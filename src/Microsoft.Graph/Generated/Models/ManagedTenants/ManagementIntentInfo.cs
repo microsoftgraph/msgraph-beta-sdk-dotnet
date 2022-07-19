@@ -28,12 +28,18 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
             get { return BackingStore?.Get<List<ManagementTemplateDetailedInfo>>("managementTemplates"); }
             set { BackingStore?.Set("managementTemplates", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>
         /// Instantiates a new managementIntentInfo and sets the default values.
         /// </summary>
         public ManagementIntentInfo() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.managedTenants.managementIntentInfo";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -51,6 +57,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
                 {"managementIntentDisplayName", n => { ManagementIntentDisplayName = n.GetStringValue(); } },
                 {"managementIntentId", n => { ManagementIntentId = n.GetStringValue(); } },
                 {"managementTemplates", n => { ManagementTemplates = n.GetCollectionOfObjectValues<ManagementTemplateDetailedInfo>(ManagementTemplateDetailedInfo.CreateFromDiscriminatorValue).ToList(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -62,6 +69,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
             writer.WriteStringValue("managementIntentDisplayName", ManagementIntentDisplayName);
             writer.WriteStringValue("managementIntentId", ManagementIntentId);
             writer.WriteCollectionOfObjectValues<ManagementTemplateDetailedInfo>("managementTemplates", ManagementTemplates);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

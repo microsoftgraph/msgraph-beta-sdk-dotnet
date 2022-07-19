@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.ManagedEBooks.Item.Categories
             /// <summary>Request query parameters</summary>
             public ManagedEBookCategoryItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new ManagedEBookCategoryItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new managedEBookCategoryItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new ManagedEBookCategoryItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public ManagedEBookCategoryItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();

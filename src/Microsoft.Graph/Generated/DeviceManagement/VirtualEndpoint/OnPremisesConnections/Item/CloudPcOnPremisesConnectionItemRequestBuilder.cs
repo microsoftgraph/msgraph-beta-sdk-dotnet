@@ -164,7 +164,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.OnPremisesConnec
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new cloudPcOnPremisesConnectionItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new CloudPcOnPremisesConnectionItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public CloudPcOnPremisesConnectionItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -189,7 +189,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.OnPremisesConnec
             /// <summary>Request query parameters</summary>
             public CloudPcOnPremisesConnectionItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new CloudPcOnPremisesConnectionItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new cloudPcOnPremisesConnectionItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new CloudPcOnPremisesConnectionItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public CloudPcOnPremisesConnectionItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -203,7 +203,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.OnPremisesConnec
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new cloudPcOnPremisesConnectionItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new CloudPcOnPremisesConnectionItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public CloudPcOnPremisesConnectionItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

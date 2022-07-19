@@ -19,6 +19,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<BitLockerEncryptionMethod?>("encryptionMethod"); }
             set { BackingStore?.Set("encryptionMethod", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>This policy setting allows you to control how BitLocker-protected fixed data drives are recovered in the absence of the required credentials. This policy setting is applied when you turn on BitLocker.</summary>
         public BitLockerRecoveryOptions RecoveryOptions {
             get { return BackingStore?.Get<BitLockerRecoveryOptions>("recoveryOptions"); }
@@ -35,6 +40,7 @@ namespace Microsoft.Graph.Beta.Models {
         public BitLockerFixedDrivePolicy() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.bitLockerFixedDrivePolicy";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -50,6 +56,7 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"encryptionMethod", n => { EncryptionMethod = n.GetEnumValue<BitLockerEncryptionMethod>(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"recoveryOptions", n => { RecoveryOptions = n.GetObjectValue<BitLockerRecoveryOptions>(BitLockerRecoveryOptions.CreateFromDiscriminatorValue); } },
                 {"requireEncryptionForWriteAccess", n => { RequireEncryptionForWriteAccess = n.GetBoolValue(); } },
             };
@@ -61,6 +68,7 @@ namespace Microsoft.Graph.Beta.Models {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<BitLockerEncryptionMethod>("encryptionMethod", EncryptionMethod);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteObjectValue<BitLockerRecoveryOptions>("recoveryOptions", RecoveryOptions);
             writer.WriteBoolValue("requireEncryptionForWriteAccess", RequireEncryptionForWriteAccess);
             writer.WriteAdditionalData(AdditionalData);

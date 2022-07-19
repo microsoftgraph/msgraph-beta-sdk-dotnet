@@ -39,6 +39,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<VpnIntegrityAlgorithmType?>("integrityCheckMethod"); }
             set { BackingStore?.Set("integrityCheckMethod", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Perfect Forward Secrecy Group. Possible values are: pfs1, pfs2, pfs2048, ecp256, ecp384, pfsMM, pfs24.</summary>
         public PerfectForwardSecrecyGroup? PfsGroup {
             get { return BackingStore?.Get<PerfectForwardSecrecyGroup?>("pfsGroup"); }
@@ -50,6 +55,7 @@ namespace Microsoft.Graph.Beta.Models {
         public CryptographySuite() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.cryptographySuite";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -69,6 +75,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"dhGroup", n => { DhGroup = n.GetEnumValue<DiffieHellmanGroup>(); } },
                 {"encryptionMethod", n => { EncryptionMethod = n.GetEnumValue<VpnEncryptionAlgorithmType>(); } },
                 {"integrityCheckMethod", n => { IntegrityCheckMethod = n.GetEnumValue<VpnIntegrityAlgorithmType>(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"pfsGroup", n => { PfsGroup = n.GetEnumValue<PerfectForwardSecrecyGroup>(); } },
             };
         }
@@ -83,6 +90,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteEnumValue<DiffieHellmanGroup>("dhGroup", DhGroup);
             writer.WriteEnumValue<VpnEncryptionAlgorithmType>("encryptionMethod", EncryptionMethod);
             writer.WriteEnumValue<VpnIntegrityAlgorithmType>("integrityCheckMethod", IntegrityCheckMethod);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteEnumValue<PerfectForwardSecrecyGroup>("pfsGroup", PfsGroup);
             writer.WriteAdditionalData(AdditionalData);
         }

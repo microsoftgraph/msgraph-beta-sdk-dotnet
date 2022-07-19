@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new WindowsPhone81AppX and sets the default values.
         /// </summary>
         public WindowsPhone81AppX() : base() {
-            Type = "#microsoft.graph.windowsPhone81AppX";
+            OdataType = "#microsoft.graph.windowsPhone81AppX";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

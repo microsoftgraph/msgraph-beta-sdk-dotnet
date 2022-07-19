@@ -20,6 +20,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("isRequired"); }
             set { BackingStore?.Set("isRequired", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Setting Definition Id</summary>
         public string SettingDefinitionId {
             get { return BackingStore?.Get<string>("settingDefinitionId"); }
@@ -30,18 +35,13 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("settingInstanceTemplateId"); }
             set { BackingStore?.Set("settingInstanceTemplateId", value); }
         }
-        /// <summary>The type property</summary>
-        public string Type {
-            get { return BackingStore?.Get<string>("@odata.type"); }
-            set { BackingStore?.Set("@odata.type", value); }
-        }
         /// <summary>
         /// Instantiates a new deviceManagementConfigurationSettingInstanceTemplate and sets the default values.
         /// </summary>
         public DeviceManagementConfigurationSettingInstanceTemplate() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
-            Type = "#microsoft.graph.deviceManagementConfigurationSettingInstanceTemplate";
+            OdataType = "#microsoft.graph.deviceManagementConfigurationSettingInstanceTemplate";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -67,9 +67,9 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"isRequired", n => { IsRequired = n.GetBoolValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"settingDefinitionId", n => { SettingDefinitionId = n.GetStringValue(); } },
                 {"settingInstanceTemplateId", n => { SettingInstanceTemplateId = n.GetStringValue(); } },
-                {"@odata.type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -79,9 +79,9 @@ namespace Microsoft.Graph.Beta.Models {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("isRequired", IsRequired);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("settingDefinitionId", SettingDefinitionId);
             writer.WriteStringValue("settingInstanceTemplateId", SettingInstanceTemplateId);
-            writer.WriteStringValue("@odata.type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

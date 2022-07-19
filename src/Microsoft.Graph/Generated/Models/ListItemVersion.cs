@@ -15,7 +15,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new ListItemVersion and sets the default values.
         /// </summary>
         public ListItemVersion() : base() {
-            Type = "#microsoft.graph.listItemVersion";
+            OdataType = "#microsoft.graph.listItemVersion";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.ApprovalWorkflowProviders.Item.PolicyTemplates {
     /// <summary>Provides operations to manage the policyTemplates property of the microsoft.graph.approvalWorkflowProvider entity.</summary>
     public class PolicyTemplatesRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

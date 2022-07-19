@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class DelegatedAdminRelationship : Entity, IParsable {
         /// <summary>The access assignments associated with the delegated admin relationship.</summary>
         public List<DelegatedAdminAccessAssignment> AccessAssignments {
@@ -65,6 +65,12 @@ namespace Microsoft.Graph.Beta.Models {
         public DelegatedAdminRelationshipStatus? Status {
             get { return BackingStore?.Get<DelegatedAdminRelationshipStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
+        }
+        /// <summary>
+        /// Instantiates a new delegatedAdminRelationship and sets the default values.
+        /// </summary>
+        public DelegatedAdminRelationship() : base() {
+            OdataType = "#microsoft.graph.delegatedAdminRelationship";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

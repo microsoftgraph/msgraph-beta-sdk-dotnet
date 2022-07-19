@@ -18,6 +18,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("message"); }
             set { BackingStore?.Set("message", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The string containing the name of the password validation rule that the action was validated against. Read-only. Not nullable.</summary>
         public string RuleName {
             get { return BackingStore?.Get<string>("ruleName"); }
@@ -34,6 +39,7 @@ namespace Microsoft.Graph.Beta.Models {
         public ValidationResult() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.validationResult";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -49,6 +55,7 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"message", n => { Message = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"ruleName", n => { RuleName = n.GetStringValue(); } },
                 {"validationPassed", n => { ValidationPassed = n.GetBoolValue(); } },
             };
@@ -60,6 +67,7 @@ namespace Microsoft.Graph.Beta.Models {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("message", Message);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("ruleName", RuleName);
             writer.WriteBoolValue("validationPassed", ValidationPassed);
             writer.WriteAdditionalData(AdditionalData);

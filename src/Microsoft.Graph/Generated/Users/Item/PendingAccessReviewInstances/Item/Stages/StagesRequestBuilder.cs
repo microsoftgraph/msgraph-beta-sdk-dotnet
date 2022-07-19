@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Users.Item.PendingAccessReviewInstances.Item.Stages {
     /// <summary>Provides operations to manage the stages property of the microsoft.graph.accessReviewInstance entity.</summary>
     public class StagesRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

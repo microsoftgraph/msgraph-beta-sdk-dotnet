@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AutopilotEvents.Item.PolicyStatu
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new deviceManagementAutopilotPolicyStatusDetailItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceManagementAutopilotPolicyStatusDetailItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceManagementAutopilotPolicyStatusDetailItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AutopilotEvents.Item.PolicyStatu
             /// <summary>Request query parameters</summary>
             public DeviceManagementAutopilotPolicyStatusDetailItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new DeviceManagementAutopilotPolicyStatusDetailItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new deviceManagementAutopilotPolicyStatusDetailItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceManagementAutopilotPolicyStatusDetailItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceManagementAutopilotPolicyStatusDetailItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AutopilotEvents.Item.PolicyStatu
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new deviceManagementAutopilotPolicyStatusDetailItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceManagementAutopilotPolicyStatusDetailItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceManagementAutopilotPolicyStatusDetailItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

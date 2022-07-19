@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.ApprovalWorkflowProviders.Item.PolicyTemplates.It
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new governancePolicyTemplateItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new GovernancePolicyTemplateItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public GovernancePolicyTemplateItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.ApprovalWorkflowProviders.Item.PolicyTemplates.It
             /// <summary>Request query parameters</summary>
             public GovernancePolicyTemplateItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new GovernancePolicyTemplateItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new governancePolicyTemplateItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new GovernancePolicyTemplateItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public GovernancePolicyTemplateItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.ApprovalWorkflowProviders.Item.PolicyTemplates.It
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new governancePolicyTemplateItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new GovernancePolicyTemplateItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public GovernancePolicyTemplateItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

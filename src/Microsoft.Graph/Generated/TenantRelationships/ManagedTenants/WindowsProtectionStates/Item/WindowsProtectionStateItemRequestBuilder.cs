@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.WindowsProtect
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new windowsProtectionStateItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new WindowsProtectionStateItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public WindowsProtectionStateItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.WindowsProtect
             /// <summary>Request query parameters</summary>
             public WindowsProtectionStateItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new WindowsProtectionStateItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new windowsProtectionStateItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new WindowsProtectionStateItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public WindowsProtectionStateItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.WindowsProtect
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new windowsProtectionStateItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new WindowsProtectionStateItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public WindowsProtectionStateItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

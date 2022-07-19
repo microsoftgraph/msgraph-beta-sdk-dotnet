@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Directory.AttributeSets.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new attributeSetItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new AttributeSetItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public AttributeSetItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Directory.AttributeSets.Item {
             /// <summary>Request query parameters</summary>
             public AttributeSetItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new AttributeSetItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new attributeSetItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new AttributeSetItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public AttributeSetItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Directory.AttributeSets.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new attributeSetItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new AttributeSetItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public AttributeSetItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

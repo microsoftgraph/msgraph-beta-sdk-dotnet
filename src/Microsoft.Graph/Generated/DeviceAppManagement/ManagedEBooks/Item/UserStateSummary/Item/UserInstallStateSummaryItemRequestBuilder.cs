@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.ManagedEBooks.Item.UserStateS
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new userInstallStateSummaryItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new UserInstallStateSummaryItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public UserInstallStateSummaryItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -184,7 +184,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.ManagedEBooks.Item.UserStateS
             /// <summary>Request query parameters</summary>
             public UserInstallStateSummaryItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new UserInstallStateSummaryItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new userInstallStateSummaryItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new UserInstallStateSummaryItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public UserInstallStateSummaryItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -198,7 +198,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.ManagedEBooks.Item.UserStateS
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new userInstallStateSummaryItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new UserInstallStateSummaryItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public UserInstallStateSummaryItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

@@ -18,6 +18,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("isReply"); }
             set { BackingStore?.Set("isReply", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The identity of the user who started the comment thread.</summary>
         public IdentitySet ParentAuthor {
             get { return BackingStore?.Get<IdentitySet>("parentAuthor"); }
@@ -34,6 +39,7 @@ namespace Microsoft.Graph.Beta.Models {
         public CommentAction() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.commentAction";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -49,6 +55,7 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"isReply", n => { IsReply = n.GetBoolValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"parentAuthor", n => { ParentAuthor = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
                 {"participants", n => { Participants = n.GetCollectionOfObjectValues<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue).ToList(); } },
             };
@@ -60,6 +67,7 @@ namespace Microsoft.Graph.Beta.Models {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("isReply", IsReply);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteObjectValue<IdentitySet>("parentAuthor", ParentAuthor);
             writer.WriteCollectionOfObjectValues<IdentitySet>("participants", Participants);
             writer.WriteAdditionalData(AdditionalData);

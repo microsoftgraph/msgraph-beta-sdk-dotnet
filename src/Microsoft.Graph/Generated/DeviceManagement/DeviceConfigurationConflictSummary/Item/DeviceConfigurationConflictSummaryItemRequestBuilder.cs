@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationConflictSumma
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new deviceConfigurationConflictSummaryItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceConfigurationConflictSummaryItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceConfigurationConflictSummaryItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationConflictSumma
             /// <summary>Request query parameters</summary>
             public DeviceConfigurationConflictSummaryItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new DeviceConfigurationConflictSummaryItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new deviceConfigurationConflictSummaryItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceConfigurationConflictSummaryItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceConfigurationConflictSummaryItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationConflictSumma
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new deviceConfigurationConflictSummaryItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceConfigurationConflictSummaryItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceConfigurationConflictSummaryItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

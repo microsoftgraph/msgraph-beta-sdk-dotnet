@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.SchedulingGroups.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new schedulingGroupItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new SchedulingGroupItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public SchedulingGroupItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -176,7 +176,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.SchedulingGroups.Item {
             /// <summary>Request query parameters</summary>
             public SchedulingGroupItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new SchedulingGroupItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new schedulingGroupItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new SchedulingGroupItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public SchedulingGroupItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -190,7 +190,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.SchedulingGroups.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new schedulingGroupItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new SchedulingGroupItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public SchedulingGroupItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

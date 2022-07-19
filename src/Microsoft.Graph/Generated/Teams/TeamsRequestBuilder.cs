@@ -15,7 +15,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Teams {
     /// <summary>Provides operations to manage the collection of team entities.</summary>
     public class TeamsRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

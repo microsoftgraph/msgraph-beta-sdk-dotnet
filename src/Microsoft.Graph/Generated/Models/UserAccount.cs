@@ -23,6 +23,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DateTimeOffset?>("lastSeenDateTime"); }
             set { BackingStore?.Set("lastSeenDateTime", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The riskScore property</summary>
         public string RiskScore {
             get { return BackingStore?.Get<string>("riskScore"); }
@@ -49,6 +54,7 @@ namespace Microsoft.Graph.Beta.Models {
         public UserAccount() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.userAccount";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -65,6 +71,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"lastSeenDateTime", n => { LastSeenDateTime = n.GetDateTimeOffsetValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"riskScore", n => { RiskScore = n.GetStringValue(); } },
                 {"service", n => { Service = n.GetStringValue(); } },
                 {"signinName", n => { SigninName = n.GetStringValue(); } },
@@ -79,6 +86,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteDateTimeOffsetValue("lastSeenDateTime", LastSeenDateTime);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("riskScore", RiskScore);
             writer.WriteStringValue("service", Service);
             writer.WriteStringValue("signinName", SigninName);

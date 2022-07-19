@@ -23,12 +23,18 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.KerberosSignOnMappingAttributeType?>("kerberosSignOnMappingAttributeType"); }
             set { BackingStore?.Set("kerberosSignOnMappingAttributeType", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>
         /// Instantiates a new kerberosSignOnSettings and sets the default values.
         /// </summary>
         public KerberosSignOnSettings() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.kerberosSignOnSettings";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -45,6 +51,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"kerberosServicePrincipalName", n => { KerberosServicePrincipalName = n.GetStringValue(); } },
                 {"kerberosSignOnMappingAttributeType", n => { KerberosSignOnMappingAttributeType = n.GetEnumValue<KerberosSignOnMappingAttributeType>(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -55,6 +62,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("kerberosServicePrincipalName", KerberosServicePrincipalName);
             writer.WriteEnumValue<KerberosSignOnMappingAttributeType>("kerberosSignOnMappingAttributeType", KerberosSignOnMappingAttributeType);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -16,6 +16,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("sensitivityLabels", value); }
         }
         /// <summary>
+        /// Instantiates a new informationProtection and sets the default values.
+        /// </summary>
+        public InformationProtection() : base() {
+            OdataType = "#microsoft.graph.security.informationProtection";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

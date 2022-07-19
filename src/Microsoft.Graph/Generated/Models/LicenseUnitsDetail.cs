@@ -18,6 +18,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<int?>("enabled"); }
             set { BackingStore?.Set("enabled", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The number of units that are suspended because the subscription of the service SKU has been cancelled. The units cannot be assigned but can still be reactivated before they are deleted.</summary>
         public int? Suspended {
             get { return BackingStore?.Get<int?>("suspended"); }
@@ -34,6 +39,7 @@ namespace Microsoft.Graph.Beta.Models {
         public LicenseUnitsDetail() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.licenseUnitsDetail";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -49,6 +55,7 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"enabled", n => { Enabled = n.GetIntValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"suspended", n => { Suspended = n.GetIntValue(); } },
                 {"warning", n => { Warning = n.GetIntValue(); } },
             };
@@ -60,6 +67,7 @@ namespace Microsoft.Graph.Beta.Models {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("enabled", Enabled);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteIntValue("suspended", Suspended);
             writer.WriteIntValue("warning", Warning);
             writer.WriteAdditionalData(AdditionalData);

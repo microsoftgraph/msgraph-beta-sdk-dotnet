@@ -113,6 +113,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("notSentToMe"); }
             set { BackingStore?.Set("notSentToMe", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Represents the strings that appear in either the toRecipients or ccRecipients properties of an incoming message in order for the condition or exception to apply.</summary>
         public List<string> RecipientContains {
             get { return BackingStore?.Get<List<string>>("recipientContains"); }
@@ -169,6 +174,7 @@ namespace Microsoft.Graph.Beta.Models {
         public MessageRulePredicates() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.messageRulePredicates";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -203,6 +209,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"isVoicemail", n => { IsVoicemail = n.GetBoolValue(); } },
                 {"messageActionFlag", n => { MessageActionFlag = n.GetEnumValue<MessageActionFlag>(); } },
                 {"notSentToMe", n => { NotSentToMe = n.GetBoolValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"recipientContains", n => { RecipientContains = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"senderContains", n => { SenderContains = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"sensitivity", n => { Sensitivity = n.GetEnumValue<Sensitivity>(); } },
@@ -241,6 +248,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteBoolValue("isVoicemail", IsVoicemail);
             writer.WriteEnumValue<MessageActionFlag>("messageActionFlag", MessageActionFlag);
             writer.WriteBoolValue("notSentToMe", NotSentToMe);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteCollectionOfPrimitiveValues<string>("recipientContains", RecipientContains);
             writer.WriteCollectionOfPrimitiveValues<string>("senderContains", SenderContains);
             writer.WriteEnumValue<Sensitivity>("sensitivity", Sensitivity);

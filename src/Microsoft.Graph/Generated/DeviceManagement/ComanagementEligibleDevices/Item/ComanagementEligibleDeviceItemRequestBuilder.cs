@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagementEligibleDevices.Item
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new comanagementEligibleDeviceItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new ComanagementEligibleDeviceItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public ComanagementEligibleDeviceItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagementEligibleDevices.Item
             /// <summary>Request query parameters</summary>
             public ComanagementEligibleDeviceItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new ComanagementEligibleDeviceItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new comanagementEligibleDeviceItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new ComanagementEligibleDeviceItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public ComanagementEligibleDeviceItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagementEligibleDevices.Item
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new comanagementEligibleDeviceItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new ComanagementEligibleDeviceItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public ComanagementEligibleDeviceItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Drive.Items.Item.Subscriptions {
     /// <summary>Provides operations to manage the subscriptions property of the microsoft.graph.driveItem entity.</summary>
     public class SubscriptionsRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

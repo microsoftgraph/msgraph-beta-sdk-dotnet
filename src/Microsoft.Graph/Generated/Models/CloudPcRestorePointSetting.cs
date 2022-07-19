@@ -18,6 +18,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<int?>("frequencyInHours"); }
             set { BackingStore?.Set("frequencyInHours", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>If true, the user has the ability to use snapshots to restore Cloud PCs. If false, non-admin users cannot use snapshots to restore the Cloud PC.</summary>
         public bool? UserRestoreEnabled {
             get { return BackingStore?.Get<bool?>("userRestoreEnabled"); }
@@ -29,6 +34,7 @@ namespace Microsoft.Graph.Beta.Models {
         public CloudPcRestorePointSetting() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.cloudPcRestorePointSetting";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -44,6 +50,7 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"frequencyInHours", n => { FrequencyInHours = n.GetIntValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"userRestoreEnabled", n => { UserRestoreEnabled = n.GetBoolValue(); } },
             };
         }
@@ -54,6 +61,7 @@ namespace Microsoft.Graph.Beta.Models {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("frequencyInHours", FrequencyInHours);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteBoolValue("userRestoreEnabled", UserRestoreEnabled);
             writer.WriteAdditionalData(AdditionalData);
         }

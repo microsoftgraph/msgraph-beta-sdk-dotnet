@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Me.Authentication.WindowsHelloForBusinessMethods.Item.Device.RegisteredOwners.User {
     /// <summary>Casts the previous resource to user.</summary>
     public class UserRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

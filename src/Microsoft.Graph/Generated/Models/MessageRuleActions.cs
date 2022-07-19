@@ -53,6 +53,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("moveToFolder"); }
             set { BackingStore?.Set("moveToFolder", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Indicates whether a message should be permanently deleted and not saved to the Deleted Items folder.</summary>
         public bool? PermanentDelete {
             get { return BackingStore?.Get<bool?>("permanentDelete"); }
@@ -74,6 +79,7 @@ namespace Microsoft.Graph.Beta.Models {
         public MessageRuleActions() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.messageRuleActions";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -96,6 +102,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"markAsRead", n => { MarkAsRead = n.GetBoolValue(); } },
                 {"markImportance", n => { MarkImportance = n.GetEnumValue<Importance>(); } },
                 {"moveToFolder", n => { MoveToFolder = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"permanentDelete", n => { PermanentDelete = n.GetBoolValue(); } },
                 {"redirectTo", n => { RedirectTo = n.GetCollectionOfObjectValues<Recipient>(Recipient.CreateFromDiscriminatorValue).ToList(); } },
                 {"stopProcessingRules", n => { StopProcessingRules = n.GetBoolValue(); } },
@@ -115,6 +122,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteBoolValue("markAsRead", MarkAsRead);
             writer.WriteEnumValue<Importance>("markImportance", MarkImportance);
             writer.WriteStringValue("moveToFolder", MoveToFolder);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteBoolValue("permanentDelete", PermanentDelete);
             writer.WriteCollectionOfObjectValues<Recipient>("redirectTo", RedirectTo);
             writer.WriteBoolValue("stopProcessingRules", StopProcessingRules);

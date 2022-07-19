@@ -116,6 +116,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("storageRequireEncryption", value); }
         }
         /// <summary>
+        /// Instantiates a new AndroidDeviceOwnerCompliancePolicy and sets the default values.
+        /// </summary>
+        public AndroidDeviceOwnerCompliancePolicy() : base() {
+            OdataType = "#microsoft.graph.androidDeviceOwnerCompliancePolicy";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

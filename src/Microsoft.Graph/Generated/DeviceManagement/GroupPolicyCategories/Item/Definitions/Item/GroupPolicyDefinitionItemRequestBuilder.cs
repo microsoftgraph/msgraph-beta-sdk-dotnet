@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyCategories.Item.Defin
             /// <summary>Request query parameters</summary>
             public GroupPolicyDefinitionItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new GroupPolicyDefinitionItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new groupPolicyDefinitionItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new GroupPolicyDefinitionItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public GroupPolicyDefinitionItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();

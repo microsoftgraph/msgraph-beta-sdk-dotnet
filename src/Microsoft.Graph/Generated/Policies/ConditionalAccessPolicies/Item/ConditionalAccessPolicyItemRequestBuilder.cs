@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Policies.ConditionalAccessPolicies.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new conditionalAccessPolicyItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new ConditionalAccessPolicyItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public ConditionalAccessPolicyItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Policies.ConditionalAccessPolicies.Item {
             /// <summary>Request query parameters</summary>
             public ConditionalAccessPolicyItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new ConditionalAccessPolicyItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new conditionalAccessPolicyItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new ConditionalAccessPolicyItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public ConditionalAccessPolicyItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Policies.ConditionalAccessPolicies.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new conditionalAccessPolicyItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new ConditionalAccessPolicyItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public ConditionalAccessPolicyItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

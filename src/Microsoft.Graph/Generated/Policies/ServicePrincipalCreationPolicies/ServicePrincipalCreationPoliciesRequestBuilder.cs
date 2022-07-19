@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Policies.ServicePrincipalCreationPolicies {
     /// <summary>Provides operations to manage the servicePrincipalCreationPolicies property of the microsoft.graph.policyRoot entity.</summary>
     public class ServicePrincipalCreationPoliciesRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

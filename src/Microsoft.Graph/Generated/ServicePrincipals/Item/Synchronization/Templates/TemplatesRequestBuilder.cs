@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Templates {
     /// <summary>Provides operations to manage the templates property of the microsoft.graph.synchronization entity.</summary>
     public class TemplatesRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

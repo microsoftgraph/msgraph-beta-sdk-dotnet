@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class Command : Entity, IParsable {
         /// <summary>The appServiceName property</summary>
         public string AppServiceName {
@@ -46,6 +46,17 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("status"); }
             set { BackingStore?.Set("status", value); }
         }
+        /// <summary>The type property</summary>
+        public string Type {
+            get { return BackingStore?.Get<string>("type"); }
+            set { BackingStore?.Set("type", value); }
+        }
+        /// <summary>
+        /// Instantiates a new command and sets the default values.
+        /// </summary>
+        public Command() : base() {
+            OdataType = "#microsoft.graph.command";
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
@@ -67,6 +78,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"postBackUri", n => { PostBackUri = n.GetStringValue(); } },
                 {"responsepayload", n => { Responsepayload = n.GetObjectValue<PayloadResponse>(PayloadResponse.CreateFromDiscriminatorValue); } },
                 {"status", n => { Status = n.GetStringValue(); } },
+                {"type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -84,6 +96,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("postBackUri", PostBackUri);
             writer.WriteObjectValue<PayloadResponse>("responsepayload", Responsepayload);
             writer.WriteStringValue("status", Status);
+            writer.WriteStringValue("type", Type);
         }
     }
 }

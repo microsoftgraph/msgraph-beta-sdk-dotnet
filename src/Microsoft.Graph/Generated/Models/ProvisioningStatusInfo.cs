@@ -18,6 +18,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<ProvisioningErrorInfo>("errorInformation"); }
             set { BackingStore?.Set("errorInformation", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Possible values are: success, warning, failure, skipped, unknownFutureValue.</summary>
         public ProvisioningResult? Status {
             get { return BackingStore?.Get<ProvisioningResult?>("status"); }
@@ -29,6 +34,7 @@ namespace Microsoft.Graph.Beta.Models {
         public ProvisioningStatusInfo() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.provisioningStatusInfo";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -44,6 +50,7 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"errorInformation", n => { ErrorInformation = n.GetObjectValue<ProvisioningErrorInfo>(ProvisioningErrorInfo.CreateFromDiscriminatorValue); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"status", n => { Status = n.GetEnumValue<ProvisioningResult>(); } },
             };
         }
@@ -54,6 +61,7 @@ namespace Microsoft.Graph.Beta.Models {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<ProvisioningErrorInfo>("errorInformation", ErrorInformation);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteEnumValue<ProvisioningResult>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }

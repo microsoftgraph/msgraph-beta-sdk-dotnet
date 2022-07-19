@@ -174,7 +174,7 @@ namespace Microsoft.Graph.Beta.Communications.Presences.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new presenceItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new PresenceItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public PresenceItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -199,7 +199,7 @@ namespace Microsoft.Graph.Beta.Communications.Presences.Item {
             /// <summary>Request query parameters</summary>
             public PresenceItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new PresenceItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new presenceItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new PresenceItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public PresenceItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -213,7 +213,7 @@ namespace Microsoft.Graph.Beta.Communications.Presences.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new presenceItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new PresenceItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public PresenceItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

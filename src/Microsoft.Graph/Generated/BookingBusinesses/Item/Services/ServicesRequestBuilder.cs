@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.BookingBusinesses.Item.Services {
     /// <summary>Provides operations to manage the services property of the microsoft.graph.bookingBusiness entity.</summary>
     public class ServicesRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

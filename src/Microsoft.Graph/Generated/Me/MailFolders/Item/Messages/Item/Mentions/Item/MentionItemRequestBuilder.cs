@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item.Messages.Item.Mentions.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new mentionItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new MentionItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public MentionItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item.Messages.Item.Mentions.Item {
             /// <summary>Request query parameters</summary>
             public MentionItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new MentionItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new mentionItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new MentionItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public MentionItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item.Messages.Item.Mentions.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new mentionItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new MentionItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public MentionItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

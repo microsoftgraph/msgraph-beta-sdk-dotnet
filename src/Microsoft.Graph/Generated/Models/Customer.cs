@@ -110,10 +110,21 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("taxRegistrationNumber"); }
             set { BackingStore?.Set("taxRegistrationNumber", value); }
         }
+        /// <summary>The type property</summary>
+        public string Type {
+            get { return BackingStore?.Get<string>("type"); }
+            set { BackingStore?.Set("type", value); }
+        }
         /// <summary>The website property</summary>
         public string Website {
             get { return BackingStore?.Get<string>("website"); }
             set { BackingStore?.Set("website", value); }
+        }
+        /// <summary>
+        /// Instantiates a new customer and sets the default values.
+        /// </summary>
+        public Customer() : base() {
+            OdataType = "#microsoft.graph.customer";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -149,6 +160,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"taxAreaId", n => { TaxAreaId = n.GetStringValue(); } },
                 {"taxLiable", n => { TaxLiable = n.GetBoolValue(); } },
                 {"taxRegistrationNumber", n => { TaxRegistrationNumber = n.GetStringValue(); } },
+                {"type", n => { Type = n.GetStringValue(); } },
                 {"website", n => { Website = n.GetStringValue(); } },
             };
         }
@@ -180,6 +192,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("taxAreaId", TaxAreaId);
             writer.WriteBoolValue("taxLiable", TaxLiable);
             writer.WriteStringValue("taxRegistrationNumber", TaxRegistrationNumber);
+            writer.WriteStringValue("type", Type);
             writer.WriteStringValue("website", Website);
         }
     }

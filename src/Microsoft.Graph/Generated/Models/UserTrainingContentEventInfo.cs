@@ -28,6 +28,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("ipAddress"); }
             set { BackingStore?.Set("ipAddress", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The operating system, platform, and device details of the user for the training event.</summary>
         public string OsPlatformDeviceDetails {
             get { return BackingStore?.Get<string>("osPlatformDeviceDetails"); }
@@ -44,6 +49,7 @@ namespace Microsoft.Graph.Beta.Models {
         public UserTrainingContentEventInfo() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.userTrainingContentEventInfo";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -61,6 +67,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"browser", n => { Browser = n.GetStringValue(); } },
                 {"contentDateTime", n => { ContentDateTime = n.GetDateTimeOffsetValue(); } },
                 {"ipAddress", n => { IpAddress = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"osPlatformDeviceDetails", n => { OsPlatformDeviceDetails = n.GetStringValue(); } },
                 {"potentialScoreImpact", n => { PotentialScoreImpact = n.GetDoubleValue(); } },
             };
@@ -74,6 +81,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("browser", Browser);
             writer.WriteDateTimeOffsetValue("contentDateTime", ContentDateTime);
             writer.WriteStringValue("ipAddress", IpAddress);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("osPlatformDeviceDetails", OsPlatformDeviceDetails);
             writer.WriteDoubleValue("potentialScoreImpact", PotentialScoreImpact);
             writer.WriteAdditionalData(AdditionalData);

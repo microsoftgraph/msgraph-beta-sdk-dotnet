@@ -39,6 +39,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MobileAppIntent?>("mobileAppIntent"); }
             set { BackingStore?.Set("mobileAppIntent", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The supported platforms for the app.</summary>
         public List<MobileAppSupportedDeviceType> SupportedDeviceTypes {
             get { return BackingStore?.Get<List<MobileAppSupportedDeviceType>>("supportedDeviceTypes"); }
@@ -50,6 +55,7 @@ namespace Microsoft.Graph.Beta.Models {
         public MobileAppIntentAndStateDetail() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.mobileAppIntentAndStateDetail";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -69,6 +75,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"displayVersion", n => { DisplayVersion = n.GetStringValue(); } },
                 {"installState", n => { InstallState = n.GetEnumValue<ResultantAppState>(); } },
                 {"mobileAppIntent", n => { MobileAppIntent = n.GetEnumValue<MobileAppIntent>(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"supportedDeviceTypes", n => { SupportedDeviceTypes = n.GetCollectionOfObjectValues<MobileAppSupportedDeviceType>(MobileAppSupportedDeviceType.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
@@ -83,6 +90,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("displayVersion", DisplayVersion);
             writer.WriteEnumValue<ResultantAppState>("installState", InstallState);
             writer.WriteEnumValue<MobileAppIntent>("mobileAppIntent", MobileAppIntent);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteCollectionOfObjectValues<MobileAppSupportedDeviceType>("supportedDeviceTypes", SupportedDeviceTypes);
             writer.WriteAdditionalData(AdditionalData);
         }

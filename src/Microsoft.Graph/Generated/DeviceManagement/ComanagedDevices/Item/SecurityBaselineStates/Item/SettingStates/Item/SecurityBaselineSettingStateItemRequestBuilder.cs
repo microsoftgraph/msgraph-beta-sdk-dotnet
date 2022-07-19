@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.SecurityBa
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new securityBaselineSettingStateItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new SecurityBaselineSettingStateItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public SecurityBaselineSettingStateItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.SecurityBa
             /// <summary>Request query parameters</summary>
             public SecurityBaselineSettingStateItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new SecurityBaselineSettingStateItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new securityBaselineSettingStateItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new SecurityBaselineSettingStateItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public SecurityBaselineSettingStateItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.SecurityBa
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new securityBaselineSettingStateItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new SecurityBaselineSettingStateItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public SecurityBaselineSettingStateItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

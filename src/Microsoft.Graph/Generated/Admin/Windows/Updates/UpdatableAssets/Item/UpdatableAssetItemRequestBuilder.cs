@@ -174,7 +174,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatableAssets.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new updatableAssetItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new UpdatableAssetItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public UpdatableAssetItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -199,7 +199,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatableAssets.Item {
             /// <summary>Request query parameters</summary>
             public UpdatableAssetItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new UpdatableAssetItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new updatableAssetItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new UpdatableAssetItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public UpdatableAssetItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -213,7 +213,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatableAssets.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new updatableAssetItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new UpdatableAssetItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public UpdatableAssetItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

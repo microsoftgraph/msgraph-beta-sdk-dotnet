@@ -41,6 +41,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("temporaryAccessPass", value); }
         }
         /// <summary>
+        /// Instantiates a new TemporaryAccessPassAuthenticationMethod and sets the default values.
+        /// </summary>
+        public TemporaryAccessPassAuthenticationMethod() : base() {
+            OdataType = "#microsoft.graph.temporaryAccessPassAuthenticationMethod";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class ExactMatchJobBase : Entity, IParsable {
         /// <summary>The completionDateTime property</summary>
         public DateTimeOffset? CompletionDateTime {
@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new exactMatchJobBase and sets the default values.
         /// </summary>
         public ExactMatchJobBase() : base() {
-            Type = "#microsoft.graph.exactMatchJobBase";
+            OdataType = "#microsoft.graph.exactMatchJobBase";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -48,6 +48,7 @@ namespace Microsoft.Graph.Beta.Models {
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
                 "#microsoft.graph.exactMatchLookupJob" => new ExactMatchLookupJob(),
+                "#microsoft.graph.exactMatchSession" => new ExactMatchSession(),
                 "#microsoft.graph.exactMatchSessionBase" => new ExactMatchSessionBase(),
                 _ => new ExactMatchJobBase(),
             };

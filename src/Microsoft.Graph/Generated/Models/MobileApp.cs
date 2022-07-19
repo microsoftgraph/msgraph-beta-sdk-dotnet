@@ -135,7 +135,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new MobileApp and sets the default values.
         /// </summary>
         public MobileApp() : base() {
-            Type = "#microsoft.graph.mobileApp";
+            OdataType = "#microsoft.graph.mobileApp";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -147,23 +147,40 @@ namespace Microsoft.Graph.Beta.Models {
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
                 "#microsoft.graph.androidForWorkApp" => new AndroidForWorkApp(),
+                "#microsoft.graph.androidLobApp" => new AndroidLobApp(),
                 "#microsoft.graph.androidManagedStoreApp" => new AndroidManagedStoreApp(),
+                "#microsoft.graph.androidManagedStoreWebApp" => new AndroidManagedStoreWebApp(),
                 "#microsoft.graph.androidStoreApp" => new AndroidStoreApp(),
                 "#microsoft.graph.iosiPadOSWebClip" => new IosiPadOSWebClip(),
+                "#microsoft.graph.iosLobApp" => new IosLobApp(),
                 "#microsoft.graph.iosStoreApp" => new IosStoreApp(),
                 "#microsoft.graph.iosVppApp" => new IosVppApp(),
+                "#microsoft.graph.macOSDmgApp" => new MacOSDmgApp(),
+                "#microsoft.graph.macOSLobApp" => new MacOSLobApp(),
                 "#microsoft.graph.macOSMdatpApp" => new MacOSMdatpApp(),
                 "#microsoft.graph.macOSMicrosoftEdgeApp" => new MacOSMicrosoftEdgeApp(),
                 "#microsoft.graph.macOSOfficeSuiteApp" => new MacOSOfficeSuiteApp(),
                 "#microsoft.graph.macOsVppApp" => new MacOsVppApp(),
+                "#microsoft.graph.managedAndroidLobApp" => new ManagedAndroidLobApp(),
+                "#microsoft.graph.managedAndroidStoreApp" => new ManagedAndroidStoreApp(),
                 "#microsoft.graph.managedApp" => new ManagedApp(),
+                "#microsoft.graph.managedIOSLobApp" => new ManagedIOSLobApp(),
+                "#microsoft.graph.managedIOSStoreApp" => new ManagedIOSStoreApp(),
+                "#microsoft.graph.managedMobileLobApp" => new ManagedMobileLobApp(),
                 "#microsoft.graph.microsoftStoreForBusinessApp" => new MicrosoftStoreForBusinessApp(),
                 "#microsoft.graph.mobileLobApp" => new MobileLobApp(),
                 "#microsoft.graph.officeSuiteApp" => new OfficeSuiteApp(),
                 "#microsoft.graph.webApp" => new WebApp(),
+                "#microsoft.graph.win32LobApp" => new Win32LobApp(),
+                "#microsoft.graph.windowsAppX" => new WindowsAppX(),
                 "#microsoft.graph.windowsMicrosoftEdgeApp" => new WindowsMicrosoftEdgeApp(),
+                "#microsoft.graph.windowsMobileMSI" => new WindowsMobileMSI(),
+                "#microsoft.graph.windowsPhone81AppX" => new WindowsPhone81AppX(),
+                "#microsoft.graph.windowsPhone81AppXBundle" => new WindowsPhone81AppXBundle(),
                 "#microsoft.graph.windowsPhone81StoreApp" => new WindowsPhone81StoreApp(),
+                "#microsoft.graph.windowsPhoneXAP" => new WindowsPhoneXAP(),
                 "#microsoft.graph.windowsStoreApp" => new WindowsStoreApp(),
+                "#microsoft.graph.windowsUniversalAppX" => new WindowsUniversalAppX(),
                 "#microsoft.graph.windowsWebApp" => new WindowsWebApp(),
                 _ => new MobileApp(),
             };

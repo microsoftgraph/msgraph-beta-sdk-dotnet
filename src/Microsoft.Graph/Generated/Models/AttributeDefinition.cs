@@ -58,6 +58,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>For attributes with reference type, lists referenced objects (for example, the manager attribute would list User as the referenced object).</summary>
         public List<ReferencedObject> ReferencedObjects {
             get { return BackingStore?.Get<List<ReferencedObject>>("referencedObjects"); }
@@ -79,6 +84,7 @@ namespace Microsoft.Graph.Beta.Models {
         public AttributeDefinition() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.attributeDefinition";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -102,6 +108,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"multivalued", n => { Multivalued = n.GetBoolValue(); } },
                 {"mutability", n => { Mutability = n.GetEnumValue<Mutability>(); } },
                 {"name", n => { Name = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"referencedObjects", n => { ReferencedObjects = n.GetCollectionOfObjectValues<ReferencedObject>(ReferencedObject.CreateFromDiscriminatorValue).ToList(); } },
                 {"required", n => { Required = n.GetBoolValue(); } },
                 {"type", n => { Type = n.GetEnumValue<AttributeType>(); } },
@@ -122,6 +129,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteBoolValue("multivalued", Multivalued);
             writer.WriteEnumValue<Mutability>("mutability", Mutability);
             writer.WriteStringValue("name", Name);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteCollectionOfObjectValues<ReferencedObject>("referencedObjects", ReferencedObjects);
             writer.WriteBoolValue("required", Required);
             writer.WriteEnumValue<AttributeType>("type", Type);

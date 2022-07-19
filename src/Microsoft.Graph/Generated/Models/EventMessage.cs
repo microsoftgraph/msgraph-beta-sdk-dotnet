@@ -51,6 +51,17 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DateTimeTimeZone>("startDateTime"); }
             set { BackingStore?.Set("startDateTime", value); }
         }
+        /// <summary>The type property</summary>
+        public EventType? Type {
+            get { return BackingStore?.Get<EventType?>("type"); }
+            set { BackingStore?.Set("type", value); }
+        }
+        /// <summary>
+        /// Instantiates a new EventMessage and sets the default values.
+        /// </summary>
+        public EventMessage() : base() {
+            OdataType = "#microsoft.graph.eventMessage";
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
@@ -79,6 +90,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"meetingMessageType", n => { MeetingMessageType = n.GetEnumValue<MeetingMessageType>(); } },
                 {"recurrence", n => { Recurrence = n.GetObjectValue<PatternedRecurrence>(PatternedRecurrence.CreateFromDiscriminatorValue); } },
                 {"startDateTime", n => { StartDateTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+                {"type", n => { Type = n.GetEnumValue<EventType>(); } },
             };
         }
         /// <summary>
@@ -97,6 +109,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteEnumValue<MeetingMessageType>("meetingMessageType", MeetingMessageType);
             writer.WriteObjectValue<PatternedRecurrence>("recurrence", Recurrence);
             writer.WriteObjectValue<DateTimeTimeZone>("startDateTime", StartDateTime);
+            writer.WriteEnumValue<EventType>("type", Type);
         }
     }
 }

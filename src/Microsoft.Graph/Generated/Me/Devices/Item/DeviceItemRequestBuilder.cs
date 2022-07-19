@@ -214,7 +214,7 @@ namespace Microsoft.Graph.Beta.Me.Devices.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new deviceItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -239,7 +239,7 @@ namespace Microsoft.Graph.Beta.Me.Devices.Item {
             /// <summary>Request query parameters</summary>
             public DeviceItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new DeviceItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new deviceItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -253,7 +253,7 @@ namespace Microsoft.Graph.Beta.Me.Devices.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new deviceItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

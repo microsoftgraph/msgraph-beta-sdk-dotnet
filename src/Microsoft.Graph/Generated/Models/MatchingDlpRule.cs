@@ -23,6 +23,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("isMostRestrictive"); }
             set { BackingStore?.Set("isMostRestrictive", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The policyId property</summary>
         public string PolicyId {
             get { return BackingStore?.Get<string>("policyId"); }
@@ -59,6 +64,7 @@ namespace Microsoft.Graph.Beta.Models {
         public MatchingDlpRule() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.matchingDlpRule";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -75,6 +81,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"actions", n => { Actions = n.GetCollectionOfObjectValues<DlpActionInfo>(DlpActionInfo.CreateFromDiscriminatorValue).ToList(); } },
                 {"isMostRestrictive", n => { IsMostRestrictive = n.GetBoolValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"policyId", n => { PolicyId = n.GetStringValue(); } },
                 {"policyName", n => { PolicyName = n.GetStringValue(); } },
                 {"priority", n => { Priority = n.GetIntValue(); } },
@@ -91,6 +98,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<DlpActionInfo>("actions", Actions);
             writer.WriteBoolValue("isMostRestrictive", IsMostRestrictive);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("policyId", PolicyId);
             writer.WriteStringValue("policyName", PolicyName);
             writer.WriteIntValue("priority", Priority);

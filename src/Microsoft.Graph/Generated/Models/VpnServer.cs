@@ -29,12 +29,18 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("isDefaultServer"); }
             set { BackingStore?.Set("isDefaultServer", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>
         /// Instantiates a new vpnServer and sets the default values.
         /// </summary>
         public VpnServer() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.vpnServer";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -52,6 +58,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"address", n => { Address = n.GetStringValue(); } },
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"isDefaultServer", n => { IsDefaultServer = n.GetBoolValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -63,6 +70,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("address", Address);
             writer.WriteStringValue("description", Description);
             writer.WriteBoolValue("isDefaultServer", IsDefaultServer);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

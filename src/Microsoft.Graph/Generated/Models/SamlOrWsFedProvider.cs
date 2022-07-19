@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new SamlOrWsFedProvider and sets the default values.
         /// </summary>
         public SamlOrWsFedProvider() : base() {
-            Type = "#microsoft.graph.samlOrWsFedProvider";
+            OdataType = "#microsoft.graph.samlOrWsFedProvider";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

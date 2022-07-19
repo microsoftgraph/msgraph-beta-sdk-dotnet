@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.IdentityProtection.ServicePrincipalRiskDetections
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new servicePrincipalRiskDetectionItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new ServicePrincipalRiskDetectionItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public ServicePrincipalRiskDetectionItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.IdentityProtection.ServicePrincipalRiskDetections
             /// <summary>Request query parameters</summary>
             public ServicePrincipalRiskDetectionItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new ServicePrincipalRiskDetectionItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new servicePrincipalRiskDetectionItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new ServicePrincipalRiskDetectionItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public ServicePrincipalRiskDetectionItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.IdentityProtection.ServicePrincipalRiskDetections
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new servicePrincipalRiskDetectionItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new ServicePrincipalRiskDetectionItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public ServicePrincipalRiskDetectionItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

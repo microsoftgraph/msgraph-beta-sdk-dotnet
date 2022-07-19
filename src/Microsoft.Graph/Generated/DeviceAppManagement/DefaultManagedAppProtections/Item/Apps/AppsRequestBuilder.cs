@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.DeviceAppManagement.DefaultManagedAppProtections.Item.Apps {
     /// <summary>Provides operations to manage the apps property of the microsoft.graph.defaultManagedAppProtection entity.</summary>
     public class AppsRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

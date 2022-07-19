@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.BookingBusinesses.Item.Appointments {
     /// <summary>Provides operations to manage the appointments property of the microsoft.graph.bookingBusiness entity.</summary>
     public class AppointmentsRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

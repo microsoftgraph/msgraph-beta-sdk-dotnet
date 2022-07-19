@@ -18,6 +18,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<RiskDetail?>("detail"); }
             set { BackingStore?.Set("detail", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The riskEventTypes property</summary>
         public List<string> RiskEventTypes {
             get { return BackingStore?.Get<List<string>>("riskEventTypes"); }
@@ -29,6 +34,7 @@ namespace Microsoft.Graph.Beta.Models {
         public RiskServicePrincipalActivity() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.riskServicePrincipalActivity";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -44,6 +50,7 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"detail", n => { Detail = n.GetEnumValue<RiskDetail>(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"riskEventTypes", n => { RiskEventTypes = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
             };
         }
@@ -54,6 +61,7 @@ namespace Microsoft.Graph.Beta.Models {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<RiskDetail>("detail", Detail);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteCollectionOfPrimitiveValues<string>("riskEventTypes", RiskEventTypes);
             writer.WriteAdditionalData(AdditionalData);
         }

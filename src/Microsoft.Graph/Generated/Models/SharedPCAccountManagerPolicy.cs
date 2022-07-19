@@ -29,6 +29,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<int?>("inactiveThresholdDays"); }
             set { BackingStore?.Set("inactiveThresholdDays", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Sets the percentage of disk space remaining on a PC before cached accounts will be deleted to free disk space. Accounts that have been inactive the longest will be deleted first. Only applies when AccountDeletionPolicy is DiskSpaceThresholdOrInactiveThreshold. Valid values 0 to 100</summary>
         public int? RemoveAccountsBelowDiskFreePercentage {
             get { return BackingStore?.Get<int?>("removeAccountsBelowDiskFreePercentage"); }
@@ -40,6 +45,7 @@ namespace Microsoft.Graph.Beta.Models {
         public SharedPCAccountManagerPolicy() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.sharedPCAccountManagerPolicy";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -57,6 +63,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"accountDeletionPolicy", n => { AccountDeletionPolicy = n.GetEnumValue<SharedPCAccountDeletionPolicyType>(); } },
                 {"cacheAccountsAboveDiskFreePercentage", n => { CacheAccountsAboveDiskFreePercentage = n.GetIntValue(); } },
                 {"inactiveThresholdDays", n => { InactiveThresholdDays = n.GetIntValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"removeAccountsBelowDiskFreePercentage", n => { RemoveAccountsBelowDiskFreePercentage = n.GetIntValue(); } },
             };
         }
@@ -69,6 +76,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteEnumValue<SharedPCAccountDeletionPolicyType>("accountDeletionPolicy", AccountDeletionPolicy);
             writer.WriteIntValue("cacheAccountsAboveDiskFreePercentage", CacheAccountsAboveDiskFreePercentage);
             writer.WriteIntValue("inactiveThresholdDays", InactiveThresholdDays);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteIntValue("removeAccountsBelowDiskFreePercentage", RemoveAccountsBelowDiskFreePercentage);
             writer.WriteAdditionalData(AdditionalData);
         }

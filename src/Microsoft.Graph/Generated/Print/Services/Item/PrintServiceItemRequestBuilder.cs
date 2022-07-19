@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.Print.Services.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new printServiceItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new PrintServiceItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public PrintServiceItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -184,7 +184,7 @@ namespace Microsoft.Graph.Beta.Print.Services.Item {
             /// <summary>Request query parameters</summary>
             public PrintServiceItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new PrintServiceItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new printServiceItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new PrintServiceItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public PrintServiceItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -198,7 +198,7 @@ namespace Microsoft.Graph.Beta.Print.Services.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new printServiceItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new PrintServiceItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public PrintServiceItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

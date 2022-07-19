@@ -14,13 +14,13 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Print.Shares.Item.AllowedGroups {
     /// <summary>Provides operations to manage the allowedGroups property of the microsoft.graph.printerShare entity.</summary>
     public class AllowedGroupsRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>The ref property</summary>
+        /// <summary>The Ref property</summary>
         public RefRequestBuilder Ref { get =>
             new RefRequestBuilder(PathParameters, RequestAdapter);
         }

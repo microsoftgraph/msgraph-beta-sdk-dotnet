@@ -6,6 +6,12 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class AndroidForWorkGmailEasConfiguration : AndroidForWorkEasEmailProfileBase, IParsable {
         /// <summary>
+        /// Instantiates a new AndroidForWorkGmailEasConfiguration and sets the default values.
+        /// </summary>
+        public AndroidForWorkGmailEasConfiguration() : base() {
+            OdataType = "#microsoft.graph.androidForWorkGmailEasConfiguration";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

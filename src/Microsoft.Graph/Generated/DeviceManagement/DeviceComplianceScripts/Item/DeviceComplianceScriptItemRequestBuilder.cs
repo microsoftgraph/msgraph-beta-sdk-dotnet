@@ -174,7 +174,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceComplianceScripts.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new deviceComplianceScriptItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceComplianceScriptItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceComplianceScriptItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -199,7 +199,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceComplianceScripts.Item {
             /// <summary>Request query parameters</summary>
             public DeviceComplianceScriptItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new DeviceComplianceScriptItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new deviceComplianceScriptItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceComplianceScriptItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceComplianceScriptItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -213,7 +213,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceComplianceScripts.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new deviceComplianceScriptItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceComplianceScriptItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceComplianceScriptItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

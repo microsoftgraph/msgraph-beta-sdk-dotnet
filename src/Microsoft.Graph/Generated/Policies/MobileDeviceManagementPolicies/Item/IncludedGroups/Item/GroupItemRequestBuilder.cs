@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Policies.MobileDeviceManagementPolicies.Item.Incl
     public class GroupItemRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>The ref property</summary>
+        /// <summary>The Ref property</summary>
         public RefRequestBuilder Ref { get =>
             new RefRequestBuilder(PathParameters, RequestAdapter);
         }

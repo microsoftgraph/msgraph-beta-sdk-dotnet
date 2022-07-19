@@ -18,6 +18,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("containerId"); }
             set { BackingStore?.Set("containerId", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The type property</summary>
         public PlannerContainerType? Type {
             get { return BackingStore?.Get<PlannerContainerType?>("type"); }
@@ -34,6 +39,7 @@ namespace Microsoft.Graph.Beta.Models {
         public PlannerPlanContainer() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.plannerPlanContainer";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -49,6 +55,7 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"containerId", n => { ContainerId = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"type", n => { Type = n.GetEnumValue<PlannerContainerType>(); } },
                 {"url", n => { Url = n.GetStringValue(); } },
             };
@@ -60,6 +67,7 @@ namespace Microsoft.Graph.Beta.Models {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("containerId", ContainerId);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteEnumValue<PlannerContainerType>("type", Type);
             writer.WriteStringValue("url", Url);
             writer.WriteAdditionalData(AdditionalData);

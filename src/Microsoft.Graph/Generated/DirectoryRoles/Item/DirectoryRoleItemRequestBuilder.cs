@@ -189,7 +189,7 @@ namespace Microsoft.Graph.Beta.DirectoryRoles.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new directoryRoleItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new DirectoryRoleItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public DirectoryRoleItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -214,7 +214,7 @@ namespace Microsoft.Graph.Beta.DirectoryRoles.Item {
             /// <summary>Request query parameters</summary>
             public DirectoryRoleItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new DirectoryRoleItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new directoryRoleItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new DirectoryRoleItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public DirectoryRoleItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -228,7 +228,7 @@ namespace Microsoft.Graph.Beta.DirectoryRoles.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new directoryRoleItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new DirectoryRoleItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public DirectoryRoleItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

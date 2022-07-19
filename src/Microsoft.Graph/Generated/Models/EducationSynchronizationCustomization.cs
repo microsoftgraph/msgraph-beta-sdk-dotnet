@@ -23,6 +23,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("isSyncDeferred"); }
             set { BackingStore?.Set("isSyncDeferred", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The collection of property names to sync. If set to null, all properties will be synchronized. Does not apply to Student Enrollments or Teacher Rosters</summary>
         public List<string> OptionalPropertiesToSync {
             get { return BackingStore?.Get<List<string>>("optionalPropertiesToSync"); }
@@ -39,6 +44,7 @@ namespace Microsoft.Graph.Beta.Models {
         public EducationSynchronizationCustomization() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.educationSynchronizationCustomization";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -55,6 +61,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"allowDisplayNameUpdate", n => { AllowDisplayNameUpdate = n.GetBoolValue(); } },
                 {"isSyncDeferred", n => { IsSyncDeferred = n.GetBoolValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"optionalPropertiesToSync", n => { OptionalPropertiesToSync = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"synchronizationStartDate", n => { SynchronizationStartDate = n.GetDateTimeOffsetValue(); } },
             };
@@ -67,6 +74,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("allowDisplayNameUpdate", AllowDisplayNameUpdate);
             writer.WriteBoolValue("isSyncDeferred", IsSyncDeferred);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteCollectionOfPrimitiveValues<string>("optionalPropertiesToSync", OptionalPropertiesToSync);
             writer.WriteDateTimeOffsetValue("synchronizationStartDate", SynchronizationStartDate);
             writer.WriteAdditionalData(AdditionalData);

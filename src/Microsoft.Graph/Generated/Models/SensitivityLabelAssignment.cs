@@ -18,6 +18,11 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The unique identifier for the sensitivity label assigned to the file.</summary>
         public string SensitivityLabelId {
             get { return BackingStore?.Get<string>("sensitivityLabelId"); }
@@ -34,6 +39,7 @@ namespace Microsoft.Graph.Beta.Models {
         public SensitivityLabelAssignment() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.sensitivityLabelAssignment";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -49,6 +55,7 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"assignmentMethod", n => { AssignmentMethod = n.GetEnumValue<SensitivityLabelAssignmentMethod>(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"sensitivityLabelId", n => { SensitivityLabelId = n.GetStringValue(); } },
                 {"tenantId", n => { TenantId = n.GetStringValue(); } },
             };
@@ -60,6 +67,7 @@ namespace Microsoft.Graph.Beta.Models {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<SensitivityLabelAssignmentMethod>("assignmentMethod", AssignmentMethod);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("sensitivityLabelId", SensitivityLabelId);
             writer.WriteStringValue("tenantId", TenantId);
             writer.WriteAdditionalData(AdditionalData);

@@ -38,12 +38,18 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("middle"); }
             set { BackingStore?.Set("middle", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>
         /// Instantiates a new personNamePronounciation and sets the default values.
         /// </summary>
         public PersonNamePronounciation() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.personNamePronounciation";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -63,6 +69,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"last", n => { Last = n.GetStringValue(); } },
                 {"maiden", n => { Maiden = n.GetStringValue(); } },
                 {"middle", n => { Middle = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -76,6 +83,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("last", Last);
             writer.WriteStringValue("maiden", Maiden);
             writer.WriteStringValue("middle", Middle);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

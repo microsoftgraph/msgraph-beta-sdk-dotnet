@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.HomeRealmDiscoveryPolicies.Item
             /// <summary>Request query parameters</summary>
             public HomeRealmDiscoveryPolicyItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new HomeRealmDiscoveryPolicyItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new homeRealmDiscoveryPolicyItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new HomeRealmDiscoveryPolicyItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public HomeRealmDiscoveryPolicyItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();

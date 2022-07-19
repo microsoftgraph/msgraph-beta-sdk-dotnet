@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Devices.Item.UsageRights.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new usageRightItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new UsageRightItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public UsageRightItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Devices.Item.UsageRights.Item {
             /// <summary>Request query parameters</summary>
             public UsageRightItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new UsageRightItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new usageRightItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new UsageRightItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public UsageRightItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Devices.Item.UsageRights.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new usageRightItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new UsageRightItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public UsageRightItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

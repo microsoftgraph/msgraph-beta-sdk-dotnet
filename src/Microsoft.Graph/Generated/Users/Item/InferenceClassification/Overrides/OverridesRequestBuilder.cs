@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Users.Item.InferenceClassification.Overrides {
     /// <summary>Provides operations to manage the overrides property of the microsoft.graph.inferenceClassification entity.</summary>
     public class OverridesRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

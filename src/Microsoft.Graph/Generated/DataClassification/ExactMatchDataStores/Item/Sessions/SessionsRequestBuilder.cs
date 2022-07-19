@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Sessions {
     /// <summary>Provides operations to manage the sessions property of the microsoft.graph.exactMatchDataStore entity.</summary>
     public class SessionsRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

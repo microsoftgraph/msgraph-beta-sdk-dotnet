@@ -11,6 +11,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("recoveryKeys", value); }
         }
         /// <summary>
+        /// Instantiates a new bitlocker and sets the default values.
+        /// </summary>
+        public Bitlocker() : base() {
+            OdataType = "#microsoft.graph.bitlocker";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

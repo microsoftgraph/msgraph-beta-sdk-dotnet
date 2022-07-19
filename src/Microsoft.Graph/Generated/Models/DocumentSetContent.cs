@@ -28,12 +28,18 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("folderName"); }
             set { BackingStore?.Set("folderName", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>
         /// Instantiates a new documentSetContent and sets the default values.
         /// </summary>
         public DocumentSetContent() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.documentSetContent";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -51,6 +57,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"contentType", n => { ContentType = n.GetObjectValue<ContentTypeInfo>(ContentTypeInfo.CreateFromDiscriminatorValue); } },
                 {"fileName", n => { FileName = n.GetStringValue(); } },
                 {"folderName", n => { FolderName = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -62,6 +69,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteObjectValue<ContentTypeInfo>("contentType", ContentType);
             writer.WriteStringValue("fileName", FileName);
             writer.WriteStringValue("folderName", FolderName);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -685,7 +685,7 @@ namespace Microsoft.Graph.Beta.Users.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new userItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new UserItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public UserItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -710,7 +710,7 @@ namespace Microsoft.Graph.Beta.Users.Item {
             /// <summary>Request query parameters</summary>
             public UserItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new UserItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new userItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new UserItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public UserItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -724,7 +724,7 @@ namespace Microsoft.Graph.Beta.Users.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new userItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new UserItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public UserItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

@@ -68,6 +68,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<SynchronizationError>("error"); }
             set { BackingStore?.Set("error", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The state property</summary>
         public SynchronizationTaskExecutionResult? State {
             get { return BackingStore?.Get<SynchronizationTaskExecutionResult?>("state"); }
@@ -89,6 +94,7 @@ namespace Microsoft.Graph.Beta.Models {
         public SynchronizationTaskExecution() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.synchronizationTaskExecution";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -114,6 +120,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"countImportedDeltas", n => { CountImportedDeltas = n.GetLongValue(); } },
                 {"countImportedReferenceDeltas", n => { CountImportedReferenceDeltas = n.GetLongValue(); } },
                 {"error", n => { Error = n.GetObjectValue<SynchronizationError>(SynchronizationError.CreateFromDiscriminatorValue); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"state", n => { State = n.GetEnumValue<SynchronizationTaskExecutionResult>(); } },
                 {"timeBegan", n => { TimeBegan = n.GetDateTimeOffsetValue(); } },
                 {"timeEnded", n => { TimeEnded = n.GetDateTimeOffsetValue(); } },
@@ -136,6 +143,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteLongValue("countImportedDeltas", CountImportedDeltas);
             writer.WriteLongValue("countImportedReferenceDeltas", CountImportedReferenceDeltas);
             writer.WriteObjectValue<SynchronizationError>("error", Error);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteEnumValue<SynchronizationTaskExecutionResult>("state", State);
             writer.WriteDateTimeOffsetValue("timeBegan", TimeBegan);
             writer.WriteDateTimeOffsetValue("timeEnded", TimeEnded);

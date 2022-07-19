@@ -15,10 +15,21 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<SignInFrequencyInterval?>("frequencyInterval"); }
             set { BackingStore?.Set("frequencyInterval", value); }
         }
+        /// <summary>Possible values are: days, hours, or null if frequencyInterval is everyTime .</summary>
+        public SigninFrequencyType? Type {
+            get { return BackingStore?.Get<SigninFrequencyType?>("type"); }
+            set { BackingStore?.Set("type", value); }
+        }
         /// <summary>The number of days or hours.</summary>
         public int? Value {
             get { return BackingStore?.Get<int?>("value"); }
             set { BackingStore?.Set("value", value); }
+        }
+        /// <summary>
+        /// Instantiates a new SignInFrequencySessionControl and sets the default values.
+        /// </summary>
+        public SignInFrequencySessionControl() : base() {
+            OdataType = "#microsoft.graph.signInFrequencySessionControl";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -35,6 +46,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"authenticationType", n => { AuthenticationType = n.GetEnumValue<SignInFrequencyAuthenticationType>(); } },
                 {"frequencyInterval", n => { FrequencyInterval = n.GetEnumValue<SignInFrequencyInterval>(); } },
+                {"type", n => { Type = n.GetEnumValue<SigninFrequencyType>(); } },
                 {"value", n => { Value = n.GetIntValue(); } },
             };
         }
@@ -47,6 +59,7 @@ namespace Microsoft.Graph.Beta.Models {
             base.Serialize(writer);
             writer.WriteEnumValue<SignInFrequencyAuthenticationType>("authenticationType", AuthenticationType);
             writer.WriteEnumValue<SignInFrequencyInterval>("frequencyInterval", FrequencyInterval);
+            writer.WriteEnumValue<SigninFrequencyType>("type", Type);
             writer.WriteIntValue("value", Value);
         }
     }

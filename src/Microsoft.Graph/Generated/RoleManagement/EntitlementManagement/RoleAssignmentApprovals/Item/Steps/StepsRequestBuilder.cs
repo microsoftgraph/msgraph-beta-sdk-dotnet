@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.RoleAssignmentApprovals.Item.Steps {
     /// <summary>Provides operations to manage the steps property of the microsoft.graph.approval entity.</summary>
     public class StepsRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.SimulationAutomations.I
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new simulationAutomationRunItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new SimulationAutomationRunItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public SimulationAutomationRunItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.SimulationAutomations.I
             /// <summary>Request query parameters</summary>
             public SimulationAutomationRunItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new SimulationAutomationRunItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new simulationAutomationRunItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new SimulationAutomationRunItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public SimulationAutomationRunItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.SimulationAutomations.I
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new simulationAutomationRunItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new SimulationAutomationRunItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public SimulationAutomationRunItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

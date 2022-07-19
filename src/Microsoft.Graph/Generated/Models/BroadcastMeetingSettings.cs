@@ -43,12 +43,18 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("isVideoOnDemandEnabled"); }
             set { BackingStore?.Set("isVideoOnDemandEnabled", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>
         /// Instantiates a new broadcastMeetingSettings and sets the default values.
         /// </summary>
         public BroadcastMeetingSettings() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.broadcastMeetingSettings";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -69,6 +75,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"isQuestionAndAnswerEnabled", n => { IsQuestionAndAnswerEnabled = n.GetBoolValue(); } },
                 {"isRecordingEnabled", n => { IsRecordingEnabled = n.GetBoolValue(); } },
                 {"isVideoOnDemandEnabled", n => { IsVideoOnDemandEnabled = n.GetBoolValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -83,6 +90,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteBoolValue("isQuestionAndAnswerEnabled", IsQuestionAndAnswerEnabled);
             writer.WriteBoolValue("isRecordingEnabled", IsRecordingEnabled);
             writer.WriteBoolValue("isVideoOnDemandEnabled", IsVideoOnDemandEnabled);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

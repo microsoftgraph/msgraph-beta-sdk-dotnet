@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.Item.UserStatuses {
     /// <summary>Provides operations to manage the userStatuses property of the microsoft.graph.deviceCompliancePolicy entity.</summary>
     public class UserStatusesRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

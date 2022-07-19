@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class RetentionEvent : Entity, IParsable {
         /// <summary>The user who created the retentionEvent.</summary>
         public Microsoft.Graph.Beta.Models.IdentitySet CreatedBy {
@@ -65,6 +65,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
         public Microsoft.Graph.Beta.Models.Security.RetentionEventType RetentionEventType {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.RetentionEventType>("retentionEventType"); }
             set { BackingStore?.Set("retentionEventType", value); }
+        }
+        /// <summary>
+        /// Instantiates a new retentionEvent and sets the default values.
+        /// </summary>
+        public RetentionEvent() : base() {
+            OdataType = "#microsoft.graph.security.retentionEvent";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

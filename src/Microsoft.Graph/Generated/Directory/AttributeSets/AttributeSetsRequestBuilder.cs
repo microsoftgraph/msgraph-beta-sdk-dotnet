@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Directory.AttributeSets {
     /// <summary>Provides operations to manage the attributeSets property of the microsoft.graph.directory entity.</summary>
     public class AttributeSetsRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

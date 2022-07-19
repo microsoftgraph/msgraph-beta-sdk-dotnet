@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AuditEvents.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new auditEventItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new AuditEventItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public AuditEventItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AuditEvents.Item {
             /// <summary>Request query parameters</summary>
             public AuditEventItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new AuditEventItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new auditEventItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new AuditEventItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public AuditEventItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AuditEvents.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new auditEventItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new AuditEventItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public AuditEventItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

@@ -28,6 +28,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<FollowupFlagStatus?>("flagStatus"); }
             set { BackingStore?.Set("flagStatus", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The date and time that the follow-up is to begin.</summary>
         public DateTimeTimeZone StartDateTime {
             get { return BackingStore?.Get<DateTimeTimeZone>("startDateTime"); }
@@ -39,6 +44,7 @@ namespace Microsoft.Graph.Beta.Models {
         public FollowupFlag() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.followupFlag";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -56,6 +62,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"completedDateTime", n => { CompletedDateTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
                 {"dueDateTime", n => { DueDateTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
                 {"flagStatus", n => { FlagStatus = n.GetEnumValue<FollowupFlagStatus>(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"startDateTime", n => { StartDateTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
             };
         }
@@ -68,6 +75,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteObjectValue<DateTimeTimeZone>("completedDateTime", CompletedDateTime);
             writer.WriteObjectValue<DateTimeTimeZone>("dueDateTime", DueDateTime);
             writer.WriteEnumValue<FollowupFlagStatus>("flagStatus", FlagStatus);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteObjectValue<DateTimeTimeZone>("startDateTime", StartDateTime);
             writer.WriteAdditionalData(AdditionalData);
         }

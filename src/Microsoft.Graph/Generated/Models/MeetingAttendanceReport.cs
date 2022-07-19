@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class MeetingAttendanceReport : Entity, IParsable {
         /// <summary>List of attendance records of an attendance report. Read-only.</summary>
         public List<AttendanceRecord> AttendanceRecords {
@@ -25,6 +25,12 @@ namespace Microsoft.Graph.Beta.Models {
         public int? TotalParticipantCount {
             get { return BackingStore?.Get<int?>("totalParticipantCount"); }
             set { BackingStore?.Set("totalParticipantCount", value); }
+        }
+        /// <summary>
+        /// Instantiates a new meetingAttendanceReport and sets the default values.
+        /// </summary>
+        public MeetingAttendanceReport() : base() {
+            OdataType = "#microsoft.graph.meetingAttendanceReport";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

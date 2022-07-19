@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.Connectors.Item
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new connectorItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new ConnectorItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public ConnectorItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -184,7 +184,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.Connectors.Item
             /// <summary>Request query parameters</summary>
             public ConnectorItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new ConnectorItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new connectorItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new ConnectorItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public ConnectorItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -198,7 +198,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.Connectors.Item
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new connectorItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new ConnectorItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public ConnectorItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

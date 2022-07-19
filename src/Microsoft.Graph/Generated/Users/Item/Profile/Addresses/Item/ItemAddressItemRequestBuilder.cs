@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Addresses.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new itemAddressItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new ItemAddressItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public ItemAddressItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Addresses.Item {
             /// <summary>Request query parameters</summary>
             public ItemAddressItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new ItemAddressItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new itemAddressItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new ItemAddressItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public ItemAddressItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Addresses.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new itemAddressItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new ItemAddressItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public ItemAddressItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

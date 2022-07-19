@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new deploymentItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new DeploymentItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public DeploymentItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -184,7 +184,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item {
             /// <summary>Request query parameters</summary>
             public DeploymentItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new DeploymentItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new deploymentItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new DeploymentItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public DeploymentItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -198,7 +198,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new deploymentItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new DeploymentItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public DeploymentItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

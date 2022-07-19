@@ -23,6 +23,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<string>>("customAuthenticationFactors"); }
             set { BackingStore?.Set("customAuthenticationFactors", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Defines the relationship of the grant controls. Possible values: AND, OR.</summary>
         public string Operator {
             get { return BackingStore?.Get<string>("operator"); }
@@ -39,6 +44,7 @@ namespace Microsoft.Graph.Beta.Models {
         public ConditionalAccessGrantControls() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.conditionalAccessGrantControls";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -55,6 +61,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"builtInControls", n => { BuiltInControls = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"customAuthenticationFactors", n => { CustomAuthenticationFactors = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"operator", n => { Operator = n.GetStringValue(); } },
                 {"termsOfUse", n => { TermsOfUse = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
             };
@@ -67,6 +74,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("builtInControls", BuiltInControls);
             writer.WriteCollectionOfPrimitiveValues<string>("customAuthenticationFactors", CustomAuthenticationFactors);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("operator", Operator);
             writer.WriteCollectionOfPrimitiveValues<string>("termsOfUse", TermsOfUse);
             writer.WriteAdditionalData(AdditionalData);

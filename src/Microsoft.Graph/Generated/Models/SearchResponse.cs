@@ -18,6 +18,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<SearchHitsContainer>>("hitsContainers"); }
             set { BackingStore?.Set("hitsContainers", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Provides details of query alteration response for spelling correction.</summary>
         public AlterationResponse QueryAlterationResponse {
             get { return BackingStore?.Get<AlterationResponse>("queryAlterationResponse"); }
@@ -39,6 +44,7 @@ namespace Microsoft.Graph.Beta.Models {
         public SearchResponse() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.searchResponse";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -54,6 +60,7 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"hitsContainers", n => { HitsContainers = n.GetCollectionOfObjectValues<SearchHitsContainer>(SearchHitsContainer.CreateFromDiscriminatorValue).ToList(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"queryAlterationResponse", n => { QueryAlterationResponse = n.GetObjectValue<AlterationResponse>(AlterationResponse.CreateFromDiscriminatorValue); } },
                 {"resultTemplates", n => { ResultTemplates = n.GetObjectValue<ResultTemplateDictionary>(ResultTemplateDictionary.CreateFromDiscriminatorValue); } },
                 {"searchTerms", n => { SearchTerms = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
@@ -66,6 +73,7 @@ namespace Microsoft.Graph.Beta.Models {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<SearchHitsContainer>("hitsContainers", HitsContainers);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteObjectValue<AlterationResponse>("queryAlterationResponse", QueryAlterationResponse);
             writer.WriteObjectValue<ResultTemplateDictionary>("resultTemplates", ResultTemplates);
             writer.WriteCollectionOfPrimitiveValues<string>("searchTerms", SearchTerms);

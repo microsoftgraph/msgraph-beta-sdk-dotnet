@@ -24,6 +24,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<string>>("exceptions"); }
             set { BackingStore?.Set("exceptions", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Specifies whether the proxy server should be used for local (intranet) addresses.</summary>
         public bool? UseForLocalAddresses {
             get { return BackingStore?.Get<bool?>("useForLocalAddresses"); }
@@ -35,6 +40,7 @@ namespace Microsoft.Graph.Beta.Models {
         public Windows10NetworkProxyServer() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.windows10NetworkProxyServer";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -51,6 +57,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"address", n => { Address = n.GetStringValue(); } },
                 {"exceptions", n => { Exceptions = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"useForLocalAddresses", n => { UseForLocalAddresses = n.GetBoolValue(); } },
             };
         }
@@ -62,6 +69,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("address", Address);
             writer.WriteCollectionOfPrimitiveValues<string>("exceptions", Exceptions);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteBoolValue("useForLocalAddresses", UseForLocalAddresses);
             writer.WriteAdditionalData(AdditionalData);
         }

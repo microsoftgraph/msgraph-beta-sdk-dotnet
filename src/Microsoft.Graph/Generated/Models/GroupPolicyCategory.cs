@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>The category entity stores the category of a group policy definition</summary>
     public class GroupPolicyCategory : Entity, IParsable {
         /// <summary>The children categories</summary>
         public List<GroupPolicyCategory> Children {
@@ -40,6 +39,12 @@ namespace Microsoft.Graph.Beta.Models {
         public GroupPolicyCategory Parent {
             get { return BackingStore?.Get<GroupPolicyCategory>("parent"); }
             set { BackingStore?.Set("parent", value); }
+        }
+        /// <summary>
+        /// Instantiates a new GroupPolicyCategory and sets the default values.
+        /// </summary>
+        public GroupPolicyCategory() : base() {
+            OdataType = "#microsoft.graph.groupPolicyCategory";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

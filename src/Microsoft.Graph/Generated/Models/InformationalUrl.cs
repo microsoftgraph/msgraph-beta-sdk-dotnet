@@ -23,6 +23,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("marketingUrl"); }
             set { BackingStore?.Set("marketingUrl", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Link to the application&apos;s privacy statement. For example, https://www.contoso.com/app/privacy</summary>
         public string PrivacyStatementUrl {
             get { return BackingStore?.Get<string>("privacyStatementUrl"); }
@@ -44,6 +49,7 @@ namespace Microsoft.Graph.Beta.Models {
         public InformationalUrl() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.informationalUrl";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -60,6 +66,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"logoUrl", n => { LogoUrl = n.GetStringValue(); } },
                 {"marketingUrl", n => { MarketingUrl = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"privacyStatementUrl", n => { PrivacyStatementUrl = n.GetStringValue(); } },
                 {"supportUrl", n => { SupportUrl = n.GetStringValue(); } },
                 {"termsOfServiceUrl", n => { TermsOfServiceUrl = n.GetStringValue(); } },
@@ -73,6 +80,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("logoUrl", LogoUrl);
             writer.WriteStringValue("marketingUrl", MarketingUrl);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("privacyStatementUrl", PrivacyStatementUrl);
             writer.WriteStringValue("supportUrl", SupportUrl);
             writer.WriteStringValue("termsOfServiceUrl", TermsOfServiceUrl);

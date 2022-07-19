@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Users.Item.Outlook.TaskGroups {
     /// <summary>Provides operations to manage the taskGroups property of the microsoft.graph.outlookUser entity.</summary>
     public class TaskGroupsRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

@@ -49,12 +49,18 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<int?>("installProgressTimeoutInMinutes"); }
             set { BackingStore?.Set("installProgressTimeoutInMinutes", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>
         /// Instantiates a new windowsEnrollmentStatusScreenSettings and sets the default values.
         /// </summary>
         public WindowsEnrollmentStatusScreenSettings() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.windowsEnrollmentStatusScreenSettings";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -76,6 +82,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"customErrorMessage", n => { CustomErrorMessage = n.GetStringValue(); } },
                 {"hideInstallationProgress", n => { HideInstallationProgress = n.GetBoolValue(); } },
                 {"installProgressTimeoutInMinutes", n => { InstallProgressTimeoutInMinutes = n.GetIntValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -91,6 +98,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("customErrorMessage", CustomErrorMessage);
             writer.WriteBoolValue("hideInstallationProgress", HideInstallationProgress);
             writer.WriteIntValue("installProgressTimeoutInMinutes", InstallProgressTimeoutInMinutes);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -164,7 +164,7 @@ namespace Microsoft.Graph.Beta.Planner.Rosters.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new plannerRosterItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new PlannerRosterItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public PlannerRosterItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -189,7 +189,7 @@ namespace Microsoft.Graph.Beta.Planner.Rosters.Item {
             /// <summary>Request query parameters</summary>
             public PlannerRosterItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new PlannerRosterItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new plannerRosterItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new PlannerRosterItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public PlannerRosterItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -203,7 +203,7 @@ namespace Microsoft.Graph.Beta.Planner.Rosters.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new plannerRosterItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new PlannerRosterItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public PlannerRosterItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

@@ -23,6 +23,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("formula"); }
             set { BackingStore?.Set("formula", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The output type used to format values in this column. Must be one of boolean, currency, dateTime, number, or text.</summary>
         public string OutputType {
             get { return BackingStore?.Get<string>("outputType"); }
@@ -34,6 +39,7 @@ namespace Microsoft.Graph.Beta.Models {
         public CalculatedColumn() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.calculatedColumn";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -50,6 +56,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"format", n => { Format = n.GetStringValue(); } },
                 {"formula", n => { Formula = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"outputType", n => { OutputType = n.GetStringValue(); } },
             };
         }
@@ -61,6 +68,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("format", Format);
             writer.WriteStringValue("formula", Formula);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("outputType", OutputType);
             writer.WriteAdditionalData(AdditionalData);
         }

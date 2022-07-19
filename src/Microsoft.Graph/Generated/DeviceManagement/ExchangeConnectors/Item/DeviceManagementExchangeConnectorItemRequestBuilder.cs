@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ExchangeConnectors.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new deviceManagementExchangeConnectorItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceManagementExchangeConnectorItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceManagementExchangeConnectorItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -184,7 +184,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ExchangeConnectors.Item {
             /// <summary>Request query parameters</summary>
             public DeviceManagementExchangeConnectorItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new DeviceManagementExchangeConnectorItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new deviceManagementExchangeConnectorItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceManagementExchangeConnectorItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceManagementExchangeConnectorItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -198,7 +198,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ExchangeConnectors.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new deviceManagementExchangeConnectorItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceManagementExchangeConnectorItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceManagementExchangeConnectorItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

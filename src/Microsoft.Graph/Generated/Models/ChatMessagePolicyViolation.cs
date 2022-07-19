@@ -23,6 +23,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("justificationText"); }
             set { BackingStore?.Set("justificationText", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Information to display to the message sender about why the message was flagged as a violation.</summary>
         public ChatMessagePolicyViolationPolicyTip PolicyTip {
             get { return BackingStore?.Get<ChatMessagePolicyViolationPolicyTip>("policyTip"); }
@@ -44,6 +49,7 @@ namespace Microsoft.Graph.Beta.Models {
         public ChatMessagePolicyViolation() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.chatMessagePolicyViolation";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -60,6 +66,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"dlpAction", n => { DlpAction = n.GetEnumValue<ChatMessagePolicyViolationDlpActionTypes>(); } },
                 {"justificationText", n => { JustificationText = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"policyTip", n => { PolicyTip = n.GetObjectValue<ChatMessagePolicyViolationPolicyTip>(ChatMessagePolicyViolationPolicyTip.CreateFromDiscriminatorValue); } },
                 {"userAction", n => { UserAction = n.GetEnumValue<ChatMessagePolicyViolationUserActionTypes>(); } },
                 {"verdictDetails", n => { VerdictDetails = n.GetEnumValue<ChatMessagePolicyViolationVerdictDetailsTypes>(); } },
@@ -73,6 +80,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<ChatMessagePolicyViolationDlpActionTypes>("dlpAction", DlpAction);
             writer.WriteStringValue("justificationText", JustificationText);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteObjectValue<ChatMessagePolicyViolationPolicyTip>("policyTip", PolicyTip);
             writer.WriteEnumValue<ChatMessagePolicyViolationUserActionTypes>("userAction", UserAction);
             writer.WriteEnumValue<ChatMessagePolicyViolationVerdictDetailsTypes>("verdictDetails", VerdictDetails);

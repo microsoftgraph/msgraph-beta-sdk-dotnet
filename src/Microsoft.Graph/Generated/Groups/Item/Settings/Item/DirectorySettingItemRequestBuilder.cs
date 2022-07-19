@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Settings.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new directorySettingItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new DirectorySettingItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public DirectorySettingItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Settings.Item {
             /// <summary>Request query parameters</summary>
             public DirectorySettingItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new DirectorySettingItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new directorySettingItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new DirectorySettingItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public DirectorySettingItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Settings.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new directorySettingItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new DirectorySettingItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public DirectorySettingItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

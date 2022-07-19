@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.CompliancePolicies.Item.Schedule
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new deviceManagementComplianceActionItemItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceManagementComplianceActionItemItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceManagementComplianceActionItemItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.CompliancePolicies.Item.Schedule
             /// <summary>Request query parameters</summary>
             public DeviceManagementComplianceActionItemItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new DeviceManagementComplianceActionItemItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new deviceManagementComplianceActionItemItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceManagementComplianceActionItemItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceManagementComplianceActionItemItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.CompliancePolicies.Item.Schedule
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new deviceManagementComplianceActionItemItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceManagementComplianceActionItemItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceManagementComplianceActionItemItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

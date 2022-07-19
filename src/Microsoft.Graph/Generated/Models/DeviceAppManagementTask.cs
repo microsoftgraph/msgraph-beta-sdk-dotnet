@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new deviceAppManagementTask and sets the default values.
         /// </summary>
         public DeviceAppManagementTask() : base() {
-            Type = "#microsoft.graph.deviceAppManagementTask";
+            OdataType = "#microsoft.graph.deviceAppManagementTask";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

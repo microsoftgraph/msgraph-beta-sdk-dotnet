@@ -174,7 +174,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.It
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new ediscoveryFileItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new EdiscoveryFileItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public EdiscoveryFileItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -199,7 +199,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.It
             /// <summary>Request query parameters</summary>
             public EdiscoveryFileItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new EdiscoveryFileItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new ediscoveryFileItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new EdiscoveryFileItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public EdiscoveryFileItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -213,7 +213,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.It
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new ediscoveryFileItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new EdiscoveryFileItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public EdiscoveryFileItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

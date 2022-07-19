@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.EmbeddedSIMActivationCodePools.I
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new embeddedSIMDeviceStateItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new EmbeddedSIMDeviceStateItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public EmbeddedSIMDeviceStateItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.EmbeddedSIMActivationCodePools.I
             /// <summary>Request query parameters</summary>
             public EmbeddedSIMDeviceStateItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new EmbeddedSIMDeviceStateItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new embeddedSIMDeviceStateItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new EmbeddedSIMDeviceStateItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public EmbeddedSIMDeviceStateItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.EmbeddedSIMActivationCodePools.I
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new embeddedSIMDeviceStateItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new EmbeddedSIMDeviceStateItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public EmbeddedSIMDeviceStateItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

@@ -23,6 +23,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("isOptional"); }
             set { BackingStore?.Set("isOptional", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The peripheral property</summary>
         public TeamworkPeripheral Peripheral {
             get { return BackingStore?.Get<TeamworkPeripheral>("peripheral"); }
@@ -34,6 +39,7 @@ namespace Microsoft.Graph.Beta.Models {
         public TeamworkPeripheralHealth() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.teamworkPeripheralHealth";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -50,6 +56,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"connection", n => { Connection = n.GetObjectValue<TeamworkConnection>(TeamworkConnection.CreateFromDiscriminatorValue); } },
                 {"isOptional", n => { IsOptional = n.GetBoolValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"peripheral", n => { Peripheral = n.GetObjectValue<TeamworkPeripheral>(TeamworkPeripheral.CreateFromDiscriminatorValue); } },
             };
         }
@@ -61,6 +68,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<TeamworkConnection>("connection", Connection);
             writer.WriteBoolValue("isOptional", IsOptional);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteObjectValue<TeamworkPeripheral>("peripheral", Peripheral);
             writer.WriteAdditionalData(AdditionalData);
         }

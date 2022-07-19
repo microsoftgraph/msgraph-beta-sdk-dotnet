@@ -194,7 +194,7 @@ namespace Microsoft.Graph.Beta.AccessReviews.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new accessReviewItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new AccessReviewItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public AccessReviewItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -219,7 +219,7 @@ namespace Microsoft.Graph.Beta.AccessReviews.Item {
             /// <summary>Request query parameters</summary>
             public AccessReviewItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new AccessReviewItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new accessReviewItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new AccessReviewItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public AccessReviewItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -233,7 +233,7 @@ namespace Microsoft.Graph.Beta.AccessReviews.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new accessReviewItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new AccessReviewItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public AccessReviewItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

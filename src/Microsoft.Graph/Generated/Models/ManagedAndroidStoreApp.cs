@@ -21,6 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("packageId", value); }
         }
         /// <summary>
+        /// Instantiates a new ManagedAndroidStoreApp and sets the default values.
+        /// </summary>
+        public ManagedAndroidStoreApp() : base() {
+            OdataType = "#microsoft.graph.managedAndroidStoreApp";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

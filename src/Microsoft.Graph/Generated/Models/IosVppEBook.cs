@@ -51,6 +51,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("vppTokenId", value); }
         }
         /// <summary>
+        /// Instantiates a new IosVppEBook and sets the default values.
+        /// </summary>
+        public IosVppEBook() : base() {
+            OdataType = "#microsoft.graph.iosVppEBook";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

@@ -29,6 +29,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DateTimeOffset?>("lastUpdatedDateTime"); }
             set { BackingStore?.Set("lastUpdatedDateTime", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Represents the state of Zebra FOTA deployment.</summary>
         public ZebraFotaDeploymentState? State {
             get { return BackingStore?.Get<ZebraFotaDeploymentState?>("state"); }
@@ -90,6 +95,7 @@ namespace Microsoft.Graph.Beta.Models {
         public ZebraFotaDeploymentStatus() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.zebraFotaDeploymentStatus";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -107,6 +113,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"cancelRequested", n => { CancelRequested = n.GetBoolValue(); } },
                 {"completeOrCanceledDateTime", n => { CompleteOrCanceledDateTime = n.GetDateTimeOffsetValue(); } },
                 {"lastUpdatedDateTime", n => { LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"state", n => { State = n.GetEnumValue<ZebraFotaDeploymentState>(); } },
                 {"totalAwaitingInstall", n => { TotalAwaitingInstall = n.GetIntValue(); } },
                 {"totalCanceled", n => { TotalCanceled = n.GetIntValue(); } },
@@ -129,6 +136,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteBoolValue("cancelRequested", CancelRequested);
             writer.WriteDateTimeOffsetValue("completeOrCanceledDateTime", CompleteOrCanceledDateTime);
             writer.WriteDateTimeOffsetValue("lastUpdatedDateTime", LastUpdatedDateTime);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteEnumValue<ZebraFotaDeploymentState>("state", State);
             writer.WriteIntValue("totalAwaitingInstall", TotalAwaitingInstall);
             writer.WriteIntValue("totalCanceled", TotalCanceled);

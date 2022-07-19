@@ -13,6 +13,11 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The value property</summary>
         public DeploymentStateReasonValue? Value {
             get { return BackingStore?.Get<DeploymentStateReasonValue?>("value"); }
@@ -24,6 +29,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         public DeploymentStateReason() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.windowsUpdates.deploymentStateReason";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -38,6 +44,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"value", n => { Value = n.GetEnumValue<DeploymentStateReasonValue>(); } },
             };
         }
@@ -47,6 +54,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// </summary>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteEnumValue<DeploymentStateReasonValue>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }

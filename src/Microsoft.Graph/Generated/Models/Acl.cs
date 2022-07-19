@@ -23,6 +23,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<IdentitySourceType?>("identitySource"); }
             set { BackingStore?.Set("identitySource", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The type property</summary>
         public AclType? Type {
             get { return BackingStore?.Get<AclType?>("type"); }
@@ -39,6 +44,7 @@ namespace Microsoft.Graph.Beta.Models {
         public Acl() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.acl";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -55,6 +61,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"accessType", n => { AccessType = n.GetEnumValue<AccessType>(); } },
                 {"identitySource", n => { IdentitySource = n.GetEnumValue<IdentitySourceType>(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"type", n => { Type = n.GetEnumValue<AclType>(); } },
                 {"value", n => { Value = n.GetStringValue(); } },
             };
@@ -67,6 +74,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<AccessType>("accessType", AccessType);
             writer.WriteEnumValue<IdentitySourceType>("identitySource", IdentitySource);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteEnumValue<AclType>("type", Type);
             writer.WriteStringValue("value", Value);
             writer.WriteAdditionalData(AdditionalData);

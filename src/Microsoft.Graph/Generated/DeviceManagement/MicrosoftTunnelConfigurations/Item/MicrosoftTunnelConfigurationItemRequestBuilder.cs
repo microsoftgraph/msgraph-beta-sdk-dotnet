@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelConfigurations.It
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new microsoftTunnelConfigurationItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new MicrosoftTunnelConfigurationItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public MicrosoftTunnelConfigurationItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelConfigurations.It
             /// <summary>Request query parameters</summary>
             public MicrosoftTunnelConfigurationItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new MicrosoftTunnelConfigurationItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new microsoftTunnelConfigurationItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new MicrosoftTunnelConfigurationItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public MicrosoftTunnelConfigurationItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelConfigurations.It
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new microsoftTunnelConfigurationItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new MicrosoftTunnelConfigurationItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public MicrosoftTunnelConfigurationItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

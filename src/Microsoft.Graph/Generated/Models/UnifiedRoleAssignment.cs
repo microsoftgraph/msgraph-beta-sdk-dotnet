@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class UnifiedRoleAssignment : Entity, IParsable {
         /// <summary>Details of the app specific scope when the assignment scope is app specific. Containment entity.</summary>
         public Microsoft.Graph.Beta.Models.AppScope AppScope {
@@ -60,6 +60,12 @@ namespace Microsoft.Graph.Beta.Models {
         public string RoleDefinitionId {
             get { return BackingStore?.Get<string>("roleDefinitionId"); }
             set { BackingStore?.Set("roleDefinitionId", value); }
+        }
+        /// <summary>
+        /// Instantiates a new unifiedRoleAssignment and sets the default values.
+        /// </summary>
+        public UnifiedRoleAssignment() : base() {
+            OdataType = "#microsoft.graph.unifiedRoleAssignment";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

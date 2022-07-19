@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Policies.ServicePrincipalCreationPolicies.Item.In
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new servicePrincipalCreationConditionSetItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new ServicePrincipalCreationConditionSetItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public ServicePrincipalCreationConditionSetItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Policies.ServicePrincipalCreationPolicies.Item.In
             /// <summary>Request query parameters</summary>
             public ServicePrincipalCreationConditionSetItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new ServicePrincipalCreationConditionSetItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new servicePrincipalCreationConditionSetItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new ServicePrincipalCreationConditionSetItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public ServicePrincipalCreationConditionSetItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Policies.ServicePrincipalCreationPolicies.Item.In
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new servicePrincipalCreationConditionSetItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new ServicePrincipalCreationConditionSetItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public ServicePrincipalCreationConditionSetItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

@@ -43,6 +43,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<IdentityProviderBase>>("identityProviders"); }
             set { BackingStore?.Set("identityProviders", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Represents entry point for identity userflow attributes.</summary>
         public List<IdentityUserFlowAttribute> UserFlowAttributes {
             get { return BackingStore?.Get<List<IdentityUserFlowAttribute>>("userFlowAttributes"); }
@@ -59,6 +64,7 @@ namespace Microsoft.Graph.Beta.Models {
         public IdentityContainer() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.identityContainer";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -79,6 +85,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"conditionalAccess", n => { ConditionalAccess = n.GetObjectValue<ConditionalAccessRoot>(ConditionalAccessRoot.CreateFromDiscriminatorValue); } },
                 {"continuousAccessEvaluationPolicy", n => { ContinuousAccessEvaluationPolicy = n.GetObjectValue<Microsoft.Graph.Beta.Models.ContinuousAccessEvaluationPolicy>(Microsoft.Graph.Beta.Models.ContinuousAccessEvaluationPolicy.CreateFromDiscriminatorValue); } },
                 {"identityProviders", n => { IdentityProviders = n.GetCollectionOfObjectValues<IdentityProviderBase>(IdentityProviderBase.CreateFromDiscriminatorValue).ToList(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"userFlowAttributes", n => { UserFlowAttributes = n.GetCollectionOfObjectValues<IdentityUserFlowAttribute>(IdentityUserFlowAttribute.CreateFromDiscriminatorValue).ToList(); } },
                 {"userFlows", n => { UserFlows = n.GetCollectionOfObjectValues<IdentityUserFlow>(IdentityUserFlow.CreateFromDiscriminatorValue).ToList(); } },
             };
@@ -95,6 +102,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteObjectValue<ConditionalAccessRoot>("conditionalAccess", ConditionalAccess);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ContinuousAccessEvaluationPolicy>("continuousAccessEvaluationPolicy", ContinuousAccessEvaluationPolicy);
             writer.WriteCollectionOfObjectValues<IdentityProviderBase>("identityProviders", IdentityProviders);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteCollectionOfObjectValues<IdentityUserFlowAttribute>("userFlowAttributes", UserFlowAttributes);
             writer.WriteCollectionOfObjectValues<IdentityUserFlow>("userFlows", UserFlows);
             writer.WriteAdditionalData(AdditionalData);

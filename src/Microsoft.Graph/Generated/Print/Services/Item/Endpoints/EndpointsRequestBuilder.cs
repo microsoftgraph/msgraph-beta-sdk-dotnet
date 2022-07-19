@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Print.Services.Item.Endpoints {
     /// <summary>Provides operations to manage the endpoints property of the microsoft.graph.printService entity.</summary>
     public class EndpointsRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

@@ -194,7 +194,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Submissio
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new educationSubmissionItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new EducationSubmissionItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public EducationSubmissionItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -219,7 +219,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Submissio
             /// <summary>Request query parameters</summary>
             public EducationSubmissionItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new EducationSubmissionItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new educationSubmissionItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new EducationSubmissionItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public EducationSubmissionItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -233,7 +233,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Submissio
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new educationSubmissionItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new EducationSubmissionItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public EducationSubmissionItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

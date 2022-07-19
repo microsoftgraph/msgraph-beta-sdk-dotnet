@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.ApprovalWorkflowProviders.Item.BusinessFlowsWithR
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new businessFlowItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new BusinessFlowItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public BusinessFlowItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -184,7 +184,7 @@ namespace Microsoft.Graph.Beta.ApprovalWorkflowProviders.Item.BusinessFlowsWithR
             /// <summary>Request query parameters</summary>
             public BusinessFlowItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new BusinessFlowItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new businessFlowItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new BusinessFlowItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public BusinessFlowItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -198,7 +198,7 @@ namespace Microsoft.Graph.Beta.ApprovalWorkflowProviders.Item.BusinessFlowsWithR
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new businessFlowItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new BusinessFlowItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public BusinessFlowItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

@@ -204,7 +204,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new ediscoveryCaseItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new EdiscoveryCaseItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public EdiscoveryCaseItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -229,7 +229,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item {
             /// <summary>Request query parameters</summary>
             public EdiscoveryCaseItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new EdiscoveryCaseItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new ediscoveryCaseItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new EdiscoveryCaseItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public EdiscoveryCaseItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -243,7 +243,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new ediscoveryCaseItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new EdiscoveryCaseItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public EdiscoveryCaseItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

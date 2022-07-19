@@ -4,12 +4,18 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class LookupResultRow : Entity, IParsable {
         /// <summary>The row property</summary>
         public string Row {
             get { return BackingStore?.Get<string>("row"); }
             set { BackingStore?.Set("row", value); }
+        }
+        /// <summary>
+        /// Instantiates a new lookupResultRow and sets the default values.
+        /// </summary>
+        public LookupResultRow() : base() {
+            OdataType = "#microsoft.graph.lookupResultRow";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.Security.Incidents.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new incidentItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new IncidentItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public IncidentItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -184,7 +184,7 @@ namespace Microsoft.Graph.Beta.Security.Incidents.Item {
             /// <summary>Request query parameters</summary>
             public IncidentItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new IncidentItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new incidentItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new IncidentItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public IncidentItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -198,7 +198,7 @@ namespace Microsoft.Graph.Beta.Security.Incidents.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new incidentItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new IncidentItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public IncidentItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

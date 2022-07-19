@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Domains.Item.SharedEmailDomainInvitations.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new sharedEmailDomainInvitationItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new SharedEmailDomainInvitationItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public SharedEmailDomainInvitationItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Domains.Item.SharedEmailDomainInvitations.Item {
             /// <summary>Request query parameters</summary>
             public SharedEmailDomainInvitationItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new SharedEmailDomainInvitationItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new sharedEmailDomainInvitationItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new SharedEmailDomainInvitationItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public SharedEmailDomainInvitationItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Domains.Item.SharedEmailDomainInvitations.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new sharedEmailDomainInvitationItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new SharedEmailDomainInvitationItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public SharedEmailDomainInvitationItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

@@ -18,6 +18,11 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.</summary>
         public string TenantId {
             get { return BackingStore?.Get<string>("tenantId"); }
@@ -29,6 +34,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         public MyRole() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.managedTenants.myRole";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -44,6 +50,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"assignments", n => { Assignments = n.GetCollectionOfObjectValues<RoleAssignment>(RoleAssignment.CreateFromDiscriminatorValue).ToList(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"tenantId", n => { TenantId = n.GetStringValue(); } },
             };
         }
@@ -54,6 +61,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<RoleAssignment>("assignments", Assignments);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("tenantId", TenantId);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.NoncustodialData
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new noncustodialDataSourceItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new NoncustodialDataSourceItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public NoncustodialDataSourceItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -204,7 +204,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.NoncustodialData
             /// <summary>Request query parameters</summary>
             public NoncustodialDataSourceItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new NoncustodialDataSourceItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new noncustodialDataSourceItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new NoncustodialDataSourceItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public NoncustodialDataSourceItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -218,7 +218,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.NoncustodialData
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new noncustodialDataSourceItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new NoncustodialDataSourceItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public NoncustodialDataSourceItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

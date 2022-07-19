@@ -43,6 +43,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("errorMessage"); }
             set { BackingStore?.Set("errorMessage", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>User identifier using the device.</summary>
         public string UserId {
             get { return BackingStore?.Get<string>("userId"); }
@@ -64,6 +69,7 @@ namespace Microsoft.Graph.Beta.Models {
         public OfficeClientCheckinStatus() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.officeClientCheckinStatus";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -84,6 +90,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"devicePlatform", n => { DevicePlatform = n.GetStringValue(); } },
                 {"devicePlatformVersion", n => { DevicePlatformVersion = n.GetStringValue(); } },
                 {"errorMessage", n => { ErrorMessage = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"userId", n => { UserId = n.GetStringValue(); } },
                 {"userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
                 {"wasSuccessful", n => { WasSuccessful = n.GetBoolValue(); } },
@@ -101,6 +108,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("devicePlatform", DevicePlatform);
             writer.WriteStringValue("devicePlatformVersion", DevicePlatformVersion);
             writer.WriteStringValue("errorMessage", ErrorMessage);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("userId", UserId);
             writer.WriteStringValue("userPrincipalName", UserPrincipalName);
             writer.WriteBoolValue("wasSuccessful", WasSuccessful);

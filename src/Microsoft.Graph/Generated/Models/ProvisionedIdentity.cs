@@ -16,6 +16,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("identityType", value); }
         }
         /// <summary>
+        /// Instantiates a new ProvisionedIdentity and sets the default values.
+        /// </summary>
+        public ProvisionedIdentity() : base() {
+            OdataType = "#microsoft.graph.provisionedIdentity";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

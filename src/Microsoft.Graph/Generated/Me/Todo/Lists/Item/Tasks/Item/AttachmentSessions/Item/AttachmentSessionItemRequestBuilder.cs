@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.Me.Todo.Lists.Item.Tasks.Item.AttachmentSessions.
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new attachmentSessionItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new AttachmentSessionItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public AttachmentSessionItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -181,7 +181,7 @@ namespace Microsoft.Graph.Beta.Me.Todo.Lists.Item.Tasks.Item.AttachmentSessions.
             /// <summary>Request query parameters</summary>
             public AttachmentSessionItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new AttachmentSessionItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new attachmentSessionItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new AttachmentSessionItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public AttachmentSessionItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -195,7 +195,7 @@ namespace Microsoft.Graph.Beta.Me.Todo.Lists.Item.Tasks.Item.AttachmentSessions.
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new attachmentSessionItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new AttachmentSessionItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public AttachmentSessionItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

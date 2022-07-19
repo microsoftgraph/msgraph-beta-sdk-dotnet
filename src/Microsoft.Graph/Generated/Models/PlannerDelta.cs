@@ -5,13 +5,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class PlannerDelta : Entity, IParsable {
         /// <summary>
         /// Instantiates a new plannerDelta and sets the default values.
         /// </summary>
         public PlannerDelta() : base() {
-            Type = "#microsoft.graph.plannerDelta";
+            OdataType = "#microsoft.graph.plannerDelta";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

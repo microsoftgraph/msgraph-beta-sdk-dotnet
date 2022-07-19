@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Beta.Education.Me.TaughtClasses.Item {
             /// <summary>Request query parameters</summary>
             public EducationClassItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new EducationClassItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new educationClassItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new EducationClassItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public EducationClassItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();

@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Planner.Plans.Item.Buckets {
     /// <summary>Provides operations to manage the buckets property of the microsoft.graph.plannerPlan entity.</summary>
     public class BucketsRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

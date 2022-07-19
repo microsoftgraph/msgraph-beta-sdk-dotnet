@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsModelScor
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new userExperienceAnalyticsModelScoresItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new UserExperienceAnalyticsModelScoresItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public UserExperienceAnalyticsModelScoresItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsModelScor
             /// <summary>Request query parameters</summary>
             public UserExperienceAnalyticsModelScoresItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new UserExperienceAnalyticsModelScoresItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new userExperienceAnalyticsModelScoresItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new UserExperienceAnalyticsModelScoresItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public UserExperienceAnalyticsModelScoresItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsModelScor
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new userExperienceAnalyticsModelScoresItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new UserExperienceAnalyticsModelScoresItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public UserExperienceAnalyticsModelScoresItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

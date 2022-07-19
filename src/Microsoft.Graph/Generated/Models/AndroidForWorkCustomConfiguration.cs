@@ -11,6 +11,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("omaSettings", value); }
         }
         /// <summary>
+        /// Instantiates a new AndroidForWorkCustomConfiguration and sets the default values.
+        /// </summary>
+        public AndroidForWorkCustomConfiguration() : base() {
+            OdataType = "#microsoft.graph.androidForWorkCustomConfiguration";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

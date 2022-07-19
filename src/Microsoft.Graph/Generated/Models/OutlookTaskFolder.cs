@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class OutlookTaskFolder : Entity, IParsable {
         /// <summary>The version of the task folder.</summary>
         public string ChangeKey {
@@ -40,6 +40,12 @@ namespace Microsoft.Graph.Beta.Models {
         public List<OutlookTask> Tasks {
             get { return BackingStore?.Get<List<OutlookTask>>("tasks"); }
             set { BackingStore?.Set("tasks", value); }
+        }
+        /// <summary>
+        /// Instantiates a new outlookTaskFolder and sets the default values.
+        /// </summary>
+        public OutlookTaskFolder() : base() {
+            OdataType = "#microsoft.graph.outlookTaskFolder";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

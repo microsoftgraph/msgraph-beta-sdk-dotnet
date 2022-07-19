@@ -44,8 +44,8 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("locationUri"); }
             set { BackingStore?.Set("locationUri", value); }
         }
-        /// <summary>The type property</summary>
-        public string Type {
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Beta.Models {
         public Location() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
-            Type = "#microsoft.graph.location";
+            OdataType = "#microsoft.graph.location";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -91,7 +91,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"locationEmailAddress", n => { LocationEmailAddress = n.GetStringValue(); } },
                 {"locationType", n => { LocationType = n.GetEnumValue<LocationType>(); } },
                 {"locationUri", n => { LocationUri = n.GetStringValue(); } },
-                {"@odata.type", n => { Type = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"uniqueId", n => { UniqueId = n.GetStringValue(); } },
                 {"uniqueIdType", n => { UniqueIdType = n.GetEnumValue<LocationUniqueIdType>(); } },
             };
@@ -108,7 +108,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("locationEmailAddress", LocationEmailAddress);
             writer.WriteEnumValue<LocationType>("locationType", LocationType);
             writer.WriteStringValue("locationUri", LocationUri);
-            writer.WriteStringValue("@odata.type", Type);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("uniqueId", UniqueId);
             writer.WriteEnumValue<LocationUniqueIdType>("uniqueIdType", UniqueIdType);
             writer.WriteAdditionalData(AdditionalData);

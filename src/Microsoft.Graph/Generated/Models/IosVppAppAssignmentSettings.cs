@@ -26,6 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("vpnConfigurationId", value); }
         }
         /// <summary>
+        /// Instantiates a new IosVppAppAssignmentSettings and sets the default values.
+        /// </summary>
+        public IosVppAppAssignmentSettings() : base() {
+            OdataType = "#microsoft.graph.iosVppAppAssignmentSettings";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

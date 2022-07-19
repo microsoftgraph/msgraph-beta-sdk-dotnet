@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.Setti
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new deviceManagementConfigurationSettingItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceManagementConfigurationSettingItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceManagementConfigurationSettingItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -184,7 +184,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.Setti
             /// <summary>Request query parameters</summary>
             public DeviceManagementConfigurationSettingItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new DeviceManagementConfigurationSettingItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new deviceManagementConfigurationSettingItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceManagementConfigurationSettingItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceManagementConfigurationSettingItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -198,7 +198,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item.Setti
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new deviceManagementConfigurationSettingItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceManagementConfigurationSettingItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceManagementConfigurationSettingItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

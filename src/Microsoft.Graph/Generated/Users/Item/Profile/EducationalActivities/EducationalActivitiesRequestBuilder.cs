@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Users.Item.Profile.EducationalActivities {
     /// <summary>Provides operations to manage the educationalActivities property of the microsoft.graph.profile entity.</summary>
     public class EducationalActivitiesRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

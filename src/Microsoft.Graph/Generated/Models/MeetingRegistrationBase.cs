@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new meetingRegistrationBase and sets the default values.
         /// </summary>
         public MeetingRegistrationBase() : base() {
-            Type = "#microsoft.graph.meetingRegistrationBase";
+            OdataType = "#microsoft.graph.meetingRegistrationBase";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

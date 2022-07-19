@@ -29,6 +29,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DateTimeOffset?>("lastCheckinDateTime"); }
             set { BackingStore?.Set("lastCheckinDateTime", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The display name of the user in the checkin</summary>
         public string UserDisplayName {
             get { return BackingStore?.Get<string>("userDisplayName"); }
@@ -50,6 +55,7 @@ namespace Microsoft.Graph.Beta.Models {
         public DeviceConfigurationTargetedUserAndDevice() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.deviceConfigurationTargetedUserAndDevice";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -67,6 +73,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"deviceId", n => { DeviceId = n.GetStringValue(); } },
                 {"deviceName", n => { DeviceName = n.GetStringValue(); } },
                 {"lastCheckinDateTime", n => { LastCheckinDateTime = n.GetDateTimeOffsetValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"userDisplayName", n => { UserDisplayName = n.GetStringValue(); } },
                 {"userId", n => { UserId = n.GetStringValue(); } },
                 {"userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
@@ -81,6 +88,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("deviceId", DeviceId);
             writer.WriteStringValue("deviceName", DeviceName);
             writer.WriteDateTimeOffsetValue("lastCheckinDateTime", LastCheckinDateTime);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("userDisplayName", UserDisplayName);
             writer.WriteStringValue("userId", UserId);
             writer.WriteStringValue("userPrincipalName", UserPrincipalName);

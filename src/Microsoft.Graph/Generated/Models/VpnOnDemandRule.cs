@@ -34,6 +34,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<string>>("domains"); }
             set { BackingStore?.Set("domains", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Probe Required Url (Only applicable when Action is evaluate connection and DomainAction is connect if needed).</summary>
         public string ProbeRequiredUrl {
             get { return BackingStore?.Get<string>("probeRequiredUrl"); }
@@ -55,6 +60,7 @@ namespace Microsoft.Graph.Beta.Models {
         public VpnOnDemandRule() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.vpnOnDemandRule";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -73,6 +79,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"dnsSearchDomains", n => { DnsSearchDomains = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"domainAction", n => { DomainAction = n.GetEnumValue<VpnOnDemandRuleConnectionDomainAction>(); } },
                 {"domains", n => { Domains = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"probeRequiredUrl", n => { ProbeRequiredUrl = n.GetStringValue(); } },
                 {"probeUrl", n => { ProbeUrl = n.GetStringValue(); } },
                 {"ssids", n => { Ssids = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
@@ -88,6 +95,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfPrimitiveValues<string>("dnsSearchDomains", DnsSearchDomains);
             writer.WriteEnumValue<VpnOnDemandRuleConnectionDomainAction>("domainAction", DomainAction);
             writer.WriteCollectionOfPrimitiveValues<string>("domains", Domains);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("probeRequiredUrl", ProbeRequiredUrl);
             writer.WriteStringValue("probeUrl", ProbeUrl);
             writer.WriteCollectionOfPrimitiveValues<string>("ssids", Ssids);

@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Planner.Rosters.Item.Members.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new plannerRosterMemberItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new PlannerRosterMemberItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public PlannerRosterMemberItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Planner.Rosters.Item.Members.Item {
             /// <summary>Request query parameters</summary>
             public PlannerRosterMemberItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new PlannerRosterMemberItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new plannerRosterMemberItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new PlannerRosterMemberItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public PlannerRosterMemberItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Planner.Rosters.Item.Members.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new plannerRosterMemberItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new PlannerRosterMemberItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public PlannerRosterMemberItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

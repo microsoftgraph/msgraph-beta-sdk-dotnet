@@ -28,6 +28,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DateTimeOffset?>("lastHealthCheckDateTime"); }
             set { BackingStore?.Set("lastHealthCheckDateTime", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The result property</summary>
         public CloudPcConnectivityEventResult? Result {
             get { return BackingStore?.Get<CloudPcConnectivityEventResult?>("result"); }
@@ -39,6 +44,7 @@ namespace Microsoft.Graph.Beta.Models {
         public CloudPcHealthCheckItem() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.cloudPcHealthCheckItem";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -56,6 +62,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"additionalDetails", n => { AdditionalDetails = n.GetStringValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"lastHealthCheckDateTime", n => { LastHealthCheckDateTime = n.GetDateTimeOffsetValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"result", n => { Result = n.GetEnumValue<CloudPcConnectivityEventResult>(); } },
             };
         }
@@ -68,6 +75,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("additionalDetails", AdditionalDetails);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteDateTimeOffsetValue("lastHealthCheckDateTime", LastHealthCheckDateTime);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteEnumValue<CloudPcConnectivityEventResult>("result", Result);
             writer.WriteAdditionalData(AdditionalData);
         }

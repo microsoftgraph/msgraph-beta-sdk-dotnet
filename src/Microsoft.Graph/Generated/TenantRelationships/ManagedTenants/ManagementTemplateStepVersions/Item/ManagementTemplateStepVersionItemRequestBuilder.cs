@@ -169,7 +169,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemp
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new managementTemplateStepVersionItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new ManagementTemplateStepVersionItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public ManagementTemplateStepVersionItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -194,7 +194,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemp
             /// <summary>Request query parameters</summary>
             public ManagementTemplateStepVersionItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new ManagementTemplateStepVersionItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new managementTemplateStepVersionItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new ManagementTemplateStepVersionItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public ManagementTemplateStepVersionItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -208,7 +208,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemp
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new managementTemplateStepVersionItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new ManagementTemplateStepVersionItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public ManagementTemplateStepVersionItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

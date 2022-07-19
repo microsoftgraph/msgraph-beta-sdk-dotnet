@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminRelationships.I
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new delegatedAdminRelationshipRequestItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new DelegatedAdminRelationshipRequestItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public DelegatedAdminRelationshipRequestItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminRelationships.I
             /// <summary>Request query parameters</summary>
             public DelegatedAdminRelationshipRequestItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new DelegatedAdminRelationshipRequestItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new delegatedAdminRelationshipRequestItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new DelegatedAdminRelationshipRequestItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public DelegatedAdminRelationshipRequestItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminRelationships.I
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new delegatedAdminRelationshipRequestItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new DelegatedAdminRelationshipRequestItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public DelegatedAdminRelationshipRequestItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

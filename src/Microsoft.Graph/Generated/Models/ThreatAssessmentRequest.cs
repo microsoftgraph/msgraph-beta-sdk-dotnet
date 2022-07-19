@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class ThreatAssessmentRequest : Entity, IParsable {
         /// <summary>The category property</summary>
         public ThreatCategory? Category {
@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new threatAssessmentRequest and sets the default values.
         /// </summary>
         public ThreatAssessmentRequest() : base() {
-            Type = "#microsoft.graph.threatAssessmentRequest";
+            OdataType = "#microsoft.graph.threatAssessmentRequest";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

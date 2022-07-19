@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class OnenotePage : OnenoteEntitySchemaObjectModel, IParsable {
         /// <summary>The page&apos;s HTML content.</summary>
         public byte[] Content {
@@ -60,6 +60,12 @@ namespace Microsoft.Graph.Beta.Models {
         public List<string> UserTags {
             get { return BackingStore?.Get<List<string>>("userTags"); }
             set { BackingStore?.Set("userTags", value); }
+        }
+        /// <summary>
+        /// Instantiates a new onenotePage and sets the default values.
+        /// </summary>
+        public OnenotePage() : base() {
+            OdataType = "#microsoft.graph.onenotePage";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

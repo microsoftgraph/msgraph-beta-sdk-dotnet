@@ -164,7 +164,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.LegalHolds.It
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new ediscoveryHoldPolicyItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new EdiscoveryHoldPolicyItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public EdiscoveryHoldPolicyItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -189,7 +189,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.LegalHolds.It
             /// <summary>Request query parameters</summary>
             public EdiscoveryHoldPolicyItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new EdiscoveryHoldPolicyItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new ediscoveryHoldPolicyItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new EdiscoveryHoldPolicyItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public EdiscoveryHoldPolicyItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -203,7 +203,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.LegalHolds.It
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new ediscoveryHoldPolicyItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new EdiscoveryHoldPolicyItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public EdiscoveryHoldPolicyItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

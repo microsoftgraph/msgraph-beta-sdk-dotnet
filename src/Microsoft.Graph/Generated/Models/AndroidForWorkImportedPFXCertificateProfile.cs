@@ -16,6 +16,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("managedDeviceCertificateStates", value); }
         }
         /// <summary>
+        /// Instantiates a new AndroidForWorkImportedPFXCertificateProfile and sets the default values.
+        /// </summary>
+        public AndroidForWorkImportedPFXCertificateProfile() : base() {
+            OdataType = "#microsoft.graph.androidForWorkImportedPFXCertificateProfile";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

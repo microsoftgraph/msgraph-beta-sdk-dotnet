@@ -37,6 +37,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("trackedOnEnrollmentStatus", value); }
         }
         /// <summary>
+        /// Instantiates a new deviceManagementAutopilotPolicyStatusDetail and sets the default values.
+        /// </summary>
+        public DeviceManagementAutopilotPolicyStatusDetail() : base() {
+            OdataType = "#microsoft.graph.deviceManagementAutopilotPolicyStatusDetail";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

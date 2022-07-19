@@ -24,6 +24,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<int?>("numberOfOccurrences"); }
             set { BackingStore?.Set("numberOfOccurrences", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Time zone for the startDate and endDate properties. Optional. If not specified, the time zone of the event is used.</summary>
         public string RecurrenceTimeZone {
             get { return BackingStore?.Get<string>("recurrenceTimeZone"); }
@@ -45,6 +50,7 @@ namespace Microsoft.Graph.Beta.Models {
         public RecurrenceRange() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.recurrenceRange";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -61,6 +67,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"endDate", n => { EndDate = n.GetDateValue(); } },
                 {"numberOfOccurrences", n => { NumberOfOccurrences = n.GetIntValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"recurrenceTimeZone", n => { RecurrenceTimeZone = n.GetStringValue(); } },
                 {"startDate", n => { StartDate = n.GetDateValue(); } },
                 {"type", n => { Type = n.GetEnumValue<RecurrenceRangeType>(); } },
@@ -74,6 +81,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteDateValue("endDate", EndDate);
             writer.WriteIntValue("numberOfOccurrences", NumberOfOccurrences);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("recurrenceTimeZone", RecurrenceTimeZone);
             writer.WriteDateValue("startDate", StartDate);
             writer.WriteEnumValue<RecurrenceRangeType>("type", Type);

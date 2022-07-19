@@ -18,6 +18,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("contactEmail"); }
             set { BackingStore?.Set("contactEmail", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>A valid URL format that begins with http:// or https://. Maximum length is 255 characters. The URL that directs to the company&apos;s privacy statement. Not required.</summary>
         public string StatementUrl {
             get { return BackingStore?.Get<string>("statementUrl"); }
@@ -29,6 +34,7 @@ namespace Microsoft.Graph.Beta.Models {
         public PrivacyProfile() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.privacyProfile";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -44,6 +50,7 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"contactEmail", n => { ContactEmail = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"statementUrl", n => { StatementUrl = n.GetStringValue(); } },
             };
         }
@@ -54,6 +61,7 @@ namespace Microsoft.Graph.Beta.Models {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("contactEmail", ContactEmail);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("statementUrl", StatementUrl);
             writer.WriteAdditionalData(AdditionalData);
         }

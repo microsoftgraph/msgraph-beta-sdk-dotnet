@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.FederatedIdentityCredentials.It
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new federatedIdentityCredentialItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new FederatedIdentityCredentialItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public FederatedIdentityCredentialItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.FederatedIdentityCredentials.It
             /// <summary>Request query parameters</summary>
             public FederatedIdentityCredentialItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new FederatedIdentityCredentialItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new federatedIdentityCredentialItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new FederatedIdentityCredentialItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public FederatedIdentityCredentialItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.FederatedIdentityCredentials.It
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new federatedIdentityCredentialItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new FederatedIdentityCredentialItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public FederatedIdentityCredentialItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

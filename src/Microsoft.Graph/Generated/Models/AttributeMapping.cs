@@ -38,6 +38,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<int?>("matchingPriority"); }
             set { BackingStore?.Set("matchingPriority", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Defines how a value should be extracted (or transformed) from the source object.</summary>
         public AttributeMappingSource Source {
             get { return BackingStore?.Get<AttributeMappingSource>("source"); }
@@ -54,6 +59,7 @@ namespace Microsoft.Graph.Beta.Models {
         public AttributeMapping() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.attributeMapping";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -73,6 +79,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"flowBehavior", n => { FlowBehavior = n.GetEnumValue<AttributeFlowBehavior>(); } },
                 {"flowType", n => { FlowType = n.GetEnumValue<AttributeFlowType>(); } },
                 {"matchingPriority", n => { MatchingPriority = n.GetIntValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"source", n => { Source = n.GetObjectValue<AttributeMappingSource>(AttributeMappingSource.CreateFromDiscriminatorValue); } },
                 {"targetAttributeName", n => { TargetAttributeName = n.GetStringValue(); } },
             };
@@ -88,6 +95,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteEnumValue<AttributeFlowBehavior>("flowBehavior", FlowBehavior);
             writer.WriteEnumValue<AttributeFlowType>("flowType", FlowType);
             writer.WriteIntValue("matchingPriority", MatchingPriority);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteObjectValue<AttributeMappingSource>("source", Source);
             writer.WriteStringValue("targetAttributeName", TargetAttributeName);
             writer.WriteAdditionalData(AdditionalData);

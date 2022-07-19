@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration.Custo
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new meetingRegistrationQuestionItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new MeetingRegistrationQuestionItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public MeetingRegistrationQuestionItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration.Custo
             /// <summary>Request query parameters</summary>
             public MeetingRegistrationQuestionItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new MeetingRegistrationQuestionItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new meetingRegistrationQuestionItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new MeetingRegistrationQuestionItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public MeetingRegistrationQuestionItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration.Custo
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new meetingRegistrationQuestionItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new MeetingRegistrationQuestionItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public MeetingRegistrationQuestionItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

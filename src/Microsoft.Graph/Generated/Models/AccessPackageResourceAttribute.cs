@@ -43,12 +43,18 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("isPersistedOnAssignmentRemoval"); }
             set { BackingStore?.Set("isPersistedOnAssignmentRemoval", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>
         /// Instantiates a new accessPackageResourceAttribute and sets the default values.
         /// </summary>
         public AccessPackageResourceAttribute() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.accessPackageResourceAttribute";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -69,6 +75,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"id", n => { Id = n.GetStringValue(); } },
                 {"isEditable", n => { IsEditable = n.GetBoolValue(); } },
                 {"isPersistedOnAssignmentRemoval", n => { IsPersistedOnAssignmentRemoval = n.GetBoolValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -83,6 +90,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("isEditable", IsEditable);
             writer.WriteBoolValue("isPersistedOnAssignmentRemoval", IsPersistedOnAssignmentRemoval);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

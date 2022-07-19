@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Financials.Companies.Item.PurchaseInvoices.Item.PurchaseInvoiceLines {
     /// <summary>Provides operations to manage the purchaseInvoiceLines property of the microsoft.graph.purchaseInvoice entity.</summary>
     public class PurchaseInvoiceLinesRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

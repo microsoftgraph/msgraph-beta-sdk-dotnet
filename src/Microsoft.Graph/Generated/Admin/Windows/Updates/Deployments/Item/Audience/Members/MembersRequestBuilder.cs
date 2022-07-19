@@ -17,7 +17,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.Members {
     /// <summary>Provides operations to manage the members property of the microsoft.graph.windowsUpdates.deploymentAudience entity.</summary>
     public class MembersRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

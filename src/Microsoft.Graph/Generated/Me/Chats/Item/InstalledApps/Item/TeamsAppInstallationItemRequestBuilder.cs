@@ -169,7 +169,7 @@ namespace Microsoft.Graph.Beta.Me.Chats.Item.InstalledApps.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new teamsAppInstallationItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new TeamsAppInstallationItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public TeamsAppInstallationItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -194,7 +194,7 @@ namespace Microsoft.Graph.Beta.Me.Chats.Item.InstalledApps.Item {
             /// <summary>Request query parameters</summary>
             public TeamsAppInstallationItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new TeamsAppInstallationItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new teamsAppInstallationItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new TeamsAppInstallationItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public TeamsAppInstallationItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -208,7 +208,7 @@ namespace Microsoft.Graph.Beta.Me.Chats.Item.InstalledApps.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new teamsAppInstallationItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new TeamsAppInstallationItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public TeamsAppInstallationItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

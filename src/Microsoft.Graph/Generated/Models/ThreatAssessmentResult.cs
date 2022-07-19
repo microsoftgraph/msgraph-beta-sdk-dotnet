@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class ThreatAssessmentResult : Entity, IParsable {
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? CreatedDateTime {
@@ -20,6 +20,12 @@ namespace Microsoft.Graph.Beta.Models {
         public ThreatAssessmentResultType? ResultType {
             get { return BackingStore?.Get<ThreatAssessmentResultType?>("resultType"); }
             set { BackingStore?.Set("resultType", value); }
+        }
+        /// <summary>
+        /// Instantiates a new threatAssessmentResult and sets the default values.
+        /// </summary>
+        public ThreatAssessmentResult() : base() {
+            OdataType = "#microsoft.graph.threatAssessmentResult";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

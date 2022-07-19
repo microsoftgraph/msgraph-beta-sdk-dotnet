@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Search.Acronyms {
     /// <summary>Provides operations to manage the acronyms property of the microsoft.graph.searchEntity entity.</summary>
     public class AcronymsRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

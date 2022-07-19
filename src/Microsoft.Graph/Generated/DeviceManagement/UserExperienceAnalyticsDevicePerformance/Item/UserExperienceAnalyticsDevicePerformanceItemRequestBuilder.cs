@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDevicePer
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new userExperienceAnalyticsDevicePerformanceItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new UserExperienceAnalyticsDevicePerformanceItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public UserExperienceAnalyticsDevicePerformanceItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDevicePer
             /// <summary>Request query parameters</summary>
             public UserExperienceAnalyticsDevicePerformanceItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new UserExperienceAnalyticsDevicePerformanceItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new userExperienceAnalyticsDevicePerformanceItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new UserExperienceAnalyticsDevicePerformanceItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public UserExperienceAnalyticsDevicePerformanceItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDevicePer
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new userExperienceAnalyticsDevicePerformanceItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new UserExperienceAnalyticsDevicePerformanceItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public UserExperienceAnalyticsDevicePerformanceItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

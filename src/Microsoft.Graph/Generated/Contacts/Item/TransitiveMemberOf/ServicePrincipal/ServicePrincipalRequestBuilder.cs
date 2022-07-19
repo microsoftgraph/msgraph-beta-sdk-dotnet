@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Contacts.Item.TransitiveMemberOf.ServicePrincipal {
     /// <summary>Casts the previous resource to servicePrincipal.</summary>
     public class ServicePrincipalRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

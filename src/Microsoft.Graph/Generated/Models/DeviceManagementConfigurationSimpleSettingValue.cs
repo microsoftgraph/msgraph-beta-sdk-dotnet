@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new DeviceManagementConfigurationSimpleSettingValue and sets the default values.
         /// </summary>
         public DeviceManagementConfigurationSimpleSettingValue() : base() {
-            Type = "#microsoft.graph.deviceManagementConfigurationSimpleSettingValue";
+            OdataType = "#microsoft.graph.deviceManagementConfigurationSimpleSettingValue";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -22,6 +22,7 @@ namespace Microsoft.Graph.Beta.Models {
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
                 "#microsoft.graph.deviceManagementConfigurationIntegerSettingValue" => new DeviceManagementConfigurationIntegerSettingValue(),
+                "#microsoft.graph.deviceManagementConfigurationReferenceSettingValue" => new DeviceManagementConfigurationReferenceSettingValue(),
                 "#microsoft.graph.deviceManagementConfigurationSecretSettingValue" => new DeviceManagementConfigurationSecretSettingValue(),
                 "#microsoft.graph.deviceManagementConfigurationStringSettingValue" => new DeviceManagementConfigurationStringSettingValue(),
                 _ => new DeviceManagementConfigurationSimpleSettingValue(),

@@ -20,6 +20,17 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("principalName"); }
             set { BackingStore?.Set("principalName", value); }
         }
+        /// <summary>The type of the subject. The value can be User, Group, and ServicePrincipal.</summary>
+        public string Type {
+            get { return BackingStore?.Get<string>("type"); }
+            set { BackingStore?.Set("type", value); }
+        }
+        /// <summary>
+        /// Instantiates a new governanceSubject and sets the default values.
+        /// </summary>
+        public GovernanceSubject() : base() {
+            OdataType = "#microsoft.graph.governanceSubject";
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
@@ -36,6 +47,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"email", n => { Email = n.GetStringValue(); } },
                 {"principalName", n => { PrincipalName = n.GetStringValue(); } },
+                {"type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +60,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("email", Email);
             writer.WriteStringValue("principalName", PrincipalName);
+            writer.WriteStringValue("type", Type);
         }
     }
 }

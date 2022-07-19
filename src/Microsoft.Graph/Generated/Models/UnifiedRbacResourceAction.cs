@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class UnifiedRbacResourceAction : Entity, IParsable {
         /// <summary>HTTP method for the action, such as DELETE, GET, PATCH, POST, PUT, or null. Supports $filter (eq) but not for null values.</summary>
         public string ActionVerb {
@@ -30,6 +30,12 @@ namespace Microsoft.Graph.Beta.Models {
         public string ResourceScopeId {
             get { return BackingStore?.Get<string>("resourceScopeId"); }
             set { BackingStore?.Set("resourceScopeId", value); }
+        }
+        /// <summary>
+        /// Instantiates a new unifiedRbacResourceAction and sets the default values.
+        /// </summary>
+        public UnifiedRbacResourceAction() : base() {
+            OdataType = "#microsoft.graph.unifiedRbacResourceAction";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

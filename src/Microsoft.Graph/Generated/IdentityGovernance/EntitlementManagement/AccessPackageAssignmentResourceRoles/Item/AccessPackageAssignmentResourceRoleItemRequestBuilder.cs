@@ -174,7 +174,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new accessPackageAssignmentResourceRoleItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new AccessPackageAssignmentResourceRoleItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public AccessPackageAssignmentResourceRoleItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -199,7 +199,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
             /// <summary>Request query parameters</summary>
             public AccessPackageAssignmentResourceRoleItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new AccessPackageAssignmentResourceRoleItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new accessPackageAssignmentResourceRoleItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new AccessPackageAssignmentResourceRoleItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public AccessPackageAssignmentResourceRoleItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -213,7 +213,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new accessPackageAssignmentResourceRoleItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new AccessPackageAssignmentResourceRoleItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public AccessPackageAssignmentResourceRoleItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

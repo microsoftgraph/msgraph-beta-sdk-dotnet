@@ -23,6 +23,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DateTimeOffset?>("eventDateTime"); }
             set { BackingStore?.Set("eventDateTime", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The stage when the entity was changed. Possible values are: contentRetrieval, contentReview, generateReport, contentDeletion, caseResolved, unknownFutureValue.</summary>
         public SubjectRightsRequestStage? Stage {
             get { return BackingStore?.Get<SubjectRightsRequestStage?>("stage"); }
@@ -44,6 +49,7 @@ namespace Microsoft.Graph.Beta.Models {
         public SubjectRightsRequestHistory() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.subjectRightsRequestHistory";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -60,6 +66,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"changedBy", n => { ChangedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
                 {"eventDateTime", n => { EventDateTime = n.GetDateTimeOffsetValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"stage", n => { Stage = n.GetEnumValue<SubjectRightsRequestStage>(); } },
                 {"stageStatus", n => { StageStatus = n.GetEnumValue<SubjectRightsRequestStageStatus>(); } },
                 {"type", n => { Type = n.GetStringValue(); } },
@@ -73,6 +80,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<IdentitySet>("changedBy", ChangedBy);
             writer.WriteDateTimeOffsetValue("eventDateTime", EventDateTime);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteEnumValue<SubjectRightsRequestStage>("stage", Stage);
             writer.WriteEnumValue<SubjectRightsRequestStageStatus>("stageStatus", StageStatus);
             writer.WriteStringValue("type", Type);

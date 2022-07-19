@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.PrivilegedRoles.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new privilegedRoleItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new PrivilegedRoleItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public PrivilegedRoleItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -204,7 +204,7 @@ namespace Microsoft.Graph.Beta.PrivilegedRoles.Item {
             /// <summary>Request query parameters</summary>
             public PrivilegedRoleItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new PrivilegedRoleItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new privilegedRoleItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new PrivilegedRoleItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public PrivilegedRoleItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -218,7 +218,7 @@ namespace Microsoft.Graph.Beta.PrivilegedRoles.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new privilegedRoleItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new PrivilegedRoleItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public PrivilegedRoleItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

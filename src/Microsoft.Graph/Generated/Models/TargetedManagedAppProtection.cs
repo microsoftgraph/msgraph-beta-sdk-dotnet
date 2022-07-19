@@ -30,7 +30,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new TargetedManagedAppProtection and sets the default values.
         /// </summary>
         public TargetedManagedAppProtection() : base() {
-            Type = "#microsoft.graph.targetedManagedAppProtection";
+            OdataType = "#microsoft.graph.targetedManagedAppProtection";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

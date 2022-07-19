@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class CompanyInformation : Entity, IParsable {
         /// <summary>The address property</summary>
         public PostalAddressType Address {
@@ -66,6 +66,12 @@ namespace Microsoft.Graph.Beta.Models {
         public string Website {
             get { return BackingStore?.Get<string>("website"); }
             set { BackingStore?.Set("website", value); }
+        }
+        /// <summary>
+        /// Instantiates a new companyInformation and sets the default values.
+        /// </summary>
+        public CompanyInformation() : base() {
+            OdataType = "#microsoft.graph.companyInformation";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

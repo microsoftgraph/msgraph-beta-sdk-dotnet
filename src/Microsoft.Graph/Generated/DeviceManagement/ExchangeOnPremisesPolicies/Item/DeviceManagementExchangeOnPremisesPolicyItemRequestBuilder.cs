@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ExchangeOnPremisesPolicies.Item 
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new deviceManagementExchangeOnPremisesPolicyItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceManagementExchangeOnPremisesPolicyItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceManagementExchangeOnPremisesPolicyItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -184,7 +184,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ExchangeOnPremisesPolicies.Item 
             /// <summary>Request query parameters</summary>
             public DeviceManagementExchangeOnPremisesPolicyItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new DeviceManagementExchangeOnPremisesPolicyItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new deviceManagementExchangeOnPremisesPolicyItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceManagementExchangeOnPremisesPolicyItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceManagementExchangeOnPremisesPolicyItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -198,7 +198,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ExchangeOnPremisesPolicies.Item 
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new deviceManagementExchangeOnPremisesPolicyItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceManagementExchangeOnPremisesPolicyItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceManagementExchangeOnPremisesPolicyItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

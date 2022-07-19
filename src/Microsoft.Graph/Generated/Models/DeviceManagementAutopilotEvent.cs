@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Represents an Autopilot flow event.</summary>
     public class DeviceManagementAutopilotEvent : Entity, IParsable {
         /// <summary>Time spent in user ESP.</summary>
         public TimeSpan? AccountSetupDuration {
@@ -140,6 +139,12 @@ namespace Microsoft.Graph.Beta.Models {
         public string WindowsAutopilotDeploymentProfileDisplayName {
             get { return BackingStore?.Get<string>("windowsAutopilotDeploymentProfileDisplayName"); }
             set { BackingStore?.Set("windowsAutopilotDeploymentProfileDisplayName", value); }
+        }
+        /// <summary>
+        /// Instantiates a new DeviceManagementAutopilotEvent and sets the default values.
+        /// </summary>
+        public DeviceManagementAutopilotEvent() : base() {
+            OdataType = "#microsoft.graph.deviceManagementAutopilotEvent";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -68,6 +68,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The sectionGroupsUrl property</summary>
         public string SectionGroupsUrl {
             get { return BackingStore?.Get<string>("sectionGroupsUrl"); }
@@ -94,6 +99,7 @@ namespace Microsoft.Graph.Beta.Models {
         public CopyNotebookModel() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.CopyNotebookModel";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -119,6 +125,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"lastModifiedTime", n => { LastModifiedTime = n.GetDateTimeOffsetValue(); } },
                 {"links", n => { Links = n.GetObjectValue<NotebookLinks>(NotebookLinks.CreateFromDiscriminatorValue); } },
                 {"name", n => { Name = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"sectionGroupsUrl", n => { SectionGroupsUrl = n.GetStringValue(); } },
                 {"sectionsUrl", n => { SectionsUrl = n.GetStringValue(); } },
                 {"self", n => { Self = n.GetStringValue(); } },
@@ -142,6 +149,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteDateTimeOffsetValue("lastModifiedTime", LastModifiedTime);
             writer.WriteObjectValue<NotebookLinks>("links", Links);
             writer.WriteStringValue("name", Name);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("sectionGroupsUrl", SectionGroupsUrl);
             writer.WriteStringValue("sectionsUrl", SectionsUrl);
             writer.WriteStringValue("self", Self);

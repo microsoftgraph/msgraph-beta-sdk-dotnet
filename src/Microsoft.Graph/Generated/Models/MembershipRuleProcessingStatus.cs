@@ -23,6 +23,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DateTimeOffset?>("lastMembershipUpdated"); }
             set { BackingStore?.Set("lastMembershipUpdated", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Current status of a dynamic group processing. Possible values are: NotStarted, Running, Succeeded, Failed, and UnknownFutureValue.  Required. Read-only.</summary>
         public MembershipRuleProcessingStatusDetails? Status {
             get { return BackingStore?.Get<MembershipRuleProcessingStatusDetails?>("status"); }
@@ -34,6 +39,7 @@ namespace Microsoft.Graph.Beta.Models {
         public MembershipRuleProcessingStatus() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.membershipRuleProcessingStatus";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -50,6 +56,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"errorMessage", n => { ErrorMessage = n.GetStringValue(); } },
                 {"lastMembershipUpdated", n => { LastMembershipUpdated = n.GetDateTimeOffsetValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"status", n => { Status = n.GetEnumValue<MembershipRuleProcessingStatusDetails>(); } },
             };
         }
@@ -61,6 +68,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("errorMessage", ErrorMessage);
             writer.WriteDateTimeOffsetValue("lastMembershipUpdated", LastMembershipUpdated);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteEnumValue<MembershipRuleProcessingStatusDetails>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }

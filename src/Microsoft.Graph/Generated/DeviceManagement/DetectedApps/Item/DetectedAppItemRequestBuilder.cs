@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DetectedApps.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new detectedAppItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new DetectedAppItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public DetectedAppItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -184,7 +184,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DetectedApps.Item {
             /// <summary>Request query parameters</summary>
             public DetectedAppItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new DetectedAppItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new detectedAppItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new DetectedAppItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public DetectedAppItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -198,7 +198,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DetectedApps.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new detectedAppItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new DetectedAppItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public DetectedAppItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

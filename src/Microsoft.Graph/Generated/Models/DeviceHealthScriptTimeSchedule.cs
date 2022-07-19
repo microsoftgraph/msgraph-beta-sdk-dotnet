@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new DeviceHealthScriptTimeSchedule and sets the default values.
         /// </summary>
         public DeviceHealthScriptTimeSchedule() : base() {
-            Type = "#microsoft.graph.deviceHealthScriptTimeSchedule";
+            OdataType = "#microsoft.graph.deviceHealthScriptTimeSchedule";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

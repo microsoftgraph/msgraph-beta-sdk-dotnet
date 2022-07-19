@@ -174,7 +174,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.Vendors.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new vendorItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new VendorItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public VendorItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -199,7 +199,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.Vendors.Item {
             /// <summary>Request query parameters</summary>
             public VendorItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new VendorItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new vendorItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new VendorItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public VendorItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -213,7 +213,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.Vendors.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new vendorItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new VendorItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public VendorItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

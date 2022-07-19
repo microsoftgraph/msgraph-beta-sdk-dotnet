@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.CountriesRegions.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new countryRegionItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new CountryRegionItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public CountryRegionItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.CountriesRegions.Item {
             /// <summary>Request query parameters</summary>
             public CountryRegionItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new CountryRegionItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new countryRegionItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new CountryRegionItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public CountryRegionItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.CountriesRegions.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new countryRegionItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new CountryRegionItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public CountryRegionItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Todo.Lists.Item.Tasks.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new todoTaskItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new TodoTaskItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public TodoTaskItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -204,7 +204,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Todo.Lists.Item.Tasks.Item {
             /// <summary>Request query parameters</summary>
             public TodoTaskItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new TodoTaskItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new todoTaskItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new TodoTaskItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public TodoTaskItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -218,7 +218,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Todo.Lists.Item.Tasks.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new todoTaskItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new TodoTaskItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public TodoTaskItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

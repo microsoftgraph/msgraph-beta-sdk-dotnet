@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.IdentityProtection.RiskyServicePrincipals.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new riskyServicePrincipalItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new RiskyServicePrincipalItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public RiskyServicePrincipalItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -184,7 +184,7 @@ namespace Microsoft.Graph.Beta.IdentityProtection.RiskyServicePrincipals.Item {
             /// <summary>Request query parameters</summary>
             public RiskyServicePrincipalItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new RiskyServicePrincipalItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new riskyServicePrincipalItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new RiskyServicePrincipalItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public RiskyServicePrincipalItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -198,7 +198,7 @@ namespace Microsoft.Graph.Beta.IdentityProtection.RiskyServicePrincipals.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new riskyServicePrincipalItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new RiskyServicePrincipalItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public RiskyServicePrincipalItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class ChangeTrackedEntity : Entity, IParsable {
         /// <summary>The createdBy property</summary>
         public IdentitySet CreatedBy {
@@ -31,7 +31,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new changeTrackedEntity and sets the default values.
         /// </summary>
         public ChangeTrackedEntity() : base() {
-            Type = "#microsoft.graph.changeTrackedEntity";
+            OdataType = "#microsoft.graph.changeTrackedEntity";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -42,14 +42,18 @@ namespace Microsoft.Graph.Beta.Models {
             var mappingValueNode = parseNode.GetChildNode("@odata.type");
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
+                "#microsoft.graph.offerShiftRequest" => new OfferShiftRequest(),
                 "#microsoft.graph.openShift" => new OpenShift(),
+                "#microsoft.graph.openShiftChangeRequest" => new OpenShiftChangeRequest(),
                 "#microsoft.graph.scheduleChangeRequest" => new ScheduleChangeRequest(),
                 "#microsoft.graph.schedulingGroup" => new SchedulingGroup(),
                 "#microsoft.graph.shift" => new Shift(),
                 "#microsoft.graph.shiftPreferences" => new ShiftPreferences(),
+                "#microsoft.graph.swapShiftsChangeRequest" => new SwapShiftsChangeRequest(),
                 "#microsoft.graph.timeCard" => new TimeCard(),
                 "#microsoft.graph.timeOff" => new TimeOff(),
                 "#microsoft.graph.timeOffReason" => new TimeOffReason(),
+                "#microsoft.graph.timeOffRequest" => new TimeOffRequest(),
                 "#microsoft.graph.workforceIntegration" => new WorkforceIntegration(),
                 _ => new ChangeTrackedEntity(),
             };

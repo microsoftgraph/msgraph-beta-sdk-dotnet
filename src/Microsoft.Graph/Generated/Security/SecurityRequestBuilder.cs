@@ -18,6 +18,7 @@ using Microsoft.Graph.Beta.Security.SecureScoreControlProfiles;
 using Microsoft.Graph.Beta.Security.SecureScores;
 using Microsoft.Graph.Beta.Security.SecurityActions;
 using Microsoft.Graph.Beta.Security.SubjectRightsRequests;
+using Microsoft.Graph.Beta.Security.ThreatSubmission;
 using Microsoft.Graph.Beta.Security.TiIndicators;
 using Microsoft.Graph.Beta.Security.Triggers;
 using Microsoft.Graph.Beta.Security.TriggerTypes;
@@ -108,6 +109,10 @@ namespace Microsoft.Graph.Beta.Security {
         /// <summary>The subjectRightsRequests property</summary>
         public SubjectRightsRequestsRequestBuilder SubjectRightsRequests { get =>
             new SubjectRightsRequestsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The threatSubmission property</summary>
+        public ThreatSubmissionRequestBuilder ThreatSubmission { get =>
+            new ThreatSubmissionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The tiIndicators property</summary>
         public TiIndicatorsRequestBuilder TiIndicators { get =>

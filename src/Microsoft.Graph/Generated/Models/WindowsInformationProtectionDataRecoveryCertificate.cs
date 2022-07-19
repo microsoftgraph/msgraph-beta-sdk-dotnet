@@ -29,6 +29,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
             set { BackingStore?.Set("expirationDateTime", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Data recovery Certificate subject name</summary>
         public string SubjectName {
             get { return BackingStore?.Get<string>("subjectName"); }
@@ -40,6 +45,7 @@ namespace Microsoft.Graph.Beta.Models {
         public WindowsInformationProtectionDataRecoveryCertificate() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.windowsInformationProtectionDataRecoveryCertificate";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -57,6 +63,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"certificate", n => { Certificate = n.GetByteArrayValue(); } },
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"subjectName", n => { SubjectName = n.GetStringValue(); } },
             };
         }
@@ -69,6 +76,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteByteArrayValue("certificate", Certificate);
             writer.WriteStringValue("description", Description);
             writer.WriteDateTimeOffsetValue("expirationDateTime", ExpirationDateTime);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("subjectName", SubjectName);
             writer.WriteAdditionalData(AdditionalData);
         }

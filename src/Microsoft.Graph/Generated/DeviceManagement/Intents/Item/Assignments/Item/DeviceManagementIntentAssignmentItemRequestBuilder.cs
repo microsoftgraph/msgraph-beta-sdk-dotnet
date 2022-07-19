@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Intents.Item.Assignments.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new deviceManagementIntentAssignmentItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceManagementIntentAssignmentItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceManagementIntentAssignmentItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Intents.Item.Assignments.Item {
             /// <summary>Request query parameters</summary>
             public DeviceManagementIntentAssignmentItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new DeviceManagementIntentAssignmentItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new deviceManagementIntentAssignmentItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceManagementIntentAssignmentItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceManagementIntentAssignmentItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Intents.Item.Assignments.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new deviceManagementIntentAssignmentItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceManagementIntentAssignmentItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceManagementIntentAssignmentItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

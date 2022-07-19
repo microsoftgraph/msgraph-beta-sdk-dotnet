@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.MessageTraces.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new messageTraceItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new MessageTraceItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public MessageTraceItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -184,7 +184,7 @@ namespace Microsoft.Graph.Beta.MessageTraces.Item {
             /// <summary>Request query parameters</summary>
             public MessageTraceItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new MessageTraceItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new messageTraceItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new MessageTraceItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public MessageTraceItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -198,7 +198,7 @@ namespace Microsoft.Graph.Beta.MessageTraces.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new messageTraceItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new MessageTraceItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public MessageTraceItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

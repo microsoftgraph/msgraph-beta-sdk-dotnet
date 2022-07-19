@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ExternalPartnerS
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new cloudPcExternalPartnerSettingItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new CloudPcExternalPartnerSettingItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public CloudPcExternalPartnerSettingItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ExternalPartnerS
             /// <summary>Request query parameters</summary>
             public CloudPcExternalPartnerSettingItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new CloudPcExternalPartnerSettingItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new cloudPcExternalPartnerSettingItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new CloudPcExternalPartnerSettingItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public CloudPcExternalPartnerSettingItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ExternalPartnerS
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new cloudPcExternalPartnerSettingItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new CloudPcExternalPartnerSettingItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public CloudPcExternalPartnerSettingItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

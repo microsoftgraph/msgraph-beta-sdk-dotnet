@@ -23,6 +23,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("countryOrRegion"); }
             set { BackingStore?.Set("countryOrRegion", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The postal code.</summary>
         public string PostalCode {
             get { return BackingStore?.Get<string>("postalCode"); }
@@ -54,6 +59,7 @@ namespace Microsoft.Graph.Beta.Models {
         public PhysicalAddress() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.physicalAddress";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -70,6 +76,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"city", n => { City = n.GetStringValue(); } },
                 {"countryOrRegion", n => { CountryOrRegion = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"postalCode", n => { PostalCode = n.GetStringValue(); } },
                 {"postOfficeBox", n => { PostOfficeBox = n.GetStringValue(); } },
                 {"state", n => { State = n.GetStringValue(); } },
@@ -85,6 +92,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("city", City);
             writer.WriteStringValue("countryOrRegion", CountryOrRegion);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("postalCode", PostalCode);
             writer.WriteStringValue("postOfficeBox", PostOfficeBox);
             writer.WriteStringValue("state", State);

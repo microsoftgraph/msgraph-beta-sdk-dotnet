@@ -169,7 +169,7 @@ namespace Microsoft.Graph.Beta.ApprovalWorkflowProviders.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new approvalWorkflowProviderItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new ApprovalWorkflowProviderItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public ApprovalWorkflowProviderItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -194,7 +194,7 @@ namespace Microsoft.Graph.Beta.ApprovalWorkflowProviders.Item {
             /// <summary>Request query parameters</summary>
             public ApprovalWorkflowProviderItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new ApprovalWorkflowProviderItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new approvalWorkflowProviderItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new ApprovalWorkflowProviderItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public ApprovalWorkflowProviderItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -208,7 +208,7 @@ namespace Microsoft.Graph.Beta.ApprovalWorkflowProviders.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new approvalWorkflowProviderItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new ApprovalWorkflowProviderItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public ApprovalWorkflowProviderItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

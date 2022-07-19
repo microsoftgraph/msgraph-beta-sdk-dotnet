@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class UserFlowLanguageConfiguration : Entity, IParsable {
         /// <summary>Collection of pages with the default content to display in a user flow for a specified language. This collection does not allow any kind of modification.</summary>
         public List<UserFlowLanguagePage> DefaultPages {
@@ -25,6 +25,12 @@ namespace Microsoft.Graph.Beta.Models {
         public List<UserFlowLanguagePage> OverridesPages {
             get { return BackingStore?.Get<List<UserFlowLanguagePage>>("overridesPages"); }
             set { BackingStore?.Set("overridesPages", value); }
+        }
+        /// <summary>
+        /// Instantiates a new userFlowLanguageConfiguration and sets the default values.
+        /// </summary>
+        public UserFlowLanguageConfiguration() : base() {
+            OdataType = "#microsoft.graph.userFlowLanguageConfiguration";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

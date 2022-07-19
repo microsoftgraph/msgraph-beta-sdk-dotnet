@@ -57,6 +57,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("yammer", value); }
         }
         /// <summary>
+        /// Instantiates a new Office365ActiveUserCounts and sets the default values.
+        /// </summary>
+        public Office365ActiveUserCounts() : base() {
+            OdataType = "#microsoft.graph.office365ActiveUserCounts";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

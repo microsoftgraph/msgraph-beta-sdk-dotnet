@@ -164,7 +164,7 @@ namespace Microsoft.Graph.Beta.PrivilegedApproval.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new privilegedApprovalItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new PrivilegedApprovalItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public PrivilegedApprovalItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -189,7 +189,7 @@ namespace Microsoft.Graph.Beta.PrivilegedApproval.Item {
             /// <summary>Request query parameters</summary>
             public PrivilegedApprovalItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new PrivilegedApprovalItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new privilegedApprovalItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new PrivilegedApprovalItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public PrivilegedApprovalItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -203,7 +203,7 @@ namespace Microsoft.Graph.Beta.PrivilegedApproval.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new privilegedApprovalItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new PrivilegedApprovalItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public PrivilegedApprovalItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

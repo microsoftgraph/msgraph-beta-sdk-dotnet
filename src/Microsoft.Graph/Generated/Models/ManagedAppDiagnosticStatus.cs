@@ -19,6 +19,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("mitigationInstruction"); }
             set { BackingStore?.Set("mitigationInstruction", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The state of the operation</summary>
         public string State {
             get { return BackingStore?.Get<string>("state"); }
@@ -35,6 +40,7 @@ namespace Microsoft.Graph.Beta.Models {
         public ManagedAppDiagnosticStatus() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.managedAppDiagnosticStatus";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -50,6 +56,7 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"mitigationInstruction", n => { MitigationInstruction = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"state", n => { State = n.GetStringValue(); } },
                 {"validationName", n => { ValidationName = n.GetStringValue(); } },
             };
@@ -61,6 +68,7 @@ namespace Microsoft.Graph.Beta.Models {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("mitigationInstruction", MitigationInstruction);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("state", State);
             writer.WriteStringValue("validationName", ValidationName);
             writer.WriteAdditionalData(AdditionalData);

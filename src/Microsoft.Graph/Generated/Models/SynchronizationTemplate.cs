@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class SynchronizationTemplate : Entity, IParsable {
         /// <summary>Identifier of the application this template belongs to.</summary>
         public string ApplicationId {
@@ -40,6 +40,12 @@ namespace Microsoft.Graph.Beta.Models {
         public SynchronizationSchema Schema {
             get { return BackingStore?.Get<SynchronizationSchema>("schema"); }
             set { BackingStore?.Set("schema", value); }
+        }
+        /// <summary>
+        /// Instantiates a new synchronizationTemplate and sets the default values.
+        /// </summary>
+        public SynchronizationTemplate() : base() {
+            OdataType = "#microsoft.graph.synchronizationTemplate";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

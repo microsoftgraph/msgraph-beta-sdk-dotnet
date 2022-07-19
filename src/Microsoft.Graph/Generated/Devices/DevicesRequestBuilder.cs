@@ -16,7 +16,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Devices {
     /// <summary>Provides operations to manage the collection of device entities.</summary>
     public class DevicesRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

@@ -30,15 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The publisher of the application</summary>
         public string Publisher {
             get { return BackingStore?.Get<string>("publisher"); }
             set { BackingStore?.Set("publisher", value); }
-        }
-        /// <summary>The type property</summary>
-        public string Type {
-            get { return BackingStore?.Get<string>("@odata.type"); }
-            set { BackingStore?.Set("@odata.type", value); }
         }
         /// <summary>
         /// Instantiates a new appListItem and sets the default values.
@@ -46,7 +46,7 @@ namespace Microsoft.Graph.Beta.Models {
         public AppListItem() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
-            Type = "#microsoft.graph.appListItem";
+            OdataType = "#microsoft.graph.appListItem";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -69,8 +69,8 @@ namespace Microsoft.Graph.Beta.Models {
                 {"appId", n => { AppId = n.GetStringValue(); } },
                 {"appStoreUrl", n => { AppStoreUrl = n.GetStringValue(); } },
                 {"name", n => { Name = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"publisher", n => { Publisher = n.GetStringValue(); } },
-                {"@odata.type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -82,8 +82,8 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("appId", AppId);
             writer.WriteStringValue("appStoreUrl", AppStoreUrl);
             writer.WriteStringValue("name", Name);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("publisher", Publisher);
-            writer.WriteStringValue("@odata.type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

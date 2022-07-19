@@ -13,6 +13,11 @@ namespace Microsoft.Graph.Beta.Models.Security {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The results property</summary>
         public List<HuntingRowResult> Results {
             get { return BackingStore?.Get<List<HuntingRowResult>>("results"); }
@@ -29,6 +34,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         public HuntingQueryResults() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.security.huntingQueryResults";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -43,6 +49,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"results", n => { Results = n.GetCollectionOfObjectValues<HuntingRowResult>(HuntingRowResult.CreateFromDiscriminatorValue).ToList(); } },
                 {"schema", n => { Schema = n.GetCollectionOfObjectValues<SinglePropertySchema>(SinglePropertySchema.CreateFromDiscriminatorValue).ToList(); } },
             };
@@ -53,6 +60,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// </summary>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteCollectionOfObjectValues<HuntingRowResult>("results", Results);
             writer.WriteCollectionOfObjectValues<SinglePropertySchema>("schema", Schema);
             writer.WriteAdditionalData(AdditionalData);

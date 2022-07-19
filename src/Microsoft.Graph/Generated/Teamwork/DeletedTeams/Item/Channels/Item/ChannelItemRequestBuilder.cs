@@ -201,7 +201,7 @@ namespace Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new channelItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new ChannelItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public ChannelItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -226,7 +226,7 @@ namespace Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item {
             /// <summary>Request query parameters</summary>
             public ChannelItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new ChannelItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new channelItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new ChannelItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public ChannelItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -240,7 +240,7 @@ namespace Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new channelItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new ChannelItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public ChannelItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

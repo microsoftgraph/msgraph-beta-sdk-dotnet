@@ -15,7 +15,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Users.Item.Onenote.Notebooks {
     /// <summary>Provides operations to manage the notebooks property of the microsoft.graph.onenote entity.</summary>
     public class NotebooksRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

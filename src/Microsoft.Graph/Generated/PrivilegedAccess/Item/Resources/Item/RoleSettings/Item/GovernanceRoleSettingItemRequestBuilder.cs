@@ -164,7 +164,7 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.Resources.Item.RoleSettings
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new governanceRoleSettingItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new GovernanceRoleSettingItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public GovernanceRoleSettingItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -189,7 +189,7 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.Resources.Item.RoleSettings
             /// <summary>Request query parameters</summary>
             public GovernanceRoleSettingItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new GovernanceRoleSettingItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new governanceRoleSettingItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new GovernanceRoleSettingItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public GovernanceRoleSettingItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -203,7 +203,7 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.Resources.Item.RoleSettings
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new governanceRoleSettingItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new GovernanceRoleSettingItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public GovernanceRoleSettingItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

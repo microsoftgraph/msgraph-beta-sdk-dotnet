@@ -41,6 +41,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("meetingOrganizer", value); }
         }
         /// <summary>
+        /// Instantiates a new CallRecordingEventMessageDetail and sets the default values.
+        /// </summary>
+        public CallRecordingEventMessageDetail() : base() {
+            OdataType = "#microsoft.graph.callRecordingEventMessageDetail";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

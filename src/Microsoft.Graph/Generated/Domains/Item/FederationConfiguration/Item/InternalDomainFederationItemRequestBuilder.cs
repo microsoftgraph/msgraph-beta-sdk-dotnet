@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Domains.Item.FederationConfiguration.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new internalDomainFederationItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new InternalDomainFederationItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public InternalDomainFederationItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Domains.Item.FederationConfiguration.Item {
             /// <summary>Request query parameters</summary>
             public InternalDomainFederationItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new InternalDomainFederationItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new internalDomainFederationItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new InternalDomainFederationItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public InternalDomainFederationItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Domains.Item.FederationConfiguration.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new internalDomainFederationItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new InternalDomainFederationItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public InternalDomainFederationItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.DeviceImages.Ite
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new cloudPcDeviceImageItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new CloudPcDeviceImageItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public CloudPcDeviceImageItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -184,7 +184,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.DeviceImages.Ite
             /// <summary>Request query parameters</summary>
             public CloudPcDeviceImageItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new CloudPcDeviceImageItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new cloudPcDeviceImageItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new CloudPcDeviceImageItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public CloudPcDeviceImageItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -198,7 +198,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.DeviceImages.Ite
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new cloudPcDeviceImageItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new CloudPcDeviceImageItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public CloudPcDeviceImageItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

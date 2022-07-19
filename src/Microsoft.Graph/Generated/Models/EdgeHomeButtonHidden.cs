@@ -6,6 +6,12 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class EdgeHomeButtonHidden : EdgeHomeButtonConfiguration, IParsable {
         /// <summary>
+        /// Instantiates a new EdgeHomeButtonHidden and sets the default values.
+        /// </summary>
+        public EdgeHomeButtonHidden() : base() {
+            OdataType = "#microsoft.graph.edgeHomeButtonHidden";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

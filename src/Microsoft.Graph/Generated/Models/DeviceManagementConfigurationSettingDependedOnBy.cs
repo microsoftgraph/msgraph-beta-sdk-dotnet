@@ -18,6 +18,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("dependedOnBy"); }
             set { BackingStore?.Set("dependedOnBy", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Value that determines if the child setting is required based on the parent setting&apos;s selection</summary>
         public bool? Required {
             get { return BackingStore?.Get<bool?>("required"); }
@@ -29,6 +34,7 @@ namespace Microsoft.Graph.Beta.Models {
         public DeviceManagementConfigurationSettingDependedOnBy() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.deviceManagementConfigurationSettingDependedOnBy";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -44,6 +50,7 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"dependedOnBy", n => { DependedOnBy = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"required", n => { Required = n.GetBoolValue(); } },
             };
         }
@@ -54,6 +61,7 @@ namespace Microsoft.Graph.Beta.Models {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("dependedOnBy", DependedOnBy);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteBoolValue("required", Required);
             writer.WriteAdditionalData(AdditionalData);
         }

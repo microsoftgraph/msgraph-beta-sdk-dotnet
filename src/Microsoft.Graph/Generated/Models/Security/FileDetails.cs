@@ -38,6 +38,11 @@ namespace Microsoft.Graph.Beta.Models.Security {
             get { return BackingStore?.Get<string>("issuer"); }
             set { BackingStore?.Set("issuer", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The sha1 property</summary>
         public string Sha1 {
             get { return BackingStore?.Get<string>("sha1"); }
@@ -59,6 +64,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         public FileDetails() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.security.fileDetails";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -78,6 +84,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
                 {"filePublisher", n => { FilePublisher = n.GetStringValue(); } },
                 {"fileSize", n => { FileSize = n.GetLongValue(); } },
                 {"issuer", n => { Issuer = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"sha1", n => { Sha1 = n.GetStringValue(); } },
                 {"sha256", n => { Sha256 = n.GetStringValue(); } },
                 {"signer", n => { Signer = n.GetStringValue(); } },
@@ -94,6 +101,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             writer.WriteStringValue("filePublisher", FilePublisher);
             writer.WriteLongValue("fileSize", FileSize);
             writer.WriteStringValue("issuer", Issuer);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("sha1", Sha1);
             writer.WriteStringValue("sha256", Sha256);
             writer.WriteStringValue("signer", Signer);

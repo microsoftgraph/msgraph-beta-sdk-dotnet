@@ -15,7 +15,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new GroupAssignmentTarget and sets the default values.
         /// </summary>
         public GroupAssignmentTarget() : base() {
-            Type = "#microsoft.graph.groupAssignmentTarget";
+            OdataType = "#microsoft.graph.groupAssignmentTarget";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

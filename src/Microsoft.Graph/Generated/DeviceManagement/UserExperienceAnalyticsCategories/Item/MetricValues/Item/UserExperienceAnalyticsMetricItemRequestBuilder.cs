@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsCategorie
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new userExperienceAnalyticsMetricItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new UserExperienceAnalyticsMetricItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public UserExperienceAnalyticsMetricItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsCategorie
             /// <summary>Request query parameters</summary>
             public UserExperienceAnalyticsMetricItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new UserExperienceAnalyticsMetricItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new userExperienceAnalyticsMetricItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new UserExperienceAnalyticsMetricItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public UserExperienceAnalyticsMetricItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsCategorie
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new userExperienceAnalyticsMetricItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new UserExperienceAnalyticsMetricItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public UserExperienceAnalyticsMetricItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

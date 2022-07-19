@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Tags.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new teamworkTagItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new TeamworkTagItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public TeamworkTagItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -184,7 +184,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Tags.Item {
             /// <summary>Request query parameters</summary>
             public TeamworkTagItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new TeamworkTagItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new teamworkTagItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new TeamworkTagItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public TeamworkTagItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -198,7 +198,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Tags.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new teamworkTagItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new TeamworkTagItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public TeamworkTagItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

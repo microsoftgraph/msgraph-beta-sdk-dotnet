@@ -33,12 +33,18 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("lastSignInRequestId"); }
             set { BackingStore?.Set("lastSignInRequestId", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>
         /// Instantiates a new signInActivity and sets the default values.
         /// </summary>
         public SignInActivity() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.signInActivity";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -57,6 +63,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"lastNonInteractiveSignInRequestId", n => { LastNonInteractiveSignInRequestId = n.GetStringValue(); } },
                 {"lastSignInDateTime", n => { LastSignInDateTime = n.GetDateTimeOffsetValue(); } },
                 {"lastSignInRequestId", n => { LastSignInRequestId = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -69,6 +76,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("lastNonInteractiveSignInRequestId", LastNonInteractiveSignInRequestId);
             writer.WriteDateTimeOffsetValue("lastSignInDateTime", LastSignInDateTime);
             writer.WriteStringValue("lastSignInRequestId", LastSignInRequestId);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

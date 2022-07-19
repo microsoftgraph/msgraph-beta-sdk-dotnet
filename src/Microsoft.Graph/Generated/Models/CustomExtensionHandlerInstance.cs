@@ -23,6 +23,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("externalCorrelationId"); }
             set { BackingStore?.Set("externalCorrelationId", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Indicates the stage of the request workflow when the access package custom extension runs. The possible values are: assignmentRequestCreated, assignmentRequestApproved, assignmentRequestGranted, assignmentRequestRemoved, assignmentFourteenDaysBeforeExpiration, assignmentOneDayBeforeExpiration, unknownFutureValue.</summary>
         public AccessPackageCustomExtensionStage? Stage {
             get { return BackingStore?.Get<AccessPackageCustomExtensionStage?>("stage"); }
@@ -39,6 +44,7 @@ namespace Microsoft.Graph.Beta.Models {
         public CustomExtensionHandlerInstance() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.customExtensionHandlerInstance";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -55,6 +61,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"customExtensionId", n => { CustomExtensionId = n.GetStringValue(); } },
                 {"externalCorrelationId", n => { ExternalCorrelationId = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"stage", n => { Stage = n.GetEnumValue<AccessPackageCustomExtensionStage>(); } },
                 {"status", n => { Status = n.GetEnumValue<AccessPackageCustomExtensionHandlerStatus>(); } },
             };
@@ -67,6 +74,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("customExtensionId", CustomExtensionId);
             writer.WriteStringValue("externalCorrelationId", ExternalCorrelationId);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteEnumValue<AccessPackageCustomExtensionStage>("stage", Stage);
             writer.WriteEnumValue<AccessPackageCustomExtensionHandlerStatus>("status", Status);
             writer.WriteAdditionalData(AdditionalData);

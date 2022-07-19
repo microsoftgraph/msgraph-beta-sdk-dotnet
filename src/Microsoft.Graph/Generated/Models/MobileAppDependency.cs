@@ -21,6 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("dependsOnAppCount", value); }
         }
         /// <summary>
+        /// Instantiates a new MobileAppDependency and sets the default values.
+        /// </summary>
+        public MobileAppDependency() : base() {
+            OdataType = "#microsoft.graph.mobileAppDependency";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

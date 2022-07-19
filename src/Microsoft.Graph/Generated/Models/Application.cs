@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Casts the previous resource to application.</summary>
     public class Application : DirectoryObject, IParsable {
         /// <summary>Specifies settings for an application that implements a web API.</summary>
         public ApiApplication Api {
@@ -225,6 +224,12 @@ namespace Microsoft.Graph.Beta.Models {
         public WindowsApplication Windows {
             get { return BackingStore?.Get<WindowsApplication>("windows"); }
             set { BackingStore?.Set("windows", value); }
+        }
+        /// <summary>
+        /// Instantiates a new Application and sets the default values.
+        /// </summary>
+        public Application() : base() {
+            OdataType = "#microsoft.graph.application";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

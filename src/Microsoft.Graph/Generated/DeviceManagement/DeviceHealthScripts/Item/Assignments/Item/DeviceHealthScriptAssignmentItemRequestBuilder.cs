@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.Item.Assignm
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new deviceHealthScriptAssignmentItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceHealthScriptAssignmentItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceHealthScriptAssignmentItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.Item.Assignm
             /// <summary>Request query parameters</summary>
             public DeviceHealthScriptAssignmentItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new DeviceHealthScriptAssignmentItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new deviceHealthScriptAssignmentItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceHealthScriptAssignmentItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceHealthScriptAssignmentItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.Item.Assignm
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new deviceHealthScriptAssignmentItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceHealthScriptAssignmentItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceHealthScriptAssignmentItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

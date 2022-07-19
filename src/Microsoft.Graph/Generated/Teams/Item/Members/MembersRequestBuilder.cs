@@ -18,7 +18,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Members {
         public AddRequestBuilder Add { get =>
             new AddRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

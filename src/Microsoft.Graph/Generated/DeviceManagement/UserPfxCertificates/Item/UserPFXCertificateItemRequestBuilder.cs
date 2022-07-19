@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserPfxCertificates.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new userPFXCertificateItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new UserPFXCertificateItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public UserPFXCertificateItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserPfxCertificates.Item {
             /// <summary>Request query parameters</summary>
             public UserPFXCertificateItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new UserPFXCertificateItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new userPFXCertificateItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new UserPFXCertificateItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public UserPFXCertificateItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserPfxCertificates.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new userPFXCertificateItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new UserPFXCertificateItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public UserPFXCertificateItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// Instantiates a new updatableAsset and sets the default values.
         /// </summary>
         public UpdatableAsset() : base() {
-            Type = "#microsoft.graph.windowsUpdates.updatableAsset";
+            OdataType = "#microsoft.graph.windowsUpdates.updatableAsset";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

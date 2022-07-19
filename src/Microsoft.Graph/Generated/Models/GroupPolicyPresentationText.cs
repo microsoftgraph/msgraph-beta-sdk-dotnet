@@ -6,6 +6,12 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class GroupPolicyPresentationText : GroupPolicyPresentation, IParsable {
         /// <summary>
+        /// Instantiates a new GroupPolicyPresentationText and sets the default values.
+        /// </summary>
+        public GroupPolicyPresentationText() : base() {
+            OdataType = "#microsoft.graph.groupPolicyPresentationText";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

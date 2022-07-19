@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.NamedLocations.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new namedLocationItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new NamedLocationItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public NamedLocationItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.NamedLocations.Item {
             /// <summary>Request query parameters</summary>
             public NamedLocationItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new NamedLocationItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new namedLocationItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new NamedLocationItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public NamedLocationItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.NamedLocations.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new namedLocationItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new NamedLocationItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public NamedLocationItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

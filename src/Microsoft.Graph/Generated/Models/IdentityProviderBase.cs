@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class IdentityProviderBase : Entity, IParsable {
         /// <summary>The display name of the identity provider.</summary>
         public string DisplayName {
@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new identityProviderBase and sets the default values.
         /// </summary>
         public IdentityProviderBase() : base() {
-            Type = "#microsoft.graph.identityProviderBase";
+            OdataType = "#microsoft.graph.identityProviderBase";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +29,9 @@ namespace Microsoft.Graph.Beta.Models {
             return mappingValue switch {
                 "#microsoft.graph.appleManagedIdentityProvider" => new AppleManagedIdentityProvider(),
                 "#microsoft.graph.builtInIdentityProvider" => new BuiltInIdentityProvider(),
+                "#microsoft.graph.internalDomainFederation" => new InternalDomainFederation(),
                 "#microsoft.graph.openIdConnectIdentityProvider" => new OpenIdConnectIdentityProvider(),
+                "#microsoft.graph.samlOrWsFedExternalDomainFederation" => new SamlOrWsFedExternalDomainFederation(),
                 "#microsoft.graph.samlOrWsFedProvider" => new SamlOrWsFedProvider(),
                 "#microsoft.graph.socialIdentityProvider" => new SocialIdentityProvider(),
                 _ => new IdentityProviderBase(),

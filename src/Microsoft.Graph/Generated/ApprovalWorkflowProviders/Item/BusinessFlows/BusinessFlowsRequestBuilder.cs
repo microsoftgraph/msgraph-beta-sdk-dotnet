@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.ApprovalWorkflowProviders.Item.BusinessFlows {
     /// <summary>Provides operations to manage the businessFlows property of the microsoft.graph.approvalWorkflowProvider entity.</summary>
     public class BusinessFlowsRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

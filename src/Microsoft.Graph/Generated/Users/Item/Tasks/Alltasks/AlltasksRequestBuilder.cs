@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Users.Item.Tasks.Alltasks {
     /// <summary>Provides operations to manage the alltasks property of the microsoft.graph.tasks entity.</summary>
     public class AlltasksRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

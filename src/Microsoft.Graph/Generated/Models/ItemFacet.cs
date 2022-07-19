@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class ItemFacet : Entity, IParsable {
         /// <summary>The audiences that are able to see the values contained within the associated entity. Possible values are: me, family, contacts, groupMembers, organization, federatedOrganizations, everyone, unknownFutureValue.</summary>
         public Microsoft.Graph.Beta.Models.AllowedAudiences? AllowedAudiences {
@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new itemFacet and sets the default values.
         /// </summary>
         public ItemFacet() : base() {
-            Type = "#microsoft.graph.itemFacet";
+            OdataType = "#microsoft.graph.itemFacet";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -15,7 +15,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Chats {
     /// <summary>Provides operations to manage the collection of chat entities.</summary>
     public class ChatsRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

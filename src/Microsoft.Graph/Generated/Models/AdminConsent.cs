@@ -14,6 +14,11 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Admin consent state.</summary>
         public AdminConsentState? ShareAPNSData {
             get { return BackingStore?.Get<AdminConsentState?>("shareAPNSData"); }
@@ -30,6 +35,7 @@ namespace Microsoft.Graph.Beta.Models {
         public AdminConsent() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.adminConsent";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -44,6 +50,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"shareAPNSData", n => { ShareAPNSData = n.GetEnumValue<AdminConsentState>(); } },
                 {"shareUserExperienceAnalyticsData", n => { ShareUserExperienceAnalyticsData = n.GetEnumValue<AdminConsentState>(); } },
             };
@@ -54,6 +61,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteEnumValue<AdminConsentState>("shareAPNSData", ShareAPNSData);
             writer.WriteEnumValue<AdminConsentState>("shareUserExperienceAnalyticsData", ShareUserExperienceAnalyticsData);
             writer.WriteAdditionalData(AdditionalData);

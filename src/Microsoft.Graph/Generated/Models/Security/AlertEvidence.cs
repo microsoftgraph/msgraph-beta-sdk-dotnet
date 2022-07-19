@@ -19,6 +19,11 @@ namespace Microsoft.Graph.Beta.Models.Security {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The remediationStatus property</summary>
         public EvidenceRemediationStatus? RemediationStatus {
             get { return BackingStore?.Get<EvidenceRemediationStatus?>("remediationStatus"); }
@@ -39,11 +44,6 @@ namespace Microsoft.Graph.Beta.Models.Security {
             get { return BackingStore?.Get<List<string>>("tags"); }
             set { BackingStore?.Set("tags", value); }
         }
-        /// <summary>The type property</summary>
-        public string Type {
-            get { return BackingStore?.Get<string>("@odata.type"); }
-            set { BackingStore?.Set("@odata.type", value); }
-        }
         /// <summary>The verdict property</summary>
         public EvidenceVerdict? Verdict {
             get { return BackingStore?.Get<EvidenceVerdict?>("verdict"); }
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         public AlertEvidence() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
-            Type = "#microsoft.graph.security.alertEvidence";
+            OdataType = "#microsoft.graph.security.alertEvidence";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -89,11 +89,11 @@ namespace Microsoft.Graph.Beta.Models.Security {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"remediationStatus", n => { RemediationStatus = n.GetEnumValue<EvidenceRemediationStatus>(); } },
                 {"remediationStatusDetails", n => { RemediationStatusDetails = n.GetStringValue(); } },
                 {"roles", n => { Roles = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"@odata.type", n => { Type = n.GetStringValue(); } },
                 {"verdict", n => { Verdict = n.GetEnumValue<EvidenceVerdict>(); } },
             };
         }
@@ -104,11 +104,11 @@ namespace Microsoft.Graph.Beta.Models.Security {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteEnumValue<EvidenceRemediationStatus>("remediationStatus", RemediationStatus);
             writer.WriteStringValue("remediationStatusDetails", RemediationStatusDetails);
             writer.WriteCollectionOfPrimitiveValues<string>("roles", Roles);
             writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
-            writer.WriteStringValue("@odata.type", Type);
             writer.WriteEnumValue<EvidenceVerdict>("verdict", Verdict);
             writer.WriteAdditionalData(AdditionalData);
         }

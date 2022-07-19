@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.IosLobAppProvisioningConfigur
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new iosLobAppProvisioningConfigurationItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new IosLobAppProvisioningConfigurationItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public IosLobAppProvisioningConfigurationItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -204,7 +204,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.IosLobAppProvisioningConfigur
             /// <summary>Request query parameters</summary>
             public IosLobAppProvisioningConfigurationItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new IosLobAppProvisioningConfigurationItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new iosLobAppProvisioningConfigurationItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new IosLobAppProvisioningConfigurationItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public IosLobAppProvisioningConfigurationItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -218,7 +218,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.IosLobAppProvisioningConfigur
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new iosLobAppProvisioningConfigurationItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new IosLobAppProvisioningConfigurationItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public IosLobAppProvisioningConfigurationItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

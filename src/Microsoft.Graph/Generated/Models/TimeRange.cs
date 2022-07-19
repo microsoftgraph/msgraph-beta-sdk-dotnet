@@ -19,6 +19,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<Time?>("endTime"); }
             set { BackingStore?.Set("endTime", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Start time for the time range.</summary>
         public Time? StartTime {
             get { return BackingStore?.Get<Time?>("startTime"); }
@@ -30,6 +35,7 @@ namespace Microsoft.Graph.Beta.Models {
         public TimeRange() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.timeRange";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -45,6 +51,7 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"endTime", n => { EndTime = n.GetTimeValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"startTime", n => { StartTime = n.GetTimeValue(); } },
             };
         }
@@ -55,6 +62,7 @@ namespace Microsoft.Graph.Beta.Models {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteTimeValue("endTime", EndTime);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteTimeValue("startTime", StartTime);
             writer.WriteAdditionalData(AdditionalData);
         }

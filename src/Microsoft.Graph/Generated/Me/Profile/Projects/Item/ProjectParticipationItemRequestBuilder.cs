@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Projects.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new projectParticipationItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new ProjectParticipationItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public ProjectParticipationItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Projects.Item {
             /// <summary>Request query parameters</summary>
             public ProjectParticipationItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new ProjectParticipationItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new projectParticipationItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new ProjectParticipationItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public ProjectParticipationItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Me.Profile.Projects.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new projectParticipationItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new ProjectParticipationItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public ProjectParticipationItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Outlook.MasterCategories.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new outlookCategoryItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new OutlookCategoryItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public OutlookCategoryItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -176,7 +176,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Outlook.MasterCategories.Item {
             /// <summary>Request query parameters</summary>
             public OutlookCategoryItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new OutlookCategoryItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new outlookCategoryItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new OutlookCategoryItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public OutlookCategoryItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -190,7 +190,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Outlook.MasterCategories.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new outlookCategoryItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new OutlookCategoryItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public OutlookCategoryItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

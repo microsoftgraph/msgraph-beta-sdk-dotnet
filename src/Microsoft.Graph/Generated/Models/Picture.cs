@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class Picture : Entity, IParsable {
         /// <summary>The content property</summary>
         public byte[] Content {
@@ -25,6 +25,12 @@ namespace Microsoft.Graph.Beta.Models {
         public int? Width {
             get { return BackingStore?.Get<int?>("width"); }
             set { BackingStore?.Set("width", value); }
+        }
+        /// <summary>
+        /// Instantiates a new picture and sets the default values.
+        /// </summary>
+        public Picture() : base() {
+            OdataType = "#microsoft.graph.picture";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

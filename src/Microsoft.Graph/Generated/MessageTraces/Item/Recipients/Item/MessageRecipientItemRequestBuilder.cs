@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.MessageTraces.Item.Recipients.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new messageRecipientItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new MessageRecipientItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public MessageRecipientItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -184,7 +184,7 @@ namespace Microsoft.Graph.Beta.MessageTraces.Item.Recipients.Item {
             /// <summary>Request query parameters</summary>
             public MessageRecipientItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new MessageRecipientItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new messageRecipientItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new MessageRecipientItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public MessageRecipientItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -198,7 +198,7 @@ namespace Microsoft.Graph.Beta.MessageTraces.Item.Recipients.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new messageRecipientItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new MessageRecipientItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public MessageRecipientItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

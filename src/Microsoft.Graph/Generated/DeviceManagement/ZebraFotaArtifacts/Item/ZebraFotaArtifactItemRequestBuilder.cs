@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ZebraFotaArtifacts.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new zebraFotaArtifactItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new ZebraFotaArtifactItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public ZebraFotaArtifactItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ZebraFotaArtifacts.Item {
             /// <summary>Request query parameters</summary>
             public ZebraFotaArtifactItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new ZebraFotaArtifactItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new zebraFotaArtifactItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new ZebraFotaArtifactItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public ZebraFotaArtifactItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ZebraFotaArtifacts.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new zebraFotaArtifactItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new ZebraFotaArtifactItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public ZebraFotaArtifactItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

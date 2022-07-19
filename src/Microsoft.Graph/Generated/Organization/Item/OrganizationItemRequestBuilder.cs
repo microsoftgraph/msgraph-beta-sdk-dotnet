@@ -209,7 +209,7 @@ namespace Microsoft.Graph.Beta.Organization.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new organizationItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new OrganizationItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public OrganizationItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -234,7 +234,7 @@ namespace Microsoft.Graph.Beta.Organization.Item {
             /// <summary>Request query parameters</summary>
             public OrganizationItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new OrganizationItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new organizationItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new OrganizationItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public OrganizationItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -248,7 +248,7 @@ namespace Microsoft.Graph.Beta.Organization.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new organizationItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new OrganizationItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public OrganizationItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

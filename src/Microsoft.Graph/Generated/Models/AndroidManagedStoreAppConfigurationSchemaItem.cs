@@ -54,6 +54,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<int?>("index"); }
             set { BackingStore?.Set("index", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Index of parent schema item to track nested schema items</summary>
         public int? ParentIndex {
             get { return BackingStore?.Get<int?>("parentIndex"); }
@@ -75,6 +80,7 @@ namespace Microsoft.Graph.Beta.Models {
         public AndroidManagedStoreAppConfigurationSchemaItem() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.androidManagedStoreAppConfigurationSchemaItem";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -97,6 +103,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"index", n => { Index = n.GetIntValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"parentIndex", n => { ParentIndex = n.GetIntValue(); } },
                 {"schemaItemKey", n => { SchemaItemKey = n.GetStringValue(); } },
                 {"selections", n => { Selections = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue).ToList(); } },
@@ -116,6 +123,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteIntValue("index", Index);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteIntValue("parentIndex", ParentIndex);
             writer.WriteStringValue("schemaItemKey", SchemaItemKey);
             writer.WriteCollectionOfObjectValues<KeyValuePair>("selections", Selections);

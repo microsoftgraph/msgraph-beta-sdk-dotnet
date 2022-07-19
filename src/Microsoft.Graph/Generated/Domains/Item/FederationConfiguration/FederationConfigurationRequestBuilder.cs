@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Domains.Item.FederationConfiguration {
     /// <summary>Provides operations to manage the federationConfiguration property of the microsoft.graph.domain entity.</summary>
     public class FederationConfigurationRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

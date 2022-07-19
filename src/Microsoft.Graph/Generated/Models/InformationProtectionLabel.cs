@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class InformationProtectionLabel : Entity, IParsable {
         /// <summary>The color that the UI should display for the label, if configured.</summary>
         public string Color {
@@ -40,6 +40,12 @@ namespace Microsoft.Graph.Beta.Models {
         public string Tooltip {
             get { return BackingStore?.Get<string>("tooltip"); }
             set { BackingStore?.Set("tooltip", value); }
+        }
+        /// <summary>
+        /// Instantiates a new informationProtectionLabel and sets the default values.
+        /// </summary>
+        public InformationProtectionLabel() : base() {
+            OdataType = "#microsoft.graph.informationProtectionLabel";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

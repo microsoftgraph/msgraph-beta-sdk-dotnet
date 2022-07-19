@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Me.Outlook.MasterCategories {
     /// <summary>Provides operations to manage the masterCategories property of the microsoft.graph.outlookUser entity.</summary>
     public class MasterCategoriesRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

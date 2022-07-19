@@ -28,6 +28,11 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
             get { return BackingStore?.Get<DateTimeOffset?>("endDateTime"); }
             set { BackingStore?.Set("endDateTime", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Date on which devices in the deployment start receiving the update. When not set, the deployment starts as soon as devices are assigned.</summary>
         public DateTimeOffset? StartDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }
@@ -39,6 +44,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         public RolloutSettings() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.windowsUpdates.rolloutSettings";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -56,6 +62,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
                 {"devicesPerOffer", n => { DevicesPerOffer = n.GetIntValue(); } },
                 {"durationBetweenOffers", n => { DurationBetweenOffers = n.GetStringValue(); } },
                 {"endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -68,6 +75,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
             writer.WriteIntValue("devicesPerOffer", DevicesPerOffer);
             writer.WriteStringValue("durationBetweenOffers", DurationBetweenOffers);
             writer.WriteDateTimeOffsetValue("endDateTime", EndDateTime);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteDateTimeOffsetValue("startDateTime", StartDateTime);
             writer.WriteAdditionalData(AdditionalData);
         }

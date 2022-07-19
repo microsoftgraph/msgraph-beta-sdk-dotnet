@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleAssignmentRequests {
     /// <summary>Provides operations to manage the roleAssignmentRequests property of the microsoft.graph.privilegedAccess entity.</summary>
     public class RoleAssignmentRequestsRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

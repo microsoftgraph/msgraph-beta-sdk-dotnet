@@ -30,7 +30,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new MobileLobApp and sets the default values.
         /// </summary>
         public MobileLobApp() : base() {
-            Type = "#microsoft.graph.mobileLobApp";
+            OdataType = "#microsoft.graph.mobileLobApp";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -49,6 +49,7 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.windowsAppX" => new WindowsAppX(),
                 "#microsoft.graph.windowsMobileMSI" => new WindowsMobileMSI(),
                 "#microsoft.graph.windowsPhone81AppX" => new WindowsPhone81AppX(),
+                "#microsoft.graph.windowsPhone81AppXBundle" => new WindowsPhone81AppXBundle(),
                 "#microsoft.graph.windowsPhoneXAP" => new WindowsPhoneXAP(),
                 "#microsoft.graph.windowsUniversalAppX" => new WindowsUniversalAppX(),
                 _ => new MobileLobApp(),

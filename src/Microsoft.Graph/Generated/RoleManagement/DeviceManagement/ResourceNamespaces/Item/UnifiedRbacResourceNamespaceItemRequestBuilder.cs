@@ -164,7 +164,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.DeviceManagement.ResourceNamespace
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new unifiedRbacResourceNamespaceItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new UnifiedRbacResourceNamespaceItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public UnifiedRbacResourceNamespaceItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -189,7 +189,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.DeviceManagement.ResourceNamespace
             /// <summary>Request query parameters</summary>
             public UnifiedRbacResourceNamespaceItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new UnifiedRbacResourceNamespaceItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new unifiedRbacResourceNamespaceItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new UnifiedRbacResourceNamespaceItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public UnifiedRbacResourceNamespaceItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -203,7 +203,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.DeviceManagement.ResourceNamespace
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new unifiedRbacResourceNamespaceItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new UnifiedRbacResourceNamespaceItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public UnifiedRbacResourceNamespaceItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

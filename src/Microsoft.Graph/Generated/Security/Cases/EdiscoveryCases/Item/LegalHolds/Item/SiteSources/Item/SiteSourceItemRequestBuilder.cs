@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.LegalHolds.It
             return requestInfo;
         }
         /// <summary>
-        /// Get siteSources from security
+        /// Data sources that represent SharePoint sites.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<SiteSourceItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -123,7 +123,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.LegalHolds.It
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get siteSources from security
+        /// Data sources that represent SharePoint sites.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -159,14 +159,14 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.LegalHolds.It
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new siteSourceItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new SiteSourceItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public SiteSourceItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>Get siteSources from security</summary>
+        /// <summary>Data sources that represent SharePoint sites.</summary>
         public class SiteSourceItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]
@@ -184,7 +184,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.LegalHolds.It
             /// <summary>Request query parameters</summary>
             public SiteSourceItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new SiteSourceItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new siteSourceItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new SiteSourceItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public SiteSourceItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -198,7 +198,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.LegalHolds.It
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new siteSourceItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new SiteSourceItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public SiteSourceItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

@@ -143,7 +143,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesOrderLines.Item {
             /// <summary>Request query parameters</summary>
             public SalesOrderLineItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new SalesOrderLineItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new salesOrderLineItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new SalesOrderLineItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public SalesOrderLineItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -157,7 +157,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesOrderLines.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new salesOrderLineItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new SalesOrderLineItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public SalesOrderLineItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

@@ -17,7 +17,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Security.InformationProtection.SensitivityLabels {
     /// <summary>Provides operations to manage the sensitivityLabels property of the microsoft.graph.security.informationProtection entity.</summary>
     public class SensitivityLabelsRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

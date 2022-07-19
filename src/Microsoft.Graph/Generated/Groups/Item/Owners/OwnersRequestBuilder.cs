@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Owners {
         public ApplicationRequestBuilder Application { get =>
             new ApplicationRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -42,7 +42,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Owners {
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>The ref property</summary>
+        /// <summary>The Ref property</summary>
         public RefRequestBuilder Ref { get =>
             new RefRequestBuilder(PathParameters, RequestAdapter);
         }

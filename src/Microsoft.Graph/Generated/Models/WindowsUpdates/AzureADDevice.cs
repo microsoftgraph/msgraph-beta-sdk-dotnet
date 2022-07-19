@@ -16,6 +16,12 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
             set { BackingStore?.Set("errors", value); }
         }
         /// <summary>
+        /// Instantiates a new AzureADDevice and sets the default values.
+        /// </summary>
+        public AzureADDevice() : base() {
+            OdataType = "#microsoft.graph.windowsUpdates.azureADDevice";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

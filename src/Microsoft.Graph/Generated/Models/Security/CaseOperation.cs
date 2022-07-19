@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// Instantiates a new caseOperation and sets the default values.
         /// </summary>
         public CaseOperation() : base() {
-            Type = "#microsoft.graph.security.caseOperation";
+            OdataType = "#microsoft.graph.security.caseOperation";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

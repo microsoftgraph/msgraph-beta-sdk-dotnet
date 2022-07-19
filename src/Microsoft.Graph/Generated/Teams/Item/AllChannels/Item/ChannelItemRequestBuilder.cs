@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.AllChannels.Item {
             /// <summary>Request query parameters</summary>
             public ChannelItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new ChannelItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new channelItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new ChannelItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public ChannelItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();

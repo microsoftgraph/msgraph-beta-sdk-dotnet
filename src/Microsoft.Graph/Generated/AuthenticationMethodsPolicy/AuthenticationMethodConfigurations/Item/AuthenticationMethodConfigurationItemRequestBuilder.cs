@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.AuthenticationMethodsPolicy.AuthenticationMethodC
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new authenticationMethodConfigurationItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new AuthenticationMethodConfigurationItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public AuthenticationMethodConfigurationItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.AuthenticationMethodsPolicy.AuthenticationMethodC
             /// <summary>Request query parameters</summary>
             public AuthenticationMethodConfigurationItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new AuthenticationMethodConfigurationItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new authenticationMethodConfigurationItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new AuthenticationMethodConfigurationItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public AuthenticationMethodConfigurationItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.AuthenticationMethodsPolicy.AuthenticationMethodC
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new authenticationMethodConfigurationItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new AuthenticationMethodConfigurationItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public AuthenticationMethodConfigurationItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

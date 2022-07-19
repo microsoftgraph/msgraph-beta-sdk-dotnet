@@ -29,6 +29,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("failedMessage"); }
             set { BackingStore?.Set("failedMessage", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Indicates the status of the attempted device scope action</summary>
         public DeviceScopeActionStatus? Status {
             get { return BackingStore?.Get<DeviceScopeActionStatus?>("status"); }
@@ -40,6 +45,7 @@ namespace Microsoft.Graph.Beta.Models {
         public DeviceScopeActionResult() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.deviceScopeActionResult";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -57,6 +63,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"deviceScopeAction", n => { DeviceScopeAction = n.GetStringValue(); } },
                 {"deviceScopeId", n => { DeviceScopeId = n.GetStringValue(); } },
                 {"failedMessage", n => { FailedMessage = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"status", n => { Status = n.GetEnumValue<DeviceScopeActionStatus>(); } },
             };
         }
@@ -69,6 +76,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("deviceScopeAction", DeviceScopeAction);
             writer.WriteStringValue("deviceScopeId", DeviceScopeId);
             writer.WriteStringValue("failedMessage", FailedMessage);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteEnumValue<DeviceScopeActionStatus>("status", Status);
             writer.WriteAdditionalData(AdditionalData);
         }

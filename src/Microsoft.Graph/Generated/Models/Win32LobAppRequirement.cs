@@ -20,15 +20,15 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("detectionValue"); }
             set { BackingStore?.Set("detectionValue", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Contains properties for detection operator.</summary>
         public Win32LobAppDetectionOperator? Operator {
             get { return BackingStore?.Get<Win32LobAppDetectionOperator?>("operator"); }
             set { BackingStore?.Set("operator", value); }
-        }
-        /// <summary>The type property</summary>
-        public string Type {
-            get { return BackingStore?.Get<string>("@odata.type"); }
-            set { BackingStore?.Set("@odata.type", value); }
         }
         /// <summary>
         /// Instantiates a new win32LobAppRequirement and sets the default values.
@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.Models {
         public Win32LobAppRequirement() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
-            Type = "#microsoft.graph.win32LobAppRequirement";
+            OdataType = "#microsoft.graph.win32LobAppRequirement";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -59,8 +59,8 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"detectionValue", n => { DetectionValue = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"operator", n => { Operator = n.GetEnumValue<Win32LobAppDetectionOperator>(); } },
-                {"@odata.type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -70,8 +70,8 @@ namespace Microsoft.Graph.Beta.Models {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("detectionValue", DetectionValue);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteEnumValue<Win32LobAppDetectionOperator>("operator", Operator);
-            writer.WriteStringValue("@odata.type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

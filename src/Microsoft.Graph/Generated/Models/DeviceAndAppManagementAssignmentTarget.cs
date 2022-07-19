@@ -25,8 +25,8 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentFilterType?>("deviceAndAppManagementAssignmentFilterType"); }
             set { BackingStore?.Set("deviceAndAppManagementAssignmentFilterType", value); }
         }
-        /// <summary>The type property</summary>
-        public string Type {
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.Models {
         public DeviceAndAppManagementAssignmentTarget() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
-            Type = "#microsoft.graph.deviceAndAppManagementAssignmentTarget";
+            OdataType = "#microsoft.graph.deviceAndAppManagementAssignmentTarget";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -50,6 +50,7 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.allDevicesAssignmentTarget" => new AllDevicesAssignmentTarget(),
                 "#microsoft.graph.allLicensedUsersAssignmentTarget" => new AllLicensedUsersAssignmentTarget(),
                 "#microsoft.graph.configurationManagerCollectionAssignmentTarget" => new ConfigurationManagerCollectionAssignmentTarget(),
+                "#microsoft.graph.exclusionGroupAssignmentTarget" => new ExclusionGroupAssignmentTarget(),
                 "#microsoft.graph.groupAssignmentTarget" => new GroupAssignmentTarget(),
                 _ => new DeviceAndAppManagementAssignmentTarget(),
             };
@@ -61,7 +62,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"deviceAndAppManagementAssignmentFilterId", n => { DeviceAndAppManagementAssignmentFilterId = n.GetStringValue(); } },
                 {"deviceAndAppManagementAssignmentFilterType", n => { DeviceAndAppManagementAssignmentFilterType = n.GetEnumValue<DeviceAndAppManagementAssignmentFilterType>(); } },
-                {"@odata.type", n => { Type = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -72,7 +73,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("deviceAndAppManagementAssignmentFilterId", DeviceAndAppManagementAssignmentFilterId);
             writer.WriteEnumValue<DeviceAndAppManagementAssignmentFilterType>("deviceAndAppManagementAssignmentFilterType", DeviceAndAppManagementAssignmentFilterType);
-            writer.WriteStringValue("@odata.type", Type);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

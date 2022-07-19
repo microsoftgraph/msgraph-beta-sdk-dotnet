@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsAppHealth
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new userExperienceAnalyticsAppHealthApplicationPerformanceItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new UserExperienceAnalyticsAppHealthApplicationPerformanceItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public UserExperienceAnalyticsAppHealthApplicationPerformanceItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsAppHealth
             /// <summary>Request query parameters</summary>
             public UserExperienceAnalyticsAppHealthApplicationPerformanceItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new UserExperienceAnalyticsAppHealthApplicationPerformanceItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new userExperienceAnalyticsAppHealthApplicationPerformanceItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new UserExperienceAnalyticsAppHealthApplicationPerformanceItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public UserExperienceAnalyticsAppHealthApplicationPerformanceItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsAppHealth
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new userExperienceAnalyticsAppHealthApplicationPerformanceItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new UserExperienceAnalyticsAppHealthApplicationPerformanceItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public UserExperienceAnalyticsAppHealthApplicationPerformanceItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Policies.AuthorizationPolicy.Item.DefaultUserRole
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new defaultUserRoleOverrideItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new DefaultUserRoleOverrideItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public DefaultUserRoleOverrideItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Policies.AuthorizationPolicy.Item.DefaultUserRole
             /// <summary>Request query parameters</summary>
             public DefaultUserRoleOverrideItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new DefaultUserRoleOverrideItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new defaultUserRoleOverrideItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new DefaultUserRoleOverrideItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public DefaultUserRoleOverrideItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Policies.AuthorizationPolicy.Item.DefaultUserRole
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new defaultUserRoleOverrideItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new DefaultUserRoleOverrideItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public DefaultUserRoleOverrideItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

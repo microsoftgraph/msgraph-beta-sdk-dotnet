@@ -70,6 +70,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<Time?>("installRuleWindowStartTime"); }
             set { BackingStore?.Set("installRuleWindowStartTime", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Maximum 28 days. Default is 28 days. Sequence of dates are: 1) Download start date. 2) Install start date. 3) Schedule end date. If any of the values are not provided, the date provided in the preceding step of the sequence is used. If no values are provided, the string value of the current UTC is used.</summary>
         public int? ScheduleDurationInDays {
             get { return BackingStore?.Get<int?>("scheduleDurationInDays"); }
@@ -96,6 +101,7 @@ namespace Microsoft.Graph.Beta.Models {
         public ZebraFotaDeploymentSettings() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.zebraFotaDeploymentSettings";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -121,6 +127,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"installRuleStartDateTime", n => { InstallRuleStartDateTime = n.GetDateTimeOffsetValue(); } },
                 {"installRuleWindowEndTime", n => { InstallRuleWindowEndTime = n.GetTimeValue(); } },
                 {"installRuleWindowStartTime", n => { InstallRuleWindowStartTime = n.GetTimeValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"scheduleDurationInDays", n => { ScheduleDurationInDays = n.GetIntValue(); } },
                 {"scheduleMode", n => { ScheduleMode = n.GetEnumValue<ZebraFotaScheduleMode>(); } },
                 {"timeZoneOffsetInMinutes", n => { TimeZoneOffsetInMinutes = n.GetIntValue(); } },
@@ -144,6 +151,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteDateTimeOffsetValue("installRuleStartDateTime", InstallRuleStartDateTime);
             writer.WriteTimeValue("installRuleWindowEndTime", InstallRuleWindowEndTime);
             writer.WriteTimeValue("installRuleWindowStartTime", InstallRuleWindowStartTime);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteIntValue("scheduleDurationInDays", ScheduleDurationInDays);
             writer.WriteEnumValue<ZebraFotaScheduleMode>("scheduleMode", ScheduleMode);
             writer.WriteIntValue("timeZoneOffsetInMinutes", TimeZoneOffsetInMinutes);

@@ -16,7 +16,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Chats.Item.PermissionGrants {
     /// <summary>Provides operations to manage the permissionGrants property of the microsoft.graph.chat entity.</summary>
     public class PermissionGrantsRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

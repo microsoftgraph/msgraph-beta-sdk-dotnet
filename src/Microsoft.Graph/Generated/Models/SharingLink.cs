@@ -23,6 +23,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("configuratorUrl"); }
             set { BackingStore?.Set("configuratorUrl", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>If true then the user can only use this link to view the item on the web, and cannot use it to download the contents of the item. Only for OneDrive for Business and SharePoint.</summary>
         public bool? PreventsDownload {
             get { return BackingStore?.Get<bool?>("preventsDownload"); }
@@ -54,6 +59,7 @@ namespace Microsoft.Graph.Beta.Models {
         public SharingLink() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.sharingLink";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -70,6 +76,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"application", n => { Application = n.GetObjectValue<Identity>(Identity.CreateFromDiscriminatorValue); } },
                 {"configuratorUrl", n => { ConfiguratorUrl = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"preventsDownload", n => { PreventsDownload = n.GetBoolValue(); } },
                 {"scope", n => { Scope = n.GetStringValue(); } },
                 {"type", n => { Type = n.GetStringValue(); } },
@@ -85,6 +92,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<Identity>("application", Application);
             writer.WriteStringValue("configuratorUrl", ConfiguratorUrl);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteBoolValue("preventsDownload", PreventsDownload);
             writer.WriteStringValue("scope", Scope);
             writer.WriteStringValue("type", Type);

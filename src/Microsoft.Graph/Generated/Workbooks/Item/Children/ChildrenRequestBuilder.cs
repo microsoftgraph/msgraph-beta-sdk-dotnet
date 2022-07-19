@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Workbooks.Item.Children {
     /// <summary>Provides operations to manage the children property of the microsoft.graph.driveItem entity.</summary>
     public class ChildrenRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

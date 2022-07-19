@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Ediscovery {
-    /// <summary>Provides operations to manage the compliance singleton.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class Tag : Entity, IParsable {
         /// <summary>Indicates whether a single or multiple child tags can be associated with a document. Possible values are: One, Many.  This value controls whether the UX presents the tags as checkboxes or a radio button group.</summary>
         public Microsoft.Graph.Beta.Models.Ediscovery.ChildSelectability? ChildSelectability {
@@ -40,6 +40,12 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
         public Tag Parent {
             get { return BackingStore?.Get<Tag>("parent"); }
             set { BackingStore?.Set("parent", value); }
+        }
+        /// <summary>
+        /// Instantiates a new tag and sets the default values.
+        /// </summary>
+        public Tag() : base() {
+            OdataType = "#microsoft.graph.ediscovery.tag";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

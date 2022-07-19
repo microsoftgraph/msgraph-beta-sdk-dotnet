@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class DimensionValue : Entity, IParsable {
         /// <summary>The code property</summary>
         public string Code {
@@ -20,6 +20,12 @@ namespace Microsoft.Graph.Beta.Models {
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
+        }
+        /// <summary>
+        /// Instantiates a new dimensionValue and sets the default values.
+        /// </summary>
+        public DimensionValue() : base() {
+            OdataType = "#microsoft.graph.dimensionValue";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

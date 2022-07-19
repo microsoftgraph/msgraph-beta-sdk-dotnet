@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Ediscovery {
-    /// <summary>Provides operations to manage the compliance singleton.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class Case : Entity, IParsable {
         /// <summary>The user who closed the case.</summary>
         public Microsoft.Graph.Beta.Models.IdentitySet ClosedBy {
@@ -90,6 +90,12 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
         public List<Tag> Tags {
             get { return BackingStore?.Get<List<Tag>>("tags"); }
             set { BackingStore?.Set("tags", value); }
+        }
+        /// <summary>
+        /// Instantiates a new case and sets the default values.
+        /// </summary>
+        public Case() : base() {
+            OdataType = "#microsoft.graph.ediscovery.case";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

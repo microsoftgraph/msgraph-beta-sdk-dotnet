@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.GovernanceRoleAssignmentRequests {
     /// <summary>Provides operations to manage the collection of governanceRoleAssignmentRequest entities.</summary>
     public class GovernanceRoleAssignmentRequestsRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

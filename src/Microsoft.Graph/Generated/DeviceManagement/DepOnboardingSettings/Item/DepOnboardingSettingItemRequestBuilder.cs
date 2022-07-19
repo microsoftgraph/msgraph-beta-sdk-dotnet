@@ -206,7 +206,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new depOnboardingSettingItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new DepOnboardingSettingItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public DepOnboardingSettingItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -231,7 +231,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item {
             /// <summary>Request query parameters</summary>
             public DepOnboardingSettingItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new DepOnboardingSettingItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new depOnboardingSettingItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new DepOnboardingSettingItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public DepOnboardingSettingItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -245,7 +245,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new depOnboardingSettingItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new DepOnboardingSettingItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public DepOnboardingSettingItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

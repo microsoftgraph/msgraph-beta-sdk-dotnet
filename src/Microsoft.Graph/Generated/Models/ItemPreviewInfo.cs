@@ -18,6 +18,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("getUrl"); }
             set { BackingStore?.Set("getUrl", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The postParameters property</summary>
         public string PostParameters {
             get { return BackingStore?.Get<string>("postParameters"); }
@@ -34,6 +39,7 @@ namespace Microsoft.Graph.Beta.Models {
         public ItemPreviewInfo() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.itemPreviewInfo";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -49,6 +55,7 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"getUrl", n => { GetUrl = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"postParameters", n => { PostParameters = n.GetStringValue(); } },
                 {"postUrl", n => { PostUrl = n.GetStringValue(); } },
             };
@@ -60,6 +67,7 @@ namespace Microsoft.Graph.Beta.Models {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("getUrl", GetUrl);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("postParameters", PostParameters);
             writer.WriteStringValue("postUrl", PostUrl);
             writer.WriteAdditionalData(AdditionalData);

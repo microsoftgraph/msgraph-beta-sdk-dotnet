@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Tags.Item.ChildT
             /// <summary>Request query parameters</summary>
             public TagItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new TagItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new tagItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new TagItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public TagItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();

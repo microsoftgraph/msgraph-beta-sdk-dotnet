@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.DeviceManagement.Intents.Item.Settings {
     /// <summary>Provides operations to manage the settings property of the microsoft.graph.deviceManagementIntent entity.</summary>
     public class SettingsRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

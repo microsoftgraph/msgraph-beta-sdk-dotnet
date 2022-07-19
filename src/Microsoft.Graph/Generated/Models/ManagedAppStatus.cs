@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new managedAppStatus and sets the default values.
         /// </summary>
         public ManagedAppStatus() : base() {
-            Type = "#microsoft.graph.managedAppStatus";
+            OdataType = "#microsoft.graph.managedAppStatus";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

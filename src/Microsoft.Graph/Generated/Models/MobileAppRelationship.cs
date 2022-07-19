@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new mobileAppRelationship and sets the default values.
         /// </summary>
         public MobileAppRelationship() : base() {
-            Type = "#microsoft.graph.mobileAppRelationship";
+            OdataType = "#microsoft.graph.mobileAppRelationship";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

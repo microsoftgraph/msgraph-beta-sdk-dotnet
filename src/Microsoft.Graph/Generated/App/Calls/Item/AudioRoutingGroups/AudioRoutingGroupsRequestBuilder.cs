@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.App.Calls.Item.AudioRoutingGroups {
     /// <summary>Provides operations to manage the audioRoutingGroups property of the microsoft.graph.call entity.</summary>
     public class AudioRoutingGroupsRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Security.CloudAppSecurityProfiles.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new cloudAppSecurityProfileItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new CloudAppSecurityProfileItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public CloudAppSecurityProfileItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Security.CloudAppSecurityProfiles.Item {
             /// <summary>Request query parameters</summary>
             public CloudAppSecurityProfileItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new CloudAppSecurityProfileItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new cloudAppSecurityProfileItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new CloudAppSecurityProfileItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public CloudAppSecurityProfileItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Security.CloudAppSecurityProfiles.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new cloudAppSecurityProfileItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new CloudAppSecurityProfileItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public CloudAppSecurityProfileItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

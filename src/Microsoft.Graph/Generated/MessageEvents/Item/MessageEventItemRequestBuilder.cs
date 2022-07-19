@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.MessageEvents.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new messageEventItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new MessageEventItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public MessageEventItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.MessageEvents.Item {
             /// <summary>Request query parameters</summary>
             public MessageEventItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new MessageEventItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new messageEventItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new MessageEventItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public MessageEventItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.MessageEvents.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new messageEventItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new MessageEventItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public MessageEventItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

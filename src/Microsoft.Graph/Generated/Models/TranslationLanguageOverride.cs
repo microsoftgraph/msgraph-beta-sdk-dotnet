@@ -18,6 +18,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("languageTag"); }
             set { BackingStore?.Set("languageTag", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The translation override behavior for the language, if any.Returned by default. Not nullable.</summary>
         public Microsoft.Graph.Beta.Models.TranslationBehavior? TranslationBehavior {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TranslationBehavior?>("translationBehavior"); }
@@ -29,6 +34,7 @@ namespace Microsoft.Graph.Beta.Models {
         public TranslationLanguageOverride() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.translationLanguageOverride";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -44,6 +50,7 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"languageTag", n => { LanguageTag = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"translationBehavior", n => { TranslationBehavior = n.GetEnumValue<TranslationBehavior>(); } },
             };
         }
@@ -54,6 +61,7 @@ namespace Microsoft.Graph.Beta.Models {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("languageTag", LanguageTag);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteEnumValue<TranslationBehavior>("translationBehavior", TranslationBehavior);
             writer.WriteAdditionalData(AdditionalData);
         }

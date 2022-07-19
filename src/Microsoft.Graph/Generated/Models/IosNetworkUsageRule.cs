@@ -29,12 +29,18 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<AppListItem>>("managedApps"); }
             set { BackingStore?.Set("managedApps", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>
         /// Instantiates a new iosNetworkUsageRule and sets the default values.
         /// </summary>
         public IosNetworkUsageRule() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.iosNetworkUsageRule";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -52,6 +58,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"cellularDataBlocked", n => { CellularDataBlocked = n.GetBoolValue(); } },
                 {"cellularDataBlockWhenRoaming", n => { CellularDataBlockWhenRoaming = n.GetBoolValue(); } },
                 {"managedApps", n => { ManagedApps = n.GetCollectionOfObjectValues<AppListItem>(AppListItem.CreateFromDiscriminatorValue).ToList(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -63,6 +70,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteBoolValue("cellularDataBlocked", CellularDataBlocked);
             writer.WriteBoolValue("cellularDataBlockWhenRoaming", CellularDataBlockWhenRoaming);
             writer.WriteCollectionOfObjectValues<AppListItem>("managedApps", ManagedApps);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -28,6 +28,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The publisherName property</summary>
         public string PublisherName {
             get { return BackingStore?.Get<string>("publisherName"); }
@@ -49,6 +54,7 @@ namespace Microsoft.Graph.Beta.Models {
         public ResponsibleSensitiveType() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.responsibleSensitiveType";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -66,6 +72,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"id", n => { Id = n.GetStringValue(); } },
                 {"name", n => { Name = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"publisherName", n => { PublisherName = n.GetStringValue(); } },
                 {"rulePackageId", n => { RulePackageId = n.GetStringValue(); } },
                 {"rulePackageType", n => { RulePackageType = n.GetStringValue(); } },
@@ -80,6 +87,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("publisherName", PublisherName);
             writer.WriteStringValue("rulePackageId", RulePackageId);
             writer.WriteStringValue("rulePackageType", RulePackageType);

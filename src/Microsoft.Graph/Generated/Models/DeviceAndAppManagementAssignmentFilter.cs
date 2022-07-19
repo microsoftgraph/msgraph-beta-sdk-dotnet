@@ -46,7 +46,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new deviceAndAppManagementAssignmentFilter and sets the default values.
         /// </summary>
         public DeviceAndAppManagementAssignmentFilter() : base() {
-            Type = "#microsoft.graph.deviceAndAppManagementAssignmentFilter";
+            OdataType = "#microsoft.graph.deviceAndAppManagementAssignmentFilter";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

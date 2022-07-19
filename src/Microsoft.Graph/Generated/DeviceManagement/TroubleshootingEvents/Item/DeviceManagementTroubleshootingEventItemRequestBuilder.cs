@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.TroubleshootingEvents.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new deviceManagementTroubleshootingEventItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceManagementTroubleshootingEventItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceManagementTroubleshootingEventItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.TroubleshootingEvents.Item {
             /// <summary>Request query parameters</summary>
             public DeviceManagementTroubleshootingEventItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new DeviceManagementTroubleshootingEventItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new deviceManagementTroubleshootingEventItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceManagementTroubleshootingEventItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceManagementTroubleshootingEventItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.TroubleshootingEvents.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new deviceManagementTroubleshootingEventItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceManagementTroubleshootingEventItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceManagementTroubleshootingEventItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

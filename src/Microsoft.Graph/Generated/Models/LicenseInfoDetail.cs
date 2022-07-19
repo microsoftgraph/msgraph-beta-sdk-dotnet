@@ -18,6 +18,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<AzureADLicenseType?>("licenseType"); }
             set { BackingStore?.Set("licenseType", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The totalAssignedCount property</summary>
         public int? TotalAssignedCount {
             get { return BackingStore?.Get<int?>("totalAssignedCount"); }
@@ -39,6 +44,7 @@ namespace Microsoft.Graph.Beta.Models {
         public LicenseInfoDetail() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.licenseInfoDetail";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -54,6 +60,7 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"licenseType", n => { LicenseType = n.GetEnumValue<AzureADLicenseType>(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"totalAssignedCount", n => { TotalAssignedCount = n.GetIntValue(); } },
                 {"totalLicenseCount", n => { TotalLicenseCount = n.GetIntValue(); } },
                 {"totalUsageCount", n => { TotalUsageCount = n.GetIntValue(); } },
@@ -66,6 +73,7 @@ namespace Microsoft.Graph.Beta.Models {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<AzureADLicenseType>("licenseType", LicenseType);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteIntValue("totalAssignedCount", TotalAssignedCount);
             writer.WriteIntValue("totalLicenseCount", TotalLicenseCount);
             writer.WriteIntValue("totalUsageCount", TotalUsageCount);

@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new managedEBookAssignment and sets the default values.
         /// </summary>
         public ManagedEBookAssignment() : base() {
-            Type = "#microsoft.graph.managedEBookAssignment";
+            OdataType = "#microsoft.graph.managedEBookAssignment";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

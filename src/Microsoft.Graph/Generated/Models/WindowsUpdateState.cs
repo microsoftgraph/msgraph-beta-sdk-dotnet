@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class WindowsUpdateState : Entity, IParsable {
         /// <summary>Device display name.</summary>
         public string DeviceDisplayName {
@@ -50,6 +50,12 @@ namespace Microsoft.Graph.Beta.Models {
         public string UserPrincipalName {
             get { return BackingStore?.Get<string>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
+        }
+        /// <summary>
+        /// Instantiates a new windowsUpdateState and sets the default values.
+        /// </summary>
+        public WindowsUpdateState() : base() {
+            OdataType = "#microsoft.graph.windowsUpdateState";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

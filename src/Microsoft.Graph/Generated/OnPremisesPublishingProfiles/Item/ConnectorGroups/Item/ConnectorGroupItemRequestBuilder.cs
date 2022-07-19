@@ -164,7 +164,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.ConnectorGroups
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new connectorGroupItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new ConnectorGroupItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public ConnectorGroupItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -189,7 +189,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.ConnectorGroups
             /// <summary>Request query parameters</summary>
             public ConnectorGroupItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new ConnectorGroupItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new connectorGroupItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new ConnectorGroupItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public ConnectorGroupItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -203,7 +203,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.ConnectorGroups
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new connectorGroupItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new ConnectorGroupItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public ConnectorGroupItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

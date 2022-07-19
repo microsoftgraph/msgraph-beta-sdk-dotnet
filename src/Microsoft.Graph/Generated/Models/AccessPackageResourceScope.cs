@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class AccessPackageResourceScope : Entity, IParsable {
         /// <summary>The accessPackageResource property</summary>
         public Microsoft.Graph.Beta.Models.AccessPackageResource AccessPackageResource {
@@ -45,6 +45,12 @@ namespace Microsoft.Graph.Beta.Models {
         public string Url {
             get { return BackingStore?.Get<string>("url"); }
             set { BackingStore?.Set("url", value); }
+        }
+        /// <summary>
+        /// Instantiates a new accessPackageResourceScope and sets the default values.
+        /// </summary>
+        public AccessPackageResourceScope() : base() {
+            OdataType = "#microsoft.graph.accessPackageResourceScope";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

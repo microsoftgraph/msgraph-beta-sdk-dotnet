@@ -23,6 +23,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("joinMeetingId"); }
             set { BackingStore?.Set("joinMeetingId", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The passcode to join a meeting.  Optional. Read-only.</summary>
         public string Passcode {
             get { return BackingStore?.Get<string>("passcode"); }
@@ -34,6 +39,7 @@ namespace Microsoft.Graph.Beta.Models {
         public JoinMeetingIdSettings() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.joinMeetingIdSettings";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -50,6 +56,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"isPasscodeRequired", n => { IsPasscodeRequired = n.GetBoolValue(); } },
                 {"joinMeetingId", n => { JoinMeetingId = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"passcode", n => { Passcode = n.GetStringValue(); } },
             };
         }
@@ -61,6 +68,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("isPasscodeRequired", IsPasscodeRequired);
             writer.WriteStringValue("joinMeetingId", JoinMeetingId);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("passcode", Passcode);
             writer.WriteAdditionalData(AdditionalData);
         }

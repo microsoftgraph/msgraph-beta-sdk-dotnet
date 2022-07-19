@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Reports.AuthenticationMethods.UserRegistrationDetails {
     /// <summary>Provides operations to manage the userRegistrationDetails property of the microsoft.graph.authenticationMethodsRoot entity.</summary>
     public class UserRegistrationDetailsRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

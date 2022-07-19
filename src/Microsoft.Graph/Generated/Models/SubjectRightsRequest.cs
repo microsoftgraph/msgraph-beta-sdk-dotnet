@@ -130,6 +130,17 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Team>("team"); }
             set { BackingStore?.Set("team", value); }
         }
+        /// <summary>The type of the request. Possible values are: export, delete, access, tagForAction, unknownFutureValue.</summary>
+        public SubjectRightsRequestType? Type {
+            get { return BackingStore?.Get<SubjectRightsRequestType?>("type"); }
+            set { BackingStore?.Set("type", value); }
+        }
+        /// <summary>
+        /// Instantiates a new SubjectRightsRequest and sets the default values.
+        /// </summary>
+        public SubjectRightsRequest() : base() {
+            OdataType = "#microsoft.graph.subjectRightsRequest";
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
@@ -168,6 +179,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"stages", n => { Stages = n.GetCollectionOfObjectValues<SubjectRightsRequestStageDetail>(SubjectRightsRequestStageDetail.CreateFromDiscriminatorValue).ToList(); } },
                 {"status", n => { Status = n.GetEnumValue<SubjectRightsRequestStatus>(); } },
                 {"team", n => { Team = n.GetObjectValue<Microsoft.Graph.Beta.Models.Team>(Microsoft.Graph.Beta.Models.Team.CreateFromDiscriminatorValue); } },
+                {"type", n => { Type = n.GetEnumValue<SubjectRightsRequestType>(); } },
             };
         }
         /// <summary>
@@ -202,6 +214,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfObjectValues<SubjectRightsRequestStageDetail>("stages", Stages);
             writer.WriteEnumValue<SubjectRightsRequestStatus>("status", Status);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Team>("team", Team);
+            writer.WriteEnumValue<SubjectRightsRequestType>("type", Type);
         }
     }
 }

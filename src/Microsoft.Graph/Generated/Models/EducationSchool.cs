@@ -76,6 +76,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("users", value); }
         }
         /// <summary>
+        /// Instantiates a new EducationSchool and sets the default values.
+        /// </summary>
+        public EducationSchool() : base() {
+            OdataType = "#microsoft.graph.educationSchool";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

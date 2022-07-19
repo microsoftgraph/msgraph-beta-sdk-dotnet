@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedDeviceC
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new managedDeviceComplianceItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new ManagedDeviceComplianceItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public ManagedDeviceComplianceItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedDeviceC
             /// <summary>Request query parameters</summary>
             public ManagedDeviceComplianceItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new ManagedDeviceComplianceItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new managedDeviceComplianceItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new ManagedDeviceComplianceItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public ManagedDeviceComplianceItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedDeviceC
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new managedDeviceComplianceItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new ManagedDeviceComplianceItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public ManagedDeviceComplianceItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

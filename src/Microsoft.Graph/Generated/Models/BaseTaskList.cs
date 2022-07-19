@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new baseTaskList and sets the default values.
         /// </summary>
         public BaseTaskList() : base() {
-            Type = "#microsoft.graph.baseTaskList";
+            OdataType = "#microsoft.graph.baseTaskList";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

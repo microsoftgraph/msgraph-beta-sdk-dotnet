@@ -36,6 +36,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("userRolesActions", value); }
         }
         /// <summary>
+        /// Instantiates a new TenantSetupInfo and sets the default values.
+        /// </summary>
+        public TenantSetupInfo() : base() {
+            OdataType = "#microsoft.graph.tenantSetupInfo";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

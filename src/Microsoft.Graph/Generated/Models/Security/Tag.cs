@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class Tag : Entity, IParsable {
         /// <summary>The createdBy property</summary>
         public Microsoft.Graph.Beta.Models.IdentitySet CreatedBy {
@@ -31,7 +31,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// Instantiates a new tag and sets the default values.
         /// </summary>
         public Tag() : base() {
-            Type = "#microsoft.graph.security.tag";
+            OdataType = "#microsoft.graph.security.tag";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

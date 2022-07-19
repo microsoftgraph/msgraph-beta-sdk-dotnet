@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Policies.AppManagementPolicies.Item.AppliesTo {
     /// <summary>Provides operations to manage the appliesTo property of the microsoft.graph.appManagementPolicy entity.</summary>
     public class AppliesToRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

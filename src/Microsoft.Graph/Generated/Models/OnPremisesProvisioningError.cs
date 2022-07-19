@@ -23,6 +23,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DateTimeOffset?>("occurredDateTime"); }
             set { BackingStore?.Set("occurredDateTime", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Name of the directory property causing the error. Current possible values: UserPrincipalName or ProxyAddress</summary>
         public string PropertyCausingError {
             get { return BackingStore?.Get<string>("propertyCausingError"); }
@@ -39,6 +44,7 @@ namespace Microsoft.Graph.Beta.Models {
         public OnPremisesProvisioningError() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.onPremisesProvisioningError";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -55,6 +61,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"category", n => { Category = n.GetStringValue(); } },
                 {"occurredDateTime", n => { OccurredDateTime = n.GetDateTimeOffsetValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"propertyCausingError", n => { PropertyCausingError = n.GetStringValue(); } },
                 {"value", n => { Value = n.GetStringValue(); } },
             };
@@ -67,6 +74,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("category", Category);
             writer.WriteDateTimeOffsetValue("occurredDateTime", OccurredDateTime);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("propertyCausingError", PropertyCausingError);
             writer.WriteStringValue("value", Value);
             writer.WriteAdditionalData(AdditionalData);

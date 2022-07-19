@@ -11,6 +11,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("certificateList", value); }
         }
         /// <summary>
+        /// Instantiates a new ClientCertificateAuthentication and sets the default values.
+        /// </summary>
+        public ClientCertificateAuthentication() : base() {
+            OdataType = "#microsoft.graph.clientCertificateAuthentication";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

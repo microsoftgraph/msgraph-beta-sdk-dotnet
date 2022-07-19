@@ -164,7 +164,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.RoleScopeTags.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new roleScopeTagItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new RoleScopeTagItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public RoleScopeTagItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -189,7 +189,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.RoleScopeTags.Item {
             /// <summary>Request query parameters</summary>
             public RoleScopeTagItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new RoleScopeTagItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new roleScopeTagItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new RoleScopeTagItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public RoleScopeTagItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -203,7 +203,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.RoleScopeTags.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new roleScopeTagItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new RoleScopeTagItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public RoleScopeTagItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

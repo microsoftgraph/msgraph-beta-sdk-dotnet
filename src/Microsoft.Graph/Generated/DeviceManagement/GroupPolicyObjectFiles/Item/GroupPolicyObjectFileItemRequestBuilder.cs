@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyObjectFiles.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new groupPolicyObjectFileItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new GroupPolicyObjectFileItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public GroupPolicyObjectFileItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyObjectFiles.Item {
             /// <summary>Request query parameters</summary>
             public GroupPolicyObjectFileItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new GroupPolicyObjectFileItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new groupPolicyObjectFileItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new GroupPolicyObjectFileItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public GroupPolicyObjectFileItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyObjectFiles.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new groupPolicyObjectFileItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new GroupPolicyObjectFileItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public GroupPolicyObjectFileItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

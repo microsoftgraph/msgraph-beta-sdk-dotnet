@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationRestrictedApp
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new restrictedAppsViolationItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new RestrictedAppsViolationItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public RestrictedAppsViolationItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationRestrictedApp
             /// <summary>Request query parameters</summary>
             public RestrictedAppsViolationItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new RestrictedAppsViolationItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new restrictedAppsViolationItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new RestrictedAppsViolationItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public RestrictedAppsViolationItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationRestrictedApp
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new restrictedAppsViolationItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new RestrictedAppsViolationItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public RestrictedAppsViolationItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

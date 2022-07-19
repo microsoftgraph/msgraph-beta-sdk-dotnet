@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Organization.Item.Settings.ProfileCardProperties.
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new profileCardPropertyItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new ProfileCardPropertyItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public ProfileCardPropertyItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Organization.Item.Settings.ProfileCardProperties.
             /// <summary>Request query parameters</summary>
             public ProfileCardPropertyItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new ProfileCardPropertyItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new profileCardPropertyItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new ProfileCardPropertyItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public ProfileCardPropertyItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Organization.Item.Settings.ProfileCardProperties.
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new profileCardPropertyItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new ProfileCardPropertyItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public ProfileCardPropertyItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

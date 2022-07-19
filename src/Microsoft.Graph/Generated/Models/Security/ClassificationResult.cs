@@ -23,6 +23,11 @@ namespace Microsoft.Graph.Beta.Models.Security {
             get { return BackingStore?.Get<int?>("count"); }
             set { BackingStore?.Set("count", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The sensitiveTypeId property</summary>
         public string SensitiveTypeId {
             get { return BackingStore?.Get<string>("sensitiveTypeId"); }
@@ -34,6 +39,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         public ClassificationResult() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.security.classificationResult";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -50,6 +56,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             return new Dictionary<string, Action<IParseNode>> {
                 {"confidenceLevel", n => { ConfidenceLevel = n.GetIntValue(); } },
                 {"count", n => { Count = n.GetIntValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"sensitiveTypeId", n => { SensitiveTypeId = n.GetStringValue(); } },
             };
         }
@@ -61,6 +68,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("confidenceLevel", ConfidenceLevel);
             writer.WriteIntValue("count", Count);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("sensitiveTypeId", SensitiveTypeId);
             writer.WriteAdditionalData(AdditionalData);
         }

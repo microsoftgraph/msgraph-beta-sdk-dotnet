@@ -13,6 +13,11 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The method by which the folder should be sorted.</summary>
         public string SortBy {
             get { return BackingStore?.Get<string>("sortBy"); }
@@ -34,6 +39,7 @@ namespace Microsoft.Graph.Beta.Models {
         public FolderView() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.folderView";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -48,6 +54,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"sortBy", n => { SortBy = n.GetStringValue(); } },
                 {"sortOrder", n => { SortOrder = n.GetStringValue(); } },
                 {"viewType", n => { ViewType = n.GetStringValue(); } },
@@ -59,6 +66,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("sortBy", SortBy);
             writer.WriteStringValue("sortOrder", SortOrder);
             writer.WriteStringValue("viewType", ViewType);

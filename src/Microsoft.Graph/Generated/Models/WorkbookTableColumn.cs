@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class WorkbookTableColumn : Entity, IParsable {
         /// <summary>Retrieve the filter applied to the column. Read-only.</summary>
         public WorkbookFilter Filter {
@@ -25,6 +25,12 @@ namespace Microsoft.Graph.Beta.Models {
         public Json Values {
             get { return BackingStore?.Get<Json>("values"); }
             set { BackingStore?.Set("values", value); }
+        }
+        /// <summary>
+        /// Instantiates a new workbookTableColumn and sets the default values.
+        /// </summary>
+        public WorkbookTableColumn() : base() {
+            OdataType = "#microsoft.graph.workbookTableColumn";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

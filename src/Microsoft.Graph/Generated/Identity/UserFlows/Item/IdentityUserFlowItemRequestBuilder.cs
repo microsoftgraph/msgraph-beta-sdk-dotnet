@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Identity.UserFlows.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new identityUserFlowItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new IdentityUserFlowItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public IdentityUserFlowItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Identity.UserFlows.Item {
             /// <summary>Request query parameters</summary>
             public IdentityUserFlowItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new IdentityUserFlowItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new identityUserFlowItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new IdentityUserFlowItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public IdentityUserFlowItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Identity.UserFlows.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new identityUserFlowItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new IdentityUserFlowItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public IdentityUserFlowItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

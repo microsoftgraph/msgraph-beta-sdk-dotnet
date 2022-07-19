@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Education.Users.Item.TaughtClasses {
     /// <summary>Provides operations to manage the taughtClasses property of the microsoft.graph.educationUser entity.</summary>
     public class TaughtClassesRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

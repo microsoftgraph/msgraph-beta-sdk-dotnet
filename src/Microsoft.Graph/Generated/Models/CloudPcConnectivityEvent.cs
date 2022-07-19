@@ -38,12 +38,18 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("message"); }
             set { BackingStore?.Set("message", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>
         /// Instantiates a new cloudPcConnectivityEvent and sets the default values.
         /// </summary>
         public CloudPcConnectivityEvent() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.cloudPcConnectivityEvent";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -63,6 +69,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"eventResult", n => { EventResult = n.GetEnumValue<CloudPcConnectivityEventResult>(); } },
                 {"eventType", n => { EventType = n.GetEnumValue<CloudPcConnectivityEventType>(); } },
                 {"message", n => { Message = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -76,6 +83,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteEnumValue<CloudPcConnectivityEventResult>("eventResult", EventResult);
             writer.WriteEnumValue<CloudPcConnectivityEventType>("eventType", EventType);
             writer.WriteStringValue("message", Message);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

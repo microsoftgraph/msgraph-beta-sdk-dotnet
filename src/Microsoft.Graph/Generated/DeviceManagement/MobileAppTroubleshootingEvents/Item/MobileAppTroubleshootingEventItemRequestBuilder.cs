@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MobileAppTroubleshootingEvents.I
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new mobileAppTroubleshootingEventItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new MobileAppTroubleshootingEventItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public MobileAppTroubleshootingEventItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -184,7 +184,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MobileAppTroubleshootingEvents.I
             /// <summary>Request query parameters</summary>
             public MobileAppTroubleshootingEventItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new MobileAppTroubleshootingEventItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new mobileAppTroubleshootingEventItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new MobileAppTroubleshootingEventItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public MobileAppTroubleshootingEventItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -198,7 +198,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MobileAppTroubleshootingEvents.I
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new mobileAppTroubleshootingEventItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new MobileAppTroubleshootingEventItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public MobileAppTroubleshootingEventItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

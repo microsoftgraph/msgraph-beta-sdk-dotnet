@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new policySetItem and sets the default values.
         /// </summary>
         public PolicySetItem() : base() {
-            Type = "#microsoft.graph.policySetItem";
+            OdataType = "#microsoft.graph.policySetItem";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

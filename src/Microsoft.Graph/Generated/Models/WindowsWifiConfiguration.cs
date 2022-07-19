@@ -75,7 +75,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new WindowsWifiConfiguration and sets the default values.
         /// </summary>
         public WindowsWifiConfiguration() : base() {
-            Type = "#microsoft.graph.windowsWifiConfiguration";
+            OdataType = "#microsoft.graph.windowsWifiConfiguration";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

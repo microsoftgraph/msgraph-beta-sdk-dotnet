@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceShellScripts.Item.UserRunS
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new deviceManagementScriptDeviceStateItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceManagementScriptDeviceStateItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceManagementScriptDeviceStateItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -184,7 +184,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceShellScripts.Item.UserRunS
             /// <summary>Request query parameters</summary>
             public DeviceManagementScriptDeviceStateItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new DeviceManagementScriptDeviceStateItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new deviceManagementScriptDeviceStateItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceManagementScriptDeviceStateItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceManagementScriptDeviceStateItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -198,7 +198,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceShellScripts.Item.UserRunS
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new deviceManagementScriptDeviceStateItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceManagementScriptDeviceStateItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceManagementScriptDeviceStateItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

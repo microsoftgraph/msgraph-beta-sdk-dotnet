@@ -49,6 +49,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("natKeepAliveOffloadEnable"); }
             set { BackingStore?.Set("natKeepAliveOffloadEnable", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The type of tunnels that will be present to the VPN client for configuration</summary>
         public VpnTunnelConfigurationType? TunnelConfiguration {
             get { return BackingStore?.Get<VpnTunnelConfigurationType?>("tunnelConfiguration"); }
@@ -70,6 +75,7 @@ namespace Microsoft.Graph.Beta.Models {
         public AppleVpnAlwaysOnConfiguration() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.appleVpnAlwaysOnConfiguration";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -91,6 +97,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"cellularExceptionAction", n => { CellularExceptionAction = n.GetEnumValue<VpnServiceExceptionAction>(); } },
                 {"natKeepAliveIntervalInSeconds", n => { NatKeepAliveIntervalInSeconds = n.GetIntValue(); } },
                 {"natKeepAliveOffloadEnable", n => { NatKeepAliveOffloadEnable = n.GetBoolValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"tunnelConfiguration", n => { TunnelConfiguration = n.GetEnumValue<VpnTunnelConfigurationType>(); } },
                 {"userToggleEnabled", n => { UserToggleEnabled = n.GetBoolValue(); } },
                 {"voicemailExceptionAction", n => { VoicemailExceptionAction = n.GetEnumValue<VpnServiceExceptionAction>(); } },
@@ -109,6 +116,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteEnumValue<VpnServiceExceptionAction>("cellularExceptionAction", CellularExceptionAction);
             writer.WriteIntValue("natKeepAliveIntervalInSeconds", NatKeepAliveIntervalInSeconds);
             writer.WriteBoolValue("natKeepAliveOffloadEnable", NatKeepAliveOffloadEnable);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteEnumValue<VpnTunnelConfigurationType>("tunnelConfiguration", TunnelConfiguration);
             writer.WriteBoolValue("userToggleEnabled", UserToggleEnabled);
             writer.WriteEnumValue<VpnServiceExceptionAction>("voicemailExceptionAction", VoicemailExceptionAction);

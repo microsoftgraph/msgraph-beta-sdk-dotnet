@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Custodians.It
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new siteSourceItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new SiteSourceItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public SiteSourceItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -184,7 +184,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Custodians.It
             /// <summary>Request query parameters</summary>
             public SiteSourceItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new SiteSourceItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new siteSourceItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new SiteSourceItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public SiteSourceItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -198,7 +198,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Custodians.It
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new siteSourceItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new SiteSourceItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public SiteSourceItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

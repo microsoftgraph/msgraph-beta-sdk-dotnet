@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class PrintUsage : Entity, IParsable {
         /// <summary>The completedBlackAndWhiteJobCount property</summary>
         public long? CompletedBlackAndWhiteJobCount {
@@ -29,10 +28,10 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("usageDate", value); }
         }
         /// <summary>
-        /// Instantiates a new printUsage and sets the default values.
+        /// Instantiates a new PrintUsage and sets the default values.
         /// </summary>
         public PrintUsage() : base() {
-            Type = "#microsoft.graph.printUsage";
+            OdataType = "#microsoft.graph.printUsage";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

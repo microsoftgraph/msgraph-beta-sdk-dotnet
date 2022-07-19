@@ -54,12 +54,18 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<string>>("neutralDomainResources"); }
             set { BackingStore?.Set("neutralDomainResources", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>
         /// Instantiates a new windowsNetworkIsolationPolicy and sets the default values.
         /// </summary>
         public WindowsNetworkIsolationPolicy() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.windowsNetworkIsolationPolicy";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -82,6 +88,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"enterpriseProxyServers", n => { EnterpriseProxyServers = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"enterpriseProxyServersAreAuthoritative", n => { EnterpriseProxyServersAreAuthoritative = n.GetBoolValue(); } },
                 {"neutralDomainResources", n => { NeutralDomainResources = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -98,6 +105,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfPrimitiveValues<string>("enterpriseProxyServers", EnterpriseProxyServers);
             writer.WriteBoolValue("enterpriseProxyServersAreAuthoritative", EnterpriseProxyServersAreAuthoritative);
             writer.WriteCollectionOfPrimitiveValues<string>("neutralDomainResources", NeutralDomainResources);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

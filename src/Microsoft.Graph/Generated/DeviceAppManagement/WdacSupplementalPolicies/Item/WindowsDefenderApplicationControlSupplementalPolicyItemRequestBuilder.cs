@@ -174,7 +174,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.WdacSupplementalPolicies.Item
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new windowsDefenderApplicationControlSupplementalPolicyItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new WindowsDefenderApplicationControlSupplementalPolicyItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public WindowsDefenderApplicationControlSupplementalPolicyItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -199,7 +199,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.WdacSupplementalPolicies.Item
             /// <summary>Request query parameters</summary>
             public WindowsDefenderApplicationControlSupplementalPolicyItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new WindowsDefenderApplicationControlSupplementalPolicyItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new windowsDefenderApplicationControlSupplementalPolicyItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new WindowsDefenderApplicationControlSupplementalPolicyItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public WindowsDefenderApplicationControlSupplementalPolicyItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -213,7 +213,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.WdacSupplementalPolicies.Item
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new windowsDefenderApplicationControlSupplementalPolicyItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new WindowsDefenderApplicationControlSupplementalPolicyItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public WindowsDefenderApplicationControlSupplementalPolicyItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new enrollmentProfile and sets the default values.
         /// </summary>
         public EnrollmentProfile() : base() {
-            Type = "#microsoft.graph.enrollmentProfile";
+            OdataType = "#microsoft.graph.enrollmentProfile";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -53,6 +53,8 @@ namespace Microsoft.Graph.Beta.Models {
             return mappingValue switch {
                 "#microsoft.graph.depEnrollmentBaseProfile" => new DepEnrollmentBaseProfile(),
                 "#microsoft.graph.depEnrollmentProfile" => new DepEnrollmentProfile(),
+                "#microsoft.graph.depIOSEnrollmentProfile" => new DepIOSEnrollmentProfile(),
+                "#microsoft.graph.depMacOSEnrollmentProfile" => new DepMacOSEnrollmentProfile(),
                 _ => new EnrollmentProfile(),
             };
         }

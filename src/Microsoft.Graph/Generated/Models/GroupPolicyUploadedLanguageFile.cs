@@ -39,12 +39,18 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>
         /// Instantiates a new groupPolicyUploadedLanguageFile and sets the default values.
         /// </summary>
         public GroupPolicyUploadedLanguageFile() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.groupPolicyUploadedLanguageFile";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -64,6 +70,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"id", n => { Id = n.GetStringValue(); } },
                 {"languageCode", n => { LanguageCode = n.GetStringValue(); } },
                 {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -77,6 +84,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("languageCode", LanguageCode);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

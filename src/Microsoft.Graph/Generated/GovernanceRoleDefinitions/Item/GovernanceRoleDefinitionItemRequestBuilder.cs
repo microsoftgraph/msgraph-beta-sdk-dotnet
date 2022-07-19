@@ -164,7 +164,7 @@ namespace Microsoft.Graph.Beta.GovernanceRoleDefinitions.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new governanceRoleDefinitionItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new GovernanceRoleDefinitionItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public GovernanceRoleDefinitionItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -189,7 +189,7 @@ namespace Microsoft.Graph.Beta.GovernanceRoleDefinitions.Item {
             /// <summary>Request query parameters</summary>
             public GovernanceRoleDefinitionItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new GovernanceRoleDefinitionItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new governanceRoleDefinitionItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new GovernanceRoleDefinitionItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public GovernanceRoleDefinitionItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -203,7 +203,7 @@ namespace Microsoft.Graph.Beta.GovernanceRoleDefinitions.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new governanceRoleDefinitionItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new GovernanceRoleDefinitionItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public GovernanceRoleDefinitionItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

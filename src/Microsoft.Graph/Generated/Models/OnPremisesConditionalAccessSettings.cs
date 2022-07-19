@@ -26,6 +26,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("overrideDefaultRule", value); }
         }
         /// <summary>
+        /// Instantiates a new OnPremisesConditionalAccessSettings and sets the default values.
+        /// </summary>
+        public OnPremisesConditionalAccessSettings() : base() {
+            OdataType = "#microsoft.graph.onPremisesConditionalAccessSettings";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

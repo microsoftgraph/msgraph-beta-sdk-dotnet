@@ -18,6 +18,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<int?>("failedUserCount"); }
             set { BackingStore?.Set("failedUserCount", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Total successful user check ins for the last 3 months.</summary>
         public int? SucceededUserCount {
             get { return BackingStore?.Get<int?>("succeededUserCount"); }
@@ -29,6 +34,7 @@ namespace Microsoft.Graph.Beta.Models {
         public OfficeUserCheckinSummary() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.officeUserCheckinSummary";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -44,6 +50,7 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"failedUserCount", n => { FailedUserCount = n.GetIntValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"succeededUserCount", n => { SucceededUserCount = n.GetIntValue(); } },
             };
         }
@@ -54,6 +61,7 @@ namespace Microsoft.Graph.Beta.Models {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("failedUserCount", FailedUserCount);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteIntValue("succeededUserCount", SucceededUserCount);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class PlannerPlan : PlannerDelta, IParsable {
         /// <summary>Collection of buckets in the plan. Read-only. Nullable.</summary>
         public List<PlannerBucket> Buckets {
@@ -50,6 +50,12 @@ namespace Microsoft.Graph.Beta.Models {
         public string Title {
             get { return BackingStore?.Get<string>("title"); }
             set { BackingStore?.Set("title", value); }
+        }
+        /// <summary>
+        /// Instantiates a new plannerPlan and sets the default values.
+        /// </summary>
+        public PlannerPlan() : base() {
+            OdataType = "#microsoft.graph.plannerPlan";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

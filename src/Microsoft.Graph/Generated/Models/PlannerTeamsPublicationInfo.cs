@@ -18,6 +18,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The identifier of the publication. Read-only.</summary>
         public string PublicationId {
             get { return BackingStore?.Get<string>("publicationId"); }
@@ -44,6 +49,7 @@ namespace Microsoft.Graph.Beta.Models {
         public PlannerTeamsPublicationInfo() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.plannerTeamsPublicationInfo";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -59,6 +65,7 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"publicationId", n => { PublicationId = n.GetStringValue(); } },
                 {"publishedToPlanId", n => { PublishedToPlanId = n.GetStringValue(); } },
                 {"publishingTeamId", n => { PublishingTeamId = n.GetStringValue(); } },
@@ -72,6 +79,7 @@ namespace Microsoft.Graph.Beta.Models {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("publicationId", PublicationId);
             writer.WriteStringValue("publishedToPlanId", PublishedToPlanId);
             writer.WriteStringValue("publishingTeamId", PublishingTeamId);

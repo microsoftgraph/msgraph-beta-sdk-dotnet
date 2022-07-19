@@ -18,12 +18,18 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
             get { return BackingStore?.Get<List<MonitoringRule>>("monitoringRules"); }
             set { BackingStore?.Set("monitoringRules", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>
         /// Instantiates a new monitoringSettings and sets the default values.
         /// </summary>
         public MonitoringSettings() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.windowsUpdates.monitoringSettings";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -39,6 +45,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"monitoringRules", n => { MonitoringRules = n.GetCollectionOfObjectValues<MonitoringRule>(MonitoringRule.CreateFromDiscriminatorValue).ToList(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +55,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<MonitoringRule>("monitoringRules", MonitoringRules);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

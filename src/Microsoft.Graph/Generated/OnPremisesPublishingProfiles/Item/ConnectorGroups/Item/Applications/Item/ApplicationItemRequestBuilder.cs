@@ -101,7 +101,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.ConnectorGroups
             /// <summary>Request query parameters</summary>
             public ApplicationItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new ApplicationItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new applicationItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new ApplicationItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public ApplicationItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();

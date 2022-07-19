@@ -199,7 +199,7 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new bookingBusinessItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new BookingBusinessItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public BookingBusinessItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -224,7 +224,7 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item {
             /// <summary>Request query parameters</summary>
             public BookingBusinessItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new BookingBusinessItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new bookingBusinessItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new BookingBusinessItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public BookingBusinessItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -238,7 +238,7 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new bookingBusinessItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new BookingBusinessItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public BookingBusinessItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

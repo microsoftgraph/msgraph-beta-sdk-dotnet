@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new ScheduleChangeRequest and sets the default values.
         /// </summary>
         public ScheduleChangeRequest() : base() {
-            Type = "#microsoft.graph.scheduleChangeRequest";
+            OdataType = "#microsoft.graph.scheduleChangeRequest";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -63,6 +63,7 @@ namespace Microsoft.Graph.Beta.Models {
             return mappingValue switch {
                 "#microsoft.graph.offerShiftRequest" => new OfferShiftRequest(),
                 "#microsoft.graph.openShiftChangeRequest" => new OpenShiftChangeRequest(),
+                "#microsoft.graph.swapShiftsChangeRequest" => new SwapShiftsChangeRequest(),
                 "#microsoft.graph.timeOffRequest" => new TimeOffRequest(),
                 _ => new ScheduleChangeRequest(),
             };

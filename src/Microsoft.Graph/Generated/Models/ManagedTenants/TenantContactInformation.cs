@@ -28,6 +28,11 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
             get { return BackingStore?.Get<string>("notes"); }
             set { BackingStore?.Set("notes", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The phone number for the contact. Optional.</summary>
         public string Phone {
             get { return BackingStore?.Get<string>("phone"); }
@@ -44,6 +49,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         public TenantContactInformation() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.managedTenants.tenantContactInformation";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -61,6 +67,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
                 {"email", n => { Email = n.GetStringValue(); } },
                 {"name", n => { Name = n.GetStringValue(); } },
                 {"notes", n => { Notes = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"phone", n => { Phone = n.GetStringValue(); } },
                 {"title", n => { Title = n.GetStringValue(); } },
             };
@@ -74,6 +81,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
             writer.WriteStringValue("email", Email);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("notes", Notes);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("phone", Phone);
             writer.WriteStringValue("title", Title);
             writer.WriteAdditionalData(AdditionalData);

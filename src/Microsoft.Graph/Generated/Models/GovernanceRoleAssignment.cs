@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class GovernanceRoleAssignment : Entity, IParsable {
         /// <summary>The state of the assignment. The value can be Eligible for eligible assignment or Active if it is directly assigned Active by administrators, or activated on an eligible assignment by the users.</summary>
         public string AssignmentState {
@@ -75,6 +75,12 @@ namespace Microsoft.Graph.Beta.Models {
         public string SubjectId {
             get { return BackingStore?.Get<string>("subjectId"); }
             set { BackingStore?.Set("subjectId", value); }
+        }
+        /// <summary>
+        /// Instantiates a new governanceRoleAssignment and sets the default values.
+        /// </summary>
+        public GovernanceRoleAssignment() : base() {
+            OdataType = "#microsoft.graph.governanceRoleAssignment";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

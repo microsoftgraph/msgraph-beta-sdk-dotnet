@@ -49,6 +49,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("mailNotificationsEnabled"); }
             set { BackingStore?.Set("mailNotificationsEnabled", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Detailed settings for recurrence.</summary>
         public AccessReviewRecurrenceSettings RecurrenceSettings {
             get { return BackingStore?.Get<AccessReviewRecurrenceSettings>("recurrenceSettings"); }
@@ -59,18 +64,13 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("remindersEnabled"); }
             set { BackingStore?.Set("remindersEnabled", value); }
         }
-        /// <summary>The type property</summary>
-        public string Type {
-            get { return BackingStore?.Get<string>("@odata.type"); }
-            set { BackingStore?.Set("@odata.type", value); }
-        }
         /// <summary>
         /// Instantiates a new accessReviewSettings and sets the default values.
         /// </summary>
         public AccessReviewSettings() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
-            Type = "#microsoft.graph.accessReviewSettings";
+            OdataType = "#microsoft.graph.accessReviewSettings";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -97,9 +97,9 @@ namespace Microsoft.Graph.Beta.Models {
                 {"autoReviewSettings", n => { AutoReviewSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.AutoReviewSettings>(Microsoft.Graph.Beta.Models.AutoReviewSettings.CreateFromDiscriminatorValue); } },
                 {"justificationRequiredOnApproval", n => { JustificationRequiredOnApproval = n.GetBoolValue(); } },
                 {"mailNotificationsEnabled", n => { MailNotificationsEnabled = n.GetBoolValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"recurrenceSettings", n => { RecurrenceSettings = n.GetObjectValue<AccessReviewRecurrenceSettings>(AccessReviewRecurrenceSettings.CreateFromDiscriminatorValue); } },
                 {"remindersEnabled", n => { RemindersEnabled = n.GetBoolValue(); } },
-                {"@odata.type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -115,9 +115,9 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AutoReviewSettings>("autoReviewSettings", AutoReviewSettings);
             writer.WriteBoolValue("justificationRequiredOnApproval", JustificationRequiredOnApproval);
             writer.WriteBoolValue("mailNotificationsEnabled", MailNotificationsEnabled);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteObjectValue<AccessReviewRecurrenceSettings>("recurrenceSettings", RecurrenceSettings);
             writer.WriteBoolValue("remindersEnabled", RemindersEnabled);
-            writer.WriteStringValue("@odata.type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

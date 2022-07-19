@@ -174,7 +174,7 @@ namespace Microsoft.Graph.Beta.OfficeConfiguration.ClientConfigurations.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new officeClientConfigurationItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new OfficeClientConfigurationItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public OfficeClientConfigurationItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -199,7 +199,7 @@ namespace Microsoft.Graph.Beta.OfficeConfiguration.ClientConfigurations.Item {
             /// <summary>Request query parameters</summary>
             public OfficeClientConfigurationItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new OfficeClientConfigurationItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new officeClientConfigurationItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new OfficeClientConfigurationItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public OfficeClientConfigurationItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -213,7 +213,7 @@ namespace Microsoft.Graph.Beta.OfficeConfiguration.ClientConfigurations.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new officeClientConfigurationItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new OfficeClientConfigurationItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public OfficeClientConfigurationItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

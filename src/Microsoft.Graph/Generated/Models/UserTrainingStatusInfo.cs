@@ -28,6 +28,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Status of the training assigned to the user. Possible values are: unknown, assigned, inProgress, completed, overdue, unknownFutureValue.</summary>
         public Microsoft.Graph.Beta.Models.TrainingStatus? TrainingStatus {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TrainingStatus?>("trainingStatus"); }
@@ -39,6 +44,7 @@ namespace Microsoft.Graph.Beta.Models {
         public UserTrainingStatusInfo() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.userTrainingStatusInfo";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -56,6 +62,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"assignedDateTime", n => { AssignedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"completionDateTime", n => { CompletionDateTime = n.GetDateTimeOffsetValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"trainingStatus", n => { TrainingStatus = n.GetEnumValue<TrainingStatus>(); } },
             };
         }
@@ -68,6 +75,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteDateTimeOffsetValue("assignedDateTime", AssignedDateTime);
             writer.WriteDateTimeOffsetValue("completionDateTime", CompletionDateTime);
             writer.WriteStringValue("displayName", DisplayName);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteEnumValue<TrainingStatus>("trainingStatus", TrainingStatus);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -84,6 +84,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<Enablement?>("mediaLibrary"); }
             set { BackingStore?.Set("mediaLibrary", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Possible values of a property</summary>
         public Enablement? Photos {
             get { return BackingStore?.Get<Enablement?>("photos"); }
@@ -150,6 +155,7 @@ namespace Microsoft.Graph.Beta.Models {
         public MacOSPrivacyAccessControlItem() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.macOSPrivacyAccessControlItem";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -178,6 +184,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"identifier", n => { Identifier = n.GetStringValue(); } },
                 {"identifierType", n => { IdentifierType = n.GetEnumValue<MacOSProcessIdentifierType>(); } },
                 {"mediaLibrary", n => { MediaLibrary = n.GetEnumValue<Enablement>(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"photos", n => { Photos = n.GetEnumValue<Enablement>(); } },
                 {"postEvent", n => { PostEvent = n.GetEnumValue<Enablement>(); } },
                 {"reminders", n => { Reminders = n.GetEnumValue<Enablement>(); } },
@@ -212,6 +219,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("identifier", Identifier);
             writer.WriteEnumValue<MacOSProcessIdentifierType>("identifierType", IdentifierType);
             writer.WriteEnumValue<Enablement>("mediaLibrary", MediaLibrary);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteEnumValue<Enablement>("photos", Photos);
             writer.WriteEnumValue<Enablement>("postEvent", PostEvent);
             writer.WriteEnumValue<Enablement>("reminders", Reminders);

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class ManagementTemplateStep : Entity, IParsable {
         /// <summary>The acceptedVersion property</summary>
         public ManagementTemplateStepVersion AcceptedVersion {
@@ -65,6 +65,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         public List<ManagementTemplateStepVersion> Versions {
             get { return BackingStore?.Get<List<ManagementTemplateStepVersion>>("versions"); }
             set { BackingStore?.Set("versions", value); }
+        }
+        /// <summary>
+        /// Instantiates a new managementTemplateStep and sets the default values.
+        /// </summary>
+        public ManagementTemplateStep() : base() {
+            OdataType = "#microsoft.graph.managedTenants.managementTemplateStep";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

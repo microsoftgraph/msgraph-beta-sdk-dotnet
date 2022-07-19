@@ -38,6 +38,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The ID of the Teams app that is associated with the attachment. The property is specifically used to attribute a Teams message card to the specified app.</summary>
         public string TeamsAppId {
             get { return BackingStore?.Get<string>("teamsAppId"); }
@@ -54,6 +59,7 @@ namespace Microsoft.Graph.Beta.Models {
         public ChatMessageAttachment() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.chatMessageAttachment";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -73,6 +79,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"contentUrl", n => { ContentUrl = n.GetStringValue(); } },
                 {"id", n => { Id = n.GetStringValue(); } },
                 {"name", n => { Name = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"teamsAppId", n => { TeamsAppId = n.GetStringValue(); } },
                 {"thumbnailUrl", n => { ThumbnailUrl = n.GetStringValue(); } },
             };
@@ -88,6 +95,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("contentUrl", ContentUrl);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("teamsAppId", TeamsAppId);
             writer.WriteStringValue("thumbnailUrl", ThumbnailUrl);
             writer.WriteAdditionalData(AdditionalData);

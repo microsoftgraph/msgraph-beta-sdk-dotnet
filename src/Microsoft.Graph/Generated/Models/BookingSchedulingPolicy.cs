@@ -29,6 +29,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<TimeSpan?>("minimumLeadTime"); }
             set { BackingStore?.Set("minimumLeadTime", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>True to notify the business via email when a booking is created or changed. Use the email address specified in the email property of the bookingBusiness entity for the business.</summary>
         public bool? SendConfirmationsToOwner {
             get { return BackingStore?.Get<bool?>("sendConfirmationsToOwner"); }
@@ -45,6 +50,7 @@ namespace Microsoft.Graph.Beta.Models {
         public BookingSchedulingPolicy() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.bookingSchedulingPolicy";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -62,6 +68,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"allowStaffSelection", n => { AllowStaffSelection = n.GetBoolValue(); } },
                 {"maximumAdvance", n => { MaximumAdvance = n.GetTimeSpanValue(); } },
                 {"minimumLeadTime", n => { MinimumLeadTime = n.GetTimeSpanValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"sendConfirmationsToOwner", n => { SendConfirmationsToOwner = n.GetBoolValue(); } },
                 {"timeSlotInterval", n => { TimeSlotInterval = n.GetTimeSpanValue(); } },
             };
@@ -75,6 +82,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteBoolValue("allowStaffSelection", AllowStaffSelection);
             writer.WriteTimeSpanValue("maximumAdvance", MaximumAdvance);
             writer.WriteTimeSpanValue("minimumLeadTime", MinimumLeadTime);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteBoolValue("sendConfirmationsToOwner", SendConfirmationsToOwner);
             writer.WriteTimeSpanValue("timeSlotInterval", TimeSlotInterval);
             writer.WriteAdditionalData(AdditionalData);

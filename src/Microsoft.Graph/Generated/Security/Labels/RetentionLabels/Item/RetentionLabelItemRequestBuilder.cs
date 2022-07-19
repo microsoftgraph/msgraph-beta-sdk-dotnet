@@ -164,7 +164,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.RetentionLabels.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new retentionLabelItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new RetentionLabelItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public RetentionLabelItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -189,7 +189,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.RetentionLabels.Item {
             /// <summary>Request query parameters</summary>
             public RetentionLabelItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new RetentionLabelItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new retentionLabelItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new RetentionLabelItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public RetentionLabelItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -203,7 +203,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.RetentionLabels.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new retentionLabelItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new RetentionLabelItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public RetentionLabelItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

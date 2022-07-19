@@ -19,6 +19,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<DeviceManagementUserRightsLocalUserOrGroup>>("localUsersOrGroups"); }
             set { BackingStore?.Set("localUsersOrGroups", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>State Management Setting.</summary>
         public StateManagementSetting? State {
             get { return BackingStore?.Get<StateManagementSetting?>("state"); }
@@ -30,6 +35,7 @@ namespace Microsoft.Graph.Beta.Models {
         public DeviceManagementUserRightsSetting() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.deviceManagementUserRightsSetting";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -45,6 +51,7 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"localUsersOrGroups", n => { LocalUsersOrGroups = n.GetCollectionOfObjectValues<DeviceManagementUserRightsLocalUserOrGroup>(DeviceManagementUserRightsLocalUserOrGroup.CreateFromDiscriminatorValue).ToList(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"state", n => { State = n.GetEnumValue<StateManagementSetting>(); } },
             };
         }
@@ -55,6 +62,7 @@ namespace Microsoft.Graph.Beta.Models {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<DeviceManagementUserRightsLocalUserOrGroup>("localUsersOrGroups", LocalUsersOrGroups);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteEnumValue<StateManagementSetting>("state", State);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.ScopedRoleMemberships {
     /// <summary>Provides operations to manage the collection of scopedRoleMembership entities.</summary>
     public class ScopedRoleMembershipsRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

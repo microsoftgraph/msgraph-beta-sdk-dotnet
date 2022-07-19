@@ -4,11 +4,18 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class PrintUsageByPrinter : PrintUsage, IParsable {
         /// <summary>The printerId property</summary>
         public string PrinterId {
             get { return BackingStore?.Get<string>("printerId"); }
             set { BackingStore?.Set("printerId", value); }
+        }
+        /// <summary>
+        /// Instantiates a new printUsageByPrinter and sets the default values.
+        /// </summary>
+        public PrintUsageByPrinter() : base() {
+            OdataType = "#microsoft.graph.printUsageByPrinter";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

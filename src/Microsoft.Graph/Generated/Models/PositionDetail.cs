@@ -34,6 +34,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("jobTitle"); }
             set { BackingStore?.Set("jobTitle", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The role the position entailed.</summary>
         public string Role {
             get { return BackingStore?.Get<string>("role"); }
@@ -55,6 +60,7 @@ namespace Microsoft.Graph.Beta.Models {
         public PositionDetail() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.positionDetail";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -73,6 +79,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"endMonthYear", n => { EndMonthYear = n.GetDateValue(); } },
                 {"jobTitle", n => { JobTitle = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"role", n => { Role = n.GetStringValue(); } },
                 {"startMonthYear", n => { StartMonthYear = n.GetDateValue(); } },
                 {"summary", n => { Summary = n.GetStringValue(); } },
@@ -88,6 +95,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("description", Description);
             writer.WriteDateValue("endMonthYear", EndMonthYear);
             writer.WriteStringValue("jobTitle", JobTitle);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("role", Role);
             writer.WriteDateValue("startMonthYear", StartMonthYear);
             writer.WriteStringValue("summary", Summary);

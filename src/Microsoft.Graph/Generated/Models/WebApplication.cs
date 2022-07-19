@@ -33,6 +33,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("oauth2AllowImplicitFlow"); }
             set { BackingStore?.Set("oauth2AllowImplicitFlow", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Specifies the URLs where user tokens are sent for sign-in, or the redirect URIs where OAuth 2.0 authorization codes and access tokens are sent.</summary>
         public List<string> RedirectUris {
             get { return BackingStore?.Get<List<string>>("redirectUris"); }
@@ -49,6 +54,7 @@ namespace Microsoft.Graph.Beta.Models {
         public WebApplication() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.webApplication";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -67,6 +73,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"implicitGrantSettings", n => { ImplicitGrantSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.ImplicitGrantSettings>(Microsoft.Graph.Beta.Models.ImplicitGrantSettings.CreateFromDiscriminatorValue); } },
                 {"logoutUrl", n => { LogoutUrl = n.GetStringValue(); } },
                 {"oauth2AllowImplicitFlow", n => { Oauth2AllowImplicitFlow = n.GetBoolValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"redirectUris", n => { RedirectUris = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"redirectUriSettings", n => { RedirectUriSettings = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.RedirectUriSettings>(Microsoft.Graph.Beta.Models.RedirectUriSettings.CreateFromDiscriminatorValue).ToList(); } },
             };
@@ -81,6 +88,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ImplicitGrantSettings>("implicitGrantSettings", ImplicitGrantSettings);
             writer.WriteStringValue("logoutUrl", LogoutUrl);
             writer.WriteBoolValue("oauth2AllowImplicitFlow", Oauth2AllowImplicitFlow);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteCollectionOfPrimitiveValues<string>("redirectUris", RedirectUris);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.RedirectUriSettings>("redirectUriSettings", RedirectUriSettings);
             writer.WriteAdditionalData(AdditionalData);

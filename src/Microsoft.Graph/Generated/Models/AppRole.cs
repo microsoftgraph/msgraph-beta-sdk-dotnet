@@ -38,6 +38,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("isEnabled"); }
             set { BackingStore?.Set("isEnabled", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Specifies if the app role is defined on the application object or on the servicePrincipal entity. Must not be included in any POST or PATCH requests. Read-only.</summary>
         public string Origin {
             get { return BackingStore?.Get<string>("origin"); }
@@ -54,6 +59,7 @@ namespace Microsoft.Graph.Beta.Models {
         public AppRole() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.appRole";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -73,6 +79,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"id", n => { Id = n.GetStringValue(); } },
                 {"isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"origin", n => { Origin = n.GetStringValue(); } },
                 {"value", n => { Value = n.GetStringValue(); } },
             };
@@ -88,6 +95,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("isEnabled", IsEnabled);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("origin", Origin);
             writer.WriteStringValue("value", Value);
             writer.WriteAdditionalData(AdditionalData);

@@ -164,7 +164,7 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.Languages.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new userFlowLanguageConfigurationItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new UserFlowLanguageConfigurationItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public UserFlowLanguageConfigurationItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -189,7 +189,7 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.Languages.Item {
             /// <summary>Request query parameters</summary>
             public UserFlowLanguageConfigurationItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new UserFlowLanguageConfigurationItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new userFlowLanguageConfigurationItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new UserFlowLanguageConfigurationItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public UserFlowLanguageConfigurationItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -203,7 +203,7 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.Languages.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new userFlowLanguageConfigurationItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new UserFlowLanguageConfigurationItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public UserFlowLanguageConfigurationItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

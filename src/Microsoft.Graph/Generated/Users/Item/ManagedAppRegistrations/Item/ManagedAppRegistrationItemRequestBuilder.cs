@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedAppRegistrations.Item {
             /// <summary>Request query parameters</summary>
             public ManagedAppRegistrationItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new ManagedAppRegistrationItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new managedAppRegistrationItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new ManagedAppRegistrationItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public ManagedAppRegistrationItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();

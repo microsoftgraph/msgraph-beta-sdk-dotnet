@@ -33,6 +33,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("listId"); }
             set { BackingStore?.Set("listId", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>If specified, this column is a secondary lookup, pulling an additional field from the list item looked up by the primary lookup. Use the list item looked up by the primary as the source for the column named here.</summary>
         public string PrimaryLookupColumnId {
             get { return BackingStore?.Get<string>("primaryLookupColumnId"); }
@@ -44,6 +49,7 @@ namespace Microsoft.Graph.Beta.Models {
         public LookupColumn() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.lookupColumn";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -62,6 +68,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"allowUnlimitedLength", n => { AllowUnlimitedLength = n.GetBoolValue(); } },
                 {"columnName", n => { ColumnName = n.GetStringValue(); } },
                 {"listId", n => { ListId = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"primaryLookupColumnId", n => { PrimaryLookupColumnId = n.GetStringValue(); } },
             };
         }
@@ -75,6 +82,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteBoolValue("allowUnlimitedLength", AllowUnlimitedLength);
             writer.WriteStringValue("columnName", ColumnName);
             writer.WriteStringValue("listId", ListId);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("primaryLookupColumnId", PrimaryLookupColumnId);
             writer.WriteAdditionalData(AdditionalData);
         }

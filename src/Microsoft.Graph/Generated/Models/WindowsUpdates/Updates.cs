@@ -15,7 +15,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
             get { return BackingStore?.Get<List<Deployment>>("deployments"); }
             set { BackingStore?.Set("deployments", value); }
         }
-        /// <summary>The resourceConnections property</summary>
+        /// <summary>Service connections to external resources such as analytics workspaces.</summary>
         public List<ResourceConnection> ResourceConnections {
             get { return BackingStore?.Get<List<ResourceConnection>>("resourceConnections"); }
             set { BackingStore?.Set("resourceConnections", value); }
@@ -24,6 +24,12 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         public List<UpdatableAsset> UpdatableAssets {
             get { return BackingStore?.Get<List<UpdatableAsset>>("updatableAssets"); }
             set { BackingStore?.Set("updatableAssets", value); }
+        }
+        /// <summary>
+        /// Instantiates a new updates and sets the default values.
+        /// </summary>
+        public Updates() : base() {
+            OdataType = "#microsoft.graph.windowsUpdates.updates";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -70,7 +70,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new unifiedRoleScheduleBase and sets the default values.
         /// </summary>
         public UnifiedRoleScheduleBase() : base() {
-            Type = "#microsoft.graph.unifiedRoleScheduleBase";
+            OdataType = "#microsoft.graph.unifiedRoleScheduleBase";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

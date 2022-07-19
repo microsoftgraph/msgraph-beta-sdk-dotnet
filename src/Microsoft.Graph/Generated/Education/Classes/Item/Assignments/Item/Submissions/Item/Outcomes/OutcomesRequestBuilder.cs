@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Submissions.Item.Outcomes {
     /// <summary>Provides operations to manage the outcomes property of the microsoft.graph.educationSubmission entity.</summary>
     public class OutcomesRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

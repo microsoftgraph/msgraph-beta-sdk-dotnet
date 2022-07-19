@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new privilegedAccessItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new PrivilegedAccessItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public PrivilegedAccessItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -204,7 +204,7 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item {
             /// <summary>Request query parameters</summary>
             public PrivilegedAccessItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new PrivilegedAccessItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new privilegedAccessItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new PrivilegedAccessItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public PrivilegedAccessItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -218,7 +218,7 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new privilegedAccessItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new PrivilegedAccessItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public PrivilegedAccessItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

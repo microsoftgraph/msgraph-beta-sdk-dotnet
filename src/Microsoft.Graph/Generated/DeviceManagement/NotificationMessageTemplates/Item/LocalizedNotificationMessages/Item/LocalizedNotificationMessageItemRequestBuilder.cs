@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.NotificationMessageTemplates.Ite
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new localizedNotificationMessageItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new LocalizedNotificationMessageItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public LocalizedNotificationMessageItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.NotificationMessageTemplates.Ite
             /// <summary>Request query parameters</summary>
             public LocalizedNotificationMessageItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new LocalizedNotificationMessageItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new localizedNotificationMessageItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new LocalizedNotificationMessageItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public LocalizedNotificationMessageItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.NotificationMessageTemplates.Ite
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new localizedNotificationMessageItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new LocalizedNotificationMessageItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public LocalizedNotificationMessageItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

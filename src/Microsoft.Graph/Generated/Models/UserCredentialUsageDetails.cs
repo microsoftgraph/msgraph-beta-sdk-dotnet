@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class UserCredentialUsageDetails : Entity, IParsable {
         /// <summary>The authMethod property</summary>
         public UsageAuthMethod? AuthMethod {
@@ -40,6 +39,12 @@ namespace Microsoft.Graph.Beta.Models {
         public string UserPrincipalName {
             get { return BackingStore?.Get<string>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
+        }
+        /// <summary>
+        /// Instantiates a new UserCredentialUsageDetails and sets the default values.
+        /// </summary>
+        public UserCredentialUsageDetails() : base() {
+            OdataType = "#microsoft.graph.userCredentialUsageDetails";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

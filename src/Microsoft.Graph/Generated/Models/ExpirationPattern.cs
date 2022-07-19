@@ -23,6 +23,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DateTimeOffset?>("endDateTime"); }
             set { BackingStore?.Set("endDateTime", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The requestor&apos;s desired expiration pattern type.</summary>
         public ExpirationPatternType? Type {
             get { return BackingStore?.Get<ExpirationPatternType?>("type"); }
@@ -34,6 +39,7 @@ namespace Microsoft.Graph.Beta.Models {
         public ExpirationPattern() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.expirationPattern";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -50,6 +56,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"duration", n => { Duration = n.GetTimeSpanValue(); } },
                 {"endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"type", n => { Type = n.GetEnumValue<ExpirationPatternType>(); } },
             };
         }
@@ -61,6 +68,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteTimeSpanValue("duration", Duration);
             writer.WriteDateTimeOffsetValue("endDateTime", EndDateTime);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteEnumValue<ExpirationPatternType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }

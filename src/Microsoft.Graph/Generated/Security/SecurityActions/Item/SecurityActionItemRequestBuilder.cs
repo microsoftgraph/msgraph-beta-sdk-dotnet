@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.Security.SecurityActions.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new securityActionItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new SecurityActionItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public SecurityActionItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -184,7 +184,7 @@ namespace Microsoft.Graph.Beta.Security.SecurityActions.Item {
             /// <summary>Request query parameters</summary>
             public SecurityActionItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new SecurityActionItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new securityActionItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new SecurityActionItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public SecurityActionItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -198,7 +198,7 @@ namespace Microsoft.Graph.Beta.Security.SecurityActions.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new securityActionItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new SecurityActionItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public SecurityActionItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

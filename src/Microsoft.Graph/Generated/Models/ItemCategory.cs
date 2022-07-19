@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class ItemCategory : Entity, IParsable {
         /// <summary>The code property</summary>
         public string Code {
@@ -20,6 +19,12 @@ namespace Microsoft.Graph.Beta.Models {
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
+        }
+        /// <summary>
+        /// Instantiates a new ItemCategory and sets the default values.
+        /// </summary>
+        public ItemCategory() : base() {
+            OdataType = "#microsoft.graph.itemCategory";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

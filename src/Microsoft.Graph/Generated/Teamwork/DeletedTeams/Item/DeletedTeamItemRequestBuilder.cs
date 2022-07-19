@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new deletedTeamItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new DeletedTeamItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public DeletedTeamItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -184,7 +184,7 @@ namespace Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item {
             /// <summary>Request query parameters</summary>
             public DeletedTeamItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new DeletedTeamItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new deletedTeamItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new DeletedTeamItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public DeletedTeamItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -198,7 +198,7 @@ namespace Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new deletedTeamItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new DeletedTeamItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public DeletedTeamItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

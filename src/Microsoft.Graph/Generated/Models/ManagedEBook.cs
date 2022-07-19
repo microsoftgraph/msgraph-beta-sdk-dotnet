@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new managedEBook and sets the default values.
         /// </summary>
         public ManagedEBook() : base() {
-            Type = "#microsoft.graph.managedEBook";
+            OdataType = "#microsoft.graph.managedEBook";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

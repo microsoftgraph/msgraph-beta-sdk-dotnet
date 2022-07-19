@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new cloudPcSnapshotItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new CloudPcSnapshotItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public CloudPcSnapshotItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.Item {
             /// <summary>Request query parameters</summary>
             public CloudPcSnapshotItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new CloudPcSnapshotItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new cloudPcSnapshotItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new CloudPcSnapshotItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public CloudPcSnapshotItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new cloudPcSnapshotItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new CloudPcSnapshotItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public CloudPcSnapshotItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

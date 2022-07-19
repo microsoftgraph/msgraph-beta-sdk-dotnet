@@ -169,7 +169,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.Journals.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new journalItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new JournalItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public JournalItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -194,7 +194,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.Journals.Item {
             /// <summary>Request query parameters</summary>
             public JournalItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new JournalItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new journalItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new JournalItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public JournalItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -208,7 +208,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.Journals.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new journalItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new JournalItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public JournalItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

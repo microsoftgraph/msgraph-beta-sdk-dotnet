@@ -169,7 +169,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.LegalHolds.Item 
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new legalHoldItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new LegalHoldItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public LegalHoldItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -194,7 +194,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.LegalHolds.Item 
             /// <summary>Request query parameters</summary>
             public LegalHoldItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new LegalHoldItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new legalHoldItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new LegalHoldItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public LegalHoldItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -208,7 +208,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.LegalHolds.Item 
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new legalHoldItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new LegalHoldItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public LegalHoldItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

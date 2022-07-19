@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ChromeOSOnboardingSettings.Item 
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new chromeOSOnboardingSettingsItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new ChromeOSOnboardingSettingsItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public ChromeOSOnboardingSettingsItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ChromeOSOnboardingSettings.Item 
             /// <summary>Request query parameters</summary>
             public ChromeOSOnboardingSettingsItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new ChromeOSOnboardingSettingsItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new chromeOSOnboardingSettingsItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new ChromeOSOnboardingSettingsItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public ChromeOSOnboardingSettingsItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ChromeOSOnboardingSettings.Item 
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new chromeOSOnboardingSettingsItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new ChromeOSOnboardingSettingsItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public ChromeOSOnboardingSettingsItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

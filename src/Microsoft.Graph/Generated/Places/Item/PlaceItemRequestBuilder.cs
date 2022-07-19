@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.Places.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new placeItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new PlaceItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public PlaceItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -184,7 +184,7 @@ namespace Microsoft.Graph.Beta.Places.Item {
             /// <summary>Request query parameters</summary>
             public PlaceItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new PlaceItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new placeItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new PlaceItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public PlaceItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -198,7 +198,7 @@ namespace Microsoft.Graph.Beta.Places.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new placeItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new PlaceItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public PlaceItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

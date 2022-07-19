@@ -184,7 +184,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCustomAttributeShellScript
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new deviceCustomAttributeShellScriptItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceCustomAttributeShellScriptItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceCustomAttributeShellScriptItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -209,7 +209,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCustomAttributeShellScript
             /// <summary>Request query parameters</summary>
             public DeviceCustomAttributeShellScriptItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new DeviceCustomAttributeShellScriptItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new deviceCustomAttributeShellScriptItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceCustomAttributeShellScriptItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceCustomAttributeShellScriptItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -223,7 +223,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCustomAttributeShellScript
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new deviceCustomAttributeShellScriptItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceCustomAttributeShellScriptItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceCustomAttributeShellScriptItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

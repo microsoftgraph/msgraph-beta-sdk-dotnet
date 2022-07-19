@@ -15,7 +15,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new EncryptContent and sets the default values.
         /// </summary>
         public EncryptContent() : base() {
-            Type = "#microsoft.graph.encryptContent";
+            OdataType = "#microsoft.graph.encryptContent";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

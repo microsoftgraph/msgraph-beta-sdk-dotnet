@@ -18,6 +18,11 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The signal to monitor. Possible values are: rollback, unknownFutureValue.</summary>
         public MonitoringSignal? Signal {
             get { return BackingStore?.Get<MonitoringSignal?>("signal"); }
@@ -34,6 +39,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         public MonitoringRule() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.windowsUpdates.monitoringRule";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -49,6 +55,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"action", n => { Action = n.GetEnumValue<MonitoringAction>(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"signal", n => { Signal = n.GetEnumValue<MonitoringSignal>(); } },
                 {"threshold", n => { Threshold = n.GetIntValue(); } },
             };
@@ -60,6 +67,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<MonitoringAction>("action", Action);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteEnumValue<MonitoringSignal>("signal", Signal);
             writer.WriteIntValue("threshold", Threshold);
             writer.WriteAdditionalData(AdditionalData);

@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Me.AppRoleAssignments {
     /// <summary>Provides operations to manage the appRoleAssignments property of the microsoft.graph.user entity.</summary>
     public class AppRoleAssignmentsRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

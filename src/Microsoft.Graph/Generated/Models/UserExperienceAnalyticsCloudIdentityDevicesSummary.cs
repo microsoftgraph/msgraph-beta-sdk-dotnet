@@ -19,12 +19,18 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<int?>("deviceWithoutCloudIdentityCount"); }
             set { BackingStore?.Set("deviceWithoutCloudIdentityCount", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>
         /// Instantiates a new userExperienceAnalyticsCloudIdentityDevicesSummary and sets the default values.
         /// </summary>
         public UserExperienceAnalyticsCloudIdentityDevicesSummary() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.userExperienceAnalyticsCloudIdentityDevicesSummary";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -40,6 +46,7 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"deviceWithoutCloudIdentityCount", n => { DeviceWithoutCloudIdentityCount = n.GetIntValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -49,6 +56,7 @@ namespace Microsoft.Graph.Beta.Models {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("deviceWithoutCloudIdentityCount", DeviceWithoutCloudIdentityCount);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

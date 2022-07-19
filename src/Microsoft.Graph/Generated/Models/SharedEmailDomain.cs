@@ -4,12 +4,17 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class SharedEmailDomain : Entity, IParsable {
         /// <summary>The provisioningStatus property</summary>
         public string ProvisioningStatus {
             get { return BackingStore?.Get<string>("provisioningStatus"); }
             set { BackingStore?.Set("provisioningStatus", value); }
+        }
+        /// <summary>
+        /// Instantiates a new SharedEmailDomain and sets the default values.
+        /// </summary>
+        public SharedEmailDomain() : base() {
+            OdataType = "#microsoft.graph.sharedEmailDomain";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

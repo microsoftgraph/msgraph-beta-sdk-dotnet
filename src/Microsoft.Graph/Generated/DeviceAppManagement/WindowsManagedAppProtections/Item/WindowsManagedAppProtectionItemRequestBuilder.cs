@@ -174,7 +174,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.WindowsManagedAppProtections.
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new windowsManagedAppProtectionItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new WindowsManagedAppProtectionItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public WindowsManagedAppProtectionItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -199,7 +199,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.WindowsManagedAppProtections.
             /// <summary>Request query parameters</summary>
             public WindowsManagedAppProtectionItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new WindowsManagedAppProtectionItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new windowsManagedAppProtectionItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new WindowsManagedAppProtectionItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public WindowsManagedAppProtectionItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -213,7 +213,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.WindowsManagedAppProtections.
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new windowsManagedAppProtectionItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new WindowsManagedAppProtectionItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public WindowsManagedAppProtectionItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Ediscovery {
-    /// <summary>Provides operations to manage the compliance singleton.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class NoncustodialDataSource : DataSourceContainer, IParsable {
         /// <summary>Indicates if hold is applied to non-custodial data source (such as mailbox or site).</summary>
         public bool? ApplyHoldToSource {
@@ -15,6 +15,12 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
         public Microsoft.Graph.Beta.Models.Ediscovery.DataSource DataSource {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Ediscovery.DataSource>("dataSource"); }
             set { BackingStore?.Set("dataSource", value); }
+        }
+        /// <summary>
+        /// Instantiates a new noncustodialDataSource and sets the default values.
+        /// </summary>
+        public NoncustodialDataSource() : base() {
+            OdataType = "#microsoft.graph.ediscovery.noncustodialDataSource";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -17,7 +17,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Directory.FeatureRolloutPolicies.Item.AppliesTo {
     /// <summary>Provides operations to manage the appliesTo property of the microsoft.graph.featureRolloutPolicy entity.</summary>
     public class AppliesToRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -31,7 +31,7 @@ namespace Microsoft.Graph.Beta.Directory.FeatureRolloutPolicies.Item.AppliesTo {
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>The ref property</summary>
+        /// <summary>The Ref property</summary>
         public RefRequestBuilder Ref { get =>
             new RefRequestBuilder(PathParameters, RequestAdapter);
         }

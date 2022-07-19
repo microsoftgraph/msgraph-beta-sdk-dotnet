@@ -169,7 +169,7 @@ namespace Microsoft.Graph.Beta.Print.Shares.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new printerShareItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new PrinterShareItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public PrinterShareItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -194,7 +194,7 @@ namespace Microsoft.Graph.Beta.Print.Shares.Item {
             /// <summary>Request query parameters</summary>
             public PrinterShareItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new PrinterShareItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new printerShareItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new PrinterShareItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public PrinterShareItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -208,7 +208,7 @@ namespace Microsoft.Graph.Beta.Print.Shares.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new printerShareItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new PrinterShareItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public PrinterShareItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

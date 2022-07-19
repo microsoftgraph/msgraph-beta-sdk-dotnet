@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class ColumnDefinition : Entity, IParsable {
         /// <summary>This column stores boolean values.</summary>
         public BooleanColumn Boolean {
@@ -156,10 +156,21 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<ThumbnailColumn>("thumbnail"); }
             set { BackingStore?.Set("thumbnail", value); }
         }
+        /// <summary>For site columns, the type of column. Read-only.</summary>
+        public ColumnTypes? Type {
+            get { return BackingStore?.Get<ColumnTypes?>("type"); }
+            set { BackingStore?.Set("type", value); }
+        }
         /// <summary>This column stores validation formula and message for the column.</summary>
         public ColumnValidation Validation {
             get { return BackingStore?.Get<ColumnValidation>("validation"); }
             set { BackingStore?.Set("validation", value); }
+        }
+        /// <summary>
+        /// Instantiates a new columnDefinition and sets the default values.
+        /// </summary>
+        public ColumnDefinition() : base() {
+            OdataType = "#microsoft.graph.columnDefinition";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -204,6 +215,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"term", n => { Term = n.GetObjectValue<TermColumn>(TermColumn.CreateFromDiscriminatorValue); } },
                 {"text", n => { Text = n.GetObjectValue<TextColumn>(TextColumn.CreateFromDiscriminatorValue); } },
                 {"thumbnail", n => { Thumbnail = n.GetObjectValue<ThumbnailColumn>(ThumbnailColumn.CreateFromDiscriminatorValue); } },
+                {"type", n => { Type = n.GetEnumValue<ColumnTypes>(); } },
                 {"validation", n => { Validation = n.GetObjectValue<ColumnValidation>(ColumnValidation.CreateFromDiscriminatorValue); } },
             };
         }
@@ -244,6 +256,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteObjectValue<TermColumn>("term", Term);
             writer.WriteObjectValue<TextColumn>("text", Text);
             writer.WriteObjectValue<ThumbnailColumn>("thumbnail", Thumbnail);
+            writer.WriteEnumValue<ColumnTypes>("type", Type);
             writer.WriteObjectValue<ColumnValidation>("validation", Validation);
         }
     }

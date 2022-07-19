@@ -6,6 +6,12 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class DeviceHealthScriptHourlySchedule : DeviceHealthScriptRunSchedule, IParsable {
         /// <summary>
+        /// Instantiates a new DeviceHealthScriptHourlySchedule and sets the default values.
+        /// </summary>
+        public DeviceHealthScriptHourlySchedule() : base() {
+            OdataType = "#microsoft.graph.deviceHealthScriptHourlySchedule";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

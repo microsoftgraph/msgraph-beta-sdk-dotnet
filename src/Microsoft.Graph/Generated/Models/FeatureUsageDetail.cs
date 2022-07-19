@@ -38,12 +38,18 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<AzureADLicenseType?>("licenseRequired"); }
             set { BackingStore?.Set("licenseRequired", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>
         /// Instantiates a new featureUsageDetail and sets the default values.
         /// </summary>
         public FeatureUsageDetail() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.featureUsageDetail";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -63,6 +69,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"lastUsedDateTime", n => { LastUsedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"licenseAssigned", n => { LicenseAssigned = n.GetEnumValue<AzureADLicenseType>(); } },
                 {"licenseRequired", n => { LicenseRequired = n.GetEnumValue<AzureADLicenseType>(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -76,6 +83,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteDateTimeOffsetValue("lastUsedDateTime", LastUsedDateTime);
             writer.WriteEnumValue<AzureADLicenseType>("licenseAssigned", LicenseAssigned);
             writer.WriteEnumValue<AzureADLicenseType>("licenseRequired", LicenseRequired);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

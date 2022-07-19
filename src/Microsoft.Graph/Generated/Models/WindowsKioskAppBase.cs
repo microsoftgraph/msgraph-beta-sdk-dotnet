@@ -30,15 +30,15 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The tile size of Windows app in the start layout.</summary>
         public WindowsAppStartLayoutTileSize? StartLayoutTileSize {
             get { return BackingStore?.Get<WindowsAppStartLayoutTileSize?>("startLayoutTileSize"); }
             set { BackingStore?.Set("startLayoutTileSize", value); }
-        }
-        /// <summary>The type property</summary>
-        public string Type {
-            get { return BackingStore?.Get<string>("@odata.type"); }
-            set { BackingStore?.Set("@odata.type", value); }
         }
         /// <summary>
         /// Instantiates a new windowsKioskAppBase and sets the default values.
@@ -46,7 +46,7 @@ namespace Microsoft.Graph.Beta.Models {
         public WindowsKioskAppBase() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
-            Type = "#microsoft.graph.windowsKioskAppBase";
+            OdataType = "#microsoft.graph.windowsKioskAppBase";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -71,8 +71,8 @@ namespace Microsoft.Graph.Beta.Models {
                 {"appType", n => { AppType = n.GetEnumValue<WindowsKioskAppType>(); } },
                 {"autoLaunch", n => { AutoLaunch = n.GetBoolValue(); } },
                 {"name", n => { Name = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"startLayoutTileSize", n => { StartLayoutTileSize = n.GetEnumValue<WindowsAppStartLayoutTileSize>(); } },
-                {"@odata.type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -84,8 +84,8 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteEnumValue<WindowsKioskAppType>("appType", AppType);
             writer.WriteBoolValue("autoLaunch", AutoLaunch);
             writer.WriteStringValue("name", Name);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteEnumValue<WindowsAppStartLayoutTileSize>("startLayoutTileSize", StartLayoutTileSize);
-            writer.WriteStringValue("@odata.type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

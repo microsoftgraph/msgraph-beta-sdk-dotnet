@@ -43,6 +43,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<MoveAction>("move"); }
             set { BackingStore?.Set("move", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>An item was renamed.</summary>
         public RenameAction Rename {
             get { return BackingStore?.Get<RenameAction>("rename"); }
@@ -69,6 +74,7 @@ namespace Microsoft.Graph.Beta.Models {
         public ItemActionSet() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.itemActionSet";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -89,6 +95,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"edit", n => { Edit = n.GetObjectValue<EditAction>(EditAction.CreateFromDiscriminatorValue); } },
                 {"mention", n => { Mention = n.GetObjectValue<MentionAction>(MentionAction.CreateFromDiscriminatorValue); } },
                 {"move", n => { Move = n.GetObjectValue<MoveAction>(MoveAction.CreateFromDiscriminatorValue); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"rename", n => { Rename = n.GetObjectValue<RenameAction>(RenameAction.CreateFromDiscriminatorValue); } },
                 {"restore", n => { Restore = n.GetObjectValue<RestoreAction>(RestoreAction.CreateFromDiscriminatorValue); } },
                 {"share", n => { Share = n.GetObjectValue<ShareAction>(ShareAction.CreateFromDiscriminatorValue); } },
@@ -107,6 +114,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteObjectValue<EditAction>("edit", Edit);
             writer.WriteObjectValue<MentionAction>("mention", Mention);
             writer.WriteObjectValue<MoveAction>("move", Move);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteObjectValue<RenameAction>("rename", Rename);
             writer.WriteObjectValue<RestoreAction>("restore", Restore);
             writer.WriteObjectValue<ShareAction>("share", Share);

@@ -37,6 +37,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("presentationValues", value); }
         }
         /// <summary>
+        /// Instantiates a new groupPolicyDefinitionValue and sets the default values.
+        /// </summary>
+        public GroupPolicyDefinitionValue() : base() {
+            OdataType = "#microsoft.graph.groupPolicyDefinitionValue";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

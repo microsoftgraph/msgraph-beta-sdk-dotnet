@@ -11,6 +11,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("ediscoveryCases", value); }
         }
         /// <summary>
+        /// Instantiates a new casesRoot and sets the default values.
+        /// </summary>
+        public CasesRoot() : base() {
+            OdataType = "#microsoft.graph.security.casesRoot";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

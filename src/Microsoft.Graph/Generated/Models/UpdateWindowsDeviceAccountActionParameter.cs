@@ -33,6 +33,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("exchangeServer"); }
             set { BackingStore?.Set("exchangeServer", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Not yet documented</summary>
         public bool? PasswordRotationEnabled {
             get { return BackingStore?.Get<bool?>("passwordRotationEnabled"); }
@@ -49,6 +54,7 @@ namespace Microsoft.Graph.Beta.Models {
         public UpdateWindowsDeviceAccountActionParameter() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.updateWindowsDeviceAccountActionParameter";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -67,6 +73,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"deviceAccount", n => { DeviceAccount = n.GetObjectValue<WindowsDeviceAccount>(WindowsDeviceAccount.CreateFromDiscriminatorValue); } },
                 {"deviceAccountEmail", n => { DeviceAccountEmail = n.GetStringValue(); } },
                 {"exchangeServer", n => { ExchangeServer = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"passwordRotationEnabled", n => { PasswordRotationEnabled = n.GetBoolValue(); } },
                 {"sessionInitiationProtocalAddress", n => { SessionInitiationProtocalAddress = n.GetStringValue(); } },
             };
@@ -81,6 +88,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteObjectValue<WindowsDeviceAccount>("deviceAccount", DeviceAccount);
             writer.WriteStringValue("deviceAccountEmail", DeviceAccountEmail);
             writer.WriteStringValue("exchangeServer", ExchangeServer);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteBoolValue("passwordRotationEnabled", PasswordRotationEnabled);
             writer.WriteStringValue("sessionInitiationProtocalAddress", SessionInitiationProtocalAddress);
             writer.WriteAdditionalData(AdditionalData);

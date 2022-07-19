@@ -169,7 +169,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.ReviewSets.Item 
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new reviewSetItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new ReviewSetItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public ReviewSetItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -194,7 +194,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.ReviewSets.Item 
             /// <summary>Request query parameters</summary>
             public ReviewSetItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new ReviewSetItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new reviewSetItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new ReviewSetItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public ReviewSetItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -208,7 +208,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.ReviewSets.Item 
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new reviewSetItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new ReviewSetItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public ReviewSetItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

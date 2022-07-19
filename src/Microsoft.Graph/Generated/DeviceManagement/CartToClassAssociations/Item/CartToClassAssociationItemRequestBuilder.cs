@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.CartToClassAssociations.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new cartToClassAssociationItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new CartToClassAssociationItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public CartToClassAssociationItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.CartToClassAssociations.Item {
             /// <summary>Request query parameters</summary>
             public CartToClassAssociationItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new CartToClassAssociationItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new cartToClassAssociationItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new CartToClassAssociationItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public CartToClassAssociationItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.CartToClassAssociations.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new cartToClassAssociationItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new CartToClassAssociationItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public CartToClassAssociationItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

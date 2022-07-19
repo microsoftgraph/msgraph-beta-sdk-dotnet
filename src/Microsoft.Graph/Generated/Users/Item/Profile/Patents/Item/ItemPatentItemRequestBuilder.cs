@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Patents.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new itemPatentItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new ItemPatentItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public ItemPatentItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Patents.Item {
             /// <summary>Request query parameters</summary>
             public ItemPatentItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new ItemPatentItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new itemPatentItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new ItemPatentItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public ItemPatentItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Patents.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new itemPatentItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new ItemPatentItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public ItemPatentItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

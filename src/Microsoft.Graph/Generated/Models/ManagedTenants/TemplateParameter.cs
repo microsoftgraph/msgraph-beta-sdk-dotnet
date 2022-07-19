@@ -33,6 +33,11 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
             get { return BackingStore?.Get<string>("jsonDefaultValue"); }
             set { BackingStore?.Set("jsonDefaultValue", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The valueType property</summary>
         public ManagementParameterValueType? ValueType {
             get { return BackingStore?.Get<ManagementParameterValueType?>("valueType"); }
@@ -44,6 +49,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         public TemplateParameter() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.managedTenants.templateParameter";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -62,6 +68,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"jsonAllowedValues", n => { JsonAllowedValues = n.GetStringValue(); } },
                 {"jsonDefaultValue", n => { JsonDefaultValue = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"valueType", n => { ValueType = n.GetEnumValue<ManagementParameterValueType>(); } },
             };
         }
@@ -75,6 +82,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("jsonAllowedValues", JsonAllowedValues);
             writer.WriteStringValue("jsonDefaultValue", JsonDefaultValue);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteEnumValue<ManagementParameterValueType>("valueType", ValueType);
             writer.WriteAdditionalData(AdditionalData);
         }

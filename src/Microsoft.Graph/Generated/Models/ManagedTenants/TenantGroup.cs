@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class TenantGroup : Entity, IParsable {
         /// <summary>A flag indicating whether all managed tenant are included in the tenant group. Required. Read-only.</summary>
         public bool? AllTenantsIncluded {
@@ -30,6 +30,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         public List<string> TenantIds {
             get { return BackingStore?.Get<List<string>>("tenantIds"); }
             set { BackingStore?.Set("tenantIds", value); }
+        }
+        /// <summary>
+        /// Instantiates a new tenantGroup and sets the default values.
+        /// </summary>
+        public TenantGroup() : base() {
+            OdataType = "#microsoft.graph.managedTenants.tenantGroup";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

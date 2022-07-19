@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>The user experience analytics battery health runtime history entity contains the trend of runtime of a device over a period of 30 days</summary>
     public class UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory : Entity, IParsable {
         /// <summary>The unique identifier of the device, Intune DeviceID or SCCM device id.</summary>
         public string DeviceId {
@@ -20,6 +19,12 @@ namespace Microsoft.Graph.Beta.Models {
         public string RuntimeDateTime {
             get { return BackingStore?.Get<string>("runtimeDateTime"); }
             set { BackingStore?.Set("runtimeDateTime", value); }
+        }
+        /// <summary>
+        /// Instantiates a new UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory and sets the default values.
+        /// </summary>
+        public UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory() : base() {
+            OdataType = "#microsoft.graph.userExperienceAnalyticsBatteryHealthDeviceRuntimeHistory";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

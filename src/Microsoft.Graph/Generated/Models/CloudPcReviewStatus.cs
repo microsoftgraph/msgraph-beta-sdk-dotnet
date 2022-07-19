@@ -28,6 +28,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("inReview"); }
             set { BackingStore?.Set("inReview", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The specific date and time of the Cloud PC snapshot that was taken and saved automatically, when the Cloud PC is set to in review. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? RestorePointDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("restorePointDateTime"); }
@@ -59,6 +64,7 @@ namespace Microsoft.Graph.Beta.Models {
         public CloudPcReviewStatus() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.cloudPcReviewStatus";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -76,6 +82,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"azureStorageAccountId", n => { AzureStorageAccountId = n.GetStringValue(); } },
                 {"azureStorageAccountName", n => { AzureStorageAccountName = n.GetStringValue(); } },
                 {"inReview", n => { InReview = n.GetBoolValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"restorePointDateTime", n => { RestorePointDateTime = n.GetDateTimeOffsetValue(); } },
                 {"reviewStartDateTime", n => { ReviewStartDateTime = n.GetDateTimeOffsetValue(); } },
                 {"subscriptionId", n => { SubscriptionId = n.GetStringValue(); } },
@@ -92,6 +99,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("azureStorageAccountId", AzureStorageAccountId);
             writer.WriteStringValue("azureStorageAccountName", AzureStorageAccountName);
             writer.WriteBoolValue("inReview", InReview);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteDateTimeOffsetValue("restorePointDateTime", RestorePointDateTime);
             writer.WriteDateTimeOffsetValue("reviewStartDateTime", ReviewStartDateTime);
             writer.WriteStringValue("subscriptionId", SubscriptionId);

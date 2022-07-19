@@ -33,6 +33,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<AlertFeedback?>("feedback"); }
             set { BackingStore?.Set("feedback", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Alert status value (if updated). Possible values are: unknown, newAlert, inProgress, resolved, dismissed.</summary>
         public AlertStatus? Status {
             get { return BackingStore?.Get<AlertStatus?>("status"); }
@@ -54,6 +59,7 @@ namespace Microsoft.Graph.Beta.Models {
         public AlertHistoryState() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.alertHistoryState";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -72,6 +78,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"assignedTo", n => { AssignedTo = n.GetStringValue(); } },
                 {"comments", n => { Comments = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"feedback", n => { Feedback = n.GetEnumValue<AlertFeedback>(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"status", n => { Status = n.GetEnumValue<AlertStatus>(); } },
                 {"updatedDateTime", n => { UpdatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"user", n => { User = n.GetStringValue(); } },
@@ -87,6 +94,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("assignedTo", AssignedTo);
             writer.WriteCollectionOfPrimitiveValues<string>("comments", Comments);
             writer.WriteEnumValue<AlertFeedback>("feedback", Feedback);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteEnumValue<AlertStatus>("status", Status);
             writer.WriteDateTimeOffsetValue("updatedDateTime", UpdatedDateTime);
             writer.WriteStringValue("user", User);

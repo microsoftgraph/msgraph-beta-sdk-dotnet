@@ -174,7 +174,7 @@ namespace Microsoft.Graph.Beta.Directory.ImpactedResources.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new recommendationResourceItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new RecommendationResourceItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public RecommendationResourceItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -199,7 +199,7 @@ namespace Microsoft.Graph.Beta.Directory.ImpactedResources.Item {
             /// <summary>Request query parameters</summary>
             public RecommendationResourceItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new RecommendationResourceItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new recommendationResourceItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new RecommendationResourceItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public RecommendationResourceItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -213,7 +213,7 @@ namespace Microsoft.Graph.Beta.Directory.ImpactedResources.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new recommendationResourceItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new RecommendationResourceItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public RecommendationResourceItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

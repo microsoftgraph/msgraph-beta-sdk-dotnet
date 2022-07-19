@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Security.TriggerTypes.RetentionEventTypes.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new retentionEventTypeItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new RetentionEventTypeItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public RetentionEventTypeItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Security.TriggerTypes.RetentionEventTypes.Item {
             /// <summary>Request query parameters</summary>
             public RetentionEventTypeItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new RetentionEventTypeItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new retentionEventTypeItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new RetentionEventTypeItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public RetentionEventTypeItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Security.TriggerTypes.RetentionEventTypes.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new retentionEventTypeItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new RetentionEventTypeItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public RetentionEventTypeItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

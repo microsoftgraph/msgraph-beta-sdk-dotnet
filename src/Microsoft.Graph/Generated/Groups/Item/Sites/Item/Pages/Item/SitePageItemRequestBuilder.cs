@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Pages.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new sitePageItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new SitePageItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public SitePageItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -184,7 +184,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Pages.Item {
             /// <summary>Request query parameters</summary>
             public SitePageItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new SitePageItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new sitePageItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new SitePageItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public SitePageItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -198,7 +198,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Pages.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new sitePageItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new SitePageItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public SitePageItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

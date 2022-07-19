@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>A pool represents a group of embedded SIM activation codes.</summary>
     public class EmbeddedSIMActivationCodePool : Entity, IParsable {
         /// <summary>The total count of activation codes which belong to this pool.</summary>
         public int? ActivationCodeCount {
@@ -40,6 +39,12 @@ namespace Microsoft.Graph.Beta.Models {
         public DateTimeOffset? ModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("modifiedDateTime"); }
             set { BackingStore?.Set("modifiedDateTime", value); }
+        }
+        /// <summary>
+        /// Instantiates a new EmbeddedSIMActivationCodePool and sets the default values.
+        /// </summary>
+        public EmbeddedSIMActivationCodePool() : base() {
+            OdataType = "#microsoft.graph.embeddedSIMActivationCodePool";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

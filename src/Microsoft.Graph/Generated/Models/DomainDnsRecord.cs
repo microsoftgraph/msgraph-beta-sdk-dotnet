@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class DomainDnsRecord : Entity, IParsable {
         /// <summary>If false, this record must be configured by the customer at the DNS host for Microsoft Online Services to operate correctly with the domain.</summary>
         public bool? IsOptional {
@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new domainDnsRecord and sets the default values.
         /// </summary>
         public DomainDnsRecord() : base() {
-            Type = "#microsoft.graph.domainDnsRecord";
+            OdataType = "#microsoft.graph.domainDnsRecord";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

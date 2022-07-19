@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites {
         public AddRequestBuilder Add { get =>
             new AddRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

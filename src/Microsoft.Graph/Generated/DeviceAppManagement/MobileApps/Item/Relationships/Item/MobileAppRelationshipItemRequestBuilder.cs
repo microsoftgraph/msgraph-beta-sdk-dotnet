@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.Relationships
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new mobileAppRelationshipItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new MobileAppRelationshipItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public MobileAppRelationshipItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.Relationships
             /// <summary>Request query parameters</summary>
             public MobileAppRelationshipItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new MobileAppRelationshipItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new mobileAppRelationshipItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new MobileAppRelationshipItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public MobileAppRelationshipItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.Relationships
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new mobileAppRelationshipItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new MobileAppRelationshipItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public MobileAppRelationshipItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

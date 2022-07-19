@@ -16,6 +16,12 @@ namespace Microsoft.Graph.Beta.Models.Search {
             set { BackingStore?.Set("state", value); }
         }
         /// <summary>
+        /// Instantiates a new Acronym and sets the default values.
+        /// </summary>
+        public Acronym() : base() {
+            OdataType = "#microsoft.graph.search.acronym";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

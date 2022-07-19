@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.DeviceManagement.ReusablePolicySettings {
     /// <summary>Provides operations to manage the reusablePolicySettings property of the microsoft.graph.deviceManagement entity.</summary>
     public class ReusablePolicySettingsRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

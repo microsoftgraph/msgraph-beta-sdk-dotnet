@@ -17,7 +17,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Owners {
     /// <summary>Provides operations to manage the owners property of the microsoft.graph.servicePrincipal entity.</summary>
     public class OwnersRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Owners {
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>The ref property</summary>
+        /// <summary>The Ref property</summary>
         public RefRequestBuilder Ref { get =>
             new RefRequestBuilder(PathParameters, RequestAdapter);
         }

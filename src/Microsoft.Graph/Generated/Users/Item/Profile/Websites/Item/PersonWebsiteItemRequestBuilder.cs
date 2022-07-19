@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Websites.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new personWebsiteItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new PersonWebsiteItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public PersonWebsiteItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Websites.Item {
             /// <summary>Request query parameters</summary>
             public PersonWebsiteItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new PersonWebsiteItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new personWebsiteItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new PersonWebsiteItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public PersonWebsiteItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Profile.Websites.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new personWebsiteItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new PersonWebsiteItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public PersonWebsiteItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

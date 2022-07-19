@@ -36,8 +36,8 @@ namespace Microsoft.Graph.Beta.Groups.Item.Drives.Item.Items.Item.ListItem {
             new DocumentSetVersionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The driveItem property</summary>
-        public Microsoft.Graph.Beta.Groups.Item.Drives.Item.Items.Item.ListItem.DriveItem.DriveItemRequestBuilder DriveItem { get =>
-            new Microsoft.Graph.Beta.Groups.Item.Drives.Item.Items.Item.ListItem.DriveItem.DriveItemRequestBuilder(PathParameters, RequestAdapter);
+        public DriveItemRequestBuilder DriveItem { get =>
+            new DriveItemRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The fields property</summary>
         public FieldsRequestBuilder Fields { get =>

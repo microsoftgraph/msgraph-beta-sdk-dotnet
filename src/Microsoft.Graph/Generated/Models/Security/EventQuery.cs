@@ -13,6 +13,11 @@ namespace Microsoft.Graph.Beta.Models.Security {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The query property</summary>
         public string Query {
             get { return BackingStore?.Get<string>("query"); }
@@ -29,6 +34,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         public EventQuery() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.security.eventQuery";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -43,6 +49,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"query", n => { Query = n.GetStringValue(); } },
                 {"queryType", n => { QueryType = n.GetEnumValue<QueryType>(); } },
             };
@@ -53,6 +60,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// </summary>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("query", Query);
             writer.WriteEnumValue<QueryType>("queryType", QueryType);
             writer.WriteAdditionalData(AdditionalData);

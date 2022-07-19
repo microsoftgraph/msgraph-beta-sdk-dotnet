@@ -48,6 +48,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Value of the option</summary>
         public DeviceManagementConfigurationSettingValue OptionValue {
             get { return BackingStore?.Get<DeviceManagementConfigurationSettingValue>("optionValue"); }
@@ -59,6 +64,7 @@ namespace Microsoft.Graph.Beta.Models {
         public DeviceManagementConfigurationOptionDefinition() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.deviceManagementConfigurationOptionDefinition";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -80,6 +86,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"helpText", n => { HelpText = n.GetStringValue(); } },
                 {"itemId", n => { ItemId = n.GetStringValue(); } },
                 {"name", n => { Name = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"optionValue", n => { OptionValue = n.GetObjectValue<DeviceManagementConfigurationSettingValue>(DeviceManagementConfigurationSettingValue.CreateFromDiscriminatorValue); } },
             };
         }
@@ -96,6 +103,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("helpText", HelpText);
             writer.WriteStringValue("itemId", ItemId);
             writer.WriteStringValue("name", Name);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteObjectValue<DeviceManagementConfigurationSettingValue>("optionValue", OptionValue);
             writer.WriteAdditionalData(AdditionalData);
         }

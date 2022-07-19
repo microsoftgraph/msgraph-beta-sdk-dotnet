@@ -174,7 +174,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new deviceManagementConfigurationPolicyItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceManagementConfigurationPolicyItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceManagementConfigurationPolicyItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -199,7 +199,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item {
             /// <summary>Request query parameters</summary>
             public DeviceManagementConfigurationPolicyItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new DeviceManagementConfigurationPolicyItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new deviceManagementConfigurationPolicyItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceManagementConfigurationPolicyItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceManagementConfigurationPolicyItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -213,7 +213,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicies.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new deviceManagementConfigurationPolicyItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceManagementConfigurationPolicyItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceManagementConfigurationPolicyItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

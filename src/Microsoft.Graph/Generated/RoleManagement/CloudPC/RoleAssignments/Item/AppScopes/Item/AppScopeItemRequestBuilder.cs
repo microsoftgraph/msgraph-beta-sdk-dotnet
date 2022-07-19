@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.CloudPC.RoleAssignments.Item.AppSc
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new appScopeItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new AppScopeItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public AppScopeItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.CloudPC.RoleAssignments.Item.AppSc
             /// <summary>Request query parameters</summary>
             public AppScopeItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new AppScopeItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new appScopeItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new AppScopeItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public AppScopeItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.CloudPC.RoleAssignments.Item.AppSc
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new appScopeItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new AppScopeItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public AppScopeItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

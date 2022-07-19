@@ -31,7 +31,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new iosVppAppAssignedLicense and sets the default values.
         /// </summary>
         public IosVppAppAssignedLicense() : base() {
-            Type = "#microsoft.graph.iosVppAppAssignedLicense";
+            OdataType = "#microsoft.graph.iosVppAppAssignedLicense";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

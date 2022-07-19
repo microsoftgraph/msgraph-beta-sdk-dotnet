@@ -189,7 +189,7 @@ namespace Microsoft.Graph.Beta.Teamwork.Devices.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new teamworkDeviceItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new TeamworkDeviceItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public TeamworkDeviceItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -214,7 +214,7 @@ namespace Microsoft.Graph.Beta.Teamwork.Devices.Item {
             /// <summary>Request query parameters</summary>
             public TeamworkDeviceItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new TeamworkDeviceItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new teamworkDeviceItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new TeamworkDeviceItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public TeamworkDeviceItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -228,7 +228,7 @@ namespace Microsoft.Graph.Beta.Teamwork.Devices.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new teamworkDeviceItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new TeamworkDeviceItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public TeamworkDeviceItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

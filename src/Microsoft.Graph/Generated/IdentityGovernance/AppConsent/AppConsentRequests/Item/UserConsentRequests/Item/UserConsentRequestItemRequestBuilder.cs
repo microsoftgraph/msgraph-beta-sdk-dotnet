@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AppConsent.AppConsentRequests.
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new userConsentRequestItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new UserConsentRequestItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public UserConsentRequestItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -184,7 +184,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AppConsent.AppConsentRequests.
             /// <summary>Request query parameters</summary>
             public UserConsentRequestItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new UserConsentRequestItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new userConsentRequestItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new UserConsentRequestItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public UserConsentRequestItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -198,7 +198,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AppConsent.AppConsentRequests.
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new userConsentRequestItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new UserConsentRequestItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public UserConsentRequestItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

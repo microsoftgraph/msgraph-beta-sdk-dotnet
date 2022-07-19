@@ -33,6 +33,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<ModifiedProperty>>("modifiedProperties"); }
             set { BackingStore?.Set("modifiedProperties", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Describes the resource type.  Example values include Application, Group, ServicePrincipal, and User.</summary>
         public string Type {
             get { return BackingStore?.Get<string>("type"); }
@@ -49,6 +54,7 @@ namespace Microsoft.Graph.Beta.Models {
         public TargetResource() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.targetResource";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -67,6 +73,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"groupType", n => { GroupType = n.GetEnumValue<GroupType>(); } },
                 {"id", n => { Id = n.GetStringValue(); } },
                 {"modifiedProperties", n => { ModifiedProperties = n.GetCollectionOfObjectValues<ModifiedProperty>(ModifiedProperty.CreateFromDiscriminatorValue).ToList(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"type", n => { Type = n.GetStringValue(); } },
                 {"userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
             };
@@ -81,6 +88,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteEnumValue<GroupType>("groupType", GroupType);
             writer.WriteStringValue("id", Id);
             writer.WriteCollectionOfObjectValues<ModifiedProperty>("modifiedProperties", ModifiedProperties);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("type", Type);
             writer.WriteStringValue("userPrincipalName", UserPrincipalName);
             writer.WriteAdditionalData(AdditionalData);

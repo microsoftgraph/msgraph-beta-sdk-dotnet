@@ -33,6 +33,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DateTimeOffset?>("latestSimulationDateTime"); }
             set { BackingStore?.Set("latestSimulationDateTime", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Number of attack simulation and training campaigns that the user was included in.</summary>
         public int? SimulationCount {
             get { return BackingStore?.Get<int?>("simulationCount"); }
@@ -44,6 +49,7 @@ namespace Microsoft.Graph.Beta.Models {
         public AttackSimulationSimulationUserCoverage() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.attackSimulationSimulationUserCoverage";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -62,6 +68,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"clickCount", n => { ClickCount = n.GetIntValue(); } },
                 {"compromisedCount", n => { CompromisedCount = n.GetIntValue(); } },
                 {"latestSimulationDateTime", n => { LatestSimulationDateTime = n.GetDateTimeOffsetValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"simulationCount", n => { SimulationCount = n.GetIntValue(); } },
             };
         }
@@ -75,6 +82,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteIntValue("clickCount", ClickCount);
             writer.WriteIntValue("compromisedCount", CompromisedCount);
             writer.WriteDateTimeOffsetValue("latestSimulationDateTime", LatestSimulationDateTime);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteIntValue("simulationCount", SimulationCount);
             writer.WriteAdditionalData(AdditionalData);
         }

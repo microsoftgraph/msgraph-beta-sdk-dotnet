@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class SensitiveType : Entity, IParsable {
         /// <summary>The classificationMethod property</summary>
         public Microsoft.Graph.Beta.Models.ClassificationMethod? ClassificationMethod {
@@ -50,6 +50,12 @@ namespace Microsoft.Graph.Beta.Models {
         public string State {
             get { return BackingStore?.Get<string>("state"); }
             set { BackingStore?.Set("state", value); }
+        }
+        /// <summary>
+        /// Instantiates a new sensitiveType and sets the default values.
+        /// </summary>
+        public SensitiveType() : base() {
+            OdataType = "#microsoft.graph.sensitiveType";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

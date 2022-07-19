@@ -125,7 +125,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new organizationalBrandingProperties and sets the default values.
         /// </summary>
         public OrganizationalBrandingProperties() : base() {
-            Type = "#microsoft.graph.organizationalBrandingProperties";
+            OdataType = "#microsoft.graph.organizationalBrandingProperties";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

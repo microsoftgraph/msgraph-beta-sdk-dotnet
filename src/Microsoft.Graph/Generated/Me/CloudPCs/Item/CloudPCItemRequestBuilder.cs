@@ -198,7 +198,7 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new cloudPCItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new CloudPCItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public CloudPCItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -223,7 +223,7 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs.Item {
             /// <summary>Request query parameters</summary>
             public CloudPCItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new CloudPCItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new cloudPCItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new CloudPCItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public CloudPCItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -237,7 +237,7 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new cloudPCItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new CloudPCItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public CloudPCItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

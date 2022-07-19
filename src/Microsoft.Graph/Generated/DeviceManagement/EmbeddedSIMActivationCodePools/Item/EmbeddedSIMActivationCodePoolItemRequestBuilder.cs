@@ -169,7 +169,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.EmbeddedSIMActivationCodePools.I
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new embeddedSIMActivationCodePoolItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new EmbeddedSIMActivationCodePoolItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public EmbeddedSIMActivationCodePoolItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -194,7 +194,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.EmbeddedSIMActivationCodePools.I
             /// <summary>Request query parameters</summary>
             public EmbeddedSIMActivationCodePoolItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new EmbeddedSIMActivationCodePoolItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new embeddedSIMActivationCodePoolItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new EmbeddedSIMActivationCodePoolItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public EmbeddedSIMActivationCodePoolItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -208,7 +208,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.EmbeddedSIMActivationCodePools.I
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new embeddedSIMActivationCodePoolItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new EmbeddedSIMActivationCodePoolItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public EmbeddedSIMActivationCodePoolItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

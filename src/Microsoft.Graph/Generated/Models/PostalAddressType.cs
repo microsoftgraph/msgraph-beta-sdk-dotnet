@@ -23,6 +23,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("countryLetterCode"); }
             set { BackingStore?.Set("countryLetterCode", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The postalCode property</summary>
         public string PostalCode {
             get { return BackingStore?.Get<string>("postalCode"); }
@@ -44,6 +49,7 @@ namespace Microsoft.Graph.Beta.Models {
         public PostalAddressType() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.postalAddressType";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -60,6 +66,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"city", n => { City = n.GetStringValue(); } },
                 {"countryLetterCode", n => { CountryLetterCode = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"postalCode", n => { PostalCode = n.GetStringValue(); } },
                 {"state", n => { State = n.GetStringValue(); } },
                 {"street", n => { Street = n.GetStringValue(); } },
@@ -73,6 +80,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("city", City);
             writer.WriteStringValue("countryLetterCode", CountryLetterCode);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("postalCode", PostalCode);
             writer.WriteStringValue("state", State);
             writer.WriteStringValue("street", Street);

@@ -54,6 +54,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<ManagementAgentType?>("managementAgent"); }
             set { BackingStore?.Set("managementAgent", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Owner type of device.</summary>
         public ManagedDeviceOwnerType? OwnerType {
             get { return BackingStore?.Get<ManagedDeviceOwnerType?>("ownerType"); }
@@ -75,6 +80,7 @@ namespace Microsoft.Graph.Beta.Models {
         public RetireScheduledManagedDevice() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.retireScheduledManagedDevice";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -97,6 +103,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"managedDeviceId", n => { ManagedDeviceId = n.GetStringValue(); } },
                 {"managedDeviceName", n => { ManagedDeviceName = n.GetStringValue(); } },
                 {"managementAgent", n => { ManagementAgent = n.GetEnumValue<ManagementAgentType>(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"ownerType", n => { OwnerType = n.GetEnumValue<ManagedDeviceOwnerType>(); } },
                 {"retireAfterDateTime", n => { RetireAfterDateTime = n.GetDateTimeOffsetValue(); } },
                 {"roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
@@ -116,6 +123,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("managedDeviceId", ManagedDeviceId);
             writer.WriteStringValue("managedDeviceName", ManagedDeviceName);
             writer.WriteEnumValue<ManagementAgentType>("managementAgent", ManagementAgent);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteEnumValue<ManagedDeviceOwnerType>("ownerType", OwnerType);
             writer.WriteDateTimeOffsetValue("retireAfterDateTime", RetireAfterDateTime);
             writer.WriteCollectionOfPrimitiveValues<string>("roleScopeTagIds", RoleScopeTagIds);

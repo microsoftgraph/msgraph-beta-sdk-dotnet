@@ -28,6 +28,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<KeyValue>>("manufacturerProperties"); }
             set { BackingStore?.Set("manufacturerProperties", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The serialNumber property</summary>
         public string SerialNumber {
             get { return BackingStore?.Get<string>("serialNumber"); }
@@ -44,6 +49,7 @@ namespace Microsoft.Graph.Beta.Models {
         public OathTokenMetadata() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.oathTokenMetadata";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -61,6 +67,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"enabled", n => { Enabled = n.GetBoolValue(); } },
                 {"manufacturer", n => { Manufacturer = n.GetStringValue(); } },
                 {"manufacturerProperties", n => { ManufacturerProperties = n.GetCollectionOfObjectValues<KeyValue>(KeyValue.CreateFromDiscriminatorValue).ToList(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"serialNumber", n => { SerialNumber = n.GetStringValue(); } },
                 {"tokenType", n => { TokenType = n.GetStringValue(); } },
             };
@@ -74,6 +81,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteStringValue("manufacturer", Manufacturer);
             writer.WriteCollectionOfObjectValues<KeyValue>("manufacturerProperties", ManufacturerProperties);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("serialNumber", SerialNumber);
             writer.WriteStringValue("tokenType", TokenType);
             writer.WriteAdditionalData(AdditionalData);

@@ -4,8 +4,14 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class OrganizationalBrandingLocalization : OrganizationalBrandingProperties, IParsable {
+        /// <summary>
+        /// Instantiates a new organizationalBrandingLocalization and sets the default values.
+        /// </summary>
+        public OrganizationalBrandingLocalization() : base() {
+            OdataType = "#microsoft.graph.organizationalBrandingLocalization";
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

@@ -23,6 +23,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<IdentitySet>("invitedBy"); }
             set { BackingStore?.Set("invitedBy", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The redeemedBy property</summary>
         public string RedeemedBy {
             get { return BackingStore?.Get<string>("redeemedBy"); }
@@ -39,6 +44,7 @@ namespace Microsoft.Graph.Beta.Models {
         public SharingInvitation() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.sharingInvitation";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -55,6 +61,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"email", n => { Email = n.GetStringValue(); } },
                 {"invitedBy", n => { InvitedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"redeemedBy", n => { RedeemedBy = n.GetStringValue(); } },
                 {"signInRequired", n => { SignInRequired = n.GetBoolValue(); } },
             };
@@ -67,6 +74,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("email", Email);
             writer.WriteObjectValue<IdentitySet>("invitedBy", InvitedBy);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("redeemedBy", RedeemedBy);
             writer.WriteBoolValue("signInRequired", SignInRequired);
             writer.WriteAdditionalData(AdditionalData);

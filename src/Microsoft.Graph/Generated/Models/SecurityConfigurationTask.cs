@@ -41,6 +41,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("managedDevices", value); }
         }
         /// <summary>
+        /// Instantiates a new SecurityConfigurationTask and sets the default values.
+        /// </summary>
+        public SecurityConfigurationTask() : base() {
+            OdataType = "#microsoft.graph.securityConfigurationTask";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

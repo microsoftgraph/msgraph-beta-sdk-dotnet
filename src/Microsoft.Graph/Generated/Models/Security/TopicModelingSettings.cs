@@ -13,22 +13,27 @@ namespace Microsoft.Graph.Beta.Models.Security {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>To learn more, see Adjust maximum number of themes dynamically.</summary>
+        /// <summary>Indicates whether the themes model should dynamically optimize the number of generated topics. To learn more, see Adjust maximum number of themes dynamically.</summary>
         public bool? DynamicallyAdjustTopicCount {
             get { return BackingStore?.Get<bool?>("dynamicallyAdjustTopicCount"); }
             set { BackingStore?.Set("dynamicallyAdjustTopicCount", value); }
         }
-        /// <summary>To learn more, see Include numbers in themes.</summary>
+        /// <summary>Indicates whether the themes model should exclude numbers while parsing document texts. To learn more, see Include numbers in themes.</summary>
         public bool? IgnoreNumbers {
             get { return BackingStore?.Get<bool?>("ignoreNumbers"); }
             set { BackingStore?.Set("ignoreNumbers", value); }
         }
-        /// <summary>Indicates whether themes is enabled for the case.</summary>
+        /// <summary>Indicates whether themes model is enabled for the case.</summary>
         public bool? IsEnabled {
             get { return BackingStore?.Get<bool?>("isEnabled"); }
             set { BackingStore?.Set("isEnabled", value); }
         }
-        /// <summary>To learn more, see Maximum number of themes.</summary>
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+        /// <summary>The total number of topics that the themes model will generate for a review set. To learn more, see Maximum number of themes.</summary>
         public int? TopicCount {
             get { return BackingStore?.Get<int?>("topicCount"); }
             set { BackingStore?.Set("topicCount", value); }
@@ -39,6 +44,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         public TopicModelingSettings() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.security.topicModelingSettings";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -56,6 +62,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
                 {"dynamicallyAdjustTopicCount", n => { DynamicallyAdjustTopicCount = n.GetBoolValue(); } },
                 {"ignoreNumbers", n => { IgnoreNumbers = n.GetBoolValue(); } },
                 {"isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"topicCount", n => { TopicCount = n.GetIntValue(); } },
             };
         }
@@ -68,6 +75,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             writer.WriteBoolValue("dynamicallyAdjustTopicCount", DynamicallyAdjustTopicCount);
             writer.WriteBoolValue("ignoreNumbers", IgnoreNumbers);
             writer.WriteBoolValue("isEnabled", IsEnabled);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteIntValue("topicCount", TopicCount);
             writer.WriteAdditionalData(AdditionalData);
         }

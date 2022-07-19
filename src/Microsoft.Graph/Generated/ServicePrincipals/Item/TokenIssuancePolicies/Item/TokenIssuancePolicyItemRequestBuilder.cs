@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.TokenIssuancePolicies.Item
             /// <summary>Request query parameters</summary>
             public TokenIssuancePolicyItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new TokenIssuancePolicyItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new tokenIssuancePolicyItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new TokenIssuancePolicyItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public TokenIssuancePolicyItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();

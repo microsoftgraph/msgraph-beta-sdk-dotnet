@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Me.Todo.Lists.Item.Tasks {
     /// <summary>Provides operations to manage the tasks property of the microsoft.graph.todoTaskList entity.</summary>
     public class TasksRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

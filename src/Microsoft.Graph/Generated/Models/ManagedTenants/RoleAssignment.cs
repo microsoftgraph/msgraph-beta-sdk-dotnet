@@ -18,6 +18,11 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The collection of roles assigned.</summary>
         public List<RoleDefinition> Roles {
             get { return BackingStore?.Get<List<RoleDefinition>>("roles"); }
@@ -29,6 +34,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         public RoleAssignment() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.managedTenants.roleAssignment";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -44,6 +50,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"assignmentType", n => { AssignmentType = n.GetEnumValue<DelegatedPrivilegeStatus>(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"roles", n => { Roles = n.GetCollectionOfObjectValues<RoleDefinition>(RoleDefinition.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
@@ -54,6 +61,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<DelegatedPrivilegeStatus>("assignmentType", AssignmentType);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteCollectionOfObjectValues<RoleDefinition>("roles", Roles);
             writer.WriteAdditionalData(AdditionalData);
         }

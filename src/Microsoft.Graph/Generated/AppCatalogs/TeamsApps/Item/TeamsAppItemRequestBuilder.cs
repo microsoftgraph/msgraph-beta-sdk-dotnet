@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.AppCatalogs.TeamsApps.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new teamsAppItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new TeamsAppItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public TeamsAppItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -184,7 +184,7 @@ namespace Microsoft.Graph.Beta.AppCatalogs.TeamsApps.Item {
             /// <summary>Request query parameters</summary>
             public TeamsAppItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new TeamsAppItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new teamsAppItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new TeamsAppItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public TeamsAppItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -198,7 +198,7 @@ namespace Microsoft.Graph.Beta.AppCatalogs.TeamsApps.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new teamsAppItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new TeamsAppItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public TeamsAppItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

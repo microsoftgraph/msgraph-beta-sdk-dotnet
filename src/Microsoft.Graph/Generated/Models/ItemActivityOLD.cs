@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class ItemActivityOLD : Entity, IParsable {
         /// <summary>The action property</summary>
         public ItemActionSet Action {
@@ -30,6 +30,12 @@ namespace Microsoft.Graph.Beta.Models {
         public ItemActivityTimeSet Times {
             get { return BackingStore?.Get<ItemActivityTimeSet>("times"); }
             set { BackingStore?.Set("times", value); }
+        }
+        /// <summary>
+        /// Instantiates a new itemActivityOLD and sets the default values.
+        /// </summary>
+        public ItemActivityOLD() : base() {
+            OdataType = "#microsoft.graph.itemActivityOLD";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

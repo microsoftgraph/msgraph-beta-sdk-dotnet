@@ -61,6 +61,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("upgradeEligibleDeviceCount", value); }
         }
         /// <summary>
+        /// Instantiates a new userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric and sets the default values.
+        /// </summary>
+        public UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric() : base() {
+            OdataType = "#microsoft.graph.userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

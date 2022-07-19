@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Search.Bookmarks.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new bookmarkItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new BookmarkItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public BookmarkItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Search.Bookmarks.Item {
             /// <summary>Request query parameters</summary>
             public BookmarkItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new BookmarkItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new bookmarkItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new BookmarkItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public BookmarkItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Search.Bookmarks.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new bookmarkItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new BookmarkItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public BookmarkItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

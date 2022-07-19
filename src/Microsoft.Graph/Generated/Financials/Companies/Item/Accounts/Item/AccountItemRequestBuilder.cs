@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.Accounts.Item {
             /// <summary>Request query parameters</summary>
             public AccountItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new AccountItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new accountItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new AccountItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public AccountItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();

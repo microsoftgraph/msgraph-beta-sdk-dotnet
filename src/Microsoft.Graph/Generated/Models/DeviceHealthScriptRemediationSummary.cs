@@ -14,6 +14,11 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The number of devices remediated by device health scripts.</summary>
         public int? RemediatedDeviceCount {
             get { return BackingStore?.Get<int?>("remediatedDeviceCount"); }
@@ -30,6 +35,7 @@ namespace Microsoft.Graph.Beta.Models {
         public DeviceHealthScriptRemediationSummary() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.deviceHealthScriptRemediationSummary";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -44,6 +50,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"remediatedDeviceCount", n => { RemediatedDeviceCount = n.GetIntValue(); } },
                 {"scriptCount", n => { ScriptCount = n.GetIntValue(); } },
             };
@@ -54,6 +61,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteIntValue("remediatedDeviceCount", RemediatedDeviceCount);
             writer.WriteIntValue("scriptCount", ScriptCount);
             writer.WriteAdditionalData(AdditionalData);

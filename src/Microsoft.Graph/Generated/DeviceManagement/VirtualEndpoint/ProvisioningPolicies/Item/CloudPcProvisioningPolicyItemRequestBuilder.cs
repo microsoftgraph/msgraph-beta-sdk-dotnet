@@ -164,7 +164,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPoli
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new cloudPcProvisioningPolicyItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new CloudPcProvisioningPolicyItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public CloudPcProvisioningPolicyItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -189,7 +189,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPoli
             /// <summary>Request query parameters</summary>
             public CloudPcProvisioningPolicyItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new CloudPcProvisioningPolicyItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new cloudPcProvisioningPolicyItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new CloudPcProvisioningPolicyItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public CloudPcProvisioningPolicyItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -203,7 +203,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPoli
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new cloudPcProvisioningPolicyItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new CloudPcProvisioningPolicyItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public CloudPcProvisioningPolicyItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

@@ -23,6 +23,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("joinUrl"); }
             set { BackingStore?.Set("joinUrl", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>All of the phone numbers associated with this conference.</summary>
         public List<Phone> Phones {
             get { return BackingStore?.Get<List<Phone>>("phones"); }
@@ -49,6 +54,7 @@ namespace Microsoft.Graph.Beta.Models {
         public OnlineMeetingInfo() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.onlineMeetingInfo";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -65,6 +71,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"conferenceId", n => { ConferenceId = n.GetStringValue(); } },
                 {"joinUrl", n => { JoinUrl = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"phones", n => { Phones = n.GetCollectionOfObjectValues<Phone>(Phone.CreateFromDiscriminatorValue).ToList(); } },
                 {"quickDial", n => { QuickDial = n.GetStringValue(); } },
                 {"tollFreeNumbers", n => { TollFreeNumbers = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
@@ -79,6 +86,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("conferenceId", ConferenceId);
             writer.WriteStringValue("joinUrl", JoinUrl);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteCollectionOfObjectValues<Phone>("phones", Phones);
             writer.WriteStringValue("quickDial", QuickDial);
             writer.WriteCollectionOfPrimitiveValues<string>("tollFreeNumbers", TollFreeNumbers);

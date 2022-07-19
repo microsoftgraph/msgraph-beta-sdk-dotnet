@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.Item.GroupA
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new deviceConfigurationGroupAssignmentItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceConfigurationGroupAssignmentItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceConfigurationGroupAssignmentItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -184,7 +184,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.Item.GroupA
             /// <summary>Request query parameters</summary>
             public DeviceConfigurationGroupAssignmentItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new DeviceConfigurationGroupAssignmentItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new deviceConfigurationGroupAssignmentItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceConfigurationGroupAssignmentItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceConfigurationGroupAssignmentItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -198,7 +198,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.Item.GroupA
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new deviceConfigurationGroupAssignmentItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceConfigurationGroupAssignmentItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceConfigurationGroupAssignmentItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

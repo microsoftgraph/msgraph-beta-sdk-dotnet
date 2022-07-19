@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.TokenLifetimePolicies.Item
             /// <summary>Request query parameters</summary>
             public TokenLifetimePolicyItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new TokenLifetimePolicyItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new tokenLifetimePolicyItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new TokenLifetimePolicyItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public TokenLifetimePolicyItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();

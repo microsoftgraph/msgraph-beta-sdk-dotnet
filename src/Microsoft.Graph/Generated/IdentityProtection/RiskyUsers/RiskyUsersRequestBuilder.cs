@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.IdentityProtection.RiskyUsers {
         public ConfirmCompromisedRequestBuilder ConfirmCompromised { get =>
             new ConfirmCompromisedRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

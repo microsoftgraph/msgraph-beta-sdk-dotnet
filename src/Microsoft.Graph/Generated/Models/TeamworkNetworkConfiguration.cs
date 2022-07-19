@@ -43,6 +43,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("isPCPortEnabled"); }
             set { BackingStore?.Set("isPCPortEnabled", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>A primary DNS is the first point of contact for a device that translates the hostname into an IP address.</summary>
         public string PrimaryDns {
             get { return BackingStore?.Get<string>("primaryDns"); }
@@ -64,6 +69,7 @@ namespace Microsoft.Graph.Beta.Models {
         public TeamworkNetworkConfiguration() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.teamworkNetworkConfiguration";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -84,6 +90,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"ipAddress", n => { IpAddress = n.GetStringValue(); } },
                 {"isDhcpEnabled", n => { IsDhcpEnabled = n.GetBoolValue(); } },
                 {"isPCPortEnabled", n => { IsPCPortEnabled = n.GetBoolValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"primaryDns", n => { PrimaryDns = n.GetStringValue(); } },
                 {"secondaryDns", n => { SecondaryDns = n.GetStringValue(); } },
                 {"subnetMask", n => { SubnetMask = n.GetStringValue(); } },
@@ -101,6 +108,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("ipAddress", IpAddress);
             writer.WriteBoolValue("isDhcpEnabled", IsDhcpEnabled);
             writer.WriteBoolValue("isPCPortEnabled", IsPCPortEnabled);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("primaryDns", PrimaryDns);
             writer.WriteStringValue("secondaryDns", SecondaryDns);
             writer.WriteStringValue("subnetMask", SubnetMask);

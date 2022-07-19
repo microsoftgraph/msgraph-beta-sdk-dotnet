@@ -11,6 +11,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("configurationXml", value); }
         }
         /// <summary>
+        /// Instantiates a new AndroidOmaCpConfiguration and sets the default values.
+        /// </summary>
+        public AndroidOmaCpConfiguration() : base() {
+            OdataType = "#microsoft.graph.androidOmaCpConfiguration";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

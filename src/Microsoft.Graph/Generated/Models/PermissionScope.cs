@@ -33,6 +33,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("isEnabled"); }
             set { BackingStore?.Set("isEnabled", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The origin property</summary>
         public string Origin {
             get { return BackingStore?.Get<string>("origin"); }
@@ -64,6 +69,7 @@ namespace Microsoft.Graph.Beta.Models {
         public PermissionScope() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.permissionScope";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -82,6 +88,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"adminConsentDisplayName", n => { AdminConsentDisplayName = n.GetStringValue(); } },
                 {"id", n => { Id = n.GetStringValue(); } },
                 {"isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"origin", n => { Origin = n.GetStringValue(); } },
                 {"type", n => { Type = n.GetStringValue(); } },
                 {"userConsentDescription", n => { UserConsentDescription = n.GetStringValue(); } },
@@ -99,6 +106,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("adminConsentDisplayName", AdminConsentDisplayName);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("isEnabled", IsEnabled);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("origin", Origin);
             writer.WriteStringValue("type", Type);
             writer.WriteStringValue("userConsentDescription", UserConsentDescription);

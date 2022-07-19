@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.EnterpriseCodeSigningCertific
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new enterpriseCodeSigningCertificateItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new EnterpriseCodeSigningCertificateItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public EnterpriseCodeSigningCertificateItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.EnterpriseCodeSigningCertific
             /// <summary>Request query parameters</summary>
             public EnterpriseCodeSigningCertificateItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new EnterpriseCodeSigningCertificateItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new enterpriseCodeSigningCertificateItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new EnterpriseCodeSigningCertificateItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public EnterpriseCodeSigningCertificateItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.EnterpriseCodeSigningCertific
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new enterpriseCodeSigningCertificateItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new EnterpriseCodeSigningCertificateItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public EnterpriseCodeSigningCertificateItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

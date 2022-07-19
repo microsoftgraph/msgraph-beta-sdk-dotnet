@@ -24,12 +24,18 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<KeyValuePair>>("localizedMessages"); }
             set { BackingStore?.Set("localizedMessages", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>
         /// Instantiates a new androidDeviceOwnerUserFacingMessage and sets the default values.
         /// </summary>
         public AndroidDeviceOwnerUserFacingMessage() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.androidDeviceOwnerUserFacingMessage";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -46,6 +52,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"defaultMessage", n => { DefaultMessage = n.GetStringValue(); } },
                 {"localizedMessages", n => { LocalizedMessages = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue).ToList(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -56,6 +63,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("defaultMessage", DefaultMessage);
             writer.WriteCollectionOfObjectValues<KeyValuePair>("localizedMessages", LocalizedMessages);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -105,7 +105,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new DepEnrollmentBaseProfile and sets the default values.
         /// </summary>
         public DepEnrollmentBaseProfile() : base() {
-            Type = "#microsoft.graph.depEnrollmentBaseProfile";
+            OdataType = "#microsoft.graph.depEnrollmentBaseProfile";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

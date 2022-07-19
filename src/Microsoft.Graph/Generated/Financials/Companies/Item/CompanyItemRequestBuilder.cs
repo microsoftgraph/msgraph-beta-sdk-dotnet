@@ -271,7 +271,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item {
             /// <summary>Request query parameters</summary>
             public CompanyItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new CompanyItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new companyItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new CompanyItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public CompanyItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();

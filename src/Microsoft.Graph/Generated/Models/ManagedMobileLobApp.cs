@@ -30,7 +30,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new ManagedMobileLobApp and sets the default values.
         /// </summary>
         public ManagedMobileLobApp() : base() {
-            Type = "#microsoft.graph.managedMobileLobApp";
+            OdataType = "#microsoft.graph.managedMobileLobApp";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

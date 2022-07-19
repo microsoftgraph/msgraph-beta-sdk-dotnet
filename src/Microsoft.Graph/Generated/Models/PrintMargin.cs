@@ -23,6 +23,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<int?>("left"); }
             set { BackingStore?.Set("left", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The margin in microns from the right edge.</summary>
         public int? Right {
             get { return BackingStore?.Get<int?>("right"); }
@@ -39,6 +44,7 @@ namespace Microsoft.Graph.Beta.Models {
         public PrintMargin() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.printMargin";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -55,6 +61,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"bottom", n => { Bottom = n.GetIntValue(); } },
                 {"left", n => { Left = n.GetIntValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"right", n => { Right = n.GetIntValue(); } },
                 {"top", n => { Top = n.GetIntValue(); } },
             };
@@ -67,6 +74,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("bottom", Bottom);
             writer.WriteIntValue("left", Left);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteIntValue("right", Right);
             writer.WriteIntValue("top", Top);
             writer.WriteAdditionalData(AdditionalData);

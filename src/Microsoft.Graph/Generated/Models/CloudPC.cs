@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class CloudPC : Entity, IParsable {
         /// <summary>The Azure Active Directory (Azure AD) device ID of the Cloud PC.</summary>
         public string AadDeviceId {
@@ -110,6 +109,12 @@ namespace Microsoft.Graph.Beta.Models {
         public string UserPrincipalName {
             get { return BackingStore?.Get<string>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
+        }
+        /// <summary>
+        /// Instantiates a new CloudPC and sets the default values.
+        /// </summary>
+        public CloudPC() : base() {
+            OdataType = "#microsoft.graph.cloudPC";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

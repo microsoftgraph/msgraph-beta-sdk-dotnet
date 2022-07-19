@@ -18,6 +18,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<long?>("deleted"); }
             set { BackingStore?.Set("deleted", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Total space remaining before reaching the quota limit, in bytes. Read-only.</summary>
         public long? Remaining {
             get { return BackingStore?.Get<long?>("remaining"); }
@@ -49,6 +54,7 @@ namespace Microsoft.Graph.Beta.Models {
         public Quota() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.quota";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -64,6 +70,7 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"deleted", n => { Deleted = n.GetLongValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"remaining", n => { Remaining = n.GetLongValue(); } },
                 {"state", n => { State = n.GetStringValue(); } },
                 {"storagePlanInformation", n => { StoragePlanInformation = n.GetObjectValue<Microsoft.Graph.Beta.Models.StoragePlanInformation>(Microsoft.Graph.Beta.Models.StoragePlanInformation.CreateFromDiscriminatorValue); } },
@@ -78,6 +85,7 @@ namespace Microsoft.Graph.Beta.Models {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteLongValue("deleted", Deleted);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteLongValue("remaining", Remaining);
             writer.WriteStringValue("state", State);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.StoragePlanInformation>("storagePlanInformation", StoragePlanInformation);

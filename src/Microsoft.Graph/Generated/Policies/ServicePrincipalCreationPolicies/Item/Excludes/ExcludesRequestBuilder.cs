@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Policies.ServicePrincipalCreationPolicies.Item.Excludes {
     /// <summary>Provides operations to manage the excludes property of the microsoft.graph.servicePrincipalCreationPolicy entity.</summary>
     public class ExcludesRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

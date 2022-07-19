@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.SwapShiftsChangeRequests.Item
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new swapShiftsChangeRequestItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new SwapShiftsChangeRequestItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public SwapShiftsChangeRequestItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.SwapShiftsChangeRequests.Item
             /// <summary>Request query parameters</summary>
             public SwapShiftsChangeRequestItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new SwapShiftsChangeRequestItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new swapShiftsChangeRequestItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new SwapShiftsChangeRequestItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public SwapShiftsChangeRequestItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.SwapShiftsChangeRequests.Item
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new swapShiftsChangeRequestItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new SwapShiftsChangeRequestItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public SwapShiftsChangeRequestItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

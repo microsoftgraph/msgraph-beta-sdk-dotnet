@@ -30,7 +30,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new identityUserFlowAttribute and sets the default values.
         /// </summary>
         public IdentityUserFlowAttribute() : base() {
-            Type = "#microsoft.graph.identityUserFlowAttribute";
+            OdataType = "#microsoft.graph.identityUserFlowAttribute";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

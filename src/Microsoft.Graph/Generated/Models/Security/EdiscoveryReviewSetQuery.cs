@@ -6,6 +6,12 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
     public class EdiscoveryReviewSetQuery : Search, IParsable {
         /// <summary>
+        /// Instantiates a new EdiscoveryReviewSetQuery and sets the default values.
+        /// </summary>
+        public EdiscoveryReviewSetQuery() : base() {
+            OdataType = "#microsoft.graph.security.ediscoveryReviewSetQuery";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

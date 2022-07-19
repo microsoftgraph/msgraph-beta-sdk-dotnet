@@ -108,6 +108,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("lastUpdateDateTime"); }
             set { BackingStore?.Set("lastUpdateDateTime", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>When operatingSystemKernelDebugging is enabled, the device is used in development and testing</summary>
         public string OperatingSystemKernelDebugging {
             get { return BackingStore?.Get<string>("operatingSystemKernelDebugging"); }
@@ -179,6 +184,7 @@ namespace Microsoft.Graph.Beta.Models {
         public DeviceHealthAttestationState() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.deviceHealthAttestationState";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -212,6 +218,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"healthStatusMismatchInfo", n => { HealthStatusMismatchInfo = n.GetStringValue(); } },
                 {"issuedDateTime", n => { IssuedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"lastUpdateDateTime", n => { LastUpdateDateTime = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"operatingSystemKernelDebugging", n => { OperatingSystemKernelDebugging = n.GetStringValue(); } },
                 {"operatingSystemRevListInfo", n => { OperatingSystemRevListInfo = n.GetStringValue(); } },
                 {"pcr0", n => { Pcr0 = n.GetStringValue(); } },
@@ -252,6 +259,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("healthStatusMismatchInfo", HealthStatusMismatchInfo);
             writer.WriteDateTimeOffsetValue("issuedDateTime", IssuedDateTime);
             writer.WriteStringValue("lastUpdateDateTime", LastUpdateDateTime);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("operatingSystemKernelDebugging", OperatingSystemKernelDebugging);
             writer.WriteStringValue("operatingSystemRevListInfo", OperatingSystemRevListInfo);
             writer.WriteStringValue("pcr0", Pcr0);

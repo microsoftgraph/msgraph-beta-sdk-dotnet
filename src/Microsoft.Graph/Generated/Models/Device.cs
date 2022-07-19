@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class Device : DirectoryObject, IParsable {
         /// <summary>true if the account is enabled; otherwise, false. Default is true.  Supports $filter (eq, ne, not, in). Only callers in Global Administrator and Cloud Device Administrator roles can set this property.</summary>
         public bool? AccountEnabled {
@@ -220,6 +219,12 @@ namespace Microsoft.Graph.Beta.Models {
         public List<UsageRight> UsageRights {
             get { return BackingStore?.Get<List<UsageRight>>("usageRights"); }
             set { BackingStore?.Set("usageRights", value); }
+        }
+        /// <summary>
+        /// Instantiates a new Device and sets the default values.
+        /// </summary>
+        public Device() : base() {
+            OdataType = "#microsoft.graph.device";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -23,6 +23,11 @@ namespace Microsoft.Graph.Beta.Models.Search {
             get { return BackingStore?.Get<bool?>("matchSimilarKeywords"); }
             set { BackingStore?.Set("matchSimilarKeywords", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Unique keywords that will guarantee the search answer is triggered.</summary>
         public List<string> ReservedKeywords {
             get { return BackingStore?.Get<List<string>>("reservedKeywords"); }
@@ -34,6 +39,7 @@ namespace Microsoft.Graph.Beta.Models.Search {
         public AnswerKeyword() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.search.answerKeyword";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -50,6 +56,7 @@ namespace Microsoft.Graph.Beta.Models.Search {
             return new Dictionary<string, Action<IParseNode>> {
                 {"keywords", n => { Keywords = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"matchSimilarKeywords", n => { MatchSimilarKeywords = n.GetBoolValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"reservedKeywords", n => { ReservedKeywords = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
             };
         }
@@ -61,6 +68,7 @@ namespace Microsoft.Graph.Beta.Models.Search {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("keywords", Keywords);
             writer.WriteBoolValue("matchSimilarKeywords", MatchSimilarKeywords);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteCollectionOfPrimitiveValues<string>("reservedKeywords", ReservedKeywords);
             writer.WriteAdditionalData(AdditionalData);
         }

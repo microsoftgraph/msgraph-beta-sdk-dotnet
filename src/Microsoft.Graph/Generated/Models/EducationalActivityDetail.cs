@@ -53,6 +53,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("notes"); }
             set { BackingStore?.Set("notes", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Link to the degree or program page.</summary>
         public string WebUrl {
             get { return BackingStore?.Get<string>("webUrl"); }
@@ -64,6 +69,7 @@ namespace Microsoft.Graph.Beta.Models {
         public EducationalActivityDetail() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.educationalActivityDetail";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -86,6 +92,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"fieldsOfStudy", n => { FieldsOfStudy = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"grade", n => { Grade = n.GetStringValue(); } },
                 {"notes", n => { Notes = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"webUrl", n => { WebUrl = n.GetStringValue(); } },
             };
         }
@@ -103,6 +110,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfPrimitiveValues<string>("fieldsOfStudy", FieldsOfStudy);
             writer.WriteStringValue("grade", Grade);
             writer.WriteStringValue("notes", Notes);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("webUrl", WebUrl);
             writer.WriteAdditionalData(AdditionalData);
         }

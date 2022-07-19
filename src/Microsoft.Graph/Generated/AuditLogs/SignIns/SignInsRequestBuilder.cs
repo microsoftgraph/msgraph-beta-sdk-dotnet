@@ -23,7 +23,7 @@ namespace Microsoft.Graph.Beta.AuditLogs.SignIns {
         public ConfirmSafeRequestBuilder ConfirmSafe { get =>
             new ConfirmSafeRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

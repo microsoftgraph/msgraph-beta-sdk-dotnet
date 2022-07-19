@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.RoleDefinitions.Item.RoleAssignm
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new roleAssignmentItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new RoleAssignmentItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public RoleAssignmentItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -184,7 +184,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.RoleDefinitions.Item.RoleAssignm
             /// <summary>Request query parameters</summary>
             public RoleAssignmentItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new RoleAssignmentItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new roleAssignmentItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new RoleAssignmentItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public RoleAssignmentItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -198,7 +198,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.RoleDefinitions.Item.RoleAssignm
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new roleAssignmentItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new RoleAssignmentItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public RoleAssignmentItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

@@ -26,6 +26,12 @@ namespace Microsoft.Graph.Beta.Models.TermStore {
             set { BackingStore?.Set("sets", value); }
         }
         /// <summary>
+        /// Instantiates a new store and sets the default values.
+        /// </summary>
+        public Store() : base() {
+            OdataType = "#microsoft.graph.termStore.store";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

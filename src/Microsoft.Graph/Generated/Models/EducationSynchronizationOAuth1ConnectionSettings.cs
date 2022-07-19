@@ -6,6 +6,12 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class EducationSynchronizationOAuth1ConnectionSettings : EducationSynchronizationConnectionSettings, IParsable {
         /// <summary>
+        /// Instantiates a new EducationSynchronizationOAuth1ConnectionSettings and sets the default values.
+        /// </summary>
+        public EducationSynchronizationOAuth1ConnectionSettings() : base() {
+            OdataType = "#microsoft.graph.educationSynchronizationOAuth1ConnectionSettings";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

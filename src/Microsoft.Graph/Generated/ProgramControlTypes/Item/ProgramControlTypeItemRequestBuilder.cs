@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.ProgramControlTypes.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new programControlTypeItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new ProgramControlTypeItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public ProgramControlTypeItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.ProgramControlTypes.Item {
             /// <summary>Request query parameters</summary>
             public ProgramControlTypeItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new ProgramControlTypeItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new programControlTypeItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new ProgramControlTypeItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public ProgramControlTypeItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.ProgramControlTypes.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new programControlTypeItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new ProgramControlTypeItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public ProgramControlTypeItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

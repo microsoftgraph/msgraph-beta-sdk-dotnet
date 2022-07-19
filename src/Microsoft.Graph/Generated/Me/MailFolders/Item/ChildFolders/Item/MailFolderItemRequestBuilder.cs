@@ -189,7 +189,7 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new mailFolderItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new MailFolderItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public MailFolderItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -214,7 +214,7 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item {
             /// <summary>Request query parameters</summary>
             public MailFolderItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new MailFolderItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new mailFolderItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new MailFolderItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public MailFolderItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -228,7 +228,7 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new mailFolderItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new MailFolderItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public MailFolderItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

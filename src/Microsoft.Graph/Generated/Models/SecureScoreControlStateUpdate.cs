@@ -23,6 +23,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("comment"); }
             set { BackingStore?.Set("comment", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>State of the control, which can be modified via a PATCH command (for example, ignored, thirdParty).</summary>
         public string State {
             get { return BackingStore?.Get<string>("state"); }
@@ -44,6 +49,7 @@ namespace Microsoft.Graph.Beta.Models {
         public SecureScoreControlStateUpdate() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.secureScoreControlStateUpdate";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -60,6 +66,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"assignedTo", n => { AssignedTo = n.GetStringValue(); } },
                 {"comment", n => { Comment = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"state", n => { State = n.GetStringValue(); } },
                 {"updatedBy", n => { UpdatedBy = n.GetStringValue(); } },
                 {"updatedDateTime", n => { UpdatedDateTime = n.GetDateTimeOffsetValue(); } },
@@ -73,6 +80,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("assignedTo", AssignedTo);
             writer.WriteStringValue("comment", Comment);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("state", State);
             writer.WriteStringValue("updatedBy", UpdatedBy);
             writer.WriteDateTimeOffsetValue("updatedDateTime", UpdatedDateTime);

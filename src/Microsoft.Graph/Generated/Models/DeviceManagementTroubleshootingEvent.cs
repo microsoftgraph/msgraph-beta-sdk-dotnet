@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Event representing an general failure.</summary>
     public class DeviceManagementTroubleshootingEvent : Entity, IParsable {
         /// <summary>A set of string key and string value pairs which provides additional information on the Troubleshooting event</summary>
         public List<KeyValuePair> AdditionalInformation {
@@ -33,10 +32,10 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("troubleshootingErrorDetails", value); }
         }
         /// <summary>
-        /// Instantiates a new deviceManagementTroubleshootingEvent and sets the default values.
+        /// Instantiates a new DeviceManagementTroubleshootingEvent and sets the default values.
         /// </summary>
         public DeviceManagementTroubleshootingEvent() : base() {
-            Type = "#microsoft.graph.deviceManagementTroubleshootingEvent";
+            OdataType = "#microsoft.graph.deviceManagementTroubleshootingEvent";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

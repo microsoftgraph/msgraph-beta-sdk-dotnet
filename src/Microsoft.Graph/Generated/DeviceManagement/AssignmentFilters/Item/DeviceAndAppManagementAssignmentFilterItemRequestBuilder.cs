@@ -161,7 +161,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new deviceAndAppManagementAssignmentFilterItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceAndAppManagementAssignmentFilterItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceAndAppManagementAssignmentFilterItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -186,7 +186,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.Item {
             /// <summary>Request query parameters</summary>
             public DeviceAndAppManagementAssignmentFilterItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new DeviceAndAppManagementAssignmentFilterItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new deviceAndAppManagementAssignmentFilterItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceAndAppManagementAssignmentFilterItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceAndAppManagementAssignmentFilterItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -200,7 +200,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new deviceAndAppManagementAssignmentFilterItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceAndAppManagementAssignmentFilterItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceAndAppManagementAssignmentFilterItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

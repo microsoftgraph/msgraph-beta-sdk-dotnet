@@ -28,6 +28,11 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
             get { return BackingStore?.Get<bool?>("isEnabled"); }
             set { BackingStore?.Set("isEnabled", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>To learn more, see Maximum number of themes.</summary>
         public int? TopicCount {
             get { return BackingStore?.Get<int?>("topicCount"); }
@@ -39,6 +44,7 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
         public TopicModelingSettings() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.ediscovery.topicModelingSettings";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -56,6 +62,7 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
                 {"dynamicallyAdjustTopicCount", n => { DynamicallyAdjustTopicCount = n.GetBoolValue(); } },
                 {"ignoreNumbers", n => { IgnoreNumbers = n.GetBoolValue(); } },
                 {"isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"topicCount", n => { TopicCount = n.GetIntValue(); } },
             };
         }
@@ -68,6 +75,7 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
             writer.WriteBoolValue("dynamicallyAdjustTopicCount", DynamicallyAdjustTopicCount);
             writer.WriteBoolValue("ignoreNumbers", IgnoreNumbers);
             writer.WriteBoolValue("isEnabled", IsEnabled);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteIntValue("topicCount", TopicCount);
             writer.WriteAdditionalData(AdditionalData);
         }

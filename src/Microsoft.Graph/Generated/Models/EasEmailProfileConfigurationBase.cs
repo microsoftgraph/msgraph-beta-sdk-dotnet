@@ -30,7 +30,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new EasEmailProfileConfigurationBase and sets the default values.
         /// </summary>
         public EasEmailProfileConfigurationBase() : base() {
-            Type = "#microsoft.graph.easEmailProfileConfigurationBase";
+            OdataType = "#microsoft.graph.easEmailProfileConfigurationBase";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

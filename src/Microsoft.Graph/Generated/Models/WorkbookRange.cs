@@ -106,6 +106,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("worksheet", value); }
         }
         /// <summary>
+        /// Instantiates a new WorkbookRange and sets the default values.
+        /// </summary>
+        public WorkbookRange() : base() {
+            OdataType = "#microsoft.graph.workbookRange";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

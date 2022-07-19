@@ -15,7 +15,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Communications.CallRecords {
     /// <summary>Provides operations to manage the callRecords property of the microsoft.graph.cloudCommunications entity.</summary>
     public class CallRecordsRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

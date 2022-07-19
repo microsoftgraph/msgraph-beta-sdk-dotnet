@@ -28,12 +28,18 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<MatchingDlpRule>>("matchingRules"); }
             set { BackingStore?.Set("matchingRules", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>
         /// Instantiates a new dlpPoliciesJobResult and sets the default values.
         /// </summary>
         public DlpPoliciesJobResult() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.dlpPoliciesJobResult";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -51,6 +57,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"auditCorrelationId", n => { AuditCorrelationId = n.GetStringValue(); } },
                 {"evaluationDateTime", n => { EvaluationDateTime = n.GetDateTimeOffsetValue(); } },
                 {"matchingRules", n => { MatchingRules = n.GetCollectionOfObjectValues<MatchingDlpRule>(MatchingDlpRule.CreateFromDiscriminatorValue).ToList(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -62,6 +69,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("auditCorrelationId", AuditCorrelationId);
             writer.WriteDateTimeOffsetValue("evaluationDateTime", EvaluationDateTime);
             writer.WriteCollectionOfObjectValues<MatchingDlpRule>("matchingRules", MatchingRules);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

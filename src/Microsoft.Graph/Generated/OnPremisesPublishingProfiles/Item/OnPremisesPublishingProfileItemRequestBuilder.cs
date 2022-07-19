@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new onPremisesPublishingProfileItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new OnPremisesPublishingProfileItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public OnPremisesPublishingProfileItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -204,7 +204,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item {
             /// <summary>Request query parameters</summary>
             public OnPremisesPublishingProfileItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new OnPremisesPublishingProfileItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new onPremisesPublishingProfileItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new OnPremisesPublishingProfileItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public OnPremisesPublishingProfileItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -218,7 +218,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new onPremisesPublishingProfileItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new OnPremisesPublishingProfileItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public OnPremisesPublishingProfileItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

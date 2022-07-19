@@ -28,6 +28,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<ItemBody>("notes"); }
             set { BackingStore?.Set("notes", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The start property</summary>
         public TimeCardEvent Start {
             get { return BackingStore?.Get<TimeCardEvent>("start"); }
@@ -39,6 +44,7 @@ namespace Microsoft.Graph.Beta.Models {
         public TimeCardBreak() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.timeCardBreak";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -56,6 +62,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"breakId", n => { BreakId = n.GetStringValue(); } },
                 {"end", n => { End = n.GetObjectValue<TimeCardEvent>(TimeCardEvent.CreateFromDiscriminatorValue); } },
                 {"notes", n => { Notes = n.GetObjectValue<ItemBody>(ItemBody.CreateFromDiscriminatorValue); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"start", n => { Start = n.GetObjectValue<TimeCardEvent>(TimeCardEvent.CreateFromDiscriminatorValue); } },
             };
         }
@@ -68,6 +75,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("breakId", BreakId);
             writer.WriteObjectValue<TimeCardEvent>("end", End);
             writer.WriteObjectValue<ItemBody>("notes", Notes);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteObjectValue<TimeCardEvent>("start", Start);
             writer.WriteAdditionalData(AdditionalData);
         }

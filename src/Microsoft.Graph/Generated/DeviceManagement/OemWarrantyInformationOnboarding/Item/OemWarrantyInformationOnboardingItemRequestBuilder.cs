@@ -164,7 +164,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.OemWarrantyInformationOnboarding
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new oemWarrantyInformationOnboardingItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new OemWarrantyInformationOnboardingItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public OemWarrantyInformationOnboardingItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -189,7 +189,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.OemWarrantyInformationOnboarding
             /// <summary>Request query parameters</summary>
             public OemWarrantyInformationOnboardingItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new OemWarrantyInformationOnboardingItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new oemWarrantyInformationOnboardingItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new OemWarrantyInformationOnboardingItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public OemWarrantyInformationOnboardingItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -203,7 +203,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.OemWarrantyInformationOnboarding
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new oemWarrantyInformationOnboardingItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new OemWarrantyInformationOnboardingItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public OemWarrantyInformationOnboardingItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

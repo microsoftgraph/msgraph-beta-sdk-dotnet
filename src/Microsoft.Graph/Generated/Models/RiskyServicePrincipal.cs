@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new RiskyServicePrincipal and sets the default values.
         /// </summary>
         public RiskyServicePrincipal() : base() {
-            Type = "#microsoft.graph.riskyServicePrincipal";
+            OdataType = "#microsoft.graph.riskyServicePrincipal";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

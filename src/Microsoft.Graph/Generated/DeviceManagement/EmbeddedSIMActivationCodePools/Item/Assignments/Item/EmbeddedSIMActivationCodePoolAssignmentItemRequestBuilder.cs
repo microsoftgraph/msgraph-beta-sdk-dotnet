@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.EmbeddedSIMActivationCodePools.I
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new embeddedSIMActivationCodePoolAssignmentItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new EmbeddedSIMActivationCodePoolAssignmentItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public EmbeddedSIMActivationCodePoolAssignmentItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.EmbeddedSIMActivationCodePools.I
             /// <summary>Request query parameters</summary>
             public EmbeddedSIMActivationCodePoolAssignmentItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new EmbeddedSIMActivationCodePoolAssignmentItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new embeddedSIMActivationCodePoolAssignmentItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new EmbeddedSIMActivationCodePoolAssignmentItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public EmbeddedSIMActivationCodePoolAssignmentItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.EmbeddedSIMActivationCodePools.I
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new embeddedSIMActivationCodePoolAssignmentItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new EmbeddedSIMActivationCodePoolAssignmentItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public EmbeddedSIMActivationCodePoolAssignmentItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

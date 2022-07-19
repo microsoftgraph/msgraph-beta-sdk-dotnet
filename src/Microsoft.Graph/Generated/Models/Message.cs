@@ -180,7 +180,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new Message and sets the default values.
         /// </summary>
         public Message() : base() {
-            Type = "#microsoft.graph.message";
+            OdataType = "#microsoft.graph.message";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -193,6 +193,8 @@ namespace Microsoft.Graph.Beta.Models {
             return mappingValue switch {
                 "#microsoft.graph.calendarSharingMessage" => new CalendarSharingMessage(),
                 "#microsoft.graph.eventMessage" => new EventMessage(),
+                "#microsoft.graph.eventMessageRequest" => new EventMessageRequest(),
+                "#microsoft.graph.eventMessageResponse" => new EventMessageResponse(),
                 _ => new Message(),
             };
         }

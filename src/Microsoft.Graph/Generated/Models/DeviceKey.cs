@@ -28,12 +28,18 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("keyType"); }
             set { BackingStore?.Set("keyType", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>
         /// Instantiates a new deviceKey and sets the default values.
         /// </summary>
         public DeviceKey() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.deviceKey";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -51,6 +57,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"deviceId", n => { DeviceId = n.GetStringValue(); } },
                 {"keyMaterial", n => { KeyMaterial = n.GetByteArrayValue(); } },
                 {"keyType", n => { KeyType = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -62,6 +69,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("deviceId", DeviceId);
             writer.WriteByteArrayValue("keyMaterial", KeyMaterial);
             writer.WriteStringValue("keyType", KeyType);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

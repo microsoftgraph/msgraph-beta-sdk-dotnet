@@ -164,7 +164,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemp
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new managementTemplateStepDeploymentItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new ManagementTemplateStepDeploymentItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public ManagementTemplateStepDeploymentItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -189,7 +189,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemp
             /// <summary>Request query parameters</summary>
             public ManagementTemplateStepDeploymentItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new ManagementTemplateStepDeploymentItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new managementTemplateStepDeploymentItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new ManagementTemplateStepDeploymentItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public ManagementTemplateStepDeploymentItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -203,7 +203,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemp
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new managementTemplateStepDeploymentItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new ManagementTemplateStepDeploymentItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public ManagementTemplateStepDeploymentItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

@@ -78,6 +78,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<PrintMultipageLayout?>("multipageLayout"); }
             set { BackingStore?.Set("multipageLayout", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The orientation setting the printer should use when printing the job. Valid values are described in the following table.</summary>
         public PrintOrientation? Orientation {
             get { return BackingStore?.Get<PrintOrientation?>("orientation"); }
@@ -114,6 +119,7 @@ namespace Microsoft.Graph.Beta.Models {
         public PrintJobConfiguration() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.printJobConfiguration";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -141,6 +147,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"mediaSize", n => { MediaSize = n.GetStringValue(); } },
                 {"mediaType", n => { MediaType = n.GetStringValue(); } },
                 {"multipageLayout", n => { MultipageLayout = n.GetEnumValue<PrintMultipageLayout>(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"orientation", n => { Orientation = n.GetEnumValue<PrintOrientation>(); } },
                 {"outputBin", n => { OutputBin = n.GetStringValue(); } },
                 {"pageRanges", n => { PageRanges = n.GetCollectionOfObjectValues<IntegerRange>(IntegerRange.CreateFromDiscriminatorValue).ToList(); } },
@@ -168,6 +175,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("mediaSize", MediaSize);
             writer.WriteStringValue("mediaType", MediaType);
             writer.WriteEnumValue<PrintMultipageLayout>("multipageLayout", MultipageLayout);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteEnumValue<PrintOrientation>("orientation", Orientation);
             writer.WriteStringValue("outputBin", OutputBin);
             writer.WriteCollectionOfObjectValues<IntegerRange>("pageRanges", PageRanges);

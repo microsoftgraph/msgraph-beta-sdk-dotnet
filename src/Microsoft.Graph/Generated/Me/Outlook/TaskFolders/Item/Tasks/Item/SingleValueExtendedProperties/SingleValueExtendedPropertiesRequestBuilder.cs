@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Me.Outlook.TaskFolders.Item.Tasks.Item.SingleValueExtendedProperties {
     /// <summary>Provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.outlookTask entity.</summary>
     public class SingleValueExtendedPropertiesRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

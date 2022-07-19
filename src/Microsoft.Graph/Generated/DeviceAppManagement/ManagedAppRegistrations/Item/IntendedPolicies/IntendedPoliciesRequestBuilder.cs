@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.DeviceAppManagement.ManagedAppRegistrations.Item.IntendedPolicies {
     /// <summary>Provides operations to manage the intendedPolicies property of the microsoft.graph.managedAppRegistration entity.</summary>
     public class IntendedPoliciesRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

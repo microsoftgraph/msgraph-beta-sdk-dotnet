@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class Tenant : Entity, IParsable {
         /// <summary>The relationship details for the tenant with the managing entity.</summary>
         public TenantContract Contract {
@@ -35,6 +35,12 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         public Microsoft.Graph.Beta.Models.ManagedTenants.TenantStatusInformation TenantStatusInformation {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedTenants.TenantStatusInformation>("tenantStatusInformation"); }
             set { BackingStore?.Set("tenantStatusInformation", value); }
+        }
+        /// <summary>
+        /// Instantiates a new tenant and sets the default values.
+        /// </summary>
+        public Tenant() : base() {
+            OdataType = "#microsoft.graph.managedTenants.tenant";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

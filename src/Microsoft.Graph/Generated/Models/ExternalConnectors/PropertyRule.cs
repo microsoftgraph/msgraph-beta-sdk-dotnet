@@ -13,6 +13,11 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The operation property</summary>
         public RuleOperation? Operation {
             get { return BackingStore?.Get<RuleOperation?>("operation"); }
@@ -39,6 +44,7 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
         public PropertyRule() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.externalConnectors.propertyRule";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -53,6 +59,7 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"operation", n => { Operation = n.GetEnumValue<RuleOperation>(); } },
                 {"property", n => { Property = n.GetStringValue(); } },
                 {"values", n => { Values = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
@@ -65,6 +72,7 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
         /// </summary>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteEnumValue<RuleOperation>("operation", Operation);
             writer.WriteStringValue("property", Property);
             writer.WriteCollectionOfPrimitiveValues<string>("values", Values);

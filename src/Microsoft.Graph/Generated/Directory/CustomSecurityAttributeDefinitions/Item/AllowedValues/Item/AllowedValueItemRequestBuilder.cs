@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Directory.CustomSecurityAttributeDefinitions.Item
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new allowedValueItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new AllowedValueItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public AllowedValueItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Directory.CustomSecurityAttributeDefinitions.Item
             /// <summary>Request query parameters</summary>
             public AllowedValueItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new AllowedValueItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new allowedValueItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new AllowedValueItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public AllowedValueItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Directory.CustomSecurityAttributeDefinitions.Item
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new allowedValueItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new AllowedValueItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public AllowedValueItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

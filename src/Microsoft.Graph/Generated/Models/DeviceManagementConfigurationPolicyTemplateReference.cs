@@ -14,6 +14,11 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Template Display Name of the referenced template. This property is read-only.</summary>
         public string TemplateDisplayName {
             get { return BackingStore?.Get<string>("templateDisplayName"); }
@@ -40,6 +45,7 @@ namespace Microsoft.Graph.Beta.Models {
         public DeviceManagementConfigurationPolicyTemplateReference() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.deviceManagementConfigurationPolicyTemplateReference";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -54,6 +60,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"templateDisplayName", n => { TemplateDisplayName = n.GetStringValue(); } },
                 {"templateDisplayVersion", n => { TemplateDisplayVersion = n.GetStringValue(); } },
                 {"templateFamily", n => { TemplateFamily = n.GetEnumValue<DeviceManagementConfigurationTemplateFamily>(); } },
@@ -66,6 +73,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("templateDisplayName", TemplateDisplayName);
             writer.WriteStringValue("templateDisplayVersion", TemplateDisplayVersion);
             writer.WriteEnumValue<DeviceManagementConfigurationTemplateFamily>("templateFamily", TemplateFamily);

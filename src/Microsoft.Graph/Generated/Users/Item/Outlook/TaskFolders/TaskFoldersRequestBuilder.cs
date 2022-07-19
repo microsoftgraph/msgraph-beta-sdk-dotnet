@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Users.Item.Outlook.TaskFolders {
     /// <summary>Provides operations to manage the taskFolders property of the microsoft.graph.outlookUser entity.</summary>
     public class TaskFoldersRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

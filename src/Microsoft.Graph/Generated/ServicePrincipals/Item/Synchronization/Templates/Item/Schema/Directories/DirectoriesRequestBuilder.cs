@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Templates.Item.Schema.Directories {
     /// <summary>Provides operations to manage the directories property of the microsoft.graph.synchronizationSchema entity.</summary>
     public class DirectoriesRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

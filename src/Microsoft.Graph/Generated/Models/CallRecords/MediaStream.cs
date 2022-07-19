@@ -113,6 +113,11 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
             get { return BackingStore?.Get<TimeSpan?>("maxRoundTripTime"); }
             set { BackingStore?.Set("maxRoundTripTime", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Packet count for the stream.</summary>
         public long? PacketUtilization {
             get { return BackingStore?.Get<long?>("packetUtilization"); }
@@ -154,6 +159,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         public MediaStream() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.callRecords.mediaStream";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -188,6 +194,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
                 {"maxPacketLossRate", n => { MaxPacketLossRate = n.GetFloatValue(); } },
                 {"maxRatioOfConcealedSamples", n => { MaxRatioOfConcealedSamples = n.GetFloatValue(); } },
                 {"maxRoundTripTime", n => { MaxRoundTripTime = n.GetTimeSpanValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"packetUtilization", n => { PacketUtilization = n.GetLongValue(); } },
                 {"postForwardErrorCorrectionPacketLossRate", n => { PostForwardErrorCorrectionPacketLossRate = n.GetFloatValue(); } },
                 {"startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
@@ -223,6 +230,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
             writer.WriteFloatValue("maxPacketLossRate", MaxPacketLossRate);
             writer.WriteFloatValue("maxRatioOfConcealedSamples", MaxRatioOfConcealedSamples);
             writer.WriteTimeSpanValue("maxRoundTripTime", MaxRoundTripTime);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteLongValue("packetUtilization", PacketUtilization);
             writer.WriteFloatValue("postForwardErrorCorrectionPacketLossRate", PostForwardErrorCorrectionPacketLossRate);
             writer.WriteDateTimeOffsetValue("startDateTime", StartDateTime);

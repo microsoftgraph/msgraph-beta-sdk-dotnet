@@ -30,7 +30,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new Place and sets the default values.
         /// </summary>
         public Place() : base() {
-            Type = "#microsoft.graph.place";
+            OdataType = "#microsoft.graph.place";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

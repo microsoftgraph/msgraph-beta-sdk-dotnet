@@ -43,12 +43,18 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("hideTermsOfUse"); }
             set { BackingStore?.Set("hideTermsOfUse", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>
         /// Instantiates a new loginPageTextVisibilitySettings and sets the default values.
         /// </summary>
         public LoginPageTextVisibilitySettings() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.loginPageTextVisibilitySettings";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -69,6 +75,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"hidePrivacyAndCookies", n => { HidePrivacyAndCookies = n.GetBoolValue(); } },
                 {"hideResetItNow", n => { HideResetItNow = n.GetBoolValue(); } },
                 {"hideTermsOfUse", n => { HideTermsOfUse = n.GetBoolValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -83,6 +90,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteBoolValue("hidePrivacyAndCookies", HidePrivacyAndCookies);
             writer.WriteBoolValue("hideResetItNow", HideResetItNow);
             writer.WriteBoolValue("hideTermsOfUse", HideTermsOfUse);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

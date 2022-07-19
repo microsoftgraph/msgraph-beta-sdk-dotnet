@@ -31,6 +31,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("userFlowIdentityProviders", value); }
         }
         /// <summary>
+        /// Instantiates a new B2xIdentityUserFlow and sets the default values.
+        /// </summary>
+        public B2xIdentityUserFlow() : base() {
+            OdataType = "#microsoft.graph.b2xIdentityUserFlow";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

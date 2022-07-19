@@ -13,6 +13,11 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The query_string property</summary>
         public SearchQueryString Query_string {
             get { return BackingStore?.Get<SearchQueryString>("query_string"); }
@@ -34,6 +39,7 @@ namespace Microsoft.Graph.Beta.Models {
         public SearchQuery() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.searchQuery";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -48,6 +54,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"query_string", n => { Query_string = n.GetObjectValue<SearchQueryString>(SearchQueryString.CreateFromDiscriminatorValue); } },
                 {"queryString", n => { QueryString = n.GetStringValue(); } },
                 {"queryTemplate", n => { QueryTemplate = n.GetStringValue(); } },
@@ -59,6 +66,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteObjectValue<SearchQueryString>("query_string", Query_string);
             writer.WriteStringValue("queryString", QueryString);
             writer.WriteStringValue("queryTemplate", QueryTemplate);

@@ -38,6 +38,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("isRequestorJustificationRequired"); }
             set { BackingStore?.Set("isRequestorJustificationRequired", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The description of the policy that the user is trying to request access using.</summary>
         public string PolicyDescription {
             get { return BackingStore?.Get<string>("policyDescription"); }
@@ -69,6 +74,7 @@ namespace Microsoft.Graph.Beta.Models {
         public AccessPackageAssignmentRequestRequirements() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.accessPackageAssignmentRequestRequirements";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -88,6 +94,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"isApprovalRequiredForExtension", n => { IsApprovalRequiredForExtension = n.GetBoolValue(); } },
                 {"isCustomAssignmentScheduleAllowed", n => { IsCustomAssignmentScheduleAllowed = n.GetBoolValue(); } },
                 {"isRequestorJustificationRequired", n => { IsRequestorJustificationRequired = n.GetBoolValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"policyDescription", n => { PolicyDescription = n.GetStringValue(); } },
                 {"policyDisplayName", n => { PolicyDisplayName = n.GetStringValue(); } },
                 {"policyId", n => { PolicyId = n.GetStringValue(); } },
@@ -106,6 +113,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteBoolValue("isApprovalRequiredForExtension", IsApprovalRequiredForExtension);
             writer.WriteBoolValue("isCustomAssignmentScheduleAllowed", IsCustomAssignmentScheduleAllowed);
             writer.WriteBoolValue("isRequestorJustificationRequired", IsRequestorJustificationRequired);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("policyDescription", PolicyDescription);
             writer.WriteStringValue("policyDisplayName", PolicyDisplayName);
             writer.WriteStringValue("policyId", PolicyId);

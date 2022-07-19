@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs {
     /// <summary>Provides operations to manage the jobs property of the microsoft.graph.synchronization entity.</summary>
     public class JobsRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

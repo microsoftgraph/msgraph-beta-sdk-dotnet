@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new iosCertificateProfile and sets the default values.
         /// </summary>
         public IosCertificateProfile() : base() {
-            Type = "#microsoft.graph.iosCertificateProfile";
+            OdataType = "#microsoft.graph.iosCertificateProfile";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -23,6 +23,8 @@ namespace Microsoft.Graph.Beta.Models {
             return mappingValue switch {
                 "#microsoft.graph.iosCertificateProfileBase" => new IosCertificateProfileBase(),
                 "#microsoft.graph.iosImportedPFXCertificateProfile" => new IosImportedPFXCertificateProfile(),
+                "#microsoft.graph.iosPkcsCertificateProfile" => new IosPkcsCertificateProfile(),
+                "#microsoft.graph.iosScepCertificateProfile" => new IosScepCertificateProfile(),
                 _ => new IosCertificateProfile(),
             };
         }

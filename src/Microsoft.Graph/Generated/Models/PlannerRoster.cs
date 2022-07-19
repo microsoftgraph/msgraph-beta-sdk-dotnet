@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class PlannerRoster : Entity, IParsable {
         /// <summary>Retrieves the members of the plannerRoster.</summary>
         public List<PlannerRosterMember> Members {
@@ -15,6 +14,12 @@ namespace Microsoft.Graph.Beta.Models {
         public List<PlannerPlan> Plans {
             get { return BackingStore?.Get<List<PlannerPlan>>("plans"); }
             set { BackingStore?.Set("plans", value); }
+        }
+        /// <summary>
+        /// Instantiates a new PlannerRoster and sets the default values.
+        /// </summary>
+        public PlannerRoster() : base() {
+            OdataType = "#microsoft.graph.plannerRoster";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

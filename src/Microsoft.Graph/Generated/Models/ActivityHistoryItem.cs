@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class ActivityHistoryItem : Entity, IParsable {
         /// <summary>Optional. The duration of active user engagement. if not supplied, this is calculated from the startedDateTime and lastActiveDateTime.</summary>
         public int? ActiveDurationSeconds {
@@ -50,6 +50,12 @@ namespace Microsoft.Graph.Beta.Models {
         public string UserTimezone {
             get { return BackingStore?.Get<string>("userTimezone"); }
             set { BackingStore?.Set("userTimezone", value); }
+        }
+        /// <summary>
+        /// Instantiates a new activityHistoryItem and sets the default values.
+        /// </summary>
+        public ActivityHistoryItem() : base() {
+            OdataType = "#microsoft.graph.activityHistoryItem";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

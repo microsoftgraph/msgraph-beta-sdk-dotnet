@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.CloudPCConnectivityIssues.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new cloudPCConnectivityIssueItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new CloudPCConnectivityIssueItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public CloudPCConnectivityIssueItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.CloudPCConnectivityIssues.Item {
             /// <summary>Request query parameters</summary>
             public CloudPCConnectivityIssueItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new CloudPCConnectivityIssueItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new cloudPCConnectivityIssueItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new CloudPCConnectivityIssueItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public CloudPCConnectivityIssueItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.CloudPCConnectivityIssues.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new cloudPCConnectivityIssueItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new CloudPCConnectivityIssueItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public CloudPCConnectivityIssueItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

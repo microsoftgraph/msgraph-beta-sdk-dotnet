@@ -18,6 +18,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("observedParticipantId"); }
             set { BackingStore?.Set("observedParticipantId", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The identity that the call is happening on behalf of.</summary>
         public IdentitySet OnBehalfOf {
             get { return BackingStore?.Get<IdentitySet>("onBehalfOf"); }
@@ -39,6 +44,7 @@ namespace Microsoft.Graph.Beta.Models {
         public IncomingContext() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.incomingContext";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -54,6 +60,7 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"observedParticipantId", n => { ObservedParticipantId = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"onBehalfOf", n => { OnBehalfOf = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
                 {"sourceParticipantId", n => { SourceParticipantId = n.GetStringValue(); } },
                 {"transferor", n => { Transferor = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
@@ -66,6 +73,7 @@ namespace Microsoft.Graph.Beta.Models {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("observedParticipantId", ObservedParticipantId);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteObjectValue<IdentitySet>("onBehalfOf", OnBehalfOf);
             writer.WriteStringValue("sourceParticipantId", SourceParticipantId);
             writer.WriteObjectValue<IdentitySet>("transferor", Transferor);

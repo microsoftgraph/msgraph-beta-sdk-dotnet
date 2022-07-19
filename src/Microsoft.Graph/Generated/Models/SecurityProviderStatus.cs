@@ -23,6 +23,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("endpoint"); }
             set { BackingStore?.Set("endpoint", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The provider property</summary>
         public string Provider {
             get { return BackingStore?.Get<string>("provider"); }
@@ -44,6 +49,7 @@ namespace Microsoft.Graph.Beta.Models {
         public SecurityProviderStatus() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.securityProviderStatus";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -60,6 +66,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"enabled", n => { Enabled = n.GetBoolValue(); } },
                 {"endpoint", n => { Endpoint = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"provider", n => { Provider = n.GetStringValue(); } },
                 {"region", n => { Region = n.GetStringValue(); } },
                 {"vendor", n => { Vendor = n.GetStringValue(); } },
@@ -73,6 +80,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("enabled", Enabled);
             writer.WriteStringValue("endpoint", Endpoint);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("provider", Provider);
             writer.WriteStringValue("region", Region);
             writer.WriteStringValue("vendor", Vendor);

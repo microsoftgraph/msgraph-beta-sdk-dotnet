@@ -15,7 +15,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new AppleExpeditedCheckinConfigurationBase and sets the default values.
         /// </summary>
         public AppleExpeditedCheckinConfigurationBase() : base() {
-            Type = "#microsoft.graph.appleExpeditedCheckinConfigurationBase";
+            OdataType = "#microsoft.graph.appleExpeditedCheckinConfigurationBase";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

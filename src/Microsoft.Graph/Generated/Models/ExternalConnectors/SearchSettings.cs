@@ -13,7 +13,12 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Enables the developer to define the appearance of the content and configure conditions that dictate when the template should be displayed.</summary>
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+        /// <summary>Enables the developer to define the appearance of the content and configure conditions that dictate when the template should be displayed. Maximum of 2 search result templates per connection.</summary>
         public List<DisplayTemplate> SearchResultTemplates {
             get { return BackingStore?.Get<List<DisplayTemplate>>("searchResultTemplates"); }
             set { BackingStore?.Set("searchResultTemplates", value); }
@@ -24,6 +29,7 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
         public SearchSettings() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.externalConnectors.searchSettings";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -38,6 +44,7 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"searchResultTemplates", n => { SearchResultTemplates = n.GetCollectionOfObjectValues<DisplayTemplate>(DisplayTemplate.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
@@ -47,6 +54,7 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
         /// </summary>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteCollectionOfObjectValues<DisplayTemplate>("searchResultTemplates", SearchResultTemplates);
             writer.WriteAdditionalData(AdditionalData);
         }

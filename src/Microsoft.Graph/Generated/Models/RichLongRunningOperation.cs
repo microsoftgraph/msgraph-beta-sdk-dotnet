@@ -20,6 +20,17 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("resourceId"); }
             set { BackingStore?.Set("resourceId", value); }
         }
+        /// <summary>Type of the operation.</summary>
+        public string Type {
+            get { return BackingStore?.Get<string>("type"); }
+            set { BackingStore?.Set("type", value); }
+        }
+        /// <summary>
+        /// Instantiates a new RichLongRunningOperation and sets the default values.
+        /// </summary>
+        public RichLongRunningOperation() : base() {
+            OdataType = "#microsoft.graph.richLongRunningOperation";
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
@@ -36,6 +47,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"error", n => { Error = n.GetObjectValue<PublicError>(PublicError.CreateFromDiscriminatorValue); } },
                 {"percentageComplete", n => { PercentageComplete = n.GetIntValue(); } },
                 {"resourceId", n => { ResourceId = n.GetStringValue(); } },
+                {"type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +60,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteObjectValue<PublicError>("error", Error);
             writer.WriteIntValue("percentageComplete", PercentageComplete);
             writer.WriteStringValue("resourceId", ResourceId);
+            writer.WriteStringValue("type", Type);
         }
     }
 }

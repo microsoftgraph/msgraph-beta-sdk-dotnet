@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class AccessReviewHistoryInstance : Entity, IParsable {
         /// <summary>Uri which can be used to retrieve review history data. This URI will be active for 24 hours after being generated. Required.</summary>
         public string DownloadUri {
@@ -40,6 +40,12 @@ namespace Microsoft.Graph.Beta.Models {
         public AccessReviewHistoryStatus? Status {
             get { return BackingStore?.Get<AccessReviewHistoryStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
+        }
+        /// <summary>
+        /// Instantiates a new accessReviewHistoryInstance and sets the default values.
+        /// </summary>
+        public AccessReviewHistoryInstance() : base() {
+            OdataType = "#microsoft.graph.accessReviewHistoryInstance";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

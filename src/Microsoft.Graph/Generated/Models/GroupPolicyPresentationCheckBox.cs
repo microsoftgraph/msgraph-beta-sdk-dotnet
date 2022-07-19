@@ -11,6 +11,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("defaultChecked", value); }
         }
         /// <summary>
+        /// Instantiates a new GroupPolicyPresentationCheckBox and sets the default values.
+        /// </summary>
+        public GroupPolicyPresentationCheckBox() : base() {
+            OdataType = "#microsoft.graph.groupPolicyPresentationCheckBox";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Oauth2PermissionGrants.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new oAuth2PermissionGrantItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new OAuth2PermissionGrantItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public OAuth2PermissionGrantItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Oauth2PermissionGrants.Item {
             /// <summary>Request query parameters</summary>
             public OAuth2PermissionGrantItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new OAuth2PermissionGrantItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new oAuth2PermissionGrantItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new OAuth2PermissionGrantItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public OAuth2PermissionGrantItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Oauth2PermissionGrants.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new oAuth2PermissionGrantItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new OAuth2PermissionGrantItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public OAuth2PermissionGrantItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

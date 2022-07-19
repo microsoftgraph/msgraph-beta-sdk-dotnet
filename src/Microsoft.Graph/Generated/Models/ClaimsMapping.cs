@@ -28,6 +28,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("givenName"); }
             set { BackingStore?.Set("givenName", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The claim that provides the last name of the user.</summary>
         public string Surname {
             get { return BackingStore?.Get<string>("surname"); }
@@ -44,6 +49,7 @@ namespace Microsoft.Graph.Beta.Models {
         public ClaimsMapping() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.claimsMapping";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -61,6 +67,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"email", n => { Email = n.GetStringValue(); } },
                 {"givenName", n => { GivenName = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"surname", n => { Surname = n.GetStringValue(); } },
                 {"userId", n => { UserId = n.GetStringValue(); } },
             };
@@ -74,6 +81,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("email", Email);
             writer.WriteStringValue("givenName", GivenName);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("surname", Surname);
             writer.WriteStringValue("userId", UserId);
             writer.WriteAdditionalData(AdditionalData);

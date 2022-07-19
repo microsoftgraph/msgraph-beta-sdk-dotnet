@@ -34,6 +34,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<ResultantAppStateDetail?>("installStateDetail"); }
             set { BackingStore?.Set("installStateDetail", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The collection of source mobile app&apos;s ids.</summary>
         public List<string> SourceIds {
             get { return BackingStore?.Get<List<string>>("sourceIds"); }
@@ -60,6 +65,7 @@ namespace Microsoft.Graph.Beta.Models {
         public MobileAppRelationshipState() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.mobileAppRelationshipState";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -78,6 +84,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"errorCode", n => { ErrorCode = n.GetIntValue(); } },
                 {"installState", n => { InstallState = n.GetEnumValue<ResultantAppState>(); } },
                 {"installStateDetail", n => { InstallStateDetail = n.GetEnumValue<ResultantAppStateDetail>(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"sourceIds", n => { SourceIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"targetDisplayName", n => { TargetDisplayName = n.GetStringValue(); } },
                 {"targetId", n => { TargetId = n.GetStringValue(); } },
@@ -94,6 +101,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteIntValue("errorCode", ErrorCode);
             writer.WriteEnumValue<ResultantAppState>("installState", InstallState);
             writer.WriteEnumValue<ResultantAppStateDetail>("installStateDetail", InstallStateDetail);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteCollectionOfPrimitiveValues<string>("sourceIds", SourceIds);
             writer.WriteStringValue("targetDisplayName", TargetDisplayName);
             writer.WriteStringValue("targetId", TargetId);

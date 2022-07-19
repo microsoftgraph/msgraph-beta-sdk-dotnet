@@ -23,6 +23,11 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
             get { return BackingStore?.Get<int?>("maxImageSize"); }
             set { BackingStore?.Set("maxImageSize", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The timeout duration for the OCR engine. A longer timeout may increase success of OCR, but may add to the total processing time.</summary>
         public TimeSpan? Timeout {
             get { return BackingStore?.Get<TimeSpan?>("timeout"); }
@@ -34,6 +39,7 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
         public OcrSettings() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.ediscovery.ocrSettings";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -50,6 +56,7 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
             return new Dictionary<string, Action<IParseNode>> {
                 {"isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
                 {"maxImageSize", n => { MaxImageSize = n.GetIntValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"timeout", n => { Timeout = n.GetTimeSpanValue(); } },
             };
         }
@@ -61,6 +68,7 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("isEnabled", IsEnabled);
             writer.WriteIntValue("maxImageSize", MaxImageSize);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteTimeSpanValue("timeout", Timeout);
             writer.WriteAdditionalData(AdditionalData);
         }

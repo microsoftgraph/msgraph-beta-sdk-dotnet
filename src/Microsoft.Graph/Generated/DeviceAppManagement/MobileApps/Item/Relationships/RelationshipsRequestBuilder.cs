@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.Relationships {
     /// <summary>Provides operations to manage the relationships property of the microsoft.graph.mobileApp entity.</summary>
     public class RelationshipsRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

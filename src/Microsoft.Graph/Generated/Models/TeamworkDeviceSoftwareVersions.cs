@@ -23,6 +23,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("firmwareSoftwareVersion"); }
             set { BackingStore?.Set("firmwareSoftwareVersion", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The software version for the operating system on the device.</summary>
         public string OperatingSystemSoftwareVersion {
             get { return BackingStore?.Get<string>("operatingSystemSoftwareVersion"); }
@@ -44,6 +49,7 @@ namespace Microsoft.Graph.Beta.Models {
         public TeamworkDeviceSoftwareVersions() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.teamworkDeviceSoftwareVersions";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -60,6 +66,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"adminAgentSoftwareVersion", n => { AdminAgentSoftwareVersion = n.GetStringValue(); } },
                 {"firmwareSoftwareVersion", n => { FirmwareSoftwareVersion = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"operatingSystemSoftwareVersion", n => { OperatingSystemSoftwareVersion = n.GetStringValue(); } },
                 {"partnerAgentSoftwareVersion", n => { PartnerAgentSoftwareVersion = n.GetStringValue(); } },
                 {"teamsClientSoftwareVersion", n => { TeamsClientSoftwareVersion = n.GetStringValue(); } },
@@ -73,6 +80,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("adminAgentSoftwareVersion", AdminAgentSoftwareVersion);
             writer.WriteStringValue("firmwareSoftwareVersion", FirmwareSoftwareVersion);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("operatingSystemSoftwareVersion", OperatingSystemSoftwareVersion);
             writer.WriteStringValue("partnerAgentSoftwareVersion", PartnerAgentSoftwareVersion);
             writer.WriteStringValue("teamsClientSoftwareVersion", TeamsClientSoftwareVersion);

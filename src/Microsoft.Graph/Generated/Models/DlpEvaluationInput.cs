@@ -29,8 +29,8 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<DiscoveredSensitiveType>>("discoveredSensitiveTypes"); }
             set { BackingStore?.Set("discoveredSensitiveTypes", value); }
         }
-        /// <summary>The type property</summary>
-        public string Type {
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Beta.Models {
         public DlpEvaluationInput() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
-            Type = "#microsoft.graph.dlpEvaluationInput";
+            OdataType = "#microsoft.graph.dlpEvaluationInput";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"accessScope", n => { AccessScope = n.GetEnumValue<AccessScope>(); } },
                 {"currentLabel", n => { CurrentLabel = n.GetObjectValue<Microsoft.Graph.Beta.Models.CurrentLabel>(Microsoft.Graph.Beta.Models.CurrentLabel.CreateFromDiscriminatorValue); } },
                 {"discoveredSensitiveTypes", n => { DiscoveredSensitiveTypes = n.GetCollectionOfObjectValues<DiscoveredSensitiveType>(DiscoveredSensitiveType.CreateFromDiscriminatorValue).ToList(); } },
-                {"@odata.type", n => { Type = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -75,7 +75,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteEnumValue<AccessScope>("accessScope", AccessScope);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.CurrentLabel>("currentLabel", CurrentLabel);
             writer.WriteCollectionOfObjectValues<DiscoveredSensitiveType>("discoveredSensitiveTypes", DiscoveredSensitiveTypes);
-            writer.WriteStringValue("@odata.type", Type);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

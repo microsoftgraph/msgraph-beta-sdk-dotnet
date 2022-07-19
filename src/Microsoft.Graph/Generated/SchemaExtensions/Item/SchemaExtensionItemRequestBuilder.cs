@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.SchemaExtensions.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new schemaExtensionItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new SchemaExtensionItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public SchemaExtensionItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.SchemaExtensions.Item {
             /// <summary>Request query parameters</summary>
             public SchemaExtensionItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new SchemaExtensionItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new schemaExtensionItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new SchemaExtensionItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public SchemaExtensionItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.SchemaExtensions.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new schemaExtensionItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new SchemaExtensionItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public SchemaExtensionItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

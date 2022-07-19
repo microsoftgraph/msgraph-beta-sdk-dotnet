@@ -23,6 +23,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<int?>("minimumCount"); }
             set { BackingStore?.Set("minimumCount", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>A filter to define a matching criteria. The key should start with the specified prefix to be returned in the response. Optional.</summary>
         public string PrefixFilter {
             get { return BackingStore?.Get<string>("prefixFilter"); }
@@ -44,6 +49,7 @@ namespace Microsoft.Graph.Beta.Models {
         public BucketAggregationDefinition() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.bucketAggregationDefinition";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -60,6 +66,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"isDescending", n => { IsDescending = n.GetBoolValue(); } },
                 {"minimumCount", n => { MinimumCount = n.GetIntValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"prefixFilter", n => { PrefixFilter = n.GetStringValue(); } },
                 {"ranges", n => { Ranges = n.GetCollectionOfObjectValues<BucketAggregationRange>(BucketAggregationRange.CreateFromDiscriminatorValue).ToList(); } },
                 {"sortBy", n => { SortBy = n.GetEnumValue<BucketAggregationSortProperty>(); } },
@@ -73,6 +80,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("isDescending", IsDescending);
             writer.WriteIntValue("minimumCount", MinimumCount);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("prefixFilter", PrefixFilter);
             writer.WriteCollectionOfObjectValues<BucketAggregationRange>("ranges", Ranges);
             writer.WriteEnumValue<BucketAggregationSortProperty>("sortBy", SortBy);

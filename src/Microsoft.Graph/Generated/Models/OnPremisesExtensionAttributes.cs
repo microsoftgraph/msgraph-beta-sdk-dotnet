@@ -88,12 +88,18 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("extensionAttribute9"); }
             set { BackingStore?.Set("extensionAttribute9", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>
         /// Instantiates a new onPremisesExtensionAttributes and sets the default values.
         /// </summary>
         public OnPremisesExtensionAttributes() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.onPremisesExtensionAttributes";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -123,6 +129,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"extensionAttribute7", n => { ExtensionAttribute7 = n.GetStringValue(); } },
                 {"extensionAttribute8", n => { ExtensionAttribute8 = n.GetStringValue(); } },
                 {"extensionAttribute9", n => { ExtensionAttribute9 = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -146,6 +153,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("extensionAttribute7", ExtensionAttribute7);
             writer.WriteStringValue("extensionAttribute8", ExtensionAttribute8);
             writer.WriteStringValue("extensionAttribute9", ExtensionAttribute9);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

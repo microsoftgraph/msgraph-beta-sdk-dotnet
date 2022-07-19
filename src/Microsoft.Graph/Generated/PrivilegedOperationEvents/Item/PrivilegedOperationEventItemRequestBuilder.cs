@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.PrivilegedOperationEvents.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new privilegedOperationEventItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new PrivilegedOperationEventItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public PrivilegedOperationEventItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.PrivilegedOperationEvents.Item {
             /// <summary>Request query parameters</summary>
             public PrivilegedOperationEventItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new PrivilegedOperationEventItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new privilegedOperationEventItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new PrivilegedOperationEventItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public PrivilegedOperationEventItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.PrivilegedOperationEvents.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new privilegedOperationEventItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new PrivilegedOperationEventItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public PrivilegedOperationEventItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

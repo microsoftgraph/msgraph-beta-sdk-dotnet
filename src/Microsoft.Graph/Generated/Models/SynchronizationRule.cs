@@ -38,6 +38,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<ObjectMapping>>("objectMappings"); }
             set { BackingStore?.Set("objectMappings", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Priority relative to other rules in the synchronizationSchema. Rules with the lowest priority number will be processed first.</summary>
         public int? Priority {
             get { return BackingStore?.Get<int?>("priority"); }
@@ -59,6 +64,7 @@ namespace Microsoft.Graph.Beta.Models {
         public SynchronizationRule() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.synchronizationRule";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -78,6 +84,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"metadata", n => { Metadata = n.GetCollectionOfObjectValues<StringKeyStringValuePair>(StringKeyStringValuePair.CreateFromDiscriminatorValue).ToList(); } },
                 {"name", n => { Name = n.GetStringValue(); } },
                 {"objectMappings", n => { ObjectMappings = n.GetCollectionOfObjectValues<ObjectMapping>(ObjectMapping.CreateFromDiscriminatorValue).ToList(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"priority", n => { Priority = n.GetIntValue(); } },
                 {"sourceDirectoryName", n => { SourceDirectoryName = n.GetStringValue(); } },
                 {"targetDirectoryName", n => { TargetDirectoryName = n.GetStringValue(); } },
@@ -94,6 +101,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfObjectValues<StringKeyStringValuePair>("metadata", Metadata);
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfObjectValues<ObjectMapping>("objectMappings", ObjectMappings);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteIntValue("priority", Priority);
             writer.WriteStringValue("sourceDirectoryName", SourceDirectoryName);
             writer.WriteStringValue("targetDirectoryName", TargetDirectoryName);

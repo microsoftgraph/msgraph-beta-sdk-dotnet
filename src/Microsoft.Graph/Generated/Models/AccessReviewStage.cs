@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class AccessReviewStage : Entity, IParsable {
         /// <summary>Each user reviewed in an accessReviewStage has a decision item representing if they were approved, denied, or not yet reviewed.</summary>
         public List<AccessReviewInstanceDecisionItem> Decisions {
@@ -35,6 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
         public string Status {
             get { return BackingStore?.Get<string>("status"); }
             set { BackingStore?.Set("status", value); }
+        }
+        /// <summary>
+        /// Instantiates a new accessReviewStage and sets the default values.
+        /// </summary>
+        public AccessReviewStage() : base() {
+            OdataType = "#microsoft.graph.accessReviewStage";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

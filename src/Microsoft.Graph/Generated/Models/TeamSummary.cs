@@ -23,6 +23,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<int?>("membersCount"); }
             set { BackingStore?.Set("membersCount", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Count of owners in a team.</summary>
         public int? OwnersCount {
             get { return BackingStore?.Get<int?>("ownersCount"); }
@@ -34,6 +39,7 @@ namespace Microsoft.Graph.Beta.Models {
         public TeamSummary() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.teamSummary";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -50,6 +56,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"guestsCount", n => { GuestsCount = n.GetIntValue(); } },
                 {"membersCount", n => { MembersCount = n.GetIntValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"ownersCount", n => { OwnersCount = n.GetIntValue(); } },
             };
         }
@@ -61,6 +68,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("guestsCount", GuestsCount);
             writer.WriteIntValue("membersCount", MembersCount);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteIntValue("ownersCount", OwnersCount);
             writer.WriteAdditionalData(AdditionalData);
         }

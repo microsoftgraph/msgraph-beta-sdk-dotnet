@@ -6,6 +6,12 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class TeleconferenceDeviceAudioQuality : TeleconferenceDeviceMediaQuality, IParsable {
         /// <summary>
+        /// Instantiates a new TeleconferenceDeviceAudioQuality and sets the default values.
+        /// </summary>
+        public TeleconferenceDeviceAudioQuality() : base() {
+            OdataType = "#microsoft.graph.teleconferenceDeviceAudioQuality";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

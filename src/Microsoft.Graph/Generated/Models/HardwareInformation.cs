@@ -124,6 +124,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("model"); }
             set { BackingStore?.Set("model", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>String that specifies the OS edition.</summary>
         public string OperatingSystemEdition {
             get { return BackingStore?.Get<string>("operatingSystemEdition"); }
@@ -220,6 +225,7 @@ namespace Microsoft.Graph.Beta.Models {
         public HardwareInformation() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.hardwareInformation";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -256,6 +262,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"manufacturer", n => { Manufacturer = n.GetStringValue(); } },
                 {"meid", n => { Meid = n.GetStringValue(); } },
                 {"model", n => { Model = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"operatingSystemEdition", n => { OperatingSystemEdition = n.GetStringValue(); } },
                 {"operatingSystemLanguage", n => { OperatingSystemLanguage = n.GetStringValue(); } },
                 {"operatingSystemProductType", n => { OperatingSystemProductType = n.GetIntValue(); } },
@@ -304,6 +311,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("manufacturer", Manufacturer);
             writer.WriteStringValue("meid", Meid);
             writer.WriteStringValue("model", Model);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("operatingSystemEdition", OperatingSystemEdition);
             writer.WriteStringValue("operatingSystemLanguage", OperatingSystemLanguage);
             writer.WriteIntValue("operatingSystemProductType", OperatingSystemProductType);

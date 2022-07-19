@@ -174,7 +174,7 @@ namespace Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Sess
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new exactMatchSessionItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new ExactMatchSessionItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public ExactMatchSessionItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -199,7 +199,7 @@ namespace Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Sess
             /// <summary>Request query parameters</summary>
             public ExactMatchSessionItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new ExactMatchSessionItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new exactMatchSessionItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new ExactMatchSessionItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public ExactMatchSessionItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -213,7 +213,7 @@ namespace Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Sess
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new exactMatchSessionItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new ExactMatchSessionItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public ExactMatchSessionItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

@@ -23,6 +23,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<MeetingParticipantInfo>>("contributors"); }
             set { BackingStore?.Set("contributors", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Information of the meeting organizer.</summary>
         public MeetingParticipantInfo Organizer {
             get { return BackingStore?.Get<MeetingParticipantInfo>("organizer"); }
@@ -39,6 +44,7 @@ namespace Microsoft.Graph.Beta.Models {
         public MeetingParticipants() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.meetingParticipants";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -55,6 +61,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"attendees", n => { Attendees = n.GetCollectionOfObjectValues<MeetingParticipantInfo>(MeetingParticipantInfo.CreateFromDiscriminatorValue).ToList(); } },
                 {"contributors", n => { Contributors = n.GetCollectionOfObjectValues<MeetingParticipantInfo>(MeetingParticipantInfo.CreateFromDiscriminatorValue).ToList(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"organizer", n => { Organizer = n.GetObjectValue<MeetingParticipantInfo>(MeetingParticipantInfo.CreateFromDiscriminatorValue); } },
                 {"producers", n => { Producers = n.GetCollectionOfObjectValues<MeetingParticipantInfo>(MeetingParticipantInfo.CreateFromDiscriminatorValue).ToList(); } },
             };
@@ -67,6 +74,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<MeetingParticipantInfo>("attendees", Attendees);
             writer.WriteCollectionOfObjectValues<MeetingParticipantInfo>("contributors", Contributors);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteObjectValue<MeetingParticipantInfo>("organizer", Organizer);
             writer.WriteCollectionOfObjectValues<MeetingParticipantInfo>("producers", Producers);
             writer.WriteAdditionalData(AdditionalData);

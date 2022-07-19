@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new AospDeviceOwnerCertificateProfileBase and sets the default values.
         /// </summary>
         public AospDeviceOwnerCertificateProfileBase() : base() {
-            Type = "#microsoft.graph.aospDeviceOwnerCertificateProfileBase";
+            OdataType = "#microsoft.graph.aospDeviceOwnerCertificateProfileBase";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

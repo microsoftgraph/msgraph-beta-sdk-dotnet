@@ -10,6 +10,17 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("otherLabel"); }
             set { BackingStore?.Set("otherLabel", value); }
         }
+        /// <summary>The type of email address. Possible values are: unknown, work, personal, main, other. The default value is unknown, which means address has not been set as a specific type.</summary>
+        public EmailType? Type {
+            get { return BackingStore?.Get<EmailType?>("type"); }
+            set { BackingStore?.Set("type", value); }
+        }
+        /// <summary>
+        /// Instantiates a new TypedEmailAddress and sets the default values.
+        /// </summary>
+        public TypedEmailAddress() : base() {
+            OdataType = "#microsoft.graph.typedEmailAddress";
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
@@ -24,6 +35,7 @@ namespace Microsoft.Graph.Beta.Models {
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"otherLabel", n => { OtherLabel = n.GetStringValue(); } },
+                {"type", n => { Type = n.GetEnumValue<EmailType>(); } },
             };
         }
         /// <summary>
@@ -34,6 +46,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("otherLabel", OtherLabel);
+            writer.WriteEnumValue<EmailType>("type", Type);
         }
     }
 }

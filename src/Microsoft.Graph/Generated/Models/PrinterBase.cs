@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class PrinterBase : Entity, IParsable {
         /// <summary>The capabilities of the printer/printerShare.</summary>
         public PrinterCapabilities Capabilities {
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new printerBase and sets the default values.
         /// </summary>
         public PrinterBase() : base() {
-            Type = "#microsoft.graph.printerBase";
+            OdataType = "#microsoft.graph.printerBase";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

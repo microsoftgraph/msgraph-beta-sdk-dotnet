@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.Currencies.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new currencyItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new CurrencyItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public CurrencyItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.Currencies.Item {
             /// <summary>Request query parameters</summary>
             public CurrencyItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new CurrencyItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new currencyItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new CurrencyItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public CurrencyItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.Currencies.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new currencyItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new CurrencyItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public CurrencyItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

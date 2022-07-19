@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class ManagedAllDeviceCertificateState : Entity, IParsable {
         /// <summary>Certificate expiry date</summary>
         public DateTimeOffset? CertificateExpirationDateTime {
@@ -65,6 +64,12 @@ namespace Microsoft.Graph.Beta.Models {
         public string UserPrincipalName {
             get { return BackingStore?.Get<string>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
+        }
+        /// <summary>
+        /// Instantiates a new ManagedAllDeviceCertificateState and sets the default values.
+        /// </summary>
+        public ManagedAllDeviceCertificateState() : base() {
+            OdataType = "#microsoft.graph.managedAllDeviceCertificateState";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

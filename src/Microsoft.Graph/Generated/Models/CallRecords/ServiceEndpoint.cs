@@ -6,6 +6,12 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.CallRecords {
     public class ServiceEndpoint : Endpoint, IParsable {
         /// <summary>
+        /// Instantiates a new ServiceEndpoint and sets the default values.
+        /// </summary>
+        public ServiceEndpoint() : base() {
+            OdataType = "#microsoft.graph.callRecords.serviceEndpoint";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

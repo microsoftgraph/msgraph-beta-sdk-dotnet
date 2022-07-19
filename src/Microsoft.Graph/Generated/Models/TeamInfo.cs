@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class TeamInfo : Entity, IParsable {
         /// <summary>The name of the team.</summary>
         public string DisplayName {
@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new teamInfo and sets the default values.
         /// </summary>
         public TeamInfo() : base() {
-            Type = "#microsoft.graph.teamInfo";
+            OdataType = "#microsoft.graph.teamInfo";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

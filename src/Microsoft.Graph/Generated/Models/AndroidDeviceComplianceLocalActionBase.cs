@@ -15,7 +15,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new AndroidDeviceComplianceLocalActionBase and sets the default values.
         /// </summary>
         public AndroidDeviceComplianceLocalActionBase() : base() {
-            Type = "#microsoft.graph.androidDeviceComplianceLocalActionBase";
+            OdataType = "#microsoft.graph.androidDeviceComplianceLocalActionBase";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

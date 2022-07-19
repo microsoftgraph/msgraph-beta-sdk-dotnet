@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Items.Item {
             /// <summary>Request query parameters</summary>
             public BaseItemItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new BaseItemItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new baseItemItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new BaseItemItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public BaseItemItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();

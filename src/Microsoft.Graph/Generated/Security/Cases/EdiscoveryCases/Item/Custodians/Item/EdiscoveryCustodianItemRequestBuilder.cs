@@ -199,7 +199,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Custodians.It
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new ediscoveryCustodianItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new EdiscoveryCustodianItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public EdiscoveryCustodianItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -224,7 +224,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Custodians.It
             /// <summary>Request query parameters</summary>
             public EdiscoveryCustodianItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new EdiscoveryCustodianItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new ediscoveryCustodianItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new EdiscoveryCustodianItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public EdiscoveryCustodianItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -238,7 +238,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Custodians.It
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new ediscoveryCustodianItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new EdiscoveryCustodianItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public EdiscoveryCustodianItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

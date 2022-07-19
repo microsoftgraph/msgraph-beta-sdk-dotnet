@@ -28,12 +28,18 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("hasOptedOut"); }
             set { BackingStore?.Set("hasOptedOut", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>
         /// Instantiates a new settings and sets the default values.
         /// </summary>
         public Settings() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.settings";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -51,6 +57,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"hasGraphMailbox", n => { HasGraphMailbox = n.GetBoolValue(); } },
                 {"hasLicense", n => { HasLicense = n.GetBoolValue(); } },
                 {"hasOptedOut", n => { HasOptedOut = n.GetBoolValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -62,6 +69,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteBoolValue("hasGraphMailbox", HasGraphMailbox);
             writer.WriteBoolValue("hasLicense", HasLicense);
             writer.WriteBoolValue("hasOptedOut", HasOptedOut);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

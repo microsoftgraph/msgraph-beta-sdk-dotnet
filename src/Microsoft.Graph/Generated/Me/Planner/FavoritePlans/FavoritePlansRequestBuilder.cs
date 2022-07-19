@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Me.Planner.FavoritePlans {
     /// <summary>Provides operations to manage the favoritePlans property of the microsoft.graph.plannerUser entity.</summary>
     public class FavoritePlansRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

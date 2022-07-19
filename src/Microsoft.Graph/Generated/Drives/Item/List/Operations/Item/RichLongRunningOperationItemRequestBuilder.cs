@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.List.Operations.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new richLongRunningOperationItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new RichLongRunningOperationItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public RichLongRunningOperationItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.List.Operations.Item {
             /// <summary>Request query parameters</summary>
             public RichLongRunningOperationItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new RichLongRunningOperationItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new richLongRunningOperationItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new RichLongRunningOperationItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public RichLongRunningOperationItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.List.Operations.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new richLongRunningOperationItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new RichLongRunningOperationItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public RichLongRunningOperationItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

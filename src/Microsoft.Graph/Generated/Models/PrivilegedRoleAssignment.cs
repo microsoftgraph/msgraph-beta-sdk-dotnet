@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class PrivilegedRoleAssignment : Entity, IParsable {
         /// <summary>The UTC DateTime when the temporary privileged role assignment will be expired. For permanent role assignment, the value is null.</summary>
         public DateTimeOffset? ExpirationDateTime {
@@ -35,6 +35,12 @@ namespace Microsoft.Graph.Beta.Models {
         public string UserId {
             get { return BackingStore?.Get<string>("userId"); }
             set { BackingStore?.Set("userId", value); }
+        }
+        /// <summary>
+        /// Instantiates a new privilegedRoleAssignment and sets the default values.
+        /// </summary>
+        public PrivilegedRoleAssignment() : base() {
+            OdataType = "#microsoft.graph.privilegedRoleAssignment";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

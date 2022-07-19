@@ -29,15 +29,15 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("id"); }
             set { BackingStore?.Set("id", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The recommendedConfidence property</summary>
         public int? RecommendedConfidence {
             get { return BackingStore?.Get<int?>("recommendedConfidence"); }
             set { BackingStore?.Set("recommendedConfidence", value); }
-        }
-        /// <summary>The type property</summary>
-        public string Type {
-            get { return BackingStore?.Get<string>("@odata.type"); }
-            set { BackingStore?.Set("@odata.type", value); }
         }
         /// <summary>The uniqueCount property</summary>
         public int? UniqueCount {
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Models {
         public DetectedSensitiveContentBase() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
-            Type = "#microsoft.graph.detectedSensitiveContentBase";
+            OdataType = "#microsoft.graph.detectedSensitiveContentBase";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -63,6 +63,7 @@ namespace Microsoft.Graph.Beta.Models {
             return mappingValue switch {
                 "#microsoft.graph.detectedSensitiveContent" => new DetectedSensitiveContent(),
                 "#microsoft.graph.exactMatchDetectedSensitiveContent" => new ExactMatchDetectedSensitiveContent(),
+                "#microsoft.graph.machineLearningDetectedSensitiveContent" => new MachineLearningDetectedSensitiveContent(),
                 _ => new DetectedSensitiveContentBase(),
             };
         }
@@ -74,8 +75,8 @@ namespace Microsoft.Graph.Beta.Models {
                 {"confidence", n => { Confidence = n.GetIntValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"id", n => { Id = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"recommendedConfidence", n => { RecommendedConfidence = n.GetIntValue(); } },
-                {"@odata.type", n => { Type = n.GetStringValue(); } },
                 {"uniqueCount", n => { UniqueCount = n.GetIntValue(); } },
             };
         }
@@ -88,8 +89,8 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteIntValue("confidence", Confidence);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("id", Id);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteIntValue("recommendedConfidence", RecommendedConfidence);
-            writer.WriteStringValue("@odata.type", Type);
             writer.WriteIntValue("uniqueCount", UniqueCount);
             writer.WriteAdditionalData(AdditionalData);
         }

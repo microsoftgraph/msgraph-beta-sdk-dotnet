@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Reports.ApplicationSignInDetailedSummary.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new applicationSignInDetailedSummaryItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new ApplicationSignInDetailedSummaryItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public ApplicationSignInDetailedSummaryItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Reports.ApplicationSignInDetailedSummary.Item {
             /// <summary>Request query parameters</summary>
             public ApplicationSignInDetailedSummaryItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new ApplicationSignInDetailedSummaryItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new applicationSignInDetailedSummaryItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new ApplicationSignInDetailedSummaryItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public ApplicationSignInDetailedSummaryItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Reports.ApplicationSignInDetailedSummary.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new applicationSignInDetailedSummaryItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new ApplicationSignInDetailedSummaryItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public ApplicationSignInDetailedSummaryItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

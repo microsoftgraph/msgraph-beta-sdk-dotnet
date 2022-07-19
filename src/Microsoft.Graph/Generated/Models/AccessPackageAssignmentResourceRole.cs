@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class AccessPackageAssignmentResourceRole : Entity, IParsable {
         /// <summary>The access package assignments resulting in this role assignment. Read-only. Nullable.</summary>
         public List<AccessPackageAssignment> AccessPackageAssignments {
@@ -40,6 +40,12 @@ namespace Microsoft.Graph.Beta.Models {
         public string Status {
             get { return BackingStore?.Get<string>("status"); }
             set { BackingStore?.Set("status", value); }
+        }
+        /// <summary>
+        /// Instantiates a new accessPackageAssignmentResourceRole and sets the default values.
+        /// </summary>
+        public AccessPackageAssignmentResourceRole() : base() {
+            OdataType = "#microsoft.graph.accessPackageAssignmentResourceRole";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

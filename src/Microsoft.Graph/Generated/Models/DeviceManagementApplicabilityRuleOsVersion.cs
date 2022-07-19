@@ -28,6 +28,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Supported Applicability rule types for Device Configuration</summary>
         public DeviceManagementApplicabilityRuleType? RuleType {
             get { return BackingStore?.Get<DeviceManagementApplicabilityRuleType?>("ruleType"); }
@@ -39,6 +44,7 @@ namespace Microsoft.Graph.Beta.Models {
         public DeviceManagementApplicabilityRuleOsVersion() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.deviceManagementApplicabilityRuleOsVersion";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -56,6 +62,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"maxOSVersion", n => { MaxOSVersion = n.GetStringValue(); } },
                 {"minOSVersion", n => { MinOSVersion = n.GetStringValue(); } },
                 {"name", n => { Name = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"ruleType", n => { RuleType = n.GetEnumValue<DeviceManagementApplicabilityRuleType>(); } },
             };
         }
@@ -68,6 +75,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("maxOSVersion", MaxOSVersion);
             writer.WriteStringValue("minOSVersion", MinOSVersion);
             writer.WriteStringValue("name", Name);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteEnumValue<DeviceManagementApplicabilityRuleType>("ruleType", RuleType);
             writer.WriteAdditionalData(AdditionalData);
         }

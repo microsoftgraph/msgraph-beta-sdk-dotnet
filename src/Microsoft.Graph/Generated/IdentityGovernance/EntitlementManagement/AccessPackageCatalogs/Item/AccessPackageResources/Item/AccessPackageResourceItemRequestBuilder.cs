@@ -169,7 +169,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new accessPackageResourceItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new AccessPackageResourceItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public AccessPackageResourceItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -194,7 +194,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
             /// <summary>Request query parameters</summary>
             public AccessPackageResourceItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new AccessPackageResourceItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new accessPackageResourceItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new AccessPackageResourceItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public AccessPackageResourceItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -208,7 +208,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new accessPackageResourceItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new AccessPackageResourceItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public AccessPackageResourceItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

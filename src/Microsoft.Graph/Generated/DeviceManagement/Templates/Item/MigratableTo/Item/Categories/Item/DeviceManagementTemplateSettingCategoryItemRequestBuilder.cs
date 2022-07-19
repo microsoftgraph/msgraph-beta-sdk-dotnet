@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Templates.Item.MigratableTo.Item
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new deviceManagementTemplateSettingCategoryItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceManagementTemplateSettingCategoryItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceManagementTemplateSettingCategoryItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -184,7 +184,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Templates.Item.MigratableTo.Item
             /// <summary>Request query parameters</summary>
             public DeviceManagementTemplateSettingCategoryItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new DeviceManagementTemplateSettingCategoryItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new deviceManagementTemplateSettingCategoryItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceManagementTemplateSettingCategoryItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceManagementTemplateSettingCategoryItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -198,7 +198,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Templates.Item.MigratableTo.Item
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new deviceManagementTemplateSettingCategoryItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceManagementTemplateSettingCategoryItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceManagementTemplateSettingCategoryItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of approvalWorkflowProvider entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class BusinessFlow : Entity, IParsable {
         /// <summary>The customData property</summary>
         public string CustomData {
@@ -50,6 +50,12 @@ namespace Microsoft.Graph.Beta.Models {
         public BusinessFlowSettings Settings {
             get { return BackingStore?.Get<BusinessFlowSettings>("settings"); }
             set { BackingStore?.Set("settings", value); }
+        }
+        /// <summary>
+        /// Instantiates a new businessFlow and sets the default values.
+        /// </summary>
+        public BusinessFlow() : base() {
+            OdataType = "#microsoft.graph.businessFlow";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

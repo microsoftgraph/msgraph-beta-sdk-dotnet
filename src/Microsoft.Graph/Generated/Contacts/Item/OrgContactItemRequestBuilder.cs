@@ -204,7 +204,7 @@ namespace Microsoft.Graph.Beta.Contacts.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new orgContactItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new OrgContactItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public OrgContactItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -229,7 +229,7 @@ namespace Microsoft.Graph.Beta.Contacts.Item {
             /// <summary>Request query parameters</summary>
             public OrgContactItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new OrgContactItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new orgContactItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new OrgContactItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public OrgContactItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -243,7 +243,7 @@ namespace Microsoft.Graph.Beta.Contacts.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new orgContactItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new OrgContactItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public OrgContactItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

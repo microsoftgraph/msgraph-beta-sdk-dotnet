@@ -164,7 +164,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsQualityUpdateProfiles.Ite
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new windowsQualityUpdateProfileItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new WindowsQualityUpdateProfileItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public WindowsQualityUpdateProfileItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -189,7 +189,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsQualityUpdateProfiles.Ite
             /// <summary>Request query parameters</summary>
             public WindowsQualityUpdateProfileItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new WindowsQualityUpdateProfileItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new windowsQualityUpdateProfileItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new WindowsQualityUpdateProfileItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public WindowsQualityUpdateProfileItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -203,7 +203,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsQualityUpdateProfiles.Ite
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new windowsQualityUpdateProfileItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new WindowsQualityUpdateProfileItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public WindowsQualityUpdateProfileItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

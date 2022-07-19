@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Communications.Calls.Item.AudioRoutingGroups.Item
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new audioRoutingGroupItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new AudioRoutingGroupItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public AudioRoutingGroupItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Communications.Calls.Item.AudioRoutingGroups.Item
             /// <summary>Request query parameters</summary>
             public AudioRoutingGroupItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new AudioRoutingGroupItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new audioRoutingGroupItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new AudioRoutingGroupItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public AudioRoutingGroupItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Communications.Calls.Item.AudioRoutingGroups.Item
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new audioRoutingGroupItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new AudioRoutingGroupItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public AudioRoutingGroupItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Users.Item.MailFolders.Item.Messages.Item.Mentions {
     /// <summary>Provides operations to manage the mentions property of the microsoft.graph.message entity.</summary>
     public class MentionsRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

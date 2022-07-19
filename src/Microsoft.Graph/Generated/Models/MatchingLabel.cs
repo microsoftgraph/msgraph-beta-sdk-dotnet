@@ -48,6 +48,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The policyTip property</summary>
         public string PolicyTip {
             get { return BackingStore?.Get<string>("policyTip"); }
@@ -69,6 +74,7 @@ namespace Microsoft.Graph.Beta.Models {
         public MatchingLabel() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.matchingLabel";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -90,6 +96,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"isEndpointProtectionEnabled", n => { IsEndpointProtectionEnabled = n.GetBoolValue(); } },
                 {"labelActions", n => { LabelActions = n.GetCollectionOfObjectValues<LabelActionBase>(LabelActionBase.CreateFromDiscriminatorValue).ToList(); } },
                 {"name", n => { Name = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"policyTip", n => { PolicyTip = n.GetStringValue(); } },
                 {"priority", n => { Priority = n.GetIntValue(); } },
                 {"toolTip", n => { ToolTip = n.GetStringValue(); } },
@@ -108,6 +115,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteBoolValue("isEndpointProtectionEnabled", IsEndpointProtectionEnabled);
             writer.WriteCollectionOfObjectValues<LabelActionBase>("labelActions", LabelActions);
             writer.WriteStringValue("name", Name);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("policyTip", PolicyTip);
             writer.WriteIntValue("priority", Priority);
             writer.WriteStringValue("toolTip", ToolTip);

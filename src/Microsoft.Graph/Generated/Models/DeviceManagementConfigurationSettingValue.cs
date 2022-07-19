@@ -15,15 +15,15 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Setting value template reference</summary>
         public DeviceManagementConfigurationSettingValueTemplateReference SettingValueTemplateReference {
             get { return BackingStore?.Get<DeviceManagementConfigurationSettingValueTemplateReference>("settingValueTemplateReference"); }
             set { BackingStore?.Set("settingValueTemplateReference", value); }
-        }
-        /// <summary>The type property</summary>
-        public string Type {
-            get { return BackingStore?.Get<string>("@odata.type"); }
-            set { BackingStore?.Set("@odata.type", value); }
         }
         /// <summary>
         /// Instantiates a new deviceManagementConfigurationSettingValue and sets the default values.
@@ -31,7 +31,7 @@ namespace Microsoft.Graph.Beta.Models {
         public DeviceManagementConfigurationSettingValue() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
-            Type = "#microsoft.graph.deviceManagementConfigurationSettingValue";
+            OdataType = "#microsoft.graph.deviceManagementConfigurationSettingValue";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -44,7 +44,11 @@ namespace Microsoft.Graph.Beta.Models {
             return mappingValue switch {
                 "#microsoft.graph.deviceManagementConfigurationChoiceSettingValue" => new DeviceManagementConfigurationChoiceSettingValue(),
                 "#microsoft.graph.deviceManagementConfigurationGroupSettingValue" => new DeviceManagementConfigurationGroupSettingValue(),
+                "#microsoft.graph.deviceManagementConfigurationIntegerSettingValue" => new DeviceManagementConfigurationIntegerSettingValue(),
+                "#microsoft.graph.deviceManagementConfigurationReferenceSettingValue" => new DeviceManagementConfigurationReferenceSettingValue(),
+                "#microsoft.graph.deviceManagementConfigurationSecretSettingValue" => new DeviceManagementConfigurationSecretSettingValue(),
                 "#microsoft.graph.deviceManagementConfigurationSimpleSettingValue" => new DeviceManagementConfigurationSimpleSettingValue(),
+                "#microsoft.graph.deviceManagementConfigurationStringSettingValue" => new DeviceManagementConfigurationStringSettingValue(),
                 _ => new DeviceManagementConfigurationSettingValue(),
             };
         }
@@ -53,8 +57,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"settingValueTemplateReference", n => { SettingValueTemplateReference = n.GetObjectValue<DeviceManagementConfigurationSettingValueTemplateReference>(DeviceManagementConfigurationSettingValueTemplateReference.CreateFromDiscriminatorValue); } },
-                {"@odata.type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -63,8 +67,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteObjectValue<DeviceManagementConfigurationSettingValueTemplateReference>("settingValueTemplateReference", SettingValueTemplateReference);
-            writer.WriteStringValue("@odata.type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

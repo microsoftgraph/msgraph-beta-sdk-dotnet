@@ -28,6 +28,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("internalReplyMessage"); }
             set { BackingStore?.Set("internalReplyMessage", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The date and time that automatic replies are set to end, if Status is set to Scheduled.</summary>
         public DateTimeTimeZone ScheduledEndDateTime {
             get { return BackingStore?.Get<DateTimeTimeZone>("scheduledEndDateTime"); }
@@ -49,6 +54,7 @@ namespace Microsoft.Graph.Beta.Models {
         public AutomaticRepliesSetting() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.automaticRepliesSetting";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -66,6 +72,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"externalAudience", n => { ExternalAudience = n.GetEnumValue<ExternalAudienceScope>(); } },
                 {"externalReplyMessage", n => { ExternalReplyMessage = n.GetStringValue(); } },
                 {"internalReplyMessage", n => { InternalReplyMessage = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"scheduledEndDateTime", n => { ScheduledEndDateTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
                 {"scheduledStartDateTime", n => { ScheduledStartDateTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
                 {"status", n => { Status = n.GetEnumValue<AutomaticRepliesStatus>(); } },
@@ -80,6 +87,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteEnumValue<ExternalAudienceScope>("externalAudience", ExternalAudience);
             writer.WriteStringValue("externalReplyMessage", ExternalReplyMessage);
             writer.WriteStringValue("internalReplyMessage", InternalReplyMessage);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteObjectValue<DateTimeTimeZone>("scheduledEndDateTime", ScheduledEndDateTime);
             writer.WriteObjectValue<DateTimeTimeZone>("scheduledStartDateTime", ScheduledStartDateTime);
             writer.WriteEnumValue<AutomaticRepliesStatus>("status", Status);

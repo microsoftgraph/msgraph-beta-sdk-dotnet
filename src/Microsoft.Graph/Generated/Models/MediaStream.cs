@@ -28,6 +28,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<Modality?>("mediaType"); }
             set { BackingStore?.Set("mediaType", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Indicates whether the media is muted by the server.</summary>
         public bool? ServerMuted {
             get { return BackingStore?.Get<bool?>("serverMuted"); }
@@ -44,6 +49,7 @@ namespace Microsoft.Graph.Beta.Models {
         public MediaStream() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.mediaStream";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -61,6 +67,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"direction", n => { Direction = n.GetEnumValue<MediaDirection>(); } },
                 {"label", n => { Label = n.GetStringValue(); } },
                 {"mediaType", n => { MediaType = n.GetEnumValue<Modality>(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"serverMuted", n => { ServerMuted = n.GetBoolValue(); } },
                 {"sourceId", n => { SourceId = n.GetStringValue(); } },
             };
@@ -74,6 +81,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteEnumValue<MediaDirection>("direction", Direction);
             writer.WriteStringValue("label", Label);
             writer.WriteEnumValue<Modality>("mediaType", MediaType);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteBoolValue("serverMuted", ServerMuted);
             writer.WriteStringValue("sourceId", SourceId);
             writer.WriteAdditionalData(AdditionalData);

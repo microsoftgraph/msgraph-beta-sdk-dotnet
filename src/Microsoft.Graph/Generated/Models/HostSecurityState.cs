@@ -38,6 +38,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("netBiosName"); }
             set { BackingStore?.Set("netBiosName", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Host Operating System. (For example, Windows10, MacOS, RHEL, etc.).</summary>
         public string Os {
             get { return BackingStore?.Get<string>("os"); }
@@ -64,6 +69,7 @@ namespace Microsoft.Graph.Beta.Models {
         public HostSecurityState() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.hostSecurityState";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -83,6 +89,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"isAzureAdRegistered", n => { IsAzureAdRegistered = n.GetBoolValue(); } },
                 {"isHybridAzureDomainJoined", n => { IsHybridAzureDomainJoined = n.GetBoolValue(); } },
                 {"netBiosName", n => { NetBiosName = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"os", n => { Os = n.GetStringValue(); } },
                 {"privateIpAddress", n => { PrivateIpAddress = n.GetStringValue(); } },
                 {"publicIpAddress", n => { PublicIpAddress = n.GetStringValue(); } },
@@ -100,6 +107,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteBoolValue("isAzureAdRegistered", IsAzureAdRegistered);
             writer.WriteBoolValue("isHybridAzureDomainJoined", IsHybridAzureDomainJoined);
             writer.WriteStringValue("netBiosName", NetBiosName);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("os", Os);
             writer.WriteStringValue("privateIpAddress", PrivateIpAddress);
             writer.WriteStringValue("publicIpAddress", PublicIpAddress);

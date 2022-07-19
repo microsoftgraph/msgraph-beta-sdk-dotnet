@@ -120,7 +120,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new AppleVpnConfiguration and sets the default values.
         /// </summary>
         public AppleVpnConfiguration() : base() {
-            Type = "#microsoft.graph.appleVpnConfiguration";
+            OdataType = "#microsoft.graph.appleVpnConfiguration";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -131,6 +131,7 @@ namespace Microsoft.Graph.Beta.Models {
             var mappingValueNode = parseNode.GetChildNode("@odata.type");
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
+                "#microsoft.graph.iosikEv2VpnConfiguration" => new IosikEv2VpnConfiguration(),
                 "#microsoft.graph.iosVpnConfiguration" => new IosVpnConfiguration(),
                 "#microsoft.graph.macOSVpnConfiguration" => new MacOSVpnConfiguration(),
                 _ => new AppleVpnConfiguration(),

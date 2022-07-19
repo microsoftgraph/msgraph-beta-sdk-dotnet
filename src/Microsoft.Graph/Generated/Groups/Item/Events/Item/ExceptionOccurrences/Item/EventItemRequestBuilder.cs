@@ -219,7 +219,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Events.Item.ExceptionOccurrences.Item
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new eventItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new EventItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public EventItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -244,7 +244,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Events.Item.ExceptionOccurrences.Item
             /// <summary>Request query parameters</summary>
             public EventItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new EventItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new eventItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new EventItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public EventItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -258,7 +258,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Events.Item.ExceptionOccurrences.Item
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new eventItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new EventItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public EventItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

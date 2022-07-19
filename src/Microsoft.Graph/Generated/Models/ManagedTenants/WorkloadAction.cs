@@ -38,6 +38,11 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
             get { return BackingStore?.Get<List<string>>("licenses"); }
             set { BackingStore?.Set("licenses", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The service associated with workload action. Optional. Read-only.</summary>
         public string Service {
             get { return BackingStore?.Get<string>("service"); }
@@ -54,6 +59,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         public WorkloadAction() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.managedTenants.workloadAction";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -73,6 +79,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"licenses", n => { Licenses = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"service", n => { Service = n.GetStringValue(); } },
                 {"settings", n => { Settings = n.GetCollectionOfObjectValues<Setting>(Setting.CreateFromDiscriminatorValue).ToList(); } },
             };
@@ -88,6 +95,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteCollectionOfPrimitiveValues<string>("licenses", Licenses);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("service", Service);
             writer.WriteCollectionOfObjectValues<Setting>("settings", Settings);
             writer.WriteAdditionalData(AdditionalData);

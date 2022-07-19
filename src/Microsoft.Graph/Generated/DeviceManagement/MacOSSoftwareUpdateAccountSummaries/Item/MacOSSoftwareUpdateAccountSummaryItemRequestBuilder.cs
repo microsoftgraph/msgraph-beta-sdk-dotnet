@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MacOSSoftwareUpdateAccountSummar
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new macOSSoftwareUpdateAccountSummaryItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new MacOSSoftwareUpdateAccountSummaryItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public MacOSSoftwareUpdateAccountSummaryItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -184,7 +184,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MacOSSoftwareUpdateAccountSummar
             /// <summary>Request query parameters</summary>
             public MacOSSoftwareUpdateAccountSummaryItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new MacOSSoftwareUpdateAccountSummaryItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new macOSSoftwareUpdateAccountSummaryItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new MacOSSoftwareUpdateAccountSummaryItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public MacOSSoftwareUpdateAccountSummaryItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -198,7 +198,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MacOSSoftwareUpdateAccountSummar
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new macOSSoftwareUpdateAccountSummaryItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new MacOSSoftwareUpdateAccountSummaryItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public MacOSSoftwareUpdateAccountSummaryItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Workbooks.Item.ListItem.DocumentSetVersions {
     /// <summary>Provides operations to manage the documentSetVersions property of the microsoft.graph.listItem entity.</summary>
     public class DocumentSetVersionsRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

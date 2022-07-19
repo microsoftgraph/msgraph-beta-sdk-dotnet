@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new baseItem and sets the default values.
         /// </summary>
         public BaseItem() : base() {
-            Type = "#microsoft.graph.baseItem";
+            OdataType = "#microsoft.graph.baseItem";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.Impor
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new importedAppleDeviceIdentityItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new ImportedAppleDeviceIdentityItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public ImportedAppleDeviceIdentityItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.Impor
             /// <summary>Request query parameters</summary>
             public ImportedAppleDeviceIdentityItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new ImportedAppleDeviceIdentityItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new importedAppleDeviceIdentityItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new ImportedAppleDeviceIdentityItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public ImportedAppleDeviceIdentityItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.Impor
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new importedAppleDeviceIdentityItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new ImportedAppleDeviceIdentityItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public ImportedAppleDeviceIdentityItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

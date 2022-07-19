@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsDriverUpdateProfiles.Item
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new windowsDriverUpdateProfileItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new WindowsDriverUpdateProfileItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public WindowsDriverUpdateProfileItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -204,7 +204,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsDriverUpdateProfiles.Item
             /// <summary>Request query parameters</summary>
             public WindowsDriverUpdateProfileItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new WindowsDriverUpdateProfileItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new windowsDriverUpdateProfileItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new WindowsDriverUpdateProfileItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public WindowsDriverUpdateProfileItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -218,7 +218,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsDriverUpdateProfiles.Item
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new windowsDriverUpdateProfileItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new WindowsDriverUpdateProfileItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public WindowsDriverUpdateProfileItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

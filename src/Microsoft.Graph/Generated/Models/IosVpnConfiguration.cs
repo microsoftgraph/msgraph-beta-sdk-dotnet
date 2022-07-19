@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new IosVpnConfiguration and sets the default values.
         /// </summary>
         public IosVpnConfiguration() : base() {
-            Type = "#microsoft.graph.iosVpnConfiguration";
+            OdataType = "#microsoft.graph.iosVpnConfiguration";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

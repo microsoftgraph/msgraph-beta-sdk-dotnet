@@ -24,6 +24,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DateTimeOffset?>("lastUpdateDateTime"); }
             set { BackingStore?.Set("lastUpdateDateTime", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>OS version</summary>
         public string OsVersion {
             get { return BackingStore?.Get<string>("osVersion"); }
@@ -35,6 +40,7 @@ namespace Microsoft.Graph.Beta.Models {
         public OsVersionCount() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.osVersionCount";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -51,6 +57,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"deviceCount", n => { DeviceCount = n.GetIntValue(); } },
                 {"lastUpdateDateTime", n => { LastUpdateDateTime = n.GetDateTimeOffsetValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"osVersion", n => { OsVersion = n.GetStringValue(); } },
             };
         }
@@ -62,6 +69,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("deviceCount", DeviceCount);
             writer.WriteDateTimeOffsetValue("lastUpdateDateTime", LastUpdateDateTime);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("osVersion", OsVersion);
             writer.WriteAdditionalData(AdditionalData);
         }

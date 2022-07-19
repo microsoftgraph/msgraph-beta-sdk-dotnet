@@ -156,6 +156,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("userSetupDelayed", value); }
         }
         /// <summary>
+        /// Instantiates a new MacOSKerberosSingleSignOnExtension and sets the default values.
+        /// </summary>
+        public MacOSKerberosSingleSignOnExtension() : base() {
+            OdataType = "#microsoft.graph.macOSKerberosSingleSignOnExtension";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

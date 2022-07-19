@@ -24,8 +24,8 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<Identity>("device"); }
             set { BackingStore?.Set("device", value); }
         }
-        /// <summary>The type property</summary>
-        public string Type {
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Beta.Models {
         public IdentitySet() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
-            Type = "#microsoft.graph.identitySet";
+            OdataType = "#microsoft.graph.identitySet";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"application", n => { Application = n.GetObjectValue<Identity>(Identity.CreateFromDiscriminatorValue); } },
                 {"device", n => { Device = n.GetObjectValue<Identity>(Identity.CreateFromDiscriminatorValue); } },
-                {"@odata.type", n => { Type = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"user", n => { User = n.GetObjectValue<Identity>(Identity.CreateFromDiscriminatorValue); } },
             };
         }
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<Identity>("application", Application);
             writer.WriteObjectValue<Identity>("device", Device);
-            writer.WriteStringValue("@odata.type", Type);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteObjectValue<Identity>("user", User);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -6,6 +6,12 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class ItemInsights : OfficeGraphInsights, IParsable {
         /// <summary>
+        /// Instantiates a new ItemInsights and sets the default values.
+        /// </summary>
+        public ItemInsights() : base() {
+            OdataType = "#microsoft.graph.itemInsights";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

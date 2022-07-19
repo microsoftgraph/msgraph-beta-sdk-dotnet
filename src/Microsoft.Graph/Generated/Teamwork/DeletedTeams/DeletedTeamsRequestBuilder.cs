@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Teamwork.DeletedTeams {
     /// <summary>Provides operations to manage the deletedTeams property of the microsoft.graph.teamwork entity.</summary>
     public class DeletedTeamsRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

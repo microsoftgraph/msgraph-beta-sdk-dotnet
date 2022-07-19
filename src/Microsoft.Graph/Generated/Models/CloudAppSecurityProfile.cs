@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class CloudAppSecurityProfile : Entity, IParsable {
         /// <summary>The azureSubscriptionId property</summary>
         public string AzureSubscriptionId {
@@ -81,10 +80,21 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<string>>("tags"); }
             set { BackingStore?.Set("tags", value); }
         }
+        /// <summary>The type property</summary>
+        public string Type {
+            get { return BackingStore?.Get<string>("type"); }
+            set { BackingStore?.Set("type", value); }
+        }
         /// <summary>The vendorInformation property</summary>
         public SecurityVendorInformation VendorInformation {
             get { return BackingStore?.Get<SecurityVendorInformation>("vendorInformation"); }
             set { BackingStore?.Set("vendorInformation", value); }
+        }
+        /// <summary>
+        /// Instantiates a new CloudAppSecurityProfile and sets the default values.
+        /// </summary>
+        public CloudAppSecurityProfile() : base() {
+            OdataType = "#microsoft.graph.cloudAppSecurityProfile";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -114,6 +124,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"publisher", n => { Publisher = n.GetStringValue(); } },
                 {"riskScore", n => { RiskScore = n.GetStringValue(); } },
                 {"tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"type", n => { Type = n.GetStringValue(); } },
                 {"vendorInformation", n => { VendorInformation = n.GetObjectValue<SecurityVendorInformation>(SecurityVendorInformation.CreateFromDiscriminatorValue); } },
             };
         }
@@ -139,6 +150,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("publisher", Publisher);
             writer.WriteStringValue("riskScore", RiskScore);
             writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
+            writer.WriteStringValue("type", Type);
             writer.WriteObjectValue<SecurityVendorInformation>("vendorInformation", VendorInformation);
         }
     }

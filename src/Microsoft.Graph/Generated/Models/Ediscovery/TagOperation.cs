@@ -6,6 +6,12 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Ediscovery {
     public class TagOperation : CaseOperation, IParsable {
         /// <summary>
+        /// Instantiates a new TagOperation and sets the default values.
+        /// </summary>
+        public TagOperation() : base() {
+            OdataType = "#microsoft.graph.ediscovery.tagOperation";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

@@ -38,6 +38,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The length of the attachment in bytes. Required.</summary>
         public long? Size {
             get { return BackingStore?.Get<long?>("size"); }
@@ -49,6 +54,7 @@ namespace Microsoft.Graph.Beta.Models {
         public AttachmentItem() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.attachmentItem";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -68,6 +74,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"contentType", n => { ContentType = n.GetStringValue(); } },
                 {"isInline", n => { IsInline = n.GetBoolValue(); } },
                 {"name", n => { Name = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"size", n => { Size = n.GetLongValue(); } },
             };
         }
@@ -82,6 +89,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("contentType", ContentType);
             writer.WriteBoolValue("isInline", IsInline);
             writer.WriteStringValue("name", Name);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteLongValue("size", Size);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.PolicySets.Item.Items.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new policySetItemItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new PolicySetItemItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public PolicySetItemItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.PolicySets.Item.Items.Item {
             /// <summary>Request query parameters</summary>
             public PolicySetItemItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new PolicySetItemItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new policySetItemItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new PolicySetItemItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public PolicySetItemItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.PolicySets.Item.Items.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new policySetItemItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new PolicySetItemItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public PolicySetItemItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

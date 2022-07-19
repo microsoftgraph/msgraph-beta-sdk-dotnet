@@ -31,6 +31,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("recommendedAction", value); }
         }
         /// <summary>
+        /// Instantiates a new StatusDetails and sets the default values.
+        /// </summary>
+        public StatusDetails() : base() {
+            OdataType = "#microsoft.graph.statusDetails";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

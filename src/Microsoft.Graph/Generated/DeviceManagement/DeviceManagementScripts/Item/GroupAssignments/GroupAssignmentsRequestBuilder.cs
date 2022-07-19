@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.DeviceManagement.DeviceManagementScripts.Item.GroupAssignments {
     /// <summary>Provides operations to manage the groupAssignments property of the microsoft.graph.deviceManagementScript entity.</summary>
     public class GroupAssignmentsRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

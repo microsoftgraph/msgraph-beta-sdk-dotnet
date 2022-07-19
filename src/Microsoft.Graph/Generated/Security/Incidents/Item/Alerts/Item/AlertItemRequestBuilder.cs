@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Beta.Security.Incidents.Item.Alerts.Item {
             /// <summary>Request query parameters</summary>
             public AlertItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new AlertItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new alertItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new AlertItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public AlertItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();

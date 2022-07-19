@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Communications.CallRecords.Item.Sessions.Item.Segments {
     /// <summary>Provides operations to manage the segments property of the microsoft.graph.callRecords.session entity.</summary>
     public class SegmentsRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

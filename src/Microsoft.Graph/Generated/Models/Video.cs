@@ -58,6 +58,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<int?>("height"); }
             set { BackingStore?.Set("height", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Width of the video, in pixels.</summary>
         public int? Width {
             get { return BackingStore?.Get<int?>("width"); }
@@ -69,6 +74,7 @@ namespace Microsoft.Graph.Beta.Models {
         public Video() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.video";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -92,6 +98,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"fourCC", n => { FourCC = n.GetStringValue(); } },
                 {"frameRate", n => { FrameRate = n.GetDoubleValue(); } },
                 {"height", n => { Height = n.GetIntValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"width", n => { Width = n.GetIntValue(); } },
             };
         }
@@ -110,6 +117,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("fourCC", FourCC);
             writer.WriteDoubleValue("frameRate", FrameRate);
             writer.WriteIntValue("height", Height);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteIntValue("width", Width);
             writer.WriteAdditionalData(AdditionalData);
         }

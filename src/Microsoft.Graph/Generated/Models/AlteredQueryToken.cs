@@ -18,6 +18,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<int?>("length"); }
             set { BackingStore?.Set("length", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Defines the offset of a changed segment.</summary>
         public int? Offset {
             get { return BackingStore?.Get<int?>("offset"); }
@@ -34,6 +39,7 @@ namespace Microsoft.Graph.Beta.Models {
         public AlteredQueryToken() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.alteredQueryToken";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -49,6 +55,7 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"length", n => { Length = n.GetIntValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"offset", n => { Offset = n.GetIntValue(); } },
                 {"suggestion", n => { Suggestion = n.GetStringValue(); } },
             };
@@ -60,6 +67,7 @@ namespace Microsoft.Graph.Beta.Models {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("length", Length);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteIntValue("offset", Offset);
             writer.WriteStringValue("suggestion", Suggestion);
             writer.WriteAdditionalData(AdditionalData);

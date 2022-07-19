@@ -18,6 +18,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("isDialInBypassEnabled"); }
             set { BackingStore?.Set("isDialInBypassEnabled", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Specifies the type of participants that are automatically admitted into a meeting, bypassing the lobby. Optional.</summary>
         public LobbyBypassScope? Scope {
             get { return BackingStore?.Get<LobbyBypassScope?>("scope"); }
@@ -29,6 +34,7 @@ namespace Microsoft.Graph.Beta.Models {
         public LobbyBypassSettings() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.lobbyBypassSettings";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -44,6 +50,7 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"isDialInBypassEnabled", n => { IsDialInBypassEnabled = n.GetBoolValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"scope", n => { Scope = n.GetEnumValue<LobbyBypassScope>(); } },
             };
         }
@@ -54,6 +61,7 @@ namespace Microsoft.Graph.Beta.Models {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("isDialInBypassEnabled", IsDialInBypassEnabled);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteEnumValue<LobbyBypassScope>("scope", Scope);
             writer.WriteAdditionalData(AdditionalData);
         }

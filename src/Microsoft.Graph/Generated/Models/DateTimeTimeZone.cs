@@ -18,6 +18,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("dateTime"); }
             set { BackingStore?.Set("dateTime", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Represents a time zone, for example, &apos;Pacific Standard Time&apos;. See below for possible values.</summary>
         public string TimeZone {
             get { return BackingStore?.Get<string>("timeZone"); }
@@ -29,6 +34,7 @@ namespace Microsoft.Graph.Beta.Models {
         public DateTimeTimeZone() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.dateTimeTimeZone";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -44,6 +50,7 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"dateTime", n => { DateTime = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"timeZone", n => { TimeZone = n.GetStringValue(); } },
             };
         }
@@ -54,6 +61,7 @@ namespace Microsoft.Graph.Beta.Models {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("dateTime", DateTime);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("timeZone", TimeZone);
             writer.WriteAdditionalData(AdditionalData);
         }

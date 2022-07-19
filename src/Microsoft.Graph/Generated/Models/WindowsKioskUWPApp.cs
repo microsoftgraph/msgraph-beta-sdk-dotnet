@@ -21,6 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("containedAppId", value); }
         }
         /// <summary>
+        /// Instantiates a new WindowsKioskUWPApp and sets the default values.
+        /// </summary>
+        public WindowsKioskUWPApp() : base() {
+            OdataType = "#microsoft.graph.windowsKioskUWPApp";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

@@ -23,6 +23,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("mimeType"); }
             set { BackingStore?.Set("mimeType", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The processingMetadata property</summary>
         public bool? ProcessingMetadata {
             get { return BackingStore?.Get<bool?>("processingMetadata"); }
@@ -34,6 +39,7 @@ namespace Microsoft.Graph.Beta.Models {
         public FileObject() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.file";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -50,6 +56,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"hashes", n => { Hashes = n.GetObjectValue<Microsoft.Graph.Beta.Models.Hashes>(Microsoft.Graph.Beta.Models.Hashes.CreateFromDiscriminatorValue); } },
                 {"mimeType", n => { MimeType = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"processingMetadata", n => { ProcessingMetadata = n.GetBoolValue(); } },
             };
         }
@@ -61,6 +68,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Hashes>("hashes", Hashes);
             writer.WriteStringValue("mimeType", MimeType);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteBoolValue("processingMetadata", ProcessingMetadata);
             writer.WriteAdditionalData(AdditionalData);
         }

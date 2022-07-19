@@ -11,6 +11,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("elementDefinitionId", value); }
         }
         /// <summary>
+        /// Instantiates a new DeviceManagementCollectionSettingDefinition and sets the default values.
+        /// </summary>
+        public DeviceManagementCollectionSettingDefinition() : base() {
+            OdataType = "#microsoft.graph.deviceManagementCollectionSettingDefinition";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

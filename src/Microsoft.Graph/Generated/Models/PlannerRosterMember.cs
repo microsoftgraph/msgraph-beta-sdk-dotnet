@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class PlannerRosterMember : Entity, IParsable {
         /// <summary>Additional roles associated with the PlannerRosterMember, which determines permissions of the member in the plannerRoster. Currently there are no available roles to assign, and every member has full control over the contents of the plannerRoster.</summary>
         public List<string> Roles {
@@ -20,6 +20,12 @@ namespace Microsoft.Graph.Beta.Models {
         public string UserId {
             get { return BackingStore?.Get<string>("userId"); }
             set { BackingStore?.Set("userId", value); }
+        }
+        /// <summary>
+        /// Instantiates a new plannerRosterMember and sets the default values.
+        /// </summary>
+        public PlannerRosterMember() : base() {
+            OdataType = "#microsoft.graph.plannerRosterMember";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

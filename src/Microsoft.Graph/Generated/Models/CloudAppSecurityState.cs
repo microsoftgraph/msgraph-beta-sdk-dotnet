@@ -23,6 +23,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("destinationServiceName"); }
             set { BackingStore?.Set("destinationServiceName", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Provider-generated/calculated risk score of the Cloud Application/Service. Recommended value range of 0-1, which equates to a percentage.</summary>
         public string RiskScore {
             get { return BackingStore?.Get<string>("riskScore"); }
@@ -34,6 +39,7 @@ namespace Microsoft.Graph.Beta.Models {
         public CloudAppSecurityState() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.cloudAppSecurityState";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -50,6 +56,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"destinationServiceIp", n => { DestinationServiceIp = n.GetStringValue(); } },
                 {"destinationServiceName", n => { DestinationServiceName = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"riskScore", n => { RiskScore = n.GetStringValue(); } },
             };
         }
@@ -61,6 +68,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("destinationServiceIp", DestinationServiceIp);
             writer.WriteStringValue("destinationServiceName", DestinationServiceName);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("riskScore", RiskScore);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Users.Item.Drives.Item.Root.Thumbnails {
     /// <summary>Provides operations to manage the thumbnails property of the microsoft.graph.driveItem entity.</summary>
     public class ThumbnailsRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

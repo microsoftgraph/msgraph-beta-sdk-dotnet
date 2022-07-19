@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class WorkbookTableRow : Entity, IParsable {
         /// <summary>Returns the index number of the row within the rows collection of the table. Zero-indexed. Read-only.</summary>
         public int? Index {
@@ -15,6 +15,12 @@ namespace Microsoft.Graph.Beta.Models {
         public Json Values {
             get { return BackingStore?.Get<Json>("values"); }
             set { BackingStore?.Set("values", value); }
+        }
+        /// <summary>
+        /// Instantiates a new workbookTableRow and sets the default values.
+        /// </summary>
+        public WorkbookTableRow() : base() {
+            OdataType = "#microsoft.graph.workbookTableRow";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

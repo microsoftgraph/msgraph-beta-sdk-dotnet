@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Me.Planner.All.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new plannerDeltaItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new PlannerDeltaItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public PlannerDeltaItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Me.Planner.All.Item {
             /// <summary>Request query parameters</summary>
             public PlannerDeltaItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new PlannerDeltaItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new plannerDeltaItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new PlannerDeltaItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public PlannerDeltaItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Me.Planner.All.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new plannerDeltaItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new PlannerDeltaItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public PlannerDeltaItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

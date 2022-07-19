@@ -62,6 +62,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("resources", value); }
         }
         /// <summary>
+        /// Instantiates a new auditEvent and sets the default values.
+        /// </summary>
+        public AuditEvent() : base() {
+            OdataType = "#microsoft.graph.auditEvent";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

@@ -174,7 +174,7 @@ namespace Microsoft.Graph.Beta.Me.Outlook.TaskFolders.Item.Tasks.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new outlookTaskItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new OutlookTaskItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public OutlookTaskItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -196,7 +196,7 @@ namespace Microsoft.Graph.Beta.Me.Outlook.TaskFolders.Item.Tasks.Item {
             /// <summary>Request query parameters</summary>
             public OutlookTaskItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new OutlookTaskItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new outlookTaskItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new OutlookTaskItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public OutlookTaskItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -210,7 +210,7 @@ namespace Microsoft.Graph.Beta.Me.Outlook.TaskFolders.Item.Tasks.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new outlookTaskItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new OutlookTaskItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public OutlookTaskItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

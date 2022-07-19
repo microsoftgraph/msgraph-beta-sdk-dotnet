@@ -11,6 +11,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("value", value); }
         }
         /// <summary>
+        /// Instantiates a new InsightValueDouble and sets the default values.
+        /// </summary>
+        public InsightValueDouble() : base() {
+            OdataType = "#microsoft.graph.insightValueDouble";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

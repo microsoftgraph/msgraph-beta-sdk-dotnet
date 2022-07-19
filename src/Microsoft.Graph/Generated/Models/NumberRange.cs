@@ -19,6 +19,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<int?>("lowerNumber"); }
             set { BackingStore?.Set("lowerNumber", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Upper number.</summary>
         public int? UpperNumber {
             get { return BackingStore?.Get<int?>("upperNumber"); }
@@ -30,6 +35,7 @@ namespace Microsoft.Graph.Beta.Models {
         public NumberRange() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.numberRange";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -45,6 +51,7 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"lowerNumber", n => { LowerNumber = n.GetIntValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"upperNumber", n => { UpperNumber = n.GetIntValue(); } },
             };
         }
@@ -55,6 +62,7 @@ namespace Microsoft.Graph.Beta.Models {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("lowerNumber", LowerNumber);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteIntValue("upperNumber", UpperNumber);
             writer.WriteAdditionalData(AdditionalData);
         }

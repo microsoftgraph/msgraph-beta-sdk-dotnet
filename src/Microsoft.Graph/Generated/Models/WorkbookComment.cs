@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class WorkbookComment : Entity, IParsable {
         /// <summary>The content of the comment.</summary>
         public string Content {
@@ -20,6 +20,12 @@ namespace Microsoft.Graph.Beta.Models {
         public List<WorkbookCommentReply> Replies {
             get { return BackingStore?.Get<List<WorkbookCommentReply>>("replies"); }
             set { BackingStore?.Set("replies", value); }
+        }
+        /// <summary>
+        /// Instantiates a new workbookComment and sets the default values.
+        /// </summary>
+        public WorkbookComment() : base() {
+            OdataType = "#microsoft.graph.workbookComment";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

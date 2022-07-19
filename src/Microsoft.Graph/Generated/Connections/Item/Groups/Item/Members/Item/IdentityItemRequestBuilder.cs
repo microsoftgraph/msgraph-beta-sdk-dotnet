@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Connections.Item.Groups.Item.Members.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new identityItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new IdentityItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public IdentityItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Connections.Item.Groups.Item.Members.Item {
             /// <summary>Request query parameters</summary>
             public IdentityItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new IdentityItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new identityItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new IdentityItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public IdentityItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Connections.Item.Groups.Item.Members.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new identityItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new IdentityItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public IdentityItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

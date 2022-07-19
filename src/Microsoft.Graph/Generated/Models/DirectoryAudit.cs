@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class DirectoryAudit : Entity, IParsable {
         /// <summary>Indicates the date and time the activity was performed. The Timestamp type is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? ActivityDateTime {
@@ -65,6 +65,12 @@ namespace Microsoft.Graph.Beta.Models {
         public string UserAgent {
             get { return BackingStore?.Get<string>("userAgent"); }
             set { BackingStore?.Set("userAgent", value); }
+        }
+        /// <summary>
+        /// Instantiates a new directoryAudit and sets the default values.
+        /// </summary>
+        public DirectoryAudit() : base() {
+            OdataType = "#microsoft.graph.directoryAudit";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

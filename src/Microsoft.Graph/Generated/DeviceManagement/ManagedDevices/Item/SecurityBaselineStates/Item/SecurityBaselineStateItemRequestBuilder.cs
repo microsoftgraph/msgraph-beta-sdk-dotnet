@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.SecurityBase
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new securityBaselineStateItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new SecurityBaselineStateItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public SecurityBaselineStateItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -184,7 +184,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.SecurityBase
             /// <summary>Request query parameters</summary>
             public SecurityBaselineStateItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new SecurityBaselineStateItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new securityBaselineStateItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new SecurityBaselineStateItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public SecurityBaselineStateItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -198,7 +198,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.SecurityBase
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new securityBaselineStateItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new SecurityBaselineStateItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public SecurityBaselineStateItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

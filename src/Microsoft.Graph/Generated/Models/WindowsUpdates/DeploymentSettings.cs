@@ -19,6 +19,11 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
             get { return BackingStore?.Get<MonitoringSettings>("monitoring"); }
             set { BackingStore?.Set("monitoring", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Settings governing how the content is rolled out.</summary>
         public RolloutSettings Rollout {
             get { return BackingStore?.Get<RolloutSettings>("rollout"); }
@@ -29,18 +34,13 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
             get { return BackingStore?.Get<SafeguardSettings>("safeguard"); }
             set { BackingStore?.Set("safeguard", value); }
         }
-        /// <summary>The type property</summary>
-        public string Type {
-            get { return BackingStore?.Get<string>("@odata.type"); }
-            set { BackingStore?.Set("@odata.type", value); }
-        }
         /// <summary>
         /// Instantiates a new deploymentSettings and sets the default values.
         /// </summary>
         public DeploymentSettings() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
-            Type = "#microsoft.graph.windowsUpdates.deploymentSettings";
+            OdataType = "#microsoft.graph.windowsUpdates.deploymentSettings";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -61,9 +61,9 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"monitoring", n => { Monitoring = n.GetObjectValue<MonitoringSettings>(MonitoringSettings.CreateFromDiscriminatorValue); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"rollout", n => { Rollout = n.GetObjectValue<RolloutSettings>(RolloutSettings.CreateFromDiscriminatorValue); } },
                 {"safeguard", n => { Safeguard = n.GetObjectValue<SafeguardSettings>(SafeguardSettings.CreateFromDiscriminatorValue); } },
-                {"@odata.type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -73,9 +73,9 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<MonitoringSettings>("monitoring", Monitoring);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteObjectValue<RolloutSettings>("rollout", Rollout);
             writer.WriteObjectValue<SafeguardSettings>("safeguard", Safeguard);
-            writer.WriteStringValue("@odata.type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -61,6 +61,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("userId", value); }
         }
         /// <summary>
+        /// Instantiates a new PrivilegedApproval and sets the default values.
+        /// </summary>
+        public PrivilegedApproval() : base() {
+            OdataType = "#microsoft.graph.privilegedApproval";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

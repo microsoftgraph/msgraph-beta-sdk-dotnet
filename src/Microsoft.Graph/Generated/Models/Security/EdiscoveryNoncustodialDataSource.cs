@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class EdiscoveryNoncustodialDataSource : DataSourceContainer, IParsable {
         /// <summary>User source or SharePoint site data source as non-custodial data source.</summary>
         public Microsoft.Graph.Beta.Models.Security.DataSource DataSource {
@@ -15,6 +15,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
         public EdiscoveryIndexOperation LastIndexOperation {
             get { return BackingStore?.Get<EdiscoveryIndexOperation>("lastIndexOperation"); }
             set { BackingStore?.Set("lastIndexOperation", value); }
+        }
+        /// <summary>
+        /// Instantiates a new ediscoveryNoncustodialDataSource and sets the default values.
+        /// </summary>
+        public EdiscoveryNoncustodialDataSource() : base() {
+            OdataType = "#microsoft.graph.security.ediscoveryNoncustodialDataSource";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

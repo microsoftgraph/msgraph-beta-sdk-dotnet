@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.SourceCollection
             /// <summary>Request query parameters</summary>
             public DataSourceItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new DataSourceItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new dataSourceItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new DataSourceItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public DataSourceItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();

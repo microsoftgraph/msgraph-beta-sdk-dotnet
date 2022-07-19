@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.Me.MobileAppTroubleshootingEvents.Item.AppLogColl
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new appLogCollectionRequestItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new AppLogCollectionRequestItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public AppLogCollectionRequestItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -184,7 +184,7 @@ namespace Microsoft.Graph.Beta.Me.MobileAppTroubleshootingEvents.Item.AppLogColl
             /// <summary>Request query parameters</summary>
             public AppLogCollectionRequestItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new AppLogCollectionRequestItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new appLogCollectionRequestItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new AppLogCollectionRequestItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public AppLogCollectionRequestItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -198,7 +198,7 @@ namespace Microsoft.Graph.Beta.Me.MobileAppTroubleshootingEvents.Item.AppLogColl
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new appLogCollectionRequestItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new AppLogCollectionRequestItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public AppLogCollectionRequestItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

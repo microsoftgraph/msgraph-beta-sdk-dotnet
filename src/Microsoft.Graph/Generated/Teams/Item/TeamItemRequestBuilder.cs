@@ -249,7 +249,7 @@ namespace Microsoft.Graph.Beta.Teams.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new teamItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new TeamItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public TeamItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -274,7 +274,7 @@ namespace Microsoft.Graph.Beta.Teams.Item {
             /// <summary>Request query parameters</summary>
             public TeamItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new TeamItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new teamItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new TeamItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public TeamItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -288,7 +288,7 @@ namespace Microsoft.Graph.Beta.Teams.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new teamItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new TeamItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public TeamItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

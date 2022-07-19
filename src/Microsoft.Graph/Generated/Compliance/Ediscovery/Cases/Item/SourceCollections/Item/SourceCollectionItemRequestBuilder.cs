@@ -189,7 +189,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.SourceCollection
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new sourceCollectionItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new SourceCollectionItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public SourceCollectionItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -214,7 +214,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.SourceCollection
             /// <summary>Request query parameters</summary>
             public SourceCollectionItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new SourceCollectionItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new sourceCollectionItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new SourceCollectionItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public SourceCollectionItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -228,7 +228,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.SourceCollection
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new sourceCollectionItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new SourceCollectionItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public SourceCollectionItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

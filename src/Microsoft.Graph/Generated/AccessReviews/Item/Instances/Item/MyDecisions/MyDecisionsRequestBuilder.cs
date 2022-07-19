@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.AccessReviews.Item.Instances.Item.MyDecisions {
     /// <summary>Provides operations to manage the myDecisions property of the microsoft.graph.accessReview entity.</summary>
     public class MyDecisionsRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

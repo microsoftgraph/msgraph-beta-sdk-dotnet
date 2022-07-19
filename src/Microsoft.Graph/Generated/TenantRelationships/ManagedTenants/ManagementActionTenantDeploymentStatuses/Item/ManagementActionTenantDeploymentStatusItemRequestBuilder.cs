@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementActi
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new managementActionTenantDeploymentStatusItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new ManagementActionTenantDeploymentStatusItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public ManagementActionTenantDeploymentStatusItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementActi
             /// <summary>Request query parameters</summary>
             public ManagementActionTenantDeploymentStatusItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new ManagementActionTenantDeploymentStatusItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new managementActionTenantDeploymentStatusItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new ManagementActionTenantDeploymentStatusItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public ManagementActionTenantDeploymentStatusItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementActi
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new managementActionTenantDeploymentStatusItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new ManagementActionTenantDeploymentStatusItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public ManagementActionTenantDeploymentStatusItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

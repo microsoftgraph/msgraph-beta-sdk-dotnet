@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.GalleryImages.It
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new cloudPcGalleryImageItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new CloudPcGalleryImageItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public CloudPcGalleryImageItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.GalleryImages.It
             /// <summary>Request query parameters</summary>
             public CloudPcGalleryImageItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new CloudPcGalleryImageItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new cloudPcGalleryImageItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new CloudPcGalleryImageItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public CloudPcGalleryImageItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.GalleryImages.It
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new cloudPcGalleryImageItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new CloudPcGalleryImageItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public CloudPcGalleryImageItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

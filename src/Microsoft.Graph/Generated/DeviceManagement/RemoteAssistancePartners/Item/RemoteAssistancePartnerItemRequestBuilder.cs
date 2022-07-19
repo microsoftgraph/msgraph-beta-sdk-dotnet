@@ -164,7 +164,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.RemoteAssistancePartners.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new remoteAssistancePartnerItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new RemoteAssistancePartnerItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public RemoteAssistancePartnerItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -189,7 +189,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.RemoteAssistancePartners.Item {
             /// <summary>Request query parameters</summary>
             public RemoteAssistancePartnerItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new RemoteAssistancePartnerItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new remoteAssistancePartnerItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new RemoteAssistancePartnerItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public RemoteAssistancePartnerItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -203,7 +203,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.RemoteAssistancePartners.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new remoteAssistancePartnerItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new RemoteAssistancePartnerItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public RemoteAssistancePartnerItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

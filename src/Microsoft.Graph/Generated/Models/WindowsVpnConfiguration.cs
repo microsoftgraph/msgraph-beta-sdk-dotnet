@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new WindowsVpnConfiguration and sets the default values.
         /// </summary>
         public WindowsVpnConfiguration() : base() {
-            Type = "#microsoft.graph.windowsVpnConfiguration";
+            OdataType = "#microsoft.graph.windowsVpnConfiguration";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -38,6 +38,7 @@ namespace Microsoft.Graph.Beta.Models {
             return mappingValue switch {
                 "#microsoft.graph.windows10VpnConfiguration" => new Windows10VpnConfiguration(),
                 "#microsoft.graph.windows81VpnConfiguration" => new Windows81VpnConfiguration(),
+                "#microsoft.graph.windowsPhone81VpnConfiguration" => new WindowsPhone81VpnConfiguration(),
                 _ => new WindowsVpnConfiguration(),
             };
         }

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Casts the previous resource to application.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class ServicePrincipalCreationConditionSet : Entity, IParsable {
         /// <summary>The applicationIds property</summary>
         public List<string> ApplicationIds {
@@ -30,6 +30,12 @@ namespace Microsoft.Graph.Beta.Models {
         public bool? CertifiedApplicationsOnly {
             get { return BackingStore?.Get<bool?>("certifiedApplicationsOnly"); }
             set { BackingStore?.Set("certifiedApplicationsOnly", value); }
+        }
+        /// <summary>
+        /// Instantiates a new servicePrincipalCreationConditionSet and sets the default values.
+        /// </summary>
+        public ServicePrincipalCreationConditionSet() : base() {
+            OdataType = "#microsoft.graph.servicePrincipalCreationConditionSet";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

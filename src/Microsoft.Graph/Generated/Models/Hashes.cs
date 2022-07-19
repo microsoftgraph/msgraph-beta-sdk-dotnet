@@ -18,6 +18,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("crc32Hash"); }
             set { BackingStore?.Set("crc32Hash", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>A proprietary hash of the file that can be used to determine if the contents of the file have changed (if available). Read-only.</summary>
         public string QuickXorHash {
             get { return BackingStore?.Get<string>("quickXorHash"); }
@@ -39,6 +44,7 @@ namespace Microsoft.Graph.Beta.Models {
         public Hashes() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.hashes";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -54,6 +60,7 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"crc32Hash", n => { Crc32Hash = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"quickXorHash", n => { QuickXorHash = n.GetStringValue(); } },
                 {"sha1Hash", n => { Sha1Hash = n.GetStringValue(); } },
                 {"sha256Hash", n => { Sha256Hash = n.GetStringValue(); } },
@@ -66,6 +73,7 @@ namespace Microsoft.Graph.Beta.Models {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("crc32Hash", Crc32Hash);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("quickXorHash", QuickXorHash);
             writer.WriteStringValue("sha1Hash", Sha1Hash);
             writer.WriteStringValue("sha256Hash", Sha256Hash);

@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.TrustFramework.Policies.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new trustFrameworkPolicyItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new TrustFrameworkPolicyItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public TrustFrameworkPolicyItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -184,7 +184,7 @@ namespace Microsoft.Graph.Beta.TrustFramework.Policies.Item {
             /// <summary>Request query parameters</summary>
             public TrustFrameworkPolicyItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new TrustFrameworkPolicyItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new trustFrameworkPolicyItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new TrustFrameworkPolicyItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public TrustFrameworkPolicyItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -198,7 +198,7 @@ namespace Microsoft.Graph.Beta.TrustFramework.Policies.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new trustFrameworkPolicyItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new TrustFrameworkPolicyItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public TrustFrameworkPolicyItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

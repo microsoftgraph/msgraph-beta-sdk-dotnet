@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.AppManagementPolicies.Item
             /// <summary>Request query parameters</summary>
             public AppManagementPolicyItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new AppManagementPolicyItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new appManagementPolicyItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new AppManagementPolicyItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public AppManagementPolicyItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();

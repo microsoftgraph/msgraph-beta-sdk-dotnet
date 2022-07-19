@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Groups.Item.Team.IncomingChannels {
     /// <summary>Provides operations to manage the incomingChannels property of the microsoft.graph.team entity.</summary>
     public class IncomingChannelsRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

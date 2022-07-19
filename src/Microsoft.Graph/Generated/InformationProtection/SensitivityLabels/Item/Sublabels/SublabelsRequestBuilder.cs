@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.InformationProtection.SensitivityLabels.Item.Sublabels {
     /// <summary>Provides operations to manage the sublabels property of the microsoft.graph.sensitivityLabel entity.</summary>
     public class SublabelsRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

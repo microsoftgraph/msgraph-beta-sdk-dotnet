@@ -19,6 +19,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<int?>("lifetimeInMinutes"); }
             set { BackingStore?.Set("lifetimeInMinutes", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Diffie-Hellman Group</summary>
         public int? SecurityDiffieHellmanGroup {
             get { return BackingStore?.Get<int?>("securityDiffieHellmanGroup"); }
@@ -40,6 +45,7 @@ namespace Microsoft.Graph.Beta.Models {
         public IosVpnSecurityAssociationParameters() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.iosVpnSecurityAssociationParameters";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -55,6 +61,7 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"lifetimeInMinutes", n => { LifetimeInMinutes = n.GetIntValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"securityDiffieHellmanGroup", n => { SecurityDiffieHellmanGroup = n.GetIntValue(); } },
                 {"securityEncryptionAlgorithm", n => { SecurityEncryptionAlgorithm = n.GetEnumValue<VpnEncryptionAlgorithmType>(); } },
                 {"securityIntegrityAlgorithm", n => { SecurityIntegrityAlgorithm = n.GetEnumValue<VpnIntegrityAlgorithmType>(); } },
@@ -67,6 +74,7 @@ namespace Microsoft.Graph.Beta.Models {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("lifetimeInMinutes", LifetimeInMinutes);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteIntValue("securityDiffieHellmanGroup", SecurityDiffieHellmanGroup);
             writer.WriteEnumValue<VpnEncryptionAlgorithmType>("securityEncryptionAlgorithm", SecurityEncryptionAlgorithm);
             writer.WriteEnumValue<VpnIntegrityAlgorithmType>("securityIntegrityAlgorithm", SecurityIntegrityAlgorithm);

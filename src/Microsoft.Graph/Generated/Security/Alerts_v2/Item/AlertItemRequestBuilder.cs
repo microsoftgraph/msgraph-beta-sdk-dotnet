@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Security.Alerts_v2.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new alertItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new AlertItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public AlertItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Security.Alerts_v2.Item {
             /// <summary>Request query parameters</summary>
             public AlertItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new AlertItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new alertItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new AlertItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public AlertItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Security.Alerts_v2.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new alertItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new AlertItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public AlertItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

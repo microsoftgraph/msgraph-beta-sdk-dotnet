@@ -48,6 +48,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("eventWebLink"); }
             set { BackingStore?.Set("eventWebLink", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The date, time, and time zone that the reminder is set to occur.</summary>
         public DateTimeTimeZone ReminderFireTime {
             get { return BackingStore?.Get<DateTimeTimeZone>("reminderFireTime"); }
@@ -59,6 +64,7 @@ namespace Microsoft.Graph.Beta.Models {
         public Reminder() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.reminder";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -80,6 +86,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"eventStartTime", n => { EventStartTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
                 {"eventSubject", n => { EventSubject = n.GetStringValue(); } },
                 {"eventWebLink", n => { EventWebLink = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"reminderFireTime", n => { ReminderFireTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
             };
         }
@@ -96,6 +103,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteObjectValue<DateTimeTimeZone>("eventStartTime", EventStartTime);
             writer.WriteStringValue("eventSubject", EventSubject);
             writer.WriteStringValue("eventWebLink", EventWebLink);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteObjectValue<DateTimeTimeZone>("reminderFireTime", ReminderFireTime);
             writer.WriteAdditionalData(AdditionalData);
         }

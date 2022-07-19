@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new securityBaselineStateSummary and sets the default values.
         /// </summary>
         public SecurityBaselineStateSummary() : base() {
-            Type = "#microsoft.graph.securityBaselineStateSummary";
+            OdataType = "#microsoft.graph.securityBaselineStateSummary";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

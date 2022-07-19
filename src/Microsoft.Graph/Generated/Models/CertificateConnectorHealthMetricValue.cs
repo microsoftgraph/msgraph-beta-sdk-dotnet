@@ -24,6 +24,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<long?>("failureCount"); }
             set { BackingStore?.Set("failureCount", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Count of successful requests/operations.</summary>
         public long? SuccessCount {
             get { return BackingStore?.Get<long?>("successCount"); }
@@ -35,6 +40,7 @@ namespace Microsoft.Graph.Beta.Models {
         public CertificateConnectorHealthMetricValue() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.certificateConnectorHealthMetricValue";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -51,6 +57,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"dateTime", n => { DateTime = n.GetDateTimeOffsetValue(); } },
                 {"failureCount", n => { FailureCount = n.GetLongValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"successCount", n => { SuccessCount = n.GetLongValue(); } },
             };
         }
@@ -62,6 +69,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("dateTime", DateTime);
             writer.WriteLongValue("failureCount", FailureCount);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteLongValue("successCount", SuccessCount);
             writer.WriteAdditionalData(AdditionalData);
         }

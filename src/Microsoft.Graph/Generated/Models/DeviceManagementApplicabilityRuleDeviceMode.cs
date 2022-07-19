@@ -23,6 +23,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Supported Applicability rule types for Device Configuration</summary>
         public DeviceManagementApplicabilityRuleType? RuleType {
             get { return BackingStore?.Get<DeviceManagementApplicabilityRuleType?>("ruleType"); }
@@ -34,6 +39,7 @@ namespace Microsoft.Graph.Beta.Models {
         public DeviceManagementApplicabilityRuleDeviceMode() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.deviceManagementApplicabilityRuleDeviceMode";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -50,6 +56,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"deviceMode", n => { DeviceMode = n.GetEnumValue<Windows10DeviceModeType>(); } },
                 {"name", n => { Name = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"ruleType", n => { RuleType = n.GetEnumValue<DeviceManagementApplicabilityRuleType>(); } },
             };
         }
@@ -61,6 +68,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<Windows10DeviceModeType>("deviceMode", DeviceMode);
             writer.WriteStringValue("name", Name);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteEnumValue<DeviceManagementApplicabilityRuleType>("ruleType", RuleType);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageResourceEnvironments.Item.AccessPackageResources {
     /// <summary>Provides operations to manage the accessPackageResources property of the microsoft.graph.accessPackageResourceEnvironment entity.</summary>
     public class AccessPackageResourcesRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

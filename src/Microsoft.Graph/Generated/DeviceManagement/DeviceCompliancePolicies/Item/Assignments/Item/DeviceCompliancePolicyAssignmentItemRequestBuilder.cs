@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.Item.As
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new deviceCompliancePolicyAssignmentItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceCompliancePolicyAssignmentItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceCompliancePolicyAssignmentItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.Item.As
             /// <summary>Request query parameters</summary>
             public DeviceCompliancePolicyAssignmentItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new DeviceCompliancePolicyAssignmentItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new deviceCompliancePolicyAssignmentItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceCompliancePolicyAssignmentItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceCompliancePolicyAssignmentItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.Item.As
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new deviceCompliancePolicyAssignmentItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new DeviceCompliancePolicyAssignmentItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceCompliancePolicyAssignmentItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

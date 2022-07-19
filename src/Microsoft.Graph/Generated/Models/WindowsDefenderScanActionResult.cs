@@ -11,6 +11,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("scanType", value); }
         }
         /// <summary>
+        /// Instantiates a new WindowsDefenderScanActionResult and sets the default values.
+        /// </summary>
+        public WindowsDefenderScanActionResult() : base() {
+            OdataType = "#microsoft.graph.windowsDefenderScanActionResult";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

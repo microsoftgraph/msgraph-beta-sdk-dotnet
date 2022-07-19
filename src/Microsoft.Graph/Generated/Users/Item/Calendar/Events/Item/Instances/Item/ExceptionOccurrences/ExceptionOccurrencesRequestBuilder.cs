@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Users.Item.Calendar.Events.Item.Instances.Item.ExceptionOccurrences {
     /// <summary>Provides operations to manage the exceptionOccurrences property of the microsoft.graph.event entity.</summary>
     public class ExceptionOccurrencesRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

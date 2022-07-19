@@ -5,20 +5,26 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
     public class OperationalInsightsConnection : ResourceConnection, IParsable {
-        /// <summary>The azureResourceGroupName property</summary>
+        /// <summary>The name of the Azure resource group that contains the Log Analytics workspace.</summary>
         public string AzureResourceGroupName {
             get { return BackingStore?.Get<string>("azureResourceGroupName"); }
             set { BackingStore?.Set("azureResourceGroupName", value); }
         }
-        /// <summary>The azureSubscriptionId property</summary>
+        /// <summary>The Azure subscription ID that contains the Log Analytics workspace.</summary>
         public string AzureSubscriptionId {
             get { return BackingStore?.Get<string>("azureSubscriptionId"); }
             set { BackingStore?.Set("azureSubscriptionId", value); }
         }
-        /// <summary>The workspaceName property</summary>
+        /// <summary>The name of the Log Analytics workspace.</summary>
         public string WorkspaceName {
             get { return BackingStore?.Get<string>("workspaceName"); }
             set { BackingStore?.Set("workspaceName", value); }
+        }
+        /// <summary>
+        /// Instantiates a new OperationalInsightsConnection and sets the default values.
+        /// </summary>
+        public OperationalInsightsConnection() : base() {
+            OdataType = "#microsoft.graph.windowsUpdates.operationalInsightsConnection";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

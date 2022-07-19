@@ -54,6 +54,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<int?>("intuneDevices"); }
             set { BackingStore?.Set("intuneDevices", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Total count of tenant attach devices. Valid values -2147483648 to 2147483647</summary>
         public int? TenantAttachDevices {
             get { return BackingStore?.Get<int?>("tenantAttachDevices"); }
@@ -90,6 +95,7 @@ namespace Microsoft.Graph.Beta.Models {
         public UserExperienceAnalyticsWorkFromAnywhereDevicesSummary() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.userExperienceAnalyticsWorkFromAnywhereDevicesSummary";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -112,6 +118,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"devicesWithoutAutopilotProfileAssigned", n => { DevicesWithoutAutopilotProfileAssigned = n.GetIntValue(); } },
                 {"devicesWithoutCloudIdentity", n => { DevicesWithoutCloudIdentity = n.GetIntValue(); } },
                 {"intuneDevices", n => { IntuneDevices = n.GetIntValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"tenantAttachDevices", n => { TenantAttachDevices = n.GetIntValue(); } },
                 {"totalDevices", n => { TotalDevices = n.GetIntValue(); } },
                 {"unsupportedOSversionDevices", n => { UnsupportedOSversionDevices = n.GetIntValue(); } },
@@ -134,6 +141,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteIntValue("devicesWithoutAutopilotProfileAssigned", DevicesWithoutAutopilotProfileAssigned);
             writer.WriteIntValue("devicesWithoutCloudIdentity", DevicesWithoutCloudIdentity);
             writer.WriteIntValue("intuneDevices", IntuneDevices);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteIntValue("tenantAttachDevices", TenantAttachDevices);
             writer.WriteIntValue("totalDevices", TotalDevices);
             writer.WriteIntValue("unsupportedOSversionDevices", UnsupportedOSversionDevices);

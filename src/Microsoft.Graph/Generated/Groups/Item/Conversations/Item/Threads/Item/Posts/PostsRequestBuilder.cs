@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Groups.Item.Conversations.Item.Threads.Item.Posts {
     /// <summary>Provides operations to manage the posts property of the microsoft.graph.conversationThread entity.</summary>
     public class PostsRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

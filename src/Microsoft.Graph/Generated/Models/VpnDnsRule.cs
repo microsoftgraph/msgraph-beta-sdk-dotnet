@@ -24,6 +24,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Keep this rule active even when the VPN is not connected: Default False</summary>
         public bool? Persistent {
             get { return BackingStore?.Get<bool?>("persistent"); }
@@ -45,6 +50,7 @@ namespace Microsoft.Graph.Beta.Models {
         public VpnDnsRule() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.vpnDnsRule";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -61,6 +67,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"autoTrigger", n => { AutoTrigger = n.GetBoolValue(); } },
                 {"name", n => { Name = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"persistent", n => { Persistent = n.GetBoolValue(); } },
                 {"proxyServerUri", n => { ProxyServerUri = n.GetStringValue(); } },
                 {"servers", n => { Servers = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
@@ -74,6 +81,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("autoTrigger", AutoTrigger);
             writer.WriteStringValue("name", Name);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteBoolValue("persistent", Persistent);
             writer.WriteStringValue("proxyServerUri", ProxyServerUri);
             writer.WriteCollectionOfPrimitiveValues<string>("servers", Servers);

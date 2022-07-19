@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.DetectedApps.Item 
             /// <summary>Request query parameters</summary>
             public DetectedAppItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new DetectedAppItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new detectedAppItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new DetectedAppItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public DetectedAppItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();

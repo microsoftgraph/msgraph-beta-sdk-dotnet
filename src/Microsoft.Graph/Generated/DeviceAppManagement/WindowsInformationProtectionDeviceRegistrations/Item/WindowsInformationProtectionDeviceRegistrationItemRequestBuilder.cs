@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.WindowsInformationProtectionD
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new windowsInformationProtectionDeviceRegistrationItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new WindowsInformationProtectionDeviceRegistrationItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public WindowsInformationProtectionDeviceRegistrationItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -184,7 +184,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.WindowsInformationProtectionD
             /// <summary>Request query parameters</summary>
             public WindowsInformationProtectionDeviceRegistrationItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new WindowsInformationProtectionDeviceRegistrationItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new windowsInformationProtectionDeviceRegistrationItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new WindowsInformationProtectionDeviceRegistrationItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public WindowsInformationProtectionDeviceRegistrationItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -198,7 +198,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.WindowsInformationProtectionD
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new windowsInformationProtectionDeviceRegistrationItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new WindowsInformationProtectionDeviceRegistrationItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public WindowsInformationProtectionDeviceRegistrationItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

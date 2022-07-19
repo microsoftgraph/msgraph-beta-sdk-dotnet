@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.RemoteActionAudits.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new remoteActionAuditItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new RemoteActionAuditItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public RemoteActionAuditItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.RemoteActionAudits.Item {
             /// <summary>Request query parameters</summary>
             public RemoteActionAuditItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new RemoteActionAuditItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new remoteActionAuditItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new RemoteActionAuditItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public RemoteActionAuditItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.RemoteActionAudits.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new remoteActionAuditItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new RemoteActionAuditItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public RemoteActionAuditItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

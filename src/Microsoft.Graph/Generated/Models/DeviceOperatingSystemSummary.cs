@@ -79,6 +79,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<int?>("macOSCount"); }
             set { BackingStore?.Set("macOSCount", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Number of unknown device count.</summary>
         public int? UnknownCount {
             get { return BackingStore?.Get<int?>("unknownCount"); }
@@ -100,6 +105,7 @@ namespace Microsoft.Graph.Beta.Models {
         public DeviceOperatingSystemSummary() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.deviceOperatingSystemSummary";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -127,6 +133,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"iosCount", n => { IosCount = n.GetIntValue(); } },
                 {"linuxCount", n => { LinuxCount = n.GetIntValue(); } },
                 {"macOSCount", n => { MacOSCount = n.GetIntValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"unknownCount", n => { UnknownCount = n.GetIntValue(); } },
                 {"windowsCount", n => { WindowsCount = n.GetIntValue(); } },
                 {"windowsMobileCount", n => { WindowsMobileCount = n.GetIntValue(); } },
@@ -151,6 +158,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteIntValue("iosCount", IosCount);
             writer.WriteIntValue("linuxCount", LinuxCount);
             writer.WriteIntValue("macOSCount", MacOSCount);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteIntValue("unknownCount", UnknownCount);
             writer.WriteIntValue("windowsCount", WindowsCount);
             writer.WriteIntValue("windowsMobileCount", WindowsMobileCount);

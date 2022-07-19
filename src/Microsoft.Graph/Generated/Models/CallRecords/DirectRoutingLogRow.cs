@@ -83,6 +83,11 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
             get { return BackingStore?.Get<string>("mediaPathLocation"); }
             set { BackingStore?.Set("mediaPathLocation", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The datacenter used for signaling for both bypass and non-bypass calls.</summary>
         public string SignalingLocation {
             get { return BackingStore?.Get<string>("signalingLocation"); }
@@ -124,6 +129,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         public DirectRoutingLogRow() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.callRecords.directRoutingLogRow";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -152,6 +158,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
                 {"inviteDateTime", n => { InviteDateTime = n.GetDateTimeOffsetValue(); } },
                 {"mediaBypassEnabled", n => { MediaBypassEnabled = n.GetBoolValue(); } },
                 {"mediaPathLocation", n => { MediaPathLocation = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"signalingLocation", n => { SignalingLocation = n.GetStringValue(); } },
                 {"startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
                 {"successfulCall", n => { SuccessfulCall = n.GetBoolValue(); } },
@@ -181,6 +188,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
             writer.WriteDateTimeOffsetValue("inviteDateTime", InviteDateTime);
             writer.WriteBoolValue("mediaBypassEnabled", MediaBypassEnabled);
             writer.WriteStringValue("mediaPathLocation", MediaPathLocation);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("signalingLocation", SignalingLocation);
             writer.WriteDateTimeOffsetValue("startDateTime", StartDateTime);
             writer.WriteBoolValue("successfulCall", SuccessfulCall);

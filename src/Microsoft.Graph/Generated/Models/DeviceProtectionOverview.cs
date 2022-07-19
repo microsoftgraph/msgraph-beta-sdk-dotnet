@@ -29,6 +29,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<int?>("inactiveThreatAgentDeviceCount"); }
             set { BackingStore?.Set("inactiveThreatAgentDeviceCount", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Pending full scan device count.</summary>
         public int? PendingFullScanDeviceCount {
             get { return BackingStore?.Get<int?>("pendingFullScanDeviceCount"); }
@@ -75,6 +80,7 @@ namespace Microsoft.Graph.Beta.Models {
         public DeviceProtectionOverview() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.deviceProtectionOverview";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -92,6 +98,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"cleanDeviceCount", n => { CleanDeviceCount = n.GetIntValue(); } },
                 {"criticalFailuresDeviceCount", n => { CriticalFailuresDeviceCount = n.GetIntValue(); } },
                 {"inactiveThreatAgentDeviceCount", n => { InactiveThreatAgentDeviceCount = n.GetIntValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"pendingFullScanDeviceCount", n => { PendingFullScanDeviceCount = n.GetIntValue(); } },
                 {"pendingManualStepsDeviceCount", n => { PendingManualStepsDeviceCount = n.GetIntValue(); } },
                 {"pendingOfflineScanDeviceCount", n => { PendingOfflineScanDeviceCount = n.GetIntValue(); } },
@@ -111,6 +118,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteIntValue("cleanDeviceCount", CleanDeviceCount);
             writer.WriteIntValue("criticalFailuresDeviceCount", CriticalFailuresDeviceCount);
             writer.WriteIntValue("inactiveThreatAgentDeviceCount", InactiveThreatAgentDeviceCount);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteIntValue("pendingFullScanDeviceCount", PendingFullScanDeviceCount);
             writer.WriteIntValue("pendingManualStepsDeviceCount", PendingManualStepsDeviceCount);
             writer.WriteIntValue("pendingOfflineScanDeviceCount", PendingOfflineScanDeviceCount);

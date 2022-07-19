@@ -16,6 +16,12 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
             set { BackingStore?.Set("qualityUpdateClassification", value); }
         }
         /// <summary>
+        /// Instantiates a new QualityUpdateCatalogEntry and sets the default values.
+        /// </summary>
+        public QualityUpdateCatalogEntry() : base() {
+            OdataType = "#microsoft.graph.windowsUpdates.qualityUpdateCatalogEntry";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new AccessReviewQueryScope and sets the default values.
         /// </summary>
         public AccessReviewQueryScope() : base() {
-            Type = "#microsoft.graph.accessReviewQueryScope";
+            OdataType = "#microsoft.graph.accessReviewQueryScope";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -294,7 +294,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new servicePrincipalItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new ServicePrincipalItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public ServicePrincipalItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -319,7 +319,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item {
             /// <summary>Request query parameters</summary>
             public ServicePrincipalItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new ServicePrincipalItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new servicePrincipalItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new ServicePrincipalItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public ServicePrincipalItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -333,7 +333,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new servicePrincipalItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new ServicePrincipalItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public ServicePrincipalItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

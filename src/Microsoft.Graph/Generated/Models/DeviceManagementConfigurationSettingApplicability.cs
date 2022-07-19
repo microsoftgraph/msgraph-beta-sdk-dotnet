@@ -24,6 +24,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DeviceManagementConfigurationDeviceMode?>("deviceMode"); }
             set { BackingStore?.Set("deviceMode", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Supported platform types.</summary>
         public DeviceManagementConfigurationPlatforms? Platform {
             get { return BackingStore?.Get<DeviceManagementConfigurationPlatforms?>("platform"); }
@@ -34,18 +39,13 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DeviceManagementConfigurationTechnologies?>("technologies"); }
             set { BackingStore?.Set("technologies", value); }
         }
-        /// <summary>The type property</summary>
-        public string Type {
-            get { return BackingStore?.Get<string>("@odata.type"); }
-            set { BackingStore?.Set("@odata.type", value); }
-        }
         /// <summary>
         /// Instantiates a new deviceManagementConfigurationSettingApplicability and sets the default values.
         /// </summary>
         public DeviceManagementConfigurationSettingApplicability() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
-            Type = "#microsoft.graph.deviceManagementConfigurationSettingApplicability";
+            OdataType = "#microsoft.graph.deviceManagementConfigurationSettingApplicability";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -68,9 +68,9 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"deviceMode", n => { DeviceMode = n.GetEnumValue<DeviceManagementConfigurationDeviceMode>(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"platform", n => { Platform = n.GetEnumValue<DeviceManagementConfigurationPlatforms>(); } },
                 {"technologies", n => { Technologies = n.GetEnumValue<DeviceManagementConfigurationTechnologies>(); } },
-                {"@odata.type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -81,9 +81,9 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("description", Description);
             writer.WriteEnumValue<DeviceManagementConfigurationDeviceMode>("deviceMode", DeviceMode);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteEnumValue<DeviceManagementConfigurationPlatforms>("platform", Platform);
             writer.WriteEnumValue<DeviceManagementConfigurationTechnologies>("technologies", Technologies);
-            writer.WriteStringValue("@odata.type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

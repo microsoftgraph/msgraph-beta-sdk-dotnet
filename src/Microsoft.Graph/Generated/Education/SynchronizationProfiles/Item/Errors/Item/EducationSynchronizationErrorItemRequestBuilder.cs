@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.Errors.Ite
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new educationSynchronizationErrorItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new EducationSynchronizationErrorItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public EducationSynchronizationErrorItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.Errors.Ite
             /// <summary>Request query parameters</summary>
             public EducationSynchronizationErrorItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new EducationSynchronizationErrorItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new educationSynchronizationErrorItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new EducationSynchronizationErrorItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public EducationSynchronizationErrorItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.Errors.Ite
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new educationSynchronizationErrorItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new EducationSynchronizationErrorItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public EducationSynchronizationErrorItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

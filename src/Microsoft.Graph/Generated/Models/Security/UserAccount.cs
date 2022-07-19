@@ -28,6 +28,11 @@ namespace Microsoft.Graph.Beta.Models.Security {
             get { return BackingStore?.Get<string>("domainName"); }
             set { BackingStore?.Set("domainName", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The userPrincipalName property</summary>
         public string UserPrincipalName {
             get { return BackingStore?.Get<string>("userPrincipalName"); }
@@ -44,6 +49,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         public UserAccount() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.security.userAccount";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -61,6 +67,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
                 {"accountName", n => { AccountName = n.GetStringValue(); } },
                 {"azureAdUserId", n => { AzureAdUserId = n.GetStringValue(); } },
                 {"domainName", n => { DomainName = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
                 {"userSid", n => { UserSid = n.GetStringValue(); } },
             };
@@ -74,6 +81,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             writer.WriteStringValue("accountName", AccountName);
             writer.WriteStringValue("azureAdUserId", AzureAdUserId);
             writer.WriteStringValue("domainName", DomainName);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("userPrincipalName", UserPrincipalName);
             writer.WriteStringValue("userSid", UserSid);
             writer.WriteAdditionalData(AdditionalData);

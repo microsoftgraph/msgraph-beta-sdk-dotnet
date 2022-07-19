@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new agreementFileProperties and sets the default values.
         /// </summary>
         public AgreementFileProperties() : base() {
-            Type = "#microsoft.graph.agreementFileProperties";
+            OdataType = "#microsoft.graph.agreementFileProperties";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

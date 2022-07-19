@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.UnitsOfMeasure.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new unitOfMeasureItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new UnitOfMeasureItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public UnitOfMeasureItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.UnitsOfMeasure.Item {
             /// <summary>Request query parameters</summary>
             public UnitOfMeasureItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new UnitOfMeasureItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new unitOfMeasureItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new UnitOfMeasureItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public UnitOfMeasureItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.UnitsOfMeasure.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new unitOfMeasureItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new UnitOfMeasureItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public UnitOfMeasureItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

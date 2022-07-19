@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Me.Drives.Item.Root.ListItem.Versions {
     /// <summary>Provides operations to manage the versions property of the microsoft.graph.listItem entity.</summary>
     public class VersionsRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

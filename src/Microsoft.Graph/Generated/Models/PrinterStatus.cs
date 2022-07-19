@@ -23,6 +23,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<string>>("details"); }
             set { BackingStore?.Set("details", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The processingState property</summary>
         public PrinterProcessingState? ProcessingState {
             get { return BackingStore?.Get<PrinterProcessingState?>("processingState"); }
@@ -49,6 +54,7 @@ namespace Microsoft.Graph.Beta.Models {
         public PrinterStatus() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.printerStatus";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -65,6 +71,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"details", n => { Details = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"processingState", n => { ProcessingState = n.GetEnumValue<PrinterProcessingState>(); } },
                 {"processingStateDescription", n => { ProcessingStateDescription = n.GetStringValue(); } },
                 {"processingStateReasons", n => { ProcessingStateReasons = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
@@ -79,6 +86,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("description", Description);
             writer.WriteCollectionOfPrimitiveValues<string>("details", Details);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteEnumValue<PrinterProcessingState>("processingState", ProcessingState);
             writer.WriteStringValue("processingStateDescription", ProcessingStateDescription);
             writer.WriteCollectionOfPrimitiveValues<string>("processingStateReasons", ProcessingStateReasons);

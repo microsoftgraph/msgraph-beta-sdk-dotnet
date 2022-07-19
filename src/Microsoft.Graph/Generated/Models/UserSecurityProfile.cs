@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class UserSecurityProfile : Entity, IParsable {
         /// <summary>The accounts property</summary>
         public List<UserAccount> Accounts {
@@ -55,6 +54,12 @@ namespace Microsoft.Graph.Beta.Models {
         public SecurityVendorInformation VendorInformation {
             get { return BackingStore?.Get<SecurityVendorInformation>("vendorInformation"); }
             set { BackingStore?.Set("vendorInformation", value); }
+        }
+        /// <summary>
+        /// Instantiates a new UserSecurityProfile and sets the default values.
+        /// </summary>
+        public UserSecurityProfile() : base() {
+            OdataType = "#microsoft.graph.userSecurityProfile";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

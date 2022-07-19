@@ -28,6 +28,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<IdentitySet>("identity"); }
             set { BackingStore?.Set("identity", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Optional. The ID of the target participant.</summary>
         public string ParticipantId {
             get { return BackingStore?.Get<string>("participantId"); }
@@ -49,6 +54,7 @@ namespace Microsoft.Graph.Beta.Models {
         public InvitationParticipantInfo() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.invitationParticipantInfo";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -66,6 +72,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"endpointType", n => { EndpointType = n.GetEnumValue<EndpointType>(); } },
                 {"hidden", n => { Hidden = n.GetBoolValue(); } },
                 {"identity", n => { Identity = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"participantId", n => { ParticipantId = n.GetStringValue(); } },
                 {"removeFromDefaultAudioRoutingGroup", n => { RemoveFromDefaultAudioRoutingGroup = n.GetBoolValue(); } },
                 {"replacesCallId", n => { ReplacesCallId = n.GetStringValue(); } },
@@ -80,6 +87,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteEnumValue<EndpointType>("endpointType", EndpointType);
             writer.WriteBoolValue("hidden", Hidden);
             writer.WriteObjectValue<IdentitySet>("identity", Identity);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("participantId", ParticipantId);
             writer.WriteBoolValue("removeFromDefaultAudioRoutingGroup", RemoveFromDefaultAudioRoutingGroup);
             writer.WriteStringValue("replacesCallId", ReplacesCallId);

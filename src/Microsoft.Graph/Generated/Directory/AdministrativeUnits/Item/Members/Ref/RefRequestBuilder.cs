@@ -145,7 +145,7 @@ namespace Microsoft.Graph.Beta.Directory.AdministrativeUnits.Item.Members.Ref {
             /// <summary>Request query parameters</summary>
             public RefRequestBuilderGetQueryParameters QueryParameters { get; set; } = new RefRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new refRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new RefRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public RefRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.Directory.AdministrativeUnits.Item.Members.Ref {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new refRequestBuilderPostRequestConfiguration and sets the default values.
+            /// Instantiates a new RefRequestBuilderPostRequestConfiguration and sets the default values.
             /// </summary>
             public RefRequestBuilderPostRequestConfiguration() {
                 Options = new List<IRequestOption>();

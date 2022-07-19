@@ -63,6 +63,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("id"); }
             set { BackingStore?.Set("id", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The total number of pages that were printed. Read-only.</summary>
         public int? PageCount {
             get { return BackingStore?.Get<int?>("pageCount"); }
@@ -89,6 +94,7 @@ namespace Microsoft.Graph.Beta.Models {
         public ArchivedPrintJob() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.archivedPrintJob";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -113,6 +119,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"duplexPageCount", n => { DuplexPageCount = n.GetIntValue(); } },
                 {"id", n => { Id = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"pageCount", n => { PageCount = n.GetIntValue(); } },
                 {"printerId", n => { PrinterId = n.GetStringValue(); } },
                 {"processingState", n => { ProcessingState = n.GetEnumValue<PrintJobProcessingState>(); } },
@@ -135,6 +142,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteIntValue("duplexPageCount", DuplexPageCount);
             writer.WriteStringValue("id", Id);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteIntValue("pageCount", PageCount);
             writer.WriteStringValue("printerId", PrinterId);
             writer.WriteEnumValue<PrintJobProcessingState>("processingState", ProcessingState);

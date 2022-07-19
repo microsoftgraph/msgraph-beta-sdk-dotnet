@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.NdesConnectors.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new ndesConnectorItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new NdesConnectorItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public NdesConnectorItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.NdesConnectors.Item {
             /// <summary>Request query parameters</summary>
             public NdesConnectorItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new NdesConnectorItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new ndesConnectorItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new NdesConnectorItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public NdesConnectorItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.NdesConnectors.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new ndesConnectorItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new NdesConnectorItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public NdesConnectorItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

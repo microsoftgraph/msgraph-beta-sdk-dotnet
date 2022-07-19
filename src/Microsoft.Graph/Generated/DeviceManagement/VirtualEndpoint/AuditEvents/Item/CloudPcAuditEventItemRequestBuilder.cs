@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.AuditEvents.Item
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new cloudPcAuditEventItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new CloudPcAuditEventItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public CloudPcAuditEventItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.AuditEvents.Item
             /// <summary>Request query parameters</summary>
             public CloudPcAuditEventItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new CloudPcAuditEventItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new cloudPcAuditEventItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new CloudPcAuditEventItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public CloudPcAuditEventItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.AuditEvents.Item
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new cloudPcAuditEventItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new CloudPcAuditEventItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public CloudPcAuditEventItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

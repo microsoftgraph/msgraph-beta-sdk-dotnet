@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Catalog.Entries.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new catalogEntryItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new CatalogEntryItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public CatalogEntryItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Catalog.Entries.Item {
             /// <summary>Request query parameters</summary>
             public CatalogEntryItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new CatalogEntryItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new catalogEntryItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new CatalogEntryItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public CatalogEntryItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Catalog.Entries.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new catalogEntryItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new CatalogEntryItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public CatalogEntryItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

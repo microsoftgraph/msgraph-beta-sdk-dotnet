@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public enum Win32LobAppRestartBehavior {
         /// <summary>Intune will restart the device after running the app installation if the operation returns a reboot code.</summary>
         BasedOnReturnCode,

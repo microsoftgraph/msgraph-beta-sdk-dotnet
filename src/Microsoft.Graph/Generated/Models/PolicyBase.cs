@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Casts the previous resource to application.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class PolicyBase : DirectoryObject, IParsable {
         /// <summary>Description for this policy. Required.</summary>
         public string Description {
@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new policyBase and sets the default values.
         /// </summary>
         public PolicyBase() : base() {
-            Type = "#microsoft.graph.policyBase";
+            OdataType = "#microsoft.graph.policyBase";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -32,15 +32,21 @@ namespace Microsoft.Graph.Beta.Models {
             var mappingValueNode = parseNode.GetChildNode("@odata.type");
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
+                "#microsoft.graph.activityBasedTimeoutPolicy" => new ActivityBasedTimeoutPolicy(),
                 "#microsoft.graph.appManagementPolicy" => new AppManagementPolicy(),
                 "#microsoft.graph.authorizationPolicy" => new AuthorizationPolicy(),
+                "#microsoft.graph.claimsMappingPolicy" => new ClaimsMappingPolicy(),
+                "#microsoft.graph.crossTenantAccessPolicy" => new CrossTenantAccessPolicy(),
                 "#microsoft.graph.externalIdentitiesPolicy" => new ExternalIdentitiesPolicy(),
+                "#microsoft.graph.homeRealmDiscoveryPolicy" => new HomeRealmDiscoveryPolicy(),
                 "#microsoft.graph.identitySecurityDefaultsEnforcementPolicy" => new IdentitySecurityDefaultsEnforcementPolicy(),
                 "#microsoft.graph.permissionGrantPolicy" => new PermissionGrantPolicy(),
                 "#microsoft.graph.servicePrincipalCreationPolicy" => new ServicePrincipalCreationPolicy(),
                 "#microsoft.graph.stsPolicy" => new StsPolicy(),
                 "#microsoft.graph.tenantAppManagementPolicy" => new TenantAppManagementPolicy(),
                 "#microsoft.graph.tenantRelationshipAccessPolicyBase" => new TenantRelationshipAccessPolicyBase(),
+                "#microsoft.graph.tokenIssuancePolicy" => new TokenIssuancePolicy(),
+                "#microsoft.graph.tokenLifetimePolicy" => new TokenLifetimePolicy(),
                 _ => new PolicyBase(),
             };
         }

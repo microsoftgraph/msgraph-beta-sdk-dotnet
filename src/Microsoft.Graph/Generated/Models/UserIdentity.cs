@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new UserIdentity and sets the default values.
         /// </summary>
         public UserIdentity() : base() {
-            Type = "#microsoft.graph.userIdentity";
+            OdataType = "#microsoft.graph.userIdentity";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

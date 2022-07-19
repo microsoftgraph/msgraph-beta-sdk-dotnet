@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Beta.Planner.Rosters.Item.Plans.Item {
             /// <summary>Request query parameters</summary>
             public PlannerPlanItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new PlannerPlanItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new plannerPlanItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new PlannerPlanItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public PlannerPlanItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();

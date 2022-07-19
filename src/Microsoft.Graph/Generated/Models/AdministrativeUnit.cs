@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of administrativeUnit entities.</summary>
     public class AdministrativeUnit : DirectoryObject, IParsable {
         /// <summary>An optional description for the administrative unit. Supports $filter (eq, ne, in, startsWith), $search.</summary>
         public string Description {
@@ -40,6 +39,12 @@ namespace Microsoft.Graph.Beta.Models {
         public string Visibility {
             get { return BackingStore?.Get<string>("visibility"); }
             set { BackingStore?.Set("visibility", value); }
+        }
+        /// <summary>
+        /// Instantiates a new AdministrativeUnit and sets the default values.
+        /// </summary>
+        public AdministrativeUnit() : base() {
+            OdataType = "#microsoft.graph.administrativeUnit";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

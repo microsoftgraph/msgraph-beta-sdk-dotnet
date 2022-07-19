@@ -33,6 +33,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<int?>("maxAgeInSeconds"); }
             set { BackingStore?.Set("maxAgeInSeconds", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The resource property</summary>
         public string Resource {
             get { return BackingStore?.Get<string>("resource"); }
@@ -44,6 +49,7 @@ namespace Microsoft.Graph.Beta.Models {
         public CorsConfiguration() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.corsConfiguration";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -62,6 +68,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"allowedMethods", n => { AllowedMethods = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"allowedOrigins", n => { AllowedOrigins = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"maxAgeInSeconds", n => { MaxAgeInSeconds = n.GetIntValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"resource", n => { Resource = n.GetStringValue(); } },
             };
         }
@@ -75,6 +82,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfPrimitiveValues<string>("allowedMethods", AllowedMethods);
             writer.WriteCollectionOfPrimitiveValues<string>("allowedOrigins", AllowedOrigins);
             writer.WriteIntValue("maxAgeInSeconds", MaxAgeInSeconds);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("resource", Resource);
             writer.WriteAdditionalData(AdditionalData);
         }

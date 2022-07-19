@@ -58,12 +58,18 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("networkMessageId"); }
             set { BackingStore?.Set("networkMessageId", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>
         /// Instantiates a new messageSecurityState and sets the default values.
         /// </summary>
         public MessageSecurityState() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.messageSecurityState";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -87,6 +93,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"messageReceivedDateTime", n => { MessageReceivedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"messageSubject", n => { MessageSubject = n.GetStringValue(); } },
                 {"networkMessageId", n => { NetworkMessageId = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -104,6 +111,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteDateTimeOffsetValue("messageReceivedDateTime", MessageReceivedDateTime);
             writer.WriteStringValue("messageSubject", MessageSubject);
             writer.WriteStringValue("networkMessageId", NetworkMessageId);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

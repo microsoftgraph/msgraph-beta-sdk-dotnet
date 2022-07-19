@@ -153,7 +153,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesCreditMemos.Item {
             /// <summary>Request query parameters</summary>
             public SalesCreditMemoItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new SalesCreditMemoItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new salesCreditMemoItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new SalesCreditMemoItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public SalesCreditMemoItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -167,7 +167,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesCreditMemos.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new salesCreditMemoItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new SalesCreditMemoItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public SalesCreditMemoItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
-    /// <summary>Provides operations to manage the collection of externalConnection entities.</summary>
     public class ExternalGroup : Entity, IParsable {
         /// <summary>The description of the external group. Optional.</summary>
         public string Description {
@@ -20,6 +19,12 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
         public List<Identity> Members {
             get { return BackingStore?.Get<List<Identity>>("members"); }
             set { BackingStore?.Set("members", value); }
+        }
+        /// <summary>
+        /// Instantiates a new ExternalGroup and sets the default values.
+        /// </summary>
+        public ExternalGroup() : base() {
+            OdataType = "#microsoft.graph.externalConnectors.externalGroup";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

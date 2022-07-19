@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Casts the previous resource to application.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class ExtensionProperty : DirectoryObject, IParsable {
         /// <summary>Display name of the application object on which this extension property is defined. Read-only.</summary>
         public string AppDisplayName {
@@ -30,6 +30,12 @@ namespace Microsoft.Graph.Beta.Models {
         public List<string> TargetObjects {
             get { return BackingStore?.Get<List<string>>("targetObjects"); }
             set { BackingStore?.Set("targetObjects", value); }
+        }
+        /// <summary>
+        /// Instantiates a new extensionProperty and sets the default values.
+        /// </summary>
+        public ExtensionProperty() : base() {
+            OdataType = "#microsoft.graph.extensionProperty";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

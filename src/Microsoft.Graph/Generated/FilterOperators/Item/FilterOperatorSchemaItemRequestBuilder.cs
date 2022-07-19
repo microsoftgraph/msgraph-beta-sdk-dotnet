@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.FilterOperators.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new filterOperatorSchemaItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new FilterOperatorSchemaItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public FilterOperatorSchemaItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.FilterOperators.Item {
             /// <summary>Request query parameters</summary>
             public FilterOperatorSchemaItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new FilterOperatorSchemaItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new filterOperatorSchemaItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new FilterOperatorSchemaItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public FilterOperatorSchemaItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.FilterOperators.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new filterOperatorSchemaItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new FilterOperatorSchemaItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public FilterOperatorSchemaItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

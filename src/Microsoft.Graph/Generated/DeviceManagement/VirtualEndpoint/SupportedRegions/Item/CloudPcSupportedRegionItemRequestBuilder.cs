@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.SupportedRegions
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new cloudPcSupportedRegionItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new CloudPcSupportedRegionItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public CloudPcSupportedRegionItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.SupportedRegions
             /// <summary>Request query parameters</summary>
             public CloudPcSupportedRegionItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new CloudPcSupportedRegionItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new cloudPcSupportedRegionItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new CloudPcSupportedRegionItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public CloudPcSupportedRegionItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.SupportedRegions
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new cloudPcSupportedRegionItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new CloudPcSupportedRegionItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public CloudPcSupportedRegionItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

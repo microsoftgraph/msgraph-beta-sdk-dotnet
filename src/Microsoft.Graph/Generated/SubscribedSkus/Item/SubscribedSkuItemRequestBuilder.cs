@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.SubscribedSkus.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new subscribedSkuItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new SubscribedSkuItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public SubscribedSkuItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -176,7 +176,7 @@ namespace Microsoft.Graph.Beta.SubscribedSkus.Item {
             /// <summary>Request query parameters</summary>
             public SubscribedSkuItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new SubscribedSkuItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new subscribedSkuItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new SubscribedSkuItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public SubscribedSkuItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -190,7 +190,7 @@ namespace Microsoft.Graph.Beta.SubscribedSkus.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new subscribedSkuItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new SubscribedSkuItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public SubscribedSkuItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

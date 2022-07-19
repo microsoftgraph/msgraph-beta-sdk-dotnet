@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Drives.Item.List.Items.Item.DocumentS
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new documentSetVersionItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new DocumentSetVersionItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public DocumentSetVersionItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -184,7 +184,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Drives.Item.List.Items.Item.DocumentS
             /// <summary>Request query parameters</summary>
             public DocumentSetVersionItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new DocumentSetVersionItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new documentSetVersionItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new DocumentSetVersionItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public DocumentSetVersionItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -198,7 +198,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Drives.Item.List.Items.Item.DocumentS
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new documentSetVersionItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new DocumentSetVersionItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public DocumentSetVersionItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

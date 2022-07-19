@@ -164,7 +164,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.IntuneBrandingProfiles.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new intuneBrandingProfileItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new IntuneBrandingProfileItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public IntuneBrandingProfileItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -189,7 +189,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.IntuneBrandingProfiles.Item {
             /// <summary>Request query parameters</summary>
             public IntuneBrandingProfileItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new IntuneBrandingProfileItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new intuneBrandingProfileItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new IntuneBrandingProfileItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public IntuneBrandingProfileItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -203,7 +203,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.IntuneBrandingProfiles.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new intuneBrandingProfileItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new IntuneBrandingProfileItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public IntuneBrandingProfileItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

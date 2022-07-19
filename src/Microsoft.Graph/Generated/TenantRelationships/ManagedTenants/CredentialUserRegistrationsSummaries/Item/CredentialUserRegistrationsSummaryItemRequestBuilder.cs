@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.CredentialUser
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new credentialUserRegistrationsSummaryItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new CredentialUserRegistrationsSummaryItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public CredentialUserRegistrationsSummaryItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.CredentialUser
             /// <summary>Request query parameters</summary>
             public CredentialUserRegistrationsSummaryItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new CredentialUserRegistrationsSummaryItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new credentialUserRegistrationsSummaryItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new CredentialUserRegistrationsSummaryItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public CredentialUserRegistrationsSummaryItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.CredentialUser
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new credentialUserRegistrationsSummaryItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new CredentialUserRegistrationsSummaryItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public CredentialUserRegistrationsSummaryItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

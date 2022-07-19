@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class OutlookItem : Entity, IParsable {
         /// <summary>The categories associated with the item</summary>
         public List<string> Categories {
@@ -31,7 +31,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// Instantiates a new outlookItem and sets the default values.
         /// </summary>
         public OutlookItem() : base() {
-            Type = "#microsoft.graph.outlookItem";
+            OdataType = "#microsoft.graph.outlookItem";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -42,8 +42,12 @@ namespace Microsoft.Graph.Beta.Models {
             var mappingValueNode = parseNode.GetChildNode("@odata.type");
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
+                "#microsoft.graph.calendarSharingMessage" => new CalendarSharingMessage(),
                 "#microsoft.graph.contact" => new Contact(),
                 "#microsoft.graph.event" => new Event(),
+                "#microsoft.graph.eventMessage" => new EventMessage(),
+                "#microsoft.graph.eventMessageRequest" => new EventMessageRequest(),
+                "#microsoft.graph.eventMessageResponse" => new EventMessageResponse(),
                 "#microsoft.graph.message" => new Message(),
                 "#microsoft.graph.note" => new Note(),
                 "#microsoft.graph.outlookTask" => new OutlookTask(),

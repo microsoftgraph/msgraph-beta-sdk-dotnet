@@ -43,6 +43,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<WorkbookIcon>("icon"); }
             set { BackingStore?.Set("icon", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The operator property</summary>
         public string Operator {
             get { return BackingStore?.Get<string>("operator"); }
@@ -59,6 +64,7 @@ namespace Microsoft.Graph.Beta.Models {
         public WorkbookFilterCriteria() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.workbookFilterCriteria";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -79,6 +85,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"dynamicCriteria", n => { DynamicCriteria = n.GetStringValue(); } },
                 {"filterOn", n => { FilterOn = n.GetStringValue(); } },
                 {"icon", n => { Icon = n.GetObjectValue<WorkbookIcon>(WorkbookIcon.CreateFromDiscriminatorValue); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"operator", n => { Operator = n.GetStringValue(); } },
                 {"values", n => { Values = n.GetObjectValue<Json>(Json.CreateFromDiscriminatorValue); } },
             };
@@ -95,6 +102,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("dynamicCriteria", DynamicCriteria);
             writer.WriteStringValue("filterOn", FilterOn);
             writer.WriteObjectValue<WorkbookIcon>("icon", Icon);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("operator", Operator);
             writer.WriteObjectValue<Json>("values", Values);
             writer.WriteAdditionalData(AdditionalData);

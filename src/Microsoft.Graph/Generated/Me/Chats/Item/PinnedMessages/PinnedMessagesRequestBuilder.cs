@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Me.Chats.Item.PinnedMessages {
     /// <summary>Provides operations to manage the pinnedMessages property of the microsoft.graph.chat entity.</summary>
     public class PinnedMessagesRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

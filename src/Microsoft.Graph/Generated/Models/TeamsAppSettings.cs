@@ -11,6 +11,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("isChatResourceSpecificConsentEnabled", value); }
         }
         /// <summary>
+        /// Instantiates a new TeamsAppSettings and sets the default values.
+        /// </summary>
+        public TeamsAppSettings() : base() {
+            OdataType = "#microsoft.graph.teamsAppSettings";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

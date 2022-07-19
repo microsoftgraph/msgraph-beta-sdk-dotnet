@@ -24,6 +24,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("hasLink"); }
             set { BackingStore?.Set("hasLink", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>Key of the Payload, In the format of Guid.</summary>
         public string PayloadId {
             get { return BackingStore?.Get<string>("payloadId"); }
@@ -40,6 +45,7 @@ namespace Microsoft.Graph.Beta.Models {
         public HasPayloadLinkResultItem() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.hasPayloadLinkResultItem";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -56,6 +62,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"error", n => { Error = n.GetStringValue(); } },
                 {"hasLink", n => { HasLink = n.GetBoolValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"payloadId", n => { PayloadId = n.GetStringValue(); } },
                 {"sources", n => { Sources = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
             };
@@ -68,6 +75,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("error", Error);
             writer.WriteBoolValue("hasLink", HasLink);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("payloadId", PayloadId);
             writer.WriteCollectionOfPrimitiveValues<string>("sources", Sources);
             writer.WriteAdditionalData(AdditionalData);

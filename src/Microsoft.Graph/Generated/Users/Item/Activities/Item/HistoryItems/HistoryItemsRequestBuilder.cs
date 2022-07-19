@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Users.Item.Activities.Item.HistoryItems {
     /// <summary>Provides operations to manage the historyItems property of the microsoft.graph.userActivity entity.</summary>
     public class HistoryItemsRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

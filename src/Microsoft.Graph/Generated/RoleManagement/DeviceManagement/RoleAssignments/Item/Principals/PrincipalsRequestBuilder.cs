@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.RoleManagement.DeviceManagement.RoleAssignments.Item.Principals {
     /// <summary>Provides operations to manage the principals property of the microsoft.graph.unifiedRoleAssignmentMultiple entity.</summary>
     public class PrincipalsRequestBuilder {
-        /// <summary>The count property</summary>
+        /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }

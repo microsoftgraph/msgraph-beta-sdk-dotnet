@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class TaxArea : Entity, IParsable {
         /// <summary>The code property</summary>
         public string Code {
@@ -25,6 +24,12 @@ namespace Microsoft.Graph.Beta.Models {
         public string TaxType {
             get { return BackingStore?.Get<string>("taxType"); }
             set { BackingStore?.Set("taxType", value); }
+        }
+        /// <summary>
+        /// Instantiates a new TaxArea and sets the default values.
+        /// </summary>
+        public TaxArea() : base() {
+            OdataType = "#microsoft.graph.taxArea";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

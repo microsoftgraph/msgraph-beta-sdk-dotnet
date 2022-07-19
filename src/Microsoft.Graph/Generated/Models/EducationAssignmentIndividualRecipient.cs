@@ -11,6 +11,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("recipients", value); }
         }
         /// <summary>
+        /// Instantiates a new EducationAssignmentIndividualRecipient and sets the default values.
+        /// </summary>
+        public EducationAssignmentIndividualRecipient() : base() {
+            OdataType = "#microsoft.graph.educationAssignmentIndividualRecipient";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>

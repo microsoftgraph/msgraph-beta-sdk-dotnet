@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class Group : DirectoryObject, IParsable {
         /// <summary>The list of users or groups that are allowed to create post&apos;s or calendar events in this group. If this list is non-empty then only users or groups listed here are allowed to post.</summary>
         public List<DirectoryObject> AcceptedSenders {
@@ -190,11 +190,6 @@ namespace Microsoft.Graph.Beta.Models {
         public string MailNickname {
             get { return BackingStore?.Get<string>("mailNickname"); }
             set { BackingStore?.Set("mailNickname", value); }
-        }
-        /// <summary>The mdmAppId property</summary>
-        public string MdmAppId {
-            get { return BackingStore?.Get<string>("mdmAppId"); }
-            set { BackingStore?.Set("mdmAppId", value); }
         }
         /// <summary>Groups and administrative units that this group is a member of. HTTP Methods: GET (supported for all groups). Read-only. Nullable. Supports $expand.</summary>
         public List<DirectoryObject> MemberOf {
@@ -402,6 +397,12 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("writebackConfiguration", value); }
         }
         /// <summary>
+        /// Instantiates a new group and sets the default values.
+        /// </summary>
+        public Group() : base() {
+            OdataType = "#microsoft.graph.group";
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>
@@ -451,7 +452,6 @@ namespace Microsoft.Graph.Beta.Models {
                 {"mail", n => { Mail = n.GetStringValue(); } },
                 {"mailEnabled", n => { MailEnabled = n.GetBoolValue(); } },
                 {"mailNickname", n => { MailNickname = n.GetStringValue(); } },
-                {"mdmAppId", n => { MdmAppId = n.GetStringValue(); } },
                 {"memberOf", n => { MemberOf = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue).ToList(); } },
                 {"members", n => { Members = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue).ToList(); } },
                 {"membershipRule", n => { MembershipRule = n.GetStringValue(); } },
@@ -539,7 +539,6 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("mail", Mail);
             writer.WriteBoolValue("mailEnabled", MailEnabled);
             writer.WriteStringValue("mailNickname", MailNickname);
-            writer.WriteStringValue("mdmAppId", MdmAppId);
             writer.WriteCollectionOfObjectValues<DirectoryObject>("memberOf", MemberOf);
             writer.WriteCollectionOfObjectValues<DirectoryObject>("members", Members);
             writer.WriteStringValue("membershipRule", MembershipRule);

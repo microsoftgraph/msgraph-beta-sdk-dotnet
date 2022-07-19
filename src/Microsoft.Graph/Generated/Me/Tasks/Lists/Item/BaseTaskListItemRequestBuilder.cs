@@ -164,7 +164,7 @@ namespace Microsoft.Graph.Beta.Me.Tasks.Lists.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new baseTaskListItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new BaseTaskListItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public BaseTaskListItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -189,7 +189,7 @@ namespace Microsoft.Graph.Beta.Me.Tasks.Lists.Item {
             /// <summary>Request query parameters</summary>
             public BaseTaskListItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new BaseTaskListItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new baseTaskListItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new BaseTaskListItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public BaseTaskListItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -203,7 +203,7 @@ namespace Microsoft.Graph.Beta.Me.Tasks.Lists.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new baseTaskListItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new BaseTaskListItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public BaseTaskListItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

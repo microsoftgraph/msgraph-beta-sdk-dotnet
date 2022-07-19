@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Notifications.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new notificationItemRequestBuilderDeleteRequestConfiguration and sets the default values.
+            /// Instantiates a new NotificationItemRequestBuilderDeleteRequestConfiguration and sets the default values.
             /// </summary>
             public NotificationItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -179,7 +179,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Notifications.Item {
             /// <summary>Request query parameters</summary>
             public NotificationItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new NotificationItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new notificationItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new NotificationItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public NotificationItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
@@ -193,7 +193,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Notifications.Item {
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
-            /// Instantiates a new notificationItemRequestBuilderPatchRequestConfiguration and sets the default values.
+            /// Instantiates a new NotificationItemRequestBuilderPatchRequestConfiguration and sets the default values.
             /// </summary>
             public NotificationItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();

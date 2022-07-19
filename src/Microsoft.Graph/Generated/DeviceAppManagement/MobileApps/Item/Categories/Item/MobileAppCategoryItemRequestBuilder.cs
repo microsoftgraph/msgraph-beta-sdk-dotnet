@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.Categories.It
             /// <summary>Request query parameters</summary>
             public MobileAppCategoryItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new MobileAppCategoryItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new mobileAppCategoryItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new MobileAppCategoryItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public MobileAppCategoryItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();

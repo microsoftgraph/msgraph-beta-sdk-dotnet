@@ -24,6 +24,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<int?>("endMonth"); }
             set { BackingStore?.Set("endMonth", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The day of the start date of the freeze period. Valid values 1 to 31</summary>
         public int? StartDay {
             get { return BackingStore?.Get<int?>("startDay"); }
@@ -40,6 +45,7 @@ namespace Microsoft.Graph.Beta.Models {
         public AndroidDeviceOwnerSystemUpdateFreezePeriod() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.androidDeviceOwnerSystemUpdateFreezePeriod";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -56,6 +62,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"endDay", n => { EndDay = n.GetIntValue(); } },
                 {"endMonth", n => { EndMonth = n.GetIntValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"startDay", n => { StartDay = n.GetIntValue(); } },
                 {"startMonth", n => { StartMonth = n.GetIntValue(); } },
             };
@@ -68,6 +75,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("endDay", EndDay);
             writer.WriteIntValue("endMonth", EndMonth);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteIntValue("startDay", StartDay);
             writer.WriteIntValue("startMonth", StartMonth);
             writer.WriteAdditionalData(AdditionalData);

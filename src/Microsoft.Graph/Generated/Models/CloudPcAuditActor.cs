@@ -28,6 +28,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("ipAddress"); }
             set { BackingStore?.Set("ipAddress", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>The delegated partner tenant ID.</summary>
         public string RemoteTenantId {
             get { return BackingStore?.Get<string>("remoteTenantId"); }
@@ -74,6 +79,7 @@ namespace Microsoft.Graph.Beta.Models {
         public CloudPcAuditActor() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
+            OdataType = "#microsoft.graph.cloudPcAuditActor";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -91,6 +97,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"applicationDisplayName", n => { ApplicationDisplayName = n.GetStringValue(); } },
                 {"applicationId", n => { ApplicationId = n.GetStringValue(); } },
                 {"ipAddress", n => { IpAddress = n.GetStringValue(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"remoteTenantId", n => { RemoteTenantId = n.GetStringValue(); } },
                 {"remoteUserId", n => { RemoteUserId = n.GetStringValue(); } },
                 {"servicePrincipalName", n => { ServicePrincipalName = n.GetStringValue(); } },
@@ -110,6 +117,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("applicationDisplayName", ApplicationDisplayName);
             writer.WriteStringValue("applicationId", ApplicationId);
             writer.WriteStringValue("ipAddress", IpAddress);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("remoteTenantId", RemoteTenantId);
             writer.WriteStringValue("remoteUserId", RemoteUserId);
             writer.WriteStringValue("servicePrincipalName", ServicePrincipalName);

@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Drives.Item.Root.Activities.Item {
             /// <summary>Request query parameters</summary>
             public ItemActivityOLDItemRequestBuilderGetQueryParameters QueryParameters { get; set; } = new ItemActivityOLDItemRequestBuilderGetQueryParameters();
             /// <summary>
-            /// Instantiates a new itemActivityOLDItemRequestBuilderGetRequestConfiguration and sets the default values.
+            /// Instantiates a new ItemActivityOLDItemRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public ItemActivityOLDItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
