@@ -6,7 +6,7 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class WorkbookRangeSort : Entity, IParsable {
         /// <summary>
-        /// Instantiates a new WorkbookRangeSort and sets the default values.
+        /// Instantiates a new workbookRangeSort and sets the default values.
         /// </summary>
         public WorkbookRangeSort() : base() {
             OdataType = "#microsoft.graph.workbookRangeSort";

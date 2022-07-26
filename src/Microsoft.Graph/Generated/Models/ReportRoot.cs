@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<PrintUsageByUser>>("monthlyPrintUsageSummariesByUser"); }
             set { BackingStore?.Set("monthlyPrintUsageSummariesByUser", value); }
         }
-        /// <summary>The security property</summary>
+        /// <summary>Provides the ability to launch a realistic simulated phishing attack that organizations can learn from.</summary>
         public SecurityReportsRoot Security {
             get { return BackingStore?.Get<SecurityReportsRoot>("security"); }
             set { BackingStore?.Set("security", value); }

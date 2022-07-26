@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("underline", value); }
         }
         /// <summary>
-        /// Instantiates a new WorkbookRangeFont and sets the default values.
+        /// Instantiates a new workbookRangeFont and sets the default values.
         /// </summary>
         public WorkbookRangeFont() : base() {
             OdataType = "#microsoft.graph.workbookRangeFont";

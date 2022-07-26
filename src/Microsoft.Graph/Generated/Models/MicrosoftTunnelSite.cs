@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Entity that represents a Microsoft Tunnel site</summary>
     public class MicrosoftTunnelSite : Entity, IParsable {
         /// <summary>The MicrosoftTunnelSite&apos;s description</summary>
         public string Description {
@@ -67,7 +68,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("upgradeWindowUtcOffsetInMinutes", value); }
         }
         /// <summary>
-        /// Instantiates a new MicrosoftTunnelSite and sets the default values.
+        /// Instantiates a new microsoftTunnelSite and sets the default values.
         /// </summary>
         public MicrosoftTunnelSite() : base() {
             OdataType = "#microsoft.graph.microsoftTunnelSite";

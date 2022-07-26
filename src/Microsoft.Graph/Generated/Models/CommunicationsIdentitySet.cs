@@ -5,17 +5,17 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class CommunicationsIdentitySet : IdentitySet, IParsable {
-        /// <summary>The assertedIdentity property</summary>
+        /// <summary>An identity the participant would like to present itself as to the other participants in the call.</summary>
         public Identity AssertedIdentity {
             get { return BackingStore?.Get<Identity>("assertedIdentity"); }
             set { BackingStore?.Set("assertedIdentity", value); }
         }
-        /// <summary>The azureCommunicationServicesUser property</summary>
+        /// <summary>The Azure Communication Services user associated with this action.</summary>
         public Identity AzureCommunicationServicesUser {
             get { return BackingStore?.Get<Identity>("azureCommunicationServicesUser"); }
             set { BackingStore?.Set("azureCommunicationServicesUser", value); }
         }
-        /// <summary>The endpointType property</summary>
+        /// <summary>Type of endpoint the participant is using. Possible values are: default, voicemail, skypeForBusiness, skypeForBusinessVoipPhone and unknownFutureValue.</summary>
         public Microsoft.Graph.Beta.Models.EndpointType? EndpointType {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EndpointType?>("endpointType"); }
             set { BackingStore?.Set("endpointType", value); }

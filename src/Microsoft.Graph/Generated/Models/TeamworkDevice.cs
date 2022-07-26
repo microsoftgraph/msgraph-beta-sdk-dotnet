@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class TeamworkDevice : Entity, IParsable {
         /// <summary>The activity properties that change based on the device usage.</summary>
         public TeamworkDeviceActivity Activity {
@@ -82,7 +81,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("operations", value); }
         }
         /// <summary>
-        /// Instantiates a new teamworkDevice and sets the default values.
+        /// Instantiates a new TeamworkDevice and sets the default values.
         /// </summary>
         public TeamworkDevice() : base() {
             OdataType = "#microsoft.graph.teamworkDevice";

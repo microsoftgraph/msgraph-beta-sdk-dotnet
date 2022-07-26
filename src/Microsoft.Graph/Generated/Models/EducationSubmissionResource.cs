@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class EducationSubmissionResource : Entity, IParsable {
         /// <summary>Pointer to the assignment from which this resource was copied. If this is null, the student uploaded the resource.</summary>
         public string AssignmentResourceUrl {
@@ -16,7 +17,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("resource", value); }
         }
         /// <summary>
-        /// Instantiates a new EducationSubmissionResource and sets the default values.
+        /// Instantiates a new educationSubmissionResource and sets the default values.
         /// </summary>
         public EducationSubmissionResource() : base() {
             OdataType = "#microsoft.graph.educationSubmissionResource";

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Windows Feature Update Profile</summary>
     public class WindowsFeatureUpdateProfile : Entity, IParsable {
         /// <summary>The list of group assignments of the profile.</summary>
         public List<WindowsFeatureUpdateProfileAssignment> Assignments {
@@ -56,7 +57,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("rolloutSettings", value); }
         }
         /// <summary>
-        /// Instantiates a new WindowsFeatureUpdateProfile and sets the default values.
+        /// Instantiates a new windowsFeatureUpdateProfile and sets the default values.
         /// </summary>
         public WindowsFeatureUpdateProfile() : base() {
             OdataType = "#microsoft.graph.windowsFeatureUpdateProfile";

@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>An abstract class containing the base properties for Managed eBook.</summary>
     public class ManagedEBook : Entity, IParsable {
         /// <summary>The list of assignments for this eBook.</summary>
         public List<ManagedEBookAssignment> Assignments {
@@ -78,7 +77,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("userStateSummary", value); }
         }
         /// <summary>
-        /// Instantiates a new managedEBook and sets the default values.
+        /// Instantiates a new ManagedEBook and sets the default values.
         /// </summary>
         public ManagedEBook() : base() {
             OdataType = "#microsoft.graph.managedEBook";

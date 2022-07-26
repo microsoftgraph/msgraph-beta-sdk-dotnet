@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class Dimension : Entity, IParsable {
         /// <summary>The code property</summary>
         public string Code {
@@ -26,7 +27,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>
-        /// Instantiates a new Dimension and sets the default values.
+        /// Instantiates a new dimension and sets the default values.
         /// </summary>
         public Dimension() : base() {
             OdataType = "#microsoft.graph.dimension";

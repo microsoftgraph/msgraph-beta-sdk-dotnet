@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Entity that represents a Chromebook tenant settings</summary>
     public class ChromeOSOnboardingSettings : Entity, IParsable {
         /// <summary>The ChromebookTenant&apos;s LastDirectorySyncDateTime</summary>
         public DateTimeOffset? LastDirectorySyncDateTime {
@@ -27,7 +26,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("ownerUserPrincipalName", value); }
         }
         /// <summary>
-        /// Instantiates a new chromeOSOnboardingSettings and sets the default values.
+        /// Instantiates a new ChromeOSOnboardingSettings and sets the default values.
         /// </summary>
         public ChromeOSOnboardingSettings() : base() {
             OdataType = "#microsoft.graph.chromeOSOnboardingSettings";

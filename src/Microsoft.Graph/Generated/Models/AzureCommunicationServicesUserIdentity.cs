@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class AzureCommunicationServicesUserIdentity : Identity, IParsable {
-        /// <summary>The azureCommunicationServicesResourceId property</summary>
+        /// <summary>The Azure Communication Services resource ID associated with the user.</summary>
         public string AzureCommunicationServicesResourceId {
             get { return BackingStore?.Get<string>("azureCommunicationServicesResourceId"); }
             set { BackingStore?.Set("azureCommunicationServicesResourceId", value); }

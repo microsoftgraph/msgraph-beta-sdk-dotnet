@@ -22,7 +22,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("notes", value); }
         }
         /// <summary>
-        /// Instantiates a new ShiftItem and sets the default values.
+        /// Instantiates a new shiftItem and sets the default values.
         /// </summary>
         public ShiftItem() : base() {
             OdataType = "#microsoft.graph.shiftItem";

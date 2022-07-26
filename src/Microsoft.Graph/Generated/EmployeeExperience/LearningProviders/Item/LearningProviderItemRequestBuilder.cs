@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Beta.EmployeeExperience.LearningProviders.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get learningProviders from employeeExperience
+        /// A collection of learning providers.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<LearningProviderItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -123,7 +123,7 @@ namespace Microsoft.Graph.Beta.EmployeeExperience.LearningProviders.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get learningProviders from employeeExperience
+        /// A collection of learning providers.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -166,7 +166,7 @@ namespace Microsoft.Graph.Beta.EmployeeExperience.LearningProviders.Item {
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>Get learningProviders from employeeExperience</summary>
+        /// <summary>A collection of learning providers.</summary>
         public class LearningProviderItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

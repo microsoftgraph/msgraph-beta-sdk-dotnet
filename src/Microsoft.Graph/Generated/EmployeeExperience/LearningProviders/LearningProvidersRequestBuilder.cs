@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.EmployeeExperience.LearningProviders {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get learningProviders from employeeExperience
+        /// A collection of learning providers.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<LearningProvidersRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Beta.EmployeeExperience.LearningProviders {
             return requestInfo;
         }
         /// <summary>
-        /// Get learningProviders from employeeExperience
+        /// A collection of learning providers.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -128,7 +128,7 @@ namespace Microsoft.Graph.Beta.EmployeeExperience.LearningProviders {
             };
             return await RequestAdapter.SendAsync<LearningProvider>(requestInfo, LearningProvider.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Get learningProviders from employeeExperience</summary>
+        /// <summary>A collection of learning providers.</summary>
         public class LearningProvidersRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

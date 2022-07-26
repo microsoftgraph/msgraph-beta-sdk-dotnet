@@ -4,6 +4,8 @@ using Microsoft.Graph.Beta.Communications.OnlineMeetings.Item.AttendeeReport;
 using Microsoft.Graph.Beta.Communications.OnlineMeetings.Item.MeetingAttendanceReport;
 using Microsoft.Graph.Beta.Communications.OnlineMeetings.Item.Recording;
 using Microsoft.Graph.Beta.Communications.OnlineMeetings.Item.Registration;
+using Microsoft.Graph.Beta.Communications.OnlineMeetings.Item.Transcripts;
+using Microsoft.Graph.Beta.Communications.OnlineMeetings.Item.VirtualAppointment;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -45,8 +47,16 @@ namespace Microsoft.Graph.Beta.Communications.OnlineMeetings.Item {
         }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        /// <summary>The transcripts property</summary>
+        public TranscriptsRequestBuilder Transcripts { get =>
+            new TranscriptsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
+        /// <summary>The virtualAppointment property</summary>
+        public VirtualAppointmentRequestBuilder VirtualAppointment { get =>
+            new VirtualAppointmentRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new OnlineMeetingItemRequestBuilder and sets the default values.
         /// <param name="pathParameters">Path parameters for the request</param>

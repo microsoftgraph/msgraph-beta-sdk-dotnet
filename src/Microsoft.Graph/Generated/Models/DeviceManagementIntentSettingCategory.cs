@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Entity representing an intent setting category</summary>
     public class DeviceManagementIntentSettingCategory : DeviceManagementSettingCategory, IParsable {
         /// <summary>The settings this category contains</summary>
         public List<DeviceManagementSettingInstance> Settings {
@@ -12,7 +11,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("settings", value); }
         }
         /// <summary>
-        /// Instantiates a new deviceManagementIntentSettingCategory and sets the default values.
+        /// Instantiates a new DeviceManagementIntentSettingCategory and sets the default values.
         /// </summary>
         public DeviceManagementIntentSettingCategory() : base() {
             OdataType = "#microsoft.graph.deviceManagementIntentSettingCategory";
