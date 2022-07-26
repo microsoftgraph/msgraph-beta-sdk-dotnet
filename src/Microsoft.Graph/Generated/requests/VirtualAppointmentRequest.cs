@@ -17,17 +17,17 @@ namespace Microsoft.Graph
     using System.Linq.Expressions;
 
     /// <summary>
-    /// The type OnlineMeetingRequest.
+    /// The type VirtualAppointmentRequest.
     /// </summary>
-    public partial class OnlineMeetingRequest : BaseRequest, IOnlineMeetingRequest
+    public partial class VirtualAppointmentRequest : BaseRequest, IVirtualAppointmentRequest
     {
         /// <summary>
-        /// Constructs a new OnlineMeetingRequest.
+        /// Constructs a new VirtualAppointmentRequest.
         /// </summary>
         /// <param name="requestUrl">The URL for the built request.</param>
         /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
         /// <param name="options">Query and header option name value pairs for the request.</param>
-        public OnlineMeetingRequest(
+        public VirtualAppointmentRequest(
             string requestUrl,
             IBaseClient client,
             IEnumerable<Option> options)
@@ -36,46 +36,46 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Creates the specified OnlineMeeting using POST.
+        /// Creates the specified VirtualAppointment using POST.
         /// </summary>
-        /// <param name="onlineMeetingToCreate">The OnlineMeeting to create.</param>
+        /// <param name="virtualAppointmentToCreate">The VirtualAppointment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created OnlineMeeting.</returns>
-        public async System.Threading.Tasks.Task<OnlineMeeting> CreateAsync(OnlineMeeting onlineMeetingToCreate, CancellationToken cancellationToken = default)
+        /// <returns>The created VirtualAppointment.</returns>
+        public async System.Threading.Tasks.Task<VirtualAppointment> CreateAsync(VirtualAppointment virtualAppointmentToCreate, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
-            var newEntity = await this.SendAsync<OnlineMeeting>(onlineMeetingToCreate, cancellationToken).ConfigureAwait(false);
+            var newEntity = await this.SendAsync<VirtualAppointment>(virtualAppointmentToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Creates the specified OnlineMeeting using POST and returns a <see cref="GraphResponse{OnlineMeeting}"/> object.
+        /// Creates the specified VirtualAppointment using POST and returns a <see cref="GraphResponse{VirtualAppointment}"/> object.
         /// </summary>
-        /// <param name="onlineMeetingToCreate">The OnlineMeeting to create.</param>
+        /// <param name="virtualAppointmentToCreate">The VirtualAppointment to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The <see cref="GraphResponse{OnlineMeeting}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<OnlineMeeting>> CreateResponseAsync(OnlineMeeting onlineMeetingToCreate, CancellationToken cancellationToken = default)
+        /// <returns>The <see cref="GraphResponse{VirtualAppointment}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<VirtualAppointment>> CreateResponseAsync(VirtualAppointment virtualAppointmentToCreate, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
-            return this.SendAsyncWithGraphResponse<OnlineMeeting>(onlineMeetingToCreate, cancellationToken);
+            return this.SendAsyncWithGraphResponse<VirtualAppointment>(virtualAppointmentToCreate, cancellationToken);
         }
 
         /// <summary>
-        /// Deletes the specified OnlineMeeting.
+        /// Deletes the specified VirtualAppointment.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
         public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.DELETE;
-            await this.SendAsync<OnlineMeeting>(null, cancellationToken).ConfigureAwait(false);
+            await this.SendAsync<VirtualAppointment>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Deletes the specified OnlineMeeting and returns a <see cref="GraphResponse"/> object.
+        /// Deletes the specified VirtualAppointment and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
@@ -86,85 +86,85 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the specified OnlineMeeting.
+        /// Gets the specified VirtualAppointment.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The OnlineMeeting.</returns>
-        public async System.Threading.Tasks.Task<OnlineMeeting> GetAsync(CancellationToken cancellationToken = default)
+        /// <returns>The VirtualAppointment.</returns>
+        public async System.Threading.Tasks.Task<VirtualAppointment> GetAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
-            var retrievedEntity = await this.SendAsync<OnlineMeeting>(null, cancellationToken).ConfigureAwait(false);
+            var retrievedEntity = await this.SendAsync<VirtualAppointment>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Gets the specified OnlineMeeting and returns a <see cref="GraphResponse{OnlineMeeting}"/> object.
+        /// Gets the specified VirtualAppointment and returns a <see cref="GraphResponse{VirtualAppointment}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The <see cref="GraphResponse{OnlineMeeting}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<OnlineMeeting>> GetResponseAsync(CancellationToken cancellationToken = default)
+        /// <returns>The <see cref="GraphResponse{VirtualAppointment}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<VirtualAppointment>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
-            return this.SendAsyncWithGraphResponse<OnlineMeeting>(null, cancellationToken);
+            return this.SendAsyncWithGraphResponse<VirtualAppointment>(null, cancellationToken);
         }
 
         /// <summary>
-        /// Updates the specified OnlineMeeting using PATCH.
+        /// Updates the specified VirtualAppointment using PATCH.
         /// </summary>
-        /// <param name="onlineMeetingToUpdate">The OnlineMeeting to update.</param>
+        /// <param name="virtualAppointmentToUpdate">The VirtualAppointment to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
-        /// <returns>The updated OnlineMeeting.</returns>
-        public async System.Threading.Tasks.Task<OnlineMeeting> UpdateAsync(OnlineMeeting onlineMeetingToUpdate, CancellationToken cancellationToken = default)
+        /// <returns>The updated VirtualAppointment.</returns>
+        public async System.Threading.Tasks.Task<VirtualAppointment> UpdateAsync(VirtualAppointment virtualAppointmentToUpdate, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.PATCH;
-            var updatedEntity = await this.SendAsync<OnlineMeeting>(onlineMeetingToUpdate, cancellationToken).ConfigureAwait(false);
+            var updatedEntity = await this.SendAsync<VirtualAppointment>(virtualAppointmentToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
         }
 
         /// <summary>
-        /// Updates the specified OnlineMeeting using PATCH and returns a <see cref="GraphResponse{OnlineMeeting}"/> object.
+        /// Updates the specified VirtualAppointment using PATCH and returns a <see cref="GraphResponse{VirtualAppointment}"/> object.
         /// </summary>
-        /// <param name="onlineMeetingToUpdate">The OnlineMeeting to update.</param>
+        /// <param name="virtualAppointmentToUpdate">The VirtualAppointment to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
-        /// <returns>The <see cref="GraphResponse{OnlineMeeting}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<OnlineMeeting>> UpdateResponseAsync(OnlineMeeting onlineMeetingToUpdate, CancellationToken cancellationToken = default)
+        /// <returns>The <see cref="GraphResponse{VirtualAppointment}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<VirtualAppointment>> UpdateResponseAsync(VirtualAppointment virtualAppointmentToUpdate, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.PATCH;
-            return this.SendAsyncWithGraphResponse<OnlineMeeting>(onlineMeetingToUpdate, cancellationToken);
+            return this.SendAsyncWithGraphResponse<VirtualAppointment>(virtualAppointmentToUpdate, cancellationToken);
         }
 
         /// <summary>
-        /// Updates the specified OnlineMeeting using PUT.
+        /// Updates the specified VirtualAppointment using PUT.
         /// </summary>
-        /// <param name="onlineMeetingToUpdate">The OnlineMeeting object to update.</param>
+        /// <param name="virtualAppointmentToUpdate">The VirtualAppointment object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task<OnlineMeeting> PutAsync(OnlineMeeting onlineMeetingToUpdate, CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<VirtualAppointment> PutAsync(VirtualAppointment virtualAppointmentToUpdate, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.PUT;
-            var updatedEntity = await this.SendAsync<OnlineMeeting>(onlineMeetingToUpdate, cancellationToken).ConfigureAwait(false);
+            var updatedEntity = await this.SendAsync<VirtualAppointment>(virtualAppointmentToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
         }
 
         /// <summary>
-        /// Updates the specified OnlineMeeting using PUT and returns a <see cref="GraphResponse{OnlineMeeting}"/> object.
+        /// Updates the specified VirtualAppointment using PUT and returns a <see cref="GraphResponse{VirtualAppointment}"/> object.
         /// </summary>
-        /// <param name="onlineMeetingToUpdate">The OnlineMeeting object to update.</param>
+        /// <param name="virtualAppointmentToUpdate">The VirtualAppointment object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The task to await of <see cref="GraphResponse{OnlineMeeting}"/>.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<OnlineMeeting>> PutResponseAsync(OnlineMeeting onlineMeetingToUpdate, CancellationToken cancellationToken = default)
+        /// <returns>The task to await of <see cref="GraphResponse{VirtualAppointment}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<VirtualAppointment>> PutResponseAsync(VirtualAppointment virtualAppointmentToUpdate, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.PUT;
-            return this.SendAsyncWithGraphResponse<OnlineMeeting>(onlineMeetingToUpdate, cancellationToken);
+            return this.SendAsyncWithGraphResponse<VirtualAppointment>(virtualAppointmentToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -172,7 +172,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="value">The expand value.</param>
         /// <returns>The request object to send.</returns>
-        public IOnlineMeetingRequest Expand(string value)
+        public IVirtualAppointmentRequest Expand(string value)
         {
             this.QueryOptions.Add(new QueryOption("$expand", value));
             return this;
@@ -183,7 +183,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="expandExpression">The expression from which to calculate the expand value.</param>
         /// <returns>The request object to send.</returns>
-        public IOnlineMeetingRequest Expand(Expression<Func<OnlineMeeting, object>> expandExpression)
+        public IVirtualAppointmentRequest Expand(Expression<Func<VirtualAppointment, object>> expandExpression)
         {
 		    if (expandExpression == null)
             {
@@ -207,7 +207,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="value">The select value.</param>
         /// <returns>The request object to send.</returns>
-        public IOnlineMeetingRequest Select(string value)
+        public IVirtualAppointmentRequest Select(string value)
         {
             this.QueryOptions.Add(new QueryOption("$select", value));
             return this;
@@ -218,7 +218,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="selectExpression">The expression from which to calculate the select value.</param>
         /// <returns>The request object to send.</returns>
-        public IOnlineMeetingRequest Select(Expression<Func<OnlineMeeting, object>> selectExpression)
+        public IVirtualAppointmentRequest Select(Expression<Func<VirtualAppointment, object>> selectExpression)
         {
             if (selectExpression == null)
             {
@@ -240,27 +240,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Initializes any collection properties after deserialization, like next requests for paging.
         /// </summary>
-        /// <param name="onlineMeetingToInitialize">The <see cref="OnlineMeeting"/> with the collection properties to initialize.</param>
-        private void InitializeCollectionProperties(OnlineMeeting onlineMeetingToInitialize)
+        /// <param name="virtualAppointmentToInitialize">The <see cref="VirtualAppointment"/> with the collection properties to initialize.</param>
+        private void InitializeCollectionProperties(VirtualAppointment virtualAppointmentToInitialize)
         {
-
-            if (onlineMeetingToInitialize != null)
-            {
-                if (onlineMeetingToInitialize.AttendanceReports != null && onlineMeetingToInitialize.AttendanceReports.CurrentPage != null)
-                {
-                    onlineMeetingToInitialize.AttendanceReports.InitializeNextPageRequest(this.Client, onlineMeetingToInitialize.AttendanceReportsNextLink);
-                    // Copy the additional data collection to the page itself so that information is not lost
-                    onlineMeetingToInitialize.AttendanceReports.AdditionalData = onlineMeetingToInitialize.AdditionalData;
-                }
-                if (onlineMeetingToInitialize.Transcripts != null && onlineMeetingToInitialize.Transcripts.CurrentPage != null)
-                {
-                    onlineMeetingToInitialize.Transcripts.InitializeNextPageRequest(this.Client, onlineMeetingToInitialize.TranscriptsNextLink);
-                    // Copy the additional data collection to the page itself so that information is not lost
-                    onlineMeetingToInitialize.Transcripts.AdditionalData = onlineMeetingToInitialize.AdditionalData;
-                }
-
-            }
-
 
         }
     }

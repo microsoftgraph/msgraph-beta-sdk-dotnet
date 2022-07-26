@@ -49,5 +49,19 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="ITenantRelationshipDelegatedAdminRelationshipsCollectionRequestBuilder"/>.</returns>
         ITenantRelationshipDelegatedAdminRelationshipsCollectionRequestBuilder DelegatedAdminRelationships { get; }
     
+        /// <summary>
+        /// Gets the request builder for TenantRelationshipFindTenantInformationByDomainName.
+        /// </summary>
+        /// <returns>The <see cref="ITenantRelationshipFindTenantInformationByDomainNameRequestBuilder"/>.</returns>
+        ITenantRelationshipFindTenantInformationByDomainNameRequestBuilder FindTenantInformationByDomainName(
+            string domainName = null);
+
+        /// <summary>
+        /// Gets the request builder for TenantRelationshipFindTenantInformationByTenantId.
+        /// </summary>
+        /// <returns>The <see cref="ITenantRelationshipFindTenantInformationByTenantIdRequestBuilder"/>.</returns>
+        ITenantRelationshipFindTenantInformationByTenantIdRequestBuilder FindTenantInformationByTenantId(
+            string tenantId = null);
+    
     }
 }

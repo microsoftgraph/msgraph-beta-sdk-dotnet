@@ -29,12 +29,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets hidden.
+        /// True if the participant would not like to be shown in other participants' rosters.
         /// </summary>
         [JsonPropertyName("hidden")]
         public bool? Hidden { get; set; }
     
         /// <summary>
         /// Gets or sets tenantId.
+        /// The application's tenant ID.
         /// </summary>
         [JsonPropertyName("tenantId")]
         public string TenantId { get; set; }

@@ -51,6 +51,18 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for VirtualAppointment.
+        /// </summary>
+        /// <returns>The <see cref="IVirtualAppointmentRequestBuilder"/>.</returns>
+        public IVirtualAppointmentRequestBuilder VirtualAppointment
+        {
+            get
+            {
+                return new VirtualAppointmentRequestBuilder(this.AppendSegmentToRequestUrl("virtualAppointment"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for AttendanceReports.
         /// </summary>
         /// <returns>The <see cref="IOnlineMeetingAttendanceReportsCollectionRequestBuilder"/>.</returns>
@@ -83,6 +95,18 @@ namespace Microsoft.Graph
             get
             {
                 return new MeetingRegistrationRequestBuilder(this.AppendSegmentToRequestUrl("registration"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for Transcripts.
+        /// </summary>
+        /// <returns>The <see cref="IOnlineMeetingTranscriptsCollectionRequestBuilder"/>.</returns>
+        public IOnlineMeetingTranscriptsCollectionRequestBuilder Transcripts
+        {
+            get
+            {
+                return new OnlineMeetingTranscriptsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("transcripts"), this.Client);
             }
         }
     
