@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>
-        /// Instantiates a new accessReviewInstance and sets the default values.
+        /// Instantiates a new AccessReviewInstance and sets the default values.
         /// </summary>
         public AccessReviewInstance() : base() {
             OdataType = "#microsoft.graph.accessReviewInstance";

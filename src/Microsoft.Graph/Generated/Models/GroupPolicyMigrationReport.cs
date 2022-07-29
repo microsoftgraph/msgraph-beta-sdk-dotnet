@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>The Group Policy migration report.</summary>
     public class GroupPolicyMigrationReport : Entity, IParsable {
         /// <summary>The date and time at which the GroupPolicyMigrationReport was created.</summary>
         public DateTimeOffset? CreatedDateTime {
@@ -76,7 +77,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("unsupportedGroupPolicyExtensions", value); }
         }
         /// <summary>
-        /// Instantiates a new GroupPolicyMigrationReport and sets the default values.
+        /// Instantiates a new groupPolicyMigrationReport and sets the default values.
         /// </summary>
         public GroupPolicyMigrationReport() : base() {
             OdataType = "#microsoft.graph.groupPolicyMigrationReport";

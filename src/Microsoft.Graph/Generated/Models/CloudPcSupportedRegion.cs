@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
-        /// <summary>The regionStatus property</summary>
+        /// <summary>The status of the supported region. Possible values are: available, restricted, unavailable, unknownFutureValue. Read-only.</summary>
         public CloudPcSupportedRegionStatus? RegionStatus {
             get { return BackingStore?.Get<CloudPcSupportedRegionStatus?>("regionStatus"); }
             set { BackingStore?.Set("regionStatus", value); }

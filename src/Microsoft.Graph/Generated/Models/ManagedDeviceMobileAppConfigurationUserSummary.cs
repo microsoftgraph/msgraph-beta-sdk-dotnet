@@ -46,7 +46,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("successCount", value); }
         }
         /// <summary>
-        /// Instantiates a new ManagedDeviceMobileAppConfigurationUserSummary and sets the default values.
+        /// Instantiates a new managedDeviceMobileAppConfigurationUserSummary and sets the default values.
         /// </summary>
         public ManagedDeviceMobileAppConfigurationUserSummary() : base() {
             OdataType = "#microsoft.graph.managedDeviceMobileAppConfigurationUserSummary";

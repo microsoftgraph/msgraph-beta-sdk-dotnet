@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class Recommendation : Entity, IParsable {
         /// <summary>The actionSteps property</summary>
         public List<ActionStep> ActionSteps {
@@ -82,7 +81,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>
-        /// Instantiates a new recommendation and sets the default values.
+        /// Instantiates a new Recommendation and sets the default values.
         /// </summary>
         public Recommendation() : base() {
             OdataType = "#microsoft.graph.recommendation";

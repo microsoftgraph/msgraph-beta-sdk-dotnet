@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Device Management Compliance Policy</summary>
     public class DeviceManagementCompliancePolicy : Entity, IParsable {
         /// <summary>Policy assignments</summary>
         public List<DeviceManagementConfigurationPolicyAssignment> Assignments {
@@ -71,7 +72,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("technologies", value); }
         }
         /// <summary>
-        /// Instantiates a new DeviceManagementCompliancePolicy and sets the default values.
+        /// Instantiates a new deviceManagementCompliancePolicy and sets the default values.
         /// </summary>
         public DeviceManagementCompliancePolicy() : base() {
             OdataType = "#microsoft.graph.deviceManagementCompliancePolicy";

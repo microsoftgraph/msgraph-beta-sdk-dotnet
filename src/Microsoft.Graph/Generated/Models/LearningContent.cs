@@ -11,74 +11,74 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
             set { BackingStore?.Set("additionalData", value); }
         }
-        /// <summary>The additionalTags property</summary>
+        /// <summary>Keywords, topics, and other tags associated with the learning content. Optional.</summary>
         public List<string> AdditionalTags {
             get { return BackingStore?.Get<List<string>>("additionalTags"); }
             set { BackingStore?.Set("additionalTags", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The contentWebUrl property</summary>
+        /// <summary>The content web URL for the learning content. Required.</summary>
         public string ContentWebUrl {
             get { return BackingStore?.Get<string>("contentWebUrl"); }
             set { BackingStore?.Set("contentWebUrl", value); }
         }
-        /// <summary>The contributor property</summary>
+        /// <summary>The author, creator, or contributor of the learning content. Optional.</summary>
         public string Contributor {
             get { return BackingStore?.Get<string>("contributor"); }
             set { BackingStore?.Set("contributor", value); }
         }
-        /// <summary>The createdDateTime property</summary>
+        /// <summary>The date when the learning content was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Optional.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>The description property</summary>
+        /// <summary>The description or summary for the learning content. Optional.</summary>
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
-        /// <summary>The duration property</summary>
+        /// <summary>The duration of the learning content in seconds. Optional.</summary>
         public TimeSpan? Duration {
             get { return BackingStore?.Get<TimeSpan?>("duration"); }
             set { BackingStore?.Set("duration", value); }
         }
-        /// <summary>The externalId property</summary>
+        /// <summary>Unique external content ID for the learning content. Required.</summary>
         public string ExternalId {
             get { return BackingStore?.Get<string>("externalId"); }
             set { BackingStore?.Set("externalId", value); }
         }
-        /// <summary>The format property</summary>
+        /// <summary>The format of the learning content. For example, Course, Video, Book, Book Summary, Audiobook Summary. Optional.</summary>
         public string Format {
             get { return BackingStore?.Get<string>("format"); }
             set { BackingStore?.Set("format", value); }
         }
-        /// <summary>The isActive property</summary>
+        /// <summary>Indicates whether the content is active or not. Inactive content will not show up in the UI. The default value is true. Optional.</summary>
         public bool? IsActive {
             get { return BackingStore?.Get<bool?>("isActive"); }
             set { BackingStore?.Set("isActive", value); }
         }
-        /// <summary>The isPremium property</summary>
+        /// <summary>Indicates whether the learning content requires the user to sign-in on the learning provider platform or not. The default value is false. Optional.</summary>
         public bool? IsPremium {
             get { return BackingStore?.Get<bool?>("isPremium"); }
             set { BackingStore?.Set("isPremium", value); }
         }
-        /// <summary>The isSearchable property</summary>
+        /// <summary>Indicates whether the learning content is searchable or not. The default value is true. Optional.</summary>
         public bool? IsSearchable {
             get { return BackingStore?.Get<bool?>("isSearchable"); }
             set { BackingStore?.Set("isSearchable", value); }
         }
-        /// <summary>The languageTag property</summary>
+        /// <summary>The language of the learning content, for example, en-us or fr-fr. Required.</summary>
         public string LanguageTag {
             get { return BackingStore?.Get<string>("languageTag"); }
             set { BackingStore?.Set("languageTag", value); }
         }
-        /// <summary>The lastModifiedDateTime property</summary>
+        /// <summary>The date when the learning content was last modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Optional.</summary>
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
-        /// <summary>The numberOfPages property</summary>
+        /// <summary>The number of pages of the learning content, for example, 9. Optional.</summary>
         public int? NumberOfPages {
             get { return BackingStore?.Get<int?>("numberOfPages"); }
             set { BackingStore?.Set("numberOfPages", value); }
@@ -88,22 +88,22 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
-        /// <summary>The skillTags property</summary>
+        /// <summary>The skills tags associated with the learning content. Optional.</summary>
         public List<string> SkillTags {
             get { return BackingStore?.Get<List<string>>("skillTags"); }
             set { BackingStore?.Set("skillTags", value); }
         }
-        /// <summary>The sourceName property</summary>
+        /// <summary>The source name of the learning content, such as LinkedIn Learning or Coursera. Optional.</summary>
         public string SourceName {
             get { return BackingStore?.Get<string>("sourceName"); }
             set { BackingStore?.Set("sourceName", value); }
         }
-        /// <summary>The thumbnailWebUrl property</summary>
+        /// <summary>The URL of learning content thumbnail image. Optional.</summary>
         public string ThumbnailWebUrl {
             get { return BackingStore?.Get<string>("thumbnailWebUrl"); }
             set { BackingStore?.Set("thumbnailWebUrl", value); }
         }
-        /// <summary>The title property</summary>
+        /// <summary>The title of the learning content. Required.</summary>
         public string Title {
             get { return BackingStore?.Get<string>("title"); }
             set { BackingStore?.Set("title", value); }

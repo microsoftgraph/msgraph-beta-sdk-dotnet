@@ -2,6 +2,8 @@ using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminCustomers;
 using Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminRelationships;
+using Microsoft.Graph.Beta.TenantRelationships.FindTenantInformationByDomainNameWithDomainName;
+using Microsoft.Graph.Beta.TenantRelationships.FindTenantInformationByTenantIdWithTenantId;
 using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -99,6 +101,22 @@ namespace Microsoft.Graph.Beta.TenantRelationships {
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
             return requestInfo;
+        }
+        /// <summary>
+        /// Provides operations to call the findTenantInformationByDomainName method.
+        /// <param name="domainName">Usage: domainName=&apos;{domainName}&apos;</param>
+        /// </summary>
+        public FindTenantInformationByDomainNameWithDomainNameRequestBuilder FindTenantInformationByDomainNameWithDomainName(string domainName) {
+            if(string.IsNullOrEmpty(domainName)) throw new ArgumentNullException(nameof(domainName));
+            return new FindTenantInformationByDomainNameWithDomainNameRequestBuilder(PathParameters, RequestAdapter, domainName);
+        }
+        /// <summary>
+        /// Provides operations to call the findTenantInformationByTenantId method.
+        /// <param name="tenantId">Usage: tenantId=&apos;{tenantId}&apos;</param>
+        /// </summary>
+        public FindTenantInformationByTenantIdWithTenantIdRequestBuilder FindTenantInformationByTenantIdWithTenantId(string tenantId) {
+            if(string.IsNullOrEmpty(tenantId)) throw new ArgumentNullException(nameof(tenantId));
+            return new FindTenantInformationByTenantIdWithTenantIdRequestBuilder(PathParameters, RequestAdapter, tenantId);
         }
         /// <summary>
         /// Get tenantRelationships

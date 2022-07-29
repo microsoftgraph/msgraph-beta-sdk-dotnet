@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class Employee : Entity, IParsable {
         /// <summary>The address property</summary>
         public PostalAddressType Address {
@@ -97,7 +98,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("terminationDate", value); }
         }
         /// <summary>
-        /// Instantiates a new Employee and sets the default values.
+        /// Instantiates a new employee and sets the default values.
         /// </summary>
         public Employee() : base() {
             OdataType = "#microsoft.graph.employee";

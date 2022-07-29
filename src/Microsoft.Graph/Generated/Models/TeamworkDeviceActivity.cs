@@ -31,7 +31,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>
-        /// Instantiates a new teamworkDeviceActivity and sets the default values.
+        /// Instantiates a new TeamworkDeviceActivity and sets the default values.
         /// </summary>
         public TeamworkDeviceActivity() : base() {
             OdataType = "#microsoft.graph.teamworkDeviceActivity";

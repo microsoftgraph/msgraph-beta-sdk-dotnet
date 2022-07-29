@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>The group policy configuration entity contains the configured values for one or more group policy definitions.</summary>
     public class GroupPolicyConfiguration : Entity, IParsable {
         /// <summary>The list of group assignments for the configuration.</summary>
         public List<GroupPolicyConfigurationAssignment> Assignments {
@@ -41,7 +42,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("roleScopeTagIds", value); }
         }
         /// <summary>
-        /// Instantiates a new GroupPolicyConfiguration and sets the default values.
+        /// Instantiates a new groupPolicyConfiguration and sets the default values.
         /// </summary>
         public GroupPolicyConfiguration() : base() {
             OdataType = "#microsoft.graph.groupPolicyConfiguration";

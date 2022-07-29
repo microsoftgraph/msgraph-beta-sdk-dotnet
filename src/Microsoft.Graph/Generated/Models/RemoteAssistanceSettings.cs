@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("remoteAssistanceState", value); }
         }
         /// <summary>
-        /// Instantiates a new RemoteAssistanceSettings and sets the default values.
+        /// Instantiates a new remoteAssistanceSettings and sets the default values.
         /// </summary>
         public RemoteAssistanceSettings() : base() {
             OdataType = "#microsoft.graph.remoteAssistanceSettings";

@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("overrideDefaultRule", value); }
         }
         /// <summary>
-        /// Instantiates a new OnPremisesConditionalAccessSettings and sets the default values.
+        /// Instantiates a new onPremisesConditionalAccessSettings and sets the default values.
         /// </summary>
         public OnPremisesConditionalAccessSettings() : base() {
             OdataType = "#microsoft.graph.onPremisesConditionalAccessSettings";
