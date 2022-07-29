@@ -30,18 +30,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets assertedIdentity.
+        /// An identity the participant would like to present itself as to the other participants in the call.
         /// </summary>
         [JsonPropertyName("assertedIdentity")]
         public Identity AssertedIdentity { get; set; }
     
         /// <summary>
         /// Gets or sets azureCommunicationServicesUser.
+        /// The Azure Communication Services user associated with this action.
         /// </summary>
         [JsonPropertyName("azureCommunicationServicesUser")]
         public Identity AzureCommunicationServicesUser { get; set; }
     
         /// <summary>
         /// Gets or sets endpointType.
+        /// Type of endpoint the participant is using. Possible values are: default, voicemail, skypeForBusiness, skypeForBusinessVoipPhone and unknownFutureValue.
         /// </summary>
         [JsonPropertyName("endpointType")]
         public EndpointType? EndpointType { get; set; }

@@ -32,6 +32,12 @@ namespace Microsoft.Graph
         new IOnlineMeetingRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for VirtualAppointment.
+        /// </summary>
+        /// <returns>The <see cref="IVirtualAppointmentRequestBuilder"/>.</returns>
+        IVirtualAppointmentRequestBuilder VirtualAppointment { get; }
+
+        /// <summary>
         /// Gets the request builder for AttendanceReports.
         /// </summary>
         /// <returns>The <see cref="IOnlineMeetingAttendanceReportsCollectionRequestBuilder"/>.</returns>
@@ -48,6 +54,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IMeetingRegistrationRequestBuilder"/>.</returns>
         IMeetingRegistrationRequestBuilder Registration { get; }
+
+        /// <summary>
+        /// Gets the request builder for Transcripts.
+        /// </summary>
+        /// <returns>The <see cref="IOnlineMeetingTranscriptsCollectionRequestBuilder"/>.</returns>
+        IOnlineMeetingTranscriptsCollectionRequestBuilder Transcripts { get; }
     
         /// <summary>
         /// Gets the request builder for AlternativeRecording.

@@ -215,6 +215,12 @@ namespace Microsoft.Graph
         public string VideoTeleconferenceId { get; set; }
     
         /// <summary>
+        /// Gets or sets virtual appointment.
+        /// </summary>
+        [JsonPropertyName("virtualAppointment")]
+        public VirtualAppointment VirtualAppointment { get; set; }
+    
+        /// <summary>
         /// Gets or sets attendance reports.
         /// The attendance reports of an online meeting. Read-only.
         /// </summary>
@@ -240,6 +246,19 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("registration")]
         public MeetingRegistration Registration { get; set; }
+    
+        /// <summary>
+        /// Gets or sets transcripts.
+        /// </summary>
+        [JsonPropertyName("transcripts")]
+        public IOnlineMeetingTranscriptsCollectionPage Transcripts { get; set; }
+
+        /// <summary>
+        /// Gets or sets transcriptsNextLink.
+        /// </summary>
+        [JsonPropertyName("transcripts@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string TranscriptsNextLink { get; set; }
     
     }
 }

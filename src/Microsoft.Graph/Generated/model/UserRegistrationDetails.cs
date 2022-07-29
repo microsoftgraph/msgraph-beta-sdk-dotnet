@@ -29,6 +29,12 @@ namespace Microsoft.Graph
         public DefaultMfaMethodType? DefaultMfaMethod { get; set; }
     
         /// <summary>
+        /// Gets or sets is admin.
+        /// </summary>
+        [JsonPropertyName("isAdmin")]
+        public bool? IsAdmin { get; set; }
+    
+        /// <summary>
         /// Gets or sets is mfa capable.
         /// Whether the user has registered a strong authentication method for multi-factor authentication. The method must be allowed by the authentication methods policy. Supports $filter (eq).
         /// </summary>
@@ -90,6 +96,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("userPrincipalName")]
         public string UserPrincipalName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets user type.
+        /// </summary>
+        [JsonPropertyName("userType")]
+        public SignInUserType? UserType { get; set; }
     
     }
 }

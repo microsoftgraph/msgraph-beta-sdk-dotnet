@@ -175,6 +175,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets security.
+        /// Provides the ability to launch a realistic simulated phishing attack that organizations can learn from.
         /// </summary>
         [JsonPropertyName("security")]
         public SecurityReportsRoot Security { get; set; }

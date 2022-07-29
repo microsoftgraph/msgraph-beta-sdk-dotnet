@@ -23,7 +23,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets endpointType.
-        /// The type of the endpoint. Possible values are: default, voicemail.
+        /// The type of endpoint. Possible values are: default, voicemail, skypeForBusiness, skypeForBusinessVoipPhone and unknownFutureValue.
         /// </summary>
         [JsonPropertyName("endpointType")]
         public EndpointType? EndpointType { get; set; }

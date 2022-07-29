@@ -86,5 +86,31 @@ namespace Microsoft.Graph
             }
         }
     
+        /// <summary>
+        /// Gets the request builder for TenantRelationshipFindTenantInformationByDomainName.
+        /// </summary>
+        /// <returns>The <see cref="ITenantRelationshipFindTenantInformationByDomainNameRequestBuilder"/>.</returns>
+        public ITenantRelationshipFindTenantInformationByDomainNameRequestBuilder FindTenantInformationByDomainName(
+            string domainName = null)
+        {
+            return new TenantRelationshipFindTenantInformationByDomainNameRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.findTenantInformationByDomainName"),
+                this.Client,
+                domainName);
+        }
+
+        /// <summary>
+        /// Gets the request builder for TenantRelationshipFindTenantInformationByTenantId.
+        /// </summary>
+        /// <returns>The <see cref="ITenantRelationshipFindTenantInformationByTenantIdRequestBuilder"/>.</returns>
+        public ITenantRelationshipFindTenantInformationByTenantIdRequestBuilder FindTenantInformationByTenantId(
+            string tenantId = null)
+        {
+            return new TenantRelationshipFindTenantInformationByTenantIdRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.findTenantInformationByTenantId"),
+                this.Client,
+                tenantId);
+        }
+    
     }
 }

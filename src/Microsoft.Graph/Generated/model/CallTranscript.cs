@@ -15,25 +15,22 @@ namespace Microsoft.Graph
     using System.Text.Json.Serialization;
 
     /// <summary>
-    /// The type Cloud Pc Supported Region.
+    /// The type Call Transcript.
     /// </summary>
-    [JsonConverter(typeof(DerivedTypeConverter<CloudPcSupportedRegion>))]
-    public partial class CloudPcSupportedRegion : Entity
+    public partial class CallTranscript : Entity
     {
     
         /// <summary>
-        /// Gets or sets display name.
-        /// The name for the supported region. Read-only.
+        /// Gets or sets content.
         /// </summary>
-        [JsonPropertyName("displayName")]
-        public string DisplayName { get; set; }
+        [JsonPropertyName("content")]
+        public Stream Content { get; set; }
     
         /// <summary>
-        /// Gets or sets region status.
-        /// The status of the supported region. Possible values are: available, restricted, unavailable, unknownFutureValue. Read-only.
+        /// Gets or sets created date time.
         /// </summary>
-        [JsonPropertyName("regionStatus")]
-        public CloudPcSupportedRegionStatus? RegionStatus { get; set; }
+        [JsonPropertyName("createdDateTime")]
+        public DateTimeOffset? CreatedDateTime { get; set; }
     
     }
 }
