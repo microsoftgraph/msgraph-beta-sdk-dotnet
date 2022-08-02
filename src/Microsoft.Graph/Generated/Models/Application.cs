@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<ApiApplication>("api"); }
             set { BackingStore?.Set("api", value); }
         }
-        /// <summary>The unique identifier for the application that is assigned by Azure AD. Not nullable. Read-only.</summary>
+        /// <summary>The unique identifier for the application that is assigned by Azure AD. Not nullable. Read-only. Supports $filter (eq).</summary>
         public string AppId {
             get { return BackingStore?.Get<string>("appId"); }
             set { BackingStore?.Set("appId", value); }
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
-        /// <summary>Read-only. Nullable. Supports $expand and $filter (eq when counting empty collections).</summary>
+        /// <summary>Read-only. Nullable. Supports $expand and $filter (eq and ne when counting empty collections and only with advanced query parameters).</summary>
         public List<ExtensionProperty> ExtensionProperties {
             get { return BackingStore?.Get<List<ExtensionProperty>>("extensionProperties"); }
             set { BackingStore?.Set("extensionProperties", value); }

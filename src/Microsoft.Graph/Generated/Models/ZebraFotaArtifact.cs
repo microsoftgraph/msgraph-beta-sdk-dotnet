@@ -6,27 +6,27 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Describes a single artifact for a specific device model.</summary>
     public class ZebraFotaArtifact : Entity, IParsable {
-        /// <summary>The version of the Board Support Package.</summary>
+        /// <summary>The version of the Board Support Package (BSP. E.g.: 01.18.02.00)</summary>
         public string BoardSupportPackageVersion {
             get { return BackingStore?.Get<string>("boardSupportPackageVersion"); }
             set { BackingStore?.Set("boardSupportPackageVersion", value); }
         }
-        /// <summary>Artifact device model.</summary>
+        /// <summary>Applicable device model (e.g.: TC8300)</summary>
         public string DeviceModel {
             get { return BackingStore?.Get<string>("deviceModel"); }
             set { BackingStore?.Set("deviceModel", value); }
         }
-        /// <summary>Artifact OS version.</summary>
+        /// <summary>Artifact OS version (e.g.: 8.1.0)</summary>
         public string OsVersion {
             get { return BackingStore?.Get<string>("osVersion"); }
             set { BackingStore?.Set("osVersion", value); }
         }
-        /// <summary>Artifact patch version.</summary>
+        /// <summary>Artifact patch version (e.g.: U00)</summary>
         public string PatchVersion {
             get { return BackingStore?.Get<string>("patchVersion"); }
             set { BackingStore?.Set("patchVersion", value); }
         }
-        /// <summary>Artifact release notes URL.</summary>
+        /// <summary>Artifact release notes URL (e.g.: https://www.zebra.com/&lt;filename.pdf&gt;)</summary>
         public string ReleaseNotesUrl {
             get { return BackingStore?.Get<string>("releaseNotesUrl"); }
             set { BackingStore?.Set("releaseNotesUrl", value); }

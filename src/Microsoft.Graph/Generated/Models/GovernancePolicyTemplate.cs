@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class GovernancePolicyTemplate : Entity, IParsable {
         /// <summary>The displayName property</summary>
         public string DisplayName {
@@ -21,7 +22,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("settings", value); }
         }
         /// <summary>
-        /// Instantiates a new GovernancePolicyTemplate and sets the default values.
+        /// Instantiates a new governancePolicyTemplate and sets the default values.
         /// </summary>
         public GovernancePolicyTemplate() : base() {
             OdataType = "#microsoft.graph.governancePolicyTemplate";

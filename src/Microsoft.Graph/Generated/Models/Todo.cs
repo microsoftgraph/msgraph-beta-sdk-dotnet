@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("lists", value); }
         }
         /// <summary>
-        /// Instantiates a new todo and sets the default values.
+        /// Instantiates a new Todo and sets the default values.
         /// </summary>
         public Todo() : base() {
             OdataType = "#microsoft.graph.todo";

@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Enrollment Profile used to enroll COSU devices using Google&apos;s Cloud Management.</summary>
     public class AndroidForWorkEnrollmentProfile : Entity, IParsable {
         /// <summary>Tenant GUID the enrollment profile belongs to.</summary>
         public string AccountId {
@@ -57,7 +56,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("tokenValue", value); }
         }
         /// <summary>
-        /// Instantiates a new androidForWorkEnrollmentProfile and sets the default values.
+        /// Instantiates a new AndroidForWorkEnrollmentProfile and sets the default values.
         /// </summary>
         public AndroidForWorkEnrollmentProfile() : base() {
             OdataType = "#microsoft.graph.androidForWorkEnrollmentProfile";

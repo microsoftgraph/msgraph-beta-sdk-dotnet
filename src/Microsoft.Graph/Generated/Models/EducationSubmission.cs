@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class EducationSubmission : Entity, IParsable {
         /// <summary>The outcomes property</summary>
         public List<EducationOutcome> Outcomes {
@@ -76,7 +77,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("unsubmittedDateTime", value); }
         }
         /// <summary>
-        /// Instantiates a new EducationSubmission and sets the default values.
+        /// Instantiates a new educationSubmission and sets the default values.
         /// </summary>
         public EducationSubmission() : base() {
             OdataType = "#microsoft.graph.educationSubmission";

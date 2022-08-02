@@ -1,6 +1,7 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Users.Item.Devices.Count;
+using Microsoft.Graph.Beta.Users.Item.Devices.Delta;
 using Microsoft.Graph.Beta.Users.Item.Devices.GetByIds;
 using Microsoft.Graph.Beta.Users.Item.Devices.GetUserOwnedObjects;
 using Microsoft.Graph.Beta.Users.Item.Devices.Item;
@@ -112,6 +113,12 @@ namespace Microsoft.Graph.Beta.Users.Item.Devices {
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
             return requestInfo;
+        }
+        /// <summary>
+        /// Provides operations to call the delta method.
+        /// </summary>
+        public DeltaRequestBuilder Delta() {
+            return new DeltaRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Get devices from users

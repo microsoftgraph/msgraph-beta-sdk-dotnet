@@ -5,17 +5,17 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class CloudPcExternalPartnerSetting : Entity, IParsable {
-        /// <summary>The enableConnection property</summary>
+        /// <summary>Enable or disable the connection to an external partner. If true, an external partner API will accept incoming calls from external partners. Required. Supports $filter (eq).</summary>
         public bool? EnableConnection {
             get { return BackingStore?.Get<bool?>("enableConnection"); }
             set { BackingStore?.Set("enableConnection", value); }
         }
-        /// <summary>The lastSyncDateTime property</summary>
+        /// <summary>Last data sync time for this external partner. The Timestamp type represents the date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 looks like this: &apos;2014-01-01T00:00:00Z&apos;.</summary>
         public DateTimeOffset? LastSyncDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastSyncDateTime"); }
             set { BackingStore?.Set("lastSyncDateTime", value); }
         }
-        /// <summary>The partnerId property</summary>
+        /// <summary>The external partner ID.</summary>
         public string PartnerId {
             get { return BackingStore?.Get<string>("partnerId"); }
             set { BackingStore?.Set("partnerId", value); }
@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<CloudPcExternalPartnerStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
-        /// <summary>The statusDetails property</summary>
+        /// <summary>Status details message.</summary>
         public string StatusDetails {
             get { return BackingStore?.Get<string>("statusDetails"); }
             set { BackingStore?.Set("statusDetails", value); }

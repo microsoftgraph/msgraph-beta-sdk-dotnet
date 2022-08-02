@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Transcripts {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get transcripts from users
+        /// The transcripts of an online meeting. Read-only.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<TranscriptsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Transcripts {
             return requestInfo;
         }
         /// <summary>
-        /// Get transcripts from users
+        /// The transcripts of an online meeting. Read-only.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -128,7 +128,7 @@ namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Transcripts {
             };
             return await RequestAdapter.SendAsync<CallTranscript>(requestInfo, CallTranscript.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Get transcripts from users</summary>
+        /// <summary>The transcripts of an online meeting. Read-only.</summary>
         public class TranscriptsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

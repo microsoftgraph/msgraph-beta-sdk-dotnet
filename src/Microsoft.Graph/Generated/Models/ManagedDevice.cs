@@ -46,7 +46,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("azureADRegistered"); }
             set { BackingStore?.Set("azureADRegistered", value); }
         }
-        /// <summary>Reports if the managed device has an escrowed Bootstrap Token. This is only for macOS devices. If FALSE, no bootstrap token is escrowed. If TRUE, the device has escrowed a bootstrap token with Intune. This property is read-only.</summary>
+        /// <summary>Reports if the managed device has an escrowed Bootstrap Token. This is only for macOS devices. To get, include BootstrapTokenEscrowed in the select clause and query with a device id. If FALSE, no bootstrap token is escrowed. If TRUE, the device has escrowed a bootstrap token with Intune. This property is read-only.</summary>
         public bool? BootstrapTokenEscrowed {
             get { return BackingStore?.Get<bool?>("bootstrapTokenEscrowed"); }
             set { BackingStore?.Set("bootstrapTokenEscrowed", value); }

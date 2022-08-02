@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Entity which represents an OnPrem Ndes connector.</summary>
     public class NdesConnector : Entity, IParsable {
         /// <summary>The friendly name of the Ndes Connector.</summary>
         public string DisplayName {
@@ -22,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("state", value); }
         }
         /// <summary>
-        /// Instantiates a new ndesConnector and sets the default values.
+        /// Instantiates a new NdesConnector and sets the default values.
         /// </summary>
         public NdesConnector() : base() {
             OdataType = "#microsoft.graph.ndesConnector";
