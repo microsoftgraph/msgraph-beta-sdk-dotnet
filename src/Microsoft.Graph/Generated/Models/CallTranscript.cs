@@ -6,12 +6,12 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class CallTranscript : Entity, IParsable {
-        /// <summary>The content property</summary>
+        /// <summary>A field representing the content of the transcript. Read-only.</summary>
         public byte[] Content {
             get { return BackingStore?.Get<byte[]>("content"); }
             set { BackingStore?.Set("content", value); }
         }
-        /// <summary>The createdDateTime property</summary>
+        /// <summary>Date and time at which the transcript was created. Read-only.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }

@@ -25,6 +25,11 @@ namespace Microsoft.Graph.Beta.Models.TenantAdmin {
             get { return BackingStore?.Get<List<string>>("excludedFileExtensionsForSyncApp"); }
             set { BackingStore?.Set("excludedFileExtensionsForSyncApp", value); }
         }
+        /// <summary>Specifies the idle session sign-out policies for the tenant.</summary>
+        public Microsoft.Graph.Beta.Models.TenantAdmin.IdleSessionSignOut IdleSessionSignOut {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TenantAdmin.IdleSessionSignOut>("idleSessionSignOut"); }
+            set { BackingStore?.Set("idleSessionSignOut", value); }
+        }
         /// <summary>Specifies the image tagging option for the tenant. Possible values are: disabled, basic, enhanced.</summary>
         public ImageTaggingChoice? ImageTaggingOption {
             get { return BackingStore?.Get<ImageTaggingChoice?>("imageTaggingOption"); }
@@ -40,6 +45,11 @@ namespace Microsoft.Graph.Beta.Models.TenantAdmin {
             get { return BackingStore?.Get<bool?>("isFileActivityNotificationEnabled"); }
             set { BackingStore?.Set("isFileActivityNotificationEnabled", value); }
         }
+        /// <summary>Indicates whether legacy authentication protocols are enabled for the tenant.</summary>
+        public bool? IsLegacyAuthProtocolsEnabled {
+            get { return BackingStore?.Get<bool?>("isLegacyAuthProtocolsEnabled"); }
+            set { BackingStore?.Set("isLegacyAuthProtocolsEnabled", value); }
+        }
         /// <summary>Indicates whetherif Fluid Framework is allowed on SharePoint sites.</summary>
         public bool? IsLoopEnabled {
             get { return BackingStore?.Get<bool?>("isLoopEnabled"); }
@@ -49,6 +59,11 @@ namespace Microsoft.Graph.Beta.Models.TenantAdmin {
         public bool? IsMacSyncAppEnabled {
             get { return BackingStore?.Get<bool?>("isMacSyncAppEnabled"); }
             set { BackingStore?.Set("isMacSyncAppEnabled", value); }
+        }
+        /// <summary>Indicates whether guests must sign in using the same account to which sharing invitations are sent.</summary>
+        public bool? IsRequireAcceptingUserToMatchInvitedUserEnabled {
+            get { return BackingStore?.Get<bool?>("isRequireAcceptingUserToMatchInvitedUserEnabled"); }
+            set { BackingStore?.Set("isRequireAcceptingUserToMatchInvitedUserEnabled", value); }
         }
         /// <summary>Indicates whether guests are allowed to reshare files, folders, and sites they don&apos;t own.</summary>
         public bool? IsResharingByExternalUsersEnabled {
@@ -158,11 +173,14 @@ namespace Microsoft.Graph.Beta.Models.TenantAdmin {
                 {"availableManagedPathsForSiteCreation", n => { AvailableManagedPathsForSiteCreation = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"deletedUserPersonalSiteRetentionPeriodInDays", n => { DeletedUserPersonalSiteRetentionPeriodInDays = n.GetIntValue(); } },
                 {"excludedFileExtensionsForSyncApp", n => { ExcludedFileExtensionsForSyncApp = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"idleSessionSignOut", n => { IdleSessionSignOut = n.GetObjectValue<Microsoft.Graph.Beta.Models.TenantAdmin.IdleSessionSignOut>(Microsoft.Graph.Beta.Models.TenantAdmin.IdleSessionSignOut.CreateFromDiscriminatorValue); } },
                 {"imageTaggingOption", n => { ImageTaggingOption = n.GetEnumValue<ImageTaggingChoice>(); } },
                 {"isCommentingOnSitePagesEnabled", n => { IsCommentingOnSitePagesEnabled = n.GetBoolValue(); } },
                 {"isFileActivityNotificationEnabled", n => { IsFileActivityNotificationEnabled = n.GetBoolValue(); } },
+                {"isLegacyAuthProtocolsEnabled", n => { IsLegacyAuthProtocolsEnabled = n.GetBoolValue(); } },
                 {"isLoopEnabled", n => { IsLoopEnabled = n.GetBoolValue(); } },
                 {"isMacSyncAppEnabled", n => { IsMacSyncAppEnabled = n.GetBoolValue(); } },
+                {"isRequireAcceptingUserToMatchInvitedUserEnabled", n => { IsRequireAcceptingUserToMatchInvitedUserEnabled = n.GetBoolValue(); } },
                 {"isResharingByExternalUsersEnabled", n => { IsResharingByExternalUsersEnabled = n.GetBoolValue(); } },
                 {"isSharePointMobileNotificationEnabled", n => { IsSharePointMobileNotificationEnabled = n.GetBoolValue(); } },
                 {"isSharePointNewsfeedEnabled", n => { IsSharePointNewsfeedEnabled = n.GetBoolValue(); } },
@@ -193,11 +211,14 @@ namespace Microsoft.Graph.Beta.Models.TenantAdmin {
             writer.WriteCollectionOfPrimitiveValues<string>("availableManagedPathsForSiteCreation", AvailableManagedPathsForSiteCreation);
             writer.WriteIntValue("deletedUserPersonalSiteRetentionPeriodInDays", DeletedUserPersonalSiteRetentionPeriodInDays);
             writer.WriteCollectionOfPrimitiveValues<string>("excludedFileExtensionsForSyncApp", ExcludedFileExtensionsForSyncApp);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.TenantAdmin.IdleSessionSignOut>("idleSessionSignOut", IdleSessionSignOut);
             writer.WriteEnumValue<ImageTaggingChoice>("imageTaggingOption", ImageTaggingOption);
             writer.WriteBoolValue("isCommentingOnSitePagesEnabled", IsCommentingOnSitePagesEnabled);
             writer.WriteBoolValue("isFileActivityNotificationEnabled", IsFileActivityNotificationEnabled);
+            writer.WriteBoolValue("isLegacyAuthProtocolsEnabled", IsLegacyAuthProtocolsEnabled);
             writer.WriteBoolValue("isLoopEnabled", IsLoopEnabled);
             writer.WriteBoolValue("isMacSyncAppEnabled", IsMacSyncAppEnabled);
+            writer.WriteBoolValue("isRequireAcceptingUserToMatchInvitedUserEnabled", IsRequireAcceptingUserToMatchInvitedUserEnabled);
             writer.WriteBoolValue("isResharingByExternalUsersEnabled", IsResharingByExternalUsersEnabled);
             writer.WriteBoolValue("isSharePointMobileNotificationEnabled", IsSharePointMobileNotificationEnabled);
             writer.WriteBoolValue("isSharePointNewsfeedEnabled", IsSharePointNewsfeedEnabled);

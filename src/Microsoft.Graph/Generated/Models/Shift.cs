@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class Shift : ChangeTrackedEntity, IParsable {
         /// <summary>The draft version of this shift that is viewable by managers. Required.</summary>
         public ShiftItem DraftShift {
@@ -32,7 +31,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("userId", value); }
         }
         /// <summary>
-        /// Instantiates a new shift and sets the default values.
+        /// Instantiates a new Shift and sets the default values.
         /// </summary>
         public Shift() : base() {
             OdataType = "#microsoft.graph.shift";

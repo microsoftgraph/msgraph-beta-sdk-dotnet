@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class TimeCard : ChangeTrackedEntity, IParsable {
         /// <summary>The list of breaks associated with the timeCard.</summary>
         public List<TimeCardBreak> Breaks {
@@ -47,7 +46,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("userId", value); }
         }
         /// <summary>
-        /// Instantiates a new timeCard and sets the default values.
+        /// Instantiates a new TimeCard and sets the default values.
         /// </summary>
         public TimeCard() : base() {
             OdataType = "#microsoft.graph.timeCard";

@@ -3,6 +3,7 @@ using Microsoft.Graph.Beta.Branding.BannerLogo;
 using Microsoft.Graph.Beta.Branding.Favicon;
 using Microsoft.Graph.Beta.Branding.Localizations;
 using Microsoft.Graph.Beta.Branding.SquareLogo;
+using Microsoft.Graph.Beta.Branding.SquareLogoDark;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -39,6 +40,10 @@ namespace Microsoft.Graph.Beta.Branding {
         /// <summary>The squareLogo property</summary>
         public SquareLogoRequestBuilder SquareLogo { get =>
             new SquareLogoRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The squareLogoDark property</summary>
+        public SquareLogoDarkRequestBuilder SquareLogoDark { get =>
+            new SquareLogoDarkRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }

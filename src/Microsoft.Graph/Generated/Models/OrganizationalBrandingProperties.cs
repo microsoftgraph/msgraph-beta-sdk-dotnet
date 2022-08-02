@@ -111,6 +111,16 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<byte[]>("squareLogo"); }
             set { BackingStore?.Set("squareLogo", value); }
         }
+        /// <summary>A square dark version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment. Allowed types are PNG or JPEG not larger than 240 x 240 pixels and not more than 10 KB in size. We recommend using a transparent image with no padding around the logo.</summary>
+        public byte[] SquareLogoDark {
+            get { return BackingStore?.Get<byte[]>("squareLogoDark"); }
+            set { BackingStore?.Set("squareLogoDark", value); }
+        }
+        /// <summary>A relative URL for the squareLogoDark property that is combined with a CDN base URL from the cdnList to provide the version served by a CDN. Read-only.</summary>
+        public string SquareLogoDarkRelativeUrl {
+            get { return BackingStore?.Get<string>("squareLogoDarkRelativeUrl"); }
+            set { BackingStore?.Set("squareLogoDarkRelativeUrl", value); }
+        }
         /// <summary>A relative URL for the squareLogo property that is combined with a CDN base URL from the cdnList to provide the version served by a CDN. Read-only.</summary>
         public string SquareLogoRelativeUrl {
             get { return BackingStore?.Get<string>("squareLogoRelativeUrl"); }
@@ -167,6 +177,8 @@ namespace Microsoft.Graph.Beta.Models {
                 {"loginPageTextVisibilitySettings", n => { LoginPageTextVisibilitySettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.LoginPageTextVisibilitySettings>(Microsoft.Graph.Beta.Models.LoginPageTextVisibilitySettings.CreateFromDiscriminatorValue); } },
                 {"signInPageText", n => { SignInPageText = n.GetStringValue(); } },
                 {"squareLogo", n => { SquareLogo = n.GetByteArrayValue(); } },
+                {"squareLogoDark", n => { SquareLogoDark = n.GetByteArrayValue(); } },
+                {"squareLogoDarkRelativeUrl", n => { SquareLogoDarkRelativeUrl = n.GetStringValue(); } },
                 {"squareLogoRelativeUrl", n => { SquareLogoRelativeUrl = n.GetStringValue(); } },
                 {"usernameHintText", n => { UsernameHintText = n.GetStringValue(); } },
             };
@@ -199,6 +211,8 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.LoginPageTextVisibilitySettings>("loginPageTextVisibilitySettings", LoginPageTextVisibilitySettings);
             writer.WriteStringValue("signInPageText", SignInPageText);
             writer.WriteByteArrayValue("squareLogo", SquareLogo);
+            writer.WriteByteArrayValue("squareLogoDark", SquareLogoDark);
+            writer.WriteStringValue("squareLogoDarkRelativeUrl", SquareLogoDarkRelativeUrl);
             writer.WriteStringValue("squareLogoRelativeUrl", SquareLogoRelativeUrl);
             writer.WriteStringValue("usernameHintText", UsernameHintText);
         }

@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public enum EnrollmentAvailabilityOptions {
         /// <summary>Device enrollment flow is shown to the end user with guided enrollment prompts</summary>
         AvailableWithPrompts,

@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public enum ManagedAppDataEncryptionType {
         /// <summary>App data is encrypted based on the default settings on the device.</summary>
         UseDeviceSettings,

@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class SensitiveType : Entity, IParsable {
         /// <summary>The classificationMethod property</summary>
         public Microsoft.Graph.Beta.Models.ClassificationMethod? ClassificationMethod {
@@ -52,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("state", value); }
         }
         /// <summary>
-        /// Instantiates a new sensitiveType and sets the default values.
+        /// Instantiates a new SensitiveType and sets the default values.
         /// </summary>
         public SensitiveType() : base() {
             OdataType = "#microsoft.graph.sensitiveType";
