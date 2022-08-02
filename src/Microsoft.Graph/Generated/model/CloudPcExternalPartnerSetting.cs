@@ -23,30 +23,35 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets enable connection.
+        /// Enable or disable the connection to an external partner. If true, an external partner API will accept incoming calls from external partners. Required. Supports $filter (eq).
         /// </summary>
         [JsonPropertyName("enableConnection")]
         public bool? EnableConnection { get; set; }
     
         /// <summary>
         /// Gets or sets last sync date time.
+        /// Last data sync time for this external partner. The Timestamp type represents the date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 looks like this: '2014-01-01T00:00:00Z'.
         /// </summary>
         [JsonPropertyName("lastSyncDateTime")]
         public DateTimeOffset? LastSyncDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets partner id.
+        /// The external partner ID.
         /// </summary>
         [JsonPropertyName("partnerId")]
         public string PartnerId { get; set; }
     
         /// <summary>
         /// Gets or sets status.
+        /// The status of the connection to the external partner. The possible values are: notAvailable, available, healthy, unhealthy, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("status")]
         public CloudPcExternalPartnerStatus? Status { get; set; }
     
         /// <summary>
         /// Gets or sets status details.
+        /// Status details message.
         /// </summary>
         [JsonPropertyName("statusDetails")]
         public string StatusDetails { get; set; }

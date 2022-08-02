@@ -34,5 +34,11 @@ namespace Microsoft.Graph
         [JsonPropertyName("isSingleLineQuestion")]
         public bool? IsSingleLineQuestion { get; set; }
     
+        /// <summary>
+        /// Gets or sets regexPattern.
+        /// </summary>
+        [JsonPropertyName("regexPattern")]
+        public string RegexPattern { get; set; }
+    
     }
 }

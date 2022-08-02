@@ -14,17 +14,17 @@ namespace Microsoft.Graph
     using System.IO;
 
     /// <summary>
-    /// The type RoomListRequestBuilder.
+    /// The type WorkspaceRequestBuilder.
     /// </summary>
-    public partial class RoomListRequestBuilder : PlaceRequestBuilder, IRoomListRequestBuilder
+    public partial class WorkspaceRequestBuilder : PlaceRequestBuilder, IWorkspaceRequestBuilder
     {
 
         /// <summary>
-        /// Constructs a new RoomListRequestBuilder.
+        /// Constructs a new WorkspaceRequestBuilder.
         /// </summary>
         /// <param name="requestUrl">The URL for the built request.</param>
         /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
-        public RoomListRequestBuilder(
+        public WorkspaceRequestBuilder(
             string requestUrl,
             IBaseClient client)
             : base(requestUrl, client)
@@ -35,7 +35,7 @@ namespace Microsoft.Graph
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        public new IRoomListRequest Request()
+        public new IWorkspaceRequest Request()
         {
             return this.Request(null);
         }
@@ -45,33 +45,9 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        public new IRoomListRequest Request(IEnumerable<Option> options)
+        public new IWorkspaceRequest Request(IEnumerable<Option> options)
         {
-            return new RoomListRequest(this.RequestUrl, this.Client, options);
-        }
-    
-        /// <summary>
-        /// Gets the request builder for Rooms.
-        /// </summary>
-        /// <returns>The <see cref="IRoomListRoomsCollectionRequestBuilder"/>.</returns>
-        public IRoomListRoomsCollectionRequestBuilder Rooms
-        {
-            get
-            {
-                return new RoomListRoomsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("rooms"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for Workspaces.
-        /// </summary>
-        /// <returns>The <see cref="IRoomListWorkspacesCollectionRequestBuilder"/>.</returns>
-        public IRoomListWorkspacesCollectionRequestBuilder Workspaces
-        {
-            get
-            {
-                return new RoomListWorkspacesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("workspaces"), this.Client);
-            }
+            return new WorkspaceRequest(this.RequestUrl, this.Client, options);
         }
     
     }

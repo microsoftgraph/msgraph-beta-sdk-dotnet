@@ -60,6 +60,15 @@ namespace Microsoft.Graph
             }
         }
 
-        
+        /// <summary>
+        /// Gets the request builder for DeviceDelta.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceDeltaRequestBuilder"/>.</returns>
+        public IDeviceDeltaRequestBuilder Delta()
+        {
+            return new DeviceDeltaRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.delta"),
+                this.Client);
+        }
     }
 }

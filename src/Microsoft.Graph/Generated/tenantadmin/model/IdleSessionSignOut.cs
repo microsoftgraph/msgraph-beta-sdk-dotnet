@@ -7,7 +7,7 @@
 
 // Template Source: ComplexType.cs.tt
 
-namespace Microsoft.Graph
+namespace Microsoft.Graph.TenantAdmin
 {
     using System;
     using System.Collections.Generic;
@@ -15,25 +15,32 @@ namespace Microsoft.Graph
     using System.Text.Json.Serialization;
 
     /// <summary>
-    /// The type AndroidFotaDeploymentAssignment.
+    /// The type IdleSessionSignOut.
     /// </summary>
-    [JsonConverter(typeof(DerivedTypeConverter<AndroidFotaDeploymentAssignment>))]
-    public partial class AndroidFotaDeploymentAssignment
+    [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter<IdleSessionSignOut>))]
+    public partial class IdleSessionSignOut
     {
 
         /// <summary>
-        /// Gets or sets id.
-        /// A unique identifier assigned to each Android FOTA Assignment entity
+        /// Gets or sets isEnabled.
+        /// Indicates whether the idle session sign-out policy is enabled.
         /// </summary>
-        [JsonPropertyName("id")]
-        public string Id { get; set; }
+        [JsonPropertyName("isEnabled")]
+        public bool? IsEnabled { get; set; }
     
         /// <summary>
-        /// Gets or sets target.
-        /// The AAD Group we are deploying firmware updates to
+        /// Gets or sets signOutAfterInSeconds.
+        /// Number of seconds of inactivity after which a user is signed out.
         /// </summary>
-        [JsonPropertyName("target")]
-        public AndroidFotaDeploymentAssignmentTarget Target { get; set; }
+        [JsonPropertyName("signOutAfterInSeconds")]
+        public Int64? SignOutAfterInSeconds { get; set; }
+    
+        /// <summary>
+        /// Gets or sets warnAfterInSeconds.
+        /// Number of seconds of inactivity after which a user is notified that they'll be signed out.
+        /// </summary>
+        [JsonPropertyName("warnAfterInSeconds")]
+        public Int64? WarnAfterInSeconds { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

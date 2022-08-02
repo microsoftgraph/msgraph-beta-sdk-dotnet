@@ -50,6 +50,13 @@ namespace Microsoft.Graph.TenantAdmin
         public IEnumerable<string> ExcludedFileExtensionsForSyncApp { get; set; }
     
         /// <summary>
+        /// Gets or sets idle session sign out.
+        /// Specifies the idle session sign-out policies for the tenant.
+        /// </summary>
+        [JsonPropertyName("idleSessionSignOut")]
+        public IdleSessionSignOut IdleSessionSignOut { get; set; }
+    
+        /// <summary>
         /// Gets or sets image tagging option.
         /// Specifies the image tagging option for the tenant. Possible values are: disabled, basic, enhanced.
         /// </summary>
@@ -71,6 +78,13 @@ namespace Microsoft.Graph.TenantAdmin
         public bool? IsFileActivityNotificationEnabled { get; set; }
     
         /// <summary>
+        /// Gets or sets is legacy auth protocols enabled.
+        /// Indicates whether legacy authentication protocols are enabled for the tenant.
+        /// </summary>
+        [JsonPropertyName("isLegacyAuthProtocolsEnabled")]
+        public bool? IsLegacyAuthProtocolsEnabled { get; set; }
+    
+        /// <summary>
         /// Gets or sets is loop enabled.
         /// Indicates whetherif Fluid Framework is allowed on SharePoint sites.
         /// </summary>
@@ -83,6 +97,13 @@ namespace Microsoft.Graph.TenantAdmin
         /// </summary>
         [JsonPropertyName("isMacSyncAppEnabled")]
         public bool? IsMacSyncAppEnabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets is require accepting user to match invited user enabled.
+        /// Indicates whether guests must sign in using the same account to which sharing invitations are sent.
+        /// </summary>
+        [JsonPropertyName("isRequireAcceptingUserToMatchInvitedUserEnabled")]
+        public bool? IsRequireAcceptingUserToMatchInvitedUserEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets is resharing by external users enabled.
