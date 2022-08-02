@@ -177,6 +177,20 @@ namespace Microsoft.Graph
         public Stream SquareLogo { get; set; }
     
         /// <summary>
+        /// Gets or sets square logo dark.
+        /// A square dark version of your company logo that appears in Windows 10 out-of-box experiences (OOBE) and when Windows Autopilot is enabled for deployment. Allowed types are PNG or JPEG not larger than 240 x 240 pixels and not more than 10 KB in size. We recommend using a transparent image with no padding around the logo.
+        /// </summary>
+        [JsonPropertyName("squareLogoDark")]
+        public Stream SquareLogoDark { get; set; }
+    
+        /// <summary>
+        /// Gets or sets square logo dark relative url.
+        /// A relative URL for the squareLogoDark property that is combined with a CDN base URL from the cdnList to provide the version served by a CDN. Read-only.
+        /// </summary>
+        [JsonPropertyName("squareLogoDarkRelativeUrl")]
+        public string SquareLogoDarkRelativeUrl { get; set; }
+    
+        /// <summary>
         /// Gets or sets square logo relative url.
         /// A relative URL for the squareLogo property that is combined with a CDN base URL from the cdnList to provide the version served by a CDN. Read-only.
         /// </summary>

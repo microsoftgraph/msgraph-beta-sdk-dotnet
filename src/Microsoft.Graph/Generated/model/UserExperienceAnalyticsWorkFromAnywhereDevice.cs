@@ -100,7 +100,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets health status.
-        /// The user experience work from anywhere per device health status. Possible values are: unknown, insufficientData, needsAttention, meetingGoals.
+        /// The user experience work from anywhere per device health status. Possible values are: unknown, insufficientData, needsAttention, meetingGoals, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("healthStatus")]
         public UserExperienceAnalyticsHealthState? HealthStatus { get; set; }

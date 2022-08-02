@@ -73,5 +73,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IDeviceCommandsCollectionRequestBuilder"/>.</returns>
         IDeviceCommandsCollectionRequestBuilder Commands { get; }
     
+        
+    
     }
 }

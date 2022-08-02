@@ -64,6 +64,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets external partner settings.
+        /// The external partner settings on a Cloud PC.
         /// </summary>
         [JsonPropertyName("externalPartnerSettings")]
         public IVirtualEndpointExternalPartnerSettingsCollectionPage ExternalPartnerSettings { get; set; }

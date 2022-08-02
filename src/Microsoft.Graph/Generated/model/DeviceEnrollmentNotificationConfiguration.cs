@@ -31,7 +31,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets branding options.
-        /// Branding Options for the Enrollment Notification. Possible values are: none, includeCompanyLogo, includeCompanyName, includeContactInformation, includeCompanyPortalLink, includeDeviceDetails.
+        /// Branding Options for the Enrollment Notification. Possible values are: none, includeCompanyLogo, includeCompanyName, includeContactInformation, includeCompanyPortalLink, includeDeviceDetails, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("brandingOptions")]
         public EnrollmentNotificationBrandingOptions? BrandingOptions { get; set; }

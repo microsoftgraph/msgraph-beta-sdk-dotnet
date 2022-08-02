@@ -54,6 +54,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IOrganizationalBrandingPropertiesSquareLogoRequestBuilder"/>.</returns>
         IOrganizationalBrandingPropertiesSquareLogoRequestBuilder SquareLogo { get; }
+
+        /// <summary>
+        /// Gets the request builder for SquareLogoDark.
+        /// </summary>
+        /// <returns>The <see cref="IOrganizationalBrandingPropertiesSquareLogoDarkRequestBuilder"/>.</returns>
+        IOrganizationalBrandingPropertiesSquareLogoDarkRequestBuilder SquareLogoDark { get; }
     
     }
 }

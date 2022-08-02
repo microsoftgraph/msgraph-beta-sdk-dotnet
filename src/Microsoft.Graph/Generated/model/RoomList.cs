@@ -48,6 +48,19 @@ namespace Microsoft.Graph
         [JsonConverter(typeof(NextLinkConverter))]
         public string RoomsNextLink { get; set; }
     
+        /// <summary>
+        /// Gets or sets workspaces.
+        /// </summary>
+        [JsonPropertyName("workspaces")]
+        public IRoomListWorkspacesCollectionPage Workspaces { get; set; }
+
+        /// <summary>
+        /// Gets or sets workspacesNextLink.
+        /// </summary>
+        [JsonPropertyName("workspaces@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string WorkspacesNextLink { get; set; }
+    
     }
 }
 

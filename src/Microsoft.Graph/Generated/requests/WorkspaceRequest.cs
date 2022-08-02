@@ -17,17 +17,17 @@ namespace Microsoft.Graph
     using System.Linq.Expressions;
 
     /// <summary>
-    /// The type RoomListRequest.
+    /// The type WorkspaceRequest.
     /// </summary>
-    public partial class RoomListRequest : BaseRequest, IRoomListRequest
+    public partial class WorkspaceRequest : BaseRequest, IWorkspaceRequest
     {
         /// <summary>
-        /// Constructs a new RoomListRequest.
+        /// Constructs a new WorkspaceRequest.
         /// </summary>
         /// <param name="requestUrl">The URL for the built request.</param>
         /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
         /// <param name="options">Query and header option name value pairs for the request.</param>
-        public RoomListRequest(
+        public WorkspaceRequest(
             string requestUrl,
             IBaseClient client,
             IEnumerable<Option> options)
@@ -36,46 +36,46 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Creates the specified RoomList using POST.
+        /// Creates the specified Workspace using POST.
         /// </summary>
-        /// <param name="roomListToCreate">The RoomList to create.</param>
+        /// <param name="workspaceToCreate">The Workspace to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The created RoomList.</returns>
-        public async System.Threading.Tasks.Task<RoomList> CreateAsync(RoomList roomListToCreate, CancellationToken cancellationToken = default)
+        /// <returns>The created Workspace.</returns>
+        public async System.Threading.Tasks.Task<Workspace> CreateAsync(Workspace workspaceToCreate, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
-            var newEntity = await this.SendAsync<RoomList>(roomListToCreate, cancellationToken).ConfigureAwait(false);
+            var newEntity = await this.SendAsync<Workspace>(workspaceToCreate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(newEntity);
             return newEntity;
         }
 
         /// <summary>
-        /// Creates the specified RoomList using POST and returns a <see cref="GraphResponse{RoomList}"/> object.
+        /// Creates the specified Workspace using POST and returns a <see cref="GraphResponse{Workspace}"/> object.
         /// </summary>
-        /// <param name="roomListToCreate">The RoomList to create.</param>
+        /// <param name="workspaceToCreate">The Workspace to create.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The <see cref="GraphResponse{RoomList}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<RoomList>> CreateResponseAsync(RoomList roomListToCreate, CancellationToken cancellationToken = default)
+        /// <returns>The <see cref="GraphResponse{Workspace}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Workspace>> CreateResponseAsync(Workspace workspaceToCreate, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.POST;
-            return this.SendAsyncWithGraphResponse<RoomList>(roomListToCreate, cancellationToken);
+            return this.SendAsyncWithGraphResponse<Workspace>(workspaceToCreate, cancellationToken);
         }
 
         /// <summary>
-        /// Deletes the specified RoomList.
+        /// Deletes the specified Workspace.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
         public async System.Threading.Tasks.Task DeleteAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.DELETE;
-            await this.SendAsync<RoomList>(null, cancellationToken).ConfigureAwait(false);
+            await this.SendAsync<Workspace>(null, cancellationToken).ConfigureAwait(false);
         }
 
         /// <summary>
-        /// Deletes the specified RoomList and returns a <see cref="GraphResponse"/> object.
+        /// Deletes the specified Workspace and returns a <see cref="GraphResponse"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
@@ -86,85 +86,85 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the specified RoomList.
+        /// Gets the specified Workspace.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The RoomList.</returns>
-        public async System.Threading.Tasks.Task<RoomList> GetAsync(CancellationToken cancellationToken = default)
+        /// <returns>The Workspace.</returns>
+        public async System.Threading.Tasks.Task<Workspace> GetAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
-            var retrievedEntity = await this.SendAsync<RoomList>(null, cancellationToken).ConfigureAwait(false);
+            var retrievedEntity = await this.SendAsync<Workspace>(null, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(retrievedEntity);
             return retrievedEntity;
         }
 
         /// <summary>
-        /// Gets the specified RoomList and returns a <see cref="GraphResponse{RoomList}"/> object.
+        /// Gets the specified Workspace and returns a <see cref="GraphResponse{Workspace}"/> object.
         /// </summary>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The <see cref="GraphResponse{RoomList}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<RoomList>> GetResponseAsync(CancellationToken cancellationToken = default)
+        /// <returns>The <see cref="GraphResponse{Workspace}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Workspace>> GetResponseAsync(CancellationToken cancellationToken = default)
         {
             this.Method = HttpMethods.GET;
-            return this.SendAsyncWithGraphResponse<RoomList>(null, cancellationToken);
+            return this.SendAsyncWithGraphResponse<Workspace>(null, cancellationToken);
         }
 
         /// <summary>
-        /// Updates the specified RoomList using PATCH.
+        /// Updates the specified Workspace using PATCH.
         /// </summary>
-        /// <param name="roomListToUpdate">The RoomList to update.</param>
+        /// <param name="workspaceToUpdate">The Workspace to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
-        /// <returns>The updated RoomList.</returns>
-        public async System.Threading.Tasks.Task<RoomList> UpdateAsync(RoomList roomListToUpdate, CancellationToken cancellationToken = default)
+        /// <returns>The updated Workspace.</returns>
+        public async System.Threading.Tasks.Task<Workspace> UpdateAsync(Workspace workspaceToUpdate, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.PATCH;
-            var updatedEntity = await this.SendAsync<RoomList>(roomListToUpdate, cancellationToken).ConfigureAwait(false);
+            var updatedEntity = await this.SendAsync<Workspace>(workspaceToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
         }
 
         /// <summary>
-        /// Updates the specified RoomList using PATCH and returns a <see cref="GraphResponse{RoomList}"/> object.
+        /// Updates the specified Workspace using PATCH and returns a <see cref="GraphResponse{Workspace}"/> object.
         /// </summary>
-        /// <param name="roomListToUpdate">The RoomList to update.</param>
+        /// <param name="workspaceToUpdate">The Workspace to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <exception cref="ClientException">Thrown when an object returned in a response is used for updating an object in Microsoft Graph.</exception>
-        /// <returns>The <see cref="GraphResponse{RoomList}"/> object of the request.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<RoomList>> UpdateResponseAsync(RoomList roomListToUpdate, CancellationToken cancellationToken = default)
+        /// <returns>The <see cref="GraphResponse{Workspace}"/> object of the request.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Workspace>> UpdateResponseAsync(Workspace workspaceToUpdate, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.PATCH;
-            return this.SendAsyncWithGraphResponse<RoomList>(roomListToUpdate, cancellationToken);
+            return this.SendAsyncWithGraphResponse<Workspace>(workspaceToUpdate, cancellationToken);
         }
 
         /// <summary>
-        /// Updates the specified RoomList using PUT.
+        /// Updates the specified Workspace using PUT.
         /// </summary>
-        /// <param name="roomListToUpdate">The RoomList object to update.</param>
+        /// <param name="workspaceToUpdate">The Workspace object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
         /// <returns>The task to await.</returns>
-        public async System.Threading.Tasks.Task<RoomList> PutAsync(RoomList roomListToUpdate, CancellationToken cancellationToken = default)
+        public async System.Threading.Tasks.Task<Workspace> PutAsync(Workspace workspaceToUpdate, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.PUT;
-            var updatedEntity = await this.SendAsync<RoomList>(roomListToUpdate, cancellationToken).ConfigureAwait(false);
+            var updatedEntity = await this.SendAsync<Workspace>(workspaceToUpdate, cancellationToken).ConfigureAwait(false);
             this.InitializeCollectionProperties(updatedEntity);
             return updatedEntity;
         }
 
         /// <summary>
-        /// Updates the specified RoomList using PUT and returns a <see cref="GraphResponse{RoomList}"/> object.
+        /// Updates the specified Workspace using PUT and returns a <see cref="GraphResponse{Workspace}"/> object.
         /// </summary>
-        /// <param name="roomListToUpdate">The RoomList object to update.</param>
+        /// <param name="workspaceToUpdate">The Workspace object to update.</param>
         /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
-        /// <returns>The task to await of <see cref="GraphResponse{RoomList}"/>.</returns>
-        public System.Threading.Tasks.Task<GraphResponse<RoomList>> PutResponseAsync(RoomList roomListToUpdate, CancellationToken cancellationToken = default)
+        /// <returns>The task to await of <see cref="GraphResponse{Workspace}"/>.</returns>
+        public System.Threading.Tasks.Task<GraphResponse<Workspace>> PutResponseAsync(Workspace workspaceToUpdate, CancellationToken cancellationToken = default)
         {
             this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
             this.Method = HttpMethods.PUT;
-            return this.SendAsyncWithGraphResponse<RoomList>(roomListToUpdate, cancellationToken);
+            return this.SendAsyncWithGraphResponse<Workspace>(workspaceToUpdate, cancellationToken);
         }
 
         /// <summary>
@@ -172,7 +172,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="value">The expand value.</param>
         /// <returns>The request object to send.</returns>
-        public IRoomListRequest Expand(string value)
+        public IWorkspaceRequest Expand(string value)
         {
             this.QueryOptions.Add(new QueryOption("$expand", value));
             return this;
@@ -183,7 +183,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="expandExpression">The expression from which to calculate the expand value.</param>
         /// <returns>The request object to send.</returns>
-        public IRoomListRequest Expand(Expression<Func<RoomList, object>> expandExpression)
+        public IWorkspaceRequest Expand(Expression<Func<Workspace, object>> expandExpression)
         {
 		    if (expandExpression == null)
             {
@@ -207,7 +207,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="value">The select value.</param>
         /// <returns>The request object to send.</returns>
-        public IRoomListRequest Select(string value)
+        public IWorkspaceRequest Select(string value)
         {
             this.QueryOptions.Add(new QueryOption("$select", value));
             return this;
@@ -218,7 +218,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="selectExpression">The expression from which to calculate the select value.</param>
         /// <returns>The request object to send.</returns>
-        public IRoomListRequest Select(Expression<Func<RoomList, object>> selectExpression)
+        public IWorkspaceRequest Select(Expression<Func<Workspace, object>> selectExpression)
         {
             if (selectExpression == null)
             {
@@ -240,27 +240,9 @@ namespace Microsoft.Graph
         /// <summary>
         /// Initializes any collection properties after deserialization, like next requests for paging.
         /// </summary>
-        /// <param name="roomListToInitialize">The <see cref="RoomList"/> with the collection properties to initialize.</param>
-        private void InitializeCollectionProperties(RoomList roomListToInitialize)
+        /// <param name="workspaceToInitialize">The <see cref="Workspace"/> with the collection properties to initialize.</param>
+        private void InitializeCollectionProperties(Workspace workspaceToInitialize)
         {
-
-            if (roomListToInitialize != null)
-            {
-                if (roomListToInitialize.Rooms != null && roomListToInitialize.Rooms.CurrentPage != null)
-                {
-                    roomListToInitialize.Rooms.InitializeNextPageRequest(this.Client, roomListToInitialize.RoomsNextLink);
-                    // Copy the additional data collection to the page itself so that information is not lost
-                    roomListToInitialize.Rooms.AdditionalData = roomListToInitialize.AdditionalData;
-                }
-                if (roomListToInitialize.Workspaces != null && roomListToInitialize.Workspaces.CurrentPage != null)
-                {
-                    roomListToInitialize.Workspaces.InitializeNextPageRequest(this.Client, roomListToInitialize.WorkspacesNextLink);
-                    // Copy the additional data collection to the page itself so that information is not lost
-                    roomListToInitialize.Workspaces.AdditionalData = roomListToInitialize.AdditionalData;
-                }
-
-            }
-
 
         }
     }

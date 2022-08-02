@@ -97,6 +97,18 @@ namespace Microsoft.Graph
                 return new OrganizationalBrandingPropertiesSquareLogoRequestBuilder(this.AppendSegmentToRequestUrl("squareLogo"), this.Client);
             }
         }
+
+        /// <summary>
+        /// Gets the request builder for SquareLogoDark.
+        /// </summary>
+        /// <returns>The <see cref="IOrganizationalBrandingPropertiesSquareLogoDarkRequestBuilder"/>.</returns>
+        public IOrganizationalBrandingPropertiesSquareLogoDarkRequestBuilder SquareLogoDark
+        {
+            get
+            {
+                return new OrganizationalBrandingPropertiesSquareLogoDarkRequestBuilder(this.AppendSegmentToRequestUrl("squareLogoDark"), this.Client);
+            }
+        }
     
     }
 }

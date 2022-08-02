@@ -249,6 +249,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets transcripts.
+        /// The transcripts of an online meeting. Read-only.
         /// </summary>
         [JsonPropertyName("transcripts")]
         public IOnlineMeetingTranscriptsCollectionPage Transcripts { get; set; }

@@ -51,7 +51,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets health status.
-        /// The health state of the user experience analytics device. Possible values are: unknown, insufficientData, needsAttention, meetingGoals.
+        /// The health state of the user experience analytics device. Possible values are: unknown, insufficientData, needsAttention, meetingGoals, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("healthStatus")]
         public UserExperienceAnalyticsHealthState? HealthStatus { get; set; }

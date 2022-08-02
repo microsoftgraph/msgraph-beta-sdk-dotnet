@@ -22,35 +22,35 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets board support package version.
-        /// The version of the Board Support Package.
+        /// The version of the Board Support Package (BSP. E.g.: 01.18.02.00)
         /// </summary>
         [JsonPropertyName("boardSupportPackageVersion")]
         public string BoardSupportPackageVersion { get; set; }
     
         /// <summary>
         /// Gets or sets device model.
-        /// Artifact device model.
+        /// Applicable device model (e.g.: TC8300)
         /// </summary>
         [JsonPropertyName("deviceModel")]
         public string DeviceModel { get; set; }
     
         /// <summary>
         /// Gets or sets os version.
-        /// Artifact OS version.
+        /// Artifact OS version (e.g.: 8.1.0)
         /// </summary>
         [JsonPropertyName("osVersion")]
         public string OsVersion { get; set; }
     
         /// <summary>
         /// Gets or sets patch version.
-        /// Artifact patch version.
+        /// Artifact patch version (e.g.: U00)
         /// </summary>
         [JsonPropertyName("patchVersion")]
         public string PatchVersion { get; set; }
     
         /// <summary>
         /// Gets or sets release notes url.
-        /// Artifact release notes URL.
+        /// Artifact release notes URL (e.g.: https://www.zebra.com/&amp;lt;filename.pdf&amp;gt;)
         /// </summary>
         [JsonPropertyName("releaseNotesUrl")]
         public string ReleaseNotesUrl { get; set; }

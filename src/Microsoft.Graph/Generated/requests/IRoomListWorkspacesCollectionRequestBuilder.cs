@@ -12,34 +12,30 @@ namespace Microsoft.Graph
     using System.Collections.Generic;
 
     /// <summary>
-    /// The interface IUserDevicesCollectionRequestBuilder.
+    /// The interface IRoomListWorkspacesCollectionRequestBuilder.
     /// </summary>
-    public partial interface IUserDevicesCollectionRequestBuilder : IBaseRequestBuilder
+    public partial interface IRoomListWorkspacesCollectionRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        IUserDevicesCollectionRequest Request();
+        IRoomListWorkspacesCollectionRequest Request();
 
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        IUserDevicesCollectionRequest Request(IEnumerable<Option> options);
+        IRoomListWorkspacesCollectionRequest Request(IEnumerable<Option> options);
 
         /// <summary>
-        /// Gets an <see cref="IDeviceRequestBuilder"/> for the specified Device.
+        /// Gets an <see cref="IWorkspaceRequestBuilder"/> for the specified Workspace.
         /// </summary>
-        /// <param name="id">The ID for the Device.</param>
-        /// <returns>The <see cref="IDeviceRequestBuilder"/>.</returns>
-        IDeviceRequestBuilder this[string id] { get; }
+        /// <param name="id">The ID for the Workspace.</param>
+        /// <returns>The <see cref="IWorkspaceRequestBuilder"/>.</returns>
+        IWorkspaceRequestBuilder this[string id] { get; }
 
-        /// <summary>
-        /// Gets the request builder for DeviceDelta.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceDeltaRequestBuilder"/>.</returns>
-        IDeviceDeltaRequestBuilder Delta();
+        
     }
 }

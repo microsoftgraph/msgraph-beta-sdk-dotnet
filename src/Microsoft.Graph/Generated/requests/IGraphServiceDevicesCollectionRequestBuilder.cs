@@ -36,6 +36,10 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IDeviceRequestBuilder"/>.</returns>
         IDeviceRequestBuilder this[string id] { get; }
 
-        
+        /// <summary>
+        /// Gets the request builder for DeviceDelta.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceDeltaRequestBuilder"/>.</returns>
+        IDeviceDeltaRequestBuilder Delta();
     }
 }
