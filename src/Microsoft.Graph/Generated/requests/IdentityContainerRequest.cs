@@ -252,6 +252,12 @@ namespace Microsoft.Graph
                     // Copy the additional data collection to the page itself so that information is not lost
                     identityContainerToInitialize.ApiConnectors.AdditionalData = identityContainerToInitialize.AdditionalData;
                 }
+                if (identityContainerToInitialize.AuthenticationEventListeners != null && identityContainerToInitialize.AuthenticationEventListeners.CurrentPage != null)
+                {
+                    identityContainerToInitialize.AuthenticationEventListeners.InitializeNextPageRequest(this.Client, identityContainerToInitialize.AuthenticationEventListenersNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    identityContainerToInitialize.AuthenticationEventListeners.AdditionalData = identityContainerToInitialize.AdditionalData;
+                }
                 if (identityContainerToInitialize.B2cUserFlows != null && identityContainerToInitialize.B2cUserFlows.CurrentPage != null)
                 {
                     identityContainerToInitialize.B2cUserFlows.InitializeNextPageRequest(this.Client, identityContainerToInitialize.B2cUserFlowsNextLink);
@@ -263,6 +269,12 @@ namespace Microsoft.Graph
                     identityContainerToInitialize.B2xUserFlows.InitializeNextPageRequest(this.Client, identityContainerToInitialize.B2xUserFlowsNextLink);
                     // Copy the additional data collection to the page itself so that information is not lost
                     identityContainerToInitialize.B2xUserFlows.AdditionalData = identityContainerToInitialize.AdditionalData;
+                }
+                if (identityContainerToInitialize.CustomAuthenticationExtensions != null && identityContainerToInitialize.CustomAuthenticationExtensions.CurrentPage != null)
+                {
+                    identityContainerToInitialize.CustomAuthenticationExtensions.InitializeNextPageRequest(this.Client, identityContainerToInitialize.CustomAuthenticationExtensionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    identityContainerToInitialize.CustomAuthenticationExtensions.AdditionalData = identityContainerToInitialize.AdditionalData;
                 }
                 if (identityContainerToInitialize.IdentityProviders != null && identityContainerToInitialize.IdentityProviders.CurrentPage != null)
                 {

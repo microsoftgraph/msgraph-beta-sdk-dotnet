@@ -244,6 +244,18 @@ namespace Microsoft.Graph.ExternalConnectors
         private void InitializeCollectionProperties(ExternalItem externalItemToInitialize)
         {
 
+            if (externalItemToInitialize != null)
+            {
+                if (externalItemToInitialize.Activities != null && externalItemToInitialize.Activities.CurrentPage != null)
+                {
+                    externalItemToInitialize.Activities.InitializeNextPageRequest(this.Client, externalItemToInitialize.ActivitiesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    externalItemToInitialize.Activities.AdditionalData = externalItemToInitialize.AdditionalData;
+                }
+
+            }
+
+
         }
     }
 }

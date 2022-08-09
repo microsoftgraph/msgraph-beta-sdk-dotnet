@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     {
 
         /// <summary>
+        /// Gets or sets displayName.
+        /// The display name of the Azure AD security group used for the assignment.
+        /// </summary>
+        [JsonPropertyName("displayName")]
+        public string DisplayName { get; set; }
+    
+        /// <summary>
         /// Gets or sets id.
         /// A unique identifier assigned to each Android FOTA Assignment entity
         /// </summary>

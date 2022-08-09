@@ -17,7 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Group Policy Presentation Text.
     /// </summary>
-    public partial class GroupPolicyPresentationText : GroupPolicyPresentation
+    public partial class GroupPolicyPresentationText : GroupPolicyUploadedPresentation
     {
     
         ///<summary>

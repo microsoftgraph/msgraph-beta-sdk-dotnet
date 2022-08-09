@@ -29,6 +29,7 @@ namespace Microsoft.Graph.SecurityNamespace
 
         /// <summary>
         /// Gets or sets uiElementNames.
+        /// The name of the UI element of watermark to be removed.
         /// </summary>
         [JsonPropertyName("uiElementNames")]
         public IEnumerable<string> UiElementNames { get; set; }

@@ -36,6 +36,19 @@ namespace Microsoft.Graph
         public string ApiConnectorsNextLink { get; set; }
     
         /// <summary>
+        /// Gets or sets authentication event listeners.
+        /// </summary>
+        [JsonPropertyName("authenticationEventListeners")]
+        public IIdentityContainerAuthenticationEventListenersCollectionPage AuthenticationEventListeners { get; set; }
+
+        /// <summary>
+        /// Gets or sets authenticationEventListenersNextLink.
+        /// </summary>
+        [JsonPropertyName("authenticationEventListeners@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string AuthenticationEventListenersNextLink { get; set; }
+    
+        /// <summary>
         /// Gets or sets b2c user flows.
         /// Represents entry point for B2C identity userflows.
         /// </summary>
@@ -62,6 +75,19 @@ namespace Microsoft.Graph
         [JsonPropertyName("b2xUserFlows@odata.nextLink")]
         [JsonConverter(typeof(NextLinkConverter))]
         public string B2xUserFlowsNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets custom authentication extensions.
+        /// </summary>
+        [JsonPropertyName("customAuthenticationExtensions")]
+        public IIdentityContainerCustomAuthenticationExtensionsCollectionPage CustomAuthenticationExtensions { get; set; }
+
+        /// <summary>
+        /// Gets or sets customAuthenticationExtensionsNextLink.
+        /// </summary>
+        [JsonPropertyName("customAuthenticationExtensions@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string CustomAuthenticationExtensionsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets identity providers.

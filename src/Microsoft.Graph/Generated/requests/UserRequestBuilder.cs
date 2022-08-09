@@ -99,6 +99,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for AppRoleAssignedResources.
+        /// </summary>
+        /// <returns>The <see cref="IUserAppRoleAssignedResourcesCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IUserAppRoleAssignedResourcesCollectionWithReferencesRequestBuilder AppRoleAssignedResources
+        {
+            get
+            {
+                return new UserAppRoleAssignedResourcesCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("appRoleAssignedResources"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for AppRoleAssignments.
         /// </summary>
         /// <returns>The <see cref="IUserAppRoleAssignmentsCollectionRequestBuilder"/>.</returns>

@@ -29,12 +29,14 @@ namespace Microsoft.Graph.SecurityNamespace
 
         /// <summary>
         /// Gets or sets metadataToAdd.
+        /// A collection of key-value pairs that should be added to the file.
         /// </summary>
         [JsonPropertyName("metadataToAdd")]
         public IEnumerable<KeyValuePair> MetadataToAdd { get; set; }
     
         /// <summary>
         /// Gets or sets metadataToRemove.
+        /// A collection of strings that indicate which keys to remove from the file metadata.
         /// </summary>
         [JsonPropertyName("metadataToRemove")]
         public IEnumerable<string> MetadataToRemove { get; set; }

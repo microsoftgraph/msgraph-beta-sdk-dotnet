@@ -50,5 +50,30 @@ namespace Microsoft.Graph.ExternalConnectors
             return new ExternalItemRequest(this.RequestUrl, this.Client, options);
         }
     
+        /// <summary>
+        /// Gets the request builder for Activities.
+        /// </summary>
+        /// <returns>The <see cref="IExternalItemActivitiesCollectionRequestBuilder"/>.</returns>
+        public IExternalItemActivitiesCollectionRequestBuilder Activities
+        {
+            get
+            {
+                return new ExternalItemActivitiesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("activities"), this.Client);
+            }
+        }
+    
+        /// <summary>
+        /// Gets the request builder for ExternalItemAddActivities.
+        /// </summary>
+        /// <returns>The <see cref="IExternalItemAddActivitiesRequestBuilder"/>.</returns>
+        public IExternalItemAddActivitiesRequestBuilder AddActivities(
+            IEnumerable<ExternalActivity> activities)
+        {
+            return new ExternalItemAddActivitiesRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.externalConnectors.addActivities"),
+                this.Client,
+                activities);
+        }
+    
     }
 }

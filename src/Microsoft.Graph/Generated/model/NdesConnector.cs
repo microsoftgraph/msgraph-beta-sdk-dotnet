@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
+        /// Gets or sets connector version.
+        /// The build version of the Ndes Connector.
+        /// </summary>
+        [JsonPropertyName("connectorVersion")]
+        public string ConnectorVersion { get; set; }
+    
+        /// <summary>
         /// Gets or sets display name.
         /// The friendly name of the Ndes Connector.
         /// </summary>
@@ -29,11 +36,32 @@ namespace Microsoft.Graph
         public string DisplayName { get; set; }
     
         /// <summary>
+        /// Gets or sets enrolled date time.
+        /// Timestamp when on-prem certificate connector was enrolled in Intune.
+        /// </summary>
+        [JsonPropertyName("enrolledDateTime")]
+        public DateTimeOffset? EnrolledDateTime { get; set; }
+    
+        /// <summary>
         /// Gets or sets last connection date time.
         /// Last connection time for the Ndes Connector
         /// </summary>
         [JsonPropertyName("lastConnectionDateTime")]
         public DateTimeOffset? LastConnectionDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets machine name.
+        /// Name of the machine running on-prem certificate connector service.
+        /// </summary>
+        [JsonPropertyName("machineName")]
+        public string MachineName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets role scope tag ids.
+        /// List of Scope Tags for this Entity instance.
+        /// </summary>
+        [JsonPropertyName("roleScopeTagIds")]
+        public IEnumerable<string> RoleScopeTagIds { get; set; }
     
         /// <summary>
         /// Gets or sets state.

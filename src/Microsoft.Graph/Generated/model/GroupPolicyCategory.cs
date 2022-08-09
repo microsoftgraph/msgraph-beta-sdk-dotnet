@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Group Policy Category.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<GroupPolicyCategory>))]
     public partial class GroupPolicyCategory : Entity
     {
     
@@ -26,6 +27,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets ingestion source.
+        /// Defines this category's ingestion source (0 - unknown, 1 - custom, 2 - global). Possible values are: unknown, custom, builtIn, unknownFutureValue.
+        /// </summary>
+        [JsonPropertyName("ingestionSource")]
+        public IngestionSource? IngestionSource { get; set; }
     
         /// <summary>
         /// Gets or sets is root.

@@ -51,6 +51,13 @@ namespace Microsoft.Graph
         public Guid? NotificationMessageTemplateId { get; set; }
     
         /// <summary>
+        /// Gets or sets notification templates.
+        /// The list of notification data -
+        /// </summary>
+        [JsonPropertyName("notificationTemplates")]
+        public IEnumerable<string> NotificationTemplates { get; set; }
+    
+        /// <summary>
         /// Gets or sets platform type.
         /// Platform type of the Enrollment Notification. Possible values are: allPlatforms, ios, windows, windowsPhone, android, androidForWork, mac.
         /// </summary>

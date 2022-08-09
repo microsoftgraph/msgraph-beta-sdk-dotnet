@@ -36,6 +36,13 @@ namespace Microsoft.Graph
         public IEnumerable<string> DnsSearchDomains { get; set; }
     
         /// <summary>
+        /// Gets or sets dnsServerAddressMatch.
+        /// DNS Search Server Address.
+        /// </summary>
+        [JsonPropertyName("dnsServerAddressMatch")]
+        public IEnumerable<string> DnsServerAddressMatch { get; set; }
+    
+        /// <summary>
         /// Gets or sets domainAction.
         /// Domain Action (Only applicable when Action is evaluate connection). Possible values are: connectIfNeeded, neverConnect.
         /// </summary>
@@ -48,6 +55,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("domains")]
         public IEnumerable<string> Domains { get; set; }
+    
+        /// <summary>
+        /// Gets or sets interfaceTypeMatch.
+        /// Network interface to trigger VPN. Possible values are: notConfigured, ethernet, wiFi, cellular.
+        /// </summary>
+        [JsonPropertyName("interfaceTypeMatch")]
+        public VpnOnDemandRuleInterfaceTypeMatch? InterfaceTypeMatch { get; set; }
     
         /// <summary>
         /// Gets or sets probeRequiredUrl.

@@ -183,6 +183,12 @@ namespace Microsoft.Graph
         public string PublisherDomain { get; set; }
     
         /// <summary>
+        /// Gets or sets request signature verification.
+        /// </summary>
+        [JsonPropertyName("requestSignatureVerification")]
+        public RequestSignatureVerification RequestSignatureVerification { get; set; }
+    
+        /// <summary>
         /// Gets or sets required resource access.
         /// Specifies the resources that the application needs to access. This property also specifies the set of delegated permissions and application roles that it needs for each of those resources. This configuration of access to the required resources drives the consent experience. No more than 50 resource services (APIs) can be configured. Beginning mid-October 2021, the total number of required permissions must not exceed 400. Not nullable. Supports $filter (eq, not, ge, le).
         /// </summary>
@@ -282,6 +288,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets created on behalf of.
+        /// Supports $filter (eq when counting empty collections). Read-only.
         /// </summary>
         [JsonPropertyName("createdOnBehalfOf")]
         public DirectoryObject CreatedOnBehalfOf { get; set; }
@@ -329,7 +336,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets owners.
-        /// Directory objects that are owners of the application. Read-only. Nullable. Supports $expand.
+        /// Directory objects that are owners of the application. Read-only. Nullable. Supports $expand and $filter (eq when counting empty collections).
         /// </summary>
         [JsonPropertyName("owners")]
         public IApplicationOwnersCollectionWithReferencesPage Owners { get; set; }

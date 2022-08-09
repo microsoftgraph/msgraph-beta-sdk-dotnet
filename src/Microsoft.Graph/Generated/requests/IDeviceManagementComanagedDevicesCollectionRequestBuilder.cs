@@ -61,6 +61,13 @@ namespace Microsoft.Graph
             CloudPcReviewStatus reviewStatus = null);
 
         /// <summary>
+        /// Gets the request builder for ManagedDeviceDownloadAppDiagnostics.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceDownloadAppDiagnosticsRequestBuilder"/>.</returns>
+        IManagedDeviceDownloadAppDiagnosticsRequestBuilder DownloadAppDiagnostics(
+            PowerliftDownloadRequestObject request = null);
+
+        /// <summary>
         /// Gets the request builder for ManagedDeviceExecuteAction.
         /// </summary>
         /// <returns>The <see cref="IManagedDeviceExecuteActionRequestBuilder"/>.</returns>
@@ -84,5 +91,12 @@ namespace Microsoft.Graph
         IManagedDeviceMoveDevicesToOURequestBuilder MoveDevicesToOU(
             IEnumerable<Guid> deviceIds,
             string organizationalUnitPath = null);
+
+        /// <summary>
+        /// Gets the request builder for ManagedDeviceAppDiagnostics.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceAppDiagnosticsRequestBuilder"/>.</returns>
+        IManagedDeviceAppDiagnosticsRequestBuilder AppDiagnostics(
+            string upn = null);
     }
 }

@@ -30,18 +30,21 @@ namespace Microsoft.Graph.SecurityNamespace
 
         /// <summary>
         /// Gets or sets actions.
+        /// The collection of actions that should be implemented by the caller.
         /// </summary>
         [JsonPropertyName("actions")]
         public IEnumerable<InformationProtectionAction> Actions { get; set; }
     
         /// <summary>
         /// Gets or sets actionSource.
+        /// Specifies why the label was selected. Possible values are: manual, automatic, recommended, default.
         /// </summary>
         [JsonPropertyName("actionSource")]
         public ActionSource? ActionSource { get; set; }
     
         /// <summary>
         /// Gets or sets responsibleSensitiveTypeIds.
+        /// If the label was the result of an automatic classification, supply the list of sensitive info type GUIDs that resulted in the returned label.
         /// </summary>
         [JsonPropertyName("responsibleSensitiveTypeIds")]
         public IEnumerable<string> ResponsibleSensitiveTypeIds { get; set; }

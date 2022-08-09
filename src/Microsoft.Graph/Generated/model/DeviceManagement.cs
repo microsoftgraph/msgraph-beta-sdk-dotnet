@@ -1869,6 +1869,34 @@ namespace Microsoft.Graph
         public string ConfigManagerCollectionsNextLink { get; set; }
     
         /// <summary>
+        /// Gets or sets organizational message details.
+        /// A list of OrganizationalMessageDetails
+        /// </summary>
+        [JsonPropertyName("organizationalMessageDetails")]
+        public IDeviceManagementOrganizationalMessageDetailsCollectionPage OrganizationalMessageDetails { get; set; }
+
+        /// <summary>
+        /// Gets or sets organizationalMessageDetailsNextLink.
+        /// </summary>
+        [JsonPropertyName("organizationalMessageDetails@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string OrganizationalMessageDetailsNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets organizational message guided contents.
+        /// A list of OrganizationalMessageGuidedContents
+        /// </summary>
+        [JsonPropertyName("organizationalMessageGuidedContents")]
+        public IDeviceManagementOrganizationalMessageGuidedContentsCollectionPage OrganizationalMessageGuidedContents { get; set; }
+
+        /// <summary>
+        /// Gets or sets organizationalMessageGuidedContentsNextLink.
+        /// </summary>
+        [JsonPropertyName("organizationalMessageGuidedContents@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string OrganizationalMessageGuidedContentsNextLink { get; set; }
+    
+        /// <summary>
         /// Gets or sets resource operations.
         /// The Resource Operations.
         /// </summary>

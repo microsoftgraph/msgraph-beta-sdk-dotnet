@@ -23,24 +23,28 @@ namespace Microsoft.Graph.SecurityNamespace
 
         /// <summary>
         /// Gets or sets assignmentMethod.
+        /// Describes whether the label was applied by an automated (standard) process or a person (privileged).
         /// </summary>
         [JsonPropertyName("assignmentMethod")]
         public AssignmentMethod? AssignmentMethod { get; set; }
     
         /// <summary>
         /// Gets or sets downgradeJustification.
+        /// The downgrade justification object that indicates if downgrade was justified and, if so, the reason.
         /// </summary>
         [JsonPropertyName("downgradeJustification")]
         public DowngradeJustification DowngradeJustification { get; set; }
     
         /// <summary>
         /// Gets or sets extendedProperties.
+        /// Extended properties will be parsed and returned in the standard Microsoft Purview Information Protection labeled metadata format as part of the label information.
         /// </summary>
         [JsonPropertyName("extendedProperties")]
         public IEnumerable<KeyValuePair> ExtendedProperties { get; set; }
     
         /// <summary>
         /// Gets or sets labelId.
+        /// The GUID of the label that should be applied to the information.
         /// </summary>
         [JsonPropertyName("labelId")]
         public string LabelId { get; set; }

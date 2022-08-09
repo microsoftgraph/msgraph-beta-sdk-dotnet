@@ -29,6 +29,13 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets or sets applicationInstance.
+        /// The application instance associated with this action.
+        /// </summary>
+        [JsonPropertyName("applicationInstance")]
+        public Identity ApplicationInstance { get; set; }
+    
+        /// <summary>
         /// Gets or sets assertedIdentity.
         /// An identity the participant would like to present itself as to the other participants in the call.
         /// </summary>
@@ -43,11 +50,39 @@ namespace Microsoft.Graph
         public Identity AzureCommunicationServicesUser { get; set; }
     
         /// <summary>
+        /// Gets or sets encrypted.
+        /// The encrypted user associated with this action.
+        /// </summary>
+        [JsonPropertyName("encrypted")]
+        public Identity Encrypted { get; set; }
+    
+        /// <summary>
         /// Gets or sets endpointType.
         /// Type of endpoint the participant is using. Possible values are: default, voicemail, skypeForBusiness, skypeForBusinessVoipPhone and unknownFutureValue.
         /// </summary>
         [JsonPropertyName("endpointType")]
         public EndpointType? EndpointType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets guest.
+        /// The guest user associated with this action.
+        /// </summary>
+        [JsonPropertyName("guest")]
+        public Identity Guest { get; set; }
+    
+        /// <summary>
+        /// Gets or sets onPremises.
+        /// The Skype for Business On-Premises user associated with this action.
+        /// </summary>
+        [JsonPropertyName("onPremises")]
+        public Identity OnPremises { get; set; }
+    
+        /// <summary>
+        /// Gets or sets phone.
+        /// Inherited from identitySet. The phone user associated with this action.
+        /// </summary>
+        [JsonPropertyName("phone")]
+        public Identity Phone { get; set; }
     
     }
 }

@@ -54,6 +54,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="ITeamsAppSettingsRequestBuilder"/>.</returns>
         ITeamsAppSettingsRequestBuilder TeamsAppSettings { get; }
+
+        /// <summary>
+        /// Gets the request builder for TeamTemplates.
+        /// </summary>
+        /// <returns>The <see cref="ITeamworkTeamTemplatesCollectionRequestBuilder"/>.</returns>
+        ITeamworkTeamTemplatesCollectionRequestBuilder TeamTemplates { get; }
     
         /// <summary>
         /// Gets the request builder for TeamworkSendActivityNotificationToRecipients.

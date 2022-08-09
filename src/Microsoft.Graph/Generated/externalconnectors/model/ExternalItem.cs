@@ -29,7 +29,7 @@ namespace Microsoft.Graph.ExternalConnectors
     
         /// <summary>
         /// Gets or sets content.
-        /// A plain-text  representation of the contents of the item. The text in this property is full-text indexed. Optional.
+        /// A plain-text representation of the contents of the item. The text in this property is full-text indexed. Optional.
         /// </summary>
         [JsonPropertyName("content")]
         public ExternalItemContent Content { get; set; }
@@ -40,6 +40,20 @@ namespace Microsoft.Graph.ExternalConnectors
         /// </summary>
         [JsonPropertyName("properties")]
         public Properties Properties { get; set; }
+    
+        /// <summary>
+        /// Gets or sets activities.
+        /// Write-only property. Returns results.
+        /// </summary>
+        [JsonPropertyName("activities")]
+        public IExternalItemActivitiesCollectionPage Activities { get; set; }
+
+        /// <summary>
+        /// Gets or sets activitiesNextLink.
+        /// </summary>
+        [JsonPropertyName("activities@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string ActivitiesNextLink { get; set; }
     
     }
 }

@@ -23,18 +23,21 @@ namespace Microsoft.Graph.SecurityNamespace
 
         /// <summary>
         /// Gets or sets confidenceLevel.
+        /// The confidence level, 0 to 100, of the result.
         /// </summary>
         [JsonPropertyName("confidenceLevel")]
         public Int32? ConfidenceLevel { get; set; }
     
         /// <summary>
         /// Gets or sets count.
+        /// The number of instances of the specific information type in the input.
         /// </summary>
         [JsonPropertyName("count")]
         public Int32? Count { get; set; }
     
         /// <summary>
         /// Gets or sets sensitiveTypeId.
+        /// The GUID of the discovered sensitive information type.
         /// </summary>
         [JsonPropertyName("sensitiveTypeId")]
         public string SensitiveTypeId { get; set; }

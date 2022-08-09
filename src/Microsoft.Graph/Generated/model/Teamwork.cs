@@ -69,6 +69,20 @@ namespace Microsoft.Graph
         [JsonPropertyName("teamsAppSettings")]
         public TeamsAppSettings TeamsAppSettings { get; set; }
     
+        /// <summary>
+        /// Gets or sets team templates.
+        /// The templates associated with a team.
+        /// </summary>
+        [JsonPropertyName("teamTemplates")]
+        public ITeamworkTeamTemplatesCollectionPage TeamTemplates { get; set; }
+
+        /// <summary>
+        /// Gets or sets teamTemplatesNextLink.
+        /// </summary>
+        [JsonPropertyName("teamTemplates@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string TeamTemplatesNextLink { get; set; }
+    
     }
 }
 

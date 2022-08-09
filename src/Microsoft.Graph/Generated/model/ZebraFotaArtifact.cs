@@ -28,6 +28,13 @@ namespace Microsoft.Graph
         public string BoardSupportPackageVersion { get; set; }
     
         /// <summary>
+        /// Gets or sets description.
+        /// Artifact description. (e.g.: `LifeGuard Update 98 (released 24-September-2021)
+        /// </summary>
+        [JsonPropertyName("description")]
+        public string Description { get; set; }
+    
+        /// <summary>
         /// Gets or sets device model.
         /// Applicable device model (e.g.: TC8300)
         /// </summary>

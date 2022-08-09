@@ -924,6 +924,18 @@ namespace Microsoft.Graph
                     // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.ConfigManagerCollections.AdditionalData = deviceManagementToInitialize.AdditionalData;
                 }
+                if (deviceManagementToInitialize.OrganizationalMessageDetails != null && deviceManagementToInitialize.OrganizationalMessageDetails.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.OrganizationalMessageDetails.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.OrganizationalMessageDetailsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    deviceManagementToInitialize.OrganizationalMessageDetails.AdditionalData = deviceManagementToInitialize.AdditionalData;
+                }
+                if (deviceManagementToInitialize.OrganizationalMessageGuidedContents != null && deviceManagementToInitialize.OrganizationalMessageGuidedContents.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.OrganizationalMessageGuidedContents.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.OrganizationalMessageGuidedContentsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    deviceManagementToInitialize.OrganizationalMessageGuidedContents.AdditionalData = deviceManagementToInitialize.AdditionalData;
+                }
                 if (deviceManagementToInitialize.ResourceOperations != null && deviceManagementToInitialize.ResourceOperations.CurrentPage != null)
                 {
                     deviceManagementToInitialize.ResourceOperations.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.ResourceOperationsNextLink);

@@ -44,7 +44,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets completed date time.
-        /// The date in the specified time zone that the task was finished.
+        /// The date and time in the specified time zone that the task was finished.
         /// </summary>
         [JsonPropertyName("completedDateTime")]
         public DateTimeTimeZone CompletedDateTime { get; set; }
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets due date time.
-        /// The date in the specified time zone that the task is to be finished.
+        /// The date and time in the specified time zone that the task is to be finished.
         /// </summary>
         [JsonPropertyName("dueDateTime")]
         public DateTimeTimeZone DueDateTime { get; set; }
@@ -100,14 +100,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets reminder date time.
-        /// The date and time for a reminder alert of the task to occur.
+        /// The date and time in the specified time zone for a reminder alert of the task to occur.
         /// </summary>
         [JsonPropertyName("reminderDateTime")]
         public DateTimeTimeZone ReminderDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets start date time.
-        /// The date in the specified time zone at which the task is scheduled to start.
+        /// The date and time in the specified time zone at which the task is scheduled to start.
         /// </summary>
         [JsonPropertyName("startDateTime")]
         public DateTimeTimeZone StartDateTime { get; set; }

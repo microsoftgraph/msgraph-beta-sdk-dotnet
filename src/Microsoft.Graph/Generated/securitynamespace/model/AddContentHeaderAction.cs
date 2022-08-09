@@ -30,42 +30,49 @@ namespace Microsoft.Graph.SecurityNamespace
 
         /// <summary>
         /// Gets or sets alignment.
+        /// The horizontal alignment of the header.
         /// </summary>
         [JsonPropertyName("alignment")]
         public ContentAlignment? Alignment { get; set; }
     
         /// <summary>
         /// Gets or sets fontColor.
+        /// Color of the font to use for the header.
         /// </summary>
         [JsonPropertyName("fontColor")]
         public string FontColor { get; set; }
     
         /// <summary>
         /// Gets or sets fontName.
+        /// Name of the font to use for the header.
         /// </summary>
         [JsonPropertyName("fontName")]
         public string FontName { get; set; }
     
         /// <summary>
         /// Gets or sets fontSize.
+        /// Font size to use for the header.
         /// </summary>
         [JsonPropertyName("fontSize")]
         public Int32? FontSize { get; set; }
     
         /// <summary>
         /// Gets or sets margin.
+        /// The margin of the header from the top of the document.
         /// </summary>
         [JsonPropertyName("margin")]
         public Int32? Margin { get; set; }
     
         /// <summary>
         /// Gets or sets text.
+        /// The contents of the header itself.
         /// </summary>
         [JsonPropertyName("text")]
         public string Text { get; set; }
     
         /// <summary>
         /// Gets or sets uiElementName.
+        /// The name of the UI element where the header should be placed.
         /// </summary>
         [JsonPropertyName("uiElementName")]
         public string UiElementName { get; set; }

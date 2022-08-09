@@ -617,6 +617,19 @@ namespace Microsoft.Graph
         public InformationProtection InformationProtection { get; set; }
     
         /// <summary>
+        /// Gets or sets app role assigned resources.
+        /// </summary>
+        [JsonPropertyName("appRoleAssignedResources")]
+        public IUserAppRoleAssignedResourcesCollectionWithReferencesPage AppRoleAssignedResources { get; set; }
+
+        /// <summary>
+        /// Gets or sets appRoleAssignedResourcesNextLink.
+        /// </summary>
+        [JsonPropertyName("appRoleAssignedResources@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string AppRoleAssignedResourcesNextLink { get; set; }
+    
+        /// <summary>
         /// Gets or sets app role assignments.
         /// Represents the app roles a user has been granted for an application. Supports $expand.
         /// </summary>
