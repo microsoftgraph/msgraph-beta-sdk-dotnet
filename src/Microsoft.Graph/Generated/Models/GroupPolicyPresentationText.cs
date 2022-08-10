@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class GroupPolicyPresentationText : GroupPolicyPresentation, IParsable {
+    public class GroupPolicyPresentationText : GroupPolicyUploadedPresentation, IParsable {
         /// <summary>
         /// Instantiates a new GroupPolicyPresentationText and sets the default values.
         /// </summary>

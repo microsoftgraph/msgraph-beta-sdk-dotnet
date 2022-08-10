@@ -47,6 +47,8 @@ namespace Microsoft.Graph.Beta.Models {
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
                 "#microsoft.graph.customAccessPackageWorkflowExtension" => new CustomAccessPackageWorkflowExtension(),
+                "#microsoft.graph.customAuthenticationExtension" => new CustomAuthenticationExtension(),
+                "#microsoft.graph.onTokenIssuanceStartCustomExtension" => new OnTokenIssuanceStartCustomExtension(),
                 _ => new CustomCalloutExtension(),
             };
         }

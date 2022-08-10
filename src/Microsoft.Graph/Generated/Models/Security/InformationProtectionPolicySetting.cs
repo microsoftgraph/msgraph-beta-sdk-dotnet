@@ -10,17 +10,17 @@ namespace Microsoft.Graph.Beta.Models.Security {
             get { return BackingStore?.Get<string>("defaultLabelId"); }
             set { BackingStore?.Set("defaultLabelId", value); }
         }
-        /// <summary>The isDowngradeJustificationRequired property</summary>
+        /// <summary>Exposes whether justification input is required on label downgrade.</summary>
         public bool? IsDowngradeJustificationRequired {
             get { return BackingStore?.Get<bool?>("isDowngradeJustificationRequired"); }
             set { BackingStore?.Set("isDowngradeJustificationRequired", value); }
         }
-        /// <summary>The isMandatory property</summary>
+        /// <summary>Exposes whether mandatory labeling is enabled.</summary>
         public bool? IsMandatory {
             get { return BackingStore?.Get<bool?>("isMandatory"); }
             set { BackingStore?.Set("isMandatory", value); }
         }
-        /// <summary>The moreInfoUrl property</summary>
+        /// <summary>Exposes the more information URL that can be configured by the administrator.</summary>
         public string MoreInfoUrl {
             get { return BackingStore?.Get<string>("moreInfoUrl"); }
             set { BackingStore?.Set("moreInfoUrl", value); }

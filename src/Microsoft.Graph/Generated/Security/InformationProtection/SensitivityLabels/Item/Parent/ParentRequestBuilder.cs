@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.Security.InformationProtection.SensitivityLabels.
             return requestInfo;
         }
         /// <summary>
-        /// Get parent from security
+        /// The parent label associated with a child label. Null if the label has no parent.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<ParentRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -118,7 +118,7 @@ namespace Microsoft.Graph.Beta.Security.InformationProtection.SensitivityLabels.
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get parent from security
+        /// The parent label associated with a child label. Null if the label has no parent.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -161,7 +161,7 @@ namespace Microsoft.Graph.Beta.Security.InformationProtection.SensitivityLabels.
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>Get parent from security</summary>
+        /// <summary>The parent label associated with a child label. Null if the label has no parent.</summary>
         public class ParentRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

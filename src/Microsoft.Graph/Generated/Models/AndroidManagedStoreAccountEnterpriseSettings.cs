@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("targetGroupIds", value); }
         }
         /// <summary>
-        /// Instantiates a new AndroidManagedStoreAccountEnterpriseSettings and sets the default values.
+        /// Instantiates a new androidManagedStoreAccountEnterpriseSettings and sets the default values.
         /// </summary>
         public AndroidManagedStoreAccountEnterpriseSettings() : base() {
             OdataType = "#microsoft.graph.androidManagedStoreAccountEnterpriseSettings";

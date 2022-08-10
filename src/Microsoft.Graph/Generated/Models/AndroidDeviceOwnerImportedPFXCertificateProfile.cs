@@ -5,6 +5,11 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class AndroidDeviceOwnerImportedPFXCertificateProfile : AndroidDeviceOwnerCertificateProfileBase, IParsable {
+        /// <summary>Certificate access type. Possible values are: userApproval, specificApps, unknownFutureValue.</summary>
+        public AndroidDeviceOwnerCertificateAccessType? CertificateAccessType {
+            get { return BackingStore?.Get<AndroidDeviceOwnerCertificateAccessType?>("certificateAccessType"); }
+            set { BackingStore?.Set("certificateAccessType", value); }
+        }
         /// <summary>PFX Import Options.</summary>
         public Microsoft.Graph.Beta.Models.IntendedPurpose? IntendedPurpose {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IntendedPurpose?>("intendedPurpose"); }
@@ -14,6 +19,11 @@ namespace Microsoft.Graph.Beta.Models {
         public List<ManagedDeviceCertificateState> ManagedDeviceCertificateStates {
             get { return BackingStore?.Get<List<ManagedDeviceCertificateState>>("managedDeviceCertificateStates"); }
             set { BackingStore?.Set("managedDeviceCertificateStates", value); }
+        }
+        /// <summary>Certificate access information. This collection can contain a maximum of 50 elements.</summary>
+        public List<AndroidDeviceOwnerSilentCertificateAccess> SilentCertificateAccessDetails {
+            get { return BackingStore?.Get<List<AndroidDeviceOwnerSilentCertificateAccess>>("silentCertificateAccessDetails"); }
+            set { BackingStore?.Set("silentCertificateAccessDetails", value); }
         }
         /// <summary>
         /// Instantiates a new AndroidDeviceOwnerImportedPFXCertificateProfile and sets the default values.
@@ -34,8 +44,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"certificateAccessType", n => { CertificateAccessType = n.GetEnumValue<AndroidDeviceOwnerCertificateAccessType>(); } },
                 {"intendedPurpose", n => { IntendedPurpose = n.GetEnumValue<IntendedPurpose>(); } },
                 {"managedDeviceCertificateStates", n => { ManagedDeviceCertificateStates = n.GetCollectionOfObjectValues<ManagedDeviceCertificateState>(ManagedDeviceCertificateState.CreateFromDiscriminatorValue).ToList(); } },
+                {"silentCertificateAccessDetails", n => { SilentCertificateAccessDetails = n.GetCollectionOfObjectValues<AndroidDeviceOwnerSilentCertificateAccess>(AndroidDeviceOwnerSilentCertificateAccess.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>
@@ -45,8 +57,10 @@ namespace Microsoft.Graph.Beta.Models {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteEnumValue<AndroidDeviceOwnerCertificateAccessType>("certificateAccessType", CertificateAccessType);
             writer.WriteEnumValue<IntendedPurpose>("intendedPurpose", IntendedPurpose);
             writer.WriteCollectionOfObjectValues<ManagedDeviceCertificateState>("managedDeviceCertificateStates", ManagedDeviceCertificateStates);
+            writer.WriteCollectionOfObjectValues<AndroidDeviceOwnerSilentCertificateAccess>("silentCertificateAccessDetails", SilentCertificateAccessDetails);
         }
     }
 }

@@ -4,6 +4,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Cancel retire.</summary>
         CancelRetire,
         /// <summary>Retire these devices.</summary>
-        ComfirmRetire,
+        ConfirmRetire,
+        /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
+        UnknownFutureValue,
     }
 }

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class SecurityAction : Entity, IParsable {
         /// <summary>Reason for invoking this action.</summary>
         public string ActionReason {
@@ -76,7 +77,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("vendorInformation", value); }
         }
         /// <summary>
-        /// Instantiates a new SecurityAction and sets the default values.
+        /// Instantiates a new securityAction and sets the default values.
         /// </summary>
         public SecurityAction() : base() {
             OdataType = "#microsoft.graph.securityAction";

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Entity that stores the server log collection status.</summary>
     public class MicrosoftTunnelServerLogCollectionResponse : Entity, IParsable {
         /// <summary>The end time of the logs collected</summary>
         public DateTimeOffset? EndDateTime {
@@ -41,7 +42,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>
-        /// Instantiates a new MicrosoftTunnelServerLogCollectionResponse and sets the default values.
+        /// Instantiates a new microsoftTunnelServerLogCollectionResponse and sets the default values.
         /// </summary>
         public MicrosoftTunnelServerLogCollectionResponse() : base() {
             OdataType = "#microsoft.graph.microsoftTunnelServerLogCollectionResponse";

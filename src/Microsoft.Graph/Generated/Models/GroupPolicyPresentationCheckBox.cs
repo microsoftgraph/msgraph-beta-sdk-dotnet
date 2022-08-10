@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class GroupPolicyPresentationCheckBox : GroupPolicyPresentation, IParsable {
+    public class GroupPolicyPresentationCheckBox : GroupPolicyUploadedPresentation, IParsable {
         /// <summary>Default value for the check box. The default value is false.</summary>
         public bool? DefaultChecked {
             get { return BackingStore?.Get<bool?>("defaultChecked"); }

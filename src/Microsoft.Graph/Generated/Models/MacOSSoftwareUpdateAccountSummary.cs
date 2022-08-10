@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>MacOS software update account summary report for a device and user</summary>
     public class MacOSSoftwareUpdateAccountSummary : Entity, IParsable {
         /// <summary>Summary of the updates by category.</summary>
         public List<MacOSSoftwareUpdateCategorySummary> CategorySummaries {
@@ -61,7 +62,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("userPrincipalName", value); }
         }
         /// <summary>
-        /// Instantiates a new MacOSSoftwareUpdateAccountSummary and sets the default values.
+        /// Instantiates a new macOSSoftwareUpdateAccountSummary and sets the default values.
         /// </summary>
         public MacOSSoftwareUpdateAccountSummary() : base() {
             OdataType = "#microsoft.graph.macOSSoftwareUpdateAccountSummary";

@@ -46,6 +46,7 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.groupPolicyPresentationMultiTextBox" => new GroupPolicyPresentationMultiTextBox(),
                 "#microsoft.graph.groupPolicyPresentationText" => new GroupPolicyPresentationText(),
                 "#microsoft.graph.groupPolicyPresentationTextBox" => new GroupPolicyPresentationTextBox(),
+                "#microsoft.graph.groupPolicyUploadedPresentation" => new GroupPolicyUploadedPresentation(),
                 _ => new GroupPolicyPresentation(),
             };
         }

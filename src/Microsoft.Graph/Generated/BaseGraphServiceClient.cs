@@ -100,6 +100,7 @@ using Microsoft.Graph.Beta.ServicePrincipals;
 using Microsoft.Graph.Beta.Settings;
 using Microsoft.Graph.Beta.Shares;
 using Microsoft.Graph.Beta.Sites;
+using Microsoft.Graph.Beta.Solutions;
 using Microsoft.Graph.Beta.Storage;
 using Microsoft.Graph.Beta.SubscribedSkus;
 using Microsoft.Graph.Beta.Subscriptions;
@@ -535,6 +536,10 @@ namespace Microsoft.Graph.Beta {
         /// <summary>The sites property</summary>
         public SitesRequestBuilder Sites { get =>
             new SitesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The solutions property</summary>
+        public SolutionsRequestBuilder Solutions { get =>
+            new SolutionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The storage property</summary>
         public StorageRequestBuilder Storage { get =>

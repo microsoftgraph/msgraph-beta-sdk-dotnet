@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class ConditionalAccessPolicy : Entity, IParsable {
         /// <summary>The conditions property</summary>
         public ConditionalAccessConditionSet Conditions {
@@ -46,7 +47,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("state", value); }
         }
         /// <summary>
-        /// Instantiates a new ConditionalAccessPolicy and sets the default values.
+        /// Instantiates a new conditionalAccessPolicy and sets the default values.
         /// </summary>
         public ConditionalAccessPolicy() : base() {
             OdataType = "#microsoft.graph.conditionalAccessPolicy";

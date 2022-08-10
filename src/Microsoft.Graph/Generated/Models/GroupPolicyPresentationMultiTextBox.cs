@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class GroupPolicyPresentationMultiTextBox : GroupPolicyPresentation, IParsable {
+    public class GroupPolicyPresentationMultiTextBox : GroupPolicyUploadedPresentation, IParsable {
         /// <summary>An unsigned integer that specifies the maximum number of text characters. Default value is 1023.</summary>
         public long? MaxLength {
             get { return BackingStore?.Get<long?>("maxLength"); }

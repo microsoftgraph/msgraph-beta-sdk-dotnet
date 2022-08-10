@@ -5,10 +5,20 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration : DeviceConfiguration, IParsable {
+        /// <summary>Certificate access type. Possible values are: userApproval, specificApps, unknownFutureValue.</summary>
+        public AndroidDeviceOwnerCertificateAccessType? CertificateAccessType {
+            get { return BackingStore?.Get<AndroidDeviceOwnerCertificateAccessType?>("certificateAccessType"); }
+            set { BackingStore?.Set("certificateAccessType", value); }
+        }
         /// <summary>Tenant level settings for the Derived Credentials to be used for authentication.</summary>
         public DeviceManagementDerivedCredentialSettings DerivedCredentialSettings {
             get { return BackingStore?.Get<DeviceManagementDerivedCredentialSettings>("derivedCredentialSettings"); }
             set { BackingStore?.Set("derivedCredentialSettings", value); }
+        }
+        /// <summary>Certificate access information. This collection can contain a maximum of 50 elements.</summary>
+        public List<AndroidDeviceOwnerSilentCertificateAccess> SilentCertificateAccessDetails {
+            get { return BackingStore?.Get<List<AndroidDeviceOwnerSilentCertificateAccess>>("silentCertificateAccessDetails"); }
+            set { BackingStore?.Set("silentCertificateAccessDetails", value); }
         }
         /// <summary>
         /// Instantiates a new AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration and sets the default values.
@@ -29,7 +39,9 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"certificateAccessType", n => { CertificateAccessType = n.GetEnumValue<AndroidDeviceOwnerCertificateAccessType>(); } },
                 {"derivedCredentialSettings", n => { DerivedCredentialSettings = n.GetObjectValue<DeviceManagementDerivedCredentialSettings>(DeviceManagementDerivedCredentialSettings.CreateFromDiscriminatorValue); } },
+                {"silentCertificateAccessDetails", n => { SilentCertificateAccessDetails = n.GetCollectionOfObjectValues<AndroidDeviceOwnerSilentCertificateAccess>(AndroidDeviceOwnerSilentCertificateAccess.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>
@@ -39,7 +51,9 @@ namespace Microsoft.Graph.Beta.Models {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteEnumValue<AndroidDeviceOwnerCertificateAccessType>("certificateAccessType", CertificateAccessType);
             writer.WriteObjectValue<DeviceManagementDerivedCredentialSettings>("derivedCredentialSettings", DerivedCredentialSettings);
+            writer.WriteCollectionOfObjectValues<AndroidDeviceOwnerSilentCertificateAccess>("silentCertificateAccessDetails", SilentCertificateAccessDetails);
         }
     }
 }

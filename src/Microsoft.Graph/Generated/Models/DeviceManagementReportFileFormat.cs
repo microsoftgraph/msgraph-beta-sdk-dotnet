@@ -1,9 +1,9 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public enum DeviceManagementReportFileFormat {
-        /// <summary>Comma-separated values</summary>
+        /// <summary>CSV Format</summary>
         Csv,
-        /// <summary>Portable Document Format</summary>
-        Pdf,
+        /// <summary>JSON Format</summary>
+        Json,
     }
 }

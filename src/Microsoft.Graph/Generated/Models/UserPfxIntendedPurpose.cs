@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public enum UserPfxIntendedPurpose {
         /// <summary>No roles/usages assigned.</summary>
         Unassigned,

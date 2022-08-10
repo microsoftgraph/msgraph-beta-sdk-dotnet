@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class DomainDnsRecord : Entity, IParsable {
         /// <summary>If false, this record must be configured by the customer at the DNS host for Microsoft Online Services to operate correctly with the domain.</summary>
         public bool? IsOptional {
@@ -32,7 +33,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("ttl", value); }
         }
         /// <summary>
-        /// Instantiates a new DomainDnsRecord and sets the default values.
+        /// Instantiates a new domainDnsRecord and sets the default values.
         /// </summary>
         public DomainDnsRecord() : base() {
             OdataType = "#microsoft.graph.domainDnsRecord";

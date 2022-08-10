@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.BookingCurrencies.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get entity from bookingCurrencies by key
+        /// Get the properties of a bookingCurrency object that is available to a Microsoft Bookings business. Use the **id** property, which is the currency code, to specify the currency.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<BookingCurrencyItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -118,7 +118,7 @@ namespace Microsoft.Graph.Beta.BookingCurrencies.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get entity from bookingCurrencies by key
+        /// Get the properties of a bookingCurrency object that is available to a Microsoft Bookings business. Use the **id** property, which is the currency code, to specify the currency.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -161,7 +161,7 @@ namespace Microsoft.Graph.Beta.BookingCurrencies.Item {
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>Get entity from bookingCurrencies by key</summary>
+        /// <summary>Get the properties of a bookingCurrency object that is available to a Microsoft Bookings business. Use the **id** property, which is the currency code, to specify the currency.</summary>
         public class BookingCurrencyItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

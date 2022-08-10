@@ -5,6 +5,7 @@ using Microsoft.Graph.Beta.Users.Item.Activities;
 using Microsoft.Graph.Beta.Users.Item.AgreementAcceptances;
 using Microsoft.Graph.Beta.Users.Item.Analytics;
 using Microsoft.Graph.Beta.Users.Item.AppConsentRequestsForApproval;
+using Microsoft.Graph.Beta.Users.Item.AppRoleAssignedResources;
 using Microsoft.Graph.Beta.Users.Item.AppRoleAssignments;
 using Microsoft.Graph.Beta.Users.Item.Approvals;
 using Microsoft.Graph.Beta.Users.Item.AssignLicense;
@@ -129,6 +130,10 @@ namespace Microsoft.Graph.Beta.Users.Item {
         /// <summary>The appConsentRequestsForApproval property</summary>
         public AppConsentRequestsForApprovalRequestBuilder AppConsentRequestsForApproval { get =>
             new AppConsentRequestsForApprovalRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The appRoleAssignedResources property</summary>
+        public AppRoleAssignedResourcesRequestBuilder AppRoleAssignedResources { get =>
+            new AppRoleAssignedResourcesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The appRoleAssignments property</summary>
         public AppRoleAssignmentsRequestBuilder AppRoleAssignments { get =>

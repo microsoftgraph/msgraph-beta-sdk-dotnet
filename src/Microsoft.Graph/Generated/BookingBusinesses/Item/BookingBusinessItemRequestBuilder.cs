@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Delete entity from bookingBusinesses
+        /// Delete a bookingBusiness object.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateDeleteRequestInformation(Action<BookingBusinessItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
@@ -108,7 +108,7 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Represents a Microsot Bookings Business.
+        /// Get the properties and relationships of a bookingBusiness object.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<BookingBusinessItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -128,7 +128,7 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update entity in bookingBusinesses
+        /// Update the properties of a bookingBusiness object.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -149,7 +149,7 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Delete entity from bookingBusinesses
+        /// Delete a bookingBusiness object.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -163,7 +163,7 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Represents a Microsot Bookings Business.
+        /// Get the properties and relationships of a bookingBusiness object.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -177,7 +177,7 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item {
             return await RequestAdapter.SendAsync<BookingBusiness>(requestInfo, BookingBusiness.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update entity in bookingBusinesses
+        /// Update the properties of a bookingBusiness object.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -206,7 +206,7 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item {
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>Represents a Microsot Bookings Business.</summary>
+        /// <summary>Get the properties and relationships of a bookingBusiness object.</summary>
         public class BookingBusinessItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

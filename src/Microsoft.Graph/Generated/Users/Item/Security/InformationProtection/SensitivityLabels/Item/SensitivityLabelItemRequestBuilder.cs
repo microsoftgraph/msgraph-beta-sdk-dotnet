@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Security.InformationProtection.Sensiti
             return requestInfo;
         }
         /// <summary>
-        /// Get sensitivityLabels from users
+        /// Read the Microsoft Purview Information Protection labels for the user or organization.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<SensitivityLabelItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -123,7 +123,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Security.InformationProtection.Sensiti
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get sensitivityLabels from users
+        /// Read the Microsoft Purview Information Protection labels for the user or organization.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -166,7 +166,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Security.InformationProtection.Sensiti
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>Get sensitivityLabels from users</summary>
+        /// <summary>Read the Microsoft Purview Information Protection labels for the user or organization.</summary>
         public class SensitivityLabelItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

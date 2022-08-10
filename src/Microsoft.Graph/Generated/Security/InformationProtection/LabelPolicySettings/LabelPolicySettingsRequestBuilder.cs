@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.Security.InformationProtection.LabelPolicySetting
             return requestInfo;
         }
         /// <summary>
-        /// Get labelPolicySettings from security
+        /// Read the Microsoft Purview Information Protection policy settings for the user or organization.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<LabelPolicySettingsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -118,7 +118,7 @@ namespace Microsoft.Graph.Beta.Security.InformationProtection.LabelPolicySetting
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get labelPolicySettings from security
+        /// Read the Microsoft Purview Information Protection policy settings for the user or organization.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -161,7 +161,7 @@ namespace Microsoft.Graph.Beta.Security.InformationProtection.LabelPolicySetting
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>Get labelPolicySettings from security</summary>
+        /// <summary>Read the Microsoft Purview Information Protection policy settings for the user or organization.</summary>
         public class LabelPolicySettingsRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

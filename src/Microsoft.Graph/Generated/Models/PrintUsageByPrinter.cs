@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class PrintUsageByPrinter : PrintUsage, IParsable {
         /// <summary>The printerId property</summary>
         public string PrinterId {
@@ -12,7 +11,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("printerId", value); }
         }
         /// <summary>
-        /// Instantiates a new printUsageByPrinter and sets the default values.
+        /// Instantiates a new PrintUsageByPrinter and sets the default values.
         /// </summary>
         public PrintUsageByPrinter() : base() {
             OdataType = "#microsoft.graph.printUsageByPrinter";

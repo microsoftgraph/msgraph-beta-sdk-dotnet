@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("unknownUserCount", value); }
         }
         /// <summary>
-        /// Instantiates a new SoftwareUpdateStatusSummary and sets the default values.
+        /// Instantiates a new softwareUpdateStatusSummary and sets the default values.
         /// </summary>
         public SoftwareUpdateStatusSummary() : base() {
             OdataType = "#microsoft.graph.softwareUpdateStatusSummary";

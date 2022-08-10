@@ -13,17 +13,17 @@ namespace Microsoft.Graph.Beta.Models.Security {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The contentFormat property</summary>
+        /// <summary>The format of the content to be labeled. Possible values are: file, email.</summary>
         public string ContentFormat {
             get { return BackingStore?.Get<string>("contentFormat"); }
             set { BackingStore?.Set("contentFormat", value); }
         }
-        /// <summary>The identifier property</summary>
+        /// <summary>Identifier used for Azure Information Protection Analytics.</summary>
         public string Identifier {
             get { return BackingStore?.Get<string>("identifier"); }
             set { BackingStore?.Set("identifier", value); }
         }
-        /// <summary>The metadata property</summary>
+        /// <summary>Existing Microsoft Purview Information Protection metadata is passed as key-value pairs, where the key is the MSIP_Label_GUID_PropName.</summary>
         public List<KeyValuePair> Metadata {
             get { return BackingStore?.Get<List<KeyValuePair>>("metadata"); }
             set { BackingStore?.Set("metadata", value); }

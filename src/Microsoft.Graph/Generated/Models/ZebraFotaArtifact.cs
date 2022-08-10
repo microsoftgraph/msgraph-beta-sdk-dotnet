@@ -11,6 +11,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("boardSupportPackageVersion"); }
             set { BackingStore?.Set("boardSupportPackageVersion", value); }
         }
+        /// <summary>Artifact description. (e.g.: `LifeGuard Update 98 (released 24-September-2021)</summary>
+        public string Description {
+            get { return BackingStore?.Get<string>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
         /// <summary>Applicable device model (e.g.: TC8300)</summary>
         public string DeviceModel {
             get { return BackingStore?.Get<string>("deviceModel"); }
@@ -51,6 +56,7 @@ namespace Microsoft.Graph.Beta.Models {
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"boardSupportPackageVersion", n => { BoardSupportPackageVersion = n.GetStringValue(); } },
+                {"description", n => { Description = n.GetStringValue(); } },
                 {"deviceModel", n => { DeviceModel = n.GetStringValue(); } },
                 {"osVersion", n => { OsVersion = n.GetStringValue(); } },
                 {"patchVersion", n => { PatchVersion = n.GetStringValue(); } },
@@ -65,6 +71,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("boardSupportPackageVersion", BoardSupportPackageVersion);
+            writer.WriteStringValue("description", Description);
             writer.WriteStringValue("deviceModel", DeviceModel);
             writer.WriteStringValue("osVersion", OsVersion);
             writer.WriteStringValue("patchVersion", PatchVersion);

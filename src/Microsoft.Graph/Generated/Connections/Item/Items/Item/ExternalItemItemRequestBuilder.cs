@@ -1,3 +1,5 @@
+using Microsoft.Graph.Beta.Connections.Item.Items.Item.Activities;
+using Microsoft.Graph.Beta.Connections.Item.Items.Item.AddActivities;
 using Microsoft.Graph.Beta.Models.ExternalConnectors;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -11,6 +13,14 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Connections.Item.Items.Item {
     /// <summary>Provides operations to manage the items property of the microsoft.graph.externalConnectors.externalConnection entity.</summary>
     public class ExternalItemItemRequestBuilder {
+        /// <summary>The activities property</summary>
+        public ActivitiesRequestBuilder Activities { get =>
+            new ActivitiesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The addActivities property</summary>
+        public AddActivitiesRequestBuilder AddActivities { get =>
+            new AddActivitiesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>

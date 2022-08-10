@@ -20,6 +20,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamsAppSettings>("teamsAppSettings"); }
             set { BackingStore?.Set("teamsAppSettings", value); }
         }
+        /// <summary>The templates associated with a team.</summary>
+        public List<TeamTemplate> TeamTemplates {
+            get { return BackingStore?.Get<List<TeamTemplate>>("teamTemplates"); }
+            set { BackingStore?.Set("teamTemplates", value); }
+        }
         /// <summary>A workforce integration with shifts.</summary>
         public List<WorkforceIntegration> WorkforceIntegrations {
             get { return BackingStore?.Get<List<WorkforceIntegration>>("workforceIntegrations"); }
@@ -47,6 +52,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"deletedTeams", n => { DeletedTeams = n.GetCollectionOfObjectValues<DeletedTeam>(DeletedTeam.CreateFromDiscriminatorValue).ToList(); } },
                 {"devices", n => { Devices = n.GetCollectionOfObjectValues<TeamworkDevice>(TeamworkDevice.CreateFromDiscriminatorValue).ToList(); } },
                 {"teamsAppSettings", n => { TeamsAppSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.TeamsAppSettings>(Microsoft.Graph.Beta.Models.TeamsAppSettings.CreateFromDiscriminatorValue); } },
+                {"teamTemplates", n => { TeamTemplates = n.GetCollectionOfObjectValues<TeamTemplate>(TeamTemplate.CreateFromDiscriminatorValue).ToList(); } },
                 {"workforceIntegrations", n => { WorkforceIntegrations = n.GetCollectionOfObjectValues<WorkforceIntegration>(WorkforceIntegration.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
@@ -60,6 +66,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfObjectValues<DeletedTeam>("deletedTeams", DeletedTeams);
             writer.WriteCollectionOfObjectValues<TeamworkDevice>("devices", Devices);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.TeamsAppSettings>("teamsAppSettings", TeamsAppSettings);
+            writer.WriteCollectionOfObjectValues<TeamTemplate>("teamTemplates", TeamTemplates);
             writer.WriteCollectionOfObjectValues<WorkforceIntegration>("workforceIntegrations", WorkforceIntegrations);
         }
     }

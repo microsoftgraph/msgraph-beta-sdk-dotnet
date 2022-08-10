@@ -18,17 +18,17 @@ namespace Microsoft.Graph.Beta.Models.Security {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The downgradeJustification property</summary>
+        /// <summary>The downgrade justification object that indicates if downgrade was justified and, if so, the reason.</summary>
         public Microsoft.Graph.Beta.Models.Security.DowngradeJustification DowngradeJustification {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.DowngradeJustification>("downgradeJustification"); }
             set { BackingStore?.Set("downgradeJustification", value); }
         }
-        /// <summary>The extendedProperties property</summary>
+        /// <summary>Extended properties will be parsed and returned in the standard Microsoft Purview Information Protection labeled metadata format as part of the label information.</summary>
         public List<KeyValuePair> ExtendedProperties {
             get { return BackingStore?.Get<List<KeyValuePair>>("extendedProperties"); }
             set { BackingStore?.Set("extendedProperties", value); }
         }
-        /// <summary>The labelId property</summary>
+        /// <summary>The GUID of the label that should be applied to the information.</summary>
         public string LabelId {
             get { return BackingStore?.Get<string>("labelId"); }
             set { BackingStore?.Set("labelId", value); }
