@@ -954,6 +954,17 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the GraphServiceSolutions request builder.
+        /// </summary>
+        public virtual ISolutionsRootRequestBuilder Solutions
+        {
+            get
+            {
+                return new SolutionsRootRequestBuilder(this.BaseUrl + "/solutions", this);
+            }
+        }
+    
+        /// <summary>
         /// Gets the GraphServiceDeviceManagement request builder.
         /// </summary>
         public virtual IDeviceManagementRequestBuilder DeviceManagement
@@ -1115,6 +1126,17 @@ namespace Microsoft.Graph
             get
             {
                 return new TenantRelationshipRequestBuilder(this.BaseUrl + "/tenantRelationships", this);
+            }
+        }
+    
+        /// <summary>
+        /// Gets the GraphServiceAdmin request builder.
+        /// </summary>
+        public virtual IAdminRequestBuilder Admin
+        {
+            get
+            {
+                return new AdminRequestBuilder(this.BaseUrl + "/admin", this);
             }
         }
     
@@ -1313,17 +1335,6 @@ namespace Microsoft.Graph
             get
             {
                 return new EmployeeExperienceRequestBuilder(this.BaseUrl + "/employeeExperience", this);
-            }
-        }
-    
-        /// <summary>
-        /// Gets the GraphServiceAdmin request builder.
-        /// </summary>
-        public virtual IAdminRequestBuilder Admin
-        {
-            get
-            {
-                return new AdminRequestBuilder(this.BaseUrl + "/admin", this);
             }
         }
     

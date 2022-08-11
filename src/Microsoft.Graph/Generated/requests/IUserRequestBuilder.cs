@@ -56,6 +56,12 @@ namespace Microsoft.Graph
         IInformationProtectionRequestBuilder InformationProtection { get; }
 
         /// <summary>
+        /// Gets the request builder for AppRoleAssignedResources.
+        /// </summary>
+        /// <returns>The <see cref="IUserAppRoleAssignedResourcesCollectionWithReferencesRequestBuilder"/>.</returns>
+        IUserAppRoleAssignedResourcesCollectionWithReferencesRequestBuilder AppRoleAssignedResources { get; }
+
+        /// <summary>
         /// Gets the request builder for AppRoleAssignments.
         /// </summary>
         /// <returns>The <see cref="IUserAppRoleAssignmentsCollectionRequestBuilder"/>.</returns>

@@ -30,11 +30,25 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets or sets certificate access type.
+        /// Certificate access type. Possible values are: userApproval, specificApps, unknownFutureValue.
+        /// </summary>
+        [JsonPropertyName("certificateAccessType")]
+        public AndroidDeviceOwnerCertificateAccessType? CertificateAccessType { get; set; }
+    
+        /// <summary>
         /// Gets or sets intended purpose.
         /// Intended Purpose of the Certificate Profile - which could be Unassigned, SmimeEncryption, SmimeSigning etc. Possible values are: unassigned, smimeEncryption, smimeSigning, vpn, wifi.
         /// </summary>
         [JsonPropertyName("intendedPurpose")]
         public IntendedPurpose? IntendedPurpose { get; set; }
+    
+        /// <summary>
+        /// Gets or sets silent certificate access details.
+        /// Certificate access information. This collection can contain a maximum of 50 elements.
+        /// </summary>
+        [JsonPropertyName("silentCertificateAccessDetails")]
+        public IEnumerable<AndroidDeviceOwnerSilentCertificateAccess> SilentCertificateAccessDetails { get; set; }
     
         /// <summary>
         /// Gets or sets managed device certificate states.

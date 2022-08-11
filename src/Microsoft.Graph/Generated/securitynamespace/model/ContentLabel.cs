@@ -23,6 +23,7 @@ namespace Microsoft.Graph.SecurityNamespace
 
         /// <summary>
         /// Gets or sets assignmentMethod.
+        /// Describes whether the label was applied by an automated (standard) process or a person (privileged).
         /// </summary>
         [JsonPropertyName("assignmentMethod")]
         public AssignmentMethod? AssignmentMethod { get; set; }

@@ -22,12 +22,14 @@ namespace Microsoft.Graph.SecurityNamespace
     
         /// <summary>
         /// Gets or sets label policy settings.
+        /// Read the Microsoft Purview Information Protection policy settings for the user or organization.
         /// </summary>
         [JsonPropertyName("labelPolicySettings")]
         public InformationProtectionPolicySetting LabelPolicySettings { get; set; }
     
         /// <summary>
         /// Gets or sets sensitivity labels.
+        /// Read the Microsoft Purview Information Protection labels for the user or organization.
         /// </summary>
         [JsonPropertyName("sensitivityLabels")]
         public IInformationProtectionSensitivityLabelsCollectionPage SensitivityLabels { get; set; }

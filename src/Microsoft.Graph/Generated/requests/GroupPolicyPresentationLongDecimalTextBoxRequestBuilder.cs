@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type GroupPolicyPresentationLongDecimalTextBoxRequestBuilder.
     /// </summary>
-    public partial class GroupPolicyPresentationLongDecimalTextBoxRequestBuilder : GroupPolicyPresentationRequestBuilder, IGroupPolicyPresentationLongDecimalTextBoxRequestBuilder
+    public partial class GroupPolicyPresentationLongDecimalTextBoxRequestBuilder : GroupPolicyUploadedPresentationRequestBuilder, IGroupPolicyPresentationLongDecimalTextBoxRequestBuilder
     {
 
         /// <summary>

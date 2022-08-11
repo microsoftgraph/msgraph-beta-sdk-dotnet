@@ -264,6 +264,12 @@ namespace Microsoft.Graph
                     // Copy the additional data collection to the page itself so that information is not lost
                     teamworkToInitialize.Devices.AdditionalData = teamworkToInitialize.AdditionalData;
                 }
+                if (teamworkToInitialize.TeamTemplates != null && teamworkToInitialize.TeamTemplates.CurrentPage != null)
+                {
+                    teamworkToInitialize.TeamTemplates.InitializeNextPageRequest(this.Client, teamworkToInitialize.TeamTemplatesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    teamworkToInitialize.TeamTemplates.AdditionalData = teamworkToInitialize.AdditionalData;
+                }
 
             }
 

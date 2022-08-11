@@ -38,6 +38,12 @@ namespace Microsoft.Graph
         IIdentityContainerApiConnectorsCollectionRequestBuilder ApiConnectors { get; }
 
         /// <summary>
+        /// Gets the request builder for AuthenticationEventListeners.
+        /// </summary>
+        /// <returns>The <see cref="IIdentityContainerAuthenticationEventListenersCollectionRequestBuilder"/>.</returns>
+        IIdentityContainerAuthenticationEventListenersCollectionRequestBuilder AuthenticationEventListeners { get; }
+
+        /// <summary>
         /// Gets the request builder for B2cUserFlows.
         /// </summary>
         /// <returns>The <see cref="IIdentityContainerB2cUserFlowsCollectionRequestBuilder"/>.</returns>
@@ -48,6 +54,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IIdentityContainerB2xUserFlowsCollectionRequestBuilder"/>.</returns>
         IIdentityContainerB2xUserFlowsCollectionRequestBuilder B2xUserFlows { get; }
+
+        /// <summary>
+        /// Gets the request builder for CustomAuthenticationExtensions.
+        /// </summary>
+        /// <returns>The <see cref="IIdentityContainerCustomAuthenticationExtensionsCollectionRequestBuilder"/>.</returns>
+        IIdentityContainerCustomAuthenticationExtensionsCollectionRequestBuilder CustomAuthenticationExtensions { get; }
 
         /// <summary>
         /// Gets the request builder for IdentityProviders.

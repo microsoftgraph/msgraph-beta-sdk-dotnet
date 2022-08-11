@@ -25,9 +25,9 @@ namespace Microsoft.Graph
         Csv = 0,
 	
         /// <summary>
-        /// Pdf
+        /// Json
         /// </summary>
-        Pdf = 1,
+        Json = 1,
 	
     }
 }

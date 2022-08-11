@@ -28,18 +28,21 @@ namespace Microsoft.Graph.SecurityNamespace
     
         /// <summary>
         /// Gets or sets is downgrade justification required.
+        /// Exposes whether justification input is required on label downgrade.
         /// </summary>
         [JsonPropertyName("isDowngradeJustificationRequired")]
         public bool? IsDowngradeJustificationRequired { get; set; }
     
         /// <summary>
         /// Gets or sets is mandatory.
+        /// Exposes whether mandatory labeling is enabled.
         /// </summary>
         [JsonPropertyName("isMandatory")]
         public bool? IsMandatory { get; set; }
     
         /// <summary>
         /// Gets or sets more info url.
+        /// Exposes the more information URL that can be configured by the administrator.
         /// </summary>
         [JsonPropertyName("moreInfoUrl")]
         public string MoreInfoUrl { get; set; }

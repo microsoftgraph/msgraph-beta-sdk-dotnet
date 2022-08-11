@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type GroupPolicyPresentationTextRequestBuilder.
     /// </summary>
-    public partial class GroupPolicyPresentationTextRequestBuilder : GroupPolicyPresentationRequestBuilder, IGroupPolicyPresentationTextRequestBuilder
+    public partial class GroupPolicyPresentationTextRequestBuilder : GroupPolicyUploadedPresentationRequestBuilder, IGroupPolicyPresentationTextRequestBuilder
     {
 
         /// <summary>

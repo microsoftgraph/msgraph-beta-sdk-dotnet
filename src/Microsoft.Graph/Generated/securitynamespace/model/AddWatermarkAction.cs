@@ -30,36 +30,42 @@ namespace Microsoft.Graph.SecurityNamespace
 
         /// <summary>
         /// Gets or sets fontColor.
+        /// Color of the font to use for the watermark.
         /// </summary>
         [JsonPropertyName("fontColor")]
         public string FontColor { get; set; }
     
         /// <summary>
         /// Gets or sets fontName.
+        /// Name of the font to use for the watermark.
         /// </summary>
         [JsonPropertyName("fontName")]
         public string FontName { get; set; }
     
         /// <summary>
         /// Gets or sets fontSize.
+        /// Font size to use for the watermark.
         /// </summary>
         [JsonPropertyName("fontSize")]
         public Int32? FontSize { get; set; }
     
         /// <summary>
         /// Gets or sets layout.
+        /// The layout of the watermark. Possible values are: horizontal, diagonal.
         /// </summary>
         [JsonPropertyName("layout")]
         public WatermarkLayout? Layout { get; set; }
     
         /// <summary>
         /// Gets or sets text.
+        /// The contents of the watermark itself.
         /// </summary>
         [JsonPropertyName("text")]
         public string Text { get; set; }
     
         /// <summary>
         /// Gets or sets uiElementName.
+        /// The name of the UI element where the watermark should be placed.
         /// </summary>
         [JsonPropertyName("uiElementName")]
         public string UiElementName { get; set; }

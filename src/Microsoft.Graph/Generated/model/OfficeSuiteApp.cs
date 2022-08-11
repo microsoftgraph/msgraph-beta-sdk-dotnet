@@ -72,6 +72,13 @@ namespace Microsoft.Graph
         public WindowsArchitecture? OfficePlatformArchitecture { get; set; }
     
         /// <summary>
+        /// Gets or sets office suite app default file format.
+        /// The property to represent the Office365 default file format type. Possible values are: notConfigured, officeOpenXMLFormat, officeOpenDocumentFormat, unknownFutureValue.
+        /// </summary>
+        [JsonPropertyName("officeSuiteAppDefaultFileFormat")]
+        public OfficeSuiteDefaultFileFormatType? OfficeSuiteAppDefaultFileFormat { get; set; }
+    
+        /// <summary>
         /// Gets or sets product ids.
         /// The Product Ids that represent the Office365 Suite SKU.
         /// </summary>

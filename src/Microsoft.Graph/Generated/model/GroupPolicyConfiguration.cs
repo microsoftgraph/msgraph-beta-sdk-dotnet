@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Group Policy Configuration.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<GroupPolicyConfiguration>))]
     public partial class GroupPolicyConfiguration : Entity
     {
     
@@ -47,6 +48,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("lastModifiedDateTime")]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets policy configuration ingestion type.
+        /// Type of definitions configured for this policy. Possible values are: unknown, custom, builtIn, mixed, unknownFutureValue.
+        /// </summary>
+        [JsonPropertyName("policyConfigurationIngestionType")]
+        public GroupPolicyConfigurationIngestionType? PolicyConfigurationIngestionType { get; set; }
     
         /// <summary>
         /// Gets or sets role scope tag ids.

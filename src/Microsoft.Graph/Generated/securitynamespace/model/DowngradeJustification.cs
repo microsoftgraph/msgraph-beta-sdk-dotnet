@@ -23,12 +23,14 @@ namespace Microsoft.Graph.SecurityNamespace
 
         /// <summary>
         /// Gets or sets isDowngradeJustified.
+        /// Indicates whether the downgrade is or is not justified.
         /// </summary>
         [JsonPropertyName("isDowngradeJustified")]
         public bool? IsDowngradeJustified { get; set; }
     
         /// <summary>
         /// Gets or sets justificationMessage.
+        /// Message that indicates why a downgrade is justified. The message will appear in administrative logs.
         /// </summary>
         [JsonPropertyName("justificationMessage")]
         public string JustificationMessage { get; set; }

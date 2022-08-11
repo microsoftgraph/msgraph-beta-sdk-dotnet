@@ -29,6 +29,7 @@ namespace Microsoft.Graph.SecurityNamespace
 
         /// <summary>
         /// Gets or sets templateId.
+        /// The unique identifier for a protection template in Microsoft Purview Information Protection to apply to the content.
         /// </summary>
         [JsonPropertyName("templateId")]
         public string TemplateId { get; set; }

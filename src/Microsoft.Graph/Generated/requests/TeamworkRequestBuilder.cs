@@ -97,6 +97,18 @@ namespace Microsoft.Graph
                 return new TeamsAppSettingsRequestBuilder(this.AppendSegmentToRequestUrl("teamsAppSettings"), this.Client);
             }
         }
+
+        /// <summary>
+        /// Gets the request builder for TeamTemplates.
+        /// </summary>
+        /// <returns>The <see cref="ITeamworkTeamTemplatesCollectionRequestBuilder"/>.</returns>
+        public ITeamworkTeamTemplatesCollectionRequestBuilder TeamTemplates
+        {
+            get
+            {
+                return new TeamworkTeamTemplatesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("teamTemplates"), this.Client);
+            }
+        }
     
         /// <summary>
         /// Gets the request builder for TeamworkSendActivityNotificationToRecipients.

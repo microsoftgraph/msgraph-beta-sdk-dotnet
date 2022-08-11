@@ -106,6 +106,19 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for ManagedDeviceDownloadAppDiagnostics.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceDownloadAppDiagnosticsRequestBuilder"/>.</returns>
+        public IManagedDeviceDownloadAppDiagnosticsRequestBuilder DownloadAppDiagnostics(
+            PowerliftDownloadRequestObject request = null)
+        {
+            return new ManagedDeviceDownloadAppDiagnosticsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.downloadAppDiagnostics"),
+                this.Client,
+                request);
+        }
+
+        /// <summary>
         /// Gets the request builder for ManagedDeviceExecuteAction.
         /// </summary>
         /// <returns>The <see cref="IManagedDeviceExecuteActionRequestBuilder"/>.</returns>
@@ -151,6 +164,19 @@ namespace Microsoft.Graph
                 this.Client,
                 deviceIds,
                 organizationalUnitPath);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ManagedDeviceAppDiagnostics.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceAppDiagnosticsRequestBuilder"/>.</returns>
+        public IManagedDeviceAppDiagnosticsRequestBuilder AppDiagnostics(
+            string upn = null)
+        {
+            return new ManagedDeviceAppDiagnosticsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.appDiagnostics"),
+                this.Client,
+                upn);
         }
     }
 }

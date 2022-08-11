@@ -258,6 +258,12 @@ namespace Microsoft.Graph
                     // Copy the additional data collection to the page itself so that information is not lost
                     userToInitialize.UsageRights.AdditionalData = userToInitialize.AdditionalData;
                 }
+                if (userToInitialize.AppRoleAssignedResources != null && userToInitialize.AppRoleAssignedResources.CurrentPage != null)
+                {
+                    userToInitialize.AppRoleAssignedResources.InitializeNextPageRequest(this.Client, userToInitialize.AppRoleAssignedResourcesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    userToInitialize.AppRoleAssignedResources.AdditionalData = userToInitialize.AdditionalData;
+                }
                 if (userToInitialize.AppRoleAssignments != null && userToInitialize.AppRoleAssignments.CurrentPage != null)
                 {
                     userToInitialize.AppRoleAssignments.InitializeNextPageRequest(this.Client, userToInitialize.AppRoleAssignmentsNextLink);

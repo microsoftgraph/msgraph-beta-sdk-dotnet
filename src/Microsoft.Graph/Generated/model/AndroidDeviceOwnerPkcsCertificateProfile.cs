@@ -30,6 +30,13 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets or sets certificate access type.
+        /// Certificate access type. Possible values are: userApproval, specificApps, unknownFutureValue.
+        /// </summary>
+        [JsonPropertyName("certificateAccessType")]
+        public AndroidDeviceOwnerCertificateAccessType? CertificateAccessType { get; set; }
+    
+        /// <summary>
         /// Gets or sets certificate store.
         /// Target store certificate. Possible values are: user, machine.
         /// </summary>
@@ -70,6 +77,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("customSubjectAlternativeNames")]
         public IEnumerable<CustomSubjectAlternativeName> CustomSubjectAlternativeNames { get; set; }
+    
+        /// <summary>
+        /// Gets or sets silent certificate access details.
+        /// Certificate access information. This collection can contain a maximum of 50 elements.
+        /// </summary>
+        [JsonPropertyName("silentCertificateAccessDetails")]
+        public IEnumerable<AndroidDeviceOwnerSilentCertificateAccess> SilentCertificateAccessDetails { get; set; }
     
         /// <summary>
         /// Gets or sets subject alternative name format string.

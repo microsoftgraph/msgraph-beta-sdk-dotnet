@@ -25,9 +25,14 @@ namespace Microsoft.Graph
         CancelRetire = 0,
 	
         /// <summary>
-        /// Comfirm Retire
+        /// Confirm Retire
         /// </summary>
-        ComfirmRetire = 1,
+        ConfirmRetire = 1,
+	
+        /// <summary>
+        /// Unknown Future Value
+        /// </summary>
+        UnknownFutureValue = 2,
 	
     }
 }

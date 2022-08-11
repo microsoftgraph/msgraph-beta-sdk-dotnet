@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IGroupPolicyPresentationDecimalTextBoxRequestBuilder.
     /// </summary>
-    public partial interface IGroupPolicyPresentationDecimalTextBoxRequestBuilder : IGroupPolicyPresentationRequestBuilder
+    public partial interface IGroupPolicyPresentationDecimalTextBoxRequestBuilder : IGroupPolicyUploadedPresentationRequestBuilder
     {
         /// <summary>
         /// Builds the request.

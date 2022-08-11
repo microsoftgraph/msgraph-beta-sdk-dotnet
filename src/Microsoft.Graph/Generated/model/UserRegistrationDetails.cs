@@ -30,6 +30,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets is admin.
+        /// Whether the user has an admin role in the tenant. This value can be used to check the authentication methods that privileged accounts are registered for and capable of.
         /// </summary>
         [JsonPropertyName("isAdmin")]
         public bool? IsAdmin { get; set; }
@@ -99,6 +100,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets user type.
+        /// Identifies whether the user is a member or guest in the tenant. The possible values are: member, guest, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("userType")]
         public SignInUserType? UserType { get; set; }

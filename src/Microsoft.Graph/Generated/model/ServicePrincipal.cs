@@ -386,6 +386,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets federated identity credentials.
+        /// Federated identities for a specific type of service principal - managed identity. Supports $expand and $filter (eq when counting empty collections).
         /// </summary>
         [JsonPropertyName("federatedIdentityCredentials")]
         public IServicePrincipalFederatedIdentityCredentialsCollectionPage FederatedIdentityCredentials { get; set; }

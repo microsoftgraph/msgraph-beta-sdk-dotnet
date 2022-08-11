@@ -63,6 +63,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for AuthenticationEventListeners.
+        /// </summary>
+        /// <returns>The <see cref="IIdentityContainerAuthenticationEventListenersCollectionRequestBuilder"/>.</returns>
+        public IIdentityContainerAuthenticationEventListenersCollectionRequestBuilder AuthenticationEventListeners
+        {
+            get
+            {
+                return new IdentityContainerAuthenticationEventListenersCollectionRequestBuilder(this.AppendSegmentToRequestUrl("authenticationEventListeners"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for B2cUserFlows.
         /// </summary>
         /// <returns>The <see cref="IIdentityContainerB2cUserFlowsCollectionRequestBuilder"/>.</returns>
@@ -83,6 +95,18 @@ namespace Microsoft.Graph
             get
             {
                 return new IdentityContainerB2xUserFlowsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("b2xUserFlows"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for CustomAuthenticationExtensions.
+        /// </summary>
+        /// <returns>The <see cref="IIdentityContainerCustomAuthenticationExtensionsCollectionRequestBuilder"/>.</returns>
+        public IIdentityContainerCustomAuthenticationExtensionsCollectionRequestBuilder CustomAuthenticationExtensions
+        {
+            get
+            {
+                return new IdentityContainerCustomAuthenticationExtensionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("customAuthenticationExtensions"), this.Client);
             }
         }
 

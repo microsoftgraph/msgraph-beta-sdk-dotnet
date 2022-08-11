@@ -22,6 +22,13 @@ namespace Microsoft.Graph.ExternalConnectors
     {
     
         /// <summary>
+        /// Gets or sets activity settings.
+        /// Collects configurable settings related to activities involving connector content.
+        /// </summary>
+        [JsonPropertyName("activitySettings")]
+        public ActivitySettings ActivitySettings { get; set; }
+    
+        /// <summary>
         /// Gets or sets compliance settings.
         /// </summary>
         [JsonPropertyName("complianceSettings")]

@@ -29,12 +29,14 @@ namespace Microsoft.Graph.SecurityNamespace
 
         /// <summary>
         /// Gets or sets name.
+        /// Name of the custom action.
         /// </summary>
         [JsonPropertyName("name")]
         public string Name { get; set; }
     
         /// <summary>
         /// Gets or sets properties.
+        /// Properties, in key-value pair format, of the action.
         /// </summary>
         [JsonPropertyName("properties")]
         public IEnumerable<KeyValuePair> Properties { get; set; }

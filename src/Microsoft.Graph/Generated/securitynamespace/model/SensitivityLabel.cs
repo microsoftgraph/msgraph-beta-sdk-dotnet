@@ -22,60 +22,70 @@ namespace Microsoft.Graph.SecurityNamespace
     
         /// <summary>
         /// Gets or sets color.
+        /// The color that the UI should display for the label, if configured.
         /// </summary>
         [JsonPropertyName("color")]
         public string Color { get; set; }
     
         /// <summary>
         /// Gets or sets content formats.
+        /// Returns the supported content formats for the label.
         /// </summary>
         [JsonPropertyName("contentFormats")]
         public IEnumerable<string> ContentFormats { get; set; }
     
         /// <summary>
         /// Gets or sets description.
+        /// The admin-defined description for the label.
         /// </summary>
         [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets has protection.
+        /// Indicates whether the label has protection actions configured.
         /// </summary>
         [JsonPropertyName("hasProtection")]
         public bool? HasProtection { get; set; }
     
         /// <summary>
         /// Gets or sets is active.
+        /// Indicates whether the label is active or not. Active labels should be hidden or disabled in the UI.
         /// </summary>
         [JsonPropertyName("isActive")]
         public bool? IsActive { get; set; }
     
         /// <summary>
         /// Gets or sets is appliable.
+        /// Indicates whether the label can be applied to content. False if the label is a parent with child labels.
         /// </summary>
         [JsonPropertyName("isAppliable")]
         public bool? IsAppliable { get; set; }
     
         /// <summary>
         /// Gets or sets name.
+        /// The plaintext name of the label.
         /// </summary>
         [JsonPropertyName("name")]
         public string Name { get; set; }
     
         /// <summary>
         /// Gets or sets sensitivity.
+        /// The sensitivity value of the label, where lower is less sensitive.
         /// </summary>
         [JsonPropertyName("sensitivity")]
         public Int32? Sensitivity { get; set; }
     
         /// <summary>
         /// Gets or sets tooltip.
+        /// The tooltip that should be displayed for the label in a UI.
         /// </summary>
         [JsonPropertyName("tooltip")]
         public string Tooltip { get; set; }
     
         /// <summary>
         /// Gets or sets parent.
+        /// The parent label associated with a child label. Null if the label has no parent.
         /// </summary>
         [JsonPropertyName("parent")]
         public SensitivityLabel Parent { get; set; }

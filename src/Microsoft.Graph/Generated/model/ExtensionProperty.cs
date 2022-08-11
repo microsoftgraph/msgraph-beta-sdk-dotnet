@@ -51,7 +51,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets name.
-        /// Name of the extension property. Not nullable.
+        /// Name of the extension property. Not nullable. Supports $filter (eq).
         /// </summary>
         [JsonPropertyName("name")]
         public string Name { get; set; }

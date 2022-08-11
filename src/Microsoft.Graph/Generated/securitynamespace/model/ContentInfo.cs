@@ -23,24 +23,28 @@ namespace Microsoft.Graph.SecurityNamespace
 
         /// <summary>
         /// Gets or sets contentFormat.
+        /// The format of the content to be labeled. Possible values are: file, email.
         /// </summary>
         [JsonPropertyName("contentFormat")]
         public string ContentFormat { get; set; }
     
         /// <summary>
         /// Gets or sets identifier.
+        /// Identifier used for Azure Information Protection Analytics.
         /// </summary>
         [JsonPropertyName("identifier")]
         public string Identifier { get; set; }
     
         /// <summary>
         /// Gets or sets metadata.
+        /// Existing Microsoft Purview Information Protection metadata is passed as key-value pairs, where the key is the MSIP_Label_GUID_PropName.
         /// </summary>
         [JsonPropertyName("metadata")]
         public IEnumerable<KeyValuePair> Metadata { get; set; }
     
         /// <summary>
         /// Gets or sets state.
+        /// The usage state of the content. The possible values are: rest, motion, or use.
         /// </summary>
         [JsonPropertyName("state")]
         public ContentState? State { get; set; }

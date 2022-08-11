@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface IGroupPolicyPresentationTextBoxRequestBuilder.
     /// </summary>
-    public partial interface IGroupPolicyPresentationTextBoxRequestBuilder : IGroupPolicyPresentationRequestBuilder
+    public partial interface IGroupPolicyPresentationTextBoxRequestBuilder : IGroupPolicyUploadedPresentationRequestBuilder
     {
         /// <summary>
         /// Builds the request.

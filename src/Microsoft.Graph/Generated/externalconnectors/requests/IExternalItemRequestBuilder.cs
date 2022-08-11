@@ -31,5 +31,18 @@ namespace Microsoft.Graph.ExternalConnectors
         /// <returns>The built request.</returns>
         new IExternalItemRequest Request(IEnumerable<Microsoft.Graph.Option> options);
     
+        /// <summary>
+        /// Gets the request builder for Activities.
+        /// </summary>
+        /// <returns>The <see cref="IExternalItemActivitiesCollectionRequestBuilder"/>.</returns>
+        IExternalItemActivitiesCollectionRequestBuilder Activities { get; }
+    
+        /// <summary>
+        /// Gets the request builder for ExternalItemAddActivities.
+        /// </summary>
+        /// <returns>The <see cref="IExternalItemAddActivitiesRequestBuilder"/>.</returns>
+        IExternalItemAddActivitiesRequestBuilder AddActivities(
+            IEnumerable<ExternalActivity> activities);
+    
     }
 }

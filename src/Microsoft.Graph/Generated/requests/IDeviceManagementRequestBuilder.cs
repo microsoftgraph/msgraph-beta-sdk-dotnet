@@ -842,6 +842,18 @@ namespace Microsoft.Graph
         IDeviceManagementConfigManagerCollectionsCollectionRequestBuilder ConfigManagerCollections { get; }
 
         /// <summary>
+        /// Gets the request builder for OrganizationalMessageDetails.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementOrganizationalMessageDetailsCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementOrganizationalMessageDetailsCollectionRequestBuilder OrganizationalMessageDetails { get; }
+
+        /// <summary>
+        /// Gets the request builder for OrganizationalMessageGuidedContents.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementOrganizationalMessageGuidedContentsCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementOrganizationalMessageGuidedContentsCollectionRequestBuilder OrganizationalMessageGuidedContents { get; }
+
+        /// <summary>
         /// Gets the request builder for ResourceOperations.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementResourceOperationsCollectionRequestBuilder"/>.</returns>

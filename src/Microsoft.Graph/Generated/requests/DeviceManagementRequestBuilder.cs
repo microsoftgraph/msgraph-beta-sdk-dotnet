@@ -1671,6 +1671,30 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for OrganizationalMessageDetails.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementOrganizationalMessageDetailsCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementOrganizationalMessageDetailsCollectionRequestBuilder OrganizationalMessageDetails
+        {
+            get
+            {
+                return new DeviceManagementOrganizationalMessageDetailsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("organizationalMessageDetails"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for OrganizationalMessageGuidedContents.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementOrganizationalMessageGuidedContentsCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementOrganizationalMessageGuidedContentsCollectionRequestBuilder OrganizationalMessageGuidedContents
+        {
+            get
+            {
+                return new DeviceManagementOrganizationalMessageGuidedContentsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("organizationalMessageGuidedContents"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for ResourceOperations.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementResourceOperationsCollectionRequestBuilder"/>.</returns>
