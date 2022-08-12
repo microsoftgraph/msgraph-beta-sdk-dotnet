@@ -1,0 +1,45 @@
+using Microsoft.Kiota.Abstractions.Serialization;
+using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+namespace Microsoft.Graph.Beta.Models {
+    public class HttpRequestEndpoint : CustomExtensionEndpointConfiguration, IParsable {
+        /// <summary>The targetUrl property</summary>
+        public string TargetUrl {
+            get { return BackingStore?.Get<string>("targetUrl"); }
+            set { BackingStore?.Set("targetUrl", value); }
+        }
+        /// <summary>
+        /// Instantiates a new HttpRequestEndpoint and sets the default values.
+        /// </summary>
+        public HttpRequestEndpoint() : base() {
+            OdataType = "#microsoft.graph.httpRequestEndpoint";
+        }
+        /// <summary>
+        /// Creates a new instance of the appropriate class based on discriminator value
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
+        /// </summary>
+        public static new HttpRequestEndpoint CreateFromDiscriminatorValue(IParseNode parseNode) {
+            _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
+            return new HttpRequestEndpoint();
+        }
+        /// <summary>
+        /// The deserialization information for the current model
+        /// </summary>
+        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"targetUrl", n => { TargetUrl = n.GetStringValue(); } },
+            };
+        }
+        /// <summary>
+        /// Serializes information the current object
+        /// <param name="writer">Serialization writer to use to serialize this model</param>
+        /// </summary>
+        public new void Serialize(ISerializationWriter writer) {
+            _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            base.Serialize(writer);
+            writer.WriteStringValue("targetUrl", TargetUrl);
+        }
+    }
+}

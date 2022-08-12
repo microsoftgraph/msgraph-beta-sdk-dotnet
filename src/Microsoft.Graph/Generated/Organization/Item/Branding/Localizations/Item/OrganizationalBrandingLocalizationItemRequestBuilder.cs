@@ -4,6 +4,7 @@ using Microsoft.Graph.Beta.Organization.Item.Branding.Localizations.Item.Backgro
 using Microsoft.Graph.Beta.Organization.Item.Branding.Localizations.Item.BannerLogo;
 using Microsoft.Graph.Beta.Organization.Item.Branding.Localizations.Item.Favicon;
 using Microsoft.Graph.Beta.Organization.Item.Branding.Localizations.Item.SquareLogo;
+using Microsoft.Graph.Beta.Organization.Item.Branding.Localizations.Item.SquareLogoDark;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -34,6 +35,10 @@ namespace Microsoft.Graph.Beta.Organization.Item.Branding.Localizations.Item {
         /// <summary>The squareLogo property</summary>
         public SquareLogoRequestBuilder SquareLogo { get =>
             new SquareLogoRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The squareLogoDark property</summary>
+        public SquareLogoDarkRequestBuilder SquareLogoDark { get =>
+            new SquareLogoDarkRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }

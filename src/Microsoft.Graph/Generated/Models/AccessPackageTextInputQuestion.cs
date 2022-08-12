@@ -10,6 +10,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("isSingleLineQuestion"); }
             set { BackingStore?.Set("isSingleLineQuestion", value); }
         }
+        /// <summary>The regexPattern property</summary>
+        public string RegexPattern {
+            get { return BackingStore?.Get<string>("regexPattern"); }
+            set { BackingStore?.Set("regexPattern", value); }
+        }
         /// <summary>
         /// Instantiates a new AccessPackageTextInputQuestion and sets the default values.
         /// </summary>
@@ -30,6 +35,7 @@ namespace Microsoft.Graph.Beta.Models {
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"isSingleLineQuestion", n => { IsSingleLineQuestion = n.GetBoolValue(); } },
+                {"regexPattern", n => { RegexPattern = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -40,6 +46,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteBoolValue("isSingleLineQuestion", IsSingleLineQuestion);
+            writer.WriteStringValue("regexPattern", RegexPattern);
         }
     }
 }

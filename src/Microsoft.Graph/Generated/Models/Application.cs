@@ -4,13 +4,14 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Casts the previous resource to application.</summary>
     public class Application : DirectoryObject, IParsable {
         /// <summary>Specifies settings for an application that implements a web API.</summary>
         public ApiApplication Api {
             get { return BackingStore?.Get<ApiApplication>("api"); }
             set { BackingStore?.Set("api", value); }
         }
-        /// <summary>The unique identifier for the application that is assigned by Azure AD. Not nullable. Read-only.</summary>
+        /// <summary>The unique identifier for the application that is assigned by Azure AD. Not nullable. Read-only. Supports $filter (eq).</summary>
         public string AppId {
             get { return BackingStore?.Get<string>("appId"); }
             set { BackingStore?.Set("appId", value); }
@@ -40,7 +41,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>The createdOnBehalfOf property</summary>
+        /// <summary>Supports $filter (eq when counting empty collections). Read-only.</summary>
         public DirectoryObject CreatedOnBehalfOf {
             get { return BackingStore?.Get<DirectoryObject>("createdOnBehalfOf"); }
             set { BackingStore?.Set("createdOnBehalfOf", value); }
@@ -65,7 +66,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
-        /// <summary>Read-only. Nullable. Supports $expand and $filter (eq when counting empty collections).</summary>
+        /// <summary>Read-only. Nullable. Supports $expand and $filter (eq and ne when counting empty collections and only with advanced query parameters).</summary>
         public List<ExtensionProperty> ExtensionProperties {
             get { return BackingStore?.Get<List<ExtensionProperty>>("extensionProperties"); }
             set { BackingStore?.Set("extensionProperties", value); }
@@ -130,7 +131,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OptionalClaims>("optionalClaims"); }
             set { BackingStore?.Set("optionalClaims", value); }
         }
-        /// <summary>Directory objects that are owners of the application. Read-only. Nullable. Supports $expand.</summary>
+        /// <summary>Directory objects that are owners of the application. Read-only. Nullable. Supports $expand and $filter (eq when counting empty collections).</summary>
         public List<DirectoryObject> Owners {
             get { return BackingStore?.Get<List<DirectoryObject>>("owners"); }
             set { BackingStore?.Set("owners", value); }
@@ -154,6 +155,11 @@ namespace Microsoft.Graph.Beta.Models {
         public string PublisherDomain {
             get { return BackingStore?.Get<string>("publisherDomain"); }
             set { BackingStore?.Set("publisherDomain", value); }
+        }
+        /// <summary>The requestSignatureVerification property</summary>
+        public Microsoft.Graph.Beta.Models.RequestSignatureVerification RequestSignatureVerification {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RequestSignatureVerification>("requestSignatureVerification"); }
+            set { BackingStore?.Set("requestSignatureVerification", value); }
         }
         /// <summary>Specifies the resources that the application needs to access. This property also specifies the set of delegated permissions and application roles that it needs for each of those resources. This configuration of access to the required resources drives the consent experience. No more than 50 resource services (APIs) can be configured. Beginning mid-October 2021, the total number of required permissions must not exceed 400. Not nullable. Supports $filter (eq, not, ge, le).</summary>
         public List<Microsoft.Graph.Beta.Models.RequiredResourceAccess> RequiredResourceAccess {
@@ -226,7 +232,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("windows", value); }
         }
         /// <summary>
-        /// Instantiates a new Application and sets the default values.
+        /// Instantiates a new application and sets the default values.
         /// </summary>
         public Application() : base() {
             OdataType = "#microsoft.graph.application";
@@ -274,6 +280,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"passwordCredentials", n => { PasswordCredentials = n.GetCollectionOfObjectValues<PasswordCredential>(PasswordCredential.CreateFromDiscriminatorValue).ToList(); } },
                 {"publicClient", n => { PublicClient = n.GetObjectValue<PublicClientApplication>(PublicClientApplication.CreateFromDiscriminatorValue); } },
                 {"publisherDomain", n => { PublisherDomain = n.GetStringValue(); } },
+                {"requestSignatureVerification", n => { RequestSignatureVerification = n.GetObjectValue<Microsoft.Graph.Beta.Models.RequestSignatureVerification>(Microsoft.Graph.Beta.Models.RequestSignatureVerification.CreateFromDiscriminatorValue); } },
                 {"requiredResourceAccess", n => { RequiredResourceAccess = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.RequiredResourceAccess>(Microsoft.Graph.Beta.Models.RequiredResourceAccess.CreateFromDiscriminatorValue).ToList(); } },
                 {"samlMetadataUrl", n => { SamlMetadataUrl = n.GetStringValue(); } },
                 {"serviceManagementReference", n => { ServiceManagementReference = n.GetStringValue(); } },
@@ -327,6 +334,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfObjectValues<PasswordCredential>("passwordCredentials", PasswordCredentials);
             writer.WriteObjectValue<PublicClientApplication>("publicClient", PublicClient);
             writer.WriteStringValue("publisherDomain", PublisherDomain);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.RequestSignatureVerification>("requestSignatureVerification", RequestSignatureVerification);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.RequiredResourceAccess>("requiredResourceAccess", RequiredResourceAccess);
             writer.WriteStringValue("samlMetadataUrl", SamlMetadataUrl);
             writer.WriteStringValue("serviceManagementReference", ServiceManagementReference);

@@ -5,12 +5,12 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
     public class MetadataAction : InformationProtectionAction, IParsable {
-        /// <summary>The metadataToAdd property</summary>
+        /// <summary>A collection of key-value pairs that should be added to the file.</summary>
         public List<KeyValuePair> MetadataToAdd {
             get { return BackingStore?.Get<List<KeyValuePair>>("metadataToAdd"); }
             set { BackingStore?.Set("metadataToAdd", value); }
         }
-        /// <summary>The metadataToRemove property</summary>
+        /// <summary>A collection of strings that indicate which keys to remove from the file metadata.</summary>
         public List<string> MetadataToRemove {
             get { return BackingStore?.Get<List<string>>("metadataToRemove"); }
             set { BackingStore?.Set("metadataToRemove", value); }

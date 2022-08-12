@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Entity that encapsulates all information required for a user&apos;s PFX certificates.</summary>
     public class UserPFXCertificate : Entity, IParsable {
         /// <summary>Date/time when this PFX certificate was imported.</summary>
         public DateTimeOffset? CreatedDateTime {
@@ -66,7 +67,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("userPrincipalName", value); }
         }
         /// <summary>
-        /// Instantiates a new UserPFXCertificate and sets the default values.
+        /// Instantiates a new userPFXCertificate and sets the default values.
         /// </summary>
         public UserPFXCertificate() : base() {
             OdataType = "#microsoft.graph.userPFXCertificate";

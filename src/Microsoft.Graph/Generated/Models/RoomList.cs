@@ -15,6 +15,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<Room>>("rooms"); }
             set { BackingStore?.Set("rooms", value); }
         }
+        /// <summary>The workspaces property</summary>
+        public List<Workspace> Workspaces {
+            get { return BackingStore?.Get<List<Workspace>>("workspaces"); }
+            set { BackingStore?.Set("workspaces", value); }
+        }
         /// <summary>
         /// Instantiates a new RoomList and sets the default values.
         /// </summary>
@@ -36,6 +41,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"emailAddress", n => { EmailAddress = n.GetStringValue(); } },
                 {"rooms", n => { Rooms = n.GetCollectionOfObjectValues<Room>(Room.CreateFromDiscriminatorValue).ToList(); } },
+                {"workspaces", n => { Workspaces = n.GetCollectionOfObjectValues<Workspace>(Workspace.CreateFromDiscriminatorValue).ToList(); } },
             };
         }
         /// <summary>
@@ -47,6 +53,7 @@ namespace Microsoft.Graph.Beta.Models {
             base.Serialize(writer);
             writer.WriteStringValue("emailAddress", EmailAddress);
             writer.WriteCollectionOfObjectValues<Room>("rooms", Rooms);
+            writer.WriteCollectionOfObjectValues<Workspace>("workspaces", Workspaces);
         }
     }
 }

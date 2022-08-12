@@ -5,42 +5,42 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class LearningProvider : Entity, IParsable {
-        /// <summary>The displayName property</summary>
+        /// <summary>The display name that appears in Viva Learning. Required.</summary>
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
-        /// <summary>The isEnabled property</summary>
+        /// <summary>The state of the provider. Optional.</summary>
         public bool? IsEnabled {
             get { return BackingStore?.Get<bool?>("isEnabled"); }
             set { BackingStore?.Set("isEnabled", value); }
         }
-        /// <summary>The learningContents property</summary>
+        /// <summary>Learning catalog items for the provider.</summary>
         public List<LearningContent> LearningContents {
             get { return BackingStore?.Get<List<LearningContent>>("learningContents"); }
             set { BackingStore?.Set("learningContents", value); }
         }
-        /// <summary>The loginWebUrl property</summary>
+        /// <summary>Authentication URL to access the courses for the provider. Optional.</summary>
         public string LoginWebUrl {
             get { return BackingStore?.Get<string>("loginWebUrl"); }
             set { BackingStore?.Set("loginWebUrl", value); }
         }
-        /// <summary>The longLogoWebUrlForDarkTheme property</summary>
+        /// <summary>The long logo URL for the dark mode, which needs to be a publicly accessible image. This image would be saved to the Blob storage of Viva Learning for rendering within the Viva Learning app. Required.</summary>
         public string LongLogoWebUrlForDarkTheme {
             get { return BackingStore?.Get<string>("longLogoWebUrlForDarkTheme"); }
             set { BackingStore?.Set("longLogoWebUrlForDarkTheme", value); }
         }
-        /// <summary>The longLogoWebUrlForLightTheme property</summary>
+        /// <summary>The long logo URL for the light mode, which needs to be a publicly accessible image. This image would be saved to the Blob storage of Viva Learning for rendering  within the Viva Learning app. Required.</summary>
         public string LongLogoWebUrlForLightTheme {
             get { return BackingStore?.Get<string>("longLogoWebUrlForLightTheme"); }
             set { BackingStore?.Set("longLogoWebUrlForLightTheme", value); }
         }
-        /// <summary>The squareLogoWebUrlForDarkTheme property</summary>
+        /// <summary>The square logo URL for the dark mode, which needs to be a publicly accessible image. This image would be saved to the Blob storage of Viva Learning for rendering within the Viva Learning app. Required.</summary>
         public string SquareLogoWebUrlForDarkTheme {
             get { return BackingStore?.Get<string>("squareLogoWebUrlForDarkTheme"); }
             set { BackingStore?.Set("squareLogoWebUrlForDarkTheme", value); }
         }
-        /// <summary>The squareLogoWebUrlForLightTheme property</summary>
+        /// <summary>The square logo URL for the light mode, which needs to be a publicly accessible image. This image would be saved to the Blob storage of Viva Learning for rendering within the Viva Learning app. Required.</summary>
         public string SquareLogoWebUrlForLightTheme {
             get { return BackingStore?.Get<string>("squareLogoWebUrlForLightTheme"); }
             set { BackingStore?.Set("squareLogoWebUrlForLightTheme", value); }

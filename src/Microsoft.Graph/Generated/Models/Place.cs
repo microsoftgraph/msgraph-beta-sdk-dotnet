@@ -43,6 +43,7 @@ namespace Microsoft.Graph.Beta.Models {
             return mappingValue switch {
                 "#microsoft.graph.room" => new Room(),
                 "#microsoft.graph.roomList" => new RoomList(),
+                "#microsoft.graph.workspace" => new Workspace(),
                 _ => new Place(),
             };
         }

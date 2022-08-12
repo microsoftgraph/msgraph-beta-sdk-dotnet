@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Ediscovery {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class Case : Entity, IParsable {
         /// <summary>The user who closed the case.</summary>
         public Microsoft.Graph.Beta.Models.IdentitySet ClosedBy {

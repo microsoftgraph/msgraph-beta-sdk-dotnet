@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ExternalPartnerS
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get externalPartnerSettings from deviceManagement
+        /// The external partner settings on a Cloud PC.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<ExternalPartnerSettingsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ExternalPartnerS
             return requestInfo;
         }
         /// <summary>
-        /// Get externalPartnerSettings from deviceManagement
+        /// The external partner settings on a Cloud PC.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -128,7 +128,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ExternalPartnerS
             };
             return await RequestAdapter.SendAsync<CloudPcExternalPartnerSetting>(requestInfo, CloudPcExternalPartnerSetting.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Get externalPartnerSettings from deviceManagement</summary>
+        /// <summary>The external partner settings on a Cloud PC.</summary>
         public class ExternalPartnerSettingsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

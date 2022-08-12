@@ -11,6 +11,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DefaultMfaMethodType?>("defaultMfaMethod"); }
             set { BackingStore?.Set("defaultMfaMethod", value); }
         }
+        /// <summary>Whether the user has an admin role in the tenant. This value can be used to check the authentication methods that privileged accounts are registered for and capable of.</summary>
+        public bool? IsAdmin {
+            get { return BackingStore?.Get<bool?>("isAdmin"); }
+            set { BackingStore?.Set("isAdmin", value); }
+        }
         /// <summary>Whether the user has registered a strong authentication method for multi-factor authentication. The method must be allowed by the authentication methods policy. Supports $filter (eq).</summary>
         public bool? IsMfaCapable {
             get { return BackingStore?.Get<bool?>("isMfaCapable"); }
@@ -56,6 +61,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
+        /// <summary>Identifies whether the user is a member or guest in the tenant. The possible values are: member, guest, unknownFutureValue.</summary>
+        public SignInUserType? UserType {
+            get { return BackingStore?.Get<SignInUserType?>("userType"); }
+            set { BackingStore?.Set("userType", value); }
+        }
         /// <summary>
         /// Instantiates a new userRegistrationDetails and sets the default values.
         /// </summary>
@@ -76,6 +86,7 @@ namespace Microsoft.Graph.Beta.Models {
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"defaultMfaMethod", n => { DefaultMfaMethod = n.GetEnumValue<DefaultMfaMethodType>(); } },
+                {"isAdmin", n => { IsAdmin = n.GetBoolValue(); } },
                 {"isMfaCapable", n => { IsMfaCapable = n.GetBoolValue(); } },
                 {"isMfaRegistered", n => { IsMfaRegistered = n.GetBoolValue(); } },
                 {"isPasswordlessCapable", n => { IsPasswordlessCapable = n.GetBoolValue(); } },
@@ -85,6 +96,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"methodsRegistered", n => { MethodsRegistered = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"userDisplayName", n => { UserDisplayName = n.GetStringValue(); } },
                 {"userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
+                {"userType", n => { UserType = n.GetEnumValue<SignInUserType>(); } },
             };
         }
         /// <summary>
@@ -95,6 +107,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteEnumValue<DefaultMfaMethodType>("defaultMfaMethod", DefaultMfaMethod);
+            writer.WriteBoolValue("isAdmin", IsAdmin);
             writer.WriteBoolValue("isMfaCapable", IsMfaCapable);
             writer.WriteBoolValue("isMfaRegistered", IsMfaRegistered);
             writer.WriteBoolValue("isPasswordlessCapable", IsPasswordlessCapable);
@@ -104,6 +117,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfPrimitiveValues<string>("methodsRegistered", MethodsRegistered);
             writer.WriteStringValue("userDisplayName", UserDisplayName);
             writer.WriteStringValue("userPrincipalName", UserPrincipalName);
+            writer.WriteEnumValue<SignInUserType>("userType", UserType);
         }
     }
 }

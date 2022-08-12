@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>The user experience analytics battery health device performance entity contains device level battery information.</summary>
     public class UserExperienceAnalyticsBatteryHealthDevicePerformance : Entity, IParsable {
         /// <summary>Estimated battery age. Unit in days. Valid values -2147483648 to 2147483647</summary>
         public int? BatteryAgeInDays {
@@ -51,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("model", value); }
         }
         /// <summary>
-        /// Instantiates a new UserExperienceAnalyticsBatteryHealthDevicePerformance and sets the default values.
+        /// Instantiates a new userExperienceAnalyticsBatteryHealthDevicePerformance and sets the default values.
         /// </summary>
         public UserExperienceAnalyticsBatteryHealthDevicePerformance() : base() {
             OdataType = "#microsoft.graph.userExperienceAnalyticsBatteryHealthDevicePerformance";

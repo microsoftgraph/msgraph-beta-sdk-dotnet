@@ -41,6 +41,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<AppConsentRequest>>("appConsentRequestsForApproval"); }
             set { BackingStore?.Set("appConsentRequestsForApproval", value); }
         }
+        /// <summary>The appRoleAssignedResources property</summary>
+        public List<ServicePrincipal> AppRoleAssignedResources {
+            get { return BackingStore?.Get<List<ServicePrincipal>>("appRoleAssignedResources"); }
+            set { BackingStore?.Set("appRoleAssignedResources", value); }
+        }
         /// <summary>Represents the app roles a user has been granted for an application. Supports $expand.</summary>
         public List<AppRoleAssignment> AppRoleAssignments {
             get { return BackingStore?.Get<List<AppRoleAssignment>>("appRoleAssignments"); }
@@ -747,6 +752,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"agreementAcceptances", n => { AgreementAcceptances = n.GetCollectionOfObjectValues<AgreementAcceptance>(AgreementAcceptance.CreateFromDiscriminatorValue).ToList(); } },
                 {"analytics", n => { Analytics = n.GetObjectValue<UserAnalytics>(UserAnalytics.CreateFromDiscriminatorValue); } },
                 {"appConsentRequestsForApproval", n => { AppConsentRequestsForApproval = n.GetCollectionOfObjectValues<AppConsentRequest>(AppConsentRequest.CreateFromDiscriminatorValue).ToList(); } },
+                {"appRoleAssignedResources", n => { AppRoleAssignedResources = n.GetCollectionOfObjectValues<ServicePrincipal>(ServicePrincipal.CreateFromDiscriminatorValue).ToList(); } },
                 {"appRoleAssignments", n => { AppRoleAssignments = n.GetCollectionOfObjectValues<AppRoleAssignment>(AppRoleAssignment.CreateFromDiscriminatorValue).ToList(); } },
                 {"approvals", n => { Approvals = n.GetCollectionOfObjectValues<Approval>(Approval.CreateFromDiscriminatorValue).ToList(); } },
                 {"assignedLicenses", n => { AssignedLicenses = n.GetCollectionOfObjectValues<AssignedLicense>(AssignedLicense.CreateFromDiscriminatorValue).ToList(); } },
@@ -899,6 +905,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfObjectValues<AgreementAcceptance>("agreementAcceptances", AgreementAcceptances);
             writer.WriteObjectValue<UserAnalytics>("analytics", Analytics);
             writer.WriteCollectionOfObjectValues<AppConsentRequest>("appConsentRequestsForApproval", AppConsentRequestsForApproval);
+            writer.WriteCollectionOfObjectValues<ServicePrincipal>("appRoleAssignedResources", AppRoleAssignedResources);
             writer.WriteCollectionOfObjectValues<AppRoleAssignment>("appRoleAssignments", AppRoleAssignments);
             writer.WriteCollectionOfObjectValues<Approval>("approvals", Approvals);
             writer.WriteCollectionOfObjectValues<AssignedLicense>("assignedLicenses", AssignedLicenses);

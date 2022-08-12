@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class GeneralLedgerEntry : Entity, IParsable {
         /// <summary>The account property</summary>
         public Microsoft.Graph.Beta.Models.Account Account {
@@ -57,7 +58,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("postingDate", value); }
         }
         /// <summary>
-        /// Instantiates a new GeneralLedgerEntry and sets the default values.
+        /// Instantiates a new generalLedgerEntry and sets the default values.
         /// </summary>
         public GeneralLedgerEntry() : base() {
             OdataType = "#microsoft.graph.generalLedgerEntry";

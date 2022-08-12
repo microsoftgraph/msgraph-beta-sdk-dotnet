@@ -1,7 +1,9 @@
+using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.AppDiagnosticsWithUpn;
 using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.BulkReprovisionCloudPc;
 using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.BulkRestoreCloudPc;
 using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.BulkSetCloudPcReviewStatus;
 using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Count;
+using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.DownloadAppDiagnostics;
 using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.ExecuteAction;
 using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item;
 using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.MoveDevicesToOU;
@@ -34,6 +36,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices {
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The downloadAppDiagnostics property</summary>
+        public DownloadAppDiagnosticsRequestBuilder DownloadAppDiagnostics { get =>
+            new DownloadAppDiagnosticsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The executeAction property</summary>
         public ExecuteActionRequestBuilder ExecuteAction { get =>
             new ExecuteActionRequestBuilder(PathParameters, RequestAdapter);
@@ -54,6 +60,14 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices {
             urlTplParams.Add("managedDevice%2Did", position);
             return new ManagedDeviceItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
+        /// <summary>
+        /// Provides operations to call the appDiagnostics method.
+        /// <param name="upn">Usage: upn=&apos;{upn}&apos;</param>
+        /// </summary>
+        public AppDiagnosticsWithUpnRequestBuilder AppDiagnosticsWithUpn(string upn) {
+            if(string.IsNullOrEmpty(upn)) throw new ArgumentNullException(nameof(upn));
+            return new AppDiagnosticsWithUpnRequestBuilder(PathParameters, RequestAdapter, upn);
+        }
         /// <summary>
         /// Instantiates a new ManagedDevicesRequestBuilder and sets the default values.
         /// <param name="pathParameters">Path parameters for the request</param>

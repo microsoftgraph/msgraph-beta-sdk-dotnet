@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the commsApplication singleton.</summary>
     public class OnlineMeeting : Entity, IParsable {
         /// <summary>Indicates whether attendees can turn on their camera.</summary>
         public bool? AllowAttendeeToEnableCamera {
@@ -155,13 +156,23 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("subject"); }
             set { BackingStore?.Set("subject", value); }
         }
+        /// <summary>The transcripts of an online meeting. Read-only.</summary>
+        public List<CallTranscript> Transcripts {
+            get { return BackingStore?.Get<List<CallTranscript>>("transcripts"); }
+            set { BackingStore?.Set("transcripts", value); }
+        }
         /// <summary>The video teleconferencing ID. Read-only.</summary>
         public string VideoTeleconferenceId {
             get { return BackingStore?.Get<string>("videoTeleconferenceId"); }
             set { BackingStore?.Set("videoTeleconferenceId", value); }
         }
+        /// <summary>The virtualAppointment property</summary>
+        public Microsoft.Graph.Beta.Models.VirtualAppointment VirtualAppointment {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.VirtualAppointment>("virtualAppointment"); }
+            set { BackingStore?.Set("virtualAppointment", value); }
+        }
         /// <summary>
-        /// Instantiates a new OnlineMeeting and sets the default values.
+        /// Instantiates a new onlineMeeting and sets the default values.
         /// </summary>
         public OnlineMeeting() : base() {
             OdataType = "#microsoft.graph.onlineMeeting";
@@ -209,7 +220,9 @@ namespace Microsoft.Graph.Beta.Models {
                 {"registration", n => { Registration = n.GetObjectValue<MeetingRegistration>(MeetingRegistration.CreateFromDiscriminatorValue); } },
                 {"startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
                 {"subject", n => { Subject = n.GetStringValue(); } },
+                {"transcripts", n => { Transcripts = n.GetCollectionOfObjectValues<CallTranscript>(CallTranscript.CreateFromDiscriminatorValue).ToList(); } },
                 {"videoTeleconferenceId", n => { VideoTeleconferenceId = n.GetStringValue(); } },
+                {"virtualAppointment", n => { VirtualAppointment = n.GetObjectValue<Microsoft.Graph.Beta.Models.VirtualAppointment>(Microsoft.Graph.Beta.Models.VirtualAppointment.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -249,7 +262,9 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteObjectValue<MeetingRegistration>("registration", Registration);
             writer.WriteDateTimeOffsetValue("startDateTime", StartDateTime);
             writer.WriteStringValue("subject", Subject);
+            writer.WriteCollectionOfObjectValues<CallTranscript>("transcripts", Transcripts);
             writer.WriteStringValue("videoTeleconferenceId", VideoTeleconferenceId);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.VirtualAppointment>("virtualAppointment", VirtualAppointment);
         }
     }
 }

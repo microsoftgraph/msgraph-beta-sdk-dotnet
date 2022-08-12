@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class TeamworkDevice : Entity, IParsable {
         /// <summary>The activity properties that change based on the device usage.</summary>
         public TeamworkDeviceActivity Activity {

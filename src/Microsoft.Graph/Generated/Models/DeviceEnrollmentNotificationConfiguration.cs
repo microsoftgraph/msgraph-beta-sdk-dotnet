@@ -20,6 +20,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("notificationMessageTemplateId"); }
             set { BackingStore?.Set("notificationMessageTemplateId", value); }
         }
+        /// <summary>The list of notification data -</summary>
+        public List<string> NotificationTemplates {
+            get { return BackingStore?.Get<List<string>>("notificationTemplates"); }
+            set { BackingStore?.Set("notificationTemplates", value); }
+        }
         /// <summary>This enum indicates the platform type for which the enrollment restriction applies.</summary>
         public EnrollmentRestrictionPlatformType? PlatformType {
             get { return BackingStore?.Get<EnrollmentRestrictionPlatformType?>("platformType"); }
@@ -52,6 +57,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"brandingOptions", n => { BrandingOptions = n.GetEnumValue<EnrollmentNotificationBrandingOptions>(); } },
                 {"defaultLocale", n => { DefaultLocale = n.GetStringValue(); } },
                 {"notificationMessageTemplateId", n => { NotificationMessageTemplateId = n.GetStringValue(); } },
+                {"notificationTemplates", n => { NotificationTemplates = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"platformType", n => { PlatformType = n.GetEnumValue<EnrollmentRestrictionPlatformType>(); } },
                 {"templateType", n => { TemplateType = n.GetEnumValue<EnrollmentNotificationTemplateType>(); } },
             };
@@ -66,6 +72,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteEnumValue<EnrollmentNotificationBrandingOptions>("brandingOptions", BrandingOptions);
             writer.WriteStringValue("defaultLocale", DefaultLocale);
             writer.WriteStringValue("notificationMessageTemplateId", NotificationMessageTemplateId);
+            writer.WriteCollectionOfPrimitiveValues<string>("notificationTemplates", NotificationTemplates);
             writer.WriteEnumValue<EnrollmentRestrictionPlatformType>("platformType", PlatformType);
             writer.WriteEnumValue<EnrollmentNotificationTemplateType>("templateType", TemplateType);
         }

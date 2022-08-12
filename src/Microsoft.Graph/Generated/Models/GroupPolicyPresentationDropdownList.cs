@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class GroupPolicyPresentationDropdownList : GroupPolicyPresentation, IParsable {
+    public class GroupPolicyPresentationDropdownList : GroupPolicyUploadedPresentation, IParsable {
         /// <summary>Localized string value identifying the default choice of the list of items.</summary>
         public GroupPolicyPresentationDropdownListItem DefaultItem {
             get { return BackingStore?.Get<GroupPolicyPresentationDropdownListItem>("defaultItem"); }

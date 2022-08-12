@@ -1,7 +1,9 @@
+using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.AppDiagnosticsWithUpn;
 using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.BulkReprovisionCloudPc;
 using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.BulkRestoreCloudPc;
 using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.BulkSetCloudPcReviewStatus;
 using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Count;
+using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.DownloadAppDiagnostics;
 using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.ExecuteAction;
 using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item;
 using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.MoveDevicesToOU;
@@ -34,6 +36,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices {
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The downloadAppDiagnostics property</summary>
+        public DownloadAppDiagnosticsRequestBuilder DownloadAppDiagnostics { get =>
+            new DownloadAppDiagnosticsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The executeAction property</summary>
         public ExecuteActionRequestBuilder ExecuteAction { get =>
             new ExecuteActionRequestBuilder(PathParameters, RequestAdapter);
@@ -54,6 +60,14 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices {
             urlTplParams.Add("managedDevice%2Did", position);
             return new ManagedDeviceItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
+        /// <summary>
+        /// Provides operations to call the appDiagnostics method.
+        /// <param name="upn">Usage: upn=&apos;{upn}&apos;</param>
+        /// </summary>
+        public AppDiagnosticsWithUpnRequestBuilder AppDiagnosticsWithUpn(string upn) {
+            if(string.IsNullOrEmpty(upn)) throw new ArgumentNullException(nameof(upn));
+            return new AppDiagnosticsWithUpnRequestBuilder(PathParameters, RequestAdapter, upn);
+        }
         /// <summary>
         /// Instantiates a new ComanagedDevicesRequestBuilder and sets the default values.
         /// <param name="pathParameters">Path parameters for the request</param>

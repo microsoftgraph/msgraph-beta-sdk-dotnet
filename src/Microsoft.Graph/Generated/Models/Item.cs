@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class Item : Entity, IParsable {
         /// <summary>The baseUnitOfMeasureId property</summary>
         public string BaseUnitOfMeasureId {
@@ -91,7 +92,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("unitPrice", value); }
         }
         /// <summary>
-        /// Instantiates a new Item and sets the default values.
+        /// Instantiates a new item and sets the default values.
         /// </summary>
         public Item() : base() {
             OdataType = "#microsoft.graph.item";

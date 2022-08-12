@@ -4,13 +4,19 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
+    /// <summary>Provides operations to manage the collection of externalConnection entities.</summary>
     public class ExternalItem : Entity, IParsable {
         /// <summary>An array of access control entries. Each entry specifies the access granted to a user or group. Required.</summary>
         public List<Microsoft.Graph.Beta.Models.ExternalConnectors.Acl> Acl {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ExternalConnectors.Acl>>("acl"); }
             set { BackingStore?.Set("acl", value); }
         }
-        /// <summary>A plain-text  representation of the contents of the item. The text in this property is full-text indexed. Optional.</summary>
+        /// <summary>Write-only property. Returns results.</summary>
+        public List<ExternalActivity> Activities {
+            get { return BackingStore?.Get<List<ExternalActivity>>("activities"); }
+            set { BackingStore?.Set("activities", value); }
+        }
+        /// <summary>A plain-text representation of the contents of the item. The text in this property is full-text indexed. Optional.</summary>
         public ExternalItemContent Content {
             get { return BackingStore?.Get<ExternalItemContent>("content"); }
             set { BackingStore?.Set("content", value); }
@@ -21,7 +27,7 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
             set { BackingStore?.Set("properties", value); }
         }
         /// <summary>
-        /// Instantiates a new ExternalItem and sets the default values.
+        /// Instantiates a new externalItem and sets the default values.
         /// </summary>
         public ExternalItem() : base() {
             OdataType = "#microsoft.graph.externalConnectors.externalItem";
@@ -40,6 +46,7 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"acl", n => { Acl = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ExternalConnectors.Acl>(Microsoft.Graph.Beta.Models.ExternalConnectors.Acl.CreateFromDiscriminatorValue).ToList(); } },
+                {"activities", n => { Activities = n.GetCollectionOfObjectValues<ExternalActivity>(ExternalActivity.CreateFromDiscriminatorValue).ToList(); } },
                 {"content", n => { Content = n.GetObjectValue<ExternalItemContent>(ExternalItemContent.CreateFromDiscriminatorValue); } },
                 {"properties", n => { Properties = n.GetObjectValue<Microsoft.Graph.Beta.Models.ExternalConnectors.Properties>(Microsoft.Graph.Beta.Models.ExternalConnectors.Properties.CreateFromDiscriminatorValue); } },
             };
@@ -52,6 +59,7 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ExternalConnectors.Acl>("acl", Acl);
+            writer.WriteCollectionOfObjectValues<ExternalActivity>("activities", Activities);
             writer.WriteObjectValue<ExternalItemContent>("content", Content);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ExternalConnectors.Properties>("properties", Properties);
         }

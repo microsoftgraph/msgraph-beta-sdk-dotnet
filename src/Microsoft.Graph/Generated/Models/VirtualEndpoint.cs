@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<CloudPcDeviceImage>>("deviceImages"); }
             set { BackingStore?.Set("deviceImages", value); }
         }
-        /// <summary>The externalPartnerSettings property</summary>
+        /// <summary>The external partner settings on a Cloud PC.</summary>
         public List<CloudPcExternalPartnerSetting> ExternalPartnerSettings {
             get { return BackingStore?.Get<List<CloudPcExternalPartnerSetting>>("externalPartnerSettings"); }
             set { BackingStore?.Set("externalPartnerSettings", value); }

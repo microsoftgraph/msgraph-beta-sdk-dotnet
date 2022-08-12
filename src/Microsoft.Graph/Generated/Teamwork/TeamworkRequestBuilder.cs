@@ -4,6 +4,7 @@ using Microsoft.Graph.Beta.Teamwork.DeletedTeams;
 using Microsoft.Graph.Beta.Teamwork.Devices;
 using Microsoft.Graph.Beta.Teamwork.SendActivityNotificationToRecipients;
 using Microsoft.Graph.Beta.Teamwork.TeamsAppSettings;
+using Microsoft.Graph.Beta.Teamwork.TeamTemplates;
 using Microsoft.Graph.Beta.Teamwork.WorkforceIntegrations;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -35,6 +36,10 @@ namespace Microsoft.Graph.Beta.Teamwork {
         /// <summary>The teamsAppSettings property</summary>
         public TeamsAppSettingsRequestBuilder TeamsAppSettings { get =>
             new TeamsAppSettingsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The teamTemplates property</summary>
+        public TeamTemplatesRequestBuilder TeamTemplates { get =>
+            new TeamTemplatesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }

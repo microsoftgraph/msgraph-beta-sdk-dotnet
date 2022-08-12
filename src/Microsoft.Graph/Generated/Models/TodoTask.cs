@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<ChecklistItem>>("checklistItems"); }
             set { BackingStore?.Set("checklistItems", value); }
         }
-        /// <summary>The date in the specified time zone that the task was finished.</summary>
+        /// <summary>The date and time in the specified time zone that the task was finished.</summary>
         public DateTimeTimeZone CompletedDateTime {
             get { return BackingStore?.Get<DateTimeTimeZone>("completedDateTime"); }
             set { BackingStore?.Set("completedDateTime", value); }
@@ -46,7 +46,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>The date in the specified time zone that the task is to be finished.</summary>
+        /// <summary>The date and time in the specified time zone that the task is to be finished.</summary>
         public DateTimeTimeZone DueDateTime {
             get { return BackingStore?.Get<DateTimeTimeZone>("dueDateTime"); }
             set { BackingStore?.Set("dueDateTime", value); }
@@ -86,12 +86,12 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<PatternedRecurrence>("recurrence"); }
             set { BackingStore?.Set("recurrence", value); }
         }
-        /// <summary>The date and time for a reminder alert of the task to occur.</summary>
+        /// <summary>The date and time in the specified time zone for a reminder alert of the task to occur.</summary>
         public DateTimeTimeZone ReminderDateTime {
             get { return BackingStore?.Get<DateTimeTimeZone>("reminderDateTime"); }
             set { BackingStore?.Set("reminderDateTime", value); }
         }
-        /// <summary>The date in the specified time zone at which the task is scheduled to start.</summary>
+        /// <summary>The date and time in the specified time zone at which the task is scheduled to start.</summary>
         public DateTimeTimeZone StartDateTime {
             get { return BackingStore?.Get<DateTimeTimeZone>("startDateTime"); }
             set { BackingStore?.Set("startDateTime", value); }

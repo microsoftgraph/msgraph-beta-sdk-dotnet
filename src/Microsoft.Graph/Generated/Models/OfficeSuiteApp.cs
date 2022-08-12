@@ -35,6 +35,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<WindowsArchitecture?>("officePlatformArchitecture"); }
             set { BackingStore?.Set("officePlatformArchitecture", value); }
         }
+        /// <summary>Describes the OfficeSuiteApp file format types that can be selected.</summary>
+        public OfficeSuiteDefaultFileFormatType? OfficeSuiteAppDefaultFileFormat {
+            get { return BackingStore?.Get<OfficeSuiteDefaultFileFormatType?>("officeSuiteAppDefaultFileFormat"); }
+            set { BackingStore?.Set("officeSuiteAppDefaultFileFormat", value); }
+        }
         /// <summary>The Product Ids that represent the Office365 Suite SKU.</summary>
         public List<string> ProductIds {
             get { return BackingStore?.Get<List<string>>("productIds"); }
@@ -90,6 +95,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"localesToInstall", n => { LocalesToInstall = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"officeConfigurationXml", n => { OfficeConfigurationXml = n.GetByteArrayValue(); } },
                 {"officePlatformArchitecture", n => { OfficePlatformArchitecture = n.GetEnumValue<WindowsArchitecture>(); } },
+                {"officeSuiteAppDefaultFileFormat", n => { OfficeSuiteAppDefaultFileFormat = n.GetEnumValue<OfficeSuiteDefaultFileFormatType>(); } },
                 {"productIds", n => { ProductIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"shouldUninstallOlderVersionsOfOffice", n => { ShouldUninstallOlderVersionsOfOffice = n.GetBoolValue(); } },
                 {"targetVersion", n => { TargetVersion = n.GetStringValue(); } },
@@ -111,6 +117,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfPrimitiveValues<string>("localesToInstall", LocalesToInstall);
             writer.WriteByteArrayValue("officeConfigurationXml", OfficeConfigurationXml);
             writer.WriteEnumValue<WindowsArchitecture>("officePlatformArchitecture", OfficePlatformArchitecture);
+            writer.WriteEnumValue<OfficeSuiteDefaultFileFormatType>("officeSuiteAppDefaultFileFormat", OfficeSuiteAppDefaultFileFormat);
             writer.WriteCollectionOfPrimitiveValues<string>("productIds", ProductIds);
             writer.WriteBoolValue("shouldUninstallOlderVersionsOfOffice", ShouldUninstallOlderVersionsOfOffice);
             writer.WriteStringValue("targetVersion", TargetVersion);

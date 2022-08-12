@@ -91,6 +91,8 @@ using Microsoft.Graph.Beta.DeviceManagement.MobileThreatDefenseConnectors;
 using Microsoft.Graph.Beta.DeviceManagement.NdesConnectors;
 using Microsoft.Graph.Beta.DeviceManagement.NotificationMessageTemplates;
 using Microsoft.Graph.Beta.DeviceManagement.OemWarrantyInformationOnboarding;
+using Microsoft.Graph.Beta.DeviceManagement.OrganizationalMessageDetails;
+using Microsoft.Graph.Beta.DeviceManagement.OrganizationalMessageGuidedContents;
 using Microsoft.Graph.Beta.DeviceManagement.RemoteActionAudits;
 using Microsoft.Graph.Beta.DeviceManagement.RemoteAssistancePartners;
 using Microsoft.Graph.Beta.DeviceManagement.RemoteAssistanceSettings;
@@ -522,6 +524,14 @@ namespace Microsoft.Graph.Beta.DeviceManagement {
         /// <summary>The oemWarrantyInformationOnboarding property</summary>
         public OemWarrantyInformationOnboardingRequestBuilder OemWarrantyInformationOnboarding { get =>
             new OemWarrantyInformationOnboardingRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The organizationalMessageDetails property</summary>
+        public OrganizationalMessageDetailsRequestBuilder OrganizationalMessageDetails { get =>
+            new OrganizationalMessageDetailsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The organizationalMessageGuidedContents property</summary>
+        public OrganizationalMessageGuidedContentsRequestBuilder OrganizationalMessageGuidedContents { get =>
+            new OrganizationalMessageGuidedContentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

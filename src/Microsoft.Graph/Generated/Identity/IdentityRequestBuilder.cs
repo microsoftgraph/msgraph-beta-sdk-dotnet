@@ -1,8 +1,10 @@
 using Microsoft.Graph.Beta.Identity.ApiConnectors;
+using Microsoft.Graph.Beta.Identity.AuthenticationEventListeners;
 using Microsoft.Graph.Beta.Identity.B2cUserFlows;
 using Microsoft.Graph.Beta.Identity.B2xUserFlows;
 using Microsoft.Graph.Beta.Identity.ConditionalAccess;
 using Microsoft.Graph.Beta.Identity.ContinuousAccessEvaluationPolicy;
+using Microsoft.Graph.Beta.Identity.CustomAuthenticationExtensions;
 using Microsoft.Graph.Beta.Identity.IdentityProviders;
 using Microsoft.Graph.Beta.Identity.UserFlowAttributes;
 using Microsoft.Graph.Beta.Identity.UserFlows;
@@ -23,6 +25,10 @@ namespace Microsoft.Graph.Beta.Identity {
         public ApiConnectorsRequestBuilder ApiConnectors { get =>
             new ApiConnectorsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The authenticationEventListeners property</summary>
+        public AuthenticationEventListenersRequestBuilder AuthenticationEventListeners { get =>
+            new AuthenticationEventListenersRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The b2cUserFlows property</summary>
         public B2cUserFlowsRequestBuilder B2cUserFlows { get =>
             new B2cUserFlowsRequestBuilder(PathParameters, RequestAdapter);
@@ -38,6 +44,10 @@ namespace Microsoft.Graph.Beta.Identity {
         /// <summary>The continuousAccessEvaluationPolicy property</summary>
         public ContinuousAccessEvaluationPolicyRequestBuilder ContinuousAccessEvaluationPolicy { get =>
             new ContinuousAccessEvaluationPolicyRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The customAuthenticationExtensions property</summary>
+        public CustomAuthenticationExtensionsRequestBuilder CustomAuthenticationExtensions { get =>
+            new CustomAuthenticationExtensionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The identityProviders property</summary>
         public IdentityProvidersRequestBuilder IdentityProviders { get =>

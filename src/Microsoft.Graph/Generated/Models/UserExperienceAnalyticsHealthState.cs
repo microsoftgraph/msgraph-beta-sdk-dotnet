@@ -5,5 +5,7 @@ namespace Microsoft.Graph.Beta.Models {
         InsufficientData,
         NeedsAttention,
         MeetingGoals,
+        /// <summary>Evolvable enum member</summary>
+        UnknownFutureValue,
     }
 }

@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The learningProviders property</summary>
+        /// <summary>A collection of learning providers.</summary>
         public List<LearningProvider> LearningProviders {
             get { return BackingStore?.Get<List<LearningProvider>>("learningProviders"); }
             set { BackingStore?.Set("learningProviders", value); }

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Entity that represents the health thresholds of a health metric.</summary>
     public class MicrosoftTunnelHealthThreshold : Entity, IParsable {
         /// <summary>The default threshold for being healthy</summary>
         public long? DefaultHealthyThreshold {
@@ -26,7 +27,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("unhealthyThreshold", value); }
         }
         /// <summary>
-        /// Instantiates a new MicrosoftTunnelHealthThreshold and sets the default values.
+        /// Instantiates a new microsoftTunnelHealthThreshold and sets the default values.
         /// </summary>
         public MicrosoftTunnelHealthThreshold() : base() {
             OdataType = "#microsoft.graph.microsoftTunnelHealthThreshold";

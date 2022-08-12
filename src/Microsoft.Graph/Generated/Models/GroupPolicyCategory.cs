@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>The category entity stores the category of a group policy definition</summary>
     public class GroupPolicyCategory : Entity, IParsable {
         /// <summary>The children categories</summary>
         public List<GroupPolicyCategory> Children {
@@ -25,6 +26,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+        /// <summary>Category Ingestion source</summary>
+        public Microsoft.Graph.Beta.Models.IngestionSource? IngestionSource {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IngestionSource?>("ingestionSource"); }
+            set { BackingStore?.Set("ingestionSource", value); }
+        }
         /// <summary>Defines if the category is a root category</summary>
         public bool? IsRoot {
             get { return BackingStore?.Get<bool?>("isRoot"); }
@@ -41,7 +47,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("parent", value); }
         }
         /// <summary>
-        /// Instantiates a new GroupPolicyCategory and sets the default values.
+        /// Instantiates a new groupPolicyCategory and sets the default values.
         /// </summary>
         public GroupPolicyCategory() : base() {
             OdataType = "#microsoft.graph.groupPolicyCategory";
@@ -63,6 +69,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"definitionFile", n => { DefinitionFile = n.GetObjectValue<GroupPolicyDefinitionFile>(GroupPolicyDefinitionFile.CreateFromDiscriminatorValue); } },
                 {"definitions", n => { Definitions = n.GetCollectionOfObjectValues<GroupPolicyDefinition>(GroupPolicyDefinition.CreateFromDiscriminatorValue).ToList(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"ingestionSource", n => { IngestionSource = n.GetEnumValue<IngestionSource>(); } },
                 {"isRoot", n => { IsRoot = n.GetBoolValue(); } },
                 {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"parent", n => { Parent = n.GetObjectValue<GroupPolicyCategory>(GroupPolicyCategory.CreateFromDiscriminatorValue); } },
@@ -79,6 +86,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteObjectValue<GroupPolicyDefinitionFile>("definitionFile", DefinitionFile);
             writer.WriteCollectionOfObjectValues<GroupPolicyDefinition>("definitions", Definitions);
             writer.WriteStringValue("displayName", DisplayName);
+            writer.WriteEnumValue<IngestionSource>("ingestionSource", IngestionSource);
             writer.WriteBoolValue("isRoot", IsRoot);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteObjectValue<GroupPolicyCategory>("parent", Parent);

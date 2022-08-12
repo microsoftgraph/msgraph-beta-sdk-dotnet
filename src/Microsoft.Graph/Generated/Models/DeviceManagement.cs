@@ -455,6 +455,16 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.OemWarrantyInformationOnboarding>>("oemWarrantyInformationOnboarding"); }
             set { BackingStore?.Set("oemWarrantyInformationOnboarding", value); }
         }
+        /// <summary>A list of OrganizationalMessageDetails</summary>
+        public List<OrganizationalMessageDetail> OrganizationalMessageDetails {
+            get { return BackingStore?.Get<List<OrganizationalMessageDetail>>("organizationalMessageDetails"); }
+            set { BackingStore?.Set("organizationalMessageDetails", value); }
+        }
+        /// <summary>A list of OrganizationalMessageGuidedContents</summary>
+        public List<OrganizationalMessageGuidedContent> OrganizationalMessageGuidedContents {
+            get { return BackingStore?.Get<List<OrganizationalMessageGuidedContent>>("organizationalMessageGuidedContents"); }
+            set { BackingStore?.Set("organizationalMessageGuidedContents", value); }
+        }
         /// <summary>The list of device remote action audits with the tenant.</summary>
         public List<RemoteActionAudit> RemoteActionAudits {
             get { return BackingStore?.Get<List<RemoteActionAudit>>("remoteActionAudits"); }
@@ -969,6 +979,8 @@ namespace Microsoft.Graph.Beta.Models {
                 {"ndesConnectors", n => { NdesConnectors = n.GetCollectionOfObjectValues<NdesConnector>(NdesConnector.CreateFromDiscriminatorValue).ToList(); } },
                 {"notificationMessageTemplates", n => { NotificationMessageTemplates = n.GetCollectionOfObjectValues<NotificationMessageTemplate>(NotificationMessageTemplate.CreateFromDiscriminatorValue).ToList(); } },
                 {"oemWarrantyInformationOnboarding", n => { OemWarrantyInformationOnboarding = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.OemWarrantyInformationOnboarding>(Microsoft.Graph.Beta.Models.OemWarrantyInformationOnboarding.CreateFromDiscriminatorValue).ToList(); } },
+                {"organizationalMessageDetails", n => { OrganizationalMessageDetails = n.GetCollectionOfObjectValues<OrganizationalMessageDetail>(OrganizationalMessageDetail.CreateFromDiscriminatorValue).ToList(); } },
+                {"organizationalMessageGuidedContents", n => { OrganizationalMessageGuidedContents = n.GetCollectionOfObjectValues<OrganizationalMessageGuidedContent>(OrganizationalMessageGuidedContent.CreateFromDiscriminatorValue).ToList(); } },
                 {"remoteActionAudits", n => { RemoteActionAudits = n.GetCollectionOfObjectValues<RemoteActionAudit>(RemoteActionAudit.CreateFromDiscriminatorValue).ToList(); } },
                 {"remoteAssistancePartners", n => { RemoteAssistancePartners = n.GetCollectionOfObjectValues<RemoteAssistancePartner>(RemoteAssistancePartner.CreateFromDiscriminatorValue).ToList(); } },
                 {"remoteAssistanceSettings", n => { RemoteAssistanceSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.RemoteAssistanceSettings>(Microsoft.Graph.Beta.Models.RemoteAssistanceSettings.CreateFromDiscriminatorValue); } },
@@ -1149,6 +1161,8 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfObjectValues<NdesConnector>("ndesConnectors", NdesConnectors);
             writer.WriteCollectionOfObjectValues<NotificationMessageTemplate>("notificationMessageTemplates", NotificationMessageTemplates);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.OemWarrantyInformationOnboarding>("oemWarrantyInformationOnboarding", OemWarrantyInformationOnboarding);
+            writer.WriteCollectionOfObjectValues<OrganizationalMessageDetail>("organizationalMessageDetails", OrganizationalMessageDetails);
+            writer.WriteCollectionOfObjectValues<OrganizationalMessageGuidedContent>("organizationalMessageGuidedContents", OrganizationalMessageGuidedContents);
             writer.WriteCollectionOfObjectValues<RemoteActionAudit>("remoteActionAudits", RemoteActionAudits);
             writer.WriteCollectionOfObjectValues<RemoteAssistancePartner>("remoteAssistancePartners", RemoteAssistancePartners);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.RemoteAssistanceSettings>("remoteAssistanceSettings", RemoteAssistanceSettings);

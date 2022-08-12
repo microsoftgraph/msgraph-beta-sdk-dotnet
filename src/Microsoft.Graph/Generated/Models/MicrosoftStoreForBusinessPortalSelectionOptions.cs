@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provides operations to manage the deviceAppManagement singleton.</summary>
     public enum MicrosoftStoreForBusinessPortalSelectionOptions {
         /// <summary>This option is not available for the account</summary>
         None,

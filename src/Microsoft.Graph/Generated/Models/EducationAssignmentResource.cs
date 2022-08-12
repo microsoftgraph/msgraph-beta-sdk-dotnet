@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class EducationAssignmentResource : Entity, IParsable {
         /// <summary>Indicates whether this resource should be copied to each student submission for modification and submission. Required</summary>
         public bool? DistributeForStudentWork {
@@ -16,7 +17,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("resource", value); }
         }
         /// <summary>
-        /// Instantiates a new EducationAssignmentResource and sets the default values.
+        /// Instantiates a new educationAssignmentResource and sets the default values.
         /// </summary>
         public EducationAssignmentResource() : base() {
             OdataType = "#microsoft.graph.educationAssignmentResource";

@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
     public class ApplyLabelAction : InformationProtectionAction, IParsable {
-        /// <summary>The actions property</summary>
+        /// <summary>The collection of actions that should be implemented by the caller.</summary>
         public List<InformationProtectionAction> Actions {
             get { return BackingStore?.Get<List<InformationProtectionAction>>("actions"); }
             set { BackingStore?.Set("actions", value); }
@@ -15,7 +15,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.ActionSource?>("actionSource"); }
             set { BackingStore?.Set("actionSource", value); }
         }
-        /// <summary>The responsibleSensitiveTypeIds property</summary>
+        /// <summary>If the label was the result of an automatic classification, supply the list of sensitive info type GUIDs that resulted in the returned label.</summary>
         public List<string> ResponsibleSensitiveTypeIds {
             get { return BackingStore?.Get<List<string>>("responsibleSensitiveTypeIds"); }
             set { BackingStore?.Set("responsibleSensitiveTypeIds", value); }

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Casts the previous resource to application.</summary>
     public class ExtensionProperty : DirectoryObject, IParsable {
         /// <summary>Display name of the application object on which this extension property is defined. Read-only.</summary>
         public string AppDisplayName {
@@ -21,12 +21,12 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("isSyncedFromOnPremises"); }
             set { BackingStore?.Set("isSyncedFromOnPremises", value); }
         }
-        /// <summary>Name of the extension property. Not nullable.</summary>
+        /// <summary>Name of the extension property. Not nullable. Supports $filter (eq).</summary>
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
-        /// <summary>Following values are supported. Not nullable. UserGroupOrganizationDeviceApplication</summary>
+        /// <summary>Following values are supported. Not nullable. UserGroupAdministrativeUnitApplicationDeviceOrganization</summary>
         public List<string> TargetObjects {
             get { return BackingStore?.Get<List<string>>("targetObjects"); }
             set { BackingStore?.Set("targetObjects", value); }

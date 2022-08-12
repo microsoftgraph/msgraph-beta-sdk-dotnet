@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class GroupPolicyPresentationLongDecimalTextBox : GroupPolicyPresentation, IParsable {
+    public class GroupPolicyPresentationLongDecimalTextBox : GroupPolicyUploadedPresentation, IParsable {
         /// <summary>An unsigned integer that specifies the initial value for the decimal text box. The default value is 1.</summary>
         public long? DefaultValue {
             get { return BackingStore?.Get<long?>("defaultValue"); }

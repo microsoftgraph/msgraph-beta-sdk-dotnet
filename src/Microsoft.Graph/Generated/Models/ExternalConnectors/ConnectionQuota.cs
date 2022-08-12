@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
             set { BackingStore?.Set("itemsRemaining", value); }
         }
         /// <summary>
-        /// Instantiates a new ConnectionQuota and sets the default values.
+        /// Instantiates a new connectionQuota and sets the default values.
         /// </summary>
         public ConnectionQuota() : base() {
             OdataType = "#microsoft.graph.externalConnectors.connectionQuota";

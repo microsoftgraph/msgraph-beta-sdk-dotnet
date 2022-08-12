@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class CommunicationsUserIdentity : Identity, IParsable {
-        /// <summary>The tenantId property</summary>
+        /// <summary>The user&apos;s tenant ID.</summary>
         public string TenantId {
             get { return BackingStore?.Get<string>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }

@@ -13,12 +13,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The isDowngradeJustified property</summary>
+        /// <summary>Indicates whether the downgrade is or is not justified.</summary>
         public bool? IsDowngradeJustified {
             get { return BackingStore?.Get<bool?>("isDowngradeJustified"); }
             set { BackingStore?.Set("isDowngradeJustified", value); }
         }
-        /// <summary>The justificationMessage property</summary>
+        /// <summary>Message that indicates why a downgrade is justified. The message will appear in administrative logs.</summary>
         public string JustificationMessage {
             get { return BackingStore?.Get<string>("justificationMessage"); }
             set { BackingStore?.Set("justificationMessage", value); }

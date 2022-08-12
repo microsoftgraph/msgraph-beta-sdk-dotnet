@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class GroupPolicyPresentationListBox : GroupPolicyPresentation, IParsable {
+    public class GroupPolicyPresentationListBox : GroupPolicyUploadedPresentation, IParsable {
         /// <summary>If this option is specified true the user must specify the registry subkey value and the registry subkey name. The list box shows two columns, one for the name and one for the data. The default value is false.</summary>
         public bool? ExplicitValue {
             get { return BackingStore?.Get<bool?>("explicitValue"); }

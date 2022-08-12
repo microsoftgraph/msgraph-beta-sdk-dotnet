@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>The group policy configuration entity contains the configured values for one or more group policy definitions.</summary>
     public class GroupPolicyConfiguration : Entity, IParsable {
         /// <summary>The list of group assignments for the configuration.</summary>
         public List<GroupPolicyConfigurationAssignment> Assignments {
@@ -35,13 +36,18 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
+        /// <summary>Group Policy Configuration Ingestion Type</summary>
+        public GroupPolicyConfigurationIngestionType? PolicyConfigurationIngestionType {
+            get { return BackingStore?.Get<GroupPolicyConfigurationIngestionType?>("policyConfigurationIngestionType"); }
+            set { BackingStore?.Set("policyConfigurationIngestionType", value); }
+        }
         /// <summary>The list of scope tags for the configuration.</summary>
         public List<string> RoleScopeTagIds {
             get { return BackingStore?.Get<List<string>>("roleScopeTagIds"); }
             set { BackingStore?.Set("roleScopeTagIds", value); }
         }
         /// <summary>
-        /// Instantiates a new GroupPolicyConfiguration and sets the default values.
+        /// Instantiates a new groupPolicyConfiguration and sets the default values.
         /// </summary>
         public GroupPolicyConfiguration() : base() {
             OdataType = "#microsoft.graph.groupPolicyConfiguration";
@@ -65,6 +71,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"policyConfigurationIngestionType", n => { PolicyConfigurationIngestionType = n.GetEnumValue<GroupPolicyConfigurationIngestionType>(); } },
                 {"roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
             };
         }
@@ -81,6 +88,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
+            writer.WriteEnumValue<GroupPolicyConfigurationIngestionType>("policyConfigurationIngestionType", PolicyConfigurationIngestionType);
             writer.WriteCollectionOfPrimitiveValues<string>("roleScopeTagIds", RoleScopeTagIds);
         }
     }

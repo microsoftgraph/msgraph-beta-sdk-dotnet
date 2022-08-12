@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Devices that are managed or pre-enrolled through Intune</summary>
     public class ManagedDevice : Entity, IParsable {
         /// <summary>Whether the device is Azure Active Directory registered. This property is read-only.</summary>
         public bool? AadRegistered {
@@ -46,7 +47,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("azureADRegistered"); }
             set { BackingStore?.Set("azureADRegistered", value); }
         }
-        /// <summary>Reports if the managed device has an escrowed Bootstrap Token. This is only for macOS devices. If FALSE, no bootstrap token is escrowed. If TRUE, the device has escrowed a bootstrap token with Intune. This property is read-only.</summary>
+        /// <summary>Reports if the managed device has an escrowed Bootstrap Token. This is only for macOS devices. To get, include BootstrapTokenEscrowed in the select clause and query with a device id. If FALSE, no bootstrap token is escrowed. If TRUE, the device has escrowed a bootstrap token with Intune. This property is read-only.</summary>
         public bool? BootstrapTokenEscrowed {
             get { return BackingStore?.Get<bool?>("bootstrapTokenEscrowed"); }
             set { BackingStore?.Set("bootstrapTokenEscrowed", value); }
@@ -462,7 +463,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("windowsRemediatedMalwareCount", value); }
         }
         /// <summary>
-        /// Instantiates a new ManagedDevice and sets the default values.
+        /// Instantiates a new managedDevice and sets the default values.
         /// </summary>
         public ManagedDevice() : base() {
             OdataType = "#microsoft.graph.managedDevice";

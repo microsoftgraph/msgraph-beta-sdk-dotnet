@@ -10,32 +10,32 @@ namespace Microsoft.Graph.Beta.Models.Security {
             get { return BackingStore?.Get<ContentAlignment?>("alignment"); }
             set { BackingStore?.Set("alignment", value); }
         }
-        /// <summary>The fontColor property</summary>
+        /// <summary>Color of the font to use for the header.</summary>
         public string FontColor {
             get { return BackingStore?.Get<string>("fontColor"); }
             set { BackingStore?.Set("fontColor", value); }
         }
-        /// <summary>The fontName property</summary>
+        /// <summary>Name of the font to use for the header.</summary>
         public string FontName {
             get { return BackingStore?.Get<string>("fontName"); }
             set { BackingStore?.Set("fontName", value); }
         }
-        /// <summary>The fontSize property</summary>
+        /// <summary>Font size to use for the header.</summary>
         public int? FontSize {
             get { return BackingStore?.Get<int?>("fontSize"); }
             set { BackingStore?.Set("fontSize", value); }
         }
-        /// <summary>The margin property</summary>
+        /// <summary>The margin of the header from the top of the document.</summary>
         public int? Margin {
             get { return BackingStore?.Get<int?>("margin"); }
             set { BackingStore?.Set("margin", value); }
         }
-        /// <summary>The text property</summary>
+        /// <summary>The contents of the header itself.</summary>
         public string Text {
             get { return BackingStore?.Get<string>("text"); }
             set { BackingStore?.Set("text", value); }
         }
-        /// <summary>The uiElementName property</summary>
+        /// <summary>The name of the UI element where the header should be placed.</summary>
         public string UiElementName {
             get { return BackingStore?.Get<string>("uiElementName"); }
             set { BackingStore?.Set("uiElementName", value); }

@@ -5,17 +5,17 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
     public class AddWatermarkAction : InformationProtectionAction, IParsable {
-        /// <summary>The fontColor property</summary>
+        /// <summary>Color of the font to use for the watermark.</summary>
         public string FontColor {
             get { return BackingStore?.Get<string>("fontColor"); }
             set { BackingStore?.Set("fontColor", value); }
         }
-        /// <summary>The fontName property</summary>
+        /// <summary>Name of the font to use for the watermark.</summary>
         public string FontName {
             get { return BackingStore?.Get<string>("fontName"); }
             set { BackingStore?.Set("fontName", value); }
         }
-        /// <summary>The fontSize property</summary>
+        /// <summary>Font size to use for the watermark.</summary>
         public int? FontSize {
             get { return BackingStore?.Get<int?>("fontSize"); }
             set { BackingStore?.Set("fontSize", value); }
@@ -25,12 +25,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
             get { return BackingStore?.Get<WatermarkLayout?>("layout"); }
             set { BackingStore?.Set("layout", value); }
         }
-        /// <summary>The text property</summary>
+        /// <summary>The contents of the watermark itself.</summary>
         public string Text {
             get { return BackingStore?.Get<string>("text"); }
             set { BackingStore?.Set("text", value); }
         }
-        /// <summary>The uiElementName property</summary>
+        /// <summary>The name of the UI element where the watermark should be placed.</summary>
         public string UiElementName {
             get { return BackingStore?.Get<string>("uiElementName"); }
             set { BackingStore?.Set("uiElementName", value); }

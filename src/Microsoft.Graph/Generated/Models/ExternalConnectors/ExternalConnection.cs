@@ -4,7 +4,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
+    /// <summary>Provides operations to manage the collection of externalConnection entities.</summary>
     public class ExternalConnection : Entity, IParsable {
+        /// <summary>Collects configurable settings related to activities involving connector content.</summary>
+        public Microsoft.Graph.Beta.Models.ExternalConnectors.ActivitySettings ActivitySettings {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ExternalConnectors.ActivitySettings>("activitySettings"); }
+            set { BackingStore?.Set("activitySettings", value); }
+        }
         /// <summary>The complianceSettings property</summary>
         public Microsoft.Graph.Beta.Models.ExternalConnectors.ComplianceSettings ComplianceSettings {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ExternalConnectors.ComplianceSettings>("complianceSettings"); }
@@ -76,7 +82,7 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
             set { BackingStore?.Set("state", value); }
         }
         /// <summary>
-        /// Instantiates a new ExternalConnection and sets the default values.
+        /// Instantiates a new externalConnection and sets the default values.
         /// </summary>
         public ExternalConnection() : base() {
             OdataType = "#microsoft.graph.externalConnectors.externalConnection";
@@ -94,6 +100,7 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"activitySettings", n => { ActivitySettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.ExternalConnectors.ActivitySettings>(Microsoft.Graph.Beta.Models.ExternalConnectors.ActivitySettings.CreateFromDiscriminatorValue); } },
                 {"complianceSettings", n => { ComplianceSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.ExternalConnectors.ComplianceSettings>(Microsoft.Graph.Beta.Models.ExternalConnectors.ComplianceSettings.CreateFromDiscriminatorValue); } },
                 {"configuration", n => { Configuration = n.GetObjectValue<Microsoft.Graph.Beta.Models.ExternalConnectors.Configuration>(Microsoft.Graph.Beta.Models.ExternalConnectors.Configuration.CreateFromDiscriminatorValue); } },
                 {"connectorId", n => { ConnectorId = n.GetStringValue(); } },
@@ -117,6 +124,7 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ExternalConnectors.ActivitySettings>("activitySettings", ActivitySettings);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ExternalConnectors.ComplianceSettings>("complianceSettings", ComplianceSettings);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ExternalConnectors.Configuration>("configuration", Configuration);
             writer.WriteStringValue("connectorId", ConnectorId);

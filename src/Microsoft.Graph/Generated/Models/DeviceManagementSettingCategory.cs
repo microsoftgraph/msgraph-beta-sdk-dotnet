@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Entity representing a setting category</summary>
     public class DeviceManagementSettingCategory : Entity, IParsable {
         /// <summary>The category name</summary>
         public string DisplayName {
@@ -22,7 +23,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("settingDefinitions", value); }
         }
         /// <summary>
-        /// Instantiates a new DeviceManagementSettingCategory and sets the default values.
+        /// Instantiates a new deviceManagementSettingCategory and sets the default values.
         /// </summary>
         public DeviceManagementSettingCategory() : base() {
             OdataType = "#microsoft.graph.deviceManagementSettingCategory";

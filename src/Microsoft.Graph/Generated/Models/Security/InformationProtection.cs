@@ -5,12 +5,12 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
     public class InformationProtection : Entity, IParsable {
-        /// <summary>The labelPolicySettings property</summary>
+        /// <summary>Read the Microsoft Purview Information Protection policy settings for the user or organization.</summary>
         public InformationProtectionPolicySetting LabelPolicySettings {
             get { return BackingStore?.Get<InformationProtectionPolicySetting>("labelPolicySettings"); }
             set { BackingStore?.Set("labelPolicySettings", value); }
         }
-        /// <summary>The sensitivityLabels property</summary>
+        /// <summary>Read the Microsoft Purview Information Protection labels for the user or organization.</summary>
         public List<SensitivityLabel> SensitivityLabels {
             get { return BackingStore?.Get<List<SensitivityLabel>>("sensitivityLabels"); }
             set { BackingStore?.Set("sensitivityLabels", value); }
