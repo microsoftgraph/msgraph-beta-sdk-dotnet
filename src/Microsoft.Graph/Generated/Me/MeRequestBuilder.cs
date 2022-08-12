@@ -3,6 +3,7 @@ using Microsoft.Graph.Beta.Me.Activities;
 using Microsoft.Graph.Beta.Me.AgreementAcceptances;
 using Microsoft.Graph.Beta.Me.Analytics;
 using Microsoft.Graph.Beta.Me.AppConsentRequestsForApproval;
+using Microsoft.Graph.Beta.Me.AppRoleAssignedResources;
 using Microsoft.Graph.Beta.Me.AppRoleAssignments;
 using Microsoft.Graph.Beta.Me.Approvals;
 using Microsoft.Graph.Beta.Me.AssignLicense;
@@ -129,6 +130,10 @@ namespace Microsoft.Graph.Beta.Me {
         /// <summary>The appConsentRequestsForApproval property</summary>
         public AppConsentRequestsForApprovalRequestBuilder AppConsentRequestsForApproval { get =>
             new AppConsentRequestsForApprovalRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The appRoleAssignedResources property</summary>
+        public AppRoleAssignedResourcesRequestBuilder AppRoleAssignedResources { get =>
+            new AppRoleAssignedResourcesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The appRoleAssignments property</summary>
         public AppRoleAssignmentsRequestBuilder AppRoleAssignments { get =>

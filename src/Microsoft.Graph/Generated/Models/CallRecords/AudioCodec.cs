@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models.CallRecords {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the cloudCommunications singleton.</summary>
     public enum AudioCodec {
         Unknown,
         Invalid,

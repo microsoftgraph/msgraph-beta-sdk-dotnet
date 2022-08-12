@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("overrides", value); }
         }
         /// <summary>
-        /// Instantiates a new InferenceClassification and sets the default values.
+        /// Instantiates a new inferenceClassification and sets the default values.
         /// </summary>
         public InferenceClassification() : base() {
             OdataType = "#microsoft.graph.inferenceClassification";

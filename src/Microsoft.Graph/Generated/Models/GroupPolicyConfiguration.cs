@@ -36,6 +36,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
+        /// <summary>Group Policy Configuration Ingestion Type</summary>
+        public GroupPolicyConfigurationIngestionType? PolicyConfigurationIngestionType {
+            get { return BackingStore?.Get<GroupPolicyConfigurationIngestionType?>("policyConfigurationIngestionType"); }
+            set { BackingStore?.Set("policyConfigurationIngestionType", value); }
+        }
         /// <summary>The list of scope tags for the configuration.</summary>
         public List<string> RoleScopeTagIds {
             get { return BackingStore?.Get<List<string>>("roleScopeTagIds"); }
@@ -66,6 +71,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"policyConfigurationIngestionType", n => { PolicyConfigurationIngestionType = n.GetEnumValue<GroupPolicyConfigurationIngestionType>(); } },
                 {"roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
             };
         }
@@ -82,6 +88,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
+            writer.WriteEnumValue<GroupPolicyConfigurationIngestionType>("policyConfigurationIngestionType", PolicyConfigurationIngestionType);
             writer.WriteCollectionOfPrimitiveValues<string>("roleScopeTagIds", RoleScopeTagIds);
         }
     }

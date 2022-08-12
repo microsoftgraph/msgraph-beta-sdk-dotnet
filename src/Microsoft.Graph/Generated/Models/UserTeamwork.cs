@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("installedApps", value); }
         }
         /// <summary>
-        /// Instantiates a new UserTeamwork and sets the default values.
+        /// Instantiates a new userTeamwork and sets the default values.
         /// </summary>
         public UserTeamwork() : base() {
             OdataType = "#microsoft.graph.userTeamwork";

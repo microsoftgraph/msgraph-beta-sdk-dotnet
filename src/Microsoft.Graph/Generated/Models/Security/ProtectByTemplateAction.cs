@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
     public class ProtectByTemplateAction : InformationProtectionAction, IParsable {
-        /// <summary>The templateId property</summary>
+        /// <summary>The unique identifier for a protection template in Microsoft Purview Information Protection to apply to the content.</summary>
         public string TemplateId {
             get { return BackingStore?.Get<string>("templateId"); }
             set { BackingStore?.Set("templateId", value); }

@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The name property</summary>
+        /// <summary>Name for this key-value pair.</summary>
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
@@ -23,7 +23,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
-        /// <summary>The value property</summary>
+        /// <summary>Value for this key-value pair.</summary>
         public string Value {
             get { return BackingStore?.Get<string>("value"); }
             set { BackingStore?.Set("value", value); }

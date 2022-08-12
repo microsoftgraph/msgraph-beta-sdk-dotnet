@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>This is the base class for Compliance policy. Compliance policies are platform specific and individual per-platform compliance policies inherit from here. </summary>
     public class DeviceCompliancePolicy : Entity, IParsable {
         /// <summary>The collection of assignments for this compliance policy.</summary>
         public List<DeviceCompliancePolicyAssignment> Assignments {
@@ -72,7 +73,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("version", value); }
         }
         /// <summary>
-        /// Instantiates a new DeviceCompliancePolicy and sets the default values.
+        /// Instantiates a new deviceCompliancePolicy and sets the default values.
         /// </summary>
         public DeviceCompliancePolicy() : base() {
             OdataType = "#microsoft.graph.deviceCompliancePolicy";

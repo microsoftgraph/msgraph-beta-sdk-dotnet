@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
     public class RecommendLabelAction : InformationProtectionAction, IParsable {
-        /// <summary>The actions property</summary>
+        /// <summary>Actions to take if the label is accepted by the user.</summary>
         public List<InformationProtectionAction> Actions {
             get { return BackingStore?.Get<List<InformationProtectionAction>>("actions"); }
             set { BackingStore?.Set("actions", value); }
@@ -15,7 +15,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.ActionSource?>("actionSource"); }
             set { BackingStore?.Set("actionSource", value); }
         }
-        /// <summary>The responsibleSensitiveTypeIds property</summary>
+        /// <summary>The sensitive information type GUIDs that caused the recommendation to be given.</summary>
         public List<string> ResponsibleSensitiveTypeIds {
             get { return BackingStore?.Get<List<string>>("responsibleSensitiveTypeIds"); }
             set { BackingStore?.Set("responsibleSensitiveTypeIds", value); }

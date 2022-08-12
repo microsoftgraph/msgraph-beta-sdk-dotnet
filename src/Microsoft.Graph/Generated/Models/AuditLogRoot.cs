@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the auditLogRoot singleton.</summary>
     public class AuditLogRoot : Entity, IParsable {
         /// <summary>The directoryAudits property</summary>
         public List<DirectoryAudit> DirectoryAudits {
@@ -31,7 +32,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("signIns", value); }
         }
         /// <summary>
-        /// Instantiates a new AuditLogRoot and sets the default values.
+        /// Instantiates a new auditLogRoot and sets the default values.
         /// </summary>
         public AuditLogRoot() : base() {
             OdataType = "#microsoft.graph.auditLogRoot";

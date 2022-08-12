@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.Owners.Ref {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Directory objects that are owners of the application. Read-only. Nullable. Supports $expand.
+        /// Directory objects that are owners of the application. Read-only. Nullable. Supports $expand and $filter (eq when counting empty collections).
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<RefRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.Owners.Ref {
             return requestInfo;
         }
         /// <summary>
-        /// Directory objects that are owners of the application. Read-only. Nullable. Supports $expand.
+        /// Directory objects that are owners of the application. Read-only. Nullable. Supports $expand and $filter (eq when counting empty collections).
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -115,7 +115,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.Owners.Ref {
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Directory objects that are owners of the application. Read-only. Nullable. Supports $expand.</summary>
+        /// <summary>Directory objects that are owners of the application. Read-only. Nullable. Supports $expand and $filter (eq when counting empty collections).</summary>
         public class RefRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

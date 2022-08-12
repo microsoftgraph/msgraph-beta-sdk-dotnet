@@ -4,14 +4,14 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class UserRegistrationDetails : Entity, IParsable {
         /// <summary>The method the user or admin selected as default for performing multi-factor authentication for the user. The possible values are: none, mobilePhone, alternateMobilePhone, officePhone, microsoftAuthenticatorPush, softwareOneTimePasscode, unknownFutureValue.</summary>
         public DefaultMfaMethodType? DefaultMfaMethod {
             get { return BackingStore?.Get<DefaultMfaMethodType?>("defaultMfaMethod"); }
             set { BackingStore?.Set("defaultMfaMethod", value); }
         }
-        /// <summary>The isAdmin property</summary>
+        /// <summary>Whether the user has an admin role in the tenant. This value can be used to check the authentication methods that privileged accounts are registered for and capable of.</summary>
         public bool? IsAdmin {
             get { return BackingStore?.Get<bool?>("isAdmin"); }
             set { BackingStore?.Set("isAdmin", value); }
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
-        /// <summary>The userType property</summary>
+        /// <summary>Identifies whether the user is a member or guest in the tenant. The possible values are: member, guest, unknownFutureValue.</summary>
         public SignInUserType? UserType {
             get { return BackingStore?.Get<SignInUserType?>("userType"); }
             set { BackingStore?.Set("userType", value); }

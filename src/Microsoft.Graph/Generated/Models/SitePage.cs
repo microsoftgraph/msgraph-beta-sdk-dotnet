@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class SitePage : BaseItem, IParsable {
         /// <summary>The content type of the page.</summary>
         public ContentTypeInfo ContentType {
@@ -31,7 +32,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("webParts", value); }
         }
         /// <summary>
-        /// Instantiates a new SitePage and sets the default values.
+        /// Instantiates a new sitePage and sets the default values.
         /// </summary>
         public SitePage() : base() {
             OdataType = "#microsoft.graph.sitePage";

@@ -16,6 +16,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<IdentityApiConnector>>("apiConnectors"); }
             set { BackingStore?.Set("apiConnectors", value); }
         }
+        /// <summary>The authenticationEventListeners property</summary>
+        public List<AuthenticationEventListener> AuthenticationEventListeners {
+            get { return BackingStore?.Get<List<AuthenticationEventListener>>("authenticationEventListeners"); }
+            set { BackingStore?.Set("authenticationEventListeners", value); }
+        }
         /// <summary>Represents entry point for B2C identity userflows.</summary>
         public List<B2cIdentityUserFlow> B2cUserFlows {
             get { return BackingStore?.Get<List<B2cIdentityUserFlow>>("b2cUserFlows"); }
@@ -37,6 +42,11 @@ namespace Microsoft.Graph.Beta.Models {
         public Microsoft.Graph.Beta.Models.ContinuousAccessEvaluationPolicy ContinuousAccessEvaluationPolicy {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ContinuousAccessEvaluationPolicy>("continuousAccessEvaluationPolicy"); }
             set { BackingStore?.Set("continuousAccessEvaluationPolicy", value); }
+        }
+        /// <summary>The customAuthenticationExtensions property</summary>
+        public List<CustomAuthenticationExtension> CustomAuthenticationExtensions {
+            get { return BackingStore?.Get<List<CustomAuthenticationExtension>>("customAuthenticationExtensions"); }
+            set { BackingStore?.Set("customAuthenticationExtensions", value); }
         }
         /// <summary>Represents entry point for identity provider base.</summary>
         public List<IdentityProviderBase> IdentityProviders {
@@ -80,10 +90,12 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"apiConnectors", n => { ApiConnectors = n.GetCollectionOfObjectValues<IdentityApiConnector>(IdentityApiConnector.CreateFromDiscriminatorValue).ToList(); } },
+                {"authenticationEventListeners", n => { AuthenticationEventListeners = n.GetCollectionOfObjectValues<AuthenticationEventListener>(AuthenticationEventListener.CreateFromDiscriminatorValue).ToList(); } },
                 {"b2cUserFlows", n => { B2cUserFlows = n.GetCollectionOfObjectValues<B2cIdentityUserFlow>(B2cIdentityUserFlow.CreateFromDiscriminatorValue).ToList(); } },
                 {"b2xUserFlows", n => { B2xUserFlows = n.GetCollectionOfObjectValues<B2xIdentityUserFlow>(B2xIdentityUserFlow.CreateFromDiscriminatorValue).ToList(); } },
                 {"conditionalAccess", n => { ConditionalAccess = n.GetObjectValue<ConditionalAccessRoot>(ConditionalAccessRoot.CreateFromDiscriminatorValue); } },
                 {"continuousAccessEvaluationPolicy", n => { ContinuousAccessEvaluationPolicy = n.GetObjectValue<Microsoft.Graph.Beta.Models.ContinuousAccessEvaluationPolicy>(Microsoft.Graph.Beta.Models.ContinuousAccessEvaluationPolicy.CreateFromDiscriminatorValue); } },
+                {"customAuthenticationExtensions", n => { CustomAuthenticationExtensions = n.GetCollectionOfObjectValues<CustomAuthenticationExtension>(CustomAuthenticationExtension.CreateFromDiscriminatorValue).ToList(); } },
                 {"identityProviders", n => { IdentityProviders = n.GetCollectionOfObjectValues<IdentityProviderBase>(IdentityProviderBase.CreateFromDiscriminatorValue).ToList(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"userFlowAttributes", n => { UserFlowAttributes = n.GetCollectionOfObjectValues<IdentityUserFlowAttribute>(IdentityUserFlowAttribute.CreateFromDiscriminatorValue).ToList(); } },
@@ -97,10 +109,12 @@ namespace Microsoft.Graph.Beta.Models {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<IdentityApiConnector>("apiConnectors", ApiConnectors);
+            writer.WriteCollectionOfObjectValues<AuthenticationEventListener>("authenticationEventListeners", AuthenticationEventListeners);
             writer.WriteCollectionOfObjectValues<B2cIdentityUserFlow>("b2cUserFlows", B2cUserFlows);
             writer.WriteCollectionOfObjectValues<B2xIdentityUserFlow>("b2xUserFlows", B2xUserFlows);
             writer.WriteObjectValue<ConditionalAccessRoot>("conditionalAccess", ConditionalAccess);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ContinuousAccessEvaluationPolicy>("continuousAccessEvaluationPolicy", ContinuousAccessEvaluationPolicy);
+            writer.WriteCollectionOfObjectValues<CustomAuthenticationExtension>("customAuthenticationExtensions", CustomAuthenticationExtensions);
             writer.WriteCollectionOfObjectValues<IdentityProviderBase>("identityProviders", IdentityProviders);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteCollectionOfObjectValues<IdentityUserFlowAttribute>("userFlowAttributes", UserFlowAttributes);

@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
     public class RemoveWatermarkAction : InformationProtectionAction, IParsable {
-        /// <summary>The uiElementNames property</summary>
+        /// <summary>The name of the UI element of watermark to be removed.</summary>
         public List<string> UiElementNames {
             get { return BackingStore?.Get<List<string>>("uiElementNames"); }
             set { BackingStore?.Set("uiElementNames", value); }

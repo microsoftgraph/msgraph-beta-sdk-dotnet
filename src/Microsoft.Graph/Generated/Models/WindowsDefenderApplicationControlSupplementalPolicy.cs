@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the deviceAppManagement singleton.</summary>
     public class WindowsDefenderApplicationControlSupplementalPolicy : Entity, IParsable {
         /// <summary>The associated group assignments for this WindowsDefenderApplicationControl supplemental policy.</summary>
         public List<WindowsDefenderApplicationControlSupplementalPolicyAssignment> Assignments {
@@ -61,7 +62,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("version", value); }
         }
         /// <summary>
-        /// Instantiates a new WindowsDefenderApplicationControlSupplementalPolicy and sets the default values.
+        /// Instantiates a new windowsDefenderApplicationControlSupplementalPolicy and sets the default values.
         /// </summary>
         public WindowsDefenderApplicationControlSupplementalPolicy() : base() {
             OdataType = "#microsoft.graph.windowsDefenderApplicationControlSupplementalPolicy";

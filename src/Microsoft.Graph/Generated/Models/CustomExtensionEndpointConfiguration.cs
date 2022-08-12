@@ -36,6 +36,7 @@ namespace Microsoft.Graph.Beta.Models {
             var mappingValueNode = parseNode.GetChildNode("@odata.type");
             var mappingValue = mappingValueNode?.GetStringValue();
             return mappingValue switch {
+                "#microsoft.graph.httpRequestEndpoint" => new HttpRequestEndpoint(),
                 "#microsoft.graph.logicAppTriggerEndpointConfiguration" => new LogicAppTriggerEndpointConfiguration(),
                 _ => new CustomExtensionEndpointConfiguration(),
             };

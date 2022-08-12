@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class Subscription : Entity, IParsable {
         /// <summary>Optional. Identifier of the application used to create the subscription. Read-only.</summary>
         public string ApplicationId {

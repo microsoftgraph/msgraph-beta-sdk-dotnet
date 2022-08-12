@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Entity that represents a Microsoft Tunnel site</summary>
     public class MicrosoftTunnelSite : Entity, IParsable {
         /// <summary>The MicrosoftTunnelSite&apos;s description</summary>
         public string Description {
@@ -15,6 +16,11 @@ namespace Microsoft.Graph.Beta.Models {
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
+        }
+        /// <summary>When set to true, certificate pinning will be enforced on connections between the Microsoft Tunnel server and Microsoft Tunnel clients. When set to false, certificate pinning will be disabled.</summary>
+        public bool? EnableCertificatePinning {
+            get { return BackingStore?.Get<bool?>("enableCertificatePinning"); }
+            set { BackingStore?.Set("enableCertificatePinning", value); }
         }
         /// <summary>The MicrosoftTunnelSite&apos;s Internal Network Access Probe URL</summary>
         public string InternalNetworkProbeUrl {
@@ -67,7 +73,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("upgradeWindowUtcOffsetInMinutes", value); }
         }
         /// <summary>
-        /// Instantiates a new MicrosoftTunnelSite and sets the default values.
+        /// Instantiates a new microsoftTunnelSite and sets the default values.
         /// </summary>
         public MicrosoftTunnelSite() : base() {
             OdataType = "#microsoft.graph.microsoftTunnelSite";
@@ -87,6 +93,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"enableCertificatePinning", n => { EnableCertificatePinning = n.GetBoolValue(); } },
                 {"internalNetworkProbeUrl", n => { InternalNetworkProbeUrl = n.GetStringValue(); } },
                 {"microsoftTunnelConfiguration", n => { MicrosoftTunnelConfiguration = n.GetObjectValue<Microsoft.Graph.Beta.Models.MicrosoftTunnelConfiguration>(Microsoft.Graph.Beta.Models.MicrosoftTunnelConfiguration.CreateFromDiscriminatorValue); } },
                 {"microsoftTunnelServers", n => { MicrosoftTunnelServers = n.GetCollectionOfObjectValues<MicrosoftTunnelServer>(MicrosoftTunnelServer.CreateFromDiscriminatorValue).ToList(); } },
@@ -108,6 +115,7 @@ namespace Microsoft.Graph.Beta.Models {
             base.Serialize(writer);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
+            writer.WriteBoolValue("enableCertificatePinning", EnableCertificatePinning);
             writer.WriteStringValue("internalNetworkProbeUrl", InternalNetworkProbeUrl);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.MicrosoftTunnelConfiguration>("microsoftTunnelConfiguration", MicrosoftTunnelConfiguration);
             writer.WriteCollectionOfObjectValues<MicrosoftTunnelServer>("microsoftTunnelServers", MicrosoftTunnelServers);

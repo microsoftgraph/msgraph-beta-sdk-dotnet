@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class GroupPolicyPresentationTextBox : GroupPolicyPresentation, IParsable {
+    public class GroupPolicyPresentationTextBox : GroupPolicyUploadedPresentation, IParsable {
         /// <summary>Localized default string displayed in the text box. The default value is empty.</summary>
         public string DefaultValue {
             get { return BackingStore?.Get<string>("defaultValue"); }

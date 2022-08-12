@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("webUrl", value); }
         }
         /// <summary>
-        /// Instantiates a new BaseItem and sets the default values.
+        /// Instantiates a new baseItem and sets the default values.
         /// </summary>
         public BaseItem() : base() {
             OdataType = "#microsoft.graph.baseItem";

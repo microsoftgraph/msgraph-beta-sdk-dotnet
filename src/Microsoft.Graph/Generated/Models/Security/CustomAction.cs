@@ -5,12 +5,12 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
     public class CustomAction : InformationProtectionAction, IParsable {
-        /// <summary>The name property</summary>
+        /// <summary>Name of the custom action.</summary>
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
-        /// <summary>The properties property</summary>
+        /// <summary>Properties, in key-value pair format, of the action.</summary>
         public List<KeyValuePair> Properties {
             get { return BackingStore?.Get<List<KeyValuePair>>("properties"); }
             set { BackingStore?.Set("properties", value); }

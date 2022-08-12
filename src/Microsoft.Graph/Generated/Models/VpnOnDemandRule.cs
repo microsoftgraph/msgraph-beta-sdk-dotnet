@@ -24,6 +24,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<string>>("dnsSearchDomains"); }
             set { BackingStore?.Set("dnsSearchDomains", value); }
         }
+        /// <summary>DNS Search Server Address.</summary>
+        public List<string> DnsServerAddressMatch {
+            get { return BackingStore?.Get<List<string>>("dnsServerAddressMatch"); }
+            set { BackingStore?.Set("dnsServerAddressMatch", value); }
+        }
         /// <summary>VPN On-Demand Rule Connection Domain Action.</summary>
         public VpnOnDemandRuleConnectionDomainAction? DomainAction {
             get { return BackingStore?.Get<VpnOnDemandRuleConnectionDomainAction?>("domainAction"); }
@@ -33,6 +38,11 @@ namespace Microsoft.Graph.Beta.Models {
         public List<string> Domains {
             get { return BackingStore?.Get<List<string>>("domains"); }
             set { BackingStore?.Set("domains", value); }
+        }
+        /// <summary>VPN On-Demand Rule Connection network interface type.</summary>
+        public VpnOnDemandRuleInterfaceTypeMatch? InterfaceTypeMatch {
+            get { return BackingStore?.Get<VpnOnDemandRuleInterfaceTypeMatch?>("interfaceTypeMatch"); }
+            set { BackingStore?.Set("interfaceTypeMatch", value); }
         }
         /// <summary>The OdataType property</summary>
         public string OdataType {
@@ -77,8 +87,10 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"action", n => { Action = n.GetEnumValue<VpnOnDemandRuleConnectionAction>(); } },
                 {"dnsSearchDomains", n => { DnsSearchDomains = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"dnsServerAddressMatch", n => { DnsServerAddressMatch = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"domainAction", n => { DomainAction = n.GetEnumValue<VpnOnDemandRuleConnectionDomainAction>(); } },
                 {"domains", n => { Domains = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"interfaceTypeMatch", n => { InterfaceTypeMatch = n.GetEnumValue<VpnOnDemandRuleInterfaceTypeMatch>(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"probeRequiredUrl", n => { ProbeRequiredUrl = n.GetStringValue(); } },
                 {"probeUrl", n => { ProbeUrl = n.GetStringValue(); } },
@@ -93,8 +105,10 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<VpnOnDemandRuleConnectionAction>("action", Action);
             writer.WriteCollectionOfPrimitiveValues<string>("dnsSearchDomains", DnsSearchDomains);
+            writer.WriteCollectionOfPrimitiveValues<string>("dnsServerAddressMatch", DnsServerAddressMatch);
             writer.WriteEnumValue<VpnOnDemandRuleConnectionDomainAction>("domainAction", DomainAction);
             writer.WriteCollectionOfPrimitiveValues<string>("domains", Domains);
+            writer.WriteEnumValue<VpnOnDemandRuleInterfaceTypeMatch>("interfaceTypeMatch", InterfaceTypeMatch);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("probeRequiredUrl", ProbeRequiredUrl);
             writer.WriteStringValue("probeUrl", ProbeUrl);

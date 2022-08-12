@@ -13,12 +13,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The confidenceLevel property</summary>
+        /// <summary>The confidence level, 0 to 100, of the result.</summary>
         public int? ConfidenceLevel {
             get { return BackingStore?.Get<int?>("confidenceLevel"); }
             set { BackingStore?.Set("confidenceLevel", value); }
         }
-        /// <summary>The count property</summary>
+        /// <summary>The number of instances of the specific information type in the input.</summary>
         public int? Count {
             get { return BackingStore?.Get<int?>("count"); }
             set { BackingStore?.Set("count", value); }
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
-        /// <summary>The sensitiveTypeId property</summary>
+        /// <summary>The GUID of the discovered sensitive information type.</summary>
         public string SensitiveTypeId {
             get { return BackingStore?.Get<string>("sensitiveTypeId"); }
             set { BackingStore?.Set("sensitiveTypeId", value); }

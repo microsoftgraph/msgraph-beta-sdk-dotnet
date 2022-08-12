@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.SchemaExtensions.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get entity from schemaExtensions by key
+        /// Get the properties of the specified schemaExtension definition.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<SchemaExtensionItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Beta.SchemaExtensions.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Update entity in schemaExtensions
+        /// Update properties in the definition of the specified schemaExtension. Additive updates to the extension can only be made when the extension is in the `InDevelopment` or `Available` status. This means custom properties or target resource types cannot be removed from the definition, but new custom properties can be added and the description of the extension changed. The update applies to all the resources that are included in the **targetTypes** property of the extension. These resources are among the supporting resource types. For delegated flows, the signed-in user can update a schema extension as long as the **owner** property of the extension is set to the **appId** of an application the signed-in user owns. That application can be the one that initially created the extension, or some other application owned by the signed-in user.  This criteria for the **owner** property allows a signed-in user to make updates through other applications they don&apos;t own, such as Microsoft Graph Explorer. When using Graph Explorer to update a **schemaExtension** resource, include the **owner** property in the PATCH request body. For more information, see the Extensions section in Known issues with Microsoft Graph.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -118,7 +118,7 @@ namespace Microsoft.Graph.Beta.SchemaExtensions.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get entity from schemaExtensions by key
+        /// Get the properties of the specified schemaExtension definition.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -132,7 +132,7 @@ namespace Microsoft.Graph.Beta.SchemaExtensions.Item {
             return await RequestAdapter.SendAsync<SchemaExtension>(requestInfo, SchemaExtension.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update entity in schemaExtensions
+        /// Update properties in the definition of the specified schemaExtension. Additive updates to the extension can only be made when the extension is in the `InDevelopment` or `Available` status. This means custom properties or target resource types cannot be removed from the definition, but new custom properties can be added and the description of the extension changed. The update applies to all the resources that are included in the **targetTypes** property of the extension. These resources are among the supporting resource types. For delegated flows, the signed-in user can update a schema extension as long as the **owner** property of the extension is set to the **appId** of an application the signed-in user owns. That application can be the one that initially created the extension, or some other application owned by the signed-in user.  This criteria for the **owner** property allows a signed-in user to make updates through other applications they don&apos;t own, such as Microsoft Graph Explorer. When using Graph Explorer to update a **schemaExtension** resource, include the **owner** property in the PATCH request body. For more information, see the Extensions section in Known issues with Microsoft Graph.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -161,7 +161,7 @@ namespace Microsoft.Graph.Beta.SchemaExtensions.Item {
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>Get entity from schemaExtensions by key</summary>
+        /// <summary>Get the properties of the specified schemaExtension definition.</summary>
         public class SchemaExtensionItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

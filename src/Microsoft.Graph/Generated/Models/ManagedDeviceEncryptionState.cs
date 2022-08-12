@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Encryption report per device</summary>
     public class ManagedDeviceEncryptionState : Entity, IParsable {
         /// <summary>Advanced BitLocker State. Possible values are: success, noUserConsent, osVolumeUnprotected, osVolumeTpmRequired, osVolumeTpmOnlyRequired, osVolumeTpmPinRequired, osVolumeTpmStartupKeyRequired, osVolumeTpmPinStartupKeyRequired, osVolumeEncryptionMethodMismatch, recoveryKeyBackupFailed, fixedDriveNotEncrypted, fixedDriveEncryptionMethodMismatch, loggedOnUserNonAdmin, windowsRecoveryEnvironmentNotConfigured, tpmNotAvailable, tpmNotReady, networkError.</summary>
         public AdvancedBitLockerState? AdvancedBitLockerStates {
@@ -61,7 +62,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("userPrincipalName", value); }
         }
         /// <summary>
-        /// Instantiates a new ManagedDeviceEncryptionState and sets the default values.
+        /// Instantiates a new managedDeviceEncryptionState and sets the default values.
         /// </summary>
         public ManagedDeviceEncryptionState() : base() {
             OdataType = "#microsoft.graph.managedDeviceEncryptionState";

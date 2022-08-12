@@ -5,6 +5,11 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class AndroidDeviceOwnerScepCertificateProfile : AndroidDeviceOwnerCertificateProfileBase, IParsable {
+        /// <summary>Certificate access type. Possible values are: userApproval, specificApps, unknownFutureValue.</summary>
+        public AndroidDeviceOwnerCertificateAccessType? CertificateAccessType {
+            get { return BackingStore?.Get<AndroidDeviceOwnerCertificateAccessType?>("certificateAccessType"); }
+            set { BackingStore?.Set("certificateAccessType", value); }
+        }
         /// <summary>Target store certificate. Possible values are: user, machine.</summary>
         public Microsoft.Graph.Beta.Models.CertificateStore? CertificateStore {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CertificateStore?>("certificateStore"); }
@@ -40,6 +45,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<string>>("scepServerUrls"); }
             set { BackingStore?.Set("scepServerUrls", value); }
         }
+        /// <summary>Certificate access information. This collection can contain a maximum of 50 elements.</summary>
+        public List<AndroidDeviceOwnerSilentCertificateAccess> SilentCertificateAccessDetails {
+            get { return BackingStore?.Get<List<AndroidDeviceOwnerSilentCertificateAccess>>("silentCertificateAccessDetails"); }
+            set { BackingStore?.Set("silentCertificateAccessDetails", value); }
+        }
         /// <summary>Custom String that defines the AAD Attribute.</summary>
         public string SubjectAlternativeNameFormatString {
             get { return BackingStore?.Get<string>("subjectAlternativeNameFormatString"); }
@@ -69,6 +79,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"certificateAccessType", n => { CertificateAccessType = n.GetEnumValue<AndroidDeviceOwnerCertificateAccessType>(); } },
                 {"certificateStore", n => { CertificateStore = n.GetEnumValue<CertificateStore>(); } },
                 {"customSubjectAlternativeNames", n => { CustomSubjectAlternativeNames = n.GetCollectionOfObjectValues<CustomSubjectAlternativeName>(CustomSubjectAlternativeName.CreateFromDiscriminatorValue).ToList(); } },
                 {"hashAlgorithm", n => { HashAlgorithm = n.GetEnumValue<HashAlgorithms>(); } },
@@ -76,6 +87,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"keyUsage", n => { KeyUsage = n.GetEnumValue<KeyUsages>(); } },
                 {"managedDeviceCertificateStates", n => { ManagedDeviceCertificateStates = n.GetCollectionOfObjectValues<ManagedDeviceCertificateState>(ManagedDeviceCertificateState.CreateFromDiscriminatorValue).ToList(); } },
                 {"scepServerUrls", n => { ScepServerUrls = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"silentCertificateAccessDetails", n => { SilentCertificateAccessDetails = n.GetCollectionOfObjectValues<AndroidDeviceOwnerSilentCertificateAccess>(AndroidDeviceOwnerSilentCertificateAccess.CreateFromDiscriminatorValue).ToList(); } },
                 {"subjectAlternativeNameFormatString", n => { SubjectAlternativeNameFormatString = n.GetStringValue(); } },
                 {"subjectNameFormatString", n => { SubjectNameFormatString = n.GetStringValue(); } },
             };
@@ -87,6 +99,7 @@ namespace Microsoft.Graph.Beta.Models {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteEnumValue<AndroidDeviceOwnerCertificateAccessType>("certificateAccessType", CertificateAccessType);
             writer.WriteEnumValue<CertificateStore>("certificateStore", CertificateStore);
             writer.WriteCollectionOfObjectValues<CustomSubjectAlternativeName>("customSubjectAlternativeNames", CustomSubjectAlternativeNames);
             writer.WriteEnumValue<HashAlgorithms>("hashAlgorithm", HashAlgorithm);
@@ -94,6 +107,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteEnumValue<KeyUsages>("keyUsage", KeyUsage);
             writer.WriteCollectionOfObjectValues<ManagedDeviceCertificateState>("managedDeviceCertificateStates", ManagedDeviceCertificateStates);
             writer.WriteCollectionOfPrimitiveValues<string>("scepServerUrls", ScepServerUrls);
+            writer.WriteCollectionOfObjectValues<AndroidDeviceOwnerSilentCertificateAccess>("silentCertificateAccessDetails", SilentCertificateAccessDetails);
             writer.WriteStringValue("subjectAlternativeNameFormatString", SubjectAlternativeNameFormatString);
             writer.WriteStringValue("subjectNameFormatString", SubjectNameFormatString);
         }
