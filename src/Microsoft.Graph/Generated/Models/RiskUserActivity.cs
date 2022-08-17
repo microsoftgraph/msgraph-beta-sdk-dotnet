@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
-        /// <summary>The type of risk event detected.</summary>
+        /// <summary>The riskEventTypes property</summary>
         public List<string> RiskEventTypes {
             get { return BackingStore?.Get<List<string>>("riskEventTypes"); }
             set { BackingStore?.Set("riskEventTypes", value); }

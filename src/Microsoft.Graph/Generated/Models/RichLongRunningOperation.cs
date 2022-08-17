@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class RichLongRunningOperation : LongRunningOperation, IParsable {
         /// <summary>Error due to which the operation failed.</summary>
         public PublicError Error {
@@ -26,7 +27,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("type", value); }
         }
         /// <summary>
-        /// Instantiates a new RichLongRunningOperation and sets the default values.
+        /// Instantiates a new richLongRunningOperation and sets the default values.
         /// </summary>
         public RichLongRunningOperation() : base() {
             OdataType = "#microsoft.graph.richLongRunningOperation";

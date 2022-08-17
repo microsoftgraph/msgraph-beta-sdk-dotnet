@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.RiskyUsers.Item.History {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// The activity related to user risk level change
+        /// Get history from riskyUsers
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<HistoryRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Beta.RiskyUsers.Item.History {
             return requestInfo;
         }
         /// <summary>
-        /// The activity related to user risk level change
+        /// Get history from riskyUsers
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -128,7 +128,7 @@ namespace Microsoft.Graph.Beta.RiskyUsers.Item.History {
             };
             return await RequestAdapter.SendAsync<RiskyUserHistoryItem>(requestInfo, RiskyUserHistoryItem.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>The activity related to user risk level change</summary>
+        /// <summary>Get history from riskyUsers</summary>
         public class HistoryRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

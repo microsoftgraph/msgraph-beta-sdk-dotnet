@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class WorkbookRangeView : Entity, IParsable {
-        /// <summary>Represents the cell addresses</summary>
+        /// <summary>The cellAddresses property</summary>
         public Json CellAddresses {
             get { return BackingStore?.Get<Json>("cellAddresses"); }
             set { BackingStore?.Set("cellAddresses", value); }

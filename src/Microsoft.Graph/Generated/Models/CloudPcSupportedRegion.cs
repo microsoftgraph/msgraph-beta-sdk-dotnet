@@ -15,6 +15,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<CloudPcSupportedRegionStatus?>("regionStatus"); }
             set { BackingStore?.Set("regionStatus", value); }
         }
+        /// <summary>The supportedSolution property</summary>
+        public CloudPcManagementService? SupportedSolution {
+            get { return BackingStore?.Get<CloudPcManagementService?>("supportedSolution"); }
+            set { BackingStore?.Set("supportedSolution", value); }
+        }
         /// <summary>
         /// Instantiates a new CloudPcSupportedRegion and sets the default values.
         /// </summary>
@@ -36,6 +41,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"regionStatus", n => { RegionStatus = n.GetEnumValue<CloudPcSupportedRegionStatus>(); } },
+                {"supportedSolution", n => { SupportedSolution = n.GetEnumValue<CloudPcManagementService>(); } },
             };
         }
         /// <summary>
@@ -47,6 +53,7 @@ namespace Microsoft.Graph.Beta.Models {
             base.Serialize(writer);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteEnumValue<CloudPcSupportedRegionStatus>("regionStatus", RegionStatus);
+            writer.WriteEnumValue<CloudPcManagementService>("supportedSolution", SupportedSolution);
         }
     }
 }

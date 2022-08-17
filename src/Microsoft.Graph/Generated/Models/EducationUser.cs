@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class EducationUser : Entity, IParsable {
         /// <summary>True if the account is enabled; otherwise, false. This property is required when a user is created. Supports /$filter.</summary>
         public bool? AccountEnabled {
@@ -151,7 +151,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<EducationSchool>>("schools"); }
             set { BackingStore?.Set("schools", value); }
         }
-        /// <summary>True if the Outlook Global Address List should contain this user; otherwise, false. If not set, this will be treated as true. For users invited through the invitation manager, this property will be set to false.</summary>
+        /// <summary>The showInAddressList property</summary>
         public bool? ShowInAddressList {
             get { return BackingStore?.Get<bool?>("showInAddressList"); }
             set { BackingStore?.Set("showInAddressList", value); }
@@ -181,7 +181,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("usageLocation"); }
             set { BackingStore?.Set("usageLocation", value); }
         }
-        /// <summary>The directory user that corresponds to this user.</summary>
+        /// <summary>The user property</summary>
         public Microsoft.Graph.Beta.Models.User User {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.User>("user"); }
             set { BackingStore?.Set("user", value); }

@@ -5,12 +5,12 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class OnenoteResource : OnenoteEntityBaseModel, IParsable {
-        /// <summary>The content stream</summary>
+        /// <summary>The content property</summary>
         public byte[] Content {
             get { return BackingStore?.Get<byte[]>("content"); }
             set { BackingStore?.Set("content", value); }
         }
-        /// <summary>The URL for downloading the content</summary>
+        /// <summary>The contentUrl property</summary>
         public string ContentUrl {
             get { return BackingStore?.Get<string>("contentUrl"); }
             set { BackingStore?.Set("contentUrl", value); }

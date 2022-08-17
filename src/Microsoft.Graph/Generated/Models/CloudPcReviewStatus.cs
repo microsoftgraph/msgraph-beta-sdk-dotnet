@@ -21,6 +21,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("azureStorageAccountName"); }
             set { BackingStore?.Set("azureStorageAccountName", value); }
         }
+        /// <summary>The name of the container in an Azure Storage account in which the Cloud PC snapshot is being saved.</summary>
+        public string AzureStorageContainerName {
+            get { return BackingStore?.Get<string>("azureStorageContainerName"); }
+            set { BackingStore?.Set("azureStorageContainerName", value); }
+        }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>True if the Cloud PC is set to in review by the administrator.</summary>
@@ -81,6 +86,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"azureStorageAccountId", n => { AzureStorageAccountId = n.GetStringValue(); } },
                 {"azureStorageAccountName", n => { AzureStorageAccountName = n.GetStringValue(); } },
+                {"azureStorageContainerName", n => { AzureStorageContainerName = n.GetStringValue(); } },
                 {"inReview", n => { InReview = n.GetBoolValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"restorePointDateTime", n => { RestorePointDateTime = n.GetDateTimeOffsetValue(); } },
@@ -98,6 +104,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("azureStorageAccountId", AzureStorageAccountId);
             writer.WriteStringValue("azureStorageAccountName", AzureStorageAccountName);
+            writer.WriteStringValue("azureStorageContainerName", AzureStorageContainerName);
             writer.WriteBoolValue("inReview", InReview);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteDateTimeOffsetValue("restorePointDateTime", RestorePointDateTime);

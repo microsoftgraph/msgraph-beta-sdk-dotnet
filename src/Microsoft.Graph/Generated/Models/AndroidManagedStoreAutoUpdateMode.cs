@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the deviceAppManagement singleton.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public enum AndroidManagedStoreAutoUpdateMode {
         /// <summary>Default update behavior (device must be connected to Wifi, charging and not actively used).</summary>
         Default,

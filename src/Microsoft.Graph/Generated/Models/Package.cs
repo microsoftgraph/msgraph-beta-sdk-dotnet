@@ -18,7 +18,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
-        /// <summary>A string indicating the type of package. While oneNote is the only currently defined value, you should expect other package types to be returned and handle them accordingly.</summary>
+        /// <summary>The type property</summary>
         public string Type {
             get { return BackingStore?.Get<string>("type"); }
             set { BackingStore?.Set("type", value); }

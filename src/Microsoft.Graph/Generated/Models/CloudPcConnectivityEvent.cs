@@ -13,12 +13,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The eventDateTime property</summary>
+        /// <summary>Indicates the date and time when this event was created. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? EventDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("eventDateTime"); }
             set { BackingStore?.Set("eventDateTime", value); }
         }
-        /// <summary>The eventName property</summary>
+        /// <summary>Name of the event.</summary>
         public string EventName {
             get { return BackingStore?.Get<string>("eventName"); }
             set { BackingStore?.Set("eventName", value); }
@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<CloudPcConnectivityEventType?>("eventType"); }
             set { BackingStore?.Set("eventType", value); }
         }
-        /// <summary>The message property</summary>
+        /// <summary>Additional message for this event.</summary>
         public string Message {
             get { return BackingStore?.Get<string>("message"); }
             set { BackingStore?.Set("message", value); }

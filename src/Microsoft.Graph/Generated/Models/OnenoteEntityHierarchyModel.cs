@@ -6,22 +6,22 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class OnenoteEntityHierarchyModel : OnenoteEntitySchemaObjectModel, IParsable {
-        /// <summary>Identity of the user, device, and application which created the item. Read-only.</summary>
+        /// <summary>The createdBy property</summary>
         public IdentitySet CreatedBy {
             get { return BackingStore?.Get<IdentitySet>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
-        /// <summary>The name of the notebook.</summary>
+        /// <summary>The displayName property</summary>
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
-        /// <summary>Identity of the user, device, and application which created the item. Read-only.</summary>
+        /// <summary>The lastModifiedBy property</summary>
         public IdentitySet LastModifiedBy {
             get { return BackingStore?.Get<IdentitySet>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
-        /// <summary>The date and time when the notebook was last modified. The timestamp represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.</summary>
+        /// <summary>The lastModifiedDateTime property</summary>
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }

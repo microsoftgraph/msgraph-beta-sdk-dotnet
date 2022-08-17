@@ -11,14 +11,14 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
             set { BackingStore?.Set("additionalData", value); }
         }
-        /// <summary>Assigns the control to the user who will take the action.</summary>
+        /// <summary>The assignedTo property</summary>
         public string AssignedTo {
             get { return BackingStore?.Get<string>("assignedTo"); }
             set { BackingStore?.Set("assignedTo", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Provides optional comment about the control.</summary>
+        /// <summary>The comment property</summary>
         public string Comment {
             get { return BackingStore?.Get<string>("comment"); }
             set { BackingStore?.Set("comment", value); }
@@ -28,17 +28,17 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
-        /// <summary>State of the control, which can be modified via a PATCH command (for example, ignored, thirdParty).</summary>
+        /// <summary>The state property</summary>
         public string State {
             get { return BackingStore?.Get<string>("state"); }
             set { BackingStore?.Set("state", value); }
         }
-        /// <summary>ID of the user who updated tenant state.</summary>
+        /// <summary>The updatedBy property</summary>
         public string UpdatedBy {
             get { return BackingStore?.Get<string>("updatedBy"); }
             set { BackingStore?.Set("updatedBy", value); }
         }
-        /// <summary>Time at which the control state was updated.</summary>
+        /// <summary>The updatedDateTime property</summary>
         public DateTimeOffset? UpdatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("updatedDateTime"); }
             set { BackingStore?.Set("updatedDateTime", value); }

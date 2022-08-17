@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Beta.Me.Activities.Item.HistoryItems.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Optional. NavigationProperty/Containment; navigation property to the activity&apos;s historyItems.
+        /// Get historyItems from me
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<ActivityHistoryItemItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -123,7 +123,7 @@ namespace Microsoft.Graph.Beta.Me.Activities.Item.HistoryItems.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Optional. NavigationProperty/Containment; navigation property to the activity&apos;s historyItems.
+        /// Get historyItems from me
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -166,7 +166,7 @@ namespace Microsoft.Graph.Beta.Me.Activities.Item.HistoryItems.Item {
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>Optional. NavigationProperty/Containment; navigation property to the activity&apos;s historyItems.</summary>
+        /// <summary>Get historyItems from me</summary>
         public class ActivityHistoryItemItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

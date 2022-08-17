@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Beta.Users.Item.AppConsentRequestsForApproval.Item.Use
             return requestInfo;
         }
         /// <summary>
-        /// A list of pending user consent requests.
+        /// A list of pending user consent requests. Supports $filter (eq).
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<UserConsentRequestItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -123,7 +123,7 @@ namespace Microsoft.Graph.Beta.Users.Item.AppConsentRequestsForApproval.Item.Use
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// A list of pending user consent requests.
+        /// A list of pending user consent requests. Supports $filter (eq).
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -166,7 +166,7 @@ namespace Microsoft.Graph.Beta.Users.Item.AppConsentRequestsForApproval.Item.Use
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>A list of pending user consent requests.</summary>
+        /// <summary>A list of pending user consent requests. Supports $filter (eq).</summary>
         public class UserConsentRequestItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

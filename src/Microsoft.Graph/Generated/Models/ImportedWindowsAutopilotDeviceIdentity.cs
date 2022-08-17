@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Imported windows autopilot devices.</summary>
     public class ImportedWindowsAutopilotDeviceIdentity : Entity, IParsable {
         /// <summary>UPN of the user the device will be assigned</summary>
         public string AssignedUserPrincipalName {
@@ -42,7 +41,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("state", value); }
         }
         /// <summary>
-        /// Instantiates a new importedWindowsAutopilotDeviceIdentity and sets the default values.
+        /// Instantiates a new ImportedWindowsAutopilotDeviceIdentity and sets the default values.
         /// </summary>
         public ImportedWindowsAutopilotDeviceIdentity() : base() {
             OdataType = "#microsoft.graph.importedWindowsAutopilotDeviceIdentity";

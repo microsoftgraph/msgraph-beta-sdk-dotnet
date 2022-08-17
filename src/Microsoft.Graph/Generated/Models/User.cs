@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("accountEnabled"); }
             set { BackingStore?.Set("accountEnabled", value); }
         }
-        /// <summary>The user&apos;s activities across devices. Read-only. Nullable.</summary>
+        /// <summary>The activities property</summary>
         public List<UserActivity> Activities {
             get { return BackingStore?.Get<List<UserActivity>>("activities"); }
             set { BackingStore?.Set("activities", value); }
@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<AssignedPlan>>("assignedPlans"); }
             set { BackingStore?.Set("assignedPlans", value); }
         }
-        /// <summary>The authentication methods that are supported for the user.</summary>
+        /// <summary>The authentication property</summary>
         public Microsoft.Graph.Beta.Models.Authentication Authentication {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Authentication>("authentication"); }
             set { BackingStore?.Set("authentication", value); }
@@ -226,6 +226,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("employeeId"); }
             set { BackingStore?.Set("employeeId", value); }
         }
+        /// <summary>The employeeLeaveDateTime property</summary>
+        public DateTimeOffset? EmployeeLeaveDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>("employeeLeaveDateTime"); }
+            set { BackingStore?.Set("employeeLeaveDateTime", value); }
+        }
         /// <summary>Represents organization data (e.g. division and costCenter) associated with a user. Supports $filter (eq, ne, not , ge, le, in).</summary>
         public Microsoft.Graph.Beta.Models.EmployeeOrgData EmployeeOrgData {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EmployeeOrgData>("employeeOrgData"); }
@@ -351,7 +356,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<LicenseAssignmentState>>("licenseAssignmentStates"); }
             set { BackingStore?.Set("licenseAssignmentStates", value); }
         }
-        /// <summary>A collection of this user&apos;s license details. Read-only.</summary>
+        /// <summary>The licenseDetails property</summary>
         public List<Microsoft.Graph.Beta.Models.LicenseDetails> LicenseDetails {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.LicenseDetails>>("licenseDetails"); }
             set { BackingStore?.Set("licenseDetails", value); }
@@ -789,6 +794,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"drives", n => { Drives = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Drive>(Microsoft.Graph.Beta.Models.Drive.CreateFromDiscriminatorValue).ToList(); } },
                 {"employeeHireDate", n => { EmployeeHireDate = n.GetDateTimeOffsetValue(); } },
                 {"employeeId", n => { EmployeeId = n.GetStringValue(); } },
+                {"employeeLeaveDateTime", n => { EmployeeLeaveDateTime = n.GetDateTimeOffsetValue(); } },
                 {"employeeOrgData", n => { EmployeeOrgData = n.GetObjectValue<Microsoft.Graph.Beta.Models.EmployeeOrgData>(Microsoft.Graph.Beta.Models.EmployeeOrgData.CreateFromDiscriminatorValue); } },
                 {"employeeType", n => { EmployeeType = n.GetStringValue(); } },
                 {"events", n => { Events = n.GetCollectionOfObjectValues<Event>(Event.CreateFromDiscriminatorValue).ToList(); } },
@@ -942,6 +948,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Drive>("drives", Drives);
             writer.WriteDateTimeOffsetValue("employeeHireDate", EmployeeHireDate);
             writer.WriteStringValue("employeeId", EmployeeId);
+            writer.WriteDateTimeOffsetValue("employeeLeaveDateTime", EmployeeLeaveDateTime);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.EmployeeOrgData>("employeeOrgData", EmployeeOrgData);
             writer.WriteStringValue("employeeType", EmployeeType);
             writer.WriteCollectionOfObjectValues<Event>("events", Events);

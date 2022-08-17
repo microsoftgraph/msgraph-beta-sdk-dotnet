@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>The user experience analytics model scores entity consolidates the various endpoint analytics scores.</summary>
     public class UserExperienceAnalyticsModelScores : Entity, IParsable {
         /// <summary>The user experience analytics model app reliability score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
         public double? AppReliabilityScore {
@@ -52,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("workFromAnywhereScore", value); }
         }
         /// <summary>
-        /// Instantiates a new userExperienceAnalyticsModelScores and sets the default values.
+        /// Instantiates a new UserExperienceAnalyticsModelScores and sets the default values.
         /// </summary>
         public UserExperienceAnalyticsModelScores() : base() {
             OdataType = "#microsoft.graph.userExperienceAnalyticsModelScores";

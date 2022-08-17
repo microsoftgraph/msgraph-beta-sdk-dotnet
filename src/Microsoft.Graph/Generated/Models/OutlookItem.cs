@@ -5,14 +5,14 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class OutlookItem : Entity, IParsable {
-        /// <summary>The categories associated with the item</summary>
+        /// <summary>The categories property</summary>
         public List<string> Categories {
             get { return BackingStore?.Get<List<string>>("categories"); }
             set { BackingStore?.Set("categories", value); }
         }
-        /// <summary>Identifies the version of the item. Every time the item is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.</summary>
+        /// <summary>The changeKey property</summary>
         public string ChangeKey {
             get { return BackingStore?.Get<string>("changeKey"); }
             set { BackingStore?.Set("changeKey", value); }

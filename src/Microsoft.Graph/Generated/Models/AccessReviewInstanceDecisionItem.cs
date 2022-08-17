@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("accessReviewId"); }
             set { BackingStore?.Set("accessReviewId", value); }
         }
-        /// <summary>The identifier of the user who applied the decision. Read-only.</summary>
+        /// <summary>The identifier of the user who applied the decision. 00000000-0000-0000-0000-000000000000 if the assigned reviewer hasn&apos;t applied the decision or it was automatically applied. Read-only.</summary>
         public UserIdentity AppliedBy {
             get { return BackingStore?.Get<UserIdentity>("appliedBy"); }
             set { BackingStore?.Set("appliedBy", value); }
@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("resourceLink"); }
             set { BackingStore?.Set("resourceLink", value); }
         }
-        /// <summary>The identifier of the reviewer. Supports $select. Read-only.</summary>
+        /// <summary>The identifier of the reviewer. 00000000-0000-0000-0000-000000000000 if the assigned reviewer hasn&apos;t reviewed. Supports $select. Read-only.</summary>
         public UserIdentity ReviewedBy {
             get { return BackingStore?.Get<UserIdentity>("reviewedBy"); }
             set { BackingStore?.Set("reviewedBy", value); }

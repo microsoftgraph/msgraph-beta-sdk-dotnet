@@ -17,6 +17,8 @@ namespace Microsoft.Graph.Beta.Models {
         EndpointConnectivityCheckCloudPcUrlNotAllowListed,
         EndpointConnectivityCheckWVDUrlNotAllowListed,
         EndpointConnectivityCheckIntuneUrlNotAllowListed,
+        EndpointConnectivityCheckAzureADUrlNotAllowListed,
+        EndpointConnectivityCheckLocaleUrlNotAllowListed,
         EndpointConnectivityCheckUnknownError,
         AzureAdDeviceSyncCheckDeviceNotFound,
         AzureAdDeviceSyncCheckLongSyncCircle,

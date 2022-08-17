@@ -87,7 +87,7 @@ namespace Microsoft.Graph.Beta.Directory.DeletedItems {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Recently deleted items. Read-only. Nullable.
+        /// Get deletedItems from directory
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<DeletedItemsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -129,7 +129,7 @@ namespace Microsoft.Graph.Beta.Directory.DeletedItems {
             return requestInfo;
         }
         /// <summary>
-        /// Recently deleted items. Read-only. Nullable.
+        /// Get deletedItems from directory
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -158,7 +158,7 @@ namespace Microsoft.Graph.Beta.Directory.DeletedItems {
             };
             return await RequestAdapter.SendAsync<DirectoryObject>(requestInfo, DirectoryObject.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Recently deleted items. Read-only. Nullable.</summary>
+        /// <summary>Get deletedItems from directory</summary>
         public class DeletedItemsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

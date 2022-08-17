@@ -5,44 +5,44 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class PrinterBase : Entity, IParsable {
-        /// <summary>The capabilities of the printer/printerShare.</summary>
+        /// <summary>The capabilities property</summary>
         public PrinterCapabilities Capabilities {
             get { return BackingStore?.Get<PrinterCapabilities>("capabilities"); }
             set { BackingStore?.Set("capabilities", value); }
         }
-        /// <summary>The default print settings of printer/printerShare.</summary>
+        /// <summary>The defaults property</summary>
         public PrinterDefaults Defaults {
             get { return BackingStore?.Get<PrinterDefaults>("defaults"); }
             set { BackingStore?.Set("defaults", value); }
         }
-        /// <summary>The name of the printer/printerShare.</summary>
+        /// <summary>The displayName property</summary>
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
-        /// <summary>Whether the printer/printerShare is currently accepting new print jobs.</summary>
+        /// <summary>The isAcceptingJobs property</summary>
         public bool? IsAcceptingJobs {
             get { return BackingStore?.Get<bool?>("isAcceptingJobs"); }
             set { BackingStore?.Set("isAcceptingJobs", value); }
         }
-        /// <summary>The list of jobs that are queued for printing by the printer/printerShare.</summary>
+        /// <summary>The jobs property</summary>
         public List<PrintJob> Jobs {
             get { return BackingStore?.Get<List<PrintJob>>("jobs"); }
             set { BackingStore?.Set("jobs", value); }
         }
-        /// <summary>The physical and/or organizational location of the printer/printerShare.</summary>
+        /// <summary>The location property</summary>
         public PrinterLocation Location {
             get { return BackingStore?.Get<PrinterLocation>("location"); }
             set { BackingStore?.Set("location", value); }
         }
-        /// <summary>The manufacturer of the printer/printerShare.</summary>
+        /// <summary>The manufacturer property</summary>
         public string Manufacturer {
             get { return BackingStore?.Get<string>("manufacturer"); }
             set { BackingStore?.Set("manufacturer", value); }
         }
-        /// <summary>The model name of the printer/printerShare.</summary>
+        /// <summary>The model property</summary>
         public string Model {
             get { return BackingStore?.Get<string>("model"); }
             set { BackingStore?.Set("model", value); }
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
-        /// <summary>The processing status of the printer/printerShare, including any errors.</summary>
+        /// <summary>The status property</summary>
         public PrinterStatus Status {
             get { return BackingStore?.Get<PrinterStatus>("status"); }
             set { BackingStore?.Set("status", value); }

@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("objectId"); }
             set { BackingStore?.Set("objectId", value); }
         }
-        /// <summary>A string representation of the principal&apos;s security identifier, if known, or null if the subject does not have a security identifier.</summary>
+        /// <summary>The onPremisesSecurityIdentifier property</summary>
         public string OnPremisesSecurityIdentifier {
             get { return BackingStore?.Get<string>("onPremisesSecurityIdentifier"); }
             set { BackingStore?.Set("onPremisesSecurityIdentifier", value); }

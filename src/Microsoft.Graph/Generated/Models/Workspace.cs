@@ -4,49 +4,49 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class Workspace : Place, IParsable {
-        /// <summary>The building property</summary>
+        /// <summary>Specifies the building name or building number that the workspace is in.</summary>
         public string Building {
             get { return BackingStore?.Get<string>("building"); }
             set { BackingStore?.Set("building", value); }
         }
-        /// <summary>The capacity property</summary>
+        /// <summary>Specifies the capacity of the workspace.</summary>
         public int? Capacity {
             get { return BackingStore?.Get<int?>("capacity"); }
             set { BackingStore?.Set("capacity", value); }
         }
-        /// <summary>The emailAddress property</summary>
+        /// <summary>Email address of the workspace.</summary>
         public string EmailAddress {
             get { return BackingStore?.Get<string>("emailAddress"); }
             set { BackingStore?.Set("emailAddress", value); }
         }
-        /// <summary>The floorLabel property</summary>
+        /// <summary>Specifies a descriptive label for the floor, for example, P.</summary>
         public string FloorLabel {
             get { return BackingStore?.Get<string>("floorLabel"); }
             set { BackingStore?.Set("floorLabel", value); }
         }
-        /// <summary>The floorNumber property</summary>
+        /// <summary>Specifies the floor number that the workspace is on.</summary>
         public int? FloorNumber {
             get { return BackingStore?.Get<int?>("floorNumber"); }
             set { BackingStore?.Set("floorNumber", value); }
         }
-        /// <summary>The isWheelChairAccessible property</summary>
+        /// <summary>Specifies whether the workspace is wheelchair accessible.</summary>
         public bool? IsWheelChairAccessible {
             get { return BackingStore?.Get<bool?>("isWheelChairAccessible"); }
             set { BackingStore?.Set("isWheelChairAccessible", value); }
         }
-        /// <summary>The label property</summary>
+        /// <summary>Specifies a descriptive label for the workspace, for example, a number or name.</summary>
         public string Label {
             get { return BackingStore?.Get<string>("label"); }
             set { BackingStore?.Set("label", value); }
         }
-        /// <summary>The nickname property</summary>
+        /// <summary>Specifies a nickname for the workspace, for example, &apos;quiet workspace&apos;.</summary>
         public string Nickname {
             get { return BackingStore?.Get<string>("nickname"); }
             set { BackingStore?.Set("nickname", value); }
         }
-        /// <summary>The tags property</summary>
+        /// <summary>Specifies additional features of the workspace, for example, details like the type of view or furniture type.</summary>
         public List<string> Tags {
             get { return BackingStore?.Get<List<string>>("tags"); }
             set { BackingStore?.Set("tags", value); }

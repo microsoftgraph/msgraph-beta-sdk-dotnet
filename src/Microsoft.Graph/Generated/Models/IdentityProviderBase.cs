@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class IdentityProviderBase : Entity, IParsable {
         /// <summary>The display name of the identity provider.</summary>
         public string DisplayName {
@@ -13,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>
-        /// Instantiates a new identityProviderBase and sets the default values.
+        /// Instantiates a new IdentityProviderBase and sets the default values.
         /// </summary>
         public IdentityProviderBase() : base() {
             OdataType = "#microsoft.graph.identityProviderBase";

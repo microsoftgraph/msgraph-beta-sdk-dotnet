@@ -11,19 +11,19 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
             set { BackingStore?.Set("additionalData", value); }
         }
-        /// <summary>The additionalDetails property</summary>
+        /// <summary>Additional message for this health check.</summary>
         public string AdditionalDetails {
             get { return BackingStore?.Get<string>("additionalDetails"); }
             set { BackingStore?.Set("additionalDetails", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The displayName property</summary>
+        /// <summary>The connectivity health check item name.</summary>
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
-        /// <summary>The lastHealthCheckDateTime property</summary>
+        /// <summary>Timestamp when the last check occurs. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? LastHealthCheckDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastHealthCheckDateTime"); }
             set { BackingStore?.Set("lastHealthCheckDateTime", value); }

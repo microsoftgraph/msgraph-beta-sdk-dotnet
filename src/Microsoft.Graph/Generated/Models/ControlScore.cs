@@ -13,17 +13,17 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Control action category (Identity, Data, Device, Apps, Infrastructure).</summary>
+        /// <summary>The controlCategory property</summary>
         public string ControlCategory {
             get { return BackingStore?.Get<string>("controlCategory"); }
             set { BackingStore?.Set("controlCategory", value); }
         }
-        /// <summary>Control unique name.</summary>
+        /// <summary>The controlName property</summary>
         public string ControlName {
             get { return BackingStore?.Get<string>("controlName"); }
             set { BackingStore?.Set("controlName", value); }
         }
-        /// <summary>Description of the control.</summary>
+        /// <summary>The description property</summary>
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
-        /// <summary>Tenant achieved score for the control (it varies day by day depending on tenant operations on the control).</summary>
+        /// <summary>The score property</summary>
         public double? Score {
             get { return BackingStore?.Get<double?>("score"); }
             set { BackingStore?.Set("score", value); }

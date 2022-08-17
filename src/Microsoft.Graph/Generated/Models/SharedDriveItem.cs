@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Permission>("permission"); }
             set { BackingStore?.Set("permission", value); }
         }
-        /// <summary>Used to access the underlying driveItem. Deprecated -- use driveItem instead.</summary>
+        /// <summary>The root property</summary>
         public Microsoft.Graph.Beta.Models.DriveItem Root {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DriveItem>("root"); }
             set { BackingStore?.Set("root", value); }

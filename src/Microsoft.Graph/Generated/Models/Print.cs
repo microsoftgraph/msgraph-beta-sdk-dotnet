@@ -23,7 +23,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
-        /// <summary>The list of print long running operations.</summary>
+        /// <summary>The operations property</summary>
         public List<PrintOperation> Operations {
             get { return BackingStore?.Get<List<PrintOperation>>("operations"); }
             set { BackingStore?.Set("operations", value); }
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<PrinterShare>>("shares"); }
             set { BackingStore?.Set("shares", value); }
         }
-        /// <summary>List of abstract definition for a task that can be triggered when various events occur within Universal Print.</summary>
+        /// <summary>The taskDefinitions property</summary>
         public List<PrintTaskDefinition> TaskDefinitions {
             get { return BackingStore?.Get<List<PrintTaskDefinition>>("taskDefinitions"); }
             set { BackingStore?.Set("taskDefinitions", value); }

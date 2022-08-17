@@ -7,7 +7,7 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class OnenoteEntityBaseModel : Entity, IParsable {
-        /// <summary>The endpoint where you can get details about the page. Read-only.</summary>
+        /// <summary>The self property</summary>
         public string Self {
             get { return BackingStore?.Get<string>("self"); }
             set { BackingStore?.Set("self", value); }

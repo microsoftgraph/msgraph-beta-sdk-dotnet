@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<RbacApplication>("directory"); }
             set { BackingStore?.Set("directory", value); }
         }
-        /// <summary>Container for roles and assignments for entitlement management resources.</summary>
+        /// <summary>The RbacApplication for Entitlement Management</summary>
         public RbacApplication EntitlementManagement {
             get { return BackingStore?.Get<RbacApplication>("entitlementManagement"); }
             set { BackingStore?.Set("entitlementManagement", value); }

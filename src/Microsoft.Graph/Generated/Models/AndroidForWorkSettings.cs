@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("targetGroupIds", value); }
         }
         /// <summary>
-        /// Instantiates a new androidForWorkSettings and sets the default values.
+        /// Instantiates a new AndroidForWorkSettings and sets the default values.
         /// </summary>
         public AndroidForWorkSettings() : base() {
             OdataType = "#microsoft.graph.androidForWorkSettings";

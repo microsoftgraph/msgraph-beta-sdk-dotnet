@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Identity.B2xUserFlows.Item.IdentityProviders {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// The identity providers included in the user flow.
+        /// Get identityProviders from identity
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<IdentityProvidersRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -77,7 +77,7 @@ namespace Microsoft.Graph.Beta.Identity.B2xUserFlows.Item.IdentityProviders {
             return requestInfo;
         }
         /// <summary>
-        /// The identity providers included in the user flow.
+        /// Get identityProviders from identity
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Beta.Identity.B2xUserFlows.Item.IdentityProviders {
             };
             return await RequestAdapter.SendAsync<IdentityProviderCollectionResponse>(requestInfo, IdentityProviderCollectionResponse.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>The identity providers included in the user flow.</summary>
+        /// <summary>Get identityProviders from identity</summary>
         public class IdentityProvidersRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

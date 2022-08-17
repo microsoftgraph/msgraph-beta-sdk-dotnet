@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.RoleAssignme
             return requestInfo;
         }
         /// <summary>
-        /// Instances for active role assignments.
+        /// Get roleAssignmentScheduleInstances from roleManagement
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<UnifiedRoleAssignmentScheduleInstanceItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -123,7 +123,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.RoleAssignme
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Instances for active role assignments.
+        /// Get roleAssignmentScheduleInstances from roleManagement
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -166,7 +166,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.RoleAssignme
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>Instances for active role assignments.</summary>
+        /// <summary>Get roleAssignmentScheduleInstances from roleManagement</summary>
         public class UnifiedRoleAssignmentScheduleInstanceItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

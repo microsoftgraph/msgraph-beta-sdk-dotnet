@@ -5,22 +5,22 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class Contract : DirectoryObject, IParsable {
-        /// <summary>Type of contract. Possible values are:  SyndicationPartner, BreadthPartner, ResellerPartner. See more in the table below.</summary>
+        /// <summary>The contractType property</summary>
         public string ContractType {
             get { return BackingStore?.Get<string>("contractType"); }
             set { BackingStore?.Set("contractType", value); }
         }
-        /// <summary>The unique identifier for the customer tenant referenced by this partnership. Corresponds to the id property of the customer tenant&apos;s organization resource.</summary>
+        /// <summary>The customerId property</summary>
         public string CustomerId {
             get { return BackingStore?.Get<string>("customerId"); }
             set { BackingStore?.Set("customerId", value); }
         }
-        /// <summary>A copy of the customer tenant&apos;s default domain name. The copy is made when the partnership with the customer is established. It is not automatically updated if the customer tenant&apos;s default domain name changes.</summary>
+        /// <summary>The defaultDomainName property</summary>
         public string DefaultDomainName {
             get { return BackingStore?.Get<string>("defaultDomainName"); }
             set { BackingStore?.Set("defaultDomainName", value); }
         }
-        /// <summary>A copy of the customer tenant&apos;s display name. The copy is made when the partnership with the customer is established. It is not automatically updated if the customer tenant&apos;s display name changes.</summary>
+        /// <summary>The displayName property</summary>
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }

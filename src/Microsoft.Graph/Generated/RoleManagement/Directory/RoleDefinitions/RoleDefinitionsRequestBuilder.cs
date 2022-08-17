@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.Directory.RoleDefinitions {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
+        /// Get roleDefinitions from roleManagement
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<RoleDefinitionsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.Directory.RoleDefinitions {
             return requestInfo;
         }
         /// <summary>
-        /// Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.
+        /// Get roleDefinitions from roleManagement
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -128,7 +128,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.Directory.RoleDefinitions {
             };
             return await RequestAdapter.SendAsync<UnifiedRoleDefinition>(requestInfo, UnifiedRoleDefinition.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.</summary>
+        /// <summary>Get roleDefinitions from roleManagement</summary>
         public class RoleDefinitionsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

@@ -24,10 +24,10 @@ namespace Microsoft.Graph.Beta.EmployeeExperience.LearningProviders.Item.Learnin
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>Gets an item from the Microsoft.Graph.Beta.employeeExperience.learningProviders.item.learningContents.item collection</summary>
-        public LearningContentExternalItemRequestBuilder this[string position] { get {
+        public LearningContentItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
-            urlTplParams.Add("learningContent%2DexternalId", position);
-            return new LearningContentExternalItemRequestBuilder(urlTplParams, RequestAdapter);
+            urlTplParams.Add("learningContent%2Did", position);
+            return new LearningContentItemRequestBuilder(urlTplParams, RequestAdapter);
         } }
         /// <summary>
         /// Instantiates a new LearningContentsRequestBuilder and sets the default values.

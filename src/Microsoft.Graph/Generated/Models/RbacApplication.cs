@@ -15,42 +15,42 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<Approval>>("roleAssignmentApprovals"); }
             set { BackingStore?.Set("roleAssignmentApprovals", value); }
         }
-        /// <summary>Resource to grant access to users or groups.</summary>
+        /// <summary>The roleAssignments property</summary>
         public List<UnifiedRoleAssignment> RoleAssignments {
             get { return BackingStore?.Get<List<UnifiedRoleAssignment>>("roleAssignments"); }
             set { BackingStore?.Set("roleAssignments", value); }
         }
-        /// <summary>Instances for active role assignments.</summary>
+        /// <summary>The roleAssignmentScheduleInstances property</summary>
         public List<UnifiedRoleAssignmentScheduleInstance> RoleAssignmentScheduleInstances {
             get { return BackingStore?.Get<List<UnifiedRoleAssignmentScheduleInstance>>("roleAssignmentScheduleInstances"); }
             set { BackingStore?.Set("roleAssignmentScheduleInstances", value); }
         }
-        /// <summary>Requests for active role assignments to principals through PIM.</summary>
+        /// <summary>The roleAssignmentScheduleRequests property</summary>
         public List<UnifiedRoleAssignmentScheduleRequest> RoleAssignmentScheduleRequests {
             get { return BackingStore?.Get<List<UnifiedRoleAssignmentScheduleRequest>>("roleAssignmentScheduleRequests"); }
             set { BackingStore?.Set("roleAssignmentScheduleRequests", value); }
         }
-        /// <summary>Schedules for active role assignment operations.</summary>
+        /// <summary>The roleAssignmentSchedules property</summary>
         public List<UnifiedRoleAssignmentSchedule> RoleAssignmentSchedules {
             get { return BackingStore?.Get<List<UnifiedRoleAssignmentSchedule>>("roleAssignmentSchedules"); }
             set { BackingStore?.Set("roleAssignmentSchedules", value); }
         }
-        /// <summary>Resource representing the roles allowed by RBAC providers and the permissions assigned to the roles.</summary>
+        /// <summary>The roleDefinitions property</summary>
         public List<UnifiedRoleDefinition> RoleDefinitions {
             get { return BackingStore?.Get<List<UnifiedRoleDefinition>>("roleDefinitions"); }
             set { BackingStore?.Set("roleDefinitions", value); }
         }
-        /// <summary>Instances for role eligibility requests.</summary>
+        /// <summary>The roleEligibilityScheduleInstances property</summary>
         public List<UnifiedRoleEligibilityScheduleInstance> RoleEligibilityScheduleInstances {
             get { return BackingStore?.Get<List<UnifiedRoleEligibilityScheduleInstance>>("roleEligibilityScheduleInstances"); }
             set { BackingStore?.Set("roleEligibilityScheduleInstances", value); }
         }
-        /// <summary>Requests for role eligibilities for principals through PIM.</summary>
+        /// <summary>The roleEligibilityScheduleRequests property</summary>
         public List<UnifiedRoleEligibilityScheduleRequest> RoleEligibilityScheduleRequests {
             get { return BackingStore?.Get<List<UnifiedRoleEligibilityScheduleRequest>>("roleEligibilityScheduleRequests"); }
             set { BackingStore?.Set("roleEligibilityScheduleRequests", value); }
         }
-        /// <summary>Schedules for role eligibility operations.</summary>
+        /// <summary>The roleEligibilitySchedules property</summary>
         public List<UnifiedRoleEligibilitySchedule> RoleEligibilitySchedules {
             get { return BackingStore?.Get<List<UnifiedRoleEligibilitySchedule>>("roleEligibilitySchedules"); }
             set { BackingStore?.Set("roleEligibilitySchedules", value); }

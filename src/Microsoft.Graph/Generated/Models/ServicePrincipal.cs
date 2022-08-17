@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class ServicePrincipal : DirectoryObject, IParsable {
         /// <summary>true if the service principal account is enabled; otherwise, false. Supports $filter (eq, ne, not, in).</summary>
         public bool? AccountEnabled {
@@ -116,7 +115,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("errorUrl"); }
             set { BackingStore?.Set("errorUrl", value); }
         }
-        /// <summary>Federated identities for a specific type of service principal - managed identity. Supports $expand and $filter (eq when counting empty collections).</summary>
+        /// <summary>The federatedIdentityCredentials property</summary>
         public List<FederatedIdentityCredential> FederatedIdentityCredentials {
             get { return BackingStore?.Get<List<FederatedIdentityCredential>>("federatedIdentityCredentials"); }
             set { BackingStore?.Set("federatedIdentityCredentials", value); }
@@ -282,7 +281,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("transitiveMemberOf", value); }
         }
         /// <summary>
-        /// Instantiates a new servicePrincipal and sets the default values.
+        /// Instantiates a new ServicePrincipal and sets the default values.
         /// </summary>
         public ServicePrincipal() : base() {
             OdataType = "#microsoft.graph.servicePrincipal";

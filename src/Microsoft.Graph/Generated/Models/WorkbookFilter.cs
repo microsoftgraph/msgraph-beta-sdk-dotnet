@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class WorkbookFilter : Entity, IParsable {
-        /// <summary>The currently applied filter on the given column. Read-only.</summary>
+        /// <summary>The criteria property</summary>
         public WorkbookFilterCriteria Criteria {
             get { return BackingStore?.Get<WorkbookFilterCriteria>("criteria"); }
             set { BackingStore?.Set("criteria", value); }

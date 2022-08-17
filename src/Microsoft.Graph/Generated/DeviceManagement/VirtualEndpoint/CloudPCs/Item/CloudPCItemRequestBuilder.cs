@@ -5,6 +5,7 @@ using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.GetClo
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Reboot;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Rename;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Reprovision;
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Restore;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Troubleshoot;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
@@ -43,6 +44,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item {
         }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        /// <summary>The restore property</summary>
+        public RestoreRequestBuilder Restore { get =>
+            new RestoreRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The troubleshoot property</summary>
         public TroubleshootRequestBuilder Troubleshoot { get =>
             new TroubleshootRequestBuilder(PathParameters, RequestAdapter);

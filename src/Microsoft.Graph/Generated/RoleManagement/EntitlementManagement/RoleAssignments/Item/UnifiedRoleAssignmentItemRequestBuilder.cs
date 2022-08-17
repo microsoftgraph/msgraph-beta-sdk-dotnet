@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.RoleAssignme
             return requestInfo;
         }
         /// <summary>
-        /// Resource to grant access to users or groups.
+        /// Get roleAssignments from roleManagement
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<UnifiedRoleAssignmentItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -138,7 +138,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.RoleAssignme
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Resource to grant access to users or groups.
+        /// Get roleAssignments from roleManagement
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -181,7 +181,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.RoleAssignme
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>Resource to grant access to users or groups.</summary>
+        /// <summary>Get roleAssignments from roleManagement</summary>
         public class UnifiedRoleAssignmentItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class SecureScoreControlProfile : Entity, IParsable {
         /// <summary>Control action type (Config, Review, Behavior).</summary>
         public string ActionType {
@@ -46,7 +45,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("implementationCost"); }
             set { BackingStore?.Set("implementationCost", value); }
         }
-        /// <summary>Time at which the control profile entity was last modified. The Timestamp type represents date and time</summary>
+        /// <summary>The lastModifiedDateTime property</summary>
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
@@ -102,7 +101,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("vendorInformation", value); }
         }
         /// <summary>
-        /// Instantiates a new secureScoreControlProfile and sets the default values.
+        /// Instantiates a new SecureScoreControlProfile and sets the default values.
         /// </summary>
         public SecureScoreControlProfile() : base() {
             OdataType = "#microsoft.graph.secureScoreControlProfile";

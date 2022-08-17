@@ -1,11 +1,18 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the auditLogRoot singleton.</summary>
-    public class AuditLogRoot : Entity, IParsable {
+    public class AuditLogRoot : IAdditionalDataHolder, IBackedModel, IParsable {
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData {
+            get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
+            set { BackingStore?.Set("additionalData", value); }
+        }
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The directoryAudits property</summary>
         public List<DirectoryAudit> DirectoryAudits {
             get { return BackingStore?.Get<List<DirectoryAudit>>("directoryAudits"); }
@@ -15,6 +22,11 @@ namespace Microsoft.Graph.Beta.Models {
         public List<ProvisioningObjectSummary> DirectoryProvisioning {
             get { return BackingStore?.Get<List<ProvisioningObjectSummary>>("directoryProvisioning"); }
             set { BackingStore?.Set("directoryProvisioning", value); }
+        }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
         }
         /// <summary>The provisioning property</summary>
         public List<ProvisioningObjectSummary> Provisioning {
@@ -32,26 +44,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("signIns", value); }
         }
         /// <summary>
-        /// Instantiates a new auditLogRoot and sets the default values.
+        /// Instantiates a new AuditLogRoot and sets the default values.
         /// </summary>
-        public AuditLogRoot() : base() {
+        public AuditLogRoot() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
+            AdditionalData = new Dictionary<string, object>();
             OdataType = "#microsoft.graph.auditLogRoot";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>
-        public static new AuditLogRoot CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static AuditLogRoot CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new AuditLogRoot();
         }
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
-        public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
-            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+        public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
+            return new Dictionary<string, Action<IParseNode>> {
                 {"directoryAudits", n => { DirectoryAudits = n.GetCollectionOfObjectValues<DirectoryAudit>(DirectoryAudit.CreateFromDiscriminatorValue).ToList(); } },
                 {"directoryProvisioning", n => { DirectoryProvisioning = n.GetCollectionOfObjectValues<ProvisioningObjectSummary>(ProvisioningObjectSummary.CreateFromDiscriminatorValue).ToList(); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"provisioning", n => { Provisioning = n.GetCollectionOfObjectValues<ProvisioningObjectSummary>(ProvisioningObjectSummary.CreateFromDiscriminatorValue).ToList(); } },
                 {"restrictedSignIns", n => { RestrictedSignIns = n.GetCollectionOfObjectValues<RestrictedSignIn>(RestrictedSignIn.CreateFromDiscriminatorValue).ToList(); } },
                 {"signIns", n => { SignIns = n.GetCollectionOfObjectValues<SignIn>(SignIn.CreateFromDiscriminatorValue).ToList(); } },
@@ -61,14 +76,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// Serializes information the current object
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         /// </summary>
-        public new void Serialize(ISerializationWriter writer) {
+        public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<DirectoryAudit>("directoryAudits", DirectoryAudits);
             writer.WriteCollectionOfObjectValues<ProvisioningObjectSummary>("directoryProvisioning", DirectoryProvisioning);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteCollectionOfObjectValues<ProvisioningObjectSummary>("provisioning", Provisioning);
             writer.WriteCollectionOfObjectValues<RestrictedSignIn>("restrictedSignIns", RestrictedSignIns);
             writer.WriteCollectionOfObjectValues<SignIn>("signIns", SignIns);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

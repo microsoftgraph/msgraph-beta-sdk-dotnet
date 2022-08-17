@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>This will allow the admin to see the specific details of an organizational message that has been created for their tenant</summary>
     public class OrganizationalMessageDetail : Entity, IParsable {
         /// <summary>The content that will be displayed to clients for the message. This includes the text portion of the message and the displayed logo</summary>
         public OrganizationalMessageContent Content {
@@ -72,7 +71,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("variant", value); }
         }
         /// <summary>
-        /// Instantiates a new organizationalMessageDetail and sets the default values.
+        /// Instantiates a new OrganizationalMessageDetail and sets the default values.
         /// </summary>
         public OrganizationalMessageDetail() : base() {
             OdataType = "#microsoft.graph.organizationalMessageDetail";

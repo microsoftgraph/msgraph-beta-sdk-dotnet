@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AppConsent.AppConsentRequests.
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// A list of pending user consent requests.
+        /// A list of pending user consent requests. Supports $filter (eq).
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<UserConsentRequestsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -108,7 +108,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AppConsent.AppConsentRequests.
             return new FilterByCurrentUserWithOnRequestBuilder(PathParameters, RequestAdapter, on);
         }
         /// <summary>
-        /// A list of pending user consent requests.
+        /// A list of pending user consent requests. Supports $filter (eq).
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -137,7 +137,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AppConsent.AppConsentRequests.
             };
             return await RequestAdapter.SendAsync<UserConsentRequest>(requestInfo, UserConsentRequest.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>A list of pending user consent requests.</summary>
+        /// <summary>A list of pending user consent requests. Supports $filter (eq).</summary>
         public class UserConsentRequestsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

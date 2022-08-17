@@ -120,7 +120,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.EntitlementManagement {
             return requestInfo;
         }
         /// <summary>
-        /// Container for roles and assignments for entitlement management resources.
+        /// The RbacApplication for Entitlement Management
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<EntitlementManagementRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -175,7 +175,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.EntitlementManagement {
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Container for roles and assignments for entitlement management resources.
+        /// The RbacApplication for Entitlement Management
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -230,7 +230,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.EntitlementManagement {
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>Container for roles and assignments for entitlement management resources.</summary>
+        /// <summary>The RbacApplication for Entitlement Management</summary>
         public class EntitlementManagementRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class WorkbookTableSort : Entity, IParsable {
-        /// <summary>Represents the current conditions used to last sort the table. Read-only.</summary>
+        /// <summary>The fields property</summary>
         public List<WorkbookSortField> Fields {
             get { return BackingStore?.Get<List<WorkbookSortField>>("fields"); }
             set { BackingStore?.Set("fields", value); }

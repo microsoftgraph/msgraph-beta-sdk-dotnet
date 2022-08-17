@@ -93,7 +93,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<long?>("size"); }
             set { BackingStore?.Set("size", value); }
         }
-        /// <summary>If the current item is also available as a special folder, this facet is returned. Read-only.</summary>
+        /// <summary>The specialFolder property</summary>
         public Microsoft.Graph.Beta.Models.SpecialFolder SpecialFolder {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SpecialFolder>("specialFolder"); }
             set { BackingStore?.Set("specialFolder", value); }

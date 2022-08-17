@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<PlannerPlan>>("favoritePlans"); }
             set { BackingStore?.Set("favoritePlans", value); }
         }
-        /// <summary>Read-only. Nullable. Returns the plannerTasks assigned to the user.</summary>
+        /// <summary>The plans property</summary>
         public List<PlannerPlan> Plans {
             get { return BackingStore?.Get<List<PlannerPlan>>("plans"); }
             set { BackingStore?.Set("plans", value); }

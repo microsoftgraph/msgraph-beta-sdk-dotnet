@@ -93,7 +93,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.Directory.RoleEligibilityScheduleR
             return requestInfo;
         }
         /// <summary>
-        /// Requests for role eligibilities for principals through PIM.
+        /// Get roleEligibilityScheduleRequests from roleManagement
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<UnifiedRoleEligibilityScheduleRequestItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -148,7 +148,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.Directory.RoleEligibilityScheduleR
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Requests for role eligibilities for principals through PIM.
+        /// Get roleEligibilityScheduleRequests from roleManagement
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -191,7 +191,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.Directory.RoleEligibilityScheduleR
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>Requests for role eligibilities for principals through PIM.</summary>
+        /// <summary>Get roleEligibilityScheduleRequests from roleManagement</summary>
         public class UnifiedRoleEligibilityScheduleRequestItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

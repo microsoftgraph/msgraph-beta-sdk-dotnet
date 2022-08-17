@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>The user experience analytics device startup score history.</summary>
     public class UserExperienceAnalyticsScoreHistory : Entity, IParsable {
         /// <summary>The user experience analytics device startup date time.</summary>
         public DateTimeOffset? StartupDateTime {
@@ -12,7 +11,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("startupDateTime", value); }
         }
         /// <summary>
-        /// Instantiates a new userExperienceAnalyticsScoreHistory and sets the default values.
+        /// Instantiates a new UserExperienceAnalyticsScoreHistory and sets the default values.
         /// </summary>
         public UserExperienceAnalyticsScoreHistory() : base() {
             OdataType = "#microsoft.graph.userExperienceAnalyticsScoreHistory";
