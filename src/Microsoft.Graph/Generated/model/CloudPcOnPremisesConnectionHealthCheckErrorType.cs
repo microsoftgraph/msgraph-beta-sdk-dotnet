@@ -100,6 +100,16 @@ namespace Microsoft.Graph
         EndpointConnectivityCheckIntuneUrlNotAllowListed = 302,
 	
         /// <summary>
+        /// Endpoint Connectivity Check Azure ADUrl Not Allow Listed
+        /// </summary>
+        EndpointConnectivityCheckAzureADUrlNotAllowListed = 303,
+	
+        /// <summary>
+        /// Endpoint Connectivity Check Locale Url Not Allow Listed
+        /// </summary>
+        EndpointConnectivityCheckLocaleUrlNotAllowListed = 304,
+	
+        /// <summary>
         /// Endpoint Connectivity Check Unknown Error
         /// </summary>
         EndpointConnectivityCheckUnknownError = 399,

@@ -58,14 +58,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets maximumLength.
-        /// Maximum length of string
+        /// Maximum length of string. Valid values 0 to 87516
         /// </summary>
         [JsonPropertyName("maximumLength")]
         public Int64? MaximumLength { get; set; }
     
         /// <summary>
         /// Gets or sets minimumLength.
-        /// Minimum length of string
+        /// Minimum length of string. Valid values 0 to 87516
         /// </summary>
         [JsonPropertyName("minimumLength")]
         public Int64? MinimumLength { get; set; }

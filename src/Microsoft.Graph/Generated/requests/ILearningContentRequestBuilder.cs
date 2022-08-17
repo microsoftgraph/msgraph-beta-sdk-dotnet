@@ -16,20 +16,20 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface ILearningContentRequestBuilder.
     /// </summary>
-    public partial interface ILearningContentRequestBuilder : IBaseRequestBuilder
+    public partial interface ILearningContentRequestBuilder : IEntityRequestBuilder
     {
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        ILearningContentRequest Request();
+        new ILearningContentRequest Request();
 
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        ILearningContentRequest Request(IEnumerable<Option> options);
+        new ILearningContentRequest Request(IEnumerable<Option> options);
     
     }
 }

@@ -114,6 +114,19 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for CloudPCRestore.
+        /// </summary>
+        /// <returns>The <see cref="ICloudPCRestoreRequestBuilder"/>.</returns>
+        public ICloudPCRestoreRequestBuilder Restore(
+            string cloudPcSnapshotId = null)
+        {
+            return new CloudPCRestoreRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.restore"),
+                this.Client,
+                cloudPcSnapshotId);
+        }
+
+        /// <summary>
         /// Gets the request builder for CloudPCTroubleshoot.
         /// </summary>
         /// <returns>The <see cref="ICloudPCTroubleshootRequestBuilder"/>.</returns>

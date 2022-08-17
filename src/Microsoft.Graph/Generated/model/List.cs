@@ -44,7 +44,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets sharepoint ids.
-        /// Returns identifiers useful for SharePoint REST compatibility. Read-only.
         /// </summary>
         [JsonPropertyName("sharepointIds")]
         public SharepointIds SharepointIds { get; set; }
@@ -72,7 +71,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets columns.
-        /// The collection of field definitions for this list.
         /// </summary>
         [JsonPropertyName("columns")]
         public IListColumnsCollectionPage Columns { get; set; }
@@ -86,7 +84,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets content types.
-        /// The collection of content types present in this list.
         /// </summary>
         [JsonPropertyName("contentTypes")]
         public IListContentTypesCollectionPage ContentTypes { get; set; }

@@ -36,7 +36,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets riskEventTypes.
-        /// The type of risk event detected.
         /// </summary>
         [JsonPropertyName("riskEventTypes")]
         public IEnumerable<string> RiskEventTypes { get; set; }

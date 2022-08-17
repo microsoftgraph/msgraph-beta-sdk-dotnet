@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
+        /// Gets or sets enable memauto enroll.
+        /// Specifies whether new Cloud PCs will be automatically enrolled in Microsoft Endpoint Manager(MEM). The default value is false.
+        /// </summary>
+        [JsonPropertyName("enableMEMAutoEnroll")]
+        public bool? EnableMEMAutoEnroll { get; set; }
+    
+        /// <summary>
         /// Gets or sets os version.
         /// The version of the operating system (OS) to provision on Cloud PCs. The possible values are: windows10, windows11, unknownFutureValue.
         /// </summary>

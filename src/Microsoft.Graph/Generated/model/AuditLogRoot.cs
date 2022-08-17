@@ -17,7 +17,8 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Audit Log Root.
     /// </summary>
-    public partial class AuditLogRoot : Entity
+    [JsonConverter(typeof(DerivedTypeConverter<AuditLogRoot>))]
+    public partial class AuditLogRoot
     {
     
         /// <summary>
@@ -84,6 +85,18 @@ namespace Microsoft.Graph
         [JsonPropertyName("signIns@odata.nextLink")]
         [JsonConverter(typeof(NextLinkConverter))]
         public string SignInsNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets @odata.type.
+        /// </summary>
+        [JsonPropertyName("@odata.type")]
+        public string ODataType { get; set; }
+
+        /// <summary>
+        /// Gets or sets additional data.
+        /// </summary>
+        [JsonExtensionData]
+        public IDictionary<string, object> AdditionalData { get; set; }
     
     }
 }

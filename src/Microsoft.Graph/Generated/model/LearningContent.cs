@@ -17,8 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Learning Content.
     /// </summary>
-    [JsonConverter(typeof(DerivedTypeConverter<LearningContent>))]
-    public partial class LearningContent
+    public partial class LearningContent : Entity
     {
     
         /// <summary>
@@ -146,18 +145,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("title")]
         public string Title { get; set; }
-    
-        /// <summary>
-        /// Gets or sets @odata.type.
-        /// </summary>
-        [JsonPropertyName("@odata.type")]
-        public string ODataType { get; set; }
-
-        /// <summary>
-        /// Gets or sets additional data.
-        /// </summary>
-        [JsonExtensionData]
-        public IDictionary<string, object> AdditionalData { get; set; }
     
     }
 }

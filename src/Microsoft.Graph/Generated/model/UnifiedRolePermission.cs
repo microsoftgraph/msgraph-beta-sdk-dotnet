@@ -37,7 +37,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets excludedResourceActions.
-        /// Set of tasks that may not be performed on a resource. Not yet supported.
         /// </summary>
         [JsonPropertyName("excludedResourceActions")]
         public IEnumerable<string> ExcludedResourceActions { get; set; }

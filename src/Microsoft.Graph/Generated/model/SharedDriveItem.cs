@@ -79,7 +79,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets root.
-        /// Used to access the underlying driveItem. Deprecated -- use driveItem instead.
         /// </summary>
         [JsonPropertyName("root")]
         public DriveItem Root { get; set; }

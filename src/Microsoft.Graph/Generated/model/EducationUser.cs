@@ -196,7 +196,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets show in address list.
-        /// True if the Outlook Global Address List should contain this user; otherwise, false. If not set, this will be treated as true. For users invited through the invitation manager, this property will be set to false.
         /// </summary>
         [JsonPropertyName("showInAddressList")]
         public bool? ShowInAddressList { get; set; }
@@ -315,7 +314,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets user.
-        /// The directory user that corresponds to this user.
         /// </summary>
         [JsonPropertyName("user")]
         public User User { get; set; }

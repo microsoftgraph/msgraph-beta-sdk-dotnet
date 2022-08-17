@@ -51,6 +51,17 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for DirectoryObjectRestore.
+        /// </summary>
+        /// <returns>The <see cref="IDirectoryObjectRestoreRequestBuilder"/>.</returns>
+        public IDirectoryObjectRestoreRequestBuilder Restore()
+        {
+            return new DirectoryObjectRestoreRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.restore"),
+                this.Client);
+        }
+
+        /// <summary>
         /// Gets the request builder for DirectoryObjectCheckMemberGroups.
         /// </summary>
         /// <returns>The <see cref="IDirectoryObjectCheckMemberGroupsRequestBuilder"/>.</returns>
@@ -100,17 +111,6 @@ namespace Microsoft.Graph
                 this.AppendSegmentToRequestUrl("microsoft.graph.getMemberObjects"),
                 this.Client,
                 securityEnabledOnly);
-        }
-
-        /// <summary>
-        /// Gets the request builder for DirectoryObjectRestore.
-        /// </summary>
-        /// <returns>The <see cref="IDirectoryObjectRestoreRequestBuilder"/>.</returns>
-        public IDirectoryObjectRestoreRequestBuilder Restore()
-        {
-            return new DirectoryObjectRestoreRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.restore"),
-                this.Client);
         }
     
     }

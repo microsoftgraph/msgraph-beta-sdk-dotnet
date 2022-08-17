@@ -53,12 +53,12 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the request builder for Definitions.
         /// </summary>
-        /// <returns>The <see cref="ITeamTemplateDefinitionsCollectionWithReferencesRequestBuilder"/>.</returns>
-        public ITeamTemplateDefinitionsCollectionWithReferencesRequestBuilder Definitions
+        /// <returns>The <see cref="ITeamTemplateDefinitionsCollectionRequestBuilder"/>.</returns>
+        public ITeamTemplateDefinitionsCollectionRequestBuilder Definitions
         {
             get
             {
-                return new TeamTemplateDefinitionsCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("definitions"), this.Client);
+                return new TeamTemplateDefinitionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("definitions"), this.Client);
             }
         }
     

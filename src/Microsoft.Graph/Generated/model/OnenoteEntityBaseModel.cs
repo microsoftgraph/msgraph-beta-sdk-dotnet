@@ -31,7 +31,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets self.
-        /// The endpoint where you can get details about the page. Read-only.
         /// </summary>
         [JsonPropertyName("self")]
         public string Self { get; set; }

@@ -23,28 +23,24 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets controlCategory.
-        /// Control action category (Identity, Data, Device, Apps, Infrastructure).
         /// </summary>
         [JsonPropertyName("controlCategory")]
         public string ControlCategory { get; set; }
     
         /// <summary>
         /// Gets or sets controlName.
-        /// Control unique name.
         /// </summary>
         [JsonPropertyName("controlName")]
         public string ControlName { get; set; }
     
         /// <summary>
         /// Gets or sets description.
-        /// Description of the control.
         /// </summary>
         [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets score.
-        /// Tenant achieved score for the control (it varies day by day depending on tenant operations on the control).
         /// </summary>
         [JsonPropertyName("score")]
         public double? Score { get; set; }

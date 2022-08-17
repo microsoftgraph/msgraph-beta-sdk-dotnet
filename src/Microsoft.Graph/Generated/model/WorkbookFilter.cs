@@ -22,7 +22,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets criteria.
-        /// The currently applied filter on the given column. Read-only.
         /// </summary>
         [JsonPropertyName("criteria")]
         public WorkbookFilterCriteria Criteria { get; set; }

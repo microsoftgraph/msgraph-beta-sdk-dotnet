@@ -23,18 +23,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets failedHealthCheckItems.
+        /// A list of failed health check items. If the status property is available, this property will be empty.
         /// </summary>
         [JsonPropertyName("failedHealthCheckItems")]
         public IEnumerable<CloudPcHealthCheckItem> FailedHealthCheckItems { get; set; }
     
         /// <summary>
         /// Gets or sets status.
+        /// Connectivity status of the Cloud PC. Possible values are: unknown, available, availableWithWarning, unavailable, and unknownFutureValue.
         /// </summary>
         [JsonPropertyName("status")]
         public CloudPcConnectivityStatus? Status { get; set; }
     
         /// <summary>
         /// Gets or sets updatedDateTime.
+        /// Datetime when the status was updated. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as 2014-01-01T00:00:00Z.
         /// </summary>
         [JsonPropertyName("updatedDateTime")]
         public DateTimeOffset? UpdatedDateTime { get; set; }

@@ -43,7 +43,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets description.
-        /// Verbose description of the application.
         /// </summary>
         [JsonPropertyName("description")]
         public string Description { get; set; }

@@ -30,14 +30,12 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets content.
-        /// The content stream
         /// </summary>
         [JsonPropertyName("content")]
         public Stream Content { get; set; }
     
         /// <summary>
         /// Gets or sets content url.
-        /// The URL for downloading the content
         /// </summary>
         [JsonPropertyName("contentUrl")]
         public string ContentUrl { get; set; }

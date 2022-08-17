@@ -50,7 +50,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets user consent requests.
-        /// A list of pending user consent requests.
+        /// A list of pending user consent requests. Supports $filter (eq).
         /// </summary>
         [JsonPropertyName("userConsentRequests")]
         public IAppConsentRequestUserConsentRequestsCollectionPage UserConsentRequests { get; set; }

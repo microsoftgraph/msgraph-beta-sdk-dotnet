@@ -35,7 +35,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets entitlement management.
-        /// Container for roles and assignments for entitlement management resources.
+        /// The RbacApplication for Entitlement Management
         /// </summary>
         [JsonPropertyName("entitlementManagement")]
         public RbacApplication EntitlementManagement { get; set; }

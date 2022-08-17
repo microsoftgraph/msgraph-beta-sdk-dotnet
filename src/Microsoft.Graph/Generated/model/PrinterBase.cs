@@ -31,49 +31,42 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets capabilities.
-        /// The capabilities of the printer/printerShare.
         /// </summary>
         [JsonPropertyName("capabilities")]
         public PrinterCapabilities Capabilities { get; set; }
     
         /// <summary>
         /// Gets or sets defaults.
-        /// The default print settings of printer/printerShare.
         /// </summary>
         [JsonPropertyName("defaults")]
         public PrinterDefaults Defaults { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
-        /// The name of the printer/printerShare.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets is accepting jobs.
-        /// Whether the printer/printerShare is currently accepting new print jobs.
         /// </summary>
         [JsonPropertyName("isAcceptingJobs")]
         public bool? IsAcceptingJobs { get; set; }
     
         /// <summary>
         /// Gets or sets location.
-        /// The physical and/or organizational location of the printer/printerShare.
         /// </summary>
         [JsonPropertyName("location")]
         public PrinterLocation Location { get; set; }
     
         /// <summary>
         /// Gets or sets manufacturer.
-        /// The manufacturer of the printer/printerShare.
         /// </summary>
         [JsonPropertyName("manufacturer")]
         public string Manufacturer { get; set; }
     
         /// <summary>
         /// Gets or sets model.
-        /// The model name of the printer/printerShare.
         /// </summary>
         [JsonPropertyName("model")]
         public string Model { get; set; }
@@ -86,14 +79,12 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets status.
-        /// The processing status of the printer/printerShare, including any errors.
         /// </summary>
         [JsonPropertyName("status")]
         public PrinterStatus Status { get; set; }
     
         /// <summary>
         /// Gets or sets jobs.
-        /// The list of jobs that are queued for printing by the printer/printerShare.
         /// </summary>
         [JsonPropertyName("jobs")]
         public IPrinterBaseJobsCollectionPage Jobs { get; set; }

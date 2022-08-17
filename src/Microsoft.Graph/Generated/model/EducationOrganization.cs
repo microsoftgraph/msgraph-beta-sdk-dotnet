@@ -52,7 +52,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets external source detail.
-        /// The name of the external source this resources was generated from.
         /// </summary>
         [JsonPropertyName("externalSourceDetail")]
         public string ExternalSourceDetail { get; set; }

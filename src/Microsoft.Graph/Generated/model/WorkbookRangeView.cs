@@ -22,7 +22,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets cell addresses.
-        /// Represents the cell addresses
         /// </summary>
         [JsonPropertyName("cellAddresses")]
         public System.Text.Json.JsonDocument CellAddresses { get; set; }
