@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>This will allow the admin to see the different templated organizational messages that can be created</summary>
     public class OrganizationalMessageGuidedContent : Entity, IParsable {
         /// <summary>Example of the logo that will be displayed to customers and its size requirements</summary>
         public OrganizationalMessageLogoGuide Logo {
@@ -32,7 +31,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("theme", value); }
         }
         /// <summary>
-        /// Instantiates a new organizationalMessageGuidedContent and sets the default values.
+        /// Instantiates a new OrganizationalMessageGuidedContent and sets the default values.
         /// </summary>
         public OrganizationalMessageGuidedContent() : base() {
             OdataType = "#microsoft.graph.organizationalMessageGuidedContent";

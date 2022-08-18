@@ -11,14 +11,14 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
             set { BackingStore?.Set("additionalData", value); }
         }
-        /// <summary>Average score within specified basis.</summary>
+        /// <summary>The averageScore property</summary>
         public double? AverageScore {
             get { return BackingStore?.Get<double?>("averageScore"); }
             set { BackingStore?.Set("averageScore", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Scope type. The possible values are: AllTenants, TotalSeats, IndustryTypes.</summary>
+        /// <summary>The basis property</summary>
         public string Basis {
             get { return BackingStore?.Get<string>("basis"); }
             set { BackingStore?.Set("basis", value); }

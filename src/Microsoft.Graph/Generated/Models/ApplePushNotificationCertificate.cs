@@ -46,7 +46,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("topicIdentifier", value); }
         }
         /// <summary>
-        /// Instantiates a new applePushNotificationCertificate and sets the default values.
+        /// Instantiates a new ApplePushNotificationCertificate and sets the default values.
         /// </summary>
         public ApplePushNotificationCertificate() : base() {
             OdataType = "#microsoft.graph.applePushNotificationCertificate";

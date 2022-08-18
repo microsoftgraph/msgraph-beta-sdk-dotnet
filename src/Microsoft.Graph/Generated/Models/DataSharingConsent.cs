@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Data sharing consent information.</summary>
     public class DataSharingConsent : Entity, IParsable {
         /// <summary>The time consent was granted for this account</summary>
         public DateTimeOffset? GrantDateTime {
@@ -37,7 +36,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("termsUrl", value); }
         }
         /// <summary>
-        /// Instantiates a new dataSharingConsent and sets the default values.
+        /// Instantiates a new DataSharingConsent and sets the default values.
         /// </summary>
         public DataSharingConsent() : base() {
             OdataType = "#microsoft.graph.dataSharingConsent";

@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class AccessReviewReviewerScope : AccessReviewScope, IParsable {
-        /// <summary>The query specifying who will be the reviewer. See table for examples.</summary>
+        /// <summary>The query specifying who will be the reviewer.</summary>
         public string Query {
             get { return BackingStore?.Get<string>("query"); }
             set { BackingStore?.Set("query", value); }

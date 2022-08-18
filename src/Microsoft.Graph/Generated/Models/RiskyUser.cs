@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class RiskyUser : Entity, IParsable {
-        /// <summary>The activity related to user risk level change</summary>
+        /// <summary>The history property</summary>
         public List<RiskyUserHistoryItem> History {
             get { return BackingStore?.Get<List<RiskyUserHistoryItem>>("history"); }
             set { BackingStore?.Set("history", value); }

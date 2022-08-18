@@ -4,69 +4,68 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class UserActivity : Entity, IParsable {
-        /// <summary>Required. URL used to launch the activity in the best native experience represented by the appId. Might launch a web-based app if no native app exists.</summary>
+        /// <summary>The activationUrl property</summary>
         public string ActivationUrl {
             get { return BackingStore?.Get<string>("activationUrl"); }
             set { BackingStore?.Set("activationUrl", value); }
         }
-        /// <summary>Required. URL for the domain representing the cross-platform identity mapping for the app. Mapping is stored either as a JSON file hosted on the domain or configurable via Windows Dev Center. The JSON file is named cross-platform-app-identifiers and is hosted at root of your HTTPS domain, either at the top level domain or include a sub domain. For example: https://contoso.com or https://myapp.contoso.com but NOT https://myapp.contoso.com/somepath. You must have a unique file and domain (or sub domain) per cross-platform app identity. For example, a separate file and domain is needed for Word vs. PowerPoint.</summary>
+        /// <summary>The activitySourceHost property</summary>
         public string ActivitySourceHost {
             get { return BackingStore?.Get<string>("activitySourceHost"); }
             set { BackingStore?.Set("activitySourceHost", value); }
         }
-        /// <summary>Required. The unique activity ID in the context of the app - supplied by caller and immutable thereafter.</summary>
+        /// <summary>The appActivityId property</summary>
         public string AppActivityId {
             get { return BackingStore?.Get<string>("appActivityId"); }
             set { BackingStore?.Set("appActivityId", value); }
         }
-        /// <summary>Optional. Short text description of the app used to generate the activity for use in cases when the app is not installed on the user’s local device.</summary>
+        /// <summary>The appDisplayName property</summary>
         public string AppDisplayName {
             get { return BackingStore?.Get<string>("appDisplayName"); }
             set { BackingStore?.Set("appDisplayName", value); }
         }
-        /// <summary>Optional. A custom piece of data - JSON-LD extensible description of content according to schema.org syntax.</summary>
+        /// <summary>The contentInfo property</summary>
         public Json ContentInfo {
             get { return BackingStore?.Get<Json>("contentInfo"); }
             set { BackingStore?.Set("contentInfo", value); }
         }
-        /// <summary>Optional. Used in the event the content can be rendered outside of a native or web-based app experience (for example, a pointer to an item in an RSS feed).</summary>
+        /// <summary>The contentUrl property</summary>
         public string ContentUrl {
             get { return BackingStore?.Get<string>("contentUrl"); }
             set { BackingStore?.Set("contentUrl", value); }
         }
-        /// <summary>Set by the server. DateTime in UTC when the object was created on the server.</summary>
+        /// <summary>The createdDateTime property</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>Set by the server. DateTime in UTC when the object expired on the server.</summary>
+        /// <summary>The expirationDateTime property</summary>
         public DateTimeOffset? ExpirationDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
             set { BackingStore?.Set("expirationDateTime", value); }
         }
-        /// <summary>Optional. URL used to launch the activity in a web-based app, if available.</summary>
+        /// <summary>The fallbackUrl property</summary>
         public string FallbackUrl {
             get { return BackingStore?.Get<string>("fallbackUrl"); }
             set { BackingStore?.Set("fallbackUrl", value); }
         }
-        /// <summary>Optional. NavigationProperty/Containment; navigation property to the activity&apos;s historyItems.</summary>
+        /// <summary>The historyItems property</summary>
         public List<ActivityHistoryItem> HistoryItems {
             get { return BackingStore?.Get<List<ActivityHistoryItem>>("historyItems"); }
             set { BackingStore?.Set("historyItems", value); }
         }
-        /// <summary>Set by the server. DateTime in UTC when the object was modified on the server.</summary>
+        /// <summary>The lastModifiedDateTime property</summary>
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
-        /// <summary>Set by the server. A status code used to identify valid objects. Values: active, updated, deleted, ignored.</summary>
+        /// <summary>The status property</summary>
         public Microsoft.Graph.Beta.Models.Status? Status {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Status?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
-        /// <summary>Optional. The timezone in which the user&apos;s device used to generate the activity was located at activity creation time; values supplied as Olson IDs in order to support cross-platform representation.</summary>
+        /// <summary>The userTimezone property</summary>
         public string UserTimezone {
             get { return BackingStore?.Get<string>("userTimezone"); }
             set { BackingStore?.Set("userTimezone", value); }
@@ -77,7 +76,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("visualElements", value); }
         }
         /// <summary>
-        /// Instantiates a new userActivity and sets the default values.
+        /// Instantiates a new UserActivity and sets the default values.
         /// </summary>
         public UserActivity() : base() {
             OdataType = "#microsoft.graph.userActivity";

@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.RiskyUsers.Item.History.Item {
             return requestInfo;
         }
         /// <summary>
-        /// The activity related to user risk level change
+        /// Get history from riskyUsers
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<RiskyUserHistoryItemItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -118,7 +118,7 @@ namespace Microsoft.Graph.Beta.RiskyUsers.Item.History.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The activity related to user risk level change
+        /// Get history from riskyUsers
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -161,7 +161,7 @@ namespace Microsoft.Graph.Beta.RiskyUsers.Item.History.Item {
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>The activity related to user risk level change</summary>
+        /// <summary>Get history from riskyUsers</summary>
         public class RiskyUserHistoryItemItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

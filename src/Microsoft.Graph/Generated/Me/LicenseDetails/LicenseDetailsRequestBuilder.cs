@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Me.LicenseDetails {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// A collection of this user&apos;s license details. Read-only.
+        /// Get licenseDetails from me
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<LicenseDetailsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Beta.Me.LicenseDetails {
             return requestInfo;
         }
         /// <summary>
-        /// A collection of this user&apos;s license details. Read-only.
+        /// Get licenseDetails from me
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -128,7 +128,7 @@ namespace Microsoft.Graph.Beta.Me.LicenseDetails {
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.LicenseDetails>(requestInfo, Microsoft.Graph.Beta.Models.LicenseDetails.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>A collection of this user&apos;s license details. Read-only.</summary>
+        /// <summary>Get licenseDetails from me</summary>
         public class LicenseDetailsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

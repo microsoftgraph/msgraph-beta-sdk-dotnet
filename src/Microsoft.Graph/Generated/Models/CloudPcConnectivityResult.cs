@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The failedHealthCheckItems property</summary>
+        /// <summary>A list of failed health check items. If the status property is available, this property will be empty.</summary>
         public List<CloudPcHealthCheckItem> FailedHealthCheckItems {
             get { return BackingStore?.Get<List<CloudPcHealthCheckItem>>("failedHealthCheckItems"); }
             set { BackingStore?.Set("failedHealthCheckItems", value); }
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<CloudPcConnectivityStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
-        /// <summary>The updatedDateTime property</summary>
+        /// <summary>Datetime when the status was updated. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? UpdatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("updatedDateTime"); }
             set { BackingStore?.Set("updatedDateTime", value); }

@@ -4,14 +4,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class CloudPC : Entity, IParsable {
         /// <summary>The Azure Active Directory (Azure AD) device ID of the Cloud PC.</summary>
         public string AadDeviceId {
             get { return BackingStore?.Get<string>("aadDeviceId"); }
             set { BackingStore?.Set("aadDeviceId", value); }
         }
-        /// <summary>The connectivityResult property</summary>
+        /// <summary>The connectivity health check result of a Cloud PC, including the updated timestamp and whether the Cloud PC is able to be connected or not.</summary>
         public CloudPcConnectivityResult ConnectivityResult {
             get { return BackingStore?.Get<CloudPcConnectivityResult>("connectivityResult"); }
             set { BackingStore?.Set("connectivityResult", value); }
@@ -112,7 +111,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("userPrincipalName", value); }
         }
         /// <summary>
-        /// Instantiates a new cloudPC and sets the default values.
+        /// Instantiates a new CloudPC and sets the default values.
         /// </summary>
         public CloudPC() : base() {
             OdataType = "#microsoft.graph.cloudPC";

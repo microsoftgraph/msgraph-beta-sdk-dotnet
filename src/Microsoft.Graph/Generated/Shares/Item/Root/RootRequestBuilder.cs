@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Shares.Item.Root {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Used to access the underlying driveItem. Deprecated -- use driveItem instead.
+        /// Get root from shares
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<RootRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -70,7 +70,7 @@ namespace Microsoft.Graph.Beta.Shares.Item.Root {
             return requestInfo;
         }
         /// <summary>
-        /// Used to access the underlying driveItem. Deprecated -- use driveItem instead.
+        /// Get root from shares
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Beta.Shares.Item.Root {
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.DriveItem>(requestInfo, Microsoft.Graph.Beta.Models.DriveItem.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Used to access the underlying driveItem. Deprecated -- use driveItem instead.</summary>
+        /// <summary>Get root from shares</summary>
         public class RootRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

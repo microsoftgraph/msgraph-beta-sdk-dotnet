@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<IdentitySet>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
-        /// <summary>Identity of the user who created the item. Read-only.</summary>
+        /// <summary>The createdByUser property</summary>
         public User CreatedByUser {
             get { return BackingStore?.Get<User>("createdByUser"); }
             set { BackingStore?.Set("createdByUser", value); }
@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>Provides a user-visible description of the item. Optional.</summary>
+        /// <summary>The description property</summary>
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<IdentitySet>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
-        /// <summary>Identity of the user who last modified the item. Read-only.</summary>
+        /// <summary>The lastModifiedByUser property</summary>
         public User LastModifiedByUser {
             get { return BackingStore?.Get<User>("lastModifiedByUser"); }
             set { BackingStore?.Set("lastModifiedByUser", value); }

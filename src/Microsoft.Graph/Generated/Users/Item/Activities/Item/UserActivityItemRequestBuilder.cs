@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Activities.Item {
             return requestInfo;
         }
         /// <summary>
-        /// The user&apos;s activities across devices. Read-only. Nullable.
+        /// Get activities from users
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<UserActivityItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -123,7 +123,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Activities.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The user&apos;s activities across devices. Read-only. Nullable.
+        /// Get activities from users
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -166,7 +166,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Activities.Item {
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>The user&apos;s activities across devices. Read-only. Nullable.</summary>
+        /// <summary>Get activities from users</summary>
         public class UserActivityItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

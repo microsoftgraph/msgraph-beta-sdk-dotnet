@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<PhysicalAddress>("address"); }
             set { BackingStore?.Set("address", value); }
         }
-        /// <summary>The underlying administrativeUnit for this school.</summary>
+        /// <summary>The administrativeUnit property</summary>
         public Microsoft.Graph.Beta.Models.AdministrativeUnit AdministrativeUnit {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AdministrativeUnit>("administrativeUnit"); }
             set { BackingStore?.Set("administrativeUnit", value); }

@@ -6,7 +6,7 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class ActivityHistoryItem : Entity, IParsable {
-        /// <summary>Optional. The duration of active user engagement. if not supplied, this is calculated from the startedDateTime and lastActiveDateTime.</summary>
+        /// <summary>The activeDurationSeconds property</summary>
         public int? ActiveDurationSeconds {
             get { return BackingStore?.Get<int?>("activeDurationSeconds"); }
             set { BackingStore?.Set("activeDurationSeconds", value); }
@@ -16,37 +16,37 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<UserActivity>("activity"); }
             set { BackingStore?.Set("activity", value); }
         }
-        /// <summary>Set by the server. DateTime in UTC when the object was created on the server.</summary>
+        /// <summary>The createdDateTime property</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>Optional. UTC DateTime when the historyItem will undergo hard-delete. Can be set by the client.</summary>
+        /// <summary>The expirationDateTime property</summary>
         public DateTimeOffset? ExpirationDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
             set { BackingStore?.Set("expirationDateTime", value); }
         }
-        /// <summary>Optional. UTC DateTime when the historyItem (activity session) was last understood as active or finished - if null, historyItem status should be Ongoing.</summary>
+        /// <summary>The lastActiveDateTime property</summary>
         public DateTimeOffset? LastActiveDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastActiveDateTime"); }
             set { BackingStore?.Set("lastActiveDateTime", value); }
         }
-        /// <summary>Set by the server. DateTime in UTC when the object was modified on the server.</summary>
+        /// <summary>The lastModifiedDateTime property</summary>
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
-        /// <summary>Required. UTC DateTime when the historyItem (activity session) was started. Required for timeline history.</summary>
+        /// <summary>The startedDateTime property</summary>
         public DateTimeOffset? StartedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("startedDateTime"); }
             set { BackingStore?.Set("startedDateTime", value); }
         }
-        /// <summary>Set by the server. A status code used to identify valid objects. Values: active, updated, deleted, ignored.</summary>
+        /// <summary>The status property</summary>
         public Microsoft.Graph.Beta.Models.Status? Status {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Status?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
-        /// <summary>Optional. The timezone in which the user&apos;s device used to generate the activity was located at activity creation time. Values supplied as Olson IDs in order to support cross-platform representation.</summary>
+        /// <summary>The userTimezone property</summary>
         public string UserTimezone {
             get { return BackingStore?.Get<string>("userTimezone"); }
             set { BackingStore?.Set("userTimezone", value); }

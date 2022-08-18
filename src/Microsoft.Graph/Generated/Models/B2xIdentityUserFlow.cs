@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<UserFlowApiConnectorConfiguration>("apiConnectorConfiguration"); }
             set { BackingStore?.Set("apiConnectorConfiguration", value); }
         }
-        /// <summary>The identity providers included in the user flow.</summary>
+        /// <summary>The identityProviders property</summary>
         public List<IdentityProvider> IdentityProviders {
             get { return BackingStore?.Get<List<IdentityProvider>>("identityProviders"); }
             set { BackingStore?.Set("identityProviders", value); }

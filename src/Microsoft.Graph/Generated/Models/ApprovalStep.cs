@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("justification"); }
             set { BackingStore?.Set("justification", value); }
         }
-        /// <summary>The identifier of the reviewer. Read-only.</summary>
+        /// <summary>The identifier of the reviewer. 00000000-0000-0000-0000-000000000000 if the assigned reviewer hasn&apos;t reviewed. Read-only.</summary>
         public Identity ReviewedBy {
             get { return BackingStore?.Get<Identity>("reviewedBy"); }
             set { BackingStore?.Set("reviewedBy", value); }

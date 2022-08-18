@@ -75,7 +75,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("grade"); }
             set { BackingStore?.Set("grade", value); }
         }
-        /// <summary>The underlying Microsoft 365 group object.</summary>
+        /// <summary>The group property</summary>
         public Microsoft.Graph.Beta.Models.Group Group {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Group>("group"); }
             set { BackingStore?.Set("group", value); }

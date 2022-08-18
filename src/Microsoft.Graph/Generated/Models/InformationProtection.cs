@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("threatAssessmentRequests", value); }
         }
         /// <summary>
-        /// Instantiates a new informationProtection and sets the default values.
+        /// Instantiates a new InformationProtection and sets the default values.
         /// </summary>
         public InformationProtection() : base() {
             OdataType = "#microsoft.graph.informationProtection";

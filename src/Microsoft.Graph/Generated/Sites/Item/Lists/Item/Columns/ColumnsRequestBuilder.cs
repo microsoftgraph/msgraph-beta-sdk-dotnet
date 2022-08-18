@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Lists.Item.Columns {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// The collection of field definitions for this list.
+        /// Get columns from sites
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<ColumnsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Lists.Item.Columns {
             return requestInfo;
         }
         /// <summary>
-        /// The collection of field definitions for this list.
+        /// Get columns from sites
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -128,7 +128,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Lists.Item.Columns {
             };
             return await RequestAdapter.SendAsync<ColumnDefinition>(requestInfo, ColumnDefinition.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>The collection of field definitions for this list.</summary>
+        /// <summary>Get columns from sites</summary>
         public class ColumnsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

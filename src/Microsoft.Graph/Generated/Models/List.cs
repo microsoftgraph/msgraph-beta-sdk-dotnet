@@ -10,12 +10,12 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<ItemActivityOLD>>("activities"); }
             set { BackingStore?.Set("activities", value); }
         }
-        /// <summary>The collection of field definitions for this list.</summary>
+        /// <summary>The columns property</summary>
         public List<ColumnDefinition> Columns {
             get { return BackingStore?.Get<List<ColumnDefinition>>("columns"); }
             set { BackingStore?.Set("columns", value); }
         }
-        /// <summary>The collection of content types present in this list.</summary>
+        /// <summary>The contentTypes property</summary>
         public List<ContentType> ContentTypes {
             get { return BackingStore?.Get<List<ContentType>>("contentTypes"); }
             set { BackingStore?.Set("contentTypes", value); }
@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<RichLongRunningOperation>>("operations"); }
             set { BackingStore?.Set("operations", value); }
         }
-        /// <summary>Returns identifiers useful for SharePoint REST compatibility. Read-only.</summary>
+        /// <summary>The sharepointIds property</summary>
         public Microsoft.Graph.Beta.Models.SharepointIds SharepointIds {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SharepointIds>("sharepointIds"); }
             set { BackingStore?.Set("sharepointIds", value); }

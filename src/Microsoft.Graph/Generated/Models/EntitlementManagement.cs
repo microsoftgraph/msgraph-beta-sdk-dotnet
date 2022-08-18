@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class EntitlementManagement : Entity, IParsable {
-        /// <summary>Approval stages for decisions associated with access package assignment requests.</summary>
+        /// <summary>The accessPackageAssignmentApprovals property</summary>
         public List<Approval> AccessPackageAssignmentApprovals {
             get { return BackingStore?.Get<List<Approval>>("accessPackageAssignmentApprovals"); }
             set { BackingStore?.Set("accessPackageAssignmentApprovals", value); }

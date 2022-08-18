@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class AppConsentRequest : Entity, IParsable {
         /// <summary>The display name of the app for which consent is requested. Required. Supports $filter (eq only) and $orderby.</summary>
         public string AppDisplayName {
@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<AppConsentRequestScope>>("pendingScopes"); }
             set { BackingStore?.Set("pendingScopes", value); }
         }
-        /// <summary>A list of pending user consent requests.</summary>
+        /// <summary>A list of pending user consent requests. Supports $filter (eq).</summary>
         public List<UserConsentRequest> UserConsentRequests {
             get { return BackingStore?.Get<List<UserConsentRequest>>("userConsentRequests"); }
             set { BackingStore?.Set("userConsentRequests", value); }

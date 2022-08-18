@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("fourCC"); }
             set { BackingStore?.Set("fourCC", value); }
         }
-        /// <summary>Frame rate of the video.</summary>
+        /// <summary>The frameRate property</summary>
         public double? FrameRate {
             get { return BackingStore?.Get<double?>("frameRate"); }
             set { BackingStore?.Set("frameRate", value); }

@@ -13,12 +13,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Collection of the certification controls associated with certification</summary>
+        /// <summary>The certificationControls property</summary>
         public List<CertificationControl> CertificationControls {
             get { return BackingStore?.Get<List<CertificationControl>>("certificationControls"); }
             set { BackingStore?.Set("certificationControls", value); }
         }
-        /// <summary>Compliance certification name (for example, ISO 27018:2014, GDPR, FedRAMP, NIST 800-171)</summary>
+        /// <summary>The certificationName property</summary>
         public string CertificationName {
             get { return BackingStore?.Get<string>("certificationName"); }
             set { BackingStore?.Set("certificationName", value); }

@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.Print.Operations.Item {
             return requestInfo;
         }
         /// <summary>
-        /// The list of print long running operations.
+        /// Get operations from print
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<PrintOperationItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -118,7 +118,7 @@ namespace Microsoft.Graph.Beta.Print.Operations.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The list of print long running operations.
+        /// Get operations from print
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -161,7 +161,7 @@ namespace Microsoft.Graph.Beta.Print.Operations.Item {
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>The list of print long running operations.</summary>
+        /// <summary>Get operations from print</summary>
         public class PrintOperationItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

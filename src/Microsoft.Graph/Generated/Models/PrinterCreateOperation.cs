@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("certificate"); }
             set { BackingStore?.Set("certificate", value); }
         }
-        /// <summary>The created printer entity. Read-only.</summary>
+        /// <summary>The printer property</summary>
         public Microsoft.Graph.Beta.Models.Printer Printer {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Printer>("printer"); }
             set { BackingStore?.Set("printer", value); }

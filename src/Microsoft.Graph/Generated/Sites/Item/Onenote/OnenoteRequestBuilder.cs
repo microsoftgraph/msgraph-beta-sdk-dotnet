@@ -93,7 +93,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Onenote {
             return requestInfo;
         }
         /// <summary>
-        /// Calls the OneNote service for notebook related operations.
+        /// Get onenote from sites
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<OnenoteRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -148,7 +148,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Onenote {
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Calls the OneNote service for notebook related operations.
+        /// Get onenote from sites
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -191,7 +191,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Onenote {
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>Calls the OneNote service for notebook related operations.</summary>
+        /// <summary>Get onenote from sites</summary>
         public class OnenoteRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

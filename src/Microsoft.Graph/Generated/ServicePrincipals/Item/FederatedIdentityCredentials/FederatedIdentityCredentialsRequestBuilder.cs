@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.FederatedIdentityCredentia
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Federated identities for a specific type of service principal - managed identity. Supports $expand and $filter (eq when counting empty collections).
+        /// Get federatedIdentityCredentials from servicePrincipals
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<FederatedIdentityCredentialsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.FederatedIdentityCredentia
             return requestInfo;
         }
         /// <summary>
-        /// Federated identities for a specific type of service principal - managed identity. Supports $expand and $filter (eq when counting empty collections).
+        /// Get federatedIdentityCredentials from servicePrincipals
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -128,7 +128,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.FederatedIdentityCredentia
             };
             return await RequestAdapter.SendAsync<FederatedIdentityCredential>(requestInfo, FederatedIdentityCredential.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Federated identities for a specific type of service principal - managed identity. Supports $expand and $filter (eq when counting empty collections).</summary>
+        /// <summary>Get federatedIdentityCredentials from servicePrincipals</summary>
         public class FederatedIdentityCredentialsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

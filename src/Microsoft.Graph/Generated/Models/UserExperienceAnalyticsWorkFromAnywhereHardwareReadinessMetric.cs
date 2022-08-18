@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("upgradeEligibleDeviceCount", value); }
         }
         /// <summary>
-        /// Instantiates a new userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric and sets the default values.
+        /// Instantiates a new UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric and sets the default values.
         /// </summary>
         public UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric() : base() {
             OdataType = "#microsoft.graph.userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric";

@@ -109,7 +109,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.List.ContentTypes.Item {
             return requestInfo;
         }
         /// <summary>
-        /// The collection of content types present in this list.
+        /// Get contentTypes from drives
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<ContentTypeItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -164,7 +164,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.List.ContentTypes.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The collection of content types present in this list.
+        /// Get contentTypes from drives
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -213,7 +213,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.List.ContentTypes.Item {
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>The collection of content types present in this list.</summary>
+        /// <summary>Get contentTypes from drives</summary>
         public class ContentTypeItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

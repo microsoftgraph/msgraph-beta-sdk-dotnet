@@ -23,7 +23,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("condition"); }
             set { BackingStore?.Set("condition", value); }
         }
-        /// <summary>Set of tasks that may not be performed on a resource. Not yet supported.</summary>
+        /// <summary>The excludedResourceActions property</summary>
         public List<string> ExcludedResourceActions {
             get { return BackingStore?.Get<List<string>>("excludedResourceActions"); }
             set { BackingStore?.Set("excludedResourceActions", value); }

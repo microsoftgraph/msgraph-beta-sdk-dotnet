@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<List>>("lists"); }
             set { BackingStore?.Set("lists", value); }
         }
-        /// <summary>Calls the OneNote service for notebook related operations.</summary>
+        /// <summary>The onenote property</summary>
         public Microsoft.Graph.Beta.Models.Onenote Onenote {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Onenote>("onenote"); }
             set { BackingStore?.Set("onenote", value); }

@@ -22,7 +22,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("used", value); }
         }
         /// <summary>
-        /// Instantiates a new officeGraphInsights and sets the default values.
+        /// Instantiates a new OfficeGraphInsights and sets the default values.
         /// </summary>
         public OfficeGraphInsights() : base() {
             OdataType = "#microsoft.graph.officeGraphInsights";

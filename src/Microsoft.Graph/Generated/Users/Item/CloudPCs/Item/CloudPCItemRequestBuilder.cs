@@ -7,6 +7,7 @@ using Microsoft.Graph.Beta.Users.Item.CloudPCs.Item.GetCloudPcLaunchInfo;
 using Microsoft.Graph.Beta.Users.Item.CloudPCs.Item.Reboot;
 using Microsoft.Graph.Beta.Users.Item.CloudPCs.Item.Rename;
 using Microsoft.Graph.Beta.Users.Item.CloudPCs.Item.Reprovision;
+using Microsoft.Graph.Beta.Users.Item.CloudPCs.Item.Restore;
 using Microsoft.Graph.Beta.Users.Item.CloudPCs.Item.Troubleshoot;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -43,6 +44,10 @@ namespace Microsoft.Graph.Beta.Users.Item.CloudPCs.Item {
         }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        /// <summary>The restore property</summary>
+        public RestoreRequestBuilder Restore { get =>
+            new RestoreRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The troubleshoot property</summary>
         public TroubleshootRequestBuilder Troubleshoot { get =>
             new TroubleshootRequestBuilder(PathParameters, RequestAdapter);
