@@ -22,7 +22,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets fields.
-        /// Represents the current conditions used to last sort the table. Read-only.
         /// </summary>
         [JsonPropertyName("fields")]
         public IEnumerable<WorkbookSortField> Fields { get; set; }

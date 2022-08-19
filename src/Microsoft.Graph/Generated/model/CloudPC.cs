@@ -30,6 +30,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets connectivity result.
+        /// The connectivity health check result of a Cloud PC, including the updated timestamp and whether the Cloud PC is able to be connected or not.
         /// </summary>
         [JsonPropertyName("connectivityResult")]
         public CloudPcConnectivityResult ConnectivityResult { get; set; }

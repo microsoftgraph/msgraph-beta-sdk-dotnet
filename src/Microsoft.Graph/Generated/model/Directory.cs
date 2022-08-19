@@ -90,7 +90,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets deleted items.
-        /// Recently deleted items. Read-only. Nullable.
         /// </summary>
         [JsonPropertyName("deletedItems")]
         public IDirectoryDeletedItemsCollectionPage DeletedItems { get; set; }

@@ -23,14 +23,12 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets name.
-        /// Certification control name
         /// </summary>
         [JsonPropertyName("name")]
         public string Name { get; set; }
     
         /// <summary>
         /// Gets or sets url.
-        /// URL for the Microsoft Service Trust Portal
         /// </summary>
         [JsonPropertyName("url")]
         public string Url { get; set; }

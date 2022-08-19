@@ -23,30 +23,35 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets eventDateTime.
+        /// Indicates the date and time when this event was created. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as 2014-01-01T00:00:00Z.
         /// </summary>
         [JsonPropertyName("eventDateTime")]
         public DateTimeOffset? EventDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets eventName.
+        /// Name of the event.
         /// </summary>
         [JsonPropertyName("eventName")]
         public string EventName { get; set; }
     
         /// <summary>
         /// Gets or sets eventResult.
+        /// Result of this event. Possible values are: unknown, success, failure, and unknownFutureValue.
         /// </summary>
         [JsonPropertyName("eventResult")]
         public CloudPcConnectivityEventResult? EventResult { get; set; }
     
         /// <summary>
         /// Gets or sets eventType.
+        /// Type of this event. Possible values are: unknown, userConnection, userTroubleshooting, deviceHealthCheck, and unknownFutureValue.
         /// </summary>
         [JsonPropertyName("eventType")]
         public CloudPcConnectivityEventType? EventType { get; set; }
     
         /// <summary>
         /// Gets or sets message.
+        /// Additional message for this event.
         /// </summary>
         [JsonPropertyName("message")]
         public string Message { get; set; }

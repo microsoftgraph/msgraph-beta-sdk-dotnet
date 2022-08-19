@@ -23,14 +23,12 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets averageScore.
-        /// Average score within specified basis.
         /// </summary>
         [JsonPropertyName("averageScore")]
         public double? AverageScore { get; set; }
     
         /// <summary>
         /// Gets or sets basis.
-        /// Scope type. The possible values are: AllTenants, TotalSeats, IndustryTypes.
         /// </summary>
         [JsonPropertyName("basis")]
         public string Basis { get; set; }

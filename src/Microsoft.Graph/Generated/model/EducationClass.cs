@@ -149,7 +149,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets group.
-        /// The underlying Microsoft 365 group object.
         /// </summary>
         [JsonPropertyName("group")]
         public Group Group { get; set; }

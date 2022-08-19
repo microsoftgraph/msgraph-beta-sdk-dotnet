@@ -16,7 +16,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type LearningContentRequestBuilder.
     /// </summary>
-    public partial class LearningContentRequestBuilder : BaseRequestBuilder, ILearningContentRequestBuilder
+    public partial class LearningContentRequestBuilder : EntityRequestBuilder, ILearningContentRequestBuilder
     {
 
         /// <summary>
@@ -35,7 +35,7 @@ namespace Microsoft.Graph
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        public ILearningContentRequest Request()
+        public new ILearningContentRequest Request()
         {
             return this.Request(null);
         }
@@ -45,7 +45,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        public ILearningContentRequest Request(IEnumerable<Option> options)
+        public new ILearningContentRequest Request(IEnumerable<Option> options)
         {
             return new LearningContentRequest(this.RequestUrl, this.Client, options);
         }

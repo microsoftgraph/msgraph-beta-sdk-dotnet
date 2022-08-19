@@ -34,8 +34,8 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets the request builder for Definitions.
         /// </summary>
-        /// <returns>The <see cref="ITeamTemplateDefinitionsCollectionWithReferencesRequestBuilder"/>.</returns>
-        ITeamTemplateDefinitionsCollectionWithReferencesRequestBuilder Definitions { get; }
+        /// <returns>The <see cref="ITeamTemplateDefinitionsCollectionRequestBuilder"/>.</returns>
+        ITeamTemplateDefinitionsCollectionRequestBuilder Definitions { get; }
     
     }
 }

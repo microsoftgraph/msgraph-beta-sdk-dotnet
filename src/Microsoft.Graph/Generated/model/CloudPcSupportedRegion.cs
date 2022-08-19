@@ -35,6 +35,12 @@ namespace Microsoft.Graph
         [JsonPropertyName("regionStatus")]
         public CloudPcSupportedRegionStatus? RegionStatus { get; set; }
     
+        /// <summary>
+        /// Gets or sets supported solution.
+        /// </summary>
+        [JsonPropertyName("supportedSolution")]
+        public CloudPcManagementService? SupportedSolution { get; set; }
+    
     }
 }
 

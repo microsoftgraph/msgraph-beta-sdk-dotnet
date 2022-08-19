@@ -37,7 +37,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets identity providers.
-        /// The identity providers included in the user flow.
         /// </summary>
         [Obsolete("The identityProvider API is deprecated and will stop returning data on March 2023. Please use the new identityProviderBase API.")]
         [JsonPropertyName("identityProviders")]

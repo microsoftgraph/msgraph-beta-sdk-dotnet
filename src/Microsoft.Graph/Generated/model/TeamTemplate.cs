@@ -24,7 +24,7 @@ namespace Microsoft.Graph
         /// Gets or sets definitions.
         /// </summary>
         [JsonPropertyName("definitions")]
-        public ITeamTemplateDefinitionsCollectionWithReferencesPage Definitions { get; set; }
+        public ITeamTemplateDefinitionsCollectionPage Definitions { get; set; }
 
         /// <summary>
         /// Gets or sets definitionsNextLink.

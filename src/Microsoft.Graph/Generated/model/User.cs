@@ -160,6 +160,12 @@ namespace Microsoft.Graph
         public string EmployeeId { get; set; }
     
         /// <summary>
+        /// Gets or sets employee leave date time.
+        /// </summary>
+        [JsonPropertyName("employeeLeaveDateTime")]
+        public DateTimeOffset? EmployeeLeaveDateTime { get; set; }
+    
+        /// <summary>
         /// Gets or sets employee org data.
         /// Represents organization data (e.g. division and costCenter) associated with a user. Supports $filter (eq, ne, not , ge, le, in).
         /// </summary>
@@ -673,7 +679,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets license details.
-        /// A collection of this user's license details. Read-only.
         /// </summary>
         [JsonPropertyName("licenseDetails")]
         public IUserLicenseDetailsCollectionPage LicenseDetails { get; set; }
@@ -1236,7 +1241,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets activities.
-        /// The user's activities across devices. Read-only. Nullable.
         /// </summary>
         [JsonPropertyName("activities")]
         public IUserActivitiesCollectionPage Activities { get; set; }
@@ -1282,7 +1286,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets authentication.
-        /// The authentication methods that are supported for the user.
         /// </summary>
         [JsonPropertyName("authentication")]
         public Authentication Authentication { get; set; }

@@ -30,54 +30,63 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets building.
+        /// Specifies the building name or building number that the workspace is in.
         /// </summary>
         [JsonPropertyName("building")]
         public string Building { get; set; }
     
         /// <summary>
         /// Gets or sets capacity.
+        /// Specifies the capacity of the workspace.
         /// </summary>
         [JsonPropertyName("capacity")]
         public Int32? Capacity { get; set; }
     
         /// <summary>
         /// Gets or sets email address.
+        /// Email address of the workspace.
         /// </summary>
         [JsonPropertyName("emailAddress")]
         public string EmailAddress { get; set; }
     
         /// <summary>
         /// Gets or sets floor label.
+        /// Specifies a descriptive label for the floor, for example, P.
         /// </summary>
         [JsonPropertyName("floorLabel")]
         public string FloorLabel { get; set; }
     
         /// <summary>
         /// Gets or sets floor number.
+        /// Specifies the floor number that the workspace is on.
         /// </summary>
         [JsonPropertyName("floorNumber")]
         public Int32? FloorNumber { get; set; }
     
         /// <summary>
         /// Gets or sets is wheel chair accessible.
+        /// Specifies whether the workspace is wheelchair accessible.
         /// </summary>
         [JsonPropertyName("isWheelChairAccessible")]
         public bool? IsWheelChairAccessible { get; set; }
     
         /// <summary>
         /// Gets or sets label.
+        /// Specifies a descriptive label for the workspace, for example, a number or name.
         /// </summary>
         [JsonPropertyName("label")]
         public string Label { get; set; }
     
         /// <summary>
         /// Gets or sets nickname.
+        /// Specifies a nickname for the workspace, for example, 'quiet workspace'.
         /// </summary>
         [JsonPropertyName("nickname")]
         public string Nickname { get; set; }
     
         /// <summary>
         /// Gets or sets tags.
+        /// Specifies additional features of the workspace, for example, details like the type of view or furniture type.
         /// </summary>
         [JsonPropertyName("tags")]
         public IEnumerable<string> Tags { get; set; }

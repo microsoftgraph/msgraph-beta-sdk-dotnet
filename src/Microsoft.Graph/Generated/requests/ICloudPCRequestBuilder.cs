@@ -66,6 +66,13 @@ namespace Microsoft.Graph
             CloudPcOperatingSystem? osVersion = null);
 
         /// <summary>
+        /// Gets the request builder for CloudPCRestore.
+        /// </summary>
+        /// <returns>The <see cref="ICloudPCRestoreRequestBuilder"/>.</returns>
+        ICloudPCRestoreRequestBuilder Restore(
+            string cloudPcSnapshotId = null);
+
+        /// <summary>
         /// Gets the request builder for CloudPCTroubleshoot.
         /// </summary>
         /// <returns>The <see cref="ICloudPCTroubleshootRequestBuilder"/>.</returns>

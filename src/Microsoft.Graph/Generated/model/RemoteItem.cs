@@ -128,7 +128,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets specialFolder.
-        /// If the current item is also available as a special folder, this facet is returned. Read-only.
         /// </summary>
         [JsonPropertyName("specialFolder")]
         public SpecialFolder SpecialFolder { get; set; }

@@ -29,7 +29,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets query.
-        /// The query specifying who will be the reviewer. See table for examples.
+        /// The query specifying who will be the reviewer.
         /// </summary>
         [JsonPropertyName("query")]
         public string Query { get; set; }

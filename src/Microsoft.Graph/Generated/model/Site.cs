@@ -232,7 +232,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets onenote.
-        /// Calls the OneNote service for notebook related operations.
         /// </summary>
         [JsonPropertyName("onenote")]
         public Onenote Onenote { get; set; }

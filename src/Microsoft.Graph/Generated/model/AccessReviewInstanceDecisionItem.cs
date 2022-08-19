@@ -29,7 +29,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets applied by.
-        /// The identifier of the user who applied the decision. Read-only.
+        /// The identifier of the user who applied the decision. 00000000-0000-0000-0000-000000000000 if the assigned reviewer hasn't applied the decision or it was automatically applied. Read-only.
         /// </summary>
         [JsonPropertyName("appliedBy")]
         public UserIdentity AppliedBy { get; set; }
@@ -106,7 +106,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets reviewed by.
-        /// The identifier of the reviewer. Supports $select. Read-only.
+        /// The identifier of the reviewer. 00000000-0000-0000-0000-000000000000 if the assigned reviewer hasn't reviewed. Supports $select. Read-only.
         /// </summary>
         [JsonPropertyName("reviewedBy")]
         public UserIdentity ReviewedBy { get; set; }

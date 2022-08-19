@@ -29,7 +29,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets activity date time.
-        /// Details about when the activity took place. Read-only.
         /// </summary>
         [JsonPropertyName("activityDateTime")]
         public DateTimeOffset? ActivityDateTime { get; set; }

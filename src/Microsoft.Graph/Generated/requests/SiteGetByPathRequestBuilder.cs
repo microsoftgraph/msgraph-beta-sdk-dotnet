@@ -225,7 +225,7 @@ namespace Microsoft.Graph
         }
         /// <summary>
         /// Gets the request builder for Onenote.
-        /// Calls the OneNote service for notebook related operations.
+        /// 
         /// </summary>
         /// <returns>The <see cref="IOnenoteRequestBuilder"/>.</returns>
         public IOnenoteRequestBuilder Onenote

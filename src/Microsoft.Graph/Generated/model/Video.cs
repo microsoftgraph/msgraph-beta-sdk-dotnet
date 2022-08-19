@@ -72,7 +72,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets frameRate.
-        /// Frame rate of the video.
         /// </summary>
         [JsonPropertyName("frameRate")]
         public double? FrameRate { get; set; }

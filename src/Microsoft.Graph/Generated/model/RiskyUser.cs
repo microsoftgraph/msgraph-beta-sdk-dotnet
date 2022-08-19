@@ -79,7 +79,6 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets history.
-        /// The activity related to user risk level change
         /// </summary>
         [JsonPropertyName("history")]
         public IRiskyUserHistoryCollectionPage History { get; set; }

@@ -23,24 +23,28 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets additionalDetails.
+        /// Additional message for this health check.
         /// </summary>
         [JsonPropertyName("additionalDetails")]
         public string AdditionalDetails { get; set; }
     
         /// <summary>
         /// Gets or sets displayName.
+        /// The connectivity health check item name.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets lastHealthCheckDateTime.
+        /// Timestamp when the last check occurs. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as 2014-01-01T00:00:00Z.
         /// </summary>
         [JsonPropertyName("lastHealthCheckDateTime")]
         public DateTimeOffset? LastHealthCheckDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets result.
+        /// The result of this health check item. Possible values are: unknown, success, failure.
         /// </summary>
         [JsonPropertyName("result")]
         public CloudPcConnectivityEventResult? Result { get; set; }

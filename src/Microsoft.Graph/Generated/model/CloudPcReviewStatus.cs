@@ -36,6 +36,13 @@ namespace Microsoft.Graph
         public string AzureStorageAccountName { get; set; }
     
         /// <summary>
+        /// Gets or sets azureStorageContainerName.
+        /// The name of the container in an Azure Storage account in which the Cloud PC snapshot is being saved.
+        /// </summary>
+        [JsonPropertyName("azureStorageContainerName")]
+        public string AzureStorageContainerName { get; set; }
+    
+        /// <summary>
         /// Gets or sets inReview.
         /// True if the Cloud PC is set to in review by the administrator.
         /// </summary>

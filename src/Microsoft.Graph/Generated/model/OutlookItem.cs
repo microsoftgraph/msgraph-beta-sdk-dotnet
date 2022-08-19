@@ -31,14 +31,12 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets categories.
-        /// The categories associated with the item
         /// </summary>
         [JsonPropertyName("categories")]
         public IEnumerable<string> Categories { get; set; }
     
         /// <summary>
         /// Gets or sets change key.
-        /// Identifies the version of the item. Every time the item is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.
         /// </summary>
         [JsonPropertyName("changeKey")]
         public string ChangeKey { get; set; }
