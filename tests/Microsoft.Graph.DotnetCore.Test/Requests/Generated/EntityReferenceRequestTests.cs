@@ -55,6 +55,11 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
                         CancellationToken.None))
                     .Returns(System.Threading.Tasks.Task.FromResult(httpResponseMessage));
 
+                this.serializer.Setup(serializer => 
+                        serializer.DeserializeObject<DirectoryObject>(It.IsAny<Stream>()))
+                            .Returns(default(DirectoryObject));
+
+
                 await this.graphServiceClient.Groups["groupId"].Members["memberId"].Reference.Request().DeleteAsync();
             }
         }

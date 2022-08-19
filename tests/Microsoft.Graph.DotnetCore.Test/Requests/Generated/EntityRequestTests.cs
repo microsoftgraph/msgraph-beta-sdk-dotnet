@@ -80,6 +80,9 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
                         HttpCompletionOption.ResponseContentRead,
                         CancellationToken.None))
                     .Returns(System.Threading.Tasks.Task.FromResult(httpResponseMessage));
+                this.serializer.Setup(serializer => 
+                            serializer.DeserializeObject<DriveItem>(It.IsAny<Stream>()))
+                                .Returns(default(DriveItem));
 
                 await this.graphServiceClient.Me.Drive.Items["id"].Request().DeleteAsync();
             }
