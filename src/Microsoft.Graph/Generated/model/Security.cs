@@ -53,6 +53,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets alerts_v2.
+        /// A collection of alerts in Microsoft 365 Defender.
         /// </summary>
         [JsonPropertyName("alerts_v2")]
         public ISecurityAlerts_v2CollectionPage Alerts_v2 { get; set; }
@@ -66,6 +67,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets incidents.
+        /// A collection of incidents in Microsoft 365 Defender, each of which is a set of correlated alerts and associated metadata that reflects the story of an attack.
         /// </summary>
         [JsonPropertyName("incidents")]
         public ISecurityIncidentsCollectionPage Incidents { get; set; }
@@ -216,6 +218,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets secure scores.
+        /// Measurements of tenants’ security posture to help protect them from threats.
         /// </summary>
         [JsonPropertyName("secureScores")]
         public ISecuritySecureScoresCollectionPage SecureScores { get; set; }

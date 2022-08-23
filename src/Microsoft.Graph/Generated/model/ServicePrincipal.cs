@@ -287,6 +287,13 @@ namespace Microsoft.Graph
         public Guid? TokenEncryptionKeyId { get; set; }
     
         /// <summary>
+        /// Gets or sets verified publisher.
+        /// Specifies the verified publisher of the application which this service principal represents.
+        /// </summary>
+        [JsonPropertyName("verifiedPublisher")]
+        public VerifiedPublisher VerifiedPublisher { get; set; }
+    
+        /// <summary>
         /// Gets or sets app management policies.
         /// The appManagementPolicy applied to this service principal.
         /// </summary>
