@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public enum AppLockerApplicationControlType {
         /// <summary>Device default value, no Application Control type selected.</summary>
         NotConfigured,

@@ -23,17 +23,17 @@ namespace Microsoft.Graph.Beta.Models.Security {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
-        /// <summary>The resourceId property</summary>
+        /// <summary>Unique identifier of the Azure resource.</summary>
         public string ResourceId {
             get { return BackingStore?.Get<string>("resourceId"); }
             set { BackingStore?.Set("resourceId", value); }
         }
-        /// <summary>The subscriptionId property</summary>
+        /// <summary>Unique identifier of the Azure subscription the customer tenant belongs to.</summary>
         public string SubscriptionId {
             get { return BackingStore?.Get<string>("subscriptionId"); }
             set { BackingStore?.Set("subscriptionId", value); }
         }
-        /// <summary>The vmId property</summary>
+        /// <summary>Unique identifier of the virtual machine instance.</summary>
         public string VmId {
             get { return BackingStore?.Get<string>("vmId"); }
             set { BackingStore?.Set("vmId", value); }

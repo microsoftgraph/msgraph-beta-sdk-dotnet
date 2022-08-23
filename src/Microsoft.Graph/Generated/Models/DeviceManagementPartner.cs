@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Entity which represents a connection to device management partner.</summary>
     public class DeviceManagementPartner : Entity, IParsable {
         /// <summary>Partner display name</summary>
         public string DisplayName {
@@ -61,7 +62,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("whenPartnerDevicesWillBeRemovedDateTime", value); }
         }
         /// <summary>
-        /// Instantiates a new DeviceManagementPartner and sets the default values.
+        /// Instantiates a new deviceManagementPartner and sets the default values.
         /// </summary>
         public DeviceManagementPartner() : base() {
             OdataType = "#microsoft.graph.deviceManagementPartner";

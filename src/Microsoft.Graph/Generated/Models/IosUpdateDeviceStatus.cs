@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class IosUpdateDeviceStatus : Entity, IParsable {
         /// <summary>The DateTime when device compliance grace period expires</summary>
         public DateTimeOffset? ComplianceGracePeriodExpirationDateTime {
@@ -66,7 +67,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("userPrincipalName", value); }
         }
         /// <summary>
-        /// Instantiates a new IosUpdateDeviceStatus and sets the default values.
+        /// Instantiates a new iosUpdateDeviceStatus and sets the default values.
         /// </summary>
         public IosUpdateDeviceStatus() : base() {
             OdataType = "#microsoft.graph.iosUpdateDeviceStatus";

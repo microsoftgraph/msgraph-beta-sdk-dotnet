@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provides operations to manage the appleUserInitiatedEnrollmentProfiles property of the microsoft.graph.deviceManagement entity.</summary>
     public enum AppleUserInitiatedEnrollmentType {
         /// <summary>Unknown enrollment type</summary>
         Unknown,

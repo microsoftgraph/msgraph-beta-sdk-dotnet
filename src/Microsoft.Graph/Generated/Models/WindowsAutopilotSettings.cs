@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("syncStatus", value); }
         }
         /// <summary>
-        /// Instantiates a new WindowsAutopilotSettings and sets the default values.
+        /// Instantiates a new windowsAutopilotSettings and sets the default values.
         /// </summary>
         public WindowsAutopilotSettings() : base() {
             OdataType = "#microsoft.graph.windowsAutopilotSettings";

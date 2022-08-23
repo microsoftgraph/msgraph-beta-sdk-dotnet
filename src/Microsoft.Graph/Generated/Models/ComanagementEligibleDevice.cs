@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Device Co-Management eligibility state</summary>
     public class ComanagementEligibleDevice : Entity, IParsable {
         /// <summary>Device registration status.</summary>
         public DeviceRegistrationState? ClientRegistrationStatus {
@@ -101,7 +102,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("userName", value); }
         }
         /// <summary>
-        /// Instantiates a new ComanagementEligibleDevice and sets the default values.
+        /// Instantiates a new comanagementEligibleDevice and sets the default values.
         /// </summary>
         public ComanagementEligibleDevice() : base() {
             OdataType = "#microsoft.graph.comanagementEligibleDevice";

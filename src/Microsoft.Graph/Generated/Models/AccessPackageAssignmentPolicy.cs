@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class AccessPackageAssignmentPolicy : Entity, IParsable {
         /// <summary>The access package with this policy. Read-only. Nullable. Supports $expand.</summary>
         public Microsoft.Graph.Beta.Models.AccessPackage AccessPackage {

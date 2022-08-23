@@ -13,27 +13,27 @@ namespace Microsoft.Graph.Beta.Models.Security {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The fileName property</summary>
+        /// <summary>The name of the file.</summary>
         public string FileName {
             get { return BackingStore?.Get<string>("fileName"); }
             set { BackingStore?.Set("fileName", value); }
         }
-        /// <summary>The filePath property</summary>
+        /// <summary>The file path (location) of the file instance.</summary>
         public string FilePath {
             get { return BackingStore?.Get<string>("filePath"); }
             set { BackingStore?.Set("filePath", value); }
         }
-        /// <summary>The filePublisher property</summary>
+        /// <summary>The publisher of the file.</summary>
         public string FilePublisher {
             get { return BackingStore?.Get<string>("filePublisher"); }
             set { BackingStore?.Set("filePublisher", value); }
         }
-        /// <summary>The fileSize property</summary>
+        /// <summary>The size of the file in bytes.</summary>
         public long? FileSize {
             get { return BackingStore?.Get<long?>("fileSize"); }
             set { BackingStore?.Set("fileSize", value); }
         }
-        /// <summary>The issuer property</summary>
+        /// <summary>The certificate authority (CA) that issued the certificate.</summary>
         public string Issuer {
             get { return BackingStore?.Get<string>("issuer"); }
             set { BackingStore?.Set("issuer", value); }
@@ -43,17 +43,17 @@ namespace Microsoft.Graph.Beta.Models.Security {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
-        /// <summary>The sha1 property</summary>
+        /// <summary>The Sha1 cryptographic hash of the file content.</summary>
         public string Sha1 {
             get { return BackingStore?.Get<string>("sha1"); }
             set { BackingStore?.Set("sha1", value); }
         }
-        /// <summary>The sha256 property</summary>
+        /// <summary>The Sha256 cryptographic hash of the file content.</summary>
         public string Sha256 {
             get { return BackingStore?.Get<string>("sha256"); }
             set { BackingStore?.Set("sha256", value); }
         }
-        /// <summary>The signer property</summary>
+        /// <summary>The signer of the signed file.</summary>
         public string Signer {
             get { return BackingStore?.Get<string>("signer"); }
             set { BackingStore?.Set("signer", value); }

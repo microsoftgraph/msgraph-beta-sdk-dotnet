@@ -5,12 +5,12 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
     public class SecurityGroupEvidence : AlertEvidence, IParsable {
-        /// <summary>The displayName property</summary>
+        /// <summary>The name of the security group.</summary>
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
-        /// <summary>The securityGroupId property</summary>
+        /// <summary>Unique identifier of the security group.</summary>
         public string SecurityGroupId {
             get { return BackingStore?.Get<string>("securityGroupId"); }
             set { BackingStore?.Set("securityGroupId", value); }

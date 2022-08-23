@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>The user experience analytics Device not windows autopilot ready.</summary>
     public class UserExperienceAnalyticsNotAutopilotReadyDevice : Entity, IParsable {
         /// <summary>The intune device&apos;s autopilotProfileAssigned.</summary>
         public bool? AutoPilotProfileAssigned {
@@ -51,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("serialNumber", value); }
         }
         /// <summary>
-        /// Instantiates a new UserExperienceAnalyticsNotAutopilotReadyDevice and sets the default values.
+        /// Instantiates a new userExperienceAnalyticsNotAutopilotReadyDevice and sets the default values.
         /// </summary>
         public UserExperienceAnalyticsNotAutopilotReadyDevice() : base() {
             OdataType = "#microsoft.graph.userExperienceAnalyticsNotAutopilotReadyDevice";

@@ -5,27 +5,27 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
     public class CloudApplicationEvidence : AlertEvidence, IParsable {
-        /// <summary>The appId property</summary>
+        /// <summary>Unique identifier of the application.</summary>
         public long? AppId {
             get { return BackingStore?.Get<long?>("appId"); }
             set { BackingStore?.Set("appId", value); }
         }
-        /// <summary>The displayName property</summary>
+        /// <summary>Name of the application.</summary>
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
-        /// <summary>The instanceId property</summary>
+        /// <summary>Identifier of the instance of the Software as a Service (SaaS) application.</summary>
         public long? InstanceId {
             get { return BackingStore?.Get<long?>("instanceId"); }
             set { BackingStore?.Set("instanceId", value); }
         }
-        /// <summary>The instanceName property</summary>
+        /// <summary>Name of the instance of the SaaS application.</summary>
         public string InstanceName {
             get { return BackingStore?.Get<string>("instanceName"); }
             set { BackingStore?.Set("instanceName", value); }
         }
-        /// <summary>The saasAppId property</summary>
+        /// <summary>The identifier of the SaaS application.</summary>
         public long? SaasAppId {
             get { return BackingStore?.Get<long?>("saasAppId"); }
             set { BackingStore?.Set("saasAppId", value); }

@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public enum ImportedWindowsAutopilotDeviceIdentityUploadStatus {
         /// <summary>No upload status.</summary>
         NoUpload,

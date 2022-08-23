@@ -5,12 +5,12 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
     public class RegistryKeyEvidence : AlertEvidence, IParsable {
-        /// <summary>The registryHive property</summary>
+        /// <summary>Registry hive of the key that the recorded action was applied to.</summary>
         public string RegistryHive {
             get { return BackingStore?.Get<string>("registryHive"); }
             set { BackingStore?.Set("registryHive", value); }
         }
-        /// <summary>The registryKey property</summary>
+        /// <summary>Registry key that the recorded action was applied to.</summary>
         public string RegistryKey {
             get { return BackingStore?.Get<string>("registryKey"); }
             set { BackingStore?.Set("registryKey", value); }

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Represents a custom attribute script for macOS.</summary>
     public class DeviceCustomAttributeShellScript : Entity, IParsable {
         /// <summary>The list of group assignments for the device management script.</summary>
         public List<DeviceManagementScriptAssignment> Assignments {
@@ -81,7 +82,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("userRunStates", value); }
         }
         /// <summary>
-        /// Instantiates a new DeviceCustomAttributeShellScript and sets the default values.
+        /// Instantiates a new deviceCustomAttributeShellScript and sets the default values.
         /// </summary>
         public DeviceCustomAttributeShellScript() : base() {
             OdataType = "#microsoft.graph.deviceCustomAttributeShellScript";

@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public enum ManagedAppPhoneNumberRedirectLevel {
         /// <summary>Sharing is allowed to all apps.</summary>
         AllApps,

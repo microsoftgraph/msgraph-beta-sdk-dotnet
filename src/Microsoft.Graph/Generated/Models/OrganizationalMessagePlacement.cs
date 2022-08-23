@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public enum OrganizationalMessagePlacement {
         /// <summary>Indicates the default area for text to be displayed. This is the only valid placement value for the actionCenter and softLanding surfaces</summary>
         Default,

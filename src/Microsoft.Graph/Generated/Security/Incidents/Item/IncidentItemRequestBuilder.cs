@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Beta.Security.Incidents.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get incidents from security
+        /// A collection of incidents in Microsoft 365 Defender, each of which is a set of correlated alerts and associated metadata that reflects the story of an attack.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<IncidentItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -123,7 +123,7 @@ namespace Microsoft.Graph.Beta.Security.Incidents.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get incidents from security
+        /// A collection of incidents in Microsoft 365 Defender, each of which is a set of correlated alerts and associated metadata that reflects the story of an attack.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -166,7 +166,7 @@ namespace Microsoft.Graph.Beta.Security.Incidents.Item {
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>Get incidents from security</summary>
+        /// <summary>A collection of incidents in Microsoft 365 Defender, each of which is a set of correlated alerts and associated metadata that reflects the story of an attack.</summary>
         public class IncidentItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

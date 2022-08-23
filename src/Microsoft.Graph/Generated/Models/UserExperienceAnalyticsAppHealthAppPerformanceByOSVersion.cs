@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>The user experience analytics application performance entity contains app performance details by OS version.</summary>
     public class UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion : Entity, IParsable {
         /// <summary>The number of devices where the app has been active. Valid values -2147483648 to 2147483647</summary>
         public int? ActiveDeviceCount {
@@ -51,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("osVersion", value); }
         }
         /// <summary>
-        /// Instantiates a new UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion and sets the default values.
+        /// Instantiates a new userExperienceAnalyticsAppHealthAppPerformanceByOSVersion and sets the default values.
         /// </summary>
         public UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion() : base() {
             OdataType = "#microsoft.graph.userExperienceAnalyticsAppHealthAppPerformanceByOSVersion";

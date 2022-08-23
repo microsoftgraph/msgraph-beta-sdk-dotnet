@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
     public class UrlEvidence : AlertEvidence, IParsable {
-        /// <summary>The url property</summary>
+        /// <summary>The Unique Resource Locator (URL).</summary>
         public string Url {
             get { return BackingStore?.Get<string>("url"); }
             set { BackingStore?.Set("url", value); }

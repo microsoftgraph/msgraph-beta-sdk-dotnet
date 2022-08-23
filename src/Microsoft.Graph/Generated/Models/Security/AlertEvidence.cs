@@ -14,7 +14,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The createdDateTime property</summary>
+        /// <summary>The time the evidence was created and added to the alert.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
@@ -29,17 +29,17 @@ namespace Microsoft.Graph.Beta.Models.Security {
             get { return BackingStore?.Get<EvidenceRemediationStatus?>("remediationStatus"); }
             set { BackingStore?.Set("remediationStatus", value); }
         }
-        /// <summary>The remediationStatusDetails property</summary>
+        /// <summary>Details about the remediation status.</summary>
         public string RemediationStatusDetails {
             get { return BackingStore?.Get<string>("remediationStatusDetails"); }
             set { BackingStore?.Set("remediationStatusDetails", value); }
         }
-        /// <summary>The roles property</summary>
+        /// <summary>The role/s that an evidence entity represents in an alert, e.g., an IP address that is associated with an attacker will have the evidence role &apos;Attacker&apos;.</summary>
         public List<string> Roles {
             get { return BackingStore?.Get<List<string>>("roles"); }
             set { BackingStore?.Set("roles", value); }
         }
-        /// <summary>The tags property</summary>
+        /// <summary>Array of custom tags associated with an evidence instance, for example to denote a group of devices, high value assets, etc.</summary>
         public List<string> Tags {
             get { return BackingStore?.Get<List<string>>("tags"); }
             set { BackingStore?.Set("tags", value); }

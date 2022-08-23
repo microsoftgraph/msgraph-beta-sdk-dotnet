@@ -5,27 +5,27 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
     public class RegistryValueEvidence : AlertEvidence, IParsable {
-        /// <summary>The registryHive property</summary>
+        /// <summary>Registry hive of the key that the recorded action was applied to.</summary>
         public string RegistryHive {
             get { return BackingStore?.Get<string>("registryHive"); }
             set { BackingStore?.Set("registryHive", value); }
         }
-        /// <summary>The registryKey property</summary>
+        /// <summary>Registry key that the recorded action was applied to.</summary>
         public string RegistryKey {
             get { return BackingStore?.Get<string>("registryKey"); }
             set { BackingStore?.Set("registryKey", value); }
         }
-        /// <summary>The registryValue property</summary>
+        /// <summary>Data of the registry value that the recorded action was applied to.</summary>
         public string RegistryValue {
             get { return BackingStore?.Get<string>("registryValue"); }
             set { BackingStore?.Set("registryValue", value); }
         }
-        /// <summary>The registryValueName property</summary>
+        /// <summary>Name of the registry value that the recorded action was applied to.</summary>
         public string RegistryValueName {
             get { return BackingStore?.Get<string>("registryValueName"); }
             set { BackingStore?.Set("registryValueName", value); }
         }
-        /// <summary>The registryValueType property</summary>
+        /// <summary>Data type, such as binary or string, of the registry value that the recorded action was applied to.</summary>
         public string RegistryValueType {
             get { return BackingStore?.Get<string>("registryValueType"); }
             set { BackingStore?.Set("registryValueType", value); }

@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Security.SecureScores {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get secureScores from security
+        /// Measurements of tenants’ security posture to help protect them from threats.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<SecureScoresRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Beta.Security.SecureScores {
             return requestInfo;
         }
         /// <summary>
-        /// Get secureScores from security
+        /// Measurements of tenants’ security posture to help protect them from threats.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -128,7 +128,7 @@ namespace Microsoft.Graph.Beta.Security.SecureScores {
             };
             return await RequestAdapter.SendAsync<SecureScore>(requestInfo, SecureScore.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Get secureScores from security</summary>
+        /// <summary>Measurements of tenants’ security posture to help protect them from threats.</summary>
         public class SecureScoresRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
