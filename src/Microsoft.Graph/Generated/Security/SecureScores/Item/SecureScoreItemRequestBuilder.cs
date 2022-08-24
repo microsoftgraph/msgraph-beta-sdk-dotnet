@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.Security.SecureScores.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get secureScores from security
+        /// Measurements of tenants’ security posture to help protect them from threats.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<SecureScoreItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -118,7 +118,7 @@ namespace Microsoft.Graph.Beta.Security.SecureScores.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get secureScores from security
+        /// Measurements of tenants’ security posture to help protect them from threats.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -161,7 +161,7 @@ namespace Microsoft.Graph.Beta.Security.SecureScores.Item {
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>Get secureScores from security</summary>
+        /// <summary>Measurements of tenants’ security posture to help protect them from threats.</summary>
         public class SecureScoreItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

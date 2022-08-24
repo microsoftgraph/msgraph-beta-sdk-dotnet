@@ -7,7 +7,7 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class IosSingleSignOnExtension : SingleSignOnExtension, IParsable {
         /// <summary>
-        /// Instantiates a new iosSingleSignOnExtension and sets the default values.
+        /// Instantiates a new IosSingleSignOnExtension and sets the default values.
         /// </summary>
         public IosSingleSignOnExtension() : base() {
             OdataType = "#microsoft.graph.iosSingleSignOnExtension";

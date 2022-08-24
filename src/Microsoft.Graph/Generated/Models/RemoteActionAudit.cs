@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Report of remote actions initiated on the devices belonging to a certain tenant.</summary>
     public class RemoteActionAudit : Entity, IParsable {
         /// <summary>Remote actions Intune supports.</summary>
         public RemoteAction? Action {
@@ -51,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("userName", value); }
         }
         /// <summary>
-        /// Instantiates a new RemoteActionAudit and sets the default values.
+        /// Instantiates a new remoteActionAudit and sets the default values.
         /// </summary>
         public RemoteActionAudit() : base() {
             OdataType = "#microsoft.graph.remoteActionAudit";

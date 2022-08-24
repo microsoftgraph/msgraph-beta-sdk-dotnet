@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class DelegatedAdminCustomer : Entity, IParsable {
         /// <summary>The Azure AD display name of the customer tenant. Read-only. Supports $orderBy.</summary>
         public string DisplayName {
@@ -21,7 +22,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("tenantId", value); }
         }
         /// <summary>
-        /// Instantiates a new DelegatedAdminCustomer and sets the default values.
+        /// Instantiates a new delegatedAdminCustomer and sets the default values.
         /// </summary>
         public DelegatedAdminCustomer() : base() {
             OdataType = "#microsoft.graph.delegatedAdminCustomer";

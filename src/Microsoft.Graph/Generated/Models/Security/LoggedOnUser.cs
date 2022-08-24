@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
     public class LoggedOnUser : IAdditionalDataHolder, IBackedModel, IParsable {
-        /// <summary>The accountName property</summary>
+        /// <summary>User account name of the logged-on user.</summary>
         public string AccountName {
             get { return BackingStore?.Get<string>("accountName"); }
             set { BackingStore?.Set("accountName", value); }
@@ -18,7 +18,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The domainName property</summary>
+        /// <summary>User account domain of the logged-on user.</summary>
         public string DomainName {
             get { return BackingStore?.Get<string>("domainName"); }
             set { BackingStore?.Set("domainName", value); }

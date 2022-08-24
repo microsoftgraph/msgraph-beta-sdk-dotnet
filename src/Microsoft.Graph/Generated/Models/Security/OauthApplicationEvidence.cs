@@ -5,22 +5,22 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
     public class OauthApplicationEvidence : AlertEvidence, IParsable {
-        /// <summary>The appId property</summary>
+        /// <summary>Unique identifier of the application.</summary>
         public string AppId {
             get { return BackingStore?.Get<string>("appId"); }
             set { BackingStore?.Set("appId", value); }
         }
-        /// <summary>The displayName property</summary>
+        /// <summary>Name of the application.</summary>
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
-        /// <summary>The objectId property</summary>
+        /// <summary>The unique identifier of the application object in Azure AD.</summary>
         public string ObjectId {
             get { return BackingStore?.Get<string>("objectId"); }
             set { BackingStore?.Set("objectId", value); }
         }
-        /// <summary>The publisher property</summary>
+        /// <summary>The name of the application publisher.</summary>
         public string Publisher {
             get { return BackingStore?.Get<string>("publisher"); }
             set { BackingStore?.Set("publisher", value); }

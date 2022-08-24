@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.Security.Alerts_v2.Item {
             return requestInfo;
         }
         /// <summary>
-        /// Get alerts_v2 from security
+        /// A collection of alerts in Microsoft 365 Defender.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<AlertItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -118,7 +118,7 @@ namespace Microsoft.Graph.Beta.Security.Alerts_v2.Item {
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get alerts_v2 from security
+        /// A collection of alerts in Microsoft 365 Defender.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -161,7 +161,7 @@ namespace Microsoft.Graph.Beta.Security.Alerts_v2.Item {
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>Get alerts_v2 from security</summary>
+        /// <summary>A collection of alerts in Microsoft 365 Defender.</summary>
         public class AlertItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

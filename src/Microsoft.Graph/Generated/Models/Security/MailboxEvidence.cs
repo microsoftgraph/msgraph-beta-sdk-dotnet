@@ -5,17 +5,17 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
     public class MailboxEvidence : AlertEvidence, IParsable {
-        /// <summary>The displayName property</summary>
+        /// <summary>The name associated with the mailbox.</summary>
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
-        /// <summary>The primaryAddress property</summary>
+        /// <summary>The primary email address of the mailbox.</summary>
         public string PrimaryAddress {
             get { return BackingStore?.Get<string>("primaryAddress"); }
             set { BackingStore?.Set("primaryAddress", value); }
         }
-        /// <summary>The userAccount property</summary>
+        /// <summary>The user account of the mailbox.</summary>
         public Microsoft.Graph.Beta.Models.Security.UserAccount UserAccount {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.UserAccount>("userAccount"); }
             set { BackingStore?.Set("userAccount", value); }

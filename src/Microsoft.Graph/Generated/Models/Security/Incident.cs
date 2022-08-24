@@ -4,54 +4,54 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class Incident : Entity, IParsable {
-        /// <summary>The alerts property</summary>
+        /// <summary>The list of related alerts. Supports $expand.</summary>
         public List<Alert> Alerts {
             get { return BackingStore?.Get<List<Alert>>("alerts"); }
             set { BackingStore?.Set("alerts", value); }
         }
-        /// <summary>The assignedTo property</summary>
+        /// <summary>Owner of the incident, or null if no owner is assigned. Free editable text.</summary>
         public string AssignedTo {
             get { return BackingStore?.Get<string>("assignedTo"); }
             set { BackingStore?.Set("assignedTo", value); }
         }
-        /// <summary>The classification property</summary>
+        /// <summary>The specification for the incident. Possible values are: unknown, falsePositive, truePositive, informationalExpectedActivity, unknownFutureValue.</summary>
         public AlertClassification? Classification {
             get { return BackingStore?.Get<AlertClassification?>("classification"); }
             set { BackingStore?.Set("classification", value); }
         }
-        /// <summary>The comments property</summary>
+        /// <summary>Array of comments created by the Security Operations (SecOps) team when the incident is managed.</summary>
         public List<AlertComment> Comments {
             get { return BackingStore?.Get<List<AlertComment>>("comments"); }
             set { BackingStore?.Set("comments", value); }
         }
-        /// <summary>The createdDateTime property</summary>
+        /// <summary>Time when the incident was first created.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>The determination property</summary>
+        /// <summary>Specifies the determination of the incident. Possible values are: unknown, apt, malware, securityPersonnel, securityTesting, unwantedSoftware, other, multiStagedAttack, compromisedUser, phishing, maliciousUserActivity, clean, insufficientData, confirmedUserActivity, lineOfBusinessApplication, unknownFutureValue.</summary>
         public AlertDetermination? Determination {
             get { return BackingStore?.Get<AlertDetermination?>("determination"); }
             set { BackingStore?.Set("determination", value); }
         }
-        /// <summary>The displayName property</summary>
+        /// <summary>The incident name.</summary>
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
-        /// <summary>The incidentWebUrl property</summary>
+        /// <summary>The URL for the incident page in the Microsoft 365 Defender portal.</summary>
         public string IncidentWebUrl {
             get { return BackingStore?.Get<string>("incidentWebUrl"); }
             set { BackingStore?.Set("incidentWebUrl", value); }
         }
-        /// <summary>The lastUpdateDateTime property</summary>
+        /// <summary>Time when the incident was last updated.</summary>
         public DateTimeOffset? LastUpdateDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastUpdateDateTime"); }
             set { BackingStore?.Set("lastUpdateDateTime", value); }
         }
-        /// <summary>The redirectIncidentId property</summary>
+        /// <summary>Only populated in case an incident is grouped together with another incident, as part of the logic that processes incidents. In such a case, the status property is redirected.</summary>
         public string RedirectIncidentId {
             get { return BackingStore?.Get<string>("redirectIncidentId"); }
             set { BackingStore?.Set("redirectIncidentId", value); }
@@ -66,12 +66,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
             get { return BackingStore?.Get<IncidentStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
-        /// <summary>The tags property</summary>
+        /// <summary>Array of custom tags associated with an incident.</summary>
         public List<string> Tags {
             get { return BackingStore?.Get<List<string>>("tags"); }
             set { BackingStore?.Set("tags", value); }
         }
-        /// <summary>The tenantId property</summary>
+        /// <summary>The Azure Active Directory tenant in which the alert was created.</summary>
         public string TenantId {
             get { return BackingStore?.Get<string>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }

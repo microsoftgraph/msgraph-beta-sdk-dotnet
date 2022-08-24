@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Describes a single artifact for a specific device model.</summary>
     public class ZebraFotaArtifact : Entity, IParsable {
         /// <summary>The version of the Board Support Package (BSP. E.g.: 01.18.02.00)</summary>
         public string BoardSupportPackageVersion {
@@ -36,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("releaseNotesUrl", value); }
         }
         /// <summary>
-        /// Instantiates a new ZebraFotaArtifact and sets the default values.
+        /// Instantiates a new zebraFotaArtifact and sets the default values.
         /// </summary>
         public ZebraFotaArtifact() : base() {
             OdataType = "#microsoft.graph.zebraFotaArtifact";

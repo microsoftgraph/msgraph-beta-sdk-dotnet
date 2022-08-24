@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Security.Alerts_v2 {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get alerts_v2 from security
+        /// A collection of alerts in Microsoft 365 Defender.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<Alerts_v2RequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Beta.Security.Alerts_v2 {
             return requestInfo;
         }
         /// <summary>
-        /// Get alerts_v2 from security
+        /// A collection of alerts in Microsoft 365 Defender.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -128,7 +128,7 @@ namespace Microsoft.Graph.Beta.Security.Alerts_v2 {
             };
             return await RequestAdapter.SendAsync<Alert>(requestInfo, Alert.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Get alerts_v2 from security</summary>
+        /// <summary>A collection of alerts in Microsoft 365 Defender.</summary>
         public class Alerts_v2RequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

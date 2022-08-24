@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
     public class UserAccount : IAdditionalDataHolder, IBackedModel, IParsable {
-        /// <summary>The accountName property</summary>
+        /// <summary>The user account&apos;s displayed name.</summary>
         public string AccountName {
             get { return BackingStore?.Get<string>("accountName"); }
             set { BackingStore?.Set("accountName", value); }
@@ -16,14 +16,14 @@ namespace Microsoft.Graph.Beta.Models.Security {
             get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
             set { BackingStore?.Set("additionalData", value); }
         }
-        /// <summary>The azureAdUserId property</summary>
+        /// <summary>The user object identifier in Azure AD.</summary>
         public string AzureAdUserId {
             get { return BackingStore?.Get<string>("azureAdUserId"); }
             set { BackingStore?.Set("azureAdUserId", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The domainName property</summary>
+        /// <summary>The name of the Active Directory domain of which the user is a member.</summary>
         public string DomainName {
             get { return BackingStore?.Get<string>("domainName"); }
             set { BackingStore?.Set("domainName", value); }
@@ -33,12 +33,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
-        /// <summary>The userPrincipalName property</summary>
+        /// <summary>The user principal name of the account in Azure AD.</summary>
         public string UserPrincipalName {
             get { return BackingStore?.Get<string>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
-        /// <summary>The userSid property</summary>
+        /// <summary>The local security identifier of the user account.</summary>
         public string UserSid {
             get { return BackingStore?.Get<string>("userSid"); }
             set { BackingStore?.Set("userSid", value); }

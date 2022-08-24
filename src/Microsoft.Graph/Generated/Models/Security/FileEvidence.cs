@@ -5,17 +5,17 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
     public class FileEvidence : AlertEvidence, IParsable {
-        /// <summary>The detectionStatus property</summary>
+        /// <summary>The status of the detection.The possible values are: detected, blocked, prevented, unknownFutureValue.</summary>
         public Microsoft.Graph.Beta.Models.Security.DetectionStatus? DetectionStatus {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.DetectionStatus?>("detectionStatus"); }
             set { BackingStore?.Set("detectionStatus", value); }
         }
-        /// <summary>The fileDetails property</summary>
+        /// <summary>The file details.</summary>
         public Microsoft.Graph.Beta.Models.Security.FileDetails FileDetails {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.FileDetails>("fileDetails"); }
             set { BackingStore?.Set("fileDetails", value); }
         }
-        /// <summary>The mdeDeviceId property</summary>
+        /// <summary>A unique identifier assigned to a device by Microsoft Defender for Endpoint.</summary>
         public string MdeDeviceId {
             get { return BackingStore?.Get<string>("mdeDeviceId"); }
             set { BackingStore?.Set("mdeDeviceId", value); }

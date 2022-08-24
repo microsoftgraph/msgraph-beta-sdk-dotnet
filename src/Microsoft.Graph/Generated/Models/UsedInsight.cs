@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class UsedInsight : Entity, IParsable {
         /// <summary>Information about when the item was last viewed or modified by the user. Read only.</summary>
         public UsageDetails LastUsed {

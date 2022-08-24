@@ -14,8 +14,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Drives.Item.Root.ListItem.Activities.I
     /// <summary>Provides operations to manage the activities property of the microsoft.graph.listItem entity.</summary>
     public class ItemActivityOLDItemRequestBuilder {
         /// <summary>The driveItem property</summary>
-        public DriveItemRequestBuilder DriveItem { get =>
-            new DriveItemRequestBuilder(PathParameters, RequestAdapter);
+        public Microsoft.Graph.Beta.Users.Item.Drives.Item.Root.ListItem.Activities.Item.DriveItem.DriveItemRequestBuilder DriveItem { get =>
+            new Microsoft.Graph.Beta.Users.Item.Drives.Item.Root.ListItem.Activities.Item.DriveItem.DriveItemRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The listItem property</summary>
         public Microsoft.Graph.Beta.Users.Item.Drives.Item.Root.ListItem.Activities.Item.ListItem.ListItemRequestBuilder ListItem { get =>

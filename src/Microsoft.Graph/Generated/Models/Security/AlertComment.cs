@@ -13,17 +13,17 @@ namespace Microsoft.Graph.Beta.Models.Security {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The comment property</summary>
+        /// <summary>The comment text.</summary>
         public string Comment {
             get { return BackingStore?.Get<string>("comment"); }
             set { BackingStore?.Set("comment", value); }
         }
-        /// <summary>The createdByDisplayName property</summary>
+        /// <summary>The person or app name that submitted the comment.</summary>
         public string CreatedByDisplayName {
             get { return BackingStore?.Get<string>("createdByDisplayName"); }
             set { BackingStore?.Set("createdByDisplayName", value); }
         }
-        /// <summary>The createdDateTime property</summary>
+        /// <summary>The time when the comment was submitted.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }

@@ -13,17 +13,17 @@ namespace Microsoft.Graph.Beta.Models.Security {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The displayName property</summary>
+        /// <summary>The name of the sender.</summary>
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
-        /// <summary>The domainName property</summary>
+        /// <summary>Sender domain.</summary>
         public string DomainName {
             get { return BackingStore?.Get<string>("domainName"); }
             set { BackingStore?.Set("domainName", value); }
         }
-        /// <summary>The emailAddress property</summary>
+        /// <summary>Sender email address.</summary>
         public string EmailAddress {
             get { return BackingStore?.Get<string>("emailAddress"); }
             set { BackingStore?.Set("emailAddress", value); }

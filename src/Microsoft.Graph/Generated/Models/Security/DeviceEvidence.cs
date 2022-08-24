@@ -5,77 +5,77 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
     public class DeviceEvidence : AlertEvidence, IParsable {
-        /// <summary>The azureAdDeviceId property</summary>
+        /// <summary>A unique identifier assigned to a device by Azure Active Directory (Azure AD) when device is Azure AD-joined.</summary>
         public string AzureAdDeviceId {
             get { return BackingStore?.Get<string>("azureAdDeviceId"); }
             set { BackingStore?.Set("azureAdDeviceId", value); }
         }
-        /// <summary>The defenderAvStatus property</summary>
+        /// <summary>State of the Defender AntiMalware engine. The possible values are: notReporting, disabled, notUpdated, updated, unknown, notSupported, unknownFutureValue.</summary>
         public Microsoft.Graph.Beta.Models.Security.DefenderAvStatus? DefenderAvStatus {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.DefenderAvStatus?>("defenderAvStatus"); }
             set { BackingStore?.Set("defenderAvStatus", value); }
         }
-        /// <summary>The deviceDnsName property</summary>
+        /// <summary>The fully qualified domain name (FQDN) for the device.</summary>
         public string DeviceDnsName {
             get { return BackingStore?.Get<string>("deviceDnsName"); }
             set { BackingStore?.Set("deviceDnsName", value); }
         }
-        /// <summary>The firstSeenDateTime property</summary>
+        /// <summary>The date and time when the device was first seen.</summary>
         public DateTimeOffset? FirstSeenDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("firstSeenDateTime"); }
             set { BackingStore?.Set("firstSeenDateTime", value); }
         }
-        /// <summary>The healthStatus property</summary>
+        /// <summary>The health state of the device.The possible values are: active, inactive, impairedCommunication, noSensorData, noSensorDataImpairedCommunication, unknown, unknownFutureValue.</summary>
         public DeviceHealthStatus? HealthStatus {
             get { return BackingStore?.Get<DeviceHealthStatus?>("healthStatus"); }
             set { BackingStore?.Set("healthStatus", value); }
         }
-        /// <summary>The loggedOnUsers property</summary>
+        /// <summary>Users that were logged on the machine during the time of the alert.</summary>
         public List<LoggedOnUser> LoggedOnUsers {
             get { return BackingStore?.Get<List<LoggedOnUser>>("loggedOnUsers"); }
             set { BackingStore?.Set("loggedOnUsers", value); }
         }
-        /// <summary>The mdeDeviceId property</summary>
+        /// <summary>A unique identifier assigned to a device by Microsoft Defender for Endpoint.</summary>
         public string MdeDeviceId {
             get { return BackingStore?.Get<string>("mdeDeviceId"); }
             set { BackingStore?.Set("mdeDeviceId", value); }
         }
-        /// <summary>The onboardingStatus property</summary>
+        /// <summary>The status of the machine onboarding to Microsoft Defender for Endpoint.The possible values are: insufficientInfo, onboarded, canBeOnboarded, unsupported, unknownFutureValue.</summary>
         public Microsoft.Graph.Beta.Models.Security.OnboardingStatus? OnboardingStatus {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.OnboardingStatus?>("onboardingStatus"); }
             set { BackingStore?.Set("onboardingStatus", value); }
         }
-        /// <summary>The osBuild property</summary>
+        /// <summary>The build version for the operating system the device is running.</summary>
         public long? OsBuild {
             get { return BackingStore?.Get<long?>("osBuild"); }
             set { BackingStore?.Set("osBuild", value); }
         }
-        /// <summary>The osPlatform property</summary>
+        /// <summary>The operating system platform the device is running.</summary>
         public string OsPlatform {
             get { return BackingStore?.Get<string>("osPlatform"); }
             set { BackingStore?.Set("osPlatform", value); }
         }
-        /// <summary>The rbacGroupId property</summary>
+        /// <summary>The ID of the role-based access control (RBAC) device group.</summary>
         public int? RbacGroupId {
             get { return BackingStore?.Get<int?>("rbacGroupId"); }
             set { BackingStore?.Set("rbacGroupId", value); }
         }
-        /// <summary>The rbacGroupName property</summary>
+        /// <summary>The name of the RBAC device group.</summary>
         public string RbacGroupName {
             get { return BackingStore?.Get<string>("rbacGroupName"); }
             set { BackingStore?.Set("rbacGroupName", value); }
         }
-        /// <summary>The riskScore property</summary>
+        /// <summary>Risk score as evaluated by Microsoft Defender for Endpoint. The possible values are: none, informational, low, medium, high, unknownFutureValue.</summary>
         public DeviceRiskScore? RiskScore {
             get { return BackingStore?.Get<DeviceRiskScore?>("riskScore"); }
             set { BackingStore?.Set("riskScore", value); }
         }
-        /// <summary>The version property</summary>
+        /// <summary>The version of the operating system platform.</summary>
         public string Version {
             get { return BackingStore?.Get<string>("version"); }
             set { BackingStore?.Set("version", value); }
         }
-        /// <summary>The vmMetadata property</summary>
+        /// <summary>Metadata of the virtual machine (VM) on which Microsoft Defender for Endpoint is running.</summary>
         public Microsoft.Graph.Beta.Models.Security.VmMetadata VmMetadata {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.VmMetadata>("vmMetadata"); }
             set { BackingStore?.Set("vmMetadata", value); }

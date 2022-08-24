@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Enrollment Profile used to enroll Android Enterprise devices using Google&apos;s Cloud Management.</summary>
     public class AndroidDeviceOwnerEnrollmentProfile : Entity, IParsable {
         /// <summary>Tenant GUID the enrollment profile belongs to.</summary>
         public string AccountId {
@@ -101,7 +102,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("wifiSsid", value); }
         }
         /// <summary>
-        /// Instantiates a new AndroidDeviceOwnerEnrollmentProfile and sets the default values.
+        /// Instantiates a new androidDeviceOwnerEnrollmentProfile and sets the default values.
         /// </summary>
         public AndroidDeviceOwnerEnrollmentProfile() : base() {
             OdataType = "#microsoft.graph.androidDeviceOwnerEnrollmentProfile";

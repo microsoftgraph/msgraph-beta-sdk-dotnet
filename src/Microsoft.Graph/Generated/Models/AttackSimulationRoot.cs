@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("simulations", value); }
         }
         /// <summary>
-        /// Instantiates a new AttackSimulationRoot and sets the default values.
+        /// Instantiates a new attackSimulationRoot and sets the default values.
         /// </summary>
         public AttackSimulationRoot() : base() {
             OdataType = "#microsoft.graph.attackSimulationRoot";

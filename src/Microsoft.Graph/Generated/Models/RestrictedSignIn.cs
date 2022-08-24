@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the auditLogRoot singleton.</summary>
     public class RestrictedSignIn : SignIn, IParsable {
         /// <summary>The targetTenantId property</summary>
         public string TargetTenantId {
@@ -11,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("targetTenantId", value); }
         }
         /// <summary>
-        /// Instantiates a new RestrictedSignIn and sets the default values.
+        /// Instantiates a new restrictedSignIn and sets the default values.
         /// </summary>
         public RestrictedSignIn() : base() {
             OdataType = "#microsoft.graph.restrictedSignIn";

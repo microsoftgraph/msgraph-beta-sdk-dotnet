@@ -18,8 +18,8 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Lists.Item.Items.Item.Acti
             new DriveItemRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The listItem property</summary>
-        public ListItemRequestBuilder ListItem { get =>
-            new ListItemRequestBuilder(PathParameters, RequestAdapter);
+        public Microsoft.Graph.Beta.Groups.Item.Sites.Item.Lists.Item.Items.Item.Activities.Item.ListItem.ListItemRequestBuilder ListItem { get =>
+            new Microsoft.Graph.Beta.Groups.Item.Sites.Item.Lists.Item.Items.Item.Activities.Item.ListItem.ListItemRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

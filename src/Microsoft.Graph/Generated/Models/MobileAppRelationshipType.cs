@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provides operations to manage the deviceAppManagement singleton.</summary>
     public enum MobileAppRelationshipType {
         /// <summary>Indicates that the target of a relationship is the child in the relationship.</summary>
         Child,

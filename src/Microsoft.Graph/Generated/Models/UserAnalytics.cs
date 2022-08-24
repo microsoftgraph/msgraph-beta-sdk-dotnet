@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("settings", value); }
         }
         /// <summary>
-        /// Instantiates a new UserAnalytics and sets the default values.
+        /// Instantiates a new userAnalytics and sets the default values.
         /// </summary>
         public UserAnalytics() : base() {
             OdataType = "#microsoft.graph.userAnalytics";

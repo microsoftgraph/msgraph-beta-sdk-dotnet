@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>The user experience analytics metric for work from anywhere report</summary>
     public class UserExperienceAnalyticsWorkFromAnywhereMetric : Entity, IParsable {
         /// <summary>The work from anywhere metric devices.</summary>
         public List<UserExperienceAnalyticsWorkFromAnywhereDevice> MetricDevices {
@@ -11,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("metricDevices", value); }
         }
         /// <summary>
-        /// Instantiates a new UserExperienceAnalyticsWorkFromAnywhereMetric and sets the default values.
+        /// Instantiates a new userExperienceAnalyticsWorkFromAnywhereMetric and sets the default values.
         /// </summary>
         public UserExperienceAnalyticsWorkFromAnywhereMetric() : base() {
             OdataType = "#microsoft.graph.userExperienceAnalyticsWorkFromAnywhereMetric";

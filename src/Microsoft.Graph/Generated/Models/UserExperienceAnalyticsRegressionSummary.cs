@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("operatingSystemRegression", value); }
         }
         /// <summary>
-        /// Instantiates a new UserExperienceAnalyticsRegressionSummary and sets the default values.
+        /// Instantiates a new userExperienceAnalyticsRegressionSummary and sets the default values.
         /// </summary>
         public UserExperienceAnalyticsRegressionSummary() : base() {
             OdataType = "#microsoft.graph.userExperienceAnalyticsRegressionSummary";

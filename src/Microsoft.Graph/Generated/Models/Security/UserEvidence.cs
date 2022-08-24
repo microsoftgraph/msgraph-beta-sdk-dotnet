@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
     public class UserEvidence : AlertEvidence, IParsable {
-        /// <summary>The userAccount property</summary>
+        /// <summary>The user account details.</summary>
         public Microsoft.Graph.Beta.Models.Security.UserAccount UserAccount {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.UserAccount>("userAccount"); }
             set { BackingStore?.Set("userAccount", value); }

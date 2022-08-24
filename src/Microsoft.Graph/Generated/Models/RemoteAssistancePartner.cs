@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>RemoteAssistPartner resources represent the metadata and status of a given Remote Assistance partner service.</summary>
     public class RemoteAssistancePartner : Entity, IParsable {
         /// <summary>Display name of the partner.</summary>
         public string DisplayName {
@@ -31,7 +32,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("onboardingUrl", value); }
         }
         /// <summary>
-        /// Instantiates a new RemoteAssistancePartner and sets the default values.
+        /// Instantiates a new remoteAssistancePartner and sets the default values.
         /// </summary>
         public RemoteAssistancePartner() : base() {
             OdataType = "#microsoft.graph.remoteAssistancePartner";
