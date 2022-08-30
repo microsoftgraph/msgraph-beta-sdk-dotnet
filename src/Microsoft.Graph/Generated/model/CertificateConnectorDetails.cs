@@ -28,6 +28,13 @@ namespace Microsoft.Graph
         public string ConnectorName { get; set; }
     
         /// <summary>
+        /// Gets or sets connector version.
+        /// Version of the connector installed.
+        /// </summary>
+        [JsonPropertyName("connectorVersion")]
+        public string ConnectorVersion { get; set; }
+    
+        /// <summary>
         /// Gets or sets enrollment date time.
         /// Date/time when this connector was enrolled.
         /// </summary>

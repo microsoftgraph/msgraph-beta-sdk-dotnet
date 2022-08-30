@@ -34,5 +34,10 @@ namespace Microsoft.Graph
         /// </summary>
         MonthlyTwice = 2,
 	
+        /// <summary>
+        /// Unknown Future Value
+        /// </summary>
+        UnknownFutureValue = 3,
+	
     }
 }

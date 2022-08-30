@@ -29,6 +29,13 @@ namespace Microsoft.Graph
         public string ClientIdentifier { get; set; }
     
         /// <summary>
+        /// Gets or sets clientVersion.
+        /// Configuration Manager Client version from SCCM
+        /// </summary>
+        [JsonPropertyName("clientVersion")]
+        public string ClientVersion { get; set; }
+    
+        /// <summary>
         /// Gets or sets isBlocked.
         /// Configuration Manager Client blocked status from SCCM
         /// </summary>

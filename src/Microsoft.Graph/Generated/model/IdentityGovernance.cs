@@ -22,6 +22,12 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
+        /// Gets or sets lifecycle workflows.
+        /// </summary>
+        [JsonPropertyName("lifecycleWorkflows")]
+        public Microsoft.Graph.IdentityGovernanceNamespace.LifecycleWorkflowsContainer LifecycleWorkflows { get; set; }
+    
+        /// <summary>
         /// Gets or sets access reviews.
         /// </summary>
         [JsonPropertyName("accessReviews")]

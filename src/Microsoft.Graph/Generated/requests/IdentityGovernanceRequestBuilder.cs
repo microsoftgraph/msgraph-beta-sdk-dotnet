@@ -51,6 +51,18 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for LifecycleWorkflows.
+        /// </summary>
+        /// <returns>The <see cref="Microsoft.Graph.IdentityGovernanceNamespace.ILifecycleWorkflowsContainerRequestBuilder"/>.</returns>
+        public Microsoft.Graph.IdentityGovernanceNamespace.ILifecycleWorkflowsContainerRequestBuilder LifecycleWorkflows
+        {
+            get
+            {
+                return new Microsoft.Graph.IdentityGovernanceNamespace.LifecycleWorkflowsContainerRequestBuilder(this.AppendSegmentToRequestUrl("lifecycleWorkflows"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for AccessReviews.
         /// </summary>
         /// <returns>The <see cref="IAccessReviewSetRequestBuilder"/>.</returns>

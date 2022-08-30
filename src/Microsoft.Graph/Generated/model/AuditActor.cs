@@ -36,6 +36,13 @@ namespace Microsoft.Graph
         public string ApplicationId { get; set; }
     
         /// <summary>
+        /// Gets or sets auditActorType.
+        /// Actor Type.
+        /// </summary>
+        [JsonPropertyName("auditActorType")]
+        public string AuditActorType { get; set; }
+    
+        /// <summary>
         /// Gets or sets ipAddress.
         /// IPAddress.
         /// </summary>

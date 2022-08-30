@@ -339,6 +339,21 @@ namespace Microsoft.Graph
             bool? useProtectedWipe = null);
 
         /// <summary>
+        /// Gets the request builder for ManagedDeviceCreateRemoteHelpSession.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceCreateRemoteHelpSessionRequestBuilder"/>.</returns>
+        IManagedDeviceCreateRemoteHelpSessionRequestBuilder CreateRemoteHelpSession(
+            string sessionType = null);
+
+        /// <summary>
+        /// Gets the request builder for ManagedDeviceRequestRemoteHelpSessionAccess.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceRequestRemoteHelpSessionAccessRequestBuilder"/>.</returns>
+        IManagedDeviceRequestRemoteHelpSessionAccessRequestBuilder RequestRemoteHelpSessionAccess(
+            string sessionKey = null,
+            string pubSubConnectionId = null);
+
+        /// <summary>
         /// Gets the request builder for ManagedDeviceGetCloudPcRemoteActionResults.
         /// </summary>
         /// <returns>The <see cref="IManagedDeviceGetCloudPcRemoteActionResultsRequestBuilder"/>.</returns>
@@ -367,6 +382,13 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IManagedDeviceGetOemWarrantyRequestBuilder"/>.</returns>
         IManagedDeviceGetOemWarrantyRequestBuilder GetOemWarranty();
+
+        /// <summary>
+        /// Gets the request builder for ManagedDeviceRetrieveRemoteHelpSession.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceRetrieveRemoteHelpSessionRequestBuilder"/>.</returns>
+        IManagedDeviceRetrieveRemoteHelpSessionRequestBuilder RetrieveRemoteHelpSession(
+            string sessionKey = null);
     
     }
 }

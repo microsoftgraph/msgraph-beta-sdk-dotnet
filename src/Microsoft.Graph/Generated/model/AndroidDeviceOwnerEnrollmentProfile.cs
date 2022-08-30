@@ -29,6 +29,13 @@ namespace Microsoft.Graph
         public string AccountId { get; set; }
     
         /// <summary>
+        /// Gets or sets configure wifi.
+        /// Boolean that indicates that the Wi-Fi network should be configured during device provisioning. When set to TRUE, device provisioning will use Wi-Fi related properties to automatically connect to Wi-Fi networks. When set to FALSE or undefined, other Wi-Fi related properties will be ignored. Default value is TRUE. Returned by default.
+        /// </summary>
+        [JsonPropertyName("configureWifi")]
+        public bool? ConfigureWifi { get; set; }
+    
+        /// <summary>
         /// Gets or sets created date time.
         /// Date time the enrollment profile was created.
         /// </summary>

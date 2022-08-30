@@ -50,5 +50,10 @@ namespace Microsoft.Graph
         /// </summary>
         EveryWeek = 15,
 	
+        /// <summary>
+        /// Unknown Future Value
+        /// </summary>
+        UnknownFutureValue = 22,
+	
     }
 }

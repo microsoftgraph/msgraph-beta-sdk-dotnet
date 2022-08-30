@@ -51,7 +51,7 @@ namespace Microsoft.Graph.TermStore
     
         /// <summary>
         /// Gets or sets scope.
-        /// Returns the type of the group. Possible values are global, system, and siteCollection.
+        /// Returns the type of the group. Possible values are: global, system, and siteCollection.
         /// </summary>
         [JsonPropertyName("scope")]
         public TermGroupScope? Scope { get; set; }

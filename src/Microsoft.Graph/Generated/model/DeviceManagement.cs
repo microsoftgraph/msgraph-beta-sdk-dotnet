@@ -92,6 +92,13 @@ namespace Microsoft.Graph
         public AdminConsent AdminConsent { get; set; }
     
         /// <summary>
+        /// Gets or sets data processor service for windows features onboarding.
+        /// A configuration entity for MEM features that utilize Data Processor Service for Windows (DPSW) data.
+        /// </summary>
+        [JsonPropertyName("dataProcessorServiceForWindowsFeaturesOnboarding")]
+        public DataProcessorServiceForWindowsFeaturesOnboarding DataProcessorServiceForWindowsFeaturesOnboarding { get; set; }
+    
+        /// <summary>
         /// Gets or sets device protection overview.
         /// Device protection overview.
         /// </summary>

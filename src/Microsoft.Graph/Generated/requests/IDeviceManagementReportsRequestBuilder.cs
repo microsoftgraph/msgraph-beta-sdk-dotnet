@@ -515,12 +515,12 @@ namespace Microsoft.Graph
         IDeviceManagementReportsGetZebraFotaDeploymentReportRequestBuilder GetZebraFotaDeploymentReport(
             Int32 skip,
             Int32 top,
-            Int32 sessionId,
             string name = null,
             IEnumerable<string> select = null,
             string search = null,
             IEnumerable<string> groupBy = null,
             IEnumerable<string> orderBy = null,
+            string sessionId = null,
             string filter = null);
 
         /// <summary>

@@ -83,7 +83,7 @@ namespace Microsoft.Graph
         /// Read-only. The role assignment request for this approval object
         /// </summary>
         [JsonPropertyName("request")]
-        public PrivilegedRoleAssignmentRequest Request { get; set; }
+        public PrivilegedRoleAssignmentRequestObject Request { get; set; }
     
         /// <summary>
         /// Gets or sets role info.

@@ -23,12 +23,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets allowedWeakAlgorithms.
+        /// Specifies whether this application accepts weak algorithms.  The possible values are: rsaSha1, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("allowedWeakAlgorithms")]
         public WeakAlgorithms? AllowedWeakAlgorithms { get; set; }
     
         /// <summary>
         /// Gets or sets isSignedRequestRequired.
+        /// Specifies whether signed authentication requests for this application should be required.
         /// </summary>
         [JsonPropertyName("isSignedRequestRequired")]
         public bool? IsSignedRequestRequired { get; set; }

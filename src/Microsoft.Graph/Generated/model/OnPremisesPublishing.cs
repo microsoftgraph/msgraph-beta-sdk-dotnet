@@ -121,6 +121,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets onPremisesApplicationSegments.
+        /// Represents the application segment collection for an on-premises wildcard application.
         /// </summary>
         [JsonPropertyName("onPremisesApplicationSegments")]
         public IEnumerable<OnPremisesApplicationSegment> OnPremisesApplicationSegments { get; set; }

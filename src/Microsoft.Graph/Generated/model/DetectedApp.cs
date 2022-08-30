@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Detected App.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<DetectedApp>))]
     public partial class DetectedApp : Entity
     {
     
@@ -33,6 +34,20 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets platform.
+        /// Indicates the operating system / platform of the discovered application.  Some possible values are Windows, iOS, macOS. The default value is unknown (0). Possible values are: unknown, windows, windowsMobile, windowsHolographic, ios, macOS, chromeOS, androidOSP, androidDeviceAdministrator, androidWorkProfile, androidDedicatedAndFullyManaged.
+        /// </summary>
+        [JsonPropertyName("platform")]
+        public DetectedAppPlatformType? Platform { get; set; }
+    
+        /// <summary>
+        /// Gets or sets publisher.
+        /// Indicates the publisher of the discovered application. For example: 'Microsoft'.  The default value is an empty string.
+        /// </summary>
+        [JsonPropertyName("publisher")]
+        public string Publisher { get; set; }
     
         /// <summary>
         /// Gets or sets size in byte.

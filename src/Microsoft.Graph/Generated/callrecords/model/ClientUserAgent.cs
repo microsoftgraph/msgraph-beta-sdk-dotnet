@@ -29,6 +29,20 @@ namespace Microsoft.Graph.CallRecords
         }
 
         /// <summary>
+        /// Gets or sets azureADAppId.
+        /// The unique identifier of the Azure AD application used by this endpoint.
+        /// </summary>
+        [JsonPropertyName("azureADAppId")]
+        public string AzureADAppId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets communicationServiceId.
+        /// Immutable resource identifier of the Azure Communication Service associated with this endpoint based on Communication Services APIs.
+        /// </summary>
+        [JsonPropertyName("communicationServiceId")]
+        public string CommunicationServiceId { get; set; }
+    
+        /// <summary>
         /// Gets or sets platform.
         /// Identifies the platform used by this endpoint. Possible values are: unknown, windows, macOS, iOS, android, web, ipPhone, roomSystem, surfaceHub, holoLens, unknownFutureValue.
         /// </summary>

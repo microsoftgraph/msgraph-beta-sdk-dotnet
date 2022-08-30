@@ -57,7 +57,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets principal id.
-        /// Identifier of the principal that has been granted the assignment. Supports $filter (eq, ne).
+        /// Identifier of the principal that has been granted the assignment. Can be a user, role-assignable group, or a service principal. Supports $filter (eq, ne).
         /// </summary>
         [JsonPropertyName("principalId")]
         public string PrincipalId { get; set; }

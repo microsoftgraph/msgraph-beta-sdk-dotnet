@@ -44,7 +44,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets frequency.
-        /// The frequency at which a client will see the message. Possible values are: weeklyOnce, monthlyOnce, monthlyTwice.
+        /// The frequency at which a client will see the message. Possible values are: weeklyOnce, monthlyOnce, monthlyTwice, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("frequency")]
         public OrganizationalMessageFrequency? Frequency { get; set; }
@@ -58,7 +58,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets scenario.
-        /// Indicates the scenario for the message. Possible values are: onboarding, lifecycle.
+        /// Indicates the scenario for the message. Possible values are: onboarding, lifecycle, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("scenario")]
         public OrganizationalMessageScenario? Scenario { get; set; }
@@ -72,14 +72,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets status.
-        /// Indicates the deployment status of the message. Possible values are: scheduled, active, completed, cancelled.
+        /// Indicates the deployment status of the message. Possible values are: scheduled, active, completed, cancelled, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("status")]
         public OrganizationalMessageStatus? Status { get; set; }
     
         /// <summary>
         /// Gets or sets surface.
-        /// Indicates the area where content will be displayed to customers. Possible values are: actionCenter, getStarted, softLanding.
+        /// Indicates the area where content will be displayed to customers. Possible values are: actionCenter, getStarted, softLanding, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("surface")]
         public OrganizationalMessageSurface? Surface { get; set; }
@@ -93,7 +93,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets theme.
-        /// Indicates the theme for the experience. Possible values are: update, training, welcomeToWindows.
+        /// Indicates the theme for the experience. Possible values are: update, training, welcomeToWindows, explore, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("theme")]
         public OrganizationalMessageTheme? Theme { get; set; }

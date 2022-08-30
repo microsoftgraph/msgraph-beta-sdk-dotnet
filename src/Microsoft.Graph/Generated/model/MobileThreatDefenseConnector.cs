@@ -140,6 +140,13 @@ namespace Microsoft.Graph
         [JsonPropertyName("windowsEnabled")]
         public bool? WindowsEnabled { get; set; }
     
+        /// <summary>
+        /// Gets or sets windows mobile application management enabled.
+        /// When TRUE, app protection policies using the Device Threat Level rule will evaluate devices including data from this connector for Windows. When FALSE, Intune will not use device risk details sent over this connector during app protection policies calculation for policies with a Device Threat Level configured. Existing devices that are not compliant due to risk levels obtained from this connector will also become compliant.
+        /// </summary>
+        [JsonPropertyName("windowsMobileApplicationManagementEnabled")]
+        public bool? WindowsMobileApplicationManagementEnabled { get; set; }
+    
     }
 }
 

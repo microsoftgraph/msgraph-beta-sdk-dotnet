@@ -24,5 +24,10 @@ namespace Microsoft.Graph
         /// </summary>
         AadGroup = 0,
 	
+        /// <summary>
+        /// Unknown Future Value
+        /// </summary>
+        UnknownFutureValue = 1,
+	
     }
 }

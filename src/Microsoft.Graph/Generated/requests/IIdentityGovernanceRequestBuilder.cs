@@ -32,6 +32,12 @@ namespace Microsoft.Graph
         IIdentityGovernanceRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for LifecycleWorkflows.
+        /// </summary>
+        /// <returns>The <see cref="Microsoft.Graph.IdentityGovernanceNamespace.ILifecycleWorkflowsContainerRequestBuilder"/>.</returns>
+        Microsoft.Graph.IdentityGovernanceNamespace.ILifecycleWorkflowsContainerRequestBuilder LifecycleWorkflows { get; }
+
+        /// <summary>
         /// Gets the request builder for AccessReviews.
         /// </summary>
         /// <returns>The <see cref="IAccessReviewSetRequestBuilder"/>.</returns>

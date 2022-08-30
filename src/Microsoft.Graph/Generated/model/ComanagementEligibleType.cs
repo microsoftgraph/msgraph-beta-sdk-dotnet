@@ -44,5 +44,10 @@ namespace Microsoft.Graph
         /// </summary>
         Ineligible = 5,
 	
+        /// <summary>
+        /// Scheduled For Enrollment
+        /// </summary>
+        ScheduledForEnrollment = 6,
+	
     }
 }

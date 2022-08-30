@@ -24,5 +24,10 @@ namespace Microsoft.Graph
         /// </summary>
         Png = 0,
 	
+        /// <summary>
+        /// Unknown Future Value
+        /// </summary>
+        UnknownFutureValue = 1,
+	
     }
 }

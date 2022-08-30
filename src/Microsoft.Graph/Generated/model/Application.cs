@@ -184,6 +184,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets request signature verification.
+        /// Specifies whether this application requires Azure AD to verify the signed authentication requests.
         /// </summary>
         [JsonPropertyName("requestSignatureVerification")]
         public RequestSignatureVerification RequestSignatureVerification { get; set; }

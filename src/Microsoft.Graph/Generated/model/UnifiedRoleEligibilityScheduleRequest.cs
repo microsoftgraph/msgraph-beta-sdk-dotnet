@@ -57,7 +57,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets principal id.
-        /// Identifier of the principal that has been granted the role eligibility. Supports $filter (eq, ne).
+        /// Identifier of the principal that has been granted the role eligibility. Can be a user or a role-assignable group. You can grant only active assignments service principals. Supports $filter (eq, ne).
         /// </summary>
         [JsonPropertyName("principalId")]
         public string PrincipalId { get; set; }

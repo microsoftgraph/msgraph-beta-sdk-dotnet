@@ -25,9 +25,19 @@ namespace Microsoft.Graph
         Csv = 0,
 	
         /// <summary>
+        /// Pdf
+        /// </summary>
+        Pdf = 1,
+	
+        /// <summary>
         /// Json
         /// </summary>
-        Json = 1,
+        Json = 2,
+	
+        /// <summary>
+        /// Unknown Future Value
+        /// </summary>
+        UnknownFutureValue = 3,
 	
     }
 }

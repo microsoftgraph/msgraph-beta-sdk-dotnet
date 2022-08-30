@@ -66,7 +66,7 @@ namespace Microsoft.Graph
         /// Gets or sets SessionId.
         /// </summary>
         [JsonPropertyName("sessionId")]
-        public Int32 SessionId { get; set; }
+        public string SessionId { get; set; }
     
         /// <summary>
         /// Gets or sets Filter.
