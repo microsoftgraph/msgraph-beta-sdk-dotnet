@@ -25,35 +25,35 @@ namespace Microsoft.Graph
         /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
         /// <param name="skip">A skip parameter for the OData method call.</param>
         /// <param name="top">A top parameter for the OData method call.</param>
-        /// <param name="sessionId">A sessionId parameter for the OData method call.</param>
         /// <param name="name">A name parameter for the OData method call.</param>
         /// <param name="select">A select parameter for the OData method call.</param>
         /// <param name="search">A search parameter for the OData method call.</param>
         /// <param name="groupBy">A groupBy parameter for the OData method call.</param>
         /// <param name="orderBy">A orderBy parameter for the OData method call.</param>
+        /// <param name="sessionId">A sessionId parameter for the OData method call.</param>
         /// <param name="filter">A filter parameter for the OData method call.</param>
         public DeviceManagementReportsGetZebraFotaDeploymentReportRequestBuilder(
             string requestUrl,
             IBaseClient client,
             Int32 skip,
             Int32 top,
-            Int32 sessionId,
             string name,
             IEnumerable<string> select,
             string search,
             IEnumerable<string> groupBy,
             IEnumerable<string> orderBy,
+            string sessionId,
             string filter)
             : base(requestUrl, client)
         {
             this.SetParameter("skip", skip, false);
             this.SetParameter("top", top, false);
-            this.SetParameter("sessionId", sessionId, false);
             this.SetParameter("name", name, true);
             this.SetParameter("select", select, true);
             this.SetParameter("search", search, true);
             this.SetParameter("groupBy", groupBy, true);
             this.SetParameter("orderBy", orderBy, true);
+            this.SetParameter("sessionId", sessionId, true);
             this.SetParameter("filter", filter, true);
         }
 
@@ -75,11 +75,6 @@ namespace Microsoft.Graph
             if (this.HasParameter("top"))
             {
                 request.RequestBody.Top = this.GetParameter<Int32>("top");
-            }
-
-            if (this.HasParameter("sessionId"))
-            {
-                request.RequestBody.SessionId = this.GetParameter<Int32>("sessionId");
             }
 
             if (this.HasParameter("name"))
@@ -105,6 +100,11 @@ namespace Microsoft.Graph
             if (this.HasParameter("orderBy"))
             {
                 request.RequestBody.OrderBy = this.GetParameter<IEnumerable<string>>("orderBy");
+            }
+
+            if (this.HasParameter("sessionId"))
+            {
+                request.RequestBody.SessionId = this.GetParameter<string>("sessionId");
             }
 
             if (this.HasParameter("filter"))

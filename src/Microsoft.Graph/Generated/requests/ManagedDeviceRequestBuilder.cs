@@ -628,6 +628,34 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for ManagedDeviceCreateRemoteHelpSession.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceCreateRemoteHelpSessionRequestBuilder"/>.</returns>
+        public IManagedDeviceCreateRemoteHelpSessionRequestBuilder CreateRemoteHelpSession(
+            string sessionType = null)
+        {
+            return new ManagedDeviceCreateRemoteHelpSessionRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.createRemoteHelpSession"),
+                this.Client,
+                sessionType);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ManagedDeviceRequestRemoteHelpSessionAccess.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceRequestRemoteHelpSessionAccessRequestBuilder"/>.</returns>
+        public IManagedDeviceRequestRemoteHelpSessionAccessRequestBuilder RequestRemoteHelpSessionAccess(
+            string sessionKey = null,
+            string pubSubConnectionId = null)
+        {
+            return new ManagedDeviceRequestRemoteHelpSessionAccessRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.requestRemoteHelpSessionAccess"),
+                this.Client,
+                sessionKey,
+                pubSubConnectionId);
+        }
+
+        /// <summary>
         /// Gets the request builder for ManagedDeviceGetCloudPcRemoteActionResults.
         /// </summary>
         /// <returns>The <see cref="IManagedDeviceGetCloudPcRemoteActionResultsRequestBuilder"/>.</returns>
@@ -680,6 +708,19 @@ namespace Microsoft.Graph
             return new ManagedDeviceGetOemWarrantyRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.getOemWarranty"),
                 this.Client);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ManagedDeviceRetrieveRemoteHelpSession.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceRetrieveRemoteHelpSessionRequestBuilder"/>.</returns>
+        public IManagedDeviceRetrieveRemoteHelpSessionRequestBuilder RetrieveRemoteHelpSession(
+            string sessionKey = null)
+        {
+            return new ManagedDeviceRetrieveRemoteHelpSessionRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.retrieveRemoteHelpSession"),
+                this.Client,
+                sessionKey);
         }
     
     }

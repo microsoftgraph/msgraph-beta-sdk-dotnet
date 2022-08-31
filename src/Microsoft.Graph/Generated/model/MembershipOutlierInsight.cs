@@ -31,36 +31,42 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets container id.
+        /// Indicates the identifier of the container, for example, a group ID.
         /// </summary>
         [JsonPropertyName("containerId")]
         public string ContainerId { get; set; }
     
         /// <summary>
         /// Gets or sets member id.
+        /// Indicates the identifier of the user.
         /// </summary>
         [JsonPropertyName("memberId")]
         public string MemberId { get; set; }
     
         /// <summary>
         /// Gets or sets outlier container type.
+        /// Indicates the type of container. The possible values are: group, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("outlierContainerType")]
         public OutlierContainerType? OutlierContainerType { get; set; }
     
         /// <summary>
         /// Gets or sets outlier member type.
+        /// Indicates the type of outlier member. The possible values are: user, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("outlierMemberType")]
         public OutlierMemberType? OutlierMemberType { get; set; }
     
         /// <summary>
         /// Gets or sets container.
+        /// Navigation link to the container directory object. For example, to a group.
         /// </summary>
         [JsonPropertyName("container")]
         public DirectoryObject Container { get; set; }
     
         /// <summary>
         /// Gets or sets member.
+        /// Navigation link to a member object. For example, to a user.
         /// </summary>
         [JsonPropertyName("member")]
         public DirectoryObject Member { get; set; }

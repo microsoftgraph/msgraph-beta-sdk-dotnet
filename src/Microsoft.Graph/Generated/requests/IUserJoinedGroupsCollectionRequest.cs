@@ -52,6 +52,20 @@ namespace Microsoft.Graph
         System.Threading.Tasks.Task<GraphResponse<UserJoinedGroupsCollectionResponse>> GetResponseAsync(CancellationToken cancellationToken = default);
 
         /// <summary>
+        /// Adds the specified expand value to the request.
+        /// </summary>
+        /// <param name="value">The expand value.</param>
+        /// <returns>The request object to send.</returns>
+        IUserJoinedGroupsCollectionRequest Expand(string value);
+
+        /// <summary>
+        /// Adds the specified expand value to the request.
+        /// </summary>
+        /// <param name="expandExpression">The expression from which to calculate the expand value.</param>
+        /// <returns>The request object to send.</returns>
+        IUserJoinedGroupsCollectionRequest Expand(Expression<Func<Group, object>> expandExpression);
+
+        /// <summary>
         /// Adds the specified select value to the request.
         /// </summary>
         /// <param name="value">The select value.</param>

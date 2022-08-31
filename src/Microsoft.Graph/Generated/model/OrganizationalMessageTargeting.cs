@@ -37,7 +37,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets targetingType.
-        /// Indicates the type of targeting. Possible values are: aadGroup.
+        /// Indicates the type of targeting. Possible values are: aadGroup, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("targetingType")]
         public OrganizationalMessageTargetingType? TargetingType { get; set; }

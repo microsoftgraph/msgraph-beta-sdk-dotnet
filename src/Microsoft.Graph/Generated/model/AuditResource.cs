@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     {
 
         /// <summary>
+        /// Gets or sets auditResourceType.
+        /// Audit resource's type.
+        /// </summary>
+        [JsonPropertyName("auditResourceType")]
+        public string AuditResourceType { get; set; }
+    
+        /// <summary>
         /// Gets or sets displayName.
         /// Display name.
         /// </summary>

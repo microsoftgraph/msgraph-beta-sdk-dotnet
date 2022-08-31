@@ -980,12 +980,12 @@ namespace Microsoft.Graph
         public IDeviceManagementReportsGetZebraFotaDeploymentReportRequestBuilder GetZebraFotaDeploymentReport(
             Int32 skip,
             Int32 top,
-            Int32 sessionId,
             string name = null,
             IEnumerable<string> select = null,
             string search = null,
             IEnumerable<string> groupBy = null,
             IEnumerable<string> orderBy = null,
+            string sessionId = null,
             string filter = null)
         {
             return new DeviceManagementReportsGetZebraFotaDeploymentReportRequestBuilder(
@@ -993,12 +993,12 @@ namespace Microsoft.Graph
                 this.Client,
                 skip,
                 top,
-                sessionId,
                 name,
                 select,
                 search,
                 groupBy,
                 orderBy,
+                sessionId,
                 filter);
         }
 

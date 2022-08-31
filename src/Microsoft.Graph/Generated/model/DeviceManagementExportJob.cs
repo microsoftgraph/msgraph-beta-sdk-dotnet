@@ -37,7 +37,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets format.
-        /// Format of the exported report. Possible values are: csv, json.
+        /// Format of the exported report. Possible values are: csv, pdf, json, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("format")]
         public DeviceManagementReportFileFormat? Format { get; set; }

@@ -34,5 +34,15 @@ namespace Microsoft.Graph
         /// </summary>
         WelcomeToWindows = 2,
 	
+        /// <summary>
+        /// Explore
+        /// </summary>
+        Explore = 3,
+	
+        /// <summary>
+        /// Unknown Future Value
+        /// </summary>
+        UnknownFutureValue = 4,
+	
     }
 }
