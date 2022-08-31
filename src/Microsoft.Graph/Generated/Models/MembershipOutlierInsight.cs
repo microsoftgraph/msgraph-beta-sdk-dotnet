@@ -5,22 +5,22 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class MembershipOutlierInsight : GovernanceInsight, IParsable {
-        /// <summary>The container property</summary>
+        /// <summary>Navigation link to the container directory object. For example, to a group.</summary>
         public DirectoryObject Container {
             get { return BackingStore?.Get<DirectoryObject>("container"); }
             set { BackingStore?.Set("container", value); }
         }
-        /// <summary>The containerId property</summary>
+        /// <summary>Indicates the identifier of the container, for example, a group ID.</summary>
         public string ContainerId {
             get { return BackingStore?.Get<string>("containerId"); }
             set { BackingStore?.Set("containerId", value); }
         }
-        /// <summary>The member property</summary>
+        /// <summary>Navigation link to a member object. For example, to a user.</summary>
         public DirectoryObject Member {
             get { return BackingStore?.Get<DirectoryObject>("member"); }
             set { BackingStore?.Set("member", value); }
         }
-        /// <summary>The memberId property</summary>
+        /// <summary>Indicates the identifier of the user.</summary>
         public string MemberId {
             get { return BackingStore?.Get<string>("memberId"); }
             set { BackingStore?.Set("memberId", value); }

@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the deviceAppManagement singleton.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public enum MobileAppSupersedenceType {
         /// <summary>Indicates that the child app should be updated by the internal logic of the parent app.</summary>
         Update,

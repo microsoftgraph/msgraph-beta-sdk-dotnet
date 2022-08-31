@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Entity that represents a defined collection of device settings</summary>
     public class DeviceManagementTemplate : Entity, IParsable {
         /// <summary>Collection of setting categories within the template</summary>
         public List<DeviceManagementTemplateSettingCategory> Categories {
@@ -68,7 +67,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("versionInfo", value); }
         }
         /// <summary>
-        /// Instantiates a new deviceManagementTemplate and sets the default values.
+        /// Instantiates a new DeviceManagementTemplate and sets the default values.
         /// </summary>
         public DeviceManagementTemplate() : base() {
             OdataType = "#microsoft.graph.deviceManagementTemplate";

@@ -45,8 +45,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports.GetZebraFotaDeploymentRe
             set { BackingStore?.Set("select", value); }
         }
         /// <summary>The sessionId property</summary>
-        public int? SessionId {
-            get { return BackingStore?.Get<int?>("sessionId"); }
+        public string SessionId {
+            get { return BackingStore?.Get<string>("sessionId"); }
             set { BackingStore?.Set("sessionId", value); }
         }
         /// <summary>The skip property</summary>
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports.GetZebraFotaDeploymentRe
                 {"orderBy", n => { OrderBy = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"search", n => { Search = n.GetStringValue(); } },
                 {"select", n => { Select = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"sessionId", n => { SessionId = n.GetIntValue(); } },
+                {"sessionId", n => { SessionId = n.GetStringValue(); } },
                 {"skip", n => { Skip = n.GetIntValue(); } },
                 {"top", n => { Top = n.GetIntValue(); } },
             };
@@ -102,7 +102,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports.GetZebraFotaDeploymentRe
             writer.WriteCollectionOfPrimitiveValues<string>("orderBy", OrderBy);
             writer.WriteStringValue("search", Search);
             writer.WriteCollectionOfPrimitiveValues<string>("select", Select);
-            writer.WriteIntValue("sessionId", SessionId);
+            writer.WriteStringValue("sessionId", SessionId);
             writer.WriteIntValue("skip", Skip);
             writer.WriteIntValue("top", Top);
             writer.WriteAdditionalData(AdditionalData);

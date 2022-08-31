@@ -9,5 +9,7 @@ namespace Microsoft.Graph.Beta.Models {
         RestartWarningsOnly,
         /// <summary>Turn off all notifications, including restart warnings.</summary>
         DisableAllNotifications,
+        /// <summary>Evolvable enum member</summary>
+        UnknownFutureValue,
     }
 }

@@ -22,6 +22,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("applicationId"); }
             set { BackingStore?.Set("applicationId", value); }
         }
+        /// <summary>Actor Type.</summary>
+        public string AuditActorType {
+            get { return BackingStore?.Get<string>("auditActorType"); }
+            set { BackingStore?.Set("auditActorType", value); }
+        }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>IPAddress.</summary>
@@ -97,6 +102,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"applicationDisplayName", n => { ApplicationDisplayName = n.GetStringValue(); } },
                 {"applicationId", n => { ApplicationId = n.GetStringValue(); } },
+                {"auditActorType", n => { AuditActorType = n.GetStringValue(); } },
                 {"ipAddress", n => { IpAddress = n.GetStringValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"remoteTenantId", n => { RemoteTenantId = n.GetStringValue(); } },
@@ -117,6 +123,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("applicationDisplayName", ApplicationDisplayName);
             writer.WriteStringValue("applicationId", ApplicationId);
+            writer.WriteStringValue("auditActorType", AuditActorType);
             writer.WriteStringValue("ipAddress", IpAddress);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("remoteTenantId", RemoteTenantId);

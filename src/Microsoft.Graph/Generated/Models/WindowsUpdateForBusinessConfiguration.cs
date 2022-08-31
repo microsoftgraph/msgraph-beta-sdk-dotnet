@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class WindowsUpdateForBusinessConfiguration : DeviceConfiguration, IParsable {
-        /// <summary>Allow eligible Windows 10 devices to upgrade to the latest version of Windows 11.</summary>
+        /// <summary>When TRUE, allows eligible Windows 10 devices to upgrade to Windows 11. When FALSE, implies the device stays on the existing operating system. Returned by default. Query parameters are not supported.</summary>
         public bool? AllowWindows11Upgrade {
             get { return BackingStore?.Get<bool?>("allowWindows11Upgrade"); }
             set { BackingStore?.Set("allowWindows11Upgrade", value); }
@@ -26,17 +26,17 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<WindowsUpdateType?>("businessReadyUpdatesOnly"); }
             set { BackingStore?.Set("businessReadyUpdatesOnly", value); }
         }
-        /// <summary>Number of days before feature updates are installed automatically with valid range from 0 to 30 days</summary>
+        /// <summary>Number of days before feature updates are installed automatically with valid range from 0 to 30 days. Returned by default. Query parameters are not supported.</summary>
         public int? DeadlineForFeatureUpdatesInDays {
             get { return BackingStore?.Get<int?>("deadlineForFeatureUpdatesInDays"); }
             set { BackingStore?.Set("deadlineForFeatureUpdatesInDays", value); }
         }
-        /// <summary>Number of days before quality updates are installed automatically with valid range from 0 to 30 days</summary>
+        /// <summary>Number of days before quality updates are installed automatically with valid range from 0 to 30 days. Returned by default. Query parameters are not supported.</summary>
         public int? DeadlineForQualityUpdatesInDays {
             get { return BackingStore?.Get<int?>("deadlineForQualityUpdatesInDays"); }
             set { BackingStore?.Set("deadlineForQualityUpdatesInDays", value); }
         }
-        /// <summary>Number of days after deadline  until restarts occur automatically with valid range from 0 to 7 days</summary>
+        /// <summary>Number of days after deadline until restarts occur automatically with valid range from 0 to 7 days. Returned by default. Query parameters are not supported.</summary>
         public int? DeadlineGracePeriodInDays {
             get { return BackingStore?.Get<int?>("deadlineGracePeriodInDays"); }
             set { BackingStore?.Set("deadlineGracePeriodInDays", value); }
@@ -51,72 +51,72 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<WindowsUpdateState>>("deviceUpdateStates"); }
             set { BackingStore?.Set("deviceUpdateStates", value); }
         }
-        /// <summary>Exclude Windows update Drivers</summary>
+        /// <summary>When TRUE, excludes Windows update Drivers. When FALSE, does not exclude Windows update Drivers. Returned by default. Query parameters are not supported.</summary>
         public bool? DriversExcluded {
             get { return BackingStore?.Get<bool?>("driversExcluded"); }
             set { BackingStore?.Set("driversExcluded", value); }
         }
-        /// <summary>Deadline in days before automatically scheduling and executing a pending restart outside of active hours, with valid range from 2 to 30 days</summary>
+        /// <summary>Deadline in days before automatically scheduling and executing a pending restart outside of active hours, with valid range from 2 to 30 days. Returned by default. Query parameters are not supported.</summary>
         public int? EngagedRestartDeadlineInDays {
             get { return BackingStore?.Get<int?>("engagedRestartDeadlineInDays"); }
             set { BackingStore?.Set("engagedRestartDeadlineInDays", value); }
         }
-        /// <summary>Number of days a user can snooze Engaged Restart reminder notifications with valid range from 1 to 3 days</summary>
+        /// <summary>Number of days a user can snooze Engaged Restart reminder notifications with valid range from 1 to 3 days. Returned by default. Query parameters are not supported.</summary>
         public int? EngagedRestartSnoozeScheduleInDays {
             get { return BackingStore?.Get<int?>("engagedRestartSnoozeScheduleInDays"); }
             set { BackingStore?.Set("engagedRestartSnoozeScheduleInDays", value); }
         }
-        /// <summary>Number of days before transitioning from Auto Restarts scheduled outside of active hours to Engaged Restart, which requires the user to schedule, with valid range from 0 to 30 days</summary>
+        /// <summary>Number of days before transitioning from Auto Restarts scheduled outside of active hours to Engaged Restart, which requires the user to schedule, with valid range from 0 to 30 days. Returned by default. Query parameters are not supported.</summary>
         public int? EngagedRestartTransitionScheduleInDays {
             get { return BackingStore?.Get<int?>("engagedRestartTransitionScheduleInDays"); }
             set { BackingStore?.Set("engagedRestartTransitionScheduleInDays", value); }
         }
-        /// <summary>Defer Feature Updates by these many days</summary>
+        /// <summary>Defer Feature Updates by these many days with valid range from 0 to 30 days. Returned by default. Query parameters are not supported.</summary>
         public int? FeatureUpdatesDeferralPeriodInDays {
             get { return BackingStore?.Get<int?>("featureUpdatesDeferralPeriodInDays"); }
             set { BackingStore?.Set("featureUpdatesDeferralPeriodInDays", value); }
         }
-        /// <summary>Pause Feature Updates</summary>
+        /// <summary>When TRUE, assigned devices are paused from receiving feature updates for up to 35 days from the time you pause the ring. When FALSE, does not pause Feature Updates. Returned by default. Query parameters are not supported.s</summary>
         public bool? FeatureUpdatesPaused {
             get { return BackingStore?.Get<bool?>("featureUpdatesPaused"); }
             set { BackingStore?.Set("featureUpdatesPaused", value); }
         }
-        /// <summary>Feature Updates Pause Expiry datetime</summary>
+        /// <summary>The Feature Updates Pause Expiry datetime. This value is 35 days from the time admin paused or extended the pause for the ring. Returned by default. Query parameters are not supported.</summary>
         public DateTimeOffset? FeatureUpdatesPauseExpiryDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("featureUpdatesPauseExpiryDateTime"); }
             set { BackingStore?.Set("featureUpdatesPauseExpiryDateTime", value); }
         }
-        /// <summary>Feature Updates Pause start date. This property is read-only.</summary>
+        /// <summary>The Feature Updates Pause start date. This value is the time when the admin paused or extended the pause for the ring. Returned by default. Query parameters are not supported. This property is read-only.</summary>
         public Date? FeatureUpdatesPauseStartDate {
             get { return BackingStore?.Get<Date?>("featureUpdatesPauseStartDate"); }
             set { BackingStore?.Set("featureUpdatesPauseStartDate", value); }
         }
-        /// <summary>Feature Updates Rollback Start datetime</summary>
+        /// <summary>The Feature Updates Rollback Start datetime.This value is the time when the admin rolled back the Feature update for the ring.Returned by default.Query parameters are not supported.</summary>
         public DateTimeOffset? FeatureUpdatesRollbackStartDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("featureUpdatesRollbackStartDateTime"); }
             set { BackingStore?.Set("featureUpdatesRollbackStartDateTime", value); }
         }
-        /// <summary>The number of days after a Feature Update for which a rollback is valid</summary>
+        /// <summary>The number of days after a Feature Update for which a rollback is valid with valid range from 2 to 60 days. Returned by default. Query parameters are not supported.</summary>
         public int? FeatureUpdatesRollbackWindowInDays {
             get { return BackingStore?.Get<int?>("featureUpdatesRollbackWindowInDays"); }
             set { BackingStore?.Set("featureUpdatesRollbackWindowInDays", value); }
         }
-        /// <summary>Specifies whether to rollback Feature Updates on the next device check in</summary>
+        /// <summary>When TRUE, rollback Feature Updates on the next device check in. When FALSE, do not rollback Feature Updates on the next device check in. Returned by default.Query parameters are not supported.</summary>
         public bool? FeatureUpdatesWillBeRolledBack {
             get { return BackingStore?.Get<bool?>("featureUpdatesWillBeRolledBack"); }
             set { BackingStore?.Set("featureUpdatesWillBeRolledBack", value); }
         }
-        /// <summary>Installation schedule</summary>
+        /// <summary>The Installation Schedule. Possible values are: ActiveHoursStart, ActiveHoursEnd, ScheduledInstallDay, ScheduledInstallTime. Returned by default. Query parameters are not supported.</summary>
         public WindowsUpdateInstallScheduleType InstallationSchedule {
             get { return BackingStore?.Get<WindowsUpdateInstallScheduleType>("installationSchedule"); }
             set { BackingStore?.Set("installationSchedule", value); }
         }
-        /// <summary>Allow Microsoft Update Service</summary>
+        /// <summary>When TRUE, allows Microsoft Update Service. When FALSE, does not allow Microsoft Update Service. Returned by default. Query parameters are not supported.</summary>
         public bool? MicrosoftUpdateServiceAllowed {
             get { return BackingStore?.Get<bool?>("microsoftUpdateServiceAllowed"); }
             set { BackingStore?.Set("microsoftUpdateServiceAllowed", value); }
         }
-        /// <summary>Specifies if the device should wait until deadline for rebooting outside of active hours</summary>
+        /// <summary>When TRUE the device should wait until deadline for rebooting outside of active hours. When FALSE the device should not wait until deadline for rebooting outside of active hours. Returned by default. Query parameters are not supported.</summary>
         public bool? PostponeRebootUntilAfterDeadline {
             get { return BackingStore?.Get<bool?>("postponeRebootUntilAfterDeadline"); }
             set { BackingStore?.Set("postponeRebootUntilAfterDeadline", value); }
@@ -126,47 +126,47 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PrereleaseFeatures?>("prereleaseFeatures"); }
             set { BackingStore?.Set("prereleaseFeatures", value); }
         }
-        /// <summary>Defer Quality Updates by these many days</summary>
+        /// <summary>Defer Quality Updates by these many days with valid range from 0 to 30 days. Returned by default. Query parameters are not supported.</summary>
         public int? QualityUpdatesDeferralPeriodInDays {
             get { return BackingStore?.Get<int?>("qualityUpdatesDeferralPeriodInDays"); }
             set { BackingStore?.Set("qualityUpdatesDeferralPeriodInDays", value); }
         }
-        /// <summary>Pause Quality Updates</summary>
+        /// <summary>When TRUE, assigned devices are paused from receiving quality updates for up to 35 days from the time you pause the ring. When FALSE, does not pause Quality Updates. Returned by default. Query parameters are not supported.</summary>
         public bool? QualityUpdatesPaused {
             get { return BackingStore?.Get<bool?>("qualityUpdatesPaused"); }
             set { BackingStore?.Set("qualityUpdatesPaused", value); }
         }
-        /// <summary>Quality Updates Pause Expiry datetime</summary>
+        /// <summary>The Quality Updates Pause Expiry datetime. This value is 35 days from the time admin paused or extended the pause for the ring. Returned by default. Query parameters are not supported.</summary>
         public DateTimeOffset? QualityUpdatesPauseExpiryDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("qualityUpdatesPauseExpiryDateTime"); }
             set { BackingStore?.Set("qualityUpdatesPauseExpiryDateTime", value); }
         }
-        /// <summary>Quality Updates Pause start date. This property is read-only.</summary>
+        /// <summary>The Quality Updates Pause start date. This value is the time when the admin paused or extended the pause for the ring. Returned by default. Query parameters are not supported. This property is read-only.</summary>
         public Date? QualityUpdatesPauseStartDate {
             get { return BackingStore?.Get<Date?>("qualityUpdatesPauseStartDate"); }
             set { BackingStore?.Set("qualityUpdatesPauseStartDate", value); }
         }
-        /// <summary>Quality Updates Rollback Start datetime</summary>
+        /// <summary>The Quality Updates Rollback Start datetime. This value is the time when the admin rolled back the Quality update for the ring. Returned by default. Query parameters are not supported.</summary>
         public DateTimeOffset? QualityUpdatesRollbackStartDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("qualityUpdatesRollbackStartDateTime"); }
             set { BackingStore?.Set("qualityUpdatesRollbackStartDateTime", value); }
         }
-        /// <summary>Specifies whether to rollback Quality Updates on the next device check in</summary>
+        /// <summary>When TRUE, rollback Quality Updates on the next device check in. When FALSE, do not rollback Quality Updates on the next device check in. Returned by default. Query parameters are not supported.</summary>
         public bool? QualityUpdatesWillBeRolledBack {
             get { return BackingStore?.Get<bool?>("qualityUpdatesWillBeRolledBack"); }
             set { BackingStore?.Set("qualityUpdatesWillBeRolledBack", value); }
         }
-        /// <summary>Specify the period for auto-restart imminent warning notifications. Supported values: 15, 30 or 60 (minutes).</summary>
+        /// <summary>Specify the period for auto-restart imminent warning notifications. Supported values: 15, 30 or 60 (minutes). Returned by default. Query parameters are not supported.</summary>
         public int? ScheduleImminentRestartWarningInMinutes {
             get { return BackingStore?.Get<int?>("scheduleImminentRestartWarningInMinutes"); }
             set { BackingStore?.Set("scheduleImminentRestartWarningInMinutes", value); }
         }
-        /// <summary>Specify the period for auto-restart warning reminder notifications. Supported values: 2, 4, 8, 12 or 24 (hours).</summary>
+        /// <summary>Specify the period for auto-restart warning reminder notifications. Supported values: 2, 4, 8, 12 or 24 (hours). Returned by default. Query parameters are not supported.</summary>
         public int? ScheduleRestartWarningInHours {
             get { return BackingStore?.Get<int?>("scheduleRestartWarningInHours"); }
             set { BackingStore?.Set("scheduleRestartWarningInHours", value); }
         }
-        /// <summary>Set to skip all check before restart: Battery level = 40%, User presence, Display Needed, Presentation mode, Full screen mode, phone call state, game mode etc.</summary>
+        /// <summary>When TRUE, skips all checks before restart: Battery level = 40%, User presence, Display Needed, Presentation mode, Full screen mode, phone call state, game mode etc. When FALSE, does not skip all checks before restart. Returned by default. Query parameters are not supported.</summary>
         public bool? SkipChecksBeforeRestart {
             get { return BackingStore?.Get<bool?>("skipChecksBeforeRestart"); }
             set { BackingStore?.Set("skipChecksBeforeRestart", value); }
@@ -176,7 +176,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<WindowsUpdateNotificationDisplayOption?>("updateNotificationLevel"); }
             set { BackingStore?.Set("updateNotificationLevel", value); }
         }
-        /// <summary>Scheduled the update installation on the weeks of the month. Possible values are: userDefined, firstWeek, secondWeek, thirdWeek, fourthWeek, everyWeek.</summary>
+        /// <summary>Schedule the update installation on the weeks of the month. Possible values are: UserDefined, FirstWeek, SecondWeek, ThirdWeek, FourthWeek, EveryWeek. Returned by default. Query parameters are not supported. Possible values are: userDefined, firstWeek, secondWeek, thirdWeek, fourthWeek, everyWeek, unknownFutureValue.</summary>
         public WindowsUpdateForBusinessUpdateWeeks? UpdateWeeks {
             get { return BackingStore?.Get<WindowsUpdateForBusinessUpdateWeeks?>("updateWeeks"); }
             set { BackingStore?.Set("updateWeeks", value); }

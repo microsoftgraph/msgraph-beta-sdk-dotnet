@@ -11,24 +11,24 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
             set { BackingStore?.Set("additionalData", value); }
         }
-        /// <summary>The alternateUrl property</summary>
+        /// <summary>If you&apos;re configuring a traffic manager in front of multiple App Proxy application segments, contains the user-friendly URL that will point to the traffic manager.</summary>
         public string AlternateUrl {
             get { return BackingStore?.Get<string>("alternateUrl"); }
             set { BackingStore?.Set("alternateUrl", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The corsConfigurations property</summary>
+        /// <summary>CORS Rule definition for a particular application segment.</summary>
         public List<CorsConfiguration> CorsConfigurations {
             get { return BackingStore?.Get<List<CorsConfiguration>>("corsConfigurations"); }
             set { BackingStore?.Set("corsConfigurations", value); }
         }
-        /// <summary>The externalUrl property</summary>
+        /// <summary>The published external URL for the application segment; for example, https://intranet.contoso.com./</summary>
         public string ExternalUrl {
             get { return BackingStore?.Get<string>("externalUrl"); }
             set { BackingStore?.Set("externalUrl", value); }
         }
-        /// <summary>The internalUrl property</summary>
+        /// <summary>The internal URL of the application segment; for example, https://intranet/.</summary>
         public string InternalUrl {
             get { return BackingStore?.Get<string>("internalUrl"); }
             set { BackingStore?.Set("internalUrl", value); }

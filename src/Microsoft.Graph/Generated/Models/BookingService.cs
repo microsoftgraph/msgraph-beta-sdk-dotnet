@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Represents a particular service offered by a booking business.</summary>
     public class BookingService : BookingNamedEntity, IParsable {
         /// <summary>Additional information that is sent to the customer when an appointment is confirmed.</summary>
         public string AdditionalInformation {
@@ -107,7 +106,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("webUrl", value); }
         }
         /// <summary>
-        /// Instantiates a new bookingService and sets the default values.
+        /// Instantiates a new BookingService and sets the default values.
         /// </summary>
         public BookingService() : base() {
             OdataType = "#microsoft.graph.bookingService";

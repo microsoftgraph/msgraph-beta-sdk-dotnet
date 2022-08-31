@@ -1,5 +1,5 @@
 using Microsoft.Graph.Beta.Agreements.Item.Acceptances;
-using Microsoft.Graph.Beta.Agreements.Item.File;
+using Microsoft.Graph.Beta.Agreements.Item.FileNamespace;
 using Microsoft.Graph.Beta.Agreements.Item.Files;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;

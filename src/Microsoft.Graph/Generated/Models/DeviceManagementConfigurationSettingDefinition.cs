@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class DeviceManagementConfigurationSettingDefinition : Entity, IParsable {
         /// <summary>The accessTypes property</summary>
         public DeviceManagementConfigurationSettingAccessTypes? AccessTypes {
@@ -98,7 +97,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("visibility", value); }
         }
         /// <summary>
-        /// Instantiates a new deviceManagementConfigurationSettingDefinition and sets the default values.
+        /// Instantiates a new DeviceManagementConfigurationSettingDefinition and sets the default values.
         /// </summary>
         public DeviceManagementConfigurationSettingDefinition() : base() {
             OdataType = "#microsoft.graph.deviceManagementConfigurationSettingDefinition";

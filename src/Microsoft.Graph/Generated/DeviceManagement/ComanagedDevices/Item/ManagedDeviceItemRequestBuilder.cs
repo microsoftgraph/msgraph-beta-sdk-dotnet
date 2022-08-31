@@ -3,6 +3,7 @@ using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.AssignmentFilt
 using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.BypassActivationLock;
 using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.CleanWindowsDevice;
 using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.CreateDeviceLogCollectionRequest;
+using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.CreateRemoteHelpSession;
 using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.DeleteUserFromSharedAppleDevice;
 using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.Deprovision;
 using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.DetectedApps;
@@ -30,10 +31,12 @@ using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.RemoteLock;
 using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.RemoveDeviceFirmwareConfigurationInterfaceManagement;
 using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.ReprovisionCloudPc;
 using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.RequestRemoteAssistance;
+using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.RequestRemoteHelpSessionAccess;
 using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.ResetPasscode;
 using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.ResizeCloudPc;
 using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.RestoreCloudPc;
 using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.Retire;
+using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.RetrieveRemoteHelpSessionWithSessionKey;
 using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.RevokeAppleVppLicenses;
 using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.RotateBitLockerKeys;
 using Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.RotateFileVaultKey;
@@ -82,6 +85,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item {
         /// <summary>The createDeviceLogCollectionRequest property</summary>
         public CreateDeviceLogCollectionRequestRequestBuilder CreateDeviceLogCollectionRequest { get =>
             new CreateDeviceLogCollectionRequestRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The createRemoteHelpSession property</summary>
+        public CreateRemoteHelpSessionRequestBuilder CreateRemoteHelpSession { get =>
+            new CreateRemoteHelpSessionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The deleteUserFromSharedAppleDevice property</summary>
         public DeleteUserFromSharedAppleDeviceRequestBuilder DeleteUserFromSharedAppleDevice { get =>
@@ -174,6 +181,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item {
         /// <summary>The requestRemoteAssistance property</summary>
         public RequestRemoteAssistanceRequestBuilder RequestRemoteAssistance { get =>
             new RequestRemoteAssistanceRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The requestRemoteHelpSessionAccess property</summary>
+        public RequestRemoteHelpSessionAccessRequestBuilder RequestRemoteHelpSessionAccess { get =>
+            new RequestRemoteHelpSessionAccessRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The resetPasscode property</summary>
         public ResetPasscodeRequestBuilder ResetPasscode { get =>
@@ -416,6 +427,14 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item {
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
+        }
+        /// <summary>
+        /// Provides operations to call the retrieveRemoteHelpSession method.
+        /// <param name="sessionKey">Usage: sessionKey=&apos;{sessionKey}&apos;</param>
+        /// </summary>
+        public RetrieveRemoteHelpSessionWithSessionKeyRequestBuilder RetrieveRemoteHelpSessionWithSessionKey(string sessionKey) {
+            if(string.IsNullOrEmpty(sessionKey)) throw new ArgumentNullException(nameof(sessionKey));
+            return new RetrieveRemoteHelpSessionWithSessionKeyRequestBuilder(PathParameters, RequestAdapter, sessionKey);
         }
         /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
         public class ManagedDeviceItemRequestBuilderDeleteRequestConfiguration {

@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.DirectoryRoles.Item {
         public DirectoryRoleItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/directoryRoles/{directoryRole%2Did}{?%24select,%24expand}";
+            UrlTemplate = "{+baseurl}/directoryRoles/{directoryRole%2Did}{?%24select}";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -73,7 +73,7 @@ namespace Microsoft.Graph.Beta.DirectoryRoles.Item {
         public DirectoryRoleItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/directoryRoles/{directoryRole%2Did}{?%24select,%24expand}";
+            UrlTemplate = "{+baseurl}/directoryRoles/{directoryRole%2Did}{?%24select}";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
@@ -198,9 +198,6 @@ namespace Microsoft.Graph.Beta.DirectoryRoles.Item {
         }
         /// <summary>Retrieve the properties of a directoryRole object. You can use both the object ID and template ID of the **directoryRole** with this API. The template ID of a built-in role is immutable and can be seen in the role description on the Azure portal. For details, see Role template IDs.</summary>
         public class DirectoryRoleItemRequestBuilderGetQueryParameters {
-            /// <summary>Expand related entities</summary>
-            [QueryParameter("%24expand")]
-            public string[] Expand { get; set; }
             /// <summary>Select properties to be returned</summary>
             [QueryParameter("%24select")]
             public string[] Select { get; set; }

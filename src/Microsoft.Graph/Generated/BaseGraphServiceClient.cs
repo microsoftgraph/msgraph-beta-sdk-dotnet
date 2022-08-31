@@ -33,7 +33,7 @@ using Microsoft.Graph.Beta.DeviceAppManagement;
 using Microsoft.Graph.Beta.DeviceManagement;
 using Microsoft.Graph.Beta.DeviceRegistrationPolicy;
 using Microsoft.Graph.Beta.Devices;
-using Microsoft.Graph.Beta.Directory;
+using Microsoft.Graph.Beta.DirectoryNamespace;
 using Microsoft.Graph.Beta.DirectoryObjects;
 using Microsoft.Graph.Beta.DirectoryRoles;
 using Microsoft.Graph.Beta.DirectoryRoleTemplates;

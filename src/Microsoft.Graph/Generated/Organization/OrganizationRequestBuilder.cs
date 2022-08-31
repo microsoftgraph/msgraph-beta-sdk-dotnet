@@ -1,6 +1,5 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
-using Microsoft.Graph.Beta.Organization.Count;
 using Microsoft.Graph.Beta.Organization.GetByIds;
 using Microsoft.Graph.Beta.Organization.GetUserOwnedObjects;
 using Microsoft.Graph.Beta.Organization.Item;
@@ -16,10 +15,6 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Organization {
     /// <summary>Provides operations to manage the collection of organization entities.</summary>
     public class OrganizationRequestBuilder {
-        /// <summary>The Count property</summary>
-        public CountRequestBuilder Count { get =>
-            new CountRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The getByIds property</summary>
         public GetByIdsRequestBuilder GetByIds { get =>
             new GetByIdsRequestBuilder(PathParameters, RequestAdapter);
@@ -52,7 +47,7 @@ namespace Microsoft.Graph.Beta.Organization {
         public OrganizationRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/organization{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
+            UrlTemplate = "{+baseurl}/organization{?%24top,%24search,%24orderby,%24select}";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -65,7 +60,7 @@ namespace Microsoft.Graph.Beta.Organization {
         public OrganizationRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/organization{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
+            UrlTemplate = "{+baseurl}/organization{?%24top,%24search,%24orderby,%24select}";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
@@ -145,15 +140,6 @@ namespace Microsoft.Graph.Beta.Organization {
         }
         /// <summary>Retrieve a list of organization objects.</summary>
         public class OrganizationRequestBuilderGetQueryParameters {
-            /// <summary>Include count of items</summary>
-            [QueryParameter("%24count")]
-            public bool? Count { get; set; }
-            /// <summary>Expand related entities</summary>
-            [QueryParameter("%24expand")]
-            public string[] Expand { get; set; }
-            /// <summary>Filter items by property values</summary>
-            [QueryParameter("%24filter")]
-            public string Filter { get; set; }
             /// <summary>Order items by property values</summary>
             [QueryParameter("%24orderby")]
             public string[] Orderby { get; set; }
@@ -163,9 +149,6 @@ namespace Microsoft.Graph.Beta.Organization {
             /// <summary>Select properties to be returned</summary>
             [QueryParameter("%24select")]
             public string[] Select { get; set; }
-            /// <summary>Skip the first n items</summary>
-            [QueryParameter("%24skip")]
-            public int? Skip { get; set; }
             /// <summary>Show only the first n items</summary>
             [QueryParameter("%24top")]
             public int? Top { get; set; }

@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>The user experience analytics top impacting process entity.</summary>
     public class UserExperienceAnalyticsImpactingProcess : Entity, IParsable {
         /// <summary>The category of impacting process.</summary>
         public string Category {
@@ -37,7 +36,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("publisher", value); }
         }
         /// <summary>
-        /// Instantiates a new userExperienceAnalyticsImpactingProcess and sets the default values.
+        /// Instantiates a new UserExperienceAnalyticsImpactingProcess and sets the default values.
         /// </summary>
         public UserExperienceAnalyticsImpactingProcess() : base() {
             OdataType = "#microsoft.graph.userExperienceAnalyticsImpactingProcess";

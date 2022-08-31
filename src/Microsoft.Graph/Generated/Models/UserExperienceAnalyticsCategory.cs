@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("metricValues", value); }
         }
         /// <summary>
-        /// Instantiates a new userExperienceAnalyticsCategory and sets the default values.
+        /// Instantiates a new UserExperienceAnalyticsCategory and sets the default values.
         /// </summary>
         public UserExperienceAnalyticsCategory() : base() {
             OdataType = "#microsoft.graph.userExperienceAnalyticsCategory";

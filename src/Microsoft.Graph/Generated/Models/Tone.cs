@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the commsApplication singleton.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public enum Tone {
         Tone0,
         Tone1,

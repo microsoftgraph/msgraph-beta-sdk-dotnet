@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("exportJobs", value); }
         }
         /// <summary>
-        /// Instantiates a new deviceManagementReports and sets the default values.
+        /// Instantiates a new DeviceManagementReports and sets the default values.
         /// </summary>
         public DeviceManagementReports() : base() {
             OdataType = "#microsoft.graph.deviceManagementReports";

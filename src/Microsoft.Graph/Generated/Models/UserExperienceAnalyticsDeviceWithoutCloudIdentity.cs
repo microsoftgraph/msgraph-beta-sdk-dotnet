@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>The user experience analytics Device without Cloud Identity.</summary>
     public class UserExperienceAnalyticsDeviceWithoutCloudIdentity : Entity, IParsable {
         /// <summary>Azure Active Directory Device Id</summary>
         public string AzureAdDeviceId {
@@ -17,7 +16,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("deviceName", value); }
         }
         /// <summary>
-        /// Instantiates a new userExperienceAnalyticsDeviceWithoutCloudIdentity and sets the default values.
+        /// Instantiates a new UserExperienceAnalyticsDeviceWithoutCloudIdentity and sets the default values.
         /// </summary>
         public UserExperienceAnalyticsDeviceWithoutCloudIdentity() : base() {
             OdataType = "#microsoft.graph.userExperienceAnalyticsDeviceWithoutCloudIdentity";

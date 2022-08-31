@@ -12,6 +12,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
             set { BackingStore?.Set("additionalData", value); }
         }
+        /// <summary>Audit resource&apos;s type.</summary>
+        public string AuditResourceType {
+            get { return BackingStore?.Get<string>("auditResourceType"); }
+            set { BackingStore?.Set("auditResourceType", value); }
+        }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Display name.</summary>
@@ -60,6 +65,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
+                {"auditResourceType", n => { AuditResourceType = n.GetStringValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"modifiedProperties", n => { ModifiedProperties = n.GetCollectionOfObjectValues<AuditProperty>(AuditProperty.CreateFromDiscriminatorValue).ToList(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
@@ -73,6 +79,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("auditResourceType", AuditResourceType);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteCollectionOfObjectValues<AuditProperty>("modifiedProperties", ModifiedProperties);
             writer.WriteStringValue("@odata.type", OdataType);

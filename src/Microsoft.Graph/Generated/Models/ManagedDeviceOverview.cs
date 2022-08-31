@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("mdmEnrolledCount", value); }
         }
         /// <summary>
-        /// Instantiates a new managedDeviceOverview and sets the default values.
+        /// Instantiates a new ManagedDeviceOverview and sets the default values.
         /// </summary>
         public ManagedDeviceOverview() : base() {
             OdataType = "#microsoft.graph.managedDeviceOverview";

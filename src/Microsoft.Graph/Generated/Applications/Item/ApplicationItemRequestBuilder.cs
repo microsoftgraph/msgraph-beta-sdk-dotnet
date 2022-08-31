@@ -135,7 +135,7 @@ namespace Microsoft.Graph.Beta.Applications.Item {
         public ApplicationItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/applications/{application%2Did}{?%24select,%24expand}";
+            UrlTemplate = "{+baseurl}/applications/{application%2Did}{?%24select}";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -148,7 +148,7 @@ namespace Microsoft.Graph.Beta.Applications.Item {
         public ApplicationItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/applications/{application%2Did}{?%24select,%24expand}";
+            UrlTemplate = "{+baseurl}/applications/{application%2Did}{?%24select}";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
@@ -273,9 +273,6 @@ namespace Microsoft.Graph.Beta.Applications.Item {
         }
         /// <summary>Get the properties and relationships of an application object.</summary>
         public class ApplicationItemRequestBuilderGetQueryParameters {
-            /// <summary>Expand related entities</summary>
-            [QueryParameter("%24expand")]
-            public string[] Expand { get; set; }
             /// <summary>Select properties to be returned</summary>
             [QueryParameter("%24select")]
             public string[] Select { get; set; }

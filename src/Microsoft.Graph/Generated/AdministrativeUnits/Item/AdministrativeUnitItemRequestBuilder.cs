@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Beta.AdministrativeUnits.Item {
         public AdministrativeUnitItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/administrativeUnits/{administrativeUnit%2Did}{?%24select,%24expand}";
+            UrlTemplate = "{+baseurl}/administrativeUnits/{administrativeUnit%2Did}{?%24select}";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Beta.AdministrativeUnits.Item {
         public AdministrativeUnitItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/administrativeUnits/{administrativeUnit%2Did}{?%24select,%24expand}";
+            UrlTemplate = "{+baseurl}/administrativeUnits/{administrativeUnit%2Did}{?%24select}";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
@@ -203,9 +203,6 @@ namespace Microsoft.Graph.Beta.AdministrativeUnits.Item {
         }
         /// <summary>Retrieve the properties and relationships of an administrativeUnit object. Since the **administrativeUnit** resource supports extensions, you can also use the `GET` operation to get custom properties and extension data in an **administrativeUnit** instance.</summary>
         public class AdministrativeUnitItemRequestBuilderGetQueryParameters {
-            /// <summary>Expand related entities</summary>
-            [QueryParameter("%24expand")]
-            public string[] Expand { get; set; }
             /// <summary>Select properties to be returned</summary>
             [QueryParameter("%24select")]
             public string[] Select { get; set; }

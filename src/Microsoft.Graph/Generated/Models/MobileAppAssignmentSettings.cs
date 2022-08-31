@@ -47,6 +47,7 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.win32LobAppAssignmentSettings" => new Win32LobAppAssignmentSettings(),
                 "#microsoft.graph.windowsAppXAppAssignmentSettings" => new WindowsAppXAppAssignmentSettings(),
                 "#microsoft.graph.windowsUniversalAppXAppAssignmentSettings" => new WindowsUniversalAppXAppAssignmentSettings(),
+                "#microsoft.graph.winGetAppAssignmentSettings" => new WinGetAppAssignmentSettings(),
                 _ => new MobileAppAssignmentSettings(),
             };
         }

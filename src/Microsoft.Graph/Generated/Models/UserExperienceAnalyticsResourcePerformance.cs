@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>The user experience analytics resource performance entity.</summary>
     public class UserExperienceAnalyticsResourcePerformance : Entity, IParsable {
         /// <summary>AverageSpikeTimeScore of a device or a model type. Valid values 0 to 100</summary>
         public int? AverageSpikeTimeScore {
@@ -72,7 +71,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("ramSpikeTimeScore", value); }
         }
         /// <summary>
-        /// Instantiates a new userExperienceAnalyticsResourcePerformance and sets the default values.
+        /// Instantiates a new UserExperienceAnalyticsResourcePerformance and sets the default values.
         /// </summary>
         public UserExperienceAnalyticsResourcePerformance() : base() {
             OdataType = "#microsoft.graph.userExperienceAnalyticsResourcePerformance";

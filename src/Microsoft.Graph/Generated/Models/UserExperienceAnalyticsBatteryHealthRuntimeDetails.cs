@@ -31,7 +31,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("lastRefreshedDateTime", value); }
         }
         /// <summary>
-        /// Instantiates a new userExperienceAnalyticsBatteryHealthRuntimeDetails and sets the default values.
+        /// Instantiates a new UserExperienceAnalyticsBatteryHealthRuntimeDetails and sets the default values.
         /// </summary>
         public UserExperienceAnalyticsBatteryHealthRuntimeDetails() : base() {
             OdataType = "#microsoft.graph.userExperienceAnalyticsBatteryHealthRuntimeDetails";

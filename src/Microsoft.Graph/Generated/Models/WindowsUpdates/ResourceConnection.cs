@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
-    /// <summary>Provides operations to manage the admin singleton.</summary>
     public class ResourceConnection : Entity, IParsable {
         /// <summary>The state of the connection. The possible values are: connected, notAuthorized, notFound, unknownFutureValue.</summary>
         public ResourceConnectionState? State {
@@ -13,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
             set { BackingStore?.Set("state", value); }
         }
         /// <summary>
-        /// Instantiates a new resourceConnection and sets the default values.
+        /// Instantiates a new ResourceConnection and sets the default values.
         /// </summary>
         public ResourceConnection() : base() {
             OdataType = "#microsoft.graph.windowsUpdates.resourceConnection";

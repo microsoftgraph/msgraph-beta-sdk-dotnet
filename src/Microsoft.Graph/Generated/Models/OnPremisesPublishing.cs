@@ -88,7 +88,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
-        /// <summary>The onPremisesApplicationSegments property</summary>
+        /// <summary>Represents the application segment collection for an on-premises wildcard application.</summary>
         public List<OnPremisesApplicationSegment> OnPremisesApplicationSegments {
             get { return BackingStore?.Get<List<OnPremisesApplicationSegment>>("onPremisesApplicationSegments"); }
             set { BackingStore?.Set("onPremisesApplicationSegments", value); }

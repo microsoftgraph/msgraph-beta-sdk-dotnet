@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.DirectoryObjects.Item {
         public DirectoryObjectItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/directoryObjects/{directoryObject%2Did}{?%24select,%24expand}";
+            UrlTemplate = "{+baseurl}/directoryObjects/{directoryObject%2Did}{?%24select}";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.DirectoryObjects.Item {
         public DirectoryObjectItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/directoryObjects/{directoryObject%2Did}{?%24select,%24expand}";
+            UrlTemplate = "{+baseurl}/directoryObjects/{directoryObject%2Did}{?%24select}";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
@@ -188,9 +188,6 @@ namespace Microsoft.Graph.Beta.DirectoryObjects.Item {
         }
         /// <summary>Retrieve the properties and relationships of a directoryObject object.</summary>
         public class DirectoryObjectItemRequestBuilderGetQueryParameters {
-            /// <summary>Expand related entities</summary>
-            [QueryParameter("%24expand")]
-            public string[] Expand { get; set; }
             /// <summary>Select properties to be returned</summary>
             [QueryParameter("%24select")]
             public string[] Select { get; set; }
