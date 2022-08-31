@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Extensions
             }
             else
             {
-                dateTime = DateTime.SpecifyKind(dateTime, DateTimeKind.Utc);
+                dateTime = DateTime.SpecifyKind(dateTime, DateTimeKind.Unspecified);
                 offset = timeZoneInfo.GetUtcOffset(dateTime);
             }
 
