@@ -2,6 +2,7 @@ using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.CallRecords;
 using Microsoft.Graph.Beta.Models.Ediscovery;
 using Microsoft.Graph.Beta.Models.ExternalConnectors;
+using Microsoft.Graph.Beta.Models.IdentityGovernance;
 using Microsoft.Graph.Beta.Models.ManagedTenants;
 using Microsoft.Graph.Beta.Models.Search;
 using Microsoft.Graph.Beta.Models.Security;
@@ -345,6 +346,7 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.delegatedAdminRelationshipRequest" => new DelegatedAdminRelationshipRequest(),
                 "#microsoft.graph.delegatedAdminServiceManagementDetail" => new DelegatedAdminServiceManagementDetail(),
                 "#microsoft.graph.delegatedPermissionClassification" => new DelegatedPermissionClassification(),
+                "#microsoft.graph.deletedItemContainer" => new DeletedItemContainer(),
                 "#microsoft.graph.deletedTeam" => new DeletedTeam(),
                 "#microsoft.graph.depEnrollmentBaseProfile" => new DepEnrollmentBaseProfile(),
                 "#microsoft.graph.depEnrollmentProfile" => new DepEnrollmentProfile(),
@@ -645,6 +647,16 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.identityApiConnector" => new IdentityApiConnector(),
                 "#microsoft.graph.identityBuiltInUserFlowAttribute" => new IdentityBuiltInUserFlowAttribute(),
                 "#microsoft.graph.identityCustomUserFlowAttribute" => new IdentityCustomUserFlowAttribute(),
+                "#microsoft.graph.identityGovernance.customTaskExtension" => new CustomTaskExtension(),
+                "#microsoft.graph.identityGovernance.lifecycleManagementSettings" => new LifecycleManagementSettings(),
+                "#microsoft.graph.identityGovernance.lifecycleWorkflowsContainer" => new LifecycleWorkflowsContainer(),
+                "#microsoft.graph.identityGovernance.run" => new Microsoft.Graph.Beta.Models.IdentityGovernance.Run(),
+                "#microsoft.graph.identityGovernance.task" => new Microsoft.Graph.Beta.Models.IdentityGovernance.TaskObject(),
+                "#microsoft.graph.identityGovernance.taskDefinition" => new Microsoft.Graph.Beta.Models.IdentityGovernance.TaskDefinition(),
+                "#microsoft.graph.identityGovernance.taskProcessingResult" => new TaskProcessingResult(),
+                "#microsoft.graph.identityGovernance.taskReport" => new TaskReport(),
+                "#microsoft.graph.identityGovernance.userProcessingResult" => new UserProcessingResult(),
+                "#microsoft.graph.identityGovernance.workflowTemplate" => new WorkflowTemplate(),
                 "#microsoft.graph.identityProvider" => new IdentityProvider(),
                 "#microsoft.graph.identityProviderBase" => new IdentityProviderBase(),
                 "#microsoft.graph.identitySecurityDefaultsEnforcementPolicy" => new IdentitySecurityDefaultsEnforcementPolicy(),
@@ -1471,6 +1483,7 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.windowsWifiConfiguration" => new WindowsWifiConfiguration(),
                 "#microsoft.graph.windowsWifiEnterpriseEAPConfiguration" => new WindowsWifiEnterpriseEAPConfiguration(),
                 "#microsoft.graph.windowsWiredNetworkConfiguration" => new WindowsWiredNetworkConfiguration(),
+                "#microsoft.graph.winGetApp" => new WinGetApp(),
                 "#microsoft.graph.workbook" => new Workbook(),
                 "#microsoft.graph.workbookApplication" => new WorkbookApplication(),
                 "#microsoft.graph.workbookChart" => new WorkbookChart(),

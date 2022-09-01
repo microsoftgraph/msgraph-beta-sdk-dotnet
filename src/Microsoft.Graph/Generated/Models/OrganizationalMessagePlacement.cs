@@ -11,5 +11,7 @@ namespace Microsoft.Graph.Beta.Models {
         Card2,
         /// <summary>Indicates the area where the fourth card is displayed. Only applies to the getStarted surface</summary>
         Card3,
+        /// <summary>UnknownFutureValue, Evolvable enumeration sentinel value. Do not use.</summary>
+        UnknownFutureValue,
     }
 }

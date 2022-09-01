@@ -13,5 +13,7 @@ namespace Microsoft.Graph.Beta.Models {
         FourthWeek,
         /// <summary>Scheduled the update installation on every week of the month</summary>
         EveryWeek,
+        /// <summary>Evolvable enum member</summary>
+        UnknownFutureValue,
     }
 }

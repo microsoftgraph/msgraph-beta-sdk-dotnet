@@ -11,6 +11,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("connectorName"); }
             set { BackingStore?.Set("connectorName", value); }
         }
+        /// <summary>Version of the connector installed.</summary>
+        public string ConnectorVersion {
+            get { return BackingStore?.Get<string>("connectorVersion"); }
+            set { BackingStore?.Set("connectorVersion", value); }
+        }
         /// <summary>Date/time when this connector was enrolled.</summary>
         public DateTimeOffset? EnrollmentDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("enrollmentDateTime"); }
@@ -46,6 +51,7 @@ namespace Microsoft.Graph.Beta.Models {
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"connectorName", n => { ConnectorName = n.GetStringValue(); } },
+                {"connectorVersion", n => { ConnectorVersion = n.GetStringValue(); } },
                 {"enrollmentDateTime", n => { EnrollmentDateTime = n.GetDateTimeOffsetValue(); } },
                 {"lastCheckinDateTime", n => { LastCheckinDateTime = n.GetDateTimeOffsetValue(); } },
                 {"machineName", n => { MachineName = n.GetStringValue(); } },
@@ -59,6 +65,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("connectorName", ConnectorName);
+            writer.WriteStringValue("connectorVersion", ConnectorVersion);
             writer.WriteDateTimeOffsetValue("enrollmentDateTime", EnrollmentDateTime);
             writer.WriteDateTimeOffsetValue("lastCheckinDateTime", LastCheckinDateTime);
             writer.WriteStringValue("machineName", MachineName);

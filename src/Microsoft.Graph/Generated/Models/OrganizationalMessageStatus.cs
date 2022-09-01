@@ -9,5 +9,7 @@ namespace Microsoft.Graph.Beta.Models {
         Completed,
         /// <summary>Indicates that the message has been cancelled and will not be shown</summary>
         Cancelled,
+        /// <summary>UnknownFutureValue, Evolvable enumeration sentinel value. Do not use.</summary>
+        UnknownFutureValue,
     }
 }

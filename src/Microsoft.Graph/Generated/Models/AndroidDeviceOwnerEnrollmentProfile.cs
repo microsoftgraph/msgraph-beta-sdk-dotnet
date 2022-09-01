@@ -4,12 +4,16 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Enrollment Profile used to enroll Android Enterprise devices using Google&apos;s Cloud Management.</summary>
     public class AndroidDeviceOwnerEnrollmentProfile : Entity, IParsable {
         /// <summary>Tenant GUID the enrollment profile belongs to.</summary>
         public string AccountId {
             get { return BackingStore?.Get<string>("accountId"); }
             set { BackingStore?.Set("accountId", value); }
+        }
+        /// <summary>Boolean that indicates that the Wi-Fi network should be configured during device provisioning. When set to TRUE, device provisioning will use Wi-Fi related properties to automatically connect to Wi-Fi networks. When set to FALSE or undefined, other Wi-Fi related properties will be ignored. Default value is TRUE. Returned by default.</summary>
+        public bool? ConfigureWifi {
+            get { return BackingStore?.Get<bool?>("configureWifi"); }
+            set { BackingStore?.Set("configureWifi", value); }
         }
         /// <summary>Date time the enrollment profile was created.</summary>
         public DateTimeOffset? CreatedDateTime {
@@ -102,7 +106,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("wifiSsid", value); }
         }
         /// <summary>
-        /// Instantiates a new androidDeviceOwnerEnrollmentProfile and sets the default values.
+        /// Instantiates a new AndroidDeviceOwnerEnrollmentProfile and sets the default values.
         /// </summary>
         public AndroidDeviceOwnerEnrollmentProfile() : base() {
             OdataType = "#microsoft.graph.androidDeviceOwnerEnrollmentProfile";
@@ -121,6 +125,7 @@ namespace Microsoft.Graph.Beta.Models {
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"accountId", n => { AccountId = n.GetStringValue(); } },
+                {"configureWifi", n => { ConfigureWifi = n.GetBoolValue(); } },
                 {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
@@ -149,6 +154,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("accountId", AccountId);
+            writer.WriteBoolValue("configureWifi", ConfigureWifi);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);

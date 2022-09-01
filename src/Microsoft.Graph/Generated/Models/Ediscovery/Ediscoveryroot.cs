@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
             set { BackingStore?.Set("cases", value); }
         }
         /// <summary>
-        /// Instantiates a new ediscoveryroot and sets the default values.
+        /// Instantiates a new Ediscoveryroot and sets the default values.
         /// </summary>
         public Ediscoveryroot() : base() {
             OdataType = "#microsoft.graph.ediscovery.ediscoveryroot";

@@ -14,7 +14,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The content type of the logo that is contained in the logo array. This is null when logoCdnUrl is used to send the logo. Possible values are: png.</summary>
+        /// <summary>The content type of the logo that is contained in the logo array. This is null when logoCdnUrl is used to send the logo. Possible values are: png, unknownFutureValue.</summary>
         public OrganizationalMessageLogoType? ContentType {
             get { return BackingStore?.Get<OrganizationalMessageLogoType?>("contentType"); }
             set { BackingStore?.Set("contentType", value); }

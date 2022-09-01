@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("messages", value); }
         }
         /// <summary>
-        /// Instantiates a new serviceAnnouncement and sets the default values.
+        /// Instantiates a new ServiceAnnouncement and sets the default values.
         /// </summary>
         public ServiceAnnouncement() : base() {
             OdataType = "#microsoft.graph.serviceAnnouncement";

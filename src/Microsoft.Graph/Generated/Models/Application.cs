@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Casts the previous resource to application.</summary>
     public class Application : DirectoryObject, IParsable {
         /// <summary>Specifies settings for an application that implements a web API.</summary>
         public ApiApplication Api {
@@ -156,7 +155,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("publisherDomain"); }
             set { BackingStore?.Set("publisherDomain", value); }
         }
-        /// <summary>The requestSignatureVerification property</summary>
+        /// <summary>Specifies whether this application requires Azure AD to verify the signed authentication requests.</summary>
         public Microsoft.Graph.Beta.Models.RequestSignatureVerification RequestSignatureVerification {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RequestSignatureVerification>("requestSignatureVerification"); }
             set { BackingStore?.Set("requestSignatureVerification", value); }
@@ -232,7 +231,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("windows", value); }
         }
         /// <summary>
-        /// Instantiates a new application and sets the default values.
+        /// Instantiates a new Application and sets the default values.
         /// </summary>
         public Application() : base() {
             OdataType = "#microsoft.graph.application";

@@ -11,14 +11,14 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
             set { BackingStore?.Set("additionalData", value); }
         }
-        /// <summary>The allowedWeakAlgorithms property</summary>
+        /// <summary>Specifies whether this application accepts weak algorithms.  The possible values are: rsaSha1, unknownFutureValue.</summary>
         public WeakAlgorithms? AllowedWeakAlgorithms {
             get { return BackingStore?.Get<WeakAlgorithms?>("allowedWeakAlgorithms"); }
             set { BackingStore?.Set("allowedWeakAlgorithms", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The isSignedRequestRequired property</summary>
+        /// <summary>Specifies whether signed authentication requests for this application should be required.</summary>
         public bool? IsSignedRequestRequired {
             get { return BackingStore?.Get<bool?>("isSignedRequestRequired"); }
             set { BackingStore?.Set("isSignedRequestRequired", value); }

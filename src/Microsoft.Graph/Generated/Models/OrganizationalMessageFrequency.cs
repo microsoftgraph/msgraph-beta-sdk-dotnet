@@ -7,5 +7,7 @@ namespace Microsoft.Graph.Beta.Models {
         MonthlyOnce,
         /// <summary>Indicates that the message will be displayed twice a month</summary>
         MonthlyTwice,
+        /// <summary>UnknownFutureValue, Evolvable enumeration sentinel value. Do not use.</summary>
+        UnknownFutureValue,
     }
 }

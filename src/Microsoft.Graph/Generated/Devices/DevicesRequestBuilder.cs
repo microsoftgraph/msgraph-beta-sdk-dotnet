@@ -1,4 +1,3 @@
-using Microsoft.Graph.Beta.Devices.Count;
 using Microsoft.Graph.Beta.Devices.Delta;
 using Microsoft.Graph.Beta.Devices.GetByIds;
 using Microsoft.Graph.Beta.Devices.GetUserOwnedObjects;
@@ -17,10 +16,6 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Devices {
     /// <summary>Provides operations to manage the collection of device entities.</summary>
     public class DevicesRequestBuilder {
-        /// <summary>The Count property</summary>
-        public CountRequestBuilder Count { get =>
-            new CountRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The getByIds property</summary>
         public GetByIdsRequestBuilder GetByIds { get =>
             new GetByIdsRequestBuilder(PathParameters, RequestAdapter);
@@ -53,7 +48,7 @@ namespace Microsoft.Graph.Beta.Devices {
         public DevicesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/devices{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
+            UrlTemplate = "{+baseurl}/devices{?%24top,%24search,%24orderby,%24select}";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -66,7 +61,7 @@ namespace Microsoft.Graph.Beta.Devices {
         public DevicesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/devices{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
+            UrlTemplate = "{+baseurl}/devices{?%24top,%24search,%24orderby,%24select}";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
@@ -152,15 +147,6 @@ namespace Microsoft.Graph.Beta.Devices {
         }
         /// <summary>Retrieve a list of devices registered in the directory. </summary>
         public class DevicesRequestBuilderGetQueryParameters {
-            /// <summary>Include count of items</summary>
-            [QueryParameter("%24count")]
-            public bool? Count { get; set; }
-            /// <summary>Expand related entities</summary>
-            [QueryParameter("%24expand")]
-            public string[] Expand { get; set; }
-            /// <summary>Filter items by property values</summary>
-            [QueryParameter("%24filter")]
-            public string Filter { get; set; }
             /// <summary>Order items by property values</summary>
             [QueryParameter("%24orderby")]
             public string[] Orderby { get; set; }
@@ -170,9 +156,6 @@ namespace Microsoft.Graph.Beta.Devices {
             /// <summary>Select properties to be returned</summary>
             [QueryParameter("%24select")]
             public string[] Select { get; set; }
-            /// <summary>Skip the first n items</summary>
-            [QueryParameter("%24skip")]
-            public int? Skip { get; set; }
             /// <summary>Show only the first n items</summary>
             [QueryParameter("%24top")]
             public int? Top { get; set; }

@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>The user experience analytics device startup process details.</summary>
     public class UserExperienceAnalyticsDeviceStartupProcess : Entity, IParsable {
         /// <summary>The user experience analytics device id.</summary>
         public string ManagedDeviceId {
@@ -32,7 +31,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("startupImpactInMs", value); }
         }
         /// <summary>
-        /// Instantiates a new userExperienceAnalyticsDeviceStartupProcess and sets the default values.
+        /// Instantiates a new UserExperienceAnalyticsDeviceStartupProcess and sets the default values.
         /// </summary>
         public UserExperienceAnalyticsDeviceStartupProcess() : base() {
             OdataType = "#microsoft.graph.userExperienceAnalyticsDeviceStartupProcess";

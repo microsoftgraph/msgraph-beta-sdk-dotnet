@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Entity which represents a connection to Mobile threat defense partner.</summary>
     public class MobileThreatDefenseConnector : Entity, IParsable {
         /// <summary>For IOS devices, allows the admin to configure whether the data sync partner may also collect metadata about installed applications from Intune</summary>
         public bool? AllowPartnerToCollectIOSApplicationMetadata {
@@ -91,8 +90,13 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("windowsEnabled"); }
             set { BackingStore?.Set("windowsEnabled", value); }
         }
+        /// <summary>When TRUE, app protection policies using the Device Threat Level rule will evaluate devices including data from this connector for Windows. When FALSE, Intune will not use device risk details sent over this connector during app protection policies calculation for policies with a Device Threat Level configured. Existing devices that are not compliant due to risk levels obtained from this connector will also become compliant.</summary>
+        public bool? WindowsMobileApplicationManagementEnabled {
+            get { return BackingStore?.Get<bool?>("windowsMobileApplicationManagementEnabled"); }
+            set { BackingStore?.Set("windowsMobileApplicationManagementEnabled", value); }
+        }
         /// <summary>
-        /// Instantiates a new mobileThreatDefenseConnector and sets the default values.
+        /// Instantiates a new MobileThreatDefenseConnector and sets the default values.
         /// </summary>
         public MobileThreatDefenseConnector() : base() {
             OdataType = "#microsoft.graph.mobileThreatDefenseConnector";
@@ -127,6 +131,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"partnerUnsupportedOsVersionBlocked", n => { PartnerUnsupportedOsVersionBlocked = n.GetBoolValue(); } },
                 {"windowsDeviceBlockedOnMissingPartnerData", n => { WindowsDeviceBlockedOnMissingPartnerData = n.GetBoolValue(); } },
                 {"windowsEnabled", n => { WindowsEnabled = n.GetBoolValue(); } },
+                {"windowsMobileApplicationManagementEnabled", n => { WindowsMobileApplicationManagementEnabled = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -153,6 +158,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteBoolValue("partnerUnsupportedOsVersionBlocked", PartnerUnsupportedOsVersionBlocked);
             writer.WriteBoolValue("windowsDeviceBlockedOnMissingPartnerData", WindowsDeviceBlockedOnMissingPartnerData);
             writer.WriteBoolValue("windowsEnabled", WindowsEnabled);
+            writer.WriteBoolValue("windowsMobileApplicationManagementEnabled", WindowsMobileApplicationManagementEnabled);
         }
     }
 }

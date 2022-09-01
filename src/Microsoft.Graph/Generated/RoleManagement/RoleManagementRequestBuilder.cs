@@ -2,7 +2,7 @@ using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.RoleManagement.CloudPC;
 using Microsoft.Graph.Beta.RoleManagement.DeviceManagement;
-using Microsoft.Graph.Beta.RoleManagement.Directory;
+using Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace;
 using Microsoft.Graph.Beta.RoleManagement.EntitlementManagement;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;

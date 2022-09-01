@@ -19,6 +19,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("clientIdentifier"); }
             set { BackingStore?.Set("clientIdentifier", value); }
         }
+        /// <summary>Configuration Manager Client version from SCCM</summary>
+        public string ClientVersion {
+            get { return BackingStore?.Get<string>("clientVersion"); }
+            set { BackingStore?.Set("clientVersion", value); }
+        }
         /// <summary>Configuration Manager Client blocked status from SCCM</summary>
         public bool? IsBlocked {
             get { return BackingStore?.Get<bool?>("isBlocked"); }
@@ -51,6 +56,7 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"clientIdentifier", n => { ClientIdentifier = n.GetStringValue(); } },
+                {"clientVersion", n => { ClientVersion = n.GetStringValue(); } },
                 {"isBlocked", n => { IsBlocked = n.GetBoolValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
@@ -62,6 +68,7 @@ namespace Microsoft.Graph.Beta.Models {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("clientIdentifier", ClientIdentifier);
+            writer.WriteStringValue("clientVersion", ClientVersion);
             writer.WriteBoolValue("isBlocked", IsBlocked);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);

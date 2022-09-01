@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
             set { BackingStore?.Set("updates", value); }
         }
         /// <summary>
-        /// Instantiates a new windows and sets the default values.
+        /// Instantiates a new Windows and sets the default values.
         /// </summary>
         public Windows() : base() {
             OdataType = "#microsoft.graph.windowsUpdates.windows";

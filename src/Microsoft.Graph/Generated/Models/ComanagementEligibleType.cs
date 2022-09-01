@@ -6,5 +6,7 @@ namespace Microsoft.Graph.Beta.Models {
         EligibleButNotAzureAdJoined,
         NeedsOsUpdate,
         Ineligible,
+        /// <summary>Devices scheduled for Co-Management enrollment</summary>
+        ScheduledForEnrollment,
     }
 }

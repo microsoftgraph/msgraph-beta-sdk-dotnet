@@ -11,24 +11,24 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
             set { BackingStore?.Set("additionalData", value); }
         }
-        /// <summary>The allowedHeaders property</summary>
+        /// <summary>The request headers that the origin domain may specify on the CORS request. The wildcard character * indicates that any header beginning with the specified prefix is allowed.</summary>
         public List<string> AllowedHeaders {
             get { return BackingStore?.Get<List<string>>("allowedHeaders"); }
             set { BackingStore?.Set("allowedHeaders", value); }
         }
-        /// <summary>The allowedMethods property</summary>
+        /// <summary>The HTTP request methods that the origin domain may use for a CORS request.</summary>
         public List<string> AllowedMethods {
             get { return BackingStore?.Get<List<string>>("allowedMethods"); }
             set { BackingStore?.Set("allowedMethods", value); }
         }
-        /// <summary>The allowedOrigins property</summary>
+        /// <summary>The origin domains that are permitted to make a request against the service via CORS. The origin domain is the domain from which the request originates. The origin must be an exact case-sensitive match with the origin that the user age sends to the service.</summary>
         public List<string> AllowedOrigins {
             get { return BackingStore?.Get<List<string>>("allowedOrigins"); }
             set { BackingStore?.Set("allowedOrigins", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The maxAgeInSeconds property</summary>
+        /// <summary>The maximum amount of time that a browser should cache the response to the preflight OPTIONS request.</summary>
         public int? MaxAgeInSeconds {
             get { return BackingStore?.Get<int?>("maxAgeInSeconds"); }
             set { BackingStore?.Set("maxAgeInSeconds", value); }
@@ -38,7 +38,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
-        /// <summary>The resource property</summary>
+        /// <summary>Resource within the application segment for which CORS permissions are granted. / grants permission for whole app segment.</summary>
         public string Resource {
             get { return BackingStore?.Get<string>("resource"); }
             set { BackingStore?.Set("resource", value); }

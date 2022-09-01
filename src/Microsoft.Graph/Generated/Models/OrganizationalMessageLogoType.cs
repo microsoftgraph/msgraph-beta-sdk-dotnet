@@ -3,5 +3,7 @@ namespace Microsoft.Graph.Beta.Models {
     public enum OrganizationalMessageLogoType {
         /// <summary>Indicates that logo is a png file</summary>
         Png,
+        /// <summary>UnknownFutureValue, Evolvable enumeration sentinel value. Do not use.</summary>
+        UnknownFutureValue,
     }
 }

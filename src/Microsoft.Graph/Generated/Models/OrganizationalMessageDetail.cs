@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>This will allow the admin to see the specific details of an organizational message that has been created for their tenant</summary>
     public class OrganizationalMessageDetail : Entity, IParsable {
         /// <summary>The content that will be displayed to clients for the message. This includes the text portion of the message and the displayed logo</summary>
         public OrganizationalMessageContent Content {
@@ -21,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DateTimeOffset?>("endDateTime"); }
             set { BackingStore?.Set("endDateTime", value); }
         }
-        /// <summary>The frequency at which a client will see the message. Possible values are: weeklyOnce, monthlyOnce, monthlyTwice.</summary>
+        /// <summary>The frequency at which a client will see the message. Possible values are: weeklyOnce, monthlyOnce, monthlyTwice, unknownFutureValue.</summary>
         public OrganizationalMessageFrequency? Frequency {
             get { return BackingStore?.Get<OrganizationalMessageFrequency?>("frequency"); }
             set { BackingStore?.Set("frequency", value); }
@@ -31,7 +30,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
-        /// <summary>Indicates the scenario for the message. Possible values are: onboarding, lifecycle.</summary>
+        /// <summary>Indicates the scenario for the message. Possible values are: onboarding, lifecycle, unknownFutureValue.</summary>
         public OrganizationalMessageScenario? Scenario {
             get { return BackingStore?.Get<OrganizationalMessageScenario?>("scenario"); }
             set { BackingStore?.Set("scenario", value); }
@@ -41,12 +40,12 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }
             set { BackingStore?.Set("startDateTime", value); }
         }
-        /// <summary>Indicates the deployment status of the message. Possible values are: scheduled, active, completed, cancelled.</summary>
+        /// <summary>Indicates the deployment status of the message. Possible values are: scheduled, active, completed, cancelled, unknownFutureValue.</summary>
         public OrganizationalMessageStatus? Status {
             get { return BackingStore?.Get<OrganizationalMessageStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
-        /// <summary>Indicates the area where content will be displayed to customers. Possible values are: actionCenter, getStarted, softLanding.</summary>
+        /// <summary>Indicates the area where content will be displayed to customers. Possible values are: actionCenter, getStarted, softLanding, unknownFutureValue.</summary>
         public OrganizationalMessageSurface? Surface {
             get { return BackingStore?.Get<OrganizationalMessageSurface?>("surface"); }
             set { BackingStore?.Set("surface", value); }
@@ -56,7 +55,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<OrganizationalMessageTargeting>("targeting"); }
             set { BackingStore?.Set("targeting", value); }
         }
-        /// <summary>Indicates the theme for the experience. Possible values are: update, training, welcomeToWindows.</summary>
+        /// <summary>Indicates the theme for the experience. Possible values are: update, training, welcomeToWindows, explore, unknownFutureValue.</summary>
         public OrganizationalMessageTheme? Theme {
             get { return BackingStore?.Get<OrganizationalMessageTheme?>("theme"); }
             set { BackingStore?.Set("theme", value); }
@@ -72,7 +71,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("variant", value); }
         }
         /// <summary>
-        /// Instantiates a new organizationalMessageDetail and sets the default values.
+        /// Instantiates a new OrganizationalMessageDetail and sets the default values.
         /// </summary>
         public OrganizationalMessageDetail() : base() {
             OdataType = "#microsoft.graph.organizationalMessageDetail";

@@ -1,10 +1,12 @@
 using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.IdentityGovernance;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class CustomCalloutExtension : Entity, IParsable {
         /// <summary>Configuration for securing the API call to the logic app. For example, using OAuth client credentials flow.</summary>
         public CustomExtensionAuthenticationConfiguration AuthenticationConfiguration {
@@ -32,7 +34,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("endpointConfiguration", value); }
         }
         /// <summary>
-        /// Instantiates a new CustomCalloutExtension and sets the default values.
+        /// Instantiates a new customCalloutExtension and sets the default values.
         /// </summary>
         public CustomCalloutExtension() : base() {
             OdataType = "#microsoft.graph.customCalloutExtension";
@@ -48,6 +50,7 @@ namespace Microsoft.Graph.Beta.Models {
             return mappingValue switch {
                 "#microsoft.graph.customAccessPackageWorkflowExtension" => new CustomAccessPackageWorkflowExtension(),
                 "#microsoft.graph.customAuthenticationExtension" => new CustomAuthenticationExtension(),
+                "#microsoft.graph.identityGovernance.customTaskExtension" => new CustomTaskExtension(),
                 "#microsoft.graph.onTokenIssuanceStartCustomExtension" => new OnTokenIssuanceStartCustomExtension(),
                 _ => new CustomCalloutExtension(),
             };

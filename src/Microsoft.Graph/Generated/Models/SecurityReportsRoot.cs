@@ -6,7 +6,7 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class SecurityReportsRoot : Entity, IParsable {
         /// <summary>
-        /// Instantiates a new securityReportsRoot and sets the default values.
+        /// Instantiates a new SecurityReportsRoot and sets the default values.
         /// </summary>
         public SecurityReportsRoot() : base() {
             OdataType = "#microsoft.graph.securityReportsRoot";

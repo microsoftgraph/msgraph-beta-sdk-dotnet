@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Represents a booking customer or staff member.</summary>
     public class BookingPerson : BookingNamedEntity, IParsable {
         /// <summary>The email address of the person.</summary>
         public string EmailAddress {
@@ -13,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("emailAddress", value); }
         }
         /// <summary>
-        /// Instantiates a new bookingPerson and sets the default values.
+        /// Instantiates a new BookingPerson and sets the default values.
         /// </summary>
         public BookingPerson() : base() {
             OdataType = "#microsoft.graph.bookingPerson";

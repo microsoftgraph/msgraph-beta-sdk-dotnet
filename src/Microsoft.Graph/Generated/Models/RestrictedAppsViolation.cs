@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Violation of restricted apps configuration profile per device per user</summary>
     public class RestrictedAppsViolation : Entity, IParsable {
         /// <summary>Device configuration profile unique identifier, must be Guid</summary>
         public string DeviceConfigurationId {
@@ -52,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("userName", value); }
         }
         /// <summary>
-        /// Instantiates a new restrictedAppsViolation and sets the default values.
+        /// Instantiates a new RestrictedAppsViolation and sets the default values.
         /// </summary>
         public RestrictedAppsViolation() : base() {
             OdataType = "#microsoft.graph.restrictedAppsViolation";

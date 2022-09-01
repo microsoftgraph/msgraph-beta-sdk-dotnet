@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Intune will provide customer the ability to run their Powershell Health scripts (remediation + detection) on the enrolled windows 10 Azure Active Directory joined devices.</summary>
     public class DeviceHealthScript : Entity, IParsable {
         /// <summary>The list of group assignments for the device health script</summary>
         public List<DeviceHealthScriptAssignment> Assignments {
@@ -102,7 +101,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("version", value); }
         }
         /// <summary>
-        /// Instantiates a new deviceHealthScript and sets the default values.
+        /// Instantiates a new DeviceHealthScript and sets the default values.
         /// </summary>
         public DeviceHealthScript() : base() {
             OdataType = "#microsoft.graph.deviceHealthScript";

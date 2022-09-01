@@ -160,6 +160,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<DeviceManagementConfigurationSettingDefinition>>("configurationSettings"); }
             set { BackingStore?.Set("configurationSettings", value); }
         }
+        /// <summary>A configuration entity for MEM features that utilize Data Processor Service for Windows (DPSW) data.</summary>
+        public Microsoft.Graph.Beta.Models.DataProcessorServiceForWindowsFeaturesOnboarding DataProcessorServiceForWindowsFeaturesOnboarding {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DataProcessorServiceForWindowsFeaturesOnboarding>("dataProcessorServiceForWindowsFeaturesOnboarding"); }
+            set { BackingStore?.Set("dataProcessorServiceForWindowsFeaturesOnboarding", value); }
+        }
         /// <summary>Data sharing consents.</summary>
         public List<DataSharingConsent> DataSharingConsents {
             get { return BackingStore?.Get<List<DataSharingConsent>>("dataSharingConsents"); }
@@ -920,6 +925,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"configurationPolicies", n => { ConfigurationPolicies = n.GetCollectionOfObjectValues<DeviceManagementConfigurationPolicy>(DeviceManagementConfigurationPolicy.CreateFromDiscriminatorValue).ToList(); } },
                 {"configurationPolicyTemplates", n => { ConfigurationPolicyTemplates = n.GetCollectionOfObjectValues<DeviceManagementConfigurationPolicyTemplate>(DeviceManagementConfigurationPolicyTemplate.CreateFromDiscriminatorValue).ToList(); } },
                 {"configurationSettings", n => { ConfigurationSettings = n.GetCollectionOfObjectValues<DeviceManagementConfigurationSettingDefinition>(DeviceManagementConfigurationSettingDefinition.CreateFromDiscriminatorValue).ToList(); } },
+                {"dataProcessorServiceForWindowsFeaturesOnboarding", n => { DataProcessorServiceForWindowsFeaturesOnboarding = n.GetObjectValue<Microsoft.Graph.Beta.Models.DataProcessorServiceForWindowsFeaturesOnboarding>(Microsoft.Graph.Beta.Models.DataProcessorServiceForWindowsFeaturesOnboarding.CreateFromDiscriminatorValue); } },
                 {"dataSharingConsents", n => { DataSharingConsents = n.GetCollectionOfObjectValues<DataSharingConsent>(DataSharingConsent.CreateFromDiscriminatorValue).ToList(); } },
                 {"depOnboardingSettings", n => { DepOnboardingSettings = n.GetCollectionOfObjectValues<DepOnboardingSetting>(DepOnboardingSetting.CreateFromDiscriminatorValue).ToList(); } },
                 {"derivedCredentials", n => { DerivedCredentials = n.GetCollectionOfObjectValues<DeviceManagementDerivedCredentialSettings>(DeviceManagementDerivedCredentialSettings.CreateFromDiscriminatorValue).ToList(); } },
@@ -1102,6 +1108,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfObjectValues<DeviceManagementConfigurationPolicy>("configurationPolicies", ConfigurationPolicies);
             writer.WriteCollectionOfObjectValues<DeviceManagementConfigurationPolicyTemplate>("configurationPolicyTemplates", ConfigurationPolicyTemplates);
             writer.WriteCollectionOfObjectValues<DeviceManagementConfigurationSettingDefinition>("configurationSettings", ConfigurationSettings);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DataProcessorServiceForWindowsFeaturesOnboarding>("dataProcessorServiceForWindowsFeaturesOnboarding", DataProcessorServiceForWindowsFeaturesOnboarding);
             writer.WriteCollectionOfObjectValues<DataSharingConsent>("dataSharingConsents", DataSharingConsents);
             writer.WriteCollectionOfObjectValues<DepOnboardingSetting>("depOnboardingSettings", DepOnboardingSettings);
             writer.WriteCollectionOfObjectValues<DeviceManagementDerivedCredentialSettings>("derivedCredentials", DerivedCredentials);

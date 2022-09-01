@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Apple push notification certificate.</summary>
     public class ApplePushNotificationCertificate : Entity, IParsable {
         /// <summary>Apple Id of the account used to create the MDM push certificate.</summary>
         public string AppleIdentifier {
@@ -47,7 +46,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("topicIdentifier", value); }
         }
         /// <summary>
-        /// Instantiates a new applePushNotificationCertificate and sets the default values.
+        /// Instantiates a new ApplePushNotificationCertificate and sets the default values.
         /// </summary>
         public ApplePushNotificationCertificate() : base() {
             OdataType = "#microsoft.graph.applePushNotificationCertificate";
