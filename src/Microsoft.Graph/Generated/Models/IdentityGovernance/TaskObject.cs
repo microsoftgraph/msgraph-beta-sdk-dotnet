@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
     public class TaskObject : Entity, IParsable {
-        /// <summary>The arguments property</summary>
+        /// <summary>Arguments included within the task.</summary>
         public List<Microsoft.Graph.Beta.Models.KeyValuePair> Arguments {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.KeyValuePair>>("arguments"); }
             set { BackingStore?.Set("arguments", value); }
@@ -15,37 +15,37 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
             get { return BackingStore?.Get<LifecycleTaskCategory?>("category"); }
             set { BackingStore?.Set("category", value); }
         }
-        /// <summary>The continueOnError property</summary>
+        /// <summary>A boolean value that determines if the failure of this task stops the subsequent workflows from running.</summary>
         public bool? ContinueOnError {
             get { return BackingStore?.Get<bool?>("continueOnError"); }
             set { BackingStore?.Set("continueOnError", value); }
         }
-        /// <summary>The description property</summary>
+        /// <summary>A string that describes the purpose of the task for administrative use.</summary>
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
-        /// <summary>The displayName property</summary>
+        /// <summary>A unique string that identifies the task. Supports $filter(eq) and orderBy.</summary>
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
-        /// <summary>The executionSequence property</summary>
+        /// <summary>An integer that states in what order the task will run in a workflow.</summary>
         public int? ExecutionSequence {
             get { return BackingStore?.Get<int?>("executionSequence"); }
             set { BackingStore?.Set("executionSequence", value); }
         }
-        /// <summary>The isEnabled property</summary>
+        /// <summary>A boolean value that denotes whether the task is set to run or not. Supports $filter(eq, ne) and orderBy.</summary>
         public bool? IsEnabled {
             get { return BackingStore?.Get<bool?>("isEnabled"); }
             set { BackingStore?.Set("isEnabled", value); }
         }
-        /// <summary>The taskDefinitionId property</summary>
+        /// <summary>A unique template identifier for the task. For more information about the tasks that Lifecycle Workflows currently supports and their unique identifiers, see supported tasks</summary>
         public string TaskDefinitionId {
             get { return BackingStore?.Get<string>("taskDefinitionId"); }
             set { BackingStore?.Set("taskDefinitionId", value); }
         }
-        /// <summary>The taskProcessingResults property</summary>
+        /// <summary>The result of processing the task.</summary>
         public List<TaskProcessingResult> TaskProcessingResults {
             get { return BackingStore?.Get<List<TaskProcessingResult>>("taskProcessingResults"); }
             set { BackingStore?.Set("taskProcessingResults", value); }

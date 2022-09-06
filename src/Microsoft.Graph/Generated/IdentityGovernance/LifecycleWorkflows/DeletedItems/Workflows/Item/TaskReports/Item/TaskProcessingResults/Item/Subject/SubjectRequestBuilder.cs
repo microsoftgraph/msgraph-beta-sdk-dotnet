@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.DeletedItem
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get subject from identityGovernance
+        /// The unique identifier of the Azure AD user targeted for the task execution.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<SubjectRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -65,12 +65,12 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.DeletedItem
             return requestInfo;
         }
         /// <summary>
-        /// Get subject from identityGovernance
+        /// The unique identifier of the Azure AD user targeted for the task execution.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<Microsoft.Graph.Beta.Models.User> GetAsync(Action<SubjectRequestBuilderGetRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.User> GetAsync(CancellationToken cancellationToken = default, Action<SubjectRequestBuilderGetRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.DeletedItem
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.User>(requestInfo, Microsoft.Graph.Beta.Models.User.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Get subject from identityGovernance</summary>
+        /// <summary>The unique identifier of the Azure AD user targeted for the task execution.</summary>
         public class SubjectRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

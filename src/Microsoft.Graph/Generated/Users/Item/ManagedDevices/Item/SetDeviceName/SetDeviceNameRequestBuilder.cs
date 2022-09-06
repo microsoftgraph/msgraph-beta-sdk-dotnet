@@ -71,7 +71,7 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.SetDeviceName {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task PostAsync(SetDeviceNamePostRequestBody body, Action<SetDeviceNameRequestBuilderPostRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task PostAsync(SetDeviceNamePostRequestBody body, CancellationToken cancellationToken = default, Action<SetDeviceNameRequestBuilderPostRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {

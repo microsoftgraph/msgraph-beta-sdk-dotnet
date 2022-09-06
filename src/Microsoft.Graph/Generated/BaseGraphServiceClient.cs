@@ -31,7 +31,6 @@ using Microsoft.Graph.Beta.DataClassification;
 using Microsoft.Graph.Beta.DataPolicyOperations;
 using Microsoft.Graph.Beta.DeviceAppManagement;
 using Microsoft.Graph.Beta.DeviceManagement;
-using Microsoft.Graph.Beta.DeviceRegistrationPolicy;
 using Microsoft.Graph.Beta.Devices;
 using Microsoft.Graph.Beta.DirectoryNamespace;
 using Microsoft.Graph.Beta.DirectoryObjects;
@@ -106,6 +105,7 @@ using Microsoft.Graph.Beta.SubscribedSkus;
 using Microsoft.Graph.Beta.Subscriptions;
 using Microsoft.Graph.Beta.Teams;
 using Microsoft.Graph.Beta.TeamsTemplates;
+using Microsoft.Graph.Beta.TeamTemplateDefinition;
 using Microsoft.Graph.Beta.Teamwork;
 using Microsoft.Graph.Beta.TenantRelationships;
 using Microsoft.Graph.Beta.TermStore;
@@ -256,10 +256,6 @@ namespace Microsoft.Graph.Beta {
         /// <summary>The deviceManagement property</summary>
         public DeviceManagementRequestBuilder DeviceManagement { get =>
             new DeviceManagementRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The deviceRegistrationPolicy property</summary>
-        public DeviceRegistrationPolicyRequestBuilder DeviceRegistrationPolicy { get =>
-            new DeviceRegistrationPolicyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The devices property</summary>
         public DevicesRequestBuilder Devices { get =>
@@ -560,6 +556,10 @@ namespace Microsoft.Graph.Beta {
         /// <summary>The teamsTemplates property</summary>
         public TeamsTemplatesRequestBuilder TeamsTemplates { get =>
             new TeamsTemplatesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The teamTemplateDefinition property</summary>
+        public TeamTemplateDefinitionRequestBuilder TeamTemplateDefinition { get =>
+            new TeamTemplateDefinitionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The teamwork property</summary>
         public TeamworkRequestBuilder Teamwork { get =>

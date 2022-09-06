@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
             set { BackingStore?.Set("members", value); }
         }
         /// <summary>
-        /// Instantiates a new DeploymentAudience and sets the default values.
+        /// Instantiates a new deploymentAudience and sets the default values.
         /// </summary>
         public DeploymentAudience() : base() {
             OdataType = "#microsoft.graph.windowsUpdates.deploymentAudience";

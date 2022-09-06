@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Intune will provide customer the ability to run their Shell scripts on the enrolled Mac OS devices. The script can be run once or periodically.</summary>
     public class DeviceShellScript : Entity, IParsable {
         /// <summary>The list of group assignments for the device management script.</summary>
         public List<DeviceManagementScriptAssignment> Assignments {
@@ -86,7 +87,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("userRunStates", value); }
         }
         /// <summary>
-        /// Instantiates a new DeviceShellScript and sets the default values.
+        /// Instantiates a new deviceShellScript and sets the default values.
         /// </summary>
         public DeviceShellScript() : base() {
             OdataType = "#microsoft.graph.deviceShellScript";

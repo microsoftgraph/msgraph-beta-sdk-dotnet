@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.List.ContentTypes.Item.Columns {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<ColumnDefinitionCollectionResponse> GetAsync(Action<ColumnsRequestBuilderGetRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<ColumnDefinitionCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<ColumnsRequestBuilderGetRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
@@ -119,7 +119,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.List.ContentTypes.Item.Columns {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<ColumnDefinition> PostAsync(ColumnDefinition body, Action<ColumnsRequestBuilderPostRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<ColumnDefinition> PostAsync(ColumnDefinition body, CancellationToken cancellationToken = default, Action<ColumnsRequestBuilderPostRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {

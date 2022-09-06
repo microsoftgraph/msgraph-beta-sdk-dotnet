@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
     public class CustomTaskExtensionCallbackData : CustomExtensionData, IParsable {
-        /// <summary>The operationStatus property</summary>
+        /// <summary>Operation status that&apos;s provided by the Azure Logic App indicating whenever the Azure Logic App has run successfully or not. Supported values: completed, failed, unknownFutureValue.</summary>
         public CustomTaskExtensionOperationStatus? OperationStatus {
             get { return BackingStore?.Get<CustomTaskExtensionOperationStatus?>("operationStatus"); }
             set { BackingStore?.Set("operationStatus", value); }

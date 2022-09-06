@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class MicrosoftAuthenticatorAuthenticationMethodConfiguration : AuthenticationMethodConfiguration, IParsable {
-        /// <summary>A collection of users or groups who are enabled to use the authentication method.</summary>
+        /// <summary>A collection of users or groups who are enabled to use the authentication method. Expanded by default.</summary>
         public List<MicrosoftAuthenticatorAuthenticationMethodTarget> IncludeTargets {
             get { return BackingStore?.Get<List<MicrosoftAuthenticatorAuthenticationMethodTarget>>("includeTargets"); }
             set { BackingStore?.Set("includeTargets", value); }

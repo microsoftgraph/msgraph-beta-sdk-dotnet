@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class TenantGroup : Entity, IParsable {
         /// <summary>A flag indicating whether all managed tenant are included in the tenant group. Required. Read-only.</summary>
         public bool? AllTenantsIncluded {

@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Beta.Me.Authentication.MicrosoftAuthenticatorMethods {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<MicrosoftAuthenticatorAuthenticationMethodCollectionResponse> GetAsync(Action<MicrosoftAuthenticatorMethodsRequestBuilderGetRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<MicrosoftAuthenticatorAuthenticationMethodCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<MicrosoftAuthenticatorMethodsRequestBuilderGetRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
@@ -119,7 +119,7 @@ namespace Microsoft.Graph.Beta.Me.Authentication.MicrosoftAuthenticatorMethods {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<MicrosoftAuthenticatorAuthenticationMethod> PostAsync(MicrosoftAuthenticatorAuthenticationMethod body, Action<MicrosoftAuthenticatorMethodsRequestBuilderPostRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<MicrosoftAuthenticatorAuthenticationMethod> PostAsync(MicrosoftAuthenticatorAuthenticationMethod body, CancellationToken cancellationToken = default, Action<MicrosoftAuthenticatorMethodsRequestBuilderPostRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {

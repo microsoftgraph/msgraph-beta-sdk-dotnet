@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.WorkflowTem
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get workflowTemplates from identityGovernance
+        /// The workflow templates in the lifecycle workflow instance.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<WorkflowTemplatesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -99,12 +99,12 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.WorkflowTem
             return requestInfo;
         }
         /// <summary>
-        /// Get workflowTemplates from identityGovernance
+        /// The workflow templates in the lifecycle workflow instance.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<WorkflowTemplateCollectionResponse> GetAsync(Action<WorkflowTemplatesRequestBuilderGetRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<WorkflowTemplateCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<WorkflowTemplatesRequestBuilderGetRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
@@ -119,7 +119,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.WorkflowTem
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<WorkflowTemplate> PostAsync(WorkflowTemplate body, Action<WorkflowTemplatesRequestBuilderPostRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<WorkflowTemplate> PostAsync(WorkflowTemplate body, CancellationToken cancellationToken = default, Action<WorkflowTemplatesRequestBuilderPostRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -128,7 +128,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.WorkflowTem
             };
             return await RequestAdapter.SendAsync<WorkflowTemplate>(requestInfo, WorkflowTemplate.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Get workflowTemplates from identityGovernance</summary>
+        /// <summary>The workflow templates in the lifecycle workflow instance.</summary>
         public class WorkflowTemplatesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

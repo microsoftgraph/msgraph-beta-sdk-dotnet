@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.AgedAccountsReceivable 
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<AgedAccountsReceivableCollectionResponse> GetAsync(Action<AgedAccountsReceivableRequestBuilderGetRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<AgedAccountsReceivableCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<AgedAccountsReceivableRequestBuilderGetRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
@@ -119,7 +119,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.AgedAccountsReceivable 
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<Microsoft.Graph.Beta.Models.AgedAccountsReceivable> PostAsync(Microsoft.Graph.Beta.Models.AgedAccountsReceivable body, Action<AgedAccountsReceivableRequestBuilderPostRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.AgedAccountsReceivable> PostAsync(Microsoft.Graph.Beta.Models.AgedAccountsReceivable body, CancellationToken cancellationToken = default, Action<AgedAccountsReceivableRequestBuilderPostRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {

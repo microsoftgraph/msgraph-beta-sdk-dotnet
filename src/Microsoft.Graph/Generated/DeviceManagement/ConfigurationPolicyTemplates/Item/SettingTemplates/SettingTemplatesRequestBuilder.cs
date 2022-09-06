@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicyTemplates.Ite
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<DeviceManagementConfigurationSettingTemplateCollectionResponse> GetAsync(Action<SettingTemplatesRequestBuilderGetRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<DeviceManagementConfigurationSettingTemplateCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<SettingTemplatesRequestBuilderGetRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
@@ -119,7 +119,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ConfigurationPolicyTemplates.Ite
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<DeviceManagementConfigurationSettingTemplate> PostAsync(DeviceManagementConfigurationSettingTemplate body, Action<SettingTemplatesRequestBuilderPostRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<DeviceManagementConfigurationSettingTemplate> PostAsync(DeviceManagementConfigurationSettingTemplate body, CancellationToken cancellationToken = default, Action<SettingTemplatesRequestBuilderPostRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {

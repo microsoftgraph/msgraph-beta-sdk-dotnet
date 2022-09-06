@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAppConfigurat
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<AndroidManagedStoreAppConfigurationSchemaCollectionResponse> GetAsync(Action<AndroidManagedStoreAppConfigurationSchemasRequestBuilderGetRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<AndroidManagedStoreAppConfigurationSchemaCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<AndroidManagedStoreAppConfigurationSchemasRequestBuilderGetRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
@@ -119,7 +119,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAppConfigurat
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<AndroidManagedStoreAppConfigurationSchema> PostAsync(AndroidManagedStoreAppConfigurationSchema body, Action<AndroidManagedStoreAppConfigurationSchemasRequestBuilderPostRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<AndroidManagedStoreAppConfigurationSchema> PostAsync(AndroidManagedStoreAppConfigurationSchema body, CancellationToken cancellationToken = default, Action<AndroidManagedStoreAppConfigurationSchemasRequestBuilderPostRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {

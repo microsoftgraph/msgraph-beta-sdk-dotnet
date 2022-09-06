@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class SitePage : BaseItem, IParsable {
         /// <summary>The content type of the page.</summary>
         public ContentTypeInfo ContentType {

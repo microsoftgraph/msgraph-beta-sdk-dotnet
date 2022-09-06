@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>The entity represents an ADMX (Administrative Template) XML file uploaded by Administrator. The ADMX file contains a collection of group policy definitions and their locations by category path. The group policy definition file also contains the languages supported as determined by the language dependent ADML (Administrative Template) language files.</summary>
     public class GroupPolicyUploadedDefinitionFile : GroupPolicyDefinitionFile, IParsable {
         /// <summary>The contents of the uploaded ADMX file.</summary>
         public byte[] Content {
@@ -37,7 +36,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("uploadDateTime", value); }
         }
         /// <summary>
-        /// Instantiates a new groupPolicyUploadedDefinitionFile and sets the default values.
+        /// Instantiates a new GroupPolicyUploadedDefinitionFile and sets the default values.
         /// </summary>
         public GroupPolicyUploadedDefinitionFile() : base() {
             OdataType = "#microsoft.graph.groupPolicyUploadedDefinitionFile";

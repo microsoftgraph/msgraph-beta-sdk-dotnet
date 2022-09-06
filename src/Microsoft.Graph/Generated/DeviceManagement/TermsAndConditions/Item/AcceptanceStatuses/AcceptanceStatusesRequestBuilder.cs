@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.TermsAndConditions.Item.Acceptan
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<TermsAndConditionsAcceptanceStatusCollectionResponse> GetAsync(Action<AcceptanceStatusesRequestBuilderGetRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<TermsAndConditionsAcceptanceStatusCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<AcceptanceStatusesRequestBuilderGetRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
@@ -119,7 +119,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.TermsAndConditions.Item.Acceptan
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<TermsAndConditionsAcceptanceStatus> PostAsync(TermsAndConditionsAcceptanceStatus body, Action<AcceptanceStatusesRequestBuilderPostRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<TermsAndConditionsAcceptanceStatus> PostAsync(TermsAndConditionsAcceptanceStatus body, CancellationToken cancellationToken = default, Action<AcceptanceStatusesRequestBuilderPostRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {

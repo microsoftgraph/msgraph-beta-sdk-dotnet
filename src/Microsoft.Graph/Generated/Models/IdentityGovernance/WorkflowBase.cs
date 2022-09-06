@@ -19,37 +19,37 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
             get { return BackingStore?.Get<LifecycleWorkflowCategory?>("category"); }
             set { BackingStore?.Set("category", value); }
         }
-        /// <summary>The createdBy property</summary>
+        /// <summary>The user who created the workflow.</summary>
         public Microsoft.Graph.Beta.Models.User CreatedBy {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.User>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
-        /// <summary>The createdDateTime property</summary>
+        /// <summary>When a workflow was created.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>The description property</summary>
+        /// <summary>A string that describes the purpose of the workflow.</summary>
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
-        /// <summary>The displayName property</summary>
+        /// <summary>A string to identify the workflow.</summary>
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
-        /// <summary>The executionConditions property</summary>
+        /// <summary>Defines when and for who the workflow will run.</summary>
         public WorkflowExecutionConditions ExecutionConditions {
             get { return BackingStore?.Get<WorkflowExecutionConditions>("executionConditions"); }
             set { BackingStore?.Set("executionConditions", value); }
         }
-        /// <summary>The lastModifiedBy property</summary>
+        /// <summary>The user who last modified the workflow.</summary>
         public Microsoft.Graph.Beta.Models.User LastModifiedBy {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.User>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
-        /// <summary>The lastModifiedDateTime property</summary>
+        /// <summary>When the workflow was last modified.</summary>
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
-        /// <summary>The tasks property</summary>
+        /// <summary>The tasks in the workflow.</summary>
         public List<TaskObject> Tasks {
             get { return BackingStore?.Get<List<TaskObject>>("tasks"); }
             set { BackingStore?.Set("tasks", value); }

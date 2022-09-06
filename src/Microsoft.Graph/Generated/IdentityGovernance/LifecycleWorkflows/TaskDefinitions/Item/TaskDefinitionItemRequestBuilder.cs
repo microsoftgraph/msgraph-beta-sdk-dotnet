@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.TaskDefinit
             return requestInfo;
         }
         /// <summary>
-        /// Get taskDefinitions from identityGovernance
+        /// The definition of tasks within the lifecycle workflows instance.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<TaskDefinitionItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -109,7 +109,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.TaskDefinit
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task DeleteAsync(Action<TaskDefinitionItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(CancellationToken cancellationToken = default, Action<TaskDefinitionItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default) {
             var requestInfo = CreateDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
@@ -118,12 +118,12 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.TaskDefinit
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get taskDefinitions from identityGovernance
+        /// The definition of tasks within the lifecycle workflows instance.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<Microsoft.Graph.Beta.Models.IdentityGovernance.TaskDefinition> GetAsync(Action<TaskDefinitionItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.IdentityGovernance.TaskDefinition> GetAsync(CancellationToken cancellationToken = default, Action<TaskDefinitionItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
@@ -138,7 +138,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.TaskDefinit
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task PatchAsync(Microsoft.Graph.Beta.Models.IdentityGovernance.TaskDefinition body, Action<TaskDefinitionItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task PatchAsync(Microsoft.Graph.Beta.Models.IdentityGovernance.TaskDefinition body, CancellationToken cancellationToken = default, Action<TaskDefinitionItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -161,7 +161,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.TaskDefinit
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>Get taskDefinitions from identityGovernance</summary>
+        /// <summary>The definition of tasks within the lifecycle workflows instance.</summary>
         public class TaskDefinitionItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

@@ -109,7 +109,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AutopilotEvents.Item.PolicyStatu
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task DeleteAsync(Action<DeviceManagementAutopilotPolicyStatusDetailItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(CancellationToken cancellationToken = default, Action<DeviceManagementAutopilotPolicyStatusDetailItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default) {
             var requestInfo = CreateDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
@@ -123,7 +123,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AutopilotEvents.Item.PolicyStatu
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<DeviceManagementAutopilotPolicyStatusDetail> GetAsync(Action<DeviceManagementAutopilotPolicyStatusDetailItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<DeviceManagementAutopilotPolicyStatusDetail> GetAsync(CancellationToken cancellationToken = default, Action<DeviceManagementAutopilotPolicyStatusDetailItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
@@ -138,7 +138,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AutopilotEvents.Item.PolicyStatu
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task PatchAsync(DeviceManagementAutopilotPolicyStatusDetail body, Action<DeviceManagementAutopilotPolicyStatusDetailItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task PatchAsync(DeviceManagementAutopilotPolicyStatusDetail body, CancellationToken cancellationToken = default, Action<DeviceManagementAutopilotPolicyStatusDetailItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {

@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.CustomTaskE
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get createdBy from identityGovernance
+        /// The unique identifier of the Azure AD user that created the custom task extension.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<CreatedByRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -65,12 +65,12 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.CustomTaskE
             return requestInfo;
         }
         /// <summary>
-        /// Get createdBy from identityGovernance
+        /// The unique identifier of the Azure AD user that created the custom task extension.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<Microsoft.Graph.Beta.Models.User> GetAsync(Action<CreatedByRequestBuilderGetRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.User> GetAsync(CancellationToken cancellationToken = default, Action<CreatedByRequestBuilderGetRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.CustomTaskE
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.User>(requestInfo, Microsoft.Graph.Beta.Models.User.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Get createdBy from identityGovernance</summary>
+        /// <summary>The unique identifier of the Azure AD user that created the custom task extension.</summary>
         public class CreatedByRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

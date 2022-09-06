@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.CompliancePolicies.Item.Settings
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<DeviceManagementConfigurationSettingDefinitionCollectionResponse> GetAsync(Action<SettingDefinitionsRequestBuilderGetRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<DeviceManagementConfigurationSettingDefinitionCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<SettingDefinitionsRequestBuilderGetRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},

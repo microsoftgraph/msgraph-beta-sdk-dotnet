@@ -13,12 +13,12 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The failedTasks property</summary>
+        /// <summary>The number of failed tasks for users in a user summary.</summary>
         public int? FailedTasks {
             get { return BackingStore?.Get<int?>("failedTasks"); }
             set { BackingStore?.Set("failedTasks", value); }
         }
-        /// <summary>The failedUsers property</summary>
+        /// <summary>The number of failed users in a user summary.</summary>
         public int? FailedUsers {
             get { return BackingStore?.Get<int?>("failedUsers"); }
             set { BackingStore?.Set("failedUsers", value); }
@@ -28,17 +28,17 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
-        /// <summary>The successfulUsers property</summary>
+        /// <summary>The number of successful users in a user summary.</summary>
         public int? SuccessfulUsers {
             get { return BackingStore?.Get<int?>("successfulUsers"); }
             set { BackingStore?.Set("successfulUsers", value); }
         }
-        /// <summary>The totalTasks property</summary>
+        /// <summary>The total tasks of users in a user summary.</summary>
         public int? TotalTasks {
             get { return BackingStore?.Get<int?>("totalTasks"); }
             set { BackingStore?.Set("totalTasks", value); }
         }
-        /// <summary>The totalUsers property</summary>
+        /// <summary>The total number of users in a user summary</summary>
         public int? TotalUsers {
             get { return BackingStore?.Get<int?>("totalUsers"); }
             set { BackingStore?.Set("totalUsers", value); }

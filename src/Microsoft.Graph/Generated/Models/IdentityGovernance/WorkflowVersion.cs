@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class WorkflowVersion : WorkflowBase, IParsable {
-        /// <summary>The versionNumber property</summary>
+        /// <summary>The version of the workflow.</summary>
         public int? VersionNumber {
             get { return BackingStore?.Get<int?>("versionNumber"); }
             set { BackingStore?.Set("versionNumber", value); }

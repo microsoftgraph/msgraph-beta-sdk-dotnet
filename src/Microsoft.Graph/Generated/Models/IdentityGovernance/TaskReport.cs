@@ -5,17 +5,17 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
     public class TaskReport : Entity, IParsable {
-        /// <summary>The completedDateTime property</summary>
+        /// <summary>The date time that the associated run completed. Value is null if the run has not completed.</summary>
         public DateTimeOffset? CompletedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("completedDateTime"); }
             set { BackingStore?.Set("completedDateTime", value); }
         }
-        /// <summary>The failedUsersCount property</summary>
+        /// <summary>The number of users in the run execution for which the associated task failed.</summary>
         public int? FailedUsersCount {
             get { return BackingStore?.Get<int?>("failedUsersCount"); }
             set { BackingStore?.Set("failedUsersCount", value); }
         }
-        /// <summary>The lastUpdatedDateTime property</summary>
+        /// <summary>The date and time that the task report was last updated.</summary>
         public DateTimeOffset? LastUpdatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastUpdatedDateTime"); }
             set { BackingStore?.Set("lastUpdatedDateTime", value); }
@@ -25,17 +25,17 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
             get { return BackingStore?.Get<LifecycleWorkflowProcessingStatus?>("processingStatus"); }
             set { BackingStore?.Set("processingStatus", value); }
         }
-        /// <summary>The runId property</summary>
+        /// <summary>The unique identifier of the associated run.</summary>
         public string RunId {
             get { return BackingStore?.Get<string>("runId"); }
             set { BackingStore?.Set("runId", value); }
         }
-        /// <summary>The startedDateTime property</summary>
+        /// <summary>The date time that the associated run started. Value is null if the run has not started.</summary>
         public DateTimeOffset? StartedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("startedDateTime"); }
             set { BackingStore?.Set("startedDateTime", value); }
         }
-        /// <summary>The successfulUsersCount property</summary>
+        /// <summary>The number of users in the run execution for which the associated task succeeded.</summary>
         public int? SuccessfulUsersCount {
             get { return BackingStore?.Get<int?>("successfulUsersCount"); }
             set { BackingStore?.Set("successfulUsersCount", value); }
@@ -50,17 +50,17 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentityGovernance.TaskObject>("task"); }
             set { BackingStore?.Set("task", value); }
         }
-        /// <summary>The taskProcessingResults property</summary>
+        /// <summary>The related lifecycle workflow taskProcessingResults.</summary>
         public List<TaskProcessingResult> TaskProcessingResults {
             get { return BackingStore?.Get<List<TaskProcessingResult>>("taskProcessingResults"); }
             set { BackingStore?.Set("taskProcessingResults", value); }
         }
-        /// <summary>The totalUsersCount property</summary>
+        /// <summary>The total number of users in the run execution for which the associated task was scheduled to execute.</summary>
         public int? TotalUsersCount {
             get { return BackingStore?.Get<int?>("totalUsersCount"); }
             set { BackingStore?.Set("totalUsersCount", value); }
         }
-        /// <summary>The unprocessedUsersCount property</summary>
+        /// <summary>The number of users in the run execution for which the associated task is queued, in progress, or canceled.</summary>
         public int? UnprocessedUsersCount {
             get { return BackingStore?.Get<int?>("unprocessedUsersCount"); }
             set { BackingStore?.Set("unprocessedUsersCount", value); }

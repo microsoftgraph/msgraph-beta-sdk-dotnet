@@ -4,19 +4,19 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class TaskProcessingResult : Entity, IParsable {
-        /// <summary>The completedDateTime property</summary>
+        /// <summary>The date time when taskProcessingResult execution ended. Value is null if task execution is still in progress.</summary>
         public DateTimeOffset? CompletedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("completedDateTime"); }
             set { BackingStore?.Set("completedDateTime", value); }
         }
-        /// <summary>The createdDateTime property</summary>
+        /// <summary>The date time when the taskProcessingResult was created. Supports $filter(lt, gt) and orderBy.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>The failureReason property</summary>
+        /// <summary>Describes why the taskProcessingResult has failed.</summary>
         public string FailureReason {
             get { return BackingStore?.Get<string>("failureReason"); }
             set { BackingStore?.Set("failureReason", value); }
@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
             get { return BackingStore?.Get<LifecycleWorkflowProcessingStatus?>("processingStatus"); }
             set { BackingStore?.Set("processingStatus", value); }
         }
-        /// <summary>The startedDateTime property</summary>
+        /// <summary>The date time when taskProcessingResult execution started. Value is null if task execution has not yet started. Supports $filter(lt, gt) and orderBy.</summary>
         public DateTimeOffset? StartedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("startedDateTime"); }
             set { BackingStore?.Set("startedDateTime", value); }

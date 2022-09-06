@@ -10,22 +10,22 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
             get { return BackingStore?.Get<LifecycleWorkflowCategory?>("category"); }
             set { BackingStore?.Set("category", value); }
         }
-        /// <summary>The description property</summary>
+        /// <summary>The description of the workflowTemplate.</summary>
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
-        /// <summary>The displayName property</summary>
+        /// <summary>The display name of the workflowTemplate. Supports  orderby.</summary>
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
-        /// <summary>The executionConditions property</summary>
+        /// <summary>Conditions describing when to execute the workflow and the criteria to identify in-scope subject set.</summary>
         public WorkflowExecutionConditions ExecutionConditions {
             get { return BackingStore?.Get<WorkflowExecutionConditions>("executionConditions"); }
             set { BackingStore?.Set("executionConditions", value); }
         }
-        /// <summary>The tasks property</summary>
+        /// <summary>Represents the configured tasks to execute and their execution sequence within a workflow. This relationship is expanded by default.</summary>
         public List<TaskObject> Tasks {
             get { return BackingStore?.Get<List<TaskObject>>("tasks"); }
             set { BackingStore?.Set("tasks", value); }

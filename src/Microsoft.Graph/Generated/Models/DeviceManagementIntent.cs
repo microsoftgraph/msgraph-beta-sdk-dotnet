@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Entity that represents an intent to apply settings to a device</summary>
     public class DeviceManagementIntent : Entity, IParsable {
         /// <summary>Collection of assignments</summary>
         public List<DeviceManagementIntentAssignment> Assignments {
@@ -77,7 +76,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("userStateSummary", value); }
         }
         /// <summary>
-        /// Instantiates a new deviceManagementIntent and sets the default values.
+        /// Instantiates a new DeviceManagementIntent and sets the default values.
         /// </summary>
         public DeviceManagementIntent() : base() {
             OdataType = "#microsoft.graph.deviceManagementIntent";

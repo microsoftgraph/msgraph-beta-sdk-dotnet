@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("unknownDeviceCount", value); }
         }
         /// <summary>
-        /// Instantiates a new DeviceConfigurationDeviceStateSummary and sets the default values.
+        /// Instantiates a new deviceConfigurationDeviceStateSummary and sets the default values.
         /// </summary>
         public DeviceConfigurationDeviceStateSummary() : base() {
             OdataType = "#microsoft.graph.deviceConfigurationDeviceStateSummary";

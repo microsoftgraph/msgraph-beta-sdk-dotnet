@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class ActivityHistoryItem : Entity, IParsable {
         /// <summary>The activeDurationSeconds property</summary>
         public int? ActiveDurationSeconds {

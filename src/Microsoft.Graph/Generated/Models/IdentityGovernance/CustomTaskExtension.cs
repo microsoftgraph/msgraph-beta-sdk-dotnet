@@ -5,27 +5,27 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
     public class CustomTaskExtension : CustomCalloutExtension, IParsable {
-        /// <summary>The callbackConfiguration property</summary>
+        /// <summary>The callback configuration for a custom extension.</summary>
         public Microsoft.Graph.Beta.Models.CustomExtensionCallbackConfiguration CallbackConfiguration {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CustomExtensionCallbackConfiguration>("callbackConfiguration"); }
             set { BackingStore?.Set("callbackConfiguration", value); }
         }
-        /// <summary>The createdBy property</summary>
+        /// <summary>The unique identifier of the Azure AD user that created the custom task extension.</summary>
         public Microsoft.Graph.Beta.Models.User CreatedBy {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.User>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
-        /// <summary>The createdDateTime property</summary>
+        /// <summary>When the custom task extension was created.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>The lastModifiedBy property</summary>
+        /// <summary>The unique identifier of the Azure AD user that modified the custom task extension last.</summary>
         public Microsoft.Graph.Beta.Models.User LastModifiedBy {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.User>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
-        /// <summary>The lastModifiedDateTime property</summary>
+        /// <summary>When the custom extension was last modified.</summary>
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }

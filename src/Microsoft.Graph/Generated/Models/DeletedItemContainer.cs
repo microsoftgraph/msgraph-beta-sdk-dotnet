@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class DeletedItemContainer : Entity, IParsable {
-        /// <summary>The workflows property</summary>
+        /// <summary>Deleted workflows that end up in the deletedItemsContainer.</summary>
         public List<Workflow> Workflows {
             get { return BackingStore?.Get<List<Workflow>>("workflows"); }
             set { BackingStore?.Set("workflows", value); }

@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
     public class RuleBasedSubjectSet : SubjectSet, IParsable {
-        /// <summary>The rule property</summary>
+        /// <summary>The rule for the subject set.</summary>
         public string Rule {
             get { return BackingStore?.Get<string>("rule"); }
             set { BackingStore?.Set("rule", value); }

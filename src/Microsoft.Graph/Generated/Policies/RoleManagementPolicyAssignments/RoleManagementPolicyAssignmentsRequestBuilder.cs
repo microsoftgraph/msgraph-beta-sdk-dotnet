@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Beta.Policies.RoleManagementPolicyAssignments {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<UnifiedRoleManagementPolicyAssignmentCollectionResponse> GetAsync(Action<RoleManagementPolicyAssignmentsRequestBuilderGetRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<UnifiedRoleManagementPolicyAssignmentCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<RoleManagementPolicyAssignmentsRequestBuilderGetRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
@@ -119,7 +119,7 @@ namespace Microsoft.Graph.Beta.Policies.RoleManagementPolicyAssignments {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<UnifiedRoleManagementPolicyAssignment> PostAsync(UnifiedRoleManagementPolicyAssignment body, Action<RoleManagementPolicyAssignmentsRequestBuilderPostRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<UnifiedRoleManagementPolicyAssignment> PostAsync(UnifiedRoleManagementPolicyAssignment body, CancellationToken cancellationToken = default, Action<RoleManagementPolicyAssignmentsRequestBuilderPostRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {

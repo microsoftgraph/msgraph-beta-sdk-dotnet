@@ -25,6 +25,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AllowInvitesFrom?>("allowInvitesFrom"); }
             set { BackingStore?.Set("allowInvitesFrom", value); }
         }
+        /// <summary>The allowUserConsentForRiskyApps property</summary>
+        public bool? AllowUserConsentForRiskyApps {
+            get { return BackingStore?.Get<bool?>("allowUserConsentForRiskyApps"); }
+            set { BackingStore?.Set("allowUserConsentForRiskyApps", value); }
+        }
         /// <summary>To disable the use of MSOL PowerShell set this property to true. This will also disable user-based access to the legacy service endpoint used by MSOL PowerShell. This does not affect Azure AD Connect or Microsoft Graph.</summary>
         public bool? BlockMsolPowerShell {
             get { return BackingStore?.Get<bool?>("blockMsolPowerShell"); }
@@ -78,6 +83,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"allowedToUseSSPR", n => { AllowedToUseSSPR = n.GetBoolValue(); } },
                 {"allowEmailVerifiedUsersToJoinOrganization", n => { AllowEmailVerifiedUsersToJoinOrganization = n.GetBoolValue(); } },
                 {"allowInvitesFrom", n => { AllowInvitesFrom = n.GetEnumValue<AllowInvitesFrom>(); } },
+                {"allowUserConsentForRiskyApps", n => { AllowUserConsentForRiskyApps = n.GetBoolValue(); } },
                 {"blockMsolPowerShell", n => { BlockMsolPowerShell = n.GetBoolValue(); } },
                 {"defaultUserRoleOverrides", n => { DefaultUserRoleOverrides = n.GetCollectionOfObjectValues<DefaultUserRoleOverride>(DefaultUserRoleOverride.CreateFromDiscriminatorValue).ToList(); } },
                 {"defaultUserRolePermissions", n => { DefaultUserRolePermissions = n.GetObjectValue<Microsoft.Graph.Beta.Models.DefaultUserRolePermissions>(Microsoft.Graph.Beta.Models.DefaultUserRolePermissions.CreateFromDiscriminatorValue); } },
@@ -97,6 +103,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteBoolValue("allowedToUseSSPR", AllowedToUseSSPR);
             writer.WriteBoolValue("allowEmailVerifiedUsersToJoinOrganization", AllowEmailVerifiedUsersToJoinOrganization);
             writer.WriteEnumValue<AllowInvitesFrom>("allowInvitesFrom", AllowInvitesFrom);
+            writer.WriteBoolValue("allowUserConsentForRiskyApps", AllowUserConsentForRiskyApps);
             writer.WriteBoolValue("blockMsolPowerShell", BlockMsolPowerShell);
             writer.WriteCollectionOfObjectValues<DefaultUserRoleOverride>("defaultUserRoleOverrides", DefaultUserRoleOverrides);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DefaultUserRolePermissions>("defaultUserRolePermissions", DefaultUserRolePermissions);
