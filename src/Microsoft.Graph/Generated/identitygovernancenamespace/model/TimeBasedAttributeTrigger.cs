@@ -30,12 +30,14 @@ namespace Microsoft.Graph.IdentityGovernanceNamespace
 
         /// <summary>
         /// Gets or sets offsetInDays.
+        /// How many days before or after the time-based attribute specified the workflow should trigger. For example, if the attribute is employeeHireDate and offsetInDays is -1, then the workflow should trigger one day before the employee hire date.
         /// </summary>
         [JsonPropertyName("offsetInDays")]
         public Int32? OffsetInDays { get; set; }
     
         /// <summary>
         /// Gets or sets timeBasedAttribute.
+        /// Determines which time-based identity property to reference. The possible values are: employeeHireDate, employeeLeaveDateTime, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("timeBasedAttribute")]
         public WorkflowTriggerTimeBasedAttribute? TimeBasedAttribute { get; set; }

@@ -115,6 +115,15 @@ namespace Microsoft.Graph
             DriveItemUploadableProperties item = null);
 
         /// <summary>
+        /// Gets the request builder for DriveItemAssignSensitivityLabel.
+        /// </summary>
+        /// <returns>The <see cref="IDriveItemAssignSensitivityLabelRequestBuilder"/>.</returns>
+        IDriveItemAssignSensitivityLabelRequestBuilder AssignSensitivityLabel(
+            string sensitivityLabelId = null,
+            SensitivityLabelAssignmentMethod? assignmentMethod = null,
+            string justificationText = null);
+
+        /// <summary>
         /// Gets the request builder for DriveItemCheckin.
         /// </summary>
         /// <returns>The <see cref="IDriveItemCheckinRequestBuilder"/>.</returns>

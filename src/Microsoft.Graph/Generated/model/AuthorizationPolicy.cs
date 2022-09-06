@@ -58,6 +58,12 @@ namespace Microsoft.Graph
         public AllowInvitesFrom? AllowInvitesFrom { get; set; }
     
         /// <summary>
+        /// Gets or sets allow user consent for risky apps.
+        /// </summary>
+        [JsonPropertyName("allowUserConsentForRiskyApps")]
+        public bool? AllowUserConsentForRiskyApps { get; set; }
+    
+        /// <summary>
         /// Gets or sets block msol power shell.
         /// To disable the use of MSOL PowerShell set this property to true. This will also disable user-based access to the legacy service endpoint used by MSOL PowerShell. This does not affect Azure AD Connect or Microsoft Graph.
         /// </summary>

@@ -32,6 +32,12 @@ namespace Microsoft.Graph
         new IConditionalAccessRootRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for AuthenticationStrengths.
+        /// </summary>
+        /// <returns>The <see cref="IAuthenticationStrengthRootRequestBuilder"/>.</returns>
+        IAuthenticationStrengthRootRequestBuilder AuthenticationStrengths { get; }
+
+        /// <summary>
         /// Gets the request builder for AuthenticationContextClassReferences.
         /// </summary>
         /// <returns>The <see cref="IConditionalAccessRootAuthenticationContextClassReferencesCollectionRequestBuilder"/>.</returns>

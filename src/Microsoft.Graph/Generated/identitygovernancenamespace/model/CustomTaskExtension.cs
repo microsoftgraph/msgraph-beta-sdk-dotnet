@@ -30,30 +30,35 @@ namespace Microsoft.Graph.IdentityGovernanceNamespace
 
         /// <summary>
         /// Gets or sets callback configuration.
+        /// The callback configuration for a custom extension.
         /// </summary>
         [JsonPropertyName("callbackConfiguration")]
         public Microsoft.Graph.CustomExtensionCallbackConfiguration CallbackConfiguration { get; set; }
     
         /// <summary>
         /// Gets or sets created date time.
+        /// When the custom task extension was created.
         /// </summary>
         [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets last modified date time.
+        /// When the custom extension was last modified.
         /// </summary>
         [JsonPropertyName("lastModifiedDateTime")]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets created by.
+        /// The unique identifier of the Azure AD user that created the custom task extension.
         /// </summary>
         [JsonPropertyName("createdBy")]
         public Microsoft.Graph.User CreatedBy { get; set; }
     
         /// <summary>
         /// Gets or sets last modified by.
+        /// The unique identifier of the Azure AD user that modified the custom task extension last.
         /// </summary>
         [JsonPropertyName("lastModifiedBy")]
         public Microsoft.Graph.User LastModifiedBy { get; set; }

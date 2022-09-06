@@ -207,6 +207,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for TemplateDefinition.
+        /// </summary>
+        /// <returns>The <see cref="ITeamTemplateDefinitionWithReferenceRequestBuilder"/>.</returns>
+        public ITeamTemplateDefinitionWithReferenceRequestBuilder TemplateDefinition
+        {
+            get
+            {
+                return new TeamTemplateDefinitionWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("templateDefinition"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Schedule.
         /// </summary>
         /// <returns>The <see cref="IScheduleRequestBuilder"/>.</returns>

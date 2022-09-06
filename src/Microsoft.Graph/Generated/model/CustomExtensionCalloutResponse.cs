@@ -23,18 +23,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets data.
+        /// Contains the data the external system provides to the custom extension endpoint.
         /// </summary>
         [JsonPropertyName("data")]
         public CustomExtensionData Data { get; set; }
     
         /// <summary>
         /// Gets or sets source.
+        /// Identifies the external system or event context related to the response.
         /// </summary>
         [JsonPropertyName("source")]
         public string Source { get; set; }
     
         /// <summary>
         /// Gets or sets type.
+        /// Describes the type of event related to the response.
         /// </summary>
         [JsonPropertyName("type")]
         public string Type { get; set; }

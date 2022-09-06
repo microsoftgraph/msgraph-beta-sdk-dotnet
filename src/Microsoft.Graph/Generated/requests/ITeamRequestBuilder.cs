@@ -110,6 +110,12 @@ namespace Microsoft.Graph
         ITeamsTemplateWithReferenceRequestBuilder Template { get; }
 
         /// <summary>
+        /// Gets the request builder for TemplateDefinition.
+        /// </summary>
+        /// <returns>The <see cref="ITeamTemplateDefinitionWithReferenceRequestBuilder"/>.</returns>
+        ITeamTemplateDefinitionWithReferenceRequestBuilder TemplateDefinition { get; }
+
+        /// <summary>
         /// Gets the request builder for Schedule.
         /// </summary>
         /// <returns>The <see cref="IScheduleRequestBuilder"/>.</returns>

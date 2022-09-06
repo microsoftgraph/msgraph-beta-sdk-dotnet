@@ -23,66 +23,77 @@ namespace Microsoft.Graph.IdentityGovernanceNamespace
     
         /// <summary>
         /// Gets or sets completed date time.
+        /// The date time that the workflow execution for a user completed. Value is null if the workflow hasn't completed. Supports $filter(lt, gt) and $orderby.
         /// </summary>
         [JsonPropertyName("completedDateTime")]
         public DateTimeOffset? CompletedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets failed tasks count.
+        /// The number of tasks that failed in the workflow execution.
         /// </summary>
         [JsonPropertyName("failedTasksCount")]
         public Int32? FailedTasksCount { get; set; }
     
         /// <summary>
         /// Gets or sets processing status.
+        /// The workflow execution status. The possible values are: queued, inProgress, completed, completedWithErrors, canceled, failed, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("processingStatus")]
         public LifecycleWorkflowProcessingStatus? ProcessingStatus { get; set; }
     
         /// <summary>
         /// Gets or sets scheduled date time.
+        /// The date time that the workflow is scheduled to be executed for a user.
         /// </summary>
         [JsonPropertyName("scheduledDateTime")]
         public DateTimeOffset? ScheduledDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets started date time.
+        /// The date time that the workflow execution started. Value is null if the workflow execution has not started. Supports $filter(lt, gt) and $orderby.
         /// </summary>
         [JsonPropertyName("startedDateTime")]
         public DateTimeOffset? StartedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets total tasks count.
+        /// The total number of tasks that in the workflow execution.
         /// </summary>
         [JsonPropertyName("totalTasksCount")]
         public Int32? TotalTasksCount { get; set; }
     
         /// <summary>
         /// Gets or sets total unprocessed tasks count.
+        /// The total number of unprocessed tasks for the workflow.
         /// </summary>
         [JsonPropertyName("totalUnprocessedTasksCount")]
         public Int32? TotalUnprocessedTasksCount { get; set; }
     
         /// <summary>
         /// Gets or sets workflow execution type.
+        /// Describes the execution type of the workflow. The possible values are: scheduled, onDemand, unknownFutureValue. Supports $filter(eq, ne).
         /// </summary>
         [JsonPropertyName("workflowExecutionType")]
         public WorkflowExecutionType? WorkflowExecutionType { get; set; }
     
         /// <summary>
         /// Gets or sets workflow version.
+        /// The version of the workflow that was executed.
         /// </summary>
         [JsonPropertyName("workflowVersion")]
         public Int32? WorkflowVersion { get; set; }
     
         /// <summary>
         /// Gets or sets subject.
+        /// The unique identifier of the AAD user targeted for the taskProcessingResult.
         /// </summary>
         [JsonPropertyName("subject")]
         public Microsoft.Graph.User Subject { get; set; }
     
         /// <summary>
         /// Gets or sets task processing results.
+        /// The associated individual task execution.
         /// </summary>
         [JsonPropertyName("taskProcessingResults")]
         public IUserProcessingResultTaskProcessingResultsCollectionPage TaskProcessingResults { get; set; }

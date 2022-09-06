@@ -38,14 +38,12 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets display app information required state.
-        /// Determines whether the user is shown additional context in their Authenticator app notification. In the body of the Authenticator notification, the user will be shown the app they are signing into along with the location that the authentication request originated from. Possible values are: enabled, disabled, default.
         /// </summary>
         [JsonPropertyName("displayAppInformationRequiredState")]
         public AdvancedConfigState? DisplayAppInformationRequiredState { get; set; }
     
         /// <summary>
         /// Gets or sets number matching required state.
-        /// Requires number matching for MFA notifications. Value is ignored for phone sign-in notifications. Possible values are: enabled, disabled, default.
         /// </summary>
         [JsonPropertyName("numberMatchingRequiredState")]
         public AdvancedConfigState? NumberMatchingRequiredState { get; set; }

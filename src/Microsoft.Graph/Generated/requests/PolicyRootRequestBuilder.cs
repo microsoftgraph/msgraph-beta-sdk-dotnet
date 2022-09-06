@@ -63,6 +63,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for AuthenticationStrengthPolicies.
+        /// </summary>
+        /// <returns>The <see cref="IPolicyRootAuthenticationStrengthPoliciesCollectionRequestBuilder"/>.</returns>
+        public IPolicyRootAuthenticationStrengthPoliciesCollectionRequestBuilder AuthenticationStrengthPolicies
+        {
+            get
+            {
+                return new PolicyRootAuthenticationStrengthPoliciesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("authenticationStrengthPolicies"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for AuthenticationFlowsPolicy.
         /// </summary>
         /// <returns>The <see cref="IAuthenticationFlowsPolicyRequestBuilder"/>.</returns>

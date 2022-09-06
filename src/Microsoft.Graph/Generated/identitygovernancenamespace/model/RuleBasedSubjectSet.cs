@@ -29,6 +29,7 @@ namespace Microsoft.Graph.IdentityGovernanceNamespace
 
         /// <summary>
         /// Gets or sets rule.
+        /// The rule for the subject set.
         /// </summary>
         [JsonPropertyName("rule")]
         public string Rule { get; set; }

@@ -23,6 +23,7 @@ namespace Microsoft.Graph.IdentityGovernanceNamespace
     
         /// <summary>
         /// Gets or sets category.
+        /// The category of the HR function that the tasks created using this definition can be used with. The possible values are: joiner, leaver.
         /// </summary>
         [JsonPropertyName("category")]
         public LifecycleTaskCategory? Category { get; set; }
@@ -35,24 +36,28 @@ namespace Microsoft.Graph.IdentityGovernanceNamespace
     
         /// <summary>
         /// Gets or sets description.
+        /// The description of the taskDefinition.
         /// </summary>
         [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
+        /// The display name of the taskDefinition.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets parameters.
+        /// The parameters that must be supplied when creating a task.
         /// </summary>
         [JsonPropertyName("parameters")]
         public IEnumerable<Parameter> Parameters { get; set; }
     
         /// <summary>
         /// Gets or sets version.
+        /// The version number of the taskDefinition. New records are pushed when we add support for new parameters.
         /// </summary>
         [JsonPropertyName("version")]
         public Int32? Version { get; set; }

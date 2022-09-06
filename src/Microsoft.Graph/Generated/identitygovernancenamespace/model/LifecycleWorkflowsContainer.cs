@@ -22,6 +22,7 @@ namespace Microsoft.Graph.IdentityGovernanceNamespace
     
         /// <summary>
         /// Gets or sets custom task extensions.
+        /// The customTaskExtension instance.
         /// </summary>
         [JsonPropertyName("customTaskExtensions")]
         public ILifecycleWorkflowsContainerCustomTaskExtensionsCollectionPage CustomTaskExtensions { get; set; }
@@ -35,18 +36,21 @@ namespace Microsoft.Graph.IdentityGovernanceNamespace
     
         /// <summary>
         /// Gets or sets deleted items.
+        /// Deleted workflows in your lifecycle workflows instance.
         /// </summary>
         [JsonPropertyName("deletedItems")]
         public Microsoft.Graph.DeletedItemContainer DeletedItems { get; set; }
     
         /// <summary>
         /// Gets or sets settings.
+        /// The settings of the lifecycle workflows instance.
         /// </summary>
         [JsonPropertyName("settings")]
         public LifecycleManagementSettings Settings { get; set; }
     
         /// <summary>
         /// Gets or sets task definitions.
+        /// The definition of tasks within the lifecycle workflows instance.
         /// </summary>
         [JsonPropertyName("taskDefinitions")]
         public ILifecycleWorkflowsContainerTaskDefinitionsCollectionPage TaskDefinitions { get; set; }
@@ -60,6 +64,7 @@ namespace Microsoft.Graph.IdentityGovernanceNamespace
     
         /// <summary>
         /// Gets or sets workflows.
+        /// The workflows in the lifecycle workflows instance.
         /// </summary>
         [JsonPropertyName("workflows")]
         public ILifecycleWorkflowsContainerWorkflowsCollectionPage Workflows { get; set; }
@@ -73,6 +78,7 @@ namespace Microsoft.Graph.IdentityGovernanceNamespace
     
         /// <summary>
         /// Gets or sets workflow templates.
+        /// The workflow templates in the lifecycle workflow instance.
         /// </summary>
         [JsonPropertyName("workflowTemplates")]
         public ILifecycleWorkflowsContainerWorkflowTemplatesCollectionPage WorkflowTemplates { get; set; }

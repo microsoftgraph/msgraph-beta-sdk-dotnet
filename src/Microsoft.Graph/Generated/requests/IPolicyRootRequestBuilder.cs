@@ -38,6 +38,12 @@ namespace Microsoft.Graph
         IAuthenticationMethodsPolicyRequestBuilder AuthenticationMethodsPolicy { get; }
 
         /// <summary>
+        /// Gets the request builder for AuthenticationStrengthPolicies.
+        /// </summary>
+        /// <returns>The <see cref="IPolicyRootAuthenticationStrengthPoliciesCollectionRequestBuilder"/>.</returns>
+        IPolicyRootAuthenticationStrengthPoliciesCollectionRequestBuilder AuthenticationStrengthPolicies { get; }
+
+        /// <summary>
         /// Gets the request builder for AuthenticationFlowsPolicy.
         /// </summary>
         /// <returns>The <see cref="IAuthenticationFlowsPolicyRequestBuilder"/>.</returns>

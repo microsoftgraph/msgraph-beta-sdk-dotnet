@@ -29,12 +29,14 @@ namespace Microsoft.Graph.IdentityGovernanceNamespace
 
         /// <summary>
         /// Gets or sets scope.
+        /// Defines who the workflow runs for.
         /// </summary>
         [JsonPropertyName("scope")]
         public Microsoft.Graph.SubjectSet Scope { get; set; }
     
         /// <summary>
         /// Gets or sets trigger.
+        /// What triggers a workflow to run.
         /// </summary>
         [JsonPropertyName("trigger")]
         public WorkflowExecutionTrigger Trigger { get; set; }

@@ -21,6 +21,12 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
+        /// Gets or sets authentication strengths.
+        /// </summary>
+        [JsonPropertyName("authenticationStrengths")]
+        public AuthenticationStrengthRoot AuthenticationStrengths { get; set; }
+    
+        /// <summary>
         /// Gets or sets authentication context class references.
         /// Read-only. Nullable. Returns a collection of the specified authentication context class references.
         /// </summary>

@@ -294,6 +294,12 @@ namespace Microsoft.Graph
         public TeamsTemplate Template { get; set; }
     
         /// <summary>
+        /// Gets or sets template definition.
+        /// </summary>
+        [JsonPropertyName("templateDefinition")]
+        public TeamTemplateDefinition TemplateDefinition { get; set; }
+    
+        /// <summary>
         /// Gets or sets schedule.
         /// The schedule of shifts for this team.
         /// </summary>
