@@ -910,6 +910,17 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the GraphServiceTeamTemplateDefinition request builder.
+        /// </summary>
+        public virtual IGraphServiceTeamTemplateDefinitionCollectionRequestBuilder TeamTemplateDefinition
+        {
+            get
+            {
+                return new GraphServiceTeamTemplateDefinitionCollectionRequestBuilder(this.BaseUrl + "/teamTemplateDefinition", this);
+            }
+        }
+    
+        /// <summary>
         /// Gets the GraphServiceIdentityGovernance request builder.
         /// </summary>
         public virtual IIdentityGovernanceRequestBuilder IdentityGovernance
@@ -1060,17 +1071,6 @@ namespace Microsoft.Graph
             get
             {
                 return new InformationProtectionRequestBuilder(this.BaseUrl + "/informationProtection", this);
-            }
-        }
-    
-        /// <summary>
-        /// Gets the GraphServiceDeviceRegistrationPolicy request builder.
-        /// </summary>
-        public virtual IDeviceRegistrationPolicyRequestBuilder DeviceRegistrationPolicy
-        {
-            get
-            {
-                return new DeviceRegistrationPolicyRequestBuilder(this.BaseUrl + "/deviceRegistrationPolicy", this);
             }
         }
     

@@ -30,6 +30,7 @@ namespace Microsoft.Graph.IdentityGovernanceNamespace
 
         /// <summary>
         /// Gets or sets operationStatus.
+        /// Operation status that's provided by the Azure Logic App indicating whenever the Azure Logic App has run successfully or not. Supported values: completed, failed, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("operationStatus")]
         public CustomTaskExtensionOperationStatus? OperationStatus { get; set; }

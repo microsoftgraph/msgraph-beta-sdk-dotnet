@@ -246,6 +246,12 @@ namespace Microsoft.Graph
 
             if (policyRootToInitialize != null)
             {
+                if (policyRootToInitialize.AuthenticationStrengthPolicies != null && policyRootToInitialize.AuthenticationStrengthPolicies.CurrentPage != null)
+                {
+                    policyRootToInitialize.AuthenticationStrengthPolicies.InitializeNextPageRequest(this.Client, policyRootToInitialize.AuthenticationStrengthPoliciesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    policyRootToInitialize.AuthenticationStrengthPolicies.AdditionalData = policyRootToInitialize.AdditionalData;
+                }
                 if (policyRootToInitialize.ActivityBasedTimeoutPolicies != null && policyRootToInitialize.ActivityBasedTimeoutPolicies.CurrentPage != null)
                 {
                     policyRootToInitialize.ActivityBasedTimeoutPolicies.InitializeNextPageRequest(this.Client, policyRootToInitialize.ActivityBasedTimeoutPoliciesNextLink);

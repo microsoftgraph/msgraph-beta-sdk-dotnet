@@ -98,8 +98,8 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IPresenceSetUserPreferredPresenceRequestBuilder"/>.</returns>
         public IPresenceSetUserPreferredPresenceRequestBuilder SetUserPreferredPresence(
-            string availability = null,
-            string activity = null,
+            string availability,
+            string activity,
             Duration expirationDuration = null)
         {
             return new PresenceSetUserPreferredPresenceRequestBuilder(

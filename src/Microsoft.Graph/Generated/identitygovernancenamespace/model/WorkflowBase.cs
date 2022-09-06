@@ -31,54 +31,63 @@ namespace Microsoft.Graph.IdentityGovernanceNamespace
     
         /// <summary>
         /// Gets or sets category.
+        /// The category of the workflow. The possible values are: joiner, leaver, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("category")]
         public LifecycleWorkflowCategory? Category { get; set; }
     
         /// <summary>
         /// Gets or sets created date time.
+        /// When a workflow was created.
         /// </summary>
         [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets description.
+        /// A string that describes the purpose of the workflow.
         /// </summary>
         [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
+        /// A string to identify the workflow.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets execution conditions.
+        /// Defines when and for who the workflow will run.
         /// </summary>
         [JsonPropertyName("executionConditions")]
         public WorkflowExecutionConditions ExecutionConditions { get; set; }
     
         /// <summary>
         /// Gets or sets last modified date time.
+        /// When the workflow was last modified.
         /// </summary>
         [JsonPropertyName("lastModifiedDateTime")]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets created by.
+        /// The user who created the workflow.
         /// </summary>
         [JsonPropertyName("createdBy")]
         public Microsoft.Graph.User CreatedBy { get; set; }
     
         /// <summary>
         /// Gets or sets last modified by.
+        /// The user who last modified the workflow.
         /// </summary>
         [JsonPropertyName("lastModifiedBy")]
         public Microsoft.Graph.User LastModifiedBy { get; set; }
     
         /// <summary>
         /// Gets or sets tasks.
+        /// The tasks in the workflow.
         /// </summary>
         [JsonPropertyName("tasks")]
         public IWorkflowBaseTasksCollectionPage Tasks { get; set; }

@@ -23,30 +23,35 @@ namespace Microsoft.Graph.IdentityGovernanceNamespace
 
         /// <summary>
         /// Gets or sets failedTasks.
+        /// Numerical count of failed tasks for users processed by a workflow.
         /// </summary>
         [JsonPropertyName("failedTasks")]
         public Int32? FailedTasks { get; set; }
     
         /// <summary>
         /// Gets or sets failedUsers.
+        /// Numerical count of failed users processed by a workflow.
         /// </summary>
         [JsonPropertyName("failedUsers")]
         public Int32? FailedUsers { get; set; }
     
         /// <summary>
         /// Gets or sets successfulUsers.
+        /// Numerical count of successful users processed by a workflow.
         /// </summary>
         [JsonPropertyName("successfulUsers")]
         public Int32? SuccessfulUsers { get; set; }
     
         /// <summary>
         /// Gets or sets totalTasks.
+        /// Numerical count of total tasks for users processed by a workflow.
         /// </summary>
         [JsonPropertyName("totalTasks")]
         public Int32? TotalTasks { get; set; }
     
         /// <summary>
         /// Gets or sets totalUsers.
+        /// Numerical count of total users processed by a workflow.
         /// </summary>
         [JsonPropertyName("totalUsers")]
         public Int32? TotalUsers { get; set; }

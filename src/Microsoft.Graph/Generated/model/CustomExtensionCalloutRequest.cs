@@ -23,18 +23,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets data.
+        /// Contains the data that will be provided to the external system.
         /// </summary>
         [JsonPropertyName("data")]
         public CustomExtensionData Data { get; set; }
     
         /// <summary>
         /// Gets or sets source.
+        /// Identifies the source system or event context related to the callout request.
         /// </summary>
         [JsonPropertyName("source")]
         public string Source { get; set; }
     
         /// <summary>
         /// Gets or sets type.
+        /// Describes the type of event related to the callout request.
         /// </summary>
         [JsonPropertyName("type")]
         public string Type { get; set; }

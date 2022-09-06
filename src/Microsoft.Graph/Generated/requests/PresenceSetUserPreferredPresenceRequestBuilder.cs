@@ -34,8 +34,8 @@ namespace Microsoft.Graph
             Duration expirationDuration)
             : base(requestUrl, client)
         {
-            this.SetParameter("availability", availability, true);
-            this.SetParameter("activity", activity, true);
+            this.SetParameter("availability", availability, false);
+            this.SetParameter("activity", activity, false);
             this.SetParameter("expirationDuration", expirationDuration, true);
         }
 

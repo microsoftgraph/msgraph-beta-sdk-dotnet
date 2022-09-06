@@ -37,6 +37,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets supported solution.
+        /// The supported service or solution for the region. The possible values are: windows365, devBox, unknownFutureValue. Read-only.
         /// </summary>
         [JsonPropertyName("supportedSolution")]
         public CloudPcManagementService? SupportedSolution { get; set; }

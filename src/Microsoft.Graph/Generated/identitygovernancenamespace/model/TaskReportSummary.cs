@@ -23,24 +23,28 @@ namespace Microsoft.Graph.IdentityGovernanceNamespace
 
         /// <summary>
         /// Gets or sets failedTasks.
+        /// The number of failed tasks in a report.
         /// </summary>
         [JsonPropertyName("failedTasks")]
         public Int32? FailedTasks { get; set; }
     
         /// <summary>
         /// Gets or sets successfulTasks.
+        /// The total number of successful tasks in a report.
         /// </summary>
         [JsonPropertyName("successfulTasks")]
         public Int32? SuccessfulTasks { get; set; }
     
         /// <summary>
         /// Gets or sets totalTasks.
+        /// The total number of tasks in a report.
         /// </summary>
         [JsonPropertyName("totalTasks")]
         public Int32? TotalTasks { get; set; }
     
         /// <summary>
         /// Gets or sets unprocessedTasks.
+        /// The number of unprocessed tasks in a report.
         /// </summary>
         [JsonPropertyName("unprocessedTasks")]
         public Int32? UnprocessedTasks { get; set; }

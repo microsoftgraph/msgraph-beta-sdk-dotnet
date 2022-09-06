@@ -214,6 +214,23 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for DriveItemAssignSensitivityLabel.
+        /// </summary>
+        /// <returns>The <see cref="IDriveItemAssignSensitivityLabelRequestBuilder"/>.</returns>
+        public IDriveItemAssignSensitivityLabelRequestBuilder AssignSensitivityLabel(
+            string sensitivityLabelId = null,
+            SensitivityLabelAssignmentMethod? assignmentMethod = null,
+            string justificationText = null)
+        {
+            return new DriveItemAssignSensitivityLabelRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.assignSensitivityLabel"),
+                this.Client,
+                sensitivityLabelId,
+                assignmentMethod,
+                justificationText);
+        }
+
+        /// <summary>
         /// Gets the request builder for DriveItemCheckin.
         /// </summary>
         /// <returns>The <see cref="IDriveItemCheckinRequestBuilder"/>.</returns>

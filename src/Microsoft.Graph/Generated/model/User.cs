@@ -161,6 +161,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets employee leave date time.
+        /// The date and time when the user left or will leave the organization. Read: Requires User-LifeCycleInfo.Read.All. For delegated scenarios, the admin needs one of the following Azure AD roles: Lifecycle Workflows Administrator, Global Reader, or Global Admin.  Write: Requires User-LifeCycleInfo.ReadWrite.All. For delegated scenarios, the admin needs the Global Administrator Azure AD role. Supports $filter (eq, ne, not , ge, le, in).
         /// </summary>
         [JsonPropertyName("employeeLeaveDateTime")]
         public DateTimeOffset? EmployeeLeaveDateTime { get; set; }

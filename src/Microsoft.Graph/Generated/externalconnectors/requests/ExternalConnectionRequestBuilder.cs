@@ -89,12 +89,12 @@ namespace Microsoft.Graph.ExternalConnectors
         /// <summary>
         /// Gets the request builder for Quota.
         /// </summary>
-        /// <returns>The <see cref="IConnectionQuotaWithReferenceRequestBuilder"/>.</returns>
-        public IConnectionQuotaWithReferenceRequestBuilder Quota
+        /// <returns>The <see cref="IConnectionQuotaRequestBuilder"/>.</returns>
+        public IConnectionQuotaRequestBuilder Quota
         {
             get
             {
-                return new ConnectionQuotaWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("quota"), this.Client);
+                return new ConnectionQuotaRequestBuilder(this.AppendSegmentToRequestUrl("quota"), this.Client);
             }
         }
 

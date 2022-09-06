@@ -50,6 +50,12 @@ namespace Microsoft.Graph
         public IEnumerable<string> TermsOfUse { get; set; }
     
         /// <summary>
+        /// Gets or sets authenticationStrength.
+        /// </summary>
+        [JsonPropertyName("authenticationStrength")]
+        public AuthenticationStrengthPolicy AuthenticationStrength { get; set; }
+    
+        /// <summary>
         /// Gets or sets additional data.
         /// </summary>
         [JsonExtensionData]

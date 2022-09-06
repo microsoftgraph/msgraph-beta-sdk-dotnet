@@ -29,6 +29,19 @@ namespace Microsoft.Graph
         public AuthenticationMethodsPolicy AuthenticationMethodsPolicy { get; set; }
     
         /// <summary>
+        /// Gets or sets authentication strength policies.
+        /// </summary>
+        [JsonPropertyName("authenticationStrengthPolicies")]
+        public IPolicyRootAuthenticationStrengthPoliciesCollectionPage AuthenticationStrengthPolicies { get; set; }
+
+        /// <summary>
+        /// Gets or sets authenticationStrengthPoliciesNextLink.
+        /// </summary>
+        [JsonPropertyName("authenticationStrengthPolicies@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string AuthenticationStrengthPoliciesNextLink { get; set; }
+    
+        /// <summary>
         /// Gets or sets authentication flows policy.
         /// The policy configuration of the self-service sign-up experience of external users.
         /// </summary>

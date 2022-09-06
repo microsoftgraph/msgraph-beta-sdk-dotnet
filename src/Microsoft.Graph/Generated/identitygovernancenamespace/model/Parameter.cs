@@ -23,18 +23,21 @@ namespace Microsoft.Graph.IdentityGovernanceNamespace
 
         /// <summary>
         /// Gets or sets name.
+        /// The name of the parameter.
         /// </summary>
         [JsonPropertyName("name")]
         public string Name { get; set; }
     
         /// <summary>
         /// Gets or sets values.
+        /// The values of the parameter.
         /// </summary>
         [JsonPropertyName("values")]
         public IEnumerable<string> Values { get; set; }
     
         /// <summary>
         /// Gets or sets valueType.
+        /// The value type of the parameter. The possible values are: enum, string, int, bool, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("valueType")]
         public ValueType? ValueType { get; set; }

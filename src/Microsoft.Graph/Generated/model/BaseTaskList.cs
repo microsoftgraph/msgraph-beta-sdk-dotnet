@@ -54,6 +54,7 @@ namespace Microsoft.Graph
         /// Gets or sets tasks.
         /// The tasks in this task list. Read-only. Nullable.
         /// </summary>
+        [Obsolete("The Tasks V2 API is deprecated and will stop returning data on September 30, 2022. Please use the To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/")]
         [JsonPropertyName("tasks")]
         public IBaseTaskListTasksCollectionPage Tasks { get; set; }
 

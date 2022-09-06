@@ -22,6 +22,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets workflows.
+        /// Deleted workflows that end up in the deletedItemsContainer.
         /// </summary>
         [JsonPropertyName("workflows")]
         public IDeletedItemContainerWorkflowsCollectionPage Workflows { get; set; }

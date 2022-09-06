@@ -23,48 +23,56 @@ namespace Microsoft.Graph.IdentityGovernanceNamespace
     
         /// <summary>
         /// Gets or sets completed date time.
+        /// The date time that the run completed. Value is null if the workflow hasn't completed. Optional.
         /// </summary>
         [JsonPropertyName("completedDateTime")]
         public DateTimeOffset? CompletedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets failed tasks count.
+        /// The number of tasks that failed in the run execution. Required.
         /// </summary>
         [JsonPropertyName("failedTasksCount")]
         public Int32? FailedTasksCount { get; set; }
     
         /// <summary>
         /// Gets or sets failed users count.
+        /// The number of users that failed in the run execution. Required.
         /// </summary>
         [JsonPropertyName("failedUsersCount")]
         public Int32? FailedUsersCount { get; set; }
     
         /// <summary>
         /// Gets or sets last updated date time.
+        /// The datetime that the run was last updated. Optional.
         /// </summary>
         [JsonPropertyName("lastUpdatedDateTime")]
         public DateTimeOffset? LastUpdatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets processing status.
+        /// The run execution status. The possible values are: queued, inProgress, completed, completedWithErrors, canceled, failed, unknownFutureValue. Required.
         /// </summary>
         [JsonPropertyName("processingStatus")]
         public LifecycleWorkflowProcessingStatus? ProcessingStatus { get; set; }
     
         /// <summary>
         /// Gets or sets scheduled date time.
+        /// The date time that the run is scheduled to be executed for a workflow. Required.
         /// </summary>
         [JsonPropertyName("scheduledDateTime")]
         public DateTimeOffset? ScheduledDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets started date time.
+        /// The date time that the run execution started. Optional.
         /// </summary>
         [JsonPropertyName("startedDateTime")]
         public DateTimeOffset? StartedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets successful users count.
+        /// The number of successfully completed users in the run. Required.
         /// </summary>
         [JsonPropertyName("successfulUsersCount")]
         public Int32? SuccessfulUsersCount { get; set; }
@@ -77,24 +85,28 @@ namespace Microsoft.Graph.IdentityGovernanceNamespace
     
         /// <summary>
         /// Gets or sets total unprocessed tasks count.
+        /// The total number of unprocessed tasks in the run execution. Required.
         /// </summary>
         [JsonPropertyName("totalUnprocessedTasksCount")]
         public Int32? TotalUnprocessedTasksCount { get; set; }
     
         /// <summary>
         /// Gets or sets total users count.
+        /// The total number of users in the workflow execution. Required.
         /// </summary>
         [JsonPropertyName("totalUsersCount")]
         public Int32? TotalUsersCount { get; set; }
     
         /// <summary>
         /// Gets or sets workflow execution type.
+        /// The execution type of the workflows associated with the run. The possible values are: scheduled, onDemand, unknownFutureValue. Required.
         /// </summary>
         [JsonPropertyName("workflowExecutionType")]
         public WorkflowExecutionType? WorkflowExecutionType { get; set; }
     
         /// <summary>
         /// Gets or sets task processing results.
+        /// The related taskProcessingResults.
         /// </summary>
         [JsonPropertyName("taskProcessingResults")]
         public IRunTaskProcessingResultsCollectionPage TaskProcessingResults { get; set; }
@@ -108,6 +120,7 @@ namespace Microsoft.Graph.IdentityGovernanceNamespace
     
         /// <summary>
         /// Gets or sets user processing results.
+        /// The associated individual user execution.
         /// </summary>
         [JsonPropertyName("userProcessingResults")]
         public IRunUserProcessingResultsCollectionPage UserProcessingResults { get; set; }

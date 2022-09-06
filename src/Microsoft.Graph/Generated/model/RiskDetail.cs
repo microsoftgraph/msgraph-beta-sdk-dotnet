@@ -89,5 +89,10 @@ namespace Microsoft.Graph
         /// </summary>
         AdminDismissedAllRiskForServicePrincipal = 13,
 	
+        /// <summary>
+        /// M365DAdmin Dismissed Detection
+        /// </summary>
+        M365DAdminDismissedDetection = 14,
+	
     }
 }
