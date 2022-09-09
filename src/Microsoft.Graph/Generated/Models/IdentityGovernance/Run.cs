@@ -5,22 +5,22 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
     public class Run : Entity, IParsable {
-        /// <summary>The completedDateTime property</summary>
+        /// <summary>The date time that the run completed. Value is null if the workflow hasn&apos;t completed. Optional.</summary>
         public DateTimeOffset? CompletedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("completedDateTime"); }
             set { BackingStore?.Set("completedDateTime", value); }
         }
-        /// <summary>The failedTasksCount property</summary>
+        /// <summary>The number of tasks that failed in the run execution. Required.</summary>
         public int? FailedTasksCount {
             get { return BackingStore?.Get<int?>("failedTasksCount"); }
             set { BackingStore?.Set("failedTasksCount", value); }
         }
-        /// <summary>The failedUsersCount property</summary>
+        /// <summary>The number of users that failed in the run execution. Required.</summary>
         public int? FailedUsersCount {
             get { return BackingStore?.Get<int?>("failedUsersCount"); }
             set { BackingStore?.Set("failedUsersCount", value); }
         }
-        /// <summary>The lastUpdatedDateTime property</summary>
+        /// <summary>The datetime that the run was last updated. Optional.</summary>
         public DateTimeOffset? LastUpdatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastUpdatedDateTime"); }
             set { BackingStore?.Set("lastUpdatedDateTime", value); }
@@ -30,22 +30,22 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
             get { return BackingStore?.Get<LifecycleWorkflowProcessingStatus?>("processingStatus"); }
             set { BackingStore?.Set("processingStatus", value); }
         }
-        /// <summary>The scheduledDateTime property</summary>
+        /// <summary>The date time that the run is scheduled to be executed for a workflow. Required.</summary>
         public DateTimeOffset? ScheduledDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("scheduledDateTime"); }
             set { BackingStore?.Set("scheduledDateTime", value); }
         }
-        /// <summary>The startedDateTime property</summary>
+        /// <summary>The date time that the run execution started. Optional.</summary>
         public DateTimeOffset? StartedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("startedDateTime"); }
             set { BackingStore?.Set("startedDateTime", value); }
         }
-        /// <summary>The successfulUsersCount property</summary>
+        /// <summary>The number of successfully completed users in the run. Required.</summary>
         public int? SuccessfulUsersCount {
             get { return BackingStore?.Get<int?>("successfulUsersCount"); }
             set { BackingStore?.Set("successfulUsersCount", value); }
         }
-        /// <summary>The taskProcessingResults property</summary>
+        /// <summary>The related taskProcessingResults.</summary>
         public List<TaskProcessingResult> TaskProcessingResults {
             get { return BackingStore?.Get<List<TaskProcessingResult>>("taskProcessingResults"); }
             set { BackingStore?.Set("taskProcessingResults", value); }
@@ -55,17 +55,17 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
             get { return BackingStore?.Get<int?>("totalTasksCount"); }
             set { BackingStore?.Set("totalTasksCount", value); }
         }
-        /// <summary>The totalUnprocessedTasksCount property</summary>
+        /// <summary>The total number of unprocessed tasks in the run execution. Required.</summary>
         public int? TotalUnprocessedTasksCount {
             get { return BackingStore?.Get<int?>("totalUnprocessedTasksCount"); }
             set { BackingStore?.Set("totalUnprocessedTasksCount", value); }
         }
-        /// <summary>The totalUsersCount property</summary>
+        /// <summary>The total number of users in the workflow execution. Required.</summary>
         public int? TotalUsersCount {
             get { return BackingStore?.Get<int?>("totalUsersCount"); }
             set { BackingStore?.Set("totalUsersCount", value); }
         }
-        /// <summary>The userProcessingResults property</summary>
+        /// <summary>The associated individual user execution.</summary>
         public List<UserProcessingResult> UserProcessingResults {
             get { return BackingStore?.Get<List<UserProcessingResult>>("userProcessingResults"); }
             set { BackingStore?.Set("userProcessingResults", value); }

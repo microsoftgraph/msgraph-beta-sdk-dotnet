@@ -17,7 +17,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("userPrincipalName", value); }
         }
         /// <summary>
-        /// Instantiates a new UserIdentity and sets the default values.
+        /// Instantiates a new userIdentity and sets the default values.
         /// </summary>
         public UserIdentity() : base() {
             OdataType = "#microsoft.graph.userIdentity";

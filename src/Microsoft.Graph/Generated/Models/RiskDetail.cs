@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public enum RiskDetail {
         None,
         AdminGeneratedTemporaryPassword,
@@ -15,5 +15,6 @@ namespace Microsoft.Graph.Beta.Models {
         UnknownFutureValue,
         AdminConfirmedServicePrincipalCompromised,
         AdminDismissedAllRiskForServicePrincipal,
+        M365DAdminDismissedDetection,
     }
 }

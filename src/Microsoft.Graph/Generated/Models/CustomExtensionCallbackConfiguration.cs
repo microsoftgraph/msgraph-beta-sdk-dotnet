@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
-        /// <summary>The timeoutDuration property</summary>
+        /// <summary>Callback time out in ISO 8601 time duration. Accepted time durations are between five minutes to three hours. For example, PT5M for five minutes and PT3H for three hours.</summary>
         public TimeSpan? TimeoutDuration {
             get { return BackingStore?.Get<TimeSpan?>("timeoutDuration"); }
             set { BackingStore?.Set("timeoutDuration", value); }

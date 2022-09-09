@@ -1,4 +1,5 @@
 using Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationContextClassReferences;
+using Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrengths;
 using Microsoft.Graph.Beta.Identity.ConditionalAccess.NamedLocations;
 using Microsoft.Graph.Beta.Identity.ConditionalAccess.Policies;
 using Microsoft.Graph.Beta.Models;
@@ -17,6 +18,10 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess {
         /// <summary>The authenticationContextClassReferences property</summary>
         public AuthenticationContextClassReferencesRequestBuilder AuthenticationContextClassReferences { get =>
             new AuthenticationContextClassReferencesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The authenticationStrengths property</summary>
+        public AuthenticationStrengthsRequestBuilder AuthenticationStrengths { get =>
+            new AuthenticationStrengthsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The namedLocations property</summary>
         public NamedLocationsRequestBuilder NamedLocations { get =>
@@ -124,7 +129,7 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task DeleteAsync(Action<ConditionalAccessRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task DeleteAsync(CancellationToken cancellationToken = default, Action<ConditionalAccessRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default) {
             var requestInfo = CreateDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
@@ -138,7 +143,7 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<ConditionalAccessRoot> GetAsync(Action<ConditionalAccessRequestBuilderGetRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<ConditionalAccessRoot> GetAsync(CancellationToken cancellationToken = default, Action<ConditionalAccessRequestBuilderGetRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
@@ -153,7 +158,7 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task PatchAsync(ConditionalAccessRoot body, Action<ConditionalAccessRequestBuilderPatchRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task PatchAsync(ConditionalAccessRoot body, CancellationToken cancellationToken = default, Action<ConditionalAccessRequestBuilderPatchRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {

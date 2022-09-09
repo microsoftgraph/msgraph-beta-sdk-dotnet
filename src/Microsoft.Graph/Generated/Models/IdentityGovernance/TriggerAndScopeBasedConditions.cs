@@ -5,12 +5,12 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
     public class TriggerAndScopeBasedConditions : WorkflowExecutionConditions, IParsable {
-        /// <summary>The scope property</summary>
+        /// <summary>Defines who the workflow runs for.</summary>
         public Microsoft.Graph.Beta.Models.SubjectSet Scope {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SubjectSet>("scope"); }
             set { BackingStore?.Set("scope", value); }
         }
-        /// <summary>The trigger property</summary>
+        /// <summary>What triggers a workflow to run.</summary>
         public WorkflowExecutionTrigger Trigger {
             get { return BackingStore?.Get<WorkflowExecutionTrigger>("trigger"); }
             set { BackingStore?.Set("trigger", value); }

@@ -82,7 +82,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Channels.Item.SharedWithTeams.Item.All
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<ConversationMemberCollectionResponse> GetAsync(Action<AllowedMembersRequestBuilderGetRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<ConversationMemberCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<AllowedMembersRequestBuilderGetRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},

@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Beta.Policies.AuthorizationPolicy.Item.DefaultUserRole
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<DefaultUserRoleOverrideCollectionResponse> GetAsync(Action<DefaultUserRoleOverridesRequestBuilderGetRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<DefaultUserRoleOverrideCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<DefaultUserRoleOverridesRequestBuilderGetRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
@@ -119,7 +119,7 @@ namespace Microsoft.Graph.Beta.Policies.AuthorizationPolicy.Item.DefaultUserRole
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<DefaultUserRoleOverride> PostAsync(DefaultUserRoleOverride body, Action<DefaultUserRoleOverridesRequestBuilderPostRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<DefaultUserRoleOverride> PostAsync(DefaultUserRoleOverride body, CancellationToken cancellationToken = default, Action<DefaultUserRoleOverridesRequestBuilderPostRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {

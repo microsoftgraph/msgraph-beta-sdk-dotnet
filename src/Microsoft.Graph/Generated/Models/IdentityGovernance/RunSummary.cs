@@ -13,12 +13,12 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The failedRuns property</summary>
+        /// <summary>The number of failed workflow runs.</summary>
         public int? FailedRuns {
             get { return BackingStore?.Get<int?>("failedRuns"); }
             set { BackingStore?.Set("failedRuns", value); }
         }
-        /// <summary>The failedTasks property</summary>
+        /// <summary>The number of failed tasks of a workflow.</summary>
         public int? FailedTasks {
             get { return BackingStore?.Get<int?>("failedTasks"); }
             set { BackingStore?.Set("failedTasks", value); }
@@ -28,12 +28,12 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
-        /// <summary>The successfulRuns property</summary>
+        /// <summary>The number of successful workflow runs.</summary>
         public int? SuccessfulRuns {
             get { return BackingStore?.Get<int?>("successfulRuns"); }
             set { BackingStore?.Set("successfulRuns", value); }
         }
-        /// <summary>The totalRuns property</summary>
+        /// <summary>The total number of runs for a workflow.</summary>
         public int? TotalRuns {
             get { return BackingStore?.Get<int?>("totalRuns"); }
             set { BackingStore?.Set("totalRuns", value); }

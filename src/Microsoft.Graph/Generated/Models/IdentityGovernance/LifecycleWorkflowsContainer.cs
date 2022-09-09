@@ -5,12 +5,12 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
     public class LifecycleWorkflowsContainer : Entity, IParsable {
-        /// <summary>The customTaskExtensions property</summary>
+        /// <summary>The customTaskExtension instance.</summary>
         public List<CustomTaskExtension> CustomTaskExtensions {
             get { return BackingStore?.Get<List<CustomTaskExtension>>("customTaskExtensions"); }
             set { BackingStore?.Set("customTaskExtensions", value); }
         }
-        /// <summary>The deletedItems property</summary>
+        /// <summary>Deleted workflows in your lifecycle workflows instance.</summary>
         public Microsoft.Graph.Beta.Models.DeletedItemContainer DeletedItems {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeletedItemContainer>("deletedItems"); }
             set { BackingStore?.Set("deletedItems", value); }
@@ -20,17 +20,17 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
             get { return BackingStore?.Get<LifecycleManagementSettings>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
-        /// <summary>The taskDefinitions property</summary>
+        /// <summary>The definition of tasks within the lifecycle workflows instance.</summary>
         public List<TaskDefinition> TaskDefinitions {
             get { return BackingStore?.Get<List<TaskDefinition>>("taskDefinitions"); }
             set { BackingStore?.Set("taskDefinitions", value); }
         }
-        /// <summary>The workflows property</summary>
+        /// <summary>The workflows in the lifecycle workflows instance.</summary>
         public List<Workflow> Workflows {
             get { return BackingStore?.Get<List<Workflow>>("workflows"); }
             set { BackingStore?.Set("workflows", value); }
         }
-        /// <summary>The workflowTemplates property</summary>
+        /// <summary>The workflow templates in the lifecycle workflow instance.</summary>
         public List<WorkflowTemplate> WorkflowTemplates {
             get { return BackingStore?.Get<List<WorkflowTemplate>>("workflowTemplates"); }
             set { BackingStore?.Set("workflowTemplates", value); }

@@ -145,6 +145,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<TeamsTemplate>("template"); }
             set { BackingStore?.Set("template", value); }
         }
+        /// <summary>The templateDefinition property</summary>
+        public TeamTemplateDefinition TemplateDefinition {
+            get { return BackingStore?.Get<TeamTemplateDefinition>("templateDefinition"); }
+            set { BackingStore?.Set("templateDefinition", value); }
+        }
         /// <summary>The ID of the Azure Active Directory tenant.</summary>
         public string TenantId {
             get { return BackingStore?.Get<string>("tenantId"); }
@@ -207,6 +212,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"summary", n => { Summary = n.GetObjectValue<TeamSummary>(TeamSummary.CreateFromDiscriminatorValue); } },
                 {"tags", n => { Tags = n.GetCollectionOfObjectValues<TeamworkTag>(TeamworkTag.CreateFromDiscriminatorValue).ToList(); } },
                 {"template", n => { Template = n.GetObjectValue<TeamsTemplate>(TeamsTemplate.CreateFromDiscriminatorValue); } },
+                {"templateDefinition", n => { TemplateDefinition = n.GetObjectValue<TeamTemplateDefinition>(TeamTemplateDefinition.CreateFromDiscriminatorValue); } },
                 {"tenantId", n => { TenantId = n.GetStringValue(); } },
                 {"visibility", n => { Visibility = n.GetEnumValue<TeamVisibilityType>(); } },
                 {"webUrl", n => { WebUrl = n.GetStringValue(); } },
@@ -247,6 +253,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteObjectValue<TeamSummary>("summary", Summary);
             writer.WriteCollectionOfObjectValues<TeamworkTag>("tags", Tags);
             writer.WriteObjectValue<TeamsTemplate>("template", Template);
+            writer.WriteObjectValue<TeamTemplateDefinition>("templateDefinition", TemplateDefinition);
             writer.WriteStringValue("tenantId", TenantId);
             writer.WriteEnumValue<TeamVisibilityType>("visibility", Visibility);
             writer.WriteStringValue("webUrl", WebUrl);

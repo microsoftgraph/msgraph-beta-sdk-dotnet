@@ -15,22 +15,22 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
             get { return BackingStore?.Get<bool?>("continueOnError"); }
             set { BackingStore?.Set("continueOnError", value); }
         }
-        /// <summary>The description property</summary>
+        /// <summary>The description of the taskDefinition.</summary>
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
-        /// <summary>The displayName property</summary>
+        /// <summary>The display name of the taskDefinition.</summary>
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
-        /// <summary>The parameters property</summary>
+        /// <summary>The parameters that must be supplied when creating a task.</summary>
         public List<Parameter> Parameters {
             get { return BackingStore?.Get<List<Parameter>>("parameters"); }
             set { BackingStore?.Set("parameters", value); }
         }
-        /// <summary>The version property</summary>
+        /// <summary>The version number of the taskDefinition. New records are pushed when we add support for new parameters.</summary>
         public int? Version {
             get { return BackingStore?.Get<int?>("version"); }
             set { BackingStore?.Set("version", value); }

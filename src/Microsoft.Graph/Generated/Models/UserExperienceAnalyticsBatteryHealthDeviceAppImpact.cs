@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>The user experience analytics battery health device app impact entity contains battery usage related information at an app level for a given device.</summary>
     public class UserExperienceAnalyticsBatteryHealthDeviceAppImpact : Entity, IParsable {
         /// <summary>User friendly display name for the app. Eg: Outlook</summary>
         public string AppDisplayName {
@@ -36,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("isForegroundApp", value); }
         }
         /// <summary>
-        /// Instantiates a new UserExperienceAnalyticsBatteryHealthDeviceAppImpact and sets the default values.
+        /// Instantiates a new userExperienceAnalyticsBatteryHealthDeviceAppImpact and sets the default values.
         /// </summary>
         public UserExperienceAnalyticsBatteryHealthDeviceAppImpact() : base() {
             OdataType = "#microsoft.graph.userExperienceAnalyticsBatteryHealthDeviceAppImpact";

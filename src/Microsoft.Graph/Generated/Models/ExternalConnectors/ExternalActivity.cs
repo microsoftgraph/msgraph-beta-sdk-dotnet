@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class ExternalActivity : Entity, IParsable {
         /// <summary>Represents an identity used to identify who is responsible for the activity.</summary>
         public Identity PerformedBy {
@@ -22,7 +23,7 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
             set { BackingStore?.Set("type", value); }
         }
         /// <summary>
-        /// Instantiates a new ExternalActivity and sets the default values.
+        /// Instantiates a new externalActivity and sets the default values.
         /// </summary>
         public ExternalActivity() : base() {
             OdataType = "#microsoft.graph.externalConnectors.externalActivity";

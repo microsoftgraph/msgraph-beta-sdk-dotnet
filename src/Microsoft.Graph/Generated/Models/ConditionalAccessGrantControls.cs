@@ -11,6 +11,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
             set { BackingStore?.Set("additionalData", value); }
         }
+        /// <summary>The authenticationStrength property</summary>
+        public AuthenticationStrengthPolicy AuthenticationStrength {
+            get { return BackingStore?.Get<AuthenticationStrengthPolicy>("authenticationStrength"); }
+            set { BackingStore?.Set("authenticationStrength", value); }
+        }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>List of values of built-in controls required by the policy. Possible values: block, mfa, compliantDevice, domainJoinedDevice, approvedApplication, compliantApplication, passwordChange, unknownFutureValue.</summary>
@@ -59,6 +64,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
+                {"authenticationStrength", n => { AuthenticationStrength = n.GetObjectValue<AuthenticationStrengthPolicy>(AuthenticationStrengthPolicy.CreateFromDiscriminatorValue); } },
                 {"builtInControls", n => { BuiltInControls = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"customAuthenticationFactors", n => { CustomAuthenticationFactors = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
@@ -72,6 +78,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<AuthenticationStrengthPolicy>("authenticationStrength", AuthenticationStrength);
             writer.WriteCollectionOfPrimitiveValues<string>("builtInControls", BuiltInControls);
             writer.WriteCollectionOfPrimitiveValues<string>("customAuthenticationFactors", CustomAuthenticationFactors);
             writer.WriteStringValue("@odata.type", OdataType);

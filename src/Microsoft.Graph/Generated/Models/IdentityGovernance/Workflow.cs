@@ -5,32 +5,32 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
     public class Workflow : WorkflowBase, IParsable {
-        /// <summary>The deletedDateTime property</summary>
+        /// <summary>The time and date a workflow is deleted. Supports $filter(lt,gt) and $orderby.</summary>
         public DateTimeOffset? DeletedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("deletedDateTime"); }
             set { BackingStore?.Set("deletedDateTime", value); }
         }
-        /// <summary>The executionScope property</summary>
+        /// <summary>The unique identifier of the Azure AD identity that last modified the workflow object..</summary>
         public List<Microsoft.Graph.Beta.Models.User> ExecutionScope {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.User>>("executionScope"); }
             set { BackingStore?.Set("executionScope", value); }
         }
-        /// <summary>The id property</summary>
+        /// <summary>Identifier used for individually addressing a specific workflow. Supports $filter(eq).</summary>
         public string Id {
             get { return BackingStore?.Get<string>("id"); }
             set { BackingStore?.Set("id", value); }
         }
-        /// <summary>The isEnabled property</summary>
+        /// <summary>If true, the workflow engine creates and processes taskProcessingResults on the users scoped to the workflow. Supports $filter(eq,ne) and orderby.</summary>
         public bool? IsEnabled {
             get { return BackingStore?.Get<bool?>("isEnabled"); }
             set { BackingStore?.Set("isEnabled", value); }
         }
-        /// <summary>The isSchedulingEnabled property</summary>
+        /// <summary>If true, the workflow engine executes the workflow on the schedule defined by tenant settings.</summary>
         public bool? IsSchedulingEnabled {
             get { return BackingStore?.Get<bool?>("isSchedulingEnabled"); }
             set { BackingStore?.Set("isSchedulingEnabled", value); }
         }
-        /// <summary>The nextScheduleRunDateTime property</summary>
+        /// <summary>The date time when the workflow is expected to run next based on the schedule interval, if there are any users matching the execution conditions. Supports $filter(lt,gt) and $orderby.</summary>
         public DateTimeOffset? NextScheduleRunDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("nextScheduleRunDateTime"); }
             set { BackingStore?.Set("nextScheduleRunDateTime", value); }
@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
             get { return BackingStore?.Get<List<Run>>("runs"); }
             set { BackingStore?.Set("runs", value); }
         }
-        /// <summary>The taskReports property</summary>
+        /// <summary>Represents the aggregation of task execution data for tasks within a workflow object.</summary>
         public List<TaskReport> TaskReports {
             get { return BackingStore?.Get<List<TaskReport>>("taskReports"); }
             set { BackingStore?.Set("taskReports", value); }
@@ -50,12 +50,12 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
             get { return BackingStore?.Get<List<UserProcessingResult>>("userProcessingResults"); }
             set { BackingStore?.Set("userProcessingResults", value); }
         }
-        /// <summary>The version property</summary>
+        /// <summary>The current version number of the workflow. Value is 1 when the workflow is first created. Supports $filter(eq).</summary>
         public int? Version {
             get { return BackingStore?.Get<int?>("version"); }
             set { BackingStore?.Set("version", value); }
         }
-        /// <summary>The versions property</summary>
+        /// <summary>The workflow versions that are available.</summary>
         public List<WorkflowVersion> Versions {
             get { return BackingStore?.Get<List<WorkflowVersion>>("versions"); }
             set { BackingStore?.Set("versions", value); }

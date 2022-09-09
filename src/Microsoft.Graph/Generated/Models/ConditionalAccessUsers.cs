@@ -18,6 +18,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<string>>("excludeGroups"); }
             set { BackingStore?.Set("excludeGroups", value); }
         }
+        /// <summary>The excludeGuestsOrExternalUsers property</summary>
+        public ConditionalAccessGuestsOrExternalUsers ExcludeGuestsOrExternalUsers {
+            get { return BackingStore?.Get<ConditionalAccessGuestsOrExternalUsers>("excludeGuestsOrExternalUsers"); }
+            set { BackingStore?.Set("excludeGuestsOrExternalUsers", value); }
+        }
         /// <summary>Role IDs excluded from scope of policy.</summary>
         public List<string> ExcludeRoles {
             get { return BackingStore?.Get<List<string>>("excludeRoles"); }
@@ -32,6 +37,11 @@ namespace Microsoft.Graph.Beta.Models {
         public List<string> IncludeGroups {
             get { return BackingStore?.Get<List<string>>("includeGroups"); }
             set { BackingStore?.Set("includeGroups", value); }
+        }
+        /// <summary>The includeGuestsOrExternalUsers property</summary>
+        public ConditionalAccessGuestsOrExternalUsers IncludeGuestsOrExternalUsers {
+            get { return BackingStore?.Get<ConditionalAccessGuestsOrExternalUsers>("includeGuestsOrExternalUsers"); }
+            set { BackingStore?.Set("includeGuestsOrExternalUsers", value); }
         }
         /// <summary>Role IDs in scope of policy unless explicitly excluded, or All.</summary>
         public List<string> IncludeRoles {
@@ -70,9 +80,11 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"excludeGroups", n => { ExcludeGroups = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"excludeGuestsOrExternalUsers", n => { ExcludeGuestsOrExternalUsers = n.GetObjectValue<ConditionalAccessGuestsOrExternalUsers>(ConditionalAccessGuestsOrExternalUsers.CreateFromDiscriminatorValue); } },
                 {"excludeRoles", n => { ExcludeRoles = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"excludeUsers", n => { ExcludeUsers = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"includeGroups", n => { IncludeGroups = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"includeGuestsOrExternalUsers", n => { IncludeGuestsOrExternalUsers = n.GetObjectValue<ConditionalAccessGuestsOrExternalUsers>(ConditionalAccessGuestsOrExternalUsers.CreateFromDiscriminatorValue); } },
                 {"includeRoles", n => { IncludeRoles = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"includeUsers", n => { IncludeUsers = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
@@ -85,9 +97,11 @@ namespace Microsoft.Graph.Beta.Models {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("excludeGroups", ExcludeGroups);
+            writer.WriteObjectValue<ConditionalAccessGuestsOrExternalUsers>("excludeGuestsOrExternalUsers", ExcludeGuestsOrExternalUsers);
             writer.WriteCollectionOfPrimitiveValues<string>("excludeRoles", ExcludeRoles);
             writer.WriteCollectionOfPrimitiveValues<string>("excludeUsers", ExcludeUsers);
             writer.WriteCollectionOfPrimitiveValues<string>("includeGroups", IncludeGroups);
+            writer.WriteObjectValue<ConditionalAccessGuestsOrExternalUsers>("includeGuestsOrExternalUsers", IncludeGuestsOrExternalUsers);
             writer.WriteCollectionOfPrimitiveValues<string>("includeRoles", IncludeRoles);
             writer.WriteCollectionOfPrimitiveValues<string>("includeUsers", IncludeUsers);
             writer.WriteStringValue("@odata.type", OdataType);

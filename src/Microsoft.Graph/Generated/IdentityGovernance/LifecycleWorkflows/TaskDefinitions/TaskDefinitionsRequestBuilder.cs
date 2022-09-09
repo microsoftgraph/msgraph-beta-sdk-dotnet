@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.TaskDefinit
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get taskDefinitions from identityGovernance
+        /// The definition of tasks within the lifecycle workflows instance.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<TaskDefinitionsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -99,12 +99,12 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.TaskDefinit
             return requestInfo;
         }
         /// <summary>
-        /// Get taskDefinitions from identityGovernance
+        /// The definition of tasks within the lifecycle workflows instance.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<TaskDefinitionCollectionResponse> GetAsync(Action<TaskDefinitionsRequestBuilderGetRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<TaskDefinitionCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<TaskDefinitionsRequestBuilderGetRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
@@ -119,7 +119,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.TaskDefinit
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<Microsoft.Graph.Beta.Models.IdentityGovernance.TaskDefinition> PostAsync(Microsoft.Graph.Beta.Models.IdentityGovernance.TaskDefinition body, Action<TaskDefinitionsRequestBuilderPostRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.IdentityGovernance.TaskDefinition> PostAsync(Microsoft.Graph.Beta.Models.IdentityGovernance.TaskDefinition body, CancellationToken cancellationToken = default, Action<TaskDefinitionsRequestBuilderPostRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -128,7 +128,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.TaskDefinit
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.IdentityGovernance.TaskDefinition>(requestInfo, Microsoft.Graph.Beta.Models.IdentityGovernance.TaskDefinition.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Get taskDefinitions from identityGovernance</summary>
+        /// <summary>The definition of tasks within the lifecycle workflows instance.</summary>
         public class TaskDefinitionsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

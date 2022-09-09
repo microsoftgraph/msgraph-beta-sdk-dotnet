@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("description", value); }
         }
         /// <summary>
-        /// Instantiates a new ExactMatchUploadAgent and sets the default values.
+        /// Instantiates a new exactMatchUploadAgent and sets the default values.
         /// </summary>
         public ExactMatchUploadAgent() : base() {
             OdataType = "#microsoft.graph.exactMatchUploadAgent";

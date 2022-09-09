@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The failedTasks property</summary>
+        /// <summary>The number of failed tasks in a report.</summary>
         public int? FailedTasks {
             get { return BackingStore?.Get<int?>("failedTasks"); }
             set { BackingStore?.Set("failedTasks", value); }
@@ -23,17 +23,17 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
-        /// <summary>The successfulTasks property</summary>
+        /// <summary>The total number of successful tasks in a report.</summary>
         public int? SuccessfulTasks {
             get { return BackingStore?.Get<int?>("successfulTasks"); }
             set { BackingStore?.Set("successfulTasks", value); }
         }
-        /// <summary>The totalTasks property</summary>
+        /// <summary>The total number of tasks in a report.</summary>
         public int? TotalTasks {
             get { return BackingStore?.Get<int?>("totalTasks"); }
             set { BackingStore?.Set("totalTasks", value); }
         }
-        /// <summary>The unprocessedTasks property</summary>
+        /// <summary>The number of unprocessed tasks in a report.</summary>
         public int? UnprocessedTasks {
             get { return BackingStore?.Get<int?>("unprocessedTasks"); }
             set { BackingStore?.Set("unprocessedTasks", value); }

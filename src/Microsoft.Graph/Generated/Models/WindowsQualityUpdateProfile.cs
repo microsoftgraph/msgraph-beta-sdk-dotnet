@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Windows Quality Update Profile</summary>
     public class WindowsQualityUpdateProfile : Entity, IParsable {
         /// <summary>The list of group assignments of the profile.</summary>
         public List<WindowsQualityUpdateProfileAssignment> Assignments {
@@ -51,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("roleScopeTagIds", value); }
         }
         /// <summary>
-        /// Instantiates a new WindowsQualityUpdateProfile and sets the default values.
+        /// Instantiates a new windowsQualityUpdateProfile and sets the default values.
         /// </summary>
         public WindowsQualityUpdateProfile() : base() {
             OdataType = "#microsoft.graph.windowsQualityUpdateProfile";

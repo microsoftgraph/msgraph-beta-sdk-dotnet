@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Conflict summary for a set of device configuration policies.</summary>
     public class DeviceConfigurationConflictSummary : Entity, IParsable {
         /// <summary>The set of policies in conflict with the given setting</summary>
         public List<SettingSource> ConflictingDeviceConfigurations {
@@ -21,7 +22,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("deviceCheckinsImpacted", value); }
         }
         /// <summary>
-        /// Instantiates a new DeviceConfigurationConflictSummary and sets the default values.
+        /// Instantiates a new deviceConfigurationConflictSummary and sets the default values.
         /// </summary>
         public DeviceConfigurationConflictSummary() : base() {
             OdataType = "#microsoft.graph.deviceConfigurationConflictSummary";

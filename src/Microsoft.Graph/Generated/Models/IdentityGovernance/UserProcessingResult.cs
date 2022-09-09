@@ -4,14 +4,14 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class UserProcessingResult : Entity, IParsable {
-        /// <summary>The completedDateTime property</summary>
+        /// <summary>The date time that the workflow execution for a user completed. Value is null if the workflow hasn&apos;t completed. Supports $filter(lt, gt) and $orderby.</summary>
         public DateTimeOffset? CompletedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("completedDateTime"); }
             set { BackingStore?.Set("completedDateTime", value); }
         }
-        /// <summary>The failedTasksCount property</summary>
+        /// <summary>The number of tasks that failed in the workflow execution.</summary>
         public int? FailedTasksCount {
             get { return BackingStore?.Get<int?>("failedTasksCount"); }
             set { BackingStore?.Set("failedTasksCount", value); }
@@ -21,12 +21,12 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
             get { return BackingStore?.Get<LifecycleWorkflowProcessingStatus?>("processingStatus"); }
             set { BackingStore?.Set("processingStatus", value); }
         }
-        /// <summary>The scheduledDateTime property</summary>
+        /// <summary>The date time that the workflow is scheduled to be executed for a user.</summary>
         public DateTimeOffset? ScheduledDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("scheduledDateTime"); }
             set { BackingStore?.Set("scheduledDateTime", value); }
         }
-        /// <summary>The startedDateTime property</summary>
+        /// <summary>The date time that the workflow execution started. Value is null if the workflow execution has not started. Supports $filter(lt, gt) and $orderby.</summary>
         public DateTimeOffset? StartedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("startedDateTime"); }
             set { BackingStore?.Set("startedDateTime", value); }
@@ -36,17 +36,17 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.User>("subject"); }
             set { BackingStore?.Set("subject", value); }
         }
-        /// <summary>The taskProcessingResults property</summary>
+        /// <summary>The associated individual task execution.</summary>
         public List<TaskProcessingResult> TaskProcessingResults {
             get { return BackingStore?.Get<List<TaskProcessingResult>>("taskProcessingResults"); }
             set { BackingStore?.Set("taskProcessingResults", value); }
         }
-        /// <summary>The totalTasksCount property</summary>
+        /// <summary>The total number of tasks that in the workflow execution.</summary>
         public int? TotalTasksCount {
             get { return BackingStore?.Get<int?>("totalTasksCount"); }
             set { BackingStore?.Set("totalTasksCount", value); }
         }
-        /// <summary>The totalUnprocessedTasksCount property</summary>
+        /// <summary>The total number of unprocessed tasks for the workflow.</summary>
         public int? TotalUnprocessedTasksCount {
             get { return BackingStore?.Get<int?>("totalUnprocessedTasksCount"); }
             set { BackingStore?.Set("totalUnprocessedTasksCount", value); }
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentityGovernance.WorkflowExecutionType?>("workflowExecutionType"); }
             set { BackingStore?.Set("workflowExecutionType", value); }
         }
-        /// <summary>The workflowVersion property</summary>
+        /// <summary>The version of the workflow that was executed.</summary>
         public int? WorkflowVersion {
             get { return BackingStore?.Get<int?>("workflowVersion"); }
             set { BackingStore?.Set("workflowVersion", value); }

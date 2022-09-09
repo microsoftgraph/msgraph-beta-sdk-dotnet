@@ -1,3 +1,4 @@
+using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Operations.CaseExportOperation;
 using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Operations.Count;
 using Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Operations.Item;
 using Microsoft.Graph.Beta.Models.Ediscovery;
@@ -13,6 +14,10 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Operations {
     /// <summary>Provides operations to manage the operations property of the microsoft.graph.ediscovery.case entity.</summary>
     public class OperationsRequestBuilder {
+        /// <summary>The caseExportOperation property</summary>
+        public CaseExportOperationRequestBuilder CaseExportOperation { get =>
+            new CaseExportOperationRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
@@ -104,7 +109,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Operations {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<CaseOperationCollectionResponse> GetAsync(Action<OperationsRequestBuilderGetRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<CaseOperationCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<OperationsRequestBuilderGetRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
@@ -119,7 +124,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Operations {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<CaseOperation> PostAsync(CaseOperation body, Action<OperationsRequestBuilderPostRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<CaseOperation> PostAsync(CaseOperation body, CancellationToken cancellationToken = default, Action<OperationsRequestBuilderPostRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {

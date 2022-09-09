@@ -10,6 +10,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<AuthenticationContextClassReference>>("authenticationContextClassReferences"); }
             set { BackingStore?.Set("authenticationContextClassReferences", value); }
         }
+        /// <summary>The authenticationStrengths property</summary>
+        public AuthenticationStrengthRoot AuthenticationStrengths {
+            get { return BackingStore?.Get<AuthenticationStrengthRoot>("authenticationStrengths"); }
+            set { BackingStore?.Set("authenticationStrengths", value); }
+        }
         /// <summary>Read-only. Nullable. Returns a collection of the specified named locations.</summary>
         public List<NamedLocation> NamedLocations {
             get { return BackingStore?.Get<List<NamedLocation>>("namedLocations"); }
@@ -40,6 +45,7 @@ namespace Microsoft.Graph.Beta.Models {
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"authenticationContextClassReferences", n => { AuthenticationContextClassReferences = n.GetCollectionOfObjectValues<AuthenticationContextClassReference>(AuthenticationContextClassReference.CreateFromDiscriminatorValue).ToList(); } },
+                {"authenticationStrengths", n => { AuthenticationStrengths = n.GetObjectValue<AuthenticationStrengthRoot>(AuthenticationStrengthRoot.CreateFromDiscriminatorValue); } },
                 {"namedLocations", n => { NamedLocations = n.GetCollectionOfObjectValues<NamedLocation>(NamedLocation.CreateFromDiscriminatorValue).ToList(); } },
                 {"policies", n => { Policies = n.GetCollectionOfObjectValues<ConditionalAccessPolicy>(ConditionalAccessPolicy.CreateFromDiscriminatorValue).ToList(); } },
             };
@@ -52,6 +58,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<AuthenticationContextClassReference>("authenticationContextClassReferences", AuthenticationContextClassReferences);
+            writer.WriteObjectValue<AuthenticationStrengthRoot>("authenticationStrengths", AuthenticationStrengths);
             writer.WriteCollectionOfObjectValues<NamedLocation>("namedLocations", NamedLocations);
             writer.WriteCollectionOfObjectValues<ConditionalAccessPolicy>("policies", Policies);
         }

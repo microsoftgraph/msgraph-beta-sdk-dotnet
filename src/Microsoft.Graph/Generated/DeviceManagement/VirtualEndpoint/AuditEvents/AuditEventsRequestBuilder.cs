@@ -105,7 +105,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.AuditEvents {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<CloudPcAuditEventCollectionResponse> GetAsync(Action<AuditEventsRequestBuilderGetRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<CloudPcAuditEventCollectionResponse> GetAsync(CancellationToken cancellationToken = default, Action<AuditEventsRequestBuilderGetRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
@@ -126,7 +126,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.AuditEvents {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<CloudPcAuditEvent> PostAsync(CloudPcAuditEvent body, Action<AuditEventsRequestBuilderPostRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<CloudPcAuditEvent> PostAsync(CloudPcAuditEvent body, CancellationToken cancellationToken = default, Action<AuditEventsRequestBuilderPostRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {

@@ -6,6 +6,7 @@ using Microsoft.Graph.Beta.Policies.AdminConsentRequestPolicy;
 using Microsoft.Graph.Beta.Policies.AppManagementPolicies;
 using Microsoft.Graph.Beta.Policies.AuthenticationFlowsPolicy;
 using Microsoft.Graph.Beta.Policies.AuthenticationMethodsPolicy;
+using Microsoft.Graph.Beta.Policies.AuthenticationStrengthPolicies;
 using Microsoft.Graph.Beta.Policies.AuthorizationPolicy;
 using Microsoft.Graph.Beta.Policies.B2cAuthenticationMethodsPolicy;
 using Microsoft.Graph.Beta.Policies.ClaimsMappingPolicies;
@@ -60,6 +61,10 @@ namespace Microsoft.Graph.Beta.Policies {
         /// <summary>The authenticationMethodsPolicy property</summary>
         public AuthenticationMethodsPolicyRequestBuilder AuthenticationMethodsPolicy { get =>
             new AuthenticationMethodsPolicyRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The authenticationStrengthPolicies property</summary>
+        public AuthenticationStrengthPoliciesRequestBuilder AuthenticationStrengthPolicies { get =>
+            new AuthenticationStrengthPoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The authorizationPolicy property</summary>
         public AuthorizationPolicyRequestBuilder AuthorizationPolicy { get =>
@@ -221,7 +226,7 @@ namespace Microsoft.Graph.Beta.Policies {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<PolicyRoot> GetAsync(Action<PoliciesRequestBuilderGetRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<PolicyRoot> GetAsync(CancellationToken cancellationToken = default, Action<PoliciesRequestBuilderGetRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
@@ -236,7 +241,7 @@ namespace Microsoft.Graph.Beta.Policies {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task PatchAsync(PolicyRoot body, Action<PoliciesRequestBuilderPatchRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task PatchAsync(PolicyRoot body, CancellationToken cancellationToken = default, Action<PoliciesRequestBuilderPatchRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {

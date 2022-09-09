@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>The user experience analytics work from anywhere model performance.</summary>
     public class UserExperienceAnalyticsWorkFromAnywhereModelPerformance : Entity, IParsable {
         /// <summary>The user experience work from anywhere&apos;s cloud identity score for the model. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
         public double? CloudIdentityScore {
@@ -52,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("workFromAnywhereScore", value); }
         }
         /// <summary>
-        /// Instantiates a new userExperienceAnalyticsWorkFromAnywhereModelPerformance and sets the default values.
+        /// Instantiates a new UserExperienceAnalyticsWorkFromAnywhereModelPerformance and sets the default values.
         /// </summary>
         public UserExperienceAnalyticsWorkFromAnywhereModelPerformance() : base() {
             OdataType = "#microsoft.graph.userExperienceAnalyticsWorkFromAnywhereModelPerformance";

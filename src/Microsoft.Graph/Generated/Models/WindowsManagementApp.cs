@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("managedInstallerConfiguredDateTime", value); }
         }
         /// <summary>
-        /// Instantiates a new windowsManagementApp and sets the default values.
+        /// Instantiates a new WindowsManagementApp and sets the default values.
         /// </summary>
         public WindowsManagementApp() : base() {
             OdataType = "#microsoft.graph.windowsManagementApp";

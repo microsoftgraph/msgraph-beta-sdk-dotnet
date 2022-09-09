@@ -31,7 +31,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("statusMessage", value); }
         }
         /// <summary>
-        /// Instantiates a new EducationSynchronizationProfileStatus and sets the default values.
+        /// Instantiates a new educationSynchronizationProfileStatus and sets the default values.
         /// </summary>
         public EducationSynchronizationProfileStatus() : base() {
             OdataType = "#microsoft.graph.educationSynchronizationProfileStatus";
