@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>An abstract class containing the base properties for Intune mobile apps.</summary>
     public class MobileApp : Entity, IParsable {
         /// <summary>The list of group assignments for this mobile app.</summary>
         public List<MobileAppAssignment> Assignments {
@@ -132,7 +133,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("userStatuses", value); }
         }
         /// <summary>
-        /// Instantiates a new MobileApp and sets the default values.
+        /// Instantiates a new mobileApp and sets the default values.
         /// </summary>
         public MobileApp() : base() {
             OdataType = "#microsoft.graph.mobileApp";
@@ -143,8 +144,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static new MobileApp CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValueNode = parseNode.GetChildNode("@odata.type");
-            var mappingValue = mappingValueNode?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch {
                 "#microsoft.graph.androidForWorkApp" => new AndroidForWorkApp(),
                 "#microsoft.graph.androidLobApp" => new AndroidLobApp(),
@@ -191,13 +191,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"assignments", n => { Assignments = n.GetCollectionOfObjectValues<MobileAppAssignment>(MobileAppAssignment.CreateFromDiscriminatorValue).ToList(); } },
-                {"categories", n => { Categories = n.GetCollectionOfObjectValues<MobileAppCategory>(MobileAppCategory.CreateFromDiscriminatorValue).ToList(); } },
+                {"assignments", n => { Assignments = n.GetCollectionOfObjectValues<MobileAppAssignment>(MobileAppAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"categories", n => { Categories = n.GetCollectionOfObjectValues<MobileAppCategory>(MobileAppCategory.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"dependentAppCount", n => { DependentAppCount = n.GetIntValue(); } },
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"developer", n => { Developer = n.GetStringValue(); } },
-                {"deviceStatuses", n => { DeviceStatuses = n.GetCollectionOfObjectValues<MobileAppInstallStatus>(MobileAppInstallStatus.CreateFromDiscriminatorValue).ToList(); } },
+                {"deviceStatuses", n => { DeviceStatuses = n.GetCollectionOfObjectValues<MobileAppInstallStatus>(MobileAppInstallStatus.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"informationUrl", n => { InformationUrl = n.GetStringValue(); } },
                 {"installSummary", n => { InstallSummary = n.GetObjectValue<MobileAppInstallSummary>(MobileAppInstallSummary.CreateFromDiscriminatorValue); } },
@@ -210,12 +210,12 @@ namespace Microsoft.Graph.Beta.Models {
                 {"privacyInformationUrl", n => { PrivacyInformationUrl = n.GetStringValue(); } },
                 {"publisher", n => { Publisher = n.GetStringValue(); } },
                 {"publishingState", n => { PublishingState = n.GetEnumValue<MobileAppPublishingState>(); } },
-                {"relationships", n => { Relationships = n.GetCollectionOfObjectValues<MobileAppRelationship>(MobileAppRelationship.CreateFromDiscriminatorValue).ToList(); } },
-                {"roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"relationships", n => { Relationships = n.GetCollectionOfObjectValues<MobileAppRelationship>(MobileAppRelationship.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"supersededAppCount", n => { SupersededAppCount = n.GetIntValue(); } },
                 {"supersedingAppCount", n => { SupersedingAppCount = n.GetIntValue(); } },
                 {"uploadState", n => { UploadState = n.GetIntValue(); } },
-                {"userStatuses", n => { UserStatuses = n.GetCollectionOfObjectValues<UserAppInstallStatus>(UserAppInstallStatus.CreateFromDiscriminatorValue).ToList(); } },
+                {"userStatuses", n => { UserStatuses = n.GetCollectionOfObjectValues<UserAppInstallStatus>(UserAppInstallStatus.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

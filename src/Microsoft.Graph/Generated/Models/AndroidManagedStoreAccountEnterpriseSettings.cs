@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("targetGroupIds", value); }
         }
         /// <summary>
-        /// Instantiates a new AndroidManagedStoreAccountEnterpriseSettings and sets the default values.
+        /// Instantiates a new androidManagedStoreAccountEnterpriseSettings and sets the default values.
         /// </summary>
         public AndroidManagedStoreAccountEnterpriseSettings() : base() {
             OdataType = "#microsoft.graph.androidManagedStoreAccountEnterpriseSettings";
@@ -86,16 +86,16 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"androidDeviceOwnerFullyManagedEnrollmentEnabled", n => { AndroidDeviceOwnerFullyManagedEnrollmentEnabled = n.GetBoolValue(); } },
                 {"bindStatus", n => { BindStatus = n.GetEnumValue<AndroidManagedStoreAccountBindStatus>(); } },
-                {"companyCodes", n => { CompanyCodes = n.GetCollectionOfObjectValues<AndroidEnrollmentCompanyCode>(AndroidEnrollmentCompanyCode.CreateFromDiscriminatorValue).ToList(); } },
+                {"companyCodes", n => { CompanyCodes = n.GetCollectionOfObjectValues<AndroidEnrollmentCompanyCode>(AndroidEnrollmentCompanyCode.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"deviceOwnerManagementEnabled", n => { DeviceOwnerManagementEnabled = n.GetBoolValue(); } },
                 {"enrollmentTarget", n => { EnrollmentTarget = n.GetEnumValue<AndroidManagedStoreAccountEnrollmentTarget>(); } },
                 {"lastAppSyncDateTime", n => { LastAppSyncDateTime = n.GetDateTimeOffsetValue(); } },
                 {"lastAppSyncStatus", n => { LastAppSyncStatus = n.GetEnumValue<AndroidManagedStoreAccountAppSyncStatus>(); } },
                 {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"managedGooglePlayInitialScopeTagIds", n => { ManagedGooglePlayInitialScopeTagIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"managedGooglePlayInitialScopeTagIds", n => { ManagedGooglePlayInitialScopeTagIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"ownerOrganizationName", n => { OwnerOrganizationName = n.GetStringValue(); } },
                 {"ownerUserPrincipalName", n => { OwnerUserPrincipalName = n.GetStringValue(); } },
-                {"targetGroupIds", n => { TargetGroupIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"targetGroupIds", n => { TargetGroupIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

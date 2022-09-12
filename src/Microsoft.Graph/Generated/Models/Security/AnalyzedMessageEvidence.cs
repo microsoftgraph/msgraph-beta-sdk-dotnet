@@ -127,10 +127,10 @@ namespace Microsoft.Graph.Beta.Models.Security {
                 {"recipientEmailAddress", n => { RecipientEmailAddress = n.GetStringValue(); } },
                 {"senderIp", n => { SenderIp = n.GetStringValue(); } },
                 {"subject", n => { Subject = n.GetStringValue(); } },
-                {"threatDetectionMethods", n => { ThreatDetectionMethods = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"threats", n => { Threats = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"threatDetectionMethods", n => { ThreatDetectionMethods = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"threats", n => { Threats = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"urlCount", n => { UrlCount = n.GetLongValue(); } },
-                {"urls", n => { Urls = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"urls", n => { Urls = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"urn", n => { Urn = n.GetStringValue(); } },
             };
         }

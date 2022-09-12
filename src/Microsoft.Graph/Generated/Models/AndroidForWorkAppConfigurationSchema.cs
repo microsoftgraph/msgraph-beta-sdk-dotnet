@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.Models {
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"exampleJson", n => { ExampleJson = n.GetByteArrayValue(); } },
-                {"schemaItems", n => { SchemaItems = n.GetCollectionOfObjectValues<AndroidForWorkAppConfigurationSchemaItem>(AndroidForWorkAppConfigurationSchemaItem.CreateFromDiscriminatorValue).ToList(); } },
+                {"schemaItems", n => { SchemaItems = n.GetCollectionOfObjectValues<AndroidForWorkAppConfigurationSchemaItem>(AndroidForWorkAppConfigurationSchemaItem.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

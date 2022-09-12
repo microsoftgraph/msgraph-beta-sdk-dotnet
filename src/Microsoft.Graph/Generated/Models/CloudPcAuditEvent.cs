@@ -89,7 +89,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"componentName", n => { ComponentName = n.GetStringValue(); } },
                 {"correlationId", n => { CorrelationId = n.GetStringValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"resources", n => { Resources = n.GetCollectionOfObjectValues<CloudPcAuditResource>(CloudPcAuditResource.CreateFromDiscriminatorValue).ToList(); } },
+                {"resources", n => { Resources = n.GetCollectionOfObjectValues<CloudPcAuditResource>(CloudPcAuditResource.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

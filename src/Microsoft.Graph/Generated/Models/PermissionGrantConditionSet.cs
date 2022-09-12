@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Casts the previous resource to application.</summary>
     public class PermissionGrantConditionSet : Entity, IParsable {
         /// <summary>Set to true to only match on client applications that are Microsoft 365 certified. Set to false to match on any other client app. Default is false.</summary>
         public bool? CertifiedClientApplicationsOnly {
@@ -71,12 +71,12 @@ namespace Microsoft.Graph.Beta.Models {
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"certifiedClientApplicationsOnly", n => { CertifiedClientApplicationsOnly = n.GetBoolValue(); } },
-                {"clientApplicationIds", n => { ClientApplicationIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"clientApplicationPublisherIds", n => { ClientApplicationPublisherIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"clientApplicationIds", n => { ClientApplicationIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"clientApplicationPublisherIds", n => { ClientApplicationPublisherIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"clientApplicationsFromVerifiedPublisherOnly", n => { ClientApplicationsFromVerifiedPublisherOnly = n.GetBoolValue(); } },
-                {"clientApplicationTenantIds", n => { ClientApplicationTenantIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"clientApplicationTenantIds", n => { ClientApplicationTenantIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"permissionClassification", n => { PermissionClassification = n.GetStringValue(); } },
-                {"permissions", n => { Permissions = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"permissions", n => { Permissions = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"permissionType", n => { PermissionType = n.GetEnumValue<PermissionType>(); } },
                 {"resourceApplication", n => { ResourceApplication = n.GetStringValue(); } },
             };

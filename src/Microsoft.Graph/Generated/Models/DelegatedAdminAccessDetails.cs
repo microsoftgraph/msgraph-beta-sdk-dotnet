@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"unifiedRoles", n => { UnifiedRoles = n.GetCollectionOfObjectValues<UnifiedRole>(UnifiedRole.CreateFromDiscriminatorValue).ToList(); } },
+                {"unifiedRoles", n => { UnifiedRoles = n.GetCollectionOfObjectValues<UnifiedRole>(UnifiedRole.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

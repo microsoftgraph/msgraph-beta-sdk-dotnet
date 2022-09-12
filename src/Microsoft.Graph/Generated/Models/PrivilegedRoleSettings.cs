@@ -75,7 +75,7 @@ namespace Microsoft.Graph.Beta.Models {
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"approvalOnElevation", n => { ApprovalOnElevation = n.GetBoolValue(); } },
-                {"approverIds", n => { ApproverIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"approverIds", n => { ApproverIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"elevationDuration", n => { ElevationDuration = n.GetTimeSpanValue(); } },
                 {"isMfaOnElevationConfigurable", n => { IsMfaOnElevationConfigurable = n.GetBoolValue(); } },
                 {"lastGlobalAdmin", n => { LastGlobalAdmin = n.GetBoolValue(); } },

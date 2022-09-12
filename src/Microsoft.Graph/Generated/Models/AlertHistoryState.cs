@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"appId", n => { AppId = n.GetStringValue(); } },
                 {"assignedTo", n => { AssignedTo = n.GetStringValue(); } },
-                {"comments", n => { Comments = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"comments", n => { Comments = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"feedback", n => { Feedback = n.GetEnumValue<AlertFeedback>(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"status", n => { Status = n.GetEnumValue<AlertStatus>(); } },

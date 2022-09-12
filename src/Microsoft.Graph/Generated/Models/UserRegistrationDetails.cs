@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class UserRegistrationDetails : Entity, IParsable {
         /// <summary>The method the user or admin selected as default for performing multi-factor authentication for the user. The possible values are: none, mobilePhone, alternateMobilePhone, officePhone, microsoftAuthenticatorPush, softwareOneTimePasscode, unknownFutureValue.</summary>
         public DefaultMfaMethodType? DefaultMfaMethod {
@@ -93,7 +93,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"isSsprCapable", n => { IsSsprCapable = n.GetBoolValue(); } },
                 {"isSsprEnabled", n => { IsSsprEnabled = n.GetBoolValue(); } },
                 {"isSsprRegistered", n => { IsSsprRegistered = n.GetBoolValue(); } },
-                {"methodsRegistered", n => { MethodsRegistered = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"methodsRegistered", n => { MethodsRegistered = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"userDisplayName", n => { UserDisplayName = n.GetStringValue(); } },
                 {"userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
                 {"userType", n => { UserType = n.GetEnumValue<SignInUserType>(); } },

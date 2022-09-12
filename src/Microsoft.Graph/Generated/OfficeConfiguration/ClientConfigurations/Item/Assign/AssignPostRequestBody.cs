@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Beta.OfficeConfiguration.ClientConfigurations.Item.Ass
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"officeConfigurationAssignments", n => { OfficeConfigurationAssignments = n.GetCollectionOfObjectValues<OfficeClientConfigurationAssignment>(OfficeClientConfigurationAssignment.CreateFromDiscriminatorValue).ToList(); } },
+                {"officeConfigurationAssignments", n => { OfficeConfigurationAssignments = n.GetCollectionOfObjectValues<OfficeClientConfigurationAssignment>(OfficeClientConfigurationAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

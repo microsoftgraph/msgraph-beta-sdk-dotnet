@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"color", n => { Color = n.GetStringValue(); } },
-                {"contentFormats", n => { ContentFormats = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"contentFormats", n => { ContentFormats = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"hasProtection", n => { HasProtection = n.GetBoolValue(); } },
                 {"isActive", n => { IsActive = n.GetBoolValue(); } },

@@ -161,7 +161,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"dpi", n => { Dpi = n.GetIntValue(); } },
                 {"duplexConfiguration", n => { DuplexConfiguration = n.GetEnumValue<PrintDuplexConfiguration>(); } },
                 {"duplexMode", n => { DuplexMode = n.GetEnumValue<PrintDuplexMode>(); } },
-                {"finishings", n => { Finishings = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"finishings", n => { Finishings = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"fitPdfToPage", n => { FitPdfToPage = n.GetBoolValue(); } },
                 {"inputBin", n => { InputBin = n.GetStringValue(); } },
                 {"mediaColor", n => { MediaColor = n.GetStringValue(); } },

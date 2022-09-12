@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Represents a particular service offered by a booking business.</summary>
     public class BookingService : BookingNamedEntity, IParsable {
         /// <summary>Additional information that is sent to the customer when an appointment is confirmed.</summary>
         public string AdditionalInformation {
@@ -106,7 +107,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("webUrl", value); }
         }
         /// <summary>
-        /// Instantiates a new BookingService and sets the default values.
+        /// Instantiates a new bookingService and sets the default values.
         /// </summary>
         public BookingService() : base() {
             OdataType = "#microsoft.graph.bookingService";
@@ -125,12 +126,12 @@ namespace Microsoft.Graph.Beta.Models {
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"additionalInformation", n => { AdditionalInformation = n.GetStringValue(); } },
-                {"customQuestions", n => { CustomQuestions = n.GetCollectionOfObjectValues<BookingQuestionAssignment>(BookingQuestionAssignment.CreateFromDiscriminatorValue).ToList(); } },
+                {"customQuestions", n => { CustomQuestions = n.GetCollectionOfObjectValues<BookingQuestionAssignment>(BookingQuestionAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"defaultDuration", n => { DefaultDuration = n.GetTimeSpanValue(); } },
                 {"defaultLocation", n => { DefaultLocation = n.GetObjectValue<Location>(Location.CreateFromDiscriminatorValue); } },
                 {"defaultPrice", n => { DefaultPrice = n.GetDoubleValue(); } },
                 {"defaultPriceType", n => { DefaultPriceType = n.GetEnumValue<BookingPriceType>(); } },
-                {"defaultReminders", n => { DefaultReminders = n.GetCollectionOfObjectValues<BookingReminder>(BookingReminder.CreateFromDiscriminatorValue).ToList(); } },
+                {"defaultReminders", n => { DefaultReminders = n.GetCollectionOfObjectValues<BookingReminder>(BookingReminder.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"isAnonymousJoinEnabled", n => { IsAnonymousJoinEnabled = n.GetBoolValue(); } },
                 {"isHiddenFromCustomers", n => { IsHiddenFromCustomers = n.GetBoolValue(); } },
@@ -142,7 +143,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"preBuffer", n => { PreBuffer = n.GetTimeSpanValue(); } },
                 {"schedulingPolicy", n => { SchedulingPolicy = n.GetObjectValue<BookingSchedulingPolicy>(BookingSchedulingPolicy.CreateFromDiscriminatorValue); } },
                 {"smsNotificationsEnabled", n => { SmsNotificationsEnabled = n.GetBoolValue(); } },
-                {"staffMemberIds", n => { StaffMemberIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"staffMemberIds", n => { StaffMemberIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"webUrl", n => { WebUrl = n.GetStringValue(); } },
             };
         }

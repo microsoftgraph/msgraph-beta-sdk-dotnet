@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"appliedPolicies", n => { AppliedPolicies = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"appliedPolicies", n => { AppliedPolicies = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"checkinDateTime", n => { CheckinDateTime = n.GetDateTimeOffsetValue(); } },
                 {"deviceName", n => { DeviceName = n.GetStringValue(); } },
                 {"devicePlatform", n => { DevicePlatform = n.GetStringValue(); } },

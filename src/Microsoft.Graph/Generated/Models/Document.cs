@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"comments", n => { Comments = n.GetCollectionOfObjectValues<DocumentComment>(DocumentComment.CreateFromDiscriminatorValue).ToList(); } },
+                {"comments", n => { Comments = n.GetCollectionOfObjectValues<DocumentComment>(DocumentComment.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Beta.Print.Reports.GetOffice365GroupsActivityStorageWi
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<Office365GroupsActivityStorage>(Office365GroupsActivityStorage.CreateFromDiscriminatorValue).ToList(); } },
+                {"value", n => { Value = n.GetCollectionOfObjectValues<Office365GroupsActivityStorage>(Office365GroupsActivityStorage.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

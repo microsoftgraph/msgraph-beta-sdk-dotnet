@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"featureUsageDetails", n => { FeatureUsageDetails = n.GetCollectionOfObjectValues<FeatureUsageDetail>(FeatureUsageDetail.CreateFromDiscriminatorValue).ToList(); } },
+                {"featureUsageDetails", n => { FeatureUsageDetails = n.GetCollectionOfObjectValues<FeatureUsageDetail>(FeatureUsageDetail.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"lastUpdatedDateTime", n => { LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"licenseAssigned", n => { LicenseAssigned = n.GetEnumValue<AzureADLicenseType>(); } },
                 {"licenseRecommended", n => { LicenseRecommended = n.GetEnumValue<AzureADLicenseType>(); } },

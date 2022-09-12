@@ -65,13 +65,13 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"contributingPolicies", n => { ContributingPolicies = n.GetCollectionOfObjectValues<SecurityBaselineContributingPolicy>(SecurityBaselineContributingPolicy.CreateFromDiscriminatorValue).ToList(); } },
+                {"contributingPolicies", n => { ContributingPolicies = n.GetCollectionOfObjectValues<SecurityBaselineContributingPolicy>(SecurityBaselineContributingPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"errorCode", n => { ErrorCode = n.GetStringValue(); } },
                 {"settingCategoryId", n => { SettingCategoryId = n.GetStringValue(); } },
                 {"settingCategoryName", n => { SettingCategoryName = n.GetStringValue(); } },
                 {"settingId", n => { SettingId = n.GetStringValue(); } },
                 {"settingName", n => { SettingName = n.GetStringValue(); } },
-                {"sourcePolicies", n => { SourcePolicies = n.GetCollectionOfObjectValues<SettingSource>(SettingSource.CreateFromDiscriminatorValue).ToList(); } },
+                {"sourcePolicies", n => { SourcePolicies = n.GetCollectionOfObjectValues<SettingSource>(SettingSource.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"state", n => { State = n.GetEnumValue<SecurityBaselineComplianceState>(); } },
             };
         }

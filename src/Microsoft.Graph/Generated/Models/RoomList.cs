@@ -40,8 +40,8 @@ namespace Microsoft.Graph.Beta.Models {
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"emailAddress", n => { EmailAddress = n.GetStringValue(); } },
-                {"rooms", n => { Rooms = n.GetCollectionOfObjectValues<Room>(Room.CreateFromDiscriminatorValue).ToList(); } },
-                {"workspaces", n => { Workspaces = n.GetCollectionOfObjectValues<Workspace>(Workspace.CreateFromDiscriminatorValue).ToList(); } },
+                {"rooms", n => { Rooms = n.GetCollectionOfObjectValues<Room>(Room.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"workspaces", n => { Workspaces = n.GetCollectionOfObjectValues<Workspace>(Workspace.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

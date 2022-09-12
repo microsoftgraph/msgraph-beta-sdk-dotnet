@@ -126,9 +126,9 @@ namespace Microsoft.Graph.Beta.Models {
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"admxSettingDefinitionId", n => { AdmxSettingDefinitionId = n.GetStringValue(); } },
-                {"childIdList", n => { ChildIdList = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"childIdList", n => { ChildIdList = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"intuneSettingDefinitionId", n => { IntuneSettingDefinitionId = n.GetStringValue(); } },
-                {"intuneSettingUriList", n => { IntuneSettingUriList = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"intuneSettingUriList", n => { IntuneSettingUriList = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"isMdmSupported", n => { IsMdmSupported = n.GetBoolValue(); } },
                 {"mdmCspName", n => { MdmCspName = n.GetStringValue(); } },
                 {"mdmMinimumOSVersion", n => { MdmMinimumOSVersion = n.GetIntValue(); } },

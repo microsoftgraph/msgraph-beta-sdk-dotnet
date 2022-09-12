@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class SecureScoreControlProfile : Entity, IParsable {
         /// <summary>Control action type (Config, Review, Behavior).</summary>
         public string ActionType {
@@ -101,7 +102,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("vendorInformation", value); }
         }
         /// <summary>
-        /// Instantiates a new SecureScoreControlProfile and sets the default values.
+        /// Instantiates a new secureScoreControlProfile and sets the default values.
         /// </summary>
         public SecureScoreControlProfile() : base() {
             OdataType = "#microsoft.graph.secureScoreControlProfile";
@@ -122,9 +123,9 @@ namespace Microsoft.Graph.Beta.Models {
                 {"actionType", n => { ActionType = n.GetStringValue(); } },
                 {"actionUrl", n => { ActionUrl = n.GetStringValue(); } },
                 {"azureTenantId", n => { AzureTenantId = n.GetStringValue(); } },
-                {"complianceInformation", n => { ComplianceInformation = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ComplianceInformation>(Microsoft.Graph.Beta.Models.ComplianceInformation.CreateFromDiscriminatorValue).ToList(); } },
+                {"complianceInformation", n => { ComplianceInformation = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ComplianceInformation>(Microsoft.Graph.Beta.Models.ComplianceInformation.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"controlCategory", n => { ControlCategory = n.GetStringValue(); } },
-                {"controlStateUpdates", n => { ControlStateUpdates = n.GetCollectionOfObjectValues<SecureScoreControlStateUpdate>(SecureScoreControlStateUpdate.CreateFromDiscriminatorValue).ToList(); } },
+                {"controlStateUpdates", n => { ControlStateUpdates = n.GetCollectionOfObjectValues<SecureScoreControlStateUpdate>(SecureScoreControlStateUpdate.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"deprecated", n => { Deprecated = n.GetBoolValue(); } },
                 {"implementationCost", n => { ImplementationCost = n.GetStringValue(); } },
                 {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
@@ -133,7 +134,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"remediation", n => { Remediation = n.GetStringValue(); } },
                 {"remediationImpact", n => { RemediationImpact = n.GetStringValue(); } },
                 {"service", n => { Service = n.GetStringValue(); } },
-                {"threats", n => { Threats = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"threats", n => { Threats = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"tier", n => { Tier = n.GetStringValue(); } },
                 {"title", n => { Title = n.GetStringValue(); } },
                 {"userImpact", n => { UserImpact = n.GetStringValue(); } },

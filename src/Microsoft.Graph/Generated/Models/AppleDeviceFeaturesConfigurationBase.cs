@@ -23,8 +23,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static new AppleDeviceFeaturesConfigurationBase CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValueNode = parseNode.GetChildNode("@odata.type");
-            var mappingValue = mappingValueNode?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch {
                 "#microsoft.graph.iosDeviceFeaturesConfiguration" => new IosDeviceFeaturesConfiguration(),
                 "#microsoft.graph.macOSDeviceFeaturesConfiguration" => new MacOSDeviceFeaturesConfiguration(),
@@ -36,7 +35,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"airPrintDestinations", n => { AirPrintDestinations = n.GetCollectionOfObjectValues<AirPrintDestination>(AirPrintDestination.CreateFromDiscriminatorValue).ToList(); } },
+                {"airPrintDestinations", n => { AirPrintDestinations = n.GetCollectionOfObjectValues<AirPrintDestination>(AirPrintDestination.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

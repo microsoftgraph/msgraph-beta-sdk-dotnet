@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GetRelatedApp
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<MobileAppRelationshipState>(MobileAppRelationshipState.CreateFromDiscriminatorValue).ToList(); } },
+                {"value", n => { Value = n.GetCollectionOfObjectValues<MobileAppRelationshipState>(MobileAppRelationshipState.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

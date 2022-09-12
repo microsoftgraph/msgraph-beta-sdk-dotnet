@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"guidedContentId", n => { GuidedContentId = n.GetStringValue(); } },
                 {"logoInfo", n => { LogoInfo = n.GetObjectValue<OrganizationalMessageLogo>(OrganizationalMessageLogo.CreateFromDiscriminatorValue); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"placementDetails", n => { PlacementDetails = n.GetCollectionOfObjectValues<OrganizationalMessagePlacementDetail>(OrganizationalMessagePlacementDetail.CreateFromDiscriminatorValue).ToList(); } },
+                {"placementDetails", n => { PlacementDetails = n.GetCollectionOfObjectValues<OrganizationalMessagePlacementDetail>(OrganizationalMessagePlacementDetail.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

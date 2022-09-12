@@ -73,7 +73,7 @@ namespace Microsoft.Graph.Beta.Drive.Items.Item.CreateLink {
                 {"expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
                 {"message", n => { Message = n.GetStringValue(); } },
                 {"password", n => { Password = n.GetStringValue(); } },
-                {"recipients", n => { Recipients = n.GetCollectionOfObjectValues<DriveRecipient>(DriveRecipient.CreateFromDiscriminatorValue).ToList(); } },
+                {"recipients", n => { Recipients = n.GetCollectionOfObjectValues<DriveRecipient>(DriveRecipient.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"retainInheritedPermissions", n => { RetainInheritedPermissions = n.GetBoolValue(); } },
                 {"scope", n => { Scope = n.GetStringValue(); } },
                 {"type", n => { Type = n.GetStringValue(); } },

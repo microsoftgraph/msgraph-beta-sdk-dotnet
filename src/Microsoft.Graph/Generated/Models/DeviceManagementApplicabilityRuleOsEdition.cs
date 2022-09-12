@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"name", n => { Name = n.GetStringValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"osEditionTypes", n => { OsEditionTypes = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"osEditionTypes", n => { OsEditionTypes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"ruleType", n => { RuleType = n.GetEnumValue<DeviceManagementApplicabilityRuleType>(); } },
             };
         }

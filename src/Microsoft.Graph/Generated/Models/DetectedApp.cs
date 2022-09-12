@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"deviceCount", n => { DeviceCount = n.GetIntValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"managedDevices", n => { ManagedDevices = n.GetCollectionOfObjectValues<ManagedDevice>(ManagedDevice.CreateFromDiscriminatorValue).ToList(); } },
+                {"managedDevices", n => { ManagedDevices = n.GetCollectionOfObjectValues<ManagedDevice>(ManagedDevice.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"platform", n => { Platform = n.GetEnumValue<DetectedAppPlatformType>(); } },
                 {"publisher", n => { Publisher = n.GetStringValue(); } },
                 {"sizeInByte", n => { SizeInByte = n.GetLongValue(); } },

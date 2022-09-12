@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class HostSecurityProfile : Entity, IParsable {
         /// <summary>The azureSubscriptionId property</summary>
         public string AzureSubscriptionId {
@@ -96,7 +97,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("vendorInformation", value); }
         }
         /// <summary>
-        /// Instantiates a new HostSecurityProfile and sets the default values.
+        /// Instantiates a new hostSecurityProfile and sets the default values.
         /// </summary>
         public HostSecurityProfile() : base() {
             OdataType = "#microsoft.graph.hostSecurityProfile";
@@ -122,15 +123,15 @@ namespace Microsoft.Graph.Beta.Models {
                 {"isAzureAdRegistered", n => { IsAzureAdRegistered = n.GetBoolValue(); } },
                 {"isHybridAzureDomainJoined", n => { IsHybridAzureDomainJoined = n.GetBoolValue(); } },
                 {"lastSeenDateTime", n => { LastSeenDateTime = n.GetDateTimeOffsetValue(); } },
-                {"logonUsers", n => { LogonUsers = n.GetCollectionOfObjectValues<LogonUser>(LogonUser.CreateFromDiscriminatorValue).ToList(); } },
+                {"logonUsers", n => { LogonUsers = n.GetCollectionOfObjectValues<LogonUser>(LogonUser.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"netBiosName", n => { NetBiosName = n.GetStringValue(); } },
-                {"networkInterfaces", n => { NetworkInterfaces = n.GetCollectionOfObjectValues<NetworkInterface>(NetworkInterface.CreateFromDiscriminatorValue).ToList(); } },
+                {"networkInterfaces", n => { NetworkInterfaces = n.GetCollectionOfObjectValues<NetworkInterface>(NetworkInterface.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"os", n => { Os = n.GetStringValue(); } },
                 {"osVersion", n => { OsVersion = n.GetStringValue(); } },
                 {"parentHost", n => { ParentHost = n.GetStringValue(); } },
-                {"relatedHostIds", n => { RelatedHostIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"relatedHostIds", n => { RelatedHostIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"riskScore", n => { RiskScore = n.GetStringValue(); } },
-                {"tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"vendorInformation", n => { VendorInformation = n.GetObjectValue<SecurityVendorInformation>(SecurityVendorInformation.CreateFromDiscriminatorValue); } },
             };
         }

@@ -65,8 +65,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"allowedAppsList", n => { AllowedAppsList = n.GetCollectionOfObjectValues<AppListItem>(AppListItem.CreateFromDiscriminatorValue).ToList(); } },
-                {"allowedUrls", n => { AllowedUrls = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"allowedAppsList", n => { AllowedAppsList = n.GetCollectionOfObjectValues<AppListItem>(AppListItem.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"allowedUrls", n => { AllowedUrls = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"kerberosPrincipalName", n => { KerberosPrincipalName = n.GetStringValue(); } },
                 {"kerberosRealm", n => { KerberosRealm = n.GetStringValue(); } },

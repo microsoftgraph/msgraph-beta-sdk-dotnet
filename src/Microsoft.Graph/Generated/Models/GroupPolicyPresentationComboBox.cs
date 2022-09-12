@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"defaultValue", n => { DefaultValue = n.GetStringValue(); } },
                 {"maxLength", n => { MaxLength = n.GetLongValue(); } },
                 {"required", n => { Required = n.GetBoolValue(); } },
-                {"suggestions", n => { Suggestions = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"suggestions", n => { Suggestions = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

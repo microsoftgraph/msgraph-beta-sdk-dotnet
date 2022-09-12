@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.PlayPrompt {
             return new Dictionary<string, Action<IParseNode>> {
                 {"clientContext", n => { ClientContext = n.GetStringValue(); } },
                 {"loop", n => { Loop = n.GetBoolValue(); } },
-                {"prompts", n => { Prompts = n.GetCollectionOfObjectValues<Prompt>(Prompt.CreateFromDiscriminatorValue).ToList(); } },
+                {"prompts", n => { Prompts = n.GetCollectionOfObjectValues<Prompt>(Prompt.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

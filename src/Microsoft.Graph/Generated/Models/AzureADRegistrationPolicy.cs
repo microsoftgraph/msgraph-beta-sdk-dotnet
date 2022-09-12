@@ -59,8 +59,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"allowedGroups", n => { AllowedGroups = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"allowedUsers", n => { AllowedUsers = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"allowedGroups", n => { AllowedGroups = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"allowedUsers", n => { AllowedUsers = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"appliesTo", n => { AppliesTo = n.GetEnumValue<PolicyScope>(); } },
                 {"isAdminConfigurable", n => { IsAdminConfigurable = n.GetBoolValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },

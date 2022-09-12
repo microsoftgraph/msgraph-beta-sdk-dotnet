@@ -69,8 +69,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static new PrinterBase CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValueNode = parseNode.GetChildNode("@odata.type");
-            var mappingValue = mappingValueNode?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch {
                 "#microsoft.graph.printer" => new Printer(),
                 "#microsoft.graph.printerShare" => new PrinterShare(),
@@ -86,7 +85,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"defaults", n => { Defaults = n.GetObjectValue<PrinterDefaults>(PrinterDefaults.CreateFromDiscriminatorValue); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"isAcceptingJobs", n => { IsAcceptingJobs = n.GetBoolValue(); } },
-                {"jobs", n => { Jobs = n.GetCollectionOfObjectValues<PrintJob>(PrintJob.CreateFromDiscriminatorValue).ToList(); } },
+                {"jobs", n => { Jobs = n.GetCollectionOfObjectValues<PrintJob>(PrintJob.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"location", n => { Location = n.GetObjectValue<PrinterLocation>(PrinterLocation.CreateFromDiscriminatorValue); } },
                 {"manufacturer", n => { Manufacturer = n.GetStringValue(); } },
                 {"model", n => { Model = n.GetStringValue(); } },

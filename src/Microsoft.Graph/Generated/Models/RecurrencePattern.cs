@@ -75,7 +75,7 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"dayOfMonth", n => { DayOfMonth = n.GetIntValue(); } },
-                {"daysOfWeek", n => { DaysOfWeek = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"daysOfWeek", n => { DaysOfWeek = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"firstDayOfWeek", n => { FirstDayOfWeek = n.GetEnumValue<DayOfWeek>(); } },
                 {"index", n => { Index = n.GetEnumValue<WeekIndex>(); } },
                 {"interval", n => { Interval = n.GetIntValue(); } },

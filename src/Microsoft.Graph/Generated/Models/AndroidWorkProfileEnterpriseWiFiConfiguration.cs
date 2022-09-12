@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"proxyAutomaticConfigurationUrl", n => { ProxyAutomaticConfigurationUrl = n.GetStringValue(); } },
                 {"proxySettings", n => { ProxySettings = n.GetEnumValue<WiFiProxySetting>(); } },
                 {"rootCertificateForServerValidation", n => { RootCertificateForServerValidation = n.GetObjectValue<AndroidWorkProfileTrustedRootCertificate>(AndroidWorkProfileTrustedRootCertificate.CreateFromDiscriminatorValue); } },
-                {"trustedServerCertificateNames", n => { TrustedServerCertificateNames = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"trustedServerCertificateNames", n => { TrustedServerCertificateNames = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class TaskDefinition : Entity, IParsable {
         /// <summary>The category property</summary>
         public LifecycleTaskCategory? Category {
@@ -36,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
             set { BackingStore?.Set("version", value); }
         }
         /// <summary>
-        /// Instantiates a new TaskDefinition and sets the default values.
+        /// Instantiates a new taskDefinition and sets the default values.
         /// </summary>
         public TaskDefinition() : base() {
             OdataType = "#microsoft.graph.identityGovernance.taskDefinition";
@@ -58,7 +59,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
                 {"continueOnError", n => { ContinueOnError = n.GetBoolValue(); } },
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"parameters", n => { Parameters = n.GetCollectionOfObjectValues<Parameter>(Parameter.CreateFromDiscriminatorValue).ToList(); } },
+                {"parameters", n => { Parameters = n.GetCollectionOfObjectValues<Parameter>(Parameter.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"version", n => { Version = n.GetIntValue(); } },
             };
         }

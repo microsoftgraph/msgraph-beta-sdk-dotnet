@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Models {
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"allowAccessToDownloadsFolder", n => { AllowAccessToDownloadsFolder = n.GetBoolValue(); } },
-                {"apps", n => { Apps = n.GetCollectionOfObjectValues<WindowsKioskAppBase>(WindowsKioskAppBase.CreateFromDiscriminatorValue).ToList(); } },
+                {"apps", n => { Apps = n.GetCollectionOfObjectValues<WindowsKioskAppBase>(WindowsKioskAppBase.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"disallowDesktopApps", n => { DisallowDesktopApps = n.GetBoolValue(); } },
                 {"showTaskBar", n => { ShowTaskBar = n.GetBoolValue(); } },
                 {"startMenuLayoutXml", n => { StartMenuLayoutXml = n.GetByteArrayValue(); } },

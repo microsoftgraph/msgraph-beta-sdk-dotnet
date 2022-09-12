@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"allowedOptions", n => { AllowedOptions = n.GetCollectionOfObjectValues<DeviceManagementConfigurationOptionDefinitionTemplate>(DeviceManagementConfigurationOptionDefinitionTemplate.CreateFromDiscriminatorValue).ToList(); } },
+                {"allowedOptions", n => { AllowedOptions = n.GetCollectionOfObjectValues<DeviceManagementConfigurationOptionDefinitionTemplate>(DeviceManagementConfigurationOptionDefinitionTemplate.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }

@@ -53,8 +53,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static new AndroidWorkProfileCertificateProfileBase CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValueNode = parseNode.GetChildNode("@odata.type");
-            var mappingValue = mappingValueNode?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch {
                 "#microsoft.graph.androidWorkProfilePkcsCertificateProfile" => new AndroidWorkProfilePkcsCertificateProfile(),
                 "#microsoft.graph.androidWorkProfileScepCertificateProfile" => new AndroidWorkProfileScepCertificateProfile(),
@@ -68,7 +67,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"certificateValidityPeriodScale", n => { CertificateValidityPeriodScale = n.GetEnumValue<CertificateValidityPeriodScale>(); } },
                 {"certificateValidityPeriodValue", n => { CertificateValidityPeriodValue = n.GetIntValue(); } },
-                {"extendedKeyUsages", n => { ExtendedKeyUsages = n.GetCollectionOfObjectValues<ExtendedKeyUsage>(ExtendedKeyUsage.CreateFromDiscriminatorValue).ToList(); } },
+                {"extendedKeyUsages", n => { ExtendedKeyUsages = n.GetCollectionOfObjectValues<ExtendedKeyUsage>(ExtendedKeyUsage.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"renewalThresholdPercentage", n => { RenewalThresholdPercentage = n.GetIntValue(); } },
                 {"rootCertificate", n => { RootCertificate = n.GetObjectValue<AndroidWorkProfileTrustedRootCertificate>(AndroidWorkProfileTrustedRootCertificate.CreateFromDiscriminatorValue); } },
                 {"subjectAlternativeNameType", n => { SubjectAlternativeNameType = n.GetEnumValue<SubjectAlternativeNameType>(); } },

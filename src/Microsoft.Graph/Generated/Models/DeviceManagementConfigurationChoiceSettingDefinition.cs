@@ -28,8 +28,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static new DeviceManagementConfigurationChoiceSettingDefinition CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValueNode = parseNode.GetChildNode("@odata.type");
-            var mappingValue = mappingValueNode?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch {
                 "#microsoft.graph.deviceManagementConfigurationChoiceSettingCollectionDefinition" => new DeviceManagementConfigurationChoiceSettingCollectionDefinition(),
                 _ => new DeviceManagementConfigurationChoiceSettingDefinition(),
@@ -41,7 +40,7 @@ namespace Microsoft.Graph.Beta.Models {
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"defaultOptionId", n => { DefaultOptionId = n.GetStringValue(); } },
-                {"options", n => { Options = n.GetCollectionOfObjectValues<DeviceManagementConfigurationOptionDefinition>(DeviceManagementConfigurationOptionDefinition.CreateFromDiscriminatorValue).ToList(); } },
+                {"options", n => { Options = n.GetCollectionOfObjectValues<DeviceManagementConfigurationOptionDefinition>(DeviceManagementConfigurationOptionDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

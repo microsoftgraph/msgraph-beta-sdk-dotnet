@@ -72,9 +72,9 @@ namespace Microsoft.Graph.Beta.Models {
                 {"conferenceId", n => { ConferenceId = n.GetStringValue(); } },
                 {"joinUrl", n => { JoinUrl = n.GetStringValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"phones", n => { Phones = n.GetCollectionOfObjectValues<Phone>(Phone.CreateFromDiscriminatorValue).ToList(); } },
+                {"phones", n => { Phones = n.GetCollectionOfObjectValues<Phone>(Phone.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"quickDial", n => { QuickDial = n.GetStringValue(); } },
-                {"tollFreeNumbers", n => { TollFreeNumbers = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"tollFreeNumbers", n => { TollFreeNumbers = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"tollNumber", n => { TollNumber = n.GetStringValue(); } },
             };
         }

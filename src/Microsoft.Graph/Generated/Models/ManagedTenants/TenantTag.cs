@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class TenantTag : Entity, IParsable {
         /// <summary>The identifier for the account that created the tenant tag. Required. Read-only.</summary>
         public string CreatedByUserId {
@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"lastActionByUserId", n => { LastActionByUserId = n.GetStringValue(); } },
                 {"lastActionDateTime", n => { LastActionDateTime = n.GetDateTimeOffsetValue(); } },
-                {"tenants", n => { Tenants = n.GetCollectionOfObjectValues<TenantInfo>(TenantInfo.CreateFromDiscriminatorValue).ToList(); } },
+                {"tenants", n => { Tenants = n.GetCollectionOfObjectValues<TenantInfo>(TenantInfo.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

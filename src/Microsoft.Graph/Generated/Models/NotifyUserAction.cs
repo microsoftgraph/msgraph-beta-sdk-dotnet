@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"emailText", n => { EmailText = n.GetStringValue(); } },
                 {"overrideOption", n => { OverrideOption = n.GetEnumValue<OverrideOption>(); } },
                 {"policyTip", n => { PolicyTip = n.GetStringValue(); } },
-                {"recipients", n => { Recipients = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"recipients", n => { Recipients = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

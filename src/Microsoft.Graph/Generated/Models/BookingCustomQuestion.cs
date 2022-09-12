@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Represents a custom question of the business.</summary>
     public class BookingCustomQuestion : Entity, IParsable {
         /// <summary>The expected answer type. The possible values are: text, radioButton, unknownFutureValue.</summary>
         public Microsoft.Graph.Beta.Models.AnswerInputType? AnswerInputType {
@@ -21,7 +22,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>
-        /// Instantiates a new BookingCustomQuestion and sets the default values.
+        /// Instantiates a new bookingCustomQuestion and sets the default values.
         /// </summary>
         public BookingCustomQuestion() : base() {
             OdataType = "#microsoft.graph.bookingCustomQuestion";
@@ -40,7 +41,7 @@ namespace Microsoft.Graph.Beta.Models {
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"answerInputType", n => { AnswerInputType = n.GetEnumValue<AnswerInputType>(); } },
-                {"answerOptions", n => { AnswerOptions = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"answerOptions", n => { AnswerOptions = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
             };
         }

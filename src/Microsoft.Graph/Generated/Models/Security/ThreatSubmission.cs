@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class ThreatSubmission : Entity, IParsable {
         /// <summary>Specifies the admin review property which constitutes of who reviewed the user submission, when and what was it identified as.</summary>
         public SubmissionAdminReview AdminReview {
@@ -69,8 +69,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// </summary>
         public static new ThreatSubmission CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValueNode = parseNode.GetChildNode("@odata.type");
-            var mappingValue = mappingValueNode?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch {
                 "#microsoft.graph.security.emailContentThreatSubmission" => new EmailContentThreatSubmission(),
                 "#microsoft.graph.security.emailThreatSubmission" => new EmailThreatSubmission(),

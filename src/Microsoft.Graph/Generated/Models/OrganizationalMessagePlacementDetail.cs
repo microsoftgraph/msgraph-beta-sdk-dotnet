@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"placement", n => { Placement = n.GetEnumValue<OrganizationalMessagePlacement>(); } },
-                {"variants", n => { Variants = n.GetCollectionOfObjectValues<OrganizationalMessageVariant>(OrganizationalMessageVariant.CreateFromDiscriminatorValue).ToList(); } },
+                {"variants", n => { Variants = n.GetCollectionOfObjectValues<OrganizationalMessageVariant>(OrganizationalMessageVariant.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

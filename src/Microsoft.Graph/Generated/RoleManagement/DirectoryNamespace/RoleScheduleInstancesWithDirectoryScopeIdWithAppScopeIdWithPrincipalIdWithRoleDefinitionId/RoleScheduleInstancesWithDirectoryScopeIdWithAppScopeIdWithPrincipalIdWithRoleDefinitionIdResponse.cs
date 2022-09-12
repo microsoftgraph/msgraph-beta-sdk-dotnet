@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.RoleScheduleIns
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<UnifiedRoleScheduleInstanceBase>(UnifiedRoleScheduleInstanceBase.CreateFromDiscriminatorValue).ToList(); } },
+                {"value", n => { Value = n.GetCollectionOfObjectValues<UnifiedRoleScheduleInstanceBase>(UnifiedRoleScheduleInstanceBase.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

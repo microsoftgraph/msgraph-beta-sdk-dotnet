@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"defaultRolesSettings", n => { DefaultRolesSettings = n.GetObjectValue<PrivilegedRoleSettings>(PrivilegedRoleSettings.CreateFromDiscriminatorValue); } },
                 {"firstTimeSetup", n => { FirstTimeSetup = n.GetBoolValue(); } },
-                {"relevantRolesSettings", n => { RelevantRolesSettings = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"relevantRolesSettings", n => { RelevantRolesSettings = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"setupStatus", n => { SetupStatus = n.GetEnumValue<SetupStatus>(); } },
                 {"skipSetup", n => { SkipSetup = n.GetBoolValue(); } },
                 {"userRolesActions", n => { UserRolesActions = n.GetStringValue(); } },

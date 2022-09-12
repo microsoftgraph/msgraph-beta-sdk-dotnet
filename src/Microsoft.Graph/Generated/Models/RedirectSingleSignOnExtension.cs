@@ -44,10 +44,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"configurations", n => { Configurations = n.GetCollectionOfObjectValues<KeyTypedValuePair>(KeyTypedValuePair.CreateFromDiscriminatorValue).ToList(); } },
+                {"configurations", n => { Configurations = n.GetCollectionOfObjectValues<KeyTypedValuePair>(KeyTypedValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"extensionIdentifier", n => { ExtensionIdentifier = n.GetStringValue(); } },
                 {"teamIdentifier", n => { TeamIdentifier = n.GetStringValue(); } },
-                {"urlPrefixes", n => { UrlPrefixes = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"urlPrefixes", n => { UrlPrefixes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

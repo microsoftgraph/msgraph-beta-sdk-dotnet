@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
                 {"clusterBy", n => { ClusterBy = n.GetStringValue(); } },
                 {"clusterByValue", n => { ClusterByValue = n.GetStringValue(); } },
                 {"emailCount", n => { EmailCount = n.GetLongValue(); } },
-                {"networkMessageIds", n => { NetworkMessageIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"networkMessageIds", n => { NetworkMessageIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"query", n => { Query = n.GetStringValue(); } },
                 {"urn", n => { Urn = n.GetStringValue(); } },
             };

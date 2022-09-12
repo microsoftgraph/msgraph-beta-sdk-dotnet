@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CloudPCs.Item.Ge
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<CloudPcConnectivityEvent>(CloudPcConnectivityEvent.CreateFromDiscriminatorValue).ToList(); } },
+                {"value", n => { Value = n.GetCollectionOfObjectValues<CloudPcConnectivityEvent>(CloudPcConnectivityEvent.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

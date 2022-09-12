@@ -33,8 +33,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static AccessReviewScope CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValueNode = parseNode.GetChildNode("@odata.type");
-            var mappingValue = mappingValueNode?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch {
                 "#microsoft.graph.accessReviewInactiveUsersQueryScope" => new AccessReviewInactiveUsersQueryScope(),
                 "#microsoft.graph.accessReviewQueryScope" => new AccessReviewQueryScope(),

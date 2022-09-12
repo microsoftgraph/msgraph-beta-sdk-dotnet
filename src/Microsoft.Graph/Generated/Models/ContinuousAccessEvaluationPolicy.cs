@@ -56,10 +56,10 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"groups", n => { Groups = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"groups", n => { Groups = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
                 {"migrate", n => { Migrate = n.GetBoolValue(); } },
-                {"users", n => { Users = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"users", n => { Users = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

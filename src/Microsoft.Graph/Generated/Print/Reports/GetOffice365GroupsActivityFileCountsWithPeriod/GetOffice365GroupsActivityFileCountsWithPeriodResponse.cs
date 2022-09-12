@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Beta.Print.Reports.GetOffice365GroupsActivityFileCount
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<Office365GroupsActivityFileCounts>(Office365GroupsActivityFileCounts.CreateFromDiscriminatorValue).ToList(); } },
+                {"value", n => { Value = n.GetCollectionOfObjectValues<Office365GroupsActivityFileCounts>(Office365GroupsActivityFileCounts.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

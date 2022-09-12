@@ -55,10 +55,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"failedDriverIds", n => { FailedDriverIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"notFoundDriverIds", n => { NotFoundDriverIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"failedDriverIds", n => { FailedDriverIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"notFoundDriverIds", n => { NotFoundDriverIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"successfulDriverIds", n => { SuccessfulDriverIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"successfulDriverIds", n => { SuccessfulDriverIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

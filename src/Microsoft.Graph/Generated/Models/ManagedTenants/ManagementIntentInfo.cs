@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
             return new Dictionary<string, Action<IParseNode>> {
                 {"managementIntentDisplayName", n => { ManagementIntentDisplayName = n.GetStringValue(); } },
                 {"managementIntentId", n => { ManagementIntentId = n.GetStringValue(); } },
-                {"managementTemplates", n => { ManagementTemplates = n.GetCollectionOfObjectValues<ManagementTemplateDetailedInfo>(ManagementTemplateDetailedInfo.CreateFromDiscriminatorValue).ToList(); } },
+                {"managementTemplates", n => { ManagementTemplates = n.GetCollectionOfObjectValues<ManagementTemplateDetailedInfo>(ManagementTemplateDetailedInfo.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }

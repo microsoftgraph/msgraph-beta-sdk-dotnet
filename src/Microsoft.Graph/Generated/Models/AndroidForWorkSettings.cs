@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("targetGroupIds", value); }
         }
         /// <summary>
-        /// Instantiates a new AndroidForWorkSettings and sets the default values.
+        /// Instantiates a new androidForWorkSettings and sets the default values.
         /// </summary>
         public AndroidForWorkSettings() : base() {
             OdataType = "#microsoft.graph.androidForWorkSettings";
@@ -77,7 +77,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"ownerOrganizationName", n => { OwnerOrganizationName = n.GetStringValue(); } },
                 {"ownerUserPrincipalName", n => { OwnerUserPrincipalName = n.GetStringValue(); } },
-                {"targetGroupIds", n => { TargetGroupIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"targetGroupIds", n => { TargetGroupIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

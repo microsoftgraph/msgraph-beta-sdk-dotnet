@@ -70,11 +70,11 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"description", n => { Description = n.GetStringValue(); } },
-                {"details", n => { Details = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"details", n => { Details = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"processingState", n => { ProcessingState = n.GetEnumValue<PrinterProcessingState>(); } },
                 {"processingStateDescription", n => { ProcessingStateDescription = n.GetStringValue(); } },
-                {"processingStateReasons", n => { ProcessingStateReasons = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"processingStateReasons", n => { ProcessingStateReasons = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"state", n => { State = n.GetEnumValue<PrinterProcessingState>(); } },
             };
         }

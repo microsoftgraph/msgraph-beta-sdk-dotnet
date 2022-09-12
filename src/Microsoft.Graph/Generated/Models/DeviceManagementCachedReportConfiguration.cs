@@ -69,9 +69,9 @@ namespace Microsoft.Graph.Beta.Models {
                 {"filter", n => { Filter = n.GetStringValue(); } },
                 {"lastRefreshDateTime", n => { LastRefreshDateTime = n.GetDateTimeOffsetValue(); } },
                 {"metadata", n => { Metadata = n.GetStringValue(); } },
-                {"orderBy", n => { OrderBy = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"orderBy", n => { OrderBy = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"reportName", n => { ReportName = n.GetStringValue(); } },
-                {"select", n => { Select = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"select", n => { Select = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"status", n => { Status = n.GetEnumValue<DeviceManagementReportStatus>(); } },
             };
         }

@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Beta.Admin.ServiceAnnouncement.Messages.Unarchive {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"messageIds", n => { MessageIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"messageIds", n => { MessageIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

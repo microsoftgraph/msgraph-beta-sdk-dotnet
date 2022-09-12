@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"claimsForTokenConfiguration", n => { ClaimsForTokenConfiguration = n.GetCollectionOfObjectValues<OnTokenIssuanceStartReturnClaim>(OnTokenIssuanceStartReturnClaim.CreateFromDiscriminatorValue).ToList(); } },
+                {"claimsForTokenConfiguration", n => { ClaimsForTokenConfiguration = n.GetCollectionOfObjectValues<OnTokenIssuanceStartReturnClaim>(OnTokenIssuanceStartReturnClaim.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

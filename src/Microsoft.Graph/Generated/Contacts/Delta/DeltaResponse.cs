@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Beta.Contacts.Delta {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.OrgContact>(Microsoft.Graph.Beta.Models.OrgContact.CreateFromDiscriminatorValue).ToList(); } },
+                {"value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.OrgContact>(Microsoft.Graph.Beta.Models.OrgContact.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

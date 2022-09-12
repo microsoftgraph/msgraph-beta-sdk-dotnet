@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Entity representing a setting category</summary>
     public class DeviceManagementSettingCategory : Entity, IParsable {
         /// <summary>The category name</summary>
         public string DisplayName {
@@ -22,7 +23,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("settingDefinitions", value); }
         }
         /// <summary>
-        /// Instantiates a new DeviceManagementSettingCategory and sets the default values.
+        /// Instantiates a new deviceManagementSettingCategory and sets the default values.
         /// </summary>
         public DeviceManagementSettingCategory() : base() {
             OdataType = "#microsoft.graph.deviceManagementSettingCategory";
@@ -33,8 +34,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static new DeviceManagementSettingCategory CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValueNode = parseNode.GetChildNode("@odata.type");
-            var mappingValue = mappingValueNode?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch {
                 "#microsoft.graph.deviceManagementIntentSettingCategory" => new DeviceManagementIntentSettingCategory(),
                 "#microsoft.graph.deviceManagementTemplateSettingCategory" => new DeviceManagementTemplateSettingCategory(),
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"hasRequiredSetting", n => { HasRequiredSetting = n.GetBoolValue(); } },
-                {"settingDefinitions", n => { SettingDefinitions = n.GetCollectionOfObjectValues<DeviceManagementSettingDefinition>(DeviceManagementSettingDefinition.CreateFromDiscriminatorValue).ToList(); } },
+                {"settingDefinitions", n => { SettingDefinitions = n.GetCollectionOfObjectValues<DeviceManagementSettingDefinition>(DeviceManagementSettingDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

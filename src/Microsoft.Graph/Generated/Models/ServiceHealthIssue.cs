@@ -75,7 +75,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"impactDescription", n => { ImpactDescription = n.GetStringValue(); } },
                 {"isResolved", n => { IsResolved = n.GetBoolValue(); } },
                 {"origin", n => { Origin = n.GetEnumValue<ServiceHealthOrigin>(); } },
-                {"posts", n => { Posts = n.GetCollectionOfObjectValues<ServiceHealthIssuePost>(ServiceHealthIssuePost.CreateFromDiscriminatorValue).ToList(); } },
+                {"posts", n => { Posts = n.GetCollectionOfObjectValues<ServiceHealthIssuePost>(ServiceHealthIssuePost.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"service", n => { Service = n.GetStringValue(); } },
                 {"status", n => { Status = n.GetEnumValue<ServiceHealthStatus>(); } },
             };

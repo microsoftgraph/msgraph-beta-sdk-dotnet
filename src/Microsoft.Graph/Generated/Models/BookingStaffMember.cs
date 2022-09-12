@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"role", n => { Role = n.GetEnumValue<BookingStaffRole>(); } },
                 {"timeZone", n => { TimeZone = n.GetStringValue(); } },
                 {"useBusinessHours", n => { UseBusinessHours = n.GetBoolValue(); } },
-                {"workingHours", n => { WorkingHours = n.GetCollectionOfObjectValues<BookingWorkHours>(BookingWorkHours.CreateFromDiscriminatorValue).ToList(); } },
+                {"workingHours", n => { WorkingHours = n.GetCollectionOfObjectValues<BookingWorkHours>(BookingWorkHours.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

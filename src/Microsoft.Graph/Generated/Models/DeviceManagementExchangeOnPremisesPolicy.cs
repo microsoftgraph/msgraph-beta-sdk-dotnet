@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Singleton entity which represents the Exchange OnPremises policy configured for a tenant.</summary>
     public class DeviceManagementExchangeOnPremisesPolicy : Entity, IParsable {
         /// <summary>The list of device access rules in Exchange. The access rules apply globally to the entire Exchange organization</summary>
         public List<DeviceManagementExchangeAccessRule> AccessRules {
@@ -31,7 +32,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("notificationContent", value); }
         }
         /// <summary>
-        /// Instantiates a new DeviceManagementExchangeOnPremisesPolicy and sets the default values.
+        /// Instantiates a new deviceManagementExchangeOnPremisesPolicy and sets the default values.
         /// </summary>
         public DeviceManagementExchangeOnPremisesPolicy() : base() {
             OdataType = "#microsoft.graph.deviceManagementExchangeOnPremisesPolicy";
@@ -49,10 +50,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"accessRules", n => { AccessRules = n.GetCollectionOfObjectValues<DeviceManagementExchangeAccessRule>(DeviceManagementExchangeAccessRule.CreateFromDiscriminatorValue).ToList(); } },
+                {"accessRules", n => { AccessRules = n.GetCollectionOfObjectValues<DeviceManagementExchangeAccessRule>(DeviceManagementExchangeAccessRule.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"conditionalAccessSettings", n => { ConditionalAccessSettings = n.GetObjectValue<OnPremisesConditionalAccessSettings>(OnPremisesConditionalAccessSettings.CreateFromDiscriminatorValue); } },
                 {"defaultAccessLevel", n => { DefaultAccessLevel = n.GetEnumValue<DeviceManagementExchangeAccessLevel>(); } },
-                {"knownDeviceClasses", n => { KnownDeviceClasses = n.GetCollectionOfObjectValues<DeviceManagementExchangeDeviceClass>(DeviceManagementExchangeDeviceClass.CreateFromDiscriminatorValue).ToList(); } },
+                {"knownDeviceClasses", n => { KnownDeviceClasses = n.GetCollectionOfObjectValues<DeviceManagementExchangeDeviceClass>(DeviceManagementExchangeDeviceClass.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"notificationContent", n => { NotificationContent = n.GetByteArrayValue(); } },
             };
         }

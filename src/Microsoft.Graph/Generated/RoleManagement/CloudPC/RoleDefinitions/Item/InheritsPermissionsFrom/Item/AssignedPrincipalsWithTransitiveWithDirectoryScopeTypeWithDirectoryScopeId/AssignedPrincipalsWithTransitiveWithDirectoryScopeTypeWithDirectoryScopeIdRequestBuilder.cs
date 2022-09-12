@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.CloudPC.RoleDefinitions.Item.Inher
         public AssignedPrincipalsWithTransitiveWithDirectoryScopeTypeWithDirectoryScopeIdRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/roleManagement/cloudPC/roleDefinitions/{unifiedRoleDefinition%2Did}/inheritsPermissionsFrom/{unifiedRoleDefinition%2Did1}/microsoft.graph.assignedPrincipals(transitive={transitive},directoryScopeType='{directoryScopeType}',directoryScopeId='{directoryScopeId}'){?transitive,directoryScopeType,directoryScopeId}";
+            UrlTemplate = "{+baseurl}/roleManagement/cloudPC/roleDefinitions/{unifiedRoleDefinition%2Did}/inheritsPermissionsFrom/{unifiedRoleDefinition%2Did1}/microsoft.graph.assignedPrincipals(transitive={transitive},directoryScopeType='{directoryScopeType}',directoryScopeId='{directoryScopeId}'){?transitive*,directoryScopeType*,directoryScopeId*}";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.CloudPC.RoleDefinitions.Item.Inher
         public AssignedPrincipalsWithTransitiveWithDirectoryScopeTypeWithDirectoryScopeIdRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/roleManagement/cloudPC/roleDefinitions/{unifiedRoleDefinition%2Did}/inheritsPermissionsFrom/{unifiedRoleDefinition%2Did1}/microsoft.graph.assignedPrincipals(transitive={transitive},directoryScopeType='{directoryScopeType}',directoryScopeId='{directoryScopeId}'){?transitive,directoryScopeType,directoryScopeId}";
+            UrlTemplate = "{+baseurl}/roleManagement/cloudPC/roleDefinitions/{unifiedRoleDefinition%2Did}/inheritsPermissionsFrom/{unifiedRoleDefinition%2Did1}/microsoft.graph.assignedPrincipals(transitive={transitive},directoryScopeType='{directoryScopeType}',directoryScopeId='{directoryScopeId}'){?transitive*,directoryScopeType*,directoryScopeId*}";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.CloudPC.RoleDefinitions.Item.Inher
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<AssignedPrincipalsWithTransitiveWithDirectoryScopeTypeWithDirectoryScopeIdResponse> GetAsync(CancellationToken cancellationToken = default, Action<AssignedPrincipalsWithTransitiveWithDirectoryScopeTypeWithDirectoryScopeIdRequestBuilderGetRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default) {
+        public async Task<AssignedPrincipalsWithTransitiveWithDirectoryScopeTypeWithDirectoryScopeIdResponse> GetAsync(Action<AssignedPrincipalsWithTransitiveWithDirectoryScopeTypeWithDirectoryScopeIdRequestBuilderGetRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},

@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Me.Drives.Item.List.ContentTypes.Item.AssociateWi
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"hubSiteUrls", n => { HubSiteUrls = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"hubSiteUrls", n => { HubSiteUrls = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"propagateToExistingLists", n => { PropagateToExistingLists = n.GetBoolValue(); } },
             };
         }

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>The user experience analytics application performance entity contains app performance by app version device id.</summary>
     public class UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId : Entity, IParsable {
         /// <summary>The number of crashes for the app. Valid values -2147483648 to 2147483647</summary>
         public int? AppCrashCount {
@@ -46,7 +47,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("processedDateTime", value); }
         }
         /// <summary>
-        /// Instantiates a new UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId and sets the default values.
+        /// Instantiates a new userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId and sets the default values.
         /// </summary>
         public UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId() : base() {
             OdataType = "#microsoft.graph.userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId";

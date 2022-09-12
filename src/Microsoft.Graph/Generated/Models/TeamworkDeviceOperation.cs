@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class TeamworkDeviceOperation : Entity, IParsable {
         /// <summary>Time at which the operation reached a final state (for example, Successful, Failed, and Cancelled).</summary>
         public DateTimeOffset? CompletedDateTime {
@@ -51,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>
-        /// Instantiates a new TeamworkDeviceOperation and sets the default values.
+        /// Instantiates a new teamworkDeviceOperation and sets the default values.
         /// </summary>
         public TeamworkDeviceOperation() : base() {
             OdataType = "#microsoft.graph.teamworkDeviceOperation";

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class TenantCustomizedInformation : Entity, IParsable {
         /// <summary>The collection of contacts for the managed tenant. Optional.</summary>
         public List<TenantContactInformation> Contacts {
@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"contacts", n => { Contacts = n.GetCollectionOfObjectValues<TenantContactInformation>(TenantContactInformation.CreateFromDiscriminatorValue).ToList(); } },
+                {"contacts", n => { Contacts = n.GetCollectionOfObjectValues<TenantContactInformation>(TenantContactInformation.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"tenantId", n => { TenantId = n.GetStringValue(); } },
                 {"website", n => { Website = n.GetStringValue(); } },

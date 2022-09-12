@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class WorkflowTemplate : Entity, IParsable {
         /// <summary>The category property</summary>
         public LifecycleWorkflowCategory? Category {
@@ -31,7 +32,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
             set { BackingStore?.Set("tasks", value); }
         }
         /// <summary>
-        /// Instantiates a new WorkflowTemplate and sets the default values.
+        /// Instantiates a new workflowTemplate and sets the default values.
         /// </summary>
         public WorkflowTemplate() : base() {
             OdataType = "#microsoft.graph.identityGovernance.workflowTemplate";
@@ -53,7 +54,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"executionConditions", n => { ExecutionConditions = n.GetObjectValue<WorkflowExecutionConditions>(WorkflowExecutionConditions.CreateFromDiscriminatorValue); } },
-                {"tasks", n => { Tasks = n.GetCollectionOfObjectValues<TaskObject>(TaskObject.CreateFromDiscriminatorValue).ToList(); } },
+                {"tasks", n => { Tasks = n.GetCollectionOfObjectValues<TaskObject>(TaskObject.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

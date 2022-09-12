@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.MoveDevicesToOU {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"deviceIds", n => { DeviceIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"deviceIds", n => { DeviceIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"organizationalUnitPath", n => { OrganizationalUnitPath = n.GetStringValue(); } },
             };
         }

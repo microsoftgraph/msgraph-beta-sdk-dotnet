@@ -134,7 +134,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"paymentTerm", n => { PaymentTerm = n.GetObjectValue<Microsoft.Graph.Beta.Models.PaymentTerm>(Microsoft.Graph.Beta.Models.PaymentTerm.CreateFromDiscriminatorValue); } },
                 {"paymentTermsId", n => { PaymentTermsId = n.GetStringValue(); } },
                 {"phoneNumber", n => { PhoneNumber = n.GetStringValue(); } },
-                {"picture", n => { Picture = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Picture>(Microsoft.Graph.Beta.Models.Picture.CreateFromDiscriminatorValue).ToList(); } },
+                {"picture", n => { Picture = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Picture>(Microsoft.Graph.Beta.Models.Picture.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"taxLiable", n => { TaxLiable = n.GetBoolValue(); } },
                 {"taxRegistrationNumber", n => { TaxRegistrationNumber = n.GetStringValue(); } },
                 {"website", n => { Website = n.GetStringValue(); } },

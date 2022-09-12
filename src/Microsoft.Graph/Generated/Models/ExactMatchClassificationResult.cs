@@ -49,8 +49,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"classification", n => { Classification = n.GetCollectionOfObjectValues<ExactMatchDetectedSensitiveContent>(ExactMatchDetectedSensitiveContent.CreateFromDiscriminatorValue).ToList(); } },
-                {"errors", n => { Errors = n.GetCollectionOfObjectValues<ClassificationError>(ClassificationError.CreateFromDiscriminatorValue).ToList(); } },
+                {"classification", n => { Classification = n.GetCollectionOfObjectValues<ExactMatchDetectedSensitiveContent>(ExactMatchDetectedSensitiveContent.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"errors", n => { Errors = n.GetCollectionOfObjectValues<ClassificationError>(ClassificationError.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }

@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
                 {"managementTemplateVersion", n => { ManagementTemplateVersion = n.GetIntValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"status", n => { Status = n.GetEnumValue<ManagementActionStatus>(); } },
-                {"workloadActionDeploymentStatuses", n => { WorkloadActionDeploymentStatuses = n.GetCollectionOfObjectValues<WorkloadActionDeploymentStatus>(WorkloadActionDeploymentStatus.CreateFromDiscriminatorValue).ToList(); } },
+                {"workloadActionDeploymentStatuses", n => { WorkloadActionDeploymentStatuses = n.GetCollectionOfObjectValues<WorkloadActionDeploymentStatus>(WorkloadActionDeploymentStatus.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

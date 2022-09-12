@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Beta.Models {
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"deliveryStatus", n => { DeliveryStatus = n.GetEnumValue<MessageStatus>(); } },
-                {"events", n => { Events = n.GetCollectionOfObjectValues<MessageEvent>(MessageEvent.CreateFromDiscriminatorValue).ToList(); } },
+                {"events", n => { Events = n.GetCollectionOfObjectValues<MessageEvent>(MessageEvent.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"recipientEmail", n => { RecipientEmail = n.GetStringValue(); } },
             };
         }

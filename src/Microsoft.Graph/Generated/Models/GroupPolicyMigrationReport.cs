@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>The Group Policy migration report.</summary>
     public class GroupPolicyMigrationReport : Entity, IParsable {
         /// <summary>The date and time at which the GroupPolicyMigrationReport was created.</summary>
         public DateTimeOffset? CreatedDateTime {
@@ -76,7 +77,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("unsupportedGroupPolicyExtensions", value); }
         }
         /// <summary>
-        /// Instantiates a new GroupPolicyMigrationReport and sets the default values.
+        /// Instantiates a new groupPolicyMigrationReport and sets the default values.
         /// </summary>
         public GroupPolicyMigrationReport() : base() {
             OdataType = "#microsoft.graph.groupPolicyMigrationReport";
@@ -99,7 +100,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"groupPolicyCreatedDateTime", n => { GroupPolicyCreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"groupPolicyLastModifiedDateTime", n => { GroupPolicyLastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"groupPolicyObjectId", n => { GroupPolicyObjectId = n.GetStringValue(); } },
-                {"groupPolicySettingMappings", n => { GroupPolicySettingMappings = n.GetCollectionOfObjectValues<GroupPolicySettingMapping>(GroupPolicySettingMapping.CreateFromDiscriminatorValue).ToList(); } },
+                {"groupPolicySettingMappings", n => { GroupPolicySettingMappings = n.GetCollectionOfObjectValues<GroupPolicySettingMapping>(GroupPolicySettingMapping.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"migrationReadiness", n => { MigrationReadiness = n.GetEnumValue<GroupPolicyMigrationReadiness>(); } },
                 {"ouDistinguishedName", n => { OuDistinguishedName = n.GetStringValue(); } },
@@ -107,7 +108,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"supportedSettingsPercent", n => { SupportedSettingsPercent = n.GetIntValue(); } },
                 {"targetedInActiveDirectory", n => { TargetedInActiveDirectory = n.GetBoolValue(); } },
                 {"totalSettingsCount", n => { TotalSettingsCount = n.GetIntValue(); } },
-                {"unsupportedGroupPolicyExtensions", n => { UnsupportedGroupPolicyExtensions = n.GetCollectionOfObjectValues<UnsupportedGroupPolicyExtension>(UnsupportedGroupPolicyExtension.CreateFromDiscriminatorValue).ToList(); } },
+                {"unsupportedGroupPolicyExtensions", n => { UnsupportedGroupPolicyExtensions = n.GetCollectionOfObjectValues<UnsupportedGroupPolicyExtension>(UnsupportedGroupPolicyExtension.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

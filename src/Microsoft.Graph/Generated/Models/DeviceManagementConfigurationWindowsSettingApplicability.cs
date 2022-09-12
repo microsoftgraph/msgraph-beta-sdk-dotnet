@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"minimumSupportedVersion", n => { MinimumSupportedVersion = n.GetStringValue(); } },
                 {"requiredAzureAdTrustType", n => { RequiredAzureAdTrustType = n.GetEnumValue<DeviceManagementConfigurationAzureAdTrustType>(); } },
                 {"requiresAzureAd", n => { RequiresAzureAd = n.GetBoolValue(); } },
-                {"windowsSkus", n => { WindowsSkus = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"windowsSkus", n => { WindowsSkus = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

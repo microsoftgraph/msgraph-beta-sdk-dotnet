@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Beta.Communications.CallRecords.GetPstnCallsWithFromDa
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<PstnCallLogRow>(PstnCallLogRow.CreateFromDiscriminatorValue).ToList(); } },
+                {"value", n => { Value = n.GetCollectionOfObjectValues<PstnCallLogRow>(PstnCallLogRow.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

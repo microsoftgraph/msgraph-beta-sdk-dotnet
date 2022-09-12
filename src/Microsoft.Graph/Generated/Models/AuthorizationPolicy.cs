@@ -85,11 +85,11 @@ namespace Microsoft.Graph.Beta.Models {
                 {"allowInvitesFrom", n => { AllowInvitesFrom = n.GetEnumValue<AllowInvitesFrom>(); } },
                 {"allowUserConsentForRiskyApps", n => { AllowUserConsentForRiskyApps = n.GetBoolValue(); } },
                 {"blockMsolPowerShell", n => { BlockMsolPowerShell = n.GetBoolValue(); } },
-                {"defaultUserRoleOverrides", n => { DefaultUserRoleOverrides = n.GetCollectionOfObjectValues<DefaultUserRoleOverride>(DefaultUserRoleOverride.CreateFromDiscriminatorValue).ToList(); } },
+                {"defaultUserRoleOverrides", n => { DefaultUserRoleOverrides = n.GetCollectionOfObjectValues<DefaultUserRoleOverride>(DefaultUserRoleOverride.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"defaultUserRolePermissions", n => { DefaultUserRolePermissions = n.GetObjectValue<Microsoft.Graph.Beta.Models.DefaultUserRolePermissions>(Microsoft.Graph.Beta.Models.DefaultUserRolePermissions.CreateFromDiscriminatorValue); } },
-                {"enabledPreviewFeatures", n => { EnabledPreviewFeatures = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"enabledPreviewFeatures", n => { EnabledPreviewFeatures = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"guestUserRoleId", n => { GuestUserRoleId = n.GetStringValue(); } },
-                {"permissionGrantPolicyIdsAssignedToDefaultUserRole", n => { PermissionGrantPolicyIdsAssignedToDefaultUserRole = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"permissionGrantPolicyIdsAssignedToDefaultUserRole", n => { PermissionGrantPolicyIdsAssignedToDefaultUserRole = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

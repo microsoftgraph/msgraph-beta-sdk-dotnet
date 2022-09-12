@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             return new Dictionary<string, Action<IParseNode>> {
                 {"contentFormat", n => { ContentFormat = n.GetStringValue(); } },
                 {"identifier", n => { Identifier = n.GetStringValue(); } },
-                {"metadata", n => { Metadata = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue).ToList(); } },
+                {"metadata", n => { Metadata = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"state", n => { State = n.GetEnumValue<ContentState>(); } },
             };

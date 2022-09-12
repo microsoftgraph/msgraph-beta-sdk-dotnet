@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
                 {"contentMarkdown", n => { ContentMarkdown = n.GetStringValue(); } },
                 {"createdByUserId", n => { CreatedByUserId = n.GetStringValue(); } },
                 {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"deployments", n => { Deployments = n.GetCollectionOfObjectValues<ManagementTemplateStepDeployment>(ManagementTemplateStepDeployment.CreateFromDiscriminatorValue).ToList(); } },
+                {"deployments", n => { Deployments = n.GetCollectionOfObjectValues<ManagementTemplateStepDeployment>(ManagementTemplateStepDeployment.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"lastActionByUserId", n => { LastActionByUserId = n.GetStringValue(); } },
                 {"lastActionDateTime", n => { LastActionDateTime = n.GetDateTimeOffsetValue(); } },
                 {"name", n => { Name = n.GetStringValue(); } },

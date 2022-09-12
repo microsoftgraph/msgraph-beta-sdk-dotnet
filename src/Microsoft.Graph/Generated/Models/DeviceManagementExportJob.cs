@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"localizationType", n => { LocalizationType = n.GetEnumValue<DeviceManagementExportJobLocalizationType>(); } },
                 {"reportName", n => { ReportName = n.GetStringValue(); } },
                 {"requestDateTime", n => { RequestDateTime = n.GetDateTimeOffsetValue(); } },
-                {"select", n => { Select = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"select", n => { Select = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"snapshotId", n => { SnapshotId = n.GetStringValue(); } },
                 {"status", n => { Status = n.GetEnumValue<DeviceManagementReportStatus>(); } },
                 {"url", n => { Url = n.GetStringValue(); } },

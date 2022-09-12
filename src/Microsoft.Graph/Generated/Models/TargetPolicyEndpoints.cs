@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"platformTypes", n => { PlatformTypes = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"platformTypes", n => { PlatformTypes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

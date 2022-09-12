@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Events.Item.ExceptionOccurrences.Item
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"newReminderTime", n => { NewReminderTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
+                {"NewReminderTime", n => { NewReminderTime = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Events.Item.ExceptionOccurrences.Item
         /// </summary>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<DateTimeTimeZone>("newReminderTime", NewReminderTime);
+            writer.WriteObjectValue<DateTimeTimeZone>("NewReminderTime", NewReminderTime);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

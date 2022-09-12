@@ -87,7 +87,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"customErrorMessage", n => { CustomErrorMessage = n.GetStringValue(); } },
                 {"disableUserStatusTrackingAfterFirstUser", n => { DisableUserStatusTrackingAfterFirstUser = n.GetBoolValue(); } },
                 {"installProgressTimeoutInMinutes", n => { InstallProgressTimeoutInMinutes = n.GetIntValue(); } },
-                {"selectedMobileAppIds", n => { SelectedMobileAppIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"selectedMobileAppIds", n => { SelectedMobileAppIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"showInstallationProgress", n => { ShowInstallationProgress = n.GetBoolValue(); } },
                 {"trackInstallProgressForAutopilotOnly", n => { TrackInstallProgressForAutopilotOnly = n.GetBoolValue(); } },
             };

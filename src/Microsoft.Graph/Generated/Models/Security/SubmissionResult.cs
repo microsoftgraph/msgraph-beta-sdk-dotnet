@@ -66,8 +66,8 @@ namespace Microsoft.Graph.Beta.Models.Security {
             return new Dictionary<string, Action<IParseNode>> {
                 {"category", n => { Category = n.GetEnumValue<SubmissionResultCategory>(); } },
                 {"detail", n => { Detail = n.GetEnumValue<SubmissionResultDetail>(); } },
-                {"detectedFiles", n => { DetectedFiles = n.GetCollectionOfObjectValues<SubmissionDetectedFile>(SubmissionDetectedFile.CreateFromDiscriminatorValue).ToList(); } },
-                {"detectedUrls", n => { DetectedUrls = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"detectedFiles", n => { DetectedFiles = n.GetCollectionOfObjectValues<SubmissionDetectedFile>(SubmissionDetectedFile.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"detectedUrls", n => { DetectedUrls = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"userMailboxSetting", n => { UserMailboxSetting = n.GetEnumValue<UserMailboxSetting>(); } },
             };

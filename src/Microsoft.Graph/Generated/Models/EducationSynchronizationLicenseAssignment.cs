@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"appliesTo", n => { AppliesTo = n.GetEnumValue<EducationUserRole>(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"skuIds", n => { SkuIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"skuIds", n => { SkuIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class Item : Entity, IParsable {
         /// <summary>The baseUnitOfMeasureId property</summary>
         public string BaseUnitOfMeasureId {
@@ -120,7 +120,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"itemCategoryId", n => { ItemCategoryId = n.GetStringValue(); } },
                 {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"number", n => { Number = n.GetStringValue(); } },
-                {"picture", n => { Picture = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Picture>(Microsoft.Graph.Beta.Models.Picture.CreateFromDiscriminatorValue).ToList(); } },
+                {"picture", n => { Picture = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Picture>(Microsoft.Graph.Beta.Models.Picture.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"priceIncludesTax", n => { PriceIncludesTax = n.GetBoolValue(); } },
                 {"taxGroupCode", n => { TaxGroupCode = n.GetStringValue(); } },
                 {"taxGroupId", n => { TaxGroupId = n.GetStringValue(); } },

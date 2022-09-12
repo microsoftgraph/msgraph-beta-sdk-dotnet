@@ -5,9 +5,9 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace Microsoft.Graph.Beta.Applications.Item.AddPassword {
-    /// <summary>Provides operations to call the addPassword method.</summary>
-    public class PasswordCredentialPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
+namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs.Item.ProvisionOnDemand {
+    /// <summary>Provides operations to call the provisionOnDemand method.</summary>
+    public class ProvisionOnDemandPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
             get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
@@ -15,15 +15,15 @@ namespace Microsoft.Graph.Beta.Applications.Item.AddPassword {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The passwordCredential property</summary>
-        public Microsoft.Graph.Beta.Models.PasswordCredential PasswordCredential {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PasswordCredential>("passwordCredential"); }
-            set { BackingStore?.Set("passwordCredential", value); }
+        /// <summary>The parameters property</summary>
+        public List<SynchronizationJobApplicationParameters> Parameters {
+            get { return BackingStore?.Get<List<SynchronizationJobApplicationParameters>>("parameters"); }
+            set { BackingStore?.Set("parameters", value); }
         }
         /// <summary>
-        /// Instantiates a new PasswordCredentialPostRequestBody and sets the default values.
+        /// Instantiates a new provisionOnDemandPostRequestBody and sets the default values.
         /// </summary>
-        public PasswordCredentialPostRequestBody() {
+        public ProvisionOnDemandPostRequestBody() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
@@ -31,16 +31,16 @@ namespace Microsoft.Graph.Beta.Applications.Item.AddPassword {
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>
-        public static PasswordCredentialPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static ProvisionOnDemandPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PasswordCredentialPostRequestBody();
+            return new ProvisionOnDemandPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"passwordCredential", n => { PasswordCredential = n.GetObjectValue<Microsoft.Graph.Beta.Models.PasswordCredential>(Microsoft.Graph.Beta.Models.PasswordCredential.CreateFromDiscriminatorValue); } },
+                {"parameters", n => { Parameters = n.GetCollectionOfObjectValues<SynchronizationJobApplicationParameters>(SynchronizationJobApplicationParameters.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.AddPassword {
         /// </summary>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PasswordCredential>("passwordCredential", PasswordCredential);
+            writer.WriteCollectionOfObjectValues<SynchronizationJobApplicationParameters>("parameters", Parameters);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

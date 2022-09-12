@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.AppDiagnosticsWit
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<PowerliftIncidentMetadata>(PowerliftIncidentMetadata.CreateFromDiscriminatorValue).ToList(); } },
+                {"value", n => { Value = n.GetCollectionOfObjectValues<PowerliftIncidentMetadata>(PowerliftIncidentMetadata.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

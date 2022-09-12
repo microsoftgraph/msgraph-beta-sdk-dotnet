@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the commsApplication singleton.</summary>
     public class MeetingRegistrantBase : Entity, IParsable {
         /// <summary>A unique web URL for the registrant to join the meeting. Read-only.</summary>
         public string JoinWebUrl {
@@ -24,8 +24,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static new MeetingRegistrantBase CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValueNode = parseNode.GetChildNode("@odata.type");
-            var mappingValue = mappingValueNode?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch {
                 "#microsoft.graph.externalMeetingRegistrant" => new ExternalMeetingRegistrant(),
                 "#microsoft.graph.meetingRegistrant" => new MeetingRegistrant(),

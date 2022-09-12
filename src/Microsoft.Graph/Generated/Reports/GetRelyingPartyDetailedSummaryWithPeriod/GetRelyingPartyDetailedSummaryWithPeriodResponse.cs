@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Beta.Reports.GetRelyingPartyDetailedSummaryWithPeriod 
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<RelyingPartyDetailedSummary>(RelyingPartyDetailedSummary.CreateFromDiscriminatorValue).ToList(); } },
+                {"value", n => { Value = n.GetCollectionOfObjectValues<RelyingPartyDetailedSummary>(RelyingPartyDetailedSummary.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

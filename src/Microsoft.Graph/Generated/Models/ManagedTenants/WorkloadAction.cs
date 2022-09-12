@@ -78,10 +78,10 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
                 {"category", n => { Category = n.GetEnumValue<WorkloadActionCategory>(); } },
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"licenses", n => { Licenses = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"licenses", n => { Licenses = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"service", n => { Service = n.GetStringValue(); } },
-                {"settings", n => { Settings = n.GetCollectionOfObjectValues<Setting>(Setting.CreateFromDiscriminatorValue).ToList(); } },
+                {"settings", n => { Settings = n.GetCollectionOfObjectValues<Setting>(Setting.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"details", n => { Details = n.GetCollectionOfObjectValues<UnsupportedDeviceConfigurationDetail>(UnsupportedDeviceConfigurationDetail.CreateFromDiscriminatorValue).ToList(); } },
+                {"details", n => { Details = n.GetCollectionOfObjectValues<UnsupportedDeviceConfigurationDetail>(UnsupportedDeviceConfigurationDetail.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"originalEntityTypeName", n => { OriginalEntityTypeName = n.GetStringValue(); } },
             };
         }

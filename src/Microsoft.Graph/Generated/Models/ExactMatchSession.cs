@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"checksum", n => { Checksum = n.GetStringValue(); } },
                 {"dataUploadURI", n => { DataUploadURI = n.GetStringValue(); } },
-                {"fields", n => { Fields = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"fields", n => { Fields = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"fileName", n => { FileName = n.GetStringValue(); } },
                 {"rowsPerBlock", n => { RowsPerBlock = n.GetIntValue(); } },
                 {"salt", n => { Salt = n.GetStringValue(); } },

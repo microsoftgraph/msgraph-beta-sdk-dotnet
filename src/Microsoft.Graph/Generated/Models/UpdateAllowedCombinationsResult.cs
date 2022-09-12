@@ -60,10 +60,10 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"additionalInformation", n => { AdditionalInformation = n.GetStringValue(); } },
-                {"conditionalAccessReferences", n => { ConditionalAccessReferences = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"currentCombinations", n => { CurrentCombinations = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"conditionalAccessReferences", n => { ConditionalAccessReferences = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"currentCombinations", n => { CurrentCombinations = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"previousCombinations", n => { PreviousCombinations = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"previousCombinations", n => { PreviousCombinations = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

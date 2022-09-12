@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"installState", n => { InstallState = n.GetEnumValue<ResultantAppState>(); } },
                 {"mobileAppIntent", n => { MobileAppIntent = n.GetEnumValue<MobileAppIntent>(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"supportedDeviceTypes", n => { SupportedDeviceTypes = n.GetCollectionOfObjectValues<MobileAppSupportedDeviceType>(MobileAppSupportedDeviceType.CreateFromDiscriminatorValue).ToList(); } },
+                {"supportedDeviceTypes", n => { SupportedDeviceTypes = n.GetCollectionOfObjectValues<MobileAppSupportedDeviceType>(MobileAppSupportedDeviceType.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

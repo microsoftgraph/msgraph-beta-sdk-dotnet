@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterp
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"approveAllPermissions", n => { ApproveAllPermissions = n.GetBoolValue(); } },
-                {"packageIds", n => { PackageIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"packageIds", n => { PackageIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

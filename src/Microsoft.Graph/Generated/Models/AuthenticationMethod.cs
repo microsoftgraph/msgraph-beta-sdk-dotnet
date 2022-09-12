@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class AuthenticationMethod : Entity, IParsable {
         /// <summary>
         /// Instantiates a new authenticationMethod and sets the default values.
@@ -19,8 +19,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static new AuthenticationMethod CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValueNode = parseNode.GetChildNode("@odata.type");
-            var mappingValue = mappingValueNode?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch {
                 "#microsoft.graph.emailAuthenticationMethod" => new EmailAuthenticationMethod(),
                 "#microsoft.graph.fido2AuthenticationMethod" => new Fido2AuthenticationMethod(),

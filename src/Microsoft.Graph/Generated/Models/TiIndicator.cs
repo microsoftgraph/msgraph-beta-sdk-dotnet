@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class TiIndicator : Entity, IParsable {
         /// <summary>The action to apply if the indicator is matched from within the targetProduct security tool. Possible values are: unknown, allow, block, alert. Required.</summary>
         public TiAction? Action {
@@ -316,7 +316,7 @@ namespace Microsoft.Graph.Beta.Models {
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"action", n => { Action = n.GetEnumValue<TiAction>(); } },
-                {"activityGroupNames", n => { ActivityGroupNames = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"activityGroupNames", n => { ActivityGroupNames = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"additionalInformation", n => { AdditionalInformation = n.GetStringValue(); } },
                 {"azureTenantId", n => { AzureTenantId = n.GetStringValue(); } },
                 {"confidence", n => { Confidence = n.GetIntValue(); } },
@@ -346,10 +346,10 @@ namespace Microsoft.Graph.Beta.Models {
                 {"fileType", n => { FileType = n.GetStringValue(); } },
                 {"ingestedDateTime", n => { IngestedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"isActive", n => { IsActive = n.GetBoolValue(); } },
-                {"killChain", n => { KillChain = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"killChain", n => { KillChain = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"knownFalsePositives", n => { KnownFalsePositives = n.GetStringValue(); } },
                 {"lastReportedDateTime", n => { LastReportedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"malwareFamilyNames", n => { MalwareFamilyNames = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"malwareFamilyNames", n => { MalwareFamilyNames = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"networkCidrBlock", n => { NetworkCidrBlock = n.GetStringValue(); } },
                 {"networkDestinationAsn", n => { NetworkDestinationAsn = n.GetLongValue(); } },
                 {"networkDestinationCidrBlock", n => { NetworkDestinationCidrBlock = n.GetStringValue(); } },
@@ -367,7 +367,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"networkSourcePort", n => { NetworkSourcePort = n.GetIntValue(); } },
                 {"passiveOnly", n => { PassiveOnly = n.GetBoolValue(); } },
                 {"severity", n => { Severity = n.GetIntValue(); } },
-                {"tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"targetProduct", n => { TargetProduct = n.GetStringValue(); } },
                 {"threatType", n => { ThreatType = n.GetStringValue(); } },
                 {"tlpLevel", n => { TlpLevel = n.GetEnumValue<TlpLevel>(); } },

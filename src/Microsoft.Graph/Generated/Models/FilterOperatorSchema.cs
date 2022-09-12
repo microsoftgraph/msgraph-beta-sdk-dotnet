@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"arity", n => { Arity = n.GetEnumValue<ScopeOperatorType>(); } },
                 {"multivaluedComparisonType", n => { MultivaluedComparisonType = n.GetEnumValue<ScopeOperatorMultiValuedComparisonType>(); } },
-                {"supportedAttributeTypes", n => { SupportedAttributeTypes = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"supportedAttributeTypes", n => { SupportedAttributeTypes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

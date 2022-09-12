@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("unknownDeviceCount", value); }
         }
         /// <summary>
-        /// Instantiates a new AdvancedThreatProtectionOnboardingStateSummary and sets the default values.
+        /// Instantiates a new advancedThreatProtectionOnboardingStateSummary and sets the default values.
         /// </summary>
         public AdvancedThreatProtectionOnboardingStateSummary() : base() {
             OdataType = "#microsoft.graph.advancedThreatProtectionOnboardingStateSummary";
@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"advancedThreatProtectionOnboardingDeviceSettingStates", n => { AdvancedThreatProtectionOnboardingDeviceSettingStates = n.GetCollectionOfObjectValues<AdvancedThreatProtectionOnboardingDeviceSettingState>(AdvancedThreatProtectionOnboardingDeviceSettingState.CreateFromDiscriminatorValue).ToList(); } },
+                {"advancedThreatProtectionOnboardingDeviceSettingStates", n => { AdvancedThreatProtectionOnboardingDeviceSettingStates = n.GetCollectionOfObjectValues<AdvancedThreatProtectionOnboardingDeviceSettingState>(AdvancedThreatProtectionOnboardingDeviceSettingState.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"compliantDeviceCount", n => { CompliantDeviceCount = n.GetIntValue(); } },
                 {"conflictDeviceCount", n => { ConflictDeviceCount = n.GetIntValue(); } },
                 {"errorDeviceCount", n => { ErrorDeviceCount = n.GetIntValue(); } },

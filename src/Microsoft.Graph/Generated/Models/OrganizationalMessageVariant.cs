@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"localizedTexts", n => { LocalizedTexts = n.GetCollectionOfObjectValues<OrganizationalMessageLocalizedText>(OrganizationalMessageLocalizedText.CreateFromDiscriminatorValue).ToList(); } },
+                {"localizedTexts", n => { LocalizedTexts = n.GetCollectionOfObjectValues<OrganizationalMessageLocalizedText>(OrganizationalMessageLocalizedText.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"name", n => { Name = n.GetStringValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"variantId", n => { VariantId = n.GetStringValue(); } },

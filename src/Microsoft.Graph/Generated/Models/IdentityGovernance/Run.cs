@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class Run : Entity, IParsable {
         /// <summary>The date time that the run completed. Value is null if the workflow hasn&apos;t completed. Optional.</summary>
         public DateTimeOffset? CompletedDateTime {
@@ -76,7 +77,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
             set { BackingStore?.Set("workflowExecutionType", value); }
         }
         /// <summary>
-        /// Instantiates a new Run and sets the default values.
+        /// Instantiates a new run and sets the default values.
         /// </summary>
         public Run() : base() {
             OdataType = "#microsoft.graph.identityGovernance.run";
@@ -102,11 +103,11 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
                 {"scheduledDateTime", n => { ScheduledDateTime = n.GetDateTimeOffsetValue(); } },
                 {"startedDateTime", n => { StartedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"successfulUsersCount", n => { SuccessfulUsersCount = n.GetIntValue(); } },
-                {"taskProcessingResults", n => { TaskProcessingResults = n.GetCollectionOfObjectValues<TaskProcessingResult>(TaskProcessingResult.CreateFromDiscriminatorValue).ToList(); } },
+                {"taskProcessingResults", n => { TaskProcessingResults = n.GetCollectionOfObjectValues<TaskProcessingResult>(TaskProcessingResult.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"totalTasksCount", n => { TotalTasksCount = n.GetIntValue(); } },
                 {"totalUnprocessedTasksCount", n => { TotalUnprocessedTasksCount = n.GetIntValue(); } },
                 {"totalUsersCount", n => { TotalUsersCount = n.GetIntValue(); } },
-                {"userProcessingResults", n => { UserProcessingResults = n.GetCollectionOfObjectValues<UserProcessingResult>(UserProcessingResult.CreateFromDiscriminatorValue).ToList(); } },
+                {"userProcessingResults", n => { UserProcessingResults = n.GetCollectionOfObjectValues<UserProcessingResult>(UserProcessingResult.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"workflowExecutionType", n => { WorkflowExecutionType = n.GetEnumValue<WorkflowExecutionType>(); } },
             };
         }

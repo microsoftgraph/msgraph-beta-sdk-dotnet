@@ -128,8 +128,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static new AppleVpnConfiguration CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValueNode = parseNode.GetChildNode("@odata.type");
-            var mappingValue = mappingValueNode?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch {
                 "#microsoft.graph.iosikEv2VpnConfiguration" => new IosikEv2VpnConfiguration(),
                 "#microsoft.graph.iosVpnConfiguration" => new IosVpnConfiguration(),
@@ -142,27 +141,27 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"associatedDomains", n => { AssociatedDomains = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"associatedDomains", n => { AssociatedDomains = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"authenticationMethod", n => { AuthenticationMethod = n.GetEnumValue<VpnAuthenticationMethod>(); } },
                 {"connectionName", n => { ConnectionName = n.GetStringValue(); } },
                 {"connectionType", n => { ConnectionType = n.GetEnumValue<AppleVpnConnectionType>(); } },
-                {"customData", n => { CustomData = n.GetCollectionOfObjectValues<KeyValue>(KeyValue.CreateFromDiscriminatorValue).ToList(); } },
-                {"customKeyValueData", n => { CustomKeyValueData = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue).ToList(); } },
+                {"customData", n => { CustomData = n.GetCollectionOfObjectValues<KeyValue>(KeyValue.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"customKeyValueData", n => { CustomKeyValueData = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"disableOnDemandUserOverride", n => { DisableOnDemandUserOverride = n.GetBoolValue(); } },
                 {"disconnectOnIdle", n => { DisconnectOnIdle = n.GetBoolValue(); } },
                 {"disconnectOnIdleTimerInSeconds", n => { DisconnectOnIdleTimerInSeconds = n.GetIntValue(); } },
                 {"enablePerApp", n => { EnablePerApp = n.GetBoolValue(); } },
                 {"enableSplitTunneling", n => { EnableSplitTunneling = n.GetBoolValue(); } },
-                {"excludedDomains", n => { ExcludedDomains = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"excludedDomains", n => { ExcludedDomains = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"identifier", n => { Identifier = n.GetStringValue(); } },
                 {"loginGroupOrDomain", n => { LoginGroupOrDomain = n.GetStringValue(); } },
-                {"onDemandRules", n => { OnDemandRules = n.GetCollectionOfObjectValues<VpnOnDemandRule>(VpnOnDemandRule.CreateFromDiscriminatorValue).ToList(); } },
+                {"onDemandRules", n => { OnDemandRules = n.GetCollectionOfObjectValues<VpnOnDemandRule>(VpnOnDemandRule.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"optInToDeviceIdSharing", n => { OptInToDeviceIdSharing = n.GetBoolValue(); } },
                 {"providerType", n => { ProviderType = n.GetEnumValue<VpnProviderType>(); } },
                 {"proxyServer", n => { ProxyServer = n.GetObjectValue<VpnProxyServer>(VpnProxyServer.CreateFromDiscriminatorValue); } },
                 {"realm", n => { Realm = n.GetStringValue(); } },
                 {"role", n => { Role = n.GetStringValue(); } },
-                {"safariDomains", n => { SafariDomains = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"safariDomains", n => { SafariDomains = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"server", n => { Server = n.GetObjectValue<VpnServer>(VpnServer.CreateFromDiscriminatorValue); } },
             };
         }

@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"clauses", n => { Clauses = n.GetCollectionOfObjectValues<FilterClause>(FilterClause.CreateFromDiscriminatorValue).ToList(); } },
+                {"clauses", n => { Clauses = n.GetCollectionOfObjectValues<FilterClause>(FilterClause.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"name", n => { Name = n.GetStringValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
             };

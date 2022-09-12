@@ -93,13 +93,13 @@ namespace Microsoft.Graph.Beta.Models {
                 {"appId", n => { AppId = n.GetStringValue(); } },
                 {"appType", n => { AppType = n.GetEnumValue<VpnTrafficRuleAppType>(); } },
                 {"claims", n => { Claims = n.GetStringValue(); } },
-                {"localAddressRanges", n => { LocalAddressRanges = n.GetCollectionOfObjectValues<IPv4Range>(IPv4Range.CreateFromDiscriminatorValue).ToList(); } },
-                {"localPortRanges", n => { LocalPortRanges = n.GetCollectionOfObjectValues<NumberRange>(NumberRange.CreateFromDiscriminatorValue).ToList(); } },
+                {"localAddressRanges", n => { LocalAddressRanges = n.GetCollectionOfObjectValues<IPv4Range>(IPv4Range.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"localPortRanges", n => { LocalPortRanges = n.GetCollectionOfObjectValues<NumberRange>(NumberRange.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"name", n => { Name = n.GetStringValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"protocols", n => { Protocols = n.GetIntValue(); } },
-                {"remoteAddressRanges", n => { RemoteAddressRanges = n.GetCollectionOfObjectValues<IPv4Range>(IPv4Range.CreateFromDiscriminatorValue).ToList(); } },
-                {"remotePortRanges", n => { RemotePortRanges = n.GetCollectionOfObjectValues<NumberRange>(NumberRange.CreateFromDiscriminatorValue).ToList(); } },
+                {"remoteAddressRanges", n => { RemoteAddressRanges = n.GetCollectionOfObjectValues<IPv4Range>(IPv4Range.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"remotePortRanges", n => { RemotePortRanges = n.GetCollectionOfObjectValues<NumberRange>(NumberRange.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"routingPolicyType", n => { RoutingPolicyType = n.GetEnumValue<VpnTrafficRuleRoutingPolicyType>(); } },
             };
         }

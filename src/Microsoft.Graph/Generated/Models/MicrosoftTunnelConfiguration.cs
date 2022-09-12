@@ -90,19 +90,19 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"advancedSettings", n => { AdvancedSettings = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue).ToList(); } },
+                {"advancedSettings", n => { AdvancedSettings = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"defaultDomainSuffix", n => { DefaultDomainSuffix = n.GetStringValue(); } },
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"disableUdpConnections", n => { DisableUdpConnections = n.GetBoolValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"dnsServers", n => { DnsServers = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"dnsServers", n => { DnsServers = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"lastUpdateDateTime", n => { LastUpdateDateTime = n.GetDateTimeOffsetValue(); } },
                 {"listenPort", n => { ListenPort = n.GetIntValue(); } },
                 {"network", n => { Network = n.GetStringValue(); } },
-                {"roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"routesExclude", n => { RoutesExclude = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"routesInclude", n => { RoutesInclude = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"splitDNS", n => { SplitDNS = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"routesExclude", n => { RoutesExclude = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"routesInclude", n => { RoutesInclude = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"splitDNS", n => { SplitDNS = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

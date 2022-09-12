@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Beta.Me.Calendars.Item.AllowedCalendarSharingRolesWith
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"value", n => { Value = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"value", n => { Value = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

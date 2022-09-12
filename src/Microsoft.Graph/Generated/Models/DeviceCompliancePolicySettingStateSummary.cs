@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Device Compilance Policy Setting State summary across the account.</summary>
     public class DeviceCompliancePolicySettingStateSummary : Entity, IParsable {
         /// <summary>Number of compliant devices</summary>
         public int? CompliantDeviceCount {
@@ -61,7 +62,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("unknownDeviceCount", value); }
         }
         /// <summary>
-        /// Instantiates a new DeviceCompliancePolicySettingStateSummary and sets the default values.
+        /// Instantiates a new deviceCompliancePolicySettingStateSummary and sets the default values.
         /// </summary>
         public DeviceCompliancePolicySettingStateSummary() : base() {
             OdataType = "#microsoft.graph.deviceCompliancePolicySettingStateSummary";
@@ -81,7 +82,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"compliantDeviceCount", n => { CompliantDeviceCount = n.GetIntValue(); } },
                 {"conflictDeviceCount", n => { ConflictDeviceCount = n.GetIntValue(); } },
-                {"deviceComplianceSettingStates", n => { DeviceComplianceSettingStates = n.GetCollectionOfObjectValues<DeviceComplianceSettingState>(DeviceComplianceSettingState.CreateFromDiscriminatorValue).ToList(); } },
+                {"deviceComplianceSettingStates", n => { DeviceComplianceSettingStates = n.GetCollectionOfObjectValues<DeviceComplianceSettingState>(DeviceComplianceSettingState.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"errorDeviceCount", n => { ErrorDeviceCount = n.GetIntValue(); } },
                 {"nonCompliantDeviceCount", n => { NonCompliantDeviceCount = n.GetIntValue(); } },
                 {"notApplicableDeviceCount", n => { NotApplicableDeviceCount = n.GetIntValue(); } },

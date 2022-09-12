@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class Alert : Entity, IParsable {
         /// <summary>The adversary or activity group that is associated with this alert.</summary>
         public string ActorDisplayName {
@@ -170,19 +170,19 @@ namespace Microsoft.Graph.Beta.Models.Security {
                 {"assignedTo", n => { AssignedTo = n.GetStringValue(); } },
                 {"category", n => { Category = n.GetStringValue(); } },
                 {"classification", n => { Classification = n.GetEnumValue<AlertClassification>(); } },
-                {"comments", n => { Comments = n.GetCollectionOfObjectValues<AlertComment>(AlertComment.CreateFromDiscriminatorValue).ToList(); } },
+                {"comments", n => { Comments = n.GetCollectionOfObjectValues<AlertComment>(AlertComment.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"detectionSource", n => { DetectionSource = n.GetEnumValue<DetectionSource>(); } },
                 {"detectorId", n => { DetectorId = n.GetStringValue(); } },
                 {"determination", n => { Determination = n.GetEnumValue<AlertDetermination>(); } },
-                {"evidence", n => { Evidence = n.GetCollectionOfObjectValues<AlertEvidence>(AlertEvidence.CreateFromDiscriminatorValue).ToList(); } },
+                {"evidence", n => { Evidence = n.GetCollectionOfObjectValues<AlertEvidence>(AlertEvidence.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"firstActivityDateTime", n => { FirstActivityDateTime = n.GetDateTimeOffsetValue(); } },
                 {"incidentId", n => { IncidentId = n.GetStringValue(); } },
                 {"incidentWebUrl", n => { IncidentWebUrl = n.GetStringValue(); } },
                 {"lastActivityDateTime", n => { LastActivityDateTime = n.GetDateTimeOffsetValue(); } },
                 {"lastUpdateDateTime", n => { LastUpdateDateTime = n.GetDateTimeOffsetValue(); } },
-                {"mitreTechniques", n => { MitreTechniques = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"mitreTechniques", n => { MitreTechniques = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"providerAlertId", n => { ProviderAlertId = n.GetStringValue(); } },
                 {"recommendedActions", n => { RecommendedActions = n.GetStringValue(); } },
                 {"resolvedDateTime", n => { ResolvedDateTime = n.GetDateTimeOffsetValue(); } },

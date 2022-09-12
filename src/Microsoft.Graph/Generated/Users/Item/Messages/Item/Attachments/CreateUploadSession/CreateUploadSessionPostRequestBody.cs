@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Messages.Item.Attachments.CreateUpload
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"attachmentItem", n => { AttachmentItem = n.GetObjectValue<Microsoft.Graph.Beta.Models.AttachmentItem>(Microsoft.Graph.Beta.Models.AttachmentItem.CreateFromDiscriminatorValue); } },
+                {"AttachmentItem", n => { AttachmentItem = n.GetObjectValue<Microsoft.Graph.Beta.Models.AttachmentItem>(Microsoft.Graph.Beta.Models.AttachmentItem.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Messages.Item.Attachments.CreateUpload
         /// </summary>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AttachmentItem>("attachmentItem", AttachmentItem);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AttachmentItem>("AttachmentItem", AttachmentItem);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

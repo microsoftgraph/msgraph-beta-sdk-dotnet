@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Casts the previous resource to application.</summary>
     public class DirectoryDefinition : Entity, IParsable {
         /// <summary>The discoverabilities property</summary>
         public DirectoryDefinitionDiscoverabilities? Discoverabilities {
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"discoverabilities", n => { Discoverabilities = n.GetEnumValue<DirectoryDefinitionDiscoverabilities>(); } },
                 {"discoveryDateTime", n => { DiscoveryDateTime = n.GetDateTimeOffsetValue(); } },
                 {"name", n => { Name = n.GetStringValue(); } },
-                {"objects", n => { Objects = n.GetCollectionOfObjectValues<ObjectDefinition>(ObjectDefinition.CreateFromDiscriminatorValue).ToList(); } },
+                {"objects", n => { Objects = n.GetCollectionOfObjectValues<ObjectDefinition>(ObjectDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"readOnly", n => { ReadOnly = n.GetBoolValue(); } },
                 {"version", n => { Version = n.GetStringValue(); } },
             };

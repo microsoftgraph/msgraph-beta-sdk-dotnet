@@ -1,13 +1,12 @@
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs.Item.ProvisionOnDemand {
-    /// <summary>Provides operations to call the provisionOnDemand method.</summary>
-    public class StringKeyStringValuePairPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
+namespace Microsoft.Graph.Beta.ServicePrincipals.Item.AddTokenSigningCertificate {
+    /// <summary>Provides operations to call the addTokenSigningCertificate method.</summary>
+    public class AddTokenSigningCertificatePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
             get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
@@ -15,15 +14,20 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs.Item.
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The parameters property</summary>
-        public List<SynchronizationJobApplicationParameters> Parameters {
-            get { return BackingStore?.Get<List<SynchronizationJobApplicationParameters>>("parameters"); }
-            set { BackingStore?.Set("parameters", value); }
+        /// <summary>The displayName property</summary>
+        public string DisplayName {
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+        /// <summary>The endDateTime property</summary>
+        public DateTimeOffset? EndDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>("endDateTime"); }
+            set { BackingStore?.Set("endDateTime", value); }
         }
         /// <summary>
-        /// Instantiates a new StringKeyStringValuePairPostRequestBody and sets the default values.
+        /// Instantiates a new addTokenSigningCertificatePostRequestBody and sets the default values.
         /// </summary>
-        public StringKeyStringValuePairPostRequestBody() {
+        public AddTokenSigningCertificatePostRequestBody() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
@@ -31,16 +35,17 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs.Item.
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>
-        public static StringKeyStringValuePairPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static AddTokenSigningCertificatePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new StringKeyStringValuePairPostRequestBody();
+            return new AddTokenSigningCertificatePostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"parameters", n => { Parameters = n.GetCollectionOfObjectValues<SynchronizationJobApplicationParameters>(SynchronizationJobApplicationParameters.CreateFromDiscriminatorValue).ToList(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>
@@ -49,7 +54,8 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs.Item.
         /// </summary>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<SynchronizationJobApplicationParameters>("parameters", Parameters);
+            writer.WriteStringValue("displayName", DisplayName);
+            writer.WriteDateTimeOffsetValue("endDateTime", EndDateTime);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

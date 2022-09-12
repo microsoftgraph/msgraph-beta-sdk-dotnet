@@ -50,8 +50,8 @@ namespace Microsoft.Graph.Beta.Models.Security {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"results", n => { Results = n.GetCollectionOfObjectValues<HuntingRowResult>(HuntingRowResult.CreateFromDiscriminatorValue).ToList(); } },
-                {"schema", n => { Schema = n.GetCollectionOfObjectValues<SinglePropertySchema>(SinglePropertySchema.CreateFromDiscriminatorValue).ToList(); } },
+                {"results", n => { Results = n.GetCollectionOfObjectValues<HuntingRowResult>(HuntingRowResult.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"schema", n => { Schema = n.GetCollectionOfObjectValues<SinglePropertySchema>(SinglePropertySchema.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

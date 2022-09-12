@@ -45,8 +45,8 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"acl", n => { Acl = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ExternalConnectors.Acl>(Microsoft.Graph.Beta.Models.ExternalConnectors.Acl.CreateFromDiscriminatorValue).ToList(); } },
-                {"activities", n => { Activities = n.GetCollectionOfObjectValues<ExternalActivity>(ExternalActivity.CreateFromDiscriminatorValue).ToList(); } },
+                {"acl", n => { Acl = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ExternalConnectors.Acl>(Microsoft.Graph.Beta.Models.ExternalConnectors.Acl.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"activities", n => { Activities = n.GetCollectionOfObjectValues<ExternalActivity>(ExternalActivity.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"content", n => { Content = n.GetObjectValue<ExternalItemContent>(ExternalItemContent.CreateFromDiscriminatorValue); } },
                 {"properties", n => { Properties = n.GetObjectValue<Microsoft.Graph.Beta.Models.ExternalConnectors.Properties>(Microsoft.Graph.Beta.Models.ExternalConnectors.Properties.CreateFromDiscriminatorValue); } },
             };

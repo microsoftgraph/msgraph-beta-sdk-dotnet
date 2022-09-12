@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GetRoleScopeTagsByResourceWithRe
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<RoleScopeTag>(RoleScopeTag.CreateFromDiscriminatorValue).ToList(); } },
+                {"value", n => { Value = n.GetCollectionOfObjectValues<RoleScopeTag>(RoleScopeTag.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

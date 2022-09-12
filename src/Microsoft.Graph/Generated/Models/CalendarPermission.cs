@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"allowedRoles", n => { AllowedRoles = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"allowedRoles", n => { AllowedRoles = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"emailAddress", n => { EmailAddress = n.GetObjectValue<Microsoft.Graph.Beta.Models.EmailAddress>(Microsoft.Graph.Beta.Models.EmailAddress.CreateFromDiscriminatorValue); } },
                 {"isInsideOrganization", n => { IsInsideOrganization = n.GetBoolValue(); } },
                 {"isRemovable", n => { IsRemovable = n.GetBoolValue(); } },

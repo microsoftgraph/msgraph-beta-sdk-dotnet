@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("lists", value); }
         }
         /// <summary>
-        /// Instantiates a new Tasks and sets the default values.
+        /// Instantiates a new tasks and sets the default values.
         /// </summary>
         public Tasks() : base() {
             OdataType = "#microsoft.graph.tasks";
@@ -34,8 +34,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"alltasks", n => { Alltasks = n.GetCollectionOfObjectValues<BaseTask>(BaseTask.CreateFromDiscriminatorValue).ToList(); } },
-                {"lists", n => { Lists = n.GetCollectionOfObjectValues<BaseTaskList>(BaseTaskList.CreateFromDiscriminatorValue).ToList(); } },
+                {"alltasks", n => { Alltasks = n.GetCollectionOfObjectValues<BaseTask>(BaseTask.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"lists", n => { Lists = n.GetCollectionOfObjectValues<BaseTaskList>(BaseTaskList.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

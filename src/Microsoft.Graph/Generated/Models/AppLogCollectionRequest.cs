@@ -46,7 +46,7 @@ namespace Microsoft.Graph.Beta.Models {
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"completedDateTime", n => { CompletedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"customLogFolders", n => { CustomLogFolders = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"customLogFolders", n => { CustomLogFolders = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"errorMessage", n => { ErrorMessage = n.GetStringValue(); } },
                 {"status", n => { Status = n.GetEnumValue<AppLogUploadState>(); } },
             };

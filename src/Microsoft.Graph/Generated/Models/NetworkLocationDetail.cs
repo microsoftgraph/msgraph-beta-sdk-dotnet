@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"networkNames", n => { NetworkNames = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"networkNames", n => { NetworkNames = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"networkType", n => { NetworkType = n.GetEnumValue<NetworkType>(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
             };

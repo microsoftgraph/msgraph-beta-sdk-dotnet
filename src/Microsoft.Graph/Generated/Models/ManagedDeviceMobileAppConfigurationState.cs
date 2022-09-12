@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"platformType", n => { PlatformType = n.GetEnumValue<PolicyPlatformType>(); } },
                 {"settingCount", n => { SettingCount = n.GetIntValue(); } },
-                {"settingStates", n => { SettingStates = n.GetCollectionOfObjectValues<ManagedDeviceMobileAppConfigurationSettingState>(ManagedDeviceMobileAppConfigurationSettingState.CreateFromDiscriminatorValue).ToList(); } },
+                {"settingStates", n => { SettingStates = n.GetCollectionOfObjectValues<ManagedDeviceMobileAppConfigurationSettingState>(ManagedDeviceMobileAppConfigurationSettingState.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"state", n => { State = n.GetEnumValue<ComplianceStatus>(); } },
                 {"userId", n => { UserId = n.GetStringValue(); } },
                 {"userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },

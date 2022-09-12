@@ -131,7 +131,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"passwordRequireToUnlockFromIdle", n => { PasswordRequireToUnlockFromIdle = n.GetBoolValue(); } },
                 {"secureBootEnabled", n => { SecureBootEnabled = n.GetBoolValue(); } },
                 {"storageRequireEncryption", n => { StorageRequireEncryption = n.GetBoolValue(); } },
-                {"validOperatingSystemBuildRanges", n => { ValidOperatingSystemBuildRanges = n.GetCollectionOfObjectValues<OperatingSystemVersionRange>(OperatingSystemVersionRange.CreateFromDiscriminatorValue).ToList(); } },
+                {"validOperatingSystemBuildRanges", n => { ValidOperatingSystemBuildRanges = n.GetCollectionOfObjectValues<OperatingSystemVersionRange>(OperatingSystemVersionRange.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

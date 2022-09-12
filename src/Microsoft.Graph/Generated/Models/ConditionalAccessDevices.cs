@@ -65,10 +65,10 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"deviceFilter", n => { DeviceFilter = n.GetObjectValue<ConditionalAccessFilter>(ConditionalAccessFilter.CreateFromDiscriminatorValue); } },
-                {"excludeDevices", n => { ExcludeDevices = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"excludeDeviceStates", n => { ExcludeDeviceStates = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"includeDevices", n => { IncludeDevices = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"includeDeviceStates", n => { IncludeDeviceStates = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"excludeDevices", n => { ExcludeDevices = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"excludeDeviceStates", n => { ExcludeDeviceStates = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"includeDevices", n => { IncludeDevices = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"includeDeviceStates", n => { IncludeDeviceStates = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }

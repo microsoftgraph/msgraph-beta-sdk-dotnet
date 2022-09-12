@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"pageLayoutType", n => { PageLayoutType = n.GetStringValue(); } },
                 {"publishingState", n => { PublishingState = n.GetObjectValue<PublicationFacet>(PublicationFacet.CreateFromDiscriminatorValue); } },
                 {"title", n => { Title = n.GetStringValue(); } },
-                {"webParts", n => { WebParts = n.GetCollectionOfObjectValues<WebPart>(WebPart.CreateFromDiscriminatorValue).ToList(); } },
+                {"webParts", n => { WebParts = n.GetCollectionOfObjectValues<WebPart>(WebPart.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

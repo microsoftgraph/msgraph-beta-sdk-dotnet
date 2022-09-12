@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"alternateUrl", n => { AlternateUrl = n.GetStringValue(); } },
-                {"corsConfigurations", n => { CorsConfigurations = n.GetCollectionOfObjectValues<CorsConfiguration>(CorsConfiguration.CreateFromDiscriminatorValue).ToList(); } },
+                {"corsConfigurations", n => { CorsConfigurations = n.GetCollectionOfObjectValues<CorsConfiguration>(CorsConfiguration.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"externalUrl", n => { ExternalUrl = n.GetStringValue(); } },
                 {"internalUrl", n => { InternalUrl = n.GetStringValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },

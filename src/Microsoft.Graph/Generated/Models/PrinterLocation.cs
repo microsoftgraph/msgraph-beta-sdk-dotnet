@@ -144,7 +144,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"latitude", n => { Latitude = n.GetDoubleValue(); } },
                 {"longitude", n => { Longitude = n.GetDoubleValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"organization", n => { Organization = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"organization", n => { Organization = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"postalCode", n => { PostalCode = n.GetStringValue(); } },
                 {"roomDescription", n => { RoomDescription = n.GetStringValue(); } },
                 {"roomName", n => { RoomName = n.GetStringValue(); } },
@@ -152,8 +152,8 @@ namespace Microsoft.Graph.Beta.Models {
                 {"site", n => { Site = n.GetStringValue(); } },
                 {"stateOrProvince", n => { StateOrProvince = n.GetStringValue(); } },
                 {"streetAddress", n => { StreetAddress = n.GetStringValue(); } },
-                {"subdivision", n => { Subdivision = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"subunit", n => { Subunit = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"subdivision", n => { Subdivision = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"subunit", n => { Subunit = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

@@ -7,7 +7,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Applications.Item.AddKey {
     /// <summary>Provides operations to call the addKey method.</summary>
-    public class KeyCredentialPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
+    public class AddKeyPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
             get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
@@ -31,9 +31,9 @@ namespace Microsoft.Graph.Beta.Applications.Item.AddKey {
             set { BackingStore?.Set("proof", value); }
         }
         /// <summary>
-        /// Instantiates a new KeyCredentialPostRequestBody and sets the default values.
+        /// Instantiates a new addKeyPostRequestBody and sets the default values.
         /// </summary>
-        public KeyCredentialPostRequestBody() {
+        public AddKeyPostRequestBody() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
@@ -41,9 +41,9 @@ namespace Microsoft.Graph.Beta.Applications.Item.AddKey {
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>
-        public static KeyCredentialPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static AddKeyPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new KeyCredentialPostRequestBody();
+            return new AddKeyPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model

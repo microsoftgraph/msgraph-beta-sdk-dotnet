@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.E
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"ids", n => { Ids = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"ids", n => { Ids = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"memberEntityType", n => { MemberEntityType = n.GetStringValue(); } },
                 {"updateCategory", n => { UpdateCategory = n.GetEnumValue<UpdateCategory>(); } },
             };

@@ -64,9 +64,9 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementActi
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"excludeGroups", n => { ExcludeGroups = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"excludeGroups", n => { ExcludeGroups = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"includeAllUsers", n => { IncludeAllUsers = n.GetBoolValue(); } },
-                {"includeGroups", n => { IncludeGroups = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"includeGroups", n => { IncludeGroups = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"managementTemplateId", n => { ManagementTemplateId = n.GetStringValue(); } },
                 {"tenantGroupId", n => { TenantGroupId = n.GetStringValue(); } },
                 {"tenantId", n => { TenantId = n.GetStringValue(); } },

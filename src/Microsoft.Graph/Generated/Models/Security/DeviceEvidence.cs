@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
                 {"deviceDnsName", n => { DeviceDnsName = n.GetStringValue(); } },
                 {"firstSeenDateTime", n => { FirstSeenDateTime = n.GetDateTimeOffsetValue(); } },
                 {"healthStatus", n => { HealthStatus = n.GetEnumValue<DeviceHealthStatus>(); } },
-                {"loggedOnUsers", n => { LoggedOnUsers = n.GetCollectionOfObjectValues<LoggedOnUser>(LoggedOnUser.CreateFromDiscriminatorValue).ToList(); } },
+                {"loggedOnUsers", n => { LoggedOnUsers = n.GetCollectionOfObjectValues<LoggedOnUser>(LoggedOnUser.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"mdeDeviceId", n => { MdeDeviceId = n.GetStringValue(); } },
                 {"onboardingStatus", n => { OnboardingStatus = n.GetEnumValue<OnboardingStatus>(); } },
                 {"osBuild", n => { OsBuild = n.GetLongValue(); } },

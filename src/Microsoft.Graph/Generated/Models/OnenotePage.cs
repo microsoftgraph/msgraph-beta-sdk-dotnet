@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"parentNotebook", n => { ParentNotebook = n.GetObjectValue<Notebook>(Notebook.CreateFromDiscriminatorValue); } },
                 {"parentSection", n => { ParentSection = n.GetObjectValue<OnenoteSection>(OnenoteSection.CreateFromDiscriminatorValue); } },
                 {"title", n => { Title = n.GetStringValue(); } },
-                {"userTags", n => { UserTags = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"userTags", n => { UserTags = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

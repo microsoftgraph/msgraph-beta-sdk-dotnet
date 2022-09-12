@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of applicationTemplate entities.</summary>
     public class ApplicationTemplate : Entity, IParsable {
         /// <summary>The list of categories for the application. Supported values can be: Collaboration, Business Management, Consumer, Content management, CRM, Data services, Developer services, E-commerce, Education, ERP, Finance, Health, Human resources, IT infrastructure, Mail, Management, Marketing, Media, Productivity, Project management, Telecommunications, Tools, Travel, and Web design &amp; hosting.</summary>
         public List<string> Categories {
@@ -56,7 +57,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("supportedSingleSignOnModes", value); }
         }
         /// <summary>
-        /// Instantiates a new ApplicationTemplate and sets the default values.
+        /// Instantiates a new applicationTemplate and sets the default values.
         /// </summary>
         public ApplicationTemplate() : base() {
             OdataType = "#microsoft.graph.applicationTemplate";
@@ -74,7 +75,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"categories", n => { Categories = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"categories", n => { Categories = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"homePageUrl", n => { HomePageUrl = n.GetStringValue(); } },
@@ -82,8 +83,8 @@ namespace Microsoft.Graph.Beta.Models {
                 {"logoUrl", n => { LogoUrl = n.GetStringValue(); } },
                 {"publisher", n => { Publisher = n.GetStringValue(); } },
                 {"supportedClaimConfiguration", n => { SupportedClaimConfiguration = n.GetObjectValue<Microsoft.Graph.Beta.Models.SupportedClaimConfiguration>(Microsoft.Graph.Beta.Models.SupportedClaimConfiguration.CreateFromDiscriminatorValue); } },
-                {"supportedProvisioningTypes", n => { SupportedProvisioningTypes = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"supportedSingleSignOnModes", n => { SupportedSingleSignOnModes = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"supportedProvisioningTypes", n => { SupportedProvisioningTypes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"supportedSingleSignOnModes", n => { SupportedSingleSignOnModes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

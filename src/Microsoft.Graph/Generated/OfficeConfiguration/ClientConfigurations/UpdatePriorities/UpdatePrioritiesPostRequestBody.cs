@@ -44,8 +44,8 @@ namespace Microsoft.Graph.Beta.OfficeConfiguration.ClientConfigurations.UpdatePr
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"officeConfigurationPolicyIds", n => { OfficeConfigurationPolicyIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"officeConfigurationPriorities", n => { OfficeConfigurationPriorities = n.GetCollectionOfPrimitiveValues<int?>().ToList(); } },
+                {"officeConfigurationPolicyIds", n => { OfficeConfigurationPolicyIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"officeConfigurationPriorities", n => { OfficeConfigurationPriorities = n.GetCollectionOfPrimitiveValues<int?>()?.ToList(); } },
             };
         }
         /// <summary>

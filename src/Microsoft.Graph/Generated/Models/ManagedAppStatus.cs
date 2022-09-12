@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Represents app protection and configuration status for the organization.</summary>
     public class ManagedAppStatus : Entity, IParsable {
         /// <summary>Friendly name of the status report.</summary>
         public string DisplayName {
@@ -17,7 +18,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("version", value); }
         }
         /// <summary>
-        /// Instantiates a new ManagedAppStatus and sets the default values.
+        /// Instantiates a new managedAppStatus and sets the default values.
         /// </summary>
         public ManagedAppStatus() : base() {
             OdataType = "#microsoft.graph.managedAppStatus";
@@ -28,8 +29,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static new ManagedAppStatus CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValueNode = parseNode.GetChildNode("@odata.type");
-            var mappingValue = mappingValueNode?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch {
                 "#microsoft.graph.managedAppStatusRaw" => new ManagedAppStatusRaw(),
                 _ => new ManagedAppStatus(),

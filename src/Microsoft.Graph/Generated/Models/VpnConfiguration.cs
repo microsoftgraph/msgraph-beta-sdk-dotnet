@@ -43,8 +43,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static new VpnConfiguration CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValueNode = parseNode.GetChildNode("@odata.type");
-            var mappingValue = mappingValueNode?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch {
                 "#microsoft.graph.androidDeviceOwnerVpnConfiguration" => new AndroidDeviceOwnerVpnConfiguration(),
                 _ => new VpnConfiguration(),
@@ -59,7 +58,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"connectionName", n => { ConnectionName = n.GetStringValue(); } },
                 {"realm", n => { Realm = n.GetStringValue(); } },
                 {"role", n => { Role = n.GetStringValue(); } },
-                {"servers", n => { Servers = n.GetCollectionOfObjectValues<VpnServer>(VpnServer.CreateFromDiscriminatorValue).ToList(); } },
+                {"servers", n => { Servers = n.GetCollectionOfObjectValues<VpnServer>(VpnServer.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

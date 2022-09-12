@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("softwareUpdateHealth", value); }
         }
         /// <summary>
-        /// Instantiates a new TeamworkDeviceHealth and sets the default values.
+        /// Instantiates a new teamworkDeviceHealth and sets the default values.
         /// </summary>
         public TeamworkDeviceHealth() : base() {
             OdataType = "#microsoft.graph.teamworkDeviceHealth";

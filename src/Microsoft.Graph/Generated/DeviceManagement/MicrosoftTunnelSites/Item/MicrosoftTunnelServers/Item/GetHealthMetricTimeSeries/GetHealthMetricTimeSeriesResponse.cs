@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelSites.Item.Micros
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<MetricTimeSeriesDataPoint>(MetricTimeSeriesDataPoint.CreateFromDiscriminatorValue).ToList(); } },
+                {"value", n => { Value = n.GetCollectionOfObjectValues<MetricTimeSeriesDataPoint>(MetricTimeSeriesDataPoint.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"isWheelChairAccessible", n => { IsWheelChairAccessible = n.GetBoolValue(); } },
                 {"label", n => { Label = n.GetStringValue(); } },
                 {"nickname", n => { Nickname = n.GetStringValue(); } },
-                {"tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"videoDeviceName", n => { VideoDeviceName = n.GetStringValue(); } },
             };
         }

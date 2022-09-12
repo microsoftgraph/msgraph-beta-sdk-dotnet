@@ -86,8 +86,8 @@ namespace Microsoft.Graph.Beta.Communications.Calls.Item.RecordResponse {
                 {"maxRecordDurationInSeconds", n => { MaxRecordDurationInSeconds = n.GetIntValue(); } },
                 {"maxSilenceTimeoutInSeconds", n => { MaxSilenceTimeoutInSeconds = n.GetIntValue(); } },
                 {"playBeep", n => { PlayBeep = n.GetBoolValue(); } },
-                {"prompts", n => { Prompts = n.GetCollectionOfObjectValues<Prompt>(Prompt.CreateFromDiscriminatorValue).ToList(); } },
-                {"stopTones", n => { StopTones = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"prompts", n => { Prompts = n.GetCollectionOfObjectValues<Prompt>(Prompt.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"stopTones", n => { StopTones = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"streamWhileRecording", n => { StreamWhileRecording = n.GetBoolValue(); } },
             };
         }

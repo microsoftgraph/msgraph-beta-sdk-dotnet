@@ -88,13 +88,13 @@ namespace Microsoft.Graph.Beta.Models {
                 {"dataType", n => { DataType = n.GetEnumValue<AndroidForWorkAppConfigurationSchemaItemDataType>(); } },
                 {"defaultBoolValue", n => { DefaultBoolValue = n.GetBoolValue(); } },
                 {"defaultIntValue", n => { DefaultIntValue = n.GetIntValue(); } },
-                {"defaultStringArrayValue", n => { DefaultStringArrayValue = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"defaultStringArrayValue", n => { DefaultStringArrayValue = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"defaultStringValue", n => { DefaultStringValue = n.GetStringValue(); } },
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"schemaItemKey", n => { SchemaItemKey = n.GetStringValue(); } },
-                {"selections", n => { Selections = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue).ToList(); } },
+                {"selections", n => { Selections = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class TaskReport : Entity, IParsable {
         /// <summary>The date time that the associated run completed. Value is null if the run has not completed.</summary>
         public DateTimeOffset? CompletedDateTime {
@@ -66,7 +67,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
             set { BackingStore?.Set("unprocessedUsersCount", value); }
         }
         /// <summary>
-        /// Instantiates a new TaskReport and sets the default values.
+        /// Instantiates a new taskReport and sets the default values.
         /// </summary>
         public TaskReport() : base() {
             OdataType = "#microsoft.graph.identityGovernance.taskReport";
@@ -93,7 +94,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
                 {"successfulUsersCount", n => { SuccessfulUsersCount = n.GetIntValue(); } },
                 {"taskDefinition", n => { TaskDefinition = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentityGovernance.TaskDefinition>(Microsoft.Graph.Beta.Models.IdentityGovernance.TaskDefinition.CreateFromDiscriminatorValue); } },
                 {"task", n => { TaskObject = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentityGovernance.TaskObject>(Microsoft.Graph.Beta.Models.IdentityGovernance.TaskObject.CreateFromDiscriminatorValue); } },
-                {"taskProcessingResults", n => { TaskProcessingResults = n.GetCollectionOfObjectValues<TaskProcessingResult>(TaskProcessingResult.CreateFromDiscriminatorValue).ToList(); } },
+                {"taskProcessingResults", n => { TaskProcessingResults = n.GetCollectionOfObjectValues<TaskProcessingResult>(TaskProcessingResult.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"totalUsersCount", n => { TotalUsersCount = n.GetIntValue(); } },
                 {"unprocessedUsersCount", n => { UnprocessedUsersCount = n.GetIntValue(); } },
             };

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Represents a booked appointment of a service by a customer in a business.</summary>
     public class BookingAppointment : Entity, IParsable {
         /// <summary>Additional information that is sent to the customer when an appointment is confirmed.</summary>
         public string AdditionalInformation {
@@ -186,7 +187,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("start", value); }
         }
         /// <summary>
-        /// Instantiates a new BookingAppointment and sets the default values.
+        /// Instantiates a new bookingAppointment and sets the default values.
         /// </summary>
         public BookingAppointment() : base() {
             OdataType = "#microsoft.graph.bookingAppointment";
@@ -212,7 +213,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"customerName", n => { CustomerName = n.GetStringValue(); } },
                 {"customerNotes", n => { CustomerNotes = n.GetStringValue(); } },
                 {"customerPhone", n => { CustomerPhone = n.GetStringValue(); } },
-                {"customers", n => { Customers = n.GetCollectionOfObjectValues<BookingCustomerInformationBase>(BookingCustomerInformationBase.CreateFromDiscriminatorValue).ToList(); } },
+                {"customers", n => { Customers = n.GetCollectionOfObjectValues<BookingCustomerInformationBase>(BookingCustomerInformationBase.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"customerTimeZone", n => { CustomerTimeZone = n.GetStringValue(); } },
                 {"duration", n => { Duration = n.GetTimeSpanValue(); } },
                 {"end", n => { End = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
@@ -231,14 +232,14 @@ namespace Microsoft.Graph.Beta.Models {
                 {"preBuffer", n => { PreBuffer = n.GetTimeSpanValue(); } },
                 {"price", n => { Price = n.GetDoubleValue(); } },
                 {"priceType", n => { PriceType = n.GetEnumValue<BookingPriceType>(); } },
-                {"reminders", n => { Reminders = n.GetCollectionOfObjectValues<BookingReminder>(BookingReminder.CreateFromDiscriminatorValue).ToList(); } },
+                {"reminders", n => { Reminders = n.GetCollectionOfObjectValues<BookingReminder>(BookingReminder.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"selfServiceAppointmentId", n => { SelfServiceAppointmentId = n.GetStringValue(); } },
                 {"serviceId", n => { ServiceId = n.GetStringValue(); } },
                 {"serviceLocation", n => { ServiceLocation = n.GetObjectValue<Location>(Location.CreateFromDiscriminatorValue); } },
                 {"serviceName", n => { ServiceName = n.GetStringValue(); } },
                 {"serviceNotes", n => { ServiceNotes = n.GetStringValue(); } },
                 {"smsNotificationsEnabled", n => { SmsNotificationsEnabled = n.GetBoolValue(); } },
-                {"staffMemberIds", n => { StaffMemberIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"staffMemberIds", n => { StaffMemberIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"start", n => { Start = n.GetObjectValue<DateTimeTimeZone>(DateTimeTimeZone.CreateFromDiscriminatorValue); } },
             };
         }

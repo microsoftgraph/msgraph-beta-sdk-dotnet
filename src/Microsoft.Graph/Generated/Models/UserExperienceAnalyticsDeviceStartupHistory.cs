@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>The user experience analytics device startup history entity contains device boot performance history details.</summary>
     public class UserExperienceAnalyticsDeviceStartupHistory : Entity, IParsable {
         /// <summary>The user experience analytics device core boot time in milliseconds.</summary>
         public int? CoreBootTimeInMs {
@@ -86,7 +87,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("totalLoginTimeInMs", value); }
         }
         /// <summary>
-        /// Instantiates a new UserExperienceAnalyticsDeviceStartupHistory and sets the default values.
+        /// Instantiates a new userExperienceAnalyticsDeviceStartupHistory and sets the default values.
         /// </summary>
         public UserExperienceAnalyticsDeviceStartupHistory() : base() {
             OdataType = "#microsoft.graph.userExperienceAnalyticsDeviceStartupHistory";

@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("operatingSystemRegression", value); }
         }
         /// <summary>
-        /// Instantiates a new UserExperienceAnalyticsRegressionSummary and sets the default values.
+        /// Instantiates a new userExperienceAnalyticsRegressionSummary and sets the default values.
         /// </summary>
         public UserExperienceAnalyticsRegressionSummary() : base() {
             OdataType = "#microsoft.graph.userExperienceAnalyticsRegressionSummary";
@@ -39,9 +39,9 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"manufacturerRegression", n => { ManufacturerRegression = n.GetCollectionOfObjectValues<UserExperienceAnalyticsMetric>(UserExperienceAnalyticsMetric.CreateFromDiscriminatorValue).ToList(); } },
-                {"modelRegression", n => { ModelRegression = n.GetCollectionOfObjectValues<UserExperienceAnalyticsMetric>(UserExperienceAnalyticsMetric.CreateFromDiscriminatorValue).ToList(); } },
-                {"operatingSystemRegression", n => { OperatingSystemRegression = n.GetCollectionOfObjectValues<UserExperienceAnalyticsMetric>(UserExperienceAnalyticsMetric.CreateFromDiscriminatorValue).ToList(); } },
+                {"manufacturerRegression", n => { ManufacturerRegression = n.GetCollectionOfObjectValues<UserExperienceAnalyticsMetric>(UserExperienceAnalyticsMetric.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"modelRegression", n => { ModelRegression = n.GetCollectionOfObjectValues<UserExperienceAnalyticsMetric>(UserExperienceAnalyticsMetric.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"operatingSystemRegression", n => { OperatingSystemRegression = n.GetCollectionOfObjectValues<UserExperienceAnalyticsMetric>(UserExperienceAnalyticsMetric.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

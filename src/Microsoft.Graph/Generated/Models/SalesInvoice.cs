@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class SalesInvoice : Entity, IParsable {
         /// <summary>The billingPostalAddress property</summary>
         public PostalAddressType BillingPostalAddress {
@@ -242,7 +242,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"paymentTermsId", n => { PaymentTermsId = n.GetStringValue(); } },
                 {"phoneNumber", n => { PhoneNumber = n.GetStringValue(); } },
                 {"pricesIncludeTax", n => { PricesIncludeTax = n.GetBoolValue(); } },
-                {"salesInvoiceLines", n => { SalesInvoiceLines = n.GetCollectionOfObjectValues<SalesInvoiceLine>(SalesInvoiceLine.CreateFromDiscriminatorValue).ToList(); } },
+                {"salesInvoiceLines", n => { SalesInvoiceLines = n.GetCollectionOfObjectValues<SalesInvoiceLine>(SalesInvoiceLine.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"salesperson", n => { Salesperson = n.GetStringValue(); } },
                 {"sellingPostalAddress", n => { SellingPostalAddress = n.GetObjectValue<PostalAddressType>(PostalAddressType.CreateFromDiscriminatorValue); } },
                 {"shipmentMethod", n => { ShipmentMethod = n.GetObjectValue<Microsoft.Graph.Beta.Models.ShipmentMethod>(Microsoft.Graph.Beta.Models.ShipmentMethod.CreateFromDiscriminatorValue); } },

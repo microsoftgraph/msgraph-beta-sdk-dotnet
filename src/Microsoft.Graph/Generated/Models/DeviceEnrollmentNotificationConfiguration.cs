@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"brandingOptions", n => { BrandingOptions = n.GetEnumValue<EnrollmentNotificationBrandingOptions>(); } },
                 {"defaultLocale", n => { DefaultLocale = n.GetStringValue(); } },
                 {"notificationMessageTemplateId", n => { NotificationMessageTemplateId = n.GetStringValue(); } },
-                {"notificationTemplates", n => { NotificationTemplates = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"notificationTemplates", n => { NotificationTemplates = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"platformType", n => { PlatformType = n.GetEnumValue<EnrollmentRestrictionPlatformType>(); } },
                 {"templateType", n => { TemplateType = n.GetEnumValue<EnrollmentNotificationTemplateType>(); } },
             };

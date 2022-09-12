@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"isCaptionEnabled", n => { IsCaptionEnabled = n.GetBoolValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"spokenLanguage", n => { SpokenLanguage = n.GetStringValue(); } },
-                {"translationLanguages", n => { TranslationLanguages = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"translationLanguages", n => { TranslationLanguages = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

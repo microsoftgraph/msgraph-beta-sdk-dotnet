@@ -69,11 +69,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports.GetCachedReport {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"groupBy", n => { GroupBy = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"groupBy", n => { GroupBy = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"id", n => { Id = n.GetStringValue(); } },
-                {"orderBy", n => { OrderBy = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"orderBy", n => { OrderBy = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"search", n => { Search = n.GetStringValue(); } },
-                {"select", n => { Select = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"select", n => { Select = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"skip", n => { Skip = n.GetIntValue(); } },
                 {"top", n => { Top = n.GetIntValue(); } },
             };

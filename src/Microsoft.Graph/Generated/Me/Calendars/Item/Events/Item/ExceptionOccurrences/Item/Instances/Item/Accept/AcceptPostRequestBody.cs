@@ -44,8 +44,8 @@ namespace Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.ExceptionOccurrence
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"comment", n => { Comment = n.GetStringValue(); } },
-                {"sendResponse", n => { SendResponse = n.GetBoolValue(); } },
+                {"Comment", n => { Comment = n.GetStringValue(); } },
+                {"SendResponse", n => { SendResponse = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -54,8 +54,8 @@ namespace Microsoft.Graph.Beta.Me.Calendars.Item.Events.Item.ExceptionOccurrence
         /// </summary>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("comment", Comment);
-            writer.WriteBoolValue("sendResponse", SendResponse);
+            writer.WriteStringValue("Comment", Comment);
+            writer.WriteBoolValue("SendResponse", SendResponse);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

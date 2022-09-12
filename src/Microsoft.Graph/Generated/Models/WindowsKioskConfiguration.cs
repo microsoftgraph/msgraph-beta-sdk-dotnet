@@ -75,14 +75,14 @@ namespace Microsoft.Graph.Beta.Models {
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"edgeKioskEnablePublicBrowsing", n => { EdgeKioskEnablePublicBrowsing = n.GetBoolValue(); } },
-                {"kioskBrowserBlockedUrlExceptions", n => { KioskBrowserBlockedUrlExceptions = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"kioskBrowserBlockedURLs", n => { KioskBrowserBlockedURLs = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"kioskBrowserBlockedUrlExceptions", n => { KioskBrowserBlockedUrlExceptions = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"kioskBrowserBlockedURLs", n => { KioskBrowserBlockedURLs = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"kioskBrowserDefaultUrl", n => { KioskBrowserDefaultUrl = n.GetStringValue(); } },
                 {"kioskBrowserEnableEndSessionButton", n => { KioskBrowserEnableEndSessionButton = n.GetBoolValue(); } },
                 {"kioskBrowserEnableHomeButton", n => { KioskBrowserEnableHomeButton = n.GetBoolValue(); } },
                 {"kioskBrowserEnableNavigationButtons", n => { KioskBrowserEnableNavigationButtons = n.GetBoolValue(); } },
                 {"kioskBrowserRestartOnIdleTimeInMinutes", n => { KioskBrowserRestartOnIdleTimeInMinutes = n.GetIntValue(); } },
-                {"kioskProfiles", n => { KioskProfiles = n.GetCollectionOfObjectValues<WindowsKioskProfile>(WindowsKioskProfile.CreateFromDiscriminatorValue).ToList(); } },
+                {"kioskProfiles", n => { KioskProfiles = n.GetCollectionOfObjectValues<WindowsKioskProfile>(WindowsKioskProfile.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"windowsKioskForceUpdateSchedule", n => { WindowsKioskForceUpdateSchedule = n.GetObjectValue<Microsoft.Graph.Beta.Models.WindowsKioskForceUpdateSchedule>(Microsoft.Graph.Beta.Models.WindowsKioskForceUpdateSchedule.CreateFromDiscriminatorValue); } },
             };
         }

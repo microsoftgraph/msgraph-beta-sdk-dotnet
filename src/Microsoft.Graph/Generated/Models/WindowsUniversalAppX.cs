@@ -71,7 +71,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"applicableArchitectures", n => { ApplicableArchitectures = n.GetEnumValue<WindowsArchitecture>(); } },
                 {"applicableDeviceTypes", n => { ApplicableDeviceTypes = n.GetEnumValue<WindowsDeviceType>(); } },
-                {"committedContainedApps", n => { CommittedContainedApps = n.GetCollectionOfObjectValues<MobileContainedApp>(MobileContainedApp.CreateFromDiscriminatorValue).ToList(); } },
+                {"committedContainedApps", n => { CommittedContainedApps = n.GetCollectionOfObjectValues<MobileContainedApp>(MobileContainedApp.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"identityName", n => { IdentityName = n.GetStringValue(); } },
                 {"identityPublisherHash", n => { IdentityPublisherHash = n.GetStringValue(); } },
                 {"identityResourceIdentifier", n => { IdentityResourceIdentifier = n.GetStringValue(); } },

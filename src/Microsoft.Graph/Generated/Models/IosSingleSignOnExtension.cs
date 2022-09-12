@@ -7,7 +7,7 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class IosSingleSignOnExtension : SingleSignOnExtension, IParsable {
         /// <summary>
-        /// Instantiates a new iosSingleSignOnExtension and sets the default values.
+        /// Instantiates a new IosSingleSignOnExtension and sets the default values.
         /// </summary>
         public IosSingleSignOnExtension() : base() {
             OdataType = "#microsoft.graph.iosSingleSignOnExtension";
@@ -18,8 +18,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static new IosSingleSignOnExtension CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValueNode = parseNode.GetChildNode("@odata.type");
-            var mappingValue = mappingValueNode?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch {
                 "#microsoft.graph.iosAzureAdSingleSignOnExtension" => new IosAzureAdSingleSignOnExtension(),
                 "#microsoft.graph.iosCredentialSingleSignOnExtension" => new IosCredentialSingleSignOnExtension(),

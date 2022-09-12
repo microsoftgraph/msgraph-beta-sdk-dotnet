@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.Participants.MuteAll {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"clientContext", n => { ClientContext = n.GetStringValue(); } },
-                {"participants", n => { Participants = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"participants", n => { Participants = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

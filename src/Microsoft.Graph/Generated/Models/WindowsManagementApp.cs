@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("managedInstallerConfiguredDateTime", value); }
         }
         /// <summary>
-        /// Instantiates a new WindowsManagementApp and sets the default values.
+        /// Instantiates a new windowsManagementApp and sets the default values.
         /// </summary>
         public WindowsManagementApp() : base() {
             OdataType = "#microsoft.graph.windowsManagementApp";
@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Models {
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"availableVersion", n => { AvailableVersion = n.GetStringValue(); } },
-                {"healthStates", n => { HealthStates = n.GetCollectionOfObjectValues<WindowsManagementAppHealthState>(WindowsManagementAppHealthState.CreateFromDiscriminatorValue).ToList(); } },
+                {"healthStates", n => { HealthStates = n.GetCollectionOfObjectValues<WindowsManagementAppHealthState>(WindowsManagementAppHealthState.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"managedInstaller", n => { ManagedInstaller = n.GetEnumValue<ManagedInstallerStatus>(); } },
                 {"managedInstallerConfiguredDateTime", n => { ManagedInstallerConfiguredDateTime = n.GetStringValue(); } },
             };
