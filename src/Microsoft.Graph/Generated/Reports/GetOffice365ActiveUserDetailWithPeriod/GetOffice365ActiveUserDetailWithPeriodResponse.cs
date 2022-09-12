@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Beta.Reports.GetOffice365ActiveUserDetailWithPeriod {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<Office365ActiveUserDetail>(Office365ActiveUserDetail.CreateFromDiscriminatorValue).ToList(); } },
+                {"value", n => { Value = n.GetCollectionOfObjectValues<Office365ActiveUserDetail>(Office365ActiveUserDetail.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

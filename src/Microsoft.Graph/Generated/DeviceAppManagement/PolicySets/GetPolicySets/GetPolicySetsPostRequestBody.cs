@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.PolicySets.GetPolicySets {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"policySetIds", n => { PolicySetIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"policySetIds", n => { PolicySetIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

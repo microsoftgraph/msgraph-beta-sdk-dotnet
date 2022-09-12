@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class SalesOrder : Entity, IParsable {
         /// <summary>The billingPostalAddress property</summary>
         public PostalAddressType BillingPostalAddress {
@@ -226,7 +226,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"phoneNumber", n => { PhoneNumber = n.GetStringValue(); } },
                 {"pricesIncludeTax", n => { PricesIncludeTax = n.GetBoolValue(); } },
                 {"requestedDeliveryDate", n => { RequestedDeliveryDate = n.GetDateValue(); } },
-                {"salesOrderLines", n => { SalesOrderLines = n.GetCollectionOfObjectValues<SalesOrderLine>(SalesOrderLine.CreateFromDiscriminatorValue).ToList(); } },
+                {"salesOrderLines", n => { SalesOrderLines = n.GetCollectionOfObjectValues<SalesOrderLine>(SalesOrderLine.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"salesperson", n => { Salesperson = n.GetStringValue(); } },
                 {"sellingPostalAddress", n => { SellingPostalAddress = n.GetObjectValue<PostalAddressType>(PostalAddressType.CreateFromDiscriminatorValue); } },
                 {"shippingPostalAddress", n => { ShippingPostalAddress = n.GetObjectValue<PostalAddressType>(PostalAddressType.CreateFromDiscriminatorValue); } },

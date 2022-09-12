@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Beta.DirectoryRoles.Delta {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<DirectoryRole>(DirectoryRole.CreateFromDiscriminatorValue).ToList(); } },
+                {"value", n => { Value = n.GetCollectionOfObjectValues<DirectoryRole>(DirectoryRole.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

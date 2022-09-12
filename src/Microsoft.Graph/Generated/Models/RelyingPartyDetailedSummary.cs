@@ -81,10 +81,10 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"failedSignInCount", n => { FailedSignInCount = n.GetLongValue(); } },
                 {"migrationStatus", n => { MigrationStatus = n.GetEnumValue<MigrationStatus>(); } },
-                {"migrationValidationDetails", n => { MigrationValidationDetails = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue).ToList(); } },
+                {"migrationValidationDetails", n => { MigrationValidationDetails = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"relyingPartyId", n => { RelyingPartyId = n.GetStringValue(); } },
                 {"relyingPartyName", n => { RelyingPartyName = n.GetStringValue(); } },
-                {"replyUrls", n => { ReplyUrls = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"replyUrls", n => { ReplyUrls = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"serviceId", n => { ServiceId = n.GetStringValue(); } },
                 {"signInSuccessRate", n => { SignInSuccessRate = n.GetDoubleValue(); } },
                 {"successfulSignInCount", n => { SuccessfulSignInCount = n.GetLongValue(); } },

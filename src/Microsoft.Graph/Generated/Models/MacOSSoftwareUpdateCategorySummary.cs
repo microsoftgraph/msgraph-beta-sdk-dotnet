@@ -77,7 +77,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"successfulUpdateCount", n => { SuccessfulUpdateCount = n.GetIntValue(); } },
                 {"totalUpdateCount", n => { TotalUpdateCount = n.GetIntValue(); } },
                 {"updateCategory", n => { UpdateCategory = n.GetEnumValue<MacOSSoftwareUpdateCategory>(); } },
-                {"updateStateSummaries", n => { UpdateStateSummaries = n.GetCollectionOfObjectValues<MacOSSoftwareUpdateStateSummary>(MacOSSoftwareUpdateStateSummary.CreateFromDiscriminatorValue).ToList(); } },
+                {"updateStateSummaries", n => { UpdateStateSummaries = n.GetCollectionOfObjectValues<MacOSSoftwareUpdateStateSummary>(MacOSSoftwareUpdateStateSummary.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"userId", n => { UserId = n.GetStringValue(); } },
             };
         }

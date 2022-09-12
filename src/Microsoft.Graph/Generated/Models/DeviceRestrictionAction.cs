@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"message", n => { Message = n.GetStringValue(); } },
                 {"restrictionAction", n => { RestrictionAction = n.GetEnumValue<RestrictionAction>(); } },
-                {"triggers", n => { Triggers = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"triggers", n => { Triggers = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

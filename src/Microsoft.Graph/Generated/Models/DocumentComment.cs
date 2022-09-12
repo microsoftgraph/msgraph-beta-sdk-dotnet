@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Beta.Models {
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"content", n => { Content = n.GetStringValue(); } },
-                {"replies", n => { Replies = n.GetCollectionOfObjectValues<DocumentCommentReply>(DocumentCommentReply.CreateFromDiscriminatorValue).ToList(); } },
+                {"replies", n => { Replies = n.GetCollectionOfObjectValues<DocumentCommentReply>(DocumentCommentReply.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

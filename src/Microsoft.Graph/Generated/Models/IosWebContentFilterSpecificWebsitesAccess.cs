@@ -34,8 +34,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"specificWebsitesOnly", n => { SpecificWebsitesOnly = n.GetCollectionOfObjectValues<IosBookmark>(IosBookmark.CreateFromDiscriminatorValue).ToList(); } },
-                {"websiteList", n => { WebsiteList = n.GetCollectionOfObjectValues<IosBookmark>(IosBookmark.CreateFromDiscriminatorValue).ToList(); } },
+                {"specificWebsitesOnly", n => { SpecificWebsitesOnly = n.GetCollectionOfObjectValues<IosBookmark>(IosBookmark.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"websiteList", n => { WebsiteList = n.GetCollectionOfObjectValues<IosBookmark>(IosBookmark.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

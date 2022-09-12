@@ -17,7 +17,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("userPrincipalName", value); }
         }
         /// <summary>
-        /// Instantiates a new userIdentity and sets the default values.
+        /// Instantiates a new UserIdentity and sets the default values.
         /// </summary>
         public UserIdentity() : base() {
             OdataType = "#microsoft.graph.userIdentity";
@@ -28,8 +28,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static new UserIdentity CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValueNode = parseNode.GetChildNode("@odata.type");
-            var mappingValue = mappingValueNode?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch {
                 "#microsoft.graph.auditUserIdentity" => new AuditUserIdentity(),
                 _ => new UserIdentity(),

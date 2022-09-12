@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the commsApplication singleton.</summary>
     public class MeetingRegistrationQuestion : Entity, IParsable {
         /// <summary>Answer input type of the custom registration question.</summary>
         public Microsoft.Graph.Beta.Models.AnswerInputType? AnswerInputType {
@@ -46,7 +46,7 @@ namespace Microsoft.Graph.Beta.Models {
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"answerInputType", n => { AnswerInputType = n.GetEnumValue<AnswerInputType>(); } },
-                {"answerOptions", n => { AnswerOptions = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"answerOptions", n => { AnswerOptions = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"isRequired", n => { IsRequired = n.GetBoolValue(); } },
             };

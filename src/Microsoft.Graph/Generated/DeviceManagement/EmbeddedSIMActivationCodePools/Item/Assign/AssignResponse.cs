@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.EmbeddedSIMActivationCodePools.I
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<EmbeddedSIMActivationCodePoolAssignment>(EmbeddedSIMActivationCodePoolAssignment.CreateFromDiscriminatorValue).ToList(); } },
+                {"value", n => { Value = n.GetCollectionOfObjectValues<EmbeddedSIMActivationCodePoolAssignment>(EmbeddedSIMActivationCodePoolAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

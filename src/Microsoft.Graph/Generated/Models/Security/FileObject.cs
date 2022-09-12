@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class FileObject : Entity, IParsable {
         /// <summary>The content property</summary>
         public byte[] Content {
@@ -79,8 +79,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// </summary>
         public static new FileObject CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValueNode = parseNode.GetChildNode("@odata.type");
-            var mappingValue = mappingValueNode?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch {
                 "#microsoft.graph.security.ediscoveryFile" => new EdiscoveryFile(),
                 _ => new FileObject(),
@@ -99,7 +98,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
                 {"name", n => { Name = n.GetStringValue(); } },
                 {"otherProperties", n => { OtherProperties = n.GetObjectValue<StringValueDictionary>(StringValueDictionary.CreateFromDiscriminatorValue); } },
                 {"processingStatus", n => { ProcessingStatus = n.GetEnumValue<FileProcessingStatus>(); } },
-                {"senderOrAuthors", n => { SenderOrAuthors = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"senderOrAuthors", n => { SenderOrAuthors = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"size", n => { Size = n.GetLongValue(); } },
                 {"sourceType", n => { SourceType = n.GetEnumValue<SourceType>(); } },
                 {"subjectTitle", n => { SubjectTitle = n.GetStringValue(); } },

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class RetentionEvent : Entity, IParsable {
         /// <summary>The user who created the retentionEvent.</summary>
         public Microsoft.Graph.Beta.Models.IdentitySet CreatedBy {
@@ -89,8 +89,8 @@ namespace Microsoft.Graph.Beta.Models.Security {
                 {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"eventPropagationResults", n => { EventPropagationResults = n.GetCollectionOfObjectValues<EventPropagationResult>(EventPropagationResult.CreateFromDiscriminatorValue).ToList(); } },
-                {"eventQueries", n => { EventQueries = n.GetCollectionOfObjectValues<EventQuery>(EventQuery.CreateFromDiscriminatorValue).ToList(); } },
+                {"eventPropagationResults", n => { EventPropagationResults = n.GetCollectionOfObjectValues<EventPropagationResult>(EventPropagationResult.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"eventQueries", n => { EventQueries = n.GetCollectionOfObjectValues<EventQuery>(EventQuery.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"eventStatus", n => { EventStatus = n.GetObjectValue<RetentionEventStatus>(RetentionEventStatus.CreateFromDiscriminatorValue); } },
                 {"eventTriggerDateTime", n => { EventTriggerDateTime = n.GetDateTimeOffsetValue(); } },
                 {"lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>(Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },

@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"excludedHosts", n => { ExcludedHosts = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"excludedHosts", n => { ExcludedHosts = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"host", n => { Host = n.GetStringValue(); } },
                 {"port", n => { Port = n.GetIntValue(); } },
             };

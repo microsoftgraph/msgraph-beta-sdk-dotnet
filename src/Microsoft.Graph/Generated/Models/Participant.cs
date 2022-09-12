@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"isIdentityAnonymized", n => { IsIdentityAnonymized = n.GetBoolValue(); } },
                 {"isInLobby", n => { IsInLobby = n.GetBoolValue(); } },
                 {"isMuted", n => { IsMuted = n.GetBoolValue(); } },
-                {"mediaStreams", n => { MediaStreams = n.GetCollectionOfObjectValues<MediaStream>(MediaStream.CreateFromDiscriminatorValue).ToList(); } },
+                {"mediaStreams", n => { MediaStreams = n.GetCollectionOfObjectValues<MediaStream>(MediaStream.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"metadata", n => { Metadata = n.GetStringValue(); } },
                 {"recordingInfo", n => { RecordingInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.RecordingInfo>(Microsoft.Graph.Beta.Models.RecordingInfo.CreateFromDiscriminatorValue); } },
             };

@@ -271,7 +271,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"productName", n => { ProductName = n.GetStringValue(); } },
                 {"residentUsersCount", n => { ResidentUsersCount = n.GetIntValue(); } },
                 {"serialNumber", n => { SerialNumber = n.GetStringValue(); } },
-                {"sharedDeviceCachedUsers", n => { SharedDeviceCachedUsers = n.GetCollectionOfObjectValues<SharedAppleDeviceUser>(SharedAppleDeviceUser.CreateFromDiscriminatorValue).ToList(); } },
+                {"sharedDeviceCachedUsers", n => { SharedDeviceCachedUsers = n.GetCollectionOfObjectValues<SharedAppleDeviceUser>(SharedAppleDeviceUser.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"subnetAddress", n => { SubnetAddress = n.GetStringValue(); } },
                 {"subscriberCarrier", n => { SubscriberCarrier = n.GetStringValue(); } },
                 {"systemManagementBIOSVersion", n => { SystemManagementBIOSVersion = n.GetStringValue(); } },
@@ -280,7 +280,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"tpmSpecificationVersion", n => { TpmSpecificationVersion = n.GetStringValue(); } },
                 {"tpmVersion", n => { TpmVersion = n.GetStringValue(); } },
                 {"wifiMac", n => { WifiMac = n.GetStringValue(); } },
-                {"wiredIPv4Addresses", n => { WiredIPv4Addresses = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"wiredIPv4Addresses", n => { WiredIPv4Addresses = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

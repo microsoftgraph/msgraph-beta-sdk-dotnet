@@ -40,8 +40,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"conflictingDeviceConfigurations", n => { ConflictingDeviceConfigurations = n.GetCollectionOfObjectValues<SettingSource>(SettingSource.CreateFromDiscriminatorValue).ToList(); } },
-                {"contributingSettings", n => { ContributingSettings = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"conflictingDeviceConfigurations", n => { ConflictingDeviceConfigurations = n.GetCollectionOfObjectValues<SettingSource>(SettingSource.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"contributingSettings", n => { ContributingSettings = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"deviceCheckinsImpacted", n => { DeviceCheckinsImpacted = n.GetIntValue(); } },
             };
         }

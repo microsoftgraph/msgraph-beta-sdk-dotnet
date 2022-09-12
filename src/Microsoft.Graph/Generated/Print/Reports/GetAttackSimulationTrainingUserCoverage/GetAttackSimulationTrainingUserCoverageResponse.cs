@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Beta.Print.Reports.GetAttackSimulationTrainingUserCove
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<AttackSimulationTrainingUserCoverage>(AttackSimulationTrainingUserCoverage.CreateFromDiscriminatorValue).ToList(); } },
+                {"value", n => { Value = n.GetCollectionOfObjectValues<AttackSimulationTrainingUserCoverage>(AttackSimulationTrainingUserCoverage.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

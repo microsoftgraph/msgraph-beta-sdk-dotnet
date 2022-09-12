@@ -161,7 +161,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"assignDateTime", n => { AssignDateTime = n.GetDateTimeOffsetValue(); } },
                 {"assignedDateTime", n => { AssignedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"assignTo", n => { AssignTo = n.GetObjectValue<EducationAssignmentRecipient>(EducationAssignmentRecipient.CreateFromDiscriminatorValue); } },
-                {"categories", n => { Categories = n.GetCollectionOfObjectValues<EducationCategory>(EducationCategory.CreateFromDiscriminatorValue).ToList(); } },
+                {"categories", n => { Categories = n.GetCollectionOfObjectValues<EducationCategory>(EducationCategory.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"classId", n => { ClassId = n.GetStringValue(); } },
                 {"closeDateTime", n => { CloseDateTime = n.GetDateTimeOffsetValue(); } },
                 {"createdBy", n => { CreatedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
@@ -174,11 +174,11 @@ namespace Microsoft.Graph.Beta.Models {
                 {"lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
                 {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"notificationChannelUrl", n => { NotificationChannelUrl = n.GetStringValue(); } },
-                {"resources", n => { Resources = n.GetCollectionOfObjectValues<EducationAssignmentResource>(EducationAssignmentResource.CreateFromDiscriminatorValue).ToList(); } },
+                {"resources", n => { Resources = n.GetCollectionOfObjectValues<EducationAssignmentResource>(EducationAssignmentResource.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"resourcesFolderUrl", n => { ResourcesFolderUrl = n.GetStringValue(); } },
                 {"rubric", n => { Rubric = n.GetObjectValue<EducationRubric>(EducationRubric.CreateFromDiscriminatorValue); } },
                 {"status", n => { Status = n.GetEnumValue<EducationAssignmentStatus>(); } },
-                {"submissions", n => { Submissions = n.GetCollectionOfObjectValues<EducationSubmission>(EducationSubmission.CreateFromDiscriminatorValue).ToList(); } },
+                {"submissions", n => { Submissions = n.GetCollectionOfObjectValues<EducationSubmission>(EducationSubmission.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"webUrl", n => { WebUrl = n.GetStringValue(); } },
             };
         }

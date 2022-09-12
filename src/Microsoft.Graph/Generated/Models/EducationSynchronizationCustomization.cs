@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"allowDisplayNameUpdate", n => { AllowDisplayNameUpdate = n.GetBoolValue(); } },
                 {"isSyncDeferred", n => { IsSyncDeferred = n.GetBoolValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"optionalPropertiesToSync", n => { OptionalPropertiesToSync = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"optionalPropertiesToSync", n => { OptionalPropertiesToSync = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"synchronizationStartDate", n => { SynchronizationStartDate = n.GetDateTimeOffsetValue(); } },
             };
         }

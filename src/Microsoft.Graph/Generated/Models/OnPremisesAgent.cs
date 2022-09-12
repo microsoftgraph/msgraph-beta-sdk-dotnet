@@ -49,11 +49,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"agentGroups", n => { AgentGroups = n.GetCollectionOfObjectValues<OnPremisesAgentGroup>(OnPremisesAgentGroup.CreateFromDiscriminatorValue).ToList(); } },
+                {"agentGroups", n => { AgentGroups = n.GetCollectionOfObjectValues<OnPremisesAgentGroup>(OnPremisesAgentGroup.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"externalIp", n => { ExternalIp = n.GetStringValue(); } },
                 {"machineName", n => { MachineName = n.GetStringValue(); } },
                 {"status", n => { Status = n.GetEnumValue<AgentStatus>(); } },
-                {"supportedPublishingTypes", n => { SupportedPublishingTypes = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"supportedPublishingTypes", n => { SupportedPublishingTypes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"licenseInfoDetails", n => { LicenseInfoDetails = n.GetCollectionOfObjectValues<LicenseInfoDetail>(LicenseInfoDetail.CreateFromDiscriminatorValue).ToList(); } },
+                {"licenseInfoDetails", n => { LicenseInfoDetails = n.GetCollectionOfObjectValues<LicenseInfoDetail>(LicenseInfoDetail.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"snapshotDateTime", n => { SnapshotDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }

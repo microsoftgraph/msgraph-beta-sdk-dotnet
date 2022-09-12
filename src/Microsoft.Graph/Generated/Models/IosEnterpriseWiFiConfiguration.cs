@@ -87,8 +87,8 @@ namespace Microsoft.Graph.Beta.Models {
                 {"innerAuthenticationProtocolForEapTtls", n => { InnerAuthenticationProtocolForEapTtls = n.GetEnumValue<NonEapAuthenticationMethodForEapTtlsType>(); } },
                 {"outerIdentityPrivacyTemporaryValue", n => { OuterIdentityPrivacyTemporaryValue = n.GetStringValue(); } },
                 {"passwordFormatString", n => { PasswordFormatString = n.GetStringValue(); } },
-                {"rootCertificatesForServerValidation", n => { RootCertificatesForServerValidation = n.GetCollectionOfObjectValues<IosTrustedRootCertificate>(IosTrustedRootCertificate.CreateFromDiscriminatorValue).ToList(); } },
-                {"trustedServerCertificateNames", n => { TrustedServerCertificateNames = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"rootCertificatesForServerValidation", n => { RootCertificatesForServerValidation = n.GetCollectionOfObjectValues<IosTrustedRootCertificate>(IosTrustedRootCertificate.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"trustedServerCertificateNames", n => { TrustedServerCertificateNames = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"usernameFormatString", n => { UsernameFormatString = n.GetStringValue(); } },
             };
         }

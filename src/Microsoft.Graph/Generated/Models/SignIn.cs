@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the auditLogRoot singleton.</summary>
     public class SignIn : Entity, IParsable {
         /// <summary>The application name displayed in the Azure Portal. Supports $filter (eq and startsWith operators only).</summary>
         public string AppDisplayName {
@@ -307,7 +308,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("userType", value); }
         }
         /// <summary>
-        /// Instantiates a new SignIn and sets the default values.
+        /// Instantiates a new signIn and sets the default values.
         /// </summary>
         public SignIn() : base() {
             OdataType = "#microsoft.graph.signIn";
@@ -318,8 +319,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static new SignIn CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValueNode = parseNode.GetChildNode("@odata.type");
-            var mappingValue = mappingValueNode?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch {
                 "#microsoft.graph.restrictedSignIn" => new RestrictedSignIn(),
                 _ => new SignIn(),
@@ -332,14 +332,14 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"appDisplayName", n => { AppDisplayName = n.GetStringValue(); } },
                 {"appId", n => { AppId = n.GetStringValue(); } },
-                {"appliedConditionalAccessPolicies", n => { AppliedConditionalAccessPolicies = n.GetCollectionOfObjectValues<AppliedConditionalAccessPolicy>(AppliedConditionalAccessPolicy.CreateFromDiscriminatorValue).ToList(); } },
-                {"authenticationContextClassReferences", n => { AuthenticationContextClassReferences = n.GetCollectionOfObjectValues<AuthenticationContext>(AuthenticationContext.CreateFromDiscriminatorValue).ToList(); } },
-                {"authenticationDetails", n => { AuthenticationDetails = n.GetCollectionOfObjectValues<AuthenticationDetail>(AuthenticationDetail.CreateFromDiscriminatorValue).ToList(); } },
-                {"authenticationMethodsUsed", n => { AuthenticationMethodsUsed = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"authenticationProcessingDetails", n => { AuthenticationProcessingDetails = n.GetCollectionOfObjectValues<KeyValue>(KeyValue.CreateFromDiscriminatorValue).ToList(); } },
+                {"appliedConditionalAccessPolicies", n => { AppliedConditionalAccessPolicies = n.GetCollectionOfObjectValues<AppliedConditionalAccessPolicy>(AppliedConditionalAccessPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"authenticationContextClassReferences", n => { AuthenticationContextClassReferences = n.GetCollectionOfObjectValues<AuthenticationContext>(AuthenticationContext.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"authenticationDetails", n => { AuthenticationDetails = n.GetCollectionOfObjectValues<AuthenticationDetail>(AuthenticationDetail.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"authenticationMethodsUsed", n => { AuthenticationMethodsUsed = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"authenticationProcessingDetails", n => { AuthenticationProcessingDetails = n.GetCollectionOfObjectValues<KeyValue>(KeyValue.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"authenticationProtocol", n => { AuthenticationProtocol = n.GetEnumValue<ProtocolType>(); } },
                 {"authenticationRequirement", n => { AuthenticationRequirement = n.GetStringValue(); } },
-                {"authenticationRequirementPolicies", n => { AuthenticationRequirementPolicies = n.GetCollectionOfObjectValues<AuthenticationRequirementPolicy>(AuthenticationRequirementPolicy.CreateFromDiscriminatorValue).ToList(); } },
+                {"authenticationRequirementPolicies", n => { AuthenticationRequirementPolicies = n.GetCollectionOfObjectValues<AuthenticationRequirementPolicy>(AuthenticationRequirementPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"autonomousSystemNumber", n => { AutonomousSystemNumber = n.GetIntValue(); } },
                 {"azureResourceId", n => { AzureResourceId = n.GetStringValue(); } },
                 {"clientAppUsed", n => { ClientAppUsed = n.GetStringValue(); } },
@@ -360,7 +360,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"isTenantRestricted", n => { IsTenantRestricted = n.GetBoolValue(); } },
                 {"location", n => { Location = n.GetObjectValue<SignInLocation>(SignInLocation.CreateFromDiscriminatorValue); } },
                 {"mfaDetail", n => { MfaDetail = n.GetObjectValue<Microsoft.Graph.Beta.Models.MfaDetail>(Microsoft.Graph.Beta.Models.MfaDetail.CreateFromDiscriminatorValue); } },
-                {"networkLocationDetails", n => { NetworkLocationDetails = n.GetCollectionOfObjectValues<NetworkLocationDetail>(NetworkLocationDetail.CreateFromDiscriminatorValue).ToList(); } },
+                {"networkLocationDetails", n => { NetworkLocationDetails = n.GetCollectionOfObjectValues<NetworkLocationDetail>(NetworkLocationDetail.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"originalRequestId", n => { OriginalRequestId = n.GetStringValue(); } },
                 {"privateLinkDetails", n => { PrivateLinkDetails = n.GetObjectValue<Microsoft.Graph.Beta.Models.PrivateLinkDetails>(Microsoft.Graph.Beta.Models.PrivateLinkDetails.CreateFromDiscriminatorValue); } },
                 {"processingTimeInMilliseconds", n => { ProcessingTimeInMilliseconds = n.GetIntValue(); } },
@@ -369,7 +369,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"resourceServicePrincipalId", n => { ResourceServicePrincipalId = n.GetStringValue(); } },
                 {"resourceTenantId", n => { ResourceTenantId = n.GetStringValue(); } },
                 {"riskDetail", n => { RiskDetail = n.GetEnumValue<RiskDetail>(); } },
-                {"riskEventTypes_v2", n => { RiskEventTypes_v2 = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"riskEventTypes_v2", n => { RiskEventTypes_v2 = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"riskLevelAggregated", n => { RiskLevelAggregated = n.GetEnumValue<RiskLevel>(); } },
                 {"riskLevelDuringSignIn", n => { RiskLevelDuringSignIn = n.GetEnumValue<RiskLevel>(); } },
                 {"riskState", n => { RiskState = n.GetEnumValue<RiskState>(); } },
@@ -377,8 +377,8 @@ namespace Microsoft.Graph.Beta.Models {
                 {"servicePrincipalCredentialThumbprint", n => { ServicePrincipalCredentialThumbprint = n.GetStringValue(); } },
                 {"servicePrincipalId", n => { ServicePrincipalId = n.GetStringValue(); } },
                 {"servicePrincipalName", n => { ServicePrincipalName = n.GetStringValue(); } },
-                {"sessionLifetimePolicies", n => { SessionLifetimePolicies = n.GetCollectionOfObjectValues<SessionLifetimePolicy>(SessionLifetimePolicy.CreateFromDiscriminatorValue).ToList(); } },
-                {"signInEventTypes", n => { SignInEventTypes = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"sessionLifetimePolicies", n => { SessionLifetimePolicies = n.GetCollectionOfObjectValues<SessionLifetimePolicy>(SessionLifetimePolicy.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"signInEventTypes", n => { SignInEventTypes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"signInIdentifier", n => { SignInIdentifier = n.GetStringValue(); } },
                 {"signInIdentifierType", n => { SignInIdentifierType = n.GetEnumValue<SignInIdentifierType>(); } },
                 {"status", n => { Status = n.GetObjectValue<SignInStatus>(SignInStatus.CreateFromDiscriminatorValue); } },

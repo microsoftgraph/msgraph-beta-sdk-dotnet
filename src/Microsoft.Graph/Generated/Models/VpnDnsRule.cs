@@ -70,7 +70,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"persistent", n => { Persistent = n.GetBoolValue(); } },
                 {"proxyServerUri", n => { ProxyServerUri = n.GetStringValue(); } },
-                {"servers", n => { Servers = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"servers", n => { Servers = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

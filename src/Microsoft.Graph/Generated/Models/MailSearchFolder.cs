@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"filterQuery", n => { FilterQuery = n.GetStringValue(); } },
                 {"includeNestedFolders", n => { IncludeNestedFolders = n.GetBoolValue(); } },
                 {"isSupported", n => { IsSupported = n.GetBoolValue(); } },
-                {"sourceFolderIds", n => { SourceFolderIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"sourceFolderIds", n => { SourceFolderIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

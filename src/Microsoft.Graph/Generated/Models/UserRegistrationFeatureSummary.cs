@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"totalUserCount", n => { TotalUserCount = n.GetLongValue(); } },
-                {"userRegistrationFeatureCounts", n => { UserRegistrationFeatureCounts = n.GetCollectionOfObjectValues<UserRegistrationFeatureCount>(UserRegistrationFeatureCount.CreateFromDiscriminatorValue).ToList(); } },
+                {"userRegistrationFeatureCounts", n => { UserRegistrationFeatureCounts = n.GetCollectionOfObjectValues<UserRegistrationFeatureCount>(UserRegistrationFeatureCount.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"userRoles", n => { UserRoles = n.GetEnumValue<IncludedUserRoles>(); } },
                 {"userTypes", n => { UserTypes = n.GetEnumValue<IncludedUserTypes>(); } },
             };

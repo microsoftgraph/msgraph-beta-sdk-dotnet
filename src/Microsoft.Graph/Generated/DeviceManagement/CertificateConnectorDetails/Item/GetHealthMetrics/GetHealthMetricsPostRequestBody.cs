@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.CertificateConnectorDetails.Item
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"metricNames", n => { MetricNames = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"metricNames", n => { MetricNames = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

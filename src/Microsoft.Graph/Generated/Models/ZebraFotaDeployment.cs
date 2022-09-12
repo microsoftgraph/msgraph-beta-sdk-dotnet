@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"deploymentAssignments", n => { DeploymentAssignments = n.GetCollectionOfObjectValues<AndroidFotaDeploymentAssignment>(AndroidFotaDeploymentAssignment.CreateFromDiscriminatorValue).ToList(); } },
+                {"deploymentAssignments", n => { DeploymentAssignments = n.GetCollectionOfObjectValues<AndroidFotaDeploymentAssignment>(AndroidFotaDeploymentAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"deploymentSettings", n => { DeploymentSettings = n.GetObjectValue<ZebraFotaDeploymentSettings>(ZebraFotaDeploymentSettings.CreateFromDiscriminatorValue); } },
                 {"deploymentStatus", n => { DeploymentStatus = n.GetObjectValue<ZebraFotaDeploymentStatus>(ZebraFotaDeploymentStatus.CreateFromDiscriminatorValue); } },
                 {"description", n => { Description = n.GetStringValue(); } },

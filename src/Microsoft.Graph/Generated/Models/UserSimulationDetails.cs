@@ -91,9 +91,9 @@ namespace Microsoft.Graph.Beta.Models {
                 {"isCompromised", n => { IsCompromised = n.GetBoolValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"reportedPhishDateTime", n => { ReportedPhishDateTime = n.GetDateTimeOffsetValue(); } },
-                {"simulationEvents", n => { SimulationEvents = n.GetCollectionOfObjectValues<UserSimulationEventInfo>(UserSimulationEventInfo.CreateFromDiscriminatorValue).ToList(); } },
+                {"simulationEvents", n => { SimulationEvents = n.GetCollectionOfObjectValues<UserSimulationEventInfo>(UserSimulationEventInfo.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"simulationUser", n => { SimulationUser = n.GetObjectValue<AttackSimulationUser>(AttackSimulationUser.CreateFromDiscriminatorValue); } },
-                {"trainingEvents", n => { TrainingEvents = n.GetCollectionOfObjectValues<UserTrainingEventInfo>(UserTrainingEventInfo.CreateFromDiscriminatorValue).ToList(); } },
+                {"trainingEvents", n => { TrainingEvents = n.GetCollectionOfObjectValues<UserTrainingEventInfo>(UserTrainingEventInfo.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

@@ -40,9 +40,9 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"receivers", n => { Receivers = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"receivers", n => { Receivers = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"routingMode", n => { RoutingMode = n.GetEnumValue<RoutingMode>(); } },
-                {"sources", n => { Sources = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"sources", n => { Sources = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

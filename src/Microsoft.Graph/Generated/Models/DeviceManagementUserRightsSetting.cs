@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"localUsersOrGroups", n => { LocalUsersOrGroups = n.GetCollectionOfObjectValues<DeviceManagementUserRightsLocalUserOrGroup>(DeviceManagementUserRightsLocalUserOrGroup.CreateFromDiscriminatorValue).ToList(); } },
+                {"localUsersOrGroups", n => { LocalUsersOrGroups = n.GetCollectionOfObjectValues<DeviceManagementUserRightsLocalUserOrGroup>(DeviceManagementUserRightsLocalUserOrGroup.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"state", n => { State = n.GetEnumValue<StateManagementSetting>(); } },
             };

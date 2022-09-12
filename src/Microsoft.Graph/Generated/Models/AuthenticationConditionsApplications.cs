@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"includeAllApplications", n => { IncludeAllApplications = n.GetBoolValue(); } },
-                {"includeApplications", n => { IncludeApplications = n.GetCollectionOfObjectValues<AuthenticationConditionApplication>(AuthenticationConditionApplication.CreateFromDiscriminatorValue).ToList(); } },
+                {"includeApplications", n => { IncludeApplications = n.GetCollectionOfObjectValues<AuthenticationConditionApplication>(AuthenticationConditionApplication.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }

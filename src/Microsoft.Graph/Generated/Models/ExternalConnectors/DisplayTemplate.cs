@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
                 {"layout", n => { Layout = n.GetObjectValue<Microsoft.Graph.Beta.Models.Json>(Microsoft.Graph.Beta.Models.Json.CreateFromDiscriminatorValue); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"priority", n => { Priority = n.GetIntValue(); } },
-                {"rules", n => { Rules = n.GetCollectionOfObjectValues<PropertyRule>(PropertyRule.CreateFromDiscriminatorValue).ToList(); } },
+                {"rules", n => { Rules = n.GetCollectionOfObjectValues<PropertyRule>(PropertyRule.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Violation of restricted apps configuration profile per device per user</summary>
     public class RestrictedAppsViolation : Entity, IParsable {
         /// <summary>Device configuration profile unique identifier, must be Guid</summary>
         public string DeviceConfigurationId {
@@ -51,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("userName", value); }
         }
         /// <summary>
-        /// Instantiates a new RestrictedAppsViolation and sets the default values.
+        /// Instantiates a new restrictedAppsViolation and sets the default values.
         /// </summary>
         public RestrictedAppsViolation() : base() {
             OdataType = "#microsoft.graph.restrictedAppsViolation";
@@ -74,7 +75,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"deviceName", n => { DeviceName = n.GetStringValue(); } },
                 {"managedDeviceId", n => { ManagedDeviceId = n.GetStringValue(); } },
                 {"platformType", n => { PlatformType = n.GetEnumValue<PolicyPlatformType>(); } },
-                {"restrictedApps", n => { RestrictedApps = n.GetCollectionOfObjectValues<ManagedDeviceReportedApp>(ManagedDeviceReportedApp.CreateFromDiscriminatorValue).ToList(); } },
+                {"restrictedApps", n => { RestrictedApps = n.GetCollectionOfObjectValues<ManagedDeviceReportedApp>(ManagedDeviceReportedApp.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"restrictedAppsState", n => { RestrictedAppsState = n.GetEnumValue<RestrictedAppsState>(); } },
                 {"userId", n => { UserId = n.GetStringValue(); } },
                 {"userName", n => { UserName = n.GetStringValue(); } },

@@ -68,8 +68,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static new GroupPolicyDefinitionFile CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValueNode = parseNode.GetChildNode("@odata.type");
-            var mappingValue = mappingValueNode?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch {
                 "#microsoft.graph.groupPolicyUploadedDefinitionFile" => new GroupPolicyUploadedDefinitionFile(),
                 _ => new GroupPolicyDefinitionFile(),
@@ -80,11 +79,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"definitions", n => { Definitions = n.GetCollectionOfObjectValues<GroupPolicyDefinition>(GroupPolicyDefinition.CreateFromDiscriminatorValue).ToList(); } },
+                {"definitions", n => { Definitions = n.GetCollectionOfObjectValues<GroupPolicyDefinition>(GroupPolicyDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"fileName", n => { FileName = n.GetStringValue(); } },
-                {"languageCodes", n => { LanguageCodes = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"languageCodes", n => { LanguageCodes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"policyType", n => { PolicyType = n.GetEnumValue<GroupPolicyType>(); } },
                 {"revision", n => { Revision = n.GetStringValue(); } },

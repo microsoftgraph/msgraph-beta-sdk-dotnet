@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"day", n => { Day = n.GetEnumValue<DayOfWeek>(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"timeSlots", n => { TimeSlots = n.GetCollectionOfObjectValues<BookingWorkTimeSlot>(BookingWorkTimeSlot.CreateFromDiscriminatorValue).ToList(); } },
+                {"timeSlots", n => { TimeSlots = n.GetCollectionOfObjectValues<BookingWorkTimeSlot>(BookingWorkTimeSlot.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

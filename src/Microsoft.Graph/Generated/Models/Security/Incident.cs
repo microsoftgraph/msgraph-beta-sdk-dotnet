@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class Incident : Entity, IParsable {
         /// <summary>The list of related alerts. Supports $expand.</summary>
         public List<Alert> Alerts {
@@ -95,10 +95,10 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"alerts", n => { Alerts = n.GetCollectionOfObjectValues<Alert>(Alert.CreateFromDiscriminatorValue).ToList(); } },
+                {"alerts", n => { Alerts = n.GetCollectionOfObjectValues<Alert>(Alert.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"assignedTo", n => { AssignedTo = n.GetStringValue(); } },
                 {"classification", n => { Classification = n.GetEnumValue<AlertClassification>(); } },
-                {"comments", n => { Comments = n.GetCollectionOfObjectValues<AlertComment>(AlertComment.CreateFromDiscriminatorValue).ToList(); } },
+                {"comments", n => { Comments = n.GetCollectionOfObjectValues<AlertComment>(AlertComment.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"determination", n => { Determination = n.GetEnumValue<AlertDetermination>(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
@@ -107,7 +107,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
                 {"redirectIncidentId", n => { RedirectIncidentId = n.GetStringValue(); } },
                 {"severity", n => { Severity = n.GetEnumValue<AlertSeverity>(); } },
                 {"status", n => { Status = n.GetEnumValue<IncidentStatus>(); } },
-                {"tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"tenantId", n => { TenantId = n.GetStringValue(); } },
             };
         }

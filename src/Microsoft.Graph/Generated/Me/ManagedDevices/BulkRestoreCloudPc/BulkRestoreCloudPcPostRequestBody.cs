@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Me.ManagedDevices.BulkRestoreCloudPc {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"managedDeviceIds", n => { ManagedDeviceIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"managedDeviceIds", n => { ManagedDeviceIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"restorePointDateTime", n => { RestorePointDateTime = n.GetDateTimeOffsetValue(); } },
                 {"timeRange", n => { TimeRange = n.GetEnumValue<RestoreTimeRange>(); } },
             };

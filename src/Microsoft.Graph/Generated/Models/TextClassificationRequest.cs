@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"fileExtension", n => { FileExtension = n.GetStringValue(); } },
                 {"matchTolerancesToInclude", n => { MatchTolerancesToInclude = n.GetEnumValue<MlClassificationMatchTolerance>(); } },
                 {"scopesToRun", n => { ScopesToRun = n.GetEnumValue<SensitiveTypeScope>(); } },
-                {"sensitiveTypeIds", n => { SensitiveTypeIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"sensitiveTypeIds", n => { SensitiveTypeIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"text", n => { Text = n.GetStringValue(); } },
             };
         }

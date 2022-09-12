@@ -64,9 +64,9 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"allowedHeaders", n => { AllowedHeaders = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"allowedMethods", n => { AllowedMethods = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"allowedOrigins", n => { AllowedOrigins = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"allowedHeaders", n => { AllowedHeaders = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"allowedMethods", n => { AllowedMethods = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"allowedOrigins", n => { AllowedOrigins = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"maxAgeInSeconds", n => { MaxAgeInSeconds = n.GetIntValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"resource", n => { Resource = n.GetStringValue(); } },

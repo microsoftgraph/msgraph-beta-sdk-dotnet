@@ -163,11 +163,11 @@ namespace Microsoft.Graph.Beta.Models {
                 {"performServerValidation", n => { PerformServerValidation = n.GetBoolValue(); } },
                 {"requireCryptographicBinding", n => { RequireCryptographicBinding = n.GetBoolValue(); } },
                 {"rootCertificateForClientValidation", n => { RootCertificateForClientValidation = n.GetObjectValue<Windows81TrustedRootCertificate>(Windows81TrustedRootCertificate.CreateFromDiscriminatorValue); } },
-                {"rootCertificatesForServerValidation", n => { RootCertificatesForServerValidation = n.GetCollectionOfObjectValues<Windows81TrustedRootCertificate>(Windows81TrustedRootCertificate.CreateFromDiscriminatorValue).ToList(); } },
+                {"rootCertificatesForServerValidation", n => { RootCertificatesForServerValidation = n.GetCollectionOfObjectValues<Windows81TrustedRootCertificate>(Windows81TrustedRootCertificate.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"secondaryAuthenticationMethod", n => { SecondaryAuthenticationMethod = n.GetEnumValue<WiredNetworkAuthenticationMethod>(); } },
                 {"secondaryIdentityCertificateForClientAuthentication", n => { SecondaryIdentityCertificateForClientAuthentication = n.GetObjectValue<WindowsCertificateProfileBase>(WindowsCertificateProfileBase.CreateFromDiscriminatorValue); } },
                 {"secondaryRootCertificateForClientValidation", n => { SecondaryRootCertificateForClientValidation = n.GetObjectValue<Windows81TrustedRootCertificate>(Windows81TrustedRootCertificate.CreateFromDiscriminatorValue); } },
-                {"trustedServerCertificateNames", n => { TrustedServerCertificateNames = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"trustedServerCertificateNames", n => { TrustedServerCertificateNames = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

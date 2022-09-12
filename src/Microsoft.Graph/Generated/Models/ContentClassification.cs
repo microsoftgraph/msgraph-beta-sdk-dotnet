@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"confidence", n => { Confidence = n.GetIntValue(); } },
-                {"matches", n => { Matches = n.GetCollectionOfObjectValues<MatchLocation>(MatchLocation.CreateFromDiscriminatorValue).ToList(); } },
+                {"matches", n => { Matches = n.GetCollectionOfObjectValues<MatchLocation>(MatchLocation.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"sensitiveTypeId", n => { SensitiveTypeId = n.GetStringValue(); } },
                 {"uniqueCount", n => { UniqueCount = n.GetIntValue(); } },

@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"authMethods", n => { AuthMethods = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"authMethods", n => { AuthMethods = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"isCapable", n => { IsCapable = n.GetBoolValue(); } },
                 {"isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
                 {"isMfaRegistered", n => { IsMfaRegistered = n.GetBoolValue(); } },

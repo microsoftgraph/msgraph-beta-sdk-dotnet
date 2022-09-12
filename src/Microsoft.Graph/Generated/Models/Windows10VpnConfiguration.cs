@@ -149,12 +149,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"associatedApps", n => { AssociatedApps = n.GetCollectionOfObjectValues<Windows10AssociatedApps>(Windows10AssociatedApps.CreateFromDiscriminatorValue).ToList(); } },
+                {"associatedApps", n => { AssociatedApps = n.GetCollectionOfObjectValues<Windows10AssociatedApps>(Windows10AssociatedApps.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"authenticationMethod", n => { AuthenticationMethod = n.GetEnumValue<Windows10VpnAuthenticationMethod>(); } },
                 {"connectionType", n => { ConnectionType = n.GetEnumValue<Windows10VpnConnectionType>(); } },
                 {"cryptographySuite", n => { CryptographySuite = n.GetObjectValue<Microsoft.Graph.Beta.Models.CryptographySuite>(Microsoft.Graph.Beta.Models.CryptographySuite.CreateFromDiscriminatorValue); } },
-                {"dnsRules", n => { DnsRules = n.GetCollectionOfObjectValues<VpnDnsRule>(VpnDnsRule.CreateFromDiscriminatorValue).ToList(); } },
-                {"dnsSuffixes", n => { DnsSuffixes = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"dnsRules", n => { DnsRules = n.GetCollectionOfObjectValues<VpnDnsRule>(VpnDnsRule.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"dnsSuffixes", n => { DnsSuffixes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"eapXml", n => { EapXml = n.GetByteArrayValue(); } },
                 {"enableAlwaysOn", n => { EnableAlwaysOn = n.GetBoolValue(); } },
                 {"enableConditionalAccess", n => { EnableConditionalAccess = n.GetBoolValue(); } },
@@ -168,11 +168,11 @@ namespace Microsoft.Graph.Beta.Models {
                 {"profileTarget", n => { ProfileTarget = n.GetEnumValue<Windows10VpnProfileTarget>(); } },
                 {"proxyServer", n => { ProxyServer = n.GetObjectValue<Windows10VpnProxyServer>(Windows10VpnProxyServer.CreateFromDiscriminatorValue); } },
                 {"rememberUserCredentials", n => { RememberUserCredentials = n.GetBoolValue(); } },
-                {"routes", n => { Routes = n.GetCollectionOfObjectValues<VpnRoute>(VpnRoute.CreateFromDiscriminatorValue).ToList(); } },
+                {"routes", n => { Routes = n.GetCollectionOfObjectValues<VpnRoute>(VpnRoute.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"singleSignOnEku", n => { SingleSignOnEku = n.GetObjectValue<ExtendedKeyUsage>(ExtendedKeyUsage.CreateFromDiscriminatorValue); } },
                 {"singleSignOnIssuerHash", n => { SingleSignOnIssuerHash = n.GetStringValue(); } },
-                {"trafficRules", n => { TrafficRules = n.GetCollectionOfObjectValues<VpnTrafficRule>(VpnTrafficRule.CreateFromDiscriminatorValue).ToList(); } },
-                {"trustedNetworkDomains", n => { TrustedNetworkDomains = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"trafficRules", n => { TrafficRules = n.GetCollectionOfObjectValues<VpnTrafficRule>(VpnTrafficRule.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"trustedNetworkDomains", n => { TrustedNetworkDomains = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"windowsInformationProtectionDomain", n => { WindowsInformationProtectionDomain = n.GetStringValue(); } },
             };
         }

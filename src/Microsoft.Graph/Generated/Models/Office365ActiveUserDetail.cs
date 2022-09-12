@@ -145,7 +145,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"assignedProducts", n => { AssignedProducts = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"assignedProducts", n => { AssignedProducts = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"deletedDate", n => { DeletedDate = n.GetDateValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"exchangeLastActivityDate", n => { ExchangeLastActivityDate = n.GetDateValue(); } },

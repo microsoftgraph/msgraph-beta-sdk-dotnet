@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Lists.Item.Items.Item.Crea
             return new Dictionary<string, Action<IParseNode>> {
                 {"expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
                 {"password", n => { Password = n.GetStringValue(); } },
-                {"recipients", n => { Recipients = n.GetCollectionOfObjectValues<DriveRecipient>(DriveRecipient.CreateFromDiscriminatorValue).ToList(); } },
+                {"recipients", n => { Recipients = n.GetCollectionOfObjectValues<DriveRecipient>(DriveRecipient.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"retainInheritedPermissions", n => { RetainInheritedPermissions = n.GetBoolValue(); } },
                 {"scope", n => { Scope = n.GetStringValue(); } },
                 {"type", n => { Type = n.GetStringValue(); } },

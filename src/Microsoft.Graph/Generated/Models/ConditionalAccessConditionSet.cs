@@ -96,15 +96,15 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"applications", n => { Applications = n.GetObjectValue<ConditionalAccessApplications>(ConditionalAccessApplications.CreateFromDiscriminatorValue); } },
                 {"clientApplications", n => { ClientApplications = n.GetObjectValue<ConditionalAccessClientApplications>(ConditionalAccessClientApplications.CreateFromDiscriminatorValue); } },
-                {"clientAppTypes", n => { ClientAppTypes = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"clientAppTypes", n => { ClientAppTypes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"devices", n => { Devices = n.GetObjectValue<ConditionalAccessDevices>(ConditionalAccessDevices.CreateFromDiscriminatorValue); } },
                 {"deviceStates", n => { DeviceStates = n.GetObjectValue<ConditionalAccessDeviceStates>(ConditionalAccessDeviceStates.CreateFromDiscriminatorValue); } },
                 {"locations", n => { Locations = n.GetObjectValue<ConditionalAccessLocations>(ConditionalAccessLocations.CreateFromDiscriminatorValue); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"platforms", n => { Platforms = n.GetObjectValue<ConditionalAccessPlatforms>(ConditionalAccessPlatforms.CreateFromDiscriminatorValue); } },
-                {"servicePrincipalRiskLevels", n => { ServicePrincipalRiskLevels = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"signInRiskLevels", n => { SignInRiskLevels = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"userRiskLevels", n => { UserRiskLevels = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"servicePrincipalRiskLevels", n => { ServicePrincipalRiskLevels = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"signInRiskLevels", n => { SignInRiskLevels = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"userRiskLevels", n => { UserRiskLevels = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"users", n => { Users = n.GetObjectValue<ConditionalAccessUsers>(ConditionalAccessUsers.CreateFromDiscriminatorValue); } },
             };
         }

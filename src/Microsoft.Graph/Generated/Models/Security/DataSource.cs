@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class DataSource : Entity, IParsable {
         /// <summary>The user who created the dataSource.</summary>
         public Microsoft.Graph.Beta.Models.IdentitySet CreatedBy {
@@ -39,8 +39,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// </summary>
         public static new DataSource CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValueNode = parseNode.GetChildNode("@odata.type");
-            var mappingValue = mappingValueNode?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch {
                 "#microsoft.graph.security.siteSource" => new SiteSource(),
                 "#microsoft.graph.security.unifiedGroupSource" => new UnifiedGroupSource(),

@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"conversationMemberRoles", n => { ConversationMemberRoles = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"conversationMemberRoles", n => { ConversationMemberRoles = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"conversationMemberUser", n => { ConversationMemberUser = n.GetObjectValue<TeamworkUserIdentity>(TeamworkUserIdentity.CreateFromDiscriminatorValue); } },
                 {"initiator", n => { Initiator = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
             };

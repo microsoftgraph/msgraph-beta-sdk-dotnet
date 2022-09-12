@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Base Profile Type for Resource Access</summary>
     public class DeviceManagementResourceAccessProfileBase : Entity, IParsable {
         /// <summary>The list of assignments for the device configuration profile.</summary>
         public List<DeviceManagementResourceAccessProfileAssignment> Assignments {
@@ -42,7 +43,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("version", value); }
         }
         /// <summary>
-        /// Instantiates a new DeviceManagementResourceAccessProfileBase and sets the default values.
+        /// Instantiates a new deviceManagementResourceAccessProfileBase and sets the default values.
         /// </summary>
         public DeviceManagementResourceAccessProfileBase() : base() {
             OdataType = "#microsoft.graph.deviceManagementResourceAccessProfileBase";
@@ -53,8 +54,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static new DeviceManagementResourceAccessProfileBase CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValueNode = parseNode.GetChildNode("@odata.type");
-            var mappingValue = mappingValueNode?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch {
                 "#microsoft.graph.windows10XCertificateProfile" => new Windows10XCertificateProfile(),
                 "#microsoft.graph.windows10XSCEPCertificateProfile" => new Windows10XSCEPCertificateProfile(),
@@ -69,12 +69,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"assignments", n => { Assignments = n.GetCollectionOfObjectValues<DeviceManagementResourceAccessProfileAssignment>(DeviceManagementResourceAccessProfileAssignment.CreateFromDiscriminatorValue).ToList(); } },
+                {"assignments", n => { Assignments = n.GetCollectionOfObjectValues<DeviceManagementResourceAccessProfileAssignment>(DeviceManagementResourceAccessProfileAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"creationDateTime", n => { CreationDateTime = n.GetDateTimeOffsetValue(); } },
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"version", n => { Version = n.GetIntValue(); } },
             };
         }

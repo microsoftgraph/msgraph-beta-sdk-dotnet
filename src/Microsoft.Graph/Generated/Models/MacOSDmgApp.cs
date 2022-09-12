@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Models {
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"ignoreVersionDetection", n => { IgnoreVersionDetection = n.GetBoolValue(); } },
-                {"includedApps", n => { IncludedApps = n.GetCollectionOfObjectValues<MacOSIncludedApp>(MacOSIncludedApp.CreateFromDiscriminatorValue).ToList(); } },
+                {"includedApps", n => { IncludedApps = n.GetCollectionOfObjectValues<MacOSIncludedApp>(MacOSIncludedApp.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"minimumSupportedOperatingSystem", n => { MinimumSupportedOperatingSystem = n.GetObjectValue<MacOSMinimumOperatingSystem>(MacOSMinimumOperatingSystem.CreateFromDiscriminatorValue); } },
                 {"primaryBundleId", n => { PrimaryBundleId = n.GetStringValue(); } },
                 {"primaryBundleVersion", n => { PrimaryBundleVersion = n.GetStringValue(); } },

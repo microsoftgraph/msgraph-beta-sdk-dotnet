@@ -132,7 +132,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"detectedDateTime", n => { DetectedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"detectionTimingType", n => { DetectionTimingType = n.GetEnumValue<RiskDetectionTimingType>(); } },
                 {"ipAddress", n => { IpAddress = n.GetStringValue(); } },
-                {"keyIds", n => { KeyIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"keyIds", n => { KeyIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"lastUpdatedDateTime", n => { LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"location", n => { Location = n.GetObjectValue<SignInLocation>(SignInLocation.CreateFromDiscriminatorValue); } },
                 {"requestId", n => { RequestId = n.GetStringValue(); } },

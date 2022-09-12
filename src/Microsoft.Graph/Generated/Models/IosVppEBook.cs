@@ -70,9 +70,9 @@ namespace Microsoft.Graph.Beta.Models {
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"appleId", n => { AppleId = n.GetStringValue(); } },
-                {"genres", n => { Genres = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"genres", n => { Genres = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"language", n => { Language = n.GetStringValue(); } },
-                {"roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"seller", n => { Seller = n.GetStringValue(); } },
                 {"totalLicenseCount", n => { TotalLicenseCount = n.GetIntValue(); } },
                 {"usedLicenseCount", n => { UsedLicenseCount = n.GetIntValue(); } },

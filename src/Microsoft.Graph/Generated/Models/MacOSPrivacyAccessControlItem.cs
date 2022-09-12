@@ -172,7 +172,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"accessibility", n => { Accessibility = n.GetEnumValue<Enablement>(); } },
                 {"addressBook", n => { AddressBook = n.GetEnumValue<Enablement>(); } },
-                {"appleEventsAllowedReceivers", n => { AppleEventsAllowedReceivers = n.GetCollectionOfObjectValues<MacOSAppleEventReceiver>(MacOSAppleEventReceiver.CreateFromDiscriminatorValue).ToList(); } },
+                {"appleEventsAllowedReceivers", n => { AppleEventsAllowedReceivers = n.GetCollectionOfObjectValues<MacOSAppleEventReceiver>(MacOSAppleEventReceiver.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"blockCamera", n => { BlockCamera = n.GetBoolValue(); } },
                 {"blockListenEvent", n => { BlockListenEvent = n.GetBoolValue(); } },
                 {"blockMicrophone", n => { BlockMicrophone = n.GetBoolValue(); } },

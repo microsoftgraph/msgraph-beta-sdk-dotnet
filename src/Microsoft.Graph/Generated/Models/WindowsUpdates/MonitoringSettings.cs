@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"monitoringRules", n => { MonitoringRules = n.GetCollectionOfObjectValues<MonitoringRule>(MonitoringRule.CreateFromDiscriminatorValue).ToList(); } },
+                {"monitoringRules", n => { MonitoringRules = n.GetCollectionOfObjectValues<MonitoringRule>(MonitoringRule.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }

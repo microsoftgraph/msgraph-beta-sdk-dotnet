@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>A class containing the properties used for Assignment Filter.</summary>
     public class DeviceAndAppManagementAssignmentFilter : Entity, IParsable {
         /// <summary>Creation time of the Assignment Filter.</summary>
         public DateTimeOffset? CreatedDateTime {
@@ -42,7 +43,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("rule", value); }
         }
         /// <summary>
-        /// Instantiates a new DeviceAndAppManagementAssignmentFilter and sets the default values.
+        /// Instantiates a new deviceAndAppManagementAssignmentFilter and sets the default values.
         /// </summary>
         public DeviceAndAppManagementAssignmentFilter() : base() {
             OdataType = "#microsoft.graph.deviceAndAppManagementAssignmentFilter";
@@ -53,8 +54,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static new DeviceAndAppManagementAssignmentFilter CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValueNode = parseNode.GetChildNode("@odata.type");
-            var mappingValue = mappingValueNode?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch {
                 "#microsoft.graph.payloadCompatibleAssignmentFilter" => new PayloadCompatibleAssignmentFilter(),
                 _ => new DeviceAndAppManagementAssignmentFilter(),
@@ -70,7 +70,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"platform", n => { Platform = n.GetEnumValue<DevicePlatformType>(); } },
-                {"roleScopeTags", n => { RoleScopeTags = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"roleScopeTags", n => { RoleScopeTags = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"rule", n => { Rule = n.GetStringValue(); } },
             };
         }

@@ -53,8 +53,7 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
         /// </summary>
         public static new CaseOperation CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValueNode = parseNode.GetChildNode("@odata.type");
-            var mappingValue = mappingValueNode?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch {
                 "#microsoft.graph.ediscovery.addToReviewSetOperation" => new AddToReviewSetOperation(),
                 "#microsoft.graph.ediscovery.caseExportOperation" => new CaseExportOperation(),

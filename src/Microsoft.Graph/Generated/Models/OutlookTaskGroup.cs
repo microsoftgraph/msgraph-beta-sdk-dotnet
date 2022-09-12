@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"groupKey", n => { GroupKey = n.GetStringValue(); } },
                 {"isDefaultGroup", n => { IsDefaultGroup = n.GetBoolValue(); } },
                 {"name", n => { Name = n.GetStringValue(); } },
-                {"taskFolders", n => { TaskFolders = n.GetCollectionOfObjectValues<OutlookTaskFolder>(OutlookTaskFolder.CreateFromDiscriminatorValue).ToList(); } },
+                {"taskFolders", n => { TaskFolders = n.GetCollectionOfObjectValues<OutlookTaskFolder>(OutlookTaskFolder.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class PurchaseInvoice : Entity, IParsable {
         /// <summary>The buyFromAddress property</summary>
         public PostalAddressType BuyFromAddress {
@@ -187,7 +187,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"payToVendorId", n => { PayToVendorId = n.GetStringValue(); } },
                 {"payToVendorNumber", n => { PayToVendorNumber = n.GetStringValue(); } },
                 {"pricesIncludeTax", n => { PricesIncludeTax = n.GetBoolValue(); } },
-                {"purchaseInvoiceLines", n => { PurchaseInvoiceLines = n.GetCollectionOfObjectValues<PurchaseInvoiceLine>(PurchaseInvoiceLine.CreateFromDiscriminatorValue).ToList(); } },
+                {"purchaseInvoiceLines", n => { PurchaseInvoiceLines = n.GetCollectionOfObjectValues<PurchaseInvoiceLine>(PurchaseInvoiceLine.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"shipToAddress", n => { ShipToAddress = n.GetObjectValue<PostalAddressType>(PostalAddressType.CreateFromDiscriminatorValue); } },
                 {"shipToContact", n => { ShipToContact = n.GetStringValue(); } },
                 {"shipToName", n => { ShipToName = n.GetStringValue(); } },

@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"certificateTemplateName", n => { CertificateTemplateName = n.GetStringValue(); } },
                 {"certificationAuthority", n => { CertificationAuthority = n.GetStringValue(); } },
                 {"certificationAuthorityName", n => { CertificationAuthorityName = n.GetStringValue(); } },
-                {"managedDeviceCertificateStates", n => { ManagedDeviceCertificateStates = n.GetCollectionOfObjectValues<ManagedDeviceCertificateState>(ManagedDeviceCertificateState.CreateFromDiscriminatorValue).ToList(); } },
+                {"managedDeviceCertificateStates", n => { ManagedDeviceCertificateStates = n.GetCollectionOfObjectValues<ManagedDeviceCertificateState>(ManagedDeviceCertificateState.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"subjectAlternativeNameFormatString", n => { SubjectAlternativeNameFormatString = n.GetStringValue(); } },
             };
         }

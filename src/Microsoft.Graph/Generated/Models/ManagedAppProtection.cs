@@ -243,8 +243,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static new ManagedAppProtection CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValueNode = parseNode.GetChildNode("@odata.type");
-            var mappingValue = mappingValueNode?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch {
                 "#microsoft.graph.androidManagedAppProtection" => new AndroidManagedAppProtection(),
                 "#microsoft.graph.defaultManagedAppProtection" => new DefaultManagedAppProtection(),
@@ -258,8 +257,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"allowedDataIngestionLocations", n => { AllowedDataIngestionLocations = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"allowedDataStorageLocations", n => { AllowedDataStorageLocations = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"allowedDataIngestionLocations", n => { AllowedDataIngestionLocations = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"allowedDataStorageLocations", n => { AllowedDataStorageLocations = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"allowedInboundDataTransferSources", n => { AllowedInboundDataTransferSources = n.GetEnumValue<ManagedAppDataTransferLevel>(); } },
                 {"allowedOutboundClipboardSharingExceptionLength", n => { AllowedOutboundClipboardSharingExceptionLength = n.GetIntValue(); } },
                 {"allowedOutboundClipboardSharingLevel", n => { AllowedOutboundClipboardSharingLevel = n.GetEnumValue<ManagedAppClipboardSharingLevel>(); } },

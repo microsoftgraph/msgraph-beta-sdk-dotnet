@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.AddKey {
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
-        public RequestInformation CreatePostRequestInformation(KeyCredentialPostRequestBody body, Action<AddKeyRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
+        public RequestInformation CreatePostRequestInformation(AddKeyPostRequestBody body, Action<AddKeyRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.POST,
@@ -73,7 +73,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.AddKey {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<KeyCredential> PostAsync(KeyCredentialPostRequestBody body, CancellationToken cancellationToken = default, Action<AddKeyRequestBuilderPostRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default) {
+        public async Task<KeyCredential> PostAsync(AddKeyPostRequestBody body, Action<AddKeyRequestBuilderPostRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {

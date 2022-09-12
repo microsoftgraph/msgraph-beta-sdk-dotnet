@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"auditResourceType", n => { AuditResourceType = n.GetStringValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"modifiedProperties", n => { ModifiedProperties = n.GetCollectionOfObjectValues<AuditProperty>(AuditProperty.CreateFromDiscriminatorValue).ToList(); } },
+                {"modifiedProperties", n => { ModifiedProperties = n.GetCollectionOfObjectValues<AuditProperty>(AuditProperty.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"resourceId", n => { ResourceId = n.GetStringValue(); } },
                 {"type", n => { Type = n.GetStringValue(); } },

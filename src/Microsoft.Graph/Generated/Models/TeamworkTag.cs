@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"memberCount", n => { MemberCount = n.GetIntValue(); } },
-                {"members", n => { Members = n.GetCollectionOfObjectValues<TeamworkTagMember>(TeamworkTagMember.CreateFromDiscriminatorValue).ToList(); } },
+                {"members", n => { Members = n.GetCollectionOfObjectValues<TeamworkTagMember>(TeamworkTagMember.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"tagType", n => { TagType = n.GetEnumValue<TeamworkTagType>(); } },
                 {"teamId", n => { TeamId = n.GetStringValue(); } },
             };

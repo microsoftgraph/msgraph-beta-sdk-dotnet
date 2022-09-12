@@ -54,12 +54,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"appUserModelIds", n => { AppUserModelIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"desktopAppPaths", n => { DesktopAppPaths = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"appUserModelIds", n => { AppUserModelIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"desktopAppPaths", n => { DesktopAppPaths = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"profileName", n => { ProfileName = n.GetStringValue(); } },
                 {"showTaskBar", n => { ShowTaskBar = n.GetBoolValue(); } },
                 {"startMenuLayoutXml", n => { StartMenuLayoutXml = n.GetByteArrayValue(); } },
-                {"userAccounts", n => { UserAccounts = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"userAccounts", n => { UserAccounts = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

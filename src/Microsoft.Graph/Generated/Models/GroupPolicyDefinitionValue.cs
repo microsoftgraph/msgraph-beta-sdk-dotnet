@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"definition", n => { Definition = n.GetObjectValue<GroupPolicyDefinition>(GroupPolicyDefinition.CreateFromDiscriminatorValue); } },
                 {"enabled", n => { Enabled = n.GetBoolValue(); } },
                 {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"presentationValues", n => { PresentationValues = n.GetCollectionOfObjectValues<GroupPolicyPresentationValue>(GroupPolicyPresentationValue.CreateFromDiscriminatorValue).ToList(); } },
+                {"presentationValues", n => { PresentationValues = n.GetCollectionOfObjectValues<GroupPolicyPresentationValue>(GroupPolicyPresentationValue.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

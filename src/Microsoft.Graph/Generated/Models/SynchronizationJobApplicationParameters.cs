@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"ruleId", n => { RuleId = n.GetStringValue(); } },
-                {"subjects", n => { Subjects = n.GetCollectionOfObjectValues<SynchronizationJobSubject>(SynchronizationJobSubject.CreateFromDiscriminatorValue).ToList(); } },
+                {"subjects", n => { Subjects = n.GetCollectionOfObjectValues<SynchronizationJobSubject>(SynchronizationJobSubject.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

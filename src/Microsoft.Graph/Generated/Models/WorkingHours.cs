@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"daysOfWeek", n => { DaysOfWeek = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"daysOfWeek", n => { DaysOfWeek = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"endTime", n => { EndTime = n.GetTimeValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"startTime", n => { StartTime = n.GetTimeValue(); } },

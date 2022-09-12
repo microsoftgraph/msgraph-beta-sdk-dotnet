@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.SetSche
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"managedDeviceIds", n => { ManagedDeviceIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"managedDeviceIds", n => { ManagedDeviceIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"state", n => { State = n.GetEnumValue<ScheduledRetireState>(); } },
             };
         }

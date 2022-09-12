@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"installState", n => { InstallState = n.GetEnumValue<ResultantAppState>(); } },
                 {"installStateDetail", n => { InstallStateDetail = n.GetEnumValue<ResultantAppStateDetail>(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"sourceIds", n => { SourceIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"sourceIds", n => { SourceIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"targetDisplayName", n => { TargetDisplayName = n.GetStringValue(); } },
                 {"targetId", n => { TargetId = n.GetStringValue(); } },
                 {"targetLastSyncDateTime", n => { TargetLastSyncDateTime = n.GetDateTimeOffsetValue(); } },

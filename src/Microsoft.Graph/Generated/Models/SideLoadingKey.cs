@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>SideLoadingKey entity is required for Windows 8 and 8.1 devices to intall Line Of Business Apps for a tenant.</summary>
     public class SideLoadingKey : Entity, IParsable {
         /// <summary>Side Loading Key description displayed to the ITPro Admins..</summary>
         public string Description {
@@ -31,7 +32,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("value", value); }
         }
         /// <summary>
-        /// Instantiates a new SideLoadingKey and sets the default values.
+        /// Instantiates a new sideLoadingKey and sets the default values.
         /// </summary>
         public SideLoadingKey() : base() {
             OdataType = "#microsoft.graph.sideLoadingKey";

@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs.Item.
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<FilterOperatorSchema>(FilterOperatorSchema.CreateFromDiscriminatorValue).ToList(); } },
+                {"value", n => { Value = n.GetCollectionOfObjectValues<FilterOperatorSchema>(FilterOperatorSchema.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

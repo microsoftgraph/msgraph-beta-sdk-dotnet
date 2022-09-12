@@ -218,7 +218,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"deadlineForQualityUpdatesInDays", n => { DeadlineForQualityUpdatesInDays = n.GetIntValue(); } },
                 {"deadlineGracePeriodInDays", n => { DeadlineGracePeriodInDays = n.GetIntValue(); } },
                 {"deliveryOptimizationMode", n => { DeliveryOptimizationMode = n.GetEnumValue<WindowsDeliveryOptimizationMode>(); } },
-                {"deviceUpdateStates", n => { DeviceUpdateStates = n.GetCollectionOfObjectValues<WindowsUpdateState>(WindowsUpdateState.CreateFromDiscriminatorValue).ToList(); } },
+                {"deviceUpdateStates", n => { DeviceUpdateStates = n.GetCollectionOfObjectValues<WindowsUpdateState>(WindowsUpdateState.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"driversExcluded", n => { DriversExcluded = n.GetBoolValue(); } },
                 {"engagedRestartDeadlineInDays", n => { EngagedRestartDeadlineInDays = n.GetIntValue(); } },
                 {"engagedRestartSnoozeScheduleInDays", n => { EngagedRestartSnoozeScheduleInDays = n.GetIntValue(); } },

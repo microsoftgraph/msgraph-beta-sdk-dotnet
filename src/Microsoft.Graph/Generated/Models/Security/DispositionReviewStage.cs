@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class DispositionReviewStage : Entity, IParsable {
         /// <summary>Name representing each stage within a collection.</summary>
         public string Name {
@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"name", n => { Name = n.GetStringValue(); } },
-                {"reviewersEmailAddresses", n => { ReviewersEmailAddresses = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"reviewersEmailAddresses", n => { ReviewersEmailAddresses = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"stageNumber", n => { StageNumber = n.GetIntValue(); } },
             };
         }

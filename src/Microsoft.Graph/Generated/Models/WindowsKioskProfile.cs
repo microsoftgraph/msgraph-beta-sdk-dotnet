@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"profileId", n => { ProfileId = n.GetStringValue(); } },
                 {"profileName", n => { ProfileName = n.GetStringValue(); } },
-                {"userAccountsConfiguration", n => { UserAccountsConfiguration = n.GetCollectionOfObjectValues<WindowsKioskUser>(WindowsKioskUser.CreateFromDiscriminatorValue).ToList(); } },
+                {"userAccountsConfiguration", n => { UserAccountsConfiguration = n.GetCollectionOfObjectValues<WindowsKioskUser>(WindowsKioskUser.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

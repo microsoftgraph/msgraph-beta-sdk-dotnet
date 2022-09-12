@@ -155,7 +155,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"locationDisabled", n => { LocationDisabled = n.GetBoolValue(); } },
                 {"macOSFileVaultDisabled", n => { MacOSFileVaultDisabled = n.GetBoolValue(); } },
                 {"macOSRegistrationDisabled", n => { MacOSRegistrationDisabled = n.GetBoolValue(); } },
-                {"managementCertificates", n => { ManagementCertificates = n.GetCollectionOfObjectValues<ManagementCertificateWithThumbprint>(ManagementCertificateWithThumbprint.CreateFromDiscriminatorValue).ToList(); } },
+                {"managementCertificates", n => { ManagementCertificates = n.GetCollectionOfObjectValues<ManagementCertificateWithThumbprint>(ManagementCertificateWithThumbprint.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"passCodeDisabled", n => { PassCodeDisabled = n.GetBoolValue(); } },
                 {"profileRemovalDisabled", n => { ProfileRemovalDisabled = n.GetBoolValue(); } },
                 {"restoreBlocked", n => { RestoreBlocked = n.GetBoolValue(); } },

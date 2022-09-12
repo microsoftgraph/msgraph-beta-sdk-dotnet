@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.VppTokens.GetLicensesForAppWi
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<VppTokenLicenseSummary>(VppTokenLicenseSummary.CreateFromDiscriminatorValue).ToList(); } },
+                {"value", n => { Value = n.GetCollectionOfObjectValues<VppTokenLicenseSummary>(VppTokenLicenseSummary.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

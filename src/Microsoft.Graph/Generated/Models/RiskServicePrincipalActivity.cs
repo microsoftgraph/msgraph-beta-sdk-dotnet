@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"detail", n => { Detail = n.GetEnumValue<RiskDetail>(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"riskEventTypes", n => { RiskEventTypes = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"riskEventTypes", n => { RiskEventTypes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.Item.Assign
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"assignedAccessMultiModeProfiles", n => { AssignedAccessMultiModeProfiles = n.GetCollectionOfObjectValues<WindowsAssignedAccessProfile>(WindowsAssignedAccessProfile.CreateFromDiscriminatorValue).ToList(); } },
+                {"assignedAccessMultiModeProfiles", n => { AssignedAccessMultiModeProfiles = n.GetCollectionOfObjectValues<WindowsAssignedAccessProfile>(WindowsAssignedAccessProfile.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

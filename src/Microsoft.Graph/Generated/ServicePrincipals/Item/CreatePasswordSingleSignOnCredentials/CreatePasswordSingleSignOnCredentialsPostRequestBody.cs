@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.CreatePasswordSingleSignOn
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"credentials", n => { Credentials = n.GetCollectionOfObjectValues<Credential>(Credential.CreateFromDiscriminatorValue).ToList(); } },
+                {"credentials", n => { Credentials = n.GetCollectionOfObjectValues<Credential>(Credential.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"id", n => { Id = n.GetStringValue(); } },
             };
         }

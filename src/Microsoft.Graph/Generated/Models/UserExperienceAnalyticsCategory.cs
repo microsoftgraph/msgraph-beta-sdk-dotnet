@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("metricValues", value); }
         }
         /// <summary>
-        /// Instantiates a new UserExperienceAnalyticsCategory and sets the default values.
+        /// Instantiates a new userExperienceAnalyticsCategory and sets the default values.
         /// </summary>
         public UserExperienceAnalyticsCategory() : base() {
             OdataType = "#microsoft.graph.userExperienceAnalyticsCategory";
@@ -34,8 +34,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"insights", n => { Insights = n.GetCollectionOfObjectValues<UserExperienceAnalyticsInsight>(UserExperienceAnalyticsInsight.CreateFromDiscriminatorValue).ToList(); } },
-                {"metricValues", n => { MetricValues = n.GetCollectionOfObjectValues<UserExperienceAnalyticsMetric>(UserExperienceAnalyticsMetric.CreateFromDiscriminatorValue).ToList(); } },
+                {"insights", n => { Insights = n.GetCollectionOfObjectValues<UserExperienceAnalyticsInsight>(UserExperienceAnalyticsInsight.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"metricValues", n => { MetricValues = n.GetCollectionOfObjectValues<UserExperienceAnalyticsMetric>(UserExperienceAnalyticsMetric.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

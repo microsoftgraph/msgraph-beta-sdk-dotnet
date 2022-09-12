@@ -91,7 +91,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"recurrenceType", n => { RecurrenceType = n.GetStringValue(); } },
-                {"reviewers", n => { Reviewers = n.GetCollectionOfObjectValues<UserSet>(UserSet.CreateFromDiscriminatorValue).ToList(); } },
+                {"reviewers", n => { Reviewers = n.GetCollectionOfObjectValues<UserSet>(UserSet.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"reviewerType", n => { ReviewerType = n.GetStringValue(); } },
                 {"startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
             };

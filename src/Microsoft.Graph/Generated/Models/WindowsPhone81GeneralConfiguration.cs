@@ -175,7 +175,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"cameraBlocked", n => { CameraBlocked = n.GetBoolValue(); } },
                 {"cellularBlockWifiTethering", n => { CellularBlockWifiTethering = n.GetBoolValue(); } },
                 {"compliantAppListType", n => { CompliantAppListType = n.GetEnumValue<AppListType>(); } },
-                {"compliantAppsList", n => { CompliantAppsList = n.GetCollectionOfObjectValues<AppListItem>(AppListItem.CreateFromDiscriminatorValue).ToList(); } },
+                {"compliantAppsList", n => { CompliantAppsList = n.GetCollectionOfObjectValues<AppListItem>(AppListItem.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"diagnosticDataBlockSubmission", n => { DiagnosticDataBlockSubmission = n.GetBoolValue(); } },
                 {"emailBlockAddingAccounts", n => { EmailBlockAddingAccounts = n.GetBoolValue(); } },
                 {"locationServicesBlocked", n => { LocationServicesBlocked = n.GetBoolValue(); } },

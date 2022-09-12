@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.WdacSupplementalPolicies.Item
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"wdacPolicyAssignments", n => { WdacPolicyAssignments = n.GetCollectionOfObjectValues<WindowsDefenderApplicationControlSupplementalPolicyAssignment>(WindowsDefenderApplicationControlSupplementalPolicyAssignment.CreateFromDiscriminatorValue).ToList(); } },
+                {"wdacPolicyAssignments", n => { WdacPolicyAssignments = n.GetCollectionOfObjectValues<WindowsDefenderApplicationControlSupplementalPolicyAssignment>(WindowsDefenderApplicationControlSupplementalPolicyAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

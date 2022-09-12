@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("workflows", value); }
         }
         /// <summary>
-        /// Instantiates a new DeletedItemContainer and sets the default values.
+        /// Instantiates a new deletedItemContainer and sets the default values.
         /// </summary>
         public DeletedItemContainer() : base() {
             OdataType = "#microsoft.graph.deletedItemContainer";
@@ -30,7 +30,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"workflows", n => { Workflows = n.GetCollectionOfObjectValues<Workflow>(Workflow.CreateFromDiscriminatorValue).ToList(); } },
+                {"workflows", n => { Workflows = n.GetCollectionOfObjectValues<Workflow>(Workflow.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

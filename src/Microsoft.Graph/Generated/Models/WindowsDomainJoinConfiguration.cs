@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"activeDirectoryDomainName", n => { ActiveDirectoryDomainName = n.GetStringValue(); } },
                 {"computerNameStaticPrefix", n => { ComputerNameStaticPrefix = n.GetStringValue(); } },
                 {"computerNameSuffixRandomCharCount", n => { ComputerNameSuffixRandomCharCount = n.GetIntValue(); } },
-                {"networkAccessConfigurations", n => { NetworkAccessConfigurations = n.GetCollectionOfObjectValues<DeviceConfiguration>(DeviceConfiguration.CreateFromDiscriminatorValue).ToList(); } },
+                {"networkAccessConfigurations", n => { NetworkAccessConfigurations = n.GetCollectionOfObjectValues<DeviceConfiguration>(DeviceConfiguration.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"organizationalUnit", n => { OrganizationalUnit = n.GetStringValue(); } },
             };
         }

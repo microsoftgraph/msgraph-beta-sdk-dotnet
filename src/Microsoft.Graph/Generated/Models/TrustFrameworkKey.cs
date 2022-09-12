@@ -134,7 +134,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"q", n => { Q = n.GetStringValue(); } },
                 {"qi", n => { Qi = n.GetStringValue(); } },
                 {"use", n => { Use = n.GetStringValue(); } },
-                {"x5c", n => { X5c = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"x5c", n => { X5c = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"x5t", n => { X5t = n.GetStringValue(); } },
             };
         }

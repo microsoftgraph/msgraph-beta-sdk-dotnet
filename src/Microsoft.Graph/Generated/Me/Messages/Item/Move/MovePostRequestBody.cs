@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Beta.Me.Messages.Item.Move {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"destinationId", n => { DestinationId = n.GetStringValue(); } },
+                {"DestinationId", n => { DestinationId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Me.Messages.Item.Move {
         /// </summary>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("destinationId", DestinationId);
+            writer.WriteStringValue("DestinationId", DestinationId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

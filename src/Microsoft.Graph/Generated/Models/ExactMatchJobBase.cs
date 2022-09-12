@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provides operations to manage the dataClassificationService singleton.</summary>
     public class ExactMatchJobBase : Entity, IParsable {
         /// <summary>The completionDateTime property</summary>
         public DateTimeOffset? CompletionDateTime {
@@ -44,8 +44,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static new ExactMatchJobBase CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValueNode = parseNode.GetChildNode("@odata.type");
-            var mappingValue = mappingValueNode?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch {
                 "#microsoft.graph.exactMatchLookupJob" => new ExactMatchLookupJob(),
                 "#microsoft.graph.exactMatchSession" => new ExactMatchSession(),

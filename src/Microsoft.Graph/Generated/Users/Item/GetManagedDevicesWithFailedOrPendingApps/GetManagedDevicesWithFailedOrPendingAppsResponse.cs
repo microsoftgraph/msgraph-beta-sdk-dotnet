@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Beta.Users.Item.GetManagedDevicesWithFailedOrPendingAp
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<ManagedDeviceSummarizedAppState>(ManagedDeviceSummarizedAppState.CreateFromDiscriminatorValue).ToList(); } },
+                {"value", n => { Value = n.GetCollectionOfObjectValues<ManagedDeviceSummarizedAppState>(ManagedDeviceSummarizedAppState.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

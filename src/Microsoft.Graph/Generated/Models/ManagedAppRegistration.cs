@@ -114,8 +114,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static new ManagedAppRegistration CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValueNode = parseNode.GetChildNode("@odata.type");
-            var mappingValue = mappingValueNode?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch {
                 "#microsoft.graph.androidManagedAppRegistration" => new AndroidManagedAppRegistration(),
                 "#microsoft.graph.iosManagedAppRegistration" => new IosManagedAppRegistration(),
@@ -129,7 +128,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"appIdentifier", n => { AppIdentifier = n.GetObjectValue<MobileAppIdentifier>(MobileAppIdentifier.CreateFromDiscriminatorValue); } },
                 {"applicationVersion", n => { ApplicationVersion = n.GetStringValue(); } },
-                {"appliedPolicies", n => { AppliedPolicies = n.GetCollectionOfObjectValues<ManagedAppPolicy>(ManagedAppPolicy.CreateFromDiscriminatorValue).ToList(); } },
+                {"appliedPolicies", n => { AppliedPolicies = n.GetCollectionOfObjectValues<ManagedAppPolicy>(ManagedAppPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"azureADDeviceId", n => { AzureADDeviceId = n.GetStringValue(); } },
                 {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"deviceManufacturer", n => { DeviceManufacturer = n.GetStringValue(); } },
@@ -137,12 +136,12 @@ namespace Microsoft.Graph.Beta.Models {
                 {"deviceName", n => { DeviceName = n.GetStringValue(); } },
                 {"deviceTag", n => { DeviceTag = n.GetStringValue(); } },
                 {"deviceType", n => { DeviceType = n.GetStringValue(); } },
-                {"flaggedReasons", n => { FlaggedReasons = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"intendedPolicies", n => { IntendedPolicies = n.GetCollectionOfObjectValues<ManagedAppPolicy>(ManagedAppPolicy.CreateFromDiscriminatorValue).ToList(); } },
+                {"flaggedReasons", n => { FlaggedReasons = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"intendedPolicies", n => { IntendedPolicies = n.GetCollectionOfObjectValues<ManagedAppPolicy>(ManagedAppPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"lastSyncDateTime", n => { LastSyncDateTime = n.GetDateTimeOffsetValue(); } },
                 {"managedDeviceId", n => { ManagedDeviceId = n.GetStringValue(); } },
                 {"managementSdkVersion", n => { ManagementSdkVersion = n.GetStringValue(); } },
-                {"operations", n => { Operations = n.GetCollectionOfObjectValues<ManagedAppOperation>(ManagedAppOperation.CreateFromDiscriminatorValue).ToList(); } },
+                {"operations", n => { Operations = n.GetCollectionOfObjectValues<ManagedAppOperation>(ManagedAppOperation.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"platformVersion", n => { PlatformVersion = n.GetStringValue(); } },
                 {"userId", n => { UserId = n.GetStringValue(); } },
                 {"version", n => { Version = n.GetStringValue(); } },

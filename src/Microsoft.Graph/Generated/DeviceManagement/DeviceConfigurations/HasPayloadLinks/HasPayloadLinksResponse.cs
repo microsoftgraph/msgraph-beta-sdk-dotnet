@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.HasPayloadL
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<HasPayloadLinkResultItem>(HasPayloadLinkResultItem.CreateFromDiscriminatorValue).ToList(); } },
+                {"value", n => { Value = n.GetCollectionOfObjectValues<HasPayloadLinkResultItem>(HasPayloadLinkResultItem.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

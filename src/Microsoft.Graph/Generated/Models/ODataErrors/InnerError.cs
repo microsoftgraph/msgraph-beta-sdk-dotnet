@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.Models.ODataErrors {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"client-request-id", n => { ClientRequestId = n.GetStringValue(); } },
-                {"date", n => { Date = n.GetDateTimeOffsetValue(); } },
+                {"Date", n => { Date = n.GetDateTimeOffsetValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"request-id", n => { RequestId = n.GetStringValue(); } },
             };
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Beta.Models.ODataErrors {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("client-request-id", ClientRequestId);
-            writer.WriteDateTimeOffsetValue("date", Date);
+            writer.WriteDateTimeOffsetValue("Date", Date);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("request-id", RequestId);
             writer.WriteAdditionalData(AdditionalData);

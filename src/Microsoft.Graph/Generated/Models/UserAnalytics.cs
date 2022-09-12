@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"activityStatistics", n => { ActivityStatistics = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ActivityStatistics>(Microsoft.Graph.Beta.Models.ActivityStatistics.CreateFromDiscriminatorValue).ToList(); } },
+                {"activityStatistics", n => { ActivityStatistics = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ActivityStatistics>(Microsoft.Graph.Beta.Models.ActivityStatistics.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"settings", n => { Settings = n.GetObjectValue<Microsoft.Graph.Beta.Models.Settings>(Microsoft.Graph.Beta.Models.Settings.CreateFromDiscriminatorValue); } },
             };
         }

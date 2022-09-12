@@ -130,7 +130,7 @@ namespace Microsoft.Graph.Beta.Models {
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"antiMalwareVersion", n => { AntiMalwareVersion = n.GetStringValue(); } },
-                {"detectedMalwareState", n => { DetectedMalwareState = n.GetCollectionOfObjectValues<WindowsDeviceMalwareState>(WindowsDeviceMalwareState.CreateFromDiscriminatorValue).ToList(); } },
+                {"detectedMalwareState", n => { DetectedMalwareState = n.GetCollectionOfObjectValues<WindowsDeviceMalwareState>(WindowsDeviceMalwareState.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"deviceState", n => { DeviceState = n.GetEnumValue<WindowsDeviceHealthState>(); } },
                 {"engineVersion", n => { EngineVersion = n.GetStringValue(); } },
                 {"fullScanOverdue", n => { FullScanOverdue = n.GetBoolValue(); } },

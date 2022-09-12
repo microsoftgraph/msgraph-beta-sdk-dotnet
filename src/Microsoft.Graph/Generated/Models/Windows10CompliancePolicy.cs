@@ -215,7 +215,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"signatureOutOfDate", n => { SignatureOutOfDate = n.GetBoolValue(); } },
                 {"storageRequireEncryption", n => { StorageRequireEncryption = n.GetBoolValue(); } },
                 {"tpmRequired", n => { TpmRequired = n.GetBoolValue(); } },
-                {"validOperatingSystemBuildRanges", n => { ValidOperatingSystemBuildRanges = n.GetCollectionOfObjectValues<OperatingSystemVersionRange>(OperatingSystemVersionRange.CreateFromDiscriminatorValue).ToList(); } },
+                {"validOperatingSystemBuildRanges", n => { ValidOperatingSystemBuildRanges = n.GetCollectionOfObjectValues<OperatingSystemVersionRange>(OperatingSystemVersionRange.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

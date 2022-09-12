@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class UserProcessingResult : Entity, IParsable {
         /// <summary>The date time that the workflow execution for a user completed. Value is null if the workflow hasn&apos;t completed. Supports $filter(lt, gt) and $orderby.</summary>
         public DateTimeOffset? CompletedDateTime {
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
                 {"scheduledDateTime", n => { ScheduledDateTime = n.GetDateTimeOffsetValue(); } },
                 {"startedDateTime", n => { StartedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"subject", n => { Subject = n.GetObjectValue<Microsoft.Graph.Beta.Models.User>(Microsoft.Graph.Beta.Models.User.CreateFromDiscriminatorValue); } },
-                {"taskProcessingResults", n => { TaskProcessingResults = n.GetCollectionOfObjectValues<TaskProcessingResult>(TaskProcessingResult.CreateFromDiscriminatorValue).ToList(); } },
+                {"taskProcessingResults", n => { TaskProcessingResults = n.GetCollectionOfObjectValues<TaskProcessingResult>(TaskProcessingResult.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"totalTasksCount", n => { TotalTasksCount = n.GetIntValue(); } },
                 {"totalUnprocessedTasksCount", n => { TotalUnprocessedTasksCount = n.GetIntValue(); } },
                 {"workflowExecutionType", n => { WorkflowExecutionType = n.GetEnumValue<WorkflowExecutionType>(); } },

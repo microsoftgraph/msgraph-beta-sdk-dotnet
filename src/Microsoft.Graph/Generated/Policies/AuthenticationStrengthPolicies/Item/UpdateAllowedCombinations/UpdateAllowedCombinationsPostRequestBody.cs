@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Beta.Policies.AuthenticationStrengthPolicies.Item.Upda
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"allowedCombinations", n => { AllowedCombinations = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"allowedCombinations", n => { AllowedCombinations = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

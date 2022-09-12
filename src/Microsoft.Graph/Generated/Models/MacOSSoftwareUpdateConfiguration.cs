@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"allOtherUpdateBehavior", n => { AllOtherUpdateBehavior = n.GetEnumValue<MacOSSoftwareUpdateBehavior>(); } },
                 {"configDataUpdateBehavior", n => { ConfigDataUpdateBehavior = n.GetEnumValue<MacOSSoftwareUpdateBehavior>(); } },
                 {"criticalUpdateBehavior", n => { CriticalUpdateBehavior = n.GetEnumValue<MacOSSoftwareUpdateBehavior>(); } },
-                {"customUpdateTimeWindows", n => { CustomUpdateTimeWindows = n.GetCollectionOfObjectValues<CustomUpdateTimeWindow>(CustomUpdateTimeWindow.CreateFromDiscriminatorValue).ToList(); } },
+                {"customUpdateTimeWindows", n => { CustomUpdateTimeWindows = n.GetCollectionOfObjectValues<CustomUpdateTimeWindow>(CustomUpdateTimeWindow.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"firmwareUpdateBehavior", n => { FirmwareUpdateBehavior = n.GetEnumValue<MacOSSoftwareUpdateBehavior>(); } },
                 {"updateScheduleType", n => { UpdateScheduleType = n.GetEnumValue<MacOSSoftwareUpdateScheduleType>(); } },
                 {"updateTimeWindowUtcOffsetInMinutes", n => { UpdateTimeWindowUtcOffsetInMinutes = n.GetIntValue(); } },

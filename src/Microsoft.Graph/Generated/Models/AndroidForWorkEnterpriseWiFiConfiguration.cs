@@ -71,7 +71,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"innerAuthenticationProtocolForPeap", n => { InnerAuthenticationProtocolForPeap = n.GetEnumValue<NonEapAuthenticationMethodForPeap>(); } },
                 {"outerIdentityPrivacyTemporaryValue", n => { OuterIdentityPrivacyTemporaryValue = n.GetStringValue(); } },
                 {"rootCertificateForServerValidation", n => { RootCertificateForServerValidation = n.GetObjectValue<AndroidForWorkTrustedRootCertificate>(AndroidForWorkTrustedRootCertificate.CreateFromDiscriminatorValue); } },
-                {"trustedServerCertificateNames", n => { TrustedServerCertificateNames = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"trustedServerCertificateNames", n => { TrustedServerCertificateNames = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

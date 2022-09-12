@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"isActive", n => { IsActive = n.GetBoolValue(); } },
-                {"userIds", n => { UserIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"userIds", n => { UserIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

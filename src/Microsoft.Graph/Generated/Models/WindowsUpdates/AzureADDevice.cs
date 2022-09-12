@@ -34,8 +34,8 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"enrollments", n => { Enrollments = n.GetCollectionOfObjectValues<UpdatableAssetEnrollment>(UpdatableAssetEnrollment.CreateFromDiscriminatorValue).ToList(); } },
-                {"errors", n => { Errors = n.GetCollectionOfObjectValues<UpdatableAssetError>(UpdatableAssetError.CreateFromDiscriminatorValue).ToList(); } },
+                {"enrollments", n => { Enrollments = n.GetCollectionOfObjectValues<UpdatableAssetEnrollment>(UpdatableAssetEnrollment.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"errors", n => { Errors = n.GetCollectionOfObjectValues<UpdatableAssetError>(UpdatableAssetError.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

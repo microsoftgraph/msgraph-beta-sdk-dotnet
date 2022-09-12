@@ -85,11 +85,11 @@ namespace Microsoft.Graph.Beta.Models {
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"appStoreUrl", n => { AppStoreUrl = n.GetStringValue(); } },
-                {"assignedLicenses", n => { AssignedLicenses = n.GetCollectionOfObjectValues<MacOsVppAppAssignedLicense>(MacOsVppAppAssignedLicense.CreateFromDiscriminatorValue).ToList(); } },
+                {"assignedLicenses", n => { AssignedLicenses = n.GetCollectionOfObjectValues<MacOsVppAppAssignedLicense>(MacOsVppAppAssignedLicense.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"bundleId", n => { BundleId = n.GetStringValue(); } },
                 {"licensingType", n => { LicensingType = n.GetObjectValue<VppLicensingType>(VppLicensingType.CreateFromDiscriminatorValue); } },
                 {"releaseDateTime", n => { ReleaseDateTime = n.GetDateTimeOffsetValue(); } },
-                {"revokeLicenseActionResults", n => { RevokeLicenseActionResults = n.GetCollectionOfObjectValues<MacOsVppAppRevokeLicensesActionResult>(MacOsVppAppRevokeLicensesActionResult.CreateFromDiscriminatorValue).ToList(); } },
+                {"revokeLicenseActionResults", n => { RevokeLicenseActionResults = n.GetCollectionOfObjectValues<MacOsVppAppRevokeLicensesActionResult>(MacOsVppAppRevokeLicensesActionResult.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"totalLicenseCount", n => { TotalLicenseCount = n.GetIntValue(); } },
                 {"usedLicenseCount", n => { UsedLicenseCount = n.GetIntValue(); } },
                 {"vppTokenAccountType", n => { VppTokenAccountType = n.GetEnumValue<VppTokenAccountType>(); } },

@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Beta.Me.DeviceEnrollmentConfigurations.CreateEnrollmen
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"deviceEnrollmentNotificationConfigurations", n => { DeviceEnrollmentNotificationConfigurations = n.GetCollectionOfObjectValues<DeviceEnrollmentConfiguration>(DeviceEnrollmentConfiguration.CreateFromDiscriminatorValue).ToList(); } },
+                {"deviceEnrollmentNotificationConfigurations", n => { DeviceEnrollmentNotificationConfigurations = n.GetCollectionOfObjectValues<DeviceEnrollmentConfiguration>(DeviceEnrollmentConfiguration.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

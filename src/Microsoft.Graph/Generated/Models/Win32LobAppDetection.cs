@@ -34,8 +34,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static Win32LobAppDetection CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValueNode = parseNode.GetChildNode("@odata.type");
-            var mappingValue = mappingValueNode?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch {
                 "#microsoft.graph.win32LobAppFileSystemDetection" => new Win32LobAppFileSystemDetection(),
                 "#microsoft.graph.win32LobAppPowerShellScriptDetection" => new Win32LobAppPowerShellScriptDetection(),

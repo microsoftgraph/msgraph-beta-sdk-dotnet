@@ -33,8 +33,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static new WindowsVpnConfiguration CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValueNode = parseNode.GetChildNode("@odata.type");
-            var mappingValue = mappingValueNode?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch {
                 "#microsoft.graph.windows10VpnConfiguration" => new Windows10VpnConfiguration(),
                 "#microsoft.graph.windows81VpnConfiguration" => new Windows81VpnConfiguration(),
@@ -49,7 +48,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"connectionName", n => { ConnectionName = n.GetStringValue(); } },
                 {"customXml", n => { CustomXml = n.GetByteArrayValue(); } },
-                {"servers", n => { Servers = n.GetCollectionOfObjectValues<VpnServer>(VpnServer.CreateFromDiscriminatorValue).ToList(); } },
+                {"servers", n => { Servers = n.GetCollectionOfObjectValues<VpnServer>(VpnServer.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.Start {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<EducationFileSynchronizationVerificationMessage>(EducationFileSynchronizationVerificationMessage.CreateFromDiscriminatorValue).ToList(); } },
+                {"value", n => { Value = n.GetCollectionOfObjectValues<EducationFileSynchronizationVerificationMessage>(EducationFileSynchronizationVerificationMessage.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

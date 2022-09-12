@@ -60,10 +60,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"classroomIds", n => { ClassroomIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"classroomIds", n => { ClassroomIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"description", n => { Description = n.GetStringValue(); } },
-                {"deviceCartIds", n => { DeviceCartIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"deviceCartIds", n => { DeviceCartIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"version", n => { Version = n.GetIntValue(); } },

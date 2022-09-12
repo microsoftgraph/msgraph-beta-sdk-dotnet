@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Models {
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"appointmentClientJoinWebUrl", n => { AppointmentClientJoinWebUrl = n.GetStringValue(); } },
-                {"appointmentClients", n => { AppointmentClients = n.GetCollectionOfObjectValues<VirtualAppointmentUser>(VirtualAppointmentUser.CreateFromDiscriminatorValue).ToList(); } },
+                {"appointmentClients", n => { AppointmentClients = n.GetCollectionOfObjectValues<VirtualAppointmentUser>(VirtualAppointmentUser.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"externalAppointmentId", n => { ExternalAppointmentId = n.GetStringValue(); } },
                 {"externalAppointmentUrl", n => { ExternalAppointmentUrl = n.GetStringValue(); } },
                 {"settings", n => { Settings = n.GetObjectValue<VirtualAppointmentSettings>(VirtualAppointmentSettings.CreateFromDiscriminatorValue); } },

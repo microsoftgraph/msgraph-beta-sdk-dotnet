@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
                 {"createdBy", n => { CreatedBy = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>(Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"queries", n => { Queries = n.GetCollectionOfObjectValues<ReviewSetQuery>(ReviewSetQuery.CreateFromDiscriminatorValue).ToList(); } },
+                {"queries", n => { Queries = n.GetCollectionOfObjectValues<ReviewSetQuery>(ReviewSetQuery.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

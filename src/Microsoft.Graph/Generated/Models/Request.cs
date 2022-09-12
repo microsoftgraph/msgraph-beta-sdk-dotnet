@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class Request : Entity, IParsable {
         /// <summary>The identifier of the approval of the request.</summary>
         public string ApprovalId {
@@ -49,8 +49,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static new Request CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValueNode = parseNode.GetChildNode("@odata.type");
-            var mappingValue = mappingValueNode?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch {
                 "#microsoft.graph.unifiedRoleAssignmentScheduleRequest" => new UnifiedRoleAssignmentScheduleRequest(),
                 "#microsoft.graph.unifiedRoleEligibilityScheduleRequest" => new UnifiedRoleEligibilityScheduleRequest(),

@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators.DeleteTiIndicators {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<ResultInfo>(ResultInfo.CreateFromDiscriminatorValue).ToList(); } },
+                {"value", n => { Value = n.GetCollectionOfObjectValues<ResultInfo>(ResultInfo.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

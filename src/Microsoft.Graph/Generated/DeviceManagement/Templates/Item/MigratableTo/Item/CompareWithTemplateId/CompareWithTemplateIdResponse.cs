@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Templates.Item.MigratableTo.Item
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<DeviceManagementSettingComparison>(DeviceManagementSettingComparison.CreateFromDiscriminatorValue).ToList(); } },
+                {"value", n => { Value = n.GetCollectionOfObjectValues<DeviceManagementSettingComparison>(DeviceManagementSettingComparison.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

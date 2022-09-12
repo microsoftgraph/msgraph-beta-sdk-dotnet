@@ -49,8 +49,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"enabledTemplateTypes", n => { EnabledTemplateTypes = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"notificationTemplates", n => { NotificationTemplates = n.GetCollectionOfObjectValues<GovernanceNotificationTemplate>(GovernanceNotificationTemplate.CreateFromDiscriminatorValue).ToList(); } },
+                {"enabledTemplateTypes", n => { EnabledTemplateTypes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"notificationTemplates", n => { NotificationTemplates = n.GetCollectionOfObjectValues<GovernanceNotificationTemplate>(GovernanceNotificationTemplate.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }

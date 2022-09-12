@@ -93,7 +93,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"lifecycleState", n => { LifecycleState = n.GetEnumValue<DeviceManagementTemplateLifecycleState>(); } },
                 {"platforms", n => { Platforms = n.GetEnumValue<DeviceManagementConfigurationPlatforms>(); } },
                 {"settingTemplateCount", n => { SettingTemplateCount = n.GetIntValue(); } },
-                {"settingTemplates", n => { SettingTemplates = n.GetCollectionOfObjectValues<DeviceManagementConfigurationSettingTemplate>(DeviceManagementConfigurationSettingTemplate.CreateFromDiscriminatorValue).ToList(); } },
+                {"settingTemplates", n => { SettingTemplates = n.GetCollectionOfObjectValues<DeviceManagementConfigurationSettingTemplate>(DeviceManagementConfigurationSettingTemplate.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"technologies", n => { Technologies = n.GetEnumValue<DeviceManagementConfigurationTechnologies>(); } },
                 {"templateFamily", n => { TemplateFamily = n.GetEnumValue<DeviceManagementConfigurationTemplateFamily>(); } },
                 {"version", n => { Version = n.GetIntValue(); } },

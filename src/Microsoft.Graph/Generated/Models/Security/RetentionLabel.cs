@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class RetentionLabel : Entity, IParsable {
         /// <summary>Specifies the action to take on a document with this label applied during the retention period. The possible values are: none, delete, startDispositionReview, unknownFutureValue.</summary>
         public Microsoft.Graph.Beta.Models.Security.ActionAfterRetentionPeriod? ActionAfterRetentionPeriod {
@@ -113,7 +113,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
                 {"descriptionForAdmins", n => { DescriptionForAdmins = n.GetStringValue(); } },
                 {"descriptionForUsers", n => { DescriptionForUsers = n.GetStringValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"dispositionReviewStages", n => { DispositionReviewStages = n.GetCollectionOfObjectValues<DispositionReviewStage>(DispositionReviewStage.CreateFromDiscriminatorValue).ToList(); } },
+                {"dispositionReviewStages", n => { DispositionReviewStages = n.GetCollectionOfObjectValues<DispositionReviewStage>(DispositionReviewStage.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"isInUse", n => { IsInUse = n.GetBoolValue(); } },
                 {"labelToBeApplied", n => { LabelToBeApplied = n.GetStringValue(); } },
                 {"lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>(Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },

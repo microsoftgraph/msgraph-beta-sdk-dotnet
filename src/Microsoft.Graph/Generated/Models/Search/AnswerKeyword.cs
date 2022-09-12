@@ -54,10 +54,10 @@ namespace Microsoft.Graph.Beta.Models.Search {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"keywords", n => { Keywords = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"keywords", n => { Keywords = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"matchSimilarKeywords", n => { MatchSimilarKeywords = n.GetBoolValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"reservedKeywords", n => { ReservedKeywords = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"reservedKeywords", n => { ReservedKeywords = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class ExternalItem : Entity, IParsable {
         /// <summary>The acl property</summary>
         public List<Microsoft.Graph.Beta.Models.Acl> Acl {
@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"acl", n => { Acl = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Acl>(Microsoft.Graph.Beta.Models.Acl.CreateFromDiscriminatorValue).ToList(); } },
+                {"acl", n => { Acl = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Acl>(Microsoft.Graph.Beta.Models.Acl.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"content", n => { Content = n.GetObjectValue<ExternalItemContent>(ExternalItemContent.CreateFromDiscriminatorValue); } },
                 {"properties", n => { Properties = n.GetObjectValue<Microsoft.Graph.Beta.Models.Properties>(Microsoft.Graph.Beta.Models.Properties.CreateFromDiscriminatorValue); } },
             };

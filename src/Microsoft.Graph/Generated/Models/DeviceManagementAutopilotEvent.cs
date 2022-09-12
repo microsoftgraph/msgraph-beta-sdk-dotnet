@@ -180,7 +180,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"eventDateTime", n => { EventDateTime = n.GetDateTimeOffsetValue(); } },
                 {"managedDeviceName", n => { ManagedDeviceName = n.GetStringValue(); } },
                 {"osVersion", n => { OsVersion = n.GetStringValue(); } },
-                {"policyStatusDetails", n => { PolicyStatusDetails = n.GetCollectionOfObjectValues<DeviceManagementAutopilotPolicyStatusDetail>(DeviceManagementAutopilotPolicyStatusDetail.CreateFromDiscriminatorValue).ToList(); } },
+                {"policyStatusDetails", n => { PolicyStatusDetails = n.GetCollectionOfObjectValues<DeviceManagementAutopilotPolicyStatusDetail>(DeviceManagementAutopilotPolicyStatusDetail.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"targetedAppCount", n => { TargetedAppCount = n.GetIntValue(); } },
                 {"targetedPolicyCount", n => { TargetedPolicyCount = n.GetIntValue(); } },
                 {"userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },

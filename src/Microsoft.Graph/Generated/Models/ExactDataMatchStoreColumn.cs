@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"ignoredDelimiters", n => { IgnoredDelimiters = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"ignoredDelimiters", n => { IgnoredDelimiters = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"isCaseInsensitive", n => { IsCaseInsensitive = n.GetBoolValue(); } },
                 {"isSearchable", n => { IsSearchable = n.GetBoolValue(); } },
                 {"name", n => { Name = n.GetStringValue(); } },

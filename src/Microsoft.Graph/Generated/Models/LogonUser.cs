@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"firstSeenDateTime", n => { FirstSeenDateTime = n.GetDateTimeOffsetValue(); } },
                 {"lastSeenDateTime", n => { LastSeenDateTime = n.GetDateTimeOffsetValue(); } },
                 {"logonId", n => { LogonId = n.GetStringValue(); } },
-                {"logonTypes", n => { LogonTypes = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"logonTypes", n => { LogonTypes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }

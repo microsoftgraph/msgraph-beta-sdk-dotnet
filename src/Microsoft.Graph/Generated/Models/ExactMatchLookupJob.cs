@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"matchingRows", n => { MatchingRows = n.GetCollectionOfObjectValues<LookupResultRow>(LookupResultRow.CreateFromDiscriminatorValue).ToList(); } },
+                {"matchingRows", n => { MatchingRows = n.GetCollectionOfObjectValues<LookupResultRow>(LookupResultRow.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"state", n => { State = n.GetStringValue(); } },
             };
         }

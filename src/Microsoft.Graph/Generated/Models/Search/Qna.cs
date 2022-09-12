@@ -71,13 +71,13 @@ namespace Microsoft.Graph.Beta.Models.Search {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"availabilityEndDateTime", n => { AvailabilityEndDateTime = n.GetDateTimeOffsetValue(); } },
                 {"availabilityStartDateTime", n => { AvailabilityStartDateTime = n.GetDateTimeOffsetValue(); } },
-                {"groupIds", n => { GroupIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"groupIds", n => { GroupIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"isSuggested", n => { IsSuggested = n.GetBoolValue(); } },
                 {"keywords", n => { Keywords = n.GetObjectValue<AnswerKeyword>(AnswerKeyword.CreateFromDiscriminatorValue); } },
-                {"languageTags", n => { LanguageTags = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"platforms", n => { Platforms = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"languageTags", n => { LanguageTags = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"platforms", n => { Platforms = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"state", n => { State = n.GetEnumValue<AnswerState>(); } },
-                {"targetedVariations", n => { TargetedVariations = n.GetCollectionOfObjectValues<AnswerVariant>(AnswerVariant.CreateFromDiscriminatorValue).ToList(); } },
+                {"targetedVariations", n => { TargetedVariations = n.GetCollectionOfObjectValues<AnswerVariant>(AnswerVariant.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

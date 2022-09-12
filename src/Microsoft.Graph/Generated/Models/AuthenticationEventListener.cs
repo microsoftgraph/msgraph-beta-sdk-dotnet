@@ -38,8 +38,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static new AuthenticationEventListener CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValueNode = parseNode.GetChildNode("@odata.type");
-            var mappingValue = mappingValueNode?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch {
                 "#microsoft.graph.onTokenIssuanceStartListener" => new OnTokenIssuanceStartListener(),
                 _ => new AuthenticationEventListener(),
@@ -53,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"authenticationEventsFlowId", n => { AuthenticationEventsFlowId = n.GetStringValue(); } },
                 {"conditions", n => { Conditions = n.GetObjectValue<AuthenticationConditions>(AuthenticationConditions.CreateFromDiscriminatorValue); } },
                 {"priority", n => { Priority = n.GetIntValue(); } },
-                {"tags", n => { Tags = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue).ToList(); } },
+                {"tags", n => { Tags = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

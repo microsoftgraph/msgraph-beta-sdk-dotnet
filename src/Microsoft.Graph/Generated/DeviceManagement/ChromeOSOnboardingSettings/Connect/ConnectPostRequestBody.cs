@@ -4,9 +4,9 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-namespace Microsoft.Graph.Beta.ServicePrincipals.Item.AddTokenSigningCertificate {
-    /// <summary>Provides operations to call the addTokenSigningCertificate method.</summary>
-    public class SelfSignedCertificatePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
+namespace Microsoft.Graph.Beta.DeviceManagement.ChromeOSOnboardingSettings.Connect {
+    /// <summary>Provides operations to call the connect method.</summary>
+    public class ConnectPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
             get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
@@ -14,20 +14,20 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.AddTokenSigningCertificate
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The displayName property</summary>
-        public string DisplayName {
-            get { return BackingStore?.Get<string>("displayName"); }
-            set { BackingStore?.Set("displayName", value); }
+        /// <summary>The ownerAccessToken property</summary>
+        public string OwnerAccessToken {
+            get { return BackingStore?.Get<string>("ownerAccessToken"); }
+            set { BackingStore?.Set("ownerAccessToken", value); }
         }
-        /// <summary>The endDateTime property</summary>
-        public DateTimeOffset? EndDateTime {
-            get { return BackingStore?.Get<DateTimeOffset?>("endDateTime"); }
-            set { BackingStore?.Set("endDateTime", value); }
+        /// <summary>The ownerUserPrincipalName property</summary>
+        public string OwnerUserPrincipalName {
+            get { return BackingStore?.Get<string>("ownerUserPrincipalName"); }
+            set { BackingStore?.Set("ownerUserPrincipalName", value); }
         }
         /// <summary>
-        /// Instantiates a new SelfSignedCertificatePostRequestBody and sets the default values.
+        /// Instantiates a new connectPostRequestBody and sets the default values.
         /// </summary>
-        public SelfSignedCertificatePostRequestBody() {
+        public ConnectPostRequestBody() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
         }
@@ -35,17 +35,17 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.AddTokenSigningCertificate
         /// Creates a new instance of the appropriate class based on discriminator value
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>
-        public static SelfSignedCertificatePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
+        public static ConnectPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new SelfSignedCertificatePostRequestBody();
+            return new ConnectPostRequestBody();
         }
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
+                {"ownerAccessToken", n => { OwnerAccessToken = n.GetStringValue(); } },
+                {"ownerUserPrincipalName", n => { OwnerUserPrincipalName = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -54,8 +54,8 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.AddTokenSigningCertificate
         /// </summary>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteDateTimeOffsetValue("endDateTime", EndDateTime);
+            writer.WriteStringValue("ownerAccessToken", OwnerAccessToken);
+            writer.WriteStringValue("ownerUserPrincipalName", OwnerUserPrincipalName);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

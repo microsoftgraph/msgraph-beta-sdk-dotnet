@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"clientVersion", n => { ClientVersion = n.GetStringValue(); } },
                 {"createdAtDateTime", n => { CreatedAtDateTime = n.GetDateTimeOffsetValue(); } },
                 {"easyId", n => { EasyId = n.GetStringValue(); } },
-                {"fileNames", n => { FileNames = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"fileNames", n => { FileNames = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"locale", n => { Locale = n.GetStringValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"platform", n => { Platform = n.GetStringValue(); } },

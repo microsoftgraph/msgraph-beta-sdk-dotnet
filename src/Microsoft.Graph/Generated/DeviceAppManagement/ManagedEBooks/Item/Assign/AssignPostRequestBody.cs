@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.ManagedEBooks.Item.Assign {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"managedEBookAssignments", n => { ManagedEBookAssignments = n.GetCollectionOfObjectValues<ManagedEBookAssignment>(ManagedEBookAssignment.CreateFromDiscriminatorValue).ToList(); } },
+                {"managedEBookAssignments", n => { ManagedEBookAssignments = n.GetCollectionOfObjectValues<ManagedEBookAssignment>(ManagedEBookAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

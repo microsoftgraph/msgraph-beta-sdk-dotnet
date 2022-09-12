@@ -86,15 +86,15 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"action", n => { Action = n.GetEnumValue<VpnOnDemandRuleConnectionAction>(); } },
-                {"dnsSearchDomains", n => { DnsSearchDomains = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"dnsServerAddressMatch", n => { DnsServerAddressMatch = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"dnsSearchDomains", n => { DnsSearchDomains = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"dnsServerAddressMatch", n => { DnsServerAddressMatch = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"domainAction", n => { DomainAction = n.GetEnumValue<VpnOnDemandRuleConnectionDomainAction>(); } },
-                {"domains", n => { Domains = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"domains", n => { Domains = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"interfaceTypeMatch", n => { InterfaceTypeMatch = n.GetEnumValue<VpnOnDemandRuleInterfaceTypeMatch>(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"probeRequiredUrl", n => { ProbeRequiredUrl = n.GetStringValue(); } },
                 {"probeUrl", n => { ProbeUrl = n.GetStringValue(); } },
-                {"ssids", n => { Ssids = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"ssids", n => { Ssids = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

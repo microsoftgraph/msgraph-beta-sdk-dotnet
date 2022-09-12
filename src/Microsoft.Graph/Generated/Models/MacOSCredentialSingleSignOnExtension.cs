@@ -49,8 +49,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"configurations", n => { Configurations = n.GetCollectionOfObjectValues<KeyTypedValuePair>(KeyTypedValuePair.CreateFromDiscriminatorValue).ToList(); } },
-                {"domains", n => { Domains = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"configurations", n => { Configurations = n.GetCollectionOfObjectValues<KeyTypedValuePair>(KeyTypedValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"domains", n => { Domains = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"extensionIdentifier", n => { ExtensionIdentifier = n.GetStringValue(); } },
                 {"realm", n => { Realm = n.GetStringValue(); } },
                 {"teamIdentifier", n => { TeamIdentifier = n.GetStringValue(); } },

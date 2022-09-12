@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"postingDateTime", n => { PostingDateTime = n.GetDateTimeOffsetValue(); } },
                 {"productVersion", n => { ProductVersion = n.GetStringValue(); } },
-                {"supportedDevices", n => { SupportedDevices = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"supportedDevices", n => { SupportedDevices = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

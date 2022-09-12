@@ -73,9 +73,9 @@ namespace Microsoft.Graph.Beta.Teamwork.SendActivityNotificationToRecipients {
                 {"activityType", n => { ActivityType = n.GetStringValue(); } },
                 {"chainId", n => { ChainId = n.GetLongValue(); } },
                 {"previewText", n => { PreviewText = n.GetObjectValue<ItemBody>(ItemBody.CreateFromDiscriminatorValue); } },
-                {"recipients", n => { Recipients = n.GetCollectionOfObjectValues<TeamworkNotificationRecipient>(TeamworkNotificationRecipient.CreateFromDiscriminatorValue).ToList(); } },
+                {"recipients", n => { Recipients = n.GetCollectionOfObjectValues<TeamworkNotificationRecipient>(TeamworkNotificationRecipient.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"teamsAppId", n => { TeamsAppId = n.GetStringValue(); } },
-                {"templateParameters", n => { TemplateParameters = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.KeyValuePair>(Microsoft.Graph.Beta.Models.KeyValuePair.CreateFromDiscriminatorValue).ToList(); } },
+                {"templateParameters", n => { TemplateParameters = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.KeyValuePair>(Microsoft.Graph.Beta.Models.KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"topic", n => { Topic = n.GetObjectValue<TeamworkActivityTopic>(TeamworkActivityTopic.CreateFromDiscriminatorValue); } },
             };
         }

@@ -34,8 +34,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"allowedUrls", n => { AllowedUrls = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"blockedUrls", n => { BlockedUrls = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"allowedUrls", n => { AllowedUrls = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"blockedUrls", n => { BlockedUrls = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

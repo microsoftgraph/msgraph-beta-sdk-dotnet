@@ -115,7 +115,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"additionalTags", n => { AdditionalTags = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"additionalTags", n => { AdditionalTags = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"contentWebUrl", n => { ContentWebUrl = n.GetStringValue(); } },
                 {"contributor", n => { Contributor = n.GetStringValue(); } },
                 {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
@@ -129,7 +129,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"languageTag", n => { LanguageTag = n.GetStringValue(); } },
                 {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"numberOfPages", n => { NumberOfPages = n.GetIntValue(); } },
-                {"skillTags", n => { SkillTags = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"skillTags", n => { SkillTags = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"sourceName", n => { SourceName = n.GetStringValue(); } },
                 {"thumbnailWebUrl", n => { ThumbnailWebUrl = n.GetStringValue(); } },
                 {"title", n => { Title = n.GetStringValue(); } },

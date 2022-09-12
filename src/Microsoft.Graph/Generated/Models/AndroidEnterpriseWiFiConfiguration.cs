@@ -88,7 +88,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"passwordFormatString", n => { PasswordFormatString = n.GetStringValue(); } },
                 {"preSharedKey", n => { PreSharedKey = n.GetStringValue(); } },
                 {"rootCertificateForServerValidation", n => { RootCertificateForServerValidation = n.GetObjectValue<AndroidTrustedRootCertificate>(AndroidTrustedRootCertificate.CreateFromDiscriminatorValue); } },
-                {"trustedServerCertificateNames", n => { TrustedServerCertificateNames = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"trustedServerCertificateNames", n => { TrustedServerCertificateNames = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"usernameFormatString", n => { UsernameFormatString = n.GetStringValue(); } },
             };
         }

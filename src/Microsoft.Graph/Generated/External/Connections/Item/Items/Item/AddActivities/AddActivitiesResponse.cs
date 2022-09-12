@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Beta.External.Connections.Item.Items.Item.AddActivitie
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<ExternalActivityResult>(ExternalActivityResult.CreateFromDiscriminatorValue).ToList(); } },
+                {"value", n => { Value = n.GetCollectionOfObjectValues<ExternalActivityResult>(ExternalActivityResult.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

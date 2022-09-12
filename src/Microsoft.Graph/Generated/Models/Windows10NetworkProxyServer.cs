@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"address", n => { Address = n.GetStringValue(); } },
-                {"exceptions", n => { Exceptions = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"exceptions", n => { Exceptions = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"useForLocalAddresses", n => { UseForLocalAddresses = n.GetBoolValue(); } },
             };

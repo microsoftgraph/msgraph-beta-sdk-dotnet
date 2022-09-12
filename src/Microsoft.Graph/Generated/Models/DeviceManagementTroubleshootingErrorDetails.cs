@@ -70,7 +70,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"failureDetails", n => { FailureDetails = n.GetStringValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"remediation", n => { Remediation = n.GetStringValue(); } },
-                {"resources", n => { Resources = n.GetCollectionOfObjectValues<DeviceManagementTroubleshootingErrorResource>(DeviceManagementTroubleshootingErrorResource.CreateFromDiscriminatorValue).ToList(); } },
+                {"resources", n => { Resources = n.GetCollectionOfObjectValues<DeviceManagementTroubleshootingErrorResource>(DeviceManagementTroubleshootingErrorResource.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

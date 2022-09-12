@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"isDefaultRecipientsEnabled", n => { IsDefaultRecipientsEnabled = n.GetBoolValue(); } },
                 {"notificationLevel", n => { NotificationLevel = n.GetStringValue(); } },
-                {"notificationRecipients", n => { NotificationRecipients = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"notificationRecipients", n => { NotificationRecipients = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"notificationType", n => { NotificationType = n.GetStringValue(); } },
                 {"recipientType", n => { RecipientType = n.GetStringValue(); } },
             };

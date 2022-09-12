@@ -73,7 +73,7 @@ namespace Microsoft.Graph.Beta.Me.Drives.Item.Root.Preview {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<ItemPreviewInfo> PostAsync(PreviewPostRequestBody body, CancellationToken cancellationToken = default, Action<PreviewRequestBuilderPostRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default) {
+        public async Task<ItemPreviewInfo> PostAsync(PreviewPostRequestBody body, Action<PreviewRequestBuilderPostRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {

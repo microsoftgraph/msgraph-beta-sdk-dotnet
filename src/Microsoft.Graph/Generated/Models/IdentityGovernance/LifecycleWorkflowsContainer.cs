@@ -54,12 +54,12 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"customTaskExtensions", n => { CustomTaskExtensions = n.GetCollectionOfObjectValues<CustomTaskExtension>(CustomTaskExtension.CreateFromDiscriminatorValue).ToList(); } },
+                {"customTaskExtensions", n => { CustomTaskExtensions = n.GetCollectionOfObjectValues<CustomTaskExtension>(CustomTaskExtension.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"deletedItems", n => { DeletedItems = n.GetObjectValue<Microsoft.Graph.Beta.Models.DeletedItemContainer>(Microsoft.Graph.Beta.Models.DeletedItemContainer.CreateFromDiscriminatorValue); } },
                 {"settings", n => { Settings = n.GetObjectValue<LifecycleManagementSettings>(LifecycleManagementSettings.CreateFromDiscriminatorValue); } },
-                {"taskDefinitions", n => { TaskDefinitions = n.GetCollectionOfObjectValues<TaskDefinition>(TaskDefinition.CreateFromDiscriminatorValue).ToList(); } },
-                {"workflows", n => { Workflows = n.GetCollectionOfObjectValues<Workflow>(Workflow.CreateFromDiscriminatorValue).ToList(); } },
-                {"workflowTemplates", n => { WorkflowTemplates = n.GetCollectionOfObjectValues<WorkflowTemplate>(WorkflowTemplate.CreateFromDiscriminatorValue).ToList(); } },
+                {"taskDefinitions", n => { TaskDefinitions = n.GetCollectionOfObjectValues<TaskDefinition>(TaskDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"workflows", n => { Workflows = n.GetCollectionOfObjectValues<Workflow>(Workflow.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"workflowTemplates", n => { WorkflowTemplates = n.GetCollectionOfObjectValues<WorkflowTemplate>(WorkflowTemplate.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

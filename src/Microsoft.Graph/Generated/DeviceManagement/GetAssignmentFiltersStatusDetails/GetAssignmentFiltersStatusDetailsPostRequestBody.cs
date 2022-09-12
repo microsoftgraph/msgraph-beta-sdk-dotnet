@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GetAssignmentFiltersStatusDetail
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"assignmentFilterIds", n => { AssignmentFilterIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"assignmentFilterIds", n => { AssignmentFilterIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"managedDeviceId", n => { ManagedDeviceId = n.GetStringValue(); } },
                 {"payloadId", n => { PayloadId = n.GetStringValue(); } },
                 {"skip", n => { Skip = n.GetIntValue(); } },

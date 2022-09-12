@@ -56,8 +56,8 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"content", n => { Content = n.GetByteArrayValue(); } },
                 {"defaultLanguageCode", n => { DefaultLanguageCode = n.GetStringValue(); } },
-                {"groupPolicyOperations", n => { GroupPolicyOperations = n.GetCollectionOfObjectValues<GroupPolicyOperation>(GroupPolicyOperation.CreateFromDiscriminatorValue).ToList(); } },
-                {"groupPolicyUploadedLanguageFiles", n => { GroupPolicyUploadedLanguageFiles = n.GetCollectionOfObjectValues<GroupPolicyUploadedLanguageFile>(GroupPolicyUploadedLanguageFile.CreateFromDiscriminatorValue).ToList(); } },
+                {"groupPolicyOperations", n => { GroupPolicyOperations = n.GetCollectionOfObjectValues<GroupPolicyOperation>(GroupPolicyOperation.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"groupPolicyUploadedLanguageFiles", n => { GroupPolicyUploadedLanguageFiles = n.GetCollectionOfObjectValues<GroupPolicyUploadedLanguageFile>(GroupPolicyUploadedLanguageFile.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"status", n => { Status = n.GetEnumValue<GroupPolicyUploadedDefinitionFileStatus>(); } },
                 {"uploadDateTime", n => { UploadDateTime = n.GetDateTimeOffsetValue(); } },
             };

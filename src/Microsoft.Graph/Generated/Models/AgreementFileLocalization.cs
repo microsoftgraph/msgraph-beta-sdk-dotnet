@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provides operations to manage the collection of agreement entities.</summary>
     public class AgreementFileLocalization : AgreementFileProperties, IParsable {
         /// <summary>Read-only. Customized versions of the terms of use agreement in the Azure AD tenant.</summary>
         public List<AgreementFileVersion> Versions {
@@ -30,7 +30,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"versions", n => { Versions = n.GetCollectionOfObjectValues<AgreementFileVersion>(AgreementFileVersion.CreateFromDiscriminatorValue).ToList(); } },
+                {"versions", n => { Versions = n.GetCollectionOfObjectValues<AgreementFileVersion>(AgreementFileVersion.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

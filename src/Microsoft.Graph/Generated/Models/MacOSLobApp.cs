@@ -76,11 +76,11 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"buildNumber", n => { BuildNumber = n.GetStringValue(); } },
                 {"bundleId", n => { BundleId = n.GetStringValue(); } },
-                {"childApps", n => { ChildApps = n.GetCollectionOfObjectValues<MacOSLobChildApp>(MacOSLobChildApp.CreateFromDiscriminatorValue).ToList(); } },
+                {"childApps", n => { ChildApps = n.GetCollectionOfObjectValues<MacOSLobChildApp>(MacOSLobChildApp.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"identityVersion", n => { IdentityVersion = n.GetStringValue(); } },
                 {"ignoreVersionDetection", n => { IgnoreVersionDetection = n.GetBoolValue(); } },
                 {"installAsManaged", n => { InstallAsManaged = n.GetBoolValue(); } },
-                {"md5Hash", n => { Md5Hash = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"md5Hash", n => { Md5Hash = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"md5HashChunkSize", n => { Md5HashChunkSize = n.GetIntValue(); } },
                 {"minimumSupportedOperatingSystem", n => { MinimumSupportedOperatingSystem = n.GetObjectValue<MacOSMinimumOperatingSystem>(MacOSMinimumOperatingSystem.CreateFromDiscriminatorValue); } },
                 {"versionNumber", n => { VersionNumber = n.GetStringValue(); } },

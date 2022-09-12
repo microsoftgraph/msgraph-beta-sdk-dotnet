@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the auditLogRoot singleton.</summary>
     public class ProvisioningObjectSummary : Entity, IParsable {
         /// <summary>The action property</summary>
         public string Action {
@@ -96,7 +97,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("tenantId", value); }
         }
         /// <summary>
-        /// Instantiates a new ProvisioningObjectSummary and sets the default values.
+        /// Instantiates a new provisioningObjectSummary and sets the default values.
         /// </summary>
         public ProvisioningObjectSummary() : base() {
             OdataType = "#microsoft.graph.provisioningObjectSummary";
@@ -121,10 +122,10 @@ namespace Microsoft.Graph.Beta.Models {
                 {"durationInMilliseconds", n => { DurationInMilliseconds = n.GetIntValue(); } },
                 {"initiatedBy", n => { InitiatedBy = n.GetObjectValue<Initiator>(Initiator.CreateFromDiscriminatorValue); } },
                 {"jobId", n => { JobId = n.GetStringValue(); } },
-                {"modifiedProperties", n => { ModifiedProperties = n.GetCollectionOfObjectValues<ModifiedProperty>(ModifiedProperty.CreateFromDiscriminatorValue).ToList(); } },
+                {"modifiedProperties", n => { ModifiedProperties = n.GetCollectionOfObjectValues<ModifiedProperty>(ModifiedProperty.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"provisioningAction", n => { ProvisioningAction = n.GetEnumValue<ProvisioningAction>(); } },
                 {"provisioningStatusInfo", n => { ProvisioningStatusInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.ProvisioningStatusInfo>(Microsoft.Graph.Beta.Models.ProvisioningStatusInfo.CreateFromDiscriminatorValue); } },
-                {"provisioningSteps", n => { ProvisioningSteps = n.GetCollectionOfObjectValues<ProvisioningStep>(ProvisioningStep.CreateFromDiscriminatorValue).ToList(); } },
+                {"provisioningSteps", n => { ProvisioningSteps = n.GetCollectionOfObjectValues<ProvisioningStep>(ProvisioningStep.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"servicePrincipal", n => { ServicePrincipal = n.GetObjectValue<ProvisioningServicePrincipal>(ProvisioningServicePrincipal.CreateFromDiscriminatorValue); } },
                 {"sourceIdentity", n => { SourceIdentity = n.GetObjectValue<ProvisionedIdentity>(ProvisionedIdentity.CreateFromDiscriminatorValue); } },
                 {"sourceSystem", n => { SourceSystem = n.GetObjectValue<ProvisioningSystem>(ProvisioningSystem.CreateFromDiscriminatorValue); } },

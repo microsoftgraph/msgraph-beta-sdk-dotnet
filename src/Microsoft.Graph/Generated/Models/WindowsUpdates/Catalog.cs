@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"entries", n => { Entries = n.GetCollectionOfObjectValues<CatalogEntry>(CatalogEntry.CreateFromDiscriminatorValue).ToList(); } },
+                {"entries", n => { Entries = n.GetCollectionOfObjectValues<CatalogEntry>(CatalogEntry.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

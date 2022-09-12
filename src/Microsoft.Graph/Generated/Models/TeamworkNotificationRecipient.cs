@@ -33,8 +33,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static TeamworkNotificationRecipient CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValueNode = parseNode.GetChildNode("@odata.type");
-            var mappingValue = mappingValueNode?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch {
                 "#microsoft.graph.aadUserNotificationRecipient" => new AadUserNotificationRecipient(),
                 "#microsoft.graph.channelMembersNotificationRecipient" => new ChannelMembersNotificationRecipient(),

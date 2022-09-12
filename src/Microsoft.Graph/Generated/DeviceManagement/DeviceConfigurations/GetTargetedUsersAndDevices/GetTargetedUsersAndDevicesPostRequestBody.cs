@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.GetTargeted
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"deviceConfigurationIds", n => { DeviceConfigurationIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"deviceConfigurationIds", n => { DeviceConfigurationIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

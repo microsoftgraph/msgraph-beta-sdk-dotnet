@@ -61,10 +61,10 @@ namespace Microsoft.Graph.Beta.Models {
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"activationCodeCount", n => { ActivationCodeCount = n.GetIntValue(); } },
-                {"activationCodes", n => { ActivationCodes = n.GetCollectionOfObjectValues<EmbeddedSIMActivationCode>(EmbeddedSIMActivationCode.CreateFromDiscriminatorValue).ToList(); } },
-                {"assignments", n => { Assignments = n.GetCollectionOfObjectValues<EmbeddedSIMActivationCodePoolAssignment>(EmbeddedSIMActivationCodePoolAssignment.CreateFromDiscriminatorValue).ToList(); } },
+                {"activationCodes", n => { ActivationCodes = n.GetCollectionOfObjectValues<EmbeddedSIMActivationCode>(EmbeddedSIMActivationCode.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"assignments", n => { Assignments = n.GetCollectionOfObjectValues<EmbeddedSIMActivationCodePoolAssignment>(EmbeddedSIMActivationCodePoolAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"deviceStates", n => { DeviceStates = n.GetCollectionOfObjectValues<EmbeddedSIMDeviceState>(EmbeddedSIMDeviceState.CreateFromDiscriminatorValue).ToList(); } },
+                {"deviceStates", n => { DeviceStates = n.GetCollectionOfObjectValues<EmbeddedSIMDeviceState>(EmbeddedSIMDeviceState.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"modifiedDateTime", n => { ModifiedDateTime = n.GetDateTimeOffsetValue(); } },
             };

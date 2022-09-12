@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"enabled", n => { Enabled = n.GetBoolValue(); } },
                 {"manufacturer", n => { Manufacturer = n.GetStringValue(); } },
-                {"manufacturerProperties", n => { ManufacturerProperties = n.GetCollectionOfObjectValues<KeyValue>(KeyValue.CreateFromDiscriminatorValue).ToList(); } },
+                {"manufacturerProperties", n => { ManufacturerProperties = n.GetCollectionOfObjectValues<KeyValue>(KeyValue.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"serialNumber", n => { SerialNumber = n.GetStringValue(); } },
                 {"tokenType", n => { TokenType = n.GetStringValue(); } },

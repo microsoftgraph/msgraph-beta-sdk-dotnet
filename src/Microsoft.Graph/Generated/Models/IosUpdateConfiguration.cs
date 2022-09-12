@@ -72,11 +72,11 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"activeHoursEnd", n => { ActiveHoursEnd = n.GetTimeValue(); } },
                 {"activeHoursStart", n => { ActiveHoursStart = n.GetTimeValue(); } },
-                {"customUpdateTimeWindows", n => { CustomUpdateTimeWindows = n.GetCollectionOfObjectValues<CustomUpdateTimeWindow>(CustomUpdateTimeWindow.CreateFromDiscriminatorValue).ToList(); } },
+                {"customUpdateTimeWindows", n => { CustomUpdateTimeWindows = n.GetCollectionOfObjectValues<CustomUpdateTimeWindow>(CustomUpdateTimeWindow.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"desiredOsVersion", n => { DesiredOsVersion = n.GetStringValue(); } },
                 {"enforcedSoftwareUpdateDelayInDays", n => { EnforcedSoftwareUpdateDelayInDays = n.GetIntValue(); } },
                 {"isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
-                {"scheduledInstallDays", n => { ScheduledInstallDays = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"scheduledInstallDays", n => { ScheduledInstallDays = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"updateScheduleType", n => { UpdateScheduleType = n.GetEnumValue<IosSoftwareUpdateScheduleType>(); } },
                 {"utcTimeOffsetInMinutes", n => { UtcTimeOffsetInMinutes = n.GetIntValue(); } },
             };

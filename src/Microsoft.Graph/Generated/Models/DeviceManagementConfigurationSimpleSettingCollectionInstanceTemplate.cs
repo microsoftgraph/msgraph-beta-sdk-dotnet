@@ -35,7 +35,7 @@ namespace Microsoft.Graph.Beta.Models {
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"allowUnmanagedValues", n => { AllowUnmanagedValues = n.GetBoolValue(); } },
-                {"simpleSettingCollectionValueTemplate", n => { SimpleSettingCollectionValueTemplate = n.GetCollectionOfObjectValues<DeviceManagementConfigurationSimpleSettingValueTemplate>(DeviceManagementConfigurationSimpleSettingValueTemplate.CreateFromDiscriminatorValue).ToList(); } },
+                {"simpleSettingCollectionValueTemplate", n => { SimpleSettingCollectionValueTemplate = n.GetCollectionOfObjectValues<DeviceManagementConfigurationSimpleSettingValueTemplate>(DeviceManagementConfigurationSimpleSettingValueTemplate.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

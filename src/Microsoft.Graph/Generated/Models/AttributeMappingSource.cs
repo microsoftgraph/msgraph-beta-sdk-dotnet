@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"expression", n => { Expression = n.GetStringValue(); } },
                 {"name", n => { Name = n.GetStringValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"parameters", n => { Parameters = n.GetCollectionOfObjectValues<StringKeyAttributeMappingSourceValuePair>(StringKeyAttributeMappingSourceValuePair.CreateFromDiscriminatorValue).ToList(); } },
+                {"parameters", n => { Parameters = n.GetCollectionOfObjectValues<StringKeyAttributeMappingSourceValuePair>(StringKeyAttributeMappingSourceValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"type", n => { Type = n.GetEnumValue<AttributeMappingSourceType>(); } },
             };
         }

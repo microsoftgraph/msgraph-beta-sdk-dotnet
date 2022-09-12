@@ -29,8 +29,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static new TeamworkHostedContent CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValueNode = parseNode.GetChildNode("@odata.type");
-            var mappingValue = mappingValueNode?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch {
                 "#microsoft.graph.chatMessageHostedContent" => new ChatMessageHostedContent(),
                 _ => new TeamworkHostedContent(),

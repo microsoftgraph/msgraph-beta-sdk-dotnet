@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class SalesQuote : Entity, IParsable {
         /// <summary>The acceptedDate property</summary>
         public Date? AcceptedDate {
@@ -187,7 +188,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("validUntilDate", value); }
         }
         /// <summary>
-        /// Instantiates a new SalesQuote and sets the default values.
+        /// Instantiates a new salesQuote and sets the default values.
         /// </summary>
         public SalesQuote() : base() {
             OdataType = "#microsoft.graph.salesQuote";
@@ -228,7 +229,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"paymentTermsId", n => { PaymentTermsId = n.GetStringValue(); } },
                 {"phoneNumber", n => { PhoneNumber = n.GetStringValue(); } },
                 {"salesperson", n => { Salesperson = n.GetStringValue(); } },
-                {"salesQuoteLines", n => { SalesQuoteLines = n.GetCollectionOfObjectValues<SalesQuoteLine>(SalesQuoteLine.CreateFromDiscriminatorValue).ToList(); } },
+                {"salesQuoteLines", n => { SalesQuoteLines = n.GetCollectionOfObjectValues<SalesQuoteLine>(SalesQuoteLine.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"sellingPostalAddress", n => { SellingPostalAddress = n.GetObjectValue<PostalAddressType>(PostalAddressType.CreateFromDiscriminatorValue); } },
                 {"sentDate", n => { SentDate = n.GetDateTimeOffsetValue(); } },
                 {"shipmentMethod", n => { ShipmentMethod = n.GetObjectValue<Microsoft.Graph.Beta.Models.ShipmentMethod>(Microsoft.Graph.Beta.Models.ShipmentMethod.CreateFromDiscriminatorValue); } },

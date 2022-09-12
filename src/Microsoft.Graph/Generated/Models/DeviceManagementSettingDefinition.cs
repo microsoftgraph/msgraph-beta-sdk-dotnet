@@ -74,8 +74,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static new DeviceManagementSettingDefinition CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValueNode = parseNode.GetChildNode("@odata.type");
-            var mappingValue = mappingValueNode?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch {
                 "#microsoft.graph.deviceManagementAbstractComplexSettingDefinition" => new DeviceManagementAbstractComplexSettingDefinition(),
                 "#microsoft.graph.deviceManagementCollectionSettingDefinition" => new DeviceManagementCollectionSettingDefinition(),
@@ -88,15 +87,15 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"constraints", n => { Constraints = n.GetCollectionOfObjectValues<DeviceManagementConstraint>(DeviceManagementConstraint.CreateFromDiscriminatorValue).ToList(); } },
-                {"dependencies", n => { Dependencies = n.GetCollectionOfObjectValues<DeviceManagementSettingDependency>(DeviceManagementSettingDependency.CreateFromDiscriminatorValue).ToList(); } },
+                {"constraints", n => { Constraints = n.GetCollectionOfObjectValues<DeviceManagementConstraint>(DeviceManagementConstraint.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"dependencies", n => { Dependencies = n.GetCollectionOfObjectValues<DeviceManagementSettingDependency>(DeviceManagementSettingDependency.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"documentationUrl", n => { DocumentationUrl = n.GetStringValue(); } },
                 {"headerSubtitle", n => { HeaderSubtitle = n.GetStringValue(); } },
                 {"headerTitle", n => { HeaderTitle = n.GetStringValue(); } },
                 {"isTopLevel", n => { IsTopLevel = n.GetBoolValue(); } },
-                {"keywords", n => { Keywords = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"keywords", n => { Keywords = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"placeholderText", n => { PlaceholderText = n.GetStringValue(); } },
                 {"valueType", n => { ValueType = n.GetEnumValue<DeviceManangementIntentValueType>(); } },
             };

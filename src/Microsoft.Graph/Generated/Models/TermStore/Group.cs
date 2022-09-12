@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.Models.TermStore {
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"parentSiteId", n => { ParentSiteId = n.GetStringValue(); } },
                 {"scope", n => { Scope = n.GetEnumValue<TermGroupScope>(); } },
-                {"sets", n => { Sets = n.GetCollectionOfObjectValues<Set>(Set.CreateFromDiscriminatorValue).ToList(); } },
+                {"sets", n => { Sets = n.GetCollectionOfObjectValues<Set>(Set.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

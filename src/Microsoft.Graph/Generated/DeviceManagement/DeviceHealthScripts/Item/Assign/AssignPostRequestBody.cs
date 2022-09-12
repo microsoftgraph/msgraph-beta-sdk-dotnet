@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.Item.Assign 
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"deviceHealthScriptAssignments", n => { DeviceHealthScriptAssignments = n.GetCollectionOfObjectValues<DeviceHealthScriptAssignment>(DeviceHealthScriptAssignment.CreateFromDiscriminatorValue).ToList(); } },
+                {"deviceHealthScriptAssignments", n => { DeviceHealthScriptAssignments = n.GetCollectionOfObjectValues<DeviceHealthScriptAssignment>(DeviceHealthScriptAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

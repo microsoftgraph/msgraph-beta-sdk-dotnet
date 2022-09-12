@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the deviceAppManagement singleton.</summary>
     public class WindowsDefenderApplicationControlSupplementalPolicy : Entity, IParsable {
         /// <summary>The associated group assignments for this WindowsDefenderApplicationControl supplemental policy.</summary>
         public List<WindowsDefenderApplicationControlSupplementalPolicyAssignment> Assignments {
@@ -61,7 +62,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("version", value); }
         }
         /// <summary>
-        /// Instantiates a new WindowsDefenderApplicationControlSupplementalPolicy and sets the default values.
+        /// Instantiates a new windowsDefenderApplicationControlSupplementalPolicy and sets the default values.
         /// </summary>
         public WindowsDefenderApplicationControlSupplementalPolicy() : base() {
             OdataType = "#microsoft.graph.windowsDefenderApplicationControlSupplementalPolicy";
@@ -79,16 +80,16 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"assignments", n => { Assignments = n.GetCollectionOfObjectValues<WindowsDefenderApplicationControlSupplementalPolicyAssignment>(WindowsDefenderApplicationControlSupplementalPolicyAssignment.CreateFromDiscriminatorValue).ToList(); } },
+                {"assignments", n => { Assignments = n.GetCollectionOfObjectValues<WindowsDefenderApplicationControlSupplementalPolicyAssignment>(WindowsDefenderApplicationControlSupplementalPolicyAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"content", n => { Content = n.GetByteArrayValue(); } },
                 {"contentFileName", n => { ContentFileName = n.GetStringValue(); } },
                 {"creationDateTime", n => { CreationDateTime = n.GetDateTimeOffsetValue(); } },
                 {"deploySummary", n => { DeploySummary = n.GetObjectValue<WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary>(WindowsDefenderApplicationControlSupplementalPolicyDeploymentSummary.CreateFromDiscriminatorValue); } },
                 {"description", n => { Description = n.GetStringValue(); } },
-                {"deviceStatuses", n => { DeviceStatuses = n.GetCollectionOfObjectValues<WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus>(WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus.CreateFromDiscriminatorValue).ToList(); } },
+                {"deviceStatuses", n => { DeviceStatuses = n.GetCollectionOfObjectValues<WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus>(WindowsDefenderApplicationControlSupplementalPolicyDeploymentStatus.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"version", n => { Version = n.GetStringValue(); } },
             };
         }

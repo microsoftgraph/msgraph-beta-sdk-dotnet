@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Beta.AuditLogs.SignIns.ConfirmCompromised {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"requestIds", n => { RequestIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"requestIds", n => { RequestIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

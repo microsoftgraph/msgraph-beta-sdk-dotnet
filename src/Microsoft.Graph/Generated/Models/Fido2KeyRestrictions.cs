@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"aaGuids", n => { AaGuids = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"aaGuids", n => { AaGuids = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"enforcementType", n => { EnforcementType = n.GetEnumValue<Fido2RestrictionEnforcementType>(); } },
                 {"isEnforced", n => { IsEnforced = n.GetBoolValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },

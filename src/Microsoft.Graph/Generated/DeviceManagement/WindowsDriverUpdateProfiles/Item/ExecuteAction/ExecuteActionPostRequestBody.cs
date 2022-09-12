@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsDriverUpdateProfiles.Item
             return new Dictionary<string, Action<IParseNode>> {
                 {"actionName", n => { ActionName = n.GetEnumValue<DriverApprovalAction>(); } },
                 {"deploymentDate", n => { DeploymentDate = n.GetDateTimeOffsetValue(); } },
-                {"driverIds", n => { DriverIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"driverIds", n => { DriverIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

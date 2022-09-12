@@ -106,8 +106,8 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"authenticationType", n => { AuthenticationType = n.GetStringValue(); } },
                 {"availabilityStatus", n => { AvailabilityStatus = n.GetStringValue(); } },
-                {"domainNameReferences", n => { DomainNameReferences = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue).ToList(); } },
-                {"federationConfiguration", n => { FederationConfiguration = n.GetCollectionOfObjectValues<InternalDomainFederation>(InternalDomainFederation.CreateFromDiscriminatorValue).ToList(); } },
+                {"domainNameReferences", n => { DomainNameReferences = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"federationConfiguration", n => { FederationConfiguration = n.GetCollectionOfObjectValues<InternalDomainFederation>(InternalDomainFederation.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"isAdminManaged", n => { IsAdminManaged = n.GetBoolValue(); } },
                 {"isDefault", n => { IsDefault = n.GetBoolValue(); } },
                 {"isInitial", n => { IsInitial = n.GetBoolValue(); } },
@@ -115,11 +115,11 @@ namespace Microsoft.Graph.Beta.Models {
                 {"isVerified", n => { IsVerified = n.GetBoolValue(); } },
                 {"passwordNotificationWindowInDays", n => { PasswordNotificationWindowInDays = n.GetIntValue(); } },
                 {"passwordValidityPeriodInDays", n => { PasswordValidityPeriodInDays = n.GetIntValue(); } },
-                {"serviceConfigurationRecords", n => { ServiceConfigurationRecords = n.GetCollectionOfObjectValues<DomainDnsRecord>(DomainDnsRecord.CreateFromDiscriminatorValue).ToList(); } },
-                {"sharedEmailDomainInvitations", n => { SharedEmailDomainInvitations = n.GetCollectionOfObjectValues<SharedEmailDomainInvitation>(SharedEmailDomainInvitation.CreateFromDiscriminatorValue).ToList(); } },
+                {"serviceConfigurationRecords", n => { ServiceConfigurationRecords = n.GetCollectionOfObjectValues<DomainDnsRecord>(DomainDnsRecord.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"sharedEmailDomainInvitations", n => { SharedEmailDomainInvitations = n.GetCollectionOfObjectValues<SharedEmailDomainInvitation>(SharedEmailDomainInvitation.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"state", n => { State = n.GetObjectValue<DomainState>(DomainState.CreateFromDiscriminatorValue); } },
-                {"supportedServices", n => { SupportedServices = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"verificationDnsRecords", n => { VerificationDnsRecords = n.GetCollectionOfObjectValues<DomainDnsRecord>(DomainDnsRecord.CreateFromDiscriminatorValue).ToList(); } },
+                {"supportedServices", n => { SupportedServices = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"verificationDnsRecords", n => { VerificationDnsRecords = n.GetCollectionOfObjectValues<DomainDnsRecord>(DomainDnsRecord.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

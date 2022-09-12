@@ -75,8 +75,8 @@ namespace Microsoft.Graph.Beta.Models {
                 {"name", n => { Name = n.GetStringValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"propertyRegexConstraint", n => { PropertyRegexConstraint = n.GetStringValue(); } },
-                {"supportedOperators", n => { SupportedOperators = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"supportedValues", n => { SupportedValues = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"supportedOperators", n => { SupportedOperators = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"supportedValues", n => { SupportedValues = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

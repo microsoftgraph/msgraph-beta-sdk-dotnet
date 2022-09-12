@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"lastRunDateTime", n => { LastRunDateTime = n.GetDateTimeOffsetValue(); } },
                 {"nextRunDateTime", n => { NextRunDateTime = n.GetDateTimeOffsetValue(); } },
-                {"runs", n => { Runs = n.GetCollectionOfObjectValues<SimulationAutomationRun>(SimulationAutomationRun.CreateFromDiscriminatorValue).ToList(); } },
+                {"runs", n => { Runs = n.GetCollectionOfObjectValues<SimulationAutomationRun>(SimulationAutomationRun.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"status", n => { Status = n.GetEnumValue<SimulationAutomationStatus>(); } },
             };
         }

@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"hasLink", n => { HasLink = n.GetBoolValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"payloadId", n => { PayloadId = n.GetStringValue(); } },
-                {"sources", n => { Sources = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"sources", n => { Sources = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

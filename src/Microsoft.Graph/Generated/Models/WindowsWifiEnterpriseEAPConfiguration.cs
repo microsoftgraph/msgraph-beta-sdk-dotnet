@@ -183,8 +183,8 @@ namespace Microsoft.Graph.Beta.Models {
                 {"promptForAdditionalAuthenticationCredentials", n => { PromptForAdditionalAuthenticationCredentials = n.GetBoolValue(); } },
                 {"requireCryptographicBinding", n => { RequireCryptographicBinding = n.GetBoolValue(); } },
                 {"rootCertificateForClientValidation", n => { RootCertificateForClientValidation = n.GetObjectValue<Windows81TrustedRootCertificate>(Windows81TrustedRootCertificate.CreateFromDiscriminatorValue); } },
-                {"rootCertificatesForServerValidation", n => { RootCertificatesForServerValidation = n.GetCollectionOfObjectValues<Windows81TrustedRootCertificate>(Windows81TrustedRootCertificate.CreateFromDiscriminatorValue).ToList(); } },
-                {"trustedServerCertificateNames", n => { TrustedServerCertificateNames = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"rootCertificatesForServerValidation", n => { RootCertificatesForServerValidation = n.GetCollectionOfObjectValues<Windows81TrustedRootCertificate>(Windows81TrustedRootCertificate.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"trustedServerCertificateNames", n => { TrustedServerCertificateNames = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"userBasedVirtualLan", n => { UserBasedVirtualLan = n.GetBoolValue(); } },
             };
         }

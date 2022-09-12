@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class ManagementTemplateCollection : Entity, IParsable {
         /// <summary>The createdByUserId property</summary>
         public string CreatedByUserId {
@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"lastActionByUserId", n => { LastActionByUserId = n.GetStringValue(); } },
                 {"lastActionDateTime", n => { LastActionDateTime = n.GetDateTimeOffsetValue(); } },
-                {"managementTemplates", n => { ManagementTemplates = n.GetCollectionOfObjectValues<ManagementTemplate>(ManagementTemplate.CreateFromDiscriminatorValue).ToList(); } },
+                {"managementTemplates", n => { ManagementTemplates = n.GetCollectionOfObjectValues<ManagementTemplate>(ManagementTemplate.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

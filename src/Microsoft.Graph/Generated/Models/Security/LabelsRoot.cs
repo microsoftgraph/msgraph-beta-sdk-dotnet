@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"retentionLabels", n => { RetentionLabels = n.GetCollectionOfObjectValues<RetentionLabel>(RetentionLabel.CreateFromDiscriminatorValue).ToList(); } },
+                {"retentionLabels", n => { RetentionLabels = n.GetCollectionOfObjectValues<RetentionLabel>(RetentionLabel.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

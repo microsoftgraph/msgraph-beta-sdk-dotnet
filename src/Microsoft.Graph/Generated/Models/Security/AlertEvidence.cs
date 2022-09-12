@@ -63,8 +63,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// </summary>
         public static AlertEvidence CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValueNode = parseNode.GetChildNode("@odata.type");
-            var mappingValue = mappingValueNode?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch {
                 "#microsoft.graph.security.analyzedMessageEvidence" => new AnalyzedMessageEvidence(),
                 "#microsoft.graph.security.cloudApplicationEvidence" => new CloudApplicationEvidence(),
@@ -92,8 +91,8 @@ namespace Microsoft.Graph.Beta.Models.Security {
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"remediationStatus", n => { RemediationStatus = n.GetEnumValue<EvidenceRemediationStatus>(); } },
                 {"remediationStatusDetails", n => { RemediationStatusDetails = n.GetStringValue(); } },
-                {"roles", n => { Roles = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"roles", n => { Roles = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"verdict", n => { Verdict = n.GetEnumValue<EvidenceVerdict>(); } },
             };
         }

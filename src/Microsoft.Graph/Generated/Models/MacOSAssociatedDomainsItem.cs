@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"applicationIdentifier", n => { ApplicationIdentifier = n.GetStringValue(); } },
                 {"directDownloadsEnabled", n => { DirectDownloadsEnabled = n.GetBoolValue(); } },
-                {"domains", n => { Domains = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"domains", n => { Domains = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }

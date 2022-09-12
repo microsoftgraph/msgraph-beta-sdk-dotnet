@@ -58,8 +58,8 @@ namespace Microsoft.Graph.Beta.Models {
                 {"connectionUrl", n => { ConnectionUrl = n.GetStringValue(); } },
                 {"customizations", n => { Customizations = n.GetObjectValue<EducationSynchronizationCustomizations>(EducationSynchronizationCustomizations.CreateFromDiscriminatorValue); } },
                 {"providerName", n => { ProviderName = n.GetStringValue(); } },
-                {"schoolsIds", n => { SchoolsIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"termIds", n => { TermIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"schoolsIds", n => { SchoolsIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"termIds", n => { TermIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

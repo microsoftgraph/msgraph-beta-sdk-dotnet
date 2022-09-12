@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class ProviderTenantSetting : Entity, IParsable {
         /// <summary>The azureTenantId property</summary>
         public string AzureTenantId {
@@ -31,7 +32,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("vendor", value); }
         }
         /// <summary>
-        /// Instantiates a new ProviderTenantSetting and sets the default values.
+        /// Instantiates a new providerTenantSetting and sets the default values.
         /// </summary>
         public ProviderTenantSetting() : base() {
             OdataType = "#microsoft.graph.providerTenantSetting";

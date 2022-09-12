@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Beta.GroupLifecyclePolicies.Item.RemoveGroup {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<RemoveGroupResponse> PostAsync(RemoveGroupPostRequestBody body, CancellationToken cancellationToken = default, Action<RemoveGroupRequestBuilderPostRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default) {
+        public async Task<RemoveGroupResponse> PostAsync(RemoveGroupPostRequestBody body, Action<RemoveGroupRequestBuilderPostRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {

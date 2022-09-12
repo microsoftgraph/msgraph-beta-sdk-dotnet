@@ -33,8 +33,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static new BaseTaskList CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValueNode = parseNode.GetChildNode("@odata.type");
-            var mappingValue = mappingValueNode?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch {
                 "#microsoft.graph.taskList" => new TaskList(),
                 "#microsoft.graph.wellKnownTaskList" => new WellKnownTaskList(),
@@ -47,8 +46,8 @@ namespace Microsoft.Graph.Beta.Models {
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"extensions", n => { Extensions = n.GetCollectionOfObjectValues<Extension>(Extension.CreateFromDiscriminatorValue).ToList(); } },
-                {"tasks", n => { Tasks = n.GetCollectionOfObjectValues<BaseTask>(BaseTask.CreateFromDiscriminatorValue).ToList(); } },
+                {"extensions", n => { Extensions = n.GetCollectionOfObjectValues<Extension>(Extension.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"tasks", n => { Tasks = n.GetCollectionOfObjectValues<BaseTask>(BaseTask.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

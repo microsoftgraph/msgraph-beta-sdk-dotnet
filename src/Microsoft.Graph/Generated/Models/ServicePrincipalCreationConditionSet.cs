@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Casts the previous resource to application.</summary>
     public class ServicePrincipalCreationConditionSet : Entity, IParsable {
         /// <summary>The applicationIds property</summary>
         public List<string> ApplicationIds {
@@ -50,10 +50,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"applicationIds", n => { ApplicationIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"applicationPublisherIds", n => { ApplicationPublisherIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"applicationIds", n => { ApplicationIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"applicationPublisherIds", n => { ApplicationPublisherIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"applicationsFromVerifiedPublisherOnly", n => { ApplicationsFromVerifiedPublisherOnly = n.GetBoolValue(); } },
-                {"applicationTenantIds", n => { ApplicationTenantIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"applicationTenantIds", n => { ApplicationTenantIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"certifiedApplicationsOnly", n => { CertifiedApplicationsOnly = n.GetBoolValue(); } },
             };
         }

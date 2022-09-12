@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"fileTypes", n => { FileTypes = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"fileTypes", n => { FileTypes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"format", n => { Format = n.GetEnumValue<DeviceManagementConfigurationStringFormat>(); } },
                 {"inputValidationSchema", n => { InputValidationSchema = n.GetStringValue(); } },
                 {"isSecret", n => { IsSecret = n.GetBoolValue(); } },

@@ -23,8 +23,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// </summary>
         public static new FileThreatSubmission CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValueNode = parseNode.GetChildNode("@odata.type");
-            var mappingValue = mappingValueNode?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch {
                 "#microsoft.graph.security.fileContentThreatSubmission" => new FileContentThreatSubmission(),
                 "#microsoft.graph.security.fileUrlThreatSubmission" => new FileUrlThreatSubmission(),

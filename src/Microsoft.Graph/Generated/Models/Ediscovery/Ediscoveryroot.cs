@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
             set { BackingStore?.Set("cases", value); }
         }
         /// <summary>
-        /// Instantiates a new Ediscoveryroot and sets the default values.
+        /// Instantiates a new ediscoveryroot and sets the default values.
         /// </summary>
         public Ediscoveryroot() : base() {
             OdataType = "#microsoft.graph.ediscovery.ediscoveryroot";
@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"cases", n => { Cases = n.GetCollectionOfObjectValues<Case>(Case.CreateFromDiscriminatorValue).ToList(); } },
+                {"cases", n => { Cases = n.GetCollectionOfObjectValues<Case>(Case.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

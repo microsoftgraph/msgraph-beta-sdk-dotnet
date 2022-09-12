@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"baseUrls", n => { BaseUrls = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"baseUrls", n => { BaseUrls = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"urlPattern", n => { UrlPattern = n.GetStringValue(); } },
             };

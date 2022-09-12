@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"acquiredByPrinter", n => { AcquiredByPrinter = n.GetBoolValue(); } },
                 {"description", n => { Description = n.GetStringValue(); } },
-                {"details", n => { Details = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"details", n => { Details = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"isAcquiredByPrinter", n => { IsAcquiredByPrinter = n.GetBoolValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"processingState", n => { ProcessingState = n.GetEnumValue<PrintJobProcessingState>(); } },

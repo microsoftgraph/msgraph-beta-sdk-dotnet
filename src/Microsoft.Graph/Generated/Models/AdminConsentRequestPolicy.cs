@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"notifyReviewers", n => { NotifyReviewers = n.GetBoolValue(); } },
                 {"remindersEnabled", n => { RemindersEnabled = n.GetBoolValue(); } },
                 {"requestDurationInDays", n => { RequestDurationInDays = n.GetIntValue(); } },
-                {"reviewers", n => { Reviewers = n.GetCollectionOfObjectValues<AccessReviewReviewerScope>(AccessReviewReviewerScope.CreateFromDiscriminatorValue).ToList(); } },
+                {"reviewers", n => { Reviewers = n.GetCollectionOfObjectValues<AccessReviewReviewerScope>(AccessReviewReviewerScope.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"version", n => { Version = n.GetIntValue(); } },
             };
         }

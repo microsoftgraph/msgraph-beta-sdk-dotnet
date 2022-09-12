@@ -48,7 +48,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"name", n => { Name = n.GetStringValue(); } },
                 {"orderHint", n => { OrderHint = n.GetStringValue(); } },
                 {"planId", n => { PlanId = n.GetStringValue(); } },
-                {"tasks", n => { Tasks = n.GetCollectionOfObjectValues<PlannerTask>(PlannerTask.CreateFromDiscriminatorValue).ToList(); } },
+                {"tasks", n => { Tasks = n.GetCollectionOfObjectValues<PlannerTask>(PlannerTask.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

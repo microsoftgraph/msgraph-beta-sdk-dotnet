@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.GetIosAvail
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<IosAvailableUpdateVersion>(IosAvailableUpdateVersion.CreateFromDiscriminatorValue).ToList(); } },
+                {"value", n => { Value = n.GetCollectionOfObjectValues<IosAvailableUpdateVersion>(IosAvailableUpdateVersion.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

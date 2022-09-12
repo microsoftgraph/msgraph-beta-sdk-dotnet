@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"files", n => { Files = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"files", n => { Files = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"powerliftId", n => { PowerliftId = n.GetStringValue(); } },
             };

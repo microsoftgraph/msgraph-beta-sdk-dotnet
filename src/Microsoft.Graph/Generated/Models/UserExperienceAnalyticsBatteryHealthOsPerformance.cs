@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>The user experience analytics battery health os performance entity contains battery related information for all operating system versions in their organization.</summary>
     public class UserExperienceAnalyticsBatteryHealthOsPerformance : Entity, IParsable {
         /// <summary>Number of active devices for that os version. Valid values -2147483648 to 2147483647</summary>
         public int? ActiveDevices {
@@ -36,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("osVersion", value); }
         }
         /// <summary>
-        /// Instantiates a new UserExperienceAnalyticsBatteryHealthOsPerformance and sets the default values.
+        /// Instantiates a new userExperienceAnalyticsBatteryHealthOsPerformance and sets the default values.
         /// </summary>
         public UserExperienceAnalyticsBatteryHealthOsPerformance() : base() {
             OdataType = "#microsoft.graph.userExperienceAnalyticsBatteryHealthOsPerformance";

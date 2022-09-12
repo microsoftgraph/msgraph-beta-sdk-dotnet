@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.Onenote.Notebooks.GetRecentNotebooksWi
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<RecentNotebook>(RecentNotebook.CreateFromDiscriminatorValue).ToList(); } },
+                {"value", n => { Value = n.GetCollectionOfObjectValues<RecentNotebook>(RecentNotebook.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

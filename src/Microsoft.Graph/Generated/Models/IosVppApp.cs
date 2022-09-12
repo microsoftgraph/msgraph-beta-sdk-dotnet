@@ -91,11 +91,11 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"applicableDeviceType", n => { ApplicableDeviceType = n.GetObjectValue<IosDeviceType>(IosDeviceType.CreateFromDiscriminatorValue); } },
                 {"appStoreUrl", n => { AppStoreUrl = n.GetStringValue(); } },
-                {"assignedLicenses", n => { AssignedLicenses = n.GetCollectionOfObjectValues<IosVppAppAssignedLicense>(IosVppAppAssignedLicense.CreateFromDiscriminatorValue).ToList(); } },
+                {"assignedLicenses", n => { AssignedLicenses = n.GetCollectionOfObjectValues<IosVppAppAssignedLicense>(IosVppAppAssignedLicense.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"bundleId", n => { BundleId = n.GetStringValue(); } },
                 {"licensingType", n => { LicensingType = n.GetObjectValue<VppLicensingType>(VppLicensingType.CreateFromDiscriminatorValue); } },
                 {"releaseDateTime", n => { ReleaseDateTime = n.GetDateTimeOffsetValue(); } },
-                {"revokeLicenseActionResults", n => { RevokeLicenseActionResults = n.GetCollectionOfObjectValues<IosVppAppRevokeLicensesActionResult>(IosVppAppRevokeLicensesActionResult.CreateFromDiscriminatorValue).ToList(); } },
+                {"revokeLicenseActionResults", n => { RevokeLicenseActionResults = n.GetCollectionOfObjectValues<IosVppAppRevokeLicensesActionResult>(IosVppAppRevokeLicensesActionResult.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"totalLicenseCount", n => { TotalLicenseCount = n.GetIntValue(); } },
                 {"usedLicenseCount", n => { UsedLicenseCount = n.GetIntValue(); } },
                 {"vppTokenAccountType", n => { VppTokenAccountType = n.GetEnumValue<VppTokenAccountType>(); } },

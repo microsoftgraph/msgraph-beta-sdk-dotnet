@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Windows Autopilot Deployment Profile</summary>
     public class WindowsAutopilotDeploymentProfile : Entity, IParsable {
         /// <summary>The list of assigned devices for the profile.</summary>
         public List<WindowsAutopilotDeviceIdentity> AssignedDevices {
@@ -82,7 +83,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("roleScopeTagIds", value); }
         }
         /// <summary>
-        /// Instantiates a new WindowsAutopilotDeploymentProfile and sets the default values.
+        /// Instantiates a new windowsAutopilotDeploymentProfile and sets the default values.
         /// </summary>
         public WindowsAutopilotDeploymentProfile() : base() {
             OdataType = "#microsoft.graph.windowsAutopilotDeploymentProfile";
@@ -93,8 +94,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static new WindowsAutopilotDeploymentProfile CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValueNode = parseNode.GetChildNode("@odata.type");
-            var mappingValue = mappingValueNode?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch {
                 "#microsoft.graph.activeDirectoryWindowsAutopilotDeploymentProfile" => new ActiveDirectoryWindowsAutopilotDeploymentProfile(),
                 "#microsoft.graph.azureADWindowsAutopilotDeploymentProfile" => new AzureADWindowsAutopilotDeploymentProfile(),
@@ -106,8 +106,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"assignedDevices", n => { AssignedDevices = n.GetCollectionOfObjectValues<WindowsAutopilotDeviceIdentity>(WindowsAutopilotDeviceIdentity.CreateFromDiscriminatorValue).ToList(); } },
-                {"assignments", n => { Assignments = n.GetCollectionOfObjectValues<WindowsAutopilotDeploymentProfileAssignment>(WindowsAutopilotDeploymentProfileAssignment.CreateFromDiscriminatorValue).ToList(); } },
+                {"assignedDevices", n => { AssignedDevices = n.GetCollectionOfObjectValues<WindowsAutopilotDeviceIdentity>(WindowsAutopilotDeviceIdentity.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"assignments", n => { Assignments = n.GetCollectionOfObjectValues<WindowsAutopilotDeploymentProfileAssignment>(WindowsAutopilotDeploymentProfileAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"deviceNameTemplate", n => { DeviceNameTemplate = n.GetStringValue(); } },
@@ -120,7 +120,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"managementServiceAppId", n => { ManagementServiceAppId = n.GetStringValue(); } },
                 {"outOfBoxExperienceSettings", n => { OutOfBoxExperienceSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.OutOfBoxExperienceSettings>(Microsoft.Graph.Beta.Models.OutOfBoxExperienceSettings.CreateFromDiscriminatorValue); } },
-                {"roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

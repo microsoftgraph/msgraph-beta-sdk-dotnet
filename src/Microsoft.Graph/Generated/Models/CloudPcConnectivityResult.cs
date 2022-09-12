@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"failedHealthCheckItems", n => { FailedHealthCheckItems = n.GetCollectionOfObjectValues<CloudPcHealthCheckItem>(CloudPcHealthCheckItem.CreateFromDiscriminatorValue).ToList(); } },
+                {"failedHealthCheckItems", n => { FailedHealthCheckItems = n.GetCollectionOfObjectValues<CloudPcHealthCheckItem>(CloudPcHealthCheckItem.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"status", n => { Status = n.GetEnumValue<CloudPcConnectivityStatus>(); } },
                 {"updatedDateTime", n => { UpdatedDateTime = n.GetDateTimeOffsetValue(); } },

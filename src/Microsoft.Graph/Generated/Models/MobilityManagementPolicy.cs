@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"discoveryUrl", n => { DiscoveryUrl = n.GetStringValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"includedGroups", n => { IncludedGroups = n.GetCollectionOfObjectValues<Group>(Group.CreateFromDiscriminatorValue).ToList(); } },
+                {"includedGroups", n => { IncludedGroups = n.GetCollectionOfObjectValues<Group>(Group.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"isValid", n => { IsValid = n.GetBoolValue(); } },
                 {"termsOfUseUrl", n => { TermsOfUseUrl = n.GetStringValue(); } },
             };

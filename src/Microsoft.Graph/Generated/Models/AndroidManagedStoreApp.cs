@@ -63,8 +63,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static new AndroidManagedStoreApp CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValueNode = parseNode.GetChildNode("@odata.type");
-            var mappingValue = mappingValueNode?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch {
                 "#microsoft.graph.androidManagedStoreWebApp" => new AndroidManagedStoreWebApp(),
                 _ => new AndroidManagedStoreApp(),
@@ -77,7 +76,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"appIdentifier", n => { AppIdentifier = n.GetStringValue(); } },
                 {"appStoreUrl", n => { AppStoreUrl = n.GetStringValue(); } },
-                {"appTracks", n => { AppTracks = n.GetCollectionOfObjectValues<AndroidManagedStoreAppTrack>(AndroidManagedStoreAppTrack.CreateFromDiscriminatorValue).ToList(); } },
+                {"appTracks", n => { AppTracks = n.GetCollectionOfObjectValues<AndroidManagedStoreAppTrack>(AndroidManagedStoreAppTrack.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"isPrivate", n => { IsPrivate = n.GetBoolValue(); } },
                 {"isSystemApp", n => { IsSystemApp = n.GetBoolValue(); } },
                 {"packageId", n => { PackageId = n.GetStringValue(); } },

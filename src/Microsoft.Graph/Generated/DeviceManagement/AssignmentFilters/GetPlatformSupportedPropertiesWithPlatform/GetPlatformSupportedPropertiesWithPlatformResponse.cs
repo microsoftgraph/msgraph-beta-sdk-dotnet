@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.GetPlatformSup
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<AssignmentFilterSupportedProperty>(AssignmentFilterSupportedProperty.CreateFromDiscriminatorValue).ToList(); } },
+                {"value", n => { Value = n.GetCollectionOfObjectValues<AssignmentFilterSupportedProperty>(AssignmentFilterSupportedProperty.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

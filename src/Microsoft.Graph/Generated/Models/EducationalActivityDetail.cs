@@ -85,11 +85,11 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"abbreviation", n => { Abbreviation = n.GetStringValue(); } },
-                {"activities", n => { Activities = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"awards", n => { Awards = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"activities", n => { Activities = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"awards", n => { Awards = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"fieldsOfStudy", n => { FieldsOfStudy = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"fieldsOfStudy", n => { FieldsOfStudy = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"grade", n => { Grade = n.GetStringValue(); } },
                 {"notes", n => { Notes = n.GetStringValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },

@@ -77,13 +77,13 @@ namespace Microsoft.Graph.Beta.Models {
                 {"authenticationMethod", n => { AuthenticationMethod = n.GetEnumValue<VpnAuthenticationMethod>(); } },
                 {"connectionName", n => { ConnectionName = n.GetStringValue(); } },
                 {"connectionType", n => { ConnectionType = n.GetEnumValue<AndroidForWorkVpnConnectionType>(); } },
-                {"customData", n => { CustomData = n.GetCollectionOfObjectValues<KeyValue>(KeyValue.CreateFromDiscriminatorValue).ToList(); } },
-                {"customKeyValueData", n => { CustomKeyValueData = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue).ToList(); } },
+                {"customData", n => { CustomData = n.GetCollectionOfObjectValues<KeyValue>(KeyValue.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"customKeyValueData", n => { CustomKeyValueData = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"fingerprint", n => { Fingerprint = n.GetStringValue(); } },
                 {"identityCertificate", n => { IdentityCertificate = n.GetObjectValue<AndroidForWorkCertificateProfileBase>(AndroidForWorkCertificateProfileBase.CreateFromDiscriminatorValue); } },
                 {"realm", n => { Realm = n.GetStringValue(); } },
                 {"role", n => { Role = n.GetStringValue(); } },
-                {"servers", n => { Servers = n.GetCollectionOfObjectValues<VpnServer>(VpnServer.CreateFromDiscriminatorValue).ToList(); } },
+                {"servers", n => { Servers = n.GetCollectionOfObjectValues<VpnServer>(VpnServer.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

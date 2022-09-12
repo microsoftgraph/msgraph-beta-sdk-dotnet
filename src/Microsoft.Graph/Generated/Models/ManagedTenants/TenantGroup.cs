@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class TenantGroup : Entity, IParsable {
         /// <summary>A flag indicating whether all managed tenant are included in the tenant group. Required. Read-only.</summary>
         public bool? AllTenantsIncluded {
@@ -52,9 +52,9 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"allTenantsIncluded", n => { AllTenantsIncluded = n.GetBoolValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"managementActions", n => { ManagementActions = n.GetCollectionOfObjectValues<ManagementActionInfo>(ManagementActionInfo.CreateFromDiscriminatorValue).ToList(); } },
-                {"managementIntents", n => { ManagementIntents = n.GetCollectionOfObjectValues<ManagementIntentInfo>(ManagementIntentInfo.CreateFromDiscriminatorValue).ToList(); } },
-                {"tenantIds", n => { TenantIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"managementActions", n => { ManagementActions = n.GetCollectionOfObjectValues<ManagementActionInfo>(ManagementActionInfo.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"managementIntents", n => { ManagementIntents = n.GetCollectionOfObjectValues<ManagementIntentInfo>(ManagementIntentInfo.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"tenantIds", n => { TenantIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

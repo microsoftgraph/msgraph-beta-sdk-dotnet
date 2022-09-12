@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.HasPayl
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"payloadIds", n => { PayloadIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"payloadIds", n => { PayloadIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

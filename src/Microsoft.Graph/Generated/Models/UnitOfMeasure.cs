@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class UnitOfMeasure : Entity, IParsable {
         /// <summary>The code property</summary>
         public string Code {
@@ -26,7 +27,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>
-        /// Instantiates a new UnitOfMeasure and sets the default values.
+        /// Instantiates a new unitOfMeasure and sets the default values.
         /// </summary>
         public UnitOfMeasure() : base() {
             OdataType = "#microsoft.graph.unitOfMeasure";

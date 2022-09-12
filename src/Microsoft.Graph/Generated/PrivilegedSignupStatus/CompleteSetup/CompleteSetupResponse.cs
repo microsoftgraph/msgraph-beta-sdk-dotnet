@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Beta.PrivilegedSignupStatus.CompleteSetup {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<RoleSuccessStatistics>(RoleSuccessStatistics.CreateFromDiscriminatorValue).ToList(); } },
+                {"value", n => { Value = n.GetCollectionOfObjectValues<RoleSuccessStatistics>(RoleSuccessStatistics.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

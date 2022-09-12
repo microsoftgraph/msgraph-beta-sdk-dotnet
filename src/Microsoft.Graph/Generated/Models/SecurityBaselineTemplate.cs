@@ -39,8 +39,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"categoryDeviceStateSummaries", n => { CategoryDeviceStateSummaries = n.GetCollectionOfObjectValues<SecurityBaselineCategoryStateSummary>(SecurityBaselineCategoryStateSummary.CreateFromDiscriminatorValue).ToList(); } },
-                {"deviceStates", n => { DeviceStates = n.GetCollectionOfObjectValues<SecurityBaselineDeviceState>(SecurityBaselineDeviceState.CreateFromDiscriminatorValue).ToList(); } },
+                {"categoryDeviceStateSummaries", n => { CategoryDeviceStateSummaries = n.GetCollectionOfObjectValues<SecurityBaselineCategoryStateSummary>(SecurityBaselineCategoryStateSummary.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"deviceStates", n => { DeviceStates = n.GetCollectionOfObjectValues<SecurityBaselineDeviceState>(SecurityBaselineDeviceState.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"deviceStateSummary", n => { DeviceStateSummary = n.GetObjectValue<SecurityBaselineStateSummary>(SecurityBaselineStateSummary.CreateFromDiscriminatorValue); } },
             };
         }

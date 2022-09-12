@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Threads.Item.Posts.Item.InReplyTo.Rep
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"post", n => { Post = n.GetObjectValue<Microsoft.Graph.Beta.Models.Post>(Microsoft.Graph.Beta.Models.Post.CreateFromDiscriminatorValue); } },
+                {"Post", n => { Post = n.GetObjectValue<Microsoft.Graph.Beta.Models.Post>(Microsoft.Graph.Beta.Models.Post.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Threads.Item.Posts.Item.InReplyTo.Rep
         /// </summary>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Post>("post", Post);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Post>("Post", Post);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"disabledSafeguardProfiles", n => { DisabledSafeguardProfiles = n.GetCollectionOfObjectValues<SafeguardProfile>(SafeguardProfile.CreateFromDiscriminatorValue).ToList(); } },
+                {"disabledSafeguardProfiles", n => { DisabledSafeguardProfiles = n.GetCollectionOfObjectValues<SafeguardProfile>(SafeguardProfile.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }

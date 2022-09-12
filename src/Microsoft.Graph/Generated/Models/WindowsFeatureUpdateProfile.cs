@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Windows Feature Update Profile</summary>
     public class WindowsFeatureUpdateProfile : Entity, IParsable {
         /// <summary>The list of group assignments of the profile.</summary>
         public List<WindowsFeatureUpdateProfileAssignment> Assignments {
@@ -56,7 +57,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("rolloutSettings", value); }
         }
         /// <summary>
-        /// Instantiates a new WindowsFeatureUpdateProfile and sets the default values.
+        /// Instantiates a new windowsFeatureUpdateProfile and sets the default values.
         /// </summary>
         public WindowsFeatureUpdateProfile() : base() {
             OdataType = "#microsoft.graph.windowsFeatureUpdateProfile";
@@ -74,7 +75,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"assignments", n => { Assignments = n.GetCollectionOfObjectValues<WindowsFeatureUpdateProfileAssignment>(WindowsFeatureUpdateProfileAssignment.CreateFromDiscriminatorValue).ToList(); } },
+                {"assignments", n => { Assignments = n.GetCollectionOfObjectValues<WindowsFeatureUpdateProfileAssignment>(WindowsFeatureUpdateProfileAssignment.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"deployableContentDisplayName", n => { DeployableContentDisplayName = n.GetStringValue(); } },
                 {"description", n => { Description = n.GetStringValue(); } },
@@ -82,7 +83,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"endOfSupportDate", n => { EndOfSupportDate = n.GetDateTimeOffsetValue(); } },
                 {"featureUpdateVersion", n => { FeatureUpdateVersion = n.GetStringValue(); } },
                 {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"rolloutSettings", n => { RolloutSettings = n.GetObjectValue<WindowsUpdateRolloutSettings>(WindowsUpdateRolloutSettings.CreateFromDiscriminatorValue); } },
             };
         }

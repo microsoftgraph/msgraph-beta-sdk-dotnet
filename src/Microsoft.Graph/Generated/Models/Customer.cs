@@ -153,7 +153,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"paymentTerm", n => { PaymentTerm = n.GetObjectValue<Microsoft.Graph.Beta.Models.PaymentTerm>(Microsoft.Graph.Beta.Models.PaymentTerm.CreateFromDiscriminatorValue); } },
                 {"paymentTermsId", n => { PaymentTermsId = n.GetStringValue(); } },
                 {"phoneNumber", n => { PhoneNumber = n.GetStringValue(); } },
-                {"picture", n => { Picture = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Picture>(Microsoft.Graph.Beta.Models.Picture.CreateFromDiscriminatorValue).ToList(); } },
+                {"picture", n => { Picture = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Picture>(Microsoft.Graph.Beta.Models.Picture.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"shipmentMethod", n => { ShipmentMethod = n.GetObjectValue<Microsoft.Graph.Beta.Models.ShipmentMethod>(Microsoft.Graph.Beta.Models.ShipmentMethod.CreateFromDiscriminatorValue); } },
                 {"shipmentMethodId", n => { ShipmentMethodId = n.GetStringValue(); } },
                 {"taxAreaDisplayName", n => { TaxAreaDisplayName = n.GetStringValue(); } },

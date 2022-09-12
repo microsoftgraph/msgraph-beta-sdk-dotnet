@@ -18,8 +18,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static new Windows10XCertificateProfile CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValueNode = parseNode.GetChildNode("@odata.type");
-            var mappingValue = mappingValueNode?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch {
                 "#microsoft.graph.windows10XSCEPCertificateProfile" => new Windows10XSCEPCertificateProfile(),
                 _ => new Windows10XCertificateProfile(),

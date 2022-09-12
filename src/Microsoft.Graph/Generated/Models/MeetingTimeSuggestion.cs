@@ -74,9 +74,9 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"attendeeAvailability", n => { AttendeeAvailability = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AttendeeAvailability>(Microsoft.Graph.Beta.Models.AttendeeAvailability.CreateFromDiscriminatorValue).ToList(); } },
+                {"attendeeAvailability", n => { AttendeeAvailability = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AttendeeAvailability>(Microsoft.Graph.Beta.Models.AttendeeAvailability.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"confidence", n => { Confidence = n.GetDoubleValue(); } },
-                {"locations", n => { Locations = n.GetCollectionOfObjectValues<Location>(Location.CreateFromDiscriminatorValue).ToList(); } },
+                {"locations", n => { Locations = n.GetCollectionOfObjectValues<Location>(Location.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"meetingTimeSlot", n => { MeetingTimeSlot = n.GetObjectValue<TimeSlot>(TimeSlot.CreateFromDiscriminatorValue); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"order", n => { Order = n.GetIntValue(); } },

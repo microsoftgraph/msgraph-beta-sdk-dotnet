@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"@odata.nextLink", n => { OdataNextLink = n.GetStringValue(); } },
-                {"value", n => { Value = n.GetCollectionOfObjectValues<UnifiedGroupSource>(UnifiedGroupSource.CreateFromDiscriminatorValue).ToList(); } },
+                {"value", n => { Value = n.GetCollectionOfObjectValues<UnifiedGroupSource>(UnifiedGroupSource.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

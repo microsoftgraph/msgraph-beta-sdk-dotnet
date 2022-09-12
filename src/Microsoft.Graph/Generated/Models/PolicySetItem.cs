@@ -59,8 +59,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static new PolicySetItem CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValueNode = parseNode.GetChildNode("@odata.type");
-            var mappingValue = mappingValueNode?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch {
                 "#microsoft.graph.deviceCompliancePolicyPolicySetItem" => new DeviceCompliancePolicyPolicySetItem(),
                 "#microsoft.graph.deviceConfigurationPolicySetItem" => new DeviceConfigurationPolicySetItem(),
@@ -86,7 +85,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"errorCode", n => { ErrorCode = n.GetEnumValue<ErrorCode>(); } },
-                {"guidedDeploymentTags", n => { GuidedDeploymentTags = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"guidedDeploymentTags", n => { GuidedDeploymentTags = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"itemType", n => { ItemType = n.GetStringValue(); } },
                 {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"payloadId", n => { PayloadId = n.GetStringValue(); } },

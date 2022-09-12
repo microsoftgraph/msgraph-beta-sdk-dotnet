@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models {
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"logo", n => { Logo = n.GetObjectValue<OrganizationalMessageLogoGuide>(OrganizationalMessageLogoGuide.CreateFromDiscriminatorValue); } },
-                {"placementDetails", n => { PlacementDetails = n.GetCollectionOfObjectValues<OrganizationalMessagePlacementDetail>(OrganizationalMessagePlacementDetail.CreateFromDiscriminatorValue).ToList(); } },
+                {"placementDetails", n => { PlacementDetails = n.GetCollectionOfObjectValues<OrganizationalMessagePlacementDetail>(OrganizationalMessagePlacementDetail.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"scenario", n => { Scenario = n.GetEnumValue<OrganizationalMessageScenario>(); } },
                 {"surface", n => { Surface = n.GetEnumValue<OrganizationalMessageSurface>(); } },
                 {"theme", n => { Theme = n.GetEnumValue<OrganizationalMessageTheme>(); } },

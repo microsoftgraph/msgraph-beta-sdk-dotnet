@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"appId", n => { AppId = n.GetStringValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"permissionIds", n => { PermissionIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"permissionIds", n => { PermissionIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

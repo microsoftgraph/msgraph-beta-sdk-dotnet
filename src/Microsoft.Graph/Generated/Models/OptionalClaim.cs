@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"additionalProperties", n => { AdditionalProperties = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"additionalProperties", n => { AdditionalProperties = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"essential", n => { Essential = n.GetBoolValue(); } },
                 {"name", n => { Name = n.GetStringValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },

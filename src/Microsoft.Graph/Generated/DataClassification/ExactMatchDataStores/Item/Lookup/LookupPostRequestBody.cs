@@ -50,8 +50,8 @@ namespace Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Look
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"key", n => { Key = n.GetStringValue(); } },
-                {"resultColumnNames", n => { ResultColumnNames = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"values", n => { Values = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"resultColumnNames", n => { ResultColumnNames = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"values", n => { Values = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

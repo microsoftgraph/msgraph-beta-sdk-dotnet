@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.CallRecords {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provides operations to manage the cloudCommunications singleton.</summary>
     public class Session : Entity, IParsable {
         /// <summary>Endpoint that answered the session.</summary>
         public Endpoint Callee {
@@ -64,8 +64,8 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
                 {"caller", n => { Caller = n.GetObjectValue<Endpoint>(Endpoint.CreateFromDiscriminatorValue); } },
                 {"endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
                 {"failureInfo", n => { FailureInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.CallRecords.FailureInfo>(Microsoft.Graph.Beta.Models.CallRecords.FailureInfo.CreateFromDiscriminatorValue); } },
-                {"modalities", n => { Modalities = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"segments", n => { Segments = n.GetCollectionOfObjectValues<Segment>(Segment.CreateFromDiscriminatorValue).ToList(); } },
+                {"modalities", n => { Modalities = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"segments", n => { Segments = n.GetCollectionOfObjectValues<Segment>(Segment.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }

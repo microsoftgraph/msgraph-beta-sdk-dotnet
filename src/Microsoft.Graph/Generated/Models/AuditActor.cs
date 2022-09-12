@@ -110,9 +110,9 @@ namespace Microsoft.Graph.Beta.Models {
                 {"servicePrincipalName", n => { ServicePrincipalName = n.GetStringValue(); } },
                 {"type", n => { Type = n.GetStringValue(); } },
                 {"userId", n => { UserId = n.GetStringValue(); } },
-                {"userPermissions", n => { UserPermissions = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"userPermissions", n => { UserPermissions = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"userPrincipalName", n => { UserPrincipalName = n.GetStringValue(); } },
-                {"userRoleScopeTags", n => { UserRoleScopeTags = n.GetCollectionOfObjectValues<RoleScopeTagInfo>(RoleScopeTagInfo.CreateFromDiscriminatorValue).ToList(); } },
+                {"userRoleScopeTags", n => { UserRoleScopeTags = n.GetCollectionOfObjectValues<RoleScopeTagInfo>(RoleScopeTagInfo.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

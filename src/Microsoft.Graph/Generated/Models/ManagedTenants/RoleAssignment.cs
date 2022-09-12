@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
             return new Dictionary<string, Action<IParseNode>> {
                 {"assignmentType", n => { AssignmentType = n.GetEnumValue<DelegatedPrivilegeStatus>(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"roles", n => { Roles = n.GetCollectionOfObjectValues<RoleDefinition>(RoleDefinition.CreateFromDiscriminatorValue).ToList(); } },
+                {"roles", n => { Roles = n.GetCollectionOfObjectValues<RoleDefinition>(RoleDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

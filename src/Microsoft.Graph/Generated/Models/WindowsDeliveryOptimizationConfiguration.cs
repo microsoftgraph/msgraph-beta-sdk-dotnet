@@ -113,7 +113,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"bandwidthMode", n => { BandwidthMode = n.GetObjectValue<DeliveryOptimizationBandwidth>(DeliveryOptimizationBandwidth.CreateFromDiscriminatorValue); } },
                 {"cacheServerBackgroundDownloadFallbackToHttpDelayInSeconds", n => { CacheServerBackgroundDownloadFallbackToHttpDelayInSeconds = n.GetIntValue(); } },
                 {"cacheServerForegroundDownloadFallbackToHttpDelayInSeconds", n => { CacheServerForegroundDownloadFallbackToHttpDelayInSeconds = n.GetIntValue(); } },
-                {"cacheServerHostNames", n => { CacheServerHostNames = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"cacheServerHostNames", n => { CacheServerHostNames = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"deliveryOptimizationMode", n => { DeliveryOptimizationMode = n.GetEnumValue<WindowsDeliveryOptimizationMode>(); } },
                 {"foregroundDownloadFromHttpDelayInSeconds", n => { ForegroundDownloadFromHttpDelayInSeconds = n.GetLongValue(); } },
                 {"groupIdSource", n => { GroupIdSource = n.GetObjectValue<DeliveryOptimizationGroupIdSource>(DeliveryOptimizationGroupIdSource.CreateFromDiscriminatorValue); } },

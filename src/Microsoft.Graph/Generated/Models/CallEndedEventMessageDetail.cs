@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"callDuration", n => { CallDuration = n.GetTimeSpanValue(); } },
                 {"callEventType", n => { CallEventType = n.GetEnumValue<TeamworkCallEventType>(); } },
                 {"callId", n => { CallId = n.GetStringValue(); } },
-                {"callParticipants", n => { CallParticipants = n.GetCollectionOfObjectValues<CallParticipantInfo>(CallParticipantInfo.CreateFromDiscriminatorValue).ToList(); } },
+                {"callParticipants", n => { CallParticipants = n.GetCollectionOfObjectValues<CallParticipantInfo>(CallParticipantInfo.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"initiator", n => { Initiator = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
             };
         }

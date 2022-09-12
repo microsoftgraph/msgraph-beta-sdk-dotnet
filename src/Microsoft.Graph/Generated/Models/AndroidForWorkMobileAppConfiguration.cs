@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"connectedAppsEnabled", n => { ConnectedAppsEnabled = n.GetBoolValue(); } },
                 {"packageId", n => { PackageId = n.GetStringValue(); } },
                 {"payloadJson", n => { PayloadJson = n.GetStringValue(); } },
-                {"permissionActions", n => { PermissionActions = n.GetCollectionOfObjectValues<AndroidPermissionAction>(AndroidPermissionAction.CreateFromDiscriminatorValue).ToList(); } },
+                {"permissionActions", n => { PermissionActions = n.GetCollectionOfObjectValues<AndroidPermissionAction>(AndroidPermissionAction.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"profileApplicability", n => { ProfileApplicability = n.GetEnumValue<AndroidProfileApplicability>(); } },
             };
         }

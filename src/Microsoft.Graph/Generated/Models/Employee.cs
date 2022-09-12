@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class Employee : Entity, IParsable {
         /// <summary>The address property</summary>
         public PostalAddressType Address {
@@ -129,7 +129,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"number", n => { Number = n.GetStringValue(); } },
                 {"personalEmail", n => { PersonalEmail = n.GetStringValue(); } },
                 {"phoneNumber", n => { PhoneNumber = n.GetStringValue(); } },
-                {"picture", n => { Picture = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Picture>(Microsoft.Graph.Beta.Models.Picture.CreateFromDiscriminatorValue).ToList(); } },
+                {"picture", n => { Picture = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Picture>(Microsoft.Graph.Beta.Models.Picture.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"statisticsGroupCode", n => { StatisticsGroupCode = n.GetStringValue(); } },
                 {"status", n => { Status = n.GetStringValue(); } },
                 {"surname", n => { Surname = n.GetStringValue(); } },

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Casts the previous resource to application.</summary>
     public class SynchronizationTemplate : Entity, IParsable {
         /// <summary>Identifier of the application this template belongs to.</summary>
         public string ApplicationId {
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"discoverable", n => { Discoverable = n.GetBoolValue(); } },
                 {"factoryTag", n => { FactoryTag = n.GetStringValue(); } },
-                {"metadata", n => { Metadata = n.GetCollectionOfObjectValues<MetadataEntry>(MetadataEntry.CreateFromDiscriminatorValue).ToList(); } },
+                {"metadata", n => { Metadata = n.GetCollectionOfObjectValues<MetadataEntry>(MetadataEntry.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"schema", n => { Schema = n.GetObjectValue<SynchronizationSchema>(SynchronizationSchema.CreateFromDiscriminatorValue); } },
             };
         }

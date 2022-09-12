@@ -50,8 +50,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"deviceManufacturers", n => { DeviceManufacturers = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"deviceModels", n => { DeviceModels = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"deviceManufacturers", n => { DeviceManufacturers = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"deviceModels", n => { DeviceModels = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }

@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"operation", n => { Operation = n.GetEnumValue<RuleOperation>(); } },
                 {"property", n => { Property = n.GetStringValue(); } },
-                {"values", n => { Values = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"values", n => { Values = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"valuesJoinedBy", n => { ValuesJoinedBy = n.GetEnumValue<BinaryOperator>(); } },
             };
         }

@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"urlToItemResolvers", n => { UrlToItemResolvers = n.GetCollectionOfObjectValues<UrlToItemResolverBase>(UrlToItemResolverBase.CreateFromDiscriminatorValue).ToList(); } },
+                {"urlToItemResolvers", n => { UrlToItemResolvers = n.GetCollectionOfObjectValues<UrlToItemResolverBase>(UrlToItemResolverBase.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

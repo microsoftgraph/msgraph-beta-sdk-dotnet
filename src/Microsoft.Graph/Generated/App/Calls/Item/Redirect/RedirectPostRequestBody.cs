@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.Redirect {
                 {"maskCallee", n => { MaskCallee = n.GetBoolValue(); } },
                 {"maskCaller", n => { MaskCaller = n.GetBoolValue(); } },
                 {"targetDisposition", n => { TargetDisposition = n.GetEnumValue<CallDisposition>(); } },
-                {"targets", n => { Targets = n.GetCollectionOfObjectValues<InvitationParticipantInfo>(InvitationParticipantInfo.CreateFromDiscriminatorValue).ToList(); } },
+                {"targets", n => { Targets = n.GetCollectionOfObjectValues<InvitationParticipantInfo>(InvitationParticipantInfo.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"timeout", n => { Timeout = n.GetIntValue(); } },
             };
         }

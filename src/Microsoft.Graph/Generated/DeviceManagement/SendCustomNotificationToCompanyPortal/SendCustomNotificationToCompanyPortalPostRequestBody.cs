@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.SendCustomNotificationToCompanyP
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"groupsToNotify", n => { GroupsToNotify = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"groupsToNotify", n => { GroupsToNotify = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"notificationBody", n => { NotificationBody = n.GetStringValue(); } },
                 {"notificationTitle", n => { NotificationTitle = n.GetStringValue(); } },
             };

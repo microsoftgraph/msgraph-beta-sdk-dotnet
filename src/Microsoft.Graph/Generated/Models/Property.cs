@@ -79,12 +79,12 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"aliases", n => { Aliases = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"aliases", n => { Aliases = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"isQueryable", n => { IsQueryable = n.GetBoolValue(); } },
                 {"isRefinable", n => { IsRefinable = n.GetBoolValue(); } },
                 {"isRetrievable", n => { IsRetrievable = n.GetBoolValue(); } },
                 {"isSearchable", n => { IsSearchable = n.GetBoolValue(); } },
-                {"labels", n => { Labels = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"labels", n => { Labels = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"name", n => { Name = n.GetStringValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"type", n => { Type = n.GetEnumValue<PropertyType>(); } },

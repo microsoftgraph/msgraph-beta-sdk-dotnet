@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>A device app management task.</summary>
     public class DeviceAppManagementTask : Entity, IParsable {
         /// <summary>The name or email of the admin this task is assigned to.</summary>
         public string AssignedTo {
@@ -57,7 +58,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>
-        /// Instantiates a new DeviceAppManagementTask and sets the default values.
+        /// Instantiates a new deviceAppManagementTask and sets the default values.
         /// </summary>
         public DeviceAppManagementTask() : base() {
             OdataType = "#microsoft.graph.deviceAppManagementTask";
@@ -68,8 +69,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static new DeviceAppManagementTask CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValueNode = parseNode.GetChildNode("@odata.type");
-            var mappingValue = mappingValueNode?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch {
                 "#microsoft.graph.appVulnerabilityTask" => new AppVulnerabilityTask(),
                 "#microsoft.graph.securityConfigurationTask" => new SecurityConfigurationTask(),

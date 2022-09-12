@@ -93,7 +93,7 @@ namespace Microsoft.Graph.Beta.Me.ManagedDevices.ExecuteAction {
                 {"actionName", n => { ActionName = n.GetEnumValue<ManagedDeviceRemoteAction>(); } },
                 {"carrierUrl", n => { CarrierUrl = n.GetStringValue(); } },
                 {"deprovisionReason", n => { DeprovisionReason = n.GetStringValue(); } },
-                {"deviceIds", n => { DeviceIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"deviceIds", n => { DeviceIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"deviceName", n => { DeviceName = n.GetStringValue(); } },
                 {"keepEnrollmentData", n => { KeepEnrollmentData = n.GetBoolValue(); } },
                 {"keepUserData", n => { KeepUserData = n.GetBoolValue(); } },

@@ -109,8 +109,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static new DeviceManagementConfigurationSettingDefinition CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValueNode = parseNode.GetChildNode("@odata.type");
-            var mappingValue = mappingValueNode?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch {
                 "#microsoft.graph.deviceManagementConfigurationChoiceSettingCollectionDefinition" => new DeviceManagementConfigurationChoiceSettingCollectionDefinition(),
                 "#microsoft.graph.deviceManagementConfigurationChoiceSettingDefinition" => new DeviceManagementConfigurationChoiceSettingDefinition(),
@@ -134,12 +133,12 @@ namespace Microsoft.Graph.Beta.Models {
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"helpText", n => { HelpText = n.GetStringValue(); } },
-                {"infoUrls", n => { InfoUrls = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"keywords", n => { Keywords = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"infoUrls", n => { InfoUrls = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"keywords", n => { Keywords = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"name", n => { Name = n.GetStringValue(); } },
                 {"occurrence", n => { Occurrence = n.GetObjectValue<DeviceManagementConfigurationSettingOccurrence>(DeviceManagementConfigurationSettingOccurrence.CreateFromDiscriminatorValue); } },
                 {"offsetUri", n => { OffsetUri = n.GetStringValue(); } },
-                {"referredSettingInformationList", n => { ReferredSettingInformationList = n.GetCollectionOfObjectValues<DeviceManagementConfigurationReferredSettingInformation>(DeviceManagementConfigurationReferredSettingInformation.CreateFromDiscriminatorValue).ToList(); } },
+                {"referredSettingInformationList", n => { ReferredSettingInformationList = n.GetCollectionOfObjectValues<DeviceManagementConfigurationReferredSettingInformation>(DeviceManagementConfigurationReferredSettingInformation.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"rootDefinitionId", n => { RootDefinitionId = n.GetStringValue(); } },
                 {"settingUsage", n => { SettingUsage = n.GetEnumValue<DeviceManagementConfigurationSettingUsage>(); } },
                 {"uxBehavior", n => { UxBehavior = n.GetEnumValue<DeviceManagementConfigurationControlType>(); } },

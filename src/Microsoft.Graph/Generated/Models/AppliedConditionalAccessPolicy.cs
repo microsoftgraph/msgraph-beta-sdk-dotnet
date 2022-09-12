@@ -98,14 +98,14 @@ namespace Microsoft.Graph.Beta.Models {
                 {"conditionsNotSatisfied", n => { ConditionsNotSatisfied = n.GetEnumValue<ConditionalAccessConditions>(); } },
                 {"conditionsSatisfied", n => { ConditionsSatisfied = n.GetEnumValue<ConditionalAccessConditions>(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"enforcedGrantControls", n => { EnforcedGrantControls = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"enforcedSessionControls", n => { EnforcedSessionControls = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"excludeRulesSatisfied", n => { ExcludeRulesSatisfied = n.GetCollectionOfObjectValues<ConditionalAccessRuleSatisfied>(ConditionalAccessRuleSatisfied.CreateFromDiscriminatorValue).ToList(); } },
+                {"enforcedGrantControls", n => { EnforcedGrantControls = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"enforcedSessionControls", n => { EnforcedSessionControls = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"excludeRulesSatisfied", n => { ExcludeRulesSatisfied = n.GetCollectionOfObjectValues<ConditionalAccessRuleSatisfied>(ConditionalAccessRuleSatisfied.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"id", n => { Id = n.GetStringValue(); } },
-                {"includeRulesSatisfied", n => { IncludeRulesSatisfied = n.GetCollectionOfObjectValues<ConditionalAccessRuleSatisfied>(ConditionalAccessRuleSatisfied.CreateFromDiscriminatorValue).ToList(); } },
+                {"includeRulesSatisfied", n => { IncludeRulesSatisfied = n.GetCollectionOfObjectValues<ConditionalAccessRuleSatisfied>(ConditionalAccessRuleSatisfied.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"result", n => { Result = n.GetEnumValue<AppliedConditionalAccessPolicyResult>(); } },
-                {"sessionControlsNotSatisfied", n => { SessionControlsNotSatisfied = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"sessionControlsNotSatisfied", n => { SessionControlsNotSatisfied = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

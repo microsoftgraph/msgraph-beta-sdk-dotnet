@@ -70,8 +70,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"blockedManufacturers", n => { BlockedManufacturers = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
-                {"blockedSkus", n => { BlockedSkus = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"blockedManufacturers", n => { BlockedManufacturers = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"blockedSkus", n => { BlockedSkus = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"osMaximumVersion", n => { OsMaximumVersion = n.GetStringValue(); } },
                 {"osMinimumVersion", n => { OsMinimumVersion = n.GetStringValue(); } },

@@ -154,7 +154,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"isTranslateHostHeaderEnabled", n => { IsTranslateHostHeaderEnabled = n.GetBoolValue(); } },
                 {"isTranslateLinksInBodyEnabled", n => { IsTranslateLinksInBodyEnabled = n.GetBoolValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"onPremisesApplicationSegments", n => { OnPremisesApplicationSegments = n.GetCollectionOfObjectValues<OnPremisesApplicationSegment>(OnPremisesApplicationSegment.CreateFromDiscriminatorValue).ToList(); } },
+                {"onPremisesApplicationSegments", n => { OnPremisesApplicationSegments = n.GetCollectionOfObjectValues<OnPremisesApplicationSegment>(OnPremisesApplicationSegment.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"singleSignOnSettings", n => { SingleSignOnSettings = n.GetObjectValue<OnPremisesPublishingSingleSignOn>(OnPremisesPublishingSingleSignOn.CreateFromDiscriminatorValue); } },
                 {"useAlternateUrlForTranslationAndRedirect", n => { UseAlternateUrlForTranslationAndRedirect = n.GetBoolValue(); } },
                 {"verifiedCustomDomainCertificatesMetadata", n => { VerifiedCustomDomainCertificatesMetadata = n.GetObjectValue<Microsoft.Graph.Beta.Models.VerifiedCustomDomainCertificatesMetadata>(Microsoft.Graph.Beta.Models.VerifiedCustomDomainCertificatesMetadata.CreateFromDiscriminatorValue); } },

@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Beta.IdentityProtection.RiskyServicePrincipals.Confirm
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"servicePrincipalIds", n => { ServicePrincipalIds = n.GetCollectionOfPrimitiveValues<string>().ToList(); } },
+                {"servicePrincipalIds", n => { ServicePrincipalIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
         /// <summary>

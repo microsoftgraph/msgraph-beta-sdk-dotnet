@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"destinationIPAddress", n => { DestinationIPAddress = n.GetStringValue(); } },
                 {"messageId", n => { MessageId = n.GetStringValue(); } },
                 {"receivedDateTime", n => { ReceivedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"recipients", n => { Recipients = n.GetCollectionOfObjectValues<MessageRecipient>(MessageRecipient.CreateFromDiscriminatorValue).ToList(); } },
+                {"recipients", n => { Recipients = n.GetCollectionOfObjectValues<MessageRecipient>(MessageRecipient.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"senderEmail", n => { SenderEmail = n.GetStringValue(); } },
                 {"size", n => { Size = n.GetIntValue(); } },
                 {"sourceIPAddress", n => { SourceIPAddress = n.GetStringValue(); } },

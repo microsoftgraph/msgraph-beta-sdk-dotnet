@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class TaskObject : Entity, IParsable {
         /// <summary>Arguments included within the task.</summary>
         public List<Microsoft.Graph.Beta.Models.KeyValuePair> Arguments {
@@ -51,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
             set { BackingStore?.Set("taskProcessingResults", value); }
         }
         /// <summary>
-        /// Instantiates a new TaskObject and sets the default values.
+        /// Instantiates a new taskObject and sets the default values.
         /// </summary>
         public TaskObject() : base() {
             OdataType = "#microsoft.graph.identityGovernance.task";
@@ -69,7 +70,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"arguments", n => { Arguments = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.KeyValuePair>(Microsoft.Graph.Beta.Models.KeyValuePair.CreateFromDiscriminatorValue).ToList(); } },
+                {"arguments", n => { Arguments = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.KeyValuePair>(Microsoft.Graph.Beta.Models.KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"category", n => { Category = n.GetEnumValue<LifecycleTaskCategory>(); } },
                 {"continueOnError", n => { ContinueOnError = n.GetBoolValue(); } },
                 {"description", n => { Description = n.GetStringValue(); } },
@@ -77,7 +78,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
                 {"executionSequence", n => { ExecutionSequence = n.GetIntValue(); } },
                 {"isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
                 {"taskDefinitionId", n => { TaskDefinitionId = n.GetStringValue(); } },
-                {"taskProcessingResults", n => { TaskProcessingResults = n.GetCollectionOfObjectValues<TaskProcessingResult>(TaskProcessingResult.CreateFromDiscriminatorValue).ToList(); } },
+                {"taskProcessingResults", n => { TaskProcessingResults = n.GetCollectionOfObjectValues<TaskProcessingResult>(TaskProcessingResult.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

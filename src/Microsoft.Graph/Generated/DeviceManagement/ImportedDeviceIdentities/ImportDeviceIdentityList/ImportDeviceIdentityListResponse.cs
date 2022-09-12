@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ImportedDeviceIdentities.ImportD
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<ImportedDeviceIdentityResult>(ImportedDeviceIdentityResult.CreateFromDiscriminatorValue).ToList(); } },
+                {"value", n => { Value = n.GetCollectionOfObjectValues<ImportedDeviceIdentityResult>(ImportedDeviceIdentityResult.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>

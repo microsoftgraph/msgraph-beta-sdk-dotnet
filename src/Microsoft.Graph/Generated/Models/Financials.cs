@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"companies", n => { Companies = n.GetCollectionOfObjectValues<Company>(Company.CreateFromDiscriminatorValue).ToList(); } },
+                {"companies", n => { Companies = n.GetCollectionOfObjectValues<Company>(Company.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
