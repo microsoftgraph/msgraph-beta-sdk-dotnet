@@ -23,7 +23,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets description.
-        /// Description of the NIC (e.g. Ethernet adapter, Wireless LAN adapter Local Area Connection &amp;lt;#&amp;gt;, etc.).
+        /// Description of the NIC (e.g. Ethernet adapter, Wireless LAN adapter Local Area Connection, and so on).
         /// </summary>
         [JsonPropertyName("description")]
         public string Description { get; set; }

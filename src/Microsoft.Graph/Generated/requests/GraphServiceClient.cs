@@ -1075,6 +1075,17 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the GraphServiceMonitoring request builder.
+        /// </summary>
+        public virtual Microsoft.Graph.DeviceManagementNamespace.IMonitoringRequestBuilder Monitoring
+        {
+            get
+            {
+                return new Microsoft.Graph.DeviceManagementNamespace.MonitoringRequestBuilder(this.BaseUrl + "/monitoring", this);
+            }
+        }
+    
+        /// <summary>
         /// Gets the GraphServiceBranding request builder.
         /// </summary>
         public virtual IOrganizationalBrandingRequestBuilder Branding

@@ -36,6 +36,12 @@ namespace Microsoft.Graph
         public CloudPcConnectivityResult ConnectivityResult { get; set; }
     
         /// <summary>
+        /// Gets or sets disk encryption state.
+        /// </summary>
+        [JsonPropertyName("diskEncryptionState")]
+        public CloudPcDiskEncryptionState? DiskEncryptionState { get; set; }
+    
+        /// <summary>
         /// Gets or sets display name.
         /// The display name of the Cloud PC.
         /// </summary>

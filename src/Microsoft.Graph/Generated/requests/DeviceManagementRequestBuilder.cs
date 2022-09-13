@@ -51,6 +51,18 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for Monitoring.
+        /// </summary>
+        /// <returns>The <see cref="Microsoft.Graph.DeviceManagementNamespace.IMonitoringRequestBuilder"/>.</returns>
+        public Microsoft.Graph.DeviceManagementNamespace.IMonitoringRequestBuilder Monitoring
+        {
+            get
+            {
+                return new Microsoft.Graph.DeviceManagementNamespace.MonitoringRequestBuilder(this.AppendSegmentToRequestUrl("monitoring"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for VirtualEndpoint.
         /// </summary>
         /// <returns>The <see cref="IVirtualEndpointRequestBuilder"/>.</returns>

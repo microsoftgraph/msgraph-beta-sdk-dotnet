@@ -39,12 +39,14 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets display app information required state.
         /// </summary>
+        [Obsolete("The DisplayAppInformationRequiredState property is deprecated and will stop returning data on September 9, 2022. Please use the new featureSetting DisplayAppInformationRequiredState property.")]
         [JsonPropertyName("displayAppInformationRequiredState")]
         public AdvancedConfigState? DisplayAppInformationRequiredState { get; set; }
     
         /// <summary>
         /// Gets or sets number matching required state.
         /// </summary>
+        [Obsolete("The NumberMatchingRequiredState property is deprecated and will stop returning data on September 9, 2022. Please use the new featureSetting NumberMatchingRequiredState property.")]
         [JsonPropertyName("numberMatchingRequiredState")]
         public AdvancedConfigState? NumberMatchingRequiredState { get; set; }
     

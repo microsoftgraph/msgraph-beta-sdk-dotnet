@@ -310,7 +310,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets federated identity credentials.
-        /// Federated identities for applications. Supports $expand and $filter (eq when counting empty collections).
+        /// Federated identities for applications. Supports $expand and $filter (startsWith, and eq, ne when counting empty collections and only with advanced query parameters).
         /// </summary>
         [JsonPropertyName("federatedIdentityCredentials")]
         public IApplicationFederatedIdentityCredentialsCollectionPage FederatedIdentityCredentials { get; set; }
@@ -337,7 +337,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets owners.
-        /// Directory objects that are owners of the application. Read-only. Nullable. Supports $expand and $filter (eq when counting empty collections).
+        /// Directory objects that are owners of the application. Read-only. Nullable. Supports $expand and $filter (eq and ne when counting empty collections).
         /// </summary>
         [JsonPropertyName("owners")]
         public IApplicationOwnersCollectionWithReferencesPage Owners { get; set; }

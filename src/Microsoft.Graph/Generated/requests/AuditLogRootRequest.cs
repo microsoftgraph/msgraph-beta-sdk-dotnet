@@ -264,12 +264,6 @@ namespace Microsoft.Graph
                     // Copy the additional data collection to the page itself so that information is not lost
                     auditLogRootToInitialize.Provisioning.AdditionalData = auditLogRootToInitialize.AdditionalData;
                 }
-                if (auditLogRootToInitialize.RestrictedSignIns != null && auditLogRootToInitialize.RestrictedSignIns.CurrentPage != null)
-                {
-                    auditLogRootToInitialize.RestrictedSignIns.InitializeNextPageRequest(this.Client, auditLogRootToInitialize.RestrictedSignInsNextLink);
-                    // Copy the additional data collection to the page itself so that information is not lost
-                    auditLogRootToInitialize.RestrictedSignIns.AdditionalData = auditLogRootToInitialize.AdditionalData;
-                }
                 if (auditLogRootToInitialize.SignIns != null && auditLogRootToInitialize.SignIns.CurrentPage != null)
                 {
                     auditLogRootToInitialize.SignIns.InitializeNextPageRequest(this.Client, auditLogRootToInitialize.SignInsNextLink);

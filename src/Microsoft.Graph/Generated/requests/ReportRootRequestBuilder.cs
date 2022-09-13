@@ -220,43 +220,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for ReportRootGetAzureADFeatureUsage.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetAzureADFeatureUsageRequestBuilder"/>.</returns>
-        public IReportRootGetAzureADFeatureUsageRequestBuilder GetAzureADFeatureUsage(
-            string period)
-        {
-            return new ReportRootGetAzureADFeatureUsageRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.getAzureADFeatureUsage"),
-                this.Client,
-                period);
-        }
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetAzureADLicenseUsage.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetAzureADLicenseUsageRequestBuilder"/>.</returns>
-        public IReportRootGetAzureADLicenseUsageRequestBuilder GetAzureADLicenseUsage(
-            string period)
-        {
-            return new ReportRootGetAzureADLicenseUsageRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.getAzureADLicenseUsage"),
-                this.Client,
-                period);
-        }
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetAzureADUserFeatureUsage.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetAzureADUserFeatureUsageRequestBuilder"/>.</returns>
-        public IReportRootGetAzureADUserFeatureUsageRequestBuilder GetAzureADUserFeatureUsage()
-        {
-            return new ReportRootGetAzureADUserFeatureUsageRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.getAzureADUserFeatureUsage"),
-                this.Client);
-        }
-
-        /// <summary>
         /// Gets the request builder for ReportRootGetCredentialUsageSummary.
         /// </summary>
         /// <returns>The <see cref="IReportRootGetCredentialUsageSummaryRequestBuilder"/>.</returns>

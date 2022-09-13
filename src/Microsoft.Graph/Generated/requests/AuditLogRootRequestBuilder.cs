@@ -87,18 +87,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for RestrictedSignIns.
-        /// </summary>
-        /// <returns>The <see cref="IAuditLogRootRestrictedSignInsCollectionRequestBuilder"/>.</returns>
-        public IAuditLogRootRestrictedSignInsCollectionRequestBuilder RestrictedSignIns
-        {
-            get
-            {
-                return new AuditLogRootRestrictedSignInsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("restrictedSignIns"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for SignIns.
         /// </summary>
         /// <returns>The <see cref="IAuditLogRootSignInsCollectionRequestBuilder"/>.</returns>
