@@ -1,11 +1,9 @@
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the auditLogRoot singleton.</summary>
     public class SignIn : Entity, IParsable {
         /// <summary>The application name displayed in the Azure Portal. Supports $filter (eq and startsWith operators only).</summary>
         public string AppDisplayName {
@@ -308,7 +306,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("userType", value); }
         }
         /// <summary>
-        /// Instantiates a new signIn and sets the default values.
+        /// Instantiates a new SignIn and sets the default values.
         /// </summary>
         public SignIn() : base() {
             OdataType = "#microsoft.graph.signIn";
@@ -319,11 +317,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static new SignIn CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
-            return mappingValue switch {
-                "#microsoft.graph.restrictedSignIn" => new RestrictedSignIn(),
-                _ => new SignIn(),
-            };
+            return new SignIn();
         }
         /// <summary>
         /// The deserialization information for the current model

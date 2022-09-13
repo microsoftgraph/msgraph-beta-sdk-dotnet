@@ -71,7 +71,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Authentication>("authentication"); }
             set { BackingStore?.Set("authentication", value); }
         }
-        /// <summary>The authorizationInfo property</summary>
+        /// <summary>Identifiers that can be used to identify and authenticate a user in non-Azure AD environments. This property can be used to store identifiers for smartcard-based certificates that a user uses for access to on-premises Active Directory deployments or for federated access. It can also be used to store the Subject Alternate Name (SAN) that&apos;s associated with a Common Access Card (CAC). Nullable.Supports $filter (eq and startsWith).</summary>
         public Microsoft.Graph.Beta.Models.AuthorizationInfo AuthorizationInfo {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AuthorizationInfo>("authorizationInfo"); }
             set { BackingStore?.Set("authorizationInfo", value); }

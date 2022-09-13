@@ -35,6 +35,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("isServiceDefault"); }
             set { BackingStore?.Set("isServiceDefault", value); }
         }
+        /// <summary>The tenantRestrictions property</summary>
+        public CrossTenantAccessPolicyTenantRestrictions TenantRestrictions {
+            get { return BackingStore?.Get<CrossTenantAccessPolicyTenantRestrictions>("tenantRestrictions"); }
+            set { BackingStore?.Set("tenantRestrictions", value); }
+        }
         /// <summary>
         /// Instantiates a new crossTenantAccessPolicyConfigurationDefault and sets the default values.
         /// </summary>
@@ -60,6 +65,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"b2bDirectConnectOutbound", n => { B2bDirectConnectOutbound = n.GetObjectValue<CrossTenantAccessPolicyB2BSetting>(CrossTenantAccessPolicyB2BSetting.CreateFromDiscriminatorValue); } },
                 {"inboundTrust", n => { InboundTrust = n.GetObjectValue<CrossTenantAccessPolicyInboundTrust>(CrossTenantAccessPolicyInboundTrust.CreateFromDiscriminatorValue); } },
                 {"isServiceDefault", n => { IsServiceDefault = n.GetBoolValue(); } },
+                {"tenantRestrictions", n => { TenantRestrictions = n.GetObjectValue<CrossTenantAccessPolicyTenantRestrictions>(CrossTenantAccessPolicyTenantRestrictions.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -75,6 +81,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteObjectValue<CrossTenantAccessPolicyB2BSetting>("b2bDirectConnectOutbound", B2bDirectConnectOutbound);
             writer.WriteObjectValue<CrossTenantAccessPolicyInboundTrust>("inboundTrust", InboundTrust);
             writer.WriteBoolValue("isServiceDefault", IsServiceDefault);
+            writer.WriteObjectValue<CrossTenantAccessPolicyTenantRestrictions>("tenantRestrictions", TenantRestrictions);
         }
     }
 }

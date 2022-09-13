@@ -18,7 +18,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DateTimeOffset?>("expiration"); }
             set { BackingStore?.Set("expiration", value); }
         }
-        /// <summary>The interval between synchronization iterations.</summary>
+        /// <summary>The interval between synchronization iterations. The value is represented in ISO 8601 format for durations. For example, PT1M represents a period of 1 month.</summary>
         public TimeSpan? Interval {
             get { return BackingStore?.Get<TimeSpan?>("interval"); }
             set { BackingStore?.Set("interval", value); }

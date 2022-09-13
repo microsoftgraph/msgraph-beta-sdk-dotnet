@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class AccessPackageAssignmentRequest : Entity, IParsable {
         /// <summary>The access package associated with the accessPackageAssignmentRequest. An access package defines the collections of resource roles and the policies for how one or more users can get access to those resources. Read-only. Nullable. Supports $expand.</summary>
         public Microsoft.Graph.Beta.Models.AccessPackage AccessPackage {
@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("requestStatus"); }
             set { BackingStore?.Set("requestStatus", value); }
         }
-        /// <summary>One of UserAdd, UserRemove, AdminAdd, AdminRemove or SystemRemove. A request from the user themselves would have requestType of UserAdd or UserRemove. Read-only.</summary>
+        /// <summary>One of UserAdd, UserExtend, UserUpdate, UserRemove, AdminAdd, AdminRemove or SystemRemove. A request from the user themselves would have requestType of UserAdd, UserUpdate or UserRemove. Read-only.</summary>
         public string RequestType {
             get { return BackingStore?.Get<string>("requestType"); }
             set { BackingStore?.Set("requestType", value); }

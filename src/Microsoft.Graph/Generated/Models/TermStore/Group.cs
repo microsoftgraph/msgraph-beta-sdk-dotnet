@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.TermStore {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class Group : Entity, IParsable {
         /// <summary>Date and time of the group creation. Read-only.</summary>
         public DateTimeOffset? CreatedDateTime {

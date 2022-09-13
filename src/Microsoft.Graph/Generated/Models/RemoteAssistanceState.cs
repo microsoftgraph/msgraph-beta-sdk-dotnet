@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public enum RemoteAssistanceState {
         /// <summary>Remote assistance is disabled for the account. With this value, Quick Assist remote assistance sessions are not allowed for the account.</summary>
         Disabled,

@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public enum WindowsSModeConfiguration {
         /// <summary>This option will remove all restrictions to unlock S mode - default</summary>
         NoRestriction,

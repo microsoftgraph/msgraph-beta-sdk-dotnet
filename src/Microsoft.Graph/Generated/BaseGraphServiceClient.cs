@@ -66,6 +66,7 @@ using Microsoft.Graph.Beta.MessageEvents;
 using Microsoft.Graph.Beta.MessageRecipients;
 using Microsoft.Graph.Beta.MessageTraces;
 using Microsoft.Graph.Beta.MobilityManagementPolicies;
+using Microsoft.Graph.Beta.Monitoring;
 using Microsoft.Graph.Beta.Oauth2PermissionGrants;
 using Microsoft.Graph.Beta.OfficeConfiguration;
 using Microsoft.Graph.Beta.OnPremisesPublishingProfiles;
@@ -396,6 +397,10 @@ namespace Microsoft.Graph.Beta {
         /// <summary>The mobilityManagementPolicies property</summary>
         public MobilityManagementPoliciesRequestBuilder MobilityManagementPolicies { get =>
             new MobilityManagementPoliciesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The monitoring property</summary>
+        public MonitoringRequestBuilder Monitoring { get =>
+            new MonitoringRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The oauth2PermissionGrants property</summary>
         public Oauth2PermissionGrantsRequestBuilder Oauth2PermissionGrants { get =>

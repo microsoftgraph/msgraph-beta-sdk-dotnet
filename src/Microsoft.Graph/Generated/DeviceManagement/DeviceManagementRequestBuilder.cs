@@ -88,6 +88,7 @@ using Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelServerLogCollectionRe
 using Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelSites;
 using Microsoft.Graph.Beta.DeviceManagement.MobileAppTroubleshootingEvents;
 using Microsoft.Graph.Beta.DeviceManagement.MobileThreatDefenseConnectors;
+using Microsoft.Graph.Beta.DeviceManagement.Monitoring;
 using Microsoft.Graph.Beta.DeviceManagement.NdesConnectors;
 using Microsoft.Graph.Beta.DeviceManagement.NotificationMessageTemplates;
 using Microsoft.Graph.Beta.DeviceManagement.OemWarrantyInformationOnboarding;
@@ -172,7 +173,7 @@ using Microsoft.Graph.Beta.DeviceManagement.WindowsUpdateCatalogItems;
 using Microsoft.Graph.Beta.DeviceManagement.ZebraFotaArtifacts;
 using Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector;
 using Microsoft.Graph.Beta.DeviceManagement.ZebraFotaDeployments;
-using Microsoft.Graph.Beta.Models;
+using Microsoft.Graph.Beta.Models.DeviceManagement;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -512,6 +513,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement {
         /// <summary>The mobileThreatDefenseConnectors property</summary>
         public MobileThreatDefenseConnectorsRequestBuilder MobileThreatDefenseConnectors { get =>
             new MobileThreatDefenseConnectorsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The monitoring property</summary>
+        public MonitoringRequestBuilder Monitoring { get =>
+            new MonitoringRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The ndesConnectors property</summary>
         public NdesConnectorsRequestBuilder NdesConnectors { get =>
@@ -895,7 +900,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement {
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
-        public RequestInformation CreatePatchRequestInformation(Microsoft.Graph.Beta.Models.DeviceManagement body, Action<DeviceManagementRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
+        public RequestInformation CreatePatchRequestInformation(Microsoft.Graph.Beta.Models.DeviceManagement.DeviceManagement body, Action<DeviceManagementRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.PATCH,
@@ -923,13 +928,13 @@ namespace Microsoft.Graph.Beta.DeviceManagement {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<Microsoft.Graph.Beta.Models.DeviceManagement> GetAsync(Action<DeviceManagementRequestBuilderGetRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.DeviceManagement.DeviceManagement> GetAsync(Action<DeviceManagementRequestBuilderGetRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.DeviceManagement>(requestInfo, Microsoft.Graph.Beta.Models.DeviceManagement.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.DeviceManagement.DeviceManagement>(requestInfo, Microsoft.Graph.Beta.Models.DeviceManagement.DeviceManagement.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Provides operations to call the getComanagedDevicesSummary method.
@@ -988,7 +993,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task PatchAsync(Microsoft.Graph.Beta.Models.DeviceManagement body, Action<DeviceManagementRequestBuilderPatchRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task PatchAsync(Microsoft.Graph.Beta.Models.DeviceManagement.DeviceManagement body, Action<DeviceManagementRequestBuilderPatchRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {

@@ -1,3 +1,4 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions.Store;
 using System;
@@ -42,7 +43,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static CrossTenantAccessPolicyB2BSetting CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new CrossTenantAccessPolicyB2BSetting();
+            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.crossTenantAccessPolicyTenantRestrictions" => new CrossTenantAccessPolicyTenantRestrictions(),
+                _ => new CrossTenantAccessPolicyB2BSetting(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model
