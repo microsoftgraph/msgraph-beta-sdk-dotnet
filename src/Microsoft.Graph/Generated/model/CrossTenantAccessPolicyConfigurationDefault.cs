@@ -62,6 +62,12 @@ namespace Microsoft.Graph
         [JsonPropertyName("isServiceDefault")]
         public bool? IsServiceDefault { get; set; }
     
+        /// <summary>
+        /// Gets or sets tenant restrictions.
+        /// </summary>
+        [JsonPropertyName("tenantRestrictions")]
+        public CrossTenantAccessPolicyTenantRestrictions TenantRestrictions { get; set; }
+    
     }
 }
 

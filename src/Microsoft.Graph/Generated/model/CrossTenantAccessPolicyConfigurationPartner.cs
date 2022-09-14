@@ -71,6 +71,12 @@ namespace Microsoft.Graph
         public string TenantId { get; set; }
     
         /// <summary>
+        /// Gets or sets tenant restrictions.
+        /// </summary>
+        [JsonPropertyName("tenantRestrictions")]
+        public CrossTenantAccessPolicyTenantRestrictions TenantRestrictions { get; set; }
+    
+        /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
         [JsonPropertyName("@odata.type")]

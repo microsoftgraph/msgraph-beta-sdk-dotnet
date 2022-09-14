@@ -23,6 +23,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets certificateUserIds.
+        /// The collection of unique identifiers that can be associated with a user and can be used to bind the Azure AD user to a certificate for authentication and authorization into non-Azure AD environments. The identifiers must be unique in the tenant.
         /// </summary>
         [JsonPropertyName("certificateUserIds")]
         public IEnumerable<string> CertificateUserIds { get; set; }

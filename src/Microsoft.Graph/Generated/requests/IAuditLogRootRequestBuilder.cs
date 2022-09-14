@@ -50,12 +50,6 @@ namespace Microsoft.Graph
         IAuditLogRootProvisioningCollectionRequestBuilder Provisioning { get; }
 
         /// <summary>
-        /// Gets the request builder for RestrictedSignIns.
-        /// </summary>
-        /// <returns>The <see cref="IAuditLogRootRestrictedSignInsCollectionRequestBuilder"/>.</returns>
-        IAuditLogRootRestrictedSignInsCollectionRequestBuilder RestrictedSignIns { get; }
-
-        /// <summary>
         /// Gets the request builder for SignIns.
         /// </summary>
         /// <returns>The <see cref="IAuditLogRootSignInsCollectionRequestBuilder"/>.</returns>

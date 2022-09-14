@@ -141,6 +141,12 @@ namespace Microsoft.Graph
         public WindowsMalwareOverview WindowsMalwareOverview { get; set; }
     
         /// <summary>
+        /// Gets or sets monitoring.
+        /// </summary>
+        [JsonPropertyName("monitoring")]
+        public Microsoft.Graph.DeviceManagementNamespace.Monitoring Monitoring { get; set; }
+    
+        /// <summary>
         /// Gets or sets virtual endpoint.
         /// </summary>
         [JsonPropertyName("virtualEndpoint")]

@@ -84,7 +84,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets request type.
-        /// One of UserAdd, UserRemove, AdminAdd, AdminRemove or SystemRemove. A request from the user themselves would have requestType of UserAdd or UserRemove. Read-only.
+        /// One of UserAdd, UserExtend, UserUpdate, UserRemove, AdminAdd, AdminRemove or SystemRemove. A request from the user themselves would have requestType of UserAdd, UserUpdate or UserRemove. Read-only.
         /// </summary>
         [JsonPropertyName("requestType")]
         public string RequestType { get; set; }

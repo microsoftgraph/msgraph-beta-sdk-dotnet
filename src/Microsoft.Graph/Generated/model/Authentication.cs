@@ -66,7 +66,6 @@ namespace Microsoft.Graph
         /// Gets or sets microsoft authenticator methods.
         /// The details of the Microsoft Authenticator app registered to a user for authentication.
         /// </summary>
-        [Obsolete("")]
         [JsonPropertyName("microsoftAuthenticatorMethods")]
         public IAuthenticationMicrosoftAuthenticatorMethodsCollectionPage MicrosoftAuthenticatorMethods { get; set; }
 

@@ -30,7 +30,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets interval.
-        /// The interval between synchronization iterations.
+        /// The interval between synchronization iterations. The value is represented in ISO 8601 format for durations. For example, PT1M represents a period of 1 month.
         /// </summary>
         [JsonPropertyName("interval")]
         public Duration Interval { get; set; }

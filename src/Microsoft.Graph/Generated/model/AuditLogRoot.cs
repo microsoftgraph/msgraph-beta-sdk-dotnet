@@ -61,19 +61,6 @@ namespace Microsoft.Graph
         public string ProvisioningNextLink { get; set; }
     
         /// <summary>
-        /// Gets or sets restricted sign ins.
-        /// </summary>
-        [JsonPropertyName("restrictedSignIns")]
-        public IAuditLogRootRestrictedSignInsCollectionPage RestrictedSignIns { get; set; }
-
-        /// <summary>
-        /// Gets or sets restrictedSignInsNextLink.
-        /// </summary>
-        [JsonPropertyName("restrictedSignIns@odata.nextLink")]
-        [JsonConverter(typeof(NextLinkConverter))]
-        public string RestrictedSignInsNextLink { get; set; }
-    
-        /// <summary>
         /// Gets or sets sign ins.
         /// </summary>
         [JsonPropertyName("signIns")]

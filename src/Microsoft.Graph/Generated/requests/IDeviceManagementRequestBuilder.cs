@@ -32,6 +32,12 @@ namespace Microsoft.Graph
         new IDeviceManagementRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for Monitoring.
+        /// </summary>
+        /// <returns>The <see cref="Microsoft.Graph.DeviceManagementNamespace.IMonitoringRequestBuilder"/>.</returns>
+        Microsoft.Graph.DeviceManagementNamespace.IMonitoringRequestBuilder Monitoring { get; }
+
+        /// <summary>
         /// Gets the request builder for VirtualEndpoint.
         /// </summary>
         /// <returns>The <see cref="IVirtualEndpointRequestBuilder"/>.</returns>

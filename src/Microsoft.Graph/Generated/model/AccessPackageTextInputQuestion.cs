@@ -36,6 +36,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets regexPattern.
+        /// This is the regex pattern that the corresponding text answer must follow.
         /// </summary>
         [JsonPropertyName("regexPattern")]
         public string RegexPattern { get; set; }

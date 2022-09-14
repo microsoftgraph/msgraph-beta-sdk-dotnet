@@ -117,26 +117,6 @@ namespace Microsoft.Graph
             string period);
 
         /// <summary>
-        /// Gets the request builder for ReportRootGetAzureADFeatureUsage.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetAzureADFeatureUsageRequestBuilder"/>.</returns>
-        IReportRootGetAzureADFeatureUsageRequestBuilder GetAzureADFeatureUsage(
-            string period);
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetAzureADLicenseUsage.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetAzureADLicenseUsageRequestBuilder"/>.</returns>
-        IReportRootGetAzureADLicenseUsageRequestBuilder GetAzureADLicenseUsage(
-            string period);
-
-        /// <summary>
-        /// Gets the request builder for ReportRootGetAzureADUserFeatureUsage.
-        /// </summary>
-        /// <returns>The <see cref="IReportRootGetAzureADUserFeatureUsageRequestBuilder"/>.</returns>
-        IReportRootGetAzureADUserFeatureUsageRequestBuilder GetAzureADUserFeatureUsage();
-
-        /// <summary>
         /// Gets the request builder for ReportRootGetCredentialUsageSummary.
         /// </summary>
         /// <returns>The <see cref="IReportRootGetCredentialUsageSummaryRequestBuilder"/>.</returns>
