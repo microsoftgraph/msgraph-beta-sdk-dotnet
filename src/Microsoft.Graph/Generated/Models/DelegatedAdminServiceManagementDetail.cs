@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class DelegatedAdminServiceManagementDetail : Entity, IParsable {
         /// <summary>The URL of the management portal for the managed service. Read-only.</summary>
         public string ServiceManagementUrl {

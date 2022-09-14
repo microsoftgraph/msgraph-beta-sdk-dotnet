@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class CloudPC : Entity, IParsable {
         /// <summary>The Azure Active Directory (Azure AD) device ID of the Cloud PC.</summary>
         public string AadDeviceId {
@@ -15,6 +15,11 @@ namespace Microsoft.Graph.Beta.Models {
         public CloudPcConnectivityResult ConnectivityResult {
             get { return BackingStore?.Get<CloudPcConnectivityResult>("connectivityResult"); }
             set { BackingStore?.Set("connectivityResult", value); }
+        }
+        /// <summary>The diskEncryptionState property</summary>
+        public CloudPcDiskEncryptionState? DiskEncryptionState {
+            get { return BackingStore?.Get<CloudPcDiskEncryptionState?>("diskEncryptionState"); }
+            set { BackingStore?.Set("diskEncryptionState", value); }
         }
         /// <summary>The display name of the Cloud PC.</summary>
         public string DisplayName {
@@ -132,6 +137,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"aadDeviceId", n => { AadDeviceId = n.GetStringValue(); } },
                 {"connectivityResult", n => { ConnectivityResult = n.GetObjectValue<CloudPcConnectivityResult>(CloudPcConnectivityResult.CreateFromDiscriminatorValue); } },
+                {"diskEncryptionState", n => { DiskEncryptionState = n.GetEnumValue<CloudPcDiskEncryptionState>(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"gracePeriodEndDateTime", n => { GracePeriodEndDateTime = n.GetDateTimeOffsetValue(); } },
                 {"imageDisplayName", n => { ImageDisplayName = n.GetStringValue(); } },
@@ -162,6 +168,7 @@ namespace Microsoft.Graph.Beta.Models {
             base.Serialize(writer);
             writer.WriteStringValue("aadDeviceId", AadDeviceId);
             writer.WriteObjectValue<CloudPcConnectivityResult>("connectivityResult", ConnectivityResult);
+            writer.WriteEnumValue<CloudPcDiskEncryptionState>("diskEncryptionState", DiskEncryptionState);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteDateTimeOffsetValue("gracePeriodEndDateTime", GracePeriodEndDateTime);
             writer.WriteStringValue("imageDisplayName", ImageDisplayName);

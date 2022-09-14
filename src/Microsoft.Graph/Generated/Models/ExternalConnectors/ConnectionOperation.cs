@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of externalConnection entities.</summary>
     public class ConnectionOperation : Entity, IParsable {
         /// <summary>If status is failed, provides more information about the error that caused the failure.</summary>
         public Microsoft.Graph.Beta.Models.PublicError Error {

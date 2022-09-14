@@ -1,7 +1,6 @@
 using Microsoft.Graph.Beta.AuditLogs.DirectoryAudits;
 using Microsoft.Graph.Beta.AuditLogs.DirectoryProvisioning;
 using Microsoft.Graph.Beta.AuditLogs.Provisioning;
-using Microsoft.Graph.Beta.AuditLogs.RestrictedSignIns;
 using Microsoft.Graph.Beta.AuditLogs.SignIns;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
@@ -32,10 +31,6 @@ namespace Microsoft.Graph.Beta.AuditLogs {
         }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>The restrictedSignIns property</summary>
-        public RestrictedSignInsRequestBuilder RestrictedSignIns { get =>
-            new RestrictedSignInsRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The signIns property</summary>
         public SignInsRequestBuilder SignIns { get =>
             new SignInsRequestBuilder(PathParameters, RequestAdapter);

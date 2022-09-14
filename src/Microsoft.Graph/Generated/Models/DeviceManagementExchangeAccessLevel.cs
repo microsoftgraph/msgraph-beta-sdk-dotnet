@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public enum DeviceManagementExchangeAccessLevel {
         /// <summary>No device access rule has been configured in Exchange.</summary>
         None,

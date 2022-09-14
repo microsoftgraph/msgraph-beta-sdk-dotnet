@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class EducationAssignmentResource : Entity, IParsable {
         /// <summary>Indicates whether this resource should be copied to each student submission for modification and submission. Required</summary>
         public bool? DistributeForStudentWork {

@@ -13,9 +13,6 @@ using Microsoft.Graph.Beta.Reports.GetAttackSimulationRepeatOffenders;
 using Microsoft.Graph.Beta.Reports.GetAttackSimulationSimulationUserCoverage;
 using Microsoft.Graph.Beta.Reports.GetAttackSimulationTrainingUserCoverage;
 using Microsoft.Graph.Beta.Reports.GetAzureADApplicationSignInSummaryWithPeriod;
-using Microsoft.Graph.Beta.Reports.GetAzureADFeatureUsageWithPeriod;
-using Microsoft.Graph.Beta.Reports.GetAzureADLicenseUsageWithPeriod;
-using Microsoft.Graph.Beta.Reports.GetAzureADUserFeatureUsage;
 using Microsoft.Graph.Beta.Reports.GetBrowserDistributionUserCountsWithPeriod;
 using Microsoft.Graph.Beta.Reports.GetBrowserUserCountsWithPeriod;
 using Microsoft.Graph.Beta.Reports.GetBrowserUserDetailWithPeriod;
@@ -324,28 +321,6 @@ namespace Microsoft.Graph.Beta.Reports {
         public GetAzureADApplicationSignInSummaryWithPeriodRequestBuilder GetAzureADApplicationSignInSummaryWithPeriod(string period) {
             if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
             return new GetAzureADApplicationSignInSummaryWithPeriodRequestBuilder(PathParameters, RequestAdapter, period);
-        }
-        /// <summary>
-        /// Provides operations to call the getAzureADFeatureUsage method.
-        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
-        /// </summary>
-        public GetAzureADFeatureUsageWithPeriodRequestBuilder GetAzureADFeatureUsageWithPeriod(string period) {
-            if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
-            return new GetAzureADFeatureUsageWithPeriodRequestBuilder(PathParameters, RequestAdapter, period);
-        }
-        /// <summary>
-        /// Provides operations to call the getAzureADLicenseUsage method.
-        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
-        /// </summary>
-        public GetAzureADLicenseUsageWithPeriodRequestBuilder GetAzureADLicenseUsageWithPeriod(string period) {
-            if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
-            return new GetAzureADLicenseUsageWithPeriodRequestBuilder(PathParameters, RequestAdapter, period);
-        }
-        /// <summary>
-        /// Provides operations to call the getAzureADUserFeatureUsage method.
-        /// </summary>
-        public GetAzureADUserFeatureUsageRequestBuilder GetAzureADUserFeatureUsage() {
-            return new GetAzureADUserFeatureUsageRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Provides operations to call the getBrowserDistributionUserCounts method.
