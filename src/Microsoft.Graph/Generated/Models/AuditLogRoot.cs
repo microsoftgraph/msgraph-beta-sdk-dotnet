@@ -33,11 +33,6 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<ProvisioningObjectSummary>>("provisioning"); }
             set { BackingStore?.Set("provisioning", value); }
         }
-        /// <summary>The restrictedSignIns property</summary>
-        public List<RestrictedSignIn> RestrictedSignIns {
-            get { return BackingStore?.Get<List<RestrictedSignIn>>("restrictedSignIns"); }
-            set { BackingStore?.Set("restrictedSignIns", value); }
-        }
         /// <summary>The signIns property</summary>
         public List<SignIn> SignIns {
             get { return BackingStore?.Get<List<SignIn>>("signIns"); }
@@ -68,7 +63,6 @@ namespace Microsoft.Graph.Beta.Models {
                 {"directoryProvisioning", n => { DirectoryProvisioning = n.GetCollectionOfObjectValues<ProvisioningObjectSummary>(ProvisioningObjectSummary.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"provisioning", n => { Provisioning = n.GetCollectionOfObjectValues<ProvisioningObjectSummary>(ProvisioningObjectSummary.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"restrictedSignIns", n => { RestrictedSignIns = n.GetCollectionOfObjectValues<RestrictedSignIn>(RestrictedSignIn.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"signIns", n => { SignIns = n.GetCollectionOfObjectValues<SignIn>(SignIn.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
@@ -82,7 +76,6 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfObjectValues<ProvisioningObjectSummary>("directoryProvisioning", DirectoryProvisioning);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteCollectionOfObjectValues<ProvisioningObjectSummary>("provisioning", Provisioning);
-            writer.WriteCollectionOfObjectValues<RestrictedSignIn>("restrictedSignIns", RestrictedSignIns);
             writer.WriteCollectionOfObjectValues<SignIn>("signIns", SignIns);
             writer.WriteAdditionalData(AdditionalData);
         }

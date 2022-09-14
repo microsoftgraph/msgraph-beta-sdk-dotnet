@@ -71,7 +71,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<ExtensionProperty>>("extensionProperties"); }
             set { BackingStore?.Set("extensionProperties", value); }
         }
-        /// <summary>Federated identities for applications. Supports $expand and $filter (eq when counting empty collections).</summary>
+        /// <summary>Federated identities for applications. Supports $expand and $filter (startsWith, and eq, ne when counting empty collections and only with advanced query parameters).</summary>
         public List<FederatedIdentityCredential> FederatedIdentityCredentials {
             get { return BackingStore?.Get<List<FederatedIdentityCredential>>("federatedIdentityCredentials"); }
             set { BackingStore?.Set("federatedIdentityCredentials", value); }
@@ -131,7 +131,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OptionalClaims>("optionalClaims"); }
             set { BackingStore?.Set("optionalClaims", value); }
         }
-        /// <summary>Directory objects that are owners of the application. Read-only. Nullable. Supports $expand and $filter (eq when counting empty collections).</summary>
+        /// <summary>Directory objects that are owners of the application. Read-only. Nullable. Supports $expand and $filter (eq and ne when counting empty collections).</summary>
         public List<DirectoryObject> Owners {
             get { return BackingStore?.Get<List<DirectoryObject>>("owners"); }
             set { BackingStore?.Set("owners", value); }

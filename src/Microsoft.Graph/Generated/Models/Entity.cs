@@ -1,5 +1,6 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.CallRecords;
+using Microsoft.Graph.Beta.Models.DeviceManagement;
 using Microsoft.Graph.Beta.Models.Ediscovery;
 using Microsoft.Graph.Beta.Models.ExternalConnectors;
 using Microsoft.Graph.Beta.Models.IdentityGovernance;
@@ -227,9 +228,6 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.authenticationStrengthRoot" => new AuthenticationStrengthRoot(),
                 "#microsoft.graph.authoredNote" => new AuthoredNote(),
                 "#microsoft.graph.authorizationPolicy" => new AuthorizationPolicy(),
-                "#microsoft.graph.azureADFeatureUsage" => new AzureADFeatureUsage(),
-                "#microsoft.graph.azureADLicenseUsage" => new AzureADLicenseUsage(),
-                "#microsoft.graph.azureADUserFeatureUsage" => new AzureADUserFeatureUsage(),
                 "#microsoft.graph.azureADWindowsAutopilotDeploymentProfile" => new AzureADWindowsAutopilotDeploymentProfile(),
                 "#microsoft.graph.b2cAuthenticationMethodsPolicy" => new B2cAuthenticationMethodsPolicy(),
                 "#microsoft.graph.b2cIdentityUserFlow" => new B2cIdentityUserFlow(),
@@ -407,7 +405,10 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.deviceHealthScriptRunSummary" => new DeviceHealthScriptRunSummary(),
                 "#microsoft.graph.deviceInstallState" => new DeviceInstallState(),
                 "#microsoft.graph.deviceLogCollectionResponse" => new DeviceLogCollectionResponse(),
-                "#microsoft.graph.deviceManagement" => new DeviceManagement(),
+                "#microsoft.graph.deviceManagement" => new Microsoft.Graph.Beta.Models.DeviceManagement.DeviceManagement(),
+                "#microsoft.graph.deviceManagement.alertRecord" => new AlertRecord(),
+                "#microsoft.graph.deviceManagement.alertRule" => new AlertRule(),
+                "#microsoft.graph.deviceManagement.monitoring" => new Microsoft.Graph.Beta.Models.DeviceManagement.Monitoring(),
                 "#microsoft.graph.deviceManagementAbstractComplexSettingDefinition" => new DeviceManagementAbstractComplexSettingDefinition(),
                 "#microsoft.graph.deviceManagementAbstractComplexSettingInstance" => new DeviceManagementAbstractComplexSettingInstance(),
                 "#microsoft.graph.deviceManagementAutopilotEvent" => new DeviceManagementAutopilotEvent(),
@@ -1047,7 +1048,6 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.resourceOperation" => new ResourceOperation(),
                 "#microsoft.graph.resourceSpecificPermissionGrant" => new ResourceSpecificPermissionGrant(),
                 "#microsoft.graph.restrictedAppsViolation" => new RestrictedAppsViolation(),
-                "#microsoft.graph.restrictedSignIn" => new RestrictedSignIn(),
                 "#microsoft.graph.richLongRunningOperation" => new RichLongRunningOperation(),
                 "#microsoft.graph.riskDetection" => new RiskDetection(),
                 "#microsoft.graph.riskyServicePrincipal" => new RiskyServicePrincipal(),

@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public enum OrganizationalMessageSurface {
         /// <summary>Indicates the message will be displayed on the Window&apos;s Action Center</summary>
         ActionCenter,

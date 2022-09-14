@@ -53,6 +53,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
+        /// <summary>The tenantRestrictions property</summary>
+        public CrossTenantAccessPolicyTenantRestrictions TenantRestrictions {
+            get { return BackingStore?.Get<CrossTenantAccessPolicyTenantRestrictions>("tenantRestrictions"); }
+            set { BackingStore?.Set("tenantRestrictions", value); }
+        }
         /// <summary>
         /// Instantiates a new crossTenantAccessPolicyConfigurationPartner and sets the default values.
         /// </summary>
@@ -82,6 +87,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"isServiceProvider", n => { IsServiceProvider = n.GetBoolValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"tenantId", n => { TenantId = n.GetStringValue(); } },
+                {"tenantRestrictions", n => { TenantRestrictions = n.GetObjectValue<CrossTenantAccessPolicyTenantRestrictions>(CrossTenantAccessPolicyTenantRestrictions.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -98,6 +104,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteBoolValue("isServiceProvider", IsServiceProvider);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("tenantId", TenantId);
+            writer.WriteObjectValue<CrossTenantAccessPolicyTenantRestrictions>("tenantRestrictions", TenantRestrictions);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

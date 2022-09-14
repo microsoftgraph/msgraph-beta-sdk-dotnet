@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The certificateUserIds property</summary>
+        /// <summary>The collection of unique identifiers that can be associated with a user and can be used to bind the Azure AD user to a certificate for authentication and authorization into non-Azure AD environments. The identifiers must be unique in the tenant.</summary>
         public List<string> CertificateUserIds {
             get { return BackingStore?.Get<List<string>>("certificateUserIds"); }
             set { BackingStore?.Set("certificateUserIds", value); }

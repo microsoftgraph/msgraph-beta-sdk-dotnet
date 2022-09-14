@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("isSingleLineQuestion"); }
             set { BackingStore?.Set("isSingleLineQuestion", value); }
         }
-        /// <summary>The regexPattern property</summary>
+        /// <summary>This is the regex pattern that the corresponding text answer must follow.</summary>
         public string RegexPattern {
             get { return BackingStore?.Get<string>("regexPattern"); }
             set { BackingStore?.Set("regexPattern", value); }
