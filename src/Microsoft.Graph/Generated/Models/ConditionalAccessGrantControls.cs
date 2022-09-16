@@ -19,8 +19,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>List of values of built-in controls required by the policy. Possible values: block, mfa, compliantDevice, domainJoinedDevice, approvedApplication, compliantApplication, passwordChange, unknownFutureValue.</summary>
-        public List<string> BuiltInControls {
-            get { return BackingStore?.Get<List<string>>("builtInControls"); }
+        public List<ConditionalAccessGrantControl?> BuiltInControls {
+            get { return BackingStore?.Get<List<ConditionalAccessGrantControl?>>("builtInControls"); }
             set { BackingStore?.Set("builtInControls", value); }
         }
         /// <summary>List of custom controls IDs required by the policy. To learn more about custom control, see Custom controls (preview).</summary>
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"authenticationStrength", n => { AuthenticationStrength = n.GetObjectValue<AuthenticationStrengthPolicy>(AuthenticationStrengthPolicy.CreateFromDiscriminatorValue); } },
-                {"builtInControls", n => { BuiltInControls = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"builtInControls", n => { BuiltInControls = n.GetCollectionOfEnumValues<ConditionalAccessGrantControl>()?.ToList(); } },
                 {"customAuthenticationFactors", n => { CustomAuthenticationFactors = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"operator", n => { Operator = n.GetStringValue(); } },
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.Models {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<AuthenticationStrengthPolicy>("authenticationStrength", AuthenticationStrength);
-            writer.WriteCollectionOfPrimitiveValues<string>("builtInControls", BuiltInControls);
+            writer.WriteCollectionOfEnumValues<ConditionalAccessGrantControl>("builtInControls", BuiltInControls);
             writer.WriteCollectionOfPrimitiveValues<string>("customAuthenticationFactors", CustomAuthenticationFactors);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("operator", Operator);

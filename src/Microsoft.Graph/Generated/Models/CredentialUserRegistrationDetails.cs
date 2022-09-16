@@ -6,8 +6,8 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class CredentialUserRegistrationDetails : Entity, IParsable {
         /// <summary>Represents the authentication method that the user has registered. Possible values are: email, mobilePhone, officePhone,  securityQuestion (only used for self-service password reset), appNotification,  appCode, alternateMobilePhone (supported only in registration),  fido,  appPassword,  unknownFutureValue.</summary>
-        public List<string> AuthMethods {
-            get { return BackingStore?.Get<List<string>>("authMethods"); }
+        public List<RegistrationAuthMethod?> AuthMethods {
+            get { return BackingStore?.Get<List<RegistrationAuthMethod?>>("authMethods"); }
             set { BackingStore?.Set("authMethods", value); }
         }
         /// <summary>Indicates whether the user is ready to perform self-service password reset or MFA.</summary>
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"authMethods", n => { AuthMethods = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"authMethods", n => { AuthMethods = n.GetCollectionOfEnumValues<RegistrationAuthMethod>()?.ToList(); } },
                 {"isCapable", n => { IsCapable = n.GetBoolValue(); } },
                 {"isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
                 {"isMfaRegistered", n => { IsMfaRegistered = n.GetBoolValue(); } },
@@ -75,7 +75,7 @@ namespace Microsoft.Graph.Beta.Models {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfPrimitiveValues<string>("authMethods", AuthMethods);
+            writer.WriteCollectionOfEnumValues<RegistrationAuthMethod>("authMethods", AuthMethods);
             writer.WriteBoolValue("isCapable", IsCapable);
             writer.WriteBoolValue("isEnabled", IsEnabled);
             writer.WriteBoolValue("isMfaRegistered", IsMfaRegistered);

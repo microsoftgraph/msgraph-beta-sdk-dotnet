@@ -41,8 +41,8 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("officeSuiteAppDefaultFileFormat", value); }
         }
         /// <summary>The Product Ids that represent the Office365 Suite SKU.</summary>
-        public List<string> ProductIds {
-            get { return BackingStore?.Get<List<string>>("productIds"); }
+        public List<OfficeProductId?> ProductIds {
+            get { return BackingStore?.Get<List<OfficeProductId?>>("productIds"); }
             set { BackingStore?.Set("productIds", value); }
         }
         /// <summary>The property to determine whether to uninstall existing Office MSI if an Office365 app suite is deployed to the device or not.</summary>
@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"officeConfigurationXml", n => { OfficeConfigurationXml = n.GetByteArrayValue(); } },
                 {"officePlatformArchitecture", n => { OfficePlatformArchitecture = n.GetEnumValue<WindowsArchitecture>(); } },
                 {"officeSuiteAppDefaultFileFormat", n => { OfficeSuiteAppDefaultFileFormat = n.GetEnumValue<OfficeSuiteDefaultFileFormatType>(); } },
-                {"productIds", n => { ProductIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"productIds", n => { ProductIds = n.GetCollectionOfEnumValues<OfficeProductId>()?.ToList(); } },
                 {"shouldUninstallOlderVersionsOfOffice", n => { ShouldUninstallOlderVersionsOfOffice = n.GetBoolValue(); } },
                 {"targetVersion", n => { TargetVersion = n.GetStringValue(); } },
                 {"updateChannel", n => { UpdateChannel = n.GetEnumValue<OfficeUpdateChannel>(); } },
@@ -118,7 +118,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteByteArrayValue("officeConfigurationXml", OfficeConfigurationXml);
             writer.WriteEnumValue<WindowsArchitecture>("officePlatformArchitecture", OfficePlatformArchitecture);
             writer.WriteEnumValue<OfficeSuiteDefaultFileFormatType>("officeSuiteAppDefaultFileFormat", OfficeSuiteAppDefaultFileFormat);
-            writer.WriteCollectionOfPrimitiveValues<string>("productIds", ProductIds);
+            writer.WriteCollectionOfEnumValues<OfficeProductId>("productIds", ProductIds);
             writer.WriteBoolValue("shouldUninstallOlderVersionsOfOffice", ShouldUninstallOlderVersionsOfOffice);
             writer.WriteStringValue("targetVersion", TargetVersion);
             writer.WriteEnumValue<OfficeUpdateChannel>("updateChannel", UpdateChannel);

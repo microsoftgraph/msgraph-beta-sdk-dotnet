@@ -27,8 +27,8 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
             set { BackingStore?.Set("failureInfo", value); }
         }
         /// <summary>List of modalities present in the session. Possible values are: unknown, audio, video, videoBasedScreenSharing, data, screenSharing, unknownFutureValue.</summary>
-        public List<string> Modalities {
-            get { return BackingStore?.Get<List<string>>("modalities"); }
+        public List<Modality?> Modalities {
+            get { return BackingStore?.Get<List<Modality?>>("modalities"); }
             set { BackingStore?.Set("modalities", value); }
         }
         /// <summary>The list of segments involved in the session. Read-only. Nullable.</summary>
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
                 {"caller", n => { Caller = n.GetObjectValue<Endpoint>(Endpoint.CreateFromDiscriminatorValue); } },
                 {"endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
                 {"failureInfo", n => { FailureInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.CallRecords.FailureInfo>(Microsoft.Graph.Beta.Models.CallRecords.FailureInfo.CreateFromDiscriminatorValue); } },
-                {"modalities", n => { Modalities = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"modalities", n => { Modalities = n.GetCollectionOfEnumValues<Modality>()?.ToList(); } },
                 {"segments", n => { Segments = n.GetCollectionOfObjectValues<Segment>(Segment.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
             };
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
             writer.WriteObjectValue<Endpoint>("caller", Caller);
             writer.WriteDateTimeOffsetValue("endDateTime", EndDateTime);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.CallRecords.FailureInfo>("failureInfo", FailureInfo);
-            writer.WriteCollectionOfPrimitiveValues<string>("modalities", Modalities);
+            writer.WriteCollectionOfEnumValues<Modality>("modalities", Modalities);
             writer.WriteCollectionOfObjectValues<Segment>("segments", Segments);
             writer.WriteDateTimeOffsetValue("startDateTime", StartDateTime);
         }

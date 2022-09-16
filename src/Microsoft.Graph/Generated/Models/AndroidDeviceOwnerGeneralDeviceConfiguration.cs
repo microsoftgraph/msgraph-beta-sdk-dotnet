@@ -406,8 +406,8 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("passwordBlockKeyguard", value); }
         }
         /// <summary>List of device keyguard features to block. This collection can contain a maximum of 7 elements.</summary>
-        public List<string> PasswordBlockKeyguardFeatures {
-            get { return BackingStore?.Get<List<string>>("passwordBlockKeyguardFeatures"); }
+        public List<AndroidKeyguardFeature?> PasswordBlockKeyguardFeatures {
+            get { return BackingStore?.Get<List<AndroidKeyguardFeature?>>("passwordBlockKeyguardFeatures"); }
             set { BackingStore?.Set("passwordBlockKeyguardFeatures", value); }
         }
         /// <summary>Indicates the amount of time that a password can be set for before it expires and a new password will be required. Valid values 1 to 365</summary>
@@ -536,8 +536,8 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("statusBarBlocked", value); }
         }
         /// <summary>List of modes in which the device&apos;s display will stay powered-on. This collection can contain a maximum of 4 elements.</summary>
-        public List<string> StayOnModes {
-            get { return BackingStore?.Get<List<string>>("stayOnModes"); }
+        public List<AndroidDeviceOwnerBatteryPluggedMode?> StayOnModes {
+            get { return BackingStore?.Get<List<AndroidDeviceOwnerBatteryPluggedMode?>>("stayOnModes"); }
             set { BackingStore?.Set("stayOnModes", value); }
         }
         /// <summary>Indicates whether or not to allow USB mass storage.</summary>
@@ -774,7 +774,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"networkEscapeHatchAllowed", n => { NetworkEscapeHatchAllowed = n.GetBoolValue(); } },
                 {"nfcBlockOutgoingBeam", n => { NfcBlockOutgoingBeam = n.GetBoolValue(); } },
                 {"passwordBlockKeyguard", n => { PasswordBlockKeyguard = n.GetBoolValue(); } },
-                {"passwordBlockKeyguardFeatures", n => { PasswordBlockKeyguardFeatures = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"passwordBlockKeyguardFeatures", n => { PasswordBlockKeyguardFeatures = n.GetCollectionOfEnumValues<AndroidKeyguardFeature>()?.ToList(); } },
                 {"passwordExpirationDays", n => { PasswordExpirationDays = n.GetIntValue(); } },
                 {"passwordMinimumLength", n => { PasswordMinimumLength = n.GetIntValue(); } },
                 {"passwordMinimumLetterCharacters", n => { PasswordMinimumLetterCharacters = n.GetIntValue(); } },
@@ -800,7 +800,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"securityRequireVerifyApps", n => { SecurityRequireVerifyApps = n.GetBoolValue(); } },
                 {"shortHelpText", n => { ShortHelpText = n.GetObjectValue<AndroidDeviceOwnerUserFacingMessage>(AndroidDeviceOwnerUserFacingMessage.CreateFromDiscriminatorValue); } },
                 {"statusBarBlocked", n => { StatusBarBlocked = n.GetBoolValue(); } },
-                {"stayOnModes", n => { StayOnModes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"stayOnModes", n => { StayOnModes = n.GetCollectionOfEnumValues<AndroidDeviceOwnerBatteryPluggedMode>()?.ToList(); } },
                 {"storageAllowUsb", n => { StorageAllowUsb = n.GetBoolValue(); } },
                 {"storageBlockExternalMedia", n => { StorageBlockExternalMedia = n.GetBoolValue(); } },
                 {"storageBlockUsbFileTransfer", n => { StorageBlockUsbFileTransfer = n.GetBoolValue(); } },
@@ -917,7 +917,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteBoolValue("networkEscapeHatchAllowed", NetworkEscapeHatchAllowed);
             writer.WriteBoolValue("nfcBlockOutgoingBeam", NfcBlockOutgoingBeam);
             writer.WriteBoolValue("passwordBlockKeyguard", PasswordBlockKeyguard);
-            writer.WriteCollectionOfPrimitiveValues<string>("passwordBlockKeyguardFeatures", PasswordBlockKeyguardFeatures);
+            writer.WriteCollectionOfEnumValues<AndroidKeyguardFeature>("passwordBlockKeyguardFeatures", PasswordBlockKeyguardFeatures);
             writer.WriteIntValue("passwordExpirationDays", PasswordExpirationDays);
             writer.WriteIntValue("passwordMinimumLength", PasswordMinimumLength);
             writer.WriteIntValue("passwordMinimumLetterCharacters", PasswordMinimumLetterCharacters);
@@ -943,7 +943,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteBoolValue("securityRequireVerifyApps", SecurityRequireVerifyApps);
             writer.WriteObjectValue<AndroidDeviceOwnerUserFacingMessage>("shortHelpText", ShortHelpText);
             writer.WriteBoolValue("statusBarBlocked", StatusBarBlocked);
-            writer.WriteCollectionOfPrimitiveValues<string>("stayOnModes", StayOnModes);
+            writer.WriteCollectionOfEnumValues<AndroidDeviceOwnerBatteryPluggedMode>("stayOnModes", StayOnModes);
             writer.WriteBoolValue("storageAllowUsb", StorageAllowUsb);
             writer.WriteBoolValue("storageBlockExternalMedia", StorageBlockExternalMedia);
             writer.WriteBoolValue("storageBlockUsbFileTransfer", StorageBlockUsbFileTransfer);

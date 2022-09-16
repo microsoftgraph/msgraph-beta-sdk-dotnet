@@ -37,8 +37,8 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("alternativeRecording", value); }
         }
         /// <summary>The anonymizeIdentityForRoles property</summary>
-        public List<string> AnonymizeIdentityForRoles {
-            get { return BackingStore?.Get<List<string>>("anonymizeIdentityForRoles"); }
+        public List<OnlineMeetingRole?> AnonymizeIdentityForRoles {
+            get { return BackingStore?.Get<List<OnlineMeetingRole?>>("anonymizeIdentityForRoles"); }
             set { BackingStore?.Set("anonymizeIdentityForRoles", value); }
         }
         /// <summary>The attendance reports of an online meeting. Read-only.</summary>
@@ -62,8 +62,8 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("broadcastSettings", value); }
         }
         /// <summary>The capabilities property</summary>
-        public List<string> Capabilities {
-            get { return BackingStore?.Get<List<string>>("capabilities"); }
+        public List<MeetingCapabilities?> Capabilities {
+            get { return BackingStore?.Get<List<MeetingCapabilities?>>("capabilities"); }
             set { BackingStore?.Set("capabilities", value); }
         }
         /// <summary>The chat information associated with this online meeting.</summary>
@@ -196,12 +196,12 @@ namespace Microsoft.Graph.Beta.Models {
                 {"allowMeetingChat", n => { AllowMeetingChat = n.GetEnumValue<MeetingChatMode>(); } },
                 {"allowTeamworkReactions", n => { AllowTeamworkReactions = n.GetBoolValue(); } },
                 {"alternativeRecording", n => { AlternativeRecording = n.GetByteArrayValue(); } },
-                {"anonymizeIdentityForRoles", n => { AnonymizeIdentityForRoles = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"anonymizeIdentityForRoles", n => { AnonymizeIdentityForRoles = n.GetCollectionOfEnumValues<OnlineMeetingRole>()?.ToList(); } },
                 {"attendanceReports", n => { AttendanceReports = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MeetingAttendanceReport>(Microsoft.Graph.Beta.Models.MeetingAttendanceReport.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"attendeeReport", n => { AttendeeReport = n.GetByteArrayValue(); } },
                 {"audioConferencing", n => { AudioConferencing = n.GetObjectValue<Microsoft.Graph.Beta.Models.AudioConferencing>(Microsoft.Graph.Beta.Models.AudioConferencing.CreateFromDiscriminatorValue); } },
                 {"broadcastSettings", n => { BroadcastSettings = n.GetObjectValue<BroadcastMeetingSettings>(BroadcastMeetingSettings.CreateFromDiscriminatorValue); } },
-                {"capabilities", n => { Capabilities = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"capabilities", n => { Capabilities = n.GetCollectionOfEnumValues<MeetingCapabilities>()?.ToList(); } },
                 {"chatInfo", n => { ChatInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.ChatInfo>(Microsoft.Graph.Beta.Models.ChatInfo.CreateFromDiscriminatorValue); } },
                 {"creationDateTime", n => { CreationDateTime = n.GetDateTimeOffsetValue(); } },
                 {"endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
@@ -238,12 +238,12 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteEnumValue<MeetingChatMode>("allowMeetingChat", AllowMeetingChat);
             writer.WriteBoolValue("allowTeamworkReactions", AllowTeamworkReactions);
             writer.WriteByteArrayValue("alternativeRecording", AlternativeRecording);
-            writer.WriteCollectionOfPrimitiveValues<string>("anonymizeIdentityForRoles", AnonymizeIdentityForRoles);
+            writer.WriteCollectionOfEnumValues<OnlineMeetingRole>("anonymizeIdentityForRoles", AnonymizeIdentityForRoles);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MeetingAttendanceReport>("attendanceReports", AttendanceReports);
             writer.WriteByteArrayValue("attendeeReport", AttendeeReport);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AudioConferencing>("audioConferencing", AudioConferencing);
             writer.WriteObjectValue<BroadcastMeetingSettings>("broadcastSettings", BroadcastSettings);
-            writer.WriteCollectionOfPrimitiveValues<string>("capabilities", Capabilities);
+            writer.WriteCollectionOfEnumValues<MeetingCapabilities>("capabilities", Capabilities);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ChatInfo>("chatInfo", ChatInfo);
             writer.WriteDateTimeOffsetValue("creationDateTime", CreationDateTime);
             writer.WriteDateTimeOffsetValue("endDateTime", EndDateTime);

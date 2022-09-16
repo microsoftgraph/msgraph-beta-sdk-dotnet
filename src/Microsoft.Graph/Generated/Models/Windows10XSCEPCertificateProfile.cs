@@ -26,8 +26,8 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("extendedKeyUsages", value); }
         }
         /// <summary>SCEP Hash Algorithm.</summary>
-        public List<string> HashAlgorithm {
-            get { return BackingStore?.Get<List<string>>("hashAlgorithm"); }
+        public List<HashAlgorithms?> HashAlgorithm {
+            get { return BackingStore?.Get<List<HashAlgorithms?>>("hashAlgorithm"); }
             set { BackingStore?.Set("hashAlgorithm", value); }
         }
         /// <summary>Key Size Options.</summary>
@@ -93,7 +93,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"certificateValidityPeriodScale", n => { CertificateValidityPeriodScale = n.GetEnumValue<CertificateValidityPeriodScale>(); } },
                 {"certificateValidityPeriodValue", n => { CertificateValidityPeriodValue = n.GetIntValue(); } },
                 {"extendedKeyUsages", n => { ExtendedKeyUsages = n.GetCollectionOfObjectValues<ExtendedKeyUsage>(ExtendedKeyUsage.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"hashAlgorithm", n => { HashAlgorithm = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"hashAlgorithm", n => { HashAlgorithm = n.GetCollectionOfEnumValues<HashAlgorithms>()?.ToList(); } },
                 {"keySize", n => { KeySize = n.GetEnumValue<KeySize>(); } },
                 {"keyStorageProvider", n => { KeyStorageProvider = n.GetEnumValue<KeyStorageProviderOption>(); } },
                 {"keyUsage", n => { KeyUsage = n.GetEnumValue<KeyUsages>(); } },
@@ -115,7 +115,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteEnumValue<CertificateValidityPeriodScale>("certificateValidityPeriodScale", CertificateValidityPeriodScale);
             writer.WriteIntValue("certificateValidityPeriodValue", CertificateValidityPeriodValue);
             writer.WriteCollectionOfObjectValues<ExtendedKeyUsage>("extendedKeyUsages", ExtendedKeyUsages);
-            writer.WriteCollectionOfPrimitiveValues<string>("hashAlgorithm", HashAlgorithm);
+            writer.WriteCollectionOfEnumValues<HashAlgorithms>("hashAlgorithm", HashAlgorithm);
             writer.WriteEnumValue<KeySize>("keySize", KeySize);
             writer.WriteEnumValue<KeyStorageProviderOption>("keyStorageProvider", KeyStorageProvider);
             writer.WriteEnumValue<KeyUsages>("keyUsage", KeyUsage);

@@ -7,8 +7,8 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class AuthenticationCombinationConfiguration : Entity, IParsable {
         /// <summary>The appliesToCombinations property</summary>
-        public List<string> AppliesToCombinations {
-            get { return BackingStore?.Get<List<string>>("appliesToCombinations"); }
+        public List<AuthenticationMethodModes?> AppliesToCombinations {
+            get { return BackingStore?.Get<List<AuthenticationMethodModes?>>("appliesToCombinations"); }
             set { BackingStore?.Set("appliesToCombinations", value); }
         }
         /// <summary>
@@ -34,7 +34,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"appliesToCombinations", n => { AppliesToCombinations = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"appliesToCombinations", n => { AppliesToCombinations = n.GetCollectionOfEnumValues<AuthenticationMethodModes>()?.ToList(); } },
             };
         }
         /// <summary>
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfPrimitiveValues<string>("appliesToCombinations", AppliesToCombinations);
+            writer.WriteCollectionOfEnumValues<AuthenticationMethodModes>("appliesToCombinations", AppliesToCombinations);
         }
     }
 }

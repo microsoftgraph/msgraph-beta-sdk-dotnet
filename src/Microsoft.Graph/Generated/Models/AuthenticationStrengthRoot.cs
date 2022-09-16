@@ -6,8 +6,8 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class AuthenticationStrengthRoot : Entity, IParsable {
         /// <summary>The authenticationCombinations property</summary>
-        public List<string> AuthenticationCombinations {
-            get { return BackingStore?.Get<List<string>>("authenticationCombinations"); }
+        public List<Microsoft.Graph.Beta.Models.AuthenticationMethodModes?> AuthenticationCombinations {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AuthenticationMethodModes?>>("authenticationCombinations"); }
             set { BackingStore?.Set("authenticationCombinations", value); }
         }
         /// <summary>The authenticationMethodModes property</summary>
@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"authenticationCombinations", n => { AuthenticationCombinations = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"authenticationCombinations", n => { AuthenticationCombinations = n.GetCollectionOfEnumValues<Microsoft.Graph.Beta.Models.AuthenticationMethodModes>()?.ToList(); } },
                 {"authenticationMethodModes", n => { AuthenticationMethodModes = n.GetCollectionOfObjectValues<AuthenticationMethodModeDetail>(AuthenticationMethodModeDetail.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"policies", n => { Policies = n.GetCollectionOfObjectValues<AuthenticationStrengthPolicy>(AuthenticationStrengthPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
             };
@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfPrimitiveValues<string>("authenticationCombinations", AuthenticationCombinations);
+            writer.WriteCollectionOfEnumValues<Microsoft.Graph.Beta.Models.AuthenticationMethodModes>("authenticationCombinations", AuthenticationCombinations);
             writer.WriteCollectionOfObjectValues<AuthenticationMethodModeDetail>("authenticationMethodModes", AuthenticationMethodModes);
             writer.WriteCollectionOfObjectValues<AuthenticationStrengthPolicy>("policies", Policies);
         }

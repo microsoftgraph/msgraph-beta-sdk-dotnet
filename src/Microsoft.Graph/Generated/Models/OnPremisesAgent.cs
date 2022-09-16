@@ -26,8 +26,8 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>The supportedPublishingTypes property</summary>
-        public List<string> SupportedPublishingTypes {
-            get { return BackingStore?.Get<List<string>>("supportedPublishingTypes"); }
+        public List<OnPremisesPublishingType?> SupportedPublishingTypes {
+            get { return BackingStore?.Get<List<OnPremisesPublishingType?>>("supportedPublishingTypes"); }
             set { BackingStore?.Set("supportedPublishingTypes", value); }
         }
         /// <summary>
@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"externalIp", n => { ExternalIp = n.GetStringValue(); } },
                 {"machineName", n => { MachineName = n.GetStringValue(); } },
                 {"status", n => { Status = n.GetEnumValue<AgentStatus>(); } },
-                {"supportedPublishingTypes", n => { SupportedPublishingTypes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"supportedPublishingTypes", n => { SupportedPublishingTypes = n.GetCollectionOfEnumValues<OnPremisesPublishingType>()?.ToList(); } },
             };
         }
         /// <summary>
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("externalIp", ExternalIp);
             writer.WriteStringValue("machineName", MachineName);
             writer.WriteEnumValue<AgentStatus>("status", Status);
-            writer.WriteCollectionOfPrimitiveValues<string>("supportedPublishingTypes", SupportedPublishingTypes);
+            writer.WriteCollectionOfEnumValues<OnPremisesPublishingType>("supportedPublishingTypes", SupportedPublishingTypes);
         }
     }
 }

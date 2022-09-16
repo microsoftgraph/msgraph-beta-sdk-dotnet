@@ -44,8 +44,8 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("logonId", value); }
         }
         /// <summary>Collection of the logon types observed for the logged on user from when first to last seen. Possible values are: unknown, interactive, remoteInteractive, network, batch, service.</summary>
-        public List<string> LogonTypes {
-            get { return BackingStore?.Get<List<string>>("logonTypes"); }
+        public List<LogonType?> LogonTypes {
+            get { return BackingStore?.Get<List<LogonType?>>("logonTypes"); }
             set { BackingStore?.Set("logonTypes", value); }
         }
         /// <summary>The OdataType property</summary>
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"firstSeenDateTime", n => { FirstSeenDateTime = n.GetDateTimeOffsetValue(); } },
                 {"lastSeenDateTime", n => { LastSeenDateTime = n.GetDateTimeOffsetValue(); } },
                 {"logonId", n => { LogonId = n.GetStringValue(); } },
-                {"logonTypes", n => { LogonTypes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"logonTypes", n => { LogonTypes = n.GetCollectionOfEnumValues<LogonType>()?.ToList(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -96,7 +96,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteDateTimeOffsetValue("firstSeenDateTime", FirstSeenDateTime);
             writer.WriteDateTimeOffsetValue("lastSeenDateTime", LastSeenDateTime);
             writer.WriteStringValue("logonId", LogonId);
-            writer.WriteCollectionOfPrimitiveValues<string>("logonTypes", LogonTypes);
+            writer.WriteCollectionOfEnumValues<LogonType>("logonTypes", LogonTypes);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }

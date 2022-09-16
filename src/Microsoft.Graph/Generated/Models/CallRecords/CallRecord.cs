@@ -22,8 +22,8 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>List of all the modalities used in the call. Possible values are: unknown, audio, video, videoBasedScreenSharing, data, screenSharing, unknownFutureValue.</summary>
-        public List<string> Modalities {
-            get { return BackingStore?.Get<List<string>>("modalities"); }
+        public List<Modality?> Modalities {
+            get { return BackingStore?.Get<List<Modality?>>("modalities"); }
             set { BackingStore?.Set("modalities", value); }
         }
         /// <summary>The organizing party&apos;s identity.</summary>
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
                 {"endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
                 {"joinWebUrl", n => { JoinWebUrl = n.GetStringValue(); } },
                 {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"modalities", n => { Modalities = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"modalities", n => { Modalities = n.GetCollectionOfEnumValues<Modality>()?.ToList(); } },
                 {"organizer", n => { Organizer = n.GetObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>(Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue); } },
                 {"participants", n => { Participants = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.IdentitySet>(Microsoft.Graph.Beta.Models.IdentitySet.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"sessions", n => { Sessions = n.GetCollectionOfObjectValues<Session>(Session.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -97,7 +97,7 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
             writer.WriteDateTimeOffsetValue("endDateTime", EndDateTime);
             writer.WriteStringValue("joinWebUrl", JoinWebUrl);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
-            writer.WriteCollectionOfPrimitiveValues<string>("modalities", Modalities);
+            writer.WriteCollectionOfEnumValues<Modality>("modalities", Modalities);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IdentitySet>("organizer", Organizer);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.IdentitySet>("participants", Participants);
             writer.WriteCollectionOfObjectValues<Session>("sessions", Sessions);

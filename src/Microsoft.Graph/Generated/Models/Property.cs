@@ -39,8 +39,8 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("isSearchable", value); }
         }
         /// <summary>The labels property</summary>
-        public List<string> Labels {
-            get { return BackingStore?.Get<List<string>>("labels"); }
+        public List<Label?> Labels {
+            get { return BackingStore?.Get<List<Label?>>("labels"); }
             set { BackingStore?.Set("labels", value); }
         }
         /// <summary>The name property</summary>
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"isRefinable", n => { IsRefinable = n.GetBoolValue(); } },
                 {"isRetrievable", n => { IsRetrievable = n.GetBoolValue(); } },
                 {"isSearchable", n => { IsSearchable = n.GetBoolValue(); } },
-                {"labels", n => { Labels = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"labels", n => { Labels = n.GetCollectionOfEnumValues<Label>()?.ToList(); } },
                 {"name", n => { Name = n.GetStringValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"type", n => { Type = n.GetEnumValue<PropertyType>(); } },
@@ -101,7 +101,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteBoolValue("isRefinable", IsRefinable);
             writer.WriteBoolValue("isRetrievable", IsRetrievable);
             writer.WriteBoolValue("isSearchable", IsSearchable);
-            writer.WriteCollectionOfPrimitiveValues<string>("labels", Labels);
+            writer.WriteCollectionOfEnumValues<Label>("labels", Labels);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteEnumValue<PropertyType>("type", Type);

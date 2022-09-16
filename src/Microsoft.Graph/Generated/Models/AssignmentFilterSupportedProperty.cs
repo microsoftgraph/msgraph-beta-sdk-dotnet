@@ -40,8 +40,8 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("propertyRegexConstraint", value); }
         }
         /// <summary>List of all supported operators on this property.</summary>
-        public List<string> SupportedOperators {
-            get { return BackingStore?.Get<List<string>>("supportedOperators"); }
+        public List<AssignmentFilterOperator?> SupportedOperators {
+            get { return BackingStore?.Get<List<AssignmentFilterOperator?>>("supportedOperators"); }
             set { BackingStore?.Set("supportedOperators", value); }
         }
         /// <summary>List of all supported values for this propery, empty if everything is supported.</summary>
@@ -75,7 +75,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"name", n => { Name = n.GetStringValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"propertyRegexConstraint", n => { PropertyRegexConstraint = n.GetStringValue(); } },
-                {"supportedOperators", n => { SupportedOperators = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"supportedOperators", n => { SupportedOperators = n.GetCollectionOfEnumValues<AssignmentFilterOperator>()?.ToList(); } },
                 {"supportedValues", n => { SupportedValues = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
@@ -90,7 +90,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("propertyRegexConstraint", PropertyRegexConstraint);
-            writer.WriteCollectionOfPrimitiveValues<string>("supportedOperators", SupportedOperators);
+            writer.WriteCollectionOfEnumValues<AssignmentFilterOperator>("supportedOperators", SupportedOperators);
             writer.WriteCollectionOfPrimitiveValues<string>("supportedValues", SupportedValues);
             writer.WriteAdditionalData(AdditionalData);
         }

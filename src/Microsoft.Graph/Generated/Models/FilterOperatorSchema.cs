@@ -16,8 +16,8 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("multivaluedComparisonType", value); }
         }
         /// <summary>Attribute types supported by the operator. Possible values are: Boolean, Binary, Reference, Integer, String.</summary>
-        public List<string> SupportedAttributeTypes {
-            get { return BackingStore?.Get<List<string>>("supportedAttributeTypes"); }
+        public List<AttributeType?> SupportedAttributeTypes {
+            get { return BackingStore?.Get<List<AttributeType?>>("supportedAttributeTypes"); }
             set { BackingStore?.Set("supportedAttributeTypes", value); }
         }
         /// <summary>
@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"arity", n => { Arity = n.GetEnumValue<ScopeOperatorType>(); } },
                 {"multivaluedComparisonType", n => { MultivaluedComparisonType = n.GetEnumValue<ScopeOperatorMultiValuedComparisonType>(); } },
-                {"supportedAttributeTypes", n => { SupportedAttributeTypes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"supportedAttributeTypes", n => { SupportedAttributeTypes = n.GetCollectionOfEnumValues<AttributeType>()?.ToList(); } },
             };
         }
         /// <summary>
@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.Models {
             base.Serialize(writer);
             writer.WriteEnumValue<ScopeOperatorType>("arity", Arity);
             writer.WriteEnumValue<ScopeOperatorMultiValuedComparisonType>("multivaluedComparisonType", MultivaluedComparisonType);
-            writer.WriteCollectionOfPrimitiveValues<string>("supportedAttributeTypes", SupportedAttributeTypes);
+            writer.WriteCollectionOfEnumValues<AttributeType>("supportedAttributeTypes", SupportedAttributeTypes);
         }
     }
 }

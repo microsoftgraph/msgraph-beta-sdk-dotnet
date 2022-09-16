@@ -1,3 +1,4 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions.Store;
 using System;
@@ -13,8 +14,8 @@ namespace Microsoft.Graph.Beta.Policies.AuthenticationStrengthPolicies.Item.Upda
             set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The allowedCombinations property</summary>
-        public List<string> AllowedCombinations {
-            get { return BackingStore?.Get<List<string>>("allowedCombinations"); }
+        public List<Microsoft.Graph.Beta.Models.AuthenticationMethodModes?> AllowedCombinations {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AuthenticationMethodModes?>>("allowedCombinations"); }
             set { BackingStore?.Set("allowedCombinations", value); }
         }
         /// <summary>Stores model information.</summary>
@@ -39,7 +40,7 @@ namespace Microsoft.Graph.Beta.Policies.AuthenticationStrengthPolicies.Item.Upda
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"allowedCombinations", n => { AllowedCombinations = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"allowedCombinations", n => { AllowedCombinations = n.GetCollectionOfEnumValues<Microsoft.Graph.Beta.Models.AuthenticationMethodModes>()?.ToList(); } },
             };
         }
         /// <summary>
@@ -48,7 +49,7 @@ namespace Microsoft.Graph.Beta.Policies.AuthenticationStrengthPolicies.Item.Upda
         /// </summary>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfPrimitiveValues<string>("allowedCombinations", AllowedCombinations);
+            writer.WriteCollectionOfEnumValues<Microsoft.Graph.Beta.Models.AuthenticationMethodModes>("allowedCombinations", AllowedCombinations);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -9,8 +9,8 @@ namespace Microsoft.Graph.Beta.Communications.Calls.Item.Answer {
     /// <summary>Provides operations to call the answer method.</summary>
     public class AnswerPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>The acceptedModalities property</summary>
-        public List<string> AcceptedModalities {
-            get { return BackingStore?.Get<List<string>>("acceptedModalities"); }
+        public List<Modality?> AcceptedModalities {
+            get { return BackingStore?.Get<List<Modality?>>("acceptedModalities"); }
             set { BackingStore?.Set("acceptedModalities", value); }
         }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.Communications.Calls.Item.Answer {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"acceptedModalities", n => { AcceptedModalities = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"acceptedModalities", n => { AcceptedModalities = n.GetCollectionOfEnumValues<Modality>()?.ToList(); } },
                 {"callbackUri", n => { CallbackUri = n.GetStringValue(); } },
                 {"callOptions", n => { CallOptions = n.GetObjectValue<IncomingCallOptions>(IncomingCallOptions.CreateFromDiscriminatorValue); } },
                 {"mediaConfig", n => { MediaConfig = n.GetObjectValue<Microsoft.Graph.Beta.Models.MediaConfig>(Microsoft.Graph.Beta.Models.MediaConfig.CreateFromDiscriminatorValue); } },
@@ -73,7 +73,7 @@ namespace Microsoft.Graph.Beta.Communications.Calls.Item.Answer {
         /// </summary>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfPrimitiveValues<string>("acceptedModalities", AcceptedModalities);
+            writer.WriteCollectionOfEnumValues<Modality>("acceptedModalities", AcceptedModalities);
             writer.WriteStringValue("callbackUri", CallbackUri);
             writer.WriteObjectValue<IncomingCallOptions>("callOptions", CallOptions);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.MediaConfig>("mediaConfig", MediaConfig);
