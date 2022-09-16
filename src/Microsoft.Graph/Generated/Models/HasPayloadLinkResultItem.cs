@@ -35,8 +35,8 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("payloadId", value); }
         }
         /// <summary>The reason where the link comes from.</summary>
-        public List<string> Sources {
-            get { return BackingStore?.Get<List<string>>("sources"); }
+        public List<DeviceAndAppManagementAssignmentSource?> Sources {
+            get { return BackingStore?.Get<List<DeviceAndAppManagementAssignmentSource?>>("sources"); }
             set { BackingStore?.Set("sources", value); }
         }
         /// <summary>
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"hasLink", n => { HasLink = n.GetBoolValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"payloadId", n => { PayloadId = n.GetStringValue(); } },
-                {"sources", n => { Sources = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"sources", n => { Sources = n.GetCollectionOfEnumValues<DeviceAndAppManagementAssignmentSource>()?.ToList(); } },
             };
         }
         /// <summary>
@@ -77,7 +77,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteBoolValue("hasLink", HasLink);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("payloadId", PayloadId);
-            writer.WriteCollectionOfPrimitiveValues<string>("sources", Sources);
+            writer.WriteCollectionOfEnumValues<DeviceAndAppManagementAssignmentSource>("sources", Sources);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -24,8 +24,8 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
         /// <summary>Applicability rule OS edition type.</summary>
-        public List<string> OsEditionTypes {
-            get { return BackingStore?.Get<List<string>>("osEditionTypes"); }
+        public List<Windows10EditionType?> OsEditionTypes {
+            get { return BackingStore?.Get<List<Windows10EditionType?>>("osEditionTypes"); }
             set { BackingStore?.Set("osEditionTypes", value); }
         }
         /// <summary>Supported Applicability rule types for Device Configuration</summary>
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"name", n => { Name = n.GetStringValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"osEditionTypes", n => { OsEditionTypes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"osEditionTypes", n => { OsEditionTypes = n.GetCollectionOfEnumValues<Windows10EditionType>()?.ToList(); } },
                 {"ruleType", n => { RuleType = n.GetEnumValue<DeviceManagementApplicabilityRuleType>(); } },
             };
         }
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteCollectionOfPrimitiveValues<string>("osEditionTypes", OsEditionTypes);
+            writer.WriteCollectionOfEnumValues<Windows10EditionType>("osEditionTypes", OsEditionTypes);
             writer.WriteEnumValue<DeviceManagementApplicabilityRuleType>("ruleType", RuleType);
             writer.WriteAdditionalData(AdditionalData);
         }

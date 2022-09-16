@@ -7,13 +7,13 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class ManagedAppProtection : ManagedAppPolicy, IParsable {
         /// <summary>Data storage locations where a user may store managed data.</summary>
-        public List<string> AllowedDataIngestionLocations {
-            get { return BackingStore?.Get<List<string>>("allowedDataIngestionLocations"); }
+        public List<ManagedAppDataIngestionLocation?> AllowedDataIngestionLocations {
+            get { return BackingStore?.Get<List<ManagedAppDataIngestionLocation?>>("allowedDataIngestionLocations"); }
             set { BackingStore?.Set("allowedDataIngestionLocations", value); }
         }
         /// <summary>Data storage locations where a user may store managed data.</summary>
-        public List<string> AllowedDataStorageLocations {
-            get { return BackingStore?.Get<List<string>>("allowedDataStorageLocations"); }
+        public List<ManagedAppDataStorageLocation?> AllowedDataStorageLocations {
+            get { return BackingStore?.Get<List<ManagedAppDataStorageLocation?>>("allowedDataStorageLocations"); }
             set { BackingStore?.Set("allowedDataStorageLocations", value); }
         }
         /// <summary>Data can be transferred from/to these classes of apps</summary>
@@ -257,8 +257,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"allowedDataIngestionLocations", n => { AllowedDataIngestionLocations = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"allowedDataStorageLocations", n => { AllowedDataStorageLocations = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"allowedDataIngestionLocations", n => { AllowedDataIngestionLocations = n.GetCollectionOfEnumValues<ManagedAppDataIngestionLocation>()?.ToList(); } },
+                {"allowedDataStorageLocations", n => { AllowedDataStorageLocations = n.GetCollectionOfEnumValues<ManagedAppDataStorageLocation>()?.ToList(); } },
                 {"allowedInboundDataTransferSources", n => { AllowedInboundDataTransferSources = n.GetEnumValue<ManagedAppDataTransferLevel>(); } },
                 {"allowedOutboundClipboardSharingExceptionLength", n => { AllowedOutboundClipboardSharingExceptionLength = n.GetIntValue(); } },
                 {"allowedOutboundClipboardSharingLevel", n => { AllowedOutboundClipboardSharingLevel = n.GetEnumValue<ManagedAppClipboardSharingLevel>(); } },
@@ -311,8 +311,8 @@ namespace Microsoft.Graph.Beta.Models {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfPrimitiveValues<string>("allowedDataIngestionLocations", AllowedDataIngestionLocations);
-            writer.WriteCollectionOfPrimitiveValues<string>("allowedDataStorageLocations", AllowedDataStorageLocations);
+            writer.WriteCollectionOfEnumValues<ManagedAppDataIngestionLocation>("allowedDataIngestionLocations", AllowedDataIngestionLocations);
+            writer.WriteCollectionOfEnumValues<ManagedAppDataStorageLocation>("allowedDataStorageLocations", AllowedDataStorageLocations);
             writer.WriteEnumValue<ManagedAppDataTransferLevel>("allowedInboundDataTransferSources", AllowedInboundDataTransferSources);
             writer.WriteIntValue("allowedOutboundClipboardSharingExceptionLength", AllowedOutboundClipboardSharingExceptionLength);
             writer.WriteEnumValue<ManagedAppClipboardSharingLevel>("allowedOutboundClipboardSharingLevel", AllowedOutboundClipboardSharingLevel);

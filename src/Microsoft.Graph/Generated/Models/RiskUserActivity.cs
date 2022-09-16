@@ -19,8 +19,8 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("detail", value); }
         }
         /// <summary>The eventTypes property</summary>
-        public List<string> EventTypes {
-            get { return BackingStore?.Get<List<string>>("eventTypes"); }
+        public List<RiskEventType?> EventTypes {
+            get { return BackingStore?.Get<List<RiskEventType?>>("eventTypes"); }
             set { BackingStore?.Set("eventTypes", value); }
         }
         /// <summary>The OdataType property</summary>
@@ -55,7 +55,7 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"detail", n => { Detail = n.GetEnumValue<RiskDetail>(); } },
-                {"eventTypes", n => { EventTypes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"eventTypes", n => { EventTypes = n.GetCollectionOfEnumValues<RiskEventType>()?.ToList(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"riskEventTypes", n => { RiskEventTypes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Beta.Models {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<RiskDetail>("detail", Detail);
-            writer.WriteCollectionOfPrimitiveValues<string>("eventTypes", EventTypes);
+            writer.WriteCollectionOfEnumValues<RiskEventType>("eventTypes", EventTypes);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteCollectionOfPrimitiveValues<string>("riskEventTypes", RiskEventTypes);
             writer.WriteAdditionalData(AdditionalData);

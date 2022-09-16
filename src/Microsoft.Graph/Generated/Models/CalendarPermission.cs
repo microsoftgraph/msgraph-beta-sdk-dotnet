@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class CalendarPermission : Entity, IParsable {
         /// <summary>List of allowed sharing or delegating permission levels for the calendar. Possible values are: none, freeBusyRead, limitedRead, read, write, delegateWithoutPrivateEventAccess, delegateWithPrivateEventAccess, custom.</summary>
-        public List<string> AllowedRoles {
-            get { return BackingStore?.Get<List<string>>("allowedRoles"); }
+        public List<CalendarRoleType?> AllowedRoles {
+            get { return BackingStore?.Get<List<CalendarRoleType?>>("allowedRoles"); }
             set { BackingStore?.Set("allowedRoles", value); }
         }
         /// <summary>Represents a sharee or delegate who has access to the calendar. For the &apos;My Organization&apos; sharee, the address property is null. Read-only.</summary>
@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"allowedRoles", n => { AllowedRoles = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"allowedRoles", n => { AllowedRoles = n.GetCollectionOfEnumValues<CalendarRoleType>()?.ToList(); } },
                 {"emailAddress", n => { EmailAddress = n.GetObjectValue<Microsoft.Graph.Beta.Models.EmailAddress>(Microsoft.Graph.Beta.Models.EmailAddress.CreateFromDiscriminatorValue); } },
                 {"isInsideOrganization", n => { IsInsideOrganization = n.GetBoolValue(); } },
                 {"isRemovable", n => { IsRemovable = n.GetBoolValue(); } },
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.Models {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfPrimitiveValues<string>("allowedRoles", AllowedRoles);
+            writer.WriteCollectionOfEnumValues<CalendarRoleType>("allowedRoles", AllowedRoles);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.EmailAddress>("emailAddress", EmailAddress);
             writer.WriteBoolValue("isInsideOrganization", IsInsideOrganization);
             writer.WriteBoolValue("isRemovable", IsRemovable);

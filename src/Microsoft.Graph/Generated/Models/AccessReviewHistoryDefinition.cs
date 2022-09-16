@@ -17,8 +17,8 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Determines which review decisions will be included in the fetched review history data if specified. Optional on create. All decisions will be included by default if no decisions are provided on create. Possible values are: approve, deny, dontKnow, notReviewed, and notNotified.</summary>
-        public List<string> Decisions {
-            get { return BackingStore?.Get<List<string>>("decisions"); }
+        public List<AccessReviewHistoryDecisionFilter?> Decisions {
+            get { return BackingStore?.Get<List<AccessReviewHistoryDecisionFilter?>>("decisions"); }
             set { BackingStore?.Set("decisions", value); }
         }
         /// <summary>Name for the access review history data collection. Required.</summary>
@@ -87,7 +87,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"createdBy", n => { CreatedBy = n.GetObjectValue<UserIdentity>(UserIdentity.CreateFromDiscriminatorValue); } },
                 {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"decisions", n => { Decisions = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"decisions", n => { Decisions = n.GetCollectionOfEnumValues<AccessReviewHistoryDecisionFilter>()?.ToList(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"downloadUri", n => { DownloadUri = n.GetStringValue(); } },
                 {"fulfilledDateTime", n => { FulfilledDateTime = n.GetDateTimeOffsetValue(); } },
@@ -108,7 +108,7 @@ namespace Microsoft.Graph.Beta.Models {
             base.Serialize(writer);
             writer.WriteObjectValue<UserIdentity>("createdBy", CreatedBy);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
-            writer.WriteCollectionOfPrimitiveValues<string>("decisions", Decisions);
+            writer.WriteCollectionOfEnumValues<AccessReviewHistoryDecisionFilter>("decisions", Decisions);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("downloadUri", DownloadUri);
             writer.WriteDateTimeOffsetValue("fulfilledDateTime", FulfilledDateTime);

@@ -1,3 +1,4 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions.Store;
 using System;
@@ -15,8 +16,8 @@ namespace Microsoft.Graph.Beta.Me.Calendar.AllowedCalendarSharingRolesWithUser {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The value property</summary>
-        public List<string> Value {
-            get { return BackingStore?.Get<List<string>>("value"); }
+        public List<CalendarRoleType?> Value {
+            get { return BackingStore?.Get<List<CalendarRoleType?>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
         /// <summary>
@@ -39,7 +40,7 @@ namespace Microsoft.Graph.Beta.Me.Calendar.AllowedCalendarSharingRolesWithUser {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"value", n => { Value = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"value", n => { Value = n.GetCollectionOfEnumValues<CalendarRoleType>()?.ToList(); } },
             };
         }
         /// <summary>
@@ -48,7 +49,7 @@ namespace Microsoft.Graph.Beta.Me.Calendar.AllowedCalendarSharingRolesWithUser {
         /// </summary>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfPrimitiveValues<string>("value", Value);
+            writer.WriteCollectionOfEnumValues<CalendarRoleType>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

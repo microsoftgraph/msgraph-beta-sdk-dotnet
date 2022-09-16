@@ -24,8 +24,8 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("clientApplications", value); }
         }
         /// <summary>Client application types included in the policy. Possible values are: all, browser, mobileAppsAndDesktopClients, exchangeActiveSync, easSupported, other. Required.</summary>
-        public List<string> ClientAppTypes {
-            get { return BackingStore?.Get<List<string>>("clientAppTypes"); }
+        public List<ConditionalAccessClientApp?> ClientAppTypes {
+            get { return BackingStore?.Get<List<ConditionalAccessClientApp?>>("clientAppTypes"); }
             set { BackingStore?.Set("clientAppTypes", value); }
         }
         /// <summary>Devices in the policy.</summary>
@@ -54,18 +54,18 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("platforms", value); }
         }
         /// <summary>Service principal risk levels included in the policy. Possible values are: low, medium, high, none, unknownFutureValue.</summary>
-        public List<string> ServicePrincipalRiskLevels {
-            get { return BackingStore?.Get<List<string>>("servicePrincipalRiskLevels"); }
+        public List<RiskLevel?> ServicePrincipalRiskLevels {
+            get { return BackingStore?.Get<List<RiskLevel?>>("servicePrincipalRiskLevels"); }
             set { BackingStore?.Set("servicePrincipalRiskLevels", value); }
         }
         /// <summary>Sign-in risk levels included in the policy. Possible values are: low, medium, high, hidden, none, unknownFutureValue. Required.</summary>
-        public List<string> SignInRiskLevels {
-            get { return BackingStore?.Get<List<string>>("signInRiskLevels"); }
+        public List<RiskLevel?> SignInRiskLevels {
+            get { return BackingStore?.Get<List<RiskLevel?>>("signInRiskLevels"); }
             set { BackingStore?.Set("signInRiskLevels", value); }
         }
         /// <summary>User risk levels included in the policy. Possible values are: low, medium, high, hidden, none, unknownFutureValue. Required.</summary>
-        public List<string> UserRiskLevels {
-            get { return BackingStore?.Get<List<string>>("userRiskLevels"); }
+        public List<RiskLevel?> UserRiskLevels {
+            get { return BackingStore?.Get<List<RiskLevel?>>("userRiskLevels"); }
             set { BackingStore?.Set("userRiskLevels", value); }
         }
         /// <summary>Users, groups, and roles included in and excluded from the policy. Either users or clientApplications is required.</summary>
@@ -96,15 +96,15 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"applications", n => { Applications = n.GetObjectValue<ConditionalAccessApplications>(ConditionalAccessApplications.CreateFromDiscriminatorValue); } },
                 {"clientApplications", n => { ClientApplications = n.GetObjectValue<ConditionalAccessClientApplications>(ConditionalAccessClientApplications.CreateFromDiscriminatorValue); } },
-                {"clientAppTypes", n => { ClientAppTypes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"clientAppTypes", n => { ClientAppTypes = n.GetCollectionOfEnumValues<ConditionalAccessClientApp>()?.ToList(); } },
                 {"devices", n => { Devices = n.GetObjectValue<ConditionalAccessDevices>(ConditionalAccessDevices.CreateFromDiscriminatorValue); } },
                 {"deviceStates", n => { DeviceStates = n.GetObjectValue<ConditionalAccessDeviceStates>(ConditionalAccessDeviceStates.CreateFromDiscriminatorValue); } },
                 {"locations", n => { Locations = n.GetObjectValue<ConditionalAccessLocations>(ConditionalAccessLocations.CreateFromDiscriminatorValue); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"platforms", n => { Platforms = n.GetObjectValue<ConditionalAccessPlatforms>(ConditionalAccessPlatforms.CreateFromDiscriminatorValue); } },
-                {"servicePrincipalRiskLevels", n => { ServicePrincipalRiskLevels = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"signInRiskLevels", n => { SignInRiskLevels = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"userRiskLevels", n => { UserRiskLevels = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"servicePrincipalRiskLevels", n => { ServicePrincipalRiskLevels = n.GetCollectionOfEnumValues<RiskLevel>()?.ToList(); } },
+                {"signInRiskLevels", n => { SignInRiskLevels = n.GetCollectionOfEnumValues<RiskLevel>()?.ToList(); } },
+                {"userRiskLevels", n => { UserRiskLevels = n.GetCollectionOfEnumValues<RiskLevel>()?.ToList(); } },
                 {"users", n => { Users = n.GetObjectValue<ConditionalAccessUsers>(ConditionalAccessUsers.CreateFromDiscriminatorValue); } },
             };
         }
@@ -116,15 +116,15 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<ConditionalAccessApplications>("applications", Applications);
             writer.WriteObjectValue<ConditionalAccessClientApplications>("clientApplications", ClientApplications);
-            writer.WriteCollectionOfPrimitiveValues<string>("clientAppTypes", ClientAppTypes);
+            writer.WriteCollectionOfEnumValues<ConditionalAccessClientApp>("clientAppTypes", ClientAppTypes);
             writer.WriteObjectValue<ConditionalAccessDevices>("devices", Devices);
             writer.WriteObjectValue<ConditionalAccessDeviceStates>("deviceStates", DeviceStates);
             writer.WriteObjectValue<ConditionalAccessLocations>("locations", Locations);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteObjectValue<ConditionalAccessPlatforms>("platforms", Platforms);
-            writer.WriteCollectionOfPrimitiveValues<string>("servicePrincipalRiskLevels", ServicePrincipalRiskLevels);
-            writer.WriteCollectionOfPrimitiveValues<string>("signInRiskLevels", SignInRiskLevels);
-            writer.WriteCollectionOfPrimitiveValues<string>("userRiskLevels", UserRiskLevels);
+            writer.WriteCollectionOfEnumValues<RiskLevel>("servicePrincipalRiskLevels", ServicePrincipalRiskLevels);
+            writer.WriteCollectionOfEnumValues<RiskLevel>("signInRiskLevels", SignInRiskLevels);
+            writer.WriteCollectionOfEnumValues<RiskLevel>("userRiskLevels", UserRiskLevels);
             writer.WriteObjectValue<ConditionalAccessUsers>("users", Users);
             writer.WriteAdditionalData(AdditionalData);
         }

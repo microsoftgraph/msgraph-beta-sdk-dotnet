@@ -31,8 +31,8 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("requiresAzureAd", value); }
         }
         /// <summary>List of Windows SKUs that the setting is applicable for</summary>
-        public List<string> WindowsSkus {
-            get { return BackingStore?.Get<List<string>>("windowsSkus"); }
+        public List<DeviceManagementConfigurationWindowsSkus?> WindowsSkus {
+            get { return BackingStore?.Get<List<DeviceManagementConfigurationWindowsSkus?>>("windowsSkus"); }
             set { BackingStore?.Set("windowsSkus", value); }
         }
         /// <summary>
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"minimumSupportedVersion", n => { MinimumSupportedVersion = n.GetStringValue(); } },
                 {"requiredAzureAdTrustType", n => { RequiredAzureAdTrustType = n.GetEnumValue<DeviceManagementConfigurationAzureAdTrustType>(); } },
                 {"requiresAzureAd", n => { RequiresAzureAd = n.GetBoolValue(); } },
-                {"windowsSkus", n => { WindowsSkus = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"windowsSkus", n => { WindowsSkus = n.GetCollectionOfEnumValues<DeviceManagementConfigurationWindowsSkus>()?.ToList(); } },
             };
         }
         /// <summary>
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("minimumSupportedVersion", MinimumSupportedVersion);
             writer.WriteEnumValue<DeviceManagementConfigurationAzureAdTrustType>("requiredAzureAdTrustType", RequiredAzureAdTrustType);
             writer.WriteBoolValue("requiresAzureAd", RequiresAzureAd);
-            writer.WriteCollectionOfPrimitiveValues<string>("windowsSkus", WindowsSkus);
+            writer.WriteCollectionOfEnumValues<DeviceManagementConfigurationWindowsSkus>("windowsSkus", WindowsSkus);
         }
     }
 }

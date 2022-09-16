@@ -7,8 +7,8 @@ namespace Microsoft.Graph.Beta.Models {
     /// <summary>Provides operations to manage the commsApplication singleton.</summary>
     public class Call : Entity, IParsable {
         /// <summary>The list of active modalities. Possible values are: unknown, audio, video, videoBasedScreenSharing, data. Read-only.</summary>
-        public List<string> ActiveModalities {
-            get { return BackingStore?.Get<List<string>>("activeModalities"); }
+        public List<Modality?> ActiveModalities {
+            get { return BackingStore?.Get<List<Modality?>>("activeModalities"); }
             set { BackingStore?.Set("activeModalities", value); }
         }
         /// <summary>The participant that answered the call. Read-only.</summary>
@@ -97,8 +97,8 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("participants", value); }
         }
         /// <summary>The requestedModalities property</summary>
-        public List<string> RequestedModalities {
-            get { return BackingStore?.Get<List<string>>("requestedModalities"); }
+        public List<Modality?> RequestedModalities {
+            get { return BackingStore?.Get<List<Modality?>>("requestedModalities"); }
             set { BackingStore?.Set("requestedModalities", value); }
         }
         /// <summary>The resultInfo property</summary>
@@ -112,8 +112,8 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("ringingTimeoutInSeconds", value); }
         }
         /// <summary>The routingPolicies property</summary>
-        public List<string> RoutingPolicies {
-            get { return BackingStore?.Get<List<string>>("routingPolicies"); }
+        public List<RoutingPolicy?> RoutingPolicies {
+            get { return BackingStore?.Get<List<RoutingPolicy?>>("routingPolicies"); }
             set { BackingStore?.Set("routingPolicies", value); }
         }
         /// <summary>The source property</summary>
@@ -175,7 +175,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"activeModalities", n => { ActiveModalities = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"activeModalities", n => { ActiveModalities = n.GetCollectionOfEnumValues<Modality>()?.ToList(); } },
                 {"answeredBy", n => { AnsweredBy = n.GetObjectValue<ParticipantInfo>(ParticipantInfo.CreateFromDiscriminatorValue); } },
                 {"audioRoutingGroups", n => { AudioRoutingGroups = n.GetCollectionOfObjectValues<AudioRoutingGroup>(AudioRoutingGroup.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"callbackUri", n => { CallbackUri = n.GetStringValue(); } },
@@ -193,10 +193,10 @@ namespace Microsoft.Graph.Beta.Models {
                 {"myParticipantId", n => { MyParticipantId = n.GetStringValue(); } },
                 {"operations", n => { Operations = n.GetCollectionOfObjectValues<CommsOperation>(CommsOperation.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"participants", n => { Participants = n.GetCollectionOfObjectValues<Participant>(Participant.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"requestedModalities", n => { RequestedModalities = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"requestedModalities", n => { RequestedModalities = n.GetCollectionOfEnumValues<Modality>()?.ToList(); } },
                 {"resultInfo", n => { ResultInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.ResultInfo>(Microsoft.Graph.Beta.Models.ResultInfo.CreateFromDiscriminatorValue); } },
                 {"ringingTimeoutInSeconds", n => { RingingTimeoutInSeconds = n.GetIntValue(); } },
-                {"routingPolicies", n => { RoutingPolicies = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"routingPolicies", n => { RoutingPolicies = n.GetCollectionOfEnumValues<RoutingPolicy>()?.ToList(); } },
                 {"source", n => { Source = n.GetObjectValue<ParticipantInfo>(ParticipantInfo.CreateFromDiscriminatorValue); } },
                 {"state", n => { State = n.GetEnumValue<CallState>(); } },
                 {"subject", n => { Subject = n.GetStringValue(); } },
@@ -214,7 +214,7 @@ namespace Microsoft.Graph.Beta.Models {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfPrimitiveValues<string>("activeModalities", ActiveModalities);
+            writer.WriteCollectionOfEnumValues<Modality>("activeModalities", ActiveModalities);
             writer.WriteObjectValue<ParticipantInfo>("answeredBy", AnsweredBy);
             writer.WriteCollectionOfObjectValues<AudioRoutingGroup>("audioRoutingGroups", AudioRoutingGroups);
             writer.WriteStringValue("callbackUri", CallbackUri);
@@ -232,10 +232,10 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("myParticipantId", MyParticipantId);
             writer.WriteCollectionOfObjectValues<CommsOperation>("operations", Operations);
             writer.WriteCollectionOfObjectValues<Participant>("participants", Participants);
-            writer.WriteCollectionOfPrimitiveValues<string>("requestedModalities", RequestedModalities);
+            writer.WriteCollectionOfEnumValues<Modality>("requestedModalities", RequestedModalities);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ResultInfo>("resultInfo", ResultInfo);
             writer.WriteIntValue("ringingTimeoutInSeconds", RingingTimeoutInSeconds);
-            writer.WriteCollectionOfPrimitiveValues<string>("routingPolicies", RoutingPolicies);
+            writer.WriteCollectionOfEnumValues<RoutingPolicy>("routingPolicies", RoutingPolicies);
             writer.WriteObjectValue<ParticipantInfo>("source", Source);
             writer.WriteEnumValue<CallState>("state", State);
             writer.WriteStringValue("subject", Subject);

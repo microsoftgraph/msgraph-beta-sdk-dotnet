@@ -58,8 +58,8 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("deviceType", value); }
         }
         /// <summary>Zero or more reasons an app registration is flagged. E.g. app running on rooted device</summary>
-        public List<string> FlaggedReasons {
-            get { return BackingStore?.Get<List<string>>("flaggedReasons"); }
+        public List<ManagedAppFlaggedReason?> FlaggedReasons {
+            get { return BackingStore?.Get<List<ManagedAppFlaggedReason?>>("flaggedReasons"); }
             set { BackingStore?.Set("flaggedReasons", value); }
         }
         /// <summary>Zero or more policies admin intended for the app as of now.</summary>
@@ -136,7 +136,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"deviceName", n => { DeviceName = n.GetStringValue(); } },
                 {"deviceTag", n => { DeviceTag = n.GetStringValue(); } },
                 {"deviceType", n => { DeviceType = n.GetStringValue(); } },
-                {"flaggedReasons", n => { FlaggedReasons = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"flaggedReasons", n => { FlaggedReasons = n.GetCollectionOfEnumValues<ManagedAppFlaggedReason>()?.ToList(); } },
                 {"intendedPolicies", n => { IntendedPolicies = n.GetCollectionOfObjectValues<ManagedAppPolicy>(ManagedAppPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"lastSyncDateTime", n => { LastSyncDateTime = n.GetDateTimeOffsetValue(); } },
                 {"managedDeviceId", n => { ManagedDeviceId = n.GetStringValue(); } },
@@ -164,7 +164,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("deviceName", DeviceName);
             writer.WriteStringValue("deviceTag", DeviceTag);
             writer.WriteStringValue("deviceType", DeviceType);
-            writer.WriteCollectionOfPrimitiveValues<string>("flaggedReasons", FlaggedReasons);
+            writer.WriteCollectionOfEnumValues<ManagedAppFlaggedReason>("flaggedReasons", FlaggedReasons);
             writer.WriteCollectionOfObjectValues<ManagedAppPolicy>("intendedPolicies", IntendedPolicies);
             writer.WriteDateTimeOffsetValue("lastSyncDateTime", LastSyncDateTime);
             writer.WriteStringValue("managedDeviceId", ManagedDeviceId);

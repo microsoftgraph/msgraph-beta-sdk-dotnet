@@ -35,8 +35,8 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("remediationStatusDetails", value); }
         }
         /// <summary>The role/s that an evidence entity represents in an alert, e.g., an IP address that is associated with an attacker will have the evidence role &apos;Attacker&apos;.</summary>
-        public List<string> Roles {
-            get { return BackingStore?.Get<List<string>>("roles"); }
+        public List<EvidenceRole?> Roles {
+            get { return BackingStore?.Get<List<EvidenceRole?>>("roles"); }
             set { BackingStore?.Set("roles", value); }
         }
         /// <summary>Array of custom tags associated with an evidence instance, for example to denote a group of devices, high value assets, etc.</summary>
@@ -91,7 +91,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"remediationStatus", n => { RemediationStatus = n.GetEnumValue<EvidenceRemediationStatus>(); } },
                 {"remediationStatusDetails", n => { RemediationStatusDetails = n.GetStringValue(); } },
-                {"roles", n => { Roles = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"roles", n => { Roles = n.GetCollectionOfEnumValues<EvidenceRole>()?.ToList(); } },
                 {"tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"verdict", n => { Verdict = n.GetEnumValue<EvidenceVerdict>(); } },
             };
@@ -106,7 +106,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteEnumValue<EvidenceRemediationStatus>("remediationStatus", RemediationStatus);
             writer.WriteStringValue("remediationStatusDetails", RemediationStatusDetails);
-            writer.WriteCollectionOfPrimitiveValues<string>("roles", Roles);
+            writer.WriteCollectionOfEnumValues<EvidenceRole>("roles", Roles);
             writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
             writer.WriteEnumValue<EvidenceVerdict>("verdict", Verdict);
             writer.WriteAdditionalData(AdditionalData);

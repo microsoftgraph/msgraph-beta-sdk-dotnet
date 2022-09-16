@@ -24,8 +24,8 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("description", value); }
         }
         /// <summary>Additional details for print job state. Valid values are described in the following table. Read-only.</summary>
-        public List<string> Details {
-            get { return BackingStore?.Get<List<string>>("details"); }
+        public List<PrintJobStateDetail?> Details {
+            get { return BackingStore?.Get<List<PrintJobStateDetail?>>("details"); }
             set { BackingStore?.Set("details", value); }
         }
         /// <summary>True if the job was acknowledged by a printer; false otherwise. Read-only.</summary>
@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"acquiredByPrinter", n => { AcquiredByPrinter = n.GetBoolValue(); } },
                 {"description", n => { Description = n.GetStringValue(); } },
-                {"details", n => { Details = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"details", n => { Details = n.GetCollectionOfEnumValues<PrintJobStateDetail>()?.ToList(); } },
                 {"isAcquiredByPrinter", n => { IsAcquiredByPrinter = n.GetBoolValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"processingState", n => { ProcessingState = n.GetEnumValue<PrintJobProcessingState>(); } },
@@ -92,7 +92,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("acquiredByPrinter", AcquiredByPrinter);
             writer.WriteStringValue("description", Description);
-            writer.WriteCollectionOfPrimitiveValues<string>("details", Details);
+            writer.WriteCollectionOfEnumValues<PrintJobStateDetail>("details", Details);
             writer.WriteBoolValue("isAcquiredByPrinter", IsAcquiredByPrinter);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteEnumValue<PrintJobProcessingState>("processingState", ProcessingState);

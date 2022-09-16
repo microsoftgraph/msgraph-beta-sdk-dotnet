@@ -6,8 +6,8 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class AuthenticationStrengthPolicy : Entity, IParsable {
         /// <summary>The allowedCombinations property</summary>
-        public List<string> AllowedCombinations {
-            get { return BackingStore?.Get<List<string>>("allowedCombinations"); }
+        public List<AuthenticationMethodModes?> AllowedCombinations {
+            get { return BackingStore?.Get<List<AuthenticationMethodModes?>>("allowedCombinations"); }
             set { BackingStore?.Set("allowedCombinations", value); }
         }
         /// <summary>The combinationConfigurations property</summary>
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"allowedCombinations", n => { AllowedCombinations = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"allowedCombinations", n => { AllowedCombinations = n.GetCollectionOfEnumValues<AuthenticationMethodModes>()?.ToList(); } },
                 {"combinationConfigurations", n => { CombinationConfigurations = n.GetCollectionOfObjectValues<AuthenticationCombinationConfiguration>(AuthenticationCombinationConfiguration.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"description", n => { Description = n.GetStringValue(); } },
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.Models {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfPrimitiveValues<string>("allowedCombinations", AllowedCombinations);
+            writer.WriteCollectionOfEnumValues<AuthenticationMethodModes>("allowedCombinations", AllowedCombinations);
             writer.WriteCollectionOfObjectValues<AuthenticationCombinationConfiguration>("combinationConfigurations", CombinationConfigurations);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("description", Description);

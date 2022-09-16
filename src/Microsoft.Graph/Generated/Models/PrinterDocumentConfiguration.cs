@@ -49,8 +49,8 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("feedOrientation", value); }
         }
         /// <summary>The finishings property</summary>
-        public List<string> Finishings {
-            get { return BackingStore?.Get<List<string>>("finishings"); }
+        public List<PrintFinishing?> Finishings {
+            get { return BackingStore?.Get<List<PrintFinishing?>>("finishings"); }
             set { BackingStore?.Set("finishings", value); }
         }
         /// <summary>The fitPdfToPage property</summary>
@@ -146,7 +146,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"duplexMode", n => { DuplexMode = n.GetEnumValue<PrintDuplexMode>(); } },
                 {"feedDirection", n => { FeedDirection = n.GetEnumValue<PrinterFeedDirection>(); } },
                 {"feedOrientation", n => { FeedOrientation = n.GetEnumValue<PrinterFeedOrientation>(); } },
-                {"finishings", n => { Finishings = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"finishings", n => { Finishings = n.GetCollectionOfEnumValues<PrintFinishing>()?.ToList(); } },
                 {"fitPdfToPage", n => { FitPdfToPage = n.GetBoolValue(); } },
                 {"inputBin", n => { InputBin = n.GetStringValue(); } },
                 {"margin", n => { Margin = n.GetObjectValue<PrintMargin>(PrintMargin.CreateFromDiscriminatorValue); } },
@@ -175,7 +175,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteEnumValue<PrintDuplexMode>("duplexMode", DuplexMode);
             writer.WriteEnumValue<PrinterFeedDirection>("feedDirection", FeedDirection);
             writer.WriteEnumValue<PrinterFeedOrientation>("feedOrientation", FeedOrientation);
-            writer.WriteCollectionOfPrimitiveValues<string>("finishings", Finishings);
+            writer.WriteCollectionOfEnumValues<PrintFinishing>("finishings", Finishings);
             writer.WriteBoolValue("fitPdfToPage", FitPdfToPage);
             writer.WriteStringValue("inputBin", InputBin);
             writer.WriteObjectValue<PrintMargin>("margin", Margin);

@@ -24,8 +24,8 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("conditionalAccessReferences", value); }
         }
         /// <summary>The currentCombinations property</summary>
-        public List<string> CurrentCombinations {
-            get { return BackingStore?.Get<List<string>>("currentCombinations"); }
+        public List<AuthenticationMethodModes?> CurrentCombinations {
+            get { return BackingStore?.Get<List<AuthenticationMethodModes?>>("currentCombinations"); }
             set { BackingStore?.Set("currentCombinations", value); }
         }
         /// <summary>The OdataType property</summary>
@@ -34,8 +34,8 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
         /// <summary>The previousCombinations property</summary>
-        public List<string> PreviousCombinations {
-            get { return BackingStore?.Get<List<string>>("previousCombinations"); }
+        public List<AuthenticationMethodModes?> PreviousCombinations {
+            get { return BackingStore?.Get<List<AuthenticationMethodModes?>>("previousCombinations"); }
             set { BackingStore?.Set("previousCombinations", value); }
         }
         /// <summary>
@@ -61,9 +61,9 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"additionalInformation", n => { AdditionalInformation = n.GetStringValue(); } },
                 {"conditionalAccessReferences", n => { ConditionalAccessReferences = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"currentCombinations", n => { CurrentCombinations = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"currentCombinations", n => { CurrentCombinations = n.GetCollectionOfEnumValues<AuthenticationMethodModes>()?.ToList(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"previousCombinations", n => { PreviousCombinations = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"previousCombinations", n => { PreviousCombinations = n.GetCollectionOfEnumValues<AuthenticationMethodModes>()?.ToList(); } },
             };
         }
         /// <summary>
@@ -74,9 +74,9 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("additionalInformation", AdditionalInformation);
             writer.WriteCollectionOfPrimitiveValues<string>("conditionalAccessReferences", ConditionalAccessReferences);
-            writer.WriteCollectionOfPrimitiveValues<string>("currentCombinations", CurrentCombinations);
+            writer.WriteCollectionOfEnumValues<AuthenticationMethodModes>("currentCombinations", CurrentCombinations);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteCollectionOfPrimitiveValues<string>("previousCombinations", PreviousCombinations);
+            writer.WriteCollectionOfEnumValues<AuthenticationMethodModes>("previousCombinations", PreviousCombinations);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

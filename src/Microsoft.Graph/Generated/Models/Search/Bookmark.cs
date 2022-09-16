@@ -41,8 +41,8 @@ namespace Microsoft.Graph.Beta.Models.Search {
             set { BackingStore?.Set("languageTags", value); }
         }
         /// <summary>List of devices and operating systems able to view this bookmark. Possible values are: unknown, android, androidForWork, ios, macOS, windowsPhone81, windowsPhone81AndLater, windows10AndLater, androidWorkProfile, androidASOP.</summary>
-        public List<string> Platforms {
-            get { return BackingStore?.Get<List<string>>("platforms"); }
+        public List<DevicePlatformType?> Platforms {
+            get { return BackingStore?.Get<List<DevicePlatformType?>>("platforms"); }
             set { BackingStore?.Set("platforms", value); }
         }
         /// <summary>List of Power Apps associated with this bookmark. If users add existing Power Apps to a bookmark, they can complete tasks, such as to enter vacation time or to report expenses on the search results page.</summary>
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Beta.Models.Search {
                 {"isSuggested", n => { IsSuggested = n.GetBoolValue(); } },
                 {"keywords", n => { Keywords = n.GetObjectValue<AnswerKeyword>(AnswerKeyword.CreateFromDiscriminatorValue); } },
                 {"languageTags", n => { LanguageTags = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"platforms", n => { Platforms = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"platforms", n => { Platforms = n.GetCollectionOfEnumValues<DevicePlatformType>()?.ToList(); } },
                 {"powerAppIds", n => { PowerAppIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"state", n => { State = n.GetEnumValue<AnswerState>(); } },
                 {"targetedVariations", n => { TargetedVariations = n.GetCollectionOfObjectValues<AnswerVariant>(AnswerVariant.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -106,7 +106,7 @@ namespace Microsoft.Graph.Beta.Models.Search {
             writer.WriteBoolValue("isSuggested", IsSuggested);
             writer.WriteObjectValue<AnswerKeyword>("keywords", Keywords);
             writer.WriteCollectionOfPrimitiveValues<string>("languageTags", LanguageTags);
-            writer.WriteCollectionOfPrimitiveValues<string>("platforms", Platforms);
+            writer.WriteCollectionOfEnumValues<DevicePlatformType>("platforms", Platforms);
             writer.WriteCollectionOfPrimitiveValues<string>("powerAppIds", PowerAppIds);
             writer.WriteEnumValue<AnswerState>("state", State);
             writer.WriteCollectionOfObjectValues<AnswerVariant>("targetedVariations", TargetedVariations);

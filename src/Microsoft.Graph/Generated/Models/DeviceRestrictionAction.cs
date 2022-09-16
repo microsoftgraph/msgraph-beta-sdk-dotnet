@@ -16,8 +16,8 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("restrictionAction", value); }
         }
         /// <summary>The triggers property</summary>
-        public List<string> Triggers {
-            get { return BackingStore?.Get<List<string>>("triggers"); }
+        public List<RestrictionTrigger?> Triggers {
+            get { return BackingStore?.Get<List<RestrictionTrigger?>>("triggers"); }
             set { BackingStore?.Set("triggers", value); }
         }
         /// <summary>
@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"message", n => { Message = n.GetStringValue(); } },
                 {"restrictionAction", n => { RestrictionAction = n.GetEnumValue<RestrictionAction>(); } },
-                {"triggers", n => { Triggers = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"triggers", n => { Triggers = n.GetCollectionOfEnumValues<RestrictionTrigger>()?.ToList(); } },
             };
         }
         /// <summary>
@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.Models {
             base.Serialize(writer);
             writer.WriteStringValue("message", Message);
             writer.WriteEnumValue<RestrictionAction>("restrictionAction", RestrictionAction);
-            writer.WriteCollectionOfPrimitiveValues<string>("triggers", Triggers);
+            writer.WriteCollectionOfEnumValues<RestrictionTrigger>("triggers", Triggers);
         }
     }
 }

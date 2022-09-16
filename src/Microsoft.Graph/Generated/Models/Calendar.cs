@@ -6,8 +6,8 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class Calendar : Entity, IParsable {
         /// <summary>Represent the online meeting service providers that can be used to create online meetings in this calendar. Possible values are: unknown, skypeForBusiness, skypeForConsumer, teamsForBusiness.</summary>
-        public List<string> AllowedOnlineMeetingProviders {
-            get { return BackingStore?.Get<List<string>>("allowedOnlineMeetingProviders"); }
+        public List<OnlineMeetingProviderType?> AllowedOnlineMeetingProviders {
+            get { return BackingStore?.Get<List<OnlineMeetingProviderType?>>("allowedOnlineMeetingProviders"); }
             set { BackingStore?.Set("allowedOnlineMeetingProviders", value); }
         }
         /// <summary>The calendarGroup in which to create the calendar. If the user has never explicitly set a group for the calendar, this property is  null.</summary>
@@ -129,7 +129,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"allowedOnlineMeetingProviders", n => { AllowedOnlineMeetingProviders = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"allowedOnlineMeetingProviders", n => { AllowedOnlineMeetingProviders = n.GetCollectionOfEnumValues<OnlineMeetingProviderType>()?.ToList(); } },
                 {"calendarGroupId", n => { CalendarGroupId = n.GetStringValue(); } },
                 {"calendarPermissions", n => { CalendarPermissions = n.GetCollectionOfObjectValues<CalendarPermission>(CalendarPermission.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"calendarView", n => { CalendarView = n.GetCollectionOfObjectValues<Event>(Event.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -159,7 +159,7 @@ namespace Microsoft.Graph.Beta.Models {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfPrimitiveValues<string>("allowedOnlineMeetingProviders", AllowedOnlineMeetingProviders);
+            writer.WriteCollectionOfEnumValues<OnlineMeetingProviderType>("allowedOnlineMeetingProviders", AllowedOnlineMeetingProviders);
             writer.WriteStringValue("calendarGroupId", CalendarGroupId);
             writer.WriteCollectionOfObjectValues<CalendarPermission>("calendarPermissions", CalendarPermissions);
             writer.WriteCollectionOfObjectValues<Event>("calendarView", CalendarView);

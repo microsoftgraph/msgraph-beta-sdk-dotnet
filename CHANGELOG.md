@@ -11,6 +11,8 @@ and this project does NOT adhere to [Semantic Versioning](https://semver.org/spe
 
 ### Changed
 
+- Fixes incorrect types for collection types referencing enums - [Kiota #1846](https://github.com/microsoft/kiota/pull/1846)
+
 ## [5.11.0-preview] - 2022-09-13
 
 ### Changed
