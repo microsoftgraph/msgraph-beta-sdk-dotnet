@@ -18,7 +18,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type UserActivateServicePlanRequest.
     /// </summary>
-    [Obsolete("The activateServicePlan API will be deprecated and will stop returning data on Jun-30, 2022")]
+    [Obsolete("The activateServicePlan API will be deprecated and will stop returning data on Oct-15, 2022")]
     public partial class UserActivateServicePlanRequest : BaseRequest, IUserActivateServicePlanRequest
     {
         /// <summary>

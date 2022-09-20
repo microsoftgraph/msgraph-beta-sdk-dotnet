@@ -15,33 +15,20 @@ namespace Microsoft.Graph
     using System.Text.Json.Serialization;
 
     /// <summary>
-    /// The type IdentitySet.
+    /// The type AuthenticationEventHandlerResult.
     /// </summary>
-    [JsonConverter(typeof(DerivedTypeConverter<IdentitySet>))]
-    public partial class IdentitySet
+    [JsonConverter(typeof(DerivedTypeConverter<AuthenticationEventHandlerResult>))]
+    public partial class AuthenticationEventHandlerResult
     {
 
-        /// <summary>
-        /// Gets or sets application.
-        /// The Identity of the Application. This property is read-only.
-        /// </summary>
-        [JsonPropertyName("application")]
-        public Identity Application { get; set; }
-    
-        /// <summary>
-        /// Gets or sets device.
-        /// The Identity of the Device. This property is read-only.
-        /// </summary>
-        [JsonPropertyName("device")]
-        public Identity Device { get; set; }
-    
-        /// <summary>
-        /// Gets or sets user.
-        /// The Identity of the User. This property is read-only.
-        /// </summary>
-        [JsonPropertyName("user")]
-        public Identity User { get; set; }
-    
+        ///<summary>
+        /// The internal AuthenticationEventHandlerResult constructor
+        ///</summary>
+        protected internal AuthenticationEventHandlerResult()
+        {
+            // Don't allow initialization of abstract complex types
+        }
+
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>

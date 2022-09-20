@@ -43,6 +43,12 @@ namespace Microsoft.Graph
         public IEnumerable<AppliedConditionalAccessPolicy> AppliedConditionalAccessPolicies { get; set; }
     
         /// <summary>
+        /// Gets or sets applied event listeners.
+        /// </summary>
+        [JsonPropertyName("appliedEventListeners")]
+        public IEnumerable<AppliedAuthenticationEventListener> AppliedEventListeners { get; set; }
+    
+        /// <summary>
         /// Gets or sets authentication context class references.
         /// Contains a collection of values that represent the conditional access authentication contexts applied to the sign-in.
         /// </summary>
