@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Indicates whether caption is enabled for this Teams live event.</summary>
+        /// <summary>Indicates whether captions are enabled for this Teams live event.</summary>
         public bool? IsCaptionEnabled {
             get { return BackingStore?.Get<bool?>("isCaptionEnabled"); }
             set { BackingStore?.Set("isCaptionEnabled", value); }

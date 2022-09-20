@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the commsApplication singleton.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class AttendanceRecord : Entity, IParsable {
         /// <summary>List of time periods between joining and leaving a meeting.</summary>
         public List<AttendanceInterval> AttendanceIntervals {
@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("emailAddress"); }
             set { BackingStore?.Set("emailAddress", value); }
         }
-        /// <summary>Identity of the user associated with this atttendance record.</summary>
+        /// <summary>Identity of the user associated with this atttendance record. The specific type will be one of the following derived types of identity, depending on the type of the user: communicationsUserIdentity, azureCommunicationServicesUserIdentity.</summary>
         public Microsoft.Graph.Beta.Models.Identity Identity {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Identity>("identity"); }
             set { BackingStore?.Set("identity", value); }

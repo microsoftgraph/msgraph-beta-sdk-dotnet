@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Devices that are managed or pre-enrolled through Intune</summary>
     public class ManagedDevice : Entity, IParsable {
         /// <summary>Whether the device is Azure Active Directory registered. This property is read-only.</summary>
         public bool? AadRegistered {
@@ -463,7 +462,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("windowsRemediatedMalwareCount", value); }
         }
         /// <summary>
-        /// Instantiates a new managedDevice and sets the default values.
+        /// Instantiates a new ManagedDevice and sets the default values.
         /// </summary>
         public ManagedDevice() : base() {
             OdataType = "#microsoft.graph.managedDevice";

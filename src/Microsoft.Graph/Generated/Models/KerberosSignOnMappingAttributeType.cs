@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Casts the previous resource to application.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public enum KerberosSignOnMappingAttributeType {
         UserPrincipalName,
         OnPremisesUserPrincipalName,

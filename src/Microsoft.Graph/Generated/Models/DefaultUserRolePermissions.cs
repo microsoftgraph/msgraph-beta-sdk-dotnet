@@ -21,6 +21,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("allowedToCreateSecurityGroups"); }
             set { BackingStore?.Set("allowedToCreateSecurityGroups", value); }
         }
+        /// <summary>Indicates whether the registered owners of a device can read their own BitLocker recovery keys with default user role.</summary>
+        public bool? AllowedToReadBitlockerKeysForOwnedDevice {
+            get { return BackingStore?.Get<bool?>("allowedToReadBitlockerKeysForOwnedDevice"); }
+            set { BackingStore?.Set("allowedToReadBitlockerKeysForOwnedDevice", value); }
+        }
         /// <summary>Indicates whether the default user role can read other users.</summary>
         public bool? AllowedToReadOtherUsers {
             get { return BackingStore?.Get<bool?>("allowedToReadOtherUsers"); }
@@ -56,6 +61,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"allowedToCreateApps", n => { AllowedToCreateApps = n.GetBoolValue(); } },
                 {"allowedToCreateSecurityGroups", n => { AllowedToCreateSecurityGroups = n.GetBoolValue(); } },
+                {"allowedToReadBitlockerKeysForOwnedDevice", n => { AllowedToReadBitlockerKeysForOwnedDevice = n.GetBoolValue(); } },
                 {"allowedToReadOtherUsers", n => { AllowedToReadOtherUsers = n.GetBoolValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
@@ -68,6 +74,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("allowedToCreateApps", AllowedToCreateApps);
             writer.WriteBoolValue("allowedToCreateSecurityGroups", AllowedToCreateSecurityGroups);
+            writer.WriteBoolValue("allowedToReadBitlockerKeysForOwnedDevice", AllowedToReadBitlockerKeysForOwnedDevice);
             writer.WriteBoolValue("allowedToReadOtherUsers", AllowedToReadOtherUsers);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);

@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of bookingCurrency entities.</summary>
     public class BookingCurrency : Entity, IParsable {
         /// <summary>The currency symbol. For example, the currency symbol for the US dollar and for the Australian dollar is $.</summary>
         public string Symbol {
@@ -12,7 +11,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("symbol", value); }
         }
         /// <summary>
-        /// Instantiates a new bookingCurrency and sets the default values.
+        /// Instantiates a new BookingCurrency and sets the default values.
         /// </summary>
         public BookingCurrency() : base() {
             OdataType = "#microsoft.graph.bookingCurrency";

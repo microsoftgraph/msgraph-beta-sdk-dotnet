@@ -12,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("workflows", value); }
         }
         /// <summary>
-        /// Instantiates a new deletedItemContainer and sets the default values.
+        /// Instantiates a new DeletedItemContainer and sets the default values.
         /// </summary>
         public DeletedItemContainer() : base() {
             OdataType = "#microsoft.graph.deletedItemContainer";

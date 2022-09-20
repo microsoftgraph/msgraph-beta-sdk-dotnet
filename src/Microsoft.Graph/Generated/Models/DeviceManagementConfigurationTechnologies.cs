@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public enum DeviceManagementConfigurationTechnologies {
         /// <summary>Setting cannot be deployed through any channel</summary>
         None,

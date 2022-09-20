@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the dataClassificationService singleton.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public enum RestrictionAction {
         Warn,
         Audit,
