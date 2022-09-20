@@ -36,6 +36,13 @@ namespace Microsoft.Graph
         public bool? AllowedToCreateSecurityGroups { get; set; }
     
         /// <summary>
+        /// Gets or sets allowedToReadBitlockerKeysForOwnedDevice.
+        /// Indicates whether the registered owners of a device can read their own BitLocker recovery keys with default user role.
+        /// </summary>
+        [JsonPropertyName("allowedToReadBitlockerKeysForOwnedDevice")]
+        public bool? AllowedToReadBitlockerKeysForOwnedDevice { get; set; }
+    
+        /// <summary>
         /// Gets or sets allowedToReadOtherUsers.
         /// Indicates whether the default user role can read other users.
         /// </summary>

@@ -36,7 +36,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets identity.
-        /// Identity of the user associated with this atttendance record.
+        /// Identity of the user associated with this atttendance record. The specific type will be one of the following derived types of identity, depending on the type of the user: communicationsUserIdentity, azureCommunicationServicesUserIdentity.
         /// </summary>
         [JsonPropertyName("identity")]
         public Identity Identity { get; set; }

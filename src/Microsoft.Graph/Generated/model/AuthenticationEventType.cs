@@ -13,31 +13,26 @@ namespace Microsoft.Graph
     using System.Text.Json.Serialization;
 
     /// <summary>
-    /// The enum MeetingChatMode.
+    /// The enum AuthenticationEventType.
     /// </summary>
     [JsonConverter(typeof(JsonStringEnumConverter))]
-    public enum MeetingChatMode
+    public enum AuthenticationEventType
     {
     
         /// <summary>
-        /// Enabled
+        /// Token Issuance Start
         /// </summary>
-        Enabled = 0,
+        TokenIssuanceStart = 0,
 	
         /// <summary>
-        /// Disabled
+        /// Page Render Start
         /// </summary>
-        Disabled = 1,
-	
-        /// <summary>
-        /// Limited
-        /// </summary>
-        Limited = 2,
+        PageRenderStart = 1,
 	
         /// <summary>
         /// Unknown Future Value
         /// </summary>
-        UnknownFutureValue = 3,
+        UnknownFutureValue = 2,
 	
     }
 }

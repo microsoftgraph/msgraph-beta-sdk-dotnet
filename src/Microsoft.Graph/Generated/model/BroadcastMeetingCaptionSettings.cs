@@ -23,7 +23,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets isCaptionEnabled.
-        /// Indicates whether caption is enabled for this Teams live event.
+        /// Indicates whether captions are enabled for this Teams live event.
         /// </summary>
         [JsonPropertyName("isCaptionEnabled")]
         public bool? IsCaptionEnabled { get; set; }

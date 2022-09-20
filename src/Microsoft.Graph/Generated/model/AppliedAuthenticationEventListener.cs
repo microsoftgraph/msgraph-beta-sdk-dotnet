@@ -15,32 +15,29 @@ namespace Microsoft.Graph
     using System.Text.Json.Serialization;
 
     /// <summary>
-    /// The type IdentitySet.
+    /// The type AppliedAuthenticationEventListener.
     /// </summary>
-    [JsonConverter(typeof(DerivedTypeConverter<IdentitySet>))]
-    public partial class IdentitySet
+    [JsonConverter(typeof(DerivedTypeConverter<AppliedAuthenticationEventListener>))]
+    public partial class AppliedAuthenticationEventListener
     {
 
         /// <summary>
-        /// Gets or sets application.
-        /// The Identity of the Application. This property is read-only.
+        /// Gets or sets eventType.
         /// </summary>
-        [JsonPropertyName("application")]
-        public Identity Application { get; set; }
+        [JsonPropertyName("eventType")]
+        public AuthenticationEventType? EventType { get; set; }
     
         /// <summary>
-        /// Gets or sets device.
-        /// The Identity of the Device. This property is read-only.
+        /// Gets or sets executedListenerId.
         /// </summary>
-        [JsonPropertyName("device")]
-        public Identity Device { get; set; }
+        [JsonPropertyName("executedListenerId")]
+        public string ExecutedListenerId { get; set; }
     
         /// <summary>
-        /// Gets or sets user.
-        /// The Identity of the User. This property is read-only.
+        /// Gets or sets handlerResult.
         /// </summary>
-        [JsonPropertyName("user")]
-        public Identity User { get; set; }
+        [JsonPropertyName("handlerResult")]
+        public AuthenticationEventHandlerResult HandlerResult { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

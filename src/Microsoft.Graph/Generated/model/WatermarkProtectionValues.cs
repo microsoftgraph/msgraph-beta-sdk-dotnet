@@ -15,32 +15,23 @@ namespace Microsoft.Graph
     using System.Text.Json.Serialization;
 
     /// <summary>
-    /// The type IdentitySet.
+    /// The type WatermarkProtectionValues.
     /// </summary>
-    [JsonConverter(typeof(DerivedTypeConverter<IdentitySet>))]
-    public partial class IdentitySet
+    [JsonConverter(typeof(DerivedTypeConverter<WatermarkProtectionValues>))]
+    public partial class WatermarkProtectionValues
     {
 
         /// <summary>
-        /// Gets or sets application.
-        /// The Identity of the Application. This property is read-only.
+        /// Gets or sets isEnabledForContentSharing.
         /// </summary>
-        [JsonPropertyName("application")]
-        public Identity Application { get; set; }
+        [JsonPropertyName("isEnabledForContentSharing")]
+        public bool? IsEnabledForContentSharing { get; set; }
     
         /// <summary>
-        /// Gets or sets device.
-        /// The Identity of the Device. This property is read-only.
+        /// Gets or sets isEnabledForVideo.
         /// </summary>
-        [JsonPropertyName("device")]
-        public Identity Device { get; set; }
-    
-        /// <summary>
-        /// Gets or sets user.
-        /// The Identity of the User. This property is read-only.
-        /// </summary>
-        [JsonPropertyName("user")]
-        public Identity User { get; set; }
+        [JsonPropertyName("isEnabledForVideo")]
+        public bool? IsEnabledForVideo { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

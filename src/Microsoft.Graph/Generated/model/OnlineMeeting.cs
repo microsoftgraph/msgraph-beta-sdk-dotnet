@@ -43,13 +43,6 @@ namespace Microsoft.Graph
         public OnlineMeetingPresenters? AllowedPresenters { get; set; }
     
         /// <summary>
-        /// Gets or sets allow meeting chat.
-        /// Specifies the mode of meeting chat.
-        /// </summary>
-        [JsonPropertyName("allowMeetingChat")]
-        public MeetingChatMode? AllowMeetingChat { get; set; }
-    
-        /// <summary>
         /// Gets or sets allow teamwork reactions.
         /// Indicates if Teams reactions are enabled for the meeting.
         /// </summary>
