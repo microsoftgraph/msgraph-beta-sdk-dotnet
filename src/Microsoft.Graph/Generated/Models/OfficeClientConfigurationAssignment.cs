@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class OfficeClientConfigurationAssignment : Entity, IParsable {
         /// <summary>The target assignment defined by the admin.</summary>
         public OfficeConfigurationAssignmentTarget Target {
@@ -12,7 +11,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("target", value); }
         }
         /// <summary>
-        /// Instantiates a new officeClientConfigurationAssignment and sets the default values.
+        /// Instantiates a new OfficeClientConfigurationAssignment and sets the default values.
         /// </summary>
         public OfficeClientConfigurationAssignment() : base() {
             OdataType = "#microsoft.graph.officeClientConfigurationAssignment";

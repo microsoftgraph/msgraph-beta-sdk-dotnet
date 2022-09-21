@@ -10,16 +10,6 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<MicrosoftAuthenticatorAuthenticationMode?>("authenticationMode"); }
             set { BackingStore?.Set("authenticationMode", value); }
         }
-        /// <summary>The displayAppInformationRequiredState property</summary>
-        public AdvancedConfigState? DisplayAppInformationRequiredState {
-            get { return BackingStore?.Get<AdvancedConfigState?>("displayAppInformationRequiredState"); }
-            set { BackingStore?.Set("displayAppInformationRequiredState", value); }
-        }
-        /// <summary>The numberMatchingRequiredState property</summary>
-        public AdvancedConfigState? NumberMatchingRequiredState {
-            get { return BackingStore?.Get<AdvancedConfigState?>("numberMatchingRequiredState"); }
-            set { BackingStore?.Set("numberMatchingRequiredState", value); }
-        }
         /// <summary>
         /// Instantiates a new MicrosoftAuthenticatorAuthenticationMethodTarget and sets the default values.
         /// </summary>
@@ -40,8 +30,6 @@ namespace Microsoft.Graph.Beta.Models {
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"authenticationMode", n => { AuthenticationMode = n.GetEnumValue<MicrosoftAuthenticatorAuthenticationMode>(); } },
-                {"displayAppInformationRequiredState", n => { DisplayAppInformationRequiredState = n.GetEnumValue<AdvancedConfigState>(); } },
-                {"numberMatchingRequiredState", n => { NumberMatchingRequiredState = n.GetEnumValue<AdvancedConfigState>(); } },
             };
         }
         /// <summary>
@@ -52,8 +40,6 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteEnumValue<MicrosoftAuthenticatorAuthenticationMode>("authenticationMode", AuthenticationMode);
-            writer.WriteEnumValue<AdvancedConfigState>("displayAppInformationRequiredState", DisplayAppInformationRequiredState);
-            writer.WriteEnumValue<AdvancedConfigState>("numberMatchingRequiredState", NumberMatchingRequiredState);
         }
     }
 }

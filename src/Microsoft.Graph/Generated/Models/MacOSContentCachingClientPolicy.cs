@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public enum MacOSContentCachingClientPolicy {
         /// <summary>Defaults to clients in local network.</summary>
         NotConfigured,

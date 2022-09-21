@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class TaskReport : Entity, IParsable {
         /// <summary>The date time that the associated run completed. Value is null if the run has not completed.</summary>
         public DateTimeOffset? CompletedDateTime {
@@ -67,7 +66,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
             set { BackingStore?.Set("unprocessedUsersCount", value); }
         }
         /// <summary>
-        /// Instantiates a new taskReport and sets the default values.
+        /// Instantiates a new TaskReport and sets the default values.
         /// </summary>
         public TaskReport() : base() {
             OdataType = "#microsoft.graph.identityGovernance.taskReport";

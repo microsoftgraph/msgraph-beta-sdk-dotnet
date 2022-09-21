@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public enum DeviceScopeStatus {
         /// <summary>Indicates the device scope is not enabled and there are no calculations in progress.</summary>
         None,

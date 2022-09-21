@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class HostSecurityProfile : Entity, IParsable {
         /// <summary>The azureSubscriptionId property</summary>
         public string AzureSubscriptionId {
@@ -97,7 +96,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("vendorInformation", value); }
         }
         /// <summary>
-        /// Instantiates a new hostSecurityProfile and sets the default values.
+        /// Instantiates a new HostSecurityProfile and sets the default values.
         /// </summary>
         public HostSecurityProfile() : base() {
             OdataType = "#microsoft.graph.hostSecurityProfile";

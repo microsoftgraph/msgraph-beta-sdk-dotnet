@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("lists", value); }
         }
         /// <summary>
-        /// Instantiates a new tasks and sets the default values.
+        /// Instantiates a new Tasks and sets the default values.
         /// </summary>
         public Tasks() : base() {
             OdataType = "#microsoft.graph.tasks";

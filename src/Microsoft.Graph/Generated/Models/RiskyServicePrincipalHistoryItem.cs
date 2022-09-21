@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class RiskyServicePrincipalHistoryItem : RiskyServicePrincipal, IParsable {
         /// <summary>The activity related to service principal risk level change.</summary>
         public RiskServicePrincipalActivity Activity {

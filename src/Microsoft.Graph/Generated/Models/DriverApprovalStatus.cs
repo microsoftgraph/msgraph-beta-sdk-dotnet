@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public enum DriverApprovalStatus {
         /// <summary>This indicates a driver needs IT admin&apos;s review.</summary>
         NeedsReview,

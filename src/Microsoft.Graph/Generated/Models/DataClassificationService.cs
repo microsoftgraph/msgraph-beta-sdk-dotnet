@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the dataClassificationService singleton.</summary>
     public class DataClassificationService : Entity, IParsable {
         /// <summary>The classifyFileJobs property</summary>
         public List<JobResponseBase> ClassifyFileJobs {
@@ -52,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("sensitivityLabels", value); }
         }
         /// <summary>
-        /// Instantiates a new dataClassificationService and sets the default values.
+        /// Instantiates a new DataClassificationService and sets the default values.
         /// </summary>
         public DataClassificationService() : base() {
             OdataType = "#microsoft.graph.dataClassificationService";

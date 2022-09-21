@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class NamedLocation : Entity, IParsable {
         /// <summary>The Timestamp type represents creation date and time of the location using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.</summary>
         public DateTimeOffset? CreatedDateTime {
@@ -23,7 +22,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("modifiedDateTime", value); }
         }
         /// <summary>
-        /// Instantiates a new namedLocation and sets the default values.
+        /// Instantiates a new NamedLocation and sets the default values.
         /// </summary>
         public NamedLocation() : base() {
             OdataType = "#microsoft.graph.namedLocation";

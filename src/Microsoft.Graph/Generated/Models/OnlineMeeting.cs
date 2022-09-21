@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the commsApplication singleton.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class OnlineMeeting : Entity, IParsable {
         /// <summary>Indicates whether attendees can turn on their camera.</summary>
         public bool? AllowAttendeeToEnableCamera {
@@ -20,11 +20,6 @@ namespace Microsoft.Graph.Beta.Models {
         public OnlineMeetingPresenters? AllowedPresenters {
             get { return BackingStore?.Get<OnlineMeetingPresenters?>("allowedPresenters"); }
             set { BackingStore?.Set("allowedPresenters", value); }
-        }
-        /// <summary>Specifies the mode of meeting chat.</summary>
-        public MeetingChatMode? AllowMeetingChat {
-            get { return BackingStore?.Get<MeetingChatMode?>("allowMeetingChat"); }
-            set { BackingStore?.Set("allowMeetingChat", value); }
         }
         /// <summary>Indicates if Teams reactions are enabled for the meeting.</summary>
         public bool? AllowTeamworkReactions {
@@ -193,7 +188,6 @@ namespace Microsoft.Graph.Beta.Models {
                 {"allowAttendeeToEnableCamera", n => { AllowAttendeeToEnableCamera = n.GetBoolValue(); } },
                 {"allowAttendeeToEnableMic", n => { AllowAttendeeToEnableMic = n.GetBoolValue(); } },
                 {"allowedPresenters", n => { AllowedPresenters = n.GetEnumValue<OnlineMeetingPresenters>(); } },
-                {"allowMeetingChat", n => { AllowMeetingChat = n.GetEnumValue<MeetingChatMode>(); } },
                 {"allowTeamworkReactions", n => { AllowTeamworkReactions = n.GetBoolValue(); } },
                 {"alternativeRecording", n => { AlternativeRecording = n.GetByteArrayValue(); } },
                 {"anonymizeIdentityForRoles", n => { AnonymizeIdentityForRoles = n.GetCollectionOfEnumValues<OnlineMeetingRole>()?.ToList(); } },
@@ -235,7 +229,6 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteBoolValue("allowAttendeeToEnableCamera", AllowAttendeeToEnableCamera);
             writer.WriteBoolValue("allowAttendeeToEnableMic", AllowAttendeeToEnableMic);
             writer.WriteEnumValue<OnlineMeetingPresenters>("allowedPresenters", AllowedPresenters);
-            writer.WriteEnumValue<MeetingChatMode>("allowMeetingChat", AllowMeetingChat);
             writer.WriteBoolValue("allowTeamworkReactions", AllowTeamworkReactions);
             writer.WriteByteArrayValue("alternativeRecording", AlternativeRecording);
             writer.WriteCollectionOfEnumValues<OnlineMeetingRole>("anonymizeIdentityForRoles", AnonymizeIdentityForRoles);
