@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class AuthenticationContextClassReference : Entity, IParsable {
         /// <summary>A short explanation of the policies that are enforced by authenticationContextClassReference. This value should be used to provide secondary text to describe the authentication context class reference when building user-facing admin experiences. For example, a selection UX.</summary>
         public string Description {
@@ -22,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("isAvailable", value); }
         }
         /// <summary>
-        /// Instantiates a new authenticationContextClassReference and sets the default values.
+        /// Instantiates a new AuthenticationContextClassReference and sets the default values.
         /// </summary>
         public AuthenticationContextClassReference() : base() {
             OdataType = "#microsoft.graph.authenticationContextClassReference";

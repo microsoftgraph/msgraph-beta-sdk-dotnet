@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.M
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action removeMembers
+        /// Remove members from an updatableAssetGroup. You can also use the method removeMembersById to remove members.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.M
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action removeMembers
+        /// Remove members from an updatableAssetGroup. You can also use the method removeMembersById to remove members.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

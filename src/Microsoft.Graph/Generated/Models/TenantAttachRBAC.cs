@@ -6,7 +6,7 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class TenantAttachRBAC : Entity, IParsable {
         /// <summary>
-        /// Instantiates a new tenantAttachRBAC and sets the default values.
+        /// Instantiates a new TenantAttachRBAC and sets the default values.
         /// </summary>
         public TenantAttachRBAC() : base() {
             OdataType = "#microsoft.graph.tenantAttachRBAC";

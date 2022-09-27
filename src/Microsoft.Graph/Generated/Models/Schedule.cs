@@ -165,8 +165,6 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfObjectValues<OpenShiftChangeRequest>("openShiftChangeRequests", OpenShiftChangeRequests);
             writer.WriteCollectionOfObjectValues<OpenShift>("openShifts", OpenShifts);
             writer.WriteBoolValue("openShiftsEnabled", OpenShiftsEnabled);
-            writer.WriteEnumValue<OperationStatus>("provisionStatus", ProvisionStatus);
-            writer.WriteStringValue("provisionStatusCode", ProvisionStatusCode);
             writer.WriteCollectionOfObjectValues<SchedulingGroup>("schedulingGroups", SchedulingGroups);
             writer.WriteCollectionOfObjectValues<Shift>("shifts", Shifts);
             writer.WriteCollectionOfObjectValues<SwapShiftsChangeRequest>("swapShiftsChangeRequests", SwapShiftsChangeRequests);

@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs.Item.Reprovision {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action reprovision
+        /// Reprovision a specific Cloud PC.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs.Item.Reprovision {
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action reprovision
+        /// Reprovision a specific Cloud PC.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

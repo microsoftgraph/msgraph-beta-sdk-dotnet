@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Intune will provide customer the ability to run their Shell scripts on the enrolled Mac OS devices. The script can be run once or periodically.</summary>
     public class DeviceShellScript : Entity, IParsable {
         /// <summary>The list of group assignments for the device management script.</summary>
         public List<DeviceManagementScriptAssignment> Assignments {
@@ -87,7 +86,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("userRunStates", value); }
         }
         /// <summary>
-        /// Instantiates a new deviceShellScript and sets the default values.
+        /// Instantiates a new DeviceShellScript and sets the default values.
         /// </summary>
         public DeviceShellScript() : base() {
             OdataType = "#microsoft.graph.deviceShellScript";
@@ -132,14 +131,12 @@ namespace Microsoft.Graph.Beta.Models {
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<DeviceManagementScriptAssignment>("assignments", Assignments);
             writer.WriteBoolValue("blockExecutionNotifications", BlockExecutionNotifications);
-            writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("description", Description);
             writer.WriteCollectionOfObjectValues<DeviceManagementScriptDeviceState>("deviceRunStates", DeviceRunStates);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteTimeSpanValue("executionFrequency", ExecutionFrequency);
             writer.WriteStringValue("fileName", FileName);
             writer.WriteCollectionOfObjectValues<DeviceManagementScriptGroupAssignment>("groupAssignments", GroupAssignments);
-            writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteIntValue("retryCount", RetryCount);
             writer.WriteCollectionOfPrimitiveValues<string>("roleScopeTagIds", RoleScopeTagIds);
             writer.WriteEnumValue<RunAsAccountType>("runAsAccount", RunAsAccount);

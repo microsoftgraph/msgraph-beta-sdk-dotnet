@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.OrganizationSett
             return requestInfo;
         }
         /// <summary>
-        /// The Cloud PC organization settings for a tenant.
+        /// Read the properties and relationships of the cloudPcOrganizationSettings from the current tenant. A tenant has only one **cloudPcOrganizationSettings** object.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<OrganizationSettingsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.OrganizationSett
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property organizationSettings in deviceManagement
+        /// Update the properties of the cloudPcOrganizationSettings object in a tenant.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -94,6 +94,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.OrganizationSett
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             if (requestConfiguration != null) {
                 var requestConfig = new OrganizationSettingsRequestBuilderPatchRequestConfiguration();
@@ -118,7 +119,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.OrganizationSett
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The Cloud PC organization settings for a tenant.
+        /// Read the properties and relationships of the cloudPcOrganizationSettings from the current tenant. A tenant has only one **cloudPcOrganizationSettings** object.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -132,20 +133,20 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.OrganizationSett
             return await RequestAdapter.SendAsync<CloudPcOrganizationSettings>(requestInfo, CloudPcOrganizationSettings.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the navigation property organizationSettings in deviceManagement
+        /// Update the properties of the cloudPcOrganizationSettings object in a tenant.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task PatchAsync(CloudPcOrganizationSettings body, Action<OrganizationSettingsRequestBuilderPatchRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<CloudPcOrganizationSettings> PatchAsync(CloudPcOrganizationSettings body, Action<OrganizationSettingsRequestBuilderPatchRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<CloudPcOrganizationSettings>(requestInfo, CloudPcOrganizationSettings.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
         public class OrganizationSettingsRequestBuilderDeleteRequestConfiguration {
@@ -161,7 +162,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.OrganizationSett
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>The Cloud PC organization settings for a tenant.</summary>
+        /// <summary>Read the properties and relationships of the cloudPcOrganizationSettings from the current tenant. A tenant has only one **cloudPcOrganizationSettings** object.</summary>
         public class OrganizationSettingsRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

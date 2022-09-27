@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Compliance management partner for all platforms</summary>
     public class ComplianceManagementPartner : Entity, IParsable {
         /// <summary>User groups which enroll Android devices through partner.</summary>
         public List<ComplianceManagementPartnerAssignment> AndroidEnrollmentAssignments {
@@ -62,7 +61,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("windowsOnboarded", value); }
         }
         /// <summary>
-        /// Instantiates a new complianceManagementPartner and sets the default values.
+        /// Instantiates a new ComplianceManagementPartner and sets the default values.
         /// </summary>
         public ComplianceManagementPartner() : base() {
             OdataType = "#microsoft.graph.complianceManagementPartner";

@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Communications.OnlineMeetings.Item.Registration {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Delete navigation property registration for communications
+        /// Disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateDeleteRequestInformation(Action<RegistrationRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Beta.Communications.OnlineMeetings.Item.Registration {
             return requestInfo;
         }
         /// <summary>
-        /// The registration that has been enabled for an online meeting. One online meeting can only have one registration enabled.
+        /// Get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<RegistrationRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -88,7 +88,7 @@ namespace Microsoft.Graph.Beta.Communications.OnlineMeetings.Item.Registration {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property registration in communications
+        /// Update the details of a meetingRegistration object assciated with an onlineMeeting on behalf of the organizer.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -99,6 +99,7 @@ namespace Microsoft.Graph.Beta.Communications.OnlineMeetings.Item.Registration {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             if (requestConfiguration != null) {
                 var requestConfig = new RegistrationRequestBuilderPatchRequestConfiguration();
@@ -109,7 +110,7 @@ namespace Microsoft.Graph.Beta.Communications.OnlineMeetings.Item.Registration {
             return requestInfo;
         }
         /// <summary>
-        /// Delete navigation property registration for communications
+        /// Disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -123,7 +124,7 @@ namespace Microsoft.Graph.Beta.Communications.OnlineMeetings.Item.Registration {
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The registration that has been enabled for an online meeting. One online meeting can only have one registration enabled.
+        /// Get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -137,20 +138,20 @@ namespace Microsoft.Graph.Beta.Communications.OnlineMeetings.Item.Registration {
             return await RequestAdapter.SendAsync<MeetingRegistration>(requestInfo, MeetingRegistration.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the navigation property registration in communications
+        /// Update the details of a meetingRegistration object assciated with an onlineMeeting on behalf of the organizer.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task PatchAsync(MeetingRegistration body, Action<RegistrationRequestBuilderPatchRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<MeetingRegistration> PatchAsync(MeetingRegistration body, Action<RegistrationRequestBuilderPatchRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<MeetingRegistration>(requestInfo, MeetingRegistration.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
         public class RegistrationRequestBuilderDeleteRequestConfiguration {
@@ -166,7 +167,7 @@ namespace Microsoft.Graph.Beta.Communications.OnlineMeetings.Item.Registration {
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>The registration that has been enabled for an online meeting. One online meeting can only have one registration enabled.</summary>
+        /// <summary>Get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.</summary>
         public class RegistrationRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

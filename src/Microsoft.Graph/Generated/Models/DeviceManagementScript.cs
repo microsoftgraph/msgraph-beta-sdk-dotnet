@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Intune will provide customer the ability to run their Powershell scripts on the enrolled windows 10 Azure Active Directory joined devices. The script can be run once or periodically.</summary>
     public class DeviceManagementScript : Entity, IParsable {
         /// <summary>The list of group assignments for the device management script.</summary>
         public List<DeviceManagementScriptAssignment> Assignments {
@@ -82,7 +81,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("userRunStates", value); }
         }
         /// <summary>
-        /// Instantiates a new deviceManagementScript and sets the default values.
+        /// Instantiates a new DeviceManagementScript and sets the default values.
         /// </summary>
         public DeviceManagementScript() : base() {
             OdataType = "#microsoft.graph.deviceManagementScript";
@@ -125,14 +124,12 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<DeviceManagementScriptAssignment>("assignments", Assignments);
-            writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("description", Description);
             writer.WriteCollectionOfObjectValues<DeviceManagementScriptDeviceState>("deviceRunStates", DeviceRunStates);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteBoolValue("enforceSignatureCheck", EnforceSignatureCheck);
             writer.WriteStringValue("fileName", FileName);
             writer.WriteCollectionOfObjectValues<DeviceManagementScriptGroupAssignment>("groupAssignments", GroupAssignments);
-            writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteCollectionOfPrimitiveValues<string>("roleScopeTagIds", RoleScopeTagIds);
             writer.WriteBoolValue("runAs32Bit", RunAs32Bit);
             writer.WriteEnumValue<RunAsAccountType>("runAsAccount", RunAsAccount);

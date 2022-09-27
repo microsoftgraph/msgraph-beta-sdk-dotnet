@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Graph model for a reusable setting</summary>
     public class DeviceManagementReusablePolicySetting : Entity, IParsable {
         /// <summary>reusable setting creation date and time. This property is read-only.</summary>
         public DateTimeOffset? CreatedDateTime {
@@ -52,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("version", value); }
         }
         /// <summary>
-        /// Instantiates a new deviceManagementReusablePolicySetting and sets the default values.
+        /// Instantiates a new DeviceManagementReusablePolicySetting and sets the default values.
         /// </summary>
         public DeviceManagementReusablePolicySetting() : base() {
             OdataType = "#microsoft.graph.deviceManagementReusablePolicySetting";
@@ -88,15 +87,11 @@ namespace Microsoft.Graph.Beta.Models {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteCollectionOfObjectValues<DeviceManagementConfigurationPolicy>("referencingConfigurationPolicies", ReferencingConfigurationPolicies);
-            writer.WriteIntValue("referencingConfigurationPolicyCount", ReferencingConfigurationPolicyCount);
             writer.WriteStringValue("settingDefinitionId", SettingDefinitionId);
             writer.WriteObjectValue<DeviceManagementConfigurationSettingInstance>("settingInstance", SettingInstance);
-            writer.WriteIntValue("version", Version);
         }
     }
 }

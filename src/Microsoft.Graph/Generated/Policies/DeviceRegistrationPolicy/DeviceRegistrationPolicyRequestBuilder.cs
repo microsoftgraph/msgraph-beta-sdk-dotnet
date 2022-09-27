@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Policies.DeviceRegistrationPolicy {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get deviceRegistrationPolicy from policies
+        /// Read the properties and relationships of a deviceRegistrationPolicy object. Represents deviceRegistrationPolicy quota restrictions, additional authentication, and authorization policies to register device identities to your organization.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<DeviceRegistrationPolicyRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -76,6 +76,7 @@ namespace Microsoft.Graph.Beta.Policies.DeviceRegistrationPolicy {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             if (requestConfiguration != null) {
                 var requestConfig = new DeviceRegistrationPolicyRequestBuilderPatchRequestConfiguration();
@@ -86,7 +87,7 @@ namespace Microsoft.Graph.Beta.Policies.DeviceRegistrationPolicy {
             return requestInfo;
         }
         /// <summary>
-        /// Get deviceRegistrationPolicy from policies
+        /// Read the properties and relationships of a deviceRegistrationPolicy object. Represents deviceRegistrationPolicy quota restrictions, additional authentication, and authorization policies to register device identities to your organization.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -106,16 +107,16 @@ namespace Microsoft.Graph.Beta.Policies.DeviceRegistrationPolicy {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task PatchAsync(Microsoft.Graph.Beta.Models.DeviceRegistrationPolicy body, Action<DeviceRegistrationPolicyRequestBuilderPatchRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.DeviceRegistrationPolicy> PatchAsync(Microsoft.Graph.Beta.Models.DeviceRegistrationPolicy body, Action<DeviceRegistrationPolicyRequestBuilderPatchRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.DeviceRegistrationPolicy>(requestInfo, Microsoft.Graph.Beta.Models.DeviceRegistrationPolicy.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Get deviceRegistrationPolicy from policies</summary>
+        /// <summary>Read the properties and relationships of a deviceRegistrationPolicy object. Represents deviceRegistrationPolicy quota restrictions, additional authentication, and authorization policies to register device identities to your organization.</summary>
         public class DeviceRegistrationPolicyRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

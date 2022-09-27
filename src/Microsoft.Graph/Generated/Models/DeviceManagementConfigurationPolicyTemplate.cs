@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Device Management Configuration Policy Template</summary>
     public class DeviceManagementConfigurationPolicyTemplate : Entity, IParsable {
         /// <summary>Allow unmanaged setting templates</summary>
         public bool? AllowUnmanagedSettings {
@@ -67,7 +66,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("version", value); }
         }
         /// <summary>
-        /// Instantiates a new deviceManagementConfigurationPolicyTemplate and sets the default values.
+        /// Instantiates a new DeviceManagementConfigurationPolicyTemplate and sets the default values.
         /// </summary>
         public DeviceManagementConfigurationPolicyTemplate() : base() {
             OdataType = "#microsoft.graph.deviceManagementConfigurationPolicyTemplate";
@@ -113,11 +112,9 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("displayVersion", DisplayVersion);
             writer.WriteEnumValue<DeviceManagementTemplateLifecycleState>("lifecycleState", LifecycleState);
             writer.WriteEnumValue<DeviceManagementConfigurationPlatforms>("platforms", Platforms);
-            writer.WriteIntValue("settingTemplateCount", SettingTemplateCount);
             writer.WriteCollectionOfObjectValues<DeviceManagementConfigurationSettingTemplate>("settingTemplates", SettingTemplates);
             writer.WriteEnumValue<DeviceManagementConfigurationTechnologies>("technologies", Technologies);
             writer.WriteEnumValue<DeviceManagementConfigurationTemplateFamily>("templateFamily", TemplateFamily);
-            writer.WriteIntValue("version", Version);
         }
     }
 }

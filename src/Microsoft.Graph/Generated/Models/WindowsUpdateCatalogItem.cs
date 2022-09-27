@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Windows update catalog item entity</summary>
     public class WindowsUpdateCatalogItem : Entity, IParsable {
         /// <summary>The display name for the catalog item.</summary>
         public string DisplayName {
@@ -23,7 +22,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("releaseDateTime", value); }
         }
         /// <summary>
-        /// Instantiates a new windowsUpdateCatalogItem and sets the default values.
+        /// Instantiates a new WindowsUpdateCatalogItem and sets the default values.
         /// </summary>
         public WindowsUpdateCatalogItem() : base() {
             OdataType = "#microsoft.graph.windowsUpdateCatalogItem";

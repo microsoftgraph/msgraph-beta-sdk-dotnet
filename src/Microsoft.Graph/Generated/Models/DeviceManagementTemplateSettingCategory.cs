@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Entity representing a template setting category</summary>
     public class DeviceManagementTemplateSettingCategory : DeviceManagementSettingCategory, IParsable {
         /// <summary>The settings this category contains</summary>
         public List<DeviceManagementSettingInstance> RecommendedSettings {
@@ -11,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("recommendedSettings", value); }
         }
         /// <summary>
-        /// Instantiates a new DeviceManagementTemplateSettingCategory and sets the default values.
+        /// Instantiates a new deviceManagementTemplateSettingCategory and sets the default values.
         /// </summary>
         public DeviceManagementTemplateSettingCategory() : base() {
             OdataType = "#microsoft.graph.deviceManagementTemplateSettingCategory";

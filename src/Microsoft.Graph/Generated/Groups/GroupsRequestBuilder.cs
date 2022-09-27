@@ -1,3 +1,4 @@
+using Microsoft.Graph.Beta.Groups.Count;
 using Microsoft.Graph.Beta.Groups.Delta;
 using Microsoft.Graph.Beta.Groups.EvaluateDynamicMembership;
 using Microsoft.Graph.Beta.Groups.GetByIds;
@@ -17,6 +18,10 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Groups {
     /// <summary>Provides operations to manage the collection of group entities.</summary>
     public class GroupsRequestBuilder {
+        /// <summary>The Count property</summary>
+        public CountRequestBuilder Count { get =>
+            new CountRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The evaluateDynamicMembership property</summary>
         public EvaluateDynamicMembershipRequestBuilder EvaluateDynamicMembership { get =>
             new EvaluateDynamicMembershipRequestBuilder(PathParameters, RequestAdapter);
@@ -53,7 +58,7 @@ namespace Microsoft.Graph.Beta.Groups {
         public GroupsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/groups{?%24top*,%24search*,%24orderby,%24select}";
+            UrlTemplate = "{+baseurl}/groups{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -66,7 +71,7 @@ namespace Microsoft.Graph.Beta.Groups {
         public GroupsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/groups{?%24top*,%24search*,%24orderby,%24select}";
+            UrlTemplate = "{+baseurl}/groups{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
@@ -152,6 +157,15 @@ namespace Microsoft.Graph.Beta.Groups {
         }
         /// <summary>List all the groups available in an organization, excluding dynamic distribution groups. To retrieve dynamic distribution groups, use the Exchange admin center. This operation returns by default only a subset of the more commonly used properties for each group. These _default_ properties are noted in the Properties section. To get properties that are _not_ returned by default, do a GET operation for the group and specify the properties in a `$select` OData query option. The **hasMembersWithLicenseErrors** and **isArchived** properties are an exception and are not returned in the `$select` query.</summary>
         public class GroupsRequestBuilderGetQueryParameters {
+            /// <summary>Include count of items</summary>
+            [QueryParameter("%24count")]
+            public bool? Count { get; set; }
+            /// <summary>Expand related entities</summary>
+            [QueryParameter("%24expand")]
+            public string[] Expand { get; set; }
+            /// <summary>Filter items by property values</summary>
+            [QueryParameter("%24filter")]
+            public string Filter { get; set; }
             /// <summary>Order items by property values</summary>
             [QueryParameter("%24orderby")]
             public string[] Orderby { get; set; }
@@ -161,6 +175,9 @@ namespace Microsoft.Graph.Beta.Groups {
             /// <summary>Select properties to be returned</summary>
             [QueryParameter("%24select")]
             public string[] Select { get; set; }
+            /// <summary>Skip the first n items</summary>
+            [QueryParameter("%24skip")]
+            public int? Skip { get; set; }
             /// <summary>Show only the first n items</summary>
             [QueryParameter("%24top")]
             public int? Top { get; set; }

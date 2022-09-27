@@ -149,7 +149,6 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<DeviceHealthScriptAssignment>("assignments", Assignments);
-            writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("description", Description);
             writer.WriteByteArrayValue("detectionScriptContent", DetectionScriptContent);
             writer.WriteCollectionOfObjectValues<DeviceHealthScriptParameter>("detectionScriptParameters", DetectionScriptParameters);
@@ -158,7 +157,6 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteBoolValue("enforceSignatureCheck", EnforceSignatureCheck);
             writer.WriteStringValue("highestAvailableVersion", HighestAvailableVersion);
             writer.WriteBoolValue("isGlobalScript", IsGlobalScript);
-            writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteStringValue("publisher", Publisher);
             writer.WriteByteArrayValue("remediationScriptContent", RemediationScriptContent);
             writer.WriteCollectionOfObjectValues<DeviceHealthScriptParameter>("remediationScriptParameters", RemediationScriptParameters);

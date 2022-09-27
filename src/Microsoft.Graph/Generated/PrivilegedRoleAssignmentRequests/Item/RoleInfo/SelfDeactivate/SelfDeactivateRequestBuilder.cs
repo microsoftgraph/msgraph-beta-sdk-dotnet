@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignmentRequests.Item.RoleInfo.Se
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action selfDeactivate
+        /// Deactivate the role that is assigned to the requestor.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreatePostRequestInformation(Action<SelfDeactivateRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignmentRequests.Item.RoleInfo.Se
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action selfDeactivate
+        /// Deactivate the role that is assigned to the requestor.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>

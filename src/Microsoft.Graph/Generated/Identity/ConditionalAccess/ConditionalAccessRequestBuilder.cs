@@ -2,6 +2,7 @@ using Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationContextClass
 using Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationStrengths;
 using Microsoft.Graph.Beta.Identity.ConditionalAccess.NamedLocations;
 using Microsoft.Graph.Beta.Identity.ConditionalAccess.Policies;
+using Microsoft.Graph.Beta.Identity.ConditionalAccess.Templates;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -35,6 +36,10 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess {
         }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        /// <summary>The templates property</summary>
+        public TemplatesRequestBuilder Templates { get =>
+            new TemplatesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
         /// <summary>
@@ -114,6 +119,7 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             if (requestConfiguration != null) {
                 var requestConfig = new ConditionalAccessRequestBuilderPatchRequestConfiguration();
@@ -158,14 +164,14 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task PatchAsync(ConditionalAccessRoot body, Action<ConditionalAccessRequestBuilderPatchRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<ConditionalAccessRoot> PatchAsync(ConditionalAccessRoot body, Action<ConditionalAccessRequestBuilderPatchRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ConditionalAccessRoot>(requestInfo, ConditionalAccessRoot.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
         public class ConditionalAccessRequestBuilderDeleteRequestConfiguration {

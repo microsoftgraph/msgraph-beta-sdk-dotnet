@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Warranty status entity for a given OEM</summary>
     public class OemWarrantyInformationOnboarding : Entity, IParsable {
         /// <summary>Specifies whether warranty API is available. This property is read-only.</summary>
         public bool? Available {
@@ -22,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("oemName", value); }
         }
         /// <summary>
-        /// Instantiates a new oemWarrantyInformationOnboarding and sets the default values.
+        /// Instantiates a new OemWarrantyInformationOnboarding and sets the default values.
         /// </summary>
         public OemWarrantyInformationOnboarding() : base() {
             OdataType = "#microsoft.graph.oemWarrantyInformationOnboarding";
@@ -52,9 +51,6 @@ namespace Microsoft.Graph.Beta.Models {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteBoolValue("available", Available);
-            writer.WriteBoolValue("enabled", Enabled);
-            writer.WriteStringValue("oemName", OemName);
         }
     }
 }

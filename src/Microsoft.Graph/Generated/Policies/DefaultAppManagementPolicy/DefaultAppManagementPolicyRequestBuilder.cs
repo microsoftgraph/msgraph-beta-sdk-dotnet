@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.Policies.DefaultAppManagementPolicy {
             return requestInfo;
         }
         /// <summary>
-        /// The tenant-wide policy that enforces app management restrictions for all applications and service principals.
+        /// Read the properties of a tenantAppManagementPolicy object.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<DefaultAppManagementPolicyRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Beta.Policies.DefaultAppManagementPolicy {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property defaultAppManagementPolicy in policies
+        /// Update the properties of a tenantAppManagementPolicy object.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -94,6 +94,7 @@ namespace Microsoft.Graph.Beta.Policies.DefaultAppManagementPolicy {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             if (requestConfiguration != null) {
                 var requestConfig = new DefaultAppManagementPolicyRequestBuilderPatchRequestConfiguration();
@@ -118,7 +119,7 @@ namespace Microsoft.Graph.Beta.Policies.DefaultAppManagementPolicy {
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The tenant-wide policy that enforces app management restrictions for all applications and service principals.
+        /// Read the properties of a tenantAppManagementPolicy object.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -132,20 +133,20 @@ namespace Microsoft.Graph.Beta.Policies.DefaultAppManagementPolicy {
             return await RequestAdapter.SendAsync<TenantAppManagementPolicy>(requestInfo, TenantAppManagementPolicy.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the navigation property defaultAppManagementPolicy in policies
+        /// Update the properties of a tenantAppManagementPolicy object.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task PatchAsync(TenantAppManagementPolicy body, Action<DefaultAppManagementPolicyRequestBuilderPatchRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<TenantAppManagementPolicy> PatchAsync(TenantAppManagementPolicy body, Action<DefaultAppManagementPolicyRequestBuilderPatchRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<TenantAppManagementPolicy>(requestInfo, TenantAppManagementPolicy.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
         public class DefaultAppManagementPolicyRequestBuilderDeleteRequestConfiguration {
@@ -161,7 +162,7 @@ namespace Microsoft.Graph.Beta.Policies.DefaultAppManagementPolicy {
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>The tenant-wide policy that enforces app management restrictions for all applications and service principals.</summary>
+        /// <summary>Read the properties of a tenantAppManagementPolicy object.</summary>
         public class DefaultAppManagementPolicyRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

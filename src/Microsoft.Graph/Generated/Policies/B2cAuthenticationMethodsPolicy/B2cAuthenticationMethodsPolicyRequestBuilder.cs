@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.Policies.B2cAuthenticationMethodsPolicy {
             return requestInfo;
         }
         /// <summary>
-        /// The Azure AD B2C policies that define how end users register via local accounts.
+        /// Read the properties of a b2cAuthenticationMethodsPolicy object.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<B2cAuthenticationMethodsPolicyRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Beta.Policies.B2cAuthenticationMethodsPolicy {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property b2cAuthenticationMethodsPolicy in policies
+        /// Update the properties of a b2cAuthenticationMethodsPolicy object.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -94,6 +94,7 @@ namespace Microsoft.Graph.Beta.Policies.B2cAuthenticationMethodsPolicy {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             if (requestConfiguration != null) {
                 var requestConfig = new B2cAuthenticationMethodsPolicyRequestBuilderPatchRequestConfiguration();
@@ -118,7 +119,7 @@ namespace Microsoft.Graph.Beta.Policies.B2cAuthenticationMethodsPolicy {
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The Azure AD B2C policies that define how end users register via local accounts.
+        /// Read the properties of a b2cAuthenticationMethodsPolicy object.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -132,20 +133,20 @@ namespace Microsoft.Graph.Beta.Policies.B2cAuthenticationMethodsPolicy {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.B2cAuthenticationMethodsPolicy>(requestInfo, Microsoft.Graph.Beta.Models.B2cAuthenticationMethodsPolicy.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the navigation property b2cAuthenticationMethodsPolicy in policies
+        /// Update the properties of a b2cAuthenticationMethodsPolicy object.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task PatchAsync(Microsoft.Graph.Beta.Models.B2cAuthenticationMethodsPolicy body, Action<B2cAuthenticationMethodsPolicyRequestBuilderPatchRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.B2cAuthenticationMethodsPolicy> PatchAsync(Microsoft.Graph.Beta.Models.B2cAuthenticationMethodsPolicy body, Action<B2cAuthenticationMethodsPolicyRequestBuilderPatchRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.B2cAuthenticationMethodsPolicy>(requestInfo, Microsoft.Graph.Beta.Models.B2cAuthenticationMethodsPolicy.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
         public class B2cAuthenticationMethodsPolicyRequestBuilderDeleteRequestConfiguration {
@@ -161,7 +162,7 @@ namespace Microsoft.Graph.Beta.Policies.B2cAuthenticationMethodsPolicy {
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>The Azure AD B2C policies that define how end users register via local accounts.</summary>
+        /// <summary>Read the properties of a b2cAuthenticationMethodsPolicy object.</summary>
         public class B2cAuthenticationMethodsPolicyRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

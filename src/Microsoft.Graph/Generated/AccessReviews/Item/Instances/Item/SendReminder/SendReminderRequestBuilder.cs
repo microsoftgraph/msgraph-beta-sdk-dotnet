@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.AccessReviews.Item.Instances.Item.SendReminder {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action sendReminder
+        /// In the Azure AD access reviews feature, send a reminder to the reviewers of a currently active accessReview.  The target object can be either a one-time access review, or an instance of a recurring access review. 
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreatePostRequestInformation(Action<SendReminderRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.AccessReviews.Item.Instances.Item.SendReminder {
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action sendReminder
+        /// In the Azure AD access reviews feature, send a reminder to the reviewers of a currently active accessReview.  The target object can be either a one-time access review, or an instance of a recurring access review. 
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>

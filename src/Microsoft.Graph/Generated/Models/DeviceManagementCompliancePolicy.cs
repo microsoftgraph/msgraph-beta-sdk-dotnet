@@ -113,16 +113,12 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<DeviceManagementConfigurationPolicyAssignment>("assignments", Assignments);
-            writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("creationSource", CreationSource);
             writer.WriteStringValue("description", Description);
-            writer.WriteBoolValue("isAssigned", IsAssigned);
-            writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<DeviceManagementConfigurationPlatforms>("platforms", Platforms);
             writer.WriteCollectionOfPrimitiveValues<string>("roleScopeTagIds", RoleScopeTagIds);
             writer.WriteCollectionOfObjectValues<DeviceManagementComplianceScheduledActionForRule>("scheduledActionsForRule", ScheduledActionsForRule);
-            writer.WriteIntValue("settingCount", SettingCount);
             writer.WriteCollectionOfObjectValues<DeviceManagementConfigurationSetting>("settings", Settings);
             writer.WriteEnumValue<DeviceManagementConfigurationTechnologies>("technologies", Technologies);
         }

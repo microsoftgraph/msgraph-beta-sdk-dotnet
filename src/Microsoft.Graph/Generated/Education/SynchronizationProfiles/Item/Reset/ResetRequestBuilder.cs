@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.Reset {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action reset
+        /// Reset the sync of a specific school data synchronization profile in the tenant.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreatePostRequestInformation(Action<ResetRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.Reset {
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action reset
+        /// Reset the sync of a specific school data synchronization profile in the tenant.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>

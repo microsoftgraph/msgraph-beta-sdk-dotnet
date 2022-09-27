@@ -60,7 +60,6 @@ namespace Microsoft.Graph.Beta.Models {
             base.Serialize(writer);
             writer.WriteEnumValue<DeviceConfigAssignmentIntent>("intent", Intent);
             writer.WriteEnumValue<DeviceAndAppManagementAssignmentSource>("source", Source);
-            writer.WriteStringValue("sourceId", SourceId);
             writer.WriteObjectValue<DeviceAndAppManagementAssignmentTarget>("target", Target);
         }
     }

@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Domains.Item.Promote {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action promote
+        /// Promote a verified subdomain to the root domain. A verified domain has its **isVerified** property set to `true`.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreatePostRequestInformation(Action<PromoteRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.Domains.Item.Promote {
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action promote
+        /// Promote a verified subdomain to the root domain. A verified domain has its **isVerified** property set to `true`.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>

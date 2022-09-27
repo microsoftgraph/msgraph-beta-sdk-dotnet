@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>The user experience analytics device performance entity contains device performance details.</summary>
     public class UserExperienceAnalyticsAppHealthDevicePerformanceDetails : Entity, IParsable {
         /// <summary>The friendly name of the application for which the event occurred.</summary>
         public string AppDisplayName {
@@ -42,7 +41,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("eventType", value); }
         }
         /// <summary>
-        /// Instantiates a new userExperienceAnalyticsAppHealthDevicePerformanceDetails and sets the default values.
+        /// Instantiates a new UserExperienceAnalyticsAppHealthDevicePerformanceDetails and sets the default values.
         /// </summary>
         public UserExperienceAnalyticsAppHealthDevicePerformanceDetails() : base() {
             OdataType = "#microsoft.graph.userExperienceAnalyticsAppHealthDevicePerformanceDetails";

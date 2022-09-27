@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("valueObjectId", value); }
         }
         /// <summary>
-        /// Instantiates a new userExperienceAnalyticsDeviceScope and sets the default values.
+        /// Instantiates a new UserExperienceAnalyticsDeviceScope and sets the default values.
         /// </summary>
         public UserExperienceAnalyticsDeviceScope() : base() {
             OdataType = "#microsoft.graph.userExperienceAnalyticsDeviceScope";

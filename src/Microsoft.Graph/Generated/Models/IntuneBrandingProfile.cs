@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>This entity contains data which is used in customizing the tenant level appearance of the Company Portal applications as well as the end user web portal.</summary>
     public class IntuneBrandingProfile : Entity, IParsable {
         /// <summary>The list of group assignments for the branding profile</summary>
         public List<IntuneBrandingProfileAssignment> Assignments {
@@ -167,7 +166,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("themeColorLogo", value); }
         }
         /// <summary>
-        /// Instantiates a new intuneBrandingProfile and sets the default values.
+        /// Instantiates a new IntuneBrandingProfile and sets the default values.
         /// </summary>
         public IntuneBrandingProfile() : base() {
             OdataType = "#microsoft.graph.intuneBrandingProfile";

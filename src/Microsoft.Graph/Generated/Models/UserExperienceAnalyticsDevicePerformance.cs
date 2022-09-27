@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>The user experience analytics device performance entity contains device boot performance details.</summary>
     public class UserExperienceAnalyticsDevicePerformance : Entity, IParsable {
         /// <summary>Average (mean) number of Blue Screens per device in the last 14 days. Valid values 0 to 9999999</summary>
         public double? AverageBlueScreens {
@@ -107,7 +106,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("startupPerformanceScore", value); }
         }
         /// <summary>
-        /// Instantiates a new userExperienceAnalyticsDevicePerformance and sets the default values.
+        /// Instantiates a new UserExperienceAnalyticsDevicePerformance and sets the default values.
         /// </summary>
         public UserExperienceAnalyticsDevicePerformance() : base() {
             OdataType = "#microsoft.graph.userExperienceAnalyticsDevicePerformance";

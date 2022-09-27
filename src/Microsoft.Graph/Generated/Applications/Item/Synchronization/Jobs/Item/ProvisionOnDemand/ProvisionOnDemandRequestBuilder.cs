@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Item.Provi
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action provisionOnDemand
+        /// Select a user and provision the account on-demand. The rate limit for this API is 5 requests per 10 seconds. 
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Item.Provi
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action provisionOnDemand
+        /// Select a user and provision the account on-demand. The rate limit for this API is 5 requests per 10 seconds. 
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Me.Tasks.Lists.Item.Tasks.Item.Move {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action move
+        /// Move a baseTask object from one baseTaskList to another.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Beta.Me.Tasks.Lists.Item.Tasks.Item.Move {
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action move
+        /// Move a baseTask object from one baseTaskList to another.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

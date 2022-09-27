@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>The user experience analytics baseline entity contains baseline values against which to compare the user experience analytics scores.</summary>
     public class UserExperienceAnalyticsBaseline : Entity, IParsable {
         /// <summary>The user experience analytics app health metrics.</summary>
         public UserExperienceAnalyticsCategory AppHealthMetrics {
@@ -57,7 +56,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("workFromAnywhereMetrics", value); }
         }
         /// <summary>
-        /// Instantiates a new userExperienceAnalyticsBaseline and sets the default values.
+        /// Instantiates a new UserExperienceAnalyticsBaseline and sets the default values.
         /// </summary>
         public UserExperienceAnalyticsBaseline() : base() {
             OdataType = "#microsoft.graph.userExperienceAnalyticsBaseline";

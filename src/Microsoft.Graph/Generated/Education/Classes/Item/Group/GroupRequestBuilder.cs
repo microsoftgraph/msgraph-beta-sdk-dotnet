@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Group {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get group from education
+        /// Retrieve the Microsoft 365 **group** that corresponds to this **educationClass**.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<GroupRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Group {
             return requestInfo;
         }
         /// <summary>
-        /// Get group from education
+        /// Retrieve the Microsoft 365 **group** that corresponds to this **educationClass**.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Group {
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Group>(requestInfo, Microsoft.Graph.Beta.Models.Group.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Get group from education</summary>
+        /// <summary>Retrieve the Microsoft 365 **group** that corresponds to this **educationClass**.</summary>
         public class GroupRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

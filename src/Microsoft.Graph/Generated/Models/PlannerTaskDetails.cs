@@ -15,6 +15,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+        /// <summary>The notes property</summary>
+        public ItemBody Notes {
+            get { return BackingStore?.Get<ItemBody>("notes"); }
+            set { BackingStore?.Set("notes", value); }
+        }
         /// <summary>This sets the type of preview that shows up on the task. Possible values are: automatic, noPreview, checklist, description, reference. When set to automatic the displayed preview is chosen by the app viewing the task.</summary>
         public PlannerPreviewType? PreviewType {
             get { return BackingStore?.Get<PlannerPreviewType?>("previewType"); }
@@ -46,6 +51,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"checklist", n => { Checklist = n.GetObjectValue<PlannerChecklistItems>(PlannerChecklistItems.CreateFromDiscriminatorValue); } },
                 {"description", n => { Description = n.GetStringValue(); } },
+                {"notes", n => { Notes = n.GetObjectValue<ItemBody>(ItemBody.CreateFromDiscriminatorValue); } },
                 {"previewType", n => { PreviewType = n.GetEnumValue<PlannerPreviewType>(); } },
                 {"references", n => { References = n.GetObjectValue<PlannerExternalReferences>(PlannerExternalReferences.CreateFromDiscriminatorValue); } },
             };
@@ -59,6 +65,7 @@ namespace Microsoft.Graph.Beta.Models {
             base.Serialize(writer);
             writer.WriteObjectValue<PlannerChecklistItems>("checklist", Checklist);
             writer.WriteStringValue("description", Description);
+            writer.WriteObjectValue<ItemBody>("notes", Notes);
             writer.WriteEnumValue<PlannerPreviewType>("previewType", PreviewType);
             writer.WriteObjectValue<PlannerExternalReferences>("references", References);
         }

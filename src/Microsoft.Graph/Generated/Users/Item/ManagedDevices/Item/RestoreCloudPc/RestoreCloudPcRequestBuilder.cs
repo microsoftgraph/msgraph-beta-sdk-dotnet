@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.RestoreCloudPc {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action restoreCloudPc
+        /// Restore a Cloud PC device to a previous state with an Intune managed device ID.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.RestoreCloudPc {
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action restoreCloudPc
+        /// Restore a Cloud PC device to a previous state with an Intune managed device ID.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

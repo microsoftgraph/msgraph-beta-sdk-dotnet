@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.AuditLogs.SignIns.ConfirmSafe {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action confirmSafe
+        /// Allow admins to mark an event in Azure AD sign in logs as safe. Admins can either mark the events flagged as risky by Azure AD Identity Protection as safe, or they can mark unflagged events as safe. For details about investigating Identity Protection risks, see How to investigate risk.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Beta.AuditLogs.SignIns.ConfirmSafe {
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action confirmSafe
+        /// Allow admins to mark an event in Azure AD sign in logs as safe. Admins can either mark the events flagged as risky by Azure AD Identity Protection as safe, or they can mark unflagged events as safe. For details about investigating Identity Protection risks, see How to investigate risk.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

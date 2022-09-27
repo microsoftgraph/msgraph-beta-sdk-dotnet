@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Drive.Root.Permissions.Item.RevokeGrants {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action revokeGrants
+        /// Revoke access to a [listItem][] or [driveItem][] granted via a sharing link by removing the specified [recipient][] from the link.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Beta.Drive.Root.Permissions.Item.RevokeGrants {
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action revokeGrants
+        /// Revoke access to a [listItem][] or [driveItem][] granted via a sharing link by removing the specified [recipient][] from the link.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

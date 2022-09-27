@@ -66,8 +66,6 @@ namespace Microsoft.Graph.Beta.Models {
             base.Serialize(writer);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteObjectValue<Entity>("resource", Resource);
-            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ResourceReference>("resourceReference", ResourceReference);
-            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ResourceVisualization>("resourceVisualization", ResourceVisualization);
             writer.WriteDoubleValue("weight", Weight);
         }
     }
