@@ -36,6 +36,12 @@ namespace Microsoft.Graph
         public IEnumerable<string> IncludeServicePrincipals { get; set; }
     
         /// <summary>
+        /// Gets or sets servicePrincipalFilter.
+        /// </summary>
+        [JsonPropertyName("servicePrincipalFilter")]
+        public ConditionalAccessFilter ServicePrincipalFilter { get; set; }
+    
+        /// <summary>
         /// Gets or sets additional data.
         /// </summary>
         [JsonExtensionData]

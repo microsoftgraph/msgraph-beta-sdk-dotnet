@@ -22,6 +22,12 @@ namespace Microsoft.Graph
     {
 
         /// <summary>
+        /// Gets or sets applicationFilter.
+        /// </summary>
+        [JsonPropertyName("applicationFilter")]
+        public ConditionalAccessFilter ApplicationFilter { get; set; }
+    
+        /// <summary>
         /// Gets or sets excludeApplications.
         /// Can be one of the following:  The list of client IDs (appId) explicitly excluded from the policy. Office365 - For the list of apps included in Office365, see Conditional Access target apps: Office 365
         /// </summary>

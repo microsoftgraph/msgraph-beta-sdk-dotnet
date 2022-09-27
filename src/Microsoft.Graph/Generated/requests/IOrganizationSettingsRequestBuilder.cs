@@ -38,6 +38,12 @@ namespace Microsoft.Graph
         IMicrosoftApplicationDataAccessSettingsRequestBuilder MicrosoftApplicationDataAccess { get; }
 
         /// <summary>
+        /// Gets the request builder for ContactInsights.
+        /// </summary>
+        /// <returns>The <see cref="IInsightsSettingsRequestBuilder"/>.</returns>
+        IInsightsSettingsRequestBuilder ContactInsights { get; }
+
+        /// <summary>
         /// Gets the request builder for ItemInsights.
         /// </summary>
         /// <returns>The <see cref="IInsightsSettingsRequestBuilder"/>.</returns>

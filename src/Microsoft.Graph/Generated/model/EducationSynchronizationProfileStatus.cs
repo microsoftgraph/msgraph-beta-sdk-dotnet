@@ -30,14 +30,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets last activity date time.
-        /// Represents the time when most recent changes were observed in profile.
+        /// Date and time when most recent changes were observed in the profile.
         /// </summary>
         [JsonPropertyName("lastActivityDateTime")]
         public DateTimeOffset? LastActivityDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets last synchronization date time.
-        /// Represents the time of the most recent successful  synchronization.
+        /// Date and time of the most recent successful synchronization.
         /// </summary>
         [JsonPropertyName("lastSynchronizationDateTime")]
         public DateTimeOffset? LastSynchronizationDateTime { get; set; }
@@ -51,7 +51,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets status message.
-        /// Status message for the current profile's synchronization stage.
+        /// Status message for the synchronization stage of the current profile.
         /// </summary>
         [JsonPropertyName("statusMessage")]
         public string StatusMessage { get; set; }

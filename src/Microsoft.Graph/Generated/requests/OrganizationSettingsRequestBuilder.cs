@@ -63,6 +63,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for ContactInsights.
+        /// </summary>
+        /// <returns>The <see cref="IInsightsSettingsRequestBuilder"/>.</returns>
+        public IInsightsSettingsRequestBuilder ContactInsights
+        {
+            get
+            {
+                return new InsightsSettingsRequestBuilder(this.AppendSegmentToRequestUrl("contactInsights"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for ItemInsights.
         /// </summary>
         /// <returns>The <see cref="IInsightsSettingsRequestBuilder"/>.</returns>

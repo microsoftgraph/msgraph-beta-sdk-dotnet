@@ -132,6 +132,19 @@ namespace Microsoft.Graph
                 this.AppendSegmentToRequestUrl("microsoft.graph.getApplicablePolicyRequirements"),
                 this.Client);
         }
+
+        /// <summary>
+        /// Gets the request builder for AccessPackageMoveToCatalog.
+        /// </summary>
+        /// <returns>The <see cref="IAccessPackageMoveToCatalogRequestBuilder"/>.</returns>
+        public IAccessPackageMoveToCatalogRequestBuilder MoveToCatalog(
+            string catalogId)
+        {
+            return new AccessPackageMoveToCatalogRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.moveToCatalog"),
+                this.Client,
+                catalogId);
+        }
     
     }
 }

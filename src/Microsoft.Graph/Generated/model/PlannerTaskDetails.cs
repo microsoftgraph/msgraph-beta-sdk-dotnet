@@ -44,6 +44,12 @@ namespace Microsoft.Graph
         public string Description { get; set; }
     
         /// <summary>
+        /// Gets or sets notes.
+        /// </summary>
+        [JsonPropertyName("notes")]
+        public ItemBody Notes { get; set; }
+    
+        /// <summary>
         /// Gets or sets preview type.
         /// This sets the type of preview that shows up on the task. Possible values are: automatic, noPreview, checklist, description, reference. When set to automatic the displayed preview is chosen by the app viewing the task.
         /// </summary>
