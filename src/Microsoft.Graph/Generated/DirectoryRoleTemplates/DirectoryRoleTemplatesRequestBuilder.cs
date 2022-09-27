@@ -1,3 +1,4 @@
+using Microsoft.Graph.Beta.DirectoryRoleTemplates.Count;
 using Microsoft.Graph.Beta.DirectoryRoleTemplates.GetByIds;
 using Microsoft.Graph.Beta.DirectoryRoleTemplates.GetUserOwnedObjects;
 using Microsoft.Graph.Beta.DirectoryRoleTemplates.Item;
@@ -15,6 +16,10 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.DirectoryRoleTemplates {
     /// <summary>Provides operations to manage the collection of directoryRoleTemplate entities.</summary>
     public class DirectoryRoleTemplatesRequestBuilder {
+        /// <summary>The Count property</summary>
+        public CountRequestBuilder Count { get =>
+            new CountRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The getByIds property</summary>
         public GetByIdsRequestBuilder GetByIds { get =>
             new GetByIdsRequestBuilder(PathParameters, RequestAdapter);
@@ -47,7 +52,7 @@ namespace Microsoft.Graph.Beta.DirectoryRoleTemplates {
         public DirectoryRoleTemplatesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/directoryRoleTemplates{?%24search*,%24orderby,%24select}";
+            UrlTemplate = "{+baseurl}/directoryRoleTemplates{?%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -60,7 +65,7 @@ namespace Microsoft.Graph.Beta.DirectoryRoleTemplates {
         public DirectoryRoleTemplatesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/directoryRoleTemplates{?%24search*,%24orderby,%24select}";
+            UrlTemplate = "{+baseurl}/directoryRoleTemplates{?%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
@@ -140,6 +145,15 @@ namespace Microsoft.Graph.Beta.DirectoryRoleTemplates {
         }
         /// <summary>Retrieve a list of directoryroletemplate objects.</summary>
         public class DirectoryRoleTemplatesRequestBuilderGetQueryParameters {
+            /// <summary>Include count of items</summary>
+            [QueryParameter("%24count")]
+            public bool? Count { get; set; }
+            /// <summary>Expand related entities</summary>
+            [QueryParameter("%24expand")]
+            public string[] Expand { get; set; }
+            /// <summary>Filter items by property values</summary>
+            [QueryParameter("%24filter")]
+            public string Filter { get; set; }
             /// <summary>Order items by property values</summary>
             [QueryParameter("%24orderby")]
             public string[] Orderby { get; set; }
@@ -149,6 +163,9 @@ namespace Microsoft.Graph.Beta.DirectoryRoleTemplates {
             /// <summary>Select properties to be returned</summary>
             [QueryParameter("%24select")]
             public string[] Select { get; set; }
+            /// <summary>Skip the first n items</summary>
+            [QueryParameter("%24skip")]
+            public int? Skip { get; set; }
         }
         /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
         public class DirectoryRoleTemplatesRequestBuilderGetRequestConfiguration {

@@ -74,8 +74,6 @@ namespace Microsoft.Graph.Beta.Models {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteStringValue("templateDisplayName", TemplateDisplayName);
-            writer.WriteStringValue("templateDisplayVersion", TemplateDisplayVersion);
             writer.WriteEnumValue<DeviceManagementConfigurationTemplateFamily>("templateFamily", TemplateFamily);
             writer.WriteStringValue("templateId", TemplateId);
             writer.WriteAdditionalData(AdditionalData);

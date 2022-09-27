@@ -116,7 +116,6 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("creationSource", CreationSource);
             writer.WriteStringValue("description", Description);
-            writer.WriteBoolValue("isAssigned", IsAssigned);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<DeviceManagementConfigurationPlatforms>("platforms", Platforms);

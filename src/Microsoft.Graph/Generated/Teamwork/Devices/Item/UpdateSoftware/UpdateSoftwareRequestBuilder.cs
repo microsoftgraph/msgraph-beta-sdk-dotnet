@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Teamwork.Devices.Item.UpdateSoftware {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action updateSoftware
+        /// Update the software for a Microsoft Teams-enabled device. This API triggers a long-running operation.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Beta.Teamwork.Devices.Item.UpdateSoftware {
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action updateSoftware
+        /// Update the software for a Microsoft Teams-enabled device. This API triggers a long-running operation.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

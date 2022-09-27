@@ -68,7 +68,6 @@ namespace Microsoft.Graph.Beta.Models {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteBoolValue("applyOnlyToWindows81", ApplyOnlyToWindows81);
             writer.WriteEnumValue<WindowsVpnConnectionType>("connectionType", ConnectionType);
             writer.WriteBoolValue("enableSplitTunneling", EnableSplitTunneling);
             writer.WriteStringValue("loginGroupOrDomain", LoginGroupOrDomain);

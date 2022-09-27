@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Devices that are managed or pre-enrolled through Intune</summary>
     public class ManagedDevice : Entity, IParsable {
         /// <summary>Whether the device is Azure Active Directory registered. This property is read-only.</summary>
         public bool? AadRegistered {
@@ -462,7 +463,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("windowsRemediatedMalwareCount", value); }
         }
         /// <summary>
-        /// Instantiates a new ManagedDevice and sets the default values.
+        /// Instantiates a new managedDevice and sets the default values.
         /// </summary>
         public ManagedDevice() : base() {
             OdataType = "#microsoft.graph.managedDevice";
@@ -584,97 +585,41 @@ namespace Microsoft.Graph.Beta.Models {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteBoolValue("aadRegistered", AadRegistered);
-            writer.WriteStringValue("activationLockBypassCode", ActivationLockBypassCode);
-            writer.WriteStringValue("androidSecurityPatchLevel", AndroidSecurityPatchLevel);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.AssignmentFilterEvaluationStatusDetails>("assignmentFilterEvaluationStatusDetails", AssignmentFilterEvaluationStatusDetails);
-            writer.WriteBoolValue("autopilotEnrolled", AutopilotEnrolled);
-            writer.WriteStringValue("azureActiveDirectoryDeviceId", AzureActiveDirectoryDeviceId);
-            writer.WriteStringValue("azureADDeviceId", AzureADDeviceId);
-            writer.WriteBoolValue("azureADRegistered", AzureADRegistered);
-            writer.WriteBoolValue("bootstrapTokenEscrowed", BootstrapTokenEscrowed);
             writer.WriteEnumValue<ChassisType>("chassisType", ChassisType);
             writer.WriteCollectionOfObjectValues<ChromeOSDeviceProperty>("chromeOSDeviceInfo", ChromeOSDeviceInfo);
             writer.WriteCollectionOfObjectValues<CloudPcRemoteActionResult>("cloudPcRemoteActionResults", CloudPcRemoteActionResults);
-            writer.WriteDateTimeOffsetValue("complianceGracePeriodExpirationDateTime", ComplianceGracePeriodExpirationDateTime);
             writer.WriteEnumValue<ComplianceState>("complianceState", ComplianceState);
-            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ConfigurationManagerClientEnabledFeatures>("configurationManagerClientEnabledFeatures", ConfigurationManagerClientEnabledFeatures);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ConfigurationManagerClientHealthState>("configurationManagerClientHealthState", ConfigurationManagerClientHealthState);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ConfigurationManagerClientInformation>("configurationManagerClientInformation", ConfigurationManagerClientInformation);
             writer.WriteCollectionOfObjectValues<DetectedApp>("detectedApps", DetectedApps);
-            writer.WriteCollectionOfObjectValues<DeviceActionResult>("deviceActionResults", DeviceActionResults);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DeviceCategory>("deviceCategory", DeviceCategory);
-            writer.WriteStringValue("deviceCategoryDisplayName", DeviceCategoryDisplayName);
             writer.WriteCollectionOfObjectValues<DeviceCompliancePolicyState>("deviceCompliancePolicyStates", DeviceCompliancePolicyStates);
             writer.WriteCollectionOfObjectValues<DeviceConfigurationState>("deviceConfigurationStates", DeviceConfigurationStates);
             writer.WriteEnumValue<DeviceEnrollmentType>("deviceEnrollmentType", DeviceEnrollmentType);
             writer.WriteBoolValue("deviceFirmwareConfigurationInterfaceManaged", DeviceFirmwareConfigurationInterfaceManaged);
-            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DeviceHealthAttestationState>("deviceHealthAttestationState", DeviceHealthAttestationState);
-            writer.WriteStringValue("deviceName", DeviceName);
             writer.WriteEnumValue<DeviceRegistrationState>("deviceRegistrationState", DeviceRegistrationState);
             writer.WriteEnumValue<DeviceType>("deviceType", DeviceType);
-            writer.WriteBoolValue("easActivated", EasActivated);
-            writer.WriteDateTimeOffsetValue("easActivationDateTime", EasActivationDateTime);
-            writer.WriteStringValue("easDeviceId", EasDeviceId);
-            writer.WriteStringValue("emailAddress", EmailAddress);
-            writer.WriteDateTimeOffsetValue("enrolledDateTime", EnrolledDateTime);
-            writer.WriteStringValue("enrollmentProfileName", EnrollmentProfileName);
-            writer.WriteStringValue("ethernetMacAddress", EthernetMacAddress);
             writer.WriteEnumValue<DeviceManagementExchangeAccessState>("exchangeAccessState", ExchangeAccessState);
             writer.WriteEnumValue<DeviceManagementExchangeAccessStateReason>("exchangeAccessStateReason", ExchangeAccessStateReason);
-            writer.WriteDateTimeOffsetValue("exchangeLastSuccessfulSyncDateTime", ExchangeLastSuccessfulSyncDateTime);
-            writer.WriteLongValue("freeStorageSpaceInBytes", FreeStorageSpaceInBytes);
-            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.HardwareInformation>("hardwareInformation", HardwareInformation);
-            writer.WriteStringValue("iccid", Iccid);
-            writer.WriteStringValue("imei", Imei);
-            writer.WriteBoolValue("isEncrypted", IsEncrypted);
-            writer.WriteBoolValue("isSupervised", IsSupervised);
-            writer.WriteStringValue("jailBroken", JailBroken);
             writer.WriteEnumValue<JoinType>("joinType", JoinType);
-            writer.WriteDateTimeOffsetValue("lastSyncDateTime", LastSyncDateTime);
             writer.WriteCollectionOfObjectValues<DeviceLogCollectionResponse>("logCollectionRequests", LogCollectionRequests);
             writer.WriteEnumValue<LostModeState>("lostModeState", LostModeState);
             writer.WriteCollectionOfObjectValues<ManagedDeviceMobileAppConfigurationState>("managedDeviceMobileAppConfigurationStates", ManagedDeviceMobileAppConfigurationStates);
             writer.WriteStringValue("managedDeviceName", ManagedDeviceName);
             writer.WriteEnumValue<ManagedDeviceOwnerType>("managedDeviceOwnerType", ManagedDeviceOwnerType);
             writer.WriteEnumValue<ManagementAgentType>("managementAgent", ManagementAgent);
-            writer.WriteDateTimeOffsetValue("managementCertificateExpirationDate", ManagementCertificateExpirationDate);
             writer.WriteEnumValue<ManagedDeviceManagementFeatures>("managementFeatures", ManagementFeatures);
             writer.WriteEnumValue<ManagementState>("managementState", ManagementState);
-            writer.WriteStringValue("manufacturer", Manufacturer);
-            writer.WriteStringValue("meid", Meid);
-            writer.WriteStringValue("model", Model);
             writer.WriteStringValue("notes", Notes);
-            writer.WriteStringValue("operatingSystem", OperatingSystem);
-            writer.WriteStringValue("osVersion", OsVersion);
             writer.WriteEnumValue<OwnerType>("ownerType", OwnerType);
             writer.WriteEnumValue<ManagedDevicePartnerReportedHealthState>("partnerReportedThreatState", PartnerReportedThreatState);
-            writer.WriteStringValue("phoneNumber", PhoneNumber);
-            writer.WriteLongValue("physicalMemoryInBytes", PhysicalMemoryInBytes);
-            writer.WriteDateTimeOffsetValue("preferMdmOverGroupPolicyAppliedDateTime", PreferMdmOverGroupPolicyAppliedDateTime);
             writer.WriteEnumValue<ManagedDeviceArchitecture>("processorArchitecture", ProcessorArchitecture);
-            writer.WriteStringValue("remoteAssistanceSessionErrorDetails", RemoteAssistanceSessionErrorDetails);
-            writer.WriteStringValue("remoteAssistanceSessionUrl", RemoteAssistanceSessionUrl);
-            writer.WriteBoolValue("requireUserEnrollmentApproval", RequireUserEnrollmentApproval);
-            writer.WriteDateTimeOffsetValue("retireAfterDateTime", RetireAfterDateTime);
             writer.WriteCollectionOfPrimitiveValues<string>("roleScopeTagIds", RoleScopeTagIds);
             writer.WriteCollectionOfObjectValues<SecurityBaselineState>("securityBaselineStates", SecurityBaselineStates);
-            writer.WriteStringValue("serialNumber", SerialNumber);
             writer.WriteStringValue("skuFamily", SkuFamily);
-            writer.WriteIntValue("skuNumber", SkuNumber);
-            writer.WriteStringValue("specificationVersion", SpecificationVersion);
-            writer.WriteStringValue("subscriberCarrier", SubscriberCarrier);
-            writer.WriteLongValue("totalStorageSpaceInBytes", TotalStorageSpaceInBytes);
-            writer.WriteStringValue("udid", Udid);
-            writer.WriteStringValue("userDisplayName", UserDisplayName);
-            writer.WriteStringValue("userId", UserId);
-            writer.WriteStringValue("userPrincipalName", UserPrincipalName);
             writer.WriteCollectionOfObjectValues<User>("users", Users);
-            writer.WriteCollectionOfObjectValues<LoggedOnUser>("usersLoggedOn", UsersLoggedOn);
-            writer.WriteStringValue("wiFiMacAddress", WiFiMacAddress);
-            writer.WriteIntValue("windowsActiveMalwareCount", WindowsActiveMalwareCount);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.WindowsProtectionState>("windowsProtectionState", WindowsProtectionState);
-            writer.WriteIntValue("windowsRemediatedMalwareCount", WindowsRemediatedMalwareCount);
         }
     }
 }

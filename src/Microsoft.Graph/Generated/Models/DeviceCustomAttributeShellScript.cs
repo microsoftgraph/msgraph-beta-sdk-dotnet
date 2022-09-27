@@ -125,7 +125,6 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<DeviceManagementScriptAssignment>("assignments", Assignments);
-            writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("customAttributeName", CustomAttributeName);
             writer.WriteEnumValue<DeviceCustomAttributeValueType>("customAttributeType", CustomAttributeType);
             writer.WriteStringValue("description", Description);
@@ -133,7 +132,6 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("fileName", FileName);
             writer.WriteCollectionOfObjectValues<DeviceManagementScriptGroupAssignment>("groupAssignments", GroupAssignments);
-            writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteCollectionOfPrimitiveValues<string>("roleScopeTagIds", RoleScopeTagIds);
             writer.WriteEnumValue<RunAsAccountType>("runAsAccount", RunAsAccount);
             writer.WriteObjectValue<DeviceManagementScriptRunSummary>("runSummary", RunSummary);

@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Education.Users.Item.User {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get user from education
+        /// Retrieve the simple directory **user** that corresponds to this **educationUser**.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<UserRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Beta.Education.Users.Item.User {
             return requestInfo;
         }
         /// <summary>
-        /// Get user from education
+        /// Retrieve the simple directory **user** that corresponds to this **educationUser**.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Beta.Education.Users.Item.User {
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.User>(requestInfo, Microsoft.Graph.Beta.Models.User.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Get user from education</summary>
+        /// <summary>Retrieve the simple directory **user** that corresponds to this **educationUser**.</summary>
         public class UserRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

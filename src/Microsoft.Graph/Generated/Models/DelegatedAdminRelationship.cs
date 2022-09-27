@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class DelegatedAdminRelationship : Entity, IParsable {
         /// <summary>The access assignments associated with the delegated admin relationship.</summary>
         public List<DelegatedAdminAccessAssignment> AccessAssignments {
@@ -66,7 +67,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>
-        /// Instantiates a new DelegatedAdminRelationship and sets the default values.
+        /// Instantiates a new delegatedAdminRelationship and sets the default values.
         /// </summary>
         public DelegatedAdminRelationship() : base() {
             OdataType = "#microsoft.graph.delegatedAdminRelationship";

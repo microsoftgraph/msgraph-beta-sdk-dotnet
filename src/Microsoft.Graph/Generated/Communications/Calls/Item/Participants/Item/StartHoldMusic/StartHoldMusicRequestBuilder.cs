@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Communications.Calls.Item.Participants.Item.Start
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action startHoldMusic
+        /// Put a participant on hold and play music in the background.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Beta.Communications.Calls.Item.Participants.Item.Start
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action startHoldMusic
+        /// Put a participant on hold and play music in the background.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

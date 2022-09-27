@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.IdentityProtection.RiskyServicePrincipals.Dismiss
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action dismiss
+        /// Dismiss the risk of one or more riskyServicePrincipal objects. This action sets the targeted service principal account&apos;s risk level to `none`. You can dismiss up to 60 service principal accounts in one request.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Beta.IdentityProtection.RiskyServicePrincipals.Dismiss
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action dismiss
+        /// Dismiss the risk of one or more riskyServicePrincipal objects. This action sets the targeted service principal account&apos;s risk level to `none`. You can dismiss up to 60 service principal accounts in one request.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

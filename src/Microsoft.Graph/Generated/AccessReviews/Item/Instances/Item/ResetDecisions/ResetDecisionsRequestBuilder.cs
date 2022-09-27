@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.AccessReviews.Item.Instances.Item.ResetDecisions 
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action resetDecisions
+        /// In the Azure AD access reviews feature, reset the decisions of a currently active accessReview.  The target object can be either a one-time access review, or an instance of a recurring access review.  Previous decisions are no longer recorded, but reviewers can continue to update decisions.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreatePostRequestInformation(Action<ResetDecisionsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.AccessReviews.Item.Instances.Item.ResetDecisions 
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action resetDecisions
+        /// In the Azure AD access reviews feature, reset the decisions of a currently active accessReview.  The target object can be either a one-time access review, or an instance of a recurring access review.  Previous decisions are no longer recorded, but reviewers can continue to update decisions.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>

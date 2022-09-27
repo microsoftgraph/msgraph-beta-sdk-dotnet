@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class SalesQuote : Entity, IParsable {
         /// <summary>The acceptedDate property</summary>
         public Date? AcceptedDate {
@@ -187,7 +188,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("validUntilDate", value); }
         }
         /// <summary>
-        /// Instantiates a new SalesQuote and sets the default values.
+        /// Instantiates a new salesQuote and sets the default values.
         /// </summary>
         public SalesQuote() : base() {
             OdataType = "#microsoft.graph.salesQuote";

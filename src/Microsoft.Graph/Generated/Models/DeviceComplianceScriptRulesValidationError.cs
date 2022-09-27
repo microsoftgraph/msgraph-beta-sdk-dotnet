@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to call the validateComplianceScript method.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public enum DeviceComplianceScriptRulesValidationError {
         /// <summary>None error.</summary>
         None,

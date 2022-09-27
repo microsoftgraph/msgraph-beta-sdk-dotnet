@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.BulkReprovisionCl
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action bulkReprovisionCloudPc
+        /// Bulk reprovision a set of Cloud PC devices with Intune managed device IDs.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.BulkReprovisionCl
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action bulkReprovisionCloudPc
+        /// Bulk reprovision a set of Cloud PC devices with Intune managed device IDs.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

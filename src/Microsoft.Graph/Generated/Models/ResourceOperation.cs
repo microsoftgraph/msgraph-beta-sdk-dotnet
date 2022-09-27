@@ -66,8 +66,6 @@ namespace Microsoft.Graph.Beta.Models {
             base.Serialize(writer);
             writer.WriteStringValue("actionName", ActionName);
             writer.WriteStringValue("description", Description);
-            writer.WriteBoolValue("enabledForScopeValidation", EnabledForScopeValidation);
-            writer.WriteStringValue("resource", Resource);
             writer.WriteStringValue("resourceName", ResourceName);
         }
     }

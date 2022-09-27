@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Me.OnlineMeetings.Item.Registration.CustomQuestio
         public CustomQuestionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/me/onlineMeetings/{onlineMeeting%2Did}/registration/customQuestions{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+            UrlTemplate = "{+baseurl}/me/onlineMeetings/{onlineMeeting%2Did}/registration/customQuestions{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -50,14 +50,14 @@ namespace Microsoft.Graph.Beta.Me.OnlineMeetings.Item.Registration.CustomQuestio
         public CustomQuestionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/me/onlineMeetings/{onlineMeeting%2Did}/registration/customQuestions{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+            UrlTemplate = "{+baseurl}/me/onlineMeetings/{onlineMeeting%2Did}/registration/customQuestions{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Custom registration questions.
+        /// Get a list of the custom registration questions associated with a meetingRegistration object on behalf of the organizer.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<CustomQuestionsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -77,7 +77,7 @@ namespace Microsoft.Graph.Beta.Me.OnlineMeetings.Item.Registration.CustomQuestio
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to customQuestions for me
+        /// Create a custom registration question associated with a meetingRegistration object on behalf of the organizer.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Beta.Me.OnlineMeetings.Item.Registration.CustomQuestio
             return requestInfo;
         }
         /// <summary>
-        /// Custom registration questions.
+        /// Get a list of the custom registration questions associated with a meetingRegistration object on behalf of the organizer.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -113,7 +113,7 @@ namespace Microsoft.Graph.Beta.Me.OnlineMeetings.Item.Registration.CustomQuestio
             return await RequestAdapter.SendAsync<MeetingRegistrationQuestionCollectionResponse>(requestInfo, MeetingRegistrationQuestionCollectionResponse.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create new navigation property to customQuestions for me
+        /// Create a custom registration question associated with a meetingRegistration object on behalf of the organizer.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -128,7 +128,7 @@ namespace Microsoft.Graph.Beta.Me.OnlineMeetings.Item.Registration.CustomQuestio
             };
             return await RequestAdapter.SendAsync<MeetingRegistrationQuestion>(requestInfo, MeetingRegistrationQuestion.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Custom registration questions.</summary>
+        /// <summary>Get a list of the custom registration questions associated with a meetingRegistration object on behalf of the organizer.</summary>
         public class CustomQuestionsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

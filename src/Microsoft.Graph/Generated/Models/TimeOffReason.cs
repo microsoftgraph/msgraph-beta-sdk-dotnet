@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class TimeOffReason : ChangeTrackedEntity, IParsable {
         /// <summary>The name of the timeOffReason. Required.</summary>
         public string DisplayName {
@@ -22,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("isActive", value); }
         }
         /// <summary>
-        /// Instantiates a new timeOffReason and sets the default values.
+        /// Instantiates a new TimeOffReason and sets the default values.
         /// </summary>
         public TimeOffReason() : base() {
             OdataType = "#microsoft.graph.timeOffReason";

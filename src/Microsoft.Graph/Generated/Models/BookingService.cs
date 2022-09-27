@@ -173,7 +173,6 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteObjectValue<BookingSchedulingPolicy>("schedulingPolicy", SchedulingPolicy);
             writer.WriteBoolValue("smsNotificationsEnabled", SmsNotificationsEnabled);
             writer.WriteCollectionOfPrimitiveValues<string>("staffMemberIds", StaffMemberIds);
-            writer.WriteStringValue("webUrl", WebUrl);
         }
     }
 }

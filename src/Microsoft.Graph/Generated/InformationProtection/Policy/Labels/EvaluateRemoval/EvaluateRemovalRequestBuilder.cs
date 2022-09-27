@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.InformationProtection.Policy.Labels.EvaluateRemov
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action evaluateRemoval
+        /// Indicate to the consuming application what actions it should take to remove the label information. Given contentInfo as an input, which includes existing content metadata key/value pairs, the API returns an informationProtectionAction that contains some combination of one of more of the following: 
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Beta.InformationProtection.Policy.Labels.EvaluateRemov
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action evaluateRemoval
+        /// Indicate to the consuming application what actions it should take to remove the label information. Given contentInfo as an input, which includes existing content metadata key/value pairs, the API returns an informationProtectionAction that contains some combination of one of more of the following: 
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

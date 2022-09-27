@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class CloudAppSecurityProfile : Entity, IParsable {
         /// <summary>The azureSubscriptionId property</summary>
         public string AzureSubscriptionId {
@@ -91,7 +92,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("vendorInformation", value); }
         }
         /// <summary>
-        /// Instantiates a new CloudAppSecurityProfile and sets the default values.
+        /// Instantiates a new cloudAppSecurityProfile and sets the default values.
         /// </summary>
         public CloudAppSecurityProfile() : base() {
             OdataType = "#microsoft.graph.cloudAppSecurityProfile";

@@ -132,14 +132,12 @@ namespace Microsoft.Graph.Beta.Models {
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<DeviceManagementScriptAssignment>("assignments", Assignments);
             writer.WriteBoolValue("blockExecutionNotifications", BlockExecutionNotifications);
-            writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("description", Description);
             writer.WriteCollectionOfObjectValues<DeviceManagementScriptDeviceState>("deviceRunStates", DeviceRunStates);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteTimeSpanValue("executionFrequency", ExecutionFrequency);
             writer.WriteStringValue("fileName", FileName);
             writer.WriteCollectionOfObjectValues<DeviceManagementScriptGroupAssignment>("groupAssignments", GroupAssignments);
-            writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteIntValue("retryCount", RetryCount);
             writer.WriteCollectionOfPrimitiveValues<string>("roleScopeTagIds", RoleScopeTagIds);
             writer.WriteEnumValue<RunAsAccountType>("runAsAccount", RunAsAccount);

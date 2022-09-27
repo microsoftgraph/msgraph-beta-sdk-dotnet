@@ -45,6 +45,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<CloudPcProvisioningPolicy>>("provisioningPolicies"); }
             set { BackingStore?.Set("provisioningPolicies", value); }
         }
+        /// <summary>The reports property</summary>
+        public CloudPcReports Reports {
+            get { return BackingStore?.Get<CloudPcReports>("reports"); }
+            set { BackingStore?.Set("reports", value); }
+        }
         /// <summary>Cloud PC service plans.</summary>
         public List<CloudPcServicePlan> ServicePlans {
             get { return BackingStore?.Get<List<CloudPcServicePlan>>("servicePlans"); }
@@ -92,6 +97,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"onPremisesConnections", n => { OnPremisesConnections = n.GetCollectionOfObjectValues<CloudPcOnPremisesConnection>(CloudPcOnPremisesConnection.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"organizationSettings", n => { OrganizationSettings = n.GetObjectValue<CloudPcOrganizationSettings>(CloudPcOrganizationSettings.CreateFromDiscriminatorValue); } },
                 {"provisioningPolicies", n => { ProvisioningPolicies = n.GetCollectionOfObjectValues<CloudPcProvisioningPolicy>(CloudPcProvisioningPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"reports", n => { Reports = n.GetObjectValue<CloudPcReports>(CloudPcReports.CreateFromDiscriminatorValue); } },
                 {"servicePlans", n => { ServicePlans = n.GetCollectionOfObjectValues<CloudPcServicePlan>(CloudPcServicePlan.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"snapshots", n => { Snapshots = n.GetCollectionOfObjectValues<CloudPcSnapshot>(CloudPcSnapshot.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"supportedRegions", n => { SupportedRegions = n.GetCollectionOfObjectValues<CloudPcSupportedRegion>(CloudPcSupportedRegion.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -113,6 +119,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfObjectValues<CloudPcOnPremisesConnection>("onPremisesConnections", OnPremisesConnections);
             writer.WriteObjectValue<CloudPcOrganizationSettings>("organizationSettings", OrganizationSettings);
             writer.WriteCollectionOfObjectValues<CloudPcProvisioningPolicy>("provisioningPolicies", ProvisioningPolicies);
+            writer.WriteObjectValue<CloudPcReports>("reports", Reports);
             writer.WriteCollectionOfObjectValues<CloudPcServicePlan>("servicePlans", ServicePlans);
             writer.WriteCollectionOfObjectValues<CloudPcSnapshot>("snapshots", Snapshots);
             writer.WriteCollectionOfObjectValues<CloudPcSupportedRegion>("supportedRegions", SupportedRegions);

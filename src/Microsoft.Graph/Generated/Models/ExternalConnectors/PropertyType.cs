@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of externalConnection entities.</summary>
     public enum PropertyType {
         String,
         Int64,

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Ediscovery {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the compliance singleton.</summary>
     public class NoncustodialDataSource : DataSourceContainer, IParsable {
         /// <summary>Indicates if hold is applied to non-custodial data source (such as mailbox or site).</summary>
         public bool? ApplyHoldToSource {

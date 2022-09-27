@@ -25,6 +25,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<ConditionalAccessPolicy>>("policies"); }
             set { BackingStore?.Set("policies", value); }
         }
+        /// <summary>The templates property</summary>
+        public List<ConditionalAccessTemplate> Templates {
+            get { return BackingStore?.Get<List<ConditionalAccessTemplate>>("templates"); }
+            set { BackingStore?.Set("templates", value); }
+        }
         /// <summary>
         /// Instantiates a new ConditionalAccessRoot and sets the default values.
         /// </summary>
@@ -48,6 +53,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"authenticationStrengths", n => { AuthenticationStrengths = n.GetObjectValue<AuthenticationStrengthRoot>(AuthenticationStrengthRoot.CreateFromDiscriminatorValue); } },
                 {"namedLocations", n => { NamedLocations = n.GetCollectionOfObjectValues<NamedLocation>(NamedLocation.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"policies", n => { Policies = n.GetCollectionOfObjectValues<ConditionalAccessPolicy>(ConditionalAccessPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"templates", n => { Templates = n.GetCollectionOfObjectValues<ConditionalAccessTemplate>(ConditionalAccessTemplate.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -61,6 +67,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteObjectValue<AuthenticationStrengthRoot>("authenticationStrengths", AuthenticationStrengths);
             writer.WriteCollectionOfObjectValues<NamedLocation>("namedLocations", NamedLocations);
             writer.WriteCollectionOfObjectValues<ConditionalAccessPolicy>("policies", Policies);
+            writer.WriteCollectionOfObjectValues<ConditionalAccessTemplate>("templates", Templates);
         }
     }
 }

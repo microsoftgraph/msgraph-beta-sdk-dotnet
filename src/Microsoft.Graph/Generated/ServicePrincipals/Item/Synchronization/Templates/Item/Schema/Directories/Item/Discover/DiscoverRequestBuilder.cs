@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Templates.
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action discover
+        /// Discover the latest schema definition for provisioning to an application. 
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreatePostRequestInformation(Action<DiscoverRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Templates.
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action discover
+        /// Discover the latest schema definition for provisioning to an application. 
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>

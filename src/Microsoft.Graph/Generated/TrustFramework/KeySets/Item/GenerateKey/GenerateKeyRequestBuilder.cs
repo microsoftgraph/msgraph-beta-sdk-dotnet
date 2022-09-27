@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.TrustFramework.KeySets.Item.GenerateKey {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action generateKey
+        /// Generate a trustFrameworkKey and a secret automatically in the trustFrameworkKeyset. The caller doesn&apos;t have to provide a secret.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Beta.TrustFramework.KeySets.Item.GenerateKey {
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action generateKey
+        /// Generate a trustFrameworkKey and a secret automatically in the trustFrameworkKeyset. The caller doesn&apos;t have to provide a secret.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

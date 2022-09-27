@@ -62,8 +62,6 @@ namespace Microsoft.Graph.Beta.Models {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteCollectionOfPrimitiveValues<string>("roleAssignmentIds", RoleAssignmentIds);
-            writer.WriteCollectionOfPrimitiveValues<string>("roleDefinitionIds", RoleDefinitionIds);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.InformationProtection.Policy.Labels.ExtractLabel 
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action extractLabel
+        /// Using the metadata that exists on an already-labeled piece of information, resolve the metadata to a specific sensitivity label. The contentInfo input is resolved to informationProtectionContentLabel.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Beta.InformationProtection.Policy.Labels.ExtractLabel 
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action extractLabel
+        /// Using the metadata that exists on an already-labeled piece of information, resolve the metadata to a specific sensitivity label. The contentInfo input is resolved to informationProtectionContentLabel.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

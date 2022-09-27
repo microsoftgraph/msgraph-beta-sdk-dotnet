@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class Person : Entity, IParsable {
         /// <summary>The person&apos;s birthday.</summary>
         public string Birthday {
@@ -106,7 +107,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("yomiCompany", value); }
         }
         /// <summary>
-        /// Instantiates a new Person and sets the default values.
+        /// Instantiates a new person and sets the default values.
         /// </summary>
         public Person() : base() {
             OdataType = "#microsoft.graph.person";

@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.MeetingAttendanceR
             return requestInfo;
         }
         /// <summary>
-        /// Get meetingAttendanceReport from users
+        /// Get the meetingAttendanceReport for an onlineMeeting. Each time an online meeting ends, an attendance report will be generated for that session.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<MeetingAttendanceReportRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -99,6 +99,7 @@ namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.MeetingAttendanceR
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             if (requestConfiguration != null) {
                 var requestConfig = new MeetingAttendanceReportRequestBuilderPatchRequestConfiguration();
@@ -123,7 +124,7 @@ namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.MeetingAttendanceR
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get meetingAttendanceReport from users
+        /// Get the meetingAttendanceReport for an onlineMeeting. Each time an online meeting ends, an attendance report will be generated for that session.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -143,14 +144,14 @@ namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.MeetingAttendanceR
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task PatchAsync(Microsoft.Graph.Beta.Models.MeetingAttendanceReport body, Action<MeetingAttendanceReportRequestBuilderPatchRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.MeetingAttendanceReport> PatchAsync(Microsoft.Graph.Beta.Models.MeetingAttendanceReport body, Action<MeetingAttendanceReportRequestBuilderPatchRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.MeetingAttendanceReport>(requestInfo, Microsoft.Graph.Beta.Models.MeetingAttendanceReport.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
         public class MeetingAttendanceReportRequestBuilderDeleteRequestConfiguration {
@@ -166,7 +167,7 @@ namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.MeetingAttendanceR
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>Get meetingAttendanceReport from users</summary>
+        /// <summary>Get the meetingAttendanceReport for an onlineMeeting. Each time an online meeting ends, an attendance report will be generated for that session.</summary>
         public class MeetingAttendanceReportRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

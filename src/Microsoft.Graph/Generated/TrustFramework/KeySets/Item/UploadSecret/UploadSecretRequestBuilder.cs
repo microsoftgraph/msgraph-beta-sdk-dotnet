@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.TrustFramework.KeySets.Item.UploadSecret {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action uploadSecret
+        /// Upload a plain text secret to a trustFrameworkKeyset. Examples of secrets are application secrets in Azure Active Directory, Google, Facebook, or any other identity provider. his method returns trustFrameworkKey.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Beta.TrustFramework.KeySets.Item.UploadSecret {
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action uploadSecret
+        /// Upload a plain text secret to a trustFrameworkKeyset. Examples of secrets are application secrets in Azure Active Directory, Google, Facebook, or any other identity provider. his method returns trustFrameworkKey.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

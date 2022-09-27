@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Item.Start
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action start
+        /// Start an existing synchronization job. If the job is in a paused state, it will continue processing changes from the point where it was paused. If the job is in quarantine, the quarantine status will be cleared. Do not create scripts to call the start job continuously while it&apos;s running because that can cause the service to stop running. Use the start job only when the job is currently paused or in quarantine. 
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreatePostRequestInformation(Action<StartRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Item.Start
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action start
+        /// Start an existing synchronization job. If the job is in a paused state, it will continue processing changes from the point where it was paused. If the job is in quarantine, the quarantine status will be cleared. Do not create scripts to call the start job continuously while it&apos;s running because that can cause the service to stop running. Use the start job only when the job is currently paused or in quarantine. 
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>

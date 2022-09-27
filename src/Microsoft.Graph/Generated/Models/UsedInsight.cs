@@ -60,8 +60,6 @@ namespace Microsoft.Graph.Beta.Models {
             base.Serialize(writer);
             writer.WriteObjectValue<UsageDetails>("lastUsed", LastUsed);
             writer.WriteObjectValue<Entity>("resource", Resource);
-            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ResourceReference>("resourceReference", ResourceReference);
-            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ResourceVisualization>("resourceVisualization", ResourceVisualization);
         }
     }
 }

@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Communications.Presences.Item.ClearPresence {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action clearPresence
+        /// Clear a presence session of an application for a user. If it is the user&apos;s only presence session, a successful **clearPresence** changes the user&apos;s presence to `Offline/Offline`. Read more about presence sessions and their time-out and expiration. 
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Beta.Communications.Presences.Item.ClearPresence {
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action clearPresence
+        /// Clear a presence session of an application for a user. If it is the user&apos;s only presence session, a successful **clearPresence** changes the user&apos;s presence to `Offline/Offline`. Read more about presence sessions and their time-out and expiration. 
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Teamwork.Devices.Item.RunDiagnostics {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action runDiagnostics
+        /// Run and generate diagnostic logs for the specified Microsoft Teams-enabled device. This API triggers a long-running operation used to generate logs for a device.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreatePostRequestInformation(Action<RunDiagnosticsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Teamwork.Devices.Item.RunDiagnostics {
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action runDiagnostics
+        /// Run and generate diagnostic logs for the specified Microsoft Teams-enabled device. This API triggers a long-running operation used to generate logs for a device.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>

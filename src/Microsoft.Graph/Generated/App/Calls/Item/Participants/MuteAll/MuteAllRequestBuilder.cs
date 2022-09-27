@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.Participants.MuteAll {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action muteAll
+        /// Mute all participants in the call.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.Participants.MuteAll {
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action muteAll
+        /// Mute all participants in the call.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

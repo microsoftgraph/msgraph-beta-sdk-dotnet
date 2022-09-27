@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class EducationUser : Entity, IParsable {
         /// <summary>True if the account is enabled; otherwise, false. This property is required when a user is created. Supports /$filter.</summary>
         public bool? AccountEnabled {
@@ -196,7 +197,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("userType", value); }
         }
         /// <summary>
-        /// Instantiates a new EducationUser and sets the default values.
+        /// Instantiates a new educationUser and sets the default values.
         /// </summary>
         public EducationUser() : base() {
             OdataType = "#microsoft.graph.educationUser";

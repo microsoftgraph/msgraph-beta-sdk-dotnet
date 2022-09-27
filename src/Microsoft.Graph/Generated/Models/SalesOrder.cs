@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class SalesOrder : Entity, IParsable {
         /// <summary>The billingPostalAddress property</summary>
         public PostalAddressType BillingPostalAddress {
@@ -182,7 +183,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("totalTaxAmount", value); }
         }
         /// <summary>
-        /// Instantiates a new SalesOrder and sets the default values.
+        /// Instantiates a new salesOrder and sets the default values.
         /// </summary>
         public SalesOrder() : base() {
             OdataType = "#microsoft.graph.salesOrder";

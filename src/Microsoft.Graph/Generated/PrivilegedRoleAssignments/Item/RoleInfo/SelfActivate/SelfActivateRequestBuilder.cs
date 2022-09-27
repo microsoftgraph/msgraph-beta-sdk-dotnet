@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignments.Item.RoleInfo.SelfActiv
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action selfActivate
+        /// Activate the role that is assigned to the requester.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignments.Item.RoleInfo.SelfActiv
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action selfActivate
+        /// Activate the role that is assigned to the requester.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

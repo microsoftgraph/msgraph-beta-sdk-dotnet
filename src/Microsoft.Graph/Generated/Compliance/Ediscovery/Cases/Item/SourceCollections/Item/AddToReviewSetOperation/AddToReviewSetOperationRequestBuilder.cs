@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.SourceCollection
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Adds the results of the sourceCollection to the specified reviewSet.
+        /// Get the last addToReviewSetOperation object associated with a source collection. 
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<AddToReviewSetOperationRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.SourceCollection
             return requestInfo;
         }
         /// <summary>
-        /// Adds the results of the sourceCollection to the specified reviewSet.
+        /// Get the last addToReviewSetOperation object associated with a source collection. 
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.SourceCollection
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Ediscovery.AddToReviewSetOperation>(requestInfo, Microsoft.Graph.Beta.Models.Ediscovery.AddToReviewSetOperation.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Adds the results of the sourceCollection to the specified reviewSet.</summary>
+        /// <summary>Get the last addToReviewSetOperation object associated with a source collection. </summary>
         public class AddToReviewSetOperationRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

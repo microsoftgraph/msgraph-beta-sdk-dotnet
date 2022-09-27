@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.UpdatePasswordSingleSignOn
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action updatePasswordSingleSignOnCredentials
+        /// Update single sign-on credentials using a password for a user or group.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.UpdatePasswordSingleSignOn
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action updatePasswordSingleSignOnCredentials
+        /// Update single sign-on credentials using a password for a user or group.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

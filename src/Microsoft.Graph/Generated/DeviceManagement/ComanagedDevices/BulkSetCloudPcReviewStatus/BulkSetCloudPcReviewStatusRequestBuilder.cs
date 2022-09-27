@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.BulkSetCloudPcR
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action bulkSetCloudPcReviewStatus
+        /// Set the review status of multiple Cloud PC devices with a single request that includes the IDs of Intune managed devices.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.BulkSetCloudPcR
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action bulkSetCloudPcReviewStatus
+        /// Set the review status of multiple Cloud PC devices with a single request that includes the IDs of Intune managed devices.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

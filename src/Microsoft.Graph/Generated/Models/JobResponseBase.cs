@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the dataClassificationService singleton.</summary>
     public class JobResponseBase : Entity, IParsable {
         /// <summary>The creationDateTime property</summary>
         public DateTimeOffset? CreationDateTime {
@@ -42,7 +43,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("type", value); }
         }
         /// <summary>
-        /// Instantiates a new JobResponseBase and sets the default values.
+        /// Instantiates a new jobResponseBase and sets the default values.
         /// </summary>
         public JobResponseBase() : base() {
             OdataType = "#microsoft.graph.jobResponseBase";

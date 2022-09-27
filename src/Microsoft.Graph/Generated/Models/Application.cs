@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Casts the previous resource to application.</summary>
     public class Application : DirectoryObject, IParsable {
         /// <summary>Specifies settings for an application that implements a web API.</summary>
         public ApiApplication Api {
@@ -20,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<AppManagementPolicy>>("appManagementPolicies"); }
             set { BackingStore?.Set("appManagementPolicies", value); }
         }
-        /// <summary>The collection of roles assigned to the application. With app role assignments, these roles can be assigned to users, groups, or service principals associated with other applications. Not nullable.</summary>
+        /// <summary>The collection of roles defined for the application. With app role assignments, these roles can be assigned to users, groups, or service principals associated with other applications. Not nullable.</summary>
         public List<AppRole> AppRoles {
             get { return BackingStore?.Get<List<AppRole>>("appRoles"); }
             set { BackingStore?.Set("appRoles", value); }
@@ -175,6 +176,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("serviceManagementReference"); }
             set { BackingStore?.Set("serviceManagementReference", value); }
         }
+        /// <summary>The servicePrincipalLockConfiguration property</summary>
+        public Microsoft.Graph.Beta.Models.ServicePrincipalLockConfiguration ServicePrincipalLockConfiguration {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ServicePrincipalLockConfiguration>("servicePrincipalLockConfiguration"); }
+            set { BackingStore?.Set("servicePrincipalLockConfiguration", value); }
+        }
         /// <summary>Specifies the Microsoft accounts that are supported for the current application. The possible values are: AzureADMyOrg, AzureADMultipleOrgs, AzureADandPersonalMicrosoftAccount (default), and PersonalMicrosoftAccount. See more in the table below. Supports $filter (eq, ne, not).</summary>
         public string SignInAudience {
             get { return BackingStore?.Get<string>("signInAudience"); }
@@ -231,7 +237,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("windows", value); }
         }
         /// <summary>
-        /// Instantiates a new Application and sets the default values.
+        /// Instantiates a new application and sets the default values.
         /// </summary>
         public Application() : base() {
             OdataType = "#microsoft.graph.application";
@@ -283,6 +289,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"requiredResourceAccess", n => { RequiredResourceAccess = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.RequiredResourceAccess>(Microsoft.Graph.Beta.Models.RequiredResourceAccess.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"samlMetadataUrl", n => { SamlMetadataUrl = n.GetStringValue(); } },
                 {"serviceManagementReference", n => { ServiceManagementReference = n.GetStringValue(); } },
+                {"servicePrincipalLockConfiguration", n => { ServicePrincipalLockConfiguration = n.GetObjectValue<Microsoft.Graph.Beta.Models.ServicePrincipalLockConfiguration>(Microsoft.Graph.Beta.Models.ServicePrincipalLockConfiguration.CreateFromDiscriminatorValue); } },
                 {"signInAudience", n => { SignInAudience = n.GetStringValue(); } },
                 {"spa", n => { Spa = n.GetObjectValue<SpaApplication>(SpaApplication.CreateFromDiscriminatorValue); } },
                 {"synchronization", n => { Synchronization = n.GetObjectValue<Microsoft.Graph.Beta.Models.Synchronization>(Microsoft.Graph.Beta.Models.Synchronization.CreateFromDiscriminatorValue); } },
@@ -337,6 +344,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.RequiredResourceAccess>("requiredResourceAccess", RequiredResourceAccess);
             writer.WriteStringValue("samlMetadataUrl", SamlMetadataUrl);
             writer.WriteStringValue("serviceManagementReference", ServiceManagementReference);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ServicePrincipalLockConfiguration>("servicePrincipalLockConfiguration", ServicePrincipalLockConfiguration);
             writer.WriteStringValue("signInAudience", SignInAudience);
             writer.WriteObjectValue<SpaApplication>("spa", Spa);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Synchronization>("synchronization", Synchronization);
