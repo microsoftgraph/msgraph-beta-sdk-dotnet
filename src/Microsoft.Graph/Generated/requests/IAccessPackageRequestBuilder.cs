@@ -72,6 +72,13 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IAccessPackageGetApplicablePolicyRequirementsRequestBuilder"/>.</returns>
         IAccessPackageGetApplicablePolicyRequirementsRequestBuilder GetApplicablePolicyRequirements();
+
+        /// <summary>
+        /// Gets the request builder for AccessPackageMoveToCatalog.
+        /// </summary>
+        /// <returns>The <see cref="IAccessPackageMoveToCatalogRequestBuilder"/>.</returns>
+        IAccessPackageMoveToCatalogRequestBuilder MoveToCatalog(
+            string catalogId);
     
     }
 }

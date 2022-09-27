@@ -41,6 +41,12 @@ namespace Microsoft.Graph
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
+        /// Gets or sets display name.
+        /// </summary>
+        [JsonPropertyName("displayName")]
+        public string DisplayName { get; set; }
+    
+        /// <summary>
         /// Gets or sets is fetchable.
         /// If true, document can be fetched by printer.
         /// </summary>
