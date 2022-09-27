@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Security.Alerts.UpdateAlerts {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action updateAlerts
+        /// Update multiple alerts in one request instead of multiple requests.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Beta.Security.Alerts.UpdateAlerts {
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action updateAlerts
+        /// Update multiple alerts in one request instead of multiple requests.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

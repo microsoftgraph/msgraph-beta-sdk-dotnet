@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class MailFolder : Entity, IParsable {
         /// <summary>The number of immediate child mailFolders in the current mailFolder.</summary>
         public int? ChildFolderCount {
@@ -72,7 +73,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("wellKnownName", value); }
         }
         /// <summary>
-        /// Instantiates a new MailFolder and sets the default values.
+        /// Instantiates a new mailFolder and sets the default values.
         /// </summary>
         public MailFolder() : base() {
             OdataType = "#microsoft.graph.mailFolder";

@@ -144,10 +144,8 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfObjectValues<BookingCustomQuestion>("customQuestions", CustomQuestions);
             writer.WriteStringValue("defaultCurrencyIso", DefaultCurrencyIso);
             writer.WriteStringValue("email", Email);
-            writer.WriteBoolValue("isPublished", IsPublished);
             writer.WriteStringValue("languageTag", LanguageTag);
             writer.WriteStringValue("phone", Phone);
-            writer.WriteStringValue("publicUrl", PublicUrl);
             writer.WriteObjectValue<BookingSchedulingPolicy>("schedulingPolicy", SchedulingPolicy);
             writer.WriteCollectionOfObjectValues<BookingService>("services", Services);
             writer.WriteCollectionOfObjectValues<BookingStaffMember>("staffMembers", StaffMembers);

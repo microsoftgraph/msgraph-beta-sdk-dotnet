@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.TrustFramework.KeySets.Item.UploadCertificate {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action uploadCertificate
+        /// Upload a certificate to a trustFrameworkKeyset. The input is a base-64 encoded value of the certificate contents. This method returns trustFrameworkKey.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Beta.TrustFramework.KeySets.Item.UploadCertificate {
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action uploadCertificate
+        /// Upload a certificate to a trustFrameworkKeyset. The input is a base-64 encoded value of the certificate contents. This method returns trustFrameworkKey.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

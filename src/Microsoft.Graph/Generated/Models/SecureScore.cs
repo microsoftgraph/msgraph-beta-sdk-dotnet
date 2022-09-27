@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class SecureScore : Entity, IParsable {
         /// <summary>Active user count of the given tenant.</summary>
         public int? ActiveUserCount {
@@ -56,7 +57,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("vendorInformation", value); }
         }
         /// <summary>
-        /// Instantiates a new SecureScore and sets the default values.
+        /// Instantiates a new secureScore and sets the default values.
         /// </summary>
         public SecureScore() : base() {
             OdataType = "#microsoft.graph.secureScore";

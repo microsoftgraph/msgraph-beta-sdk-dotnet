@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class PrivilegedSignupStatus : Entity, IParsable {
         /// <summary>The isRegistered property</summary>
         public bool? IsRegistered {
@@ -16,7 +17,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>
-        /// Instantiates a new PrivilegedSignupStatus and sets the default values.
+        /// Instantiates a new privilegedSignupStatus and sets the default values.
         /// </summary>
         public PrivilegedSignupStatus() : base() {
             OdataType = "#microsoft.graph.privilegedSignupStatus";

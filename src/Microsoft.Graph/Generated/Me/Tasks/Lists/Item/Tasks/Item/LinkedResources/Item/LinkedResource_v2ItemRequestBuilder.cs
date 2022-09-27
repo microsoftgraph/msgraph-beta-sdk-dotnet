@@ -94,6 +94,7 @@ namespace Microsoft.Graph.Beta.Me.Tasks.Lists.Item.Tasks.Item.LinkedResources.It
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             if (requestConfiguration != null) {
                 var requestConfig = new LinkedResource_v2ItemRequestBuilderPatchRequestConfiguration();
@@ -138,14 +139,14 @@ namespace Microsoft.Graph.Beta.Me.Tasks.Lists.Item.Tasks.Item.LinkedResources.It
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task PatchAsync(LinkedResource_v2 body, Action<LinkedResource_v2ItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<LinkedResource_v2> PatchAsync(LinkedResource_v2 body, Action<LinkedResource_v2ItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<LinkedResource_v2>(requestInfo, LinkedResource_v2.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
         public class LinkedResource_v2ItemRequestBuilderDeleteRequestConfiguration {

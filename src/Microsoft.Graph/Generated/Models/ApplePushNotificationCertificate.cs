@@ -83,7 +83,6 @@ namespace Microsoft.Graph.Beta.Models {
             base.Serialize(writer);
             writer.WriteStringValue("appleIdentifier", AppleIdentifier);
             writer.WriteStringValue("certificate", Certificate);
-            writer.WriteStringValue("certificateSerialNumber", CertificateSerialNumber);
             writer.WriteStringValue("certificateUploadFailureReason", CertificateUploadFailureReason);
             writer.WriteStringValue("certificateUploadStatus", CertificateUploadStatus);
             writer.WriteDateTimeOffsetValue("expirationDateTime", ExpirationDateTime);

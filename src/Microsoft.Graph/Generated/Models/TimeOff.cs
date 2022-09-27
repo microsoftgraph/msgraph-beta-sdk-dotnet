@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class TimeOff : ChangeTrackedEntity, IParsable {
         /// <summary>The draft version of this timeOff that is viewable by managers. Required.</summary>
         public TimeOffItem DraftTimeOff {
@@ -27,7 +26,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("userId", value); }
         }
         /// <summary>
-        /// Instantiates a new timeOff and sets the default values.
+        /// Instantiates a new TimeOff and sets the default values.
         /// </summary>
         public TimeOff() : base() {
             OdataType = "#microsoft.graph.timeOff";

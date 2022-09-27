@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class DocumentComment : Entity, IParsable {
         /// <summary>The content property</summary>
         public string Content {
@@ -16,7 +17,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("replies", value); }
         }
         /// <summary>
-        /// Instantiates a new DocumentComment and sets the default values.
+        /// Instantiates a new documentComment and sets the default values.
         /// </summary>
         public DocumentComment() : base() {
             OdataType = "#microsoft.graph.documentComment";

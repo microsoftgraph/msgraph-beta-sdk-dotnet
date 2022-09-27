@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.PrivilegedApproval.Item.RoleInfo.Summary {
             return requestInfo;
         }
         /// <summary>
-        /// The summary information for this role. Read-only. Nullable.
+        /// Retrieve the properties and relationships of privilegedRoleSummary object.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<SummaryRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -94,6 +94,7 @@ namespace Microsoft.Graph.Beta.PrivilegedApproval.Item.RoleInfo.Summary {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             if (requestConfiguration != null) {
                 var requestConfig = new SummaryRequestBuilderPatchRequestConfiguration();
@@ -118,7 +119,7 @@ namespace Microsoft.Graph.Beta.PrivilegedApproval.Item.RoleInfo.Summary {
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The summary information for this role. Read-only. Nullable.
+        /// Retrieve the properties and relationships of privilegedRoleSummary object.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -138,14 +139,14 @@ namespace Microsoft.Graph.Beta.PrivilegedApproval.Item.RoleInfo.Summary {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task PatchAsync(PrivilegedRoleSummary body, Action<SummaryRequestBuilderPatchRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<PrivilegedRoleSummary> PatchAsync(PrivilegedRoleSummary body, Action<SummaryRequestBuilderPatchRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<PrivilegedRoleSummary>(requestInfo, PrivilegedRoleSummary.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
         public class SummaryRequestBuilderDeleteRequestConfiguration {
@@ -161,7 +162,7 @@ namespace Microsoft.Graph.Beta.PrivilegedApproval.Item.RoleInfo.Summary {
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>The summary information for this role. Read-only. Nullable.</summary>
+        /// <summary>Retrieve the properties and relationships of privilegedRoleSummary object.</summary>
         public class SummaryRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

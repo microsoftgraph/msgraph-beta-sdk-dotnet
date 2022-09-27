@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.DeviceManagement {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class AlertRecord : Entity, IParsable {
         /// <summary>The alertImpact property</summary>
         public Microsoft.Graph.Beta.Models.DeviceManagement.AlertImpact AlertImpact {

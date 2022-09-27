@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Teamwork.SendActivityNotificationToRecipients {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action sendActivityNotificationToRecipients
+        /// Send activity feed notifications to multiple users, in bulk.  For more details about sending notifications and the requirements for doing so, seesending Teams activity notifications.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Beta.Teamwork.SendActivityNotificationToRecipients {
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action sendActivityNotificationToRecipients
+        /// Send activity feed notifications to multiple users, in bulk.  For more details about sending notifications and the requirements for doing so, seesending Teams activity notifications.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

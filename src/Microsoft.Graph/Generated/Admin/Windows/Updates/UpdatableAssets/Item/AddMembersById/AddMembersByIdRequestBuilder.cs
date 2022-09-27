@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatableAssets.Item.AddMem
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action addMembersById
+        /// Add members of the same type to an updatableAssetGroup. You can also use the method addMembers to add members.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatableAssets.Item.AddMem
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action addMembersById
+        /// Add members of the same type to an updatableAssetGroup. You can also use the method addMembers to add members.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

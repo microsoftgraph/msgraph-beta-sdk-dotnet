@@ -259,9 +259,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("customerPhone", CustomerPhone);
             writer.WriteCollectionOfObjectValues<BookingCustomerInformationBase>("customers", Customers);
             writer.WriteStringValue("customerTimeZone", CustomerTimeZone);
-            writer.WriteTimeSpanValue("duration", Duration);
             writer.WriteObjectValue<DateTimeTimeZone>("end", End);
-            writer.WriteIntValue("filledAttendeesCount", FilledAttendeesCount);
             writer.WriteDoubleValue("invoiceAmount", InvoiceAmount);
             writer.WriteObjectValue<DateTimeTimeZone>("invoiceDate", InvoiceDate);
             writer.WriteStringValue("invoiceId", InvoiceId);

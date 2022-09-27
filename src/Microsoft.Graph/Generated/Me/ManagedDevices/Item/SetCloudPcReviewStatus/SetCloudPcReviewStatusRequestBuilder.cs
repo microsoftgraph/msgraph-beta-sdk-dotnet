@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Me.ManagedDevices.Item.SetCloudPcReviewStatus {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action setCloudPcReviewStatus
+        /// Set the review status of a specific Cloud PC device. Use this API to set the review status of a Cloud PC to in review if you consider a Cloud PC as suspicious. After the review is completed, use this API again to set the Cloud PC back to a normal state.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Beta.Me.ManagedDevices.Item.SetCloudPcReviewStatus {
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action setCloudPcReviewStatus
+        /// Set the review status of a specific Cloud PC device. Use this API to set the review status of a Cloud PC to in review if you consider a Cloud PC as suspicious. After the review is completed, use this API again to set the Cloud PC back to a normal state.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

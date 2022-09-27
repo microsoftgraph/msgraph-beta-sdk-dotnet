@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Contacts.Item.Manager {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// The user or contact that is this contact&apos;s manager. Read-only. Supports $expand.
+        /// Get the contact&apos;s manager
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<ManagerRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Beta.Contacts.Item.Manager {
             return requestInfo;
         }
         /// <summary>
-        /// The user or contact that is this contact&apos;s manager. Read-only. Supports $expand.
+        /// Get the contact&apos;s manager
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Beta.Contacts.Item.Manager {
             };
             return await RequestAdapter.SendAsync<DirectoryObject>(requestInfo, DirectoryObject.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>The user or contact that is this contact&apos;s manager. Read-only. Supports $expand.</summary>
+        /// <summary>Get the contact&apos;s manager</summary>
         public class ManagerRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

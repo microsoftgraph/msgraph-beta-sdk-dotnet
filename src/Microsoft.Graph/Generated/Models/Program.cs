@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class Program : Entity, IParsable {
         /// <summary>Controls associated with the program.</summary>
         public List<ProgramControl> Controls {
@@ -21,7 +22,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>
-        /// Instantiates a new Program and sets the default values.
+        /// Instantiates a new program and sets the default values.
         /// </summary>
         public Program() : base() {
             OdataType = "#microsoft.graph.program";

@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Users.ValidatePassword {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action validatePassword
+        /// Check a user&apos;s password against the organization&apos;s password validation policy and report whether the password is valid. Use this action to provide real-time feedback on password strength while the user types their password.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Beta.Users.ValidatePassword {
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action validatePassword
+        /// Check a user&apos;s password against the organization&apos;s password validation policy and report whether the password is valid. Use this action to provide real-time feedback on password strength while the user types their password.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

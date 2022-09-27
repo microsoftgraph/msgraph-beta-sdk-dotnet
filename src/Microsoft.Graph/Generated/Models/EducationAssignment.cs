@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class EducationAssignment : Entity, IParsable {
         /// <summary>Optional field to control the assignment behavior for students who are added after the assignment is published. If not specified, defaults to none value. Currently supports only two values: none or assignIfOpen.</summary>
         public EducationAddedStudentAction? AddedStudentAction {
@@ -136,7 +137,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("webUrl", value); }
         }
         /// <summary>
-        /// Instantiates a new EducationAssignment and sets the default values.
+        /// Instantiates a new educationAssignment and sets the default values.
         /// </summary>
         public EducationAssignment() : base() {
             OdataType = "#microsoft.graph.educationAssignment";
@@ -193,28 +194,18 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteEnumValue<EducationAddToCalendarOptions>("addToCalendarAction", AddToCalendarAction);
             writer.WriteBoolValue("allowLateSubmissions", AllowLateSubmissions);
             writer.WriteBoolValue("allowStudentsToAddResourcesToSubmission", AllowStudentsToAddResourcesToSubmission);
-            writer.WriteDateTimeOffsetValue("assignDateTime", AssignDateTime);
-            writer.WriteDateTimeOffsetValue("assignedDateTime", AssignedDateTime);
             writer.WriteObjectValue<EducationAssignmentRecipient>("assignTo", AssignTo);
             writer.WriteCollectionOfObjectValues<EducationCategory>("categories", Categories);
             writer.WriteStringValue("classId", ClassId);
             writer.WriteDateTimeOffsetValue("closeDateTime", CloseDateTime);
-            writer.WriteObjectValue<IdentitySet>("createdBy", CreatedBy);
-            writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteDateTimeOffsetValue("dueDateTime", DueDateTime);
-            writer.WriteStringValue("feedbackResourcesFolderUrl", FeedbackResourcesFolderUrl);
             writer.WriteObjectValue<EducationAssignmentGradeType>("grading", Grading);
             writer.WriteObjectValue<EducationItemBody>("instructions", Instructions);
-            writer.WriteObjectValue<IdentitySet>("lastModifiedBy", LastModifiedBy);
-            writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteStringValue("notificationChannelUrl", NotificationChannelUrl);
             writer.WriteCollectionOfObjectValues<EducationAssignmentResource>("resources", Resources);
-            writer.WriteStringValue("resourcesFolderUrl", ResourcesFolderUrl);
             writer.WriteObjectValue<EducationRubric>("rubric", Rubric);
-            writer.WriteEnumValue<EducationAssignmentStatus>("status", Status);
             writer.WriteCollectionOfObjectValues<EducationSubmission>("submissions", Submissions);
-            writer.WriteStringValue("webUrl", WebUrl);
         }
     }
 }

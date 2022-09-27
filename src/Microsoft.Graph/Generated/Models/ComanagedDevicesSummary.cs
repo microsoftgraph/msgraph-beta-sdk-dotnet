@@ -103,16 +103,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteIntValue("compliancePolicyCount", CompliancePolicyCount);
-            writer.WriteIntValue("configurationSettingsCount", ConfigurationSettingsCount);
-            writer.WriteIntValue("endpointProtectionCount", EndpointProtectionCount);
-            writer.WriteIntValue("inventoryCount", InventoryCount);
-            writer.WriteIntValue("modernAppsCount", ModernAppsCount);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteIntValue("officeAppsCount", OfficeAppsCount);
-            writer.WriteIntValue("resourceAccessCount", ResourceAccessCount);
-            writer.WriteIntValue("totalComanagedCount", TotalComanagedCount);
-            writer.WriteIntValue("windowsUpdateForBusinessCount", WindowsUpdateForBusinessCount);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

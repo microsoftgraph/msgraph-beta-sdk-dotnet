@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel.Messages.Item.Rep
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action undoSoftDelete
+        /// Undo soft deletion of a single message or a message reply in a channel or a chat.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreatePostRequestInformation(Action<UndoSoftDeleteRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.PrimaryChannel.Messages.Item.Rep
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action undoSoftDelete
+        /// Undo soft deletion of a single message or a message reply in a channel or a chat.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
