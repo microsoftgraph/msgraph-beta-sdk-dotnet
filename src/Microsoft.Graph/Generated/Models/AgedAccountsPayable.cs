@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class AgedAccountsPayable : Entity, IParsable {
         /// <summary>The agedAsOfDate property</summary>
         public Date? AgedAsOfDate {
@@ -57,7 +58,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("vendorNumber", value); }
         }
         /// <summary>
-        /// Instantiates a new AgedAccountsPayable and sets the default values.
+        /// Instantiates a new agedAccountsPayable and sets the default values.
         /// </summary>
         public AgedAccountsPayable() : base() {
             OdataType = "#microsoft.graph.agedAccountsPayable";

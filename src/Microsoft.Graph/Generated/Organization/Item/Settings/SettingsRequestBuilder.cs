@@ -1,5 +1,6 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Organization.Item.Settings.ContactInsights;
 using Microsoft.Graph.Beta.Organization.Item.Settings.ItemInsights;
 using Microsoft.Graph.Beta.Organization.Item.Settings.MicrosoftApplicationDataAccess;
 using Microsoft.Graph.Beta.Organization.Item.Settings.PeopleInsights;
@@ -15,6 +16,10 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Organization.Item.Settings {
     /// <summary>Provides operations to manage the settings property of the microsoft.graph.organization entity.</summary>
     public class SettingsRequestBuilder {
+        /// <summary>The contactInsights property</summary>
+        public ContactInsightsRequestBuilder ContactInsights { get =>
+            new ContactInsightsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The itemInsights property</summary>
         public ItemInsightsRequestBuilder ItemInsights { get =>
             new ItemInsightsRequestBuilder(PathParameters, RequestAdapter);
@@ -83,7 +88,7 @@ namespace Microsoft.Graph.Beta.Organization.Item.Settings {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of organizationSettings object. Nullable.
+        /// Retrieve the properties and relationships of an organizationSettings object, including **profileCardProperties**. This operation does not return insightsSettings. Depending on the type of insights, you can get their settings by using list itemInsights or list peopleInsights. This operation does not return microsoftApplicationDataAccessSettings. To get microsoftApplicationDataAccessSettings, use list microsoftApplicationDataAccessSettings.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<SettingsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -114,6 +119,7 @@ namespace Microsoft.Graph.Beta.Organization.Item.Settings {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             if (requestConfiguration != null) {
                 var requestConfig = new SettingsRequestBuilderPatchRequestConfiguration();
@@ -138,7 +144,7 @@ namespace Microsoft.Graph.Beta.Organization.Item.Settings {
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of organizationSettings object. Nullable.
+        /// Retrieve the properties and relationships of an organizationSettings object, including **profileCardProperties**. This operation does not return insightsSettings. Depending on the type of insights, you can get their settings by using list itemInsights or list peopleInsights. This operation does not return microsoftApplicationDataAccessSettings. To get microsoftApplicationDataAccessSettings, use list microsoftApplicationDataAccessSettings.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -158,14 +164,14 @@ namespace Microsoft.Graph.Beta.Organization.Item.Settings {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task PatchAsync(Microsoft.Graph.Beta.Models.OrganizationSettings body, Action<SettingsRequestBuilderPatchRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.OrganizationSettings> PatchAsync(Microsoft.Graph.Beta.Models.OrganizationSettings body, Action<SettingsRequestBuilderPatchRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.OrganizationSettings>(requestInfo, Microsoft.Graph.Beta.Models.OrganizationSettings.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
         public class SettingsRequestBuilderDeleteRequestConfiguration {
@@ -181,7 +187,7 @@ namespace Microsoft.Graph.Beta.Organization.Item.Settings {
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>Retrieve the properties and relationships of organizationSettings object. Nullable.</summary>
+        /// <summary>Retrieve the properties and relationships of an organizationSettings object, including **profileCardProperties**. This operation does not return insightsSettings. Depending on the type of insights, you can get their settings by using list itemInsights or list peopleInsights. This operation does not return microsoftApplicationDataAccessSettings. To get microsoftApplicationDataAccessSettings, use list microsoftApplicationDataAccessSettings.</summary>
         public class SettingsRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to call the query method.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public enum BucketAggregationSortProperty {
         Count,
         KeyAsString,

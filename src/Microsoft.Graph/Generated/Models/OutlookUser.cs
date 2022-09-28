@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("tasks", value); }
         }
         /// <summary>
-        /// Instantiates a new OutlookUser and sets the default values.
+        /// Instantiates a new outlookUser and sets the default values.
         /// </summary>
         public OutlookUser() : base() {
             OdataType = "#microsoft.graph.outlookUser";

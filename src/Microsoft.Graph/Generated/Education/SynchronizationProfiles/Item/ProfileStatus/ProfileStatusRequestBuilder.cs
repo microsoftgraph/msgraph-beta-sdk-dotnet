@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.ProfileSta
             return requestInfo;
         }
         /// <summary>
-        /// The synchronization status.
+        /// Get the status of a specific school data synchronization profile in the tenant. The response will indicate the status of the sync.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<ProfileStatusRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -94,6 +94,7 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.ProfileSta
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             if (requestConfiguration != null) {
                 var requestConfig = new ProfileStatusRequestBuilderPatchRequestConfiguration();
@@ -118,7 +119,7 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.ProfileSta
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The synchronization status.
+        /// Get the status of a specific school data synchronization profile in the tenant. The response will indicate the status of the sync.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -138,14 +139,14 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.ProfileSta
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task PatchAsync(EducationSynchronizationProfileStatus body, Action<ProfileStatusRequestBuilderPatchRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<EducationSynchronizationProfileStatus> PatchAsync(EducationSynchronizationProfileStatus body, Action<ProfileStatusRequestBuilderPatchRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<EducationSynchronizationProfileStatus>(requestInfo, EducationSynchronizationProfileStatus.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
         public class ProfileStatusRequestBuilderDeleteRequestConfiguration {
@@ -161,7 +162,7 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item.ProfileSta
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>The synchronization status.</summary>
+        /// <summary>Get the status of a specific school data synchronization profile in the tenant. The response will indicate the status of the sync.</summary>
         public class ProfileStatusRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.IdentityProtection.RiskyServicePrincipals.Confirm
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action confirmCompromised
+        /// Confirm one or more riskyServicePrincipal objects as compromised. This action sets the targeted service principal account&apos;s risk level to `high`. When the risk level of the service principal is confirmed as compromised, the service principal object is disabled and its **disabledByMicrosoftStatus** property is updated.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Beta.IdentityProtection.RiskyServicePrincipals.Confirm
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action confirmCompromised
+        /// Confirm one or more riskyServicePrincipal objects as compromised. This action sets the targeted service principal account&apos;s risk level to `high`. When the risk level of the service principal is confirmed as compromised, the service principal object is disabled and its **disabledByMicrosoftStatus** property is updated.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

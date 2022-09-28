@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Print.Reports.ApplicationSignInDetailedSummary {
         public ApplicationSignInDetailedSummaryRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/print/reports/applicationSignInDetailedSummary{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+            UrlTemplate = "{+baseurl}/print/reports/applicationSignInDetailedSummary{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -50,14 +50,14 @@ namespace Microsoft.Graph.Beta.Print.Reports.ApplicationSignInDetailedSummary {
         public ApplicationSignInDetailedSummaryRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/print/reports/applicationSignInDetailedSummary{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+            UrlTemplate = "{+baseurl}/print/reports/applicationSignInDetailedSummary{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Represents a detailed summary of an application sign-in.
+        /// Retrieve the applicationSignInDetailedSummary objects.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<ApplicationSignInDetailedSummaryRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Beta.Print.Reports.ApplicationSignInDetailedSummary {
             return requestInfo;
         }
         /// <summary>
-        /// Represents a detailed summary of an application sign-in.
+        /// Retrieve the applicationSignInDetailedSummary objects.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -128,7 +128,7 @@ namespace Microsoft.Graph.Beta.Print.Reports.ApplicationSignInDetailedSummary {
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ApplicationSignInDetailedSummary>(requestInfo, Microsoft.Graph.Beta.Models.ApplicationSignInDetailedSummary.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Represents a detailed summary of an application sign-in.</summary>
+        /// <summary>Retrieve the applicationSignInDetailedSummary objects.</summary>
         public class ApplicationSignInDetailedSummaryRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

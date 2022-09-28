@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.Connections.Item.Quota {
             return requestInfo;
         }
         /// <summary>
-        /// Get quota from connections
+        /// Retrieve the properties and relationships of a connectionQuota object.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<QuotaRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -94,6 +94,7 @@ namespace Microsoft.Graph.Beta.Connections.Item.Quota {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             if (requestConfiguration != null) {
                 var requestConfig = new QuotaRequestBuilderPatchRequestConfiguration();
@@ -118,7 +119,7 @@ namespace Microsoft.Graph.Beta.Connections.Item.Quota {
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get quota from connections
+        /// Retrieve the properties and relationships of a connectionQuota object.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -138,14 +139,14 @@ namespace Microsoft.Graph.Beta.Connections.Item.Quota {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task PatchAsync(ConnectionQuota body, Action<QuotaRequestBuilderPatchRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<ConnectionQuota> PatchAsync(ConnectionQuota body, Action<QuotaRequestBuilderPatchRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ConnectionQuota>(requestInfo, ConnectionQuota.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
         public class QuotaRequestBuilderDeleteRequestConfiguration {
@@ -161,7 +162,7 @@ namespace Microsoft.Graph.Beta.Connections.Item.Quota {
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>Get quota from connections</summary>
+        /// <summary>Retrieve the properties and relationships of a connectionQuota object.</summary>
         public class QuotaRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

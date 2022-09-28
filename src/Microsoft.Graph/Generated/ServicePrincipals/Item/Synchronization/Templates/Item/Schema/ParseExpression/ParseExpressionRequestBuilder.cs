@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Templates.
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action parseExpression
+        /// Parse a given string expression into an attributeMappingSource object. For more information about expressions, see Writing Expressions for Attribute Mappings in Azure Active Directory.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Templates.
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action parseExpression
+        /// Parse a given string expression into an attributeMappingSource object. For more information about expressions, see Writing Expressions for Attribute Mappings in Azure Active Directory.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

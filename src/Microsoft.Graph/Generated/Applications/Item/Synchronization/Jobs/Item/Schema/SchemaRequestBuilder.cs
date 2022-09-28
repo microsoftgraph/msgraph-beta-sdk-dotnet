@@ -75,7 +75,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Item.Schem
             return requestInfo;
         }
         /// <summary>
-        /// The synchronization schema configured for the job.
+        /// Retrieve the schema for a given synchronization job or template.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<SchemaRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Item.Schem
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property schema in applications
+        /// Update the synchronization schema for a given job or template. This method fully replaces the current schema with the one provided in the request. To update the schema of a template, make the call on the application object. You must be the owner of the application.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -106,6 +106,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Item.Schem
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             if (requestConfiguration != null) {
                 var requestConfig = new SchemaRequestBuilderPatchRequestConfiguration();
@@ -142,7 +143,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Item.Schem
             return new FunctionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
-        /// The synchronization schema configured for the job.
+        /// Retrieve the schema for a given synchronization job or template.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -156,20 +157,20 @@ namespace Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Item.Schem
             return await RequestAdapter.SendAsync<SynchronizationSchema>(requestInfo, SynchronizationSchema.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the navigation property schema in applications
+        /// Update the synchronization schema for a given job or template. This method fully replaces the current schema with the one provided in the request. To update the schema of a template, make the call on the application object. You must be the owner of the application.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task PatchAsync(SynchronizationSchema body, Action<SchemaRequestBuilderPatchRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<SynchronizationSchema> PatchAsync(SynchronizationSchema body, Action<SchemaRequestBuilderPatchRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<SynchronizationSchema>(requestInfo, SynchronizationSchema.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
         public class SchemaRequestBuilderDeleteRequestConfiguration {
@@ -185,7 +186,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Item.Schem
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>The synchronization schema configured for the job.</summary>
+        /// <summary>Retrieve the schema for a given synchronization job or template.</summary>
         public class SchemaRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

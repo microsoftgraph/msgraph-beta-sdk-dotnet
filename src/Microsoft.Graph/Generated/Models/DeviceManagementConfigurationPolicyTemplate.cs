@@ -113,11 +113,9 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("displayVersion", DisplayVersion);
             writer.WriteEnumValue<DeviceManagementTemplateLifecycleState>("lifecycleState", LifecycleState);
             writer.WriteEnumValue<DeviceManagementConfigurationPlatforms>("platforms", Platforms);
-            writer.WriteIntValue("settingTemplateCount", SettingTemplateCount);
             writer.WriteCollectionOfObjectValues<DeviceManagementConfigurationSettingTemplate>("settingTemplates", SettingTemplates);
             writer.WriteEnumValue<DeviceManagementConfigurationTechnologies>("technologies", Technologies);
             writer.WriteEnumValue<DeviceManagementConfigurationTemplateFamily>("templateFamily", TemplateFamily);
-            writer.WriteIntValue("version", Version);
         }
     }
 }

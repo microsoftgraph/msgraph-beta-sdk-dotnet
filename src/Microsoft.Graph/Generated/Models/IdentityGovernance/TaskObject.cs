@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class TaskObject : Entity, IParsable {
         /// <summary>Arguments included within the task.</summary>
         public List<Microsoft.Graph.Beta.Models.KeyValuePair> Arguments {
@@ -51,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
             set { BackingStore?.Set("taskProcessingResults", value); }
         }
         /// <summary>
-        /// Instantiates a new TaskObject and sets the default values.
+        /// Instantiates a new taskObject and sets the default values.
         /// </summary>
         public TaskObject() : base() {
             OdataType = "#microsoft.graph.identityGovernance.task";

@@ -61,7 +61,6 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfObjectValues<RoleScopeTagAutoAssignment>("assignments", Assignments);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteBoolValue("isBuiltIn", IsBuiltIn);
         }
     }
 }

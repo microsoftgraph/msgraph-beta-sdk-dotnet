@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.Me.Settings.ContactMergeSuggestions {
             return requestInfo;
         }
         /// <summary>
-        /// The user&apos;s settings for the visibility of merge suggestion for the duplicate contacts in the user&apos;s contact list.
+        /// Read the properties and relationships of a contactMergeSuggestions object.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<ContactMergeSuggestionsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Beta.Me.Settings.ContactMergeSuggestions {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property contactMergeSuggestions in me
+        /// Update the properties of a contactMergeSuggestions object.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -94,6 +94,7 @@ namespace Microsoft.Graph.Beta.Me.Settings.ContactMergeSuggestions {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             if (requestConfiguration != null) {
                 var requestConfig = new ContactMergeSuggestionsRequestBuilderPatchRequestConfiguration();
@@ -118,7 +119,7 @@ namespace Microsoft.Graph.Beta.Me.Settings.ContactMergeSuggestions {
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// The user&apos;s settings for the visibility of merge suggestion for the duplicate contacts in the user&apos;s contact list.
+        /// Read the properties and relationships of a contactMergeSuggestions object.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -132,20 +133,20 @@ namespace Microsoft.Graph.Beta.Me.Settings.ContactMergeSuggestions {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ContactMergeSuggestions>(requestInfo, Microsoft.Graph.Beta.Models.ContactMergeSuggestions.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the navigation property contactMergeSuggestions in me
+        /// Update the properties of a contactMergeSuggestions object.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task PatchAsync(Microsoft.Graph.Beta.Models.ContactMergeSuggestions body, Action<ContactMergeSuggestionsRequestBuilderPatchRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.ContactMergeSuggestions> PatchAsync(Microsoft.Graph.Beta.Models.ContactMergeSuggestions body, Action<ContactMergeSuggestionsRequestBuilderPatchRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ContactMergeSuggestions>(requestInfo, Microsoft.Graph.Beta.Models.ContactMergeSuggestions.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
         public class ContactMergeSuggestionsRequestBuilderDeleteRequestConfiguration {
@@ -161,7 +162,7 @@ namespace Microsoft.Graph.Beta.Me.Settings.ContactMergeSuggestions {
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>The user&apos;s settings for the visibility of merge suggestion for the duplicate contacts in the user&apos;s contact list.</summary>
+        /// <summary>Read the properties and relationships of a contactMergeSuggestions object.</summary>
         public class ContactMergeSuggestionsRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

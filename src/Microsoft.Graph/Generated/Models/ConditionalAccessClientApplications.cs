@@ -28,6 +28,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+        /// <summary>The servicePrincipalFilter property</summary>
+        public ConditionalAccessFilter ServicePrincipalFilter {
+            get { return BackingStore?.Get<ConditionalAccessFilter>("servicePrincipalFilter"); }
+            set { BackingStore?.Set("servicePrincipalFilter", value); }
+        }
         /// <summary>
         /// Instantiates a new conditionalAccessClientApplications and sets the default values.
         /// </summary>
@@ -52,6 +57,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"excludeServicePrincipals", n => { ExcludeServicePrincipals = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"includeServicePrincipals", n => { IncludeServicePrincipals = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                {"servicePrincipalFilter", n => { ServicePrincipalFilter = n.GetObjectValue<ConditionalAccessFilter>(ConditionalAccessFilter.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -63,6 +69,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfPrimitiveValues<string>("excludeServicePrincipals", ExcludeServicePrincipals);
             writer.WriteCollectionOfPrimitiveValues<string>("includeServicePrincipals", IncludeServicePrincipals);
             writer.WriteStringValue("@odata.type", OdataType);
+            writer.WriteObjectValue<ConditionalAccessFilter>("servicePrincipalFilter", ServicePrincipalFilter);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

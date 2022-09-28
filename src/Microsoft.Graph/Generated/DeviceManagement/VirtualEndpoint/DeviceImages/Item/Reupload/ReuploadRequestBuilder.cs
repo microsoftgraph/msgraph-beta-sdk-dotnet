@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.DeviceImages.Ite
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action reupload
+        /// Reupload a cloudPcDeviceImage object that failed to upload.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreatePostRequestInformation(Action<ReuploadRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.DeviceImages.Ite
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action reupload
+        /// Reupload a cloudPcDeviceImage object that failed to upload.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>

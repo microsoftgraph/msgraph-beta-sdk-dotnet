@@ -1123,7 +1123,6 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceCompliancePolicy>("deviceCompliancePolicies", DeviceCompliancePolicies);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DeviceCompliancePolicyDeviceStateSummary>("deviceCompliancePolicyDeviceStateSummary", DeviceCompliancePolicyDeviceStateSummary);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceCompliancePolicySettingStateSummary>("deviceCompliancePolicySettingStateSummaries", DeviceCompliancePolicySettingStateSummaries);
-            writer.WriteDateTimeOffsetValue("deviceComplianceReportSummarizationDateTime", DeviceComplianceReportSummarizationDateTime);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceComplianceScript>("deviceComplianceScripts", DeviceComplianceScripts);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceConfigurationConflictSummary>("deviceConfigurationConflictSummary", DeviceConfigurationConflictSummary);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DeviceConfigurationDeviceStateSummary>("deviceConfigurationDeviceStateSummaries", DeviceConfigurationDeviceStateSummaries);
@@ -1157,8 +1156,6 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.IntuneBrand>("intuneBrand", IntuneBrand);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.IntuneBrandingProfile>("intuneBrandingProfiles", IntuneBrandingProfiles);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.IosUpdateDeviceStatus>("iosUpdateStatuses", IosUpdateStatuses);
-            writer.WriteDateTimeOffsetValue("lastReportAggregationDateTime", LastReportAggregationDateTime);
-            writer.WriteBoolValue("legacyPcManangementEnabled", LegacyPcManangementEnabled);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.MacOSSoftwareUpdateAccountSummary>("macOSSoftwareUpdateAccountSummaries", MacOSSoftwareUpdateAccountSummaries);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ManagedDeviceCleanupSettings>("managedDeviceCleanupSettings", ManagedDeviceCleanupSettings);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.ManagedDeviceEncryptionState>("managedDeviceEncryptionStates", ManagedDeviceEncryptionStates);
@@ -1199,7 +1196,6 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.TenantAttachRBAC>("tenantAttachRBAC", TenantAttachRBAC);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.TermsAndConditions>("termsAndConditions", TermsAndConditions);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementTroubleshootingEvent>("troubleshootingEvents", TroubleshootingEvents);
-            writer.WriteBoolValue("unlicensedAdminstratorsEnabled", UnlicensedAdminstratorsEnabled);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthApplicationPerformance>("userExperienceAnalyticsAppHealthApplicationPerformance", UserExperienceAnalyticsAppHealthApplicationPerformance);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion>("userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion", UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails>("userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails", UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails);

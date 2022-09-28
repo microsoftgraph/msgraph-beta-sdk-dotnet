@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.NoncustodialData
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action release
+        /// Releases the non-custodial data source from the case.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreatePostRequestInformation(Action<ReleaseRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.NoncustodialData
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action release
+        /// Releases the non-custodial data source from the case.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>

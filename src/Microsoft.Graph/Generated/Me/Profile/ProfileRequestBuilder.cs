@@ -140,7 +140,7 @@ namespace Microsoft.Graph.Beta.Me.Profile {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Delete navigation property profile for me
+        /// Deletes a profile object from a user&apos;s account.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateDeleteRequestInformation(Action<ProfileRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
@@ -158,7 +158,7 @@ namespace Microsoft.Graph.Beta.Me.Profile {
             return requestInfo;
         }
         /// <summary>
-        /// Represents properties that are descriptive of a user in a tenant.
+        /// Retrieve the properties and relationships of a profile object for a given user. The **profile** resource exposes various rich properties that are descriptive of the user as relationships, for example, anniversaries and education activities. To get one of these navigation properties, use the corresponding GET method on that property. See the methods exposed by **profile**.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<ProfileRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -189,6 +189,7 @@ namespace Microsoft.Graph.Beta.Me.Profile {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             if (requestConfiguration != null) {
                 var requestConfig = new ProfileRequestBuilderPatchRequestConfiguration();
@@ -199,7 +200,7 @@ namespace Microsoft.Graph.Beta.Me.Profile {
             return requestInfo;
         }
         /// <summary>
-        /// Delete navigation property profile for me
+        /// Deletes a profile object from a user&apos;s account.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -213,7 +214,7 @@ namespace Microsoft.Graph.Beta.Me.Profile {
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Represents properties that are descriptive of a user in a tenant.
+        /// Retrieve the properties and relationships of a profile object for a given user. The **profile** resource exposes various rich properties that are descriptive of the user as relationships, for example, anniversaries and education activities. To get one of these navigation properties, use the corresponding GET method on that property. See the methods exposed by **profile**.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -233,14 +234,14 @@ namespace Microsoft.Graph.Beta.Me.Profile {
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task PatchAsync(Microsoft.Graph.Beta.Models.Profile body, Action<ProfileRequestBuilderPatchRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.Profile> PatchAsync(Microsoft.Graph.Beta.Models.Profile body, Action<ProfileRequestBuilderPatchRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Profile>(requestInfo, Microsoft.Graph.Beta.Models.Profile.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
         public class ProfileRequestBuilderDeleteRequestConfiguration {
@@ -256,7 +257,7 @@ namespace Microsoft.Graph.Beta.Me.Profile {
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>Represents properties that are descriptive of a user in a tenant.</summary>
+        /// <summary>Retrieve the properties and relationships of a profile object for a given user. The **profile** resource exposes various rich properties that are descriptive of the user as relationships, for example, anniversaries and education activities. To get one of these navigation properties, use the corresponding GET method on that property. See the methods exposed by **profile**.</summary>
         public class ProfileRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

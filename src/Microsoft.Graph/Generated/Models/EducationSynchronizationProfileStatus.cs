@@ -10,12 +10,12 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<long?>("errorCount"); }
             set { BackingStore?.Set("errorCount", value); }
         }
-        /// <summary>Represents the time when most recent changes were observed in profile.</summary>
+        /// <summary>Date and time when most recent changes were observed in the profile.</summary>
         public DateTimeOffset? LastActivityDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastActivityDateTime"); }
             set { BackingStore?.Set("lastActivityDateTime", value); }
         }
-        /// <summary>Represents the time of the most recent successful  synchronization.</summary>
+        /// <summary>Date and time of the most recent successful synchronization.</summary>
         public DateTimeOffset? LastSynchronizationDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastSynchronizationDateTime"); }
             set { BackingStore?.Set("lastSynchronizationDateTime", value); }
@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<EducationSynchronizationStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
-        /// <summary>Status message for the current profile&apos;s synchronization stage.</summary>
+        /// <summary>Status message for the synchronization stage of the current profile.</summary>
         public string StatusMessage {
             get { return BackingStore?.Get<string>("statusMessage"); }
             set { BackingStore?.Set("statusMessage", value); }

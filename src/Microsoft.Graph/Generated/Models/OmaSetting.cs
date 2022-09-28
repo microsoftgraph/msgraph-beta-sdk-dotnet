@@ -92,10 +92,8 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteBoolValue("isEncrypted", IsEncrypted);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("omaUri", OmaUri);
-            writer.WriteStringValue("secretReferenceValueId", SecretReferenceValueId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class PrintJob : Entity, IParsable {
         /// <summary>A group of settings that a printer should use to print a job.</summary>
         public PrintJobConfiguration Configuration {
@@ -20,6 +20,11 @@ namespace Microsoft.Graph.Beta.Models {
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
+        }
+        /// <summary>The displayName property</summary>
+        public string DisplayName {
+            get { return BackingStore?.Get<string>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The documents property</summary>
         public List<PrintDocument> Documents {
@@ -73,6 +78,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"configuration", n => { Configuration = n.GetObjectValue<PrintJobConfiguration>(PrintJobConfiguration.CreateFromDiscriminatorValue); } },
                 {"createdBy", n => { CreatedBy = n.GetObjectValue<UserIdentity>(UserIdentity.CreateFromDiscriminatorValue); } },
                 {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"documents", n => { Documents = n.GetCollectionOfObjectValues<PrintDocument>(PrintDocument.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"isFetchable", n => { IsFetchable = n.GetBoolValue(); } },
                 {"redirectedFrom", n => { RedirectedFrom = n.GetStringValue(); } },
@@ -91,6 +97,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteObjectValue<PrintJobConfiguration>("configuration", Configuration);
             writer.WriteObjectValue<UserIdentity>("createdBy", CreatedBy);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
+            writer.WriteStringValue("displayName", DisplayName);
             writer.WriteCollectionOfObjectValues<PrintDocument>("documents", Documents);
             writer.WriteBoolValue("isFetchable", IsFetchable);
             writer.WriteStringValue("redirectedFrom", RedirectedFrom);

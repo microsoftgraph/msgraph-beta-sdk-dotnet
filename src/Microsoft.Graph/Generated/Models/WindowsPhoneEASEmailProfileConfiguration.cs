@@ -94,7 +94,6 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("accountName", AccountName);
-            writer.WriteBoolValue("applyOnlyToWindowsPhone81", ApplyOnlyToWindowsPhone81);
             writer.WriteEnumValue<EmailSyncDuration>("durationOfEmailToSync", DurationOfEmailToSync);
             writer.WriteEnumValue<UserEmailSource>("emailAddressSource", EmailAddressSource);
             writer.WriteEnumValue<EmailSyncSchedule>("emailSyncSchedule", EmailSyncSchedule);

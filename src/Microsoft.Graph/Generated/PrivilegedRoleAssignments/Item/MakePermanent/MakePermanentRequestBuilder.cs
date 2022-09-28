@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignments.Item.MakePermanent {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action makePermanent
+        /// Make the role assignment permanent.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignments.Item.MakePermanent {
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action makePermanent
+        /// Make the role assignment permanent.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

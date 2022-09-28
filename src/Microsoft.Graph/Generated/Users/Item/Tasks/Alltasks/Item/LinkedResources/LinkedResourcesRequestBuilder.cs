@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Tasks.Alltasks.Item.LinkedResources {
         public LinkedResourcesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/users/{user%2Did}/tasks/alltasks/{baseTask%2Did}/linkedResources{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+            UrlTemplate = "{+baseurl}/users/{user%2Did}/tasks/alltasks/{baseTask%2Did}/linkedResources{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -50,14 +50,14 @@ namespace Microsoft.Graph.Beta.Users.Item.Tasks.Alltasks.Item.LinkedResources {
         public LinkedResourcesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/users/{user%2Did}/tasks/alltasks/{baseTask%2Did}/linkedResources{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+            UrlTemplate = "{+baseurl}/users/{user%2Did}/tasks/alltasks/{baseTask%2Did}/linkedResources{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// A collection of resources linked to the task.
+        /// Get the linkedResource_v2 resources associated to a baseTask from the linkedResources navigation property.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<LinkedResourcesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -77,7 +77,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Tasks.Alltasks.Item.LinkedResources {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to linkedResources for users
+        /// Create a new linkedResource_v2 object.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Tasks.Alltasks.Item.LinkedResources {
             return requestInfo;
         }
         /// <summary>
-        /// A collection of resources linked to the task.
+        /// Get the linkedResource_v2 resources associated to a baseTask from the linkedResources navigation property.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -113,7 +113,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Tasks.Alltasks.Item.LinkedResources {
             return await RequestAdapter.SendAsync<LinkedResource_v2CollectionResponse>(requestInfo, LinkedResource_v2CollectionResponse.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create new navigation property to linkedResources for users
+        /// Create a new linkedResource_v2 object.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -128,7 +128,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Tasks.Alltasks.Item.LinkedResources {
             };
             return await RequestAdapter.SendAsync<LinkedResource_v2>(requestInfo, LinkedResource_v2.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>A collection of resources linked to the task.</summary>
+        /// <summary>Get the linkedResource_v2 resources associated to a baseTask from the linkedResources navigation property.</summary>
         public class LinkedResourcesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

@@ -37,7 +37,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication.EmailMethods {
         public EmailMethodsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/users/{user%2Did}/authentication/emailMethods{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+            UrlTemplate = "{+baseurl}/users/{user%2Did}/authentication/emailMethods{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -50,14 +50,14 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication.EmailMethods {
         public EmailMethodsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/users/{user%2Did}/authentication/emailMethods{?%24top*,%24skip*,%24search*,%24filter*,%24count*,%24orderby,%24select,%24expand}";
+            UrlTemplate = "{+baseurl}/users/{user%2Did}/authentication/emailMethods{?%24top,%24skip,%24search,%24filter,%24count,%24orderby,%24select,%24expand}";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Represents the email addresses registered to a user for authentication.
+        /// Retrieve a list of a user&apos;s email Authentication Method objects and their properties. This call will only return a single object as only one email method can be set on users.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<EmailMethodsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -77,7 +77,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication.EmailMethods {
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to emailMethods for users
+        /// Set a user&apos;s emailAuthenticationMethod object. Email authentication is a self-service password reset method. A user may only have one email authentication method.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication.EmailMethods {
             return requestInfo;
         }
         /// <summary>
-        /// Represents the email addresses registered to a user for authentication.
+        /// Retrieve a list of a user&apos;s email Authentication Method objects and their properties. This call will only return a single object as only one email method can be set on users.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -113,7 +113,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication.EmailMethods {
             return await RequestAdapter.SendAsync<EmailAuthenticationMethodCollectionResponse>(requestInfo, EmailAuthenticationMethodCollectionResponse.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create new navigation property to emailMethods for users
+        /// Set a user&apos;s emailAuthenticationMethod object. Email authentication is a self-service password reset method. A user may only have one email authentication method.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -128,7 +128,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication.EmailMethods {
             };
             return await RequestAdapter.SendAsync<EmailAuthenticationMethod>(requestInfo, EmailAuthenticationMethod.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Represents the email addresses registered to a user for authentication.</summary>
+        /// <summary>Retrieve a list of a user&apos;s email Authentication Method objects and their properties. This call will only return a single object as only one email method can be set on users.</summary>
         public class EmailMethodsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

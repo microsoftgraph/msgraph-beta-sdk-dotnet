@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.It
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action applyTags
+        /// Apply tags to files in an eDiscovery review set. For details, see Tag documents in a review set in eDiscovery.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.It
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action applyTags
+        /// Apply tags to files in an eDiscovery review set. For details, see Tag documents in a review set in eDiscovery.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

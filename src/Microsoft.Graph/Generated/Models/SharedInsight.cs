@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class SharedInsight : Entity, IParsable {
         /// <summary>Details about the shared item. Read only.</summary>
         public SharingDetail LastShared {
@@ -73,8 +73,6 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteObjectValue<SharingDetail>("lastShared", LastShared);
             writer.WriteObjectValue<Entity>("lastSharedMethod", LastSharedMethod);
             writer.WriteObjectValue<Entity>("resource", Resource);
-            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ResourceReference>("resourceReference", ResourceReference);
-            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ResourceVisualization>("resourceVisualization", ResourceVisualization);
             writer.WriteCollectionOfObjectValues<SharingDetail>("sharingHistory", SharingHistory);
         }
     }

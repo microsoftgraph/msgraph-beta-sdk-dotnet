@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Users.Item.JoinedGroups.EvaluateDynamicMembership
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action evaluateDynamicMembership
+        /// Evaluate whether a user or device is or would be a member of a dynamic group. The membership rule is returned along with other details that were used in the evaluation. You can complete this operation in the following ways:
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Beta.Users.Item.JoinedGroups.EvaluateDynamicMembership
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action evaluateDynamicMembership
+        /// Evaluate whether a user or device is or would be a member of a dynamic group. The membership rule is returned along with other details that were used in the evaluation. You can complete this operation in the following ways:
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

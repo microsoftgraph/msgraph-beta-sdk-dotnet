@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Beta.Users.Item.FindRoomLists {
         public FindRoomListsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/users/{user%2Did}/microsoft.graph.findRoomLists()";
+            UrlTemplate = "{+baseurl}/users/{user%2Did}/microsoft.graph.findRoomLists(){?%24top,%24skip,%24search,%24filter,%24count}";
             var urlTplParams = new Dictionary<string, object>(pathParameters);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
@@ -37,14 +37,14 @@ namespace Microsoft.Graph.Beta.Users.Item.FindRoomLists {
         public FindRoomListsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
-            UrlTemplate = "{+baseurl}/users/{user%2Did}/microsoft.graph.findRoomLists()";
+            UrlTemplate = "{+baseurl}/users/{user%2Did}/microsoft.graph.findRoomLists(){?%24top,%24skip,%24search,%24filter,%24count}";
             var urlTplParams = new Dictionary<string, object>();
             urlTplParams.Add("request-raw-url", rawUrl);
             PathParameters = urlTplParams;
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke function findRoomLists
+        /// Get the room lists defined in a tenant, as represented by their emailAddress objects. Tenants can organize meeting rooms into room lists. In this API, each meeting room and room list is represented by an emailAddress instance.You can get all the room lists in the tenant, get all the rooms in the tenant, or get all the rooms in a specific room list.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<FindRoomListsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -57,13 +57,14 @@ namespace Microsoft.Graph.Beta.Users.Item.FindRoomLists {
             if (requestConfiguration != null) {
                 var requestConfig = new FindRoomListsRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);
+                requestInfo.AddQueryParameters(requestConfig.QueryParameters);
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
             return requestInfo;
         }
         /// <summary>
-        /// Invoke function findRoomLists
+        /// Get the room lists defined in a tenant, as represented by their emailAddress objects. Tenants can organize meeting rooms into room lists. In this API, each meeting room and room list is represented by an emailAddress instance.You can get all the room lists in the tenant, get all the rooms in the tenant, or get all the rooms in a specific room list.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -76,12 +77,32 @@ namespace Microsoft.Graph.Beta.Users.Item.FindRoomLists {
             };
             return await RequestAdapter.SendAsync<FindRoomListsResponse>(requestInfo, FindRoomListsResponse.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
+        /// <summary>Get the room lists defined in a tenant, as represented by their emailAddress objects. Tenants can organize meeting rooms into room lists. In this API, each meeting room and room list is represented by an emailAddress instance.You can get all the room lists in the tenant, get all the rooms in the tenant, or get all the rooms in a specific room list.</summary>
+        public class FindRoomListsRequestBuilderGetQueryParameters {
+            /// <summary>Include count of items</summary>
+            [QueryParameter("%24count")]
+            public bool? Count { get; set; }
+            /// <summary>Filter items by property values</summary>
+            [QueryParameter("%24filter")]
+            public string Filter { get; set; }
+            /// <summary>Search items by search phrases</summary>
+            [QueryParameter("%24search")]
+            public string Search { get; set; }
+            /// <summary>Skip the first n items</summary>
+            [QueryParameter("%24skip")]
+            public int? Skip { get; set; }
+            /// <summary>Show only the first n items</summary>
+            [QueryParameter("%24top")]
+            public int? Top { get; set; }
+        }
         /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
         public class FindRoomListsRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
             public IDictionary<string, string> Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
+            /// <summary>Request query parameters</summary>
+            public FindRoomListsRequestBuilderGetQueryParameters QueryParameters { get; set; } = new FindRoomListsRequestBuilderGetQueryParameters();
             /// <summary>
             /// Instantiates a new findRoomListsRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>

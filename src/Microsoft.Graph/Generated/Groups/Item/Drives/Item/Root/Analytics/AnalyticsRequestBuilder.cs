@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Drives.Item.Root.Analytics {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Analytics about the view activities that took place on this item.
+        /// Get [itemAnalytics][] about the views that took place under this resource.The **itemAnalytics** resource is a convenient way to get activity stats for `allTime` and the `lastSevenDays`.For a custom time range or interval, use the [getActivitiesByInterval][] API.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<AnalyticsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Drives.Item.Root.Analytics {
             return requestInfo;
         }
         /// <summary>
-        /// Analytics about the view activities that took place on this item.
+        /// Get [itemAnalytics][] about the views that took place under this resource.The **itemAnalytics** resource is a convenient way to get activity stats for `allTime` and the `lastSevenDays`.For a custom time range or interval, use the [getActivitiesByInterval][] API.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Drives.Item.Root.Analytics {
             };
             return await RequestAdapter.SendAsync<ItemAnalytics>(requestInfo, ItemAnalytics.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Analytics about the view activities that took place on this item.</summary>
+        /// <summary>Get [itemAnalytics][] about the views that took place under this resource.The **itemAnalytics** resource is a convenient way to get activity stats for `allTime` and the `lastSevenDays`.For a custom time range or interval, use the [getActivitiesByInterval][] API.</summary>
         public class AnalyticsRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

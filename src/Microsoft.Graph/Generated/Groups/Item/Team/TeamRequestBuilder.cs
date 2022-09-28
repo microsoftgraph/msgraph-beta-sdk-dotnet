@@ -183,7 +183,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property team in groups
+        /// Create a new team from a group. In order to create a team, the group must have a least one owner. If the group was created less than 15 minutes ago, it&apos;s possible for the Create team call to fail with a 404 error code due to replication delays.The recommended pattern is to retry the Create team call three times, with a 10 second delay between calls.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -194,6 +194,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team {
                 UrlTemplate = UrlTemplate,
                 PathParameters = PathParameters,
             };
+            requestInfo.Headers.Add("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             if (requestConfiguration != null) {
                 var requestConfig = new TeamRequestBuilderPatchRequestConfiguration();
@@ -232,20 +233,20 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team {
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Team>(requestInfo, Microsoft.Graph.Beta.Models.Team.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the navigation property team in groups
+        /// Create a new team from a group. In order to create a team, the group must have a least one owner. If the group was created less than 15 minutes ago, it&apos;s possible for the Create team call to fail with a 404 error code due to replication delays.The recommended pattern is to retry the Create team call three times, with a 10 second delay between calls.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task PatchAsync(Microsoft.Graph.Beta.Models.Team body, Action<TeamRequestBuilderPatchRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.Team> PatchAsync(Microsoft.Graph.Beta.Models.Team body, Action<TeamRequestBuilderPatchRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Team>(requestInfo, Microsoft.Graph.Beta.Models.Team.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
         public class TeamRequestBuilderDeleteRequestConfiguration {
