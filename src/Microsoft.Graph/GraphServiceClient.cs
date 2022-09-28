@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta
         public GraphServiceClient(
             TokenCredential tokenCredential,
             IEnumerable<string> scopes = null
-            ):this(new AzureIdentityAuthenticationProvider(tokenCredential, null,scopes?.ToArray() ?? Array.Empty<string>()))
+            ):this(new AzureIdentityAuthenticationProvider(tokenCredential, null, null,scopes?.ToArray() ?? Array.Empty<string>()))
         {
         }
 
