@@ -867,6 +867,30 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for UserExperienceAnalyticsAnomaly.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsAnomalyCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementUserExperienceAnalyticsAnomalyCollectionRequestBuilder UserExperienceAnalyticsAnomaly
+        {
+            get
+            {
+                return new DeviceManagementUserExperienceAnalyticsAnomalyCollectionRequestBuilder(this.AppendSegmentToRequestUrl("userExperienceAnalyticsAnomaly"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for UserExperienceAnalyticsAnomalyDevice.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsAnomalyDeviceCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementUserExperienceAnalyticsAnomalyDeviceCollectionRequestBuilder UserExperienceAnalyticsAnomalyDevice
+        {
+            get
+            {
+                return new DeviceManagementUserExperienceAnalyticsAnomalyDeviceCollectionRequestBuilder(this.AppendSegmentToRequestUrl("userExperienceAnalyticsAnomalyDevice"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for UserExperienceAnalyticsAppHealthApplicationPerformance.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsAppHealthApplicationPerformanceCollectionRequestBuilder"/>.</returns>
@@ -2033,6 +2057,32 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for DeviceManagementPostOrganizationalMessageTenantConsent.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementPostOrganizationalMessageTenantConsentRequestBuilder"/>.</returns>
+        public IDeviceManagementPostOrganizationalMessageTenantConsentRequestBuilder PostOrganizationalMessageTenantConsent(
+            bool firstPartyMessageAllowed)
+        {
+            return new DeviceManagementPostOrganizationalMessageTenantConsentRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.postOrganizationalMessageTenantConsent"),
+                this.Client,
+                firstPartyMessageAllowed);
+        }
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementUpdateOrganizationalMessageTenantConsent.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementUpdateOrganizationalMessageTenantConsentRequestBuilder"/>.</returns>
+        public IDeviceManagementUpdateOrganizationalMessageTenantConsentRequestBuilder UpdateOrganizationalMessageTenantConsent(
+            bool firstPartyMessageAllowed)
+        {
+            return new DeviceManagementUpdateOrganizationalMessageTenantConsentRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.updateOrganizationalMessageTenantConsent"),
+                this.Client,
+                firstPartyMessageAllowed);
+        }
+
+        /// <summary>
         /// Gets the request builder for DeviceManagementGetEffectivePermissions.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementGetEffectivePermissionsRequestBuilder"/>.</returns>
@@ -2113,6 +2163,17 @@ namespace Microsoft.Graph
                 this.AppendSegmentToRequestUrl("microsoft.graph.getSuggestedEnrollmentLimit"),
                 this.Client,
                 enrollmentType);
+        }
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementGetOrganizationalMessageTenantConsent.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementGetOrganizationalMessageTenantConsentRequestBuilder"/>.</returns>
+        public IDeviceManagementGetOrganizationalMessageTenantConsentRequestBuilder GetOrganizationalMessageTenantConsent()
+        {
+            return new DeviceManagementGetOrganizationalMessageTenantConsentRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getOrganizationalMessageTenantConsent"),
+                this.Client);
         }
 
         /// <summary>

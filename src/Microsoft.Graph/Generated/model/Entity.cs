@@ -31,6 +31,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets id.
+        /// The unique identifier for an entity. Read-only.
         /// </summary>
         [JsonPropertyName("id")]
         public string Id { get; set; }

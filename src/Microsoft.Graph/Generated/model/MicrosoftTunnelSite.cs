@@ -22,14 +22,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets description.
-        /// The MicrosoftTunnelSite's description
+        /// The site's description (optional)
         /// </summary>
         [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
-        /// The MicrosoftTunnelSite's display name
+        /// The display name for the site. This property is required when a site is created.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
@@ -43,21 +43,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets internal network probe url.
-        /// The MicrosoftTunnelSite's Internal Network Access Probe URL
+        /// The site's Internal Network Access Probe URL
         /// </summary>
         [JsonPropertyName("internalNetworkProbeUrl")]
         public string InternalNetworkProbeUrl { get; set; }
     
         /// <summary>
         /// Gets or sets public address.
-        /// The MicrosoftTunnelSite's public domain name or IP address
+        /// The site's public domain name or IP address
         /// </summary>
         [JsonPropertyName("publicAddress")]
         public string PublicAddress { get; set; }
     
         /// <summary>
         /// Gets or sets role scope tag ids.
-        /// List of Scope Tags for this Entity instance.
+        /// List of Scope Tags for this Entity instance
         /// </summary>
         [JsonPropertyName("roleScopeTagIds")]
         public IEnumerable<string> RoleScopeTagIds { get; set; }
@@ -71,7 +71,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets upgrade available.
-        /// True if an upgrade is available
+        /// The site provides the state of when an upgrade is available
         /// </summary>
         [JsonPropertyName("upgradeAvailable")]
         public bool? UpgradeAvailable { get; set; }

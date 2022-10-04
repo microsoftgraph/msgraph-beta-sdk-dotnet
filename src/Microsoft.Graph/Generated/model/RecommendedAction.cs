@@ -30,7 +30,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets potentialScoreImpact.
-        /// Potential improvement in security score of the tenant from the recommended action.
+        /// Potential improvement in the tenant security score from the recommended action.
         /// </summary>
         [JsonPropertyName("potentialScoreImpact")]
         public double? PotentialScoreImpact { get; set; }

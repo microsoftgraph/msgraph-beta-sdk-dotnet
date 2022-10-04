@@ -23,7 +23,7 @@ namespace Microsoft.Graph.IdentityGovernanceNamespace
     
         /// <summary>
         /// Gets or sets category.
-        /// The category of the workflow template. The possible values are: joiner, leaver.
+        /// The category of the workflow template. The possible values are: joiner, leaver. Supports $filter (eq).
         /// </summary>
         [JsonPropertyName("category")]
         public LifecycleWorkflowCategory? Category { get; set; }

@@ -30,14 +30,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets display name.
-        /// The MicrosoftTunnelServer's display name
+        /// The display name for the server. This property is required when a server is created and cannot be cleared during updates.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets last checkin date time.
-        /// When the MicrosoftTunnelServer last checked in
+        /// Indicates when the server last checked in
         /// </summary>
         [JsonPropertyName("lastCheckinDateTime")]
         public DateTimeOffset? LastCheckinDateTime { get; set; }
@@ -51,7 +51,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets tunnel server health status.
-        /// The MicrosoftTunnelServer's health status. Possible values are: unknown, healthy, unhealthy, warning, offline, upgradeInProgress, upgradeFailed.
+        /// Indicates the server's health Status as of the last evaluation time. Health is evaluated every 60 seconds, and the possible values are: unknown, healthy, unhealthy, warning, offline, upgradeInProgress, upgradeFailed. Possible values are: unknown, healthy, unhealthy, warning, offline, upgradeInProgress, upgradeFailed, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("tunnelServerHealthStatus")]
         public MicrosoftTunnelServerHealthStatus? TunnelServerHealthStatus { get; set; }

@@ -74,6 +74,35 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for DeviceCompliancePolicyGetNoncompliantDevicesToRetire.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceCompliancePolicyGetNoncompliantDevicesToRetireRequestBuilder"/>.</returns>
+        public IDeviceCompliancePolicyGetNoncompliantDevicesToRetireRequestBuilder GetNoncompliantDevicesToRetire(
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null)
+        {
+            return new DeviceCompliancePolicyGetNoncompliantDevicesToRetireRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getNoncompliantDevicesToRetire"),
+                this.Client,
+                name,
+                select,
+                search,
+                groupBy,
+                orderBy,
+                skip,
+                top,
+                sessionId,
+                filter);
+        }
+
+        /// <summary>
         /// Gets the request builder for DeviceCompliancePolicyRefreshDeviceComplianceReportSummarization.
         /// </summary>
         /// <returns>The <see cref="IDeviceCompliancePolicyRefreshDeviceComplianceReportSummarizationRequestBuilder"/>.</returns>

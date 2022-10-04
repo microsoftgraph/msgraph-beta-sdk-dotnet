@@ -31,6 +31,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets membershipKind.
+        /// Represents the membership kind. The possible values are: all, enumerated, unknownFutureValue. enumerated references an object of conditionalAccessEnumeratedExternalTenants derived type.
         /// </summary>
         [JsonPropertyName("membershipKind")]
         public ConditionalAccessExternalTenantsMembershipKind? MembershipKind { get; set; }

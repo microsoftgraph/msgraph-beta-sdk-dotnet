@@ -29,6 +29,13 @@ namespace Microsoft.Graph
         public bool? AllowSessionsToUnenrolledDevices { get; set; }
     
         /// <summary>
+        /// Gets or sets block chat.
+        /// Indicates if sessions to block chat function. This setting is configurable by the admin. Default value is false.
+        /// </summary>
+        [JsonPropertyName("blockChat")]
+        public bool? BlockChat { get; set; }
+    
+        /// <summary>
         /// Gets or sets remote assistance state.
         /// The current state of remote assistance for the account. Possible values are: disabled, enabled. This setting is configurable by the admin. Remote assistance settings that have not yet been configured by the admin have a disabled state. Returned by default. Possible values are: disabled, enabled.
         /// </summary>

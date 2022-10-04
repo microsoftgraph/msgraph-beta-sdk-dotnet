@@ -44,5 +44,10 @@ namespace Microsoft.Graph
         /// </summary>
         UnknownFutureValue = 5,
 	
+        /// <summary>
+        /// Loop Page
+        /// </summary>
+        LoopPage = 6,
+	
     }
 }

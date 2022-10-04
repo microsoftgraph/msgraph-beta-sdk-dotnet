@@ -29,13 +29,14 @@ namespace Microsoft.Graph.ManagedTenants
     
         /// <summary>
         /// Gets or sets device specification.
+        /// The specification of the cloud PC device. Required. Read-only.
         /// </summary>
         [JsonPropertyName("deviceSpecification")]
         public string DeviceSpecification { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
-        /// The display name for the cloud PC. Required. Read-only.
+        /// The display name  of the cloud PC device. Required. Read-only.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
@@ -49,34 +50,35 @@ namespace Microsoft.Graph.ManagedTenants
     
         /// <summary>
         /// Gets or sets managed device id.
-        /// The managed device identifier for the cloud PC. Optional. Read-only.
+        /// The managed device identifier of the cloud PC device. Optional. Read-only.
         /// </summary>
         [JsonPropertyName("managedDeviceId")]
         public string ManagedDeviceId { get; set; }
     
         /// <summary>
         /// Gets or sets managed device name.
-        /// The managed device display name for the cloud PC. Optional. Read-only.
+        /// The managed device display name of the cloud PC device. Optional. Read-only.
         /// </summary>
         [JsonPropertyName("managedDeviceName")]
         public string ManagedDeviceName { get; set; }
     
         /// <summary>
         /// Gets or sets provisioning policy id.
-        /// The provisioning policy identifier for the cloud PC. Required. Read-only.
+        /// The provisioning policy identifier for the cloud PC device. Required. Read-only.
         /// </summary>
         [JsonPropertyName("provisioningPolicyId")]
         public string ProvisioningPolicyId { get; set; }
     
         /// <summary>
         /// Gets or sets service plan name.
-        /// The service plan name for the cloud PC. Required. Read-only.
+        /// The service plan name of the cloud PC device. Required. Read-only.
         /// </summary>
         [JsonPropertyName("servicePlanName")]
         public string ServicePlanName { get; set; }
     
         /// <summary>
         /// Gets or sets service plan type.
+        /// The service plan type of the cloud PC device. Required. Read-only.
         /// </summary>
         [JsonPropertyName("servicePlanType")]
         public string ServicePlanType { get; set; }
@@ -97,7 +99,7 @@ namespace Microsoft.Graph.ManagedTenants
     
         /// <summary>
         /// Gets or sets user principal name.
-        /// The user principal name (UPN) of the user assigned to the cloud PC. Required. Read-only.
+        /// The user principal name (UPN) of the user assigned to the cloud PC device. Required. Read-only.
         /// </summary>
         [JsonPropertyName("userPrincipalName")]
         public string UserPrincipalName { get; set; }

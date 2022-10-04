@@ -23,28 +23,28 @@ namespace Microsoft.Graph.SecurityNamespace
 
         /// <summary>
         /// Gets or sets attackSimDateTime.
-        /// Specifies the date time of the attack simulation.
+        /// The date and time of the attack simulation.
         /// </summary>
         [JsonPropertyName("attackSimDateTime")]
         public DateTimeOffset? AttackSimDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets attackSimDurationTime.
-        /// Specifies the duration (in time) for the attack simulation
+        /// The duration (in time) for the attack simulation.
         /// </summary>
         [JsonPropertyName("attackSimDurationTime")]
         public Microsoft.Graph.Duration AttackSimDurationTime { get; set; }
     
         /// <summary>
         /// Gets or sets attackSimId.
-        /// Specifies the activity id for the attack simulation.
+        /// The activity ID for the attack simulation.
         /// </summary>
         [JsonPropertyName("attackSimId")]
         public Guid? AttackSimId { get; set; }
     
         /// <summary>
         /// Gets or sets attackSimUserId.
-        /// Specifies the user id of the user who got the attack simulation email
+        /// The unique identifier for the user who got the attack simulation email.
         /// </summary>
         [JsonPropertyName("attackSimUserId")]
         public string AttackSimUserId { get; set; }

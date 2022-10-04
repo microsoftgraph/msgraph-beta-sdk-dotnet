@@ -37,7 +37,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets userId.
-        /// This is the id property value of the user resource that represents the user in the Azure AD tenant.
+        /// This is the id property value of the user resource that represents the user in the Azure Active Directory tenant.
         /// </summary>
         [JsonPropertyName("userId")]
         public string UserId { get; set; }

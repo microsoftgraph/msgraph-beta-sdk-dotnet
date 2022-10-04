@@ -60,6 +60,11 @@ namespace Microsoft.Graph
         EndpointSecurityApplicationControl = 16,
 	
         /// <summary>
+        /// Enrollment Configuration
+        /// </summary>
+        EnrollmentConfiguration = 18,
+	
+        /// <summary>
         /// Baseline
         /// </summary>
         Baseline = 20,

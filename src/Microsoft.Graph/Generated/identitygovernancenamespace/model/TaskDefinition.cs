@@ -23,7 +23,7 @@ namespace Microsoft.Graph.IdentityGovernanceNamespace
     
         /// <summary>
         /// Gets or sets category.
-        /// The category of the HR function that the tasks created using this definition can be used with. The possible values are: joiner, leaver.
+        /// The category of the HR function that the tasks created using this definition can be used with. The possible values are: joiner, leaver. This is a multi-valued enumeration whose allowed combinations are joiner, joiner,leaver, or leaver. Supports $filter (eq).
         /// </summary>
         [JsonPropertyName("category")]
         public LifecycleTaskCategory? Category { get; set; }
@@ -43,14 +43,14 @@ namespace Microsoft.Graph.IdentityGovernanceNamespace
     
         /// <summary>
         /// Gets or sets display name.
-        /// The display name of the taskDefinition.
+        /// The display name of the taskDefinition`.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets parameters.
-        /// The parameters that must be supplied when creating a task.
+        /// The parameters that must be supplied when creating a workflow task object.
         /// </summary>
         [JsonPropertyName("parameters")]
         public IEnumerable<Parameter> Parameters { get; set; }

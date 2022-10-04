@@ -31,6 +31,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets hideBotAfterEscalation.
+        /// Indicates whether to hide the app after the call is escalated.
         /// </summary>
         [JsonPropertyName("hideBotAfterEscalation")]
         public bool? HideBotAfterEscalation { get; set; }

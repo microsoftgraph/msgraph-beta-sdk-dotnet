@@ -72,7 +72,7 @@ namespace Microsoft.Graph.IdentityGovernanceNamespace
     
         /// <summary>
         /// Gets or sets execution scope.
-        /// The unique identifier of the Azure AD identity that last modified the workflow object..
+        /// The unique identifier of the Azure AD identity that last modified the workflow object.
         /// </summary>
         [JsonPropertyName("executionScope")]
         public IWorkflowExecutionScopeCollectionWithReferencesPage ExecutionScope { get; set; }

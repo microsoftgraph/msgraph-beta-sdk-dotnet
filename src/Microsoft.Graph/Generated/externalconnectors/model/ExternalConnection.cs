@@ -30,6 +30,7 @@ namespace Microsoft.Graph.ExternalConnectors
     
         /// <summary>
         /// Gets or sets compliance settings.
+        /// The settings required for the connection to participate in eDiscovery, such as the display templates for eDiscovery results.
         /// </summary>
         [JsonPropertyName("complianceSettings")]
         public ComplianceSettings ComplianceSettings { get; set; }
@@ -57,6 +58,7 @@ namespace Microsoft.Graph.ExternalConnectors
     
         /// <summary>
         /// Gets or sets enabled content experiences.
+        /// The list of content experiences the connection will participate in. Possible values are search and compliance.
         /// </summary>
         [JsonPropertyName("enabledContentExperiences")]
         public ContentExperienceType? EnabledContentExperiences { get; set; }

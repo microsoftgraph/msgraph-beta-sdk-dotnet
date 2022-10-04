@@ -31,7 +31,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets simulation automations.
-        /// Represents simulation automations created to run on a tenant.
+        /// Represents simulation automation created to run on a tenant.
         /// </summary>
         [JsonPropertyName("simulationAutomations")]
         public IAttackSimulationRootSimulationAutomationsCollectionPage SimulationAutomations { get; set; }

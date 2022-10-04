@@ -40,5 +40,20 @@ namespace Microsoft.Graph
         /// </summary>
         AndroidEnterprise = 4,
 	
+        /// <summary>
+        /// Android Enterprise Dedicated Devices With Azure Ad Shared Mode
+        /// </summary>
+        AndroidEnterpriseDedicatedDevicesWithAzureAdSharedMode = 8,
+	
+        /// <summary>
+        /// Android Open Source Project User Associated
+        /// </summary>
+        AndroidOpenSourceProjectUserAssociated = 16,
+	
+        /// <summary>
+        /// Android Open Source Project Userless
+        /// </summary>
+        AndroidOpenSourceProjectUserless = 32,
+	
     }
 }

@@ -54,5 +54,10 @@ namespace Microsoft.Graph
         /// </summary>
         UpgradeFailed = 6,
 	
+        /// <summary>
+        /// Unknown Future Value
+        /// </summary>
+        UnknownFutureValue = 7,
+	
     }
 }

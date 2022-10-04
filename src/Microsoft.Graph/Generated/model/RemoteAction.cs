@@ -139,5 +139,25 @@ namespace Microsoft.Graph
         /// </summary>
         ActivateDeviceEsim = 23,
 	
+        /// <summary>
+        /// Deprovision
+        /// </summary>
+        Deprovision = 24,
+	
+        /// <summary>
+        /// Disable
+        /// </summary>
+        Disable = 25,
+	
+        /// <summary>
+        /// Reenable
+        /// </summary>
+        Reenable = 26,
+	
+        /// <summary>
+        /// Move Device To Organizational Unit
+        /// </summary>
+        MoveDeviceToOrganizationalUnit = 27,
+	
     }
 }

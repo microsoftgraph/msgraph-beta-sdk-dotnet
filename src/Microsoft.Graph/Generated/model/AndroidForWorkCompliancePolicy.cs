@@ -114,6 +114,13 @@ namespace Microsoft.Graph
         public Int32? PasswordSignInFailureCountBeforeFactoryReset { get; set; }
     
         /// <summary>
+        /// Gets or sets required password complexity.
+        /// Indicates the required device password complexity on Android. One of: NONE, LOW, MEDIUM, HIGH. This is a new API targeted to Android API 12+. Possible values are: none, low, medium, high.
+        /// </summary>
+        [JsonPropertyName("requiredPasswordComplexity")]
+        public AndroidRequiredPasswordComplexity? RequiredPasswordComplexity { get; set; }
+    
+        /// <summary>
         /// Gets or sets security block jailbroken devices.
         /// Devices must not be jailbroken or rooted.
         /// </summary>

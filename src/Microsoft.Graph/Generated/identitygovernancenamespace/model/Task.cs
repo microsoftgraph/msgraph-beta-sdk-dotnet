@@ -23,7 +23,7 @@ namespace Microsoft.Graph.IdentityGovernanceNamespace
     
         /// <summary>
         /// Gets or sets arguments.
-        /// Arguments included within the task.
+        /// Arguments included within the task.  For guidance to configure this property, see Configure the arguments for built-in Lifecycle Workflow tasks.
         /// </summary>
         [JsonPropertyName("arguments")]
         public IEnumerable<Microsoft.Graph.KeyValuePair> Arguments { get; set; }

@@ -570,6 +570,18 @@ namespace Microsoft.Graph
                     // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.RemoteActionAudits.AdditionalData = deviceManagementToInitialize.AdditionalData;
                 }
+                if (deviceManagementToInitialize.UserExperienceAnalyticsAnomaly != null && deviceManagementToInitialize.UserExperienceAnalyticsAnomaly.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.UserExperienceAnalyticsAnomaly.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.UserExperienceAnalyticsAnomalyNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    deviceManagementToInitialize.UserExperienceAnalyticsAnomaly.AdditionalData = deviceManagementToInitialize.AdditionalData;
+                }
+                if (deviceManagementToInitialize.UserExperienceAnalyticsAnomalyDevice != null && deviceManagementToInitialize.UserExperienceAnalyticsAnomalyDevice.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.UserExperienceAnalyticsAnomalyDevice.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.UserExperienceAnalyticsAnomalyDeviceNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    deviceManagementToInitialize.UserExperienceAnalyticsAnomalyDevice.AdditionalData = deviceManagementToInitialize.AdditionalData;
+                }
                 if (deviceManagementToInitialize.UserExperienceAnalyticsAppHealthApplicationPerformance != null && deviceManagementToInitialize.UserExperienceAnalyticsAppHealthApplicationPerformance.CurrentPage != null)
                 {
                     deviceManagementToInitialize.UserExperienceAnalyticsAppHealthApplicationPerformance.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.UserExperienceAnalyticsAppHealthApplicationPerformanceNextLink);

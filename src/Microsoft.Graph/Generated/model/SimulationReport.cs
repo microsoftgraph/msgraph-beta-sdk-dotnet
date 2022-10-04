@@ -30,7 +30,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets simulationUsers.
-        /// Represents users of a tenant and their online actions in an attack simulation and training campaign.
+        /// The tenant users and their online actions in an attack simulation and training campaign.
         /// </summary>
         [JsonPropertyName("simulationUsers")]
         public IEnumerable<UserSimulationDetails> SimulationUsers { get; set; }

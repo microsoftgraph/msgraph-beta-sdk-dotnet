@@ -35,11 +35,10 @@ namespace Microsoft.Graph
         public string ContentWebUrl { get; set; }
     
         /// <summary>
-        /// Gets or sets contributor.
-        /// The author, creator, or contributor of the learning content. Optional.
+        /// Gets or sets contributors.
         /// </summary>
-        [JsonPropertyName("contributor")]
-        public string Contributor { get; set; }
+        [JsonPropertyName("contributors")]
+        public IEnumerable<string> Contributors { get; set; }
     
         /// <summary>
         /// Gets or sets created date time.

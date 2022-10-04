@@ -40,6 +40,14 @@ namespace Microsoft.Graph
             DateTimeOffset endDateTime);
 
         /// <summary>
+        /// Gets the request builder for MicrosoftTunnelServerGenerateServerLogCollectionRequest.
+        /// </summary>
+        /// <returns>The <see cref="IMicrosoftTunnelServerGenerateServerLogCollectionRequestRequestBuilder"/>.</returns>
+        IMicrosoftTunnelServerGenerateServerLogCollectionRequestRequestBuilder GenerateServerLogCollectionRequest(
+            DateTimeOffset startDateTime,
+            DateTimeOffset endDateTime);
+
+        /// <summary>
         /// Gets the request builder for MicrosoftTunnelServerGetHealthMetrics.
         /// </summary>
         /// <returns>The <see cref="IMicrosoftTunnelServerGetHealthMetricsRequestBuilder"/>.</returns>

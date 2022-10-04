@@ -23,21 +23,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets average blue screens.
-        /// Average (mean) number of Blue Screens per device in the last 14 days. Valid values 0 to 9999999
+        /// Average (mean) number of Blue Screens per device in the last 30 days. Valid values 0 to 9999999
         /// </summary>
         [JsonPropertyName("averageBlueScreens")]
         public double? AverageBlueScreens { get; set; }
     
         /// <summary>
         /// Gets or sets average restarts.
-        /// Average (mean) number of Restarts per device in the last 14 days. Valid values 0 to 9999999
+        /// Average (mean) number of Restarts per device in the last 30 days. Valid values 0 to 9999999
         /// </summary>
         [JsonPropertyName("averageRestarts")]
         public double? AverageRestarts { get; set; }
     
         /// <summary>
         /// Gets or sets blue screen count.
-        /// Number of Blue Screens in the last 14 days. Valid values 0 to 9999999
+        /// Number of Blue Screens in the last 30 days. Valid values 0 to 9999999
         /// </summary>
         [JsonPropertyName("blueScreenCount")]
         public Int32? BlueScreenCount { get; set; }
@@ -149,7 +149,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets restart count.
-        /// Number of Restarts in the last 14 days. Valid values 0 to 9999999
+        /// Number of Restarts in the last 30 days. Valid values 0 to 9999999
         /// </summary>
         [JsonPropertyName("restartCount")]
         public Int32? RestartCount { get; set; }

@@ -66,6 +66,21 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for MicrosoftTunnelServerGenerateServerLogCollectionRequest.
+        /// </summary>
+        /// <returns>The <see cref="IMicrosoftTunnelServerGenerateServerLogCollectionRequestRequestBuilder"/>.</returns>
+        public IMicrosoftTunnelServerGenerateServerLogCollectionRequestRequestBuilder GenerateServerLogCollectionRequest(
+            DateTimeOffset startDateTime,
+            DateTimeOffset endDateTime)
+        {
+            return new MicrosoftTunnelServerGenerateServerLogCollectionRequestRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.generateServerLogCollectionRequest"),
+                this.Client,
+                startDateTime,
+                endDateTime);
+        }
+
+        /// <summary>
         /// Gets the request builder for MicrosoftTunnelServerGetHealthMetrics.
         /// </summary>
         /// <returns>The <see cref="IMicrosoftTunnelServerGetHealthMetricsRequestBuilder"/>.</returns>

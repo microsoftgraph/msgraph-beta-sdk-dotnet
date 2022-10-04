@@ -189,6 +189,12 @@ namespace Microsoft.Graph
             string footer = null);
 
         /// <summary>
+        /// Gets the request builder for ManagedDeviceEnrollNowAction.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceEnrollNowActionRequestBuilder"/>.</returns>
+        IManagedDeviceEnrollNowActionRequestBuilder EnrollNowAction();
+
+        /// <summary>
         /// Gets the request builder for ManagedDeviceLocateDevice.
         /// </summary>
         /// <returns>The <see cref="IManagedDeviceLocateDeviceRequestBuilder"/>.</returns>

@@ -23,7 +23,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets count.
-        /// Count of occurence of the simulation event in an attack simulation and training campaign.
+        /// Count of the simulation event occurrence in an attack simulation and training campaign.
         /// </summary>
         [JsonPropertyName("count")]
         public Int32? Count { get; set; }

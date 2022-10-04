@@ -176,6 +176,13 @@ namespace Microsoft.Graph
         public bool? ShowAzureADEnterpriseApps { get; set; }
     
         /// <summary>
+        /// Gets or sets showConfigurationManagerApps.
+        /// Boolean that indicates if ConfigurationManagerApps will be shown in Company Portal
+        /// </summary>
+        [JsonPropertyName("showConfigurationManagerApps")]
+        public bool? ShowConfigurationManagerApps { get; set; }
+    
+        /// <summary>
         /// Gets or sets showDisplayNameNextToLogo.
         /// Boolean that represents whether the administrator-supplied display name will be shown next to the logo image.
         /// </summary>

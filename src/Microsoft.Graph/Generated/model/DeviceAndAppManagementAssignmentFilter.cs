@@ -50,6 +50,13 @@ namespace Microsoft.Graph
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
+        /// Gets or sets payloads.
+        /// Associated assignments for a specific filter
+        /// </summary>
+        [JsonPropertyName("payloads")]
+        public IEnumerable<PayloadByFilter> Payloads { get; set; }
+    
+        /// <summary>
         /// Gets or sets platform.
         /// Platform type of the devices on which the Assignment Filter will be applicable. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, unknown.
         /// </summary>

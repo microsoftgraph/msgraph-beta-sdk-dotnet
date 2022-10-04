@@ -351,6 +351,17 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for ManagedDeviceEnrollNowAction.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceEnrollNowActionRequestBuilder"/>.</returns>
+        public IManagedDeviceEnrollNowActionRequestBuilder EnrollNowAction()
+        {
+            return new ManagedDeviceEnrollNowActionRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.enrollNowAction"),
+                this.Client);
+        }
+
+        /// <summary>
         /// Gets the request builder for ManagedDeviceLocateDevice.
         /// </summary>
         /// <returns>The <see cref="IManagedDeviceLocateDeviceRequestBuilder"/>.</returns>

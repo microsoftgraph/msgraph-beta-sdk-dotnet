@@ -44,7 +44,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets latestSimulationDateTime.
-        /// Date and time of latest attack simulation and training campaign that the user was included in.
+        /// Date and time of the latest attack simulation and training campaign that the user was included in.
         /// </summary>
         [JsonPropertyName("latestSimulationDateTime")]
         public DateTimeOffset? LatestSimulationDateTime { get; set; }

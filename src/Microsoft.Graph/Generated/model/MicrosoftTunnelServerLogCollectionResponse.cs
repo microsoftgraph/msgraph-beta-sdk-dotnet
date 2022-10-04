@@ -65,7 +65,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets status.
-        /// The status of log collection. Possible values are: pending, completed, failed.
+        /// The status of log collection. Possible values are: pending, completed, failed. Possible values are: pending, completed, failed, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("status")]
         public MicrosoftTunnelLogCollectionStatus? Status { get; set; }
