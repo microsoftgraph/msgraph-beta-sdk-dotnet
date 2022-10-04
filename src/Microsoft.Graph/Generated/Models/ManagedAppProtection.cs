@@ -161,6 +161,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("minimumWipeOsVersion"); }
             set { BackingStore?.Set("minimumWipeOsVersion", value); }
         }
+        /// <summary>Indicates how to prioritize which Mobile Threat Defense (MTD) partner is enabled for a given platform, when more than one is enabled. An app can only be actively using a single Mobile Threat Defense partner. When NULL, Microsoft Defender will be given preference. Otherwise setting the value to defenderOverThirdPartyPartner or thirdPartyPartnerOverDefender will make explicit which partner to prioritize. Possible values are: null, defenderOverThirdPartyPartner, thirdPartyPartnerOverDefender and unknownFutureValue. Default value is null. Possible values are: defenderOverThirdPartyPartner, thirdPartyPartnerOverDefender, unknownFutureValue.</summary>
+        public Microsoft.Graph.Beta.Models.MobileThreatDefensePartnerPriority? MobileThreatDefensePartnerPriority {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MobileThreatDefensePartnerPriority?>("mobileThreatDefensePartnerPriority"); }
+            set { BackingStore?.Set("mobileThreatDefensePartnerPriority", value); }
+        }
         /// <summary>An admin initiated action to be applied on a managed app.</summary>
         public ManagedAppRemediationAction? MobileThreatDefenseRemediationAction {
             get { return BackingStore?.Get<ManagedAppRemediationAction?>("mobileThreatDefenseRemediationAction"); }
@@ -288,6 +293,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"minimumWarningOsVersion", n => { MinimumWarningOsVersion = n.GetStringValue(); } },
                 {"minimumWipeAppVersion", n => { MinimumWipeAppVersion = n.GetStringValue(); } },
                 {"minimumWipeOsVersion", n => { MinimumWipeOsVersion = n.GetStringValue(); } },
+                {"mobileThreatDefensePartnerPriority", n => { MobileThreatDefensePartnerPriority = n.GetEnumValue<MobileThreatDefensePartnerPriority>(); } },
                 {"mobileThreatDefenseRemediationAction", n => { MobileThreatDefenseRemediationAction = n.GetEnumValue<ManagedAppRemediationAction>(); } },
                 {"notificationRestriction", n => { NotificationRestriction = n.GetEnumValue<ManagedAppNotificationRestriction>(); } },
                 {"organizationalCredentialsRequired", n => { OrganizationalCredentialsRequired = n.GetBoolValue(); } },
@@ -342,6 +348,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("minimumWarningOsVersion", MinimumWarningOsVersion);
             writer.WriteStringValue("minimumWipeAppVersion", MinimumWipeAppVersion);
             writer.WriteStringValue("minimumWipeOsVersion", MinimumWipeOsVersion);
+            writer.WriteEnumValue<MobileThreatDefensePartnerPriority>("mobileThreatDefensePartnerPriority", MobileThreatDefensePartnerPriority);
             writer.WriteEnumValue<ManagedAppRemediationAction>("mobileThreatDefenseRemediationAction", MobileThreatDefenseRemediationAction);
             writer.WriteEnumValue<ManagedAppNotificationRestriction>("notificationRestriction", NotificationRestriction);
             writer.WriteBoolValue("organizationalCredentialsRequired", OrganizationalCredentialsRequired);

@@ -1,4 +1,5 @@
 using Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelSites.Item.MicrosoftTunnelServers.Item.CreateServerLogCollectionRequest;
+using Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelSites.Item.MicrosoftTunnelServers.Item.GenerateServerLogCollectionRequest;
 using Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelSites.Item.MicrosoftTunnelServers.Item.GetHealthMetrics;
 using Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelSites.Item.MicrosoftTunnelServers.Item.GetHealthMetricTimeSeries;
 using Microsoft.Graph.Beta.Models;
@@ -17,6 +18,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelSites.Item.Micros
         /// <summary>The createServerLogCollectionRequest property</summary>
         public CreateServerLogCollectionRequestRequestBuilder CreateServerLogCollectionRequest { get =>
             new CreateServerLogCollectionRequestRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The generateServerLogCollectionRequest property</summary>
+        public GenerateServerLogCollectionRequestRequestBuilder GenerateServerLogCollectionRequest { get =>
+            new GenerateServerLogCollectionRequestRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The getHealthMetrics property</summary>
         public GetHealthMetricsRequestBuilder GetHealthMetrics { get =>

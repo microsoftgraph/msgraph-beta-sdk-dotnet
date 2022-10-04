@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class AttackSimulationRoot : Entity, IParsable {
-        /// <summary>Represents simulation automations created to run on a tenant.</summary>
+        /// <summary>Represents simulation automation created to run on a tenant.</summary>
         public List<SimulationAutomation> SimulationAutomations {
             get { return BackingStore?.Get<List<SimulationAutomation>>("simulationAutomations"); }
             set { BackingStore?.Set("simulationAutomations", value); }
@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("simulations", value); }
         }
         /// <summary>
-        /// Instantiates a new attackSimulationRoot and sets the default values.
+        /// Instantiates a new AttackSimulationRoot and sets the default values.
         /// </summary>
         public AttackSimulationRoot() : base() {
             OdataType = "#microsoft.graph.attackSimulationRoot";

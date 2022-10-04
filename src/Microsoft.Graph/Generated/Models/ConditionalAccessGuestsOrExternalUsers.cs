@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The externalTenants property</summary>
+        /// <summary>The tenant ids of the selected types of external users. It could be either all b2b tenant, or a collection of tenant ids. External tenants can be specified only when guestOrExternalUserTypes is not null or an empty string.</summary>
         public ConditionalAccessExternalTenants ExternalTenants {
             get { return BackingStore?.Get<ConditionalAccessExternalTenants>("externalTenants"); }
             set { BackingStore?.Set("externalTenants", value); }

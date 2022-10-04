@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class OrganizationSettings : Entity, IParsable {
-        /// <summary>The contactInsights property</summary>
+        /// <summary>Contains the properties that are configured by an administrator as a tenant-level privacy control whether to identify duplicate contacts among a user&apos;s contacts list and suggest the user to merge those contacts to have a cleaner contacts list. List contactInsights returns the settings to display or return contact insights in an organization.</summary>
         public InsightsSettings ContactInsights {
             get { return BackingStore?.Get<InsightsSettings>("contactInsights"); }
             set { BackingStore?.Set("contactInsights", value); }

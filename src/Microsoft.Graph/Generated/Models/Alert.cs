@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class Alert : Entity, IParsable {
         /// <summary>Name or alias of the activity group (attacker) this alert is attributed to.</summary>
         public string ActivityGroupName {
@@ -202,7 +201,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("vulnerabilityStates", value); }
         }
         /// <summary>
-        /// Instantiates a new alert and sets the default values.
+        /// Instantiates a new Alert and sets the default values.
         /// </summary>
         public Alert() : base() {
             OdataType = "#microsoft.graph.alert";

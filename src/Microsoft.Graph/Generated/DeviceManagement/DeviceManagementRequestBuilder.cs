@@ -63,6 +63,7 @@ using Microsoft.Graph.Beta.DeviceManagement.GetComanagedDevicesSummary;
 using Microsoft.Graph.Beta.DeviceManagement.GetComanagementEligibleDevicesSummary;
 using Microsoft.Graph.Beta.DeviceManagement.GetEffectivePermissions;
 using Microsoft.Graph.Beta.DeviceManagement.GetEffectivePermissionsWithScope;
+using Microsoft.Graph.Beta.DeviceManagement.GetOrganizationalMessageTenantConsent;
 using Microsoft.Graph.Beta.DeviceManagement.GetRoleScopeTagsByIdsWithIds;
 using Microsoft.Graph.Beta.DeviceManagement.GetRoleScopeTagsByResourceWithResource;
 using Microsoft.Graph.Beta.DeviceManagement.GetSuggestedEnrollmentLimitWithEnrollmentType;
@@ -94,6 +95,7 @@ using Microsoft.Graph.Beta.DeviceManagement.NotificationMessageTemplates;
 using Microsoft.Graph.Beta.DeviceManagement.OemWarrantyInformationOnboarding;
 using Microsoft.Graph.Beta.DeviceManagement.OrganizationalMessageDetails;
 using Microsoft.Graph.Beta.DeviceManagement.OrganizationalMessageGuidedContents;
+using Microsoft.Graph.Beta.DeviceManagement.PostOrganizationalMessageTenantConsent;
 using Microsoft.Graph.Beta.DeviceManagement.RemoteActionAudits;
 using Microsoft.Graph.Beta.DeviceManagement.RemoteAssistancePartners;
 using Microsoft.Graph.Beta.DeviceManagement.RemoteAssistanceSettings;
@@ -115,6 +117,9 @@ using Microsoft.Graph.Beta.DeviceManagement.TemplateSettings;
 using Microsoft.Graph.Beta.DeviceManagement.TenantAttachRBAC;
 using Microsoft.Graph.Beta.DeviceManagement.TermsAndConditions;
 using Microsoft.Graph.Beta.DeviceManagement.TroubleshootingEvents;
+using Microsoft.Graph.Beta.DeviceManagement.UpdateOrganizationalMessageTenantConsent;
+using Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsAnomaly;
+using Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsAnomalyDevice;
 using Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsAppHealthApplicationPerformance;
 using Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion;
 using Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails;
@@ -540,6 +545,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement {
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
+        /// <summary>The postOrganizationalMessageTenantConsent property</summary>
+        public PostOrganizationalMessageTenantConsentRequestBuilder PostOrganizationalMessageTenantConsent { get =>
+            new PostOrganizationalMessageTenantConsentRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The remoteActionAudits property</summary>
         public RemoteActionAuditsRequestBuilder RemoteActionAudits { get =>
             new RemoteActionAuditsRequestBuilder(PathParameters, RequestAdapter);
@@ -622,8 +631,20 @@ namespace Microsoft.Graph.Beta.DeviceManagement {
         public TroubleshootingEventsRequestBuilder TroubleshootingEvents { get =>
             new TroubleshootingEventsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>The updateOrganizationalMessageTenantConsent property</summary>
+        public UpdateOrganizationalMessageTenantConsentRequestBuilder UpdateOrganizationalMessageTenantConsent { get =>
+            new UpdateOrganizationalMessageTenantConsentRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
+        /// <summary>The userExperienceAnalyticsAnomaly property</summary>
+        public UserExperienceAnalyticsAnomalyRequestBuilder UserExperienceAnalyticsAnomaly { get =>
+            new UserExperienceAnalyticsAnomalyRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The userExperienceAnalyticsAnomalyDevice property</summary>
+        public UserExperienceAnalyticsAnomalyDeviceRequestBuilder UserExperienceAnalyticsAnomalyDevice { get =>
+            new UserExperienceAnalyticsAnomalyDeviceRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The userExperienceAnalyticsAppHealthApplicationPerformance property</summary>
         public UserExperienceAnalyticsAppHealthApplicationPerformanceRequestBuilder UserExperienceAnalyticsAppHealthApplicationPerformance { get =>
             new UserExperienceAnalyticsAppHealthApplicationPerformanceRequestBuilder(PathParameters, RequestAdapter);
@@ -962,6 +983,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement {
         public GetEffectivePermissionsWithScopeRequestBuilder GetEffectivePermissionsWithScope(string scope) {
             if(string.IsNullOrEmpty(scope)) throw new ArgumentNullException(nameof(scope));
             return new GetEffectivePermissionsWithScopeRequestBuilder(PathParameters, RequestAdapter, scope);
+        }
+        /// <summary>
+        /// Provides operations to call the getOrganizationalMessageTenantConsent method.
+        /// </summary>
+        public GetOrganizationalMessageTenantConsentRequestBuilder GetOrganizationalMessageTenantConsent() {
+            return new GetOrganizationalMessageTenantConsentRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Provides operations to call the getRoleScopeTagsByIds method.

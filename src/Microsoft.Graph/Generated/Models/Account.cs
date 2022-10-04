@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("subCategory", value); }
         }
         /// <summary>
-        /// Instantiates a new account and sets the default values.
+        /// Instantiates a new Account and sets the default values.
         /// </summary>
         public Account() : base() {
             OdataType = "#microsoft.graph.account";

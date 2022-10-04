@@ -46,6 +46,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DeviceManagementConfigurationPlatforms?>("platforms"); }
             set { BackingStore?.Set("platforms", value); }
         }
+        /// <summary>Indicates the priority of each policies that are selected by the admin during enrollment process</summary>
+        public DeviceManagementPriorityMetaData PriorityMetaData {
+            get { return BackingStore?.Get<DeviceManagementPriorityMetaData>("priorityMetaData"); }
+            set { BackingStore?.Set("priorityMetaData", value); }
+        }
         /// <summary>List of Scope Tags for this Entity instance.</summary>
         public List<string> RoleScopeTagIds {
             get { return BackingStore?.Get<List<string>>("roleScopeTagIds"); }
@@ -98,6 +103,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"name", n => { Name = n.GetStringValue(); } },
                 {"platforms", n => { Platforms = n.GetEnumValue<DeviceManagementConfigurationPlatforms>(); } },
+                {"priorityMetaData", n => { PriorityMetaData = n.GetObjectValue<DeviceManagementPriorityMetaData>(DeviceManagementPriorityMetaData.CreateFromDiscriminatorValue); } },
                 {"roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"settingCount", n => { SettingCount = n.GetIntValue(); } },
                 {"settings", n => { Settings = n.GetCollectionOfObjectValues<DeviceManagementConfigurationSetting>(DeviceManagementConfigurationSetting.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -119,6 +125,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<DeviceManagementConfigurationPlatforms>("platforms", Platforms);
+            writer.WriteObjectValue<DeviceManagementPriorityMetaData>("priorityMetaData", PriorityMetaData);
             writer.WriteCollectionOfPrimitiveValues<string>("roleScopeTagIds", RoleScopeTagIds);
             writer.WriteIntValue("settingCount", SettingCount);
             writer.WriteCollectionOfObjectValues<DeviceManagementConfigurationSetting>("settings", Settings);

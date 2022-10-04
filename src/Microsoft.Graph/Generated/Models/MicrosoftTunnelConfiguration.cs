@@ -16,17 +16,17 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("defaultDomainSuffix"); }
             set { BackingStore?.Set("defaultDomainSuffix", value); }
         }
-        /// <summary>The MicrosoftTunnelConfiguration&apos;s description</summary>
+        /// <summary>The configuration&apos;s description (optional)</summary>
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
-        /// <summary>When DisableUdpConnections is set, the clients and VPN server will not use DTLS connections to tansfer data.</summary>
+        /// <summary>When DisableUdpConnections is set, the clients and VPN server will not use DTLS connections to transfer data.</summary>
         public bool? DisableUdpConnections {
             get { return BackingStore?.Get<bool?>("disableUdpConnections"); }
             set { BackingStore?.Set("disableUdpConnections", value); }
         }
-        /// <summary>The MicrosoftTunnelConfiguration&apos;s display name</summary>
+        /// <summary>The display name for the server configuration. This property is required when a server is created.</summary>
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<string>>("dnsServers"); }
             set { BackingStore?.Set("dnsServers", value); }
         }
-        /// <summary>When the MicrosoftTunnelConfiguration was last updated</summary>
+        /// <summary>When the configuration was last updated</summary>
         public DateTimeOffset? LastUpdateDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastUpdateDateTime"); }
             set { BackingStore?.Set("lastUpdateDateTime", value); }
@@ -51,17 +51,27 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("network"); }
             set { BackingStore?.Set("network", value); }
         }
-        /// <summary>List of Scope Tags for this Entity instance.</summary>
+        /// <summary>List of Scope Tags for this Entity instance</summary>
         public List<string> RoleScopeTagIds {
             get { return BackingStore?.Get<List<string>>("roleScopeTagIds"); }
             set { BackingStore?.Set("roleScopeTagIds", value); }
         }
         /// <summary>Subsets of the routes that will not be routed by the server</summary>
+        public List<string> RouteExcludes {
+            get { return BackingStore?.Get<List<string>>("routeExcludes"); }
+            set { BackingStore?.Set("routeExcludes", value); }
+        }
+        /// <summary>The routes that will be routed by the server</summary>
+        public List<string> RouteIncludes {
+            get { return BackingStore?.Get<List<string>>("routeIncludes"); }
+            set { BackingStore?.Set("routeIncludes", value); }
+        }
+        /// <summary>Subsets of the routes that will not be routed by the server. This property is going to be deprecated with the option of using the new property, &apos;RouteExcludes&apos;.</summary>
         public List<string> RoutesExclude {
             get { return BackingStore?.Get<List<string>>("routesExclude"); }
             set { BackingStore?.Set("routesExclude", value); }
         }
-        /// <summary>The routs that will be routed by the server</summary>
+        /// <summary>The routes that will be routed by the server. This property is going to be deprecated with the option of using the new property, &apos;RouteIncludes&apos;.</summary>
         public List<string> RoutesInclude {
             get { return BackingStore?.Get<List<string>>("routesInclude"); }
             set { BackingStore?.Set("routesInclude", value); }
@@ -100,6 +110,8 @@ namespace Microsoft.Graph.Beta.Models {
                 {"listenPort", n => { ListenPort = n.GetIntValue(); } },
                 {"network", n => { Network = n.GetStringValue(); } },
                 {"roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"routeExcludes", n => { RouteExcludes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"routeIncludes", n => { RouteIncludes = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"routesExclude", n => { RoutesExclude = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"routesInclude", n => { RoutesInclude = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"splitDNS", n => { SplitDNS = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
@@ -122,6 +134,8 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteIntValue("listenPort", ListenPort);
             writer.WriteStringValue("network", Network);
             writer.WriteCollectionOfPrimitiveValues<string>("roleScopeTagIds", RoleScopeTagIds);
+            writer.WriteCollectionOfPrimitiveValues<string>("routeExcludes", RouteExcludes);
+            writer.WriteCollectionOfPrimitiveValues<string>("routeIncludes", RouteIncludes);
             writer.WriteCollectionOfPrimitiveValues<string>("routesExclude", RoutesExclude);
             writer.WriteCollectionOfPrimitiveValues<string>("routesInclude", RoutesInclude);
             writer.WriteCollectionOfPrimitiveValues<string>("splitDNS", SplitDNS);

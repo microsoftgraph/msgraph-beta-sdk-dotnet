@@ -11,12 +11,12 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("agentImageDigest"); }
             set { BackingStore?.Set("agentImageDigest", value); }
         }
-        /// <summary>The MicrosoftTunnelServer&apos;s display name</summary>
+        /// <summary>The display name for the server. This property is required when a server is created and cannot be cleared during updates.</summary>
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
-        /// <summary>When the MicrosoftTunnelServer last checked in</summary>
+        /// <summary>Indicates when the server last checked in</summary>
         public DateTimeOffset? LastCheckinDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastCheckinDateTime"); }
             set { BackingStore?.Set("lastCheckinDateTime", value); }

@@ -13,6 +13,7 @@ using Microsoft.Graph.Beta.Me.ManagedDevices.Item.DeviceConfigurationStates;
 using Microsoft.Graph.Beta.Me.ManagedDevices.Item.Disable;
 using Microsoft.Graph.Beta.Me.ManagedDevices.Item.DisableLostMode;
 using Microsoft.Graph.Beta.Me.ManagedDevices.Item.EnableLostMode;
+using Microsoft.Graph.Beta.Me.ManagedDevices.Item.EnrollNowAction;
 using Microsoft.Graph.Beta.Me.ManagedDevices.Item.GetCloudPcRemoteActionResults;
 using Microsoft.Graph.Beta.Me.ManagedDevices.Item.GetCloudPcReviewStatus;
 using Microsoft.Graph.Beta.Me.ManagedDevices.Item.GetFileVaultKey;
@@ -125,6 +126,10 @@ namespace Microsoft.Graph.Beta.Me.ManagedDevices.Item {
         /// <summary>The enableLostMode property</summary>
         public EnableLostModeRequestBuilder EnableLostMode { get =>
             new EnableLostModeRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The enrollNowAction property</summary>
+        public EnrollNowActionRequestBuilder EnrollNowAction { get =>
+            new EnrollNowActionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The locateDevice property</summary>
         public LocateDeviceRequestBuilder LocateDevice { get =>

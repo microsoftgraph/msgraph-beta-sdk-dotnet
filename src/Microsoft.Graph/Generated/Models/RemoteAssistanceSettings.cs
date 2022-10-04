@@ -10,6 +10,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("allowSessionsToUnenrolledDevices"); }
             set { BackingStore?.Set("allowSessionsToUnenrolledDevices", value); }
         }
+        /// <summary>Indicates if sessions to block chat function. This setting is configurable by the admin. Default value is false.</summary>
+        public bool? BlockChat {
+            get { return BackingStore?.Get<bool?>("blockChat"); }
+            set { BackingStore?.Set("blockChat", value); }
+        }
         /// <summary>State of remote assistance for the account</summary>
         public Microsoft.Graph.Beta.Models.RemoteAssistanceState? RemoteAssistanceState {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RemoteAssistanceState?>("remoteAssistanceState"); }
@@ -35,6 +40,7 @@ namespace Microsoft.Graph.Beta.Models {
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"allowSessionsToUnenrolledDevices", n => { AllowSessionsToUnenrolledDevices = n.GetBoolValue(); } },
+                {"blockChat", n => { BlockChat = n.GetBoolValue(); } },
                 {"remoteAssistanceState", n => { RemoteAssistanceState = n.GetEnumValue<RemoteAssistanceState>(); } },
             };
         }
@@ -46,6 +52,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteBoolValue("allowSessionsToUnenrolledDevices", AllowSessionsToUnenrolledDevices);
+            writer.WriteBoolValue("blockChat", BlockChat);
             writer.WriteEnumValue<RemoteAssistanceState>("remoteAssistanceState", RemoteAssistanceState);
         }
     }

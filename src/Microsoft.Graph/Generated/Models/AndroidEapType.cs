@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public enum AndroidEapType {
         /// <summary>Extensible Authentication Protocol-Transport Layer Security (EAP-TLS).</summary>
         EapTls,

@@ -11,22 +11,22 @@ namespace Microsoft.Graph.Beta.Models.Security {
             get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
             set { BackingStore?.Set("additionalData", value); }
         }
-        /// <summary>Specifies the date time of the attack simulation.</summary>
+        /// <summary>The date and time of the attack simulation.</summary>
         public DateTimeOffset? AttackSimDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("attackSimDateTime"); }
             set { BackingStore?.Set("attackSimDateTime", value); }
         }
-        /// <summary>Specifies the duration (in time) for the attack simulation</summary>
+        /// <summary>The duration (in time) for the attack simulation.</summary>
         public TimeSpan? AttackSimDurationTime {
             get { return BackingStore?.Get<TimeSpan?>("attackSimDurationTime"); }
             set { BackingStore?.Set("attackSimDurationTime", value); }
         }
-        /// <summary>Specifies the activity id for the attack simulation.</summary>
+        /// <summary>The activity ID for the attack simulation.</summary>
         public string AttackSimId {
             get { return BackingStore?.Get<string>("attackSimId"); }
             set { BackingStore?.Set("attackSimId", value); }
         }
-        /// <summary>Specifies the user id of the user who got the attack simulation email</summary>
+        /// <summary>The unique identifier for the user who got the attack simulation email.</summary>
         public string AttackSimUserId {
             get { return BackingStore?.Get<string>("attackSimUserId"); }
             set { BackingStore?.Set("attackSimUserId", value); }

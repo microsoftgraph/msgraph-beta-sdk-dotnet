@@ -7,6 +7,7 @@ using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.GetEffectivePermissi
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.OnPremisesConnections;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.OrganizationSettings;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPolicies;
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ServicePlans;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.SupportedRegions;
@@ -57,6 +58,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint {
         /// <summary>The provisioningPolicies property</summary>
         public ProvisioningPoliciesRequestBuilder ProvisioningPolicies { get =>
             new ProvisioningPoliciesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The reports property</summary>
+        public ReportsRequestBuilder Reports { get =>
+            new ReportsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }

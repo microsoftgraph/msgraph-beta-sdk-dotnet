@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class EducationSynchronizationError : Entity, IParsable {
         /// <summary>Represents the sync entity (school, section, student, teacher).</summary>
         public string EntryType {
@@ -37,7 +36,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("reportableIdentifier", value); }
         }
         /// <summary>
-        /// Instantiates a new educationSynchronizationError and sets the default values.
+        /// Instantiates a new EducationSynchronizationError and sets the default values.
         /// </summary>
         public EducationSynchronizationError() : base() {
             OdataType = "#microsoft.graph.educationSynchronizationError";

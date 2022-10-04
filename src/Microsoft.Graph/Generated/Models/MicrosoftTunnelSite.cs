@@ -7,12 +7,12 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Entity that represents a Microsoft Tunnel site</summary>
     public class MicrosoftTunnelSite : Entity, IParsable {
-        /// <summary>The MicrosoftTunnelSite&apos;s description</summary>
+        /// <summary>The site&apos;s description (optional)</summary>
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
-        /// <summary>The MicrosoftTunnelSite&apos;s display name</summary>
+        /// <summary>The display name for the site. This property is required when a site is created.</summary>
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
@@ -22,7 +22,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("enableCertificatePinning"); }
             set { BackingStore?.Set("enableCertificatePinning", value); }
         }
-        /// <summary>The MicrosoftTunnelSite&apos;s Internal Network Access Probe URL</summary>
+        /// <summary>The site&apos;s Internal Network Access Probe URL</summary>
         public string InternalNetworkProbeUrl {
             get { return BackingStore?.Get<string>("internalNetworkProbeUrl"); }
             set { BackingStore?.Set("internalNetworkProbeUrl", value); }
@@ -37,12 +37,12 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<MicrosoftTunnelServer>>("microsoftTunnelServers"); }
             set { BackingStore?.Set("microsoftTunnelServers", value); }
         }
-        /// <summary>The MicrosoftTunnelSite&apos;s public domain name or IP address</summary>
+        /// <summary>The site&apos;s public domain name or IP address</summary>
         public string PublicAddress {
             get { return BackingStore?.Get<string>("publicAddress"); }
             set { BackingStore?.Set("publicAddress", value); }
         }
-        /// <summary>List of Scope Tags for this Entity instance.</summary>
+        /// <summary>List of Scope Tags for this Entity instance</summary>
         public List<string> RoleScopeTagIds {
             get { return BackingStore?.Get<List<string>>("roleScopeTagIds"); }
             set { BackingStore?.Set("roleScopeTagIds", value); }
@@ -52,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("upgradeAutomatically"); }
             set { BackingStore?.Set("upgradeAutomatically", value); }
         }
-        /// <summary>True if an upgrade is available</summary>
+        /// <summary>The site provides the state of when an upgrade is available</summary>
         public bool? UpgradeAvailable {
             get { return BackingStore?.Get<bool?>("upgradeAvailable"); }
             set { BackingStore?.Set("upgradeAvailable", value); }

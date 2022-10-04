@@ -9,5 +9,11 @@ namespace Microsoft.Graph.Beta.Models {
         Mdm,
         /// <summary>Android Enterprise</summary>
         AndroidEnterprise,
+        /// <summary>Android Enterprise dedicated devices with Azure AD Shared mode</summary>
+        AndroidEnterpriseDedicatedDevicesWithAzureAdSharedMode,
+        /// <summary>Android Open Source Project (AOSP) devices</summary>
+        AndroidOpenSourceProjectUserAssociated,
+        /// <summary>Android Open Source Project (AOSP) userless devices</summary>
+        AndroidOpenSourceProjectUserless,
     }
 }

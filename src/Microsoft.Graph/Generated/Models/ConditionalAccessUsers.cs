@@ -18,7 +18,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<string>>("excludeGroups"); }
             set { BackingStore?.Set("excludeGroups", value); }
         }
-        /// <summary>The excludeGuestsOrExternalUsers property</summary>
+        /// <summary>Internal guests or external users excluded in the policy scope. Optionally populated.</summary>
         public ConditionalAccessGuestsOrExternalUsers ExcludeGuestsOrExternalUsers {
             get { return BackingStore?.Get<ConditionalAccessGuestsOrExternalUsers>("excludeGuestsOrExternalUsers"); }
             set { BackingStore?.Set("excludeGuestsOrExternalUsers", value); }
@@ -38,7 +38,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<string>>("includeGroups"); }
             set { BackingStore?.Set("includeGroups", value); }
         }
-        /// <summary>The includeGuestsOrExternalUsers property</summary>
+        /// <summary>Internal guests or external users included in the policy scope. Optionally populated.</summary>
         public ConditionalAccessGuestsOrExternalUsers IncludeGuestsOrExternalUsers {
             get { return BackingStore?.Get<ConditionalAccessGuestsOrExternalUsers>("includeGuestsOrExternalUsers"); }
             set { BackingStore?.Set("includeGuestsOrExternalUsers", value); }

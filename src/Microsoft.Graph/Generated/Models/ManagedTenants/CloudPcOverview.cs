@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class CloudPcOverview : Entity, IParsable {
         /// <summary>Date and time the entity was last updated in the multi-tenant management platform. Optional. Read-only.</summary>
         public DateTimeOffset? LastRefreshedDateTime {
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
             get { return BackingStore?.Get<string>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
-        /// <summary>The totalBusinessLicenses property</summary>
+        /// <summary>The total number of cloud PC devices that have the Business SKU. Optional. Read-only.</summary>
         public int? TotalBusinessLicenses {
             get { return BackingStore?.Get<int?>("totalBusinessLicenses"); }
             set { BackingStore?.Set("totalBusinessLicenses", value); }
@@ -101,7 +101,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
             get { return BackingStore?.Get<int?>("totalCloudPcStatus"); }
             set { BackingStore?.Set("totalCloudPcStatus", value); }
         }
-        /// <summary>The totalEnterpriseLicenses property</summary>
+        /// <summary>The total number of cloud PC devices that have the Enterprise SKU. Optional. Read-only.</summary>
         public int? TotalEnterpriseLicenses {
             get { return BackingStore?.Get<int?>("totalEnterpriseLicenses"); }
             set { BackingStore?.Set("totalEnterpriseLicenses", value); }

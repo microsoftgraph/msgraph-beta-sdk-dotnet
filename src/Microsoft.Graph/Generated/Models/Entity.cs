@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The id property</summary>
+        /// <summary>The unique identifier for an entity. Read-only.</summary>
         public string Id {
             get { return BackingStore?.Get<string>("id"); }
             set { BackingStore?.Set("id", value); }
@@ -281,12 +281,14 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.cloudPcAuditEvent" => new CloudPcAuditEvent(),
                 "#microsoft.graph.cloudPCConnectivityIssue" => new CloudPCConnectivityIssue(),
                 "#microsoft.graph.cloudPcDeviceImage" => new CloudPcDeviceImage(),
+                "#microsoft.graph.cloudPcExportJob" => new CloudPcExportJob(),
                 "#microsoft.graph.cloudPcExternalPartnerSetting" => new CloudPcExternalPartnerSetting(),
                 "#microsoft.graph.cloudPcGalleryImage" => new CloudPcGalleryImage(),
                 "#microsoft.graph.cloudPcOnPremisesConnection" => new CloudPcOnPremisesConnection(),
                 "#microsoft.graph.cloudPcOrganizationSettings" => new CloudPcOrganizationSettings(),
                 "#microsoft.graph.cloudPcProvisioningPolicy" => new CloudPcProvisioningPolicy(),
                 "#microsoft.graph.cloudPcProvisioningPolicyAssignment" => new CloudPcProvisioningPolicyAssignment(),
+                "#microsoft.graph.cloudPcReports" => new CloudPcReports(),
                 "#microsoft.graph.cloudPcServicePlan" => new CloudPcServicePlan(),
                 "#microsoft.graph.cloudPcSnapshot" => new CloudPcSnapshot(),
                 "#microsoft.graph.cloudPcSupportedRegion" => new CloudPcSupportedRegion(),
@@ -302,6 +304,7 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.complianceManagementPartner" => new ComplianceManagementPartner(),
                 "#microsoft.graph.conditionalAccessPolicy" => new ConditionalAccessPolicy(),
                 "#microsoft.graph.conditionalAccessRoot" => new ConditionalAccessRoot(),
+                "#microsoft.graph.conditionalAccessTemplate" => new ConditionalAccessTemplate(),
                 "#microsoft.graph.configManagerCollection" => new ConfigManagerCollection(),
                 "#microsoft.graph.connectedOrganization" => new ConnectedOrganization(),
                 "#microsoft.graph.connectionOperation" => new ConnectionOperation(),
@@ -1310,6 +1313,8 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.userConfiguration" => new UserConfiguration(),
                 "#microsoft.graph.userConsentRequest" => new UserConsentRequest(),
                 "#microsoft.graph.userCredentialUsageDetails" => new UserCredentialUsageDetails(),
+                "#microsoft.graph.userExperienceAnalyticsAnomaly" => new UserExperienceAnalyticsAnomaly(),
+                "#microsoft.graph.userExperienceAnalyticsAnomalyDevice" => new UserExperienceAnalyticsAnomalyDevice(),
                 "#microsoft.graph.userExperienceAnalyticsAppHealthApplicationPerformance" => new UserExperienceAnalyticsAppHealthApplicationPerformance(),
                 "#microsoft.graph.userExperienceAnalyticsAppHealthAppPerformanceByAppVersion" => new UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion(),
                 "#microsoft.graph.userExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails" => new UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails(),

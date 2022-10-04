@@ -4,19 +4,19 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class CloudPcDevice : Entity, IParsable {
         /// <summary>The status of the cloud PC. Possible values are: notProvisioned, provisioning, provisioned, upgrading, inGracePeriod, deprovisioning, failed. Required. Read-only.</summary>
         public string CloudPcStatus {
             get { return BackingStore?.Get<string>("cloudPcStatus"); }
             set { BackingStore?.Set("cloudPcStatus", value); }
         }
-        /// <summary>The deviceSpecification property</summary>
+        /// <summary>The specification of the cloud PC device. Required. Read-only.</summary>
         public string DeviceSpecification {
             get { return BackingStore?.Get<string>("deviceSpecification"); }
             set { BackingStore?.Set("deviceSpecification", value); }
         }
-        /// <summary>The display name for the cloud PC. Required. Read-only.</summary>
+        /// <summary>The display name  of the cloud PC device. Required. Read-only.</summary>
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
@@ -26,27 +26,27 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
             get { return BackingStore?.Get<DateTimeOffset?>("lastRefreshedDateTime"); }
             set { BackingStore?.Set("lastRefreshedDateTime", value); }
         }
-        /// <summary>The managed device identifier for the cloud PC. Optional. Read-only.</summary>
+        /// <summary>The managed device identifier of the cloud PC device. Optional. Read-only.</summary>
         public string ManagedDeviceId {
             get { return BackingStore?.Get<string>("managedDeviceId"); }
             set { BackingStore?.Set("managedDeviceId", value); }
         }
-        /// <summary>The managed device display name for the cloud PC. Optional. Read-only.</summary>
+        /// <summary>The managed device display name of the cloud PC device. Optional. Read-only.</summary>
         public string ManagedDeviceName {
             get { return BackingStore?.Get<string>("managedDeviceName"); }
             set { BackingStore?.Set("managedDeviceName", value); }
         }
-        /// <summary>The provisioning policy identifier for the cloud PC. Required. Read-only.</summary>
+        /// <summary>The provisioning policy identifier for the cloud PC device. Required. Read-only.</summary>
         public string ProvisioningPolicyId {
             get { return BackingStore?.Get<string>("provisioningPolicyId"); }
             set { BackingStore?.Set("provisioningPolicyId", value); }
         }
-        /// <summary>The service plan name for the cloud PC. Required. Read-only.</summary>
+        /// <summary>The service plan name of the cloud PC device. Required. Read-only.</summary>
         public string ServicePlanName {
             get { return BackingStore?.Get<string>("servicePlanName"); }
             set { BackingStore?.Set("servicePlanName", value); }
         }
-        /// <summary>The servicePlanType property</summary>
+        /// <summary>The service plan type of the cloud PC device. Required. Read-only.</summary>
         public string ServicePlanType {
             get { return BackingStore?.Get<string>("servicePlanType"); }
             set { BackingStore?.Set("servicePlanType", value); }
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
             get { return BackingStore?.Get<string>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
-        /// <summary>The user principal name (UPN) of the user assigned to the cloud PC. Required. Read-only.</summary>
+        /// <summary>The user principal name (UPN) of the user assigned to the cloud PC device. Required. Read-only.</summary>
         public string UserPrincipalName {
             get { return BackingStore?.Get<string>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }

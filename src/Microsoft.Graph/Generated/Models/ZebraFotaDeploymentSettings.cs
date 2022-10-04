@@ -40,6 +40,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DateTimeOffset?>("downloadRuleStartDateTime"); }
             set { BackingStore?.Set("downloadRuleStartDateTime", value); }
         }
+        /// <summary>A description provided by Zebra for the the firmware artifact to update the device to (e.g.: LifeGuard Update 120 (released 29-June-2022).</summary>
+        public string FirmwareTargetArtifactDescription {
+            get { return BackingStore?.Get<string>("firmwareTargetArtifactDescription"); }
+            set { BackingStore?.Set("firmwareTargetArtifactDescription", value); }
+        }
         /// <summary>Deployment&apos;s Board Support Package (BSP. E.g.: &apos;01.18.02.00&apos;). Required only for custom update type.</summary>
         public string FirmwareTargetBoardSupportPackageVersion {
             get { return BackingStore?.Get<string>("firmwareTargetBoardSupportPackageVersion"); }
@@ -121,6 +126,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"deviceModel", n => { DeviceModel = n.GetStringValue(); } },
                 {"downloadRuleNetworkType", n => { DownloadRuleNetworkType = n.GetEnumValue<ZebraFotaNetworkType>(); } },
                 {"downloadRuleStartDateTime", n => { DownloadRuleStartDateTime = n.GetDateTimeOffsetValue(); } },
+                {"firmwareTargetArtifactDescription", n => { FirmwareTargetArtifactDescription = n.GetStringValue(); } },
                 {"firmwareTargetBoardSupportPackageVersion", n => { FirmwareTargetBoardSupportPackageVersion = n.GetStringValue(); } },
                 {"firmwareTargetOsVersion", n => { FirmwareTargetOsVersion = n.GetStringValue(); } },
                 {"firmwareTargetPatch", n => { FirmwareTargetPatch = n.GetStringValue(); } },
@@ -145,6 +151,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("deviceModel", DeviceModel);
             writer.WriteEnumValue<ZebraFotaNetworkType>("downloadRuleNetworkType", DownloadRuleNetworkType);
             writer.WriteDateTimeOffsetValue("downloadRuleStartDateTime", DownloadRuleStartDateTime);
+            writer.WriteStringValue("firmwareTargetArtifactDescription", FirmwareTargetArtifactDescription);
             writer.WriteStringValue("firmwareTargetBoardSupportPackageVersion", FirmwareTargetBoardSupportPackageVersion);
             writer.WriteStringValue("firmwareTargetOsVersion", FirmwareTargetOsVersion);
             writer.WriteStringValue("firmwareTargetPatch", FirmwareTargetPatch);

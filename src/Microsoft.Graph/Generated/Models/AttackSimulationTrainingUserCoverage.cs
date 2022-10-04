@@ -23,7 +23,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
-        /// <summary>List of assigned trainings&apos; and their statuses for the user.</summary>
+        /// <summary>List of assigned trainings and their statuses for the user.</summary>
         public List<UserTrainingStatusInfo> UserTrainings {
             get { return BackingStore?.Get<List<UserTrainingStatusInfo>>("userTrainings"); }
             set { BackingStore?.Set("userTrainings", value); }

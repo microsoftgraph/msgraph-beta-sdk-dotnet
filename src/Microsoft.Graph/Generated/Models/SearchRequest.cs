@@ -73,6 +73,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<ResultTemplateOption>("resultTemplateOptions"); }
             set { BackingStore?.Set("resultTemplateOptions", value); }
         }
+        /// <summary>The sharePointOneDriveOptions property</summary>
+        public Microsoft.Graph.Beta.Models.SharePointOneDriveOptions SharePointOneDriveOptions {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SharePointOneDriveOptions>("sharePointOneDriveOptions"); }
+            set { BackingStore?.Set("sharePointOneDriveOptions", value); }
+        }
         /// <summary>The size of the page to be retrieved. Optional.</summary>
         public int? Size {
             get { return BackingStore?.Get<int?>("size"); }
@@ -126,6 +131,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"queryAlterationOptions", n => { QueryAlterationOptions = n.GetObjectValue<SearchAlterationOptions>(SearchAlterationOptions.CreateFromDiscriminatorValue); } },
                 {"region", n => { Region = n.GetStringValue(); } },
                 {"resultTemplateOptions", n => { ResultTemplateOptions = n.GetObjectValue<ResultTemplateOption>(ResultTemplateOption.CreateFromDiscriminatorValue); } },
+                {"sharePointOneDriveOptions", n => { SharePointOneDriveOptions = n.GetObjectValue<Microsoft.Graph.Beta.Models.SharePointOneDriveOptions>(Microsoft.Graph.Beta.Models.SharePointOneDriveOptions.CreateFromDiscriminatorValue); } },
                 {"size", n => { Size = n.GetIntValue(); } },
                 {"sortProperties", n => { SortProperties = n.GetCollectionOfObjectValues<SortProperty>(SortProperty.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"stored_fields", n => { Stored_fields = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
@@ -150,6 +156,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteObjectValue<SearchAlterationOptions>("queryAlterationOptions", QueryAlterationOptions);
             writer.WriteStringValue("region", Region);
             writer.WriteObjectValue<ResultTemplateOption>("resultTemplateOptions", ResultTemplateOptions);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.SharePointOneDriveOptions>("sharePointOneDriveOptions", SharePointOneDriveOptions);
             writer.WriteIntValue("size", Size);
             writer.WriteCollectionOfObjectValues<SortProperty>("sortProperties", SortProperties);
             writer.WriteCollectionOfPrimitiveValues<string>("stored_fields", Stored_fields);

@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class ServicePrincipal : DirectoryObject, IParsable {
         /// <summary>true if the service principal account is enabled; otherwise, false. Supports $filter (eq, ne, not, in).</summary>
         public bool? AccountEnabled {
@@ -216,7 +215,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<PermissionScope>>("publishedPermissionScopes"); }
             set { BackingStore?.Set("publishedPermissionScopes", value); }
         }
-        /// <summary>The publisherName property</summary>
+        /// <summary>The name of the Azure AD tenant that published the application.</summary>
         public string PublisherName {
             get { return BackingStore?.Get<string>("publisherName"); }
             set { BackingStore?.Set("publisherName", value); }
@@ -287,7 +286,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("verifiedPublisher", value); }
         }
         /// <summary>
-        /// Instantiates a new servicePrincipal and sets the default values.
+        /// Instantiates a new ServicePrincipal and sets the default values.
         /// </summary>
         public ServicePrincipal() : base() {
             OdataType = "#microsoft.graph.servicePrincipal";

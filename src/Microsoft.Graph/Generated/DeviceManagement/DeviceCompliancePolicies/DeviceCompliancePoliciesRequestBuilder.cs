@@ -1,5 +1,6 @@
 using Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.Count;
 using Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.GetDevicesScheduledToRetire;
+using Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.GetNoncompliantDevicesToRetire;
 using Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.HasPayloadLinks;
 using Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.Item;
 using Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.RefreshDeviceComplianceReportSummarization;
@@ -21,6 +22,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies {
         /// <summary>The Count property</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The getNoncompliantDevicesToRetire property</summary>
+        public GetNoncompliantDevicesToRetireRequestBuilder GetNoncompliantDevicesToRetire { get =>
+            new GetNoncompliantDevicesToRetireRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The hasPayloadLinks property</summary>
         public HasPayloadLinksRequestBuilder HasPayloadLinks { get =>
