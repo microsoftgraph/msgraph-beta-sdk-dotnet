@@ -36,6 +36,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IMicrosoftTunnelServerLogCollectionResponseCreateDownloadUrlRequestBuilder"/>.</returns>
         IMicrosoftTunnelServerLogCollectionResponseCreateDownloadUrlRequestBuilder CreateDownloadUrl();
+
+        /// <summary>
+        /// Gets the request builder for MicrosoftTunnelServerLogCollectionResponseGenerateDownloadUrl.
+        /// </summary>
+        /// <returns>The <see cref="IMicrosoftTunnelServerLogCollectionResponseGenerateDownloadUrlRequestBuilder"/>.</returns>
+        IMicrosoftTunnelServerLogCollectionResponseGenerateDownloadUrlRequestBuilder GenerateDownloadUrl();
     
     }
 }

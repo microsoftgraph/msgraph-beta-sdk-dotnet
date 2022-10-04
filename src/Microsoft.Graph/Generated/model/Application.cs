@@ -211,6 +211,12 @@ namespace Microsoft.Graph
         public string ServiceManagementReference { get; set; }
     
         /// <summary>
+        /// Gets or sets service principal lock configuration.
+        /// </summary>
+        [JsonPropertyName("servicePrincipalLockConfiguration")]
+        public ServicePrincipalLockConfiguration ServicePrincipalLockConfiguration { get; set; }
+    
+        /// <summary>
         /// Gets or sets sign in audience.
         /// Specifies the Microsoft accounts that are supported for the current application. The possible values are: AzureADMyOrg, AzureADMultipleOrgs, AzureADandPersonalMicrosoftAccount (default), and PersonalMicrosoftAccount. See more in the table below. Supports $filter (eq, ne, not).
         /// </summary>

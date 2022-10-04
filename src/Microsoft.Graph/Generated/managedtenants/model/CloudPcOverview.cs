@@ -133,6 +133,7 @@ namespace Microsoft.Graph.ManagedTenants
     
         /// <summary>
         /// Gets or sets total business licenses.
+        /// The total number of cloud PC devices that have the Business SKU. Optional. Read-only.
         /// </summary>
         [JsonPropertyName("totalBusinessLicenses")]
         public Int32? TotalBusinessLicenses { get; set; }
@@ -153,6 +154,7 @@ namespace Microsoft.Graph.ManagedTenants
     
         /// <summary>
         /// Gets or sets total enterprise licenses.
+        /// The total number of cloud PC devices that have the Enterprise SKU. Optional. Read-only.
         /// </summary>
         [JsonPropertyName("totalEnterpriseLicenses")]
         public Int32? TotalEnterpriseLicenses { get; set; }

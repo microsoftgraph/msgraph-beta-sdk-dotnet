@@ -44,7 +44,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets status.
-        /// Status of the run of an attack simulation automation. The possible values are: unknown, running, succeeded, failed, skipped, unknownFutureValue.
+        /// Status of the attack simulation automation run. The possible values are: unknown, running, succeeded, failed, skipped, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("status")]
         public SimulationAutomationRunStatus? Status { get; set; }

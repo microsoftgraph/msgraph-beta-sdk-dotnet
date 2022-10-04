@@ -79,7 +79,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets is automated.
-        /// Flag representing if the attack simulation and training campaign was created from a simulation automation flow. Supports $filter and $orderby.
+        /// Flag that represents if the attack simulation and training campaign was created from a simulation automation flow. Supports $filter and $orderby.
         /// </summary>
         [JsonPropertyName("isAutomated")]
         public bool? IsAutomated { get; set; }

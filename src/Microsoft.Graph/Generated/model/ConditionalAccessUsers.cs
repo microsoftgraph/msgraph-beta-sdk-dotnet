@@ -30,6 +30,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets excludeGuestsOrExternalUsers.
+        /// Internal guests or external users excluded in the policy scope. Optionally populated.
         /// </summary>
         [JsonPropertyName("excludeGuestsOrExternalUsers")]
         public ConditionalAccessGuestsOrExternalUsers ExcludeGuestsOrExternalUsers { get; set; }
@@ -57,6 +58,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets includeGuestsOrExternalUsers.
+        /// Internal guests or external users included in the policy scope. Optionally populated.
         /// </summary>
         [JsonPropertyName("includeGuestsOrExternalUsers")]
         public ConditionalAccessGuestsOrExternalUsers IncludeGuestsOrExternalUsers { get; set; }

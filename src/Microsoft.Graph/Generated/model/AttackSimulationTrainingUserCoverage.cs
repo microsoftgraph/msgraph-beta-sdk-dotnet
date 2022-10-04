@@ -30,7 +30,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets userTrainings.
-        /// List of assigned trainings' and their statuses for the user.
+        /// List of assigned trainings and their statuses for the user.
         /// </summary>
         [JsonPropertyName("userTrainings")]
         public IEnumerable<UserTrainingStatusInfo> UserTrainings { get; set; }

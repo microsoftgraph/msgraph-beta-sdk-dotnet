@@ -226,6 +226,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets publisher name.
+        /// The name of the Azure AD tenant that published the application.
         /// </summary>
         [JsonPropertyName("publisherName")]
         public string PublisherName { get; set; }

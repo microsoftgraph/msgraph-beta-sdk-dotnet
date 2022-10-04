@@ -23,7 +23,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets attackSimulationUser.
-        /// User in an attack simulation and training campaign.
+        /// The user in an attack simulation and training campaign.
         /// </summary>
         [JsonPropertyName("attackSimulationUser")]
         public AttackSimulationUser AttackSimulationUser { get; set; }

@@ -127,6 +127,13 @@ namespace Microsoft.Graph
         public DeviceManagementSubscriptionState? SubscriptionState { get; set; }
     
         /// <summary>
+        /// Gets or sets user experience analytics anomaly severity overview.
+        /// The user experience analytics anomaly severity overview entity contains the count information for each severity of anomaly.
+        /// </summary>
+        [JsonPropertyName("userExperienceAnalyticsAnomalySeverityOverview")]
+        public UserExperienceAnalyticsAnomalySeverityOverview UserExperienceAnalyticsAnomalySeverityOverview { get; set; }
+    
+        /// <summary>
         /// Gets or sets user experience analytics settings.
         /// User experience analytics device settings
         /// </summary>
@@ -991,6 +998,34 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("tenantAttachRBAC")]
         public TenantAttachRBAC TenantAttachRBAC { get; set; }
+    
+        /// <summary>
+        /// Gets or sets user experience analytics anomaly.
+        /// The user experience analytics anomaly entity contains anomaly details.
+        /// </summary>
+        [JsonPropertyName("userExperienceAnalyticsAnomaly")]
+        public IDeviceManagementUserExperienceAnalyticsAnomalyCollectionPage UserExperienceAnalyticsAnomaly { get; set; }
+
+        /// <summary>
+        /// Gets or sets userExperienceAnalyticsAnomalyNextLink.
+        /// </summary>
+        [JsonPropertyName("userExperienceAnalyticsAnomaly@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string UserExperienceAnalyticsAnomalyNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets user experience analytics anomaly device.
+        /// The user experience analytics anomaly entity contains device details.
+        /// </summary>
+        [JsonPropertyName("userExperienceAnalyticsAnomalyDevice")]
+        public IDeviceManagementUserExperienceAnalyticsAnomalyDeviceCollectionPage UserExperienceAnalyticsAnomalyDevice { get; set; }
+
+        /// <summary>
+        /// Gets or sets userExperienceAnalyticsAnomalyDeviceNextLink.
+        /// </summary>
+        [JsonPropertyName("userExperienceAnalyticsAnomalyDevice@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string UserExperienceAnalyticsAnomalyDeviceNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets user experience analytics app health application performance.

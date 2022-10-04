@@ -264,6 +264,12 @@ namespace Microsoft.Graph
                     // Copy the additional data collection to the page itself so that information is not lost
                     conditionalAccessRootToInitialize.Policies.AdditionalData = conditionalAccessRootToInitialize.AdditionalData;
                 }
+                if (conditionalAccessRootToInitialize.Templates != null && conditionalAccessRootToInitialize.Templates.CurrentPage != null)
+                {
+                    conditionalAccessRootToInitialize.Templates.InitializeNextPageRequest(this.Client, conditionalAccessRootToInitialize.TemplatesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    conditionalAccessRootToInitialize.Templates.AdditionalData = conditionalAccessRootToInitialize.AdditionalData;
+                }
 
             }
 

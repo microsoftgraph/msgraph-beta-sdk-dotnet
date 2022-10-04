@@ -22,28 +22,28 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets default healthy threshold.
-        /// The default threshold for being healthy
+        /// The threshold for being healthy based on default health status metrics: CPU usage healthy &amp;lt; 50%, Memory usage healthy &amp;lt; 50%, Disk space healthy &amp;gt; 5GB, Latency healthy &amp;lt; 10ms, health metrics can be customized. Read-only.
         /// </summary>
         [JsonPropertyName("defaultHealthyThreshold")]
         public Int64? DefaultHealthyThreshold { get; set; }
     
         /// <summary>
         /// Gets or sets default unhealthy threshold.
-        /// The default threshold for being unhealthy
+        /// The threshold for being unhealthy based on default health status metrics: CPU usage unhealthy &amp;gt; 75%, Memory usage unhealthy &amp;gt; 75%, Disk space &amp;lt; 3GB, Latency unhealthy &amp;gt; 20ms, health metrics can be customized. Read-only.
         /// </summary>
         [JsonPropertyName("defaultUnhealthyThreshold")]
         public Int64? DefaultUnhealthyThreshold { get; set; }
     
         /// <summary>
         /// Gets or sets healthy threshold.
-        /// The threshold for being healthy
+        /// The threshold for being healthy based on default health status metrics: CPU usage healthy &amp;lt; 50%, Memory usage healthy &amp;lt; 50%, Disk space healthy &amp;gt; 5GB, Latency healthy &amp;lt; 10ms, health metrics can be customized.
         /// </summary>
         [JsonPropertyName("healthyThreshold")]
         public Int64? HealthyThreshold { get; set; }
     
         /// <summary>
         /// Gets or sets unhealthy threshold.
-        /// The threshold for being unhealthy
+        /// The threshold for being unhealthy based on default health status metrics: CPU usage unhealthy &amp;gt; 75%, Memory usage unhealthy &amp;gt; 75%, Disk space &amp;lt; 3GB, Latency Unhealthy &amp;gt; 20ms, health metrics can be customized.
         /// </summary>
         [JsonPropertyName("unhealthyThreshold")]
         public Int64? UnhealthyThreshold { get; set; }

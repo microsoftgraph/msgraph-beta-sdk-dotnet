@@ -22,7 +22,7 @@ namespace Microsoft.Graph.IdentityGovernanceNamespace
     
         /// <summary>
         /// Gets or sets workflow schedule interval in hours.
-        /// The interval in hours at which all workflows running in the tenant should be scheduled for execution. This interval has a minimum value of 1 and a maximum value of 24.
+        /// The interval in hours at which all workflows running in the tenant should be scheduled for execution. This interval has a minimum value of 1 and a maximum value of 24. The default value is 3 hours.
         /// </summary>
         [JsonPropertyName("workflowScheduleIntervalInHours")]
         public Int32? WorkflowScheduleIntervalInHours { get; set; }

@@ -60,6 +60,17 @@ namespace Microsoft.Graph
                 this.AppendSegmentToRequestUrl("microsoft.graph.createDownloadUrl"),
                 this.Client);
         }
+
+        /// <summary>
+        /// Gets the request builder for MicrosoftTunnelServerLogCollectionResponseGenerateDownloadUrl.
+        /// </summary>
+        /// <returns>The <see cref="IMicrosoftTunnelServerLogCollectionResponseGenerateDownloadUrlRequestBuilder"/>.</returns>
+        public IMicrosoftTunnelServerLogCollectionResponseGenerateDownloadUrlRequestBuilder GenerateDownloadUrl()
+        {
+            return new MicrosoftTunnelServerLogCollectionResponseGenerateDownloadUrlRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.generateDownloadUrl"),
+                this.Client);
+        }
     
     }
 }

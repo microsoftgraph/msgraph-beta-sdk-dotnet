@@ -100,6 +100,13 @@ namespace Microsoft.Graph
         public Int32? PasswordSignInFailureCountBeforeFactoryReset { get; set; }
     
         /// <summary>
+        /// Gets or sets required password complexity.
+        /// Indicates the required device password complexity on Android. One of: NONE, LOW, MEDIUM, HIGH. This is a new API targeted to Android 12+. Possible values are: none, low, medium, high.
+        /// </summary>
+        [JsonPropertyName("requiredPasswordComplexity")]
+        public AndroidRequiredPasswordComplexity? RequiredPasswordComplexity { get; set; }
+    
+        /// <summary>
         /// Gets or sets security require verify apps.
         /// Require the Android Verify apps feature is turned on.
         /// </summary>
@@ -322,6 +329,13 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("workProfilePasswordSignInFailureCountBeforeFactoryReset")]
         public Int32? WorkProfilePasswordSignInFailureCountBeforeFactoryReset { get; set; }
+    
+        /// <summary>
+        /// Gets or sets work profile required password complexity.
+        /// Indicates the required work profile password complexity on Android. One of: NONE, LOW, MEDIUM, HIGH. This is a new API targeted to Android 12+. Possible values are: none, low, medium, high.
+        /// </summary>
+        [JsonPropertyName("workProfileRequiredPasswordComplexity")]
+        public AndroidRequiredPasswordComplexity? WorkProfileRequiredPasswordComplexity { get; set; }
     
         /// <summary>
         /// Gets or sets work profile require password.

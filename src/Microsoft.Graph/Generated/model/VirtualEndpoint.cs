@@ -126,6 +126,12 @@ namespace Microsoft.Graph
         public string ProvisioningPoliciesNextLink { get; set; }
     
         /// <summary>
+        /// Gets or sets reports.
+        /// </summary>
+        [JsonPropertyName("reports")]
+        public CloudPcReports Reports { get; set; }
+    
+        /// <summary>
         /// Gets or sets service plans.
         /// Cloud PC service plans.
         /// </summary>

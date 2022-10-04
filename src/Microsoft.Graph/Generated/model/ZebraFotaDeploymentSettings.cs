@@ -57,6 +57,13 @@ namespace Microsoft.Graph
         public DateTimeOffset? DownloadRuleStartDateTime { get; set; }
     
         /// <summary>
+        /// Gets or sets firmwareTargetArtifactDescription.
+        /// A description provided by Zebra for the the firmware artifact to update the device to (e.g.: LifeGuard Update 120 (released 29-June-2022).
+        /// </summary>
+        [JsonPropertyName("firmwareTargetArtifactDescription")]
+        public string FirmwareTargetArtifactDescription { get; set; }
+    
+        /// <summary>
         /// Gets or sets firmwareTargetBoardSupportPackageVersion.
         /// Deployment's Board Support Package (BSP. E.g.: '01.18.02.00'). Required only for custom update type.
         /// </summary>

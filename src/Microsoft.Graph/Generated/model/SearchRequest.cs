@@ -98,6 +98,12 @@ namespace Microsoft.Graph
         public ResultTemplateOption ResultTemplateOptions { get; set; }
     
         /// <summary>
+        /// Gets or sets sharePointOneDriveOptions.
+        /// </summary>
+        [JsonPropertyName("sharePointOneDriveOptions")]
+        public SharePointOneDriveOptions SharePointOneDriveOptions { get; set; }
+    
+        /// <summary>
         /// Gets or sets size.
         /// The size of the page to be retrieved. Optional.
         /// </summary>

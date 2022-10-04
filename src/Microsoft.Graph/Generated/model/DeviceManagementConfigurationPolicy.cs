@@ -71,6 +71,13 @@ namespace Microsoft.Graph
         public DeviceManagementConfigurationPlatforms? Platforms { get; set; }
     
         /// <summary>
+        /// Gets or sets priority meta data.
+        /// Indicates the priority of each policies that are selected by the admin during enrollment process
+        /// </summary>
+        [JsonPropertyName("priorityMetaData")]
+        public DeviceManagementPriorityMetaData PriorityMetaData { get; set; }
+    
+        /// <summary>
         /// Gets or sets role scope tag ids.
         /// List of Scope Tags for this Entity instance.
         /// </summary>

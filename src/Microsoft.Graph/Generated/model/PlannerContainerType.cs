@@ -34,5 +34,10 @@ namespace Microsoft.Graph
         /// </summary>
         Roster = 3,
 	
+        /// <summary>
+        /// Project
+        /// </summary>
+        Project = 4,
+	
     }
 }

@@ -247,6 +247,13 @@ namespace Microsoft.Graph
         public string MinimumWipeOsVersion { get; set; }
     
         /// <summary>
+        /// Gets or sets mobile threat defense partner priority.
+        /// Indicates how to prioritize which Mobile Threat Defense (MTD) partner is enabled for a given platform, when more than one is enabled. An app can only be actively using a single Mobile Threat Defense partner. When NULL, Microsoft Defender will be given preference. Otherwise setting the value to defenderOverThirdPartyPartner or thirdPartyPartnerOverDefender will make explicit which partner to prioritize. Possible values are: null, defenderOverThirdPartyPartner, thirdPartyPartnerOverDefender and unknownFutureValue. Default value is null. Possible values are: defenderOverThirdPartyPartner, thirdPartyPartnerOverDefender, unknownFutureValue.
+        /// </summary>
+        [JsonPropertyName("mobileThreatDefensePartnerPriority")]
+        public MobileThreatDefensePartnerPriority? MobileThreatDefensePartnerPriority { get; set; }
+    
+        /// <summary>
         /// Gets or sets mobile threat defense remediation action.
         /// Determines what action to take if the mobile threat defense threat threshold isn't met. Warn isn't a supported value for this property. Possible values are: block, wipe, warn.
         /// </summary>

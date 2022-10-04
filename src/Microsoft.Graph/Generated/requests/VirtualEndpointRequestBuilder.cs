@@ -147,6 +147,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for Reports.
+        /// </summary>
+        /// <returns>The <see cref="ICloudPcReportsRequestBuilder"/>.</returns>
+        public ICloudPcReportsRequestBuilder Reports
+        {
+            get
+            {
+                return new CloudPcReportsRequestBuilder(this.AppendSegmentToRequestUrl("reports"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for ServicePlans.
         /// </summary>
         /// <returns>The <see cref="IVirtualEndpointServicePlansCollectionRequestBuilder"/>.</returns>

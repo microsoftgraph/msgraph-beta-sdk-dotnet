@@ -80,6 +80,12 @@ namespace Microsoft.Graph
         IVirtualEndpointProvisioningPoliciesCollectionRequestBuilder ProvisioningPolicies { get; }
 
         /// <summary>
+        /// Gets the request builder for Reports.
+        /// </summary>
+        /// <returns>The <see cref="ICloudPcReportsRequestBuilder"/>.</returns>
+        ICloudPcReportsRequestBuilder Reports { get; }
+
+        /// <summary>
         /// Gets the request builder for ServicePlans.
         /// </summary>
         /// <returns>The <see cref="IVirtualEndpointServicePlansCollectionRequestBuilder"/>.</returns>

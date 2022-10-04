@@ -51,14 +51,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets isCompromised.
-        /// Flag representing if user was compromised in an attack simulation and training campaign.
+        /// Indicates whether a user was compromised in an attack simulation and training campaign.
         /// </summary>
         [JsonPropertyName("isCompromised")]
         public bool? IsCompromised { get; set; }
     
         /// <summary>
         /// Gets or sets reportedPhishDateTime.
-        /// Date and time when user reported delivered payload as phish in the attack simulation and training campaign.
+        /// Date and time when a user reported the delivered payload as phishing in the attack simulation and training campaign.
         /// </summary>
         [JsonPropertyName("reportedPhishDateTime")]
         public DateTimeOffset? ReportedPhishDateTime { get; set; }
@@ -72,7 +72,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets simulationUser.
-        /// User in an attack simulation and training campaign.
+        /// The user in an attack simulation and training campaign.
         /// </summary>
         [JsonPropertyName("simulationUser")]
         public AttackSimulationUser SimulationUser { get; set; }

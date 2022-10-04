@@ -22,7 +22,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets description.
-        /// A short explanation of the policies that are enforced by authenticationContextClassReference. This value should be used to provide secondary text to describe the authentication context class reference when building user-facing admin experiences. For example, a selection UX.
+        /// A short explanation of the policies that are enforced by authenticationContextClassReference. This value should be used to provide secondary text to describe the authentication context class reference when building user facing admin experiences. For example, selection UX.
         /// </summary>
         [JsonPropertyName("description")]
         public string Description { get; set; }
@@ -36,7 +36,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets is available.
-        /// Indicates whether the authenticationContextClassReference has been published by the security admin and is ready for use by apps. When it is set to false, it should not be shown in admin UX experiences because the value is not currently available for selection.  Supports $filter (eq).
+        /// Indicates whether the authenticationContextClassReference has been published by the security admin and is ready for use by apps. When it is set to false, it should not be shown in selection UX used to tag resources with authentication context class values. It will still be shown in the Conditionall Access policy authoring experience.  Supports $filter (eq).
         /// </summary>
         [JsonPropertyName("isAvailable")]
         public bool? IsAvailable { get; set; }

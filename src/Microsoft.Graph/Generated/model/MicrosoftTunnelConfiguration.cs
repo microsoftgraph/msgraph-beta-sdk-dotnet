@@ -36,21 +36,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets description.
-        /// The MicrosoftTunnelConfiguration's description
+        /// The configuration's description (optional)
         /// </summary>
         [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets disable udp connections.
-        /// When DisableUdpConnections is set, the clients and VPN server will not use DTLS connections to tansfer data.
+        /// When DisableUdpConnections is set, the clients and VPN server will not use DTLS connections to transfer data.
         /// </summary>
         [JsonPropertyName("disableUdpConnections")]
         public bool? DisableUdpConnections { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
-        /// The MicrosoftTunnelConfiguration's display name
+        /// The display name for the server configuration. This property is required when a server is created.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
@@ -64,7 +64,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets last update date time.
-        /// When the MicrosoftTunnelConfiguration was last updated
+        /// When the configuration was last updated
         /// </summary>
         [JsonPropertyName("lastUpdateDateTime")]
         public DateTimeOffset? LastUpdateDateTime { get; set; }
@@ -85,21 +85,35 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets role scope tag ids.
-        /// List of Scope Tags for this Entity instance.
+        /// List of Scope Tags for this Entity instance
         /// </summary>
         [JsonPropertyName("roleScopeTagIds")]
         public IEnumerable<string> RoleScopeTagIds { get; set; }
     
         /// <summary>
-        /// Gets or sets routes exclude.
+        /// Gets or sets route excludes.
         /// Subsets of the routes that will not be routed by the server
+        /// </summary>
+        [JsonPropertyName("routeExcludes")]
+        public IEnumerable<string> RouteExcludes { get; set; }
+    
+        /// <summary>
+        /// Gets or sets route includes.
+        /// The routes that will be routed by the server
+        /// </summary>
+        [JsonPropertyName("routeIncludes")]
+        public IEnumerable<string> RouteIncludes { get; set; }
+    
+        /// <summary>
+        /// Gets or sets routes exclude.
+        /// Subsets of the routes that will not be routed by the server. This property is going to be deprecated with the option of using the new property, 'RouteExcludes'.
         /// </summary>
         [JsonPropertyName("routesExclude")]
         public IEnumerable<string> RoutesExclude { get; set; }
     
         /// <summary>
         /// Gets or sets routes include.
-        /// The routs that will be routed by the server
+        /// The routes that will be routed by the server. This property is going to be deprecated with the option of using the new property, 'RouteIncludes'.
         /// </summary>
         [JsonPropertyName("routesInclude")]
         public IEnumerable<string> RoutesInclude { get; set; }

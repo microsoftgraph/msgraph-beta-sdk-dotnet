@@ -54,6 +54,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IConditionalAccessRootPoliciesCollectionRequestBuilder"/>.</returns>
         IConditionalAccessRootPoliciesCollectionRequestBuilder Policies { get; }
+
+        /// <summary>
+        /// Gets the request builder for Templates.
+        /// </summary>
+        /// <returns>The <see cref="IConditionalAccessRootTemplatesCollectionRequestBuilder"/>.</returns>
+        IConditionalAccessRootTemplatesCollectionRequestBuilder Templates { get; }
     
     }
 }

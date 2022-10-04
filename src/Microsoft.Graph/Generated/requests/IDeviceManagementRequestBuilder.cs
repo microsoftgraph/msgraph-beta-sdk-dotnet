@@ -440,6 +440,18 @@ namespace Microsoft.Graph
         ITenantAttachRBACRequestBuilder TenantAttachRBAC { get; }
 
         /// <summary>
+        /// Gets the request builder for UserExperienceAnalyticsAnomaly.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsAnomalyCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementUserExperienceAnalyticsAnomalyCollectionRequestBuilder UserExperienceAnalyticsAnomaly { get; }
+
+        /// <summary>
+        /// Gets the request builder for UserExperienceAnalyticsAnomalyDevice.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsAnomalyDeviceCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementUserExperienceAnalyticsAnomalyDeviceCollectionRequestBuilder UserExperienceAnalyticsAnomalyDevice { get; }
+
+        /// <summary>
         /// Gets the request builder for UserExperienceAnalyticsAppHealthApplicationPerformance.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsAppHealthApplicationPerformanceCollectionRequestBuilder"/>.</returns>
@@ -1026,6 +1038,20 @@ namespace Microsoft.Graph
         IDeviceManagementEnableUnlicensedAdminstratorsRequestBuilder EnableUnlicensedAdminstrators();
 
         /// <summary>
+        /// Gets the request builder for DeviceManagementPostOrganizationalMessageTenantConsent.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementPostOrganizationalMessageTenantConsentRequestBuilder"/>.</returns>
+        IDeviceManagementPostOrganizationalMessageTenantConsentRequestBuilder PostOrganizationalMessageTenantConsent(
+            bool firstPartyMessageAllowed);
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementUpdateOrganizationalMessageTenantConsent.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementUpdateOrganizationalMessageTenantConsentRequestBuilder"/>.</returns>
+        IDeviceManagementUpdateOrganizationalMessageTenantConsentRequestBuilder UpdateOrganizationalMessageTenantConsent(
+            bool firstPartyMessageAllowed);
+
+        /// <summary>
         /// Gets the request builder for DeviceManagementGetEffectivePermissions.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementGetEffectivePermissionsRequestBuilder"/>.</returns>
@@ -1069,6 +1095,12 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IDeviceManagementGetSuggestedEnrollmentLimitRequestBuilder"/>.</returns>
         IDeviceManagementGetSuggestedEnrollmentLimitRequestBuilder GetSuggestedEnrollmentLimit(
             string enrollmentType = null);
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementGetOrganizationalMessageTenantConsent.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementGetOrganizationalMessageTenantConsentRequestBuilder"/>.</returns>
+        IDeviceManagementGetOrganizationalMessageTenantConsentRequestBuilder GetOrganizationalMessageTenantConsent();
 
         /// <summary>
         /// Gets the request builder for DeviceManagementGetAssignedRoleDetails.
