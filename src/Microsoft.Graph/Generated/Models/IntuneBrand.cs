@@ -129,6 +129,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("showAzureADEnterpriseApps"); }
             set { BackingStore?.Set("showAzureADEnterpriseApps", value); }
         }
+        /// <summary>Boolean that indicates if ConfigurationManagerApps will be shown in Company Portal</summary>
+        public bool? ShowConfigurationManagerApps {
+            get { return BackingStore?.Get<bool?>("showConfigurationManagerApps"); }
+            set { BackingStore?.Set("showConfigurationManagerApps", value); }
+        }
         /// <summary>Boolean that represents whether the administrator-supplied display name will be shown next to the logo image.</summary>
         public bool? ShowDisplayNameNextToLogo {
             get { return BackingStore?.Get<bool?>("showDisplayNameNextToLogo"); }
@@ -198,6 +203,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"sendDeviceOwnershipChangePushNotification", n => { SendDeviceOwnershipChangePushNotification = n.GetBoolValue(); } },
                 {"showAzureADEnterpriseApps", n => { ShowAzureADEnterpriseApps = n.GetBoolValue(); } },
+                {"showConfigurationManagerApps", n => { ShowConfigurationManagerApps = n.GetBoolValue(); } },
                 {"showDisplayNameNextToLogo", n => { ShowDisplayNameNextToLogo = n.GetBoolValue(); } },
                 {"showLogo", n => { ShowLogo = n.GetBoolValue(); } },
                 {"showNameNextToLogo", n => { ShowNameNextToLogo = n.GetBoolValue(); } },
@@ -234,6 +240,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfPrimitiveValues<string>("roleScopeTagIds", RoleScopeTagIds);
             writer.WriteBoolValue("sendDeviceOwnershipChangePushNotification", SendDeviceOwnershipChangePushNotification);
             writer.WriteBoolValue("showAzureADEnterpriseApps", ShowAzureADEnterpriseApps);
+            writer.WriteBoolValue("showConfigurationManagerApps", ShowConfigurationManagerApps);
             writer.WriteBoolValue("showDisplayNameNextToLogo", ShowDisplayNameNextToLogo);
             writer.WriteBoolValue("showLogo", ShowLogo);
             writer.WriteBoolValue("showNameNextToLogo", ShowNameNextToLogo);

@@ -23,7 +23,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<SimulationReportOverview>("overview"); }
             set { BackingStore?.Set("overview", value); }
         }
-        /// <summary>Represents users of a tenant and their online actions in an attack simulation and training campaign.</summary>
+        /// <summary>The tenant users and their online actions in an attack simulation and training campaign.</summary>
         public List<UserSimulationDetails> SimulationUsers {
             get { return BackingStore?.Get<List<UserSimulationDetails>>("simulationUsers"); }
             set { BackingStore?.Set("simulationUsers", value); }

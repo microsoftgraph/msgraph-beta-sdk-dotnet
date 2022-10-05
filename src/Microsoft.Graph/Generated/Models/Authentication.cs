@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("windowsHelloForBusinessMethods", value); }
         }
         /// <summary>
-        /// Instantiates a new authentication and sets the default values.
+        /// Instantiates a new Authentication and sets the default values.
         /// </summary>
         public Authentication() : base() {
             OdataType = "#microsoft.graph.authentication";

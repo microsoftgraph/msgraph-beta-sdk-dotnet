@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class LearningContent : Entity, IParsable {
         /// <summary>Keywords, topics, and other tags associated with the learning content. Optional.</summary>
         public List<string> AdditionalTags {
@@ -16,10 +16,10 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("contentWebUrl"); }
             set { BackingStore?.Set("contentWebUrl", value); }
         }
-        /// <summary>The author, creator, or contributor of the learning content. Optional.</summary>
-        public string Contributor {
-            get { return BackingStore?.Get<string>("contributor"); }
-            set { BackingStore?.Set("contributor", value); }
+        /// <summary>The contributors property</summary>
+        public List<string> Contributors {
+            get { return BackingStore?.Get<List<string>>("contributors"); }
+            set { BackingStore?.Set("contributors", value); }
         }
         /// <summary>The date when the learning content was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Optional.</summary>
         public DateTimeOffset? CreatedDateTime {
@@ -117,7 +117,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"additionalTags", n => { AdditionalTags = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"contentWebUrl", n => { ContentWebUrl = n.GetStringValue(); } },
-                {"contributor", n => { Contributor = n.GetStringValue(); } },
+                {"contributors", n => { Contributors = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"duration", n => { Duration = n.GetTimeSpanValue(); } },
@@ -144,7 +144,7 @@ namespace Microsoft.Graph.Beta.Models {
             base.Serialize(writer);
             writer.WriteCollectionOfPrimitiveValues<string>("additionalTags", AdditionalTags);
             writer.WriteStringValue("contentWebUrl", ContentWebUrl);
-            writer.WriteStringValue("contributor", Contributor);
+            writer.WriteCollectionOfPrimitiveValues<string>("contributors", Contributors);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("description", Description);
             writer.WriteTimeSpanValue("duration", Duration);

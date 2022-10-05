@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class MessageEvent : Entity, IParsable {
         /// <summary>The dateTime property</summary>
         public DateTimeOffset? DateTime {
@@ -22,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("eventType", value); }
         }
         /// <summary>
-        /// Instantiates a new messageEvent and sets the default values.
+        /// Instantiates a new MessageEvent and sets the default values.
         /// </summary>
         public MessageEvent() : base() {
             OdataType = "#microsoft.graph.messageEvent";

@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
             get { return BackingStore?.Get<DateTimeOffset?>("deletedDateTime"); }
             set { BackingStore?.Set("deletedDateTime", value); }
         }
-        /// <summary>The unique identifier of the Azure AD identity that last modified the workflow object..</summary>
+        /// <summary>The unique identifier of the Azure AD identity that last modified the workflow object.</summary>
         public List<Microsoft.Graph.Beta.Models.User> ExecutionScope {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.User>>("executionScope"); }
             set { BackingStore?.Set("executionScope", value); }

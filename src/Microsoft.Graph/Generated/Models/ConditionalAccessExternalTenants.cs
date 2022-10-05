@@ -14,7 +14,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The membershipKind property</summary>
+        /// <summary>Represents the membership kind. The possible values are: all, enumerated, unknownFutureValue. enumerated references an object of conditionalAccessEnumeratedExternalTenants derived type.</summary>
         public ConditionalAccessExternalTenantsMembershipKind? MembershipKind {
             get { return BackingStore?.Get<ConditionalAccessExternalTenantsMembershipKind?>("membershipKind"); }
             set { BackingStore?.Set("membershipKind", value); }

@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class OfficeClientConfiguration : Entity, IParsable {
         /// <summary>The list of group assignments for the policy.</summary>
         public List<OfficeClientConfigurationAssignment> Assignments {
@@ -48,7 +47,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("userPreferencePayload", value); }
         }
         /// <summary>
-        /// Instantiates a new officeClientConfiguration and sets the default values.
+        /// Instantiates a new OfficeClientConfiguration and sets the default values.
         /// </summary>
         public OfficeClientConfiguration() : base() {
             OdataType = "#microsoft.graph.officeClientConfiguration";

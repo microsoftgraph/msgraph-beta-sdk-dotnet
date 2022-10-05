@@ -23,7 +23,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
-        /// <summary>Potential improvement in security score of the tenant from the recommended action.</summary>
+        /// <summary>Potential improvement in the tenant security score from the recommended action.</summary>
         public double? PotentialScoreImpact {
             get { return BackingStore?.Get<double?>("potentialScoreImpact"); }
             set { BackingStore?.Set("potentialScoreImpact", value); }

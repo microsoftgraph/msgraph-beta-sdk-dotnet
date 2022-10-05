@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
     public class TimeBasedAttributeTrigger : WorkflowExecutionTrigger, IParsable {
-        /// <summary>How many days before or after the time-based attribute specified the workflow should trigger. For example, if the attribute is employeeHireDate and offsetInDays is -1, then the workflow should trigger one day before the employee hire date.</summary>
+        /// <summary>How many days before or after the time-based attribute specified the workflow should trigger. For example, if the attribute is employeeHireDate and offsetInDays is -1, then the workflow should trigger one day before the employee hire date. The value can range between -60 and 60 days.</summary>
         public int? OffsetInDays {
             get { return BackingStore?.Get<int?>("offsetInDays"); }
             set { BackingStore?.Set("offsetInDays", value); }

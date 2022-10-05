@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
-        /// <summary>Status of the training assigned to the user. Possible values are: unknown, assigned, inProgress, completed, overdue, unknownFutureValue.</summary>
+        /// <summary>The status of the training assigned to the user. Possible values are: unknown, assigned, inProgress, completed, overdue, unknownFutureValue.</summary>
         public Microsoft.Graph.Beta.Models.TrainingStatus? TrainingStatus {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TrainingStatus?>("trainingStatus"); }
             set { BackingStore?.Set("trainingStatus", value); }

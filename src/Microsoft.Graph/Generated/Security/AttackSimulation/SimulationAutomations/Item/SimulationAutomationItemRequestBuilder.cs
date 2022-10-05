@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.SimulationAutomations.I
             return requestInfo;
         }
         /// <summary>
-        /// Represents simulation automations created to run on a tenant.
+        /// Represents simulation automation created to run on a tenant.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<SimulationAutomationItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -124,7 +124,7 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.SimulationAutomations.I
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Represents simulation automations created to run on a tenant.
+        /// Represents simulation automation created to run on a tenant.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -167,7 +167,7 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.SimulationAutomations.I
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>Represents simulation automations created to run on a tenant.</summary>
+        /// <summary>Represents simulation automation created to run on a tenant.</summary>
         public class SimulationAutomationItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

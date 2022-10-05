@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("outOfOfficeSettings", value); }
         }
         /// <summary>
-        /// Instantiates a new presence and sets the default values.
+        /// Instantiates a new Presence and sets the default values.
         /// </summary>
         public Presence() : base() {
             OdataType = "#microsoft.graph.presence";

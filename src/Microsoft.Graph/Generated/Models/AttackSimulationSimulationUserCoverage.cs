@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<int?>("compromisedCount"); }
             set { BackingStore?.Set("compromisedCount", value); }
         }
-        /// <summary>Date and time of latest attack simulation and training campaign that the user was included in.</summary>
+        /// <summary>Date and time of the latest attack simulation and training campaign that the user was included in.</summary>
         public DateTimeOffset? LatestSimulationDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("latestSimulationDateTime"); }
             set { BackingStore?.Set("latestSimulationDateTime", value); }

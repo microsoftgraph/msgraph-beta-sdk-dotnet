@@ -1,4 +1,5 @@
 using Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelServerLogCollectionResponses.Item.CreateDownloadUrl;
+using Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelServerLogCollectionResponses.Item.GenerateDownloadUrl;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -15,6 +16,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelServerLogCollecti
         /// <summary>The createDownloadUrl property</summary>
         public CreateDownloadUrlRequestBuilder CreateDownloadUrl { get =>
             new CreateDownloadUrlRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The generateDownloadUrl property</summary>
+        public GenerateDownloadUrlRequestBuilder GenerateDownloadUrl { get =>
+            new GenerateDownloadUrlRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

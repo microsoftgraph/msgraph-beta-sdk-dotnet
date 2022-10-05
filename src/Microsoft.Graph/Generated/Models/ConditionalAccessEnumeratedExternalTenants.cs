@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class ConditionalAccessEnumeratedExternalTenants : ConditionalAccessExternalTenants, IParsable {
-        /// <summary>The members property</summary>
+        /// <summary>Represents a collection of tenant ids in the scope of Conditional Access for guests and external users policy targeting.</summary>
         public List<string> Members {
             get { return BackingStore?.Get<List<string>>("members"); }
             set { BackingStore?.Set("members", value); }

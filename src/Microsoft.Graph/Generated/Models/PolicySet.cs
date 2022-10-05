@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>A class containing the properties used for PolicySet.</summary>
     public class PolicySet : Entity, IParsable {
         /// <summary>Assignments of the PolicySet.</summary>
         public List<PolicySetAssignment> Assignments {
@@ -57,7 +56,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>
-        /// Instantiates a new policySet and sets the default values.
+        /// Instantiates a new PolicySet and sets the default values.
         /// </summary>
         public PolicySet() : base() {
             OdataType = "#microsoft.graph.policySet";

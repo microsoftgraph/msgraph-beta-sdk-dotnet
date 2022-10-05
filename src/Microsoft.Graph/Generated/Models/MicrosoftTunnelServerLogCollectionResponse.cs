@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }
             set { BackingStore?.Set("startDateTime", value); }
         }
-        /// <summary>Enum type that represent the status of log collection.</summary>
+        /// <summary>Enum type that represent the status of log collection</summary>
         public MicrosoftTunnelLogCollectionStatus? Status {
             get { return BackingStore?.Get<MicrosoftTunnelLogCollectionStatus?>("status"); }
             set { BackingStore?.Set("status", value); }

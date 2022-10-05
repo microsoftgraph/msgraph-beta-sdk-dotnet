@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
-        /// <summary>This is the id property value of the user resource that represents the user in the Azure AD tenant.</summary>
+        /// <summary>This is the id property value of the user resource that represents the user in the Azure Active Directory tenant.</summary>
         public string UserId {
             get { return BackingStore?.Get<string>("userId"); }
             set { BackingStore?.Set("userId", value); }

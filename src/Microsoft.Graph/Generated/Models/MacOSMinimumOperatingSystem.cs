@@ -19,60 +19,65 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
-        /// <summary>Mac OS 10.10 or later.</summary>
+        /// <summary>When TRUE, indicates macOS 10.10 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.</summary>
         public bool? V10_10 {
             get { return BackingStore?.Get<bool?>("v10_10"); }
             set { BackingStore?.Set("v10_10", value); }
         }
-        /// <summary>Mac OS 10.11 or later.</summary>
+        /// <summary>When TRUE, indicates macOS 10.11 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.</summary>
         public bool? V10_11 {
             get { return BackingStore?.Get<bool?>("v10_11"); }
             set { BackingStore?.Set("v10_11", value); }
         }
-        /// <summary>Mac OS 10.12 or later.</summary>
+        /// <summary>When TRUE, indicates macOS 10.12 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.</summary>
         public bool? V10_12 {
             get { return BackingStore?.Get<bool?>("v10_12"); }
             set { BackingStore?.Set("v10_12", value); }
         }
-        /// <summary>Mac OS 10.13 or later.</summary>
+        /// <summary>When TRUE, indicates macOS 10.13 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.</summary>
         public bool? V10_13 {
             get { return BackingStore?.Get<bool?>("v10_13"); }
             set { BackingStore?.Set("v10_13", value); }
         }
-        /// <summary>Mac OS 10.14 or later.</summary>
+        /// <summary>When TRUE, indicates macOS 10.14 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.</summary>
         public bool? V10_14 {
             get { return BackingStore?.Get<bool?>("v10_14"); }
             set { BackingStore?.Set("v10_14", value); }
         }
-        /// <summary>Mac OS 10.15 or later.</summary>
+        /// <summary>When TRUE, indicates macOS 10.15 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.</summary>
         public bool? V10_15 {
             get { return BackingStore?.Get<bool?>("v10_15"); }
             set { BackingStore?.Set("v10_15", value); }
         }
-        /// <summary>Mac OS 10.7 or later.</summary>
+        /// <summary>When TRUE, indicates macOS 10.7 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.</summary>
         public bool? V10_7 {
             get { return BackingStore?.Get<bool?>("v10_7"); }
             set { BackingStore?.Set("v10_7", value); }
         }
-        /// <summary>Mac OS 10.8 or later.</summary>
+        /// <summary>When TRUE, indicates macOS 10.8 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.</summary>
         public bool? V10_8 {
             get { return BackingStore?.Get<bool?>("v10_8"); }
             set { BackingStore?.Set("v10_8", value); }
         }
-        /// <summary>Mac OS 10.9 or later.</summary>
+        /// <summary>When TRUE, indicates macOS 10.9 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.</summary>
         public bool? V10_9 {
             get { return BackingStore?.Get<bool?>("v10_9"); }
             set { BackingStore?.Set("v10_9", value); }
         }
-        /// <summary>Mac OS 11.0 or later.</summary>
+        /// <summary>When TRUE, indicates macOS 11.0 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.</summary>
         public bool? V11_0 {
             get { return BackingStore?.Get<bool?>("v11_0"); }
             set { BackingStore?.Set("v11_0", value); }
         }
-        /// <summary>Mac OS 12.0 or later.</summary>
+        /// <summary>When TRUE, indicates macOS 12.0 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.</summary>
         public bool? V12_0 {
             get { return BackingStore?.Get<bool?>("v12_0"); }
             set { BackingStore?.Set("v12_0", value); }
+        }
+        /// <summary>When TRUE, indicates macOS 13.0 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.</summary>
+        public bool? V13_0 {
+            get { return BackingStore?.Get<bool?>("v13_0"); }
+            set { BackingStore?.Set("v13_0", value); }
         }
         /// <summary>
         /// Instantiates a new macOSMinimumOperatingSystem and sets the default values.
@@ -107,6 +112,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"v10_9", n => { V10_9 = n.GetBoolValue(); } },
                 {"v11_0", n => { V11_0 = n.GetBoolValue(); } },
                 {"v12_0", n => { V12_0 = n.GetBoolValue(); } },
+                {"v13_0", n => { V13_0 = n.GetBoolValue(); } },
             };
         }
         /// <summary>
@@ -127,6 +133,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteBoolValue("v10_9", V10_9);
             writer.WriteBoolValue("v11_0", V11_0);
             writer.WriteBoolValue("v12_0", V12_0);
+            writer.WriteBoolValue("v13_0", V13_0);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<int?>("inProgressTrainingsCount"); }
             set { BackingStore?.Set("inProgressTrainingsCount", value); }
         }
-        /// <summary>Flag representing if user was compromised in an attack simulation and training campaign.</summary>
+        /// <summary>Indicates whether a user was compromised in an attack simulation and training campaign.</summary>
         public bool? IsCompromised {
             get { return BackingStore?.Get<bool?>("isCompromised"); }
             set { BackingStore?.Set("isCompromised", value); }
@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
-        /// <summary>Date and time when user reported delivered payload as phish in the attack simulation and training campaign.</summary>
+        /// <summary>Date and time when a user reported the delivered payload as phishing in the attack simulation and training campaign.</summary>
         public DateTimeOffset? ReportedPhishDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("reportedPhishDateTime"); }
             set { BackingStore?.Set("reportedPhishDateTime", value); }
@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<UserSimulationEventInfo>>("simulationEvents"); }
             set { BackingStore?.Set("simulationEvents", value); }
         }
-        /// <summary>User in an attack simulation and training campaign.</summary>
+        /// <summary>The user in an attack simulation and training campaign.</summary>
         public AttackSimulationUser SimulationUser {
             get { return BackingStore?.Get<AttackSimulationUser>("simulationUser"); }
             set { BackingStore?.Set("simulationUser", value); }

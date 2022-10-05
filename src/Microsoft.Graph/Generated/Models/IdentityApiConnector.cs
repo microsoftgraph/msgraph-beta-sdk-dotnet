@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("targetUrl", value); }
         }
         /// <summary>
-        /// Instantiates a new identityApiConnector and sets the default values.
+        /// Instantiates a new IdentityApiConnector and sets the default values.
         /// </summary>
         public IdentityApiConnector() : base() {
             OdataType = "#microsoft.graph.identityApiConnector";

@@ -38,7 +38,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("osPlatformDeviceDetails"); }
             set { BackingStore?.Set("osPlatformDeviceDetails", value); }
         }
-        /// <summary>Potential improvement in security posture of the tenant after completion of the training by the user.</summary>
+        /// <summary>Potential improvement in the tenant security posture after completion of the training by the user.</summary>
         public double? PotentialScoreImpact {
             get { return BackingStore?.Get<double?>("potentialScoreImpact"); }
             set { BackingStore?.Set("potentialScoreImpact", value); }

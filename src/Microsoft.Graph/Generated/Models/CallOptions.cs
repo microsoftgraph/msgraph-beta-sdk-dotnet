@@ -14,7 +14,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The hideBotAfterEscalation property</summary>
+        /// <summary>Indicates whether to hide the app after the call is escalated.</summary>
         public bool? HideBotAfterEscalation {
             get { return BackingStore?.Get<bool?>("hideBotAfterEscalation"); }
             set { BackingStore?.Set("hideBotAfterEscalation", value); }

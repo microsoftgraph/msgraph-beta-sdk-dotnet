@@ -590,6 +590,21 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
             get { return BackingStore?.Get<bool?>("unlicensedAdminstratorsEnabled"); }
             set { BackingStore?.Set("unlicensedAdminstratorsEnabled", value); }
         }
+        /// <summary>The user experience analytics anomaly entity contains anomaly details.</summary>
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomaly> UserExperienceAnalyticsAnomaly {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomaly>>("userExperienceAnalyticsAnomaly"); }
+            set { BackingStore?.Set("userExperienceAnalyticsAnomaly", value); }
+        }
+        /// <summary>The user experience analytics anomaly entity contains device details.</summary>
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalyDevice> UserExperienceAnalyticsAnomalyDevice {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalyDevice>>("userExperienceAnalyticsAnomalyDevice"); }
+            set { BackingStore?.Set("userExperienceAnalyticsAnomalyDevice", value); }
+        }
+        /// <summary>The user experience analytics anomaly severity overview entity contains the count information for each severity of anomaly.</summary>
+        public Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalySeverityOverview UserExperienceAnalyticsAnomalySeverityOverview {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalySeverityOverview>("userExperienceAnalyticsAnomalySeverityOverview"); }
+            set { BackingStore?.Set("userExperienceAnalyticsAnomalySeverityOverview", value); }
+        }
         /// <summary>User experience analytics appHealth Application Performance</summary>
         public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthApplicationPerformance> UserExperienceAnalyticsAppHealthApplicationPerformance {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthApplicationPerformance>>("userExperienceAnalyticsAppHealthApplicationPerformance"); }
@@ -1016,6 +1031,9 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
                 {"termsAndConditions", n => { TermsAndConditions = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.TermsAndConditions>(Microsoft.Graph.Beta.Models.TermsAndConditions.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"troubleshootingEvents", n => { TroubleshootingEvents = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementTroubleshootingEvent>(Microsoft.Graph.Beta.Models.DeviceManagementTroubleshootingEvent.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"unlicensedAdminstratorsEnabled", n => { UnlicensedAdminstratorsEnabled = n.GetBoolValue(); } },
+                {"userExperienceAnalyticsAnomaly", n => { UserExperienceAnalyticsAnomaly = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomaly>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomaly.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"userExperienceAnalyticsAnomalyDevice", n => { UserExperienceAnalyticsAnomalyDevice = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalyDevice>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalyDevice.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"userExperienceAnalyticsAnomalySeverityOverview", n => { UserExperienceAnalyticsAnomalySeverityOverview = n.GetObjectValue<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalySeverityOverview>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalySeverityOverview.CreateFromDiscriminatorValue); } },
                 {"userExperienceAnalyticsAppHealthApplicationPerformance", n => { UserExperienceAnalyticsAppHealthApplicationPerformance = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthApplicationPerformance>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthApplicationPerformance.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion", n => { UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails", n => { UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -1196,6 +1214,9 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.TenantAttachRBAC>("tenantAttachRBAC", TenantAttachRBAC);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.TermsAndConditions>("termsAndConditions", TermsAndConditions);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.DeviceManagementTroubleshootingEvent>("troubleshootingEvents", TroubleshootingEvents);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomaly>("userExperienceAnalyticsAnomaly", UserExperienceAnalyticsAnomaly);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalyDevice>("userExperienceAnalyticsAnomalyDevice", UserExperienceAnalyticsAnomalyDevice);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalySeverityOverview>("userExperienceAnalyticsAnomalySeverityOverview", UserExperienceAnalyticsAnomalySeverityOverview);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthApplicationPerformance>("userExperienceAnalyticsAppHealthApplicationPerformance", UserExperienceAnalyticsAppHealthApplicationPerformance);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion>("userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion", UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails>("userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails", UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails);

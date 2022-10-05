@@ -65,6 +65,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<int?>("passwordSignInFailureCountBeforeFactoryReset"); }
             set { BackingStore?.Set("passwordSignInFailureCountBeforeFactoryReset", value); }
         }
+        /// <summary>The password complexity types that can be set on Android. One of: NONE, LOW, MEDIUM, HIGH. This is an API targeted to Android 11+.</summary>
+        public AndroidRequiredPasswordComplexity? RequiredPasswordComplexity {
+            get { return BackingStore?.Get<AndroidRequiredPasswordComplexity?>("requiredPasswordComplexity"); }
+            set { BackingStore?.Set("requiredPasswordComplexity", value); }
+        }
         /// <summary>Devices must not be jailbroken or rooted.</summary>
         public bool? SecurityBlockJailbrokenDevices {
             get { return BackingStore?.Get<bool?>("securityBlockJailbrokenDevices"); }
@@ -151,6 +156,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"passwordRequired", n => { PasswordRequired = n.GetBoolValue(); } },
                 {"passwordRequiredType", n => { PasswordRequiredType = n.GetEnumValue<AndroidRequiredPasswordType>(); } },
                 {"passwordSignInFailureCountBeforeFactoryReset", n => { PasswordSignInFailureCountBeforeFactoryReset = n.GetIntValue(); } },
+                {"requiredPasswordComplexity", n => { RequiredPasswordComplexity = n.GetEnumValue<AndroidRequiredPasswordComplexity>(); } },
                 {"securityBlockJailbrokenDevices", n => { SecurityBlockJailbrokenDevices = n.GetBoolValue(); } },
                 {"securityDisableUsbDebugging", n => { SecurityDisableUsbDebugging = n.GetBoolValue(); } },
                 {"securityPreventInstallAppsFromUnknownSources", n => { SecurityPreventInstallAppsFromUnknownSources = n.GetBoolValue(); } },
@@ -183,6 +189,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteBoolValue("passwordRequired", PasswordRequired);
             writer.WriteEnumValue<AndroidRequiredPasswordType>("passwordRequiredType", PasswordRequiredType);
             writer.WriteIntValue("passwordSignInFailureCountBeforeFactoryReset", PasswordSignInFailureCountBeforeFactoryReset);
+            writer.WriteEnumValue<AndroidRequiredPasswordComplexity>("requiredPasswordComplexity", RequiredPasswordComplexity);
             writer.WriteBoolValue("securityBlockJailbrokenDevices", SecurityBlockJailbrokenDevices);
             writer.WriteBoolValue("securityDisableUsbDebugging", SecurityDisableUsbDebugging);
             writer.WriteBoolValue("securityPreventInstallAppsFromUnknownSources", SecurityPreventInstallAppsFromUnknownSources);

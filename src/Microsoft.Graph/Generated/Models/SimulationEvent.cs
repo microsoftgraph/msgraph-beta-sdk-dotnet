@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Count of occurence of the simulation event in an attack simulation and training campaign.</summary>
+        /// <summary>Count of the simulation event occurrence in an attack simulation and training campaign.</summary>
         public int? Count {
             get { return BackingStore?.Get<int?>("count"); }
             set { BackingStore?.Set("count", value); }

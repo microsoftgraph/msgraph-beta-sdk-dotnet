@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public enum DeviceManagementConfigurationTemplateFamily {
         /// <summary>Default for Template Family when Policy is not linked to a Template</summary>
         None,
@@ -17,6 +17,8 @@ namespace Microsoft.Graph.Beta.Models {
         EndpointSecurityAccountProtection,
         /// <summary>Template Family for ApplicationControl that helps mitigate security threats by restricting the applications that users can run and the code that runs in the System Core (kernel)</summary>
         EndpointSecurityApplicationControl,
+        /// <summary>Template Family for EnrollmentConfiguration</summary>
+        EnrollmentConfiguration,
         /// <summary>Template Family for Baseline</summary>
         Baseline,
     }

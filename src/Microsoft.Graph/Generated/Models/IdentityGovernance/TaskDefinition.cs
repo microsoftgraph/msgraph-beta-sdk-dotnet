@@ -21,12 +21,12 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
-        /// <summary>The display name of the taskDefinition.</summary>
+        /// <summary>The display name of the taskDefinition`.</summary>
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
-        /// <summary>The parameters that must be supplied when creating a task.</summary>
+        /// <summary>The parameters that must be supplied when creating a workflow task object.</summary>
         public List<Parameter> Parameters {
             get { return BackingStore?.Get<List<Parameter>>("parameters"); }
             set { BackingStore?.Set("parameters", value); }

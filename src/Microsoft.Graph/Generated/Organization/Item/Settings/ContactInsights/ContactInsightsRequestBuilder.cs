@@ -63,7 +63,7 @@ namespace Microsoft.Graph.Beta.Organization.Item.Settings.ContactInsights {
             return requestInfo;
         }
         /// <summary>
-        /// Get contactInsights from organization
+        /// Get the properties of an insightsSettings object for displaying or returning contact insights in an organization.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<ContactInsightsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Beta.Organization.Item.Settings.ContactInsights {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property contactInsights in organization
+        /// Update the privacy settings to display or return the specified type of insights in an organization. The type of settings can be contact insights, item insights, or people insights. To learn more about customizing insights privacy for your organization, see:-  Customize item insights privacy -  Customize people insights privacy
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -119,7 +119,7 @@ namespace Microsoft.Graph.Beta.Organization.Item.Settings.ContactInsights {
             await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get contactInsights from organization
+        /// Get the properties of an insightsSettings object for displaying or returning contact insights in an organization.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -133,7 +133,7 @@ namespace Microsoft.Graph.Beta.Organization.Item.Settings.ContactInsights {
             return await RequestAdapter.SendAsync<InsightsSettings>(requestInfo, InsightsSettings.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the navigation property contactInsights in organization
+        /// Update the privacy settings to display or return the specified type of insights in an organization. The type of settings can be contact insights, item insights, or people insights. To learn more about customizing insights privacy for your organization, see:-  Customize item insights privacy -  Customize people insights privacy
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -162,7 +162,7 @@ namespace Microsoft.Graph.Beta.Organization.Item.Settings.ContactInsights {
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>Get contactInsights from organization</summary>
+        /// <summary>Get the properties of an insightsSettings object for displaying or returning contact insights in an organization.</summary>
         public class ContactInsightsRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

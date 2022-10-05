@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("scopeType", value); }
         }
         /// <summary>
-        /// Instantiates a new unifiedRoleManagementPolicy and sets the default values.
+        /// Instantiates a new UnifiedRoleManagementPolicy and sets the default values.
         /// </summary>
         public UnifiedRoleManagementPolicy() : base() {
             OdataType = "#microsoft.graph.unifiedRoleManagementPolicy";

@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>A class containing the properties used for Assignment Filter.</summary>
     public class DeviceAndAppManagementAssignmentFilter : Entity, IParsable {
         /// <summary>Creation time of the Assignment Filter.</summary>
         public DateTimeOffset? CreatedDateTime {
@@ -27,6 +26,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
+        /// <summary>Associated assignments for a specific filter</summary>
+        public List<PayloadByFilter> Payloads {
+            get { return BackingStore?.Get<List<PayloadByFilter>>("payloads"); }
+            set { BackingStore?.Set("payloads", value); }
+        }
         /// <summary>Supported platform types.</summary>
         public DevicePlatformType? Platform {
             get { return BackingStore?.Get<DevicePlatformType?>("platform"); }
@@ -43,7 +47,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("rule", value); }
         }
         /// <summary>
-        /// Instantiates a new deviceAndAppManagementAssignmentFilter and sets the default values.
+        /// Instantiates a new DeviceAndAppManagementAssignmentFilter and sets the default values.
         /// </summary>
         public DeviceAndAppManagementAssignmentFilter() : base() {
             OdataType = "#microsoft.graph.deviceAndAppManagementAssignmentFilter";
@@ -69,6 +73,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"payloads", n => { Payloads = n.GetCollectionOfObjectValues<PayloadByFilter>(PayloadByFilter.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"platform", n => { Platform = n.GetEnumValue<DevicePlatformType>(); } },
                 {"roleScopeTags", n => { RoleScopeTags = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"rule", n => { Rule = n.GetStringValue(); } },
@@ -85,6 +90,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
+            writer.WriteCollectionOfObjectValues<PayloadByFilter>("payloads", Payloads);
             writer.WriteEnumValue<DevicePlatformType>("platform", Platform);
             writer.WriteCollectionOfPrimitiveValues<string>("roleScopeTags", RoleScopeTags);
             writer.WriteStringValue("rule", Rule);

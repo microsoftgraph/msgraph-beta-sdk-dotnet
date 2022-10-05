@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class UnifiedRoleManagementPolicyAssignment : Entity, IParsable {
         /// <summary>The policy that&apos;s associated with a policy assignment. Supports $expand and a nested $expand of the rules and effectiveRules relationships for the policy.</summary>
         public UnifiedRoleManagementPolicy Policy {
@@ -32,7 +31,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("scopeType", value); }
         }
         /// <summary>
-        /// Instantiates a new unifiedRoleManagementPolicyAssignment and sets the default values.
+        /// Instantiates a new UnifiedRoleManagementPolicyAssignment and sets the default values.
         /// </summary>
         public UnifiedRoleManagementPolicyAssignment() : base() {
             OdataType = "#microsoft.graph.unifiedRoleManagementPolicyAssignment";
