@@ -75,6 +75,19 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for ChatMessageSetReaction.
+        /// </summary>
+        /// <returns>The <see cref="IChatMessageSetReactionRequestBuilder"/>.</returns>
+        public IChatMessageSetReactionRequestBuilder SetReaction(
+            string reactionType = null)
+        {
+            return new ChatMessageSetReactionRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.setReaction"),
+                this.Client,
+                reactionType);
+        }
+
+        /// <summary>
         /// Gets the request builder for ChatMessageSoftDelete.
         /// </summary>
         /// <returns>The <see cref="IChatMessageSoftDeleteRequestBuilder"/>.</returns>
@@ -94,6 +107,19 @@ namespace Microsoft.Graph
             return new ChatMessageUndoSoftDeleteRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.undoSoftDelete"),
                 this.Client);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ChatMessageUnsetReaction.
+        /// </summary>
+        /// <returns>The <see cref="IChatMessageUnsetReactionRequestBuilder"/>.</returns>
+        public IChatMessageUnsetReactionRequestBuilder UnsetReaction(
+            string reactionType = null)
+        {
+            return new ChatMessageUnsetReactionRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.unsetReaction"),
+                this.Client,
+                reactionType);
         }
     
     }

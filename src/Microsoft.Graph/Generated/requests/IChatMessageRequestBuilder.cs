@@ -44,6 +44,13 @@ namespace Microsoft.Graph
         IChatMessageRepliesCollectionRequestBuilder Replies { get; }
     
         /// <summary>
+        /// Gets the request builder for ChatMessageSetReaction.
+        /// </summary>
+        /// <returns>The <see cref="IChatMessageSetReactionRequestBuilder"/>.</returns>
+        IChatMessageSetReactionRequestBuilder SetReaction(
+            string reactionType = null);
+
+        /// <summary>
         /// Gets the request builder for ChatMessageSoftDelete.
         /// </summary>
         /// <returns>The <see cref="IChatMessageSoftDeleteRequestBuilder"/>.</returns>
@@ -54,6 +61,13 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IChatMessageUndoSoftDeleteRequestBuilder"/>.</returns>
         IChatMessageUndoSoftDeleteRequestBuilder UndoSoftDelete();
+
+        /// <summary>
+        /// Gets the request builder for ChatMessageUnsetReaction.
+        /// </summary>
+        /// <returns>The <see cref="IChatMessageUnsetReactionRequestBuilder"/>.</returns>
+        IChatMessageUnsetReactionRequestBuilder UnsetReaction(
+            string reactionType = null);
     
     }
 }

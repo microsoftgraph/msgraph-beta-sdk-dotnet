@@ -70,6 +70,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets templates.
+        /// Read-only. Nullable. Returns a collection of the specified Conditional Access templates.
         /// </summary>
         [JsonPropertyName("templates")]
         public IConditionalAccessRootTemplatesCollectionPage Templates { get; set; }

@@ -65,6 +65,20 @@ namespace Microsoft.Graph.IdentityGovernanceNamespace
         public WorkflowExecutionConditions ExecutionConditions { get; set; }
     
         /// <summary>
+        /// Gets or sets is enabled.
+        /// Whether the workflow is enabled or disabled. If this setting is true, the workflow can be run on demand or on schedule when isSchedulingEnabled is true.
+        /// </summary>
+        [JsonPropertyName("isEnabled")]
+        public bool? IsEnabled { get; set; }
+    
+        /// <summary>
+        /// Gets or sets is scheduling enabled.
+        /// If true, the Lifecycle Workflow engine executes the workflow based on the schedule defined by tenant settings. Cannot be true for a disabled workflow (where isEnabled is false).
+        /// </summary>
+        [JsonPropertyName("isSchedulingEnabled")]
+        public bool? IsSchedulingEnabled { get; set; }
+    
+        /// <summary>
         /// Gets or sets last modified date time.
         /// When the workflow was last modified.
         /// </summary>

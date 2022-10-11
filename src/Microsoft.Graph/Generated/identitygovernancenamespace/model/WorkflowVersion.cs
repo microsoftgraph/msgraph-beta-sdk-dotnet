@@ -30,7 +30,7 @@ namespace Microsoft.Graph.IdentityGovernanceNamespace
 
         /// <summary>
         /// Gets or sets version number.
-        /// The version of the workflow.
+        /// The version of the workflow.Supports $filter(eq, ne), orderby.
         /// </summary>
         [JsonPropertyName("versionNumber")]
         public Int32? VersionNumber { get; set; }

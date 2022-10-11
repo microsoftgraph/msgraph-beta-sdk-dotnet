@@ -30,42 +30,28 @@ namespace Microsoft.Graph.IdentityGovernanceNamespace
 
         /// <summary>
         /// Gets or sets deleted date time.
-        /// The time and date a workflow is deleted. Supports $filter(lt,gt) and $orderby.
+        /// When the workflow was deleted. Supports $filter(lt,gt) and $orderBy.
         /// </summary>
         [JsonPropertyName("deletedDateTime")]
         public DateTimeOffset? DeletedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets id.
-        /// Identifier used for individually addressing a specific workflow. Supports $filter(eq).
+        /// Identifier used for individually addressing a specific workflow. Supports $filter(eq, ne).
         /// </summary>
         [JsonPropertyName("id")]
         public string Id { get; set; }
     
         /// <summary>
-        /// Gets or sets is enabled.
-        /// If true, the workflow engine creates and processes taskProcessingResults on the users scoped to the workflow. Supports $filter(eq,ne) and orderby.
-        /// </summary>
-        [JsonPropertyName("isEnabled")]
-        public bool? IsEnabled { get; set; }
-    
-        /// <summary>
-        /// Gets or sets is scheduling enabled.
-        /// If true, the workflow engine executes the workflow on the schedule defined by tenant settings.
-        /// </summary>
-        [JsonPropertyName("isSchedulingEnabled")]
-        public bool? IsSchedulingEnabled { get; set; }
-    
-        /// <summary>
         /// Gets or sets next schedule run date time.
-        /// The date time when the workflow is expected to run next based on the schedule interval, if there are any users matching the execution conditions. Supports $filter(lt,gt) and $orderby.
+        /// The date time when the workflow is expected to run next based on the schedule interval, if there are any users matching the execution conditions. Supports $filter(lt,gt) and $orderBy.
         /// </summary>
         [JsonPropertyName("nextScheduleRunDateTime")]
         public DateTimeOffset? NextScheduleRunDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets version.
-        /// The current version number of the workflow. Value is 1 when the workflow is first created. Supports $filter(eq).
+        /// The current version number of the workflow. Value is 1 when the workflow is first created. Supports $filter(eq, ne).
         /// </summary>
         [JsonPropertyName("version")]
         public Int32? Version { get; set; }

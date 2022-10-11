@@ -23,24 +23,28 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets description.
+        /// The user-friendly name of the template.
         /// </summary>
         [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets details.
+        /// Complete list of policy details specific to the template. This property contains the JSON of policy settings for configuring a Conditional Access policy.
         /// </summary>
         [JsonPropertyName("details")]
         public ConditionalAccessPolicyDetail Details { get; set; }
     
         /// <summary>
         /// Gets or sets name.
+        /// The user-friendly name of the template.
         /// </summary>
         [JsonPropertyName("name")]
         public string Name { get; set; }
     
         /// <summary>
         /// Gets or sets scenarios.
+        /// List of conditional access scenarios that the template is recommended for. The possible values are: new, secureFoundation, zeroTrust, remoteWork, protectAdmins, emergingThreats, unknownFutureValue. This is a multi-valued enum. Supports $filter (has).
         /// </summary>
         [JsonPropertyName("scenarios")]
         public TemplateScenarios? Scenarios { get; set; }
