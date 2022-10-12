@@ -36,6 +36,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets contributors.
+        /// The authors, creators, or contributors of the learning content. Optional.
         /// </summary>
         [JsonPropertyName("contributors")]
         public IEnumerable<string> Contributors { get; set; }

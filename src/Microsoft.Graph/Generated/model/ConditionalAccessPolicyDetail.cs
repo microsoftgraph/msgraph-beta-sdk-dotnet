@@ -23,18 +23,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets conditions.
+        /// Represents the type of conditions that govern when the policy applies.
         /// </summary>
         [JsonPropertyName("conditions")]
         public ConditionalAccessConditionSet Conditions { get; set; }
     
         /// <summary>
         /// Gets or sets grantControls.
+        /// Represents grant controls that must be fulfilled for the policy.
         /// </summary>
         [JsonPropertyName("grantControls")]
         public ConditionalAccessGrantControls GrantControls { get; set; }
     
         /// <summary>
         /// Gets or sets sessionControls.
+        /// Represents a complex type of session controls that is enforced after sign-in.
         /// </summary>
         [JsonPropertyName("sessionControls")]
         public ConditionalAccessSessionControls SessionControls { get; set; }

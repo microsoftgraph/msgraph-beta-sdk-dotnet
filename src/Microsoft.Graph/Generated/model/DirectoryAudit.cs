@@ -44,7 +44,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets category.
-        /// Indicates which resource category that's targeted by the activity. (For example: User Management, Group Management etc..)
+        /// Indicates which resource category that's targeted by the activity. For example: UserManagement, GroupManagement, ApplicationManagement, RoleManagement.
         /// </summary>
         [JsonPropertyName("category")]
         public string Category { get; set; }

@@ -69,7 +69,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets request type.
-        /// Use AdminAdd to add a resource, if the caller is an administrator or resource owner, or AdminRemove to remove a resource.
+        /// Use AdminAdd to add a resource, if the caller is an administrator or resource owner, AdminUpdate to update a resource, or AdminRemove to remove a resource.
         /// </summary>
         [JsonPropertyName("requestType")]
         public string RequestType { get; set; }

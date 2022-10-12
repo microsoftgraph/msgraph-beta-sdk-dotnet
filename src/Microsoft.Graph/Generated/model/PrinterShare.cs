@@ -44,6 +44,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets view point.
+        /// Additional data for a printer share as viewed by the signed-in user.
         /// </summary>
         [JsonPropertyName("viewPoint")]
         public PrinterShareViewpoint ViewPoint { get; set; }

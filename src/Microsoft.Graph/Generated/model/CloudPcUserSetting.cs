@@ -64,7 +64,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets assignments.
-        /// Represents the set of Microsoft 365 groups and security groups in Azure AD that have cloudPCUserSetting assigned. Returned only on $expand. For an example, see Get cloudPcUserSettingample.
+        /// Represents the set of Microsoft 365 groups and security groups in Azure Active Directory that have cloudPCUserSetting assigned. Returned only on $expand. For an example, see Get cloudPcUserSettingample.
         /// </summary>
         [JsonPropertyName("assignments")]
         public ICloudPcUserSettingAssignmentsCollectionPage Assignments { get; set; }

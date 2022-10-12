@@ -29,7 +29,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets added on.
-        /// The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+        /// The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.
         /// </summary>
         [JsonPropertyName("addedOn")]
         public DateTimeOffset? AddedOn { get; set; }
@@ -57,7 +57,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets is pending onboarding.
-        /// True if the resource is not yet available for assignment.
+        /// True if the resource is not yet available for assignment. Read-only.
         /// </summary>
         [JsonPropertyName("isPendingOnboarding")]
         public bool? IsPendingOnboarding { get; set; }
