@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>A class containing the properties for Audit Event.</summary>
     public class AuditEvent : Entity, IParsable {
         /// <summary>Friendly name of the activity.</summary>
         public string Activity {
@@ -61,7 +62,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("resources", value); }
         }
         /// <summary>
-        /// Instantiates a new AuditEvent and sets the default values.
+        /// Instantiates a new auditEvent and sets the default values.
         /// </summary>
         public AuditEvent() : base() {
             OdataType = "#microsoft.graph.auditEvent";

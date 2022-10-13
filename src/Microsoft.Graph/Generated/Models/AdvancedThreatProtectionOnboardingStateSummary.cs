@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("unknownDeviceCount", value); }
         }
         /// <summary>
-        /// Instantiates a new AdvancedThreatProtectionOnboardingStateSummary and sets the default values.
+        /// Instantiates a new advancedThreatProtectionOnboardingStateSummary and sets the default values.
         /// </summary>
         public AdvancedThreatProtectionOnboardingStateSummary() : base() {
             OdataType = "#microsoft.graph.advancedThreatProtectionOnboardingStateSummary";

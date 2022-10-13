@@ -462,7 +462,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("windowsRemediatedMalwareCount", value); }
         }
         /// <summary>
-        /// Instantiates a new ManagedDevice and sets the default values.
+        /// Instantiates a new managedDevice and sets the default values.
         /// </summary>
         public ManagedDevice() : base() {
             OdataType = "#microsoft.graph.managedDevice";

@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<KeyValue>>("additionalDetails"); }
             set { BackingStore?.Set("additionalDetails", value); }
         }
-        /// <summary>Indicates which resource category that&apos;s targeted by the activity. (For example: User Management, Group Management etc..)</summary>
+        /// <summary>Indicates which resource category that&apos;s targeted by the activity. For example: UserManagement, GroupManagement, ApplicationManagement, RoleManagement.</summary>
         public string Category {
             get { return BackingStore?.Get<string>("category"); }
             set { BackingStore?.Set("category", value); }

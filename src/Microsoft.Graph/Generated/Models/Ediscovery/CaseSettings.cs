@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
             set { BackingStore?.Set("topicModeling", value); }
         }
         /// <summary>
-        /// Instantiates a new CaseSettings and sets the default values.
+        /// Instantiates a new caseSettings and sets the default values.
         /// </summary>
         public CaseSettings() : base() {
             OdataType = "#microsoft.graph.ediscovery.caseSettings";

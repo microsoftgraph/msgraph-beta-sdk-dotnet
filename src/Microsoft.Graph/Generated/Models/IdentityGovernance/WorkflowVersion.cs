@@ -6,7 +6,7 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
     /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class WorkflowVersion : WorkflowBase, IParsable {
-        /// <summary>The version of the workflow.</summary>
+        /// <summary>The version of the workflow.Supports $filter(eq, ne), orderby.</summary>
         public int? VersionNumber {
             get { return BackingStore?.Get<int?>("versionNumber"); }
             set { BackingStore?.Set("versionNumber", value); }

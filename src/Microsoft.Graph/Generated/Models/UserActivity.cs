@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class UserActivity : Entity, IParsable {
         /// <summary>The activationUrl property</summary>
         public string ActivationUrl {
@@ -76,7 +77,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("visualElements", value); }
         }
         /// <summary>
-        /// Instantiates a new UserActivity and sets the default values.
+        /// Instantiates a new userActivity and sets the default values.
         /// </summary>
         public UserActivity() : base() {
             OdataType = "#microsoft.graph.userActivity";

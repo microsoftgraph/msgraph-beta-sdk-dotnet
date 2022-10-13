@@ -44,6 +44,16 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
             get { return BackingStore?.Get<WorkflowExecutionConditions>("executionConditions"); }
             set { BackingStore?.Set("executionConditions", value); }
         }
+        /// <summary>Whether the workflow is enabled or disabled. If this setting is true, the workflow can be run on demand or on schedule when isSchedulingEnabled is true.</summary>
+        public bool? IsEnabled {
+            get { return BackingStore?.Get<bool?>("isEnabled"); }
+            set { BackingStore?.Set("isEnabled", value); }
+        }
+        /// <summary>If true, the Lifecycle Workflow engine executes the workflow based on the schedule defined by tenant settings. Cannot be true for a disabled workflow (where isEnabled is false).</summary>
+        public bool? IsSchedulingEnabled {
+            get { return BackingStore?.Get<bool?>("isSchedulingEnabled"); }
+            set { BackingStore?.Set("isSchedulingEnabled", value); }
+        }
         /// <summary>The user who last modified the workflow.</summary>
         public Microsoft.Graph.Beta.Models.User LastModifiedBy {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.User>("lastModifiedBy"); }
@@ -96,6 +106,8 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"executionConditions", n => { ExecutionConditions = n.GetObjectValue<WorkflowExecutionConditions>(WorkflowExecutionConditions.CreateFromDiscriminatorValue); } },
+                {"isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
+                {"isSchedulingEnabled", n => { IsSchedulingEnabled = n.GetBoolValue(); } },
                 {"lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<Microsoft.Graph.Beta.Models.User>(Microsoft.Graph.Beta.Models.User.CreateFromDiscriminatorValue); } },
                 {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
@@ -114,6 +126,8 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteObjectValue<WorkflowExecutionConditions>("executionConditions", ExecutionConditions);
+            writer.WriteBoolValue("isEnabled", IsEnabled);
+            writer.WriteBoolValue("isSchedulingEnabled", IsSchedulingEnabled);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.User>("lastModifiedBy", LastModifiedBy);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteStringValue("@odata.type", OdataType);

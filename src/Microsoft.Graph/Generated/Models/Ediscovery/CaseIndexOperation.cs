@@ -6,7 +6,7 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Ediscovery {
     public class CaseIndexOperation : CaseOperation, IParsable {
         /// <summary>
-        /// Instantiates a new CaseIndexOperation and sets the default values.
+        /// Instantiates a new caseIndexOperation and sets the default values.
         /// </summary>
         public CaseIndexOperation() : base() {
             OdataType = "#microsoft.graph.ediscovery.caseIndexOperation";

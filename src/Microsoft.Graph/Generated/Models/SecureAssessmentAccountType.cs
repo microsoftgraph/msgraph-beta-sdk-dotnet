@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public enum SecureAssessmentAccountType {
         /// <summary>Indicates an Azure AD account in format of AzureAD\username@tenant.com.</summary>
         AzureADAccount,

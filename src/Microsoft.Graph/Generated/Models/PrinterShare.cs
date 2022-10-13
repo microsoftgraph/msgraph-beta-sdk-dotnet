@@ -30,7 +30,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Printer>("printer"); }
             set { BackingStore?.Set("printer", value); }
         }
-        /// <summary>The viewPoint property</summary>
+        /// <summary>Additional data for a printer share as viewed by the signed-in user.</summary>
         public PrinterShareViewpoint ViewPoint {
             get { return BackingStore?.Get<PrinterShareViewpoint>("viewPoint"); }
             set { BackingStore?.Set("viewPoint", value); }

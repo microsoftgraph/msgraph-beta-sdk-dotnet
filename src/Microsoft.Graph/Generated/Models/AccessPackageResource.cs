@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("addedBy"); }
             set { BackingStore?.Set("addedBy", value); }
         }
-        /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
+        /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.</summary>
         public DateTimeOffset? AddedOn {
             get { return BackingStore?.Get<DateTimeOffset?>("addedOn"); }
             set { BackingStore?.Set("addedOn", value); }
@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
-        /// <summary>True if the resource is not yet available for assignment.</summary>
+        /// <summary>True if the resource is not yet available for assignment. Read-only.</summary>
         public bool? IsPendingOnboarding {
             get { return BackingStore?.Get<bool?>("isPendingOnboarding"); }
             set { BackingStore?.Set("isPendingOnboarding", value); }

@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>
-        /// Instantiates a new Program and sets the default values.
+        /// Instantiates a new program and sets the default values.
         /// </summary>
         public Program() : base() {
             OdataType = "#microsoft.graph.program";

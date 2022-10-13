@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the autopilotEvents property of the microsoft.graph.deviceManagement entity.</summary>
     public class DeviceManagementAutopilotEventCollectionResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<DeviceManagementAutopilotEvent> Value {

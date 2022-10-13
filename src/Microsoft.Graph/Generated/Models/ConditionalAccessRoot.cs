@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<ConditionalAccessPolicy>>("policies"); }
             set { BackingStore?.Set("policies", value); }
         }
-        /// <summary>The templates property</summary>
+        /// <summary>Read-only. Nullable. Returns a collection of the specified Conditional Access templates.</summary>
         public List<ConditionalAccessTemplate> Templates {
             get { return BackingStore?.Get<List<ConditionalAccessTemplate>>("templates"); }
             set { BackingStore?.Set("templates", value); }

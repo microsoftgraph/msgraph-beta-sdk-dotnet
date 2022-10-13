@@ -6,7 +6,7 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class ConditionalAccessTemplate : Entity, IParsable {
-        /// <summary>The description property</summary>
+        /// <summary>The user-friendly name of the template.</summary>
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<ConditionalAccessPolicyDetail>("details"); }
             set { BackingStore?.Set("details", value); }
         }
-        /// <summary>The name property</summary>
+        /// <summary>The user-friendly name of the template.</summary>
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }

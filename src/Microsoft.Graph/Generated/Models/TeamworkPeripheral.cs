@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("vendorId", value); }
         }
         /// <summary>
-        /// Instantiates a new TeamworkPeripheral and sets the default values.
+        /// Instantiates a new teamworkPeripheral and sets the default values.
         /// </summary>
         public TeamworkPeripheral() : base() {
             OdataType = "#microsoft.graph.teamworkPeripheral";

@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.Templates {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get templates from identity
+        /// Get a list of the conditionalAccessTemplate objects and their properties.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<TemplatesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.Templates {
             return requestInfo;
         }
         /// <summary>
-        /// Get templates from identity
+        /// Get a list of the conditionalAccessTemplate objects and their properties.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -128,7 +128,7 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.Templates {
             };
             return await RequestAdapter.SendAsync<ConditionalAccessTemplate>(requestInfo, ConditionalAccessTemplate.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Get templates from identity</summary>
+        /// <summary>Get a list of the conditionalAccessTemplate objects and their properties.</summary>
         public class TemplatesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

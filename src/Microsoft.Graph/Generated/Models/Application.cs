@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Casts the previous resource to application.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class Application : DirectoryObject, IParsable {
         /// <summary>Specifies settings for an application that implements a web API.</summary>
         public ApiApplication Api {

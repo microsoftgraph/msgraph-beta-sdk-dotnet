@@ -131,8 +131,8 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.I
         }
         /// <summary>
         /// Provides operations to call the summary method.
-        /// <param name="endDateTime">Usage: endDateTime=&apos;{endDateTime}&apos;</param>
-        /// <param name="startDateTime">Usage: startDateTime=&apos;{startDateTime}&apos;</param>
+        /// <param name="endDateTime">Usage: endDateTime={endDateTime}</param>
+        /// <param name="startDateTime">Usage: startDateTime={startDateTime}</param>
         /// </summary>
         public SummaryWithStartDateTimeWithEndDateTimeRequestBuilder SummaryWithStartDateTimeWithEndDateTime(DateTimeOffset? endDateTime, DateTimeOffset? startDateTime) {
             _ = endDateTime ?? throw new ArgumentNullException(nameof(endDateTime));

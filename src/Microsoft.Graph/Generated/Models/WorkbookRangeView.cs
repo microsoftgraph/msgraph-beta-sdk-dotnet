@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class WorkbookRangeView : Entity, IParsable {
         /// <summary>The cellAddresses property</summary>
         public Json CellAddresses {
@@ -66,7 +67,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("valueTypes", value); }
         }
         /// <summary>
-        /// Instantiates a new WorkbookRangeView and sets the default values.
+        /// Instantiates a new workbookRangeView and sets the default values.
         /// </summary>
         public WorkbookRangeView() : base() {
             OdataType = "#microsoft.graph.workbookRangeView";

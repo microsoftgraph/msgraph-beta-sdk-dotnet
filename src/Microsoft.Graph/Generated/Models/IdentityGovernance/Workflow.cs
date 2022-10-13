@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
     public class Workflow : WorkflowBase, IParsable {
-        /// <summary>The time and date a workflow is deleted. Supports $filter(lt,gt) and $orderby.</summary>
+        /// <summary>When the workflow was deleted. Supports $filter(lt,gt) and $orderBy.</summary>
         public DateTimeOffset? DeletedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("deletedDateTime"); }
             set { BackingStore?.Set("deletedDateTime", value); }
@@ -15,22 +15,12 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.User>>("executionScope"); }
             set { BackingStore?.Set("executionScope", value); }
         }
-        /// <summary>Identifier used for individually addressing a specific workflow. Supports $filter(eq).</summary>
+        /// <summary>Identifier used for individually addressing a specific workflow. Supports $filter(eq, ne).</summary>
         public string Id {
             get { return BackingStore?.Get<string>("id"); }
             set { BackingStore?.Set("id", value); }
         }
-        /// <summary>If true, the workflow engine creates and processes taskProcessingResults on the users scoped to the workflow. Supports $filter(eq,ne) and orderby.</summary>
-        public bool? IsEnabled {
-            get { return BackingStore?.Get<bool?>("isEnabled"); }
-            set { BackingStore?.Set("isEnabled", value); }
-        }
-        /// <summary>If true, the workflow engine executes the workflow on the schedule defined by tenant settings.</summary>
-        public bool? IsSchedulingEnabled {
-            get { return BackingStore?.Get<bool?>("isSchedulingEnabled"); }
-            set { BackingStore?.Set("isSchedulingEnabled", value); }
-        }
-        /// <summary>The date time when the workflow is expected to run next based on the schedule interval, if there are any users matching the execution conditions. Supports $filter(lt,gt) and $orderby.</summary>
+        /// <summary>The date time when the workflow is expected to run next based on the schedule interval, if there are any users matching the execution conditions. Supports $filter(lt,gt) and $orderBy.</summary>
         public DateTimeOffset? NextScheduleRunDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("nextScheduleRunDateTime"); }
             set { BackingStore?.Set("nextScheduleRunDateTime", value); }
@@ -50,7 +40,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
             get { return BackingStore?.Get<List<UserProcessingResult>>("userProcessingResults"); }
             set { BackingStore?.Set("userProcessingResults", value); }
         }
-        /// <summary>The current version number of the workflow. Value is 1 when the workflow is first created. Supports $filter(eq).</summary>
+        /// <summary>The current version number of the workflow. Value is 1 when the workflow is first created. Supports $filter(eq, ne).</summary>
         public int? Version {
             get { return BackingStore?.Get<int?>("version"); }
             set { BackingStore?.Set("version", value); }
@@ -82,8 +72,6 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
                 {"deletedDateTime", n => { DeletedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"executionScope", n => { ExecutionScope = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.User>(Microsoft.Graph.Beta.Models.User.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"id", n => { Id = n.GetStringValue(); } },
-                {"isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
-                {"isSchedulingEnabled", n => { IsSchedulingEnabled = n.GetBoolValue(); } },
                 {"nextScheduleRunDateTime", n => { NextScheduleRunDateTime = n.GetDateTimeOffsetValue(); } },
                 {"runs", n => { Runs = n.GetCollectionOfObjectValues<Run>(Run.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"taskReports", n => { TaskReports = n.GetCollectionOfObjectValues<TaskReport>(TaskReport.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -102,8 +90,6 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
             writer.WriteDateTimeOffsetValue("deletedDateTime", DeletedDateTime);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.User>("executionScope", ExecutionScope);
             writer.WriteStringValue("id", Id);
-            writer.WriteBoolValue("isEnabled", IsEnabled);
-            writer.WriteBoolValue("isSchedulingEnabled", IsSchedulingEnabled);
             writer.WriteDateTimeOffsetValue("nextScheduleRunDateTime", NextScheduleRunDateTime);
             writer.WriteCollectionOfObjectValues<Run>("runs", Runs);
             writer.WriteCollectionOfObjectValues<TaskReport>("taskReports", TaskReports);

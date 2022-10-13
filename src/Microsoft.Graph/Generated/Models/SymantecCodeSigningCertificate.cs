@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("uploadDateTime", value); }
         }
         /// <summary>
-        /// Instantiates a new SymantecCodeSigningCertificate and sets the default values.
+        /// Instantiates a new symantecCodeSigningCertificate and sets the default values.
         /// </summary>
         public SymantecCodeSigningCertificate() : base() {
             OdataType = "#microsoft.graph.symantecCodeSigningCertificate";
