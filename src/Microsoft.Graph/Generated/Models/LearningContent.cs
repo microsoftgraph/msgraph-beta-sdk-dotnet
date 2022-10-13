@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class LearningContent : Entity, IParsable {
         /// <summary>Keywords, topics, and other tags associated with the learning content. Optional.</summary>
         public List<string> AdditionalTags {
@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("contentWebUrl"); }
             set { BackingStore?.Set("contentWebUrl", value); }
         }
-        /// <summary>The contributors property</summary>
+        /// <summary>The authors, creators, or contributors of the learning content. Optional.</summary>
         public List<string> Contributors {
             get { return BackingStore?.Get<List<string>>("contributors"); }
             set { BackingStore?.Set("contributors", value); }

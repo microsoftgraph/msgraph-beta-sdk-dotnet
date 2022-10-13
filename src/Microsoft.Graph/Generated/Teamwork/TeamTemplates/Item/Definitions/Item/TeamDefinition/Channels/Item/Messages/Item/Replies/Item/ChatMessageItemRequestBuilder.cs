@@ -1,8 +1,10 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.Channels.Item.Messages.Item.Replies.Item.HostedContents;
+using Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.Channels.Item.Messages.Item.Replies.Item.SetReaction;
 using Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.Channels.Item.Messages.Item.Replies.Item.SoftDelete;
 using Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.Channels.Item.Messages.Item.Replies.Item.UndoSoftDelete;
+using Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.Channels.Item.Messages.Item.Replies.Item.UnsetReaction;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -22,6 +24,10 @@ namespace Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.Team
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        /// <summary>The setReaction property</summary>
+        public SetReactionRequestBuilder SetReaction { get =>
+            new SetReactionRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The softDelete property</summary>
         public SoftDeleteRequestBuilder SoftDelete { get =>
             new SoftDeleteRequestBuilder(PathParameters, RequestAdapter);
@@ -29,6 +35,10 @@ namespace Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.Team
         /// <summary>The undoSoftDelete property</summary>
         public UndoSoftDeleteRequestBuilder UndoSoftDelete { get =>
             new UndoSoftDeleteRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The unsetReaction property</summary>
+        public UnsetReactionRequestBuilder UnsetReaction { get =>
+            new UnsetReactionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }

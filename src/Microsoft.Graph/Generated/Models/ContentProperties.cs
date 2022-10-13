@@ -1,3 +1,4 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions.Store;
 using System;
@@ -52,7 +53,11 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public static ContentProperties CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new ContentProperties();
+            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.attachmentContentProperties" => new AttachmentContentProperties(),
+                _ => new ContentProperties(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The includeContent property</summary>
+        /// <summary>The type of search content. The possible values are: privateContent, sharedContent. Read-only.</summary>
         public SearchContent? IncludeContent {
             get { return BackingStore?.Get<SearchContent?>("includeContent"); }
             set { BackingStore?.Set("includeContent", value); }

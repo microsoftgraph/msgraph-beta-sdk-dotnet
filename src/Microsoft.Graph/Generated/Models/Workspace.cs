@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class Workspace : Place, IParsable {
         /// <summary>Specifies the building name or building number that the workspace is in.</summary>
         public string Building {
@@ -51,7 +52,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("tags", value); }
         }
         /// <summary>
-        /// Instantiates a new Workspace and sets the default values.
+        /// Instantiates a new workspace and sets the default values.
         /// </summary>
         public Workspace() : base() {
             OdataType = "#microsoft.graph.workspace";

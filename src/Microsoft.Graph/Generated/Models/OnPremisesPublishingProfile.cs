@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class OnPremisesPublishingProfile : Entity, IParsable {
         /// <summary>List of existing onPremisesAgentGroup objects. Read-only. Nullable.</summary>
         public List<OnPremisesAgentGroup> AgentGroups {
@@ -41,7 +42,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("publishedResources", value); }
         }
         /// <summary>
-        /// Instantiates a new OnPremisesPublishingProfile and sets the default values.
+        /// Instantiates a new onPremisesPublishingProfile and sets the default values.
         /// </summary>
         public OnPremisesPublishingProfile() : base() {
             OdataType = "#microsoft.graph.onPremisesPublishingProfile";

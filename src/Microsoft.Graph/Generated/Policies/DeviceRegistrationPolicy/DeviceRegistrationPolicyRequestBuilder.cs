@@ -65,28 +65,6 @@ namespace Microsoft.Graph.Beta.Policies.DeviceRegistrationPolicy {
             return requestInfo;
         }
         /// <summary>
-        /// Update the navigation property deviceRegistrationPolicy in policies
-        /// <param name="body"></param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
-        public RequestInformation CreatePatchRequestInformation(Microsoft.Graph.Beta.Models.DeviceRegistrationPolicy body, Action<DeviceRegistrationPolicyRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
-            _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation {
-                HttpMethod = Method.PATCH,
-                UrlTemplate = UrlTemplate,
-                PathParameters = PathParameters,
-            };
-            requestInfo.Headers.Add("Accept", "application/json");
-            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
-            if (requestConfiguration != null) {
-                var requestConfig = new DeviceRegistrationPolicyRequestBuilderPatchRequestConfiguration();
-                requestConfiguration.Invoke(requestConfig);
-                requestInfo.AddRequestOptions(requestConfig.Options);
-                requestInfo.AddHeaders(requestConfig.Headers);
-            }
-            return requestInfo;
-        }
-        /// <summary>
         /// Read the properties and relationships of a deviceRegistrationPolicy object. Represents deviceRegistrationPolicy quota restrictions, additional authentication, and authorization policies to register device identities to your organization.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -94,22 +72,6 @@ namespace Microsoft.Graph.Beta.Policies.DeviceRegistrationPolicy {
         /// </summary>
         public async Task<Microsoft.Graph.Beta.Models.DeviceRegistrationPolicy> GetAsync(Action<DeviceRegistrationPolicyRequestBuilderGetRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
-            };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.DeviceRegistrationPolicy>(requestInfo, Microsoft.Graph.Beta.Models.DeviceRegistrationPolicy.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
-        }
-        /// <summary>
-        /// Update the navigation property deviceRegistrationPolicy in policies
-        /// <param name="body"></param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
-        /// </summary>
-        public async Task<Microsoft.Graph.Beta.Models.DeviceRegistrationPolicy> PatchAsync(Microsoft.Graph.Beta.Models.DeviceRegistrationPolicy body, Action<DeviceRegistrationPolicyRequestBuilderPatchRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
-            _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
@@ -137,20 +99,6 @@ namespace Microsoft.Graph.Beta.Policies.DeviceRegistrationPolicy {
             /// Instantiates a new deviceRegistrationPolicyRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public DeviceRegistrationPolicyRequestBuilderGetRequestConfiguration() {
-                Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
-            }
-        }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
-        public class DeviceRegistrationPolicyRequestBuilderPatchRequestConfiguration {
-            /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
-            /// <summary>Request options</summary>
-            public IList<IRequestOption> Options { get; set; }
-            /// <summary>
-            /// Instantiates a new deviceRegistrationPolicyRequestBuilderPatchRequestConfiguration and sets the default values.
-            /// </summary>
-            public DeviceRegistrationPolicyRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();
                 Headers = new Dictionary<string, string>();
             }

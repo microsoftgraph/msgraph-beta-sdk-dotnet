@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class AttributeSet : Entity, IParsable {
         /// <summary>Description of the attribute set. Can be up to 128 characters long and include Unicode characters. Can be changed later.</summary>
         public string Description {
@@ -16,7 +17,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("maxAttributesPerSet", value); }
         }
         /// <summary>
-        /// Instantiates a new AttributeSet and sets the default values.
+        /// Instantiates a new attributeSet and sets the default values.
         /// </summary>
         public AttributeSet() : base() {
             OdataType = "#microsoft.graph.attributeSet";

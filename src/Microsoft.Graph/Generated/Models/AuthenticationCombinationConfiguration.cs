@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class AuthenticationCombinationConfiguration : Entity, IParsable {
         /// <summary>The appliesToCombinations property</summary>
         public List<AuthenticationMethodModes?> AppliesToCombinations {
@@ -12,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("appliesToCombinations", value); }
         }
         /// <summary>
-        /// Instantiates a new AuthenticationCombinationConfiguration and sets the default values.
+        /// Instantiates a new authenticationCombinationConfiguration and sets the default values.
         /// </summary>
         public AuthenticationCombinationConfiguration() : base() {
             OdataType = "#microsoft.graph.authenticationCombinationConfiguration";

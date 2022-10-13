@@ -467,9 +467,9 @@ namespace Microsoft.Graph.Beta.Print.Reports {
         }
         /// <summary>
         /// Provides operations to call the getGroupArchivedPrintJobs method.
-        /// <param name="endDateTime">Usage: endDateTime=&apos;{endDateTime}&apos;</param>
+        /// <param name="endDateTime">Usage: endDateTime={endDateTime}</param>
         /// <param name="groupId">Usage: groupId=&apos;{groupId}&apos;</param>
-        /// <param name="startDateTime">Usage: startDateTime=&apos;{startDateTime}&apos;</param>
+        /// <param name="startDateTime">Usage: startDateTime={startDateTime}</param>
         /// </summary>
         public GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTimeRequestBuilder GetGroupArchivedPrintJobsWithGroupIdWithStartDateTimeWithEndDateTime(DateTimeOffset? endDateTime, string groupId, DateTimeOffset? startDateTime) {
             _ = endDateTime ?? throw new ArgumentNullException(nameof(endDateTime));
@@ -713,9 +713,9 @@ namespace Microsoft.Graph.Beta.Print.Reports {
         }
         /// <summary>
         /// Provides operations to call the getPrinterArchivedPrintJobs method.
-        /// <param name="endDateTime">Usage: endDateTime=&apos;{endDateTime}&apos;</param>
+        /// <param name="endDateTime">Usage: endDateTime={endDateTime}</param>
         /// <param name="printerId">Usage: printerId=&apos;{printerId}&apos;</param>
-        /// <param name="startDateTime">Usage: startDateTime=&apos;{startDateTime}&apos;</param>
+        /// <param name="startDateTime">Usage: startDateTime={startDateTime}</param>
         /// </summary>
         public GetPrinterArchivedPrintJobsWithPrinterIdWithStartDateTimeWithEndDateTimeRequestBuilder GetPrinterArchivedPrintJobsWithPrinterIdWithStartDateTimeWithEndDateTime(DateTimeOffset? endDateTime, string printerId, DateTimeOffset? startDateTime) {
             _ = endDateTime ?? throw new ArgumentNullException(nameof(endDateTime));
@@ -1109,8 +1109,8 @@ namespace Microsoft.Graph.Beta.Print.Reports {
         }
         /// <summary>
         /// Provides operations to call the getUserArchivedPrintJobs method.
-        /// <param name="endDateTime">Usage: endDateTime=&apos;{endDateTime}&apos;</param>
-        /// <param name="startDateTime">Usage: startDateTime=&apos;{startDateTime}&apos;</param>
+        /// <param name="endDateTime">Usage: endDateTime={endDateTime}</param>
+        /// <param name="startDateTime">Usage: startDateTime={startDateTime}</param>
         /// <param name="userId">Usage: userId=&apos;{userId}&apos;</param>
         /// </summary>
         public GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTimeRequestBuilder GetUserArchivedPrintJobsWithUserIdWithStartDateTimeWithEndDateTime(DateTimeOffset? endDateTime, DateTimeOffset? startDateTime, string userId) {

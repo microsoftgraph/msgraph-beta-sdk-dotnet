@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("requestStatus"); }
             set { BackingStore?.Set("requestStatus", value); }
         }
-        /// <summary>Use AdminAdd to add a resource, if the caller is an administrator or resource owner, or AdminRemove to remove a resource.</summary>
+        /// <summary>Use AdminAdd to add a resource, if the caller is an administrator or resource owner, AdminUpdate to update a resource, or AdminRemove to remove a resource.</summary>
         public string RequestType {
             get { return BackingStore?.Get<string>("requestType"); }
             set { BackingStore?.Set("requestType", value); }

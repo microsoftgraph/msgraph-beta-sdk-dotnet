@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class CloudPcUserSetting : Entity, IParsable {
-        /// <summary>Represents the set of Microsoft 365 groups and security groups in Azure AD that have cloudPCUserSetting assigned. Returned only on $expand. For an example, see Get cloudPcUserSettingample.</summary>
+        /// <summary>Represents the set of Microsoft 365 groups and security groups in Azure Active Directory that have cloudPCUserSetting assigned. Returned only on $expand. For an example, see Get cloudPcUserSettingample.</summary>
         public List<CloudPcUserSettingAssignment> Assignments {
             get { return BackingStore?.Get<List<CloudPcUserSettingAssignment>>("assignments"); }
             set { BackingStore?.Set("assignments", value); }

@@ -18,7 +18,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<ConditionalAccessConditionSet>("conditions"); }
             set { BackingStore?.Set("conditions", value); }
         }
-        /// <summary>The grantControls property</summary>
+        /// <summary>Represents grant controls that must be fulfilled for the policy.</summary>
         public ConditionalAccessGrantControls GrantControls {
             get { return BackingStore?.Get<ConditionalAccessGrantControls>("grantControls"); }
             set { BackingStore?.Set("grantControls", value); }
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
-        /// <summary>The sessionControls property</summary>
+        /// <summary>Represents a complex type of session controls that is enforced after sign-in.</summary>
         public ConditionalAccessSessionControls SessionControls {
             get { return BackingStore?.Get<ConditionalAccessSessionControls>("sessionControls"); }
             set { BackingStore?.Set("sessionControls", value); }

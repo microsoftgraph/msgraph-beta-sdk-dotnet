@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("shiftPreferences", value); }
         }
         /// <summary>
-        /// Instantiates a new UserSettings and sets the default values.
+        /// Instantiates a new userSettings and sets the default values.
         /// </summary>
         public UserSettings() : base() {
             OdataType = "#microsoft.graph.userSettings";

@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
-    /// <summary>Provides operations to manage the collection of externalConnection entities.</summary>
     public class ExternalConnection : Entity, IParsable {
         /// <summary>Collects configurable settings related to activities involving connector content.</summary>
         public Microsoft.Graph.Beta.Models.ExternalConnectors.ActivitySettings ActivitySettings {
@@ -82,7 +81,7 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
             set { BackingStore?.Set("state", value); }
         }
         /// <summary>
-        /// Instantiates a new externalConnection and sets the default values.
+        /// Instantiates a new ExternalConnection and sets the default values.
         /// </summary>
         public ExternalConnection() : base() {
             OdataType = "#microsoft.graph.externalConnectors.externalConnection";

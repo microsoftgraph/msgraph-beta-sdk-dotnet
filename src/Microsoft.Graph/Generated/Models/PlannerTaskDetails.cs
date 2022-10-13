@@ -15,7 +15,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
-        /// <summary>The notes property</summary>
+        /// <summary>Rich text description of the task. To be used by HTML-aware clients. For backwards compatibility, a plain-text version of the HTML description will be synced to the &apos;description&apos; field. If this field has not previously been set but &apos;description&apos; has been, the existing description will be synchronized to &apos;notes&apos; with minimal whitespace-preserving HTML markup. Setting both &apos;description&apos; and &apos;notes&apos; is an error and will result in an exception.</summary>
         public ItemBody Notes {
             get { return BackingStore?.Get<ItemBody>("notes"); }
             set { BackingStore?.Set("notes", value); }

@@ -71,7 +71,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("userSettings", value); }
         }
         /// <summary>
-        /// Instantiates a new VirtualEndpoint and sets the default values.
+        /// Instantiates a new virtualEndpoint and sets the default values.
         /// </summary>
         public VirtualEndpoint() : base() {
             OdataType = "#microsoft.graph.virtualEndpoint";

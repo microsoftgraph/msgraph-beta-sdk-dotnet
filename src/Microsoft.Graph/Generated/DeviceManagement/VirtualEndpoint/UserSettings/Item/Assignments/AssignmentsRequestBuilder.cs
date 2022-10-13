@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.UserSettings.Ite
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Represents the set of Microsoft 365 groups and security groups in Azure AD that have cloudPCUserSetting assigned. Returned only on $expand. For an example, see Get cloudPcUserSettingample.
+        /// Represents the set of Microsoft 365 groups and security groups in Azure Active Directory that have cloudPCUserSetting assigned. Returned only on $expand. For an example, see Get cloudPcUserSettingample.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<AssignmentsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.UserSettings.Ite
             return requestInfo;
         }
         /// <summary>
-        /// Represents the set of Microsoft 365 groups and security groups in Azure AD that have cloudPCUserSetting assigned. Returned only on $expand. For an example, see Get cloudPcUserSettingample.
+        /// Represents the set of Microsoft 365 groups and security groups in Azure Active Directory that have cloudPCUserSetting assigned. Returned only on $expand. For an example, see Get cloudPcUserSettingample.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
@@ -128,7 +128,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.UserSettings.Ite
             };
             return await RequestAdapter.SendAsync<CloudPcUserSettingAssignment>(requestInfo, CloudPcUserSettingAssignment.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
         }
-        /// <summary>Represents the set of Microsoft 365 groups and security groups in Azure AD that have cloudPCUserSetting assigned. Returned only on $expand. For an example, see Get cloudPcUserSettingample.</summary>
+        /// <summary>Represents the set of Microsoft 365 groups and security groups in Azure Active Directory that have cloudPCUserSetting assigned. Returned only on $expand. For an example, see Get cloudPcUserSettingample.</summary>
         public class AssignmentsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
