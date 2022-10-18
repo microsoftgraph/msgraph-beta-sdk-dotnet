@@ -23,24 +23,28 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets additionalInformation.
+        /// Information about why the updateAllowedCombinations action was successful or failed.
         /// </summary>
         [JsonPropertyName("additionalInformation")]
         public string AdditionalInformation { get; set; }
     
         /// <summary>
         /// Gets or sets conditionalAccessReferences.
+        /// References to existing Conditional Access policies that use this authentication strength.
         /// </summary>
         [JsonPropertyName("conditionalAccessReferences")]
         public IEnumerable<string> ConditionalAccessReferences { get; set; }
     
         /// <summary>
         /// Gets or sets currentCombinations.
+        /// The list of current authentication method combinations allowed by the authentication strength.
         /// </summary>
         [JsonPropertyName("currentCombinations")]
         public IEnumerable<AuthenticationMethodModes> CurrentCombinations { get; set; }
     
         /// <summary>
         /// Gets or sets previousCombinations.
+        /// The list of former authentication method combinations allowed by the authentication strength before they were updated through the updateAllowedCombinations action.
         /// </summary>
         [JsonPropertyName("previousCombinations")]
         public IEnumerable<AuthenticationMethodModes> PreviousCombinations { get; set; }

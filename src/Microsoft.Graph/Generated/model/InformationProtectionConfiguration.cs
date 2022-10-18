@@ -7,7 +7,7 @@
 
 // Template Source: ComplexType.cs.tt
 
-namespace Microsoft.Graph.SecurityNamespace
+namespace Microsoft.Graph
 {
     using System;
     using System.Collections.Generic;
@@ -15,25 +15,17 @@ namespace Microsoft.Graph.SecurityNamespace
     using System.Text.Json.Serialization;
 
     /// <summary>
-    /// The type SinglePropertySchema.
+    /// The type InformationProtectionConfiguration.
     /// </summary>
-    [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter<SinglePropertySchema>))]
-    public partial class SinglePropertySchema
+    [JsonConverter(typeof(DerivedTypeConverter<InformationProtectionConfiguration>))]
+    public partial class InformationProtectionConfiguration
     {
 
         /// <summary>
-        /// Gets or sets name.
-        /// The name of the property.
+        /// Gets or sets ocr.
         /// </summary>
-        [JsonPropertyName("name")]
-        public string Name { get; set; }
-    
-        /// <summary>
-        /// Gets or sets type.
-        /// The type of the property.
-        /// </summary>
-        [JsonPropertyName("type")]
-        public string Type { get; set; }
+        [JsonPropertyName("ocr")]
+        public OpticalCharacterRecognitionConfiguration Ocr { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

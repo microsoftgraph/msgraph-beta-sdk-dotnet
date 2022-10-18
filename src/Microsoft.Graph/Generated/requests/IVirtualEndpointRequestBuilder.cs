@@ -44,6 +44,12 @@ namespace Microsoft.Graph
         IVirtualEndpointCloudPCsCollectionRequestBuilder CloudPCs { get; }
 
         /// <summary>
+        /// Gets the request builder for CrossCloudGovernmentOrganizationMapping.
+        /// </summary>
+        /// <returns>The <see cref="ICloudPcCrossCloudGovernmentOrganizationMappingRequestBuilder"/>.</returns>
+        ICloudPcCrossCloudGovernmentOrganizationMappingRequestBuilder CrossCloudGovernmentOrganizationMapping { get; }
+
+        /// <summary>
         /// Gets the request builder for DeviceImages.
         /// </summary>
         /// <returns>The <see cref="IVirtualEndpointDeviceImagesCollectionRequestBuilder"/>.</returns>

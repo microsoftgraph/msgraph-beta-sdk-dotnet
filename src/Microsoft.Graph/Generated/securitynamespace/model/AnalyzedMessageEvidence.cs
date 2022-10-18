@@ -29,7 +29,7 @@ namespace Microsoft.Graph.SecurityNamespace
 
         /// <summary>
         /// Gets or sets antiSpamDirection.
-        /// Direction of the email relative to your network. The possible values are: Inbound, Outbound or Intraorg.
+        /// Direction of the email relative to your network. The possible values are: inbound, outbound or intraorg.
         /// </summary>
         [JsonPropertyName("antiSpamDirection")]
         public string AntiSpamDirection { get; set; }
@@ -43,14 +43,14 @@ namespace Microsoft.Graph.SecurityNamespace
     
         /// <summary>
         /// Gets or sets deliveryAction.
-        /// Delivery action of the email. The possible values are: Delivered, DeliveredAsSpam, Junked, Blocked, or Replaced.
+        /// Delivery action of the email. The possible values are: delivered, deliveredAsSpam, junked, blocked, or replaced.
         /// </summary>
         [JsonPropertyName("deliveryAction")]
         public string DeliveryAction { get; set; }
     
         /// <summary>
         /// Gets or sets deliveryLocation.
-        /// Location where the email was delivered. The possible values are: Inbox, External, JunkFolder, Quarantine, Failed, Dropped, DeletedFolder or Forwarded.
+        /// Location where the email was delivered. The possible values are: inbox, external, junkFolder, quarantine, failed, dropped, deletedFolder or forwarded.
         /// </summary>
         [JsonPropertyName("deliveryLocation")]
         public string DeliveryLocation { get; set; }

@@ -22,6 +22,7 @@ namespace Microsoft.Graph.DeviceManagementNamespace
     
         /// <summary>
         /// Gets or sets alert records.
+        /// The collection of records of alert events.
         /// </summary>
         [JsonPropertyName("alertRecords")]
         public IMonitoringAlertRecordsCollectionPage AlertRecords { get; set; }
@@ -35,6 +36,7 @@ namespace Microsoft.Graph.DeviceManagementNamespace
     
         /// <summary>
         /// Gets or sets alert rules.
+        /// The collection of alert rules.
         /// </summary>
         [JsonPropertyName("alertRules")]
         public IMonitoringAlertRulesCollectionPage AlertRules { get; set; }

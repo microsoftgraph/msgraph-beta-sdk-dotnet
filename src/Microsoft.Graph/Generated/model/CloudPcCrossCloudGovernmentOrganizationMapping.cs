@@ -15,25 +15,17 @@ namespace Microsoft.Graph
     using System.Text.Json.Serialization;
 
     /// <summary>
-    /// The type Fido2Combination Configuration.
+    /// The type Cloud Pc Cross Cloud Government Organization Mapping.
     /// </summary>
-    public partial class Fido2CombinationConfiguration : AuthenticationCombinationConfiguration
+    public partial class CloudPcCrossCloudGovernmentOrganizationMapping : Entity
     {
     
-        ///<summary>
-        /// The Fido2CombinationConfiguration constructor
-        ///</summary>
-        public Fido2CombinationConfiguration()
-        {
-            this.ODataType = "microsoft.graph.fido2CombinationConfiguration";
-        }
-
         /// <summary>
-        /// Gets or sets allowed aaguids.
-        /// A list of AAGUIDs allowed to be used as part of the specified authentication method combinations.
+        /// Gets or sets organization ids in usgov cloud.
+        /// The tenant ID in the Azure Government cloud corresponding to the GCC tenant in the public cloud. Currently, 1:1 mappings are supported, so this collection can only contain one tenant ID.
         /// </summary>
-        [JsonPropertyName("allowedAAGUIDs")]
-        public IEnumerable<string> AllowedAAGUIDs { get; set; }
+        [JsonPropertyName("organizationIdsInUSGovCloud")]
+        public IEnumerable<string> OrganizationIdsInUSGovCloud { get; set; }
     
     }
 }

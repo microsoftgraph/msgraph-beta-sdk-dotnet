@@ -75,6 +75,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for CrossCloudGovernmentOrganizationMapping.
+        /// </summary>
+        /// <returns>The <see cref="ICloudPcCrossCloudGovernmentOrganizationMappingRequestBuilder"/>.</returns>
+        public ICloudPcCrossCloudGovernmentOrganizationMappingRequestBuilder CrossCloudGovernmentOrganizationMapping
+        {
+            get
+            {
+                return new CloudPcCrossCloudGovernmentOrganizationMappingRequestBuilder(this.AppendSegmentToRequestUrl("crossCloudGovernmentOrganizationMapping"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for DeviceImages.
         /// </summary>
         /// <returns>The <see cref="IVirtualEndpointDeviceImagesCollectionRequestBuilder"/>.</returns>

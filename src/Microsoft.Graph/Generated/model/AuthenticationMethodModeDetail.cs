@@ -23,12 +23,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets authentication method.
+        /// The authentication method that this mode modifies. The possible values are: password, voice, hardwareOath, softwareOath, sms, fido2, windowsHelloForBusiness, microsoftAuthenticator, temporaryAccessPass, email, x509Certificate, federation, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("authenticationMethod")]
         public BaseAuthenticationMethod? AuthenticationMethod { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
+        /// The display name of this mode
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }

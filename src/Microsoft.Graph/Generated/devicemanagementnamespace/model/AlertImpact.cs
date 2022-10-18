@@ -23,12 +23,14 @@ namespace Microsoft.Graph.DeviceManagementNamespace
 
         /// <summary>
         /// Gets or sets aggregationType.
+        /// The aggregation type of the impact. The possible values are: count, percentage, affectedCloudPcCount, affectedCloudPcPercentage, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("aggregationType")]
         public AggregationType? AggregationType { get; set; }
     
         /// <summary>
         /// Gets or sets value.
+        /// The number value of the impact.
         /// </summary>
         [JsonPropertyName("value")]
         public Int32? Value { get; set; }

@@ -13,36 +13,31 @@ namespace Microsoft.Graph
     using System.Text.Json.Serialization;
 
     /// <summary>
-    /// The enum CloudPcExportJobStatus.
+    /// The enum AuthenticationAppAdminConfiguration.
     /// </summary>
     [JsonConverter(typeof(JsonStringEnumConverter))]
-    public enum CloudPcExportJobStatus
+    public enum AuthenticationAppAdminConfiguration
     {
     
         /// <summary>
-        /// Not Started
+        /// Not Applicable
         /// </summary>
-        NotStarted = 0,
+        NotApplicable = 0,
 	
         /// <summary>
-        /// In Progress
+        /// Enabled
         /// </summary>
-        InProgress = 1,
+        Enabled = 1,
 	
         /// <summary>
-        /// Completed
+        /// Disabled
         /// </summary>
-        Completed = 2,
-	
-        /// <summary>
-        /// Failed
-        /// </summary>
-        Failed = 3,
+        Disabled = 2,
 	
         /// <summary>
         /// Unknown Future Value
         /// </summary>
-        UnknownFutureValue = 4,
+        UnknownFutureValue = 3,
 	
     }
 }

@@ -49,6 +49,13 @@ namespace Microsoft.Graph
         public string CloudPCsNextLink { get; set; }
     
         /// <summary>
+        /// Gets or sets cross cloud government organization mapping.
+        /// Cloud PC organization mapping between public and US Government Community Cloud (GCC) organizations.
+        /// </summary>
+        [JsonPropertyName("crossCloudGovernmentOrganizationMapping")]
+        public CloudPcCrossCloudGovernmentOrganizationMapping CrossCloudGovernmentOrganizationMapping { get; set; }
+    
+        /// <summary>
         /// Gets or sets device images.
         /// The image resource on Cloud PC.
         /// </summary>

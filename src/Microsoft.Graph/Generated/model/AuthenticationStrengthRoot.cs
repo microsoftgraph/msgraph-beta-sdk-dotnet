@@ -23,12 +23,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets authentication combinations.
+        /// A collection of all valid authentication method combinations in the system.
         /// </summary>
         [JsonPropertyName("authenticationCombinations")]
         public IEnumerable<AuthenticationMethodModes> AuthenticationCombinations { get; set; }
     
         /// <summary>
         /// Gets or sets authentication method modes.
+        /// Names and descriptions of all valid authentication method modes in the system.
         /// </summary>
         [JsonPropertyName("authenticationMethodModes")]
         public IAuthenticationStrengthRootAuthenticationMethodModesCollectionPage AuthenticationMethodModes { get; set; }
@@ -42,6 +44,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets policies.
+        /// A collection of authentication strength policies that exist for this tenant, including both built-in and custom policies.
         /// </summary>
         [JsonPropertyName("policies")]
         public IAuthenticationStrengthRootPoliciesCollectionPage Policies { get; set; }
