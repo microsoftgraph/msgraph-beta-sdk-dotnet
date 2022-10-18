@@ -7,7 +7,7 @@
 
 // Template Source: ComplexType.cs.tt
 
-namespace Microsoft.Graph.SecurityNamespace
+namespace Microsoft.Graph
 {
     using System;
     using System.Collections.Generic;
@@ -15,25 +15,35 @@ namespace Microsoft.Graph.SecurityNamespace
     using System.Text.Json.Serialization;
 
     /// <summary>
-    /// The type SinglePropertySchema.
+    /// The type AuthenticationAppPolicyDetails.
     /// </summary>
-    [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter<SinglePropertySchema>))]
-    public partial class SinglePropertySchema
+    [JsonConverter(typeof(DerivedTypeConverter<AuthenticationAppPolicyDetails>))]
+    public partial class AuthenticationAppPolicyDetails
     {
 
         /// <summary>
-        /// Gets or sets name.
-        /// The name of the property.
+        /// Gets or sets adminConfiguration.
         /// </summary>
-        [JsonPropertyName("name")]
-        public string Name { get; set; }
+        [JsonPropertyName("adminConfiguration")]
+        public AuthenticationAppAdminConfiguration? AdminConfiguration { get; set; }
     
         /// <summary>
-        /// Gets or sets type.
-        /// The type of the property.
+        /// Gets or sets authenticationEvaluation.
         /// </summary>
-        [JsonPropertyName("type")]
-        public string Type { get; set; }
+        [JsonPropertyName("authenticationEvaluation")]
+        public AuthenticationAppEvaluation? AuthenticationEvaluation { get; set; }
+    
+        /// <summary>
+        /// Gets or sets policyName.
+        /// </summary>
+        [JsonPropertyName("policyName")]
+        public string PolicyName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets status.
+        /// </summary>
+        [JsonPropertyName("status")]
+        public AuthenticationAppPolicyStatus? Status { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

@@ -23,48 +23,56 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets allowed combinations.
+        /// A collection of authentication method modes that are required be used to satify this authentication strength.
         /// </summary>
         [JsonPropertyName("allowedCombinations")]
         public IEnumerable<AuthenticationMethodModes> AllowedCombinations { get; set; }
     
         /// <summary>
         /// Gets or sets created date time.
+        /// The datetime when this policy was created.
         /// </summary>
         [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets description.
+        /// The human-readable description of this policy.
         /// </summary>
         [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
+        /// The human-readable display name of this policy. Supports $filter (eq, ne, not , and in).
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets modified date time.
+        /// The datetime when this policy was last modified.
         /// </summary>
         [JsonPropertyName("modifiedDateTime")]
         public DateTimeOffset? ModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets policy type.
+        /// A descriptor of whether this policy is built into Azure AD or created by an admin for the tenant. The possible values are: builtIn, custom, unknownFutureValue. Supports $filter (eq, ne, not , and in).
         /// </summary>
         [JsonPropertyName("policyType")]
         public AuthenticationStrengthPolicyType? PolicyType { get; set; }
     
         /// <summary>
         /// Gets or sets requirements satisfied.
+        /// A descriptor of whether this authentication strength grants the MFA claim upon successful satisfaction. The possible values are: none, mfa, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("requirementsSatisfied")]
         public AuthenticationStrengthRequirements? RequirementsSatisfied { get; set; }
     
         /// <summary>
         /// Gets or sets combination configurations.
+        /// Settings that may be used to require specific types or instances of an authentication method to be used when authenticating with a specified combination of authentication methods.
         /// </summary>
         [JsonPropertyName("combinationConfigurations")]
         public IAuthenticationStrengthPolicyCombinationConfigurationsCollectionPage CombinationConfigurations { get; set; }

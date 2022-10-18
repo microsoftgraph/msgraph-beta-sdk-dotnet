@@ -23,54 +23,63 @@ namespace Microsoft.Graph.DeviceManagementNamespace
     
         /// <summary>
         /// Gets or sets alert impact.
+        /// The impact of the alert event. Consists of a number followed by the aggregation type. For example, 6 Count and 12 AffectedCloudPcPercentage.
         /// </summary>
         [JsonPropertyName("alertImpact")]
         public AlertImpact AlertImpact { get; set; }
     
         /// <summary>
         /// Gets or sets alert rule id.
+        /// The corresponding ID of the alert rule.
         /// </summary>
         [JsonPropertyName("alertRuleId")]
         public string AlertRuleId { get; set; }
     
         /// <summary>
         /// Gets or sets alert rule template.
+        /// The rule template of the alert event. The possible values are: cloudPcProvisionScenario, cloudPcImageUploadScenario, cloudPcOnPremiseNetworkConnectionCheckScenario, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("alertRuleTemplate")]
         public AlertRuleTemplate? AlertRuleTemplate { get; set; }
     
         /// <summary>
         /// Gets or sets detected date time.
+        /// The date and time when the alert event was detected. The Timestamp type represents date and time information using ISO 8601 format. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
         /// </summary>
         [JsonPropertyName("detectedDateTime")]
         public DateTimeOffset? DetectedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
+        /// The display name of the alert record.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets last updated date time.
+        /// The date and time when the alert record was last updated. The Timestamp type represents date and time information using ISO 8601 format. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
         /// </summary>
         [JsonPropertyName("lastUpdatedDateTime")]
         public DateTimeOffset? LastUpdatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets resolved date time.
+        /// The date and time when the alert event was resolved. The Timestamp type represents date and time information using ISO 8601 format. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
         /// </summary>
         [JsonPropertyName("resolvedDateTime")]
         public DateTimeOffset? ResolvedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets severity.
+        /// The severity of the alert event. The possible values are: unknown, informational, warning, critical, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("severity")]
         public RuleSeverityType? Severity { get; set; }
     
         /// <summary>
         /// Gets or sets status.
+        /// The status of the alert record. The possible values are: active, resolved, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("status")]
         public AlertStatusType? Status { get; set; }

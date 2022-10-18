@@ -64,5 +64,10 @@ namespace Microsoft.Graph
         /// </summary>
         EmailUser = 8,
 	
+        /// <summary>
+        /// Azure Communication Services User
+        /// </summary>
+        AzureCommunicationServicesUser = 9,
+	
     }
 }

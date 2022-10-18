@@ -31,6 +31,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets applies to combinations.
+        /// Which authentication method combinations this configuration applies to. Must be an allowedCombinations object that's defined for the authenticationStrengthPolicy. The only possible value for fido2combinationConfigurations is 'fido2'.
         /// </summary>
         [JsonPropertyName("appliesToCombinations")]
         public IEnumerable<AuthenticationMethodModes> AppliesToCombinations { get; set; }

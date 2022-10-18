@@ -23,48 +23,56 @@ namespace Microsoft.Graph.DeviceManagementNamespace
 
         /// <summary>
         /// Gets or sets alertImpact.
+        /// The associated alert impact.
         /// </summary>
         [JsonPropertyName("alertImpact")]
         public AlertImpact AlertImpact { get; set; }
     
         /// <summary>
         /// Gets or sets alertRecordId.
+        /// The associated alert record ID.
         /// </summary>
         [JsonPropertyName("alertRecordId")]
         public string AlertRecordId { get; set; }
     
         /// <summary>
         /// Gets or sets alertRuleId.
+        /// The associated alert rule ID.
         /// </summary>
         [JsonPropertyName("alertRuleId")]
         public string AlertRuleId { get; set; }
     
         /// <summary>
         /// Gets or sets alertRuleName.
+        /// The associated alert rule name.
         /// </summary>
         [JsonPropertyName("alertRuleName")]
         public string AlertRuleName { get; set; }
     
         /// <summary>
         /// Gets or sets alertRuleTemplate.
+        /// The associated alert rule template. The possible values are: cloudPcProvisionScenario, cloudPcImageUploadScenario, cloudPcOnPremiseNetworkConnectionCheckScenario, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("alertRuleTemplate")]
         public AlertRuleTemplate? AlertRuleTemplate { get; set; }
     
         /// <summary>
         /// Gets or sets id.
+        /// The unique identifier for the portal notification.
         /// </summary>
         [JsonPropertyName("id")]
         public string Id { get; set; }
     
         /// <summary>
         /// Gets or sets isPortalNotificationSent.
+        /// If true, the portal notification has already been sent for the user; otherwise, the portal notification hasn't been sent yet.
         /// </summary>
         [JsonPropertyName("isPortalNotificationSent")]
         public bool? IsPortalNotificationSent { get; set; }
     
         /// <summary>
         /// Gets or sets severity.
+        /// The associated alert rule severity. The possible values are: unknown, informational, warning, critical, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("severity")]
         public RuleSeverityType? Severity { get; set; }

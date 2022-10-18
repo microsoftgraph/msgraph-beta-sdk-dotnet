@@ -29,7 +29,7 @@ namespace Microsoft.Graph.IdentityGovernanceNamespace
 
         /// <summary>
         /// Gets or sets rule.
-        /// The rule for the subject set.
+        /// The rule for the subject set. Lifecycle Workflows supports a rich set of user properties for configuring the rules using $filter query expressions. For more information, see supported user and query parameters.
         /// </summary>
         [JsonPropertyName("rule")]
         public string Rule { get; set; }

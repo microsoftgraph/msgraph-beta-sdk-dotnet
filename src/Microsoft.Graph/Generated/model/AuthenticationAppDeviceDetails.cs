@@ -7,7 +7,7 @@
 
 // Template Source: ComplexType.cs.tt
 
-namespace Microsoft.Graph.SecurityNamespace
+namespace Microsoft.Graph
 {
     using System;
     using System.Collections.Generic;
@@ -15,25 +15,35 @@ namespace Microsoft.Graph.SecurityNamespace
     using System.Text.Json.Serialization;
 
     /// <summary>
-    /// The type SinglePropertySchema.
+    /// The type AuthenticationAppDeviceDetails.
     /// </summary>
-    [JsonConverter(typeof(Microsoft.Graph.DerivedTypeConverter<SinglePropertySchema>))]
-    public partial class SinglePropertySchema
+    [JsonConverter(typeof(DerivedTypeConverter<AuthenticationAppDeviceDetails>))]
+    public partial class AuthenticationAppDeviceDetails
     {
 
         /// <summary>
-        /// Gets or sets name.
-        /// The name of the property.
+        /// Gets or sets appVersion.
         /// </summary>
-        [JsonPropertyName("name")]
-        public string Name { get; set; }
+        [JsonPropertyName("appVersion")]
+        public string AppVersion { get; set; }
     
         /// <summary>
-        /// Gets or sets type.
-        /// The type of the property.
+        /// Gets or sets clientApp.
         /// </summary>
-        [JsonPropertyName("type")]
-        public string Type { get; set; }
+        [JsonPropertyName("clientApp")]
+        public string ClientApp { get; set; }
+    
+        /// <summary>
+        /// Gets or sets deviceId.
+        /// </summary>
+        [JsonPropertyName("deviceId")]
+        public string DeviceId { get; set; }
+    
+        /// <summary>
+        /// Gets or sets operatingSystem.
+        /// </summary>
+        [JsonPropertyName("operatingSystem")]
+        public string OperatingSystem { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

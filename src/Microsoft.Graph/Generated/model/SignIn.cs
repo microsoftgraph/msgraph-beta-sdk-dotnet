@@ -49,6 +49,18 @@ namespace Microsoft.Graph
         public IEnumerable<AppliedAuthenticationEventListener> AppliedEventListeners { get; set; }
     
         /// <summary>
+        /// Gets or sets authentication app device details.
+        /// </summary>
+        [JsonPropertyName("authenticationAppDeviceDetails")]
+        public AuthenticationAppDeviceDetails AuthenticationAppDeviceDetails { get; set; }
+    
+        /// <summary>
+        /// Gets or sets authentication app policy evaluation details.
+        /// </summary>
+        [JsonPropertyName("authenticationAppPolicyEvaluationDetails")]
+        public IEnumerable<AuthenticationAppPolicyDetails> AuthenticationAppPolicyEvaluationDetails { get; set; }
+    
+        /// <summary>
         /// Gets or sets authentication context class references.
         /// Contains a collection of values that represent the conditional access authentication contexts applied to the sign-in.
         /// </summary>

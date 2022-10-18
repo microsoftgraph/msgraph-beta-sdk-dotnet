@@ -52,20 +52,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets allow invites from.
-        /// Indicates who can invite external users to the organization. Possible values are: none, adminsAndGuestInviters, adminsGuestInvitersAndAllMembers, everyone.  everyone is the default setting for all cloud environments except US Government. See more in the table below.
+        /// Indicates who can invite external users to the organization. Possible values are: none, adminsAndGuestInviters, adminsGuestInvitersAndAllMembers, everyone. everyone is the default setting for all cloud environments except US Government. See more in the table below.
         /// </summary>
         [JsonPropertyName("allowInvitesFrom")]
         public AllowInvitesFrom? AllowInvitesFrom { get; set; }
     
         /// <summary>
         /// Gets or sets allow user consent for risky apps.
+        /// Indicates whether user consent for risky apps is allowed. We recommend to keep this as false.
         /// </summary>
         [JsonPropertyName("allowUserConsentForRiskyApps")]
         public bool? AllowUserConsentForRiskyApps { get; set; }
     
         /// <summary>
         /// Gets or sets block msol power shell.
-        /// To disable the use of MSOL PowerShell set this property to true. This will also disable user-based access to the legacy service endpoint used by MSOL PowerShell. This does not affect Azure AD Connect or Microsoft Graph.
+        /// To disable the use of the MSOnline PowerShell module set this property to true. This will also disable user-based access to the legacy service endpoint used by the MSOnline PowerShell module. This does not affect Azure AD Connect or Microsoft Graph.
         /// </summary>
         [JsonPropertyName("blockMsolPowerShell")]
         public bool? BlockMsolPowerShell { get; set; }

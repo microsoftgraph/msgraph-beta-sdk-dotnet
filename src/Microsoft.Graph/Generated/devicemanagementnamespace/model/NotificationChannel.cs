@@ -23,18 +23,21 @@ namespace Microsoft.Graph.DeviceManagementNamespace
 
         /// <summary>
         /// Gets or sets notificationChannelType.
+        /// The type of the notification channel. The possible values are: portal, email, phoneCall, sms, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("notificationChannelType")]
         public NotificationChannelType? NotificationChannelType { get; set; }
     
         /// <summary>
         /// Gets or sets notificationReceivers.
+        /// Information about the notification receivers, such as locale and contact information. For example, en-us for locale and serena.davis@contoso.com for contact information.
         /// </summary>
         [JsonPropertyName("notificationReceivers")]
         public IEnumerable<NotificationReceiver> NotificationReceivers { get; set; }
     
         /// <summary>
         /// Gets or sets receivers.
+        /// The contact information about the notification receivers, such as email addresses. For portal notifications, receivers can be left blank. For email notifications, receivers consists of email addresses such as serena.davis@contoso.com.
         /// </summary>
         [JsonPropertyName("receivers")]
         public IEnumerable<string> Receivers { get; set; }

@@ -30,6 +30,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets authentication strength policies.
+        /// The authentication method combinations that are to be used in scenarios defined by Azure AD Conditional Access.
         /// </summary>
         [JsonPropertyName("authenticationStrengthPolicies")]
         public IPolicyRootAuthenticationStrengthPoliciesCollectionPage AuthenticationStrengthPolicies { get; set; }

@@ -15,25 +15,41 @@ namespace Microsoft.Graph
     using System.Text.Json.Serialization;
 
     /// <summary>
-    /// The type KeyValue.
+    /// The type InformationProtectionConfigurations.
     /// </summary>
-    [JsonConverter(typeof(DerivedTypeConverter<KeyValue>))]
-    public partial class KeyValue
+    [JsonConverter(typeof(DerivedTypeConverter<InformationProtectionConfigurations>))]
+    public partial class InformationProtectionConfigurations
     {
 
         /// <summary>
-        /// Gets or sets key.
-        /// Key.
+        /// Gets or sets endpoint.
         /// </summary>
-        [JsonPropertyName("key")]
-        public string Key { get; set; }
+        [JsonPropertyName("endpoint")]
+        public InformationProtectionConfiguration Endpoint { get; set; }
     
         /// <summary>
-        /// Gets or sets value.
-        /// Value.
+        /// Gets or sets exchange.
         /// </summary>
-        [JsonPropertyName("value")]
-        public string Value { get; set; }
+        [JsonPropertyName("exchange")]
+        public InformationProtectionConfiguration Exchange { get; set; }
+    
+        /// <summary>
+        /// Gets or sets oneDrive.
+        /// </summary>
+        [JsonPropertyName("oneDrive")]
+        public InformationProtectionConfiguration OneDrive { get; set; }
+    
+        /// <summary>
+        /// Gets or sets sharePoint.
+        /// </summary>
+        [JsonPropertyName("sharePoint")]
+        public InformationProtectionConfiguration SharePoint { get; set; }
+    
+        /// <summary>
+        /// Gets or sets teams.
+        /// </summary>
+        [JsonPropertyName("teams")]
+        public InformationProtectionConfiguration Teams { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

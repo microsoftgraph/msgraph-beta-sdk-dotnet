@@ -37,6 +37,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets task folders.
         /// </summary>
+        [Obsolete("The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/")]
         [JsonPropertyName("taskFolders")]
         public IOutlookUserTaskFoldersCollectionPage TaskFolders { get; set; }
 
@@ -50,6 +51,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets task groups.
         /// </summary>
+        [Obsolete("The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/")]
         [JsonPropertyName("taskGroups")]
         public IOutlookUserTaskGroupsCollectionPage TaskGroups { get; set; }
 
@@ -63,6 +65,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets tasks.
         /// </summary>
+        [Obsolete("The Outlook tasks API is deprecated and will stop returning data on February 20, 2023. Please use the new To Do API. For more details, please visit https://developer.microsoft.com/en-us/office/blogs/announcing-the-general-availability-of-microsoft-to-do-apis-on-graph/")]
         [JsonPropertyName("tasks")]
         public IOutlookUserTasksCollectionPage Tasks { get; set; }
 

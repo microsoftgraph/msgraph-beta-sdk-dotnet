@@ -23,18 +23,21 @@ namespace Microsoft.Graph.DeviceManagementNamespace
 
         /// <summary>
         /// Gets or sets aggregation.
+        /// Indicates the built-in aggregation methods. The possible values are: count, percentage, affectedCloudPcCount, affectedCloudPcPercentage, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("aggregation")]
         public AggregationType? Aggregation { get; set; }
     
         /// <summary>
         /// Gets or sets operator.
+        /// Indicates the built-in operator. The possible values are: greaterOrEqual, equal, greater, less, lessOrEqual, notEqual, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("operator")]
         public OperatorType? Operator { get; set; }
     
         /// <summary>
         /// Gets or sets target.
+        /// The target threshold value.
         /// </summary>
         [JsonPropertyName("target")]
         public Int32? Target { get; set; }
