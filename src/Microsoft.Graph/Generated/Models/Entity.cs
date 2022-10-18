@@ -280,6 +280,7 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.cloudPC" => new CloudPC(),
                 "#microsoft.graph.cloudPcAuditEvent" => new CloudPcAuditEvent(),
                 "#microsoft.graph.cloudPCConnectivityIssue" => new CloudPCConnectivityIssue(),
+                "#microsoft.graph.cloudPcCrossCloudGovernmentOrganizationMapping" => new CloudPcCrossCloudGovernmentOrganizationMapping(),
                 "#microsoft.graph.cloudPcDeviceImage" => new CloudPcDeviceImage(),
                 "#microsoft.graph.cloudPcExportJob" => new CloudPcExportJob(),
                 "#microsoft.graph.cloudPcExternalPartnerSetting" => new CloudPcExternalPartnerSetting(),

@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AuthenticationMethodsPolicy>("authenticationMethodsPolicy"); }
             set { BackingStore?.Set("authenticationMethodsPolicy", value); }
         }
-        /// <summary>The authenticationStrengthPolicies property</summary>
+        /// <summary>The authentication method combinations that are to be used in scenarios defined by Azure AD Conditional Access.</summary>
         public List<AuthenticationStrengthPolicy> AuthenticationStrengthPolicies {
             get { return BackingStore?.Get<List<AuthenticationStrengthPolicy>>("authenticationStrengthPolicies"); }
             set { BackingStore?.Set("authenticationStrengthPolicies", value); }

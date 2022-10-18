@@ -1,14 +1,24 @@
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions.Store;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    public class ActivityStatisticsCollectionResponse : BaseCollectionPaginationCountResponse, IParsable {
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    public class ActivityStatisticsCollectionResponse : BaseCollectionPaginationCountResponse, IBackedModel, IParsable {
+        /// <summary>Stores model information.</summary>
+        public IBackingStore BackingStore { get; private set; }
         /// <summary>The value property</summary>
         public List<ActivityStatistics> Value {
             get { return BackingStore?.Get<List<ActivityStatistics>>("value"); }
             set { BackingStore?.Set("value", value); }
+        }
+        /// <summary>
+        /// Instantiates a new ActivityStatisticsCollectionResponse and sets the default values.
+        /// </summary>
+        public ActivityStatisticsCollectionResponse() : base() {
+            BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

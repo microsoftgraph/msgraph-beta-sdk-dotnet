@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<AuthenticationContextClassReference>>("authenticationContextClassReferences"); }
             set { BackingStore?.Set("authenticationContextClassReferences", value); }
         }
-        /// <summary>The authenticationStrengths property</summary>
+        /// <summary>Defines the authentication strength policies, valid authentication method combinations, and authentication method mode details that can be required by a conditional access policy .</summary>
         public AuthenticationStrengthRoot AuthenticationStrengths {
             get { return BackingStore?.Get<AuthenticationStrengthRoot>("authenticationStrengths"); }
             set { BackingStore?.Set("authenticationStrengths", value); }

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class PinnedChatMessageInfo : Entity, IParsable {
         /// <summary>Represents details about the chat message that is pinned.</summary>
         public ChatMessage Message {

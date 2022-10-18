@@ -67,15 +67,14 @@ namespace Microsoft.Graph.Beta.Applications.Item.Synchronization.Templates.Item.
         /// Invoke function functions
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<FunctionsResponse> GetAsync(Action<FunctionsRequestBuilderGetRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<FunctionsResponse> GetAsync(Action<FunctionsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<FunctionsResponse>(requestInfo, FunctionsResponse.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<FunctionsResponse>(requestInfo, FunctionsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>Invoke function functions</summary>
         public class FunctionsRequestBuilderGetQueryParameters {

@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public enum IosNotificationPreviewVisibility {
         /// <summary>Notification preview settings will not be overwritten.</summary>
         NotConfigured,

@@ -5,15 +5,14 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class AuthenticationCombinationConfiguration : Entity, IParsable {
-        /// <summary>The appliesToCombinations property</summary>
+        /// <summary>Which authentication method combinations this configuration applies to. Must be an allowedCombinations object that&apos;s defined for the authenticationStrengthPolicy. The only possible value for fido2combinationConfigurations is &apos;fido2&apos;.</summary>
         public List<AuthenticationMethodModes?> AppliesToCombinations {
             get { return BackingStore?.Get<List<AuthenticationMethodModes?>>("appliesToCombinations"); }
             set { BackingStore?.Set("appliesToCombinations", value); }
         }
         /// <summary>
-        /// Instantiates a new authenticationCombinationConfiguration and sets the default values.
+        /// Instantiates a new AuthenticationCombinationConfiguration and sets the default values.
         /// </summary>
         public AuthenticationCombinationConfiguration() : base() {
             OdataType = "#microsoft.graph.authenticationCombinationConfiguration";

@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the assignments property of the microsoft.graph.iosLobAppProvisioningConfiguration entity.</summary>
     public class IosLobAppProvisioningConfigurationAssignmentCollectionResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<IosLobAppProvisioningConfigurationAssignment> Value {

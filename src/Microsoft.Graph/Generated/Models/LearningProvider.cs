@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class LearningProvider : Entity, IParsable {
         /// <summary>The display name that appears in Viva Learning. Required.</summary>
         public string DisplayName {
@@ -47,7 +46,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("squareLogoWebUrlForLightTheme", value); }
         }
         /// <summary>
-        /// Instantiates a new learningProvider and sets the default values.
+        /// Instantiates a new LearningProvider and sets the default values.
         /// </summary>
         public LearningProvider() : base() {
             OdataType = "#microsoft.graph.learningProvider";

@@ -4,49 +4,49 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.DeviceManagement {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class AlertRecord : Entity, IParsable {
-        /// <summary>The alertImpact property</summary>
+        /// <summary>The impact of the alert event. Consists of a number followed by the aggregation type. For example, 6 Count and 12 AffectedCloudPcPercentage.</summary>
         public Microsoft.Graph.Beta.Models.DeviceManagement.AlertImpact AlertImpact {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagement.AlertImpact>("alertImpact"); }
             set { BackingStore?.Set("alertImpact", value); }
         }
-        /// <summary>The alertRuleId property</summary>
+        /// <summary>The corresponding ID of the alert rule.</summary>
         public string AlertRuleId {
             get { return BackingStore?.Get<string>("alertRuleId"); }
             set { BackingStore?.Set("alertRuleId", value); }
         }
-        /// <summary>The alertRuleTemplate property</summary>
+        /// <summary>The rule template of the alert event. The possible values are: cloudPcProvisionScenario, cloudPcImageUploadScenario, cloudPcOnPremiseNetworkConnectionCheckScenario, unknownFutureValue.</summary>
         public Microsoft.Graph.Beta.Models.DeviceManagement.AlertRuleTemplate? AlertRuleTemplate {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagement.AlertRuleTemplate?>("alertRuleTemplate"); }
             set { BackingStore?.Set("alertRuleTemplate", value); }
         }
-        /// <summary>The detectedDateTime property</summary>
+        /// <summary>The date and time when the alert event was detected. The Timestamp type represents date and time information using ISO 8601 format. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? DetectedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("detectedDateTime"); }
             set { BackingStore?.Set("detectedDateTime", value); }
         }
-        /// <summary>The displayName property</summary>
+        /// <summary>The display name of the alert record.</summary>
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
-        /// <summary>The lastUpdatedDateTime property</summary>
+        /// <summary>The date and time when the alert record was last updated. The Timestamp type represents date and time information using ISO 8601 format. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? LastUpdatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastUpdatedDateTime"); }
             set { BackingStore?.Set("lastUpdatedDateTime", value); }
         }
-        /// <summary>The resolvedDateTime property</summary>
+        /// <summary>The date and time when the alert event was resolved. The Timestamp type represents date and time information using ISO 8601 format. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? ResolvedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("resolvedDateTime"); }
             set { BackingStore?.Set("resolvedDateTime", value); }
         }
-        /// <summary>The severity property</summary>
+        /// <summary>The severity of the alert event. The possible values are: unknown, informational, warning, critical, unknownFutureValue.</summary>
         public RuleSeverityType? Severity {
             get { return BackingStore?.Get<RuleSeverityType?>("severity"); }
             set { BackingStore?.Set("severity", value); }
         }
-        /// <summary>The status property</summary>
+        /// <summary>The status of the alert record. The possible values are: active, resolved, unknownFutureValue.</summary>
         public AlertStatusType? Status {
             get { return BackingStore?.Get<AlertStatusType?>("status"); }
             set { BackingStore?.Set("status", value); }

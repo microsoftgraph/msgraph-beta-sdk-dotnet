@@ -10,5 +10,6 @@ namespace Microsoft.Graph.Beta.Models {
         PhoneUser,
         UnknownFutureValue,
         EmailUser,
+        AzureCommunicationServicesUser,
     }
 }

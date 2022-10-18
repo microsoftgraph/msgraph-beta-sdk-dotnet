@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
             get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
             set { BackingStore?.Set("additionalData", value); }
         }
-        /// <summary>The aggregation property</summary>
+        /// <summary>Indicates the built-in aggregation methods. The possible values are: count, percentage, affectedCloudPcCount, affectedCloudPcPercentage, unknownFutureValue.</summary>
         public AggregationType? Aggregation {
             get { return BackingStore?.Get<AggregationType?>("aggregation"); }
             set { BackingStore?.Set("aggregation", value); }
@@ -23,12 +23,12 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
-        /// <summary>The operator property</summary>
+        /// <summary>Indicates the built-in operator. The possible values are: greaterOrEqual, equal, greater, less, lessOrEqual, notEqual, unknownFutureValue.</summary>
         public OperatorType? Operator {
             get { return BackingStore?.Get<OperatorType?>("operator"); }
             set { BackingStore?.Set("operator", value); }
         }
-        /// <summary>The target property</summary>
+        /// <summary>The target threshold value.</summary>
         public int? Target {
             get { return BackingStore?.Get<int?>("target"); }
             set { BackingStore?.Set("target", value); }

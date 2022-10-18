@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class Fido2CombinationConfiguration : AuthenticationCombinationConfiguration, IParsable {
-        /// <summary>The allowedAAGUIDs property</summary>
+        /// <summary>A list of AAGUIDs allowed to be used as part of the specified authentication method combinations.</summary>
         public List<string> AllowedAAGUIDs {
             get { return BackingStore?.Get<List<string>>("allowedAAGUIDs"); }
             set { BackingStore?.Set("allowedAAGUIDs", value); }

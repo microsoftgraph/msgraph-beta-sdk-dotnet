@@ -67,15 +67,14 @@ namespace Microsoft.Graph.Beta.Me.GetManagedAppDiagnosticStatuses {
         /// Gets diagnostics validation status for a given user.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<GetManagedAppDiagnosticStatusesResponse> GetAsync(Action<GetManagedAppDiagnosticStatusesRequestBuilderGetRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<GetManagedAppDiagnosticStatusesResponse> GetAsync(Action<GetManagedAppDiagnosticStatusesRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<GetManagedAppDiagnosticStatusesResponse>(requestInfo, GetManagedAppDiagnosticStatusesResponse.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<GetManagedAppDiagnosticStatusesResponse>(requestInfo, GetManagedAppDiagnosticStatusesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>Gets diagnostics validation status for a given user.</summary>
         public class GetManagedAppDiagnosticStatusesRequestBuilderGetQueryParameters {

@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Monitoring.AlertRecords {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get alertRecords from deviceManagement
+        /// Get a list of the alertRecord objects and their properties.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<AlertRecordsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -100,18 +100,17 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Monitoring.AlertRecords {
             return requestInfo;
         }
         /// <summary>
-        /// Get alertRecords from deviceManagement
+        /// Get a list of the alertRecord objects and their properties.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<AlertRecordCollectionResponse> GetAsync(Action<AlertRecordsRequestBuilderGetRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<AlertRecordCollectionResponse> GetAsync(Action<AlertRecordsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<AlertRecordCollectionResponse>(requestInfo, AlertRecordCollectionResponse.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<AlertRecordCollectionResponse>(requestInfo, AlertRecordCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Provides operations to call the getPortalNotifications method.
@@ -124,18 +123,17 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Monitoring.AlertRecords {
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<AlertRecord> PostAsync(AlertRecord body, Action<AlertRecordsRequestBuilderPostRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<AlertRecord> PostAsync(AlertRecord body, Action<AlertRecordsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<AlertRecord>(requestInfo, AlertRecord.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<AlertRecord>(requestInfo, AlertRecord.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Get alertRecords from deviceManagement</summary>
+        /// <summary>Get a list of the alertRecord objects and their properties.</summary>
         public class AlertRecordsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

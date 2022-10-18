@@ -5,12 +5,12 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.DeviceManagement {
     public class Monitoring : Entity, IParsable {
-        /// <summary>The alertRecords property</summary>
+        /// <summary>The collection of records of alert events.</summary>
         public List<AlertRecord> AlertRecords {
             get { return BackingStore?.Get<List<AlertRecord>>("alertRecords"); }
             set { BackingStore?.Set("alertRecords", value); }
         }
-        /// <summary>The alertRules property</summary>
+        /// <summary>The collection of alert rules.</summary>
         public List<AlertRule> AlertRules {
             get { return BackingStore?.Get<List<AlertRule>>("alertRules"); }
             set { BackingStore?.Set("alertRules", value); }

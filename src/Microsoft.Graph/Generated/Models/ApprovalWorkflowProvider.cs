@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of approvalWorkflowProvider entities.</summary>
     public class ApprovalWorkflowProvider : Entity, IParsable {
         /// <summary>The businessFlows property</summary>
         public List<BusinessFlow> BusinessFlows {
@@ -27,7 +26,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("policyTemplates", value); }
         }
         /// <summary>
-        /// Instantiates a new approvalWorkflowProvider and sets the default values.
+        /// Instantiates a new ApprovalWorkflowProvider and sets the default values.
         /// </summary>
         public ApprovalWorkflowProvider() : base() {
             OdataType = "#microsoft.graph.approvalWorkflowProvider";

@@ -67,15 +67,14 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GetAssignedRoleDetails {
         /// Retrieves the assigned role definitions and role assignments of the currently authenticated user.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<DeviceAndAppManagementAssignedRoleDetails> GetAsync(Action<GetAssignedRoleDetailsRequestBuilderGetRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<DeviceAndAppManagementAssignedRoleDetails> GetAsync(Action<GetAssignedRoleDetailsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<DeviceAndAppManagementAssignedRoleDetails>(requestInfo, DeviceAndAppManagementAssignedRoleDetails.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<DeviceAndAppManagementAssignedRoleDetails>(requestInfo, DeviceAndAppManagementAssignedRoleDetails.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
         public class GetAssignedRoleDetailsRequestBuilderGetRequestConfiguration {

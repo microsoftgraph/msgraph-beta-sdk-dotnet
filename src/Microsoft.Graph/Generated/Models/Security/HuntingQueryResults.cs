@@ -18,12 +18,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
-        /// <summary>The results property</summary>
+        /// <summary>The results of the hunting query.</summary>
         public List<HuntingRowResult> Results {
             get { return BackingStore?.Get<List<HuntingRowResult>>("results"); }
             set { BackingStore?.Set("results", value); }
         }
-        /// <summary>The schema property</summary>
+        /// <summary>The schema for the response.</summary>
         public List<SinglePropertySchema> Schema {
             get { return BackingStore?.Get<List<SinglePropertySchema>>("schema"); }
             set { BackingStore?.Set("schema", value); }

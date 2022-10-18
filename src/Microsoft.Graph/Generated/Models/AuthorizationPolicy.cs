@@ -20,17 +20,17 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("allowEmailVerifiedUsersToJoinOrganization"); }
             set { BackingStore?.Set("allowEmailVerifiedUsersToJoinOrganization", value); }
         }
-        /// <summary>Indicates who can invite external users to the organization. Possible values are: none, adminsAndGuestInviters, adminsGuestInvitersAndAllMembers, everyone.  everyone is the default setting for all cloud environments except US Government. See more in the table below.</summary>
+        /// <summary>Indicates who can invite external users to the organization. Possible values are: none, adminsAndGuestInviters, adminsGuestInvitersAndAllMembers, everyone. everyone is the default setting for all cloud environments except US Government. See more in the table below.</summary>
         public Microsoft.Graph.Beta.Models.AllowInvitesFrom? AllowInvitesFrom {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AllowInvitesFrom?>("allowInvitesFrom"); }
             set { BackingStore?.Set("allowInvitesFrom", value); }
         }
-        /// <summary>The allowUserConsentForRiskyApps property</summary>
+        /// <summary>Indicates whether user consent for risky apps is allowed. We recommend to keep this as false.</summary>
         public bool? AllowUserConsentForRiskyApps {
             get { return BackingStore?.Get<bool?>("allowUserConsentForRiskyApps"); }
             set { BackingStore?.Set("allowUserConsentForRiskyApps", value); }
         }
-        /// <summary>To disable the use of MSOL PowerShell set this property to true. This will also disable user-based access to the legacy service endpoint used by MSOL PowerShell. This does not affect Azure AD Connect or Microsoft Graph.</summary>
+        /// <summary>To disable the use of the MSOnline PowerShell module set this property to true. This will also disable user-based access to the legacy service endpoint used by the MSOnline PowerShell module. This does not affect Azure AD Connect or Microsoft Graph.</summary>
         public bool? BlockMsolPowerShell {
             get { return BackingStore?.Get<bool?>("blockMsolPowerShell"); }
             set { BackingStore?.Set("blockMsolPowerShell", value); }

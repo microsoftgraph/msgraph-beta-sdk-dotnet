@@ -102,31 +102,29 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurationRestrictedApp
         /// Restricted apps violations for this account.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<RestrictedAppsViolationCollectionResponse> GetAsync(Action<DeviceConfigurationRestrictedAppsViolationsRequestBuilderGetRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<RestrictedAppsViolationCollectionResponse> GetAsync(Action<DeviceConfigurationRestrictedAppsViolationsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<RestrictedAppsViolationCollectionResponse>(requestInfo, RestrictedAppsViolationCollectionResponse.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<RestrictedAppsViolationCollectionResponse>(requestInfo, RestrictedAppsViolationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to deviceConfigurationRestrictedAppsViolations for deviceManagement
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<RestrictedAppsViolation> PostAsync(RestrictedAppsViolation body, Action<DeviceConfigurationRestrictedAppsViolationsRequestBuilderPostRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<RestrictedAppsViolation> PostAsync(RestrictedAppsViolation body, Action<DeviceConfigurationRestrictedAppsViolationsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<RestrictedAppsViolation>(requestInfo, RestrictedAppsViolation.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<RestrictedAppsViolation>(requestInfo, RestrictedAppsViolation.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>Restricted apps violations for this account.</summary>
         public class DeviceConfigurationRestrictedAppsViolationsRequestBuilderGetQueryParameters {

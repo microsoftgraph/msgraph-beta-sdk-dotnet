@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
             get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
             set { BackingStore?.Set("additionalData", value); }
         }
-        /// <summary>The aggregationType property</summary>
+        /// <summary>The aggregation type of the impact. The possible values are: count, percentage, affectedCloudPcCount, affectedCloudPcPercentage, unknownFutureValue.</summary>
         public Microsoft.Graph.Beta.Models.DeviceManagement.AggregationType? AggregationType {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagement.AggregationType?>("aggregationType"); }
             set { BackingStore?.Set("aggregationType", value); }
@@ -23,7 +23,7 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
-        /// <summary>The value property</summary>
+        /// <summary>The number value of the impact.</summary>
         public int? Value {
             get { return BackingStore?.Get<int?>("value"); }
             set { BackingStore?.Set("value", value); }

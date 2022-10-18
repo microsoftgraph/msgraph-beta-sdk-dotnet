@@ -5,17 +5,17 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class AuthenticationStrengthRoot : Entity, IParsable {
-        /// <summary>The authenticationCombinations property</summary>
+        /// <summary>A collection of all valid authentication method combinations in the system.</summary>
         public List<Microsoft.Graph.Beta.Models.AuthenticationMethodModes?> AuthenticationCombinations {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AuthenticationMethodModes?>>("authenticationCombinations"); }
             set { BackingStore?.Set("authenticationCombinations", value); }
         }
-        /// <summary>The authenticationMethodModes property</summary>
+        /// <summary>Names and descriptions of all valid authentication method modes in the system.</summary>
         public List<AuthenticationMethodModeDetail> AuthenticationMethodModes {
             get { return BackingStore?.Get<List<AuthenticationMethodModeDetail>>("authenticationMethodModes"); }
             set { BackingStore?.Set("authenticationMethodModes", value); }
         }
-        /// <summary>The policies property</summary>
+        /// <summary>A collection of authentication strength policies that exist for this tenant, including both built-in and custom policies.</summary>
         public List<AuthenticationStrengthPolicy> Policies {
             get { return BackingStore?.Get<List<AuthenticationStrengthPolicy>>("policies"); }
             set { BackingStore?.Set("policies", value); }
