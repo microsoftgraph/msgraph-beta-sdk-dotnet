@@ -11,7 +11,13 @@ and this project does NOT adhere to [Semantic Versioning](https://semver.org/spe
 
 ### Changed
 
-- Adds OdataDeltaLink property to collection responses for delta 
+## [5.13.0-preview] - 2022-10-18
+
+### Changed
+
+- Adds OdataDeltaLink property to collection responses for delta
+- Changes the ResponeHandler parameter in request builders to be a RequestOption in dotnet [#1858](https://github.com/microsoft/kiota/issues/1858)
+- Latest metadata updates from 18th October 2022 snapshot
  
 ## [5.12.0-preview] - 2022-09-28
 
