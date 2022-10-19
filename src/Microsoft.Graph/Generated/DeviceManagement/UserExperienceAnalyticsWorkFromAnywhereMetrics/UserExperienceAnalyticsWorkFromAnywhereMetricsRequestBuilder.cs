@@ -102,31 +102,29 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsWorkFromA
         /// User experience analytics work from anywhere metrics.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<UserExperienceAnalyticsWorkFromAnywhereMetricCollectionResponse> GetAsync(Action<UserExperienceAnalyticsWorkFromAnywhereMetricsRequestBuilderGetRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<UserExperienceAnalyticsWorkFromAnywhereMetricCollectionResponse> GetAsync(Action<UserExperienceAnalyticsWorkFromAnywhereMetricsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<UserExperienceAnalyticsWorkFromAnywhereMetricCollectionResponse>(requestInfo, UserExperienceAnalyticsWorkFromAnywhereMetricCollectionResponse.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<UserExperienceAnalyticsWorkFromAnywhereMetricCollectionResponse>(requestInfo, UserExperienceAnalyticsWorkFromAnywhereMetricCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to userExperienceAnalyticsWorkFromAnywhereMetrics for deviceManagement
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<UserExperienceAnalyticsWorkFromAnywhereMetric> PostAsync(UserExperienceAnalyticsWorkFromAnywhereMetric body, Action<UserExperienceAnalyticsWorkFromAnywhereMetricsRequestBuilderPostRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<UserExperienceAnalyticsWorkFromAnywhereMetric> PostAsync(UserExperienceAnalyticsWorkFromAnywhereMetric body, Action<UserExperienceAnalyticsWorkFromAnywhereMetricsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<UserExperienceAnalyticsWorkFromAnywhereMetric>(requestInfo, UserExperienceAnalyticsWorkFromAnywhereMetric.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<UserExperienceAnalyticsWorkFromAnywhereMetric>(requestInfo, UserExperienceAnalyticsWorkFromAnywhereMetric.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>User experience analytics work from anywhere metrics.</summary>
         public class UserExperienceAnalyticsWorkFromAnywhereMetricsRequestBuilderGetQueryParameters {

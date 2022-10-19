@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class PrintService : Entity, IParsable {
         /// <summary>Endpoints that can be used to access the service. Read-only. Nullable.</summary>
         public List<PrintServiceEndpoint> Endpoints {
@@ -12,7 +11,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("endpoints", value); }
         }
         /// <summary>
-        /// Instantiates a new printService and sets the default values.
+        /// Instantiates a new PrintService and sets the default values.
         /// </summary>
         public PrintService() : base() {
             OdataType = "#microsoft.graph.printService";

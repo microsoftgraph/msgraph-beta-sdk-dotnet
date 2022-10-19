@@ -102,31 +102,29 @@ namespace Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores {
         /// Get exactMatchDataStores from dataClassification
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<ExactMatchDataStoreCollectionResponse> GetAsync(Action<ExactMatchDataStoresRequestBuilderGetRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<ExactMatchDataStoreCollectionResponse> GetAsync(Action<ExactMatchDataStoresRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ExactMatchDataStoreCollectionResponse>(requestInfo, ExactMatchDataStoreCollectionResponse.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ExactMatchDataStoreCollectionResponse>(requestInfo, ExactMatchDataStoreCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to exactMatchDataStores for dataClassification
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<ExactMatchDataStore> PostAsync(ExactMatchDataStore body, Action<ExactMatchDataStoresRequestBuilderPostRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<ExactMatchDataStore> PostAsync(ExactMatchDataStore body, Action<ExactMatchDataStoresRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<ExactMatchDataStore>(requestInfo, ExactMatchDataStore.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<ExactMatchDataStore>(requestInfo, ExactMatchDataStore.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>Get exactMatchDataStores from dataClassification</summary>
         public class ExactMatchDataStoresRequestBuilderGetQueryParameters {

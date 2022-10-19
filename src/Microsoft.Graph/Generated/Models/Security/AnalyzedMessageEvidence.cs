@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
     public class AnalyzedMessageEvidence : AlertEvidence, IParsable {
-        /// <summary>Direction of the email relative to your network. The possible values are: Inbound, Outbound or Intraorg.</summary>
+        /// <summary>Direction of the email relative to your network. The possible values are: inbound, outbound or intraorg.</summary>
         public string AntiSpamDirection {
             get { return BackingStore?.Get<string>("antiSpamDirection"); }
             set { BackingStore?.Set("antiSpamDirection", value); }
@@ -15,12 +15,12 @@ namespace Microsoft.Graph.Beta.Models.Security {
             get { return BackingStore?.Get<long?>("attachmentsCount"); }
             set { BackingStore?.Set("attachmentsCount", value); }
         }
-        /// <summary>Delivery action of the email. The possible values are: Delivered, DeliveredAsSpam, Junked, Blocked, or Replaced.</summary>
+        /// <summary>Delivery action of the email. The possible values are: delivered, deliveredAsSpam, junked, blocked, or replaced.</summary>
         public string DeliveryAction {
             get { return BackingStore?.Get<string>("deliveryAction"); }
             set { BackingStore?.Set("deliveryAction", value); }
         }
-        /// <summary>Location where the email was delivered. The possible values are: Inbox, External, JunkFolder, Quarantine, Failed, Dropped, DeletedFolder or Forwarded.</summary>
+        /// <summary>Location where the email was delivered. The possible values are: inbox, external, junkFolder, quarantine, failed, dropped, deletedFolder or forwarded.</summary>
         public string DeliveryLocation {
             get { return BackingStore?.Get<string>("deliveryLocation"); }
             set { BackingStore?.Set("deliveryLocation", value); }

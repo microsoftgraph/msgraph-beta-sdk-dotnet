@@ -102,31 +102,29 @@ namespace Microsoft.Graph.Beta.DeviceManagement.CloudPCConnectivityIssues {
         /// The list of CloudPC Connectivity Issue.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<CloudPCConnectivityIssueCollectionResponse> GetAsync(Action<CloudPCConnectivityIssuesRequestBuilderGetRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<CloudPCConnectivityIssueCollectionResponse> GetAsync(Action<CloudPCConnectivityIssuesRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<CloudPCConnectivityIssueCollectionResponse>(requestInfo, CloudPCConnectivityIssueCollectionResponse.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<CloudPCConnectivityIssueCollectionResponse>(requestInfo, CloudPCConnectivityIssueCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to cloudPCConnectivityIssues for deviceManagement
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<CloudPCConnectivityIssue> PostAsync(CloudPCConnectivityIssue body, Action<CloudPCConnectivityIssuesRequestBuilderPostRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<CloudPCConnectivityIssue> PostAsync(CloudPCConnectivityIssue body, Action<CloudPCConnectivityIssuesRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<CloudPCConnectivityIssue>(requestInfo, CloudPCConnectivityIssue.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<CloudPCConnectivityIssue>(requestInfo, CloudPCConnectivityIssue.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>The list of CloudPC Connectivity Issue.</summary>
         public class CloudPCConnectivityIssuesRequestBuilderGetQueryParameters {

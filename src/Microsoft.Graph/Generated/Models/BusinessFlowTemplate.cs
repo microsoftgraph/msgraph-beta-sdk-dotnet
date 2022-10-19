@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of businessFlowTemplate entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class BusinessFlowTemplate : Entity, IParsable {
         /// <summary>The name of the business flow template</summary>
         public string DisplayName {

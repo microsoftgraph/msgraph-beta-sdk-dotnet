@@ -102,31 +102,29 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyMigrationReports.Item
         /// A list of unsupported group policy extensions inside the Group Policy Object.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<UnsupportedGroupPolicyExtensionCollectionResponse> GetAsync(Action<UnsupportedGroupPolicyExtensionsRequestBuilderGetRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<UnsupportedGroupPolicyExtensionCollectionResponse> GetAsync(Action<UnsupportedGroupPolicyExtensionsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<UnsupportedGroupPolicyExtensionCollectionResponse>(requestInfo, UnsupportedGroupPolicyExtensionCollectionResponse.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<UnsupportedGroupPolicyExtensionCollectionResponse>(requestInfo, UnsupportedGroupPolicyExtensionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to unsupportedGroupPolicyExtensions for deviceManagement
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<UnsupportedGroupPolicyExtension> PostAsync(UnsupportedGroupPolicyExtension body, Action<UnsupportedGroupPolicyExtensionsRequestBuilderPostRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<UnsupportedGroupPolicyExtension> PostAsync(UnsupportedGroupPolicyExtension body, Action<UnsupportedGroupPolicyExtensionsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<UnsupportedGroupPolicyExtension>(requestInfo, UnsupportedGroupPolicyExtension.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<UnsupportedGroupPolicyExtension>(requestInfo, UnsupportedGroupPolicyExtension.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>A list of unsupported group policy extensions inside the Group Policy Object.</summary>
         public class UnsupportedGroupPolicyExtensionsRequestBuilderGetQueryParameters {

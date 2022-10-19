@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Monitoring.AlertRecords.Item.SetPortalNotificatio
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action setPortalNotificationAsSent
+        /// Set a single portal notification status to published by modifying the **isPortalNotificationSent** property to `true` for the user specified in the request.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreatePostRequestInformation(Action<SetPortalNotificationAsSentRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
@@ -62,18 +62,17 @@ namespace Microsoft.Graph.Beta.Monitoring.AlertRecords.Item.SetPortalNotificatio
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action setPortalNotificationAsSent
+        /// Set a single portal notification status to published by modifying the **isPortalNotificationSent** property to `true` for the user specified in the request.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task PostAsync(Action<SetPortalNotificationAsSentRequestBuilderPostRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task PostAsync(Action<SetPortalNotificationAsSentRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreatePostRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, responseHandler, errorMapping, cancellationToken);
+            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
         public class SetPortalNotificationAsSentRequestBuilderPostRequestConfiguration {

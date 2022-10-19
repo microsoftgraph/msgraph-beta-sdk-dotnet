@@ -102,31 +102,29 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AdvancedThreatProtectionOnboardi
         /// Not yet documented
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<AdvancedThreatProtectionOnboardingDeviceSettingStateCollectionResponse> GetAsync(Action<AdvancedThreatProtectionOnboardingDeviceSettingStatesRequestBuilderGetRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<AdvancedThreatProtectionOnboardingDeviceSettingStateCollectionResponse> GetAsync(Action<AdvancedThreatProtectionOnboardingDeviceSettingStatesRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<AdvancedThreatProtectionOnboardingDeviceSettingStateCollectionResponse>(requestInfo, AdvancedThreatProtectionOnboardingDeviceSettingStateCollectionResponse.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<AdvancedThreatProtectionOnboardingDeviceSettingStateCollectionResponse>(requestInfo, AdvancedThreatProtectionOnboardingDeviceSettingStateCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to advancedThreatProtectionOnboardingDeviceSettingStates for deviceManagement
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<AdvancedThreatProtectionOnboardingDeviceSettingState> PostAsync(AdvancedThreatProtectionOnboardingDeviceSettingState body, Action<AdvancedThreatProtectionOnboardingDeviceSettingStatesRequestBuilderPostRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<AdvancedThreatProtectionOnboardingDeviceSettingState> PostAsync(AdvancedThreatProtectionOnboardingDeviceSettingState body, Action<AdvancedThreatProtectionOnboardingDeviceSettingStatesRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<AdvancedThreatProtectionOnboardingDeviceSettingState>(requestInfo, AdvancedThreatProtectionOnboardingDeviceSettingState.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<AdvancedThreatProtectionOnboardingDeviceSettingState>(requestInfo, AdvancedThreatProtectionOnboardingDeviceSettingState.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>Not yet documented</summary>
         public class AdvancedThreatProtectionOnboardingDeviceSettingStatesRequestBuilderGetQueryParameters {

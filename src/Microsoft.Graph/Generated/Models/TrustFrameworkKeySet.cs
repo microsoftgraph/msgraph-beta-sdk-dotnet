@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class TrustFrameworkKeySet : Entity, IParsable {
         /// <summary>A collection of the keys.</summary>
         public List<TrustFrameworkKey> Keys {
@@ -11,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("keys", value); }
         }
         /// <summary>
-        /// Instantiates a new TrustFrameworkKeySet and sets the default values.
+        /// Instantiates a new trustFrameworkKeySet and sets the default values.
         /// </summary>
         public TrustFrameworkKeySet() : base() {
             OdataType = "#microsoft.graph.trustFrameworkKeySet";

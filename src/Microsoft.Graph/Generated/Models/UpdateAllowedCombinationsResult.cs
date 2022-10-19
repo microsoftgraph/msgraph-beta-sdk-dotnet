@@ -11,19 +11,19 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
             set { BackingStore?.Set("additionalData", value); }
         }
-        /// <summary>The additionalInformation property</summary>
+        /// <summary>Information about why the updateAllowedCombinations action was successful or failed.</summary>
         public string AdditionalInformation {
             get { return BackingStore?.Get<string>("additionalInformation"); }
             set { BackingStore?.Set("additionalInformation", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The conditionalAccessReferences property</summary>
+        /// <summary>References to existing Conditional Access policies that use this authentication strength.</summary>
         public List<string> ConditionalAccessReferences {
             get { return BackingStore?.Get<List<string>>("conditionalAccessReferences"); }
             set { BackingStore?.Set("conditionalAccessReferences", value); }
         }
-        /// <summary>The currentCombinations property</summary>
+        /// <summary>The list of current authentication method combinations allowed by the authentication strength.</summary>
         public List<AuthenticationMethodModes?> CurrentCombinations {
             get { return BackingStore?.Get<List<AuthenticationMethodModes?>>("currentCombinations"); }
             set { BackingStore?.Set("currentCombinations", value); }
@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
-        /// <summary>The previousCombinations property</summary>
+        /// <summary>The list of former authentication method combinations allowed by the authentication strength before they were updated through the updateAllowedCombinations action.</summary>
         public List<AuthenticationMethodModes?> PreviousCombinations {
             get { return BackingStore?.Get<List<AuthenticationMethodModes?>>("previousCombinations"); }
             set { BackingStore?.Set("previousCombinations", value); }

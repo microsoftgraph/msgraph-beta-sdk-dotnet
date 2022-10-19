@@ -102,31 +102,29 @@ namespace Microsoft.Graph.Beta.DeviceManagement.CertificateConnectorDetails {
         /// Collection of certificate connector details, each associated with a corresponding Intune Certificate Connector.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<CertificateConnectorDetailsCollectionResponse> GetAsync(Action<CertificateConnectorDetailsRequestBuilderGetRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<CertificateConnectorDetailsCollectionResponse> GetAsync(Action<CertificateConnectorDetailsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<CertificateConnectorDetailsCollectionResponse>(requestInfo, CertificateConnectorDetailsCollectionResponse.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<CertificateConnectorDetailsCollectionResponse>(requestInfo, CertificateConnectorDetailsCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to certificateConnectorDetails for deviceManagement
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<Microsoft.Graph.Beta.Models.CertificateConnectorDetails> PostAsync(Microsoft.Graph.Beta.Models.CertificateConnectorDetails body, Action<CertificateConnectorDetailsRequestBuilderPostRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.CertificateConnectorDetails> PostAsync(Microsoft.Graph.Beta.Models.CertificateConnectorDetails body, Action<CertificateConnectorDetailsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.CertificateConnectorDetails>(requestInfo, Microsoft.Graph.Beta.Models.CertificateConnectorDetails.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.CertificateConnectorDetails>(requestInfo, Microsoft.Graph.Beta.Models.CertificateConnectorDetails.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>Collection of certificate connector details, each associated with a corresponding Intune Certificate Connector.</summary>
         public class CertificateConnectorDetailsRequestBuilderGetQueryParameters {

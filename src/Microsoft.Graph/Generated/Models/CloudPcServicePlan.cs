@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class CloudPcServicePlan : Entity, IParsable {
         /// <summary>The name for the service plan. Read-only.</summary>
         public string DisplayName {
@@ -37,7 +36,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("vCpuCount", value); }
         }
         /// <summary>
-        /// Instantiates a new cloudPcServicePlan and sets the default values.
+        /// Instantiates a new CloudPcServicePlan and sets the default values.
         /// </summary>
         public CloudPcServicePlan() : base() {
             OdataType = "#microsoft.graph.cloudPcServicePlan";

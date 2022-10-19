@@ -68,15 +68,14 @@ namespace Microsoft.Graph.Beta.Places.Item.Room {
         /// Get the item of type microsoft.graph.place as microsoft.graph.room
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<Microsoft.Graph.Beta.Models.Room> GetAsync(Action<RoomRequestBuilderGetRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<Microsoft.Graph.Beta.Models.Room> GetAsync(Action<RoomRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Room>(requestInfo, Microsoft.Graph.Beta.Models.Room.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Room>(requestInfo, Microsoft.Graph.Beta.Models.Room.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>Get the item of type microsoft.graph.place as microsoft.graph.room</summary>
         public class RoomRequestBuilderGetQueryParameters {

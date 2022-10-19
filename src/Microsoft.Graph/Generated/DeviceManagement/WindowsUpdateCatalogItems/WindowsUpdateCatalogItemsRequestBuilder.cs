@@ -102,31 +102,29 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsUpdateCatalogItems {
         /// A collection of windows update catalog items (fetaure updates item , quality updates item)
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<WindowsUpdateCatalogItemCollectionResponse> GetAsync(Action<WindowsUpdateCatalogItemsRequestBuilderGetRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<WindowsUpdateCatalogItemCollectionResponse> GetAsync(Action<WindowsUpdateCatalogItemsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<WindowsUpdateCatalogItemCollectionResponse>(requestInfo, WindowsUpdateCatalogItemCollectionResponse.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<WindowsUpdateCatalogItemCollectionResponse>(requestInfo, WindowsUpdateCatalogItemCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Create new navigation property to windowsUpdateCatalogItems for deviceManagement
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <param name="responseHandler">Response handler to use in place of the default response handling provided by the core service</param>
         /// </summary>
-        public async Task<WindowsUpdateCatalogItem> PostAsync(WindowsUpdateCatalogItem body, Action<WindowsUpdateCatalogItemsRequestBuilderPostRequestConfiguration> requestConfiguration = default, IResponseHandler responseHandler = default, CancellationToken cancellationToken = default) {
+        public async Task<WindowsUpdateCatalogItem> PostAsync(WindowsUpdateCatalogItem body, Action<WindowsUpdateCatalogItemsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
                 {"4XX", ODataError.CreateFromDiscriminatorValue},
                 {"5XX", ODataError.CreateFromDiscriminatorValue},
             };
-            return await RequestAdapter.SendAsync<WindowsUpdateCatalogItem>(requestInfo, WindowsUpdateCatalogItem.CreateFromDiscriminatorValue, responseHandler, errorMapping, cancellationToken);
+            return await RequestAdapter.SendAsync<WindowsUpdateCatalogItem>(requestInfo, WindowsUpdateCatalogItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>A collection of windows update catalog items (fetaure updates item , quality updates item)</summary>
         public class WindowsUpdateCatalogItemsRequestBuilderGetQueryParameters {

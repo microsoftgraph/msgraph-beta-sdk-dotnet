@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class Run : Entity, IParsable {
         /// <summary>The date time that the run completed. Value is null if the workflow hasn&apos;t completed. Optional.</summary>
         public DateTimeOffset? CompletedDateTime {

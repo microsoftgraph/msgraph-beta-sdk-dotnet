@@ -6,27 +6,27 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.DeviceManagement {
     /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class AlertRule : Entity, IParsable {
-        /// <summary>The alertRuleTemplate property</summary>
+        /// <summary>The rule template of the alert event. The possible values are: cloudPcProvisionScenario, cloudPcImageUploadScenario, cloudPcOnPremiseNetworkConnectionCheckScenario, unknownFutureValue.</summary>
         public Microsoft.Graph.Beta.Models.DeviceManagement.AlertRuleTemplate? AlertRuleTemplate {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagement.AlertRuleTemplate?>("alertRuleTemplate"); }
             set { BackingStore?.Set("alertRuleTemplate", value); }
         }
-        /// <summary>The description property</summary>
+        /// <summary>The rule description.</summary>
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
-        /// <summary>The displayName property</summary>
+        /// <summary>The display name of the rule.</summary>
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
-        /// <summary>The enabled property</summary>
+        /// <summary>The status of the rule that indicates whether the rule is enabled or disabled. If true, the rule is enabled; otherwise, the rule is disabled.</summary>
         public bool? Enabled {
             get { return BackingStore?.Get<bool?>("enabled"); }
             set { BackingStore?.Set("enabled", value); }
         }
-        /// <summary>The isSystemRule property</summary>
+        /// <summary>Indicates whether the rule is a system rule. If true, the rule is a system rule; otherwise, the rule is a custom defined rule and can be edited. System rules are built-in and only</summary>
         public bool? IsSystemRule {
             get { return BackingStore?.Get<bool?>("isSystemRule"); }
             set { BackingStore?.Set("isSystemRule", value); }

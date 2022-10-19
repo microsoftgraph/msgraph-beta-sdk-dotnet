@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class SignIn : Entity, IParsable {
         /// <summary>The application name displayed in the Azure Portal. Supports $filter (eq and startsWith operators only).</summary>
         public string AppDisplayName {
@@ -24,6 +25,16 @@ namespace Microsoft.Graph.Beta.Models {
         public List<AppliedAuthenticationEventListener> AppliedEventListeners {
             get { return BackingStore?.Get<List<AppliedAuthenticationEventListener>>("appliedEventListeners"); }
             set { BackingStore?.Set("appliedEventListeners", value); }
+        }
+        /// <summary>The authenticationAppDeviceDetails property</summary>
+        public Microsoft.Graph.Beta.Models.AuthenticationAppDeviceDetails AuthenticationAppDeviceDetails {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AuthenticationAppDeviceDetails>("authenticationAppDeviceDetails"); }
+            set { BackingStore?.Set("authenticationAppDeviceDetails", value); }
+        }
+        /// <summary>The authenticationAppPolicyEvaluationDetails property</summary>
+        public List<AuthenticationAppPolicyDetails> AuthenticationAppPolicyEvaluationDetails {
+            get { return BackingStore?.Get<List<AuthenticationAppPolicyDetails>>("authenticationAppPolicyEvaluationDetails"); }
+            set { BackingStore?.Set("authenticationAppPolicyEvaluationDetails", value); }
         }
         /// <summary>Contains a collection of values that represent the conditional access authentication contexts applied to the sign-in.</summary>
         public List<AuthenticationContext> AuthenticationContextClassReferences {
@@ -311,7 +322,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("userType", value); }
         }
         /// <summary>
-        /// Instantiates a new SignIn and sets the default values.
+        /// Instantiates a new signIn and sets the default values.
         /// </summary>
         public SignIn() : base() {
             OdataType = "#microsoft.graph.signIn";
@@ -333,6 +344,8 @@ namespace Microsoft.Graph.Beta.Models {
                 {"appId", n => { AppId = n.GetStringValue(); } },
                 {"appliedConditionalAccessPolicies", n => { AppliedConditionalAccessPolicies = n.GetCollectionOfObjectValues<AppliedConditionalAccessPolicy>(AppliedConditionalAccessPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"appliedEventListeners", n => { AppliedEventListeners = n.GetCollectionOfObjectValues<AppliedAuthenticationEventListener>(AppliedAuthenticationEventListener.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"authenticationAppDeviceDetails", n => { AuthenticationAppDeviceDetails = n.GetObjectValue<Microsoft.Graph.Beta.Models.AuthenticationAppDeviceDetails>(Microsoft.Graph.Beta.Models.AuthenticationAppDeviceDetails.CreateFromDiscriminatorValue); } },
+                {"authenticationAppPolicyEvaluationDetails", n => { AuthenticationAppPolicyEvaluationDetails = n.GetCollectionOfObjectValues<AuthenticationAppPolicyDetails>(AuthenticationAppPolicyDetails.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"authenticationContextClassReferences", n => { AuthenticationContextClassReferences = n.GetCollectionOfObjectValues<AuthenticationContext>(AuthenticationContext.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"authenticationDetails", n => { AuthenticationDetails = n.GetCollectionOfObjectValues<AuthenticationDetail>(AuthenticationDetail.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"authenticationMethodsUsed", n => { AuthenticationMethodsUsed = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
@@ -403,6 +416,8 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("appId", AppId);
             writer.WriteCollectionOfObjectValues<AppliedConditionalAccessPolicy>("appliedConditionalAccessPolicies", AppliedConditionalAccessPolicies);
             writer.WriteCollectionOfObjectValues<AppliedAuthenticationEventListener>("appliedEventListeners", AppliedEventListeners);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.AuthenticationAppDeviceDetails>("authenticationAppDeviceDetails", AuthenticationAppDeviceDetails);
+            writer.WriteCollectionOfObjectValues<AuthenticationAppPolicyDetails>("authenticationAppPolicyEvaluationDetails", AuthenticationAppPolicyEvaluationDetails);
             writer.WriteCollectionOfObjectValues<AuthenticationContext>("authenticationContextClassReferences", AuthenticationContextClassReferences);
             writer.WriteCollectionOfObjectValues<AuthenticationDetail>("authenticationDetails", AuthenticationDetails);
             writer.WriteCollectionOfPrimitiveValues<string>("authenticationMethodsUsed", AuthenticationMethodsUsed);

@@ -11,39 +11,39 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
             get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
             set { BackingStore?.Set("additionalData", value); }
         }
-        /// <summary>The alertImpact property</summary>
+        /// <summary>The associated alert impact.</summary>
         public Microsoft.Graph.Beta.Models.DeviceManagement.AlertImpact AlertImpact {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagement.AlertImpact>("alertImpact"); }
             set { BackingStore?.Set("alertImpact", value); }
         }
-        /// <summary>The alertRecordId property</summary>
+        /// <summary>The associated alert record ID.</summary>
         public string AlertRecordId {
             get { return BackingStore?.Get<string>("alertRecordId"); }
             set { BackingStore?.Set("alertRecordId", value); }
         }
-        /// <summary>The alertRuleId property</summary>
+        /// <summary>The associated alert rule ID.</summary>
         public string AlertRuleId {
             get { return BackingStore?.Get<string>("alertRuleId"); }
             set { BackingStore?.Set("alertRuleId", value); }
         }
-        /// <summary>The alertRuleName property</summary>
+        /// <summary>The associated alert rule name.</summary>
         public string AlertRuleName {
             get { return BackingStore?.Get<string>("alertRuleName"); }
             set { BackingStore?.Set("alertRuleName", value); }
         }
-        /// <summary>The alertRuleTemplate property</summary>
+        /// <summary>The associated alert rule template. The possible values are: cloudPcProvisionScenario, cloudPcImageUploadScenario, cloudPcOnPremiseNetworkConnectionCheckScenario, unknownFutureValue.</summary>
         public Microsoft.Graph.Beta.Models.DeviceManagement.AlertRuleTemplate? AlertRuleTemplate {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagement.AlertRuleTemplate?>("alertRuleTemplate"); }
             set { BackingStore?.Set("alertRuleTemplate", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The id property</summary>
+        /// <summary>The unique identifier for the portal notification.</summary>
         public string Id {
             get { return BackingStore?.Get<string>("id"); }
             set { BackingStore?.Set("id", value); }
         }
-        /// <summary>The isPortalNotificationSent property</summary>
+        /// <summary>If true, the portal notification has already been sent for the user; otherwise, the portal notification hasn&apos;t been sent yet.</summary>
         public bool? IsPortalNotificationSent {
             get { return BackingStore?.Get<bool?>("isPortalNotificationSent"); }
             set { BackingStore?.Set("isPortalNotificationSent", value); }
@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
-        /// <summary>The severity property</summary>
+        /// <summary>The associated alert rule severity. The possible values are: unknown, informational, warning, critical, unknownFutureValue.</summary>
         public RuleSeverityType? Severity {
             get { return BackingStore?.Get<RuleSeverityType?>("severity"); }
             set { BackingStore?.Set("severity", value); }
