@@ -91,7 +91,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("unitPrice", value); }
         }
         /// <summary>
-        /// Instantiates a new item and sets the default values.
+        /// Instantiates a new Item and sets the default values.
         /// </summary>
         public Item() : base() {
             OdataType = "#microsoft.graph.item";

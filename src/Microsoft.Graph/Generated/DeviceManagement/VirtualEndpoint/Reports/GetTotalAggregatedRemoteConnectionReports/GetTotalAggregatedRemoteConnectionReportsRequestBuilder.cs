@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetTotal
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action getTotalAggregatedRemoteConnectionReports
+        /// Get the total aggregated remote connection usage of a Cloud PC during a given time span.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetTotal
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action getTotalAggregatedRemoteConnectionReports
+        /// Get the total aggregated remote connection usage of a Cloud PC during a given time span.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

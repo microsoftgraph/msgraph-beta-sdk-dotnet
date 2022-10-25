@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class PurchaseInvoice : Entity, IParsable {
         /// <summary>The buyFromAddress property</summary>
         public PostalAddressType BuyFromAddress {
@@ -153,7 +152,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("vendorNumber", value); }
         }
         /// <summary>
-        /// Instantiates a new purchaseInvoice and sets the default values.
+        /// Instantiates a new PurchaseInvoice and sets the default values.
         /// </summary>
         public PurchaseInvoice() : base() {
             OdataType = "#microsoft.graph.purchaseInvoice";

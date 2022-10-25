@@ -5,42 +5,42 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class CloudPcExportJob : Entity, IParsable {
-        /// <summary>The expirationDateTime property</summary>
+        /// <summary>The date time when the export job expires.</summary>
         public DateTimeOffset? ExpirationDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
             set { BackingStore?.Set("expirationDateTime", value); }
         }
-        /// <summary>The exportJobStatus property</summary>
+        /// <summary>The status of the export job.The possible values are: notStarted, inProgress, completed, unknownFutureValue. Read-only.</summary>
         public CloudPcExportJobStatus? ExportJobStatus {
             get { return BackingStore?.Get<CloudPcExportJobStatus?>("exportJobStatus"); }
             set { BackingStore?.Set("exportJobStatus", value); }
         }
-        /// <summary>The exportUrl property</summary>
+        /// <summary>The storage account url of the exported report, it can be used to download the file.</summary>
         public string ExportUrl {
             get { return BackingStore?.Get<string>("exportUrl"); }
             set { BackingStore?.Set("exportUrl", value); }
         }
-        /// <summary>The filter property</summary>
+        /// <summary>The filter applied on the report.</summary>
         public string Filter {
             get { return BackingStore?.Get<string>("filter"); }
             set { BackingStore?.Set("filter", value); }
         }
-        /// <summary>The format property</summary>
+        /// <summary>The format of the exported report.</summary>
         public string Format {
             get { return BackingStore?.Get<string>("format"); }
             set { BackingStore?.Set("format", value); }
         }
-        /// <summary>The reportName property</summary>
+        /// <summary>The report name.The possible values are: remoteConnectionHistoricalReports, dailyAggregatedRemoteConnectionReports, totalAggregatedRemoteConnectionReports, unknownFutureValue.</summary>
         public CloudPcReportName? ReportName {
             get { return BackingStore?.Get<CloudPcReportName?>("reportName"); }
             set { BackingStore?.Set("reportName", value); }
         }
-        /// <summary>The requestDateTime property</summary>
+        /// <summary>The date time when the export job was requested.</summary>
         public DateTimeOffset? RequestDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("requestDateTime"); }
             set { BackingStore?.Set("requestDateTime", value); }
         }
-        /// <summary>The select property</summary>
+        /// <summary>The selected columns of the report.</summary>
         public List<string> Select {
             get { return BackingStore?.Get<List<string>>("select"); }
             set { BackingStore?.Set("select", value); }

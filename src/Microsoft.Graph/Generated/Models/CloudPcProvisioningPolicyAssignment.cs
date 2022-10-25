@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class CloudPcProvisioningPolicyAssignment : Entity, IParsable {
         /// <summary>The assignment target for the provisioning policy. Currently, the only target supported for this policy is a user group. For details, see cloudPcManagementGroupAssignmentTarget.</summary>
         public CloudPcManagementAssignmentTarget Target {
@@ -12,7 +11,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("target", value); }
         }
         /// <summary>
-        /// Instantiates a new cloudPcProvisioningPolicyAssignment and sets the default values.
+        /// Instantiates a new CloudPcProvisioningPolicyAssignment and sets the default values.
         /// </summary>
         public CloudPcProvisioningPolicyAssignment() : base() {
             OdataType = "#microsoft.graph.cloudPcProvisioningPolicyAssignment";

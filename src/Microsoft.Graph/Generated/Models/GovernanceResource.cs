@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("type", value); }
         }
         /// <summary>
-        /// Instantiates a new governanceResource and sets the default values.
+        /// Instantiates a new GovernanceResource and sets the default values.
         /// </summary>
         public GovernanceResource() : base() {
             OdataType = "#microsoft.graph.governanceResource";

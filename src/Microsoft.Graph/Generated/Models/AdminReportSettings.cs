@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("displayConcealedNames", value); }
         }
         /// <summary>
-        /// Instantiates a new AdminReportSettings and sets the default values.
+        /// Instantiates a new adminReportSettings and sets the default values.
         /// </summary>
         public AdminReportSettings() : base() {
             OdataType = "#microsoft.graph.adminReportSettings";

@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>A class containing the properties used for Assignment Filter.</summary>
     public class DeviceAndAppManagementAssignmentFilter : Entity, IParsable {
         /// <summary>Creation time of the Assignment Filter.</summary>
         public DateTimeOffset? CreatedDateTime {
@@ -48,7 +47,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("rule", value); }
         }
         /// <summary>
-        /// Instantiates a new deviceAndAppManagementAssignmentFilter and sets the default values.
+        /// Instantiates a new DeviceAndAppManagementAssignmentFilter and sets the default values.
         /// </summary>
         public DeviceAndAppManagementAssignmentFilter() : base() {
             OdataType = "#microsoft.graph.deviceAndAppManagementAssignmentFilter";

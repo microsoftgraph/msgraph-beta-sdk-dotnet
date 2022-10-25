@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("wrapText", value); }
         }
         /// <summary>
-        /// Instantiates a new workbookRangeFormat and sets the default values.
+        /// Instantiates a new WorkbookRangeFormat and sets the default values.
         /// </summary>
         public WorkbookRangeFormat() : base() {
             OdataType = "#microsoft.graph.workbookRangeFormat";

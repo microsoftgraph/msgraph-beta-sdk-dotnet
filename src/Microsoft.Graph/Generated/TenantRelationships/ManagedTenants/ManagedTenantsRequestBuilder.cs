@@ -10,6 +10,13 @@ using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.CredentialUserRegi
 using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.DeviceCompliancePolicySettingStateSummaries;
 using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedDeviceCompliances;
 using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedDeviceComplianceTrends;
+using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantAlertLogs;
+using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantAlertRuleDefinitions;
+using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantAlertRules;
+using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantAlerts;
+using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantApiNotifications;
+using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantEmailNotifications;
+using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagedTenantTicketingEndpoints;
 using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementActions;
 using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementActionTenantDeploymentStatuses;
 using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementIntents;
@@ -75,6 +82,34 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants {
         /// <summary>The managedDeviceComplianceTrends property</summary>
         public ManagedDeviceComplianceTrendsRequestBuilder ManagedDeviceComplianceTrends { get =>
             new ManagedDeviceComplianceTrendsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The managedTenantAlertLogs property</summary>
+        public ManagedTenantAlertLogsRequestBuilder ManagedTenantAlertLogs { get =>
+            new ManagedTenantAlertLogsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The managedTenantAlertRuleDefinitions property</summary>
+        public ManagedTenantAlertRuleDefinitionsRequestBuilder ManagedTenantAlertRuleDefinitions { get =>
+            new ManagedTenantAlertRuleDefinitionsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The managedTenantAlertRules property</summary>
+        public ManagedTenantAlertRulesRequestBuilder ManagedTenantAlertRules { get =>
+            new ManagedTenantAlertRulesRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The managedTenantAlerts property</summary>
+        public ManagedTenantAlertsRequestBuilder ManagedTenantAlerts { get =>
+            new ManagedTenantAlertsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The managedTenantApiNotifications property</summary>
+        public ManagedTenantApiNotificationsRequestBuilder ManagedTenantApiNotifications { get =>
+            new ManagedTenantApiNotificationsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The managedTenantEmailNotifications property</summary>
+        public ManagedTenantEmailNotificationsRequestBuilder ManagedTenantEmailNotifications { get =>
+            new ManagedTenantEmailNotificationsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The managedTenantTicketingEndpoints property</summary>
+        public ManagedTenantTicketingEndpointsRequestBuilder ManagedTenantTicketingEndpoints { get =>
+            new ManagedTenantTicketingEndpointsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The managementActions property</summary>
         public ManagementActionsRequestBuilder ManagementActions { get =>

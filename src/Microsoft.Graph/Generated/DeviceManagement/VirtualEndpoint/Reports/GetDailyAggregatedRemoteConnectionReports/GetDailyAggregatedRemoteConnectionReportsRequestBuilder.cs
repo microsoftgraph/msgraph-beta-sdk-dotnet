@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetDaily
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action getDailyAggregatedRemoteConnectionReports
+        /// Get the daily aggregated remote connection reports, such as round trip time, available bandwidth, and so on, in a given period.
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetDaily
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action getDailyAggregatedRemoteConnectionReports
+        /// Get the daily aggregated remote connection reports, such as round trip time, available bandwidth, and so on, in a given period.
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class ManagedTenantTicketingEndpoint : Entity, IParsable {
         /// <summary>The createdByUserId property</summary>
         public string CreatedByUserId {
@@ -41,7 +42,7 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
             set { BackingStore?.Set("phoneNumber", value); }
         }
         /// <summary>
-        /// Instantiates a new ManagedTenantTicketingEndpoint and sets the default values.
+        /// Instantiates a new managedTenantTicketingEndpoint and sets the default values.
         /// </summary>
         public ManagedTenantTicketingEndpoint() : base() {
             OdataType = "#microsoft.graph.managedTenants.managedTenantTicketingEndpoint";

@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class JournalLine : Entity, IParsable {
         /// <summary>The account property</summary>
         public Microsoft.Graph.Beta.Models.Account Account {
@@ -68,7 +67,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("postingDate", value); }
         }
         /// <summary>
-        /// Instantiates a new journalLine and sets the default values.
+        /// Instantiates a new JournalLine and sets the default values.
         /// </summary>
         public JournalLine() : base() {
             OdataType = "#microsoft.graph.journalLine";

@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public enum UserExperienceAnalyticsAnomalyType {
         /// <summary>Indicates the detected anomaly is due to certain devices.</summary>
         Device,

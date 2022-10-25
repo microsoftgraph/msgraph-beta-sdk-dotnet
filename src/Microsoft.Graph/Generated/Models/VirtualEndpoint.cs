@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<CloudPcProvisioningPolicy>>("provisioningPolicies"); }
             set { BackingStore?.Set("provisioningPolicies", value); }
         }
-        /// <summary>The reports property</summary>
+        /// <summary>Cloud PC related reports.</summary>
         public CloudPcReports Reports {
             get { return BackingStore?.Get<CloudPcReports>("reports"); }
             set { BackingStore?.Set("reports", value); }
@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("userSettings", value); }
         }
         /// <summary>
-        /// Instantiates a new virtualEndpoint and sets the default values.
+        /// Instantiates a new VirtualEndpoint and sets the default values.
         /// </summary>
         public VirtualEndpoint() : base() {
             OdataType = "#microsoft.graph.virtualEndpoint";

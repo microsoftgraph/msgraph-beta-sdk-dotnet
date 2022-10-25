@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class SalesCreditMemo : Entity, IParsable {
         /// <summary>The billingPostalAddress property</summary>
         public PostalAddressType BillingPostalAddress {
@@ -168,7 +167,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("totalTaxAmount", value); }
         }
         /// <summary>
-        /// Instantiates a new salesCreditMemo and sets the default values.
+        /// Instantiates a new SalesCreditMemo and sets the default values.
         /// </summary>
         public SalesCreditMemo() : base() {
             OdataType = "#microsoft.graph.salesCreditMemo";

@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>
-        /// Instantiates a new itemCategory and sets the default values.
+        /// Instantiates a new ItemCategory and sets the default values.
         /// </summary>
         public ItemCategory() : base() {
             OdataType = "#microsoft.graph.itemCategory";

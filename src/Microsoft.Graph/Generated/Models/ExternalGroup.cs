@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class ExternalGroup : Entity, IParsable {
         /// <summary>The description property</summary>
         public string Description {
@@ -17,7 +16,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>
-        /// Instantiates a new externalGroup and sets the default values.
+        /// Instantiates a new ExternalGroup and sets the default values.
         /// </summary>
         public ExternalGroup() : base() {
             OdataType = "#microsoft.graph.externalGroup";

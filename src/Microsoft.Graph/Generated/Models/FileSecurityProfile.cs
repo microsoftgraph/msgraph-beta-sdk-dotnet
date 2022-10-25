@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class FileSecurityProfile : Entity, IParsable {
         /// <summary>The activityGroupNames property</summary>
         public List<string> ActivityGroupNames {
@@ -87,7 +86,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("vulnerabilityStates", value); }
         }
         /// <summary>
-        /// Instantiates a new fileSecurityProfile and sets the default values.
+        /// Instantiates a new FileSecurityProfile and sets the default values.
         /// </summary>
         public FileSecurityProfile() : base() {
             OdataType = "#microsoft.graph.fileSecurityProfile";

@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class SalesInvoiceLine : Entity, IParsable {
         /// <summary>The account property</summary>
         public Microsoft.Graph.Beta.Models.Account Account {
@@ -128,7 +127,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("unitPrice", value); }
         }
         /// <summary>
-        /// Instantiates a new salesInvoiceLine and sets the default values.
+        /// Instantiates a new SalesInvoiceLine and sets the default values.
         /// </summary>
         public SalesInvoiceLine() : base() {
             OdataType = "#microsoft.graph.salesInvoiceLine";
