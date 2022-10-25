@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports {
             return requestInfo;
         }
         /// <summary>
-        /// Get reports from deviceManagement
+        /// Cloud PC related reports.
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
         public RequestInformation CreateGetRequestInformation(Action<ReportsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -140,7 +140,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get reports from deviceManagement
+        /// Cloud PC related reports.
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
@@ -197,7 +197,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports {
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>Get reports from deviceManagement</summary>
+        /// <summary>Cloud PC related reports.</summary>
         public class ReportsRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

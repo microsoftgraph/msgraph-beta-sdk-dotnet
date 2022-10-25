@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class ConnectionOperation : Entity, IParsable {
         /// <summary>The error property</summary>
         public PublicError Error {
@@ -16,7 +17,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>
-        /// Instantiates a new ConnectionOperation and sets the default values.
+        /// Instantiates a new connectionOperation and sets the default values.
         /// </summary>
         public ConnectionOperation() : base() {
             OdataType = "#microsoft.graph.connectionOperation";

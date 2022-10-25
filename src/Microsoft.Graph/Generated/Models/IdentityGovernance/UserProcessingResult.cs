@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class UserProcessingResult : Entity, IParsable {
         /// <summary>The date time that the workflow execution for a user completed. Value is null if the workflow hasn&apos;t completed. Supports $filter(lt, gt) and $orderby.</summary>
         public DateTimeOffset? CompletedDateTime {

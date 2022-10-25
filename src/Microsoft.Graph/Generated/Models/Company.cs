@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class Company : Entity, IParsable {
         /// <summary>The accounts property</summary>
         public List<Account> Accounts {
@@ -201,7 +202,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("vendors", value); }
         }
         /// <summary>
-        /// Instantiates a new Company and sets the default values.
+        /// Instantiates a new company and sets the default values.
         /// </summary>
         public Company() : base() {
             OdataType = "#microsoft.graph.company";

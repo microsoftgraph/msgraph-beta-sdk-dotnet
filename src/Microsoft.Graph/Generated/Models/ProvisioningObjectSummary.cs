@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class ProvisioningObjectSummary : Entity, IParsable {
         /// <summary>The action property</summary>
         public string Action {
@@ -97,7 +96,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("tenantId", value); }
         }
         /// <summary>
-        /// Instantiates a new provisioningObjectSummary and sets the default values.
+        /// Instantiates a new ProvisioningObjectSummary and sets the default values.
         /// </summary>
         public ProvisioningObjectSummary() : base() {
             OdataType = "#microsoft.graph.provisioningObjectSummary";

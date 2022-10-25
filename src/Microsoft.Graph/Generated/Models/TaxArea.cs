@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class TaxArea : Entity, IParsable {
         /// <summary>The code property</summary>
         public string Code {
@@ -27,7 +26,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("taxType", value); }
         }
         /// <summary>
-        /// Instantiates a new taxArea and sets the default values.
+        /// Instantiates a new TaxArea and sets the default values.
         /// </summary>
         public TaxArea() : base() {
             OdataType = "#microsoft.graph.taxArea";

@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DateTimeOffset?>("endDateTime"); }
             set { BackingStore?.Set("endDateTime", value); }
         }
-        /// <summary>The frequency at which a client will see the message. Possible values are: weeklyOnce, monthlyOnce, monthlyTwice, unknownFutureValue.</summary>
+        /// <summary>The frequency at which a client will see the message</summary>
         public OrganizationalMessageFrequency? Frequency {
             get { return BackingStore?.Get<OrganizationalMessageFrequency?>("frequency"); }
             set { BackingStore?.Set("frequency", value); }
@@ -31,7 +31,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
-        /// <summary>Indicates the scenario for the message. Possible values are: onboarding, lifecycle, unknownFutureValue.</summary>
+        /// <summary>Indicates the scenario for the message</summary>
         public OrganizationalMessageScenario? Scenario {
             get { return BackingStore?.Get<OrganizationalMessageScenario?>("scenario"); }
             set { BackingStore?.Set("scenario", value); }
@@ -41,12 +41,12 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }
             set { BackingStore?.Set("startDateTime", value); }
         }
-        /// <summary>Indicates the deployment status of the message. Possible values are: scheduled, active, completed, cancelled, unknownFutureValue.</summary>
+        /// <summary>Indicates the deployment status of the message</summary>
         public OrganizationalMessageStatus? Status {
             get { return BackingStore?.Get<OrganizationalMessageStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
-        /// <summary>Indicates the area where content will be displayed to customers. Possible values are: actionCenter, getStarted, softLanding, unknownFutureValue.</summary>
+        /// <summary>Indicates the area where content will be displayed to customers</summary>
         public OrganizationalMessageSurface? Surface {
             get { return BackingStore?.Get<OrganizationalMessageSurface?>("surface"); }
             set { BackingStore?.Set("surface", value); }
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<OrganizationalMessageTargeting>("targeting"); }
             set { BackingStore?.Set("targeting", value); }
         }
-        /// <summary>Indicates the theme for the experience. Possible values are: update, training, welcomeToWindows, explore, unknownFutureValue.</summary>
+        /// <summary>Indicates the theme for the experience</summary>
         public OrganizationalMessageTheme? Theme {
             get { return BackingStore?.Get<OrganizationalMessageTheme?>("theme"); }
             set { BackingStore?.Set("theme", value); }

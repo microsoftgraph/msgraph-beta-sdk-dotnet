@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<CloudPcProvisioningPolicy>>("provisioningPolicies"); }
             set { BackingStore?.Set("provisioningPolicies", value); }
         }
-        /// <summary>The reports property</summary>
+        /// <summary>Cloud PC related reports.</summary>
         public CloudPcReports Reports {
             get { return BackingStore?.Get<CloudPcReports>("reports"); }
             set { BackingStore?.Set("reports", value); }

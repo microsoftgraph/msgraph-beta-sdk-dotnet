@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class CloudPcReports : Entity, IParsable {
-        /// <summary>The exportJobs property</summary>
+        /// <summary>The export jobs created for downloading reports.</summary>
         public List<CloudPcExportJob> ExportJobs {
             get { return BackingStore?.Get<List<CloudPcExportJob>>("exportJobs"); }
             set { BackingStore?.Set("exportJobs", value); }

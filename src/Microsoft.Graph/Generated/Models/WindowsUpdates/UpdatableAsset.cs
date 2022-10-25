@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the admin singleton.</summary>
     public class UpdatableAsset : Entity, IParsable {
         /// <summary>
         /// Instantiates a new updatableAsset and sets the default values.

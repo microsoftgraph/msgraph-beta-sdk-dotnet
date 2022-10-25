@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class ExternalIdentitiesPolicy : PolicyBase, IParsable {
-        /// <summary>Notifies Azure AD whether to clean up the user information about the external identity, from the guest tenant, when the user is deleted in their home tenant.</summary>
+        /// <summary>Reserved for future use.</summary>
         public bool? AllowDeletedIdentitiesDataRemoval {
             get { return BackingStore?.Get<bool?>("allowDeletedIdentitiesDataRemoval"); }
             set { BackingStore?.Set("allowDeletedIdentitiesDataRemoval", value); }
