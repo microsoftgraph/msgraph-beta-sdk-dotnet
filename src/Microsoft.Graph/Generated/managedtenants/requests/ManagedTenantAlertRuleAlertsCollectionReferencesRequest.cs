@@ -32,7 +32,43 @@ namespace Microsoft.Graph.ManagedTenants
             : base(requestUrl, client, options)
         {
         }
-        
-        
+        /// <summary>
+        /// Adds the specified Microsoft.Graph.ReferenceRequestBody to the collection via POST.
+        /// </summary>
+        /// <param name="managedTenantAlertReference">The Microsoft.Graph.ReferenceRequestBody to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task to await.</returns>
+        public System.Threading.Tasks.Task AddAsync(Microsoft.Graph.ReferenceRequestBody managedTenantAlertReference, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+
+            if (string.IsNullOrEmpty(managedTenantAlertReference.ODataId))
+            {
+                throw new Microsoft.Graph.ServiceException(new Microsoft.Graph.Error { Code = "invalidRequest", Message = "ID is required to add a reference." });
+            }
+
+            return this.SendAsync(managedTenantAlertReference, cancellationToken);
+        }
+
+        /// <summary>
+        /// Adds the specified Microsoft.Graph.ReferenceRequestBody to the collection via POST and returns a <see cref="GraphResponse{Microsoft.Graph.ReferenceRequestBody}"/> object of the request.
+        /// </summary>
+        /// <param name="managedTenantAlertReference">The Microsoft.Graph.ReferenceRequestBody to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        /// <returns>The task of <see cref="GraphResponse"/> to await.</returns>
+        public System.Threading.Tasks.Task<GraphResponse> AddResponseAsync(Microsoft.Graph.ReferenceRequestBody managedTenantAlertReference, CancellationToken cancellationToken = default)
+        {
+            this.ContentType = CoreConstants.MimeTypeNames.Application.Json;
+            this.Method = HttpMethods.POST;
+
+            if (string.IsNullOrEmpty(managedTenantAlertReference.ODataId))
+            {
+                throw new Microsoft.Graph.ServiceException(new Microsoft.Graph.Error { Code = "invalidRequest", Message = "ID is required to add a reference." });
+            }
+
+            return this.SendAsyncWithGraphResponse(managedTenantAlertReference, cancellationToken);
+        }
+
     }
 }

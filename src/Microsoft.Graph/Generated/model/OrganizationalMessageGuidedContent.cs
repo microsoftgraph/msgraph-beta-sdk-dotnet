@@ -37,21 +37,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets scenario.
-        /// Indicates the scenario for the guided content. Possible values are: onboarding, lifecycle, unknownFutureValue.
+        /// Indicates the scenario for the guided content
         /// </summary>
         [JsonPropertyName("scenario")]
         public OrganizationalMessageScenario? Scenario { get; set; }
     
         /// <summary>
         /// Gets or sets surface.
-        /// Indicates the area where content will be displayed to customers. Possible values are: actionCenter, getStarted, softLanding, unknownFutureValue.
+        /// Indicates the area where content will be displayed to customers
         /// </summary>
         [JsonPropertyName("surface")]
         public OrganizationalMessageSurface? Surface { get; set; }
     
         /// <summary>
         /// Gets or sets theme.
-        /// Indicates the theme for the guided content. Possible values are: update, training, welcomeToWindows, explore, unknownFutureValue.
+        /// Indicates the theme for the guided content
         /// </summary>
         [JsonPropertyName("theme")]
         public OrganizationalMessageTheme? Theme { get; set; }

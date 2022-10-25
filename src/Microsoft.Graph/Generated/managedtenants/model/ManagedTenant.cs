@@ -161,6 +161,97 @@ namespace Microsoft.Graph.ManagedTenants
         public string ManagedDeviceComplianceTrendsNextLink { get; set; }
     
         /// <summary>
+        /// Gets or sets managed tenant alert logs.
+        /// </summary>
+        [JsonPropertyName("managedTenantAlertLogs")]
+        public IManagedTenantManagedTenantAlertLogsCollectionPage ManagedTenantAlertLogs { get; set; }
+
+        /// <summary>
+        /// Gets or sets managedTenantAlertLogsNextLink.
+        /// </summary>
+        [JsonPropertyName("managedTenantAlertLogs@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string ManagedTenantAlertLogsNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets managed tenant alert rule definitions.
+        /// </summary>
+        [JsonPropertyName("managedTenantAlertRuleDefinitions")]
+        public IManagedTenantManagedTenantAlertRuleDefinitionsCollectionPage ManagedTenantAlertRuleDefinitions { get; set; }
+
+        /// <summary>
+        /// Gets or sets managedTenantAlertRuleDefinitionsNextLink.
+        /// </summary>
+        [JsonPropertyName("managedTenantAlertRuleDefinitions@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string ManagedTenantAlertRuleDefinitionsNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets managed tenant alert rules.
+        /// </summary>
+        [JsonPropertyName("managedTenantAlertRules")]
+        public IManagedTenantManagedTenantAlertRulesCollectionPage ManagedTenantAlertRules { get; set; }
+
+        /// <summary>
+        /// Gets or sets managedTenantAlertRulesNextLink.
+        /// </summary>
+        [JsonPropertyName("managedTenantAlertRules@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string ManagedTenantAlertRulesNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets managed tenant alerts.
+        /// </summary>
+        [JsonPropertyName("managedTenantAlerts")]
+        public IManagedTenantManagedTenantAlertsCollectionPage ManagedTenantAlerts { get; set; }
+
+        /// <summary>
+        /// Gets or sets managedTenantAlertsNextLink.
+        /// </summary>
+        [JsonPropertyName("managedTenantAlerts@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string ManagedTenantAlertsNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets managed tenant api notifications.
+        /// </summary>
+        [JsonPropertyName("managedTenantApiNotifications")]
+        public IManagedTenantManagedTenantApiNotificationsCollectionPage ManagedTenantApiNotifications { get; set; }
+
+        /// <summary>
+        /// Gets or sets managedTenantApiNotificationsNextLink.
+        /// </summary>
+        [JsonPropertyName("managedTenantApiNotifications@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string ManagedTenantApiNotificationsNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets managed tenant email notifications.
+        /// </summary>
+        [JsonPropertyName("managedTenantEmailNotifications")]
+        public IManagedTenantManagedTenantEmailNotificationsCollectionPage ManagedTenantEmailNotifications { get; set; }
+
+        /// <summary>
+        /// Gets or sets managedTenantEmailNotificationsNextLink.
+        /// </summary>
+        [JsonPropertyName("managedTenantEmailNotifications@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string ManagedTenantEmailNotificationsNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets managed tenant ticketing endpoints.
+        /// </summary>
+        [JsonPropertyName("managedTenantTicketingEndpoints")]
+        public IManagedTenantManagedTenantTicketingEndpointsCollectionPage ManagedTenantTicketingEndpoints { get; set; }
+
+        /// <summary>
+        /// Gets or sets managedTenantTicketingEndpointsNextLink.
+        /// </summary>
+        [JsonPropertyName("managedTenantTicketingEndpoints@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string ManagedTenantTicketingEndpointsNextLink { get; set; }
+    
+        /// <summary>
         /// Gets or sets management actions.
         /// The collection of baseline management actions across managed tenants.
         /// </summary>

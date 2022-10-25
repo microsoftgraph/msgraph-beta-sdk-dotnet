@@ -23,48 +23,56 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets expiration date time.
+        /// The date time when the export job expires.
         /// </summary>
         [JsonPropertyName("expirationDateTime")]
         public DateTimeOffset? ExpirationDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets export job status.
+        /// The status of the export job.The possible values are: notStarted, inProgress, completed, unknownFutureValue. Read-only.
         /// </summary>
         [JsonPropertyName("exportJobStatus")]
         public CloudPcExportJobStatus? ExportJobStatus { get; set; }
     
         /// <summary>
         /// Gets or sets export url.
+        /// The storage account url of the exported report, it can be used to download the file.
         /// </summary>
         [JsonPropertyName("exportUrl")]
         public string ExportUrl { get; set; }
     
         /// <summary>
         /// Gets or sets filter.
+        /// The filter applied on the report.
         /// </summary>
         [JsonPropertyName("filter")]
         public string Filter { get; set; }
     
         /// <summary>
         /// Gets or sets format.
+        /// The format of the exported report.
         /// </summary>
         [JsonPropertyName("format")]
         public string Format { get; set; }
     
         /// <summary>
         /// Gets or sets report name.
+        /// The report name.The possible values are: remoteConnectionHistoricalReports, dailyAggregatedRemoteConnectionReports, totalAggregatedRemoteConnectionReports, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("reportName")]
         public CloudPcReportName? ReportName { get; set; }
     
         /// <summary>
         /// Gets or sets request date time.
+        /// The date time when the export job was requested.
         /// </summary>
         [JsonPropertyName("requestDateTime")]
         public DateTimeOffset? RequestDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets select.
+        /// The selected columns of the report.
         /// </summary>
         [JsonPropertyName("select")]
         public IEnumerable<string> Select { get; set; }

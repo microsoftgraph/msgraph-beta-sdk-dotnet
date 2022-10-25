@@ -92,6 +92,48 @@ namespace Microsoft.Graph.ManagedTenants
         IManagedTenantManagedDeviceComplianceTrendsCollectionRequestBuilder ManagedDeviceComplianceTrends { get; }
 
         /// <summary>
+        /// Gets the request builder for ManagedTenantAlertLogs.
+        /// </summary>
+        /// <returns>The <see cref="IManagedTenantManagedTenantAlertLogsCollectionRequestBuilder"/>.</returns>
+        IManagedTenantManagedTenantAlertLogsCollectionRequestBuilder ManagedTenantAlertLogs { get; }
+
+        /// <summary>
+        /// Gets the request builder for ManagedTenantAlertRuleDefinitions.
+        /// </summary>
+        /// <returns>The <see cref="IManagedTenantManagedTenantAlertRuleDefinitionsCollectionRequestBuilder"/>.</returns>
+        IManagedTenantManagedTenantAlertRuleDefinitionsCollectionRequestBuilder ManagedTenantAlertRuleDefinitions { get; }
+
+        /// <summary>
+        /// Gets the request builder for ManagedTenantAlertRules.
+        /// </summary>
+        /// <returns>The <see cref="IManagedTenantManagedTenantAlertRulesCollectionRequestBuilder"/>.</returns>
+        IManagedTenantManagedTenantAlertRulesCollectionRequestBuilder ManagedTenantAlertRules { get; }
+
+        /// <summary>
+        /// Gets the request builder for ManagedTenantAlerts.
+        /// </summary>
+        /// <returns>The <see cref="IManagedTenantManagedTenantAlertsCollectionRequestBuilder"/>.</returns>
+        IManagedTenantManagedTenantAlertsCollectionRequestBuilder ManagedTenantAlerts { get; }
+
+        /// <summary>
+        /// Gets the request builder for ManagedTenantApiNotifications.
+        /// </summary>
+        /// <returns>The <see cref="IManagedTenantManagedTenantApiNotificationsCollectionRequestBuilder"/>.</returns>
+        IManagedTenantManagedTenantApiNotificationsCollectionRequestBuilder ManagedTenantApiNotifications { get; }
+
+        /// <summary>
+        /// Gets the request builder for ManagedTenantEmailNotifications.
+        /// </summary>
+        /// <returns>The <see cref="IManagedTenantManagedTenantEmailNotificationsCollectionRequestBuilder"/>.</returns>
+        IManagedTenantManagedTenantEmailNotificationsCollectionRequestBuilder ManagedTenantEmailNotifications { get; }
+
+        /// <summary>
+        /// Gets the request builder for ManagedTenantTicketingEndpoints.
+        /// </summary>
+        /// <returns>The <see cref="IManagedTenantManagedTenantTicketingEndpointsCollectionRequestBuilder"/>.</returns>
+        IManagedTenantManagedTenantTicketingEndpointsCollectionRequestBuilder ManagedTenantTicketingEndpoints { get; }
+
+        /// <summary>
         /// Gets the request builder for ManagementActions.
         /// </summary>
         /// <returns>The <see cref="IManagedTenantManagementActionsCollectionRequestBuilder"/>.</returns>
