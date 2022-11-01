@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class PrivilegedApproval : Entity, IParsable {
         /// <summary>The approvalDuration property</summary>
         public TimeSpan? ApprovalDuration {
@@ -61,7 +62,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("userId", value); }
         }
         /// <summary>
-        /// Instantiates a new PrivilegedApproval and sets the default values.
+        /// Instantiates a new privilegedApproval and sets the default values.
         /// </summary>
         public PrivilegedApproval() : base() {
             OdataType = "#microsoft.graph.privilegedApproval";

@@ -16,8 +16,8 @@ namespace Microsoft.Graph.Beta.Security.Alerts.UpdateAlerts {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The value property</summary>
-        public List<Alert> Value {
-            get { return BackingStore?.Get<List<Alert>>("value"); }
+        public List<Microsoft.Graph.Beta.Models.Alert> Value {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Alert>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
         /// <summary>
@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Beta.Security.Alerts.UpdateAlerts {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"value", n => { Value = n.GetCollectionOfObjectValues<Alert>(Alert.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"value", n => { Value = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Alert>(Microsoft.Graph.Beta.Models.Alert.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.Security.Alerts.UpdateAlerts {
         /// </summary>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<Alert>("value", Value);
+            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Alert>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Beta.Models.TenantAdmin {
             set { BackingStore?.Set("settings", value); }
         }
         /// <summary>
-        /// Instantiates a new Sharepoint and sets the default values.
+        /// Instantiates a new sharepoint and sets the default values.
         /// </summary>
         public Sharepoint() : base() {
             OdataType = "#microsoft.graph.tenantAdmin.sharepoint";

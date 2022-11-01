@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class MessageRecipient : Entity, IParsable {
         /// <summary>The deliveryStatus property</summary>
         public MessageStatus? DeliveryStatus {
@@ -21,7 +22,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("recipientEmail", value); }
         }
         /// <summary>
-        /// Instantiates a new MessageRecipient and sets the default values.
+        /// Instantiates a new messageRecipient and sets the default values.
         /// </summary>
         public MessageRecipient() : base() {
             OdataType = "#microsoft.graph.messageRecipient";

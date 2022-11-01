@@ -18,7 +18,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EndpointType?>("endpointType"); }
             set { BackingStore?.Set("endpointType", value); }
         }
-        /// <summary>The hidden property</summary>
+        /// <summary>Optional. Whether to hide the participant from the roster.</summary>
         public bool? Hidden {
             get { return BackingStore?.Get<bool?>("hidden"); }
             set { BackingStore?.Set("hidden", value); }
@@ -38,7 +38,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("participantId"); }
             set { BackingStore?.Set("participantId", value); }
         }
-        /// <summary>The removeFromDefaultAudioRoutingGroup property</summary>
+        /// <summary>Optional. Whether to remove them from the main mixer.</summary>
         public bool? RemoveFromDefaultAudioRoutingGroup {
             get { return BackingStore?.Get<bool?>("removeFromDefaultAudioRoutingGroup"); }
             set { BackingStore?.Set("removeFromDefaultAudioRoutingGroup", value); }
