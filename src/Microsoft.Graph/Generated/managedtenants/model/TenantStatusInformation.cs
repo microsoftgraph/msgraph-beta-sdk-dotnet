@@ -23,7 +23,7 @@ namespace Microsoft.Graph.ManagedTenants
 
         /// <summary>
         /// Gets or sets delegatedPrivilegeStatus.
-        /// The status of the delegated admin privilege relationship between the managing entity and the managed tenant. Possible values are: none, delegatedAdminPrivileges, unknownFutureValue. Optional. Read-only.
+        /// The status of the delegated admin privilege relationship between the managing entity and the managed tenant. Possible values are: none, delegatedAdminPrivileges, unknownFutureValue, granularDelegatedAdminPrivileges, delegatedAndGranularDelegetedAdminPrivileges. Note that you must use the Prefer: include-unknown-enum-members request header to get the following values from this evolvable enum: granularDelegatedAdminPrivileges , delegatedAndGranularDelegetedAdminPrivileges. Optional. Read-only.
         /// </summary>
         [JsonPropertyName("delegatedPrivilegeStatus")]
         public DelegatedPrivilegeStatus? DelegatedPrivilegeStatus { get; set; }

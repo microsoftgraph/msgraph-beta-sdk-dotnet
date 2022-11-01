@@ -21,13 +21,17 @@ namespace Microsoft.Graph
     public partial class PrintUsage : Entity
     {
     
-        ///<summary>
-        /// The internal PrintUsage constructor
-        ///</summary>
-        protected internal PrintUsage()
-        {
-            // Don't allow initialization of abstract entity types
-        }
+        /// <summary>
+        /// Gets or sets black and white page count.
+        /// </summary>
+        [JsonPropertyName("blackAndWhitePageCount")]
+        public Int64? BlackAndWhitePageCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets color page count.
+        /// </summary>
+        [JsonPropertyName("colorPageCount")]
+        public Int64? ColorPageCount { get; set; }
     
         /// <summary>
         /// Gets or sets completed black and white job count.
@@ -42,10 +46,40 @@ namespace Microsoft.Graph
         public Int64? CompletedColorJobCount { get; set; }
     
         /// <summary>
+        /// Gets or sets completed job count.
+        /// </summary>
+        [JsonPropertyName("completedJobCount")]
+        public Int64? CompletedJobCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets double sided sheet count.
+        /// </summary>
+        [JsonPropertyName("doubleSidedSheetCount")]
+        public Int64? DoubleSidedSheetCount { get; set; }
+    
+        /// <summary>
         /// Gets or sets incomplete job count.
         /// </summary>
         [JsonPropertyName("incompleteJobCount")]
         public Int64? IncompleteJobCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets media sheet count.
+        /// </summary>
+        [JsonPropertyName("mediaSheetCount")]
+        public Int64? MediaSheetCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets page count.
+        /// </summary>
+        [JsonPropertyName("pageCount")]
+        public Int64? PageCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets single sided sheet count.
+        /// </summary>
+        [JsonPropertyName("singleSidedSheetCount")]
+        public Int64? SingleSidedSheetCount { get; set; }
     
         /// <summary>
         /// Gets or sets usage date.

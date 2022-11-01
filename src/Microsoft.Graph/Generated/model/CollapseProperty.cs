@@ -15,41 +15,23 @@ namespace Microsoft.Graph
     using System.Text.Json.Serialization;
 
     /// <summary>
-    /// The type InformationProtectionConfigurations.
+    /// The type CollapseProperty.
     /// </summary>
-    [JsonConverter(typeof(DerivedTypeConverter<InformationProtectionConfigurations>))]
-    public partial class InformationProtectionConfigurations
+    [JsonConverter(typeof(DerivedTypeConverter<CollapseProperty>))]
+    public partial class CollapseProperty
     {
 
         /// <summary>
-        /// Gets or sets endpoint.
+        /// Gets or sets fields.
         /// </summary>
-        [JsonPropertyName("endpoint")]
-        public InformationProtectionConfiguration Endpoint { get; set; }
+        [JsonPropertyName("fields")]
+        public IEnumerable<string> Fields { get; set; }
     
         /// <summary>
-        /// Gets or sets exchange.
+        /// Gets or sets limit.
         /// </summary>
-        [JsonPropertyName("exchange")]
-        public InformationProtectionConfiguration Exchange { get; set; }
-    
-        /// <summary>
-        /// Gets or sets oneDrive.
-        /// </summary>
-        [JsonPropertyName("oneDrive")]
-        public InformationProtectionConfiguration OneDrive { get; set; }
-    
-        /// <summary>
-        /// Gets or sets sharePoint.
-        /// </summary>
-        [JsonPropertyName("sharePoint")]
-        public InformationProtectionConfiguration SharePoint { get; set; }
-    
-        /// <summary>
-        /// Gets or sets teams.
-        /// </summary>
-        [JsonPropertyName("teams")]
-        public InformationProtectionConfiguration Teams { get; set; }
+        [JsonPropertyName("limit")]
+        public Int16? Limit { get; set; }
     
         /// <summary>
         /// Gets or sets additional data.

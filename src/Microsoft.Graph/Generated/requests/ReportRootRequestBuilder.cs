@@ -99,6 +99,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for DailyPrintUsage.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootDailyPrintUsageCollectionRequestBuilder"/>.</returns>
+        public IReportRootDailyPrintUsageCollectionRequestBuilder DailyPrintUsage
+        {
+            get
+            {
+                return new ReportRootDailyPrintUsageCollectionRequestBuilder(this.AppendSegmentToRequestUrl("dailyPrintUsage"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for DailyPrintUsageByPrinter.
         /// </summary>
         /// <returns>The <see cref="IReportRootDailyPrintUsageByPrinterCollectionRequestBuilder"/>.</returns>

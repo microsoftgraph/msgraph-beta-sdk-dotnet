@@ -954,17 +954,6 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
-        /// Gets the GraphServiceAuthenticationMethodsPolicy request builder.
-        /// </summary>
-        public virtual IAuthenticationMethodsPolicyRequestBuilder AuthenticationMethodsPolicy
-        {
-            get
-            {
-                return new AuthenticationMethodsPolicyRequestBuilder(this.BaseUrl + "/authenticationMethodsPolicy", this);
-            }
-        }
-    
-        /// <summary>
         /// Gets the GraphServiceSolutions request builder.
         /// </summary>
         public virtual ISolutionsRootRequestBuilder Solutions
@@ -972,6 +961,17 @@ namespace Microsoft.Graph
             get
             {
                 return new SolutionsRootRequestBuilder(this.BaseUrl + "/solutions", this);
+            }
+        }
+    
+        /// <summary>
+        /// Gets the GraphServiceAuthenticationMethodsPolicy request builder.
+        /// </summary>
+        public virtual IAuthenticationMethodsPolicyRequestBuilder AuthenticationMethodsPolicy
+        {
+            get
+            {
+                return new AuthenticationMethodsPolicyRequestBuilder(this.BaseUrl + "/authenticationMethodsPolicy", this);
             }
         }
     

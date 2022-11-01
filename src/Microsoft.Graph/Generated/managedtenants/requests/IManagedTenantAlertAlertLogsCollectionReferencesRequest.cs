@@ -19,7 +19,19 @@ namespace Microsoft.Graph.ManagedTenants
     /// </summary>
     public partial interface IManagedTenantAlertAlertLogsCollectionReferencesRequest : Microsoft.Graph.IBaseRequest
     {
-        
-        
+        /// <summary>
+        /// Adds the specified Microsoft.Graph.ReferenceRequestBody to the collection via POST.
+        /// </summary>
+        /// <param name="managedTenantAlertLogReference">The Microsoft.Graph.ReferenceRequestBody to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        System.Threading.Tasks.Task AddAsync(Microsoft.Graph.ReferenceRequestBody managedTenantAlertLogReference, CancellationToken cancellationToken = default);
+
+        /// <summary>
+        /// Adds the specified Microsoft.Graph.ReferenceRequestBody to the collection via POST and returns a <see cref="GraphResponse{Microsoft.Graph.ReferenceRequestBody}"/> object of the request.
+        /// </summary>
+        /// <param name="managedTenantAlertLogReference">The Microsoft.Graph.ReferenceRequestBody to add.</param>
+        /// <param name="cancellationToken">The <see cref="CancellationToken"/> for the request.</param>
+        System.Threading.Tasks.Task<GraphResponse> AddResponseAsync(Microsoft.Graph.ReferenceRequestBody managedTenantAlertLogReference, CancellationToken cancellationToken = default);
+
     }
 }

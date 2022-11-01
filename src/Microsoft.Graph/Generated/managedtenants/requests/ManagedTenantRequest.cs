@@ -306,6 +306,48 @@ namespace Microsoft.Graph.ManagedTenants
                     // Copy the additional data collection to the page itself so that information is not lost
                     managedTenantToInitialize.ManagedDeviceComplianceTrends.AdditionalData = managedTenantToInitialize.AdditionalData;
                 }
+                if (managedTenantToInitialize.ManagedTenantAlertLogs != null && managedTenantToInitialize.ManagedTenantAlertLogs.CurrentPage != null)
+                {
+                    managedTenantToInitialize.ManagedTenantAlertLogs.InitializeNextPageRequest(this.Client, managedTenantToInitialize.ManagedTenantAlertLogsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    managedTenantToInitialize.ManagedTenantAlertLogs.AdditionalData = managedTenantToInitialize.AdditionalData;
+                }
+                if (managedTenantToInitialize.ManagedTenantAlertRuleDefinitions != null && managedTenantToInitialize.ManagedTenantAlertRuleDefinitions.CurrentPage != null)
+                {
+                    managedTenantToInitialize.ManagedTenantAlertRuleDefinitions.InitializeNextPageRequest(this.Client, managedTenantToInitialize.ManagedTenantAlertRuleDefinitionsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    managedTenantToInitialize.ManagedTenantAlertRuleDefinitions.AdditionalData = managedTenantToInitialize.AdditionalData;
+                }
+                if (managedTenantToInitialize.ManagedTenantAlertRules != null && managedTenantToInitialize.ManagedTenantAlertRules.CurrentPage != null)
+                {
+                    managedTenantToInitialize.ManagedTenantAlertRules.InitializeNextPageRequest(this.Client, managedTenantToInitialize.ManagedTenantAlertRulesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    managedTenantToInitialize.ManagedTenantAlertRules.AdditionalData = managedTenantToInitialize.AdditionalData;
+                }
+                if (managedTenantToInitialize.ManagedTenantAlerts != null && managedTenantToInitialize.ManagedTenantAlerts.CurrentPage != null)
+                {
+                    managedTenantToInitialize.ManagedTenantAlerts.InitializeNextPageRequest(this.Client, managedTenantToInitialize.ManagedTenantAlertsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    managedTenantToInitialize.ManagedTenantAlerts.AdditionalData = managedTenantToInitialize.AdditionalData;
+                }
+                if (managedTenantToInitialize.ManagedTenantApiNotifications != null && managedTenantToInitialize.ManagedTenantApiNotifications.CurrentPage != null)
+                {
+                    managedTenantToInitialize.ManagedTenantApiNotifications.InitializeNextPageRequest(this.Client, managedTenantToInitialize.ManagedTenantApiNotificationsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    managedTenantToInitialize.ManagedTenantApiNotifications.AdditionalData = managedTenantToInitialize.AdditionalData;
+                }
+                if (managedTenantToInitialize.ManagedTenantEmailNotifications != null && managedTenantToInitialize.ManagedTenantEmailNotifications.CurrentPage != null)
+                {
+                    managedTenantToInitialize.ManagedTenantEmailNotifications.InitializeNextPageRequest(this.Client, managedTenantToInitialize.ManagedTenantEmailNotificationsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    managedTenantToInitialize.ManagedTenantEmailNotifications.AdditionalData = managedTenantToInitialize.AdditionalData;
+                }
+                if (managedTenantToInitialize.ManagedTenantTicketingEndpoints != null && managedTenantToInitialize.ManagedTenantTicketingEndpoints.CurrentPage != null)
+                {
+                    managedTenantToInitialize.ManagedTenantTicketingEndpoints.InitializeNextPageRequest(this.Client, managedTenantToInitialize.ManagedTenantTicketingEndpointsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    managedTenantToInitialize.ManagedTenantTicketingEndpoints.AdditionalData = managedTenantToInitialize.AdditionalData;
+                }
                 if (managedTenantToInitialize.ManagementActions != null && managedTenantToInitialize.ManagementActions.CurrentPage != null)
                 {
                     managedTenantToInitialize.ManagementActions.InitializeNextPageRequest(this.Client, managedTenantToInitialize.ManagementActionsNextLink);

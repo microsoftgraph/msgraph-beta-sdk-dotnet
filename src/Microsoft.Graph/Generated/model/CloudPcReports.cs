@@ -22,6 +22,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets export jobs.
+        /// The export jobs created for downloading reports.
         /// </summary>
         [JsonPropertyName("exportJobs")]
         public ICloudPcReportsExportJobsCollectionPage ExportJobs { get; set; }

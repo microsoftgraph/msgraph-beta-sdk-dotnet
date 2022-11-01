@@ -22,12 +22,6 @@ namespace Microsoft.Graph
     {
 
         /// <summary>
-        /// Gets or sets accessScope.
-        /// </summary>
-        [JsonPropertyName("accessScope")]
-        public AccessScope? AccessScope { get; set; }
-    
-        /// <summary>
         /// Gets or sets currentLabel.
         /// </summary>
         [JsonPropertyName("currentLabel")]

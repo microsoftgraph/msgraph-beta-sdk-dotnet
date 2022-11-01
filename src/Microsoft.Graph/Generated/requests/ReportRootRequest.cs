@@ -264,6 +264,12 @@ namespace Microsoft.Graph
                     // Copy the additional data collection to the page itself so that information is not lost
                     reportRootToInitialize.UserCredentialUsageDetails.AdditionalData = reportRootToInitialize.AdditionalData;
                 }
+                if (reportRootToInitialize.DailyPrintUsage != null && reportRootToInitialize.DailyPrintUsage.CurrentPage != null)
+                {
+                    reportRootToInitialize.DailyPrintUsage.InitializeNextPageRequest(this.Client, reportRootToInitialize.DailyPrintUsageNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    reportRootToInitialize.DailyPrintUsage.AdditionalData = reportRootToInitialize.AdditionalData;
+                }
                 if (reportRootToInitialize.DailyPrintUsageByPrinter != null && reportRootToInitialize.DailyPrintUsageByPrinter.CurrentPage != null)
                 {
                     reportRootToInitialize.DailyPrintUsageByPrinter.InitializeNextPageRequest(this.Client, reportRootToInitialize.DailyPrintUsageByPrinterNextLink);
