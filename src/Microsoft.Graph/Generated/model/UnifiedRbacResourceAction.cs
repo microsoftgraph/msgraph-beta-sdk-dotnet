@@ -28,11 +28,23 @@ namespace Microsoft.Graph
         public string ActionVerb { get; set; }
     
         /// <summary>
+        /// Gets or sets authentication context id.
+        /// </summary>
+        [JsonPropertyName("authenticationContextId")]
+        public string AuthenticationContextId { get; set; }
+    
+        /// <summary>
         /// Gets or sets description.
         /// Description for the action. Supports $filter (eq).
         /// </summary>
         [JsonPropertyName("description")]
         public string Description { get; set; }
+    
+        /// <summary>
+        /// Gets or sets is authentication context settable.
+        /// </summary>
+        [JsonPropertyName("isAuthenticationContextSettable")]
+        public bool? IsAuthenticationContextSettable { get; set; }
     
         /// <summary>
         /// Gets or sets name.

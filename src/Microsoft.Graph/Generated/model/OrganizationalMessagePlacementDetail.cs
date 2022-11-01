@@ -23,7 +23,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets placement.
-        /// Indicates the name of the placement. Possible values are: default, card0, card1, card2, card3, unknownFutureValue.
+        /// Indicates the name of the placement
         /// </summary>
         [JsonPropertyName("placement")]
         public OrganizationalMessagePlacement? Placement { get; set; }

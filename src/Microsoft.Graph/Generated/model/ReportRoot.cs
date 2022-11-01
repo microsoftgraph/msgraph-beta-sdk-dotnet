@@ -70,6 +70,19 @@ namespace Microsoft.Graph
         public string UserCredentialUsageDetailsNextLink { get; set; }
     
         /// <summary>
+        /// Gets or sets daily print usage.
+        /// </summary>
+        [JsonPropertyName("dailyPrintUsage")]
+        public IReportRootDailyPrintUsageCollectionPage DailyPrintUsage { get; set; }
+
+        /// <summary>
+        /// Gets or sets dailyPrintUsageNextLink.
+        /// </summary>
+        [JsonPropertyName("dailyPrintUsage@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string DailyPrintUsageNextLink { get; set; }
+    
+        /// <summary>
         /// Gets or sets daily print usage by printer.
         /// </summary>
         [JsonPropertyName("dailyPrintUsageByPrinter")]

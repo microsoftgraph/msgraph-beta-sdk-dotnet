@@ -30,6 +30,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets hidden.
+        /// Optional. Whether to hide the participant from the roster.
         /// </summary>
         [JsonPropertyName("hidden")]
         public bool? Hidden { get; set; }
@@ -50,6 +51,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets removeFromDefaultAudioRoutingGroup.
+        /// Optional. Whether to remove them from the main mixer.
         /// </summary>
         [JsonPropertyName("removeFromDefaultAudioRoutingGroup")]
         public bool? RemoveFromDefaultAudioRoutingGroup { get; set; }

@@ -57,7 +57,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets duration.
-        /// The duration of the learning content in seconds. Optional.
+        /// The duration of the learning content in seconds. The value is represented in ISO 8601 format for durations. Optional.
         /// </summary>
         [JsonPropertyName("duration")]
         public Duration Duration { get; set; }

@@ -134,6 +134,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets reports.
+        /// Cloud PC related reports.
         /// </summary>
         [JsonPropertyName("reports")]
         public CloudPcReports Reports { get; set; }

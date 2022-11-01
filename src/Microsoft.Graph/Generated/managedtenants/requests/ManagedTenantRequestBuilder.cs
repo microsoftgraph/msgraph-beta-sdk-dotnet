@@ -171,6 +171,90 @@ namespace Microsoft.Graph.ManagedTenants
         }
 
         /// <summary>
+        /// Gets the request builder for ManagedTenantAlertLogs.
+        /// </summary>
+        /// <returns>The <see cref="IManagedTenantManagedTenantAlertLogsCollectionRequestBuilder"/>.</returns>
+        public IManagedTenantManagedTenantAlertLogsCollectionRequestBuilder ManagedTenantAlertLogs
+        {
+            get
+            {
+                return new ManagedTenantManagedTenantAlertLogsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("managedTenantAlertLogs"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for ManagedTenantAlertRuleDefinitions.
+        /// </summary>
+        /// <returns>The <see cref="IManagedTenantManagedTenantAlertRuleDefinitionsCollectionRequestBuilder"/>.</returns>
+        public IManagedTenantManagedTenantAlertRuleDefinitionsCollectionRequestBuilder ManagedTenantAlertRuleDefinitions
+        {
+            get
+            {
+                return new ManagedTenantManagedTenantAlertRuleDefinitionsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("managedTenantAlertRuleDefinitions"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for ManagedTenantAlertRules.
+        /// </summary>
+        /// <returns>The <see cref="IManagedTenantManagedTenantAlertRulesCollectionRequestBuilder"/>.</returns>
+        public IManagedTenantManagedTenantAlertRulesCollectionRequestBuilder ManagedTenantAlertRules
+        {
+            get
+            {
+                return new ManagedTenantManagedTenantAlertRulesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("managedTenantAlertRules"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for ManagedTenantAlerts.
+        /// </summary>
+        /// <returns>The <see cref="IManagedTenantManagedTenantAlertsCollectionRequestBuilder"/>.</returns>
+        public IManagedTenantManagedTenantAlertsCollectionRequestBuilder ManagedTenantAlerts
+        {
+            get
+            {
+                return new ManagedTenantManagedTenantAlertsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("managedTenantAlerts"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for ManagedTenantApiNotifications.
+        /// </summary>
+        /// <returns>The <see cref="IManagedTenantManagedTenantApiNotificationsCollectionRequestBuilder"/>.</returns>
+        public IManagedTenantManagedTenantApiNotificationsCollectionRequestBuilder ManagedTenantApiNotifications
+        {
+            get
+            {
+                return new ManagedTenantManagedTenantApiNotificationsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("managedTenantApiNotifications"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for ManagedTenantEmailNotifications.
+        /// </summary>
+        /// <returns>The <see cref="IManagedTenantManagedTenantEmailNotificationsCollectionRequestBuilder"/>.</returns>
+        public IManagedTenantManagedTenantEmailNotificationsCollectionRequestBuilder ManagedTenantEmailNotifications
+        {
+            get
+            {
+                return new ManagedTenantManagedTenantEmailNotificationsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("managedTenantEmailNotifications"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for ManagedTenantTicketingEndpoints.
+        /// </summary>
+        /// <returns>The <see cref="IManagedTenantManagedTenantTicketingEndpointsCollectionRequestBuilder"/>.</returns>
+        public IManagedTenantManagedTenantTicketingEndpointsCollectionRequestBuilder ManagedTenantTicketingEndpoints
+        {
+            get
+            {
+                return new ManagedTenantManagedTenantTicketingEndpointsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("managedTenantTicketingEndpoints"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for ManagementActions.
         /// </summary>
         /// <returns>The <see cref="IManagedTenantManagementActionsCollectionRequestBuilder"/>.</returns>

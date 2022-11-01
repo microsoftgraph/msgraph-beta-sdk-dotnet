@@ -30,7 +30,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets allow deleted identities data removal.
-        /// Notifies Azure AD whether to clean up the user information about the external identity, from the guest tenant, when the user is deleted in their home tenant.
+        /// Reserved for future use.
         /// </summary>
         [JsonPropertyName("allowDeletedIdentitiesDataRemoval")]
         public bool? AllowDeletedIdentitiesDataRemoval { get; set; }

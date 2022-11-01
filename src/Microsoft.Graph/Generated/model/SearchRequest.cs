@@ -36,6 +36,12 @@ namespace Microsoft.Graph
         public IEnumerable<AggregationOption> Aggregations { get; set; }
     
         /// <summary>
+        /// Gets or sets collapseProperties.
+        /// </summary>
+        [JsonPropertyName("collapseProperties")]
+        public IEnumerable<CollapseProperty> CollapseProperties { get; set; }
+    
+        /// <summary>
         /// Gets or sets contentSources.
         /// Contains the connection to be targeted. Respects the following format : /external/connections/connectionid where connectionid is the ConnectionId defined in the Connectors Administration.  Note: contentSource is only applicable when entityType=externalItem. Optional.
         /// </summary>

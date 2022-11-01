@@ -23,7 +23,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets contentType.
-        /// The content type of the logo that is contained in the logo array. This is null when logoCdnUrl is used to send the logo. Possible values are: png, unknownFutureValue.
+        /// The content type of the logo that is contained in the logo array. This is null when logoCdnUrl is used to send the logo
         /// </summary>
         [JsonPropertyName("contentType")]
         public OrganizationalMessageLogoType? ContentType { get; set; }

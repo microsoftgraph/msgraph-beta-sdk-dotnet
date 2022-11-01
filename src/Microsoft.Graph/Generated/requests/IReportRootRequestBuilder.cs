@@ -56,6 +56,12 @@ namespace Microsoft.Graph
         IReportRootUserCredentialUsageDetailsCollectionRequestBuilder UserCredentialUsageDetails { get; }
 
         /// <summary>
+        /// Gets the request builder for DailyPrintUsage.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootDailyPrintUsageCollectionRequestBuilder"/>.</returns>
+        IReportRootDailyPrintUsageCollectionRequestBuilder DailyPrintUsage { get; }
+
+        /// <summary>
         /// Gets the request builder for DailyPrintUsageByPrinter.
         /// </summary>
         /// <returns>The <see cref="IReportRootDailyPrintUsageByPrinterCollectionRequestBuilder"/>.</returns>
