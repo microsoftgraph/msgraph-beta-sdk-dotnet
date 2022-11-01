@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
-        /// <summary>Indicates the name of the placement. Possible values are: default, card0, card1, card2, card3, unknownFutureValue.</summary>
+        /// <summary>Indicates the name of the placement</summary>
         public OrganizationalMessagePlacement? Placement {
             get { return BackingStore?.Get<OrganizationalMessagePlacement?>("placement"); }
             set { BackingStore?.Set("placement", value); }

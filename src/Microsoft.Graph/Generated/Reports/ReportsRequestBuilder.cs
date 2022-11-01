@@ -3,6 +3,7 @@ using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Reports.ApplicationSignInDetailedSummary;
 using Microsoft.Graph.Beta.Reports.AuthenticationMethods;
 using Microsoft.Graph.Beta.Reports.CredentialUserRegistrationDetails;
+using Microsoft.Graph.Beta.Reports.DailyPrintUsage;
 using Microsoft.Graph.Beta.Reports.DailyPrintUsageByPrinter;
 using Microsoft.Graph.Beta.Reports.DailyPrintUsageByUser;
 using Microsoft.Graph.Beta.Reports.DailyPrintUsageSummariesByPrinter;
@@ -155,6 +156,10 @@ namespace Microsoft.Graph.Beta.Reports {
         /// <summary>The credentialUserRegistrationDetails property</summary>
         public CredentialUserRegistrationDetailsRequestBuilder CredentialUserRegistrationDetails { get =>
             new CredentialUserRegistrationDetailsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The dailyPrintUsage property</summary>
+        public DailyPrintUsageRequestBuilder DailyPrintUsage { get =>
+            new DailyPrintUsageRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The dailyPrintUsageByPrinter property</summary>
         public DailyPrintUsageByPrinterRequestBuilder DailyPrintUsageByPrinter { get =>

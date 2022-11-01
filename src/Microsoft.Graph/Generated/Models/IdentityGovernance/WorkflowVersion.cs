@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class WorkflowVersion : WorkflowBase, IParsable {
         /// <summary>The version of the workflow.Supports $filter(eq, ne), orderby.</summary>
         public int? VersionNumber {

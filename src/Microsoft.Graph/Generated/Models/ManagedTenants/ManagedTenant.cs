@@ -55,6 +55,41 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
             get { return BackingStore?.Get<List<ManagedDeviceComplianceTrend>>("managedDeviceComplianceTrends"); }
             set { BackingStore?.Set("managedDeviceComplianceTrends", value); }
         }
+        /// <summary>The managedTenantAlertLogs property</summary>
+        public List<ManagedTenantAlertLog> ManagedTenantAlertLogs {
+            get { return BackingStore?.Get<List<ManagedTenantAlertLog>>("managedTenantAlertLogs"); }
+            set { BackingStore?.Set("managedTenantAlertLogs", value); }
+        }
+        /// <summary>The managedTenantAlertRuleDefinitions property</summary>
+        public List<ManagedTenantAlertRuleDefinition> ManagedTenantAlertRuleDefinitions {
+            get { return BackingStore?.Get<List<ManagedTenantAlertRuleDefinition>>("managedTenantAlertRuleDefinitions"); }
+            set { BackingStore?.Set("managedTenantAlertRuleDefinitions", value); }
+        }
+        /// <summary>The managedTenantAlertRules property</summary>
+        public List<ManagedTenantAlertRule> ManagedTenantAlertRules {
+            get { return BackingStore?.Get<List<ManagedTenantAlertRule>>("managedTenantAlertRules"); }
+            set { BackingStore?.Set("managedTenantAlertRules", value); }
+        }
+        /// <summary>The managedTenantAlerts property</summary>
+        public List<ManagedTenantAlert> ManagedTenantAlerts {
+            get { return BackingStore?.Get<List<ManagedTenantAlert>>("managedTenantAlerts"); }
+            set { BackingStore?.Set("managedTenantAlerts", value); }
+        }
+        /// <summary>The managedTenantApiNotifications property</summary>
+        public List<ManagedTenantApiNotification> ManagedTenantApiNotifications {
+            get { return BackingStore?.Get<List<ManagedTenantApiNotification>>("managedTenantApiNotifications"); }
+            set { BackingStore?.Set("managedTenantApiNotifications", value); }
+        }
+        /// <summary>The managedTenantEmailNotifications property</summary>
+        public List<ManagedTenantEmailNotification> ManagedTenantEmailNotifications {
+            get { return BackingStore?.Get<List<ManagedTenantEmailNotification>>("managedTenantEmailNotifications"); }
+            set { BackingStore?.Set("managedTenantEmailNotifications", value); }
+        }
+        /// <summary>The managedTenantTicketingEndpoints property</summary>
+        public List<ManagedTenantTicketingEndpoint> ManagedTenantTicketingEndpoints {
+            get { return BackingStore?.Get<List<ManagedTenantTicketingEndpoint>>("managedTenantTicketingEndpoints"); }
+            set { BackingStore?.Set("managedTenantTicketingEndpoints", value); }
+        }
         /// <summary>The collection of baseline management actions across managed tenants.</summary>
         public List<ManagementAction> ManagementActions {
             get { return BackingStore?.Get<List<ManagementAction>>("managementActions"); }
@@ -159,6 +194,13 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
                 {"deviceCompliancePolicySettingStateSummaries", n => { DeviceCompliancePolicySettingStateSummaries = n.GetCollectionOfObjectValues<DeviceCompliancePolicySettingStateSummary>(DeviceCompliancePolicySettingStateSummary.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"managedDeviceCompliances", n => { ManagedDeviceCompliances = n.GetCollectionOfObjectValues<ManagedDeviceCompliance>(ManagedDeviceCompliance.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"managedDeviceComplianceTrends", n => { ManagedDeviceComplianceTrends = n.GetCollectionOfObjectValues<ManagedDeviceComplianceTrend>(ManagedDeviceComplianceTrend.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"managedTenantAlertLogs", n => { ManagedTenantAlertLogs = n.GetCollectionOfObjectValues<ManagedTenantAlertLog>(ManagedTenantAlertLog.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"managedTenantAlertRuleDefinitions", n => { ManagedTenantAlertRuleDefinitions = n.GetCollectionOfObjectValues<ManagedTenantAlertRuleDefinition>(ManagedTenantAlertRuleDefinition.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"managedTenantAlertRules", n => { ManagedTenantAlertRules = n.GetCollectionOfObjectValues<ManagedTenantAlertRule>(ManagedTenantAlertRule.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"managedTenantAlerts", n => { ManagedTenantAlerts = n.GetCollectionOfObjectValues<ManagedTenantAlert>(ManagedTenantAlert.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"managedTenantApiNotifications", n => { ManagedTenantApiNotifications = n.GetCollectionOfObjectValues<ManagedTenantApiNotification>(ManagedTenantApiNotification.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"managedTenantEmailNotifications", n => { ManagedTenantEmailNotifications = n.GetCollectionOfObjectValues<ManagedTenantEmailNotification>(ManagedTenantEmailNotification.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"managedTenantTicketingEndpoints", n => { ManagedTenantTicketingEndpoints = n.GetCollectionOfObjectValues<ManagedTenantTicketingEndpoint>(ManagedTenantTicketingEndpoint.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"managementActions", n => { ManagementActions = n.GetCollectionOfObjectValues<ManagementAction>(ManagementAction.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"managementActionTenantDeploymentStatuses", n => { ManagementActionTenantDeploymentStatuses = n.GetCollectionOfObjectValues<ManagementActionTenantDeploymentStatus>(ManagementActionTenantDeploymentStatus.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"managementIntents", n => { ManagementIntents = n.GetCollectionOfObjectValues<ManagementIntent>(ManagementIntent.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -193,6 +235,13 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
             writer.WriteCollectionOfObjectValues<DeviceCompliancePolicySettingStateSummary>("deviceCompliancePolicySettingStateSummaries", DeviceCompliancePolicySettingStateSummaries);
             writer.WriteCollectionOfObjectValues<ManagedDeviceCompliance>("managedDeviceCompliances", ManagedDeviceCompliances);
             writer.WriteCollectionOfObjectValues<ManagedDeviceComplianceTrend>("managedDeviceComplianceTrends", ManagedDeviceComplianceTrends);
+            writer.WriteCollectionOfObjectValues<ManagedTenantAlertLog>("managedTenantAlertLogs", ManagedTenantAlertLogs);
+            writer.WriteCollectionOfObjectValues<ManagedTenantAlertRuleDefinition>("managedTenantAlertRuleDefinitions", ManagedTenantAlertRuleDefinitions);
+            writer.WriteCollectionOfObjectValues<ManagedTenantAlertRule>("managedTenantAlertRules", ManagedTenantAlertRules);
+            writer.WriteCollectionOfObjectValues<ManagedTenantAlert>("managedTenantAlerts", ManagedTenantAlerts);
+            writer.WriteCollectionOfObjectValues<ManagedTenantApiNotification>("managedTenantApiNotifications", ManagedTenantApiNotifications);
+            writer.WriteCollectionOfObjectValues<ManagedTenantEmailNotification>("managedTenantEmailNotifications", ManagedTenantEmailNotifications);
+            writer.WriteCollectionOfObjectValues<ManagedTenantTicketingEndpoint>("managedTenantTicketingEndpoints", ManagedTenantTicketingEndpoints);
             writer.WriteCollectionOfObjectValues<ManagementAction>("managementActions", ManagementActions);
             writer.WriteCollectionOfObjectValues<ManagementActionTenantDeploymentStatus>("managementActionTenantDeploymentStatuses", ManagementActionTenantDeploymentStatuses);
             writer.WriteCollectionOfObjectValues<ManagementIntent>("managementIntents", ManagementIntents);

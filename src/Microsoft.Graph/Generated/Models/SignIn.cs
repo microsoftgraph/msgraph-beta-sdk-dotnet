@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class SignIn : Entity, IParsable {
         /// <summary>The application name displayed in the Azure Portal. Supports $filter (eq and startsWith operators only).</summary>
         public string AppDisplayName {
@@ -322,7 +321,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("userType", value); }
         }
         /// <summary>
-        /// Instantiates a new signIn and sets the default values.
+        /// Instantiates a new SignIn and sets the default values.
         /// </summary>
         public SignIn() : base() {
             OdataType = "#microsoft.graph.signIn";

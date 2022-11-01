@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class DeletedTeam : Entity, IParsable {
         /// <summary>The channels those are either shared with this deleted team or created in this deleted team.</summary>
         public List<Channel> Channels {
@@ -11,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("channels", value); }
         }
         /// <summary>
-        /// Instantiates a new DeletedTeam and sets the default values.
+        /// Instantiates a new deletedTeam and sets the default values.
         /// </summary>
         public DeletedTeam() : base() {
             OdataType = "#microsoft.graph.deletedTeam";

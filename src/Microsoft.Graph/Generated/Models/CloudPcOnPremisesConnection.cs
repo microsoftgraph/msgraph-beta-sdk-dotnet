@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class CloudPcOnPremisesConnection : Entity, IParsable {
         /// <summary>The fully qualified domain name (FQDN) of the Active Directory domain you want to join. Optional.</summary>
         public string AdDomainName {
@@ -86,7 +87,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("virtualNetworkId", value); }
         }
         /// <summary>
-        /// Instantiates a new CloudPcOnPremisesConnection and sets the default values.
+        /// Instantiates a new cloudPcOnPremisesConnection and sets the default values.
         /// </summary>
         public CloudPcOnPremisesConnection() : base() {
             OdataType = "#microsoft.graph.cloudPcOnPremisesConnection";

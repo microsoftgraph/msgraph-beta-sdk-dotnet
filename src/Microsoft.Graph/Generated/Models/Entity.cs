@@ -411,7 +411,7 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.deviceLogCollectionResponse" => new DeviceLogCollectionResponse(),
                 "#microsoft.graph.deviceManagement" => new Microsoft.Graph.Beta.Models.DeviceManagement.DeviceManagement(),
                 "#microsoft.graph.deviceManagement.alertRecord" => new AlertRecord(),
-                "#microsoft.graph.deviceManagement.alertRule" => new AlertRule(),
+                "#microsoft.graph.deviceManagement.alertRule" => new Microsoft.Graph.Beta.Models.DeviceManagement.AlertRule(),
                 "#microsoft.graph.deviceManagement.monitoring" => new Microsoft.Graph.Beta.Models.DeviceManagement.Monitoring(),
                 "#microsoft.graph.deviceManagementAbstractComplexSettingDefinition" => new DeviceManagementAbstractComplexSettingDefinition(),
                 "#microsoft.graph.deviceManagementAbstractComplexSettingInstance" => new DeviceManagementAbstractComplexSettingInstance(),

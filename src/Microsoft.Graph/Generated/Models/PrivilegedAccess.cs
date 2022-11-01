@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class PrivilegedAccess : Entity, IParsable {
         /// <summary>The display name of the provider managed by PIM.</summary>
         public string DisplayName {
@@ -36,7 +37,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("roleSettings", value); }
         }
         /// <summary>
-        /// Instantiates a new PrivilegedAccess and sets the default values.
+        /// Instantiates a new privilegedAccess and sets the default values.
         /// </summary>
         public PrivilegedAccess() : base() {
             OdataType = "#microsoft.graph.privilegedAccess";

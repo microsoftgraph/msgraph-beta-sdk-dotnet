@@ -4,17 +4,27 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class UnifiedRbacResourceAction : Entity, IParsable {
         /// <summary>HTTP method for the action, such as DELETE, GET, PATCH, POST, PUT, or null. Supports $filter (eq) but not for null values.</summary>
         public string ActionVerb {
             get { return BackingStore?.Get<string>("actionVerb"); }
             set { BackingStore?.Set("actionVerb", value); }
         }
+        /// <summary>The authenticationContextId property</summary>
+        public string AuthenticationContextId {
+            get { return BackingStore?.Get<string>("authenticationContextId"); }
+            set { BackingStore?.Set("authenticationContextId", value); }
+        }
         /// <summary>Description for the action. Supports $filter (eq).</summary>
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
+        }
+        /// <summary>The isAuthenticationContextSettable property</summary>
+        public bool? IsAuthenticationContextSettable {
+            get { return BackingStore?.Get<bool?>("isAuthenticationContextSettable"); }
+            set { BackingStore?.Set("isAuthenticationContextSettable", value); }
         }
         /// <summary>Name for the action within the resource namespace, such as microsoft.insights/programs/update. Can include slash character (/). Case insensitive. Required. Supports $filter (eq).</summary>
         public string Name {
@@ -51,7 +61,9 @@ namespace Microsoft.Graph.Beta.Models {
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"actionVerb", n => { ActionVerb = n.GetStringValue(); } },
+                {"authenticationContextId", n => { AuthenticationContextId = n.GetStringValue(); } },
                 {"description", n => { Description = n.GetStringValue(); } },
+                {"isAuthenticationContextSettable", n => { IsAuthenticationContextSettable = n.GetBoolValue(); } },
                 {"name", n => { Name = n.GetStringValue(); } },
                 {"resourceScope", n => { ResourceScope = n.GetObjectValue<UnifiedRbacResourceScope>(UnifiedRbacResourceScope.CreateFromDiscriminatorValue); } },
                 {"resourceScopeId", n => { ResourceScopeId = n.GetStringValue(); } },
@@ -65,7 +77,9 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("actionVerb", ActionVerb);
+            writer.WriteStringValue("authenticationContextId", AuthenticationContextId);
             writer.WriteStringValue("description", Description);
+            writer.WriteBoolValue("isAuthenticationContextSettable", IsAuthenticationContextSettable);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<UnifiedRbacResourceScope>("resourceScope", ResourceScope);
             writer.WriteStringValue("resourceScopeId", ResourceScopeId);
