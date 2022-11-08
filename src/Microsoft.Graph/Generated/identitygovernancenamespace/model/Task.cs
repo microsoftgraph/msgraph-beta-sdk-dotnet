@@ -23,56 +23,56 @@ namespace Microsoft.Graph.IdentityGovernanceNamespace
     
         /// <summary>
         /// Gets or sets arguments.
-        /// Arguments included within the task.  For guidance to configure this property, see Configure the arguments for built-in Lifecycle Workflow tasks.
+        /// Arguments included within the task.  For guidance to configure this property, see Configure the arguments for built-in Lifecycle Workflow tasks. Required.
         /// </summary>
         [JsonPropertyName("arguments")]
         public IEnumerable<Microsoft.Graph.KeyValuePair> Arguments { get; set; }
     
         /// <summary>
         /// Gets or sets category.
-        /// The category of the task. The possible values are: joiner, leaver, unknownFutureValue. This property is multi-valued and the same task can apply to both joiner and leaver categories.
+        /// The category of the task. The possible values are: joiner, leaver, unknownFutureValue. This property is multi-valued and the same task can apply to both joiner and leaver categories.Supports $filter(eq, ne).
         /// </summary>
         [JsonPropertyName("category")]
         public LifecycleTaskCategory? Category { get; set; }
     
         /// <summary>
         /// Gets or sets continue on error.
-        /// A boolean value that determines if the failure of this task stops the subsequent workflows from running.
+        /// A boolean value that determines if the failure of this task stops the subsequent workflows from running. Optional.
         /// </summary>
         [JsonPropertyName("continueOnError")]
         public bool? ContinueOnError { get; set; }
     
         /// <summary>
         /// Gets or sets description.
-        /// A string that describes the purpose of the task for administrative use.
+        /// A string that describes the purpose of the task for administrative use. Optional.
         /// </summary>
         [JsonPropertyName("description")]
         public string Description { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
-        /// A unique string that identifies the task. Supports $filter(eq) and orderBy.
+        /// A unique string that identifies the task. Required.Supports $filter(eq, ne) and orderBy.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets execution sequence.
-        /// An integer that states in what order the task will run in a workflow.
+        /// An integer that states in what order the task will run in a workflow.Supports $orderby.
         /// </summary>
         [JsonPropertyName("executionSequence")]
         public Int32? ExecutionSequence { get; set; }
     
         /// <summary>
         /// Gets or sets is enabled.
-        /// A boolean value that denotes whether the task is set to run or not. Supports $filter(eq, ne) and orderBy.
+        /// A boolean value that denotes whether the task is set to run or not. Optional.Supports $filter(eq, ne) and orderBy.
         /// </summary>
         [JsonPropertyName("isEnabled")]
         public bool? IsEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets task definition id.
-        /// A unique template identifier for the task. For more information about the tasks that Lifecycle Workflows currently supports and their unique identifiers, see supported tasks
+        /// A unique template identifier for the task. For more information about the tasks that Lifecycle Workflows currently supports and their unique identifiers, see supported tasks. Required.Supports $filter(eq, ne).
         /// </summary>
         [JsonPropertyName("taskDefinitionId")]
         public string TaskDefinitionId { get; set; }

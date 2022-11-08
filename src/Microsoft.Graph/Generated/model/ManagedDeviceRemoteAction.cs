@@ -99,5 +99,10 @@ namespace Microsoft.Graph
         /// </summary>
         CollectDiagnostics = 15,
 	
+        /// <summary>
+        /// Initiate Mobile Device Management Key Recovery
+        /// </summary>
+        InitiateMobileDeviceManagementKeyRecovery = 16,
+	
     }
 }

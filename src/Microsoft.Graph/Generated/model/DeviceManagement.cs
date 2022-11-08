@@ -1469,13 +1469,6 @@ namespace Microsoft.Graph
         public UserExperienceAnalyticsOverview UserExperienceAnalyticsOverview { get; set; }
     
         /// <summary>
-        /// Gets or sets user experience analytics regression summary.
-        /// User experience analytics regression summary
-        /// </summary>
-        [JsonPropertyName("userExperienceAnalyticsRegressionSummary")]
-        public UserExperienceAnalyticsRegressionSummary UserExperienceAnalyticsRegressionSummary { get; set; }
-    
-        /// <summary>
         /// Gets or sets user experience analytics remote connection.
         /// User experience analytics remote connection
         /// </summary>
@@ -1915,34 +1908,6 @@ namespace Microsoft.Graph
         [JsonPropertyName("configManagerCollections@odata.nextLink")]
         [JsonConverter(typeof(NextLinkConverter))]
         public string ConfigManagerCollectionsNextLink { get; set; }
-    
-        /// <summary>
-        /// Gets or sets organizational message details.
-        /// A list of OrganizationalMessageDetails
-        /// </summary>
-        [JsonPropertyName("organizationalMessageDetails")]
-        public IDeviceManagementOrganizationalMessageDetailsCollectionPage OrganizationalMessageDetails { get; set; }
-
-        /// <summary>
-        /// Gets or sets organizationalMessageDetailsNextLink.
-        /// </summary>
-        [JsonPropertyName("organizationalMessageDetails@odata.nextLink")]
-        [JsonConverter(typeof(NextLinkConverter))]
-        public string OrganizationalMessageDetailsNextLink { get; set; }
-    
-        /// <summary>
-        /// Gets or sets organizational message guided contents.
-        /// A list of OrganizationalMessageGuidedContents
-        /// </summary>
-        [JsonPropertyName("organizationalMessageGuidedContents")]
-        public IDeviceManagementOrganizationalMessageGuidedContentsCollectionPage OrganizationalMessageGuidedContents { get; set; }
-
-        /// <summary>
-        /// Gets or sets organizationalMessageGuidedContentsNextLink.
-        /// </summary>
-        [JsonPropertyName("organizationalMessageGuidedContents@odata.nextLink")]
-        [JsonConverter(typeof(NextLinkConverter))]
-        public string OrganizationalMessageGuidedContentsNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets resource operations.

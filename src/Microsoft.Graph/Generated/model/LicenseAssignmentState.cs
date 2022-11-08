@@ -23,7 +23,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets assignedByGroup.
-        /// The id of the group that assigns this license. If the assignment is a direct-assigned license, this field will be Null. Read-Only.
+        /// Indicates whether the license is directly-assigned or inherited from a group. If directly-assigned, this field is null; if inherited through a group membership, this field contains the ID of the group. Read-Only.
         /// </summary>
         [JsonPropertyName("assignedByGroup")]
         public string AssignedByGroup { get; set; }

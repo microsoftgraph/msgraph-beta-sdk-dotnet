@@ -80,6 +80,12 @@ namespace Microsoft.Graph
         IDirectoryInboundSharedUserProfilesCollectionRequestBuilder InboundSharedUserProfiles { get; }
 
         /// <summary>
+        /// Gets the request builder for OnPremisesSynchronization.
+        /// </summary>
+        /// <returns>The <see cref="IDirectoryOnPremisesSynchronizationCollectionRequestBuilder"/>.</returns>
+        IDirectoryOnPremisesSynchronizationCollectionRequestBuilder OnPremisesSynchronization { get; }
+
+        /// <summary>
         /// Gets the request builder for OutboundSharedUserProfiles.
         /// </summary>
         /// <returns>The <see cref="IDirectoryOutboundSharedUserProfilesCollectionRequestBuilder"/>.</returns>

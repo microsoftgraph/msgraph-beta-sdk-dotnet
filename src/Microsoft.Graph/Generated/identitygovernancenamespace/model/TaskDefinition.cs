@@ -23,7 +23,7 @@ namespace Microsoft.Graph.IdentityGovernanceNamespace
     
         /// <summary>
         /// Gets or sets category.
-        /// The category of the HR function that the tasks created using this definition can be used with. The possible values are: joiner, leaver. This is a multi-valued enumeration whose allowed combinations are joiner, joiner,leaver, or leaver. Supports $filter (eq, has).
+        /// The category of the HR function that the tasks created using this definition can be used with. The possible values are: joiner, leaver. This is a multi-valued enumeration whose allowed combinations are joiner, joiner,leaver, or leaver.Supports $filter(eq, ne, has) and $orderby.
         /// </summary>
         [JsonPropertyName("category")]
         public LifecycleTaskCategory? Category { get; set; }
@@ -43,21 +43,21 @@ namespace Microsoft.Graph.IdentityGovernanceNamespace
     
         /// <summary>
         /// Gets or sets display name.
-        /// The display name of the taskDefinition`.
+        /// The display name of the taskDefinition.Supports $filter(eq, ne) and $orderby.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets parameters.
-        /// The parameters that must be supplied when creating a workflow task object.
+        /// The parameters that must be supplied when creating a workflow task object.Supports $filter(any).
         /// </summary>
         [JsonPropertyName("parameters")]
         public IEnumerable<Parameter> Parameters { get; set; }
     
         /// <summary>
         /// Gets or sets version.
-        /// The version number of the taskDefinition. New records are pushed when we add support for new parameters.
+        /// The version number of the taskDefinition. New records are pushed when we add support for new parameters.Supports $filter(ge, gt, le, lt, eq, ne) and $orderby.
         /// </summary>
         [JsonPropertyName("version")]
         public Int32? Version { get; set; }

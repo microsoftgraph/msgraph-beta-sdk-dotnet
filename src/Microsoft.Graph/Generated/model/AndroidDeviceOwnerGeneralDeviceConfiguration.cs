@@ -591,7 +591,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets password block keyguard features.
-        /// List of device keyguard features to block. This collection can contain a maximum of 7 elements.
+        /// List of device keyguard features to block. This collection can contain a maximum of 11 elements.
         /// </summary>
         [JsonPropertyName("passwordBlockKeyguardFeatures")]
         public IEnumerable<AndroidKeyguardFeature> PasswordBlockKeyguardFeatures { get; set; }

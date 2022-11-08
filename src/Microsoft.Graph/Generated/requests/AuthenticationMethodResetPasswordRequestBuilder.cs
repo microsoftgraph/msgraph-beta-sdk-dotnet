@@ -24,16 +24,13 @@ namespace Microsoft.Graph
         /// <param name="requestUrl">The URL for the request.</param>
         /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
         /// <param name="newPassword">A newPassword parameter for the OData method call.</param>
-        /// <param name="requireChangeOnNextSignIn">A requireChangeOnNextSignIn parameter for the OData method call.</param>
         public AuthenticationMethodResetPasswordRequestBuilder(
             string requestUrl,
             IBaseClient client,
-            string newPassword,
-            bool? requireChangeOnNextSignIn)
+            string newPassword)
             : base(requestUrl, client)
         {
             this.SetParameter("newPassword", newPassword, true);
-            this.SetParameter("requireChangeOnNextSignIn", requireChangeOnNextSignIn, true);
         }
 
         /// <summary>
@@ -49,11 +46,6 @@ namespace Microsoft.Graph
             if (this.HasParameter("newPassword"))
             {
                 request.RequestBody.NewPassword = this.GetParameter<string>("newPassword");
-            }
-
-            if (this.HasParameter("requireChangeOnNextSignIn"))
-            {
-                request.RequestBody.RequireChangeOnNextSignIn = this.GetParameter<bool?>("requireChangeOnNextSignIn");
             }
 
             return request;

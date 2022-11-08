@@ -23,21 +23,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets buildNumber.
-        /// The build number of MacOS Line of Business (LoB) app.
+        /// The build number of the app.
         /// </summary>
         [JsonPropertyName("buildNumber")]
         public string BuildNumber { get; set; }
     
         /// <summary>
         /// Gets or sets bundleId.
-        /// The Identity Name.
+        /// The bundleId of the app.
         /// </summary>
         [JsonPropertyName("bundleId")]
         public string BundleId { get; set; }
     
         /// <summary>
         /// Gets or sets versionNumber.
-        /// The version number of MacOS Line of Business (LoB) app.
+        /// The version number of the app.
         /// </summary>
         [JsonPropertyName("versionNumber")]
         public string VersionNumber { get; set; }

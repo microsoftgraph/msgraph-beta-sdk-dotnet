@@ -85,6 +85,13 @@ namespace Microsoft.Graph
         public Int32? InstallProgressTimeoutInMinutes { get; set; }
     
         /// <summary>
+        /// Gets or sets install quality updates.
+        /// Allows quality updates installation during OOBE
+        /// </summary>
+        [JsonPropertyName("installQualityUpdates")]
+        public bool? InstallQualityUpdates { get; set; }
+    
+        /// <summary>
         /// Gets or sets selected mobile app ids.
         /// Selected applications to track the installation status
         /// </summary>

@@ -23,14 +23,14 @@ namespace Microsoft.Graph.IdentityGovernanceNamespace
     
         /// <summary>
         /// Gets or sets completed date time.
-        /// The date time that the associated run completed. Value is null if the run has not completed.
+        /// The date time that the associated run completed. Value is null if the run has not completed.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
         /// </summary>
         [JsonPropertyName("completedDateTime")]
         public DateTimeOffset? CompletedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets failed users count.
-        /// The number of users in the run execution for which the associated task failed.
+        /// The number of users in the run execution for which the associated task failed.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
         /// </summary>
         [JsonPropertyName("failedUsersCount")]
         public Int32? FailedUsersCount { get; set; }
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.IdentityGovernanceNamespace
     
         /// <summary>
         /// Gets or sets processing status.
-        /// The processing status of the associated task based on the taskProcessingResults. The possible values are based on the number of queued, inProgress, completed, completedWithErrors, canceled, failed, and unknownFutureValue.
+        /// The processing status of the associated task based on the taskProcessingResults. The possible values are based on the number of queued, inProgress, completed, completedWithErrors, canceled, failed, and unknownFutureValue.Supports $filter(eq, ne) and $orderby.
         /// </summary>
         [JsonPropertyName("processingStatus")]
         public LifecycleWorkflowProcessingStatus? ProcessingStatus { get; set; }
@@ -65,35 +65,35 @@ namespace Microsoft.Graph.IdentityGovernanceNamespace
     
         /// <summary>
         /// Gets or sets successful users count.
-        /// The number of users in the run execution for which the associated task succeeded.
+        /// The number of users in the run execution for which the associated task succeeded.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
         /// </summary>
         [JsonPropertyName("successfulUsersCount")]
         public Int32? SuccessfulUsersCount { get; set; }
     
         /// <summary>
         /// Gets or sets total users count.
-        /// The total number of users in the run execution for which the associated task was scheduled to execute.
+        /// The total number of users in the run execution for which the associated task was scheduled to execute.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
         /// </summary>
         [JsonPropertyName("totalUsersCount")]
         public Int32? TotalUsersCount { get; set; }
     
         /// <summary>
         /// Gets or sets unprocessed users count.
-        /// The number of users in the run execution for which the associated task is queued, in progress, or canceled.
+        /// The number of users in the run execution for which the associated task is queued, in progress, or canceled.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
         /// </summary>
         [JsonPropertyName("unprocessedUsersCount")]
         public Int32? UnprocessedUsersCount { get; set; }
     
         /// <summary>
         /// Gets or sets task.
-        /// The related lifecycle workflow task.
+        /// The related lifecycle workflow task.Supports $filter(eq, ne) and $expand.
         /// </summary>
         [JsonPropertyName("task")]
         public TaskObject @Task { get; set; }
     
         /// <summary>
         /// Gets or sets task definition.
-        /// The taskDefinition associated with the related lifecycle workflow task.
+        /// The taskDefinition associated with the related lifecycle workflow task.Supports $filter(eq, ne) and $expand.
         /// </summary>
         [JsonPropertyName("taskDefinition")]
         public TaskDefinition TaskDefinition { get; set; }

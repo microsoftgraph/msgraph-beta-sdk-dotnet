@@ -44,7 +44,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets device id.
-        /// The unique identifier of the device used for accepting the agreement.
+        /// The unique identifier of the device used for accepting the agreement. Supports $filter (eq) and eq for null values.
         /// </summary>
         [JsonPropertyName("deviceId")]
         public string DeviceId { get; set; }
@@ -65,14 +65,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets expiration date time.
-        /// The expiration date time of the acceptance. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+        /// The expiration date time of the acceptance. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq, ge, le) and eq for null values.
         /// </summary>
         [JsonPropertyName("expirationDateTime")]
         public DateTimeOffset? ExpirationDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets recorded date time.
-        /// The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z
+        /// The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $filter (eq) and eq for null values.
         /// </summary>
         [JsonPropertyName("recordedDateTime")]
         public DateTimeOffset? RecordedDateTime { get; set; }
@@ -100,7 +100,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets user id.
-        /// ID of the user who accepted the agreement.
+        /// ID of the user who accepted the agreement. Supports $filter (eq).
         /// </summary>
         [JsonPropertyName("userId")]
         public string UserId { get; set; }

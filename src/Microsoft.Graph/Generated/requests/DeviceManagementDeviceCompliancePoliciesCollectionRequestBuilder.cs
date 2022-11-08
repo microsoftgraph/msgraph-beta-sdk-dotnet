@@ -119,12 +119,14 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IDeviceCompliancePolicySetScheduledRetireStateRequestBuilder"/>.</returns>
         public IDeviceCompliancePolicySetScheduledRetireStateRequestBuilder SetScheduledRetireState(
             ScheduledRetireState state,
+            bool? scopedToAllDevices = null,
             IEnumerable<string> managedDeviceIds = null)
         {
             return new DeviceCompliancePolicySetScheduledRetireStateRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.setScheduledRetireState"),
                 this.Client,
                 state,
+                scopedToAllDevices,
                 managedDeviceIds);
         }
 

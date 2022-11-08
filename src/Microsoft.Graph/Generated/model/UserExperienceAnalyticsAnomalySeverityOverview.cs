@@ -50,13 +50,6 @@ namespace Microsoft.Graph
         public Int32? MediumSeverityAnomalyCount { get; set; }
     
         /// <summary>
-        /// Gets or sets otherSeverityAnomalyCount.
-        /// The number of anomalies which have been detected with undefined severity. Valid values -2147483648 to 2147483647
-        /// </summary>
-        [JsonPropertyName("otherSeverityAnomalyCount")]
-        public Int32? OtherSeverityAnomalyCount { get; set; }
-    
-        /// <summary>
         /// Gets or sets additional data.
         /// </summary>
         [JsonExtensionData]

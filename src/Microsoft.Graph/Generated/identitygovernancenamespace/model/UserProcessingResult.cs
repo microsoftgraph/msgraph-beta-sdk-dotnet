@@ -23,7 +23,7 @@ namespace Microsoft.Graph.IdentityGovernanceNamespace
     
         /// <summary>
         /// Gets or sets completed date time.
-        /// The date time that the workflow execution for a user completed. Value is null if the workflow hasn't completed. Supports $filter(lt, gt) and $orderby.
+        /// The date time that the workflow execution for a user completed. Value is null if the workflow hasn't completed.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
         /// </summary>
         [JsonPropertyName("completedDateTime")]
         public DateTimeOffset? CompletedDateTime { get; set; }
@@ -37,21 +37,21 @@ namespace Microsoft.Graph.IdentityGovernanceNamespace
     
         /// <summary>
         /// Gets or sets processing status.
-        /// The workflow execution status. The possible values are: queued, inProgress, completed, completedWithErrors, canceled, failed, unknownFutureValue.
+        /// The workflow execution status. The possible values are: queued, inProgress, completed, completedWithErrors, canceled, failed, unknownFutureValue.Supports $filter(eq, ne) and $orderby.
         /// </summary>
         [JsonPropertyName("processingStatus")]
         public LifecycleWorkflowProcessingStatus? ProcessingStatus { get; set; }
     
         /// <summary>
         /// Gets or sets scheduled date time.
-        /// The date time that the workflow is scheduled to be executed for a user.
+        /// The date time that the workflow is scheduled to be executed for a user.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
         /// </summary>
         [JsonPropertyName("scheduledDateTime")]
         public DateTimeOffset? ScheduledDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets started date time.
-        /// The date time that the workflow execution started. Value is null if the workflow execution has not started. Supports $filter(lt, gt) and $orderby.
+        /// The date time that the workflow execution started. Value is null if the workflow execution has not started.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
         /// </summary>
         [JsonPropertyName("startedDateTime")]
         public DateTimeOffset? StartedDateTime { get; set; }
@@ -72,7 +72,7 @@ namespace Microsoft.Graph.IdentityGovernanceNamespace
     
         /// <summary>
         /// Gets or sets workflow execution type.
-        /// Describes the execution type of the workflow. The possible values are: scheduled, onDemand, unknownFutureValue. Supports $filter(eq, ne).
+        /// Describes the execution type of the workflow. The possible values are: scheduled, onDemand, unknownFutureValue.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
         /// </summary>
         [JsonPropertyName("workflowExecutionType")]
         public WorkflowExecutionType? WorkflowExecutionType { get; set; }
@@ -86,7 +86,7 @@ namespace Microsoft.Graph.IdentityGovernanceNamespace
     
         /// <summary>
         /// Gets or sets subject.
-        /// The unique identifier of the AAD user targeted for the taskProcessingResult.
+        /// The unique identifier of the AAD user targeted for the taskProcessingResult.Supports $filter(eq, ne) and $expand.
         /// </summary>
         [JsonPropertyName("subject")]
         public Microsoft.Graph.User Subject { get; set; }

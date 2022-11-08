@@ -154,6 +154,19 @@ namespace Microsoft.Graph
         public string ServicePlansNextLink { get; set; }
     
         /// <summary>
+        /// Gets or sets shared use service plans.
+        /// </summary>
+        [JsonPropertyName("sharedUseServicePlans")]
+        public IVirtualEndpointSharedUseServicePlansCollectionWithReferencesPage SharedUseServicePlans { get; set; }
+
+        /// <summary>
+        /// Gets or sets sharedUseServicePlansNextLink.
+        /// </summary>
+        [JsonPropertyName("sharedUseServicePlans@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string SharedUseServicePlansNextLink { get; set; }
+    
+        /// <summary>
         /// Gets or sets snapshots.
         /// Cloud PC snapshots.
         /// </summary>

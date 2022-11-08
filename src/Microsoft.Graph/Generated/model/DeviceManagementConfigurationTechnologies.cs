@@ -66,9 +66,14 @@ namespace Microsoft.Graph
         Enrollment = 4096,
 	
         /// <summary>
+        /// Endpoint Privilege Management
+        /// </summary>
+        EndpointPrivilegeManagement = 8192,
+	
+        /// <summary>
         /// Unknown Future Value
         /// </summary>
-        UnknownFutureValue = 1073741824,
+        UnknownFutureValue = 16384,
 	
     }
 }

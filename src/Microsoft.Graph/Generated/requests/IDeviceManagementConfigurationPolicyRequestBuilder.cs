@@ -57,6 +57,13 @@ namespace Microsoft.Graph
         IDeviceManagementConfigurationPolicyCreateCopyRequestBuilder CreateCopy(
             string displayName = null,
             string description = null);
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementConfigurationPolicyReorder.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementConfigurationPolicyReorderRequestBuilder"/>.</returns>
+        IDeviceManagementConfigurationPolicyReorderRequestBuilder Reorder(
+            Int32 priority);
     
     }
 }

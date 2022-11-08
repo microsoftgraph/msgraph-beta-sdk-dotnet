@@ -74,5 +74,10 @@ namespace Microsoft.Graph
         /// </summary>
         AndroidDedicatedAndFullyManaged = 10,
 	
+        /// <summary>
+        /// Unknown Future Value
+        /// </summary>
+        UnknownFutureValue = 11,
+	
     }
 }

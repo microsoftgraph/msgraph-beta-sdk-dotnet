@@ -34,5 +34,11 @@ namespace Microsoft.Graph
         [JsonPropertyName("groupId")]
         public string GroupId { get; set; }
     
+        /// <summary>
+        /// Gets or sets servicePlanId.
+        /// </summary>
+        [JsonPropertyName("servicePlanId")]
+        public string ServicePlanId { get; set; }
+    
     }
 }

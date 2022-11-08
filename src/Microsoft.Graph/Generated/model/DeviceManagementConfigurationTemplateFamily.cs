@@ -60,14 +60,29 @@ namespace Microsoft.Graph
         EndpointSecurityApplicationControl = 16,
 	
         /// <summary>
+        /// Endpoint Security Endpoint Privilege Management
+        /// </summary>
+        EndpointSecurityEndpointPrivilegeManagement = 17,
+	
+        /// <summary>
         /// Enrollment Configuration
         /// </summary>
         EnrollmentConfiguration = 18,
 	
         /// <summary>
+        /// App Quiet Time
+        /// </summary>
+        AppQuietTime = 19,
+	
+        /// <summary>
         /// Baseline
         /// </summary>
         Baseline = 20,
+	
+        /// <summary>
+        /// Unknown Future Value
+        /// </summary>
+        UnknownFutureValue = 21,
 	
     }
 }

@@ -48,8 +48,7 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IAuthenticationMethodResetPasswordRequestBuilder"/>.</returns>
         IAuthenticationMethodResetPasswordRequestBuilder ResetPassword(
-            string newPassword = null,
-            bool? requireChangeOnNextSignIn = null);
+            string newPassword = null);
     
     }
 }

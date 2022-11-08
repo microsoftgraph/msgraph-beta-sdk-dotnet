@@ -37,49 +37,49 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets company name.
-        /// Name of the company that this organizational contact belong to. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+        /// Name of the company that this organizational contact belong to. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values).
         /// </summary>
         [JsonPropertyName("companyName")]
         public string CompanyName { get; set; }
     
         /// <summary>
         /// Gets or sets department.
-        /// The name for the department in which the contact works. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+        /// The name for the department in which the contact works. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values).
         /// </summary>
         [JsonPropertyName("department")]
         public string Department { get; set; }
     
         /// <summary>
         /// Gets or sets display name.
-        /// Display name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.
+        /// Display name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values), $search, and $orderBy.
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
     
         /// <summary>
         /// Gets or sets given name.
-        /// First name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+        /// First name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values).
         /// </summary>
         [JsonPropertyName("givenName")]
         public string GivenName { get; set; }
     
         /// <summary>
         /// Gets or sets job title.
-        /// Job title for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+        /// Job title for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values).
         /// </summary>
         [JsonPropertyName("jobTitle")]
         public string JobTitle { get; set; }
     
         /// <summary>
         /// Gets or sets mail.
-        /// The SMTP address for the contact, for example, 'jeff@contoso.onmicrosoft.com'. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+        /// The SMTP address for the contact, for example, 'jeff@contoso.onmicrosoft.com'. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values).
         /// </summary>
         [JsonPropertyName("mail")]
         public string Mail { get; set; }
     
         /// <summary>
         /// Gets or sets mail nickname.
-        /// Email alias (portion of email address pre-pending the @ symbol) for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).
+        /// Email alias (portion of email address pre-pending the @ symbol) for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values).
         /// </summary>
         [JsonPropertyName("mailNickname")]
         public string MailNickname { get; set; }
@@ -93,14 +93,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets on premises provisioning errors.
-        /// List of any synchronization provisioning errors for this organizational contact. Supports $filter (eq, not).
+        /// List of any synchronization provisioning errors for this organizational contact. Supports $filter (eq, not for category and propertyCausingError) and eq to count empty collections.
         /// </summary>
         [JsonPropertyName("onPremisesProvisioningErrors")]
         public IEnumerable<OnPremisesProvisioningError> OnPremisesProvisioningErrors { get; set; }
     
         /// <summary>
         /// Gets or sets on premises sync enabled.
-        /// true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced and now mastered in Exchange; null if this object has never been synced from an on-premises directory (default).  Supports $filter (eq, ne, not, in, and eq on null values).
+        /// true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced and now mastered in Exchange; null if this object has never been synced from an on-premises directory (default).  Supports $filter (eq, ne, not, in, and eq for null values).
         /// </summary>
         [JsonPropertyName("onPremisesSyncEnabled")]
         public bool? OnPremisesSyncEnabled { get; set; }
@@ -114,14 +114,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets proxy addresses.
-        /// For example: 'SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com'. The any operator is required for filter expressions on multi-valued properties. Supports $filter (eq, not, ge, le, startsWith, and counting empty collections).
+        /// For example: 'SMTP: bob@contoso.com', 'smtp: bob@sales.contoso.com'. The any operator is required for filter expressions on multi-valued properties. Supports $filter (eq, not, ge, le, startsWith, and eq to count empty collections).
         /// </summary>
         [JsonPropertyName("proxyAddresses")]
         public IEnumerable<string> ProxyAddresses { get; set; }
     
         /// <summary>
         /// Gets or sets surname.
-        /// Last name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values)
+        /// Last name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values)
         /// </summary>
         [JsonPropertyName("surname")]
         public string Surname { get; set; }
@@ -142,7 +142,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets manager.
-        /// The user or contact that is this contact's manager. Read-only. Supports $expand.
+        /// The user or contact that is this contact's manager. Read-only. Supports $expand and $filter (eq) by id.
         /// </summary>
         [JsonPropertyName("manager")]
         public DirectoryObject Manager { get; set; }

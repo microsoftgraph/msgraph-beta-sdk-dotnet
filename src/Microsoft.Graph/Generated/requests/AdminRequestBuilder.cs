@@ -51,6 +51,18 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for Edge.
+        /// </summary>
+        /// <returns>The <see cref="IEdgeRequestBuilder"/>.</returns>
+        public IEdgeRequestBuilder Edge
+        {
+            get
+            {
+                return new EdgeRequestBuilder(this.AppendSegmentToRequestUrl("edge"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Sharepoint.
         /// </summary>
         /// <returns>The <see cref="Microsoft.Graph.TenantAdmin.ISharepointRequestBuilder"/>.</returns>

@@ -31,5 +31,11 @@ namespace Microsoft.Graph
         /// <returns>The built request.</returns>
         new IDeviceManagementPartnerRequest Request(IEnumerable<Option> options);
     
+        /// <summary>
+        /// Gets the request builder for DeviceManagementPartnerTerminate.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementPartnerTerminateRequestBuilder"/>.</returns>
+        IDeviceManagementPartnerTerminateRequestBuilder Terminate();
+    
     }
 }

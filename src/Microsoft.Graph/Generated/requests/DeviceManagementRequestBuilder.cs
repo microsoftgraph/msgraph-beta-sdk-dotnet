@@ -1299,18 +1299,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for UserExperienceAnalyticsRegressionSummary.
-        /// </summary>
-        /// <returns>The <see cref="IUserExperienceAnalyticsRegressionSummaryRequestBuilder"/>.</returns>
-        public IUserExperienceAnalyticsRegressionSummaryRequestBuilder UserExperienceAnalyticsRegressionSummary
-        {
-            get
-            {
-                return new UserExperienceAnalyticsRegressionSummaryRequestBuilder(this.AppendSegmentToRequestUrl("userExperienceAnalyticsRegressionSummary"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for UserExperienceAnalyticsRemoteConnection.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsRemoteConnectionCollectionRequestBuilder"/>.</returns>
@@ -1707,30 +1695,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for OrganizationalMessageDetails.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceManagementOrganizationalMessageDetailsCollectionRequestBuilder"/>.</returns>
-        public IDeviceManagementOrganizationalMessageDetailsCollectionRequestBuilder OrganizationalMessageDetails
-        {
-            get
-            {
-                return new DeviceManagementOrganizationalMessageDetailsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("organizationalMessageDetails"), this.Client);
-            }
-        }
-
-        /// <summary>
-        /// Gets the request builder for OrganizationalMessageGuidedContents.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceManagementOrganizationalMessageGuidedContentsCollectionRequestBuilder"/>.</returns>
-        public IDeviceManagementOrganizationalMessageGuidedContentsCollectionRequestBuilder OrganizationalMessageGuidedContents
-        {
-            get
-            {
-                return new DeviceManagementOrganizationalMessageGuidedContentsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("organizationalMessageGuidedContents"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for ResourceOperations.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementResourceOperationsCollectionRequestBuilder"/>.</returns>
@@ -2057,32 +2021,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for DeviceManagementPostOrganizationalMessageTenantConsent.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceManagementPostOrganizationalMessageTenantConsentRequestBuilder"/>.</returns>
-        public IDeviceManagementPostOrganizationalMessageTenantConsentRequestBuilder PostOrganizationalMessageTenantConsent(
-            bool firstPartyMessageAllowed)
-        {
-            return new DeviceManagementPostOrganizationalMessageTenantConsentRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.postOrganizationalMessageTenantConsent"),
-                this.Client,
-                firstPartyMessageAllowed);
-        }
-
-        /// <summary>
-        /// Gets the request builder for DeviceManagementUpdateOrganizationalMessageTenantConsent.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceManagementUpdateOrganizationalMessageTenantConsentRequestBuilder"/>.</returns>
-        public IDeviceManagementUpdateOrganizationalMessageTenantConsentRequestBuilder UpdateOrganizationalMessageTenantConsent(
-            bool firstPartyMessageAllowed)
-        {
-            return new DeviceManagementUpdateOrganizationalMessageTenantConsentRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.updateOrganizationalMessageTenantConsent"),
-                this.Client,
-                firstPartyMessageAllowed);
-        }
-
-        /// <summary>
         /// Gets the request builder for DeviceManagementGetEffectivePermissions.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementGetEffectivePermissionsRequestBuilder"/>.</returns>
@@ -2142,6 +2080,17 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for DeviceManagementUserExperienceAnalyticsSummarizedDeviceScopes.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsSummarizedDeviceScopesRequestBuilder"/>.</returns>
+        public IDeviceManagementUserExperienceAnalyticsSummarizedDeviceScopesRequestBuilder UserExperienceAnalyticsSummarizedDeviceScopes()
+        {
+            return new DeviceManagementUserExperienceAnalyticsSummarizedDeviceScopesRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.userExperienceAnalyticsSummarizedDeviceScopes"),
+                this.Client);
+        }
+
+        /// <summary>
         /// Gets the request builder for DeviceManagementUserExperienceAnalyticsSummarizeWorkFromAnywhereDevices.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsSummarizeWorkFromAnywhereDevicesRequestBuilder"/>.</returns>
@@ -2163,17 +2112,6 @@ namespace Microsoft.Graph
                 this.AppendSegmentToRequestUrl("microsoft.graph.getSuggestedEnrollmentLimit"),
                 this.Client,
                 enrollmentType);
-        }
-
-        /// <summary>
-        /// Gets the request builder for DeviceManagementGetOrganizationalMessageTenantConsent.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceManagementGetOrganizationalMessageTenantConsentRequestBuilder"/>.</returns>
-        public IDeviceManagementGetOrganizationalMessageTenantConsentRequestBuilder GetOrganizationalMessageTenantConsent()
-        {
-            return new DeviceManagementGetOrganizationalMessageTenantConsentRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.getOrganizationalMessageTenantConsent"),
-                this.Client);
         }
 
         /// <summary>

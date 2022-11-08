@@ -78,6 +78,13 @@ namespace Microsoft.Graph
         public string OuDistinguishedName { get; set; }
     
         /// <summary>
+        /// Gets or sets role scope tag ids.
+        /// The list of scope tags for the configuration.
+        /// </summary>
+        [JsonPropertyName("roleScopeTagIds")]
+        public IEnumerable<string> RoleScopeTagIds { get; set; }
+    
+        /// <summary>
         /// Gets or sets supported settings count.
         /// The number of Group Policy Settings supported by Intune.
         /// </summary>

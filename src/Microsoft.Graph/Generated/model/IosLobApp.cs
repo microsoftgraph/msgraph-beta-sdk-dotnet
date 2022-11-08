@@ -58,7 +58,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets identity version.
-        /// The identity version.
+        /// The identity version. This property is being deprecated in 2211(November 2022)
         /// </summary>
         [JsonPropertyName("identityVersion")]
         public string IdentityVersion { get; set; }

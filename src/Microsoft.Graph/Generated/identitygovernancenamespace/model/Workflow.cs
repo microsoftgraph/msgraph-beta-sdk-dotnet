@@ -30,14 +30,14 @@ namespace Microsoft.Graph.IdentityGovernanceNamespace
 
         /// <summary>
         /// Gets or sets deleted date time.
-        /// When the workflow was deleted. Supports $filter(lt,gt) and $orderBy.
+        /// When the workflow was deleted.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
         /// </summary>
         [JsonPropertyName("deletedDateTime")]
         public DateTimeOffset? DeletedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets id.
-        /// Identifier used for individually addressing a specific workflow. Supports $filter(eq, ne).
+        /// Identifier used for individually addressing a specific workflow.Supports $filter(eq, ne) and $orderby.
         /// </summary>
         [JsonPropertyName("id")]
         public string Id { get; set; }
@@ -51,7 +51,7 @@ namespace Microsoft.Graph.IdentityGovernanceNamespace
     
         /// <summary>
         /// Gets or sets version.
-        /// The current version number of the workflow. Value is 1 when the workflow is first created. Supports $filter(eq, ne).
+        /// The current version number of the workflow. Value is 1 when the workflow is first created.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
         /// </summary>
         [JsonPropertyName("version")]
         public Int32? Version { get; set; }

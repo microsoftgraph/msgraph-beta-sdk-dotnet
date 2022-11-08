@@ -32,6 +32,12 @@ namespace Microsoft.Graph
         IAdminRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for Edge.
+        /// </summary>
+        /// <returns>The <see cref="IEdgeRequestBuilder"/>.</returns>
+        IEdgeRequestBuilder Edge { get; }
+
+        /// <summary>
         /// Gets the request builder for Sharepoint.
         /// </summary>
         /// <returns>The <see cref="Microsoft.Graph.TenantAdmin.ISharepointRequestBuilder"/>.</returns>

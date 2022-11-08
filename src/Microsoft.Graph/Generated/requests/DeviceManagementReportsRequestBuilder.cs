@@ -655,6 +655,35 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetEncryptionReportForDevices.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetEncryptionReportForDevicesRequestBuilder"/>.</returns>
+        public IDeviceManagementReportsGetEncryptionReportForDevicesRequestBuilder GetEncryptionReportForDevices(
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null)
+        {
+            return new DeviceManagementReportsGetEncryptionReportForDevicesRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getEncryptionReportForDevices"),
+                this.Client,
+                name,
+                select,
+                search,
+                groupBy,
+                orderBy,
+                skip,
+                top,
+                sessionId,
+                filter);
+        }
+
+        /// <summary>
         /// Gets the request builder for DeviceManagementReportsGetQuietTimePolicyUsersReport.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementReportsGetQuietTimePolicyUsersReportRequestBuilder"/>.</returns>
@@ -1019,6 +1048,35 @@ namespace Microsoft.Graph
         {
             return new DeviceManagementReportsGetGroupPolicySettingsDeviceSettingsReportRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.getGroupPolicySettingsDeviceSettingsReport"),
+                this.Client,
+                name,
+                select,
+                search,
+                groupBy,
+                orderBy,
+                skip,
+                top,
+                sessionId,
+                filter);
+        }
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetMobileApplicationManagementAppConfigurationReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetMobileApplicationManagementAppConfigurationReportRequestBuilder"/>.</returns>
+        public IDeviceManagementReportsGetMobileApplicationManagementAppConfigurationReportRequestBuilder GetMobileApplicationManagementAppConfigurationReport(
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null)
+        {
+            return new DeviceManagementReportsGetMobileApplicationManagementAppConfigurationReportRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getMobileApplicationManagementAppConfigurationReport"),
                 this.Client,
                 name,
                 select,

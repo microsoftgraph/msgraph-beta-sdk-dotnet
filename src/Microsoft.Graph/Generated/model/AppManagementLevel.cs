@@ -55,5 +55,10 @@ namespace Microsoft.Graph
         /// </summary>
         AndroidOpenSourceProjectUserless = 32,
 	
+        /// <summary>
+        /// Unknown Future Value
+        /// </summary>
+        UnknownFutureValue = 64,
+	
     }
 }

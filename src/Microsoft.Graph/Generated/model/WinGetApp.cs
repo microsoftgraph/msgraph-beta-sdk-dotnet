@@ -36,6 +36,13 @@ namespace Microsoft.Graph
         public WinGetAppInstallExperience InstallExperience { get; set; }
     
         /// <summary>
+        /// Gets or sets manifest hash.
+        /// Hash of package metadata properties used to validate that the application matches the metadata in the source repository.
+        /// </summary>
+        [JsonPropertyName("manifestHash")]
+        public string ManifestHash { get; set; }
+    
+        /// <summary>
         /// Gets or sets package identifier.
         /// The PackageIdentifier from the WinGet source repository REST API. This also maps to the Id when using the WinGet client command line application. Required at creation time, cannot be modified on existing objects.
         /// </summary>

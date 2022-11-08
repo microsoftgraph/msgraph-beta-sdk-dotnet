@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     {
 
         /// <summary>
+        /// Gets or sets priority.
+        /// Priority of the policy. Valid values 1 to 500
+        /// </summary>
+        [JsonPropertyName("priority")]
+        public Int32? Priority { get; set; }
+    
+        /// <summary>
         /// Gets or sets additional data.
         /// </summary>
         [JsonExtensionData]

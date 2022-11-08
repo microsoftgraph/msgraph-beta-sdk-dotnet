@@ -296,6 +296,13 @@ namespace Microsoft.Graph
         public string MinimumWarningPatchVersion { get; set; }
     
         /// <summary>
+        /// Gets or sets minimum warning sdk version.
+        /// Versions less than the specified version will result in warning message on the managed app from accessing company data. (iOS only)
+        /// </summary>
+        [JsonPropertyName("minimumWarningSdkVersion")]
+        public string MinimumWarningSdkVersion { get; set; }
+    
+        /// <summary>
         /// Gets or sets minimum wipe company portal version.
         /// Minimum version of the Company portal that must be installed on the device or the company data on the app will be wiped
         /// </summary>

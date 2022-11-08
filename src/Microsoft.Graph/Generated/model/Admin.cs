@@ -22,6 +22,13 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
+        /// Gets or sets edge.
+        /// A container for Microsoft Edge resources. Read-only.
+        /// </summary>
+        [JsonPropertyName("edge")]
+        public Edge Edge { get; set; }
+    
+        /// <summary>
         /// Gets or sets sharepoint.
         /// A container for administrative resources to manage tenant-level settings for SharePoint and OneDrive.
         /// </summary>

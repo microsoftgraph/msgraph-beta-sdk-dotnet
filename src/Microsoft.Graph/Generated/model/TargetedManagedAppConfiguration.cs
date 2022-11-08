@@ -51,6 +51,13 @@ namespace Microsoft.Graph
         public bool? IsAssigned { get; set; }
     
         /// <summary>
+        /// Gets or sets targeted app management levels.
+        /// The intended app management levels for this policy
+        /// </summary>
+        [JsonPropertyName("targetedAppManagementLevels")]
+        public AppManagementLevel? TargetedAppManagementLevels { get; set; }
+    
+        /// <summary>
         /// Gets or sets apps.
         /// List of apps to which the policy is deployed.
         /// </summary>

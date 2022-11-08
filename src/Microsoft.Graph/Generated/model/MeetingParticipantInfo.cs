@@ -23,7 +23,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets identity.
-        /// Identity information of the participant.
+        /// Identity information of the participant. Only the user property is used for onlineMeeting participants.
         /// </summary>
         [JsonPropertyName("identity")]
         public IdentitySet Identity { get; set; }
