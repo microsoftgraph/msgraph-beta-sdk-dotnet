@@ -142,7 +142,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets mail nickname.
-        /// The mail alias for the group, unique for Microsoft 365 groups in the organization. Maximum length is 64 characters. This property can contain only characters in the ASCII character set 0 - 127 except the following: @ () / [] ' ; : . &amp;lt;&amp;gt; , SPACE. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith).
+        /// The mail alias for the group, unique for Microsoft 365 groups in the organization. Maximum length is 64 characters. This property can contain only characters in the ASCII character set 0 - 127 except the following: @ () / [] ' ; : &amp;lt;&amp;gt; , SPACE. Returned by default. Supports $filter (eq, ne, not, ge, le, in, startsWith).
         /// </summary>
         [JsonPropertyName("mailNickname")]
         public string MailNickname { get; set; }

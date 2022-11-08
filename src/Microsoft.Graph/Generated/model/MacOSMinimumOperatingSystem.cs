@@ -23,14 +23,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets v10_10.
-        /// When TRUE, indicates macOS 10.10 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
+        /// When TRUE, indicates OS X 10.10 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
         /// </summary>
         [JsonPropertyName("v10_10")]
         public bool? V10_10 { get; set; }
     
         /// <summary>
         /// Gets or sets v10_11.
-        /// When TRUE, indicates macOS 10.11 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
+        /// When TRUE, indicates OS X 10.11 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
         /// </summary>
         [JsonPropertyName("v10_11")]
         public bool? V10_11 { get; set; }
@@ -65,21 +65,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets v10_7.
-        /// When TRUE, indicates macOS 10.7 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
+        /// When TRUE, indicates Mac OS X 10.7 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
         /// </summary>
         [JsonPropertyName("v10_7")]
         public bool? V10_7 { get; set; }
     
         /// <summary>
         /// Gets or sets v10_8.
-        /// When TRUE, indicates macOS 10.8 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
+        /// When TRUE, indicates OS X 10.8 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
         /// </summary>
         [JsonPropertyName("v10_8")]
         public bool? V10_8 { get; set; }
     
         /// <summary>
         /// Gets or sets v10_9.
-        /// When TRUE, indicates macOS 10.9 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
+        /// When TRUE, indicates OS X 10.9 or later is required to install the app. When FALSE, indicates some other OS version is the minimum OS to install the app. Default value is FALSE.
         /// </summary>
         [JsonPropertyName("v10_9")]
         public bool? V10_9 { get; set; }

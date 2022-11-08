@@ -362,6 +362,17 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for ManagedDeviceInitiateMobileDeviceManagementKeyRecovery.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceInitiateMobileDeviceManagementKeyRecoveryRequestBuilder"/>.</returns>
+        public IManagedDeviceInitiateMobileDeviceManagementKeyRecoveryRequestBuilder InitiateMobileDeviceManagementKeyRecovery()
+        {
+            return new ManagedDeviceInitiateMobileDeviceManagementKeyRecoveryRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.initiateMobileDeviceManagementKeyRecovery"),
+                this.Client);
+        }
+
+        /// <summary>
         /// Gets the request builder for ManagedDeviceLocateDevice.
         /// </summary>
         /// <returns>The <see cref="IManagedDeviceLocateDeviceRequestBuilder"/>.</returns>
@@ -649,6 +660,19 @@ namespace Microsoft.Graph
                 this.AppendSegmentToRequestUrl("microsoft.graph.createRemoteHelpSession"),
                 this.Client,
                 sessionType);
+        }
+
+        /// <summary>
+        /// Gets the request builder for ManagedDeviceEndRemoteHelpSession.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceEndRemoteHelpSessionRequestBuilder"/>.</returns>
+        public IManagedDeviceEndRemoteHelpSessionRequestBuilder EndRemoteHelpSession(
+            string sessionKey = null)
+        {
+            return new ManagedDeviceEndRemoteHelpSessionRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.endRemoteHelpSession"),
+                this.Client,
+                sessionKey);
         }
 
         /// <summary>

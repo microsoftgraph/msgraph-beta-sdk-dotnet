@@ -129,6 +129,19 @@ namespace Microsoft.Graph
         public string InboundSharedUserProfilesNextLink { get; set; }
     
         /// <summary>
+        /// Gets or sets on premises synchronization.
+        /// </summary>
+        [JsonPropertyName("onPremisesSynchronization")]
+        public IDirectoryOnPremisesSynchronizationCollectionPage OnPremisesSynchronization { get; set; }
+
+        /// <summary>
+        /// Gets or sets onPremisesSynchronizationNextLink.
+        /// </summary>
+        [JsonPropertyName("onPremisesSynchronization@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string OnPremisesSynchronizationNextLink { get; set; }
+    
+        /// <summary>
         /// Gets or sets outbound shared user profiles.
         /// </summary>
         [JsonPropertyName("outboundSharedUserProfiles")]

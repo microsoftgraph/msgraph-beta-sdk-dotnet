@@ -195,6 +195,12 @@ namespace Microsoft.Graph
         IManagedDeviceEnrollNowActionRequestBuilder EnrollNowAction();
 
         /// <summary>
+        /// Gets the request builder for ManagedDeviceInitiateMobileDeviceManagementKeyRecovery.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceInitiateMobileDeviceManagementKeyRecoveryRequestBuilder"/>.</returns>
+        IManagedDeviceInitiateMobileDeviceManagementKeyRecoveryRequestBuilder InitiateMobileDeviceManagementKeyRecovery();
+
+        /// <summary>
         /// Gets the request builder for ManagedDeviceLocateDevice.
         /// </summary>
         /// <returns>The <see cref="IManagedDeviceLocateDeviceRequestBuilder"/>.</returns>
@@ -350,6 +356,13 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IManagedDeviceCreateRemoteHelpSessionRequestBuilder"/>.</returns>
         IManagedDeviceCreateRemoteHelpSessionRequestBuilder CreateRemoteHelpSession(
             string sessionType = null);
+
+        /// <summary>
+        /// Gets the request builder for ManagedDeviceEndRemoteHelpSession.
+        /// </summary>
+        /// <returns>The <see cref="IManagedDeviceEndRemoteHelpSessionRequestBuilder"/>.</returns>
+        IManagedDeviceEndRemoteHelpSessionRequestBuilder EndRemoteHelpSession(
+            string sessionKey = null);
 
         /// <summary>
         /// Gets the request builder for ManagedDeviceRequestRemoteHelpSessionAccess.

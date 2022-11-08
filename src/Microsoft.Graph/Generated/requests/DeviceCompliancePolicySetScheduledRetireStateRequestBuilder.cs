@@ -24,15 +24,18 @@ namespace Microsoft.Graph
         /// <param name="requestUrl">The URL for the request.</param>
         /// <param name="client">The <see cref="IBaseClient"/> for handling requests.</param>
         /// <param name="state">A state parameter for the OData method call.</param>
+        /// <param name="scopedToAllDevices">A scopedToAllDevices parameter for the OData method call.</param>
         /// <param name="managedDeviceIds">A managedDeviceIds parameter for the OData method call.</param>
         public DeviceCompliancePolicySetScheduledRetireStateRequestBuilder(
             string requestUrl,
             IBaseClient client,
             ScheduledRetireState state,
+            bool? scopedToAllDevices,
             IEnumerable<string> managedDeviceIds)
             : base(requestUrl, client)
         {
             this.SetParameter("state", state, false);
+            this.SetParameter("scopedToAllDevices", scopedToAllDevices, true);
             this.SetParameter("managedDeviceIds", managedDeviceIds, true);
         }
 
@@ -49,6 +52,11 @@ namespace Microsoft.Graph
             if (this.HasParameter("state"))
             {
                 request.RequestBody.State = this.GetParameter<ScheduledRetireState>("state");
+            }
+
+            if (this.HasParameter("scopedToAllDevices"))
+            {
+                request.RequestBody.ScopedToAllDevices = this.GetParameter<bool?>("scopedToAllDevices");
             }
 
             if (this.HasParameter("managedDeviceIds"))

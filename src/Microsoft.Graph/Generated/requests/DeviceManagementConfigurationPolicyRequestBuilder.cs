@@ -101,6 +101,19 @@ namespace Microsoft.Graph
                 displayName,
                 description);
         }
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementConfigurationPolicyReorder.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementConfigurationPolicyReorderRequestBuilder"/>.</returns>
+        public IDeviceManagementConfigurationPolicyReorderRequestBuilder Reorder(
+            Int32 priority)
+        {
+            return new DeviceManagementConfigurationPolicyReorderRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.reorder"),
+                this.Client,
+                priority);
+        }
     
     }
 }

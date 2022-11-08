@@ -45,7 +45,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets targeted app management levels.
-        /// The intended app management levels for this policy. Possible values are: unspecified, unmanaged, mdm, androidEnterprise, androidEnterpriseDedicatedDevicesWithAzureAdSharedMode, androidOpenSourceProjectUserAssociated, androidOpenSourceProjectUserless.
+        /// The intended app management levels for this policy. Possible values are: unspecified, unmanaged, mdm, androidEnterprise, androidEnterpriseDedicatedDevicesWithAzureAdSharedMode, androidOpenSourceProjectUserAssociated, androidOpenSourceProjectUserless, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("targetedAppManagementLevels")]
         public AppManagementLevel? TargetedAppManagementLevels { get; set; }

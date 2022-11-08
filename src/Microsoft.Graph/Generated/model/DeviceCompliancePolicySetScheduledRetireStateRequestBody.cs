@@ -21,6 +21,12 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
+        /// Gets or sets ScopedToAllDevices.
+        /// </summary>
+        [JsonPropertyName("scopedToAllDevices")]
+        public bool? ScopedToAllDevices { get; set; }
+    
+        /// <summary>
         /// Gets or sets State.
         /// </summary>
         [JsonPropertyName("state")]

@@ -23,14 +23,14 @@ namespace Microsoft.Graph.IdentityGovernanceNamespace
     
         /// <summary>
         /// Gets or sets completed date time.
-        /// The date time when taskProcessingResult execution ended. Value is null if task execution is still in progress.
+        /// The date time when taskProcessingResult execution ended. Value is null if task execution is still in progress.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
         /// </summary>
         [JsonPropertyName("completedDateTime")]
         public DateTimeOffset? CompletedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets created date time.
-        /// The date time when the taskProcessingResult was created. Supports $filter(lt, gt) and orderBy.
+        /// The date time when the taskProcessingResult was created.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
         /// </summary>
         [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
@@ -44,21 +44,21 @@ namespace Microsoft.Graph.IdentityGovernanceNamespace
     
         /// <summary>
         /// Gets or sets processing status.
-        /// Describes the execution status of the taskProcessingResult. The possible values are: queued, inProgress, completed, completedWithErrors, canceled, failed, unknownFutureValue. Supports $filter(eq).
+        /// Describes the execution status of the taskProcessingResult. The possible values are: queued, inProgress, completed, completedWithErrors, canceled, failed, unknownFutureValue.Supports $filter(eq, ne) and $orderby.
         /// </summary>
         [JsonPropertyName("processingStatus")]
         public LifecycleWorkflowProcessingStatus? ProcessingStatus { get; set; }
     
         /// <summary>
         /// Gets or sets started date time.
-        /// The date time when taskProcessingResult execution started. Value is null if task execution has not yet started. Supports $filter(lt, gt) and orderBy.
+        /// The date time when taskProcessingResult execution started. Value is null if task execution has not yet started.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
         /// </summary>
         [JsonPropertyName("startedDateTime")]
         public DateTimeOffset? StartedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets subject.
-        /// The unique identifier of the Azure AD user targeted for the task execution.
+        /// The unique identifier of the Azure AD user targeted for the task execution.Supports $filter(eq, ne) and $expand.
         /// </summary>
         [JsonPropertyName("subject")]
         public Microsoft.Graph.User Subject { get; set; }

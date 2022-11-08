@@ -43,21 +43,18 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets scheduling group id.
-        /// ID of the scheduling group the shift is part of. Required.
         /// </summary>
         [JsonPropertyName("schedulingGroupId")]
         public string SchedulingGroupId { get; set; }
     
         /// <summary>
         /// Gets or sets shared shift.
-        /// The shared version of this shift that is viewable by both employees and managers. Required.
         /// </summary>
         [JsonPropertyName("sharedShift")]
         public ShiftItem SharedShift { get; set; }
     
         /// <summary>
         /// Gets or sets user id.
-        /// ID of the user assigned to the shift. Required.
         /// </summary>
         [JsonPropertyName("userId")]
         public string UserId { get; set; }

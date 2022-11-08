@@ -23,12 +23,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets fields.
+        /// Defines the collapse group to trim results. The properties in this collection must be sortable/refinable properties. Required.
         /// </summary>
         [JsonPropertyName("fields")]
         public IEnumerable<string> Fields { get; set; }
     
         /// <summary>
         /// Gets or sets limit.
+        /// Defines a maximum limit count for this field. This numeric value must be a positive integer. Required.
         /// </summary>
         [JsonPropertyName("limit")]
         public Int16? Limit { get; set; }

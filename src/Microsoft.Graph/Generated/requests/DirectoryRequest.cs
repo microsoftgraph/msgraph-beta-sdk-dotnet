@@ -294,6 +294,12 @@ namespace Microsoft.Graph
                     // Copy the additional data collection to the page itself so that information is not lost
                     directoryToInitialize.InboundSharedUserProfiles.AdditionalData = directoryToInitialize.AdditionalData;
                 }
+                if (directoryToInitialize.OnPremisesSynchronization != null && directoryToInitialize.OnPremisesSynchronization.CurrentPage != null)
+                {
+                    directoryToInitialize.OnPremisesSynchronization.InitializeNextPageRequest(this.Client, directoryToInitialize.OnPremisesSynchronizationNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    directoryToInitialize.OnPremisesSynchronization.AdditionalData = directoryToInitialize.AdditionalData;
+                }
                 if (directoryToInitialize.OutboundSharedUserProfiles != null && directoryToInitialize.OutboundSharedUserProfiles.CurrentPage != null)
                 {
                     directoryToInitialize.OutboundSharedUserProfiles.InitializeNextPageRequest(this.Client, directoryToInitialize.OutboundSharedUserProfilesNextLink);

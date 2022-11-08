@@ -37,6 +37,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets collapseProperties.
+        /// Contains the ordered collection of fields and limit to collapse results. Optional.
         /// </summary>
         [JsonPropertyName("collapseProperties")]
         public IEnumerable<CollapseProperty> CollapseProperties { get; set; }

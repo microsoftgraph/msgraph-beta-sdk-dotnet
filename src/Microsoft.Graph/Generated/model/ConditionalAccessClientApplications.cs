@@ -37,6 +37,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets servicePrincipalFilter.
+        /// Filter that defines the dynamic-servicePrincipal-syntax rule to include/exclude service principals. A filter can use custom security attributes to include/exclude service principals.
         /// </summary>
         [JsonPropertyName("servicePrincipalFilter")]
         public ConditionalAccessFilter ServicePrincipalFilter { get; set; }

@@ -84,6 +84,17 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the GraphServiceDirectoryObjects request builder.
+        /// </summary>
+        public virtual IGraphServiceDirectoryObjectsCollectionRequestBuilder DirectoryObjects
+        {
+            get
+            {
+                return new GraphServiceDirectoryObjectsCollectionRequestBuilder(this.BaseUrl + "/directoryObjects", this);
+            }
+        }
+    
+        /// <summary>
         /// Gets the GraphServiceInvitations request builder.
         /// </summary>
         public virtual IGraphServiceInvitationsCollectionRequestBuilder Invitations
@@ -268,17 +279,6 @@ namespace Microsoft.Graph
             get
             {
                 return new GraphServiceContractsCollectionRequestBuilder(this.BaseUrl + "/contracts", this);
-            }
-        }
-    
-        /// <summary>
-        /// Gets the GraphServiceDirectoryObjects request builder.
-        /// </summary>
-        public virtual IGraphServiceDirectoryObjectsCollectionRequestBuilder DirectoryObjects
-        {
-            get
-            {
-                return new GraphServiceDirectoryObjectsCollectionRequestBuilder(this.BaseUrl + "/directoryObjects", this);
             }
         }
     

@@ -37,28 +37,28 @@ namespace Microsoft.Graph.IdentityGovernanceNamespace
     
         /// <summary>
         /// Gets or sets created date time.
-        /// When the custom task extension was created.
+        /// When the custom task extension was created.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
         /// </summary>
         [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets last modified date time.
-        /// When the custom extension was last modified.
+        /// When the custom extension was last modified.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
         /// </summary>
         [JsonPropertyName("lastModifiedDateTime")]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets created by.
-        /// The unique identifier of the Azure AD user that created the custom task extension.
+        /// The unique identifier of the Azure AD user that created the custom task extension.Supports $filter(eq, ne) and $expand.
         /// </summary>
         [JsonPropertyName("createdBy")]
         public Microsoft.Graph.User CreatedBy { get; set; }
     
         /// <summary>
         /// Gets or sets last modified by.
-        /// The unique identifier of the Azure AD user that modified the custom task extension last.
+        /// The unique identifier of the Azure AD user that modified the custom task extension last.Supports $filter(eq, ne) and $expand.
         /// </summary>
         [JsonPropertyName("lastModifiedBy")]
         public Microsoft.Graph.User LastModifiedBy { get; set; }

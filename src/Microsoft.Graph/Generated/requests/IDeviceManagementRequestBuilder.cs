@@ -656,12 +656,6 @@ namespace Microsoft.Graph
         IUserExperienceAnalyticsOverviewRequestBuilder UserExperienceAnalyticsOverview { get; }
 
         /// <summary>
-        /// Gets the request builder for UserExperienceAnalyticsRegressionSummary.
-        /// </summary>
-        /// <returns>The <see cref="IUserExperienceAnalyticsRegressionSummaryRequestBuilder"/>.</returns>
-        IUserExperienceAnalyticsRegressionSummaryRequestBuilder UserExperienceAnalyticsRegressionSummary { get; }
-
-        /// <summary>
         /// Gets the request builder for UserExperienceAnalyticsRemoteConnection.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsRemoteConnectionCollectionRequestBuilder"/>.</returns>
@@ -860,18 +854,6 @@ namespace Microsoft.Graph
         IDeviceManagementConfigManagerCollectionsCollectionRequestBuilder ConfigManagerCollections { get; }
 
         /// <summary>
-        /// Gets the request builder for OrganizationalMessageDetails.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceManagementOrganizationalMessageDetailsCollectionRequestBuilder"/>.</returns>
-        IDeviceManagementOrganizationalMessageDetailsCollectionRequestBuilder OrganizationalMessageDetails { get; }
-
-        /// <summary>
-        /// Gets the request builder for OrganizationalMessageGuidedContents.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceManagementOrganizationalMessageGuidedContentsCollectionRequestBuilder"/>.</returns>
-        IDeviceManagementOrganizationalMessageGuidedContentsCollectionRequestBuilder OrganizationalMessageGuidedContents { get; }
-
-        /// <summary>
         /// Gets the request builder for ResourceOperations.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementResourceOperationsCollectionRequestBuilder"/>.</returns>
@@ -1038,20 +1020,6 @@ namespace Microsoft.Graph
         IDeviceManagementEnableUnlicensedAdminstratorsRequestBuilder EnableUnlicensedAdminstrators();
 
         /// <summary>
-        /// Gets the request builder for DeviceManagementPostOrganizationalMessageTenantConsent.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceManagementPostOrganizationalMessageTenantConsentRequestBuilder"/>.</returns>
-        IDeviceManagementPostOrganizationalMessageTenantConsentRequestBuilder PostOrganizationalMessageTenantConsent(
-            bool firstPartyMessageAllowed);
-
-        /// <summary>
-        /// Gets the request builder for DeviceManagementUpdateOrganizationalMessageTenantConsent.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceManagementUpdateOrganizationalMessageTenantConsentRequestBuilder"/>.</returns>
-        IDeviceManagementUpdateOrganizationalMessageTenantConsentRequestBuilder UpdateOrganizationalMessageTenantConsent(
-            bool firstPartyMessageAllowed);
-
-        /// <summary>
         /// Gets the request builder for DeviceManagementGetEffectivePermissions.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementGetEffectivePermissionsRequestBuilder"/>.</returns>
@@ -1084,6 +1052,12 @@ namespace Microsoft.Graph
         IDeviceManagementGetComanagementEligibleDevicesSummaryRequestBuilder GetComanagementEligibleDevicesSummary();
 
         /// <summary>
+        /// Gets the request builder for DeviceManagementUserExperienceAnalyticsSummarizedDeviceScopes.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsSummarizedDeviceScopesRequestBuilder"/>.</returns>
+        IDeviceManagementUserExperienceAnalyticsSummarizedDeviceScopesRequestBuilder UserExperienceAnalyticsSummarizedDeviceScopes();
+
+        /// <summary>
         /// Gets the request builder for DeviceManagementUserExperienceAnalyticsSummarizeWorkFromAnywhereDevices.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsSummarizeWorkFromAnywhereDevicesRequestBuilder"/>.</returns>
@@ -1095,12 +1069,6 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IDeviceManagementGetSuggestedEnrollmentLimitRequestBuilder"/>.</returns>
         IDeviceManagementGetSuggestedEnrollmentLimitRequestBuilder GetSuggestedEnrollmentLimit(
             string enrollmentType = null);
-
-        /// <summary>
-        /// Gets the request builder for DeviceManagementGetOrganizationalMessageTenantConsent.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceManagementGetOrganizationalMessageTenantConsentRequestBuilder"/>.</returns>
-        IDeviceManagementGetOrganizationalMessageTenantConsentRequestBuilder GetOrganizationalMessageTenantConsent();
 
         /// <summary>
         /// Gets the request builder for DeviceManagementGetAssignedRoleDetails.

@@ -121,7 +121,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets status.
-        /// ComanagementEligibleStatus. Possible values are: comanaged, eligible, eligibleButNotAzureAdJoined, needsOsUpdate, ineligible, scheduledForEnrollment.
+        /// ComanagementEligibleStatus. Possible values are: comanaged, eligible, eligibleButNotAzureAdJoined, needsOsUpdate, ineligible, scheduledForEnrollment, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("status")]
         public ComanagementEligibleType? Status { get; set; }

@@ -121,6 +121,13 @@ namespace Microsoft.Graph
         public string MinimumRequiredSdkVersion { get; set; }
     
         /// <summary>
+        /// Gets or sets minimum warning sdk version.
+        /// Versions less than the specified version will result in warning message on the managed app from accessing company data.
+        /// </summary>
+        [JsonPropertyName("minimumWarningSdkVersion")]
+        public string MinimumWarningSdkVersion { get; set; }
+    
+        /// <summary>
         /// Gets or sets minimum wipe sdk version.
         /// Versions less than the specified version will block the managed app from accessing company data.
         /// </summary>

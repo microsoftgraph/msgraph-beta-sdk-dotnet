@@ -50,5 +50,16 @@ namespace Microsoft.Graph
             return new DeviceManagementPartnerRequest(this.RequestUrl, this.Client, options);
         }
     
+        /// <summary>
+        /// Gets the request builder for DeviceManagementPartnerTerminate.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementPartnerTerminateRequestBuilder"/>.</returns>
+        public IDeviceManagementPartnerTerminateRequestBuilder Terminate()
+        {
+            return new DeviceManagementPartnerTerminateRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.terminate"),
+                this.Client);
+        }
+    
     }
 }

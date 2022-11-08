@@ -26,11 +26,5 @@ namespace Microsoft.Graph
         [JsonPropertyName("newPassword")]
         public string NewPassword { get; set; }
     
-        /// <summary>
-        /// Gets or sets RequireChangeOnNextSignIn.
-        /// </summary>
-        [JsonPropertyName("requireChangeOnNextSignIn")]
-        public bool? RequireChangeOnNextSignIn { get; set; }
-    
     }
 }

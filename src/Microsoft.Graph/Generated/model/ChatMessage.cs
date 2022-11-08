@@ -120,6 +120,12 @@ namespace Microsoft.Graph
         public IEnumerable<ChatMessageMention> Mentions { get; set; }
     
         /// <summary>
+        /// Gets or sets message history.
+        /// </summary>
+        [JsonPropertyName("messageHistory")]
+        public IEnumerable<ChatMessageHistoryItem> MessageHistory { get; set; }
+    
+        /// <summary>
         /// Gets or sets message type.
         /// The type of chat message. The possible values are: message, chatEvent, typing, unknownFutureValue, systemEventMessage. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: systemEventMessage.
         /// </summary>

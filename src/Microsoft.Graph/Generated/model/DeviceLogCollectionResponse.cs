@@ -21,6 +21,13 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
+        /// Gets or sets enrolled by user.
+        /// The User Principal Name (UPN) of the user that enrolled the device
+        /// </summary>
+        [JsonPropertyName("enrolledByUser")]
+        public string EnrolledByUser { get; set; }
+    
+        /// <summary>
         /// Gets or sets error code.
         /// The error code, if any. Valid values -9.22337203685478E+18 to 9.22337203685478E+18
         /// </summary>

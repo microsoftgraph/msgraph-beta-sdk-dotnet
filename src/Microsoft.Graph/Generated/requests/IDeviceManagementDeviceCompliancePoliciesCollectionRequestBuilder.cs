@@ -70,6 +70,7 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IDeviceCompliancePolicySetScheduledRetireStateRequestBuilder"/>.</returns>
         IDeviceCompliancePolicySetScheduledRetireStateRequestBuilder SetScheduledRetireState(
             ScheduledRetireState state,
+            bool? scopedToAllDevices = null,
             IEnumerable<string> managedDeviceIds = null);
 
         /// <summary>

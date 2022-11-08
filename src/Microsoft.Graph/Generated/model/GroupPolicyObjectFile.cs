@@ -55,6 +55,13 @@ namespace Microsoft.Graph
         [JsonPropertyName("ouDistinguishedName")]
         public string OuDistinguishedName { get; set; }
     
+        /// <summary>
+        /// Gets or sets role scope tag ids.
+        /// The list of scope tags for the configuration.
+        /// </summary>
+        [JsonPropertyName("roleScopeTagIds")]
+        public IEnumerable<string> RoleScopeTagIds { get; set; }
+    
     }
 }
 

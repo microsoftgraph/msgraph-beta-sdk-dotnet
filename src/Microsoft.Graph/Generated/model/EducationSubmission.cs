@@ -99,6 +99,13 @@ namespace Microsoft.Graph
         public DateTimeOffset? UnsubmittedDateTime { get; set; }
     
         /// <summary>
+        /// Gets or sets web url.
+        /// The deep link URL for the given submission.
+        /// </summary>
+        [JsonPropertyName("webUrl")]
+        public string WebUrl { get; set; }
+    
+        /// <summary>
         /// Gets or sets outcomes.
         /// </summary>
         [JsonPropertyName("outcomes")]

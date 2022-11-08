@@ -183,6 +183,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for SharedUseServicePlans.
+        /// </summary>
+        /// <returns>The <see cref="IVirtualEndpointSharedUseServicePlansCollectionWithReferencesRequestBuilder"/>.</returns>
+        public IVirtualEndpointSharedUseServicePlansCollectionWithReferencesRequestBuilder SharedUseServicePlans
+        {
+            get
+            {
+                return new VirtualEndpointSharedUseServicePlansCollectionWithReferencesRequestBuilder(this.AppendSegmentToRequestUrl("sharedUseServicePlans"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Snapshots.
         /// </summary>
         /// <returns>The <see cref="IVirtualEndpointSnapshotsCollectionRequestBuilder"/>.</returns>

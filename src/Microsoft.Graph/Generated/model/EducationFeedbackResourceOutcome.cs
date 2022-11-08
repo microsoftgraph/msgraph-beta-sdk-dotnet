@@ -38,7 +38,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets resource status.
-        /// The status of the feedback resource. The possible values are: notPublished, pendingPublish, published, failedPublish, and unknownFutureValue.
+        /// The status of the feedback resource. The possible values are: notPublished, pendingPublish, published, failedPublish, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("resourceStatus")]
         public EducationFeedbackResourceOutcomeStatus? ResourceStatus { get; set; }

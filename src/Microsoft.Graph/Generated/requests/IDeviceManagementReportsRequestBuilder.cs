@@ -344,6 +344,21 @@ namespace Microsoft.Graph
             string filter = null);
 
         /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetEncryptionReportForDevices.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetEncryptionReportForDevicesRequestBuilder"/>.</returns>
+        IDeviceManagementReportsGetEncryptionReportForDevicesRequestBuilder GetEncryptionReportForDevices(
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null);
+
+        /// <summary>
         /// Gets the request builder for DeviceManagementReportsGetQuietTimePolicyUsersReport.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementReportsGetQuietTimePolicyUsersReportRequestBuilder"/>.</returns>
@@ -528,6 +543,21 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementReportsGetGroupPolicySettingsDeviceSettingsReportRequestBuilder"/>.</returns>
         IDeviceManagementReportsGetGroupPolicySettingsDeviceSettingsReportRequestBuilder GetGroupPolicySettingsDeviceSettingsReport(
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null);
+
+        /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetMobileApplicationManagementAppConfigurationReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetMobileApplicationManagementAppConfigurationReportRequestBuilder"/>.</returns>
+        IDeviceManagementReportsGetMobileApplicationManagementAppConfigurationReportRequestBuilder GetMobileApplicationManagementAppConfigurationReport(
             string name = null,
             IEnumerable<string> select = null,
             string search = null,

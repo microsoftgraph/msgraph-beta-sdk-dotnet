@@ -77,14 +77,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IAuthenticationMethodResetPasswordRequestBuilder"/>.</returns>
         public IAuthenticationMethodResetPasswordRequestBuilder ResetPassword(
-            string newPassword = null,
-            bool? requireChangeOnNextSignIn = null)
+            string newPassword = null)
         {
             return new AuthenticationMethodResetPasswordRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.resetPassword"),
                 this.Client,
-                newPassword,
-                requireChangeOnNextSignIn);
+                newPassword);
         }
     
     }

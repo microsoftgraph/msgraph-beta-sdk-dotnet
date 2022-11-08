@@ -37,14 +37,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets initiated by.
-        /// The id of actor that does the operation.
+        /// The ID of actor that does the operation.
         /// </summary>
         [JsonPropertyName("initiatedBy")]
         public string InitiatedBy { get; set; }
     
         /// <summary>
         /// Gets or sets user id.
-        /// The id of the user.
+        /// The ID of the user.
         /// </summary>
         [JsonPropertyName("userId")]
         public string UserId { get; set; }

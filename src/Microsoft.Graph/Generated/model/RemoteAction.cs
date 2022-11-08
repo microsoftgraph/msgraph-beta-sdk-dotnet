@@ -159,5 +159,10 @@ namespace Microsoft.Graph
         /// </summary>
         MoveDeviceToOrganizationalUnit = 27,
 	
+        /// <summary>
+        /// Initiate Mobile Device Management Key Recovery
+        /// </summary>
+        InitiateMobileDeviceManagementKeyRecovery = 28,
+	
     }
 }

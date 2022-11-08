@@ -260,21 +260,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets free storage space in bytes.
-        /// Free Storage in Bytes. This property is read-only.
+        /// Free Storage in Bytes. Default value is 0. Read-only. This property is read-only.
         /// </summary>
         [JsonPropertyName("freeStorageSpaceInBytes")]
         public Int64? FreeStorageSpaceInBytes { get; set; }
     
         /// <summary>
         /// Gets or sets hardware information.
-        /// The hardward details for the device.  Includes information such as storage space, manufacturer, serial number, etc. This property is read-only.
+        /// The hardward details for the device.  Includes information such as storage space, manufacturer, serial number, etc. Return default value in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.
         /// </summary>
         [JsonPropertyName("hardwareInformation")]
         public HardwareInformation HardwareInformation { get; set; }
     
         /// <summary>
         /// Gets or sets iccid.
-        /// Integrated Circuit Card Identifier, it is A SIM card's unique identification number. This property is read-only.
+        /// Integrated Circuit Card Identifier, it is A SIM card's unique identification number. Return default value null in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.
         /// </summary>
         [JsonPropertyName("iccid")]
         public string Iccid { get; set; }
@@ -393,7 +393,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets notes.
-        /// Notes on the device created by IT Admin
+        /// Notes on the device created by IT Admin. Return default value null in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select.  $Search is not supported.
         /// </summary>
         [JsonPropertyName("notes")]
         public string Notes { get; set; }
@@ -435,7 +435,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets physical memory in bytes.
-        /// Total Memory in Bytes. This property is read-only.
+        /// Total Memory in Bytes. Return default value 0 in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select. Default value is 0. Read-only. This property is read-only.
         /// </summary>
         [JsonPropertyName("physicalMemoryInBytes")]
         public Int64? PhysicalMemoryInBytes { get; set; }
@@ -505,7 +505,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets sku number.
-        /// Device sku number, see also: https://docs.microsoft.com/windows/win32/api/sysinfoapi/nf-sysinfoapi-getproductinfo. Valid values 0 to 2147483647. This property is read-only.
+        /// Device sku number, see also: https://learn.microsoft.com/windows/win32/api/sysinfoapi/nf-sysinfoapi-getproductinfo. Valid values 0 to 2147483647. This property is read-only.
         /// </summary>
         [JsonPropertyName("skuNumber")]
         public Int32? SkuNumber { get; set; }
@@ -533,7 +533,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets udid.
-        /// Unique Device Identifier for iOS and macOS devices. This property is read-only.
+        /// Unique Device Identifier for iOS and macOS devices. Return default value null in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.
         /// </summary>
         [JsonPropertyName("udid")]
         public string Udid { get; set; }

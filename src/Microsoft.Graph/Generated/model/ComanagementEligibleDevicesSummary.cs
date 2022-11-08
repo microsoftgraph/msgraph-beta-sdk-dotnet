@@ -57,6 +57,13 @@ namespace Microsoft.Graph
         public Int32? NeedsOsUpdateCount { get; set; }
     
         /// <summary>
+        /// Gets or sets scheduledForEnrollmentCount.
+        /// Count of devices scheduled for Co-Management enrollment. Valid values 0 to 9999999
+        /// </summary>
+        [JsonPropertyName("scheduledForEnrollmentCount")]
+        public Int32? ScheduledForEnrollmentCount { get; set; }
+    
+        /// <summary>
         /// Gets or sets additional data.
         /// </summary>
         [JsonExtensionData]

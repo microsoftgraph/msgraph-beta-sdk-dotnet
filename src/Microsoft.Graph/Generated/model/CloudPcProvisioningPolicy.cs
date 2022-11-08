@@ -113,6 +113,12 @@ namespace Microsoft.Graph
         public string OnPremisesConnectionId { get; set; }
     
         /// <summary>
+        /// Gets or sets provisioning type.
+        /// </summary>
+        [JsonPropertyName("provisioningType")]
+        public CloudPcProvisioningType? ProvisioningType { get; set; }
+    
+        /// <summary>
         /// Gets or sets windows settings.
         /// Specific Windows settings to configure while creating Cloud PCs for this provisioning policy.
         /// </summary>

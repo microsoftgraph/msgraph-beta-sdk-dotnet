@@ -23,56 +23,56 @@ namespace Microsoft.Graph.IdentityGovernanceNamespace
     
         /// <summary>
         /// Gets or sets completed date time.
-        /// The date time that the run completed. Value is null if the workflow hasn't completed. Optional.
+        /// The date time that the run completed. Value is null if the workflow hasn't completed.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
         /// </summary>
         [JsonPropertyName("completedDateTime")]
         public DateTimeOffset? CompletedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets failed tasks count.
-        /// The number of tasks that failed in the run execution. Required.
+        /// The number of tasks that failed in the run execution.
         /// </summary>
         [JsonPropertyName("failedTasksCount")]
         public Int32? FailedTasksCount { get; set; }
     
         /// <summary>
         /// Gets or sets failed users count.
-        /// The number of users that failed in the run execution. Required.
+        /// The number of users that failed in the run execution.
         /// </summary>
         [JsonPropertyName("failedUsersCount")]
         public Int32? FailedUsersCount { get; set; }
     
         /// <summary>
         /// Gets or sets last updated date time.
-        /// The datetime that the run was last updated. Optional.
+        /// The datetime that the run was last updated.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
         /// </summary>
         [JsonPropertyName("lastUpdatedDateTime")]
         public DateTimeOffset? LastUpdatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets processing status.
-        /// The run execution status. The possible values are: queued, inProgress, completed, completedWithErrors, canceled, failed, unknownFutureValue. Required.
+        /// The run execution status. The possible values are: queued, inProgress, completed, completedWithErrors, canceled, failed, unknownFutureValue.Supports $filter(eq, ne) and $orderby.
         /// </summary>
         [JsonPropertyName("processingStatus")]
         public LifecycleWorkflowProcessingStatus? ProcessingStatus { get; set; }
     
         /// <summary>
         /// Gets or sets scheduled date time.
-        /// The date time that the run is scheduled to be executed for a workflow. Required.
+        /// The date time that the run is scheduled to be executed for a workflow.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
         /// </summary>
         [JsonPropertyName("scheduledDateTime")]
         public DateTimeOffset? ScheduledDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets started date time.
-        /// The date time that the run execution started. Optional.
+        /// The date time that the run execution started.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.
         /// </summary>
         [JsonPropertyName("startedDateTime")]
         public DateTimeOffset? StartedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets successful users count.
-        /// The number of successfully completed users in the run. Required.
+        /// The number of successfully completed users in the run.
         /// </summary>
         [JsonPropertyName("successfulUsersCount")]
         public Int32? SuccessfulUsersCount { get; set; }
@@ -85,21 +85,21 @@ namespace Microsoft.Graph.IdentityGovernanceNamespace
     
         /// <summary>
         /// Gets or sets total unprocessed tasks count.
-        /// The total number of unprocessed tasks in the run execution. Required.
+        /// The total number of unprocessed tasks in the run execution.
         /// </summary>
         [JsonPropertyName("totalUnprocessedTasksCount")]
         public Int32? TotalUnprocessedTasksCount { get; set; }
     
         /// <summary>
         /// Gets or sets total users count.
-        /// The total number of users in the workflow execution. Required.
+        /// The total number of users in the workflow execution.
         /// </summary>
         [JsonPropertyName("totalUsersCount")]
         public Int32? TotalUsersCount { get; set; }
     
         /// <summary>
         /// Gets or sets workflow execution type.
-        /// The execution type of the workflows associated with the run. The possible values are: scheduled, onDemand, unknownFutureValue. Required.
+        /// The execution type of the workflows associated with the run. The possible values are: scheduled, onDemand, unknownFutureValue.Supports $filter(eq, ne) and $orderby.
         /// </summary>
         [JsonPropertyName("workflowExecutionType")]
         public WorkflowExecutionType? WorkflowExecutionType { get; set; }
