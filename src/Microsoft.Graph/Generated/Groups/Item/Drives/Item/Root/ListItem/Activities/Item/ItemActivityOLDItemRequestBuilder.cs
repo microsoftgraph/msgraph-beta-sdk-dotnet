@@ -13,11 +13,11 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Groups.Item.Drives.Item.Root.ListItem.Activities.Item {
     /// <summary>Provides operations to manage the activities property of the microsoft.graph.listItem entity.</summary>
     public class ItemActivityOLDItemRequestBuilder {
-        /// <summary>The driveItem property</summary>
+        /// <summary>Provides operations to manage the driveItem property of the microsoft.graph.itemActivityOLD entity.</summary>
         public Microsoft.Graph.Beta.Groups.Item.Drives.Item.Root.ListItem.Activities.Item.DriveItem.DriveItemRequestBuilder DriveItem { get =>
             new Microsoft.Graph.Beta.Groups.Item.Drives.Item.Root.ListItem.Activities.Item.DriveItem.DriveItemRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The listItem property</summary>
+        /// <summary>Provides operations to manage the listItem property of the microsoft.graph.itemActivityOLD entity.</summary>
         public Microsoft.Graph.Beta.Groups.Item.Drives.Item.Root.ListItem.Activities.Item.ListItem.ListItemRequestBuilder ListItem { get =>
             new Microsoft.Graph.Beta.Groups.Item.Drives.Item.Root.ListItem.Activities.Item.ListItem.ListItemRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -29,9 +29,9 @@ namespace Microsoft.Graph.Beta.Groups.Item.Drives.Item.Root.ListItem.Activities.
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new ItemActivityOLDItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public ItemActivityOLDItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -42,9 +42,9 @@ namespace Microsoft.Graph.Beta.Groups.Item.Drives.Item.Root.ListItem.Activities.
         }
         /// <summary>
         /// Instantiates a new ItemActivityOLDItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public ItemActivityOLDItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -56,8 +56,8 @@ namespace Microsoft.Graph.Beta.Groups.Item.Drives.Item.Root.ListItem.Activities.
         }
         /// <summary>
         /// Delete navigation property activities for groups
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateDeleteRequestInformation(Action<ItemActivityOLDItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.DELETE,
@@ -74,8 +74,8 @@ namespace Microsoft.Graph.Beta.Groups.Item.Drives.Item.Root.ListItem.Activities.
         }
         /// <summary>
         /// The list of recent activities that took place on this item.
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<ItemActivityOLDItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -94,9 +94,9 @@ namespace Microsoft.Graph.Beta.Groups.Item.Drives.Item.Root.ListItem.Activities.
         }
         /// <summary>
         /// Update the navigation property activities in groups
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(ItemActivityOLD body, Action<ItemActivityOLDItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -116,9 +116,9 @@ namespace Microsoft.Graph.Beta.Groups.Item.Drives.Item.Root.ListItem.Activities.
         }
         /// <summary>
         /// Delete navigation property activities for groups
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task DeleteAsync(Action<ItemActivityOLDItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -129,9 +129,9 @@ namespace Microsoft.Graph.Beta.Groups.Item.Drives.Item.Root.ListItem.Activities.
         }
         /// <summary>
         /// The list of recent activities that took place on this item.
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<ItemActivityOLD> GetAsync(Action<ItemActivityOLDItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -142,10 +142,10 @@ namespace Microsoft.Graph.Beta.Groups.Item.Drives.Item.Root.ListItem.Activities.
         }
         /// <summary>
         /// Update the navigation property activities in groups
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<ItemActivityOLD> PatchAsync(ItemActivityOLD body, Action<ItemActivityOLDItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);

@@ -15,11 +15,11 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization {
     /// <summary>Provides operations to manage the synchronization property of the microsoft.graph.servicePrincipal entity.</summary>
     public class SynchronizationRequestBuilder {
-        /// <summary>The acquireAccessToken property</summary>
+        /// <summary>Provides operations to call the acquireAccessToken method.</summary>
         public AcquireAccessTokenRequestBuilder AcquireAccessToken { get =>
             new AcquireAccessTokenRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The jobs property</summary>
+        /// <summary>Provides operations to manage the jobs property of the microsoft.graph.synchronization entity.</summary>
         public JobsRequestBuilder Jobs { get =>
             new JobsRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization {
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>The templates property</summary>
+        /// <summary>Provides operations to manage the templates property of the microsoft.graph.synchronization entity.</summary>
         public TemplatesRequestBuilder Templates { get =>
             new TemplatesRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -35,9 +35,9 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization {
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new SynchronizationRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public SynchronizationRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -48,9 +48,9 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization {
         }
         /// <summary>
         /// Instantiates a new SynchronizationRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public SynchronizationRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -62,8 +62,8 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization {
         }
         /// <summary>
         /// Delete navigation property synchronization for servicePrincipals
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateDeleteRequestInformation(Action<SynchronizationRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.DELETE,
@@ -80,8 +80,8 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization {
         }
         /// <summary>
         /// Get synchronization from servicePrincipals
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<SynchronizationRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -100,9 +100,9 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization {
         }
         /// <summary>
         /// Update the navigation property synchronization in servicePrincipals
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(Microsoft.Graph.Beta.Models.Synchronization body, Action<SynchronizationRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -122,9 +122,9 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization {
         }
         /// <summary>
         /// Delete navigation property synchronization for servicePrincipals
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task DeleteAsync(Action<SynchronizationRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -135,9 +135,9 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization {
         }
         /// <summary>
         /// Get synchronization from servicePrincipals
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<Microsoft.Graph.Beta.Models.Synchronization> GetAsync(Action<SynchronizationRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -148,10 +148,10 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization {
         }
         /// <summary>
         /// Update the navigation property synchronization in servicePrincipals
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<Microsoft.Graph.Beta.Models.Synchronization> PatchAsync(Microsoft.Graph.Beta.Models.Synchronization body, Action<SynchronizationRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);

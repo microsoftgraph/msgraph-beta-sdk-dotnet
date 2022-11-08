@@ -10,6 +10,7 @@ using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.OrganizationSettings
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ProvisioningPolicies;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.ServicePlans;
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.SharedUseServicePlans;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.SupportedRegions;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.UserSettings;
@@ -26,73 +27,77 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint {
     /// <summary>Provides operations to manage the virtualEndpoint property of the microsoft.graph.deviceManagement entity.</summary>
     public class VirtualEndpointRequestBuilder {
-        /// <summary>The auditEvents property</summary>
+        /// <summary>Provides operations to manage the auditEvents property of the microsoft.graph.virtualEndpoint entity.</summary>
         public AuditEventsRequestBuilder AuditEvents { get =>
             new AuditEventsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The cloudPCs property</summary>
+        /// <summary>Provides operations to manage the cloudPCs property of the microsoft.graph.virtualEndpoint entity.</summary>
         public CloudPCsRequestBuilder CloudPCs { get =>
             new CloudPCsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The crossCloudGovernmentOrganizationMapping property</summary>
+        /// <summary>Provides operations to manage the crossCloudGovernmentOrganizationMapping property of the microsoft.graph.virtualEndpoint entity.</summary>
         public CrossCloudGovernmentOrganizationMappingRequestBuilder CrossCloudGovernmentOrganizationMapping { get =>
             new CrossCloudGovernmentOrganizationMappingRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The deviceImages property</summary>
+        /// <summary>Provides operations to manage the deviceImages property of the microsoft.graph.virtualEndpoint entity.</summary>
         public DeviceImagesRequestBuilder DeviceImages { get =>
             new DeviceImagesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The externalPartnerSettings property</summary>
+        /// <summary>Provides operations to manage the externalPartnerSettings property of the microsoft.graph.virtualEndpoint entity.</summary>
         public ExternalPartnerSettingsRequestBuilder ExternalPartnerSettings { get =>
             new ExternalPartnerSettingsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The galleryImages property</summary>
+        /// <summary>Provides operations to manage the galleryImages property of the microsoft.graph.virtualEndpoint entity.</summary>
         public GalleryImagesRequestBuilder GalleryImages { get =>
             new GalleryImagesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The onPremisesConnections property</summary>
+        /// <summary>Provides operations to manage the onPremisesConnections property of the microsoft.graph.virtualEndpoint entity.</summary>
         public OnPremisesConnectionsRequestBuilder OnPremisesConnections { get =>
             new OnPremisesConnectionsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The organizationSettings property</summary>
+        /// <summary>Provides operations to manage the organizationSettings property of the microsoft.graph.virtualEndpoint entity.</summary>
         public OrganizationSettingsRequestBuilder OrganizationSettings { get =>
             new OrganizationSettingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>The provisioningPolicies property</summary>
+        /// <summary>Provides operations to manage the provisioningPolicies property of the microsoft.graph.virtualEndpoint entity.</summary>
         public ProvisioningPoliciesRequestBuilder ProvisioningPolicies { get =>
             new ProvisioningPoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The reports property</summary>
+        /// <summary>Provides operations to manage the reports property of the microsoft.graph.virtualEndpoint entity.</summary>
         public ReportsRequestBuilder Reports { get =>
             new ReportsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>The servicePlans property</summary>
+        /// <summary>Provides operations to manage the servicePlans property of the microsoft.graph.virtualEndpoint entity.</summary>
         public ServicePlansRequestBuilder ServicePlans { get =>
             new ServicePlansRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The snapshots property</summary>
+        /// <summary>Provides operations to manage the sharedUseServicePlans property of the microsoft.graph.virtualEndpoint entity.</summary>
+        public SharedUseServicePlansRequestBuilder SharedUseServicePlans { get =>
+            new SharedUseServicePlansRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the snapshots property of the microsoft.graph.virtualEndpoint entity.</summary>
         public SnapshotsRequestBuilder Snapshots { get =>
             new SnapshotsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The supportedRegions property</summary>
+        /// <summary>Provides operations to manage the supportedRegions property of the microsoft.graph.virtualEndpoint entity.</summary>
         public SupportedRegionsRequestBuilder SupportedRegions { get =>
             new SupportedRegionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>The userSettings property</summary>
+        /// <summary>Provides operations to manage the userSettings property of the microsoft.graph.virtualEndpoint entity.</summary>
         public UserSettingsRequestBuilder UserSettings { get =>
             new UserSettingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new VirtualEndpointRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public VirtualEndpointRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -103,9 +108,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint {
         }
         /// <summary>
         /// Instantiates a new VirtualEndpointRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public VirtualEndpointRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -117,8 +122,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint {
         }
         /// <summary>
         /// Delete navigation property virtualEndpoint for deviceManagement
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateDeleteRequestInformation(Action<VirtualEndpointRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.DELETE,
@@ -135,8 +140,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint {
         }
         /// <summary>
         /// Get virtualEndpoint from deviceManagement
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<VirtualEndpointRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -155,9 +160,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint {
         }
         /// <summary>
         /// Update the navigation property virtualEndpoint in deviceManagement
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(Microsoft.Graph.Beta.Models.VirtualEndpoint body, Action<VirtualEndpointRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -177,9 +182,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint {
         }
         /// <summary>
         /// Delete navigation property virtualEndpoint for deviceManagement
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task DeleteAsync(Action<VirtualEndpointRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -190,9 +195,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint {
         }
         /// <summary>
         /// Get virtualEndpoint from deviceManagement
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<Microsoft.Graph.Beta.Models.VirtualEndpoint> GetAsync(Action<VirtualEndpointRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -209,10 +214,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint {
         }
         /// <summary>
         /// Update the navigation property virtualEndpoint in deviceManagement
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<Microsoft.Graph.Beta.Models.VirtualEndpoint> PatchAsync(Microsoft.Graph.Beta.Models.VirtualEndpoint body, Action<VirtualEndpointRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);

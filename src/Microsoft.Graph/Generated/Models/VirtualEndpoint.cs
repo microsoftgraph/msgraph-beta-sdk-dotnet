@@ -60,6 +60,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<CloudPcServicePlan>>("servicePlans"); }
             set { BackingStore?.Set("servicePlans", value); }
         }
+        /// <summary>The sharedUseServicePlans property</summary>
+        public List<CloudPcSharedUseServicePlan> SharedUseServicePlans {
+            get { return BackingStore?.Get<List<CloudPcSharedUseServicePlan>>("sharedUseServicePlans"); }
+            set { BackingStore?.Set("sharedUseServicePlans", value); }
+        }
         /// <summary>Cloud PC snapshots.</summary>
         public List<CloudPcSnapshot> Snapshots {
             get { return BackingStore?.Get<List<CloudPcSnapshot>>("snapshots"); }
@@ -83,8 +88,8 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
-        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new VirtualEndpoint CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new VirtualEndpoint();
@@ -105,6 +110,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"provisioningPolicies", n => { ProvisioningPolicies = n.GetCollectionOfObjectValues<CloudPcProvisioningPolicy>(CloudPcProvisioningPolicy.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"reports", n => { Reports = n.GetObjectValue<CloudPcReports>(CloudPcReports.CreateFromDiscriminatorValue); } },
                 {"servicePlans", n => { ServicePlans = n.GetCollectionOfObjectValues<CloudPcServicePlan>(CloudPcServicePlan.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"sharedUseServicePlans", n => { SharedUseServicePlans = n.GetCollectionOfObjectValues<CloudPcSharedUseServicePlan>(CloudPcSharedUseServicePlan.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"snapshots", n => { Snapshots = n.GetCollectionOfObjectValues<CloudPcSnapshot>(CloudPcSnapshot.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"supportedRegions", n => { SupportedRegions = n.GetCollectionOfObjectValues<CloudPcSupportedRegion>(CloudPcSupportedRegion.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"userSettings", n => { UserSettings = n.GetCollectionOfObjectValues<CloudPcUserSetting>(CloudPcUserSetting.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -112,8 +118,8 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>
         /// Serializes information the current object
-        /// <param name="writer">Serialization writer to use to serialize this model</param>
         /// </summary>
+        /// <param name="writer">Serialization writer to use to serialize this model</param>
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
@@ -128,6 +134,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfObjectValues<CloudPcProvisioningPolicy>("provisioningPolicies", ProvisioningPolicies);
             writer.WriteObjectValue<CloudPcReports>("reports", Reports);
             writer.WriteCollectionOfObjectValues<CloudPcServicePlan>("servicePlans", ServicePlans);
+            writer.WriteCollectionOfObjectValues<CloudPcSharedUseServicePlan>("sharedUseServicePlans", SharedUseServicePlans);
             writer.WriteCollectionOfObjectValues<CloudPcSnapshot>("snapshots", Snapshots);
             writer.WriteCollectionOfObjectValues<CloudPcSupportedRegion>("supportedRegions", SupportedRegions);
             writer.WriteCollectionOfObjectValues<CloudPcUserSetting>("userSettings", UserSettings);

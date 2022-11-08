@@ -20,41 +20,41 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Groups.Item.Owners {
     /// <summary>Provides operations to manage the owners property of the microsoft.graph.group entity.</summary>
     public class OwnersRequestBuilder {
-        /// <summary>The application property</summary>
+        /// <summary>Casts the previous resource to application.</summary>
         public ApplicationRequestBuilder Application { get =>
             new ApplicationRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The Count property</summary>
+        /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The device property</summary>
+        /// <summary>Casts the previous resource to device.</summary>
         public DeviceRequestBuilder Device { get =>
             new DeviceRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The group property</summary>
+        /// <summary>Casts the previous resource to group.</summary>
         public GroupRequestBuilder Group { get =>
             new GroupRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The orgContact property</summary>
+        /// <summary>Casts the previous resource to orgContact.</summary>
         public OrgContactRequestBuilder OrgContact { get =>
             new OrgContactRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>The Ref property</summary>
+        /// <summary>Provides operations to manage the collection of group entities.</summary>
         public RefRequestBuilder Ref { get =>
             new RefRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>The servicePrincipal property</summary>
+        /// <summary>Casts the previous resource to servicePrincipal.</summary>
         public ServicePrincipalRequestBuilder ServicePrincipal { get =>
             new ServicePrincipalRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>The user property</summary>
+        /// <summary>Casts the previous resource to user.</summary>
         public UserRequestBuilder User { get =>
             new UserRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -66,9 +66,9 @@ namespace Microsoft.Graph.Beta.Groups.Item.Owners {
         } }
         /// <summary>
         /// Instantiates a new OwnersRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public OwnersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -79,9 +79,9 @@ namespace Microsoft.Graph.Beta.Groups.Item.Owners {
         }
         /// <summary>
         /// Instantiates a new OwnersRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public OwnersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -93,8 +93,8 @@ namespace Microsoft.Graph.Beta.Groups.Item.Owners {
         }
         /// <summary>
         /// The owners of the group who can be users or service principals. Nullable. If this property is not specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,&apos;Role&apos;)&amp;$select=id,displayName&amp;$expand=owners($select=id,userPrincipalName,displayName).
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<OwnersRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -113,9 +113,9 @@ namespace Microsoft.Graph.Beta.Groups.Item.Owners {
         }
         /// <summary>
         /// The owners of the group who can be users or service principals. Nullable. If this property is not specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,&apos;Role&apos;)&amp;$select=id,displayName&amp;$expand=owners($select=id,userPrincipalName,displayName).
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<DirectoryObjectCollectionResponse> GetAsync(Action<OwnersRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {

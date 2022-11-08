@@ -4,14 +4,14 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class TaskReport : Entity, IParsable {
-        /// <summary>The date time that the associated run completed. Value is null if the run has not completed.</summary>
+        /// <summary>The date time that the associated run completed. Value is null if the run has not completed.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.</summary>
         public DateTimeOffset? CompletedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("completedDateTime"); }
             set { BackingStore?.Set("completedDateTime", value); }
         }
-        /// <summary>The number of users in the run execution for which the associated task failed.</summary>
+        /// <summary>The number of users in the run execution for which the associated task failed.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.</summary>
         public int? FailedUsersCount {
             get { return BackingStore?.Get<int?>("failedUsersCount"); }
             set { BackingStore?.Set("failedUsersCount", value); }
@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
             get { return BackingStore?.Get<DateTimeOffset?>("startedDateTime"); }
             set { BackingStore?.Set("startedDateTime", value); }
         }
-        /// <summary>The number of users in the run execution for which the associated task succeeded.</summary>
+        /// <summary>The number of users in the run execution for which the associated task succeeded.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.</summary>
         public int? SuccessfulUsersCount {
             get { return BackingStore?.Get<int?>("successfulUsersCount"); }
             set { BackingStore?.Set("successfulUsersCount", value); }
@@ -56,12 +56,12 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
             get { return BackingStore?.Get<List<TaskProcessingResult>>("taskProcessingResults"); }
             set { BackingStore?.Set("taskProcessingResults", value); }
         }
-        /// <summary>The total number of users in the run execution for which the associated task was scheduled to execute.</summary>
+        /// <summary>The total number of users in the run execution for which the associated task was scheduled to execute.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.</summary>
         public int? TotalUsersCount {
             get { return BackingStore?.Get<int?>("totalUsersCount"); }
             set { BackingStore?.Set("totalUsersCount", value); }
         }
-        /// <summary>The number of users in the run execution for which the associated task is queued, in progress, or canceled.</summary>
+        /// <summary>The number of users in the run execution for which the associated task is queued, in progress, or canceled.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.</summary>
         public int? UnprocessedUsersCount {
             get { return BackingStore?.Get<int?>("unprocessedUsersCount"); }
             set { BackingStore?.Set("unprocessedUsersCount", value); }
@@ -74,8 +74,8 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
-        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new TaskReport CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new TaskReport();
@@ -101,8 +101,8 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
         }
         /// <summary>
         /// Serializes information the current object
-        /// <param name="writer">Serialization writer to use to serialize this model</param>
         /// </summary>
+        /// <param name="writer">Serialization writer to use to serialize this model</param>
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);

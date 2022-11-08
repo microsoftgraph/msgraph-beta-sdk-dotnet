@@ -16,7 +16,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.GovernanceResources.Item.RoleAssignmentRequests.Item {
     /// <summary>Provides operations to manage the roleAssignmentRequests property of the microsoft.graph.governanceResource entity.</summary>
     public class GovernanceRoleAssignmentRequestItemRequestBuilder {
-        /// <summary>The cancel property</summary>
+        /// <summary>Provides operations to call the cancel method.</summary>
         public CancelRequestBuilder Cancel { get =>
             new CancelRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -24,19 +24,19 @@ namespace Microsoft.Graph.Beta.GovernanceResources.Item.RoleAssignmentRequests.I
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>The resource property</summary>
+        /// <summary>Provides operations to manage the resource property of the microsoft.graph.governanceRoleAssignmentRequest entity.</summary>
         public ResourceRequestBuilder Resource { get =>
             new ResourceRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The roleDefinition property</summary>
+        /// <summary>Provides operations to manage the roleDefinition property of the microsoft.graph.governanceRoleAssignmentRequest entity.</summary>
         public RoleDefinitionRequestBuilder RoleDefinition { get =>
             new RoleDefinitionRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The subject property</summary>
+        /// <summary>Provides operations to manage the subject property of the microsoft.graph.governanceRoleAssignmentRequest entity.</summary>
         public SubjectRequestBuilder Subject { get =>
             new SubjectRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The updateRequest property</summary>
+        /// <summary>Provides operations to call the updateRequest method.</summary>
         public UpdateRequestRequestBuilder UpdateRequest { get =>
             new UpdateRequestRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -44,9 +44,9 @@ namespace Microsoft.Graph.Beta.GovernanceResources.Item.RoleAssignmentRequests.I
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new GovernanceRoleAssignmentRequestItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public GovernanceRoleAssignmentRequestItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -57,9 +57,9 @@ namespace Microsoft.Graph.Beta.GovernanceResources.Item.RoleAssignmentRequests.I
         }
         /// <summary>
         /// Instantiates a new GovernanceRoleAssignmentRequestItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public GovernanceRoleAssignmentRequestItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -71,8 +71,8 @@ namespace Microsoft.Graph.Beta.GovernanceResources.Item.RoleAssignmentRequests.I
         }
         /// <summary>
         /// Delete navigation property roleAssignmentRequests for governanceResources
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateDeleteRequestInformation(Action<GovernanceRoleAssignmentRequestItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.DELETE,
@@ -89,8 +89,8 @@ namespace Microsoft.Graph.Beta.GovernanceResources.Item.RoleAssignmentRequests.I
         }
         /// <summary>
         /// The collection of role assignment requests for the resource.
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<GovernanceRoleAssignmentRequestItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -109,9 +109,9 @@ namespace Microsoft.Graph.Beta.GovernanceResources.Item.RoleAssignmentRequests.I
         }
         /// <summary>
         /// Update the navigation property roleAssignmentRequests in governanceResources
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(GovernanceRoleAssignmentRequest body, Action<GovernanceRoleAssignmentRequestItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -131,9 +131,9 @@ namespace Microsoft.Graph.Beta.GovernanceResources.Item.RoleAssignmentRequests.I
         }
         /// <summary>
         /// Delete navigation property roleAssignmentRequests for governanceResources
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task DeleteAsync(Action<GovernanceRoleAssignmentRequestItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -144,9 +144,9 @@ namespace Microsoft.Graph.Beta.GovernanceResources.Item.RoleAssignmentRequests.I
         }
         /// <summary>
         /// The collection of role assignment requests for the resource.
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<GovernanceRoleAssignmentRequest> GetAsync(Action<GovernanceRoleAssignmentRequestItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -157,10 +157,10 @@ namespace Microsoft.Graph.Beta.GovernanceResources.Item.RoleAssignmentRequests.I
         }
         /// <summary>
         /// Update the navigation property roleAssignmentRequests in governanceResources
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<GovernanceRoleAssignmentRequest> PatchAsync(GovernanceRoleAssignmentRequest body, Action<GovernanceRoleAssignmentRequestItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);

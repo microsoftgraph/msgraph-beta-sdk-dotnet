@@ -21,35 +21,35 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Identity {
     /// <summary>Provides operations to manage the identityContainer singleton.</summary>
     public class IdentityRequestBuilder {
-        /// <summary>The apiConnectors property</summary>
+        /// <summary>Provides operations to manage the apiConnectors property of the microsoft.graph.identityContainer entity.</summary>
         public ApiConnectorsRequestBuilder ApiConnectors { get =>
             new ApiConnectorsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The authenticationEventListeners property</summary>
+        /// <summary>Provides operations to manage the authenticationEventListeners property of the microsoft.graph.identityContainer entity.</summary>
         public AuthenticationEventListenersRequestBuilder AuthenticationEventListeners { get =>
             new AuthenticationEventListenersRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The b2cUserFlows property</summary>
+        /// <summary>Provides operations to manage the b2cUserFlows property of the microsoft.graph.identityContainer entity.</summary>
         public B2cUserFlowsRequestBuilder B2cUserFlows { get =>
             new B2cUserFlowsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The b2xUserFlows property</summary>
+        /// <summary>Provides operations to manage the b2xUserFlows property of the microsoft.graph.identityContainer entity.</summary>
         public B2xUserFlowsRequestBuilder B2xUserFlows { get =>
             new B2xUserFlowsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The conditionalAccess property</summary>
+        /// <summary>Provides operations to manage the conditionalAccess property of the microsoft.graph.identityContainer entity.</summary>
         public ConditionalAccessRequestBuilder ConditionalAccess { get =>
             new ConditionalAccessRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The continuousAccessEvaluationPolicy property</summary>
+        /// <summary>Provides operations to manage the continuousAccessEvaluationPolicy property of the microsoft.graph.identityContainer entity.</summary>
         public ContinuousAccessEvaluationPolicyRequestBuilder ContinuousAccessEvaluationPolicy { get =>
             new ContinuousAccessEvaluationPolicyRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The customAuthenticationExtensions property</summary>
+        /// <summary>Provides operations to manage the customAuthenticationExtensions property of the microsoft.graph.identityContainer entity.</summary>
         public CustomAuthenticationExtensionsRequestBuilder CustomAuthenticationExtensions { get =>
             new CustomAuthenticationExtensionsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The identityProviders property</summary>
+        /// <summary>Provides operations to manage the identityProviders property of the microsoft.graph.identityContainer entity.</summary>
         public IdentityProvidersRequestBuilder IdentityProviders { get =>
             new IdentityProvidersRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -59,19 +59,19 @@ namespace Microsoft.Graph.Beta.Identity {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>The userFlowAttributes property</summary>
+        /// <summary>Provides operations to manage the userFlowAttributes property of the microsoft.graph.identityContainer entity.</summary>
         public UserFlowAttributesRequestBuilder UserFlowAttributes { get =>
             new UserFlowAttributesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The userFlows property</summary>
+        /// <summary>Provides operations to manage the userFlows property of the microsoft.graph.identityContainer entity.</summary>
         public UserFlowsRequestBuilder UserFlows { get =>
             new UserFlowsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new IdentityRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public IdentityRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -82,9 +82,9 @@ namespace Microsoft.Graph.Beta.Identity {
         }
         /// <summary>
         /// Instantiates a new IdentityRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public IdentityRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -96,8 +96,8 @@ namespace Microsoft.Graph.Beta.Identity {
         }
         /// <summary>
         /// Get identity
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<IdentityRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -116,9 +116,9 @@ namespace Microsoft.Graph.Beta.Identity {
         }
         /// <summary>
         /// Update identity
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(IdentityContainer body, Action<IdentityRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -138,9 +138,9 @@ namespace Microsoft.Graph.Beta.Identity {
         }
         /// <summary>
         /// Get identity
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<IdentityContainer> GetAsync(Action<IdentityRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -151,10 +151,10 @@ namespace Microsoft.Graph.Beta.Identity {
         }
         /// <summary>
         /// Update identity
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<IdentityContainer> PatchAsync(IdentityContainer body, Action<IdentityRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);

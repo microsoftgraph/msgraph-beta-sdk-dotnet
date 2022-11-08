@@ -19,19 +19,19 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps {
     /// <summary>Provides operations to manage the mobileApps property of the microsoft.graph.deviceAppManagement entity.</summary>
     public class MobileAppsRequestBuilder {
-        /// <summary>The Count property</summary>
+        /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The hasPayloadLinks property</summary>
+        /// <summary>Provides operations to call the hasPayloadLinks method.</summary>
         public HasPayloadLinksRequestBuilder HasPayloadLinks { get =>
             new HasPayloadLinksRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The managedMobileLobApp property</summary>
+        /// <summary>Casts the previous resource to managedMobileLobApp.</summary>
         public ManagedMobileLobAppRequestBuilder ManagedMobileLobApp { get =>
             new ManagedMobileLobAppRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The mobileLobApp property</summary>
+        /// <summary>Casts the previous resource to mobileLobApp.</summary>
         public MobileLobAppRequestBuilder MobileLobApp { get =>
             new MobileLobAppRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -41,11 +41,11 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>The validateXml property</summary>
+        /// <summary>Provides operations to call the validateXml method.</summary>
         public ValidateXmlRequestBuilder ValidateXml { get =>
             new ValidateXmlRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Gets an item from the Microsoft.Graph.Beta.deviceAppManagement.mobileApps.item collection</summary>
+        /// <summary>Provides operations to manage the mobileApps property of the microsoft.graph.deviceAppManagement entity.</summary>
         public MobileAppItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("mobileApp%2Did", position);
@@ -53,9 +53,9 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps {
         } }
         /// <summary>
         /// Instantiates a new MobileAppsRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public MobileAppsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -66,9 +66,9 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps {
         }
         /// <summary>
         /// Instantiates a new MobileAppsRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public MobileAppsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -80,8 +80,8 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps {
         }
         /// <summary>
         /// The mobile apps.
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<MobileAppsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -100,9 +100,9 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps {
         }
         /// <summary>
         /// Create new navigation property to mobileApps for deviceAppManagement
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePostRequestInformation(MobileApp body, Action<MobileAppsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -122,9 +122,9 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps {
         }
         /// <summary>
         /// The mobile apps.
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<MobileAppCollectionResponse> GetAsync(Action<MobileAppsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -135,17 +135,17 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps {
         }
         /// <summary>
         /// Provides operations to call the getMobileAppCount method.
-        /// <param name="status">Usage: status=&apos;{status}&apos;</param>
         /// </summary>
+        /// <param name="status">Usage: status=&apos;{status}&apos;</param>
         public GetMobileAppCountWithStatusRequestBuilder GetMobileAppCountWithStatus(string status) {
             if(string.IsNullOrEmpty(status)) throw new ArgumentNullException(nameof(status));
             return new GetMobileAppCountWithStatusRequestBuilder(PathParameters, RequestAdapter, status);
         }
         /// <summary>
         /// Provides operations to call the getTopMobileApps method.
+        /// </summary>
         /// <param name="count">Usage: count={count}</param>
         /// <param name="status">Usage: status=&apos;{status}&apos;</param>
-        /// </summary>
         public GetTopMobileAppsWithStatusWithCountRequestBuilder GetTopMobileAppsWithStatusWithCount(long? count, string status) {
             _ = count ?? throw new ArgumentNullException(nameof(count));
             if(string.IsNullOrEmpty(status)) throw new ArgumentNullException(nameof(status));
@@ -153,10 +153,10 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps {
         }
         /// <summary>
         /// Create new navigation property to mobileApps for deviceAppManagement
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<MobileApp> PostAsync(MobileApp body, Action<MobileAppsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, requestConfiguration);

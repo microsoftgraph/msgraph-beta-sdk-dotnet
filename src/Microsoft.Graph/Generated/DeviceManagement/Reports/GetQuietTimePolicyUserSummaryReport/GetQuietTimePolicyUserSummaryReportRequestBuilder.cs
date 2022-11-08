@@ -18,9 +18,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports.GetQuietTimePolicyUserSu
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new GetQuietTimePolicyUserSummaryReportRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public GetQuietTimePolicyUserSummaryReportRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -31,9 +31,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports.GetQuietTimePolicyUserSu
         }
         /// <summary>
         /// Instantiates a new GetQuietTimePolicyUserSummaryReportRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public GetQuietTimePolicyUserSummaryReportRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -45,9 +45,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports.GetQuietTimePolicyUserSu
         }
         /// <summary>
         /// Invoke action getQuietTimePolicyUserSummaryReport
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePostRequestInformation(GetQuietTimePolicyUserSummaryReportPostRequestBody body, Action<GetQuietTimePolicyUserSummaryReportRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -66,10 +66,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports.GetQuietTimePolicyUserSu
         }
         /// <summary>
         /// Invoke action getQuietTimePolicyUserSummaryReport
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<Stream> PostAsync(GetQuietTimePolicyUserSummaryReportPostRequestBody body, Action<GetQuietTimePolicyUserSummaryReportRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, requestConfiguration);

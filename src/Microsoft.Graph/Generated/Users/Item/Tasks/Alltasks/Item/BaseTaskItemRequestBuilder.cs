@@ -16,23 +16,23 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Users.Item.Tasks.Alltasks.Item {
     /// <summary>Provides operations to manage the alltasks property of the microsoft.graph.tasks entity.</summary>
     public class BaseTaskItemRequestBuilder {
-        /// <summary>The checklistItems property</summary>
+        /// <summary>Provides operations to manage the checklistItems property of the microsoft.graph.baseTask entity.</summary>
         public ChecklistItemsRequestBuilder ChecklistItems { get =>
             new ChecklistItemsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The extensions property</summary>
+        /// <summary>Provides operations to manage the extensions property of the microsoft.graph.baseTask entity.</summary>
         public ExtensionsRequestBuilder Extensions { get =>
             new ExtensionsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The linkedResources property</summary>
+        /// <summary>Provides operations to manage the linkedResources property of the microsoft.graph.baseTask entity.</summary>
         public LinkedResourcesRequestBuilder LinkedResources { get =>
             new LinkedResourcesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The move property</summary>
+        /// <summary>Provides operations to call the move method.</summary>
         public MoveRequestBuilder Move { get =>
             new MoveRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The parentList property</summary>
+        /// <summary>Provides operations to manage the parentList property of the microsoft.graph.baseTask entity.</summary>
         public ParentListRequestBuilder ParentList { get =>
             new ParentListRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -44,9 +44,9 @@ namespace Microsoft.Graph.Beta.Users.Item.Tasks.Alltasks.Item {
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new BaseTaskItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public BaseTaskItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -57,9 +57,9 @@ namespace Microsoft.Graph.Beta.Users.Item.Tasks.Alltasks.Item {
         }
         /// <summary>
         /// Instantiates a new BaseTaskItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public BaseTaskItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -71,8 +71,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Tasks.Alltasks.Item {
         }
         /// <summary>
         /// Delete navigation property alltasks for users
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateDeleteRequestInformation(Action<BaseTaskItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.DELETE,
@@ -89,8 +89,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Tasks.Alltasks.Item {
         }
         /// <summary>
         /// All tasks in the users mailbox.
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<BaseTaskItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -109,9 +109,9 @@ namespace Microsoft.Graph.Beta.Users.Item.Tasks.Alltasks.Item {
         }
         /// <summary>
         /// Update the navigation property alltasks in users
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(BaseTask body, Action<BaseTaskItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -131,9 +131,9 @@ namespace Microsoft.Graph.Beta.Users.Item.Tasks.Alltasks.Item {
         }
         /// <summary>
         /// Delete navigation property alltasks for users
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task DeleteAsync(Action<BaseTaskItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -144,9 +144,9 @@ namespace Microsoft.Graph.Beta.Users.Item.Tasks.Alltasks.Item {
         }
         /// <summary>
         /// All tasks in the users mailbox.
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<BaseTask> GetAsync(Action<BaseTaskItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -157,10 +157,10 @@ namespace Microsoft.Graph.Beta.Users.Item.Tasks.Alltasks.Item {
         }
         /// <summary>
         /// Update the navigation property alltasks in users
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<BaseTask> PatchAsync(BaseTask body, Action<BaseTaskItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);

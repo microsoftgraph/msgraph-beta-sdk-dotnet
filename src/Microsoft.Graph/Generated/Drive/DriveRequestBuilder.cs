@@ -21,23 +21,23 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Drive {
     /// <summary>Provides operations to manage the drive singleton.</summary>
     public class DriveRequestBuilder {
-        /// <summary>The activities property</summary>
+        /// <summary>Provides operations to manage the activities property of the microsoft.graph.drive entity.</summary>
         public ActivitiesRequestBuilder Activities { get =>
             new ActivitiesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The bundles property</summary>
+        /// <summary>Provides operations to manage the bundles property of the microsoft.graph.drive entity.</summary>
         public BundlesRequestBuilder Bundles { get =>
             new BundlesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The following property</summary>
+        /// <summary>Provides operations to manage the following property of the microsoft.graph.drive entity.</summary>
         public FollowingRequestBuilder Following { get =>
             new FollowingRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The items property</summary>
+        /// <summary>Provides operations to manage the items property of the microsoft.graph.drive entity.</summary>
         public ItemsRequestBuilder Items { get =>
             new ItemsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The list property</summary>
+        /// <summary>Provides operations to manage the list property of the microsoft.graph.drive entity.</summary>
         public ListRequestBuilder List { get =>
             new ListRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -45,11 +45,11 @@ namespace Microsoft.Graph.Beta.Drive {
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>The root property</summary>
+        /// <summary>Provides operations to manage the root property of the microsoft.graph.drive entity.</summary>
         public RootRequestBuilder Root { get =>
             new RootRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The special property</summary>
+        /// <summary>Provides operations to manage the special property of the microsoft.graph.drive entity.</summary>
         public SpecialRequestBuilder Special { get =>
             new SpecialRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -57,9 +57,9 @@ namespace Microsoft.Graph.Beta.Drive {
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new DriveRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public DriveRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -70,9 +70,9 @@ namespace Microsoft.Graph.Beta.Drive {
         }
         /// <summary>
         /// Instantiates a new DriveRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public DriveRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -84,8 +84,8 @@ namespace Microsoft.Graph.Beta.Drive {
         }
         /// <summary>
         /// Get drive
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<DriveRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -104,9 +104,9 @@ namespace Microsoft.Graph.Beta.Drive {
         }
         /// <summary>
         /// Update drive
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(Microsoft.Graph.Beta.Models.Drive body, Action<DriveRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -126,9 +126,9 @@ namespace Microsoft.Graph.Beta.Drive {
         }
         /// <summary>
         /// Get drive
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<Microsoft.Graph.Beta.Models.Drive> GetAsync(Action<DriveRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -139,10 +139,10 @@ namespace Microsoft.Graph.Beta.Drive {
         }
         /// <summary>
         /// Update drive
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<Microsoft.Graph.Beta.Models.Drive> PatchAsync(Microsoft.Graph.Beta.Models.Drive body, Action<DriveRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);
@@ -160,8 +160,8 @@ namespace Microsoft.Graph.Beta.Drive {
         }
         /// <summary>
         /// Provides operations to call the search method.
-        /// <param name="q">Usage: q=&apos;{q}&apos;</param>
         /// </summary>
+        /// <param name="q">Usage: q=&apos;{q}&apos;</param>
         public SearchWithQRequestBuilder SearchWithQ(string q) {
             if(string.IsNullOrEmpty(q)) throw new ArgumentNullException(nameof(q));
             return new SearchWithQRequestBuilder(PathParameters, RequestAdapter, q);

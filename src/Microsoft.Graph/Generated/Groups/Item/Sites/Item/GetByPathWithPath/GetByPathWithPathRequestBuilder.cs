@@ -19,10 +19,10 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.GetByPathWithPath {
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new GetByPathWithPathRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="path">Usage: path=&apos;{path}&apos;</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public GetByPathWithPathRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string path = default) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -34,9 +34,9 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.GetByPathWithPath {
         }
         /// <summary>
         /// Instantiates a new GetByPathWithPathRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public GetByPathWithPathRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -48,8 +48,8 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.GetByPathWithPath {
         }
         /// <summary>
         /// Invoke function getByPath
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<GetByPathWithPathRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -67,9 +67,9 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.GetByPathWithPath {
         }
         /// <summary>
         /// Invoke function getByPath
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<Microsoft.Graph.Beta.Models.Site> GetAsync(Action<GetByPathWithPathRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {

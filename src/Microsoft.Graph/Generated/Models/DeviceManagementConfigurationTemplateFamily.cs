@@ -17,9 +17,15 @@ namespace Microsoft.Graph.Beta.Models {
         EndpointSecurityAccountProtection,
         /// <summary>Template Family for ApplicationControl that helps mitigate security threats by restricting the applications that users can run and the code that runs in the System Core (kernel)</summary>
         EndpointSecurityApplicationControl,
+        /// <summary>Template Family for EPM Elevation Rules</summary>
+        EndpointSecurityEndpointPrivilegeManagement,
         /// <summary>Template Family for EnrollmentConfiguration</summary>
         EnrollmentConfiguration,
+        /// <summary>Template Family for QuietTimeIndicates Template Family for all the Apps QuietTime policies and templates</summary>
+        AppQuietTime,
         /// <summary>Template Family for Baseline</summary>
         Baseline,
+        /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
+        UnknownFutureValue,
     }
 }

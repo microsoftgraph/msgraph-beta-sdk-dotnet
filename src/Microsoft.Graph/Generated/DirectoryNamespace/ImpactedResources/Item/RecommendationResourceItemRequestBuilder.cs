@@ -15,21 +15,21 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.DirectoryNamespace.ImpactedResources.Item {
     /// <summary>Provides operations to manage the impactedResources property of the microsoft.graph.directory entity.</summary>
     public class RecommendationResourceItemRequestBuilder {
-        /// <summary>The complete property</summary>
+        /// <summary>Provides operations to call the complete method.</summary>
         public CompleteRequestBuilder Complete { get =>
             new CompleteRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The dismiss property</summary>
+        /// <summary>Provides operations to call the dismiss method.</summary>
         public DismissRequestBuilder Dismiss { get =>
             new DismissRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>The postpone property</summary>
+        /// <summary>Provides operations to call the postpone method.</summary>
         public PostponeRequestBuilder Postpone { get =>
             new PostponeRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The reactivate property</summary>
+        /// <summary>Provides operations to call the reactivate method.</summary>
         public ReactivateRequestBuilder Reactivate { get =>
             new ReactivateRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -39,9 +39,9 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.ImpactedResources.Item {
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new RecommendationResourceItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public RecommendationResourceItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -52,9 +52,9 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.ImpactedResources.Item {
         }
         /// <summary>
         /// Instantiates a new RecommendationResourceItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public RecommendationResourceItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -66,8 +66,8 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.ImpactedResources.Item {
         }
         /// <summary>
         /// Delete navigation property impactedResources for directory
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateDeleteRequestInformation(Action<RecommendationResourceItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.DELETE,
@@ -84,8 +84,8 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.ImpactedResources.Item {
         }
         /// <summary>
         /// Get impactedResources from directory
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<RecommendationResourceItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -104,9 +104,9 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.ImpactedResources.Item {
         }
         /// <summary>
         /// Update the navigation property impactedResources in directory
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(RecommendationResource body, Action<RecommendationResourceItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -126,9 +126,9 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.ImpactedResources.Item {
         }
         /// <summary>
         /// Delete navigation property impactedResources for directory
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task DeleteAsync(Action<RecommendationResourceItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -139,9 +139,9 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.ImpactedResources.Item {
         }
         /// <summary>
         /// Get impactedResources from directory
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<RecommendationResource> GetAsync(Action<RecommendationResourceItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -152,10 +152,10 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.ImpactedResources.Item {
         }
         /// <summary>
         /// Update the navigation property impactedResources in directory
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<RecommendationResource> PatchAsync(RecommendationResource body, Action<RecommendationResourceItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);

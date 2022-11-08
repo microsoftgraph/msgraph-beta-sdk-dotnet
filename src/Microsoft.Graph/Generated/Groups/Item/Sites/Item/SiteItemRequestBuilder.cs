@@ -28,63 +28,63 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item {
     /// <summary>Provides operations to manage the sites property of the microsoft.graph.group entity.</summary>
     public class SiteItemRequestBuilder {
-        /// <summary>The analytics property</summary>
+        /// <summary>Provides operations to manage the analytics property of the microsoft.graph.site entity.</summary>
         public AnalyticsRequestBuilder Analytics { get =>
             new AnalyticsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The columns property</summary>
+        /// <summary>Provides operations to manage the columns property of the microsoft.graph.site entity.</summary>
         public ColumnsRequestBuilder Columns { get =>
             new ColumnsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The contentTypes property</summary>
+        /// <summary>Provides operations to manage the contentTypes property of the microsoft.graph.site entity.</summary>
         public ContentTypesRequestBuilder ContentTypes { get =>
             new ContentTypesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The drive property</summary>
+        /// <summary>Provides operations to manage the drive property of the microsoft.graph.site entity.</summary>
         public DriveRequestBuilder Drive { get =>
             new DriveRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The drives property</summary>
+        /// <summary>Provides operations to manage the drives property of the microsoft.graph.site entity.</summary>
         public DrivesRequestBuilder Drives { get =>
             new DrivesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The externalColumns property</summary>
+        /// <summary>Provides operations to manage the externalColumns property of the microsoft.graph.site entity.</summary>
         public ExternalColumnsRequestBuilder ExternalColumns { get =>
             new ExternalColumnsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The items property</summary>
+        /// <summary>Provides operations to manage the items property of the microsoft.graph.site entity.</summary>
         public ItemsRequestBuilder Items { get =>
             new ItemsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The lists property</summary>
+        /// <summary>Provides operations to manage the lists property of the microsoft.graph.site entity.</summary>
         public ListsRequestBuilder Lists { get =>
             new ListsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The onenote property</summary>
+        /// <summary>Provides operations to manage the onenote property of the microsoft.graph.site entity.</summary>
         public OnenoteRequestBuilder Onenote { get =>
             new OnenoteRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The operations property</summary>
+        /// <summary>Provides operations to manage the operations property of the microsoft.graph.site entity.</summary>
         public OperationsRequestBuilder Operations { get =>
             new OperationsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The pages property</summary>
+        /// <summary>Provides operations to manage the pages property of the microsoft.graph.site entity.</summary>
         public PagesRequestBuilder Pages { get =>
             new PagesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>The permissions property</summary>
+        /// <summary>Provides operations to manage the permissions property of the microsoft.graph.site entity.</summary>
         public PermissionsRequestBuilder Permissions { get =>
             new PermissionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>The sites property</summary>
+        /// <summary>Provides operations to manage the sites property of the microsoft.graph.site entity.</summary>
         public Microsoft.Graph.Beta.Groups.Item.Sites.Item.Sites.SitesRequestBuilder Sites { get =>
             new Microsoft.Graph.Beta.Groups.Item.Sites.Item.Sites.SitesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The termStore property</summary>
+        /// <summary>Provides operations to manage the termStore property of the microsoft.graph.site entity.</summary>
         public TermStoreRequestBuilder TermStore { get =>
             new TermStoreRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -92,9 +92,9 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item {
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new SiteItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public SiteItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -105,9 +105,9 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item {
         }
         /// <summary>
         /// Instantiates a new SiteItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public SiteItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -119,8 +119,8 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item {
         }
         /// <summary>
         /// The list of SharePoint sites in this group. Access the default site with /sites/root.
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<SiteItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -139,9 +139,9 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item {
         }
         /// <summary>
         /// Update the navigation property sites in groups
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(Microsoft.Graph.Beta.Models.Site body, Action<SiteItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -161,10 +161,10 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item {
         }
         /// <summary>
         /// Provides operations to call the getActivitiesByInterval method.
+        /// </summary>
         /// <param name="endDateTime">Usage: endDateTime=&apos;{endDateTime}&apos;</param>
         /// <param name="interval">Usage: interval=&apos;{interval}&apos;</param>
         /// <param name="startDateTime">Usage: startDateTime=&apos;{startDateTime}&apos;</param>
-        /// </summary>
         public GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval(string endDateTime, string interval, string startDateTime) {
             if(string.IsNullOrEmpty(endDateTime)) throw new ArgumentNullException(nameof(endDateTime));
             if(string.IsNullOrEmpty(interval)) throw new ArgumentNullException(nameof(interval));
@@ -173,17 +173,17 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item {
         }
         /// <summary>
         /// Provides operations to call the getApplicableContentTypesForList method.
-        /// <param name="listId">Usage: listId=&apos;{listId}&apos;</param>
         /// </summary>
+        /// <param name="listId">Usage: listId=&apos;{listId}&apos;</param>
         public GetApplicableContentTypesForListWithListIdRequestBuilder GetApplicableContentTypesForListWithListId(string listId) {
             if(string.IsNullOrEmpty(listId)) throw new ArgumentNullException(nameof(listId));
             return new GetApplicableContentTypesForListWithListIdRequestBuilder(PathParameters, RequestAdapter, listId);
         }
         /// <summary>
         /// The list of SharePoint sites in this group. Access the default site with /sites/root.
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<Microsoft.Graph.Beta.Models.Site> GetAsync(Action<SiteItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -194,18 +194,18 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item {
         }
         /// <summary>
         /// Provides operations to call the getByPath method.
-        /// <param name="path">Usage: path=&apos;{path}&apos;</param>
         /// </summary>
+        /// <param name="path">Usage: path=&apos;{path}&apos;</param>
         public GetByPathWithPathRequestBuilder GetByPathWithPath(string path) {
             if(string.IsNullOrEmpty(path)) throw new ArgumentNullException(nameof(path));
             return new GetByPathWithPathRequestBuilder(PathParameters, RequestAdapter, path);
         }
         /// <summary>
         /// Update the navigation property sites in groups
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<Microsoft.Graph.Beta.Models.Site> PatchAsync(Microsoft.Graph.Beta.Models.Site body, Action<SiteItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);

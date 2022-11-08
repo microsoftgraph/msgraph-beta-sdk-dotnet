@@ -17,11 +17,11 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Teamwork {
     /// <summary>Provides operations to manage the teamwork singleton.</summary>
     public class TeamworkRequestBuilder {
-        /// <summary>The deletedTeams property</summary>
+        /// <summary>Provides operations to manage the deletedTeams property of the microsoft.graph.teamwork entity.</summary>
         public DeletedTeamsRequestBuilder DeletedTeams { get =>
             new DeletedTeamsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The devices property</summary>
+        /// <summary>Provides operations to manage the devices property of the microsoft.graph.teamwork entity.</summary>
         public DevicesRequestBuilder Devices { get =>
             new DevicesRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -29,29 +29,29 @@ namespace Microsoft.Graph.Beta.Teamwork {
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>The sendActivityNotificationToRecipients property</summary>
+        /// <summary>Provides operations to call the sendActivityNotificationToRecipients method.</summary>
         public SendActivityNotificationToRecipientsRequestBuilder SendActivityNotificationToRecipients { get =>
             new SendActivityNotificationToRecipientsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The teamsAppSettings property</summary>
+        /// <summary>Provides operations to manage the teamsAppSettings property of the microsoft.graph.teamwork entity.</summary>
         public TeamsAppSettingsRequestBuilder TeamsAppSettings { get =>
             new TeamsAppSettingsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The teamTemplates property</summary>
+        /// <summary>Provides operations to manage the teamTemplates property of the microsoft.graph.teamwork entity.</summary>
         public TeamTemplatesRequestBuilder TeamTemplates { get =>
             new TeamTemplatesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>The workforceIntegrations property</summary>
+        /// <summary>Provides operations to manage the workforceIntegrations property of the microsoft.graph.teamwork entity.</summary>
         public WorkforceIntegrationsRequestBuilder WorkforceIntegrations { get =>
             new WorkforceIntegrationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new TeamworkRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public TeamworkRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -62,9 +62,9 @@ namespace Microsoft.Graph.Beta.Teamwork {
         }
         /// <summary>
         /// Instantiates a new TeamworkRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public TeamworkRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -76,8 +76,8 @@ namespace Microsoft.Graph.Beta.Teamwork {
         }
         /// <summary>
         /// Get teamwork
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<TeamworkRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -96,9 +96,9 @@ namespace Microsoft.Graph.Beta.Teamwork {
         }
         /// <summary>
         /// Update teamwork
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(Microsoft.Graph.Beta.Models.Teamwork body, Action<TeamworkRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -118,9 +118,9 @@ namespace Microsoft.Graph.Beta.Teamwork {
         }
         /// <summary>
         /// Get teamwork
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<Microsoft.Graph.Beta.Models.Teamwork> GetAsync(Action<TeamworkRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -131,10 +131,10 @@ namespace Microsoft.Graph.Beta.Teamwork {
         }
         /// <summary>
         /// Update teamwork
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<Microsoft.Graph.Beta.Models.Teamwork> PatchAsync(Microsoft.Graph.Beta.Models.Teamwork body, Action<TeamworkRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);

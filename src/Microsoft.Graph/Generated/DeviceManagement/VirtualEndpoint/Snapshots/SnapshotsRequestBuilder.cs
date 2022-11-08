@@ -15,7 +15,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots {
     /// <summary>Provides operations to manage the snapshots property of the microsoft.graph.virtualEndpoint entity.</summary>
     public class SnapshotsRequestBuilder {
-        /// <summary>The Count property</summary>
+        /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the Microsoft.Graph.Beta.deviceManagement.virtualEndpoint.snapshots.item collection</summary>
+        /// <summary>Provides operations to manage the snapshots property of the microsoft.graph.virtualEndpoint entity.</summary>
         public CloudPcSnapshotItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("cloudPcSnapshot%2Did", position);
@@ -33,9 +33,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots {
         } }
         /// <summary>
         /// Instantiates a new SnapshotsRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public SnapshotsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -46,9 +46,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots {
         }
         /// <summary>
         /// Instantiates a new SnapshotsRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public SnapshotsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -60,8 +60,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots {
         }
         /// <summary>
         /// Get a list of cloudPcSnapshot objects and their properties.
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<SnapshotsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -80,9 +80,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots {
         }
         /// <summary>
         /// Create new navigation property to snapshots for deviceManagement
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePostRequestInformation(CloudPcSnapshot body, Action<SnapshotsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -102,9 +102,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots {
         }
         /// <summary>
         /// Get a list of cloudPcSnapshot objects and their properties.
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<CloudPcSnapshotCollectionResponse> GetAsync(Action<SnapshotsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -115,8 +115,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots {
         }
         /// <summary>
         /// Provides operations to call the getStorageAccounts method.
-        /// <param name="subscriptionId">Usage: subscriptionId=&apos;{subscriptionId}&apos;</param>
         /// </summary>
+        /// <param name="subscriptionId">Usage: subscriptionId=&apos;{subscriptionId}&apos;</param>
         public GetStorageAccountsWithSubscriptionIdRequestBuilder GetStorageAccountsWithSubscriptionId(string subscriptionId) {
             if(string.IsNullOrEmpty(subscriptionId)) throw new ArgumentNullException(nameof(subscriptionId));
             return new GetStorageAccountsWithSubscriptionIdRequestBuilder(PathParameters, RequestAdapter, subscriptionId);
@@ -129,10 +129,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots {
         }
         /// <summary>
         /// Create new navigation property to snapshots for deviceManagement
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<CloudPcSnapshot> PostAsync(CloudPcSnapshot body, Action<SnapshotsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, requestConfiguration);

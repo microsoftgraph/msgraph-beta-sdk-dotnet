@@ -75,6 +75,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("onPremisesConnectionId"); }
             set { BackingStore?.Set("onPremisesConnectionId", value); }
         }
+        /// <summary>The provisioningType property</summary>
+        public CloudPcProvisioningType? ProvisioningType {
+            get { return BackingStore?.Get<CloudPcProvisioningType?>("provisioningType"); }
+            set { BackingStore?.Set("provisioningType", value); }
+        }
         /// <summary>Specific Windows settings to configure while creating Cloud PCs for this provisioning policy.</summary>
         public CloudPcWindowsSettings WindowsSettings {
             get { return BackingStore?.Get<CloudPcWindowsSettings>("windowsSettings"); }
@@ -88,8 +93,8 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
-        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new CloudPcProvisioningPolicy CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new CloudPcProvisioningPolicy();
@@ -113,13 +118,14 @@ namespace Microsoft.Graph.Beta.Models {
                 {"managedBy", n => { ManagedBy = n.GetEnumValue<CloudPcManagementService>(); } },
                 {"microsoftManagedDesktop", n => { MicrosoftManagedDesktop = n.GetObjectValue<Microsoft.Graph.Beta.Models.MicrosoftManagedDesktop>(Microsoft.Graph.Beta.Models.MicrosoftManagedDesktop.CreateFromDiscriminatorValue); } },
                 {"onPremisesConnectionId", n => { OnPremisesConnectionId = n.GetStringValue(); } },
+                {"provisioningType", n => { ProvisioningType = n.GetEnumValue<CloudPcProvisioningType>(); } },
                 {"windowsSettings", n => { WindowsSettings = n.GetObjectValue<CloudPcWindowsSettings>(CloudPcWindowsSettings.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
         /// Serializes information the current object
-        /// <param name="writer">Serialization writer to use to serialize this model</param>
         /// </summary>
+        /// <param name="writer">Serialization writer to use to serialize this model</param>
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
@@ -137,6 +143,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteEnumValue<CloudPcManagementService>("managedBy", ManagedBy);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.MicrosoftManagedDesktop>("microsoftManagedDesktop", MicrosoftManagedDesktop);
             writer.WriteStringValue("onPremisesConnectionId", OnPremisesConnectionId);
+            writer.WriteEnumValue<CloudPcProvisioningType>("provisioningType", ProvisioningType);
             writer.WriteObjectValue<CloudPcWindowsSettings>("windowsSettings", WindowsSettings);
         }
     }

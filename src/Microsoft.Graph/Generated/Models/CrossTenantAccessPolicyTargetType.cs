@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Casts the previous resource to application.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public enum CrossTenantAccessPolicyTargetType {
         User,
         Group,

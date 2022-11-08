@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Contains properties the MacOS LOB App in a bundle package</summary>
+    /// <summary>Contains properties of a macOS .app in the package</summary>
     public class MacOSLobChildApp : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
@@ -14,12 +14,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The build number of MacOS Line of Business (LoB) app.</summary>
+        /// <summary>The build number of the app.</summary>
         public string BuildNumber {
             get { return BackingStore?.Get<string>("buildNumber"); }
             set { BackingStore?.Set("buildNumber", value); }
         }
-        /// <summary>The Identity Name.</summary>
+        /// <summary>The bundleId of the app.</summary>
         public string BundleId {
             get { return BackingStore?.Get<string>("bundleId"); }
             set { BackingStore?.Set("bundleId", value); }
@@ -29,7 +29,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
-        /// <summary>The version number of MacOS Line of Business (LoB) app.</summary>
+        /// <summary>The version number of the app.</summary>
         public string VersionNumber {
             get { return BackingStore?.Get<string>("versionNumber"); }
             set { BackingStore?.Set("versionNumber", value); }
@@ -44,8 +44,8 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
-        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static MacOSLobChildApp CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new MacOSLobChildApp();
@@ -63,8 +63,8 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>
         /// Serializes information the current object
-        /// <param name="writer">Serialization writer to use to serialize this model</param>
         /// </summary>
+        /// <param name="writer">Serialization writer to use to serialize this model</param>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("buildNumber", BuildNumber);

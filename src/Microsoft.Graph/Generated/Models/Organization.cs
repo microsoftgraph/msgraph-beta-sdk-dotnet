@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class Organization : DirectoryObject, IParsable {
         /// <summary>The collection of service plans associated with the tenant. Not nullable.</summary>
         public List<AssignedPlan> AssignedPlans {
@@ -49,6 +50,11 @@ namespace Microsoft.Graph.Beta.Models {
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
+        }
+        /// <summary>Two-letter ISO 3166 country code indicating the default service usage location of an organization.</summary>
+        public string DefaultUsageLocation {
+            get { return BackingStore?.Get<string>("defaultUsageLocation"); }
+            set { BackingStore?.Set("defaultUsageLocation", value); }
         }
         /// <summary>The directory size quota information of an organization.</summary>
         public Microsoft.Graph.Beta.Models.DirectorySizeQuota DirectorySizeQuota {
@@ -146,15 +152,15 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("verifiedDomains", value); }
         }
         /// <summary>
-        /// Instantiates a new Organization and sets the default values.
+        /// Instantiates a new organization and sets the default values.
         /// </summary>
         public Organization() : base() {
             OdataType = "#microsoft.graph.organization";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
-        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new Organization CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new Organization();
@@ -173,6 +179,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"country", n => { Country = n.GetStringValue(); } },
                 {"countryLetterCode", n => { CountryLetterCode = n.GetStringValue(); } },
                 {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"defaultUsageLocation", n => { DefaultUsageLocation = n.GetStringValue(); } },
                 {"directorySizeQuota", n => { DirectorySizeQuota = n.GetObjectValue<Microsoft.Graph.Beta.Models.DirectorySizeQuota>(Microsoft.Graph.Beta.Models.DirectorySizeQuota.CreateFromDiscriminatorValue); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"extensions", n => { Extensions = n.GetCollectionOfObjectValues<Extension>(Extension.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -196,8 +203,8 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>
         /// Serializes information the current object
-        /// <param name="writer">Serialization writer to use to serialize this model</param>
         /// </summary>
+        /// <param name="writer">Serialization writer to use to serialize this model</param>
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
@@ -210,6 +217,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("country", Country);
             writer.WriteStringValue("countryLetterCode", CountryLetterCode);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
+            writer.WriteStringValue("defaultUsageLocation", DefaultUsageLocation);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DirectorySizeQuota>("directorySizeQuota", DirectorySizeQuota);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteCollectionOfObjectValues<Extension>("extensions", Extensions);

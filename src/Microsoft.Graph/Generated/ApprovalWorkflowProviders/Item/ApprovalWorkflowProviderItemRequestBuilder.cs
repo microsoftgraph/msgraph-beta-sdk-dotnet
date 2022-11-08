@@ -14,17 +14,17 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.ApprovalWorkflowProviders.Item {
     /// <summary>Provides operations to manage the collection of approvalWorkflowProvider entities.</summary>
     public class ApprovalWorkflowProviderItemRequestBuilder {
-        /// <summary>The businessFlows property</summary>
+        /// <summary>Provides operations to manage the businessFlows property of the microsoft.graph.approvalWorkflowProvider entity.</summary>
         public BusinessFlowsRequestBuilder BusinessFlows { get =>
             new BusinessFlowsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The businessFlowsWithRequestsAwaitingMyDecision property</summary>
+        /// <summary>Provides operations to manage the businessFlowsWithRequestsAwaitingMyDecision property of the microsoft.graph.approvalWorkflowProvider entity.</summary>
         public BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilder BusinessFlowsWithRequestsAwaitingMyDecision { get =>
             new BusinessFlowsWithRequestsAwaitingMyDecisionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>The policyTemplates property</summary>
+        /// <summary>Provides operations to manage the policyTemplates property of the microsoft.graph.approvalWorkflowProvider entity.</summary>
         public PolicyTemplatesRequestBuilder PolicyTemplates { get =>
             new PolicyTemplatesRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -34,9 +34,9 @@ namespace Microsoft.Graph.Beta.ApprovalWorkflowProviders.Item {
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new ApprovalWorkflowProviderItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public ApprovalWorkflowProviderItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -47,9 +47,9 @@ namespace Microsoft.Graph.Beta.ApprovalWorkflowProviders.Item {
         }
         /// <summary>
         /// Instantiates a new ApprovalWorkflowProviderItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public ApprovalWorkflowProviderItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -61,8 +61,8 @@ namespace Microsoft.Graph.Beta.ApprovalWorkflowProviders.Item {
         }
         /// <summary>
         /// Delete entity from approvalWorkflowProviders
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateDeleteRequestInformation(Action<ApprovalWorkflowProviderItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.DELETE,
@@ -79,8 +79,8 @@ namespace Microsoft.Graph.Beta.ApprovalWorkflowProviders.Item {
         }
         /// <summary>
         /// Get entity from approvalWorkflowProviders by key
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<ApprovalWorkflowProviderItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -99,9 +99,9 @@ namespace Microsoft.Graph.Beta.ApprovalWorkflowProviders.Item {
         }
         /// <summary>
         /// Update entity in approvalWorkflowProviders
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(ApprovalWorkflowProvider body, Action<ApprovalWorkflowProviderItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -121,9 +121,9 @@ namespace Microsoft.Graph.Beta.ApprovalWorkflowProviders.Item {
         }
         /// <summary>
         /// Delete entity from approvalWorkflowProviders
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task DeleteAsync(Action<ApprovalWorkflowProviderItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -134,9 +134,9 @@ namespace Microsoft.Graph.Beta.ApprovalWorkflowProviders.Item {
         }
         /// <summary>
         /// Get entity from approvalWorkflowProviders by key
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<ApprovalWorkflowProvider> GetAsync(Action<ApprovalWorkflowProviderItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -147,10 +147,10 @@ namespace Microsoft.Graph.Beta.ApprovalWorkflowProviders.Item {
         }
         /// <summary>
         /// Update entity in approvalWorkflowProviders
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<ApprovalWorkflowProvider> PatchAsync(ApprovalWorkflowProvider body, Action<ApprovalWorkflowProviderItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);

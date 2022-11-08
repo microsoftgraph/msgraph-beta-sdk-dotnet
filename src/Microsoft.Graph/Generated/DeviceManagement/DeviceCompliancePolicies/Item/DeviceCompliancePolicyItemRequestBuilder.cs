@@ -20,23 +20,23 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.Item {
     /// <summary>Provides operations to manage the deviceCompliancePolicies property of the microsoft.graph.deviceManagement entity.</summary>
     public class DeviceCompliancePolicyItemRequestBuilder {
-        /// <summary>The assign property</summary>
+        /// <summary>Provides operations to call the assign method.</summary>
         public AssignRequestBuilder Assign { get =>
             new AssignRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The assignments property</summary>
+        /// <summary>Provides operations to manage the assignments property of the microsoft.graph.deviceCompliancePolicy entity.</summary>
         public AssignmentsRequestBuilder Assignments { get =>
             new AssignmentsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The deviceSettingStateSummaries property</summary>
+        /// <summary>Provides operations to manage the deviceSettingStateSummaries property of the microsoft.graph.deviceCompliancePolicy entity.</summary>
         public DeviceSettingStateSummariesRequestBuilder DeviceSettingStateSummaries { get =>
             new DeviceSettingStateSummariesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The deviceStatuses property</summary>
+        /// <summary>Provides operations to manage the deviceStatuses property of the microsoft.graph.deviceCompliancePolicy entity.</summary>
         public DeviceStatusesRequestBuilder DeviceStatuses { get =>
             new DeviceStatusesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The deviceStatusOverview property</summary>
+        /// <summary>Provides operations to manage the deviceStatusOverview property of the microsoft.graph.deviceCompliancePolicy entity.</summary>
         public DeviceStatusOverviewRequestBuilder DeviceStatusOverview { get =>
             new DeviceStatusOverviewRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -44,29 +44,29 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.Item {
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>The scheduleActionsForRules property</summary>
+        /// <summary>Provides operations to call the scheduleActionsForRules method.</summary>
         public ScheduleActionsForRulesRequestBuilder ScheduleActionsForRules { get =>
             new ScheduleActionsForRulesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The scheduledActionsForRule property</summary>
+        /// <summary>Provides operations to manage the scheduledActionsForRule property of the microsoft.graph.deviceCompliancePolicy entity.</summary>
         public ScheduledActionsForRuleRequestBuilder ScheduledActionsForRule { get =>
             new ScheduledActionsForRuleRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>The userStatuses property</summary>
+        /// <summary>Provides operations to manage the userStatuses property of the microsoft.graph.deviceCompliancePolicy entity.</summary>
         public UserStatusesRequestBuilder UserStatuses { get =>
             new UserStatusesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The userStatusOverview property</summary>
+        /// <summary>Provides operations to manage the userStatusOverview property of the microsoft.graph.deviceCompliancePolicy entity.</summary>
         public UserStatusOverviewRequestBuilder UserStatusOverview { get =>
             new UserStatusOverviewRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new DeviceCompliancePolicyItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public DeviceCompliancePolicyItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -77,9 +77,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.Item {
         }
         /// <summary>
         /// Instantiates a new DeviceCompliancePolicyItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public DeviceCompliancePolicyItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -91,8 +91,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.Item {
         }
         /// <summary>
         /// Delete navigation property deviceCompliancePolicies for deviceManagement
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateDeleteRequestInformation(Action<DeviceCompliancePolicyItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.DELETE,
@@ -109,8 +109,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.Item {
         }
         /// <summary>
         /// The device compliance policies.
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<DeviceCompliancePolicyItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -129,9 +129,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.Item {
         }
         /// <summary>
         /// Update the navigation property deviceCompliancePolicies in deviceManagement
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(DeviceCompliancePolicy body, Action<DeviceCompliancePolicyItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -151,9 +151,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.Item {
         }
         /// <summary>
         /// Delete navigation property deviceCompliancePolicies for deviceManagement
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task DeleteAsync(Action<DeviceCompliancePolicyItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -164,9 +164,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.Item {
         }
         /// <summary>
         /// The device compliance policies.
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<DeviceCompliancePolicy> GetAsync(Action<DeviceCompliancePolicyItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -177,10 +177,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.Item {
         }
         /// <summary>
         /// Update the navigation property deviceCompliancePolicies in deviceManagement
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<DeviceCompliancePolicy> PatchAsync(DeviceCompliancePolicy body, Action<DeviceCompliancePolicyItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);

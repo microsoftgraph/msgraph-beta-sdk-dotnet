@@ -22,57 +22,57 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item {
     /// <summary>Provides operations to manage the mobileApps property of the microsoft.graph.deviceAppManagement entity.</summary>
     public class MobileAppItemRequestBuilder {
-        /// <summary>The assign property</summary>
+        /// <summary>Provides operations to call the assign method.</summary>
         public AssignRequestBuilder Assign { get =>
             new AssignRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The assignments property</summary>
+        /// <summary>Provides operations to manage the assignments property of the microsoft.graph.mobileApp entity.</summary>
         public AssignmentsRequestBuilder Assignments { get =>
             new AssignmentsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The categories property</summary>
+        /// <summary>Provides operations to manage the categories property of the microsoft.graph.mobileApp entity.</summary>
         public CategoriesRequestBuilder Categories { get =>
             new CategoriesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The deviceStatuses property</summary>
+        /// <summary>Provides operations to manage the deviceStatuses property of the microsoft.graph.mobileApp entity.</summary>
         public DeviceStatusesRequestBuilder DeviceStatuses { get =>
             new DeviceStatusesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The installSummary property</summary>
+        /// <summary>Provides operations to manage the installSummary property of the microsoft.graph.mobileApp entity.</summary>
         public InstallSummaryRequestBuilder InstallSummary { get =>
             new InstallSummaryRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The managedMobileLobApp property</summary>
+        /// <summary>Casts the previous resource to managedMobileLobApp.</summary>
         public ManagedMobileLobAppRequestBuilder ManagedMobileLobApp { get =>
             new ManagedMobileLobAppRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The mobileLobApp property</summary>
+        /// <summary>Casts the previous resource to mobileLobApp.</summary>
         public MobileLobAppRequestBuilder MobileLobApp { get =>
             new MobileLobAppRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>The relationships property</summary>
+        /// <summary>Provides operations to manage the relationships property of the microsoft.graph.mobileApp entity.</summary>
         public RelationshipsRequestBuilder Relationships { get =>
             new RelationshipsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>The updateRelationships property</summary>
+        /// <summary>Provides operations to call the updateRelationships method.</summary>
         public UpdateRelationshipsRequestBuilder UpdateRelationships { get =>
             new UpdateRelationshipsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>The userStatuses property</summary>
+        /// <summary>Provides operations to manage the userStatuses property of the microsoft.graph.mobileApp entity.</summary>
         public UserStatusesRequestBuilder UserStatuses { get =>
             new UserStatusesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new MobileAppItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public MobileAppItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -83,9 +83,9 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item {
         }
         /// <summary>
         /// Instantiates a new MobileAppItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public MobileAppItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -97,8 +97,8 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item {
         }
         /// <summary>
         /// Delete navigation property mobileApps for deviceAppManagement
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateDeleteRequestInformation(Action<MobileAppItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.DELETE,
@@ -115,8 +115,8 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item {
         }
         /// <summary>
         /// The mobile apps.
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<MobileAppItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -135,9 +135,9 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item {
         }
         /// <summary>
         /// Update the navigation property mobileApps in deviceAppManagement
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(MobileApp body, Action<MobileAppItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -157,9 +157,9 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item {
         }
         /// <summary>
         /// Delete navigation property mobileApps for deviceAppManagement
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task DeleteAsync(Action<MobileAppItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -170,9 +170,9 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item {
         }
         /// <summary>
         /// The mobile apps.
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<MobileApp> GetAsync(Action<MobileAppItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -183,9 +183,9 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item {
         }
         /// <summary>
         /// Provides operations to call the getRelatedAppStates method.
+        /// </summary>
         /// <param name="deviceId">Usage: deviceId=&apos;{deviceId}&apos;</param>
         /// <param name="userPrincipalName">Usage: userPrincipalName=&apos;{userPrincipalName}&apos;</param>
-        /// </summary>
         public GetRelatedAppStatesWithUserPrincipalNameWithDeviceIdRequestBuilder GetRelatedAppStatesWithUserPrincipalNameWithDeviceId(string deviceId, string userPrincipalName) {
             if(string.IsNullOrEmpty(deviceId)) throw new ArgumentNullException(nameof(deviceId));
             if(string.IsNullOrEmpty(userPrincipalName)) throw new ArgumentNullException(nameof(userPrincipalName));
@@ -193,10 +193,10 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item {
         }
         /// <summary>
         /// Update the navigation property mobileApps in deviceAppManagement
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<MobileApp> PatchAsync(MobileApp body, Action<MobileAppItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);

@@ -18,7 +18,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Print.Printers.Item {
     /// <summary>Provides operations to manage the printers property of the microsoft.graph.print entity.</summary>
     public class PrinterItemRequestBuilder {
-        /// <summary>The connectors property</summary>
+        /// <summary>Provides operations to manage the connectors property of the microsoft.graph.printer entity.</summary>
         public ConnectorsRequestBuilder Connectors { get =>
             new ConnectorsRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -26,23 +26,23 @@ namespace Microsoft.Graph.Beta.Print.Printers.Item {
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>The resetDefaults property</summary>
+        /// <summary>Provides operations to call the resetDefaults method.</summary>
         public ResetDefaultsRequestBuilder ResetDefaults { get =>
             new ResetDefaultsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The restoreFactoryDefaults property</summary>
+        /// <summary>Provides operations to call the restoreFactoryDefaults method.</summary>
         public RestoreFactoryDefaultsRequestBuilder RestoreFactoryDefaults { get =>
             new RestoreFactoryDefaultsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The share property</summary>
+        /// <summary>Provides operations to manage the share property of the microsoft.graph.printer entity.</summary>
         public ShareRequestBuilder Share { get =>
             new ShareRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The shares property</summary>
+        /// <summary>Provides operations to manage the shares property of the microsoft.graph.printer entity.</summary>
         public SharesRequestBuilder Shares { get =>
             new SharesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The taskTriggers property</summary>
+        /// <summary>Provides operations to manage the taskTriggers property of the microsoft.graph.printer entity.</summary>
         public TaskTriggersRequestBuilder TaskTriggers { get =>
             new TaskTriggersRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -50,9 +50,9 @@ namespace Microsoft.Graph.Beta.Print.Printers.Item {
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new PrinterItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public PrinterItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -63,9 +63,9 @@ namespace Microsoft.Graph.Beta.Print.Printers.Item {
         }
         /// <summary>
         /// Instantiates a new PrinterItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public PrinterItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -77,8 +77,8 @@ namespace Microsoft.Graph.Beta.Print.Printers.Item {
         }
         /// <summary>
         /// Delete navigation property printers for print
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateDeleteRequestInformation(Action<PrinterItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.DELETE,
@@ -95,8 +95,8 @@ namespace Microsoft.Graph.Beta.Print.Printers.Item {
         }
         /// <summary>
         /// The list of printers registered in the tenant.
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<PrinterItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -115,9 +115,9 @@ namespace Microsoft.Graph.Beta.Print.Printers.Item {
         }
         /// <summary>
         /// Update the navigation property printers in print
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(Microsoft.Graph.Beta.Models.Printer body, Action<PrinterItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -137,9 +137,9 @@ namespace Microsoft.Graph.Beta.Print.Printers.Item {
         }
         /// <summary>
         /// Delete navigation property printers for print
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task DeleteAsync(Action<PrinterItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -150,9 +150,9 @@ namespace Microsoft.Graph.Beta.Print.Printers.Item {
         }
         /// <summary>
         /// The list of printers registered in the tenant.
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<Microsoft.Graph.Beta.Models.Printer> GetAsync(Action<PrinterItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -169,10 +169,10 @@ namespace Microsoft.Graph.Beta.Print.Printers.Item {
         }
         /// <summary>
         /// Update the navigation property printers in print
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<Microsoft.Graph.Beta.Models.Printer> PatchAsync(Microsoft.Graph.Beta.Models.Printer body, Action<PrinterItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);

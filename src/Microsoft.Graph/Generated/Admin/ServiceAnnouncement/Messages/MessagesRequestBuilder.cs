@@ -19,23 +19,23 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Admin.ServiceAnnouncement.Messages {
     /// <summary>Provides operations to manage the messages property of the microsoft.graph.serviceAnnouncement entity.</summary>
     public class MessagesRequestBuilder {
-        /// <summary>The archive property</summary>
+        /// <summary>Provides operations to call the archive method.</summary>
         public ArchiveRequestBuilder Archive { get =>
             new ArchiveRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The Count property</summary>
+        /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The favorite property</summary>
+        /// <summary>Provides operations to call the favorite method.</summary>
         public FavoriteRequestBuilder Favorite { get =>
             new FavoriteRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The markRead property</summary>
+        /// <summary>Provides operations to call the markRead method.</summary>
         public MarkReadRequestBuilder MarkRead { get =>
             new MarkReadRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The markUnread property</summary>
+        /// <summary>Provides operations to call the markUnread method.</summary>
         public MarkUnreadRequestBuilder MarkUnread { get =>
             new MarkUnreadRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -43,17 +43,17 @@ namespace Microsoft.Graph.Beta.Admin.ServiceAnnouncement.Messages {
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>The unarchive property</summary>
+        /// <summary>Provides operations to call the unarchive method.</summary>
         public UnarchiveRequestBuilder Unarchive { get =>
             new UnarchiveRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The unfavorite property</summary>
+        /// <summary>Provides operations to call the unfavorite method.</summary>
         public UnfavoriteRequestBuilder Unfavorite { get =>
             new UnfavoriteRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the Microsoft.Graph.Beta.admin.serviceAnnouncement.messages.item collection</summary>
+        /// <summary>Provides operations to manage the messages property of the microsoft.graph.serviceAnnouncement entity.</summary>
         public ServiceUpdateMessageItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("serviceUpdateMessage%2Did", position);
@@ -61,9 +61,9 @@ namespace Microsoft.Graph.Beta.Admin.ServiceAnnouncement.Messages {
         } }
         /// <summary>
         /// Instantiates a new MessagesRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public MessagesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -74,9 +74,9 @@ namespace Microsoft.Graph.Beta.Admin.ServiceAnnouncement.Messages {
         }
         /// <summary>
         /// Instantiates a new MessagesRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public MessagesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -88,8 +88,8 @@ namespace Microsoft.Graph.Beta.Admin.ServiceAnnouncement.Messages {
         }
         /// <summary>
         /// Retrieve the serviceUpdateMessage resources from the **messages** navigation property. This operation retrieves all service update messages that exist for the tenant.
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<MessagesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -108,9 +108,9 @@ namespace Microsoft.Graph.Beta.Admin.ServiceAnnouncement.Messages {
         }
         /// <summary>
         /// Create new navigation property to messages for admin
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePostRequestInformation(ServiceUpdateMessage body, Action<MessagesRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -130,9 +130,9 @@ namespace Microsoft.Graph.Beta.Admin.ServiceAnnouncement.Messages {
         }
         /// <summary>
         /// Retrieve the serviceUpdateMessage resources from the **messages** navigation property. This operation retrieves all service update messages that exist for the tenant.
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<ServiceUpdateMessageCollectionResponse> GetAsync(Action<MessagesRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -143,10 +143,10 @@ namespace Microsoft.Graph.Beta.Admin.ServiceAnnouncement.Messages {
         }
         /// <summary>
         /// Create new navigation property to messages for admin
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<ServiceUpdateMessage> PostAsync(ServiceUpdateMessage body, Action<MessagesRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, requestConfiguration);

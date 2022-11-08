@@ -18,19 +18,19 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.Item {
     /// <summary>Provides operations to manage the deviceHealthScripts property of the microsoft.graph.deviceManagement entity.</summary>
     public class DeviceHealthScriptItemRequestBuilder {
-        /// <summary>The assign property</summary>
+        /// <summary>Provides operations to call the assign method.</summary>
         public AssignRequestBuilder Assign { get =>
             new AssignRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The assignments property</summary>
+        /// <summary>Provides operations to manage the assignments property of the microsoft.graph.deviceHealthScript entity.</summary>
         public AssignmentsRequestBuilder Assignments { get =>
             new AssignmentsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The deviceRunStates property</summary>
+        /// <summary>Provides operations to manage the deviceRunStates property of the microsoft.graph.deviceHealthScript entity.</summary>
         public DeviceRunStatesRequestBuilder DeviceRunStates { get =>
             new DeviceRunStatesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The getGlobalScriptHighestAvailableVersion property</summary>
+        /// <summary>Provides operations to call the getGlobalScriptHighestAvailableVersion method.</summary>
         public GetGlobalScriptHighestAvailableVersionRequestBuilder GetGlobalScriptHighestAvailableVersion { get =>
             new GetGlobalScriptHighestAvailableVersionRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -38,11 +38,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.Item {
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>The runSummary property</summary>
+        /// <summary>Provides operations to manage the runSummary property of the microsoft.graph.deviceHealthScript entity.</summary>
         public RunSummaryRequestBuilder RunSummary { get =>
             new RunSummaryRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The updateGlobalScript property</summary>
+        /// <summary>Provides operations to call the updateGlobalScript method.</summary>
         public UpdateGlobalScriptRequestBuilder UpdateGlobalScript { get =>
             new UpdateGlobalScriptRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -50,9 +50,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.Item {
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new DeviceHealthScriptItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public DeviceHealthScriptItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -63,9 +63,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.Item {
         }
         /// <summary>
         /// Instantiates a new DeviceHealthScriptItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public DeviceHealthScriptItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -77,8 +77,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.Item {
         }
         /// <summary>
         /// Delete navigation property deviceHealthScripts for deviceManagement
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateDeleteRequestInformation(Action<DeviceHealthScriptItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.DELETE,
@@ -95,8 +95,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.Item {
         }
         /// <summary>
         /// The list of device health scripts associated with the tenant.
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<DeviceHealthScriptItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -115,9 +115,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.Item {
         }
         /// <summary>
         /// Update the navigation property deviceHealthScripts in deviceManagement
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(DeviceHealthScript body, Action<DeviceHealthScriptItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -137,9 +137,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.Item {
         }
         /// <summary>
         /// Delete navigation property deviceHealthScripts for deviceManagement
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task DeleteAsync(Action<DeviceHealthScriptItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -150,9 +150,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.Item {
         }
         /// <summary>
         /// The list of device health scripts associated with the tenant.
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<DeviceHealthScript> GetAsync(Action<DeviceHealthScriptItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -169,10 +169,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.Item {
         }
         /// <summary>
         /// Update the navigation property deviceHealthScripts in deviceManagement
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<DeviceHealthScript> PatchAsync(DeviceHealthScript body, Action<DeviceHealthScriptItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);

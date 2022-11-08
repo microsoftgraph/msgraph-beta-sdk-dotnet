@@ -16,25 +16,25 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Organization.Item.Settings {
     /// <summary>Provides operations to manage the settings property of the microsoft.graph.organization entity.</summary>
     public class SettingsRequestBuilder {
-        /// <summary>The contactInsights property</summary>
+        /// <summary>Provides operations to manage the contactInsights property of the microsoft.graph.organizationSettings entity.</summary>
         public ContactInsightsRequestBuilder ContactInsights { get =>
             new ContactInsightsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The itemInsights property</summary>
+        /// <summary>Provides operations to manage the itemInsights property of the microsoft.graph.organizationSettings entity.</summary>
         public ItemInsightsRequestBuilder ItemInsights { get =>
             new ItemInsightsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The microsoftApplicationDataAccess property</summary>
+        /// <summary>Provides operations to manage the microsoftApplicationDataAccess property of the microsoft.graph.organizationSettings entity.</summary>
         public MicrosoftApplicationDataAccessRequestBuilder MicrosoftApplicationDataAccess { get =>
             new MicrosoftApplicationDataAccessRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>The peopleInsights property</summary>
+        /// <summary>Provides operations to manage the peopleInsights property of the microsoft.graph.organizationSettings entity.</summary>
         public PeopleInsightsRequestBuilder PeopleInsights { get =>
             new PeopleInsightsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The profileCardProperties property</summary>
+        /// <summary>Provides operations to manage the profileCardProperties property of the microsoft.graph.organizationSettings entity.</summary>
         public ProfileCardPropertiesRequestBuilder ProfileCardProperties { get =>
             new ProfileCardPropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -44,9 +44,9 @@ namespace Microsoft.Graph.Beta.Organization.Item.Settings {
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new SettingsRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public SettingsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -57,9 +57,9 @@ namespace Microsoft.Graph.Beta.Organization.Item.Settings {
         }
         /// <summary>
         /// Instantiates a new SettingsRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public SettingsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -71,8 +71,8 @@ namespace Microsoft.Graph.Beta.Organization.Item.Settings {
         }
         /// <summary>
         /// Delete navigation property settings for organization
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateDeleteRequestInformation(Action<SettingsRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.DELETE,
@@ -89,8 +89,8 @@ namespace Microsoft.Graph.Beta.Organization.Item.Settings {
         }
         /// <summary>
         /// Retrieve the properties and relationships of an organizationSettings object, including **profileCardProperties**. This operation does not return insightsSettings. Depending on the type of insights, you can get their settings by using list itemInsights or list peopleInsights. This operation does not return microsoftApplicationDataAccessSettings. To get microsoftApplicationDataAccessSettings, use list microsoftApplicationDataAccessSettings.
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<SettingsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -109,9 +109,9 @@ namespace Microsoft.Graph.Beta.Organization.Item.Settings {
         }
         /// <summary>
         /// Update the navigation property settings in organization
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(Microsoft.Graph.Beta.Models.OrganizationSettings body, Action<SettingsRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -131,9 +131,9 @@ namespace Microsoft.Graph.Beta.Organization.Item.Settings {
         }
         /// <summary>
         /// Delete navigation property settings for organization
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task DeleteAsync(Action<SettingsRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -144,9 +144,9 @@ namespace Microsoft.Graph.Beta.Organization.Item.Settings {
         }
         /// <summary>
         /// Retrieve the properties and relationships of an organizationSettings object, including **profileCardProperties**. This operation does not return insightsSettings. Depending on the type of insights, you can get their settings by using list itemInsights or list peopleInsights. This operation does not return microsoftApplicationDataAccessSettings. To get microsoftApplicationDataAccessSettings, use list microsoftApplicationDataAccessSettings.
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<Microsoft.Graph.Beta.Models.OrganizationSettings> GetAsync(Action<SettingsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -157,10 +157,10 @@ namespace Microsoft.Graph.Beta.Organization.Item.Settings {
         }
         /// <summary>
         /// Update the navigation property settings in organization
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<Microsoft.Graph.Beta.Models.OrganizationSettings> PatchAsync(Microsoft.Graph.Beta.Models.OrganizationSettings body, Action<SettingsRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);

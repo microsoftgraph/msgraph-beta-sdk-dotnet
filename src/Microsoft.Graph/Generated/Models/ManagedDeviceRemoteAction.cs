@@ -23,5 +23,7 @@ namespace Microsoft.Graph.Beta.Models {
         ActivateDeviceEsim,
         /// <summary>Name of the collectDiagnostics action.</summary>
         CollectDiagnostics,
+        /// <summary>Name of action to initiate MDM key recovery</summary>
+        InitiateMobileDeviceManagementKeyRecovery,
     }
 }

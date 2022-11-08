@@ -23,43 +23,43 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.DataClassification {
     /// <summary>Provides operations to manage the dataClassificationService singleton.</summary>
     public class DataClassificationRequestBuilder {
-        /// <summary>The classifyExactMatches property</summary>
+        /// <summary>Provides operations to call the classifyExactMatches method.</summary>
         public ClassifyExactMatchesRequestBuilder ClassifyExactMatches { get =>
             new ClassifyExactMatchesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The classifyFile property</summary>
+        /// <summary>Provides operations to call the classifyFile method.</summary>
         public ClassifyFileRequestBuilder ClassifyFile { get =>
             new ClassifyFileRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The classifyFileJobs property</summary>
+        /// <summary>Provides operations to manage the classifyFileJobs property of the microsoft.graph.dataClassificationService entity.</summary>
         public ClassifyFileJobsRequestBuilder ClassifyFileJobs { get =>
             new ClassifyFileJobsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The classifyText property</summary>
+        /// <summary>Provides operations to call the classifyText method.</summary>
         public ClassifyTextRequestBuilder ClassifyText { get =>
             new ClassifyTextRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The classifyTextJobs property</summary>
+        /// <summary>Provides operations to manage the classifyTextJobs property of the microsoft.graph.dataClassificationService entity.</summary>
         public ClassifyTextJobsRequestBuilder ClassifyTextJobs { get =>
             new ClassifyTextJobsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The evaluateDlpPoliciesJobs property</summary>
+        /// <summary>Provides operations to manage the evaluateDlpPoliciesJobs property of the microsoft.graph.dataClassificationService entity.</summary>
         public EvaluateDlpPoliciesJobsRequestBuilder EvaluateDlpPoliciesJobs { get =>
             new EvaluateDlpPoliciesJobsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The evaluateLabelJobs property</summary>
+        /// <summary>Provides operations to manage the evaluateLabelJobs property of the microsoft.graph.dataClassificationService entity.</summary>
         public EvaluateLabelJobsRequestBuilder EvaluateLabelJobs { get =>
             new EvaluateLabelJobsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The exactMatchDataStores property</summary>
+        /// <summary>Provides operations to manage the exactMatchDataStores property of the microsoft.graph.dataClassificationService entity.</summary>
         public ExactMatchDataStoresRequestBuilder ExactMatchDataStores { get =>
             new ExactMatchDataStoresRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The exactMatchUploadAgents property</summary>
+        /// <summary>Provides operations to manage the exactMatchUploadAgents property of the microsoft.graph.dataClassificationService entity.</summary>
         public ExactMatchUploadAgentsRequestBuilder ExactMatchUploadAgents { get =>
             new ExactMatchUploadAgentsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The jobs property</summary>
+        /// <summary>Provides operations to manage the jobs property of the microsoft.graph.dataClassificationService entity.</summary>
         public JobsRequestBuilder Jobs { get =>
             new JobsRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -67,11 +67,11 @@ namespace Microsoft.Graph.Beta.DataClassification {
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>The sensitiveTypes property</summary>
+        /// <summary>Provides operations to manage the sensitiveTypes property of the microsoft.graph.dataClassificationService entity.</summary>
         public SensitiveTypesRequestBuilder SensitiveTypes { get =>
             new SensitiveTypesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The sensitivityLabels property</summary>
+        /// <summary>Provides operations to manage the sensitivityLabels property of the microsoft.graph.dataClassificationService entity.</summary>
         public SensitivityLabelsRequestBuilder SensitivityLabels { get =>
             new SensitivityLabelsRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -79,9 +79,9 @@ namespace Microsoft.Graph.Beta.DataClassification {
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new DataClassificationRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public DataClassificationRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -92,9 +92,9 @@ namespace Microsoft.Graph.Beta.DataClassification {
         }
         /// <summary>
         /// Instantiates a new DataClassificationRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public DataClassificationRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -106,8 +106,8 @@ namespace Microsoft.Graph.Beta.DataClassification {
         }
         /// <summary>
         /// Get dataClassification
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<DataClassificationRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -126,9 +126,9 @@ namespace Microsoft.Graph.Beta.DataClassification {
         }
         /// <summary>
         /// Update dataClassification
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(DataClassificationService body, Action<DataClassificationRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -148,9 +148,9 @@ namespace Microsoft.Graph.Beta.DataClassification {
         }
         /// <summary>
         /// Get dataClassification
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<DataClassificationService> GetAsync(Action<DataClassificationRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -161,10 +161,10 @@ namespace Microsoft.Graph.Beta.DataClassification {
         }
         /// <summary>
         /// Update dataClassification
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<DataClassificationService> PatchAsync(DataClassificationService body, Action<DataClassificationRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);

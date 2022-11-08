@@ -43,6 +43,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+        /// <summary>Count of devices scheduled for Co-Management enrollment. Valid values 0 to 9999999</summary>
+        public int? ScheduledForEnrollmentCount {
+            get { return BackingStore?.Get<int?>("scheduledForEnrollmentCount"); }
+            set { BackingStore?.Set("scheduledForEnrollmentCount", value); }
+        }
         /// <summary>
         /// Instantiates a new comanagementEligibleDevicesSummary and sets the default values.
         /// </summary>
@@ -53,8 +58,8 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
-        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static ComanagementEligibleDevicesSummary CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new ComanagementEligibleDevicesSummary();
@@ -70,12 +75,13 @@ namespace Microsoft.Graph.Beta.Models {
                 {"ineligibleCount", n => { IneligibleCount = n.GetIntValue(); } },
                 {"needsOsUpdateCount", n => { NeedsOsUpdateCount = n.GetIntValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                {"scheduledForEnrollmentCount", n => { ScheduledForEnrollmentCount = n.GetIntValue(); } },
             };
         }
         /// <summary>
         /// Serializes information the current object
-        /// <param name="writer">Serialization writer to use to serialize this model</param>
         /// </summary>
+        /// <param name="writer">Serialization writer to use to serialize this model</param>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("comanagedCount", ComanagedCount);
@@ -84,6 +90,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteIntValue("ineligibleCount", IneligibleCount);
             writer.WriteIntValue("needsOsUpdateCount", NeedsOsUpdateCount);
             writer.WriteStringValue("@odata.type", OdataType);
+            writer.WriteIntValue("scheduledForEnrollmentCount", ScheduledForEnrollmentCount);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

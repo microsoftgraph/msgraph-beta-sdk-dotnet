@@ -18,15 +18,15 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.AccessReviews.Item.Instances.Item {
     /// <summary>Provides operations to manage the instances property of the microsoft.graph.accessReview entity.</summary>
     public class AccessReviewItemRequestBuilder {
-        /// <summary>The applyDecisions property</summary>
+        /// <summary>Provides operations to call the applyDecisions method.</summary>
         public ApplyDecisionsRequestBuilder ApplyDecisions { get =>
             new ApplyDecisionsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The decisions property</summary>
+        /// <summary>Provides operations to manage the decisions property of the microsoft.graph.accessReview entity.</summary>
         public DecisionsRequestBuilder Decisions { get =>
             new DecisionsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The myDecisions property</summary>
+        /// <summary>Provides operations to manage the myDecisions property of the microsoft.graph.accessReview entity.</summary>
         public MyDecisionsRequestBuilder MyDecisions { get =>
             new MyDecisionsRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -34,19 +34,19 @@ namespace Microsoft.Graph.Beta.AccessReviews.Item.Instances.Item {
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>The resetDecisions property</summary>
+        /// <summary>Provides operations to call the resetDecisions method.</summary>
         public ResetDecisionsRequestBuilder ResetDecisions { get =>
             new ResetDecisionsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The reviewers property</summary>
+        /// <summary>Provides operations to manage the reviewers property of the microsoft.graph.accessReview entity.</summary>
         public ReviewersRequestBuilder Reviewers { get =>
             new ReviewersRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The sendReminder property</summary>
+        /// <summary>Provides operations to call the sendReminder method.</summary>
         public SendReminderRequestBuilder SendReminder { get =>
             new SendReminderRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The stop property</summary>
+        /// <summary>Provides operations to call the stop method.</summary>
         public StopRequestBuilder Stop { get =>
             new StopRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -54,9 +54,9 @@ namespace Microsoft.Graph.Beta.AccessReviews.Item.Instances.Item {
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new AccessReviewItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public AccessReviewItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -67,9 +67,9 @@ namespace Microsoft.Graph.Beta.AccessReviews.Item.Instances.Item {
         }
         /// <summary>
         /// Instantiates a new AccessReviewItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public AccessReviewItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -81,8 +81,8 @@ namespace Microsoft.Graph.Beta.AccessReviews.Item.Instances.Item {
         }
         /// <summary>
         /// Delete navigation property instances for accessReviews
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateDeleteRequestInformation(Action<AccessReviewItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.DELETE,
@@ -99,8 +99,8 @@ namespace Microsoft.Graph.Beta.AccessReviews.Item.Instances.Item {
         }
         /// <summary>
         /// The collection of access reviews instances past, present and future, if this object is a recurring access review.
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<AccessReviewItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -119,9 +119,9 @@ namespace Microsoft.Graph.Beta.AccessReviews.Item.Instances.Item {
         }
         /// <summary>
         /// Update the navigation property instances in accessReviews
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(AccessReview body, Action<AccessReviewItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -141,9 +141,9 @@ namespace Microsoft.Graph.Beta.AccessReviews.Item.Instances.Item {
         }
         /// <summary>
         /// Delete navigation property instances for accessReviews
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task DeleteAsync(Action<AccessReviewItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -154,9 +154,9 @@ namespace Microsoft.Graph.Beta.AccessReviews.Item.Instances.Item {
         }
         /// <summary>
         /// The collection of access reviews instances past, present and future, if this object is a recurring access review.
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<AccessReview> GetAsync(Action<AccessReviewItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -167,10 +167,10 @@ namespace Microsoft.Graph.Beta.AccessReviews.Item.Instances.Item {
         }
         /// <summary>
         /// Update the navigation property instances in accessReviews
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<AccessReview> PatchAsync(AccessReview body, Action<AccessReviewItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);

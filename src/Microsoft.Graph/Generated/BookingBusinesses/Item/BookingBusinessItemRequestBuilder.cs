@@ -20,43 +20,43 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.BookingBusinesses.Item {
     /// <summary>Provides operations to manage the collection of bookingBusiness entities.</summary>
     public class BookingBusinessItemRequestBuilder {
-        /// <summary>The appointments property</summary>
+        /// <summary>Provides operations to manage the appointments property of the microsoft.graph.bookingBusiness entity.</summary>
         public AppointmentsRequestBuilder Appointments { get =>
             new AppointmentsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The calendarView property</summary>
+        /// <summary>Provides operations to manage the calendarView property of the microsoft.graph.bookingBusiness entity.</summary>
         public CalendarViewRequestBuilder CalendarView { get =>
             new CalendarViewRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The customers property</summary>
+        /// <summary>Provides operations to manage the customers property of the microsoft.graph.bookingBusiness entity.</summary>
         public CustomersRequestBuilder Customers { get =>
             new CustomersRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The customQuestions property</summary>
+        /// <summary>Provides operations to manage the customQuestions property of the microsoft.graph.bookingBusiness entity.</summary>
         public CustomQuestionsRequestBuilder CustomQuestions { get =>
             new CustomQuestionsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The getStaffAvailability property</summary>
+        /// <summary>Provides operations to call the getStaffAvailability method.</summary>
         public GetStaffAvailabilityRequestBuilder GetStaffAvailability { get =>
             new GetStaffAvailabilityRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>The publish property</summary>
+        /// <summary>Provides operations to call the publish method.</summary>
         public PublishRequestBuilder Publish { get =>
             new PublishRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>The services property</summary>
+        /// <summary>Provides operations to manage the services property of the microsoft.graph.bookingBusiness entity.</summary>
         public ServicesRequestBuilder Services { get =>
             new ServicesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The staffMembers property</summary>
+        /// <summary>Provides operations to manage the staffMembers property of the microsoft.graph.bookingBusiness entity.</summary>
         public StaffMembersRequestBuilder StaffMembers { get =>
             new StaffMembersRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The unpublish property</summary>
+        /// <summary>Provides operations to call the unpublish method.</summary>
         public UnpublishRequestBuilder Unpublish { get =>
             new UnpublishRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -64,9 +64,9 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item {
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new BookingBusinessItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public BookingBusinessItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -77,9 +77,9 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item {
         }
         /// <summary>
         /// Instantiates a new BookingBusinessItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public BookingBusinessItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -91,8 +91,8 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item {
         }
         /// <summary>
         /// Delete a bookingBusiness object.
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateDeleteRequestInformation(Action<BookingBusinessItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.DELETE,
@@ -109,8 +109,8 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item {
         }
         /// <summary>
         /// Get the properties and relationships of a bookingBusiness object.
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<BookingBusinessItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -129,9 +129,9 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item {
         }
         /// <summary>
         /// Update the properties of a bookingBusiness object.
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(BookingBusiness body, Action<BookingBusinessItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -151,9 +151,9 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item {
         }
         /// <summary>
         /// Delete a bookingBusiness object.
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task DeleteAsync(Action<BookingBusinessItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -164,9 +164,9 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item {
         }
         /// <summary>
         /// Get the properties and relationships of a bookingBusiness object.
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<BookingBusiness> GetAsync(Action<BookingBusinessItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -177,10 +177,10 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item {
         }
         /// <summary>
         /// Update the properties of a bookingBusiness object.
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<BookingBusiness> PatchAsync(BookingBusiness body, Action<BookingBusinessItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);

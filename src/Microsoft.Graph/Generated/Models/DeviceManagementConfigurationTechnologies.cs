@@ -19,7 +19,9 @@ namespace Microsoft.Graph.Beta.Models {
         LinuxMdm,
         /// <summary>Setting can be deployed through device enrollment.</summary>
         Enrollment,
-        /// <summary>Sentinel member for cases where the client cannot handle the new enum values.</summary>
+        /// <summary>Setting can be deployed using the Endpoint privilege management channel</summary>
+        EndpointPrivilegeManagement,
+        /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
         UnknownFutureValue,
     }
 }

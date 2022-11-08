@@ -5,52 +5,52 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class MacOSLobApp : MobileLobApp, IParsable {
-        /// <summary>The build number of MacOS Line of Business (LoB) app.</summary>
+        /// <summary>The build number of the package. This should match the package CFBundleShortVersionString of the .pkg file.</summary>
         public string BuildNumber {
             get { return BackingStore?.Get<string>("buildNumber"); }
             set { BackingStore?.Set("buildNumber", value); }
         }
-        /// <summary>The bundle id.</summary>
+        /// <summary>The primary bundleId of the package.</summary>
         public string BundleId {
             get { return BackingStore?.Get<string>("bundleId"); }
             set { BackingStore?.Set("bundleId", value); }
         }
-        /// <summary>The app list in this bundle package</summary>
+        /// <summary>List of ComplexType macOSLobChildApp objects. Represents the apps expected to be installed by the package.</summary>
         public List<MacOSLobChildApp> ChildApps {
             get { return BackingStore?.Get<List<MacOSLobChildApp>>("childApps"); }
             set { BackingStore?.Set("childApps", value); }
         }
-        /// <summary>The identity version.</summary>
+        /// <summary>The identity version. This property is being deprecated in 2211(November 2022).</summary>
         public string IdentityVersion {
             get { return BackingStore?.Get<string>("identityVersion"); }
             set { BackingStore?.Set("identityVersion", value); }
         }
-        /// <summary>A boolean to control whether the app&apos;s version will be used to detect the app after it is installed on a device. Set this to true for macOS Line of Business (LoB) apps that use a self update feature.</summary>
+        /// <summary>When TRUE, indicates that the app&apos;s version will NOT be used to detect if the app is installed on a device. When FALSE, indicates that the app&apos;s version will be used to detect if the app is installed on a device. Set this to true for apps that use a self update feature.</summary>
         public bool? IgnoreVersionDetection {
             get { return BackingStore?.Get<bool?>("ignoreVersionDetection"); }
             set { BackingStore?.Set("ignoreVersionDetection", value); }
         }
-        /// <summary>A boolean to control whether the app will be installed as managed (requires macOS 11.0 and other PKG restrictions).</summary>
+        /// <summary>When TRUE, indicates that the app will be installed as managed (requires macOS 11.0 and other managed package restrictions). When FALSE, indicates that the app will be installed as unmanaged.</summary>
         public bool? InstallAsManaged {
             get { return BackingStore?.Get<bool?>("installAsManaged"); }
             set { BackingStore?.Set("installAsManaged", value); }
         }
-        /// <summary>The MD5 hash codes</summary>
+        /// <summary>The MD5 hash codes. This is empty if the package was uploaded directly. If the Intune App Wrapping Tool is used to create a .intunemac, this value can be found inside the Detection.xml file.</summary>
         public List<string> Md5Hash {
             get { return BackingStore?.Get<List<string>>("md5Hash"); }
             set { BackingStore?.Set("md5Hash", value); }
         }
-        /// <summary>The chunk size for MD5 hash</summary>
+        /// <summary>The chunk size for MD5 hash. This is &apos;0&apos; or empty if the package was uploaded directly. If the Intune App Wrapping Tool is used to create a .intunemac, this value can be found inside the Detection.xml file.</summary>
         public int? Md5HashChunkSize {
             get { return BackingStore?.Get<int?>("md5HashChunkSize"); }
             set { BackingStore?.Set("md5HashChunkSize", value); }
         }
-        /// <summary>The value for the minimum applicable operating system.</summary>
+        /// <summary>ComplexType macOSMinimumOperatingSystem that indicates the minimum operating system applicable for the application.</summary>
         public MacOSMinimumOperatingSystem MinimumSupportedOperatingSystem {
             get { return BackingStore?.Get<MacOSMinimumOperatingSystem>("minimumSupportedOperatingSystem"); }
             set { BackingStore?.Set("minimumSupportedOperatingSystem", value); }
         }
-        /// <summary>The version number of MacOS Line of Business (LoB) app.</summary>
+        /// <summary>The version number of the package. This should match the package CFBundleVersion in the packageinfo file.</summary>
         public string VersionNumber {
             get { return BackingStore?.Get<string>("versionNumber"); }
             set { BackingStore?.Set("versionNumber", value); }
@@ -63,8 +63,8 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
-        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new MacOSLobApp CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new MacOSLobApp();
@@ -88,8 +88,8 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>
         /// Serializes information the current object
-        /// <param name="writer">Serialization writer to use to serialize this model</param>
         /// </summary>
+        /// <param name="writer">Serialization writer to use to serialize this model</param>
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);

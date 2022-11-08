@@ -20,31 +20,31 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices {
     /// <summary>Provides operations to manage the managedDevices property of the microsoft.graph.user entity.</summary>
     public class ManagedDevicesRequestBuilder {
-        /// <summary>The bulkReprovisionCloudPc property</summary>
+        /// <summary>Provides operations to call the bulkReprovisionCloudPc method.</summary>
         public BulkReprovisionCloudPcRequestBuilder BulkReprovisionCloudPc { get =>
             new BulkReprovisionCloudPcRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The bulkRestoreCloudPc property</summary>
+        /// <summary>Provides operations to call the bulkRestoreCloudPc method.</summary>
         public BulkRestoreCloudPcRequestBuilder BulkRestoreCloudPc { get =>
             new BulkRestoreCloudPcRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The bulkSetCloudPcReviewStatus property</summary>
+        /// <summary>Provides operations to call the bulkSetCloudPcReviewStatus method.</summary>
         public BulkSetCloudPcReviewStatusRequestBuilder BulkSetCloudPcReviewStatus { get =>
             new BulkSetCloudPcReviewStatusRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The Count property</summary>
+        /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The downloadAppDiagnostics property</summary>
+        /// <summary>Provides operations to call the downloadAppDiagnostics method.</summary>
         public DownloadAppDiagnosticsRequestBuilder DownloadAppDiagnostics { get =>
             new DownloadAppDiagnosticsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The executeAction property</summary>
+        /// <summary>Provides operations to call the executeAction method.</summary>
         public ExecuteActionRequestBuilder ExecuteAction { get =>
             new ExecuteActionRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The moveDevicesToOU property</summary>
+        /// <summary>Provides operations to call the moveDevicesToOU method.</summary>
         public MoveDevicesToOURequestBuilder MoveDevicesToOU { get =>
             new MoveDevicesToOURequestBuilder(PathParameters, RequestAdapter);
         }
@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the Microsoft.Graph.Beta.users.item.managedDevices.item collection</summary>
+        /// <summary>Provides operations to manage the managedDevices property of the microsoft.graph.user entity.</summary>
         public ManagedDeviceItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("managedDevice%2Did", position);
@@ -62,17 +62,17 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices {
         } }
         /// <summary>
         /// Provides operations to call the appDiagnostics method.
-        /// <param name="upn">Usage: upn=&apos;{upn}&apos;</param>
         /// </summary>
+        /// <param name="upn">Usage: upn=&apos;{upn}&apos;</param>
         public AppDiagnosticsWithUpnRequestBuilder AppDiagnosticsWithUpn(string upn) {
             if(string.IsNullOrEmpty(upn)) throw new ArgumentNullException(nameof(upn));
             return new AppDiagnosticsWithUpnRequestBuilder(PathParameters, RequestAdapter, upn);
         }
         /// <summary>
         /// Instantiates a new ManagedDevicesRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public ManagedDevicesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -83,9 +83,9 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices {
         }
         /// <summary>
         /// Instantiates a new ManagedDevicesRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public ManagedDevicesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -97,8 +97,8 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices {
         }
         /// <summary>
         /// The managed devices associated with the user.
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<ManagedDevicesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -117,9 +117,9 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices {
         }
         /// <summary>
         /// Create new navigation property to managedDevices for users
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePostRequestInformation(Microsoft.Graph.Beta.Models.ManagedDevice body, Action<ManagedDevicesRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -139,9 +139,9 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices {
         }
         /// <summary>
         /// The managed devices associated with the user.
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<ManagedDeviceCollectionResponse> GetAsync(Action<ManagedDevicesRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -152,10 +152,10 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices {
         }
         /// <summary>
         /// Create new navigation property to managedDevices for users
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<Microsoft.Graph.Beta.Models.ManagedDevice> PostAsync(Microsoft.Graph.Beta.Models.ManagedDevice body, Action<ManagedDevicesRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, requestConfiguration);

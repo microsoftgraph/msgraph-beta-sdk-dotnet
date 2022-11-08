@@ -45,6 +45,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<int?>("installProgressTimeoutInMinutes"); }
             set { BackingStore?.Set("installProgressTimeoutInMinutes", value); }
         }
+        /// <summary>Allows quality updates installation during OOBE</summary>
+        public bool? InstallQualityUpdates {
+            get { return BackingStore?.Get<bool?>("installQualityUpdates"); }
+            set { BackingStore?.Set("installQualityUpdates", value); }
+        }
         /// <summary>Selected applications to track the installation status</summary>
         public List<string> SelectedMobileAppIds {
             get { return BackingStore?.Get<List<string>>("selectedMobileAppIds"); }
@@ -68,8 +73,8 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
-        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new Windows10EnrollmentCompletionPageConfiguration CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new Windows10EnrollmentCompletionPageConfiguration();
@@ -87,6 +92,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"customErrorMessage", n => { CustomErrorMessage = n.GetStringValue(); } },
                 {"disableUserStatusTrackingAfterFirstUser", n => { DisableUserStatusTrackingAfterFirstUser = n.GetBoolValue(); } },
                 {"installProgressTimeoutInMinutes", n => { InstallProgressTimeoutInMinutes = n.GetIntValue(); } },
+                {"installQualityUpdates", n => { InstallQualityUpdates = n.GetBoolValue(); } },
                 {"selectedMobileAppIds", n => { SelectedMobileAppIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"showInstallationProgress", n => { ShowInstallationProgress = n.GetBoolValue(); } },
                 {"trackInstallProgressForAutopilotOnly", n => { TrackInstallProgressForAutopilotOnly = n.GetBoolValue(); } },
@@ -94,8 +100,8 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>
         /// Serializes information the current object
-        /// <param name="writer">Serialization writer to use to serialize this model</param>
         /// </summary>
+        /// <param name="writer">Serialization writer to use to serialize this model</param>
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
@@ -107,6 +113,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("customErrorMessage", CustomErrorMessage);
             writer.WriteBoolValue("disableUserStatusTrackingAfterFirstUser", DisableUserStatusTrackingAfterFirstUser);
             writer.WriteIntValue("installProgressTimeoutInMinutes", InstallProgressTimeoutInMinutes);
+            writer.WriteBoolValue("installQualityUpdates", InstallQualityUpdates);
             writer.WriteCollectionOfPrimitiveValues<string>("selectedMobileAppIds", SelectedMobileAppIds);
             writer.WriteBoolValue("showInstallationProgress", ShowInstallationProgress);
             writer.WriteBoolValue("trackInstallProgressForAutopilotOnly", TrackInstallProgressForAutopilotOnly);

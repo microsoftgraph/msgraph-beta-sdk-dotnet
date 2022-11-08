@@ -17,15 +17,15 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Security.TiIndicators {
     /// <summary>Provides operations to manage the tiIndicators property of the microsoft.graph.security entity.</summary>
     public class TiIndicatorsRequestBuilder {
-        /// <summary>The Count property</summary>
+        /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The deleteTiIndicators property</summary>
+        /// <summary>Provides operations to call the deleteTiIndicators method.</summary>
         public DeleteTiIndicatorsRequestBuilder DeleteTiIndicators { get =>
             new DeleteTiIndicatorsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The deleteTiIndicatorsByExternalId property</summary>
+        /// <summary>Provides operations to call the deleteTiIndicatorsByExternalId method.</summary>
         public DeleteTiIndicatorsByExternalIdRequestBuilder DeleteTiIndicatorsByExternalId { get =>
             new DeleteTiIndicatorsByExternalIdRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -33,17 +33,17 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators {
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>The submitTiIndicators property</summary>
+        /// <summary>Provides operations to call the submitTiIndicators method.</summary>
         public SubmitTiIndicatorsRequestBuilder SubmitTiIndicators { get =>
             new SubmitTiIndicatorsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The updateTiIndicators property</summary>
+        /// <summary>Provides operations to call the updateTiIndicators method.</summary>
         public UpdateTiIndicatorsRequestBuilder UpdateTiIndicators { get =>
             new UpdateTiIndicatorsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the Microsoft.Graph.Beta.security.tiIndicators.item collection</summary>
+        /// <summary>Provides operations to manage the tiIndicators property of the microsoft.graph.security entity.</summary>
         public TiIndicatorItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("tiIndicator%2Did", position);
@@ -51,9 +51,9 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators {
         } }
         /// <summary>
         /// Instantiates a new TiIndicatorsRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public TiIndicatorsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -64,9 +64,9 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators {
         }
         /// <summary>
         /// Instantiates a new TiIndicatorsRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public TiIndicatorsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -78,8 +78,8 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators {
         }
         /// <summary>
         /// Retrieve a list of tiIndicator objects.
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<TiIndicatorsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -98,9 +98,9 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators {
         }
         /// <summary>
         /// Create a new tiIndicator object.
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePostRequestInformation(TiIndicator body, Action<TiIndicatorsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -120,9 +120,9 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators {
         }
         /// <summary>
         /// Retrieve a list of tiIndicator objects.
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<TiIndicatorCollectionResponse> GetAsync(Action<TiIndicatorsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -133,10 +133,10 @@ namespace Microsoft.Graph.Beta.Security.TiIndicators {
         }
         /// <summary>
         /// Create a new tiIndicator object.
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<TiIndicator> PostAsync(TiIndicator body, Action<TiIndicatorsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, requestConfiguration);

@@ -14,13 +14,13 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.DeviceManagement.ResourceAccessProfiles {
     /// <summary>Provides operations to manage the resourceAccessProfiles property of the microsoft.graph.deviceManagement entity.</summary>
     public class ResourceAccessProfilesRequestBuilder {
-        /// <summary>The Count property</summary>
+        /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>The queryByPlatformType property</summary>
+        /// <summary>Provides operations to call the queryByPlatformType method.</summary>
         public QueryByPlatformTypeRequestBuilder QueryByPlatformType { get =>
             new QueryByPlatformTypeRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ResourceAccessProfiles {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the Microsoft.Graph.Beta.deviceManagement.resourceAccessProfiles.item collection</summary>
+        /// <summary>Provides operations to manage the resourceAccessProfiles property of the microsoft.graph.deviceManagement entity.</summary>
         public DeviceManagementResourceAccessProfileBaseItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceManagementResourceAccessProfileBase%2Did", position);
@@ -36,9 +36,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ResourceAccessProfiles {
         } }
         /// <summary>
         /// Instantiates a new ResourceAccessProfilesRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public ResourceAccessProfilesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -49,9 +49,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ResourceAccessProfiles {
         }
         /// <summary>
         /// Instantiates a new ResourceAccessProfilesRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public ResourceAccessProfilesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -63,8 +63,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ResourceAccessProfiles {
         }
         /// <summary>
         /// Collection of resource access settings associated with account.
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<ResourceAccessProfilesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -83,9 +83,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ResourceAccessProfiles {
         }
         /// <summary>
         /// Create new navigation property to resourceAccessProfiles for deviceManagement
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePostRequestInformation(DeviceManagementResourceAccessProfileBase body, Action<ResourceAccessProfilesRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -105,9 +105,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ResourceAccessProfiles {
         }
         /// <summary>
         /// Collection of resource access settings associated with account.
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<DeviceManagementResourceAccessProfileBaseCollectionResponse> GetAsync(Action<ResourceAccessProfilesRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -118,10 +118,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ResourceAccessProfiles {
         }
         /// <summary>
         /// Create new navigation property to resourceAccessProfiles for deviceManagement
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<DeviceManagementResourceAccessProfileBase> PostAsync(DeviceManagementResourceAccessProfileBase body, Action<ResourceAccessProfilesRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, requestConfiguration);

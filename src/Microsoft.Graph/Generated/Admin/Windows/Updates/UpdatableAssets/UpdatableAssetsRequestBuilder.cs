@@ -17,15 +17,15 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatableAssets {
     /// <summary>Provides operations to manage the updatableAssets property of the microsoft.graph.windowsUpdates.updates entity.</summary>
     public class UpdatableAssetsRequestBuilder {
-        /// <summary>The Count property</summary>
+        /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The enrollAssets property</summary>
+        /// <summary>Provides operations to call the enrollAssets method.</summary>
         public EnrollAssetsRequestBuilder EnrollAssets { get =>
             new EnrollAssetsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The enrollAssetsById property</summary>
+        /// <summary>Provides operations to call the enrollAssetsById method.</summary>
         public EnrollAssetsByIdRequestBuilder EnrollAssetsById { get =>
             new EnrollAssetsByIdRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -33,17 +33,17 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatableAssets {
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>The unenrollAssets property</summary>
+        /// <summary>Provides operations to call the unenrollAssets method.</summary>
         public UnenrollAssetsRequestBuilder UnenrollAssets { get =>
             new UnenrollAssetsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The unenrollAssetsById property</summary>
+        /// <summary>Provides operations to call the unenrollAssetsById method.</summary>
         public UnenrollAssetsByIdRequestBuilder UnenrollAssetsById { get =>
             new UnenrollAssetsByIdRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the Microsoft.Graph.Beta.admin.windows.updates.updatableAssets.item collection</summary>
+        /// <summary>Provides operations to manage the updatableAssets property of the microsoft.graph.windowsUpdates.updates entity.</summary>
         public UpdatableAssetItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("updatableAsset%2Did", position);
@@ -51,9 +51,9 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatableAssets {
         } }
         /// <summary>
         /// Instantiates a new UpdatableAssetsRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public UpdatableAssetsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -64,9 +64,9 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatableAssets {
         }
         /// <summary>
         /// Instantiates a new UpdatableAssetsRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public UpdatableAssetsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -78,8 +78,8 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatableAssets {
         }
         /// <summary>
         /// Get a list of updatableAsset objects and their properties. Listing updatable assets returns **updatableAsset** resources of the following derived types: azureADDevice and updatableAssetGroup. Use list azureADDevice resources or list updatableAssetGroup resources to filter and get resources of only one of the derived types.
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<UpdatableAssetsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -98,9 +98,9 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatableAssets {
         }
         /// <summary>
         /// Create a new updatableAssetGroup object. The **updatableAssetGroup** resource inherits from updatableAsset.
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePostRequestInformation(UpdatableAsset body, Action<UpdatableAssetsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -120,9 +120,9 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatableAssets {
         }
         /// <summary>
         /// Get a list of updatableAsset objects and their properties. Listing updatable assets returns **updatableAsset** resources of the following derived types: azureADDevice and updatableAssetGroup. Use list azureADDevice resources or list updatableAssetGroup resources to filter and get resources of only one of the derived types.
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<UpdatableAssetCollectionResponse> GetAsync(Action<UpdatableAssetsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -133,10 +133,10 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.UpdatableAssets {
         }
         /// <summary>
         /// Create a new updatableAssetGroup object. The **updatableAssetGroup** resource inherits from updatableAsset.
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<UpdatableAsset> PostAsync(UpdatableAsset body, Action<UpdatableAssetsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, requestConfiguration);

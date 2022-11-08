@@ -22,15 +22,15 @@ namespace Microsoft.Graph.Beta.Reports.AuthenticationMethods {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>The userRegistrationDetails property</summary>
+        /// <summary>Provides operations to manage the userRegistrationDetails property of the microsoft.graph.authenticationMethodsRoot entity.</summary>
         public UserRegistrationDetailsRequestBuilder UserRegistrationDetails { get =>
             new UserRegistrationDetailsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new AuthenticationMethodsRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public AuthenticationMethodsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -41,9 +41,9 @@ namespace Microsoft.Graph.Beta.Reports.AuthenticationMethods {
         }
         /// <summary>
         /// Instantiates a new AuthenticationMethodsRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public AuthenticationMethodsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -55,8 +55,8 @@ namespace Microsoft.Graph.Beta.Reports.AuthenticationMethods {
         }
         /// <summary>
         /// Delete navigation property authenticationMethods for reports
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateDeleteRequestInformation(Action<AuthenticationMethodsRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.DELETE,
@@ -73,8 +73,8 @@ namespace Microsoft.Graph.Beta.Reports.AuthenticationMethods {
         }
         /// <summary>
         /// Container for navigation properties for Azure AD authentication methods resources.
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<AuthenticationMethodsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -93,9 +93,9 @@ namespace Microsoft.Graph.Beta.Reports.AuthenticationMethods {
         }
         /// <summary>
         /// Update the navigation property authenticationMethods in reports
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(AuthenticationMethodsRoot body, Action<AuthenticationMethodsRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -115,9 +115,9 @@ namespace Microsoft.Graph.Beta.Reports.AuthenticationMethods {
         }
         /// <summary>
         /// Delete navigation property authenticationMethods for reports
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task DeleteAsync(Action<AuthenticationMethodsRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -128,9 +128,9 @@ namespace Microsoft.Graph.Beta.Reports.AuthenticationMethods {
         }
         /// <summary>
         /// Container for navigation properties for Azure AD authentication methods resources.
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<AuthenticationMethodsRoot> GetAsync(Action<AuthenticationMethodsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -141,10 +141,10 @@ namespace Microsoft.Graph.Beta.Reports.AuthenticationMethods {
         }
         /// <summary>
         /// Update the navigation property authenticationMethods in reports
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<AuthenticationMethodsRoot> PatchAsync(AuthenticationMethodsRoot body, Action<AuthenticationMethodsRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);
@@ -162,9 +162,9 @@ namespace Microsoft.Graph.Beta.Reports.AuthenticationMethods {
         }
         /// <summary>
         /// Provides operations to call the usersRegisteredByFeature method.
+        /// </summary>
         /// <param name="includedUserRoles">Usage: includedUserRoles=&apos;{includedUserRoles}&apos;</param>
         /// <param name="includedUserTypes">Usage: includedUserTypes=&apos;{includedUserTypes}&apos;</param>
-        /// </summary>
         public UsersRegisteredByFeatureWithIncludedUserTypesWithIncludedUserRolesRequestBuilder UsersRegisteredByFeatureWithIncludedUserTypesWithIncludedUserRoles(string includedUserRoles, string includedUserTypes) {
             if(string.IsNullOrEmpty(includedUserRoles)) throw new ArgumentNullException(nameof(includedUserRoles));
             if(string.IsNullOrEmpty(includedUserTypes)) throw new ArgumentNullException(nameof(includedUserTypes));
@@ -178,9 +178,9 @@ namespace Microsoft.Graph.Beta.Reports.AuthenticationMethods {
         }
         /// <summary>
         /// Provides operations to call the usersRegisteredByMethod method.
+        /// </summary>
         /// <param name="includedUserRoles">Usage: includedUserRoles=&apos;{includedUserRoles}&apos;</param>
         /// <param name="includedUserTypes">Usage: includedUserTypes=&apos;{includedUserTypes}&apos;</param>
-        /// </summary>
         public UsersRegisteredByMethodWithIncludedUserTypesWithIncludedUserRolesRequestBuilder UsersRegisteredByMethodWithIncludedUserTypesWithIncludedUserRoles(string includedUserRoles, string includedUserTypes) {
             if(string.IsNullOrEmpty(includedUserRoles)) throw new ArgumentNullException(nameof(includedUserRoles));
             if(string.IsNullOrEmpty(includedUserTypes)) throw new ArgumentNullException(nameof(includedUserTypes));

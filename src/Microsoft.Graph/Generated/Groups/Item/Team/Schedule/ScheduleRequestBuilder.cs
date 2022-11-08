@@ -22,15 +22,15 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Groups.Item.Team.Schedule {
     /// <summary>Provides operations to manage the schedule property of the microsoft.graph.team entity.</summary>
     public class ScheduleRequestBuilder {
-        /// <summary>The offerShiftRequests property</summary>
+        /// <summary>Provides operations to manage the offerShiftRequests property of the microsoft.graph.schedule entity.</summary>
         public OfferShiftRequestsRequestBuilder OfferShiftRequests { get =>
             new OfferShiftRequestsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The openShiftChangeRequests property</summary>
+        /// <summary>Provides operations to manage the openShiftChangeRequests property of the microsoft.graph.schedule entity.</summary>
         public OpenShiftChangeRequestsRequestBuilder OpenShiftChangeRequests { get =>
             new OpenShiftChangeRequestsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The openShifts property</summary>
+        /// <summary>Provides operations to manage the openShifts property of the microsoft.graph.schedule entity.</summary>
         public OpenShiftsRequestBuilder OpenShifts { get =>
             new OpenShiftsRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -38,35 +38,35 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Schedule {
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>The schedulingGroups property</summary>
+        /// <summary>Provides operations to manage the schedulingGroups property of the microsoft.graph.schedule entity.</summary>
         public SchedulingGroupsRequestBuilder SchedulingGroups { get =>
             new SchedulingGroupsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The share property</summary>
+        /// <summary>Provides operations to call the share method.</summary>
         public ShareRequestBuilder Share { get =>
             new ShareRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The shifts property</summary>
+        /// <summary>Provides operations to manage the shifts property of the microsoft.graph.schedule entity.</summary>
         public ShiftsRequestBuilder Shifts { get =>
             new ShiftsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The swapShiftsChangeRequests property</summary>
+        /// <summary>Provides operations to manage the swapShiftsChangeRequests property of the microsoft.graph.schedule entity.</summary>
         public SwapShiftsChangeRequestsRequestBuilder SwapShiftsChangeRequests { get =>
             new SwapShiftsChangeRequestsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The timeCards property</summary>
+        /// <summary>Provides operations to manage the timeCards property of the microsoft.graph.schedule entity.</summary>
         public TimeCardsRequestBuilder TimeCards { get =>
             new TimeCardsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The timeOffReasons property</summary>
+        /// <summary>Provides operations to manage the timeOffReasons property of the microsoft.graph.schedule entity.</summary>
         public TimeOffReasonsRequestBuilder TimeOffReasons { get =>
             new TimeOffReasonsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The timeOffRequests property</summary>
+        /// <summary>Provides operations to manage the timeOffRequests property of the microsoft.graph.schedule entity.</summary>
         public TimeOffRequestsRequestBuilder TimeOffRequests { get =>
             new TimeOffRequestsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The timesOff property</summary>
+        /// <summary>Provides operations to manage the timesOff property of the microsoft.graph.schedule entity.</summary>
         public TimesOffRequestBuilder TimesOff { get =>
             new TimesOffRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -74,9 +74,9 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Schedule {
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new ScheduleRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public ScheduleRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -87,9 +87,9 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Schedule {
         }
         /// <summary>
         /// Instantiates a new ScheduleRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public ScheduleRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -101,8 +101,8 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Schedule {
         }
         /// <summary>
         /// Delete navigation property schedule for groups
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateDeleteRequestInformation(Action<ScheduleRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.DELETE,
@@ -119,8 +119,8 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Schedule {
         }
         /// <summary>
         /// Retrieve the properties and relationships of a schedule object. The schedule creation process conforms to the One API guideline for resource based long running operations (RELO).When clients use the PUT method, if the schedule is provisioned, the operation updates the schedule; otherwise, the operation starts the schedule provisioning process in the background. During schedule provisioning, clients can use the GET method to get the schedule and look at the `provisionStatus` property for the current state of the provisioning. If the provisioning failed, clients can get additional information from the `provisionStatusCode` property. Clients can also inspect the configuration of the schedule.
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<ScheduleRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -139,9 +139,9 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Schedule {
         }
         /// <summary>
         /// Update the navigation property schedule in groups
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePutRequestInformation(Microsoft.Graph.Beta.Models.Schedule body, Action<ScheduleRequestBuilderPutRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -161,9 +161,9 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Schedule {
         }
         /// <summary>
         /// Delete navigation property schedule for groups
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task DeleteAsync(Action<ScheduleRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -174,9 +174,9 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Schedule {
         }
         /// <summary>
         /// Retrieve the properties and relationships of a schedule object. The schedule creation process conforms to the One API guideline for resource based long running operations (RELO).When clients use the PUT method, if the schedule is provisioned, the operation updates the schedule; otherwise, the operation starts the schedule provisioning process in the background. During schedule provisioning, clients can use the GET method to get the schedule and look at the `provisionStatus` property for the current state of the provisioning. If the provisioning failed, clients can get additional information from the `provisionStatusCode` property. Clients can also inspect the configuration of the schedule.
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<Microsoft.Graph.Beta.Models.Schedule> GetAsync(Action<ScheduleRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -187,10 +187,10 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Schedule {
         }
         /// <summary>
         /// Update the navigation property schedule in groups
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<Microsoft.Graph.Beta.Models.Schedule> PutAsync(Microsoft.Graph.Beta.Models.Schedule body, Action<ScheduleRequestBuilderPutRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePutRequestInformation(body, requestConfiguration);

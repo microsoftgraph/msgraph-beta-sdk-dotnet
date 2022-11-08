@@ -18,11 +18,11 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.GetTopMobileAppsWi
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new GetTopMobileAppsWithStatusWithCountRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="count">Usage: count={count}</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         /// <param name="status">Usage: status=&apos;{status}&apos;</param>
-        /// </summary>
         public GetTopMobileAppsWithStatusWithCountRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, long? count = default, string status = default) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -35,9 +35,9 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.GetTopMobileAppsWi
         }
         /// <summary>
         /// Instantiates a new GetTopMobileAppsWithStatusWithCountRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public GetTopMobileAppsWithStatusWithCountRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -49,8 +49,8 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.GetTopMobileAppsWi
         }
         /// <summary>
         /// Invoke function getTopMobileApps
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<GetTopMobileAppsWithStatusWithCountRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -69,9 +69,9 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.GetTopMobileAppsWi
         }
         /// <summary>
         /// Invoke function getTopMobileApps
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<GetTopMobileAppsWithStatusWithCountResponse> GetAsync(Action<GetTopMobileAppsWithStatusWithCountRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {

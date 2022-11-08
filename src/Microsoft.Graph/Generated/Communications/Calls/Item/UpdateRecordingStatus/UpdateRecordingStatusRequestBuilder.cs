@@ -19,9 +19,9 @@ namespace Microsoft.Graph.Beta.Communications.Calls.Item.UpdateRecordingStatus {
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new UpdateRecordingStatusRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public UpdateRecordingStatusRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -32,9 +32,9 @@ namespace Microsoft.Graph.Beta.Communications.Calls.Item.UpdateRecordingStatus {
         }
         /// <summary>
         /// Instantiates a new UpdateRecordingStatusRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public UpdateRecordingStatusRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -46,9 +46,9 @@ namespace Microsoft.Graph.Beta.Communications.Calls.Item.UpdateRecordingStatus {
         }
         /// <summary>
         /// Update the application&apos;s recording status associated with a call. This requires the use of the Teams policy-based recording solution.
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePostRequestInformation(UpdateRecordingStatusPostRequestBody body, Action<UpdateRecordingStatusRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -68,10 +68,10 @@ namespace Microsoft.Graph.Beta.Communications.Calls.Item.UpdateRecordingStatus {
         }
         /// <summary>
         /// Update the application&apos;s recording status associated with a call. This requires the use of the Teams policy-based recording solution.
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<UpdateRecordingStatusOperation> PostAsync(UpdateRecordingStatusPostRequestBody body, Action<UpdateRecordingStatusRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, requestConfiguration);

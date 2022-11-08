@@ -15,15 +15,15 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Users.Item.DeviceEnrollmentConfigurations {
     /// <summary>Provides operations to manage the deviceEnrollmentConfigurations property of the microsoft.graph.user entity.</summary>
     public class DeviceEnrollmentConfigurationsRequestBuilder {
-        /// <summary>The Count property</summary>
+        /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The createEnrollmentNotificationConfiguration property</summary>
+        /// <summary>Provides operations to call the createEnrollmentNotificationConfiguration method.</summary>
         public CreateEnrollmentNotificationConfigurationRequestBuilder CreateEnrollmentNotificationConfiguration { get =>
             new CreateEnrollmentNotificationConfigurationRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The hasPayloadLinks property</summary>
+        /// <summary>Provides operations to call the hasPayloadLinks method.</summary>
         public HasPayloadLinksRequestBuilder HasPayloadLinks { get =>
             new HasPayloadLinksRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Users.Item.DeviceEnrollmentConfigurations {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the Microsoft.Graph.Beta.users.item.deviceEnrollmentConfigurations.item collection</summary>
+        /// <summary>Provides operations to manage the deviceEnrollmentConfigurations property of the microsoft.graph.user entity.</summary>
         public DeviceEnrollmentConfigurationItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("deviceEnrollmentConfiguration%2Did", position);
@@ -41,9 +41,9 @@ namespace Microsoft.Graph.Beta.Users.Item.DeviceEnrollmentConfigurations {
         } }
         /// <summary>
         /// Instantiates a new DeviceEnrollmentConfigurationsRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public DeviceEnrollmentConfigurationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -54,9 +54,9 @@ namespace Microsoft.Graph.Beta.Users.Item.DeviceEnrollmentConfigurations {
         }
         /// <summary>
         /// Instantiates a new DeviceEnrollmentConfigurationsRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public DeviceEnrollmentConfigurationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -68,8 +68,8 @@ namespace Microsoft.Graph.Beta.Users.Item.DeviceEnrollmentConfigurations {
         }
         /// <summary>
         /// Get enrollment configurations targeted to the user
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<DeviceEnrollmentConfigurationsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -88,9 +88,9 @@ namespace Microsoft.Graph.Beta.Users.Item.DeviceEnrollmentConfigurations {
         }
         /// <summary>
         /// Create new navigation property to deviceEnrollmentConfigurations for users
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePostRequestInformation(DeviceEnrollmentConfiguration body, Action<DeviceEnrollmentConfigurationsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -110,9 +110,9 @@ namespace Microsoft.Graph.Beta.Users.Item.DeviceEnrollmentConfigurations {
         }
         /// <summary>
         /// Get enrollment configurations targeted to the user
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<DeviceEnrollmentConfigurationCollectionResponse> GetAsync(Action<DeviceEnrollmentConfigurationsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -123,10 +123,10 @@ namespace Microsoft.Graph.Beta.Users.Item.DeviceEnrollmentConfigurations {
         }
         /// <summary>
         /// Create new navigation property to deviceEnrollmentConfigurations for users
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<DeviceEnrollmentConfiguration> PostAsync(DeviceEnrollmentConfiguration body, Action<DeviceEnrollmentConfigurationsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, requestConfiguration);

@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public enum RemoteAction {
         /// <summary>Indicate user initiates an unknown action.</summary>
         Unknown,
@@ -57,5 +57,7 @@ namespace Microsoft.Graph.Beta.Models {
         Reenable,
         /// <summary>Indicate user initiates an action to move the device to a new organizational unit.</summary>
         MoveDeviceToOrganizationalUnit,
+        /// <summary>Add device action of InitiateMobileDeviceManagementKeyRecovery</summary>
+        InitiateMobileDeviceManagementKeyRecovery,
     }
 }

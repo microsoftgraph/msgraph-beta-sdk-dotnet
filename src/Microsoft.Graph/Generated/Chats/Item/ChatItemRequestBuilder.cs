@@ -24,59 +24,59 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Chats.Item {
     /// <summary>Provides operations to manage the collection of chat entities.</summary>
     public class ChatItemRequestBuilder {
-        /// <summary>The hideForUser property</summary>
+        /// <summary>Provides operations to call the hideForUser method.</summary>
         public HideForUserRequestBuilder HideForUser { get =>
             new HideForUserRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The installedApps property</summary>
+        /// <summary>Provides operations to manage the installedApps property of the microsoft.graph.chat entity.</summary>
         public InstalledAppsRequestBuilder InstalledApps { get =>
             new InstalledAppsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The lastMessagePreview property</summary>
+        /// <summary>Provides operations to manage the lastMessagePreview property of the microsoft.graph.chat entity.</summary>
         public LastMessagePreviewRequestBuilder LastMessagePreview { get =>
             new LastMessagePreviewRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The markChatReadForUser property</summary>
+        /// <summary>Provides operations to call the markChatReadForUser method.</summary>
         public MarkChatReadForUserRequestBuilder MarkChatReadForUser { get =>
             new MarkChatReadForUserRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The markChatUnreadForUser property</summary>
+        /// <summary>Provides operations to call the markChatUnreadForUser method.</summary>
         public MarkChatUnreadForUserRequestBuilder MarkChatUnreadForUser { get =>
             new MarkChatUnreadForUserRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The members property</summary>
+        /// <summary>Provides operations to manage the members property of the microsoft.graph.chat entity.</summary>
         public MembersRequestBuilder Members { get =>
             new MembersRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The messages property</summary>
+        /// <summary>Provides operations to manage the messages property of the microsoft.graph.chat entity.</summary>
         public MessagesRequestBuilder Messages { get =>
             new MessagesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The operations property</summary>
+        /// <summary>Provides operations to manage the operations property of the microsoft.graph.chat entity.</summary>
         public OperationsRequestBuilder Operations { get =>
             new OperationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>The permissionGrants property</summary>
+        /// <summary>Provides operations to manage the permissionGrants property of the microsoft.graph.chat entity.</summary>
         public PermissionGrantsRequestBuilder PermissionGrants { get =>
             new PermissionGrantsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The pinnedMessages property</summary>
+        /// <summary>Provides operations to manage the pinnedMessages property of the microsoft.graph.chat entity.</summary>
         public PinnedMessagesRequestBuilder PinnedMessages { get =>
             new PinnedMessagesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>The sendActivityNotification property</summary>
+        /// <summary>Provides operations to call the sendActivityNotification method.</summary>
         public SendActivityNotificationRequestBuilder SendActivityNotification { get =>
             new SendActivityNotificationRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The tabs property</summary>
+        /// <summary>Provides operations to manage the tabs property of the microsoft.graph.chat entity.</summary>
         public TabsRequestBuilder Tabs { get =>
             new TabsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The unhideForUser property</summary>
+        /// <summary>Provides operations to call the unhideForUser method.</summary>
         public UnhideForUserRequestBuilder UnhideForUser { get =>
             new UnhideForUserRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -84,9 +84,9 @@ namespace Microsoft.Graph.Beta.Chats.Item {
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new ChatItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public ChatItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -97,9 +97,9 @@ namespace Microsoft.Graph.Beta.Chats.Item {
         }
         /// <summary>
         /// Instantiates a new ChatItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public ChatItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -111,8 +111,8 @@ namespace Microsoft.Graph.Beta.Chats.Item {
         }
         /// <summary>
         /// Delete entity from chats
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateDeleteRequestInformation(Action<ChatItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.DELETE,
@@ -129,8 +129,8 @@ namespace Microsoft.Graph.Beta.Chats.Item {
         }
         /// <summary>
         /// Retrieve a single chat (without its messages). This method supports federation. To access a chat, at least one chat member must belong to the tenant the request initiated from.
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<ChatItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -149,9 +149,9 @@ namespace Microsoft.Graph.Beta.Chats.Item {
         }
         /// <summary>
         /// Update the properties of a chat object.
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(Microsoft.Graph.Beta.Models.Chat body, Action<ChatItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -171,9 +171,9 @@ namespace Microsoft.Graph.Beta.Chats.Item {
         }
         /// <summary>
         /// Delete entity from chats
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task DeleteAsync(Action<ChatItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -184,9 +184,9 @@ namespace Microsoft.Graph.Beta.Chats.Item {
         }
         /// <summary>
         /// Retrieve a single chat (without its messages). This method supports federation. To access a chat, at least one chat member must belong to the tenant the request initiated from.
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<Microsoft.Graph.Beta.Models.Chat> GetAsync(Action<ChatItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -197,10 +197,10 @@ namespace Microsoft.Graph.Beta.Chats.Item {
         }
         /// <summary>
         /// Update the properties of a chat object.
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<Microsoft.Graph.Beta.Models.Chat> PatchAsync(Microsoft.Graph.Beta.Models.Chat body, Action<ChatItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);

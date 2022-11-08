@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class AuthenticationEventListener : Entity, IParsable {
         /// <summary>The authenticationEventsFlowId property</summary>
         public string AuthenticationEventsFlowId {
@@ -28,15 +27,15 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("tags", value); }
         }
         /// <summary>
-        /// Instantiates a new authenticationEventListener and sets the default values.
+        /// Instantiates a new AuthenticationEventListener and sets the default values.
         /// </summary>
         public AuthenticationEventListener() : base() {
             OdataType = "#microsoft.graph.authenticationEventListener";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
-        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new AuthenticationEventListener CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
@@ -58,8 +57,8 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>
         /// Serializes information the current object
-        /// <param name="writer">Serialization writer to use to serialize this model</param>
         /// </summary>
+        /// <param name="writer">Serialization writer to use to serialize this model</param>
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
