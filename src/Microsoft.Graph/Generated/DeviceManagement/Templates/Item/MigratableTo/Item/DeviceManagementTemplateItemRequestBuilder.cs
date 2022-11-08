@@ -15,11 +15,11 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.DeviceManagement.Templates.Item.MigratableTo.Item {
     /// <summary>Provides operations to manage the migratableTo property of the microsoft.graph.deviceManagementTemplate entity.</summary>
     public class DeviceManagementTemplateItemRequestBuilder {
-        /// <summary>The categories property</summary>
+        /// <summary>Provides operations to manage the categories property of the microsoft.graph.deviceManagementTemplate entity.</summary>
         public CategoriesRequestBuilder Categories { get =>
             new CategoriesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The createInstance property</summary>
+        /// <summary>Provides operations to call the createInstance method.</summary>
         public CreateInstanceRequestBuilder CreateInstance { get =>
             new CreateInstanceRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Templates.Item.MigratableTo.Item
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>The settings property</summary>
+        /// <summary>Provides operations to manage the settings property of the microsoft.graph.deviceManagementTemplate entity.</summary>
         public SettingsRequestBuilder Settings { get =>
             new SettingsRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -35,17 +35,17 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Templates.Item.MigratableTo.Item
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Provides operations to call the compare method.
-        /// <param name="templateId">Usage: templateId=&apos;{templateId}&apos;</param>
         /// </summary>
+        /// <param name="templateId">Usage: templateId=&apos;{templateId}&apos;</param>
         public CompareWithTemplateIdRequestBuilder CompareWithTemplateId(string templateId) {
             if(string.IsNullOrEmpty(templateId)) throw new ArgumentNullException(nameof(templateId));
             return new CompareWithTemplateIdRequestBuilder(PathParameters, RequestAdapter, templateId);
         }
         /// <summary>
         /// Instantiates a new DeviceManagementTemplateItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public DeviceManagementTemplateItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -56,9 +56,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Templates.Item.MigratableTo.Item
         }
         /// <summary>
         /// Instantiates a new DeviceManagementTemplateItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public DeviceManagementTemplateItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -70,8 +70,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Templates.Item.MigratableTo.Item
         }
         /// <summary>
         /// Delete navigation property migratableTo for deviceManagement
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateDeleteRequestInformation(Action<DeviceManagementTemplateItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.DELETE,
@@ -88,8 +88,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Templates.Item.MigratableTo.Item
         }
         /// <summary>
         /// Collection of templates this template can migrate to
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<DeviceManagementTemplateItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -108,9 +108,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Templates.Item.MigratableTo.Item
         }
         /// <summary>
         /// Update the navigation property migratableTo in deviceManagement
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(DeviceManagementTemplate body, Action<DeviceManagementTemplateItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -130,9 +130,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Templates.Item.MigratableTo.Item
         }
         /// <summary>
         /// Delete navigation property migratableTo for deviceManagement
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task DeleteAsync(Action<DeviceManagementTemplateItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -143,9 +143,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Templates.Item.MigratableTo.Item
         }
         /// <summary>
         /// Collection of templates this template can migrate to
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<DeviceManagementTemplate> GetAsync(Action<DeviceManagementTemplateItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -156,10 +156,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Templates.Item.MigratableTo.Item
         }
         /// <summary>
         /// Update the navigation property migratableTo in deviceManagement
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<DeviceManagementTemplate> PatchAsync(DeviceManagementTemplate body, Action<DeviceManagementTemplateItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);

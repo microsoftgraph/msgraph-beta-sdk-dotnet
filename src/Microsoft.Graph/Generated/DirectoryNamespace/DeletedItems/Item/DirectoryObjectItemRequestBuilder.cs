@@ -19,27 +19,27 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.DirectoryNamespace.DeletedItems.Item {
     /// <summary>Provides operations to manage the deletedItems property of the microsoft.graph.directory entity.</summary>
     public class DirectoryObjectItemRequestBuilder {
-        /// <summary>The application property</summary>
+        /// <summary>Casts the previous resource to application.</summary>
         public ApplicationRequestBuilder Application { get =>
             new ApplicationRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The checkMemberGroups property</summary>
+        /// <summary>Provides operations to call the checkMemberGroups method.</summary>
         public CheckMemberGroupsRequestBuilder CheckMemberGroups { get =>
             new CheckMemberGroupsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The checkMemberObjects property</summary>
+        /// <summary>Provides operations to call the checkMemberObjects method.</summary>
         public CheckMemberObjectsRequestBuilder CheckMemberObjects { get =>
             new CheckMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The getMemberGroups property</summary>
+        /// <summary>Provides operations to call the getMemberGroups method.</summary>
         public GetMemberGroupsRequestBuilder GetMemberGroups { get =>
             new GetMemberGroupsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The getMemberObjects property</summary>
+        /// <summary>Provides operations to call the getMemberObjects method.</summary>
         public GetMemberObjectsRequestBuilder GetMemberObjects { get =>
             new GetMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The group property</summary>
+        /// <summary>Casts the previous resource to group.</summary>
         public GroupRequestBuilder Group { get =>
             new GroupRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -47,21 +47,21 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.DeletedItems.Item {
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>The restore property</summary>
+        /// <summary>Provides operations to call the restore method.</summary>
         public RestoreRequestBuilder Restore { get =>
             new RestoreRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>The user property</summary>
+        /// <summary>Casts the previous resource to user.</summary>
         public UserRequestBuilder User { get =>
             new UserRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new DirectoryObjectItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public DirectoryObjectItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -72,9 +72,9 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.DeletedItems.Item {
         }
         /// <summary>
         /// Instantiates a new DirectoryObjectItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public DirectoryObjectItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -86,8 +86,8 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.DeletedItems.Item {
         }
         /// <summary>
         /// Delete navigation property deletedItems for directory
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateDeleteRequestInformation(Action<DirectoryObjectItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.DELETE,
@@ -104,8 +104,8 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.DeletedItems.Item {
         }
         /// <summary>
         /// Get deletedItems from directory
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<DirectoryObjectItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -124,9 +124,9 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.DeletedItems.Item {
         }
         /// <summary>
         /// Update the navigation property deletedItems in directory
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(DirectoryObject body, Action<DirectoryObjectItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -146,9 +146,9 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.DeletedItems.Item {
         }
         /// <summary>
         /// Delete navigation property deletedItems for directory
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task DeleteAsync(Action<DirectoryObjectItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -159,9 +159,9 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.DeletedItems.Item {
         }
         /// <summary>
         /// Get deletedItems from directory
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<DirectoryObject> GetAsync(Action<DirectoryObjectItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -172,10 +172,10 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.DeletedItems.Item {
         }
         /// <summary>
         /// Update the navigation property deletedItems in directory
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<DirectoryObject> PatchAsync(DirectoryObject body, Action<DirectoryObjectItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);

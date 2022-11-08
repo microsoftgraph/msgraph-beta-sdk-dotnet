@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.MessageTraces.Item.Recipients.Item {
     /// <summary>Provides operations to manage the recipients property of the microsoft.graph.messageTrace entity.</summary>
     public class MessageRecipientItemRequestBuilder {
-        /// <summary>The events property</summary>
+        /// <summary>Provides operations to manage the events property of the microsoft.graph.messageRecipient entity.</summary>
         public EventsRequestBuilder Events { get =>
             new EventsRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -24,9 +24,9 @@ namespace Microsoft.Graph.Beta.MessageTraces.Item.Recipients.Item {
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new MessageRecipientItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public MessageRecipientItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -37,9 +37,9 @@ namespace Microsoft.Graph.Beta.MessageTraces.Item.Recipients.Item {
         }
         /// <summary>
         /// Instantiates a new MessageRecipientItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public MessageRecipientItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -51,8 +51,8 @@ namespace Microsoft.Graph.Beta.MessageTraces.Item.Recipients.Item {
         }
         /// <summary>
         /// Delete navigation property recipients for messageTraces
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateDeleteRequestInformation(Action<MessageRecipientItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.DELETE,
@@ -69,8 +69,8 @@ namespace Microsoft.Graph.Beta.MessageTraces.Item.Recipients.Item {
         }
         /// <summary>
         /// Get recipients from messageTraces
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<MessageRecipientItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -89,9 +89,9 @@ namespace Microsoft.Graph.Beta.MessageTraces.Item.Recipients.Item {
         }
         /// <summary>
         /// Update the navigation property recipients in messageTraces
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(MessageRecipient body, Action<MessageRecipientItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -111,9 +111,9 @@ namespace Microsoft.Graph.Beta.MessageTraces.Item.Recipients.Item {
         }
         /// <summary>
         /// Delete navigation property recipients for messageTraces
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task DeleteAsync(Action<MessageRecipientItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -124,9 +124,9 @@ namespace Microsoft.Graph.Beta.MessageTraces.Item.Recipients.Item {
         }
         /// <summary>
         /// Get recipients from messageTraces
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<MessageRecipient> GetAsync(Action<MessageRecipientItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -137,10 +137,10 @@ namespace Microsoft.Graph.Beta.MessageTraces.Item.Recipients.Item {
         }
         /// <summary>
         /// Update the navigation property recipients in messageTraces
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<MessageRecipient> PatchAsync(MessageRecipient body, Action<MessageRecipientItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);

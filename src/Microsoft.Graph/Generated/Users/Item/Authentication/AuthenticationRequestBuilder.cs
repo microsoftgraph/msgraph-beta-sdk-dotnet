@@ -22,61 +22,61 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Users.Item.Authentication {
     /// <summary>Provides operations to manage the authentication property of the microsoft.graph.user entity.</summary>
     public class AuthenticationRequestBuilder {
-        /// <summary>The emailMethods property</summary>
+        /// <summary>Provides operations to manage the emailMethods property of the microsoft.graph.authentication entity.</summary>
         public EmailMethodsRequestBuilder EmailMethods { get =>
             new EmailMethodsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The fido2Methods property</summary>
+        /// <summary>Provides operations to manage the fido2Methods property of the microsoft.graph.authentication entity.</summary>
         public Fido2MethodsRequestBuilder Fido2Methods { get =>
             new Fido2MethodsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The methods property</summary>
+        /// <summary>Provides operations to manage the methods property of the microsoft.graph.authentication entity.</summary>
         public MethodsRequestBuilder Methods { get =>
             new MethodsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The microsoftAuthenticatorMethods property</summary>
+        /// <summary>Provides operations to manage the microsoftAuthenticatorMethods property of the microsoft.graph.authentication entity.</summary>
         public MicrosoftAuthenticatorMethodsRequestBuilder MicrosoftAuthenticatorMethods { get =>
             new MicrosoftAuthenticatorMethodsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The operations property</summary>
+        /// <summary>Provides operations to manage the operations property of the microsoft.graph.authentication entity.</summary>
         public OperationsRequestBuilder Operations { get =>
             new OperationsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The passwordlessMicrosoftAuthenticatorMethods property</summary>
+        /// <summary>Provides operations to manage the passwordlessMicrosoftAuthenticatorMethods property of the microsoft.graph.authentication entity.</summary>
         public PasswordlessMicrosoftAuthenticatorMethodsRequestBuilder PasswordlessMicrosoftAuthenticatorMethods { get =>
             new PasswordlessMicrosoftAuthenticatorMethodsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The passwordMethods property</summary>
+        /// <summary>Provides operations to manage the passwordMethods property of the microsoft.graph.authentication entity.</summary>
         public PasswordMethodsRequestBuilder PasswordMethods { get =>
             new PasswordMethodsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>The phoneMethods property</summary>
+        /// <summary>Provides operations to manage the phoneMethods property of the microsoft.graph.authentication entity.</summary>
         public PhoneMethodsRequestBuilder PhoneMethods { get =>
             new PhoneMethodsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>The softwareOathMethods property</summary>
+        /// <summary>Provides operations to manage the softwareOathMethods property of the microsoft.graph.authentication entity.</summary>
         public SoftwareOathMethodsRequestBuilder SoftwareOathMethods { get =>
             new SoftwareOathMethodsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The temporaryAccessPassMethods property</summary>
+        /// <summary>Provides operations to manage the temporaryAccessPassMethods property of the microsoft.graph.authentication entity.</summary>
         public TemporaryAccessPassMethodsRequestBuilder TemporaryAccessPassMethods { get =>
             new TemporaryAccessPassMethodsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>The windowsHelloForBusinessMethods property</summary>
+        /// <summary>Provides operations to manage the windowsHelloForBusinessMethods property of the microsoft.graph.authentication entity.</summary>
         public WindowsHelloForBusinessMethodsRequestBuilder WindowsHelloForBusinessMethods { get =>
             new WindowsHelloForBusinessMethodsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new AuthenticationRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public AuthenticationRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -87,9 +87,9 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication {
         }
         /// <summary>
         /// Instantiates a new AuthenticationRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public AuthenticationRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -101,8 +101,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication {
         }
         /// <summary>
         /// Delete navigation property authentication for users
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateDeleteRequestInformation(Action<AuthenticationRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.DELETE,
@@ -119,8 +119,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication {
         }
         /// <summary>
         /// Get authentication from users
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<AuthenticationRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -139,9 +139,9 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication {
         }
         /// <summary>
         /// Update the navigation property authentication in users
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(Microsoft.Graph.Beta.Models.Authentication body, Action<AuthenticationRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -161,9 +161,9 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication {
         }
         /// <summary>
         /// Delete navigation property authentication for users
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task DeleteAsync(Action<AuthenticationRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -174,9 +174,9 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication {
         }
         /// <summary>
         /// Get authentication from users
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<Microsoft.Graph.Beta.Models.Authentication> GetAsync(Action<AuthenticationRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -187,10 +187,10 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication {
         }
         /// <summary>
         /// Update the navigation property authentication in users
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<Microsoft.Graph.Beta.Models.Authentication> PatchAsync(Microsoft.Graph.Beta.Models.Authentication body, Action<AuthenticationRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);

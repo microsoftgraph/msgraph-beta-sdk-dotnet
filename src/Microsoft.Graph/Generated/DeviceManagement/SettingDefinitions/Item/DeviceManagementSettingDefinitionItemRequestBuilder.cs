@@ -19,9 +19,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.SettingDefinitions.Item {
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new DeviceManagementSettingDefinitionItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public DeviceManagementSettingDefinitionItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -32,9 +32,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.SettingDefinitions.Item {
         }
         /// <summary>
         /// Instantiates a new DeviceManagementSettingDefinitionItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public DeviceManagementSettingDefinitionItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -46,8 +46,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.SettingDefinitions.Item {
         }
         /// <summary>
         /// Delete navigation property settingDefinitions for deviceManagement
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateDeleteRequestInformation(Action<DeviceManagementSettingDefinitionItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.DELETE,
@@ -64,8 +64,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.SettingDefinitions.Item {
         }
         /// <summary>
         /// The device management intent setting definitions
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<DeviceManagementSettingDefinitionItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -84,9 +84,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.SettingDefinitions.Item {
         }
         /// <summary>
         /// Update the navigation property settingDefinitions in deviceManagement
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(DeviceManagementSettingDefinition body, Action<DeviceManagementSettingDefinitionItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -106,9 +106,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.SettingDefinitions.Item {
         }
         /// <summary>
         /// Delete navigation property settingDefinitions for deviceManagement
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task DeleteAsync(Action<DeviceManagementSettingDefinitionItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -119,9 +119,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.SettingDefinitions.Item {
         }
         /// <summary>
         /// The device management intent setting definitions
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<DeviceManagementSettingDefinition> GetAsync(Action<DeviceManagementSettingDefinitionItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -132,10 +132,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.SettingDefinitions.Item {
         }
         /// <summary>
         /// Update the navigation property settingDefinitions in deviceManagement
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<DeviceManagementSettingDefinition> PatchAsync(DeviceManagementSettingDefinition body, Action<DeviceManagementSettingDefinitionItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);

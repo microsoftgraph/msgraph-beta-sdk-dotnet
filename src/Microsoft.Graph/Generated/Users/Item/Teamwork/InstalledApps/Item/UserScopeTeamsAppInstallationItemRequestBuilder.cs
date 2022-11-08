@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Users.Item.Teamwork.InstalledApps.Item {
     /// <summary>Provides operations to manage the installedApps property of the microsoft.graph.userTeamwork entity.</summary>
     public class UserScopeTeamsAppInstallationItemRequestBuilder {
-        /// <summary>The chat property</summary>
+        /// <summary>Provides operations to manage the chat property of the microsoft.graph.userScopeTeamsAppInstallation entity.</summary>
         public ChatRequestBuilder Chat { get =>
             new ChatRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -24,9 +24,9 @@ namespace Microsoft.Graph.Beta.Users.Item.Teamwork.InstalledApps.Item {
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new UserScopeTeamsAppInstallationItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public UserScopeTeamsAppInstallationItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -37,9 +37,9 @@ namespace Microsoft.Graph.Beta.Users.Item.Teamwork.InstalledApps.Item {
         }
         /// <summary>
         /// Instantiates a new UserScopeTeamsAppInstallationItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public UserScopeTeamsAppInstallationItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -51,8 +51,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Teamwork.InstalledApps.Item {
         }
         /// <summary>
         /// Delete navigation property installedApps for users
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateDeleteRequestInformation(Action<UserScopeTeamsAppInstallationItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.DELETE,
@@ -69,8 +69,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Teamwork.InstalledApps.Item {
         }
         /// <summary>
         /// The apps installed in the personal scope of this user.
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<UserScopeTeamsAppInstallationItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -89,9 +89,9 @@ namespace Microsoft.Graph.Beta.Users.Item.Teamwork.InstalledApps.Item {
         }
         /// <summary>
         /// Update the navigation property installedApps in users
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(UserScopeTeamsAppInstallation body, Action<UserScopeTeamsAppInstallationItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -111,9 +111,9 @@ namespace Microsoft.Graph.Beta.Users.Item.Teamwork.InstalledApps.Item {
         }
         /// <summary>
         /// Delete navigation property installedApps for users
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task DeleteAsync(Action<UserScopeTeamsAppInstallationItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -124,9 +124,9 @@ namespace Microsoft.Graph.Beta.Users.Item.Teamwork.InstalledApps.Item {
         }
         /// <summary>
         /// The apps installed in the personal scope of this user.
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<UserScopeTeamsAppInstallation> GetAsync(Action<UserScopeTeamsAppInstallationItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -137,10 +137,10 @@ namespace Microsoft.Graph.Beta.Users.Item.Teamwork.InstalledApps.Item {
         }
         /// <summary>
         /// Update the navigation property installedApps in users
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<UserScopeTeamsAppInstallation> PatchAsync(UserScopeTeamsAppInstallation body, Action<UserScopeTeamsAppInstallationItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);

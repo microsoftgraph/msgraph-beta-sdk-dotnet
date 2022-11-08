@@ -19,9 +19,9 @@ namespace Microsoft.Graph.Beta.Groups.Item.Drives.Item.List.Columns.Item.SourceC
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new SourceColumnRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public SourceColumnRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -32,9 +32,9 @@ namespace Microsoft.Graph.Beta.Groups.Item.Drives.Item.List.Columns.Item.SourceC
         }
         /// <summary>
         /// Instantiates a new SourceColumnRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public SourceColumnRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -46,8 +46,8 @@ namespace Microsoft.Graph.Beta.Groups.Item.Drives.Item.List.Columns.Item.SourceC
         }
         /// <summary>
         /// The source column for content type column.
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<SourceColumnRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -66,9 +66,9 @@ namespace Microsoft.Graph.Beta.Groups.Item.Drives.Item.List.Columns.Item.SourceC
         }
         /// <summary>
         /// The source column for content type column.
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<ColumnDefinition> GetAsync(Action<SourceColumnRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {

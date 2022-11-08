@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Users.Item.Outlook.MasterCategories {
     /// <summary>Provides operations to manage the masterCategories property of the microsoft.graph.outlookUser entity.</summary>
     public class MasterCategoriesRequestBuilder {
-        /// <summary>The Count property</summary>
+        /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -23,7 +23,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Outlook.MasterCategories {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the Microsoft.Graph.Beta.users.item.outlook.masterCategories.item collection</summary>
+        /// <summary>Provides operations to manage the masterCategories property of the microsoft.graph.outlookUser entity.</summary>
         public OutlookCategoryItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("outlookCategory%2Did", position);
@@ -31,9 +31,9 @@ namespace Microsoft.Graph.Beta.Users.Item.Outlook.MasterCategories {
         } }
         /// <summary>
         /// Instantiates a new MasterCategoriesRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public MasterCategoriesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -44,9 +44,9 @@ namespace Microsoft.Graph.Beta.Users.Item.Outlook.MasterCategories {
         }
         /// <summary>
         /// Instantiates a new MasterCategoriesRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public MasterCategoriesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -58,8 +58,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Outlook.MasterCategories {
         }
         /// <summary>
         /// Get all the categories that have been defined for the user.
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<MasterCategoriesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -78,9 +78,9 @@ namespace Microsoft.Graph.Beta.Users.Item.Outlook.MasterCategories {
         }
         /// <summary>
         /// Create an outlookCategory object in the user&apos;s master list of categories.
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePostRequestInformation(OutlookCategory body, Action<MasterCategoriesRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -100,9 +100,9 @@ namespace Microsoft.Graph.Beta.Users.Item.Outlook.MasterCategories {
         }
         /// <summary>
         /// Get all the categories that have been defined for the user.
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<OutlookCategoryCollectionResponse> GetAsync(Action<MasterCategoriesRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -113,10 +113,10 @@ namespace Microsoft.Graph.Beta.Users.Item.Outlook.MasterCategories {
         }
         /// <summary>
         /// Create an outlookCategory object in the user&apos;s master list of categories.
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<OutlookCategory> PostAsync(OutlookCategory body, Action<MasterCategoriesRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, requestConfiguration);

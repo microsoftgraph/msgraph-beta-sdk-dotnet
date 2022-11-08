@@ -20,39 +20,39 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Teams.Item.PrimaryChannel {
     /// <summary>Provides operations to manage the primaryChannel property of the microsoft.graph.team entity.</summary>
     public class PrimaryChannelRequestBuilder {
-        /// <summary>The completeMigration property</summary>
+        /// <summary>Provides operations to call the completeMigration method.</summary>
         public CompleteMigrationRequestBuilder CompleteMigration { get =>
             new CompleteMigrationRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The filesFolder property</summary>
+        /// <summary>Provides operations to manage the filesFolder property of the microsoft.graph.channel entity.</summary>
         public FilesFolderRequestBuilder FilesFolder { get =>
             new FilesFolderRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The members property</summary>
+        /// <summary>Provides operations to manage the members property of the microsoft.graph.channel entity.</summary>
         public MembersRequestBuilder Members { get =>
             new MembersRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The messages property</summary>
+        /// <summary>Provides operations to manage the messages property of the microsoft.graph.channel entity.</summary>
         public MessagesRequestBuilder Messages { get =>
             new MessagesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>The provisionEmail property</summary>
+        /// <summary>Provides operations to call the provisionEmail method.</summary>
         public ProvisionEmailRequestBuilder ProvisionEmail { get =>
             new ProvisionEmailRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The removeEmail property</summary>
+        /// <summary>Provides operations to call the removeEmail method.</summary>
         public RemoveEmailRequestBuilder RemoveEmail { get =>
             new RemoveEmailRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>The sharedWithTeams property</summary>
+        /// <summary>Provides operations to manage the sharedWithTeams property of the microsoft.graph.channel entity.</summary>
         public SharedWithTeamsRequestBuilder SharedWithTeams { get =>
             new SharedWithTeamsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The tabs property</summary>
+        /// <summary>Provides operations to manage the tabs property of the microsoft.graph.channel entity.</summary>
         public TabsRequestBuilder Tabs { get =>
             new TabsRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -60,9 +60,9 @@ namespace Microsoft.Graph.Beta.Teams.Item.PrimaryChannel {
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new PrimaryChannelRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public PrimaryChannelRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -73,9 +73,9 @@ namespace Microsoft.Graph.Beta.Teams.Item.PrimaryChannel {
         }
         /// <summary>
         /// Instantiates a new PrimaryChannelRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public PrimaryChannelRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -87,8 +87,8 @@ namespace Microsoft.Graph.Beta.Teams.Item.PrimaryChannel {
         }
         /// <summary>
         /// Delete navigation property primaryChannel for teams
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateDeleteRequestInformation(Action<PrimaryChannelRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.DELETE,
@@ -105,8 +105,8 @@ namespace Microsoft.Graph.Beta.Teams.Item.PrimaryChannel {
         }
         /// <summary>
         /// Get the default channel, **General**, of a team.
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<PrimaryChannelRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -125,9 +125,9 @@ namespace Microsoft.Graph.Beta.Teams.Item.PrimaryChannel {
         }
         /// <summary>
         /// Update the navigation property primaryChannel in teams
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(Channel body, Action<PrimaryChannelRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -147,9 +147,9 @@ namespace Microsoft.Graph.Beta.Teams.Item.PrimaryChannel {
         }
         /// <summary>
         /// Delete navigation property primaryChannel for teams
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task DeleteAsync(Action<PrimaryChannelRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -166,9 +166,9 @@ namespace Microsoft.Graph.Beta.Teams.Item.PrimaryChannel {
         }
         /// <summary>
         /// Get the default channel, **General**, of a team.
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<Channel> GetAsync(Action<PrimaryChannelRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -179,10 +179,10 @@ namespace Microsoft.Graph.Beta.Teams.Item.PrimaryChannel {
         }
         /// <summary>
         /// Update the navigation property primaryChannel in teams
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<Channel> PatchAsync(Channel body, Action<PrimaryChannelRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);

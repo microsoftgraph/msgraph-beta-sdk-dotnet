@@ -19,11 +19,6 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication.Methods.Item.ResetPassw
             get { return BackingStore?.Get<string>("newPassword"); }
             set { BackingStore?.Set("newPassword", value); }
         }
-        /// <summary>The requireChangeOnNextSignIn property</summary>
-        public bool? RequireChangeOnNextSignIn {
-            get { return BackingStore?.Get<bool?>("requireChangeOnNextSignIn"); }
-            set { BackingStore?.Set("requireChangeOnNextSignIn", value); }
-        }
         /// <summary>
         /// Instantiates a new resetPasswordPostRequestBody and sets the default values.
         /// </summary>
@@ -33,8 +28,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication.Methods.Item.ResetPassw
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
-        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static ResetPasswordPostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new ResetPasswordPostRequestBody();
@@ -45,17 +40,15 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication.Methods.Item.ResetPassw
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"newPassword", n => { NewPassword = n.GetStringValue(); } },
-                {"requireChangeOnNextSignIn", n => { RequireChangeOnNextSignIn = n.GetBoolValue(); } },
             };
         }
         /// <summary>
         /// Serializes information the current object
-        /// <param name="writer">Serialization writer to use to serialize this model</param>
         /// </summary>
+        /// <param name="writer">Serialization writer to use to serialize this model</param>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("newPassword", NewPassword);
-            writer.WriteBoolValue("requireChangeOnNextSignIn", RequireChangeOnNextSignIn);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

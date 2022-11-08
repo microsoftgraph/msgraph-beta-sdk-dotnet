@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class DirectoryObjectPartnerReference : DirectoryObject, IParsable {
         /// <summary>Description of the object returned. Read-only.</summary>
         public string Description {
@@ -26,15 +27,15 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("objectType", value); }
         }
         /// <summary>
-        /// Instantiates a new DirectoryObjectPartnerReference and sets the default values.
+        /// Instantiates a new directoryObjectPartnerReference and sets the default values.
         /// </summary>
         public DirectoryObjectPartnerReference() : base() {
             OdataType = "#microsoft.graph.directoryObjectPartnerReference";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
-        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new DirectoryObjectPartnerReference CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new DirectoryObjectPartnerReference();
@@ -52,8 +53,8 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>
         /// Serializes information the current object
-        /// <param name="writer">Serialization writer to use to serialize this model</param>
         /// </summary>
+        /// <param name="writer">Serialization writer to use to serialize this model</param>
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);

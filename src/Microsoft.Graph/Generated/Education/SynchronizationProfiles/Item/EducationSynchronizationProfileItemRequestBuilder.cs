@@ -18,31 +18,31 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item {
     /// <summary>Provides operations to manage the synchronizationProfiles property of the microsoft.graph.educationRoot entity.</summary>
     public class EducationSynchronizationProfileItemRequestBuilder {
-        /// <summary>The errors property</summary>
+        /// <summary>Provides operations to manage the errors property of the microsoft.graph.educationSynchronizationProfile entity.</summary>
         public ErrorsRequestBuilder Errors { get =>
             new ErrorsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>The pause property</summary>
+        /// <summary>Provides operations to call the pause method.</summary>
         public PauseRequestBuilder Pause { get =>
             new PauseRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The profileStatus property</summary>
+        /// <summary>Provides operations to manage the profileStatus property of the microsoft.graph.educationSynchronizationProfile entity.</summary>
         public ProfileStatusRequestBuilder ProfileStatus { get =>
             new ProfileStatusRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>The reset property</summary>
+        /// <summary>Provides operations to call the reset method.</summary>
         public ResetRequestBuilder Reset { get =>
             new ResetRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The resume property</summary>
+        /// <summary>Provides operations to call the resume method.</summary>
         public ResumeRequestBuilder Resume { get =>
             new ResumeRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The start property</summary>
+        /// <summary>Provides operations to call the start method.</summary>
         public StartRequestBuilder Start { get =>
             new StartRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -50,9 +50,9 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item {
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new EducationSynchronizationProfileItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public EducationSynchronizationProfileItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -63,9 +63,9 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item {
         }
         /// <summary>
         /// Instantiates a new EducationSynchronizationProfileItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public EducationSynchronizationProfileItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -77,8 +77,8 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item {
         }
         /// <summary>
         /// Delete navigation property synchronizationProfiles for education
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateDeleteRequestInformation(Action<EducationSynchronizationProfileItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.DELETE,
@@ -95,8 +95,8 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item {
         }
         /// <summary>
         /// Get synchronizationProfiles from education
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<EducationSynchronizationProfileItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -115,9 +115,9 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item {
         }
         /// <summary>
         /// Update the navigation property synchronizationProfiles in education
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(EducationSynchronizationProfile body, Action<EducationSynchronizationProfileItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -137,9 +137,9 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item {
         }
         /// <summary>
         /// Delete navigation property synchronizationProfiles for education
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task DeleteAsync(Action<EducationSynchronizationProfileItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -150,9 +150,9 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item {
         }
         /// <summary>
         /// Get synchronizationProfiles from education
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<EducationSynchronizationProfile> GetAsync(Action<EducationSynchronizationProfileItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -163,10 +163,10 @@ namespace Microsoft.Graph.Beta.Education.SynchronizationProfiles.Item {
         }
         /// <summary>
         /// Update the navigation property synchronizationProfiles in education
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<EducationSynchronizationProfile> PatchAsync(EducationSynchronizationProfile body, Action<EducationSynchronizationProfileItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);

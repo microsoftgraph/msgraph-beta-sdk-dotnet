@@ -19,9 +19,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.RoleScopeTags.Item.Assignments.I
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new RoleScopeTagAutoAssignmentItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public RoleScopeTagAutoAssignmentItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -32,9 +32,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.RoleScopeTags.Item.Assignments.I
         }
         /// <summary>
         /// Instantiates a new RoleScopeTagAutoAssignmentItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public RoleScopeTagAutoAssignmentItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -46,8 +46,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.RoleScopeTags.Item.Assignments.I
         }
         /// <summary>
         /// Delete navigation property assignments for deviceManagement
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateDeleteRequestInformation(Action<RoleScopeTagAutoAssignmentItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.DELETE,
@@ -64,8 +64,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.RoleScopeTags.Item.Assignments.I
         }
         /// <summary>
         /// The list of assignments for this Role Scope Tag.
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<RoleScopeTagAutoAssignmentItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -84,9 +84,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.RoleScopeTags.Item.Assignments.I
         }
         /// <summary>
         /// Update the navigation property assignments in deviceManagement
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(RoleScopeTagAutoAssignment body, Action<RoleScopeTagAutoAssignmentItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -106,9 +106,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.RoleScopeTags.Item.Assignments.I
         }
         /// <summary>
         /// Delete navigation property assignments for deviceManagement
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task DeleteAsync(Action<RoleScopeTagAutoAssignmentItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -119,9 +119,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.RoleScopeTags.Item.Assignments.I
         }
         /// <summary>
         /// The list of assignments for this Role Scope Tag.
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<RoleScopeTagAutoAssignment> GetAsync(Action<RoleScopeTagAutoAssignmentItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -132,10 +132,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.RoleScopeTags.Item.Assignments.I
         }
         /// <summary>
         /// Update the navigation property assignments in deviceManagement
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<RoleScopeTagAutoAssignment> PatchAsync(RoleScopeTagAutoAssignment body, Action<RoleScopeTagAutoAssignmentItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);

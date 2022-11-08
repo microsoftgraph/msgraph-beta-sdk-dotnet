@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Devices that are managed or pre-enrolled through Intune</summary>
     public class ManagedDevice : Entity, IParsable {
         /// <summary>Whether the device is Azure Active Directory registered. This property is read-only.</summary>
         public bool? AadRegistered {
@@ -202,17 +201,17 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DateTimeOffset?>("exchangeLastSuccessfulSyncDateTime"); }
             set { BackingStore?.Set("exchangeLastSuccessfulSyncDateTime", value); }
         }
-        /// <summary>Free Storage in Bytes. This property is read-only.</summary>
+        /// <summary>Free Storage in Bytes. Default value is 0. Read-only. This property is read-only.</summary>
         public long? FreeStorageSpaceInBytes {
             get { return BackingStore?.Get<long?>("freeStorageSpaceInBytes"); }
             set { BackingStore?.Set("freeStorageSpaceInBytes", value); }
         }
-        /// <summary>The hardward details for the device.  Includes information such as storage space, manufacturer, serial number, etc. This property is read-only.</summary>
+        /// <summary>The hardward details for the device.  Includes information such as storage space, manufacturer, serial number, etc. Return default value in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.</summary>
         public Microsoft.Graph.Beta.Models.HardwareInformation HardwareInformation {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.HardwareInformation>("hardwareInformation"); }
             set { BackingStore?.Set("hardwareInformation", value); }
         }
-        /// <summary>Integrated Circuit Card Identifier, it is A SIM card&apos;s unique identification number. This property is read-only.</summary>
+        /// <summary>Integrated Circuit Card Identifier, it is A SIM card&apos;s unique identification number. Return default value null in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.</summary>
         public string Iccid {
             get { return BackingStore?.Get<string>("iccid"); }
             set { BackingStore?.Set("iccid", value); }
@@ -307,7 +306,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("model"); }
             set { BackingStore?.Set("model", value); }
         }
-        /// <summary>Notes on the device created by IT Admin</summary>
+        /// <summary>Notes on the device created by IT Admin. Return default value null in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select.  $Search is not supported.</summary>
         public string Notes {
             get { return BackingStore?.Get<string>("notes"); }
             set { BackingStore?.Set("notes", value); }
@@ -337,7 +336,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("phoneNumber"); }
             set { BackingStore?.Set("phoneNumber", value); }
         }
-        /// <summary>Total Memory in Bytes. This property is read-only.</summary>
+        /// <summary>Total Memory in Bytes. Return default value 0 in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select. Default value is 0. Read-only. This property is read-only.</summary>
         public long? PhysicalMemoryInBytes {
             get { return BackingStore?.Get<long?>("physicalMemoryInBytes"); }
             set { BackingStore?.Set("physicalMemoryInBytes", value); }
@@ -392,7 +391,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("skuFamily"); }
             set { BackingStore?.Set("skuFamily", value); }
         }
-        /// <summary>Device sku number, see also: https://docs.microsoft.com/windows/win32/api/sysinfoapi/nf-sysinfoapi-getproductinfo. Valid values 0 to 2147483647. This property is read-only.</summary>
+        /// <summary>Device sku number, see also: https://learn.microsoft.com/windows/win32/api/sysinfoapi/nf-sysinfoapi-getproductinfo. Valid values 0 to 2147483647. This property is read-only.</summary>
         public int? SkuNumber {
             get { return BackingStore?.Get<int?>("skuNumber"); }
             set { BackingStore?.Set("skuNumber", value); }
@@ -412,7 +411,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<long?>("totalStorageSpaceInBytes"); }
             set { BackingStore?.Set("totalStorageSpaceInBytes", value); }
         }
-        /// <summary>Unique Device Identifier for iOS and macOS devices. This property is read-only.</summary>
+        /// <summary>Unique Device Identifier for iOS and macOS devices. Return default value null in LIST managedDevices. Real value only returned in singel device GET call with device id and included in select parameter. Supports: $select. $Search is not supported. Read-only. This property is read-only.</summary>
         public string Udid {
             get { return BackingStore?.Get<string>("udid"); }
             set { BackingStore?.Set("udid", value); }
@@ -470,8 +469,8 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
-        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new ManagedDevice CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
@@ -580,8 +579,8 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>
         /// Serializes information the current object
-        /// <param name="writer">Serialization writer to use to serialize this model</param>
         /// </summary>
+        /// <param name="writer">Serialization writer to use to serialize this model</param>
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);

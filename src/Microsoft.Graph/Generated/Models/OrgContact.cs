@@ -4,19 +4,18 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Casts the previous resource to orgContact.</summary>
     public class OrgContact : DirectoryObject, IParsable {
         /// <summary>Postal addresses for this organizational contact. For now a contact can only have one physical address.</summary>
         public List<PhysicalOfficeAddress> Addresses {
             get { return BackingStore?.Get<List<PhysicalOfficeAddress>>("addresses"); }
             set { BackingStore?.Set("addresses", value); }
         }
-        /// <summary>Name of the company that this organizational contact belong to. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).</summary>
+        /// <summary>Name of the company that this organizational contact belong to. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values).</summary>
         public string CompanyName {
             get { return BackingStore?.Get<string>("companyName"); }
             set { BackingStore?.Set("companyName", value); }
         }
-        /// <summary>The name for the department in which the contact works. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).</summary>
+        /// <summary>The name for the department in which the contact works. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values).</summary>
         public string Department {
             get { return BackingStore?.Get<string>("department"); }
             set { BackingStore?.Set("department", value); }
@@ -26,32 +25,32 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<DirectoryObject>>("directReports"); }
             set { BackingStore?.Set("directReports", value); }
         }
-        /// <summary>Display name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values), $search, and $orderBy.</summary>
+        /// <summary>Display name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values), $search, and $orderBy.</summary>
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
-        /// <summary>First name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).</summary>
+        /// <summary>First name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values).</summary>
         public string GivenName {
             get { return BackingStore?.Get<string>("givenName"); }
             set { BackingStore?.Set("givenName", value); }
         }
-        /// <summary>Job title for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).</summary>
+        /// <summary>Job title for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values).</summary>
         public string JobTitle {
             get { return BackingStore?.Get<string>("jobTitle"); }
             set { BackingStore?.Set("jobTitle", value); }
         }
-        /// <summary>The SMTP address for the contact, for example, &apos;jeff@contoso.onmicrosoft.com&apos;. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).</summary>
+        /// <summary>The SMTP address for the contact, for example, &apos;jeff@contoso.onmicrosoft.com&apos;. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values).</summary>
         public string Mail {
             get { return BackingStore?.Get<string>("mail"); }
             set { BackingStore?.Set("mail", value); }
         }
-        /// <summary>Email alias (portion of email address pre-pending the @ symbol) for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).</summary>
+        /// <summary>Email alias (portion of email address pre-pending the @ symbol) for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values).</summary>
         public string MailNickname {
             get { return BackingStore?.Get<string>("mailNickname"); }
             set { BackingStore?.Set("mailNickname", value); }
         }
-        /// <summary>The user or contact that is this contact&apos;s manager. Read-only. Supports $expand.</summary>
+        /// <summary>The user or contact that is this contact&apos;s manager. Read-only. Supports $expand and $filter (eq) by id.</summary>
         public DirectoryObject Manager {
             get { return BackingStore?.Get<DirectoryObject>("manager"); }
             set { BackingStore?.Set("manager", value); }
@@ -66,12 +65,12 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DateTimeOffset?>("onPremisesLastSyncDateTime"); }
             set { BackingStore?.Set("onPremisesLastSyncDateTime", value); }
         }
-        /// <summary>List of any synchronization provisioning errors for this organizational contact. Supports $filter (eq, not).</summary>
+        /// <summary>List of any synchronization provisioning errors for this organizational contact. Supports $filter (eq, not for category and propertyCausingError) and eq to count empty collections.</summary>
         public List<OnPremisesProvisioningError> OnPremisesProvisioningErrors {
             get { return BackingStore?.Get<List<OnPremisesProvisioningError>>("onPremisesProvisioningErrors"); }
             set { BackingStore?.Set("onPremisesProvisioningErrors", value); }
         }
-        /// <summary>true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced and now mastered in Exchange; null if this object has never been synced from an on-premises directory (default).  Supports $filter (eq, ne, not, in, and eq on null values).</summary>
+        /// <summary>true if this object is synced from an on-premises directory; false if this object was originally synced from an on-premises directory but is no longer synced and now mastered in Exchange; null if this object has never been synced from an on-premises directory (default).  Supports $filter (eq, ne, not, in, and eq for null values).</summary>
         public bool? OnPremisesSyncEnabled {
             get { return BackingStore?.Get<bool?>("onPremisesSyncEnabled"); }
             set { BackingStore?.Set("onPremisesSyncEnabled", value); }
@@ -81,12 +80,12 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<Phone>>("phones"); }
             set { BackingStore?.Set("phones", value); }
         }
-        /// <summary>For example: &apos;SMTP: bob@contoso.com&apos;, &apos;smtp: bob@sales.contoso.com&apos;. The any operator is required for filter expressions on multi-valued properties. Supports $filter (eq, not, ge, le, startsWith, and counting empty collections).</summary>
+        /// <summary>For example: &apos;SMTP: bob@contoso.com&apos;, &apos;smtp: bob@sales.contoso.com&apos;. The any operator is required for filter expressions on multi-valued properties. Supports $filter (eq, not, ge, le, startsWith, and eq to count empty collections).</summary>
         public List<string> ProxyAddresses {
             get { return BackingStore?.Get<List<string>>("proxyAddresses"); }
             set { BackingStore?.Set("proxyAddresses", value); }
         }
-        /// <summary>Last name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values)</summary>
+        /// <summary>Last name for this organizational contact. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq for null values)</summary>
         public string Surname {
             get { return BackingStore?.Get<string>("surname"); }
             set { BackingStore?.Set("surname", value); }
@@ -102,15 +101,15 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("transitiveReports", value); }
         }
         /// <summary>
-        /// Instantiates a new orgContact and sets the default values.
+        /// Instantiates a new OrgContact and sets the default values.
         /// </summary>
         public OrgContact() : base() {
             OdataType = "#microsoft.graph.orgContact";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
-        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new OrgContact CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new OrgContact();
@@ -143,8 +142,8 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>
         /// Serializes information the current object
-        /// <param name="writer">Serialization writer to use to serialize this model</param>
         /// </summary>
+        /// <param name="writer">Serialization writer to use to serialize this model</param>
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);

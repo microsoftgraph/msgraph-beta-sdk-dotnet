@@ -45,8 +45,8 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
-        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static Entity CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
@@ -247,6 +247,9 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.bookingPerson" => new BookingPerson(),
                 "#microsoft.graph.bookingService" => new BookingService(),
                 "#microsoft.graph.bookingStaffMember" => new BookingStaffMember(),
+                "#microsoft.graph.browserSharedCookie" => new BrowserSharedCookie(),
+                "#microsoft.graph.browserSite" => new BrowserSite(),
+                "#microsoft.graph.browserSiteList" => new BrowserSiteList(),
                 "#microsoft.graph.builtInIdentityProvider" => new BuiltInIdentityProvider(),
                 "#microsoft.graph.businessFlow" => new BusinessFlow(),
                 "#microsoft.graph.businessFlowTemplate" => new BusinessFlowTemplate(),
@@ -291,6 +294,7 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.cloudPcProvisioningPolicyAssignment" => new CloudPcProvisioningPolicyAssignment(),
                 "#microsoft.graph.cloudPcReports" => new CloudPcReports(),
                 "#microsoft.graph.cloudPcServicePlan" => new CloudPcServicePlan(),
+                "#microsoft.graph.cloudPcSharedUseServicePlan" => new CloudPcSharedUseServicePlan(),
                 "#microsoft.graph.cloudPcSnapshot" => new CloudPcSnapshot(),
                 "#microsoft.graph.cloudPcSupportedRegion" => new CloudPcSupportedRegion(),
                 "#microsoft.graph.cloudPcUserSetting" => new CloudPcUserSetting(),
@@ -507,6 +511,7 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.driveItemVersion" => new DriveItemVersion(),
                 "#microsoft.graph.easEmailProfileConfigurationBase" => new EasEmailProfileConfigurationBase(),
                 "#microsoft.graph.eBookInstallSummary" => new EBookInstallSummary(),
+                "#microsoft.graph.edge" => new Edge(),
                 "#microsoft.graph.ediscovery.addToReviewSetOperation" => new Microsoft.Graph.Beta.Models.Ediscovery.AddToReviewSetOperation(),
                 "#microsoft.graph.ediscovery.case" => new Microsoft.Graph.Beta.Models.Ediscovery.Case(),
                 "#microsoft.graph.ediscovery.caseExportOperation" => new Microsoft.Graph.Beta.Models.Ediscovery.CaseExportOperation(),
@@ -685,6 +690,7 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.informationProtectionPolicy" => new InformationProtectionPolicy(),
                 "#microsoft.graph.insightsSettings" => new InsightsSettings(),
                 "#microsoft.graph.internalDomainFederation" => new InternalDomainFederation(),
+                "#microsoft.graph.internetExplorerMode" => new InternetExplorerMode(),
                 "#microsoft.graph.intuneBrandingProfile" => new IntuneBrandingProfile(),
                 "#microsoft.graph.intuneBrandingProfileAssignment" => new IntuneBrandingProfileAssignment(),
                 "#microsoft.graph.invitation" => new Invitation(),
@@ -770,6 +776,7 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.macOSImportedPFXCertificateProfile" => new MacOSImportedPFXCertificateProfile(),
                 "#microsoft.graph.macOSLobApp" => new MacOSLobApp(),
                 "#microsoft.graph.macOSMdatpApp" => new MacOSMdatpApp(),
+                "#microsoft.graph.macOSMicrosoftDefenderApp" => new MacOSMicrosoftDefenderApp(),
                 "#microsoft.graph.macOSMicrosoftEdgeApp" => new MacOSMicrosoftEdgeApp(),
                 "#microsoft.graph.macOSOfficeSuiteApp" => new MacOSOfficeSuiteApp(),
                 "#microsoft.graph.macOSPkcsCertificateProfile" => new MacOSPkcsCertificateProfile(),
@@ -935,6 +942,7 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.onPremisesAgent" => new OnPremisesAgent(),
                 "#microsoft.graph.onPremisesAgentGroup" => new OnPremisesAgentGroup(),
                 "#microsoft.graph.onPremisesConditionalAccessSettings" => new OnPremisesConditionalAccessSettings(),
+                "#microsoft.graph.onPremisesDirectorySynchronization" => new OnPremisesDirectorySynchronization(),
                 "#microsoft.graph.onPremisesPublishingProfile" => new OnPremisesPublishingProfile(),
                 "#microsoft.graph.onTokenIssuanceStartCustomExtension" => new OnTokenIssuanceStartCustomExtension(),
                 "#microsoft.graph.onTokenIssuanceStartListener" => new OnTokenIssuanceStartListener(),
@@ -948,8 +956,6 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.organizationalBranding" => new OrganizationalBranding(),
                 "#microsoft.graph.organizationalBrandingLocalization" => new OrganizationalBrandingLocalization(),
                 "#microsoft.graph.organizationalBrandingProperties" => new OrganizationalBrandingProperties(),
-                "#microsoft.graph.organizationalMessageDetail" => new OrganizationalMessageDetail(),
-                "#microsoft.graph.organizationalMessageGuidedContent" => new OrganizationalMessageGuidedContent(),
                 "#microsoft.graph.organizationSettings" => new OrganizationSettings(),
                 "#microsoft.graph.orgContact" => new OrgContact(),
                 "#microsoft.graph.outlookCategory" => new OutlookCategory(),
@@ -1355,7 +1361,6 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.userExperienceAnalyticsModelScores" => new UserExperienceAnalyticsModelScores(),
                 "#microsoft.graph.userExperienceAnalyticsNotAutopilotReadyDevice" => new UserExperienceAnalyticsNotAutopilotReadyDevice(),
                 "#microsoft.graph.userExperienceAnalyticsOverview" => new UserExperienceAnalyticsOverview(),
-                "#microsoft.graph.userExperienceAnalyticsRegressionSummary" => new UserExperienceAnalyticsRegressionSummary(),
                 "#microsoft.graph.userExperienceAnalyticsRemoteConnection" => new UserExperienceAnalyticsRemoteConnection(),
                 "#microsoft.graph.userExperienceAnalyticsResourcePerformance" => new UserExperienceAnalyticsResourcePerformance(),
                 "#microsoft.graph.userExperienceAnalyticsScoreHistory" => new UserExperienceAnalyticsScoreHistory(),
@@ -1568,8 +1573,8 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>
         /// Serializes information the current object
-        /// <param name="writer">Serialization writer to use to serialize this model</param>
         /// </summary>
+        /// <param name="writer">Serialization writer to use to serialize this model</param>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("id", Id);

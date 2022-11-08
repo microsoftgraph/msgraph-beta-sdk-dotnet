@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.SecurityBaselineStates.Item.SettingStates {
     /// <summary>Provides operations to manage the settingStates property of the microsoft.graph.securityBaselineState entity.</summary>
     public class SettingStatesRequestBuilder {
-        /// <summary>The Count property</summary>
+        /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -23,7 +23,7 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.SecurityBaselineSt
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the Microsoft.Graph.Beta.users.item.managedDevices.item.securityBaselineStates.item.settingStates.item collection</summary>
+        /// <summary>Provides operations to manage the settingStates property of the microsoft.graph.securityBaselineState entity.</summary>
         public SecurityBaselineSettingStateItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("securityBaselineSettingState%2Did", position);
@@ -31,9 +31,9 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.SecurityBaselineSt
         } }
         /// <summary>
         /// Instantiates a new SettingStatesRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public SettingStatesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -44,9 +44,9 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.SecurityBaselineSt
         }
         /// <summary>
         /// Instantiates a new SettingStatesRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public SettingStatesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -58,8 +58,8 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.SecurityBaselineSt
         }
         /// <summary>
         /// The security baseline state for different settings for a device
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<SettingStatesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -78,9 +78,9 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.SecurityBaselineSt
         }
         /// <summary>
         /// Create new navigation property to settingStates for users
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePostRequestInformation(SecurityBaselineSettingState body, Action<SettingStatesRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -100,9 +100,9 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.SecurityBaselineSt
         }
         /// <summary>
         /// The security baseline state for different settings for a device
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<SecurityBaselineSettingStateCollectionResponse> GetAsync(Action<SettingStatesRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -113,10 +113,10 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.SecurityBaselineSt
         }
         /// <summary>
         /// Create new navigation property to settingStates for users
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<SecurityBaselineSettingState> PostAsync(SecurityBaselineSettingState body, Action<SettingStatesRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, requestConfiguration);

@@ -23,5 +23,7 @@ namespace Microsoft.Graph.Beta.Models {
         AndroidWorkProfile,
         /// <summary>Indicates that the platform of the detected application is Android dedicated and fully managed.</summary>
         AndroidDedicatedAndFullyManaged,
+        /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
+        UnknownFutureValue,
     }
 }

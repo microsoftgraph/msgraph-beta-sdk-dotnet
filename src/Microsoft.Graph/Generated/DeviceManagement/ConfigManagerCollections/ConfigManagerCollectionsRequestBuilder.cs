@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.DeviceManagement.ConfigManagerCollections {
     /// <summary>Provides operations to manage the configManagerCollections property of the microsoft.graph.deviceManagement entity.</summary>
     public class ConfigManagerCollectionsRequestBuilder {
-        /// <summary>The Count property</summary>
+        /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ConfigManagerCollections {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the Microsoft.Graph.Beta.deviceManagement.configManagerCollections.item collection</summary>
+        /// <summary>Provides operations to manage the configManagerCollections property of the microsoft.graph.deviceManagement entity.</summary>
         public ConfigManagerCollectionItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("configManagerCollection%2Did", position);
@@ -32,9 +32,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ConfigManagerCollections {
         } }
         /// <summary>
         /// Instantiates a new ConfigManagerCollectionsRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public ConfigManagerCollectionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -45,9 +45,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ConfigManagerCollections {
         }
         /// <summary>
         /// Instantiates a new ConfigManagerCollectionsRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public ConfigManagerCollectionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -59,8 +59,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ConfigManagerCollections {
         }
         /// <summary>
         /// A list of ConfigManagerCollection
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<ConfigManagerCollectionsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -79,9 +79,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ConfigManagerCollections {
         }
         /// <summary>
         /// Create new navigation property to configManagerCollections for deviceManagement
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePostRequestInformation(ConfigManagerCollection body, Action<ConfigManagerCollectionsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -101,9 +101,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ConfigManagerCollections {
         }
         /// <summary>
         /// A list of ConfigManagerCollection
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<ConfigManagerCollectionCollectionResponse> GetAsync(Action<ConfigManagerCollectionsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -114,18 +114,18 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ConfigManagerCollections {
         }
         /// <summary>
         /// Provides operations to call the getPolicySummary method.
-        /// <param name="policyId">Usage: policyId=&apos;{policyId}&apos;</param>
         /// </summary>
+        /// <param name="policyId">Usage: policyId=&apos;{policyId}&apos;</param>
         public GetPolicySummaryWithPolicyIdRequestBuilder GetPolicySummaryWithPolicyId(string policyId) {
             if(string.IsNullOrEmpty(policyId)) throw new ArgumentNullException(nameof(policyId));
             return new GetPolicySummaryWithPolicyIdRequestBuilder(PathParameters, RequestAdapter, policyId);
         }
         /// <summary>
         /// Create new navigation property to configManagerCollections for deviceManagement
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<ConfigManagerCollection> PostAsync(ConfigManagerCollection body, Action<ConfigManagerCollectionsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, requestConfiguration);

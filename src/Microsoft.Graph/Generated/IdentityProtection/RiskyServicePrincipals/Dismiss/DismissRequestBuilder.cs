@@ -18,9 +18,9 @@ namespace Microsoft.Graph.Beta.IdentityProtection.RiskyServicePrincipals.Dismiss
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new DismissRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public DismissRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -31,9 +31,9 @@ namespace Microsoft.Graph.Beta.IdentityProtection.RiskyServicePrincipals.Dismiss
         }
         /// <summary>
         /// Instantiates a new DismissRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public DismissRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -45,9 +45,9 @@ namespace Microsoft.Graph.Beta.IdentityProtection.RiskyServicePrincipals.Dismiss
         }
         /// <summary>
         /// Dismiss the risk of one or more riskyServicePrincipal objects. This action sets the targeted service principal account&apos;s risk level to `none`. You can dismiss up to 60 service principal accounts in one request.
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePostRequestInformation(DismissPostRequestBody body, Action<DismissRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -66,10 +66,10 @@ namespace Microsoft.Graph.Beta.IdentityProtection.RiskyServicePrincipals.Dismiss
         }
         /// <summary>
         /// Dismiss the risk of one or more riskyServicePrincipal objects. This action sets the targeted service principal account&apos;s risk level to `none`. You can dismiss up to 60 service principal accounts in one request.
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task PostAsync(DismissPostRequestBody body, Action<DismissRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, requestConfiguration);

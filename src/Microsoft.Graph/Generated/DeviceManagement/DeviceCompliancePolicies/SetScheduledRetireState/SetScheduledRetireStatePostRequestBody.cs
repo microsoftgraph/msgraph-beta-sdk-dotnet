@@ -20,6 +20,11 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.SetSche
             get { return BackingStore?.Get<List<string>>("managedDeviceIds"); }
             set { BackingStore?.Set("managedDeviceIds", value); }
         }
+        /// <summary>The scopedToAllDevices property</summary>
+        public bool? ScopedToAllDevices {
+            get { return BackingStore?.Get<bool?>("scopedToAllDevices"); }
+            set { BackingStore?.Set("scopedToAllDevices", value); }
+        }
         /// <summary>Cancel or confirm scheduled retire </summary>
         public ScheduledRetireState? State {
             get { return BackingStore?.Get<ScheduledRetireState?>("state"); }
@@ -34,8 +39,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.SetSche
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
-        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static SetScheduledRetireStatePostRequestBody CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new SetScheduledRetireStatePostRequestBody();
@@ -46,16 +51,18 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.SetSche
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"managedDeviceIds", n => { ManagedDeviceIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"scopedToAllDevices", n => { ScopedToAllDevices = n.GetBoolValue(); } },
                 {"state", n => { State = n.GetEnumValue<ScheduledRetireState>(); } },
             };
         }
         /// <summary>
         /// Serializes information the current object
-        /// <param name="writer">Serialization writer to use to serialize this model</param>
         /// </summary>
+        /// <param name="writer">Serialization writer to use to serialize this model</param>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("managedDeviceIds", ManagedDeviceIds);
+            writer.WriteBoolValue("scopedToAllDevices", ScopedToAllDevices);
             writer.WriteEnumValue<ScheduledRetireState>("state", State);
             writer.WriteAdditionalData(AdditionalData);
         }

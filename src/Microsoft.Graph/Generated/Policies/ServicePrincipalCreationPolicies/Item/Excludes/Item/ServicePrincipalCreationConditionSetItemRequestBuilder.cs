@@ -19,9 +19,9 @@ namespace Microsoft.Graph.Beta.Policies.ServicePrincipalCreationPolicies.Item.Ex
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new ServicePrincipalCreationConditionSetItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public ServicePrincipalCreationConditionSetItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -32,9 +32,9 @@ namespace Microsoft.Graph.Beta.Policies.ServicePrincipalCreationPolicies.Item.Ex
         }
         /// <summary>
         /// Instantiates a new ServicePrincipalCreationConditionSetItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public ServicePrincipalCreationConditionSetItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -46,8 +46,8 @@ namespace Microsoft.Graph.Beta.Policies.ServicePrincipalCreationPolicies.Item.Ex
         }
         /// <summary>
         /// Delete navigation property excludes for policies
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateDeleteRequestInformation(Action<ServicePrincipalCreationConditionSetItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.DELETE,
@@ -64,8 +64,8 @@ namespace Microsoft.Graph.Beta.Policies.ServicePrincipalCreationPolicies.Item.Ex
         }
         /// <summary>
         /// Get excludes from policies
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<ServicePrincipalCreationConditionSetItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -84,9 +84,9 @@ namespace Microsoft.Graph.Beta.Policies.ServicePrincipalCreationPolicies.Item.Ex
         }
         /// <summary>
         /// Update the navigation property excludes in policies
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(ServicePrincipalCreationConditionSet body, Action<ServicePrincipalCreationConditionSetItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -106,9 +106,9 @@ namespace Microsoft.Graph.Beta.Policies.ServicePrincipalCreationPolicies.Item.Ex
         }
         /// <summary>
         /// Delete navigation property excludes for policies
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task DeleteAsync(Action<ServicePrincipalCreationConditionSetItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -119,9 +119,9 @@ namespace Microsoft.Graph.Beta.Policies.ServicePrincipalCreationPolicies.Item.Ex
         }
         /// <summary>
         /// Get excludes from policies
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<ServicePrincipalCreationConditionSet> GetAsync(Action<ServicePrincipalCreationConditionSetItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -132,10 +132,10 @@ namespace Microsoft.Graph.Beta.Policies.ServicePrincipalCreationPolicies.Item.Ex
         }
         /// <summary>
         /// Update the navigation property excludes in policies
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<ServicePrincipalCreationConditionSet> PatchAsync(ServicePrincipalCreationConditionSet body, Action<ServicePrincipalCreationConditionSetItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);

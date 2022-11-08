@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Users.Item.Onenote.Resources.Item {
     /// <summary>Provides operations to manage the resources property of the microsoft.graph.onenote entity.</summary>
     public class OnenoteResourceItemRequestBuilder {
-        /// <summary>The content property</summary>
+        /// <summary>Provides operations to manage the media for the user entity.</summary>
         public ContentRequestBuilder Content { get =>
             new ContentRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -24,9 +24,9 @@ namespace Microsoft.Graph.Beta.Users.Item.Onenote.Resources.Item {
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new OnenoteResourceItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public OnenoteResourceItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -37,9 +37,9 @@ namespace Microsoft.Graph.Beta.Users.Item.Onenote.Resources.Item {
         }
         /// <summary>
         /// Instantiates a new OnenoteResourceItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public OnenoteResourceItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -51,8 +51,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Onenote.Resources.Item {
         }
         /// <summary>
         /// Delete navigation property resources for users
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateDeleteRequestInformation(Action<OnenoteResourceItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.DELETE,
@@ -69,8 +69,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Onenote.Resources.Item {
         }
         /// <summary>
         /// The image and other file resources in OneNote pages. Getting a resources collection is not supported, but you can get the binary content of a specific resource. Read-only. Nullable.
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<OnenoteResourceItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -89,9 +89,9 @@ namespace Microsoft.Graph.Beta.Users.Item.Onenote.Resources.Item {
         }
         /// <summary>
         /// Update the navigation property resources in users
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(OnenoteResource body, Action<OnenoteResourceItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -111,9 +111,9 @@ namespace Microsoft.Graph.Beta.Users.Item.Onenote.Resources.Item {
         }
         /// <summary>
         /// Delete navigation property resources for users
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task DeleteAsync(Action<OnenoteResourceItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -124,9 +124,9 @@ namespace Microsoft.Graph.Beta.Users.Item.Onenote.Resources.Item {
         }
         /// <summary>
         /// The image and other file resources in OneNote pages. Getting a resources collection is not supported, but you can get the binary content of a specific resource. Read-only. Nullable.
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<OnenoteResource> GetAsync(Action<OnenoteResourceItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -137,10 +137,10 @@ namespace Microsoft.Graph.Beta.Users.Item.Onenote.Resources.Item {
         }
         /// <summary>
         /// Update the navigation property resources in users
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<OnenoteResource> PatchAsync(OnenoteResource body, Action<OnenoteResourceItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);

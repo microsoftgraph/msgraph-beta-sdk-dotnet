@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.RoleManagement.CloudPC.RoleDefinitions.Item {
     /// <summary>Provides operations to manage the roleDefinitions property of the microsoft.graph.rbacApplicationMultiple entity.</summary>
     public class UnifiedRoleDefinitionItemRequestBuilder {
-        /// <summary>The inheritsPermissionsFrom property</summary>
+        /// <summary>Provides operations to manage the inheritsPermissionsFrom property of the microsoft.graph.unifiedRoleDefinition entity.</summary>
         public InheritsPermissionsFromRequestBuilder InheritsPermissionsFrom { get =>
             new InheritsPermissionsFromRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -31,9 +31,9 @@ namespace Microsoft.Graph.Beta.RoleManagement.CloudPC.RoleDefinitions.Item {
         }
         /// <summary>
         /// Instantiates a new UnifiedRoleDefinitionItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public UnifiedRoleDefinitionItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -44,9 +44,9 @@ namespace Microsoft.Graph.Beta.RoleManagement.CloudPC.RoleDefinitions.Item {
         }
         /// <summary>
         /// Instantiates a new UnifiedRoleDefinitionItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public UnifiedRoleDefinitionItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -58,8 +58,8 @@ namespace Microsoft.Graph.Beta.RoleManagement.CloudPC.RoleDefinitions.Item {
         }
         /// <summary>
         /// Delete navigation property roleDefinitions for roleManagement
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateDeleteRequestInformation(Action<UnifiedRoleDefinitionItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.DELETE,
@@ -76,8 +76,8 @@ namespace Microsoft.Graph.Beta.RoleManagement.CloudPC.RoleDefinitions.Item {
         }
         /// <summary>
         /// Get roleDefinitions from roleManagement
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<UnifiedRoleDefinitionItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -96,9 +96,9 @@ namespace Microsoft.Graph.Beta.RoleManagement.CloudPC.RoleDefinitions.Item {
         }
         /// <summary>
         /// Update the navigation property roleDefinitions in roleManagement
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(UnifiedRoleDefinition body, Action<UnifiedRoleDefinitionItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -118,9 +118,9 @@ namespace Microsoft.Graph.Beta.RoleManagement.CloudPC.RoleDefinitions.Item {
         }
         /// <summary>
         /// Delete navigation property roleDefinitions for roleManagement
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task DeleteAsync(Action<UnifiedRoleDefinitionItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -131,9 +131,9 @@ namespace Microsoft.Graph.Beta.RoleManagement.CloudPC.RoleDefinitions.Item {
         }
         /// <summary>
         /// Get roleDefinitions from roleManagement
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<UnifiedRoleDefinition> GetAsync(Action<UnifiedRoleDefinitionItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -144,10 +144,10 @@ namespace Microsoft.Graph.Beta.RoleManagement.CloudPC.RoleDefinitions.Item {
         }
         /// <summary>
         /// Update the navigation property roleDefinitions in roleManagement
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<UnifiedRoleDefinition> PatchAsync(UnifiedRoleDefinition body, Action<UnifiedRoleDefinitionItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);

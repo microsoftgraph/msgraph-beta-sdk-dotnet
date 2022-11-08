@@ -15,11 +15,11 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience {
     /// <summary>Provides operations to manage the audience property of the microsoft.graph.windowsUpdates.deployment entity.</summary>
     public class AudienceRequestBuilder {
-        /// <summary>The exclusions property</summary>
+        /// <summary>Provides operations to manage the exclusions property of the microsoft.graph.windowsUpdates.deploymentAudience entity.</summary>
         public ExclusionsRequestBuilder Exclusions { get =>
             new ExclusionsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The members property</summary>
+        /// <summary>Provides operations to manage the members property of the microsoft.graph.windowsUpdates.deploymentAudience entity.</summary>
         public MembersRequestBuilder Members { get =>
             new MembersRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -27,11 +27,11 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience {
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>The updateAudience property</summary>
+        /// <summary>Provides operations to call the updateAudience method.</summary>
         public UpdateAudienceRequestBuilder UpdateAudience { get =>
             new UpdateAudienceRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The updateAudienceById property</summary>
+        /// <summary>Provides operations to call the updateAudienceById method.</summary>
         public UpdateAudienceByIdRequestBuilder UpdateAudienceById { get =>
             new UpdateAudienceByIdRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -39,9 +39,9 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience {
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new AudienceRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public AudienceRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -52,9 +52,9 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience {
         }
         /// <summary>
         /// Instantiates a new AudienceRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public AudienceRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -66,8 +66,8 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience {
         }
         /// <summary>
         /// Delete navigation property audience for admin
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateDeleteRequestInformation(Action<AudienceRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.DELETE,
@@ -84,8 +84,8 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience {
         }
         /// <summary>
         /// Specifies the audience to which content is deployed.
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<AudienceRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -104,9 +104,9 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience {
         }
         /// <summary>
         /// Update the navigation property audience in admin
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(DeploymentAudience body, Action<AudienceRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -126,9 +126,9 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience {
         }
         /// <summary>
         /// Delete navigation property audience for admin
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task DeleteAsync(Action<AudienceRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -139,9 +139,9 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience {
         }
         /// <summary>
         /// Specifies the audience to which content is deployed.
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<DeploymentAudience> GetAsync(Action<AudienceRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -152,10 +152,10 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience {
         }
         /// <summary>
         /// Update the navigation property audience in admin
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<DeploymentAudience> PatchAsync(DeploymentAudience body, Action<AudienceRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);

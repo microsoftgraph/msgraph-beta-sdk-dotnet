@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Me.Approvals.Item.Steps {
     /// <summary>Provides operations to manage the steps property of the microsoft.graph.approval entity.</summary>
     public class StepsRequestBuilder {
-        /// <summary>The Count property</summary>
+        /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -23,7 +23,7 @@ namespace Microsoft.Graph.Beta.Me.Approvals.Item.Steps {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the Microsoft.Graph.Beta.me.approvals.item.steps.item collection</summary>
+        /// <summary>Provides operations to manage the steps property of the microsoft.graph.approval entity.</summary>
         public ApprovalStepItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("approvalStep%2Did", position);
@@ -31,9 +31,9 @@ namespace Microsoft.Graph.Beta.Me.Approvals.Item.Steps {
         } }
         /// <summary>
         /// Instantiates a new StepsRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public StepsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -44,9 +44,9 @@ namespace Microsoft.Graph.Beta.Me.Approvals.Item.Steps {
         }
         /// <summary>
         /// Instantiates a new StepsRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public StepsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -58,8 +58,8 @@ namespace Microsoft.Graph.Beta.Me.Approvals.Item.Steps {
         }
         /// <summary>
         /// In Azure AD entitlement management, lists the approvalStep objects associated with an approval object.  This call can be made by an approver, providing the identifier of the access package assignment request.
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<StepsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -78,9 +78,9 @@ namespace Microsoft.Graph.Beta.Me.Approvals.Item.Steps {
         }
         /// <summary>
         /// Create new navigation property to steps for me
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePostRequestInformation(ApprovalStep body, Action<StepsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -100,9 +100,9 @@ namespace Microsoft.Graph.Beta.Me.Approvals.Item.Steps {
         }
         /// <summary>
         /// In Azure AD entitlement management, lists the approvalStep objects associated with an approval object.  This call can be made by an approver, providing the identifier of the access package assignment request.
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<ApprovalStepCollectionResponse> GetAsync(Action<StepsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -113,10 +113,10 @@ namespace Microsoft.Graph.Beta.Me.Approvals.Item.Steps {
         }
         /// <summary>
         /// Create new navigation property to steps for me
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<ApprovalStep> PostAsync(ApprovalStep body, Action<StepsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, requestConfiguration);

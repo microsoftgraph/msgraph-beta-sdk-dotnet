@@ -18,10 +18,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDevicePer
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new SummarizeDevicePerformanceDevicesWithSummarizeByRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         /// <param name="summarizeBy">Usage: summarizeBy=&apos;{summarizeBy}&apos;</param>
-        /// </summary>
         public SummarizeDevicePerformanceDevicesWithSummarizeByRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string summarizeBy = default) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -33,9 +33,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDevicePer
         }
         /// <summary>
         /// Instantiates a new SummarizeDevicePerformanceDevicesWithSummarizeByRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public SummarizeDevicePerformanceDevicesWithSummarizeByRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -47,8 +47,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDevicePer
         }
         /// <summary>
         /// Invoke function summarizeDevicePerformanceDevices
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<SummarizeDevicePerformanceDevicesWithSummarizeByRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -67,9 +67,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDevicePer
         }
         /// <summary>
         /// Invoke function summarizeDevicePerformanceDevices
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<SummarizeDevicePerformanceDevicesWithSummarizeByResponse> GetAsync(Action<SummarizeDevicePerformanceDevicesWithSummarizeByRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {

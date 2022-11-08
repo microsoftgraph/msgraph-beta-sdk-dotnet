@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public enum ComanagementEligibleType {
         Comanaged,
         Eligible,
@@ -8,5 +8,7 @@ namespace Microsoft.Graph.Beta.Models {
         Ineligible,
         /// <summary>Devices scheduled for Co-Management enrollment</summary>
         ScheduledForEnrollment,
+        /// <summary>Evolvable enumeration sentinel value. Do not use.</summary>
+        UnknownFutureValue,
     }
 }

@@ -12,7 +12,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.LogCollectionRequests.Item {
     /// <summary>Provides operations to manage the logCollectionRequests property of the microsoft.graph.managedDevice entity.</summary>
     public class DeviceLogCollectionResponseItemRequestBuilder {
-        /// <summary>The createDownloadUrl property</summary>
+        /// <summary>Provides operations to call the createDownloadUrl method.</summary>
         public CreateDownloadUrlRequestBuilder CreateDownloadUrl { get =>
             new CreateDownloadUrlRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -24,9 +24,9 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.LogCollectionReque
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new DeviceLogCollectionResponseItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public DeviceLogCollectionResponseItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -37,9 +37,9 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.LogCollectionReque
         }
         /// <summary>
         /// Instantiates a new DeviceLogCollectionResponseItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public DeviceLogCollectionResponseItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -51,8 +51,8 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.LogCollectionReque
         }
         /// <summary>
         /// Delete navigation property logCollectionRequests for users
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateDeleteRequestInformation(Action<DeviceLogCollectionResponseItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.DELETE,
@@ -69,8 +69,8 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.LogCollectionReque
         }
         /// <summary>
         /// List of log collection requests
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<DeviceLogCollectionResponseItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -89,9 +89,9 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.LogCollectionReque
         }
         /// <summary>
         /// Update the navigation property logCollectionRequests in users
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(DeviceLogCollectionResponse body, Action<DeviceLogCollectionResponseItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -111,9 +111,9 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.LogCollectionReque
         }
         /// <summary>
         /// Delete navigation property logCollectionRequests for users
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task DeleteAsync(Action<DeviceLogCollectionResponseItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -124,9 +124,9 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.LogCollectionReque
         }
         /// <summary>
         /// List of log collection requests
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<DeviceLogCollectionResponse> GetAsync(Action<DeviceLogCollectionResponseItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -137,10 +137,10 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.LogCollectionReque
         }
         /// <summary>
         /// Update the navigation property logCollectionRequests in users
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<DeviceLogCollectionResponse> PatchAsync(DeviceLogCollectionResponse body, Action<DeviceLogCollectionResponseItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);

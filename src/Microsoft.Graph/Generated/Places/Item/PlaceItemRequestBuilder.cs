@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.Places.Item {
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>The room property</summary>
+        /// <summary>Casts the previous resource to room.</summary>
         public RoomRequestBuilder Room { get =>
             new RoomRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -24,9 +24,9 @@ namespace Microsoft.Graph.Beta.Places.Item {
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new PlaceItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public PlaceItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -37,9 +37,9 @@ namespace Microsoft.Graph.Beta.Places.Item {
         }
         /// <summary>
         /// Instantiates a new PlaceItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public PlaceItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -51,8 +51,8 @@ namespace Microsoft.Graph.Beta.Places.Item {
         }
         /// <summary>
         /// Delete entity from places
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateDeleteRequestInformation(Action<PlaceItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.DELETE,
@@ -69,8 +69,8 @@ namespace Microsoft.Graph.Beta.Places.Item {
         }
         /// <summary>
         /// Get the properties and relationships of a place object specified by either its ID or email address.  The **place** object can be one of the following types: The **room**, **workspace**, and **roomList** resources are derived from the **place** object.
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<PlaceItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -89,9 +89,9 @@ namespace Microsoft.Graph.Beta.Places.Item {
         }
         /// <summary>
         /// Update the properties of place object, which can be a room, workspace, or roomList. You can identify the **room**, **workspace**, or **roomList** by specifying the **id** or **emailAddress** property.
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(Place body, Action<PlaceItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -111,9 +111,9 @@ namespace Microsoft.Graph.Beta.Places.Item {
         }
         /// <summary>
         /// Delete entity from places
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task DeleteAsync(Action<PlaceItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -124,9 +124,9 @@ namespace Microsoft.Graph.Beta.Places.Item {
         }
         /// <summary>
         /// Get the properties and relationships of a place object specified by either its ID or email address.  The **place** object can be one of the following types: The **room**, **workspace**, and **roomList** resources are derived from the **place** object.
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<Place> GetAsync(Action<PlaceItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -137,10 +137,10 @@ namespace Microsoft.Graph.Beta.Places.Item {
         }
         /// <summary>
         /// Update the properties of place object, which can be a room, workspace, or roomList. You can identify the **room**, **workspace**, or **roomList** by specifying the **id** or **emailAddress** property.
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<Place> PatchAsync(Place body, Action<PlaceItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);

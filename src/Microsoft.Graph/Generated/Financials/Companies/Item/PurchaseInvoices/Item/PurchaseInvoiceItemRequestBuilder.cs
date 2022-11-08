@@ -15,17 +15,17 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Financials.Companies.Item.PurchaseInvoices.Item {
     /// <summary>Provides operations to manage the purchaseInvoices property of the microsoft.graph.company entity.</summary>
     public class PurchaseInvoiceItemRequestBuilder {
-        /// <summary>The currency property</summary>
+        /// <summary>Provides operations to manage the currency property of the microsoft.graph.purchaseInvoice entity.</summary>
         public CurrencyRequestBuilder Currency { get =>
             new CurrencyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>The post property</summary>
+        /// <summary>Provides operations to call the post method.</summary>
         public PostRequestBuilder Post { get =>
             new PostRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The purchaseInvoiceLines property</summary>
+        /// <summary>Provides operations to manage the purchaseInvoiceLines property of the microsoft.graph.purchaseInvoice entity.</summary>
         public PurchaseInvoiceLinesRequestBuilder PurchaseInvoiceLines { get =>
             new PurchaseInvoiceLinesRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -33,15 +33,15 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.PurchaseInvoices.Item {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>The vendor property</summary>
+        /// <summary>Provides operations to manage the vendor property of the microsoft.graph.purchaseInvoice entity.</summary>
         public VendorRequestBuilder Vendor { get =>
             new VendorRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new PurchaseInvoiceItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public PurchaseInvoiceItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -52,9 +52,9 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.PurchaseInvoices.Item {
         }
         /// <summary>
         /// Instantiates a new PurchaseInvoiceItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public PurchaseInvoiceItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -66,8 +66,8 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.PurchaseInvoices.Item {
         }
         /// <summary>
         /// Get purchaseInvoices from financials
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<PurchaseInvoiceItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -86,9 +86,9 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.PurchaseInvoices.Item {
         }
         /// <summary>
         /// Update the navigation property purchaseInvoices in financials
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(PurchaseInvoice body, Action<PurchaseInvoiceItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -108,9 +108,9 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.PurchaseInvoices.Item {
         }
         /// <summary>
         /// Get purchaseInvoices from financials
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<PurchaseInvoice> GetAsync(Action<PurchaseInvoiceItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -121,10 +121,10 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.PurchaseInvoices.Item {
         }
         /// <summary>
         /// Update the navigation property purchaseInvoices in financials
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<PurchaseInvoice> PatchAsync(PurchaseInvoice body, Action<PurchaseInvoiceItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);

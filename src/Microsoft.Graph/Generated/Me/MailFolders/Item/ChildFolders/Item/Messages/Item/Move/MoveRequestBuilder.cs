@@ -19,9 +19,9 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.Messages.It
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new MoveRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public MoveRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -32,9 +32,9 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.Messages.It
         }
         /// <summary>
         /// Instantiates a new MoveRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public MoveRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -46,9 +46,9 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.Messages.It
         }
         /// <summary>
         /// Move a message to another folder within the specified user&apos;s mailbox. This creates a new copy of the message in the destination folder and removes the original message.
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePostRequestInformation(MovePostRequestBody body, Action<MoveRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -68,10 +68,10 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item.ChildFolders.Item.Messages.It
         }
         /// <summary>
         /// Move a message to another folder within the specified user&apos;s mailbox. This creates a new copy of the message in the destination folder and removes the original message.
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<Microsoft.Graph.Beta.Models.Message> PostAsync(MovePostRequestBody body, Action<MoveRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, requestConfiguration);

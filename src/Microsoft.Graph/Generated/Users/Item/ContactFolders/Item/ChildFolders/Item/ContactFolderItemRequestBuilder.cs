@@ -14,11 +14,11 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Users.Item.ContactFolders.Item.ChildFolders.Item {
     /// <summary>Provides operations to manage the childFolders property of the microsoft.graph.contactFolder entity.</summary>
     public class ContactFolderItemRequestBuilder {
-        /// <summary>The contacts property</summary>
+        /// <summary>Provides operations to manage the contacts property of the microsoft.graph.contactFolder entity.</summary>
         public ContactsRequestBuilder Contacts { get =>
             new ContactsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The multiValueExtendedProperties property</summary>
+        /// <summary>Provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.contactFolder entity.</summary>
         public MultiValueExtendedPropertiesRequestBuilder MultiValueExtendedProperties { get =>
             new MultiValueExtendedPropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.Users.Item.ContactFolders.Item.ChildFolders.Item 
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>The singleValueExtendedProperties property</summary>
+        /// <summary>Provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.contactFolder entity.</summary>
         public SingleValueExtendedPropertiesRequestBuilder SingleValueExtendedProperties { get =>
             new SingleValueExtendedPropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -34,9 +34,9 @@ namespace Microsoft.Graph.Beta.Users.Item.ContactFolders.Item.ChildFolders.Item 
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new ContactFolderItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public ContactFolderItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -47,9 +47,9 @@ namespace Microsoft.Graph.Beta.Users.Item.ContactFolders.Item.ChildFolders.Item 
         }
         /// <summary>
         /// Instantiates a new ContactFolderItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public ContactFolderItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -61,8 +61,8 @@ namespace Microsoft.Graph.Beta.Users.Item.ContactFolders.Item.ChildFolders.Item 
         }
         /// <summary>
         /// Delete navigation property childFolders for users
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateDeleteRequestInformation(Action<ContactFolderItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.DELETE,
@@ -79,8 +79,8 @@ namespace Microsoft.Graph.Beta.Users.Item.ContactFolders.Item.ChildFolders.Item 
         }
         /// <summary>
         /// The collection of child folders in the folder. Navigation property. Read-only. Nullable.
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<ContactFolderItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -99,9 +99,9 @@ namespace Microsoft.Graph.Beta.Users.Item.ContactFolders.Item.ChildFolders.Item 
         }
         /// <summary>
         /// Update the navigation property childFolders in users
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(ContactFolder body, Action<ContactFolderItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -121,9 +121,9 @@ namespace Microsoft.Graph.Beta.Users.Item.ContactFolders.Item.ChildFolders.Item 
         }
         /// <summary>
         /// Delete navigation property childFolders for users
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task DeleteAsync(Action<ContactFolderItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -134,9 +134,9 @@ namespace Microsoft.Graph.Beta.Users.Item.ContactFolders.Item.ChildFolders.Item 
         }
         /// <summary>
         /// The collection of child folders in the folder. Navigation property. Read-only. Nullable.
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<ContactFolder> GetAsync(Action<ContactFolderItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -147,10 +147,10 @@ namespace Microsoft.Graph.Beta.Users.Item.ContactFolders.Item.ChildFolders.Item 
         }
         /// <summary>
         /// Update the navigation property childFolders in users
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<ContactFolder> PatchAsync(ContactFolder body, Action<ContactFolderItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);

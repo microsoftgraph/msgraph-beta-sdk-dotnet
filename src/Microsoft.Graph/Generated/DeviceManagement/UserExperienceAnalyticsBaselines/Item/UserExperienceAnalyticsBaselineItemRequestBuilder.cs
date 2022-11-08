@@ -18,45 +18,45 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBaselines.Item {
     /// <summary>Provides operations to manage the userExperienceAnalyticsBaselines property of the microsoft.graph.deviceManagement entity.</summary>
     public class UserExperienceAnalyticsBaselineItemRequestBuilder {
-        /// <summary>The appHealthMetrics property</summary>
+        /// <summary>Provides operations to manage the appHealthMetrics property of the microsoft.graph.userExperienceAnalyticsBaseline entity.</summary>
         public AppHealthMetricsRequestBuilder AppHealthMetrics { get =>
             new AppHealthMetricsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The batteryHealthMetrics property</summary>
+        /// <summary>Provides operations to manage the batteryHealthMetrics property of the microsoft.graph.userExperienceAnalyticsBaseline entity.</summary>
         public BatteryHealthMetricsRequestBuilder BatteryHealthMetrics { get =>
             new BatteryHealthMetricsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The bestPracticesMetrics property</summary>
+        /// <summary>Provides operations to manage the bestPracticesMetrics property of the microsoft.graph.userExperienceAnalyticsBaseline entity.</summary>
         public BestPracticesMetricsRequestBuilder BestPracticesMetrics { get =>
             new BestPracticesMetricsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The deviceBootPerformanceMetrics property</summary>
+        /// <summary>Provides operations to manage the deviceBootPerformanceMetrics property of the microsoft.graph.userExperienceAnalyticsBaseline entity.</summary>
         public DeviceBootPerformanceMetricsRequestBuilder DeviceBootPerformanceMetrics { get =>
             new DeviceBootPerformanceMetricsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>The rebootAnalyticsMetrics property</summary>
+        /// <summary>Provides operations to manage the rebootAnalyticsMetrics property of the microsoft.graph.userExperienceAnalyticsBaseline entity.</summary>
         public RebootAnalyticsMetricsRequestBuilder RebootAnalyticsMetrics { get =>
             new RebootAnalyticsMetricsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>The resourcePerformanceMetrics property</summary>
+        /// <summary>Provides operations to manage the resourcePerformanceMetrics property of the microsoft.graph.userExperienceAnalyticsBaseline entity.</summary>
         public ResourcePerformanceMetricsRequestBuilder ResourcePerformanceMetrics { get =>
             new ResourcePerformanceMetricsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>The workFromAnywhereMetrics property</summary>
+        /// <summary>Provides operations to manage the workFromAnywhereMetrics property of the microsoft.graph.userExperienceAnalyticsBaseline entity.</summary>
         public WorkFromAnywhereMetricsRequestBuilder WorkFromAnywhereMetrics { get =>
             new WorkFromAnywhereMetricsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new UserExperienceAnalyticsBaselineItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public UserExperienceAnalyticsBaselineItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -67,9 +67,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBaselines
         }
         /// <summary>
         /// Instantiates a new UserExperienceAnalyticsBaselineItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public UserExperienceAnalyticsBaselineItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -81,8 +81,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBaselines
         }
         /// <summary>
         /// Delete navigation property userExperienceAnalyticsBaselines for deviceManagement
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateDeleteRequestInformation(Action<UserExperienceAnalyticsBaselineItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.DELETE,
@@ -99,8 +99,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBaselines
         }
         /// <summary>
         /// User experience analytics baselines
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<UserExperienceAnalyticsBaselineItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -119,9 +119,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBaselines
         }
         /// <summary>
         /// Update the navigation property userExperienceAnalyticsBaselines in deviceManagement
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(UserExperienceAnalyticsBaseline body, Action<UserExperienceAnalyticsBaselineItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -141,9 +141,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBaselines
         }
         /// <summary>
         /// Delete navigation property userExperienceAnalyticsBaselines for deviceManagement
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task DeleteAsync(Action<UserExperienceAnalyticsBaselineItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -154,9 +154,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBaselines
         }
         /// <summary>
         /// User experience analytics baselines
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<UserExperienceAnalyticsBaseline> GetAsync(Action<UserExperienceAnalyticsBaselineItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -167,10 +167,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBaselines
         }
         /// <summary>
         /// Update the navigation property userExperienceAnalyticsBaselines in deviceManagement
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<UserExperienceAnalyticsBaseline> PatchAsync(UserExperienceAnalyticsBaseline body, Action<UserExperienceAnalyticsBaselineItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);

@@ -16,15 +16,15 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Users.Item.JoinedGroups {
     /// <summary>Provides operations to manage the joinedGroups property of the microsoft.graph.user entity.</summary>
     public class JoinedGroupsRequestBuilder {
-        /// <summary>The evaluateDynamicMembership property</summary>
+        /// <summary>Provides operations to call the evaluateDynamicMembership method.</summary>
         public EvaluateDynamicMembershipRequestBuilder EvaluateDynamicMembership { get =>
             new EvaluateDynamicMembershipRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The getByIds property</summary>
+        /// <summary>Provides operations to call the getByIds method.</summary>
         public GetByIdsRequestBuilder GetByIds { get =>
             new GetByIdsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The getUserOwnedObjects property</summary>
+        /// <summary>Provides operations to call the getUserOwnedObjects method.</summary>
         public GetUserOwnedObjectsRequestBuilder GetUserOwnedObjects { get =>
             new GetUserOwnedObjectsRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -34,15 +34,15 @@ namespace Microsoft.Graph.Beta.Users.Item.JoinedGroups {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>The validateProperties property</summary>
+        /// <summary>Provides operations to call the validateProperties method.</summary>
         public ValidatePropertiesRequestBuilder ValidateProperties { get =>
             new ValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new JoinedGroupsRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public JoinedGroupsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -53,9 +53,9 @@ namespace Microsoft.Graph.Beta.Users.Item.JoinedGroups {
         }
         /// <summary>
         /// Instantiates a new JoinedGroupsRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public JoinedGroupsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -67,8 +67,8 @@ namespace Microsoft.Graph.Beta.Users.Item.JoinedGroups {
         }
         /// <summary>
         /// Get joinedGroups from users
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<JoinedGroupsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -93,9 +93,9 @@ namespace Microsoft.Graph.Beta.Users.Item.JoinedGroups {
         }
         /// <summary>
         /// Get joinedGroups from users
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<GroupCollectionResponse> GetAsync(Action<JoinedGroupsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {

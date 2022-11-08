@@ -19,27 +19,27 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Drives.Item.Root.ListItem {
     /// <summary>Provides operations to manage the listItem property of the microsoft.graph.driveItem entity.</summary>
     public class ListItemRequestBuilder {
-        /// <summary>The activities property</summary>
+        /// <summary>Provides operations to manage the activities property of the microsoft.graph.listItem entity.</summary>
         public ActivitiesRequestBuilder Activities { get =>
             new ActivitiesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The analytics property</summary>
+        /// <summary>Provides operations to manage the analytics property of the microsoft.graph.listItem entity.</summary>
         public AnalyticsRequestBuilder Analytics { get =>
             new AnalyticsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The createLink property</summary>
+        /// <summary>Provides operations to call the createLink method.</summary>
         public CreateLinkRequestBuilder CreateLink { get =>
             new CreateLinkRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The documentSetVersions property</summary>
+        /// <summary>Provides operations to manage the documentSetVersions property of the microsoft.graph.listItem entity.</summary>
         public DocumentSetVersionsRequestBuilder DocumentSetVersions { get =>
             new DocumentSetVersionsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The driveItem property</summary>
+        /// <summary>Provides operations to manage the driveItem property of the microsoft.graph.listItem entity.</summary>
         public Microsoft.Graph.Beta.Drives.Item.Root.ListItem.DriveItem.DriveItemRequestBuilder DriveItem { get =>
             new Microsoft.Graph.Beta.Drives.Item.Root.ListItem.DriveItem.DriveItemRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The fields property</summary>
+        /// <summary>Provides operations to manage the fields property of the microsoft.graph.listItem entity.</summary>
         public FieldsRequestBuilder Fields { get =>
             new FieldsRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -49,15 +49,15 @@ namespace Microsoft.Graph.Beta.Drives.Item.Root.ListItem {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>The versions property</summary>
+        /// <summary>Provides operations to manage the versions property of the microsoft.graph.listItem entity.</summary>
         public VersionsRequestBuilder Versions { get =>
             new VersionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new ListItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public ListItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -68,9 +68,9 @@ namespace Microsoft.Graph.Beta.Drives.Item.Root.ListItem {
         }
         /// <summary>
         /// Instantiates a new ListItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public ListItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -82,8 +82,8 @@ namespace Microsoft.Graph.Beta.Drives.Item.Root.ListItem {
         }
         /// <summary>
         /// Delete navigation property listItem for drives
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateDeleteRequestInformation(Action<ListItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.DELETE,
@@ -100,8 +100,8 @@ namespace Microsoft.Graph.Beta.Drives.Item.Root.ListItem {
         }
         /// <summary>
         /// For drives in SharePoint, the associated document library list item. Read-only. Nullable.
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<ListItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -120,9 +120,9 @@ namespace Microsoft.Graph.Beta.Drives.Item.Root.ListItem {
         }
         /// <summary>
         /// Update the navigation property listItem in drives
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(Microsoft.Graph.Beta.Models.ListItem body, Action<ListItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -142,9 +142,9 @@ namespace Microsoft.Graph.Beta.Drives.Item.Root.ListItem {
         }
         /// <summary>
         /// Delete navigation property listItem for drives
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task DeleteAsync(Action<ListItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -155,10 +155,10 @@ namespace Microsoft.Graph.Beta.Drives.Item.Root.ListItem {
         }
         /// <summary>
         /// Provides operations to call the getActivitiesByInterval method.
+        /// </summary>
         /// <param name="endDateTime">Usage: endDateTime=&apos;{endDateTime}&apos;</param>
         /// <param name="interval">Usage: interval=&apos;{interval}&apos;</param>
         /// <param name="startDateTime">Usage: startDateTime=&apos;{startDateTime}&apos;</param>
-        /// </summary>
         public GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval(string endDateTime, string interval, string startDateTime) {
             if(string.IsNullOrEmpty(endDateTime)) throw new ArgumentNullException(nameof(endDateTime));
             if(string.IsNullOrEmpty(interval)) throw new ArgumentNullException(nameof(interval));
@@ -167,9 +167,9 @@ namespace Microsoft.Graph.Beta.Drives.Item.Root.ListItem {
         }
         /// <summary>
         /// For drives in SharePoint, the associated document library list item. Read-only. Nullable.
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<Microsoft.Graph.Beta.Models.ListItem> GetAsync(Action<ListItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -180,10 +180,10 @@ namespace Microsoft.Graph.Beta.Drives.Item.Root.ListItem {
         }
         /// <summary>
         /// Update the navigation property listItem in drives
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<Microsoft.Graph.Beta.Models.ListItem> PatchAsync(Microsoft.Graph.Beta.Models.ListItem body, Action<ListItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);

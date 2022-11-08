@@ -24,43 +24,43 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Me.CalendarView.Item.Instances.Item {
     /// <summary>Provides operations to manage the instances property of the microsoft.graph.event entity.</summary>
     public class EventItemRequestBuilder {
-        /// <summary>The accept property</summary>
+        /// <summary>Provides operations to call the accept method.</summary>
         public AcceptRequestBuilder Accept { get =>
             new AcceptRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The attachments property</summary>
+        /// <summary>Provides operations to manage the attachments property of the microsoft.graph.event entity.</summary>
         public AttachmentsRequestBuilder Attachments { get =>
             new AttachmentsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The calendar property</summary>
+        /// <summary>Provides operations to manage the calendar property of the microsoft.graph.event entity.</summary>
         public CalendarRequestBuilder Calendar { get =>
             new CalendarRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The cancel property</summary>
+        /// <summary>Provides operations to call the cancel method.</summary>
         public CancelRequestBuilder Cancel { get =>
             new CancelRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The decline property</summary>
+        /// <summary>Provides operations to call the decline method.</summary>
         public DeclineRequestBuilder Decline { get =>
             new DeclineRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The dismissReminder property</summary>
+        /// <summary>Provides operations to call the dismissReminder method.</summary>
         public DismissReminderRequestBuilder DismissReminder { get =>
             new DismissReminderRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The exceptionOccurrences property</summary>
+        /// <summary>Provides operations to manage the exceptionOccurrences property of the microsoft.graph.event entity.</summary>
         public ExceptionOccurrencesRequestBuilder ExceptionOccurrences { get =>
             new ExceptionOccurrencesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The extensions property</summary>
+        /// <summary>Provides operations to manage the extensions property of the microsoft.graph.event entity.</summary>
         public ExtensionsRequestBuilder Extensions { get =>
             new ExtensionsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The forward property</summary>
+        /// <summary>Provides operations to call the forward method.</summary>
         public ForwardRequestBuilder Forward { get =>
             new ForwardRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The multiValueExtendedProperties property</summary>
+        /// <summary>Provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.event entity.</summary>
         public MultiValueExtendedPropertiesRequestBuilder MultiValueExtendedProperties { get =>
             new MultiValueExtendedPropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -68,15 +68,15 @@ namespace Microsoft.Graph.Beta.Me.CalendarView.Item.Instances.Item {
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>The singleValueExtendedProperties property</summary>
+        /// <summary>Provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.event entity.</summary>
         public SingleValueExtendedPropertiesRequestBuilder SingleValueExtendedProperties { get =>
             new SingleValueExtendedPropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The snoozeReminder property</summary>
+        /// <summary>Provides operations to call the snoozeReminder method.</summary>
         public SnoozeReminderRequestBuilder SnoozeReminder { get =>
             new SnoozeReminderRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The tentativelyAccept property</summary>
+        /// <summary>Provides operations to call the tentativelyAccept method.</summary>
         public TentativelyAcceptRequestBuilder TentativelyAccept { get =>
             new TentativelyAcceptRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -84,9 +84,9 @@ namespace Microsoft.Graph.Beta.Me.CalendarView.Item.Instances.Item {
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new EventItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public EventItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -97,9 +97,9 @@ namespace Microsoft.Graph.Beta.Me.CalendarView.Item.Instances.Item {
         }
         /// <summary>
         /// Instantiates a new EventItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public EventItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -111,8 +111,8 @@ namespace Microsoft.Graph.Beta.Me.CalendarView.Item.Instances.Item {
         }
         /// <summary>
         /// The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<EventItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -131,9 +131,9 @@ namespace Microsoft.Graph.Beta.Me.CalendarView.Item.Instances.Item {
         }
         /// <summary>
         /// The occurrences of a recurring series, if the event is a series master. This property includes occurrences that are part of the recurrence pattern, and exceptions that have been modified, but does not include occurrences that have been cancelled from the series. Navigation property. Read-only. Nullable.
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<Event> GetAsync(Action<EventItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {

@@ -19,9 +19,9 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.TaskDefinit
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new TaskDefinitionItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public TaskDefinitionItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -32,9 +32,9 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.TaskDefinit
         }
         /// <summary>
         /// Instantiates a new TaskDefinitionItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public TaskDefinitionItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -46,8 +46,8 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.TaskDefinit
         }
         /// <summary>
         /// Delete navigation property taskDefinitions for identityGovernance
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateDeleteRequestInformation(Action<TaskDefinitionItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.DELETE,
@@ -64,8 +64,8 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.TaskDefinit
         }
         /// <summary>
         /// The definition of tasks within the lifecycle workflows instance.
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<TaskDefinitionItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -84,9 +84,9 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.TaskDefinit
         }
         /// <summary>
         /// Update the navigation property taskDefinitions in identityGovernance
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(Microsoft.Graph.Beta.Models.IdentityGovernance.TaskDefinition body, Action<TaskDefinitionItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -106,9 +106,9 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.TaskDefinit
         }
         /// <summary>
         /// Delete navigation property taskDefinitions for identityGovernance
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task DeleteAsync(Action<TaskDefinitionItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -119,9 +119,9 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.TaskDefinit
         }
         /// <summary>
         /// The definition of tasks within the lifecycle workflows instance.
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<Microsoft.Graph.Beta.Models.IdentityGovernance.TaskDefinition> GetAsync(Action<TaskDefinitionItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -132,10 +132,10 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.TaskDefinit
         }
         /// <summary>
         /// Update the navigation property taskDefinitions in identityGovernance
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<Microsoft.Graph.Beta.Models.IdentityGovernance.TaskDefinition> PatchAsync(Microsoft.Graph.Beta.Models.IdentityGovernance.TaskDefinition body, Action<TaskDefinitionItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);

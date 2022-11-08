@@ -17,23 +17,23 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Users.Item.InformationProtection.Policy.Labels {
     /// <summary>Provides operations to manage the labels property of the microsoft.graph.informationProtectionPolicy entity.</summary>
     public class LabelsRequestBuilder {
-        /// <summary>The Count property</summary>
+        /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The evaluateApplication property</summary>
+        /// <summary>Provides operations to call the evaluateApplication method.</summary>
         public EvaluateApplicationRequestBuilder EvaluateApplication { get =>
             new EvaluateApplicationRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The evaluateClassificationResults property</summary>
+        /// <summary>Provides operations to call the evaluateClassificationResults method.</summary>
         public EvaluateClassificationResultsRequestBuilder EvaluateClassificationResults { get =>
             new EvaluateClassificationResultsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The evaluateRemoval property</summary>
+        /// <summary>Provides operations to call the evaluateRemoval method.</summary>
         public EvaluateRemovalRequestBuilder EvaluateRemoval { get =>
             new EvaluateRemovalRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The extractLabel property</summary>
+        /// <summary>Provides operations to call the extractLabel method.</summary>
         public ExtractLabelRequestBuilder ExtractLabel { get =>
             new ExtractLabelRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Beta.Users.Item.InformationProtection.Policy.Labels {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the Microsoft.Graph.Beta.users.item.informationProtection.policy.labels.item collection</summary>
+        /// <summary>Provides operations to manage the labels property of the microsoft.graph.informationProtectionPolicy entity.</summary>
         public InformationProtectionLabelItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("informationProtectionLabel%2Did", position);
@@ -51,9 +51,9 @@ namespace Microsoft.Graph.Beta.Users.Item.InformationProtection.Policy.Labels {
         } }
         /// <summary>
         /// Instantiates a new LabelsRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public LabelsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -64,9 +64,9 @@ namespace Microsoft.Graph.Beta.Users.Item.InformationProtection.Policy.Labels {
         }
         /// <summary>
         /// Instantiates a new LabelsRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public LabelsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -78,8 +78,8 @@ namespace Microsoft.Graph.Beta.Users.Item.InformationProtection.Policy.Labels {
         }
         /// <summary>
         /// Get a collection of information protection labels available to the user or to the organization.
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<LabelsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -98,9 +98,9 @@ namespace Microsoft.Graph.Beta.Users.Item.InformationProtection.Policy.Labels {
         }
         /// <summary>
         /// Create new navigation property to labels for users
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePostRequestInformation(InformationProtectionLabel body, Action<LabelsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -120,9 +120,9 @@ namespace Microsoft.Graph.Beta.Users.Item.InformationProtection.Policy.Labels {
         }
         /// <summary>
         /// Get a collection of information protection labels available to the user or to the organization.
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<InformationProtectionLabelCollectionResponse> GetAsync(Action<LabelsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -133,10 +133,10 @@ namespace Microsoft.Graph.Beta.Users.Item.InformationProtection.Policy.Labels {
         }
         /// <summary>
         /// Create new navigation property to labels for users
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<InformationProtectionLabel> PostAsync(InformationProtectionLabel body, Action<LabelsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, requestConfiguration);

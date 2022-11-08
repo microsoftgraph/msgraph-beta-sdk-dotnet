@@ -18,10 +18,10 @@ namespace Microsoft.Graph.Beta.Reports.GetEmailActivityUserDetailWithDate {
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new GetEmailActivityUserDetailWithDateRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="date">Usage: date={date}</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public GetEmailActivityUserDetailWithDateRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Date? date = default) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -33,9 +33,9 @@ namespace Microsoft.Graph.Beta.Reports.GetEmailActivityUserDetailWithDate {
         }
         /// <summary>
         /// Instantiates a new GetEmailActivityUserDetailWithDateRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public GetEmailActivityUserDetailWithDateRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -47,8 +47,8 @@ namespace Microsoft.Graph.Beta.Reports.GetEmailActivityUserDetailWithDate {
         }
         /// <summary>
         /// Invoke function getEmailActivityUserDetail
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<GetEmailActivityUserDetailWithDateRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -65,9 +65,9 @@ namespace Microsoft.Graph.Beta.Reports.GetEmailActivityUserDetailWithDate {
         }
         /// <summary>
         /// Invoke function getEmailActivityUserDetail
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<Stream> GetAsync(Action<GetEmailActivityUserDetailWithDateRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {

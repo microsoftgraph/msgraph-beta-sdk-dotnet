@@ -16,15 +16,15 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.TenantRelationships {
     /// <summary>Provides operations to manage the tenantRelationship singleton.</summary>
     public class TenantRelationshipsRequestBuilder {
-        /// <summary>The delegatedAdminCustomers property</summary>
+        /// <summary>Provides operations to manage the delegatedAdminCustomers property of the microsoft.graph.tenantRelationship entity.</summary>
         public DelegatedAdminCustomersRequestBuilder DelegatedAdminCustomers { get =>
             new DelegatedAdminCustomersRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The delegatedAdminRelationships property</summary>
+        /// <summary>Provides operations to manage the delegatedAdminRelationships property of the microsoft.graph.tenantRelationship entity.</summary>
         public DelegatedAdminRelationshipsRequestBuilder DelegatedAdminRelationships { get =>
             new DelegatedAdminRelationshipsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The managedTenants property</summary>
+        /// <summary>Provides operations to manage the managedTenants property of the microsoft.graph.tenantRelationship entity.</summary>
         public ManagedTenantsRequestBuilder ManagedTenants { get =>
             new ManagedTenantsRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -36,9 +36,9 @@ namespace Microsoft.Graph.Beta.TenantRelationships {
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new TenantRelationshipsRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public TenantRelationshipsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -49,9 +49,9 @@ namespace Microsoft.Graph.Beta.TenantRelationships {
         }
         /// <summary>
         /// Instantiates a new TenantRelationshipsRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public TenantRelationshipsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -63,8 +63,8 @@ namespace Microsoft.Graph.Beta.TenantRelationships {
         }
         /// <summary>
         /// Get tenantRelationships
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<TenantRelationshipsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -83,9 +83,9 @@ namespace Microsoft.Graph.Beta.TenantRelationships {
         }
         /// <summary>
         /// Update tenantRelationships
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(TenantRelationship body, Action<TenantRelationshipsRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -105,25 +105,25 @@ namespace Microsoft.Graph.Beta.TenantRelationships {
         }
         /// <summary>
         /// Provides operations to call the findTenantInformationByDomainName method.
-        /// <param name="domainName">Usage: domainName=&apos;{domainName}&apos;</param>
         /// </summary>
+        /// <param name="domainName">Usage: domainName=&apos;{domainName}&apos;</param>
         public FindTenantInformationByDomainNameWithDomainNameRequestBuilder FindTenantInformationByDomainNameWithDomainName(string domainName) {
             if(string.IsNullOrEmpty(domainName)) throw new ArgumentNullException(nameof(domainName));
             return new FindTenantInformationByDomainNameWithDomainNameRequestBuilder(PathParameters, RequestAdapter, domainName);
         }
         /// <summary>
         /// Provides operations to call the findTenantInformationByTenantId method.
-        /// <param name="tenantId">Usage: tenantId=&apos;{tenantId}&apos;</param>
         /// </summary>
+        /// <param name="tenantId">Usage: tenantId=&apos;{tenantId}&apos;</param>
         public FindTenantInformationByTenantIdWithTenantIdRequestBuilder FindTenantInformationByTenantIdWithTenantId(string tenantId) {
             if(string.IsNullOrEmpty(tenantId)) throw new ArgumentNullException(nameof(tenantId));
             return new FindTenantInformationByTenantIdWithTenantIdRequestBuilder(PathParameters, RequestAdapter, tenantId);
         }
         /// <summary>
         /// Get tenantRelationships
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<TenantRelationship> GetAsync(Action<TenantRelationshipsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -134,10 +134,10 @@ namespace Microsoft.Graph.Beta.TenantRelationships {
         }
         /// <summary>
         /// Update tenantRelationships
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<TenantRelationship> PatchAsync(TenantRelationship body, Action<TenantRelationshipsRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);

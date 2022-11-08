@@ -16,27 +16,27 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Financials.Companies.Item.Customers.Item {
     /// <summary>Provides operations to manage the customers property of the microsoft.graph.company entity.</summary>
     public class CustomerItemRequestBuilder {
-        /// <summary>The currency property</summary>
+        /// <summary>Provides operations to manage the currency property of the microsoft.graph.customer entity.</summary>
         public CurrencyRequestBuilder Currency { get =>
             new CurrencyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>The paymentMethod property</summary>
+        /// <summary>Provides operations to manage the paymentMethod property of the microsoft.graph.customer entity.</summary>
         public PaymentMethodRequestBuilder PaymentMethod { get =>
             new PaymentMethodRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The paymentTerm property</summary>
+        /// <summary>Provides operations to manage the paymentTerm property of the microsoft.graph.customer entity.</summary>
         public PaymentTermRequestBuilder PaymentTerm { get =>
             new PaymentTermRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The picture property</summary>
+        /// <summary>Provides operations to manage the picture property of the microsoft.graph.customer entity.</summary>
         public PictureRequestBuilder Picture { get =>
             new PictureRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>The shipmentMethod property</summary>
+        /// <summary>Provides operations to manage the shipmentMethod property of the microsoft.graph.customer entity.</summary>
         public ShipmentMethodRequestBuilder ShipmentMethod { get =>
             new ShipmentMethodRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -44,9 +44,9 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.Customers.Item {
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new CustomerItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public CustomerItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -57,9 +57,9 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.Customers.Item {
         }
         /// <summary>
         /// Instantiates a new CustomerItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public CustomerItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -71,8 +71,8 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.Customers.Item {
         }
         /// <summary>
         /// Delete navigation property customers for financials
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateDeleteRequestInformation(Action<CustomerItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.DELETE,
@@ -89,8 +89,8 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.Customers.Item {
         }
         /// <summary>
         /// Get customers from financials
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<CustomerItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -109,9 +109,9 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.Customers.Item {
         }
         /// <summary>
         /// Update the navigation property customers in financials
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(Microsoft.Graph.Beta.Models.Customer body, Action<CustomerItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -131,9 +131,9 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.Customers.Item {
         }
         /// <summary>
         /// Delete navigation property customers for financials
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task DeleteAsync(Action<CustomerItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -144,9 +144,9 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.Customers.Item {
         }
         /// <summary>
         /// Get customers from financials
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<Microsoft.Graph.Beta.Models.Customer> GetAsync(Action<CustomerItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -157,10 +157,10 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.Customers.Item {
         }
         /// <summary>
         /// Update the navigation property customers in financials
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<Microsoft.Graph.Beta.Models.Customer> PatchAsync(Microsoft.Graph.Beta.Models.Customer body, Action<CustomerItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);

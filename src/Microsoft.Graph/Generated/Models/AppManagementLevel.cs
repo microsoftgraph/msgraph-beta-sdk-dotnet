@@ -15,5 +15,7 @@ namespace Microsoft.Graph.Beta.Models {
         AndroidOpenSourceProjectUserAssociated,
         /// <summary>Android Open Source Project (AOSP) userless devices</summary>
         AndroidOpenSourceProjectUserless,
+        /// <summary>Place holder for evolvable enum</summary>
+        UnknownFutureValue,
     }
 }

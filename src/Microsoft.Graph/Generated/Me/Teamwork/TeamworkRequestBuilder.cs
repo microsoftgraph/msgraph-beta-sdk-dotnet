@@ -14,11 +14,11 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Me.Teamwork {
     /// <summary>Provides operations to manage the teamwork property of the microsoft.graph.user entity.</summary>
     public class TeamworkRequestBuilder {
-        /// <summary>The associatedTeams property</summary>
+        /// <summary>Provides operations to manage the associatedTeams property of the microsoft.graph.userTeamwork entity.</summary>
         public AssociatedTeamsRequestBuilder AssociatedTeams { get =>
             new AssociatedTeamsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The installedApps property</summary>
+        /// <summary>Provides operations to manage the installedApps property of the microsoft.graph.userTeamwork entity.</summary>
         public InstalledAppsRequestBuilder InstalledApps { get =>
             new InstalledAppsRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.Me.Teamwork {
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>The sendActivityNotification property</summary>
+        /// <summary>Provides operations to call the sendActivityNotification method.</summary>
         public SendActivityNotificationRequestBuilder SendActivityNotification { get =>
             new SendActivityNotificationRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -34,9 +34,9 @@ namespace Microsoft.Graph.Beta.Me.Teamwork {
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new TeamworkRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public TeamworkRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -47,9 +47,9 @@ namespace Microsoft.Graph.Beta.Me.Teamwork {
         }
         /// <summary>
         /// Instantiates a new TeamworkRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public TeamworkRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -61,8 +61,8 @@ namespace Microsoft.Graph.Beta.Me.Teamwork {
         }
         /// <summary>
         /// Delete navigation property teamwork for me
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateDeleteRequestInformation(Action<TeamworkRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.DELETE,
@@ -79,8 +79,8 @@ namespace Microsoft.Graph.Beta.Me.Teamwork {
         }
         /// <summary>
         /// A container for Microsoft Teams features available for the user. Read-only. Nullable.
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<TeamworkRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -99,9 +99,9 @@ namespace Microsoft.Graph.Beta.Me.Teamwork {
         }
         /// <summary>
         /// Update the navigation property teamwork in me
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(UserTeamwork body, Action<TeamworkRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -121,9 +121,9 @@ namespace Microsoft.Graph.Beta.Me.Teamwork {
         }
         /// <summary>
         /// Delete navigation property teamwork for me
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task DeleteAsync(Action<TeamworkRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -134,9 +134,9 @@ namespace Microsoft.Graph.Beta.Me.Teamwork {
         }
         /// <summary>
         /// A container for Microsoft Teams features available for the user. Read-only. Nullable.
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<UserTeamwork> GetAsync(Action<TeamworkRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -147,10 +147,10 @@ namespace Microsoft.Graph.Beta.Me.Teamwork {
         }
         /// <summary>
         /// Update the navigation property teamwork in me
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<UserTeamwork> PatchAsync(UserTeamwork body, Action<TeamworkRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);

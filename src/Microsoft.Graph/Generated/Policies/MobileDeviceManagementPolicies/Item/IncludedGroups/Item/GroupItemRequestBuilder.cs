@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Policies.MobileDeviceManagementPolicies.Item.Incl
     public class GroupItemRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>The Ref property</summary>
+        /// <summary>Provides operations to manage the collection of policyRoot entities.</summary>
         public RefRequestBuilder Ref { get =>
             new RefRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -20,9 +20,9 @@ namespace Microsoft.Graph.Beta.Policies.MobileDeviceManagementPolicies.Item.Incl
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new GroupItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public GroupItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -33,9 +33,9 @@ namespace Microsoft.Graph.Beta.Policies.MobileDeviceManagementPolicies.Item.Incl
         }
         /// <summary>
         /// Instantiates a new GroupItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public GroupItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));

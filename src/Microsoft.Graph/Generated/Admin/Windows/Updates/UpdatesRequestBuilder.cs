@@ -15,11 +15,11 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Admin.Windows.Updates {
     /// <summary>Provides operations to manage the updates property of the microsoft.graph.windowsUpdates.windows entity.</summary>
     public class UpdatesRequestBuilder {
-        /// <summary>The catalog property</summary>
+        /// <summary>Provides operations to manage the catalog property of the microsoft.graph.windowsUpdates.updates entity.</summary>
         public CatalogRequestBuilder Catalog { get =>
             new CatalogRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The deployments property</summary>
+        /// <summary>Provides operations to manage the deployments property of the microsoft.graph.windowsUpdates.updates entity.</summary>
         public DeploymentsRequestBuilder Deployments { get =>
             new DeploymentsRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -27,11 +27,11 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates {
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>The resourceConnections property</summary>
+        /// <summary>Provides operations to manage the resourceConnections property of the microsoft.graph.windowsUpdates.updates entity.</summary>
         public ResourceConnectionsRequestBuilder ResourceConnections { get =>
             new ResourceConnectionsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The updatableAssets property</summary>
+        /// <summary>Provides operations to manage the updatableAssets property of the microsoft.graph.windowsUpdates.updates entity.</summary>
         public UpdatableAssetsRequestBuilder UpdatableAssets { get =>
             new UpdatableAssetsRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -39,9 +39,9 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates {
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new UpdatesRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public UpdatesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -52,9 +52,9 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates {
         }
         /// <summary>
         /// Instantiates a new UpdatesRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public UpdatesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -66,8 +66,8 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates {
         }
         /// <summary>
         /// Delete navigation property updates for admin
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateDeleteRequestInformation(Action<UpdatesRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.DELETE,
@@ -84,8 +84,8 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates {
         }
         /// <summary>
         /// Entity that acts as a container for the functionality of the Windows Update for Business deployment service. Read-only.
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<UpdatesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -104,9 +104,9 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates {
         }
         /// <summary>
         /// Update the navigation property updates in admin
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(Microsoft.Graph.Beta.Models.WindowsUpdates.Updates body, Action<UpdatesRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -126,9 +126,9 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates {
         }
         /// <summary>
         /// Delete navigation property updates for admin
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task DeleteAsync(Action<UpdatesRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -139,9 +139,9 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates {
         }
         /// <summary>
         /// Entity that acts as a container for the functionality of the Windows Update for Business deployment service. Read-only.
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<Microsoft.Graph.Beta.Models.WindowsUpdates.Updates> GetAsync(Action<UpdatesRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -152,10 +152,10 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates {
         }
         /// <summary>
         /// Update the navigation property updates in admin
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<Microsoft.Graph.Beta.Models.WindowsUpdates.Updates> PatchAsync(Microsoft.Graph.Beta.Models.WindowsUpdates.Updates body, Action<UpdatesRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);

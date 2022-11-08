@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Policies.AuthenticationStrengthPolicies {
     /// <summary>Provides operations to manage the authenticationStrengthPolicies property of the microsoft.graph.policyRoot entity.</summary>
     public class AuthenticationStrengthPoliciesRequestBuilder {
-        /// <summary>The Count property</summary>
+        /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Beta.Policies.AuthenticationStrengthPolicies {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the Microsoft.Graph.Beta.policies.authenticationStrengthPolicies.item collection</summary>
+        /// <summary>Provides operations to manage the authenticationStrengthPolicies property of the microsoft.graph.policyRoot entity.</summary>
         public AuthenticationStrengthPolicyItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("authenticationStrengthPolicy%2Did", position);
@@ -32,9 +32,9 @@ namespace Microsoft.Graph.Beta.Policies.AuthenticationStrengthPolicies {
         } }
         /// <summary>
         /// Instantiates a new AuthenticationStrengthPoliciesRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public AuthenticationStrengthPoliciesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -45,9 +45,9 @@ namespace Microsoft.Graph.Beta.Policies.AuthenticationStrengthPolicies {
         }
         /// <summary>
         /// Instantiates a new AuthenticationStrengthPoliciesRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public AuthenticationStrengthPoliciesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -59,8 +59,8 @@ namespace Microsoft.Graph.Beta.Policies.AuthenticationStrengthPolicies {
         }
         /// <summary>
         /// Get a list of the authenticationStrengthPolicy objects and their properties. This API returns both built-in and custom policies.
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<AuthenticationStrengthPoliciesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -79,9 +79,9 @@ namespace Microsoft.Graph.Beta.Policies.AuthenticationStrengthPolicies {
         }
         /// <summary>
         /// Create a new custom authenticationStrengthPolicy object.
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePostRequestInformation(AuthenticationStrengthPolicy body, Action<AuthenticationStrengthPoliciesRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -101,17 +101,17 @@ namespace Microsoft.Graph.Beta.Policies.AuthenticationStrengthPolicies {
         }
         /// <summary>
         /// Provides operations to call the findByMethodMode method.
-        /// <param name="authenticationMethodModes">Usage: authenticationMethodModes={authenticationMethodModes}</param>
         /// </summary>
+        /// <param name="authenticationMethodModes">Usage: authenticationMethodModes={authenticationMethodModes}</param>
         public FindByMethodModeWithAuthenticationMethodModesRequestBuilder FindByMethodModeWithAuthenticationMethodModes(string authenticationMethodModes) {
             if(string.IsNullOrEmpty(authenticationMethodModes)) throw new ArgumentNullException(nameof(authenticationMethodModes));
             return new FindByMethodModeWithAuthenticationMethodModesRequestBuilder(PathParameters, RequestAdapter, authenticationMethodModes);
         }
         /// <summary>
         /// Get a list of the authenticationStrengthPolicy objects and their properties. This API returns both built-in and custom policies.
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<AuthenticationStrengthPolicyCollectionResponse> GetAsync(Action<AuthenticationStrengthPoliciesRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -122,10 +122,10 @@ namespace Microsoft.Graph.Beta.Policies.AuthenticationStrengthPolicies {
         }
         /// <summary>
         /// Create a new custom authenticationStrengthPolicy object.
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<AuthenticationStrengthPolicy> PostAsync(AuthenticationStrengthPolicy body, Action<AuthenticationStrengthPoliciesRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, requestConfiguration);

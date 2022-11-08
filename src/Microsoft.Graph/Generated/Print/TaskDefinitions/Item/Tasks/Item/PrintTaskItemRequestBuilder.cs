@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Print.TaskDefinitions.Item.Tasks.Item {
     /// <summary>Provides operations to manage the tasks property of the microsoft.graph.printTaskDefinition entity.</summary>
     public class PrintTaskItemRequestBuilder {
-        /// <summary>The definition property</summary>
+        /// <summary>Provides operations to manage the definition property of the microsoft.graph.printTask entity.</summary>
         public DefinitionRequestBuilder Definition { get =>
             new DefinitionRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Print.TaskDefinitions.Item.Tasks.Item {
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>The trigger property</summary>
+        /// <summary>Provides operations to manage the trigger property of the microsoft.graph.printTask entity.</summary>
         public TriggerRequestBuilder Trigger { get =>
             new TriggerRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -29,9 +29,9 @@ namespace Microsoft.Graph.Beta.Print.TaskDefinitions.Item.Tasks.Item {
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new PrintTaskItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public PrintTaskItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -42,9 +42,9 @@ namespace Microsoft.Graph.Beta.Print.TaskDefinitions.Item.Tasks.Item {
         }
         /// <summary>
         /// Instantiates a new PrintTaskItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public PrintTaskItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -56,8 +56,8 @@ namespace Microsoft.Graph.Beta.Print.TaskDefinitions.Item.Tasks.Item {
         }
         /// <summary>
         /// Delete navigation property tasks for print
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateDeleteRequestInformation(Action<PrintTaskItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.DELETE,
@@ -74,8 +74,8 @@ namespace Microsoft.Graph.Beta.Print.TaskDefinitions.Item.Tasks.Item {
         }
         /// <summary>
         /// A list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<PrintTaskItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -94,9 +94,9 @@ namespace Microsoft.Graph.Beta.Print.TaskDefinitions.Item.Tasks.Item {
         }
         /// <summary>
         /// Update the navigation property tasks in print
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(PrintTask body, Action<PrintTaskItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -116,9 +116,9 @@ namespace Microsoft.Graph.Beta.Print.TaskDefinitions.Item.Tasks.Item {
         }
         /// <summary>
         /// Delete navigation property tasks for print
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task DeleteAsync(Action<PrintTaskItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -129,9 +129,9 @@ namespace Microsoft.Graph.Beta.Print.TaskDefinitions.Item.Tasks.Item {
         }
         /// <summary>
         /// A list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<PrintTask> GetAsync(Action<PrintTaskItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -142,10 +142,10 @@ namespace Microsoft.Graph.Beta.Print.TaskDefinitions.Item.Tasks.Item {
         }
         /// <summary>
         /// Update the navigation property tasks in print
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<PrintTask> PatchAsync(PrintTask body, Action<PrintTaskItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);

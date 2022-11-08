@@ -13,11 +13,11 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.IdentityGovernance.TermsOfUse {
     /// <summary>Provides operations to manage the termsOfUse property of the microsoft.graph.identityGovernance entity.</summary>
     public class TermsOfUseRequestBuilder {
-        /// <summary>The agreementAcceptances property</summary>
+        /// <summary>Provides operations to manage the agreementAcceptances property of the microsoft.graph.termsOfUseContainer entity.</summary>
         public AgreementAcceptancesRequestBuilder AgreementAcceptances { get =>
             new AgreementAcceptancesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The agreements property</summary>
+        /// <summary>Provides operations to manage the agreements property of the microsoft.graph.termsOfUseContainer entity.</summary>
         public AgreementsRequestBuilder Agreements { get =>
             new AgreementsRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -29,9 +29,9 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.TermsOfUse {
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new TermsOfUseRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public TermsOfUseRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -42,9 +42,9 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.TermsOfUse {
         }
         /// <summary>
         /// Instantiates a new TermsOfUseRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public TermsOfUseRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -56,8 +56,8 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.TermsOfUse {
         }
         /// <summary>
         /// Delete navigation property termsOfUse for identityGovernance
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateDeleteRequestInformation(Action<TermsOfUseRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.DELETE,
@@ -74,8 +74,8 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.TermsOfUse {
         }
         /// <summary>
         /// Get termsOfUse from identityGovernance
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<TermsOfUseRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -94,9 +94,9 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.TermsOfUse {
         }
         /// <summary>
         /// Update the navigation property termsOfUse in identityGovernance
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(TermsOfUseContainer body, Action<TermsOfUseRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -116,9 +116,9 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.TermsOfUse {
         }
         /// <summary>
         /// Delete navigation property termsOfUse for identityGovernance
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task DeleteAsync(Action<TermsOfUseRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -129,9 +129,9 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.TermsOfUse {
         }
         /// <summary>
         /// Get termsOfUse from identityGovernance
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<TermsOfUseContainer> GetAsync(Action<TermsOfUseRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -142,10 +142,10 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.TermsOfUse {
         }
         /// <summary>
         /// Update the navigation property termsOfUse in identityGovernance
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<TermsOfUseContainer> PatchAsync(TermsOfUseContainer body, Action<TermsOfUseRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);

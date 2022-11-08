@@ -17,29 +17,29 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Devices.Item.RegisteredOwners {
     /// <summary>Provides operations to manage the registeredOwners property of the microsoft.graph.device entity.</summary>
     public class RegisteredOwnersRequestBuilder {
-        /// <summary>The Count property</summary>
+        /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The endpoint property</summary>
+        /// <summary>Casts the previous resource to endpoint.</summary>
         public EndpointRequestBuilder Endpoint { get =>
             new EndpointRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>The Ref property</summary>
+        /// <summary>Provides operations to manage the collection of device entities.</summary>
         public RefRequestBuilder Ref { get =>
             new RefRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>The servicePrincipal property</summary>
+        /// <summary>Casts the previous resource to servicePrincipal.</summary>
         public ServicePrincipalRequestBuilder ServicePrincipal { get =>
             new ServicePrincipalRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>The user property</summary>
+        /// <summary>Casts the previous resource to user.</summary>
         public UserRequestBuilder User { get =>
             new UserRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -51,9 +51,9 @@ namespace Microsoft.Graph.Beta.Devices.Item.RegisteredOwners {
         } }
         /// <summary>
         /// Instantiates a new RegisteredOwnersRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public RegisteredOwnersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -64,9 +64,9 @@ namespace Microsoft.Graph.Beta.Devices.Item.RegisteredOwners {
         }
         /// <summary>
         /// Instantiates a new RegisteredOwnersRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public RegisteredOwnersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -78,8 +78,8 @@ namespace Microsoft.Graph.Beta.Devices.Item.RegisteredOwners {
         }
         /// <summary>
         /// The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable. Supports $expand.
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<RegisteredOwnersRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -98,9 +98,9 @@ namespace Microsoft.Graph.Beta.Devices.Item.RegisteredOwners {
         }
         /// <summary>
         /// The user that cloud joined the device or registered their personal device. The registered owner is set at the time of registration. Currently, there can be only one owner. Read-only. Nullable. Supports $expand.
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<DirectoryObjectCollectionResponse> GetAsync(Action<RegisteredOwnersRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {

@@ -16,25 +16,25 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item {
     /// <summary>Provides operations to manage the collection of onPremisesPublishingProfile entities.</summary>
     public class OnPremisesPublishingProfileItemRequestBuilder {
-        /// <summary>The agentGroups property</summary>
+        /// <summary>Provides operations to manage the agentGroups property of the microsoft.graph.onPremisesPublishingProfile entity.</summary>
         public AgentGroupsRequestBuilder AgentGroups { get =>
             new AgentGroupsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The agents property</summary>
+        /// <summary>Provides operations to manage the agents property of the microsoft.graph.onPremisesPublishingProfile entity.</summary>
         public AgentsRequestBuilder Agents { get =>
             new AgentsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The connectorGroups property</summary>
+        /// <summary>Provides operations to manage the connectorGroups property of the microsoft.graph.onPremisesPublishingProfile entity.</summary>
         public ConnectorGroupsRequestBuilder ConnectorGroups { get =>
             new ConnectorGroupsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The connectors property</summary>
+        /// <summary>Provides operations to manage the connectors property of the microsoft.graph.onPremisesPublishingProfile entity.</summary>
         public ConnectorsRequestBuilder Connectors { get =>
             new ConnectorsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>The publishedResources property</summary>
+        /// <summary>Provides operations to manage the publishedResources property of the microsoft.graph.onPremisesPublishingProfile entity.</summary>
         public PublishedResourcesRequestBuilder PublishedResources { get =>
             new PublishedResourcesRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -44,9 +44,9 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item {
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new OnPremisesPublishingProfileItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public OnPremisesPublishingProfileItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -57,9 +57,9 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item {
         }
         /// <summary>
         /// Instantiates a new OnPremisesPublishingProfileItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public OnPremisesPublishingProfileItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -71,8 +71,8 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item {
         }
         /// <summary>
         /// Delete entity from onPremisesPublishingProfiles
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateDeleteRequestInformation(Action<OnPremisesPublishingProfileItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.DELETE,
@@ -89,8 +89,8 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item {
         }
         /// <summary>
         /// Get entity from onPremisesPublishingProfiles by key
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<OnPremisesPublishingProfileItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -109,9 +109,9 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item {
         }
         /// <summary>
         /// Update entity in onPremisesPublishingProfiles
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(OnPremisesPublishingProfile body, Action<OnPremisesPublishingProfileItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -131,9 +131,9 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item {
         }
         /// <summary>
         /// Delete entity from onPremisesPublishingProfiles
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task DeleteAsync(Action<OnPremisesPublishingProfileItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -144,9 +144,9 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item {
         }
         /// <summary>
         /// Get entity from onPremisesPublishingProfiles by key
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<OnPremisesPublishingProfile> GetAsync(Action<OnPremisesPublishingProfileItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -157,10 +157,10 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item {
         }
         /// <summary>
         /// Update entity in onPremisesPublishingProfiles
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<OnPremisesPublishingProfile> PatchAsync(OnPremisesPublishingProfile body, Action<OnPremisesPublishingProfileItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);

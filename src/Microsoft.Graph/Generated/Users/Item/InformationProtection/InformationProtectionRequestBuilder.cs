@@ -21,57 +21,57 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Users.Item.InformationProtection {
     /// <summary>Provides operations to manage the informationProtection property of the microsoft.graph.user entity.</summary>
     public class InformationProtectionRequestBuilder {
-        /// <summary>The bitlocker property</summary>
+        /// <summary>Provides operations to manage the bitlocker property of the microsoft.graph.informationProtection entity.</summary>
         public BitlockerRequestBuilder Bitlocker { get =>
             new BitlockerRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The dataLossPreventionPolicies property</summary>
+        /// <summary>Provides operations to manage the dataLossPreventionPolicies property of the microsoft.graph.informationProtection entity.</summary>
         public DataLossPreventionPoliciesRequestBuilder DataLossPreventionPolicies { get =>
             new DataLossPreventionPoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The decryptBuffer property</summary>
+        /// <summary>Provides operations to call the decryptBuffer method.</summary>
         public DecryptBufferRequestBuilder DecryptBuffer { get =>
             new DecryptBufferRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The encryptBuffer property</summary>
+        /// <summary>Provides operations to call the encryptBuffer method.</summary>
         public EncryptBufferRequestBuilder EncryptBuffer { get =>
             new EncryptBufferRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>The policy property</summary>
+        /// <summary>Provides operations to manage the policy property of the microsoft.graph.informationProtection entity.</summary>
         public PolicyRequestBuilder Policy { get =>
             new PolicyRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>The sensitivityLabels property</summary>
+        /// <summary>Provides operations to manage the sensitivityLabels property of the microsoft.graph.informationProtection entity.</summary>
         public SensitivityLabelsRequestBuilder SensitivityLabels { get =>
             new SensitivityLabelsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The sensitivityPolicySettings property</summary>
+        /// <summary>Provides operations to manage the sensitivityPolicySettings property of the microsoft.graph.informationProtection entity.</summary>
         public SensitivityPolicySettingsRequestBuilder SensitivityPolicySettings { get =>
             new SensitivityPolicySettingsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The signDigest property</summary>
+        /// <summary>Provides operations to call the signDigest method.</summary>
         public SignDigestRequestBuilder SignDigest { get =>
             new SignDigestRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The threatAssessmentRequests property</summary>
+        /// <summary>Provides operations to manage the threatAssessmentRequests property of the microsoft.graph.informationProtection entity.</summary>
         public ThreatAssessmentRequestsRequestBuilder ThreatAssessmentRequests { get =>
             new ThreatAssessmentRequestsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>The verifySignature property</summary>
+        /// <summary>Provides operations to call the verifySignature method.</summary>
         public VerifySignatureRequestBuilder VerifySignature { get =>
             new VerifySignatureRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new InformationProtectionRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public InformationProtectionRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -82,9 +82,9 @@ namespace Microsoft.Graph.Beta.Users.Item.InformationProtection {
         }
         /// <summary>
         /// Instantiates a new InformationProtectionRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public InformationProtectionRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -96,8 +96,8 @@ namespace Microsoft.Graph.Beta.Users.Item.InformationProtection {
         }
         /// <summary>
         /// Delete navigation property informationProtection for users
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateDeleteRequestInformation(Action<InformationProtectionRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.DELETE,
@@ -114,8 +114,8 @@ namespace Microsoft.Graph.Beta.Users.Item.InformationProtection {
         }
         /// <summary>
         /// Get informationProtection from users
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<InformationProtectionRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -134,9 +134,9 @@ namespace Microsoft.Graph.Beta.Users.Item.InformationProtection {
         }
         /// <summary>
         /// Update the navigation property informationProtection in users
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(Microsoft.Graph.Beta.Models.InformationProtection body, Action<InformationProtectionRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -156,9 +156,9 @@ namespace Microsoft.Graph.Beta.Users.Item.InformationProtection {
         }
         /// <summary>
         /// Delete navigation property informationProtection for users
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task DeleteAsync(Action<InformationProtectionRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -169,9 +169,9 @@ namespace Microsoft.Graph.Beta.Users.Item.InformationProtection {
         }
         /// <summary>
         /// Get informationProtection from users
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<Microsoft.Graph.Beta.Models.InformationProtection> GetAsync(Action<InformationProtectionRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -182,10 +182,10 @@ namespace Microsoft.Graph.Beta.Users.Item.InformationProtection {
         }
         /// <summary>
         /// Update the navigation property informationProtection in users
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<Microsoft.Graph.Beta.Models.InformationProtection> PatchAsync(Microsoft.Graph.Beta.Models.InformationProtection body, Action<InformationProtectionRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);

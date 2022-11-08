@@ -19,19 +19,19 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.AccessReviews.Item {
     /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class AccessReviewItemRequestBuilder {
-        /// <summary>The applyDecisions property</summary>
+        /// <summary>Provides operations to call the applyDecisions method.</summary>
         public ApplyDecisionsRequestBuilder ApplyDecisions { get =>
             new ApplyDecisionsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The decisions property</summary>
+        /// <summary>Provides operations to manage the decisions property of the microsoft.graph.accessReview entity.</summary>
         public DecisionsRequestBuilder Decisions { get =>
             new DecisionsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The instances property</summary>
+        /// <summary>Provides operations to manage the instances property of the microsoft.graph.accessReview entity.</summary>
         public InstancesRequestBuilder Instances { get =>
             new InstancesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The myDecisions property</summary>
+        /// <summary>Provides operations to manage the myDecisions property of the microsoft.graph.accessReview entity.</summary>
         public MyDecisionsRequestBuilder MyDecisions { get =>
             new MyDecisionsRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -39,19 +39,19 @@ namespace Microsoft.Graph.Beta.AccessReviews.Item {
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>The resetDecisions property</summary>
+        /// <summary>Provides operations to call the resetDecisions method.</summary>
         public ResetDecisionsRequestBuilder ResetDecisions { get =>
             new ResetDecisionsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The reviewers property</summary>
+        /// <summary>Provides operations to manage the reviewers property of the microsoft.graph.accessReview entity.</summary>
         public ReviewersRequestBuilder Reviewers { get =>
             new ReviewersRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The sendReminder property</summary>
+        /// <summary>Provides operations to call the sendReminder method.</summary>
         public SendReminderRequestBuilder SendReminder { get =>
             new SendReminderRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The stop property</summary>
+        /// <summary>Provides operations to call the stop method.</summary>
         public StopRequestBuilder Stop { get =>
             new StopRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -59,9 +59,9 @@ namespace Microsoft.Graph.Beta.AccessReviews.Item {
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new AccessReviewItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public AccessReviewItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -72,9 +72,9 @@ namespace Microsoft.Graph.Beta.AccessReviews.Item {
         }
         /// <summary>
         /// Instantiates a new AccessReviewItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public AccessReviewItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -86,8 +86,8 @@ namespace Microsoft.Graph.Beta.AccessReviews.Item {
         }
         /// <summary>
         /// In the Azure AD access reviews feature, delete an accessReview object.
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateDeleteRequestInformation(Action<AccessReviewItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.DELETE,
@@ -104,8 +104,8 @@ namespace Microsoft.Graph.Beta.AccessReviews.Item {
         }
         /// <summary>
         /// In the Azure AD access reviews feature, retrieve an accessReview object.   To retrieve the reviewers of the access review, use the list accessReview reviewers API. To retrieve the decisions of the access review, use the list accessReview decisions API, or the list my accessReview decisions API. If this is a recurring access review, no decisions will be associated with the recurring access review series. Instead, use the `instances` relationship of that series to retrieve an accessReview collection of the past, current, and future instances of the access review. Each past and current instance will have decisions.
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<AccessReviewItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -124,9 +124,9 @@ namespace Microsoft.Graph.Beta.AccessReviews.Item {
         }
         /// <summary>
         /// In the Azure AD access reviews feature, update an existing accessReview object to change one or more of its properties. This API is not intended to change the reviewers or decisions of a review.  To change the reviewers, use the addReviewer or removeReviewer APIs.  To stop an already-started one-time review, or an already-started instance of a recurring review, early, use the stop API. To apply the decisions to the target group or app access rights, use the apply API. 
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(AccessReview body, Action<AccessReviewItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -146,9 +146,9 @@ namespace Microsoft.Graph.Beta.AccessReviews.Item {
         }
         /// <summary>
         /// In the Azure AD access reviews feature, delete an accessReview object.
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task DeleteAsync(Action<AccessReviewItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -159,9 +159,9 @@ namespace Microsoft.Graph.Beta.AccessReviews.Item {
         }
         /// <summary>
         /// In the Azure AD access reviews feature, retrieve an accessReview object.   To retrieve the reviewers of the access review, use the list accessReview reviewers API. To retrieve the decisions of the access review, use the list accessReview decisions API, or the list my accessReview decisions API. If this is a recurring access review, no decisions will be associated with the recurring access review series. Instead, use the `instances` relationship of that series to retrieve an accessReview collection of the past, current, and future instances of the access review. Each past and current instance will have decisions.
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<AccessReview> GetAsync(Action<AccessReviewItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -172,10 +172,10 @@ namespace Microsoft.Graph.Beta.AccessReviews.Item {
         }
         /// <summary>
         /// In the Azure AD access reviews feature, update an existing accessReview object to change one or more of its properties. This API is not intended to change the reviewers or decisions of a review.  To change the reviewers, use the addReviewer or removeReviewer APIs.  To stop an already-started one-time review, or an already-started instance of a recurring review, early, use the stop API. To apply the decisions to the target group or app access rights, use the apply API. 
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<AccessReview> PatchAsync(AccessReview body, Action<AccessReviewItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);

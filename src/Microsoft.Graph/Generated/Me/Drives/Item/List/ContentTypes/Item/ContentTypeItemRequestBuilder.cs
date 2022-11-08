@@ -21,43 +21,43 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Me.Drives.Item.List.ContentTypes.Item {
     /// <summary>Provides operations to manage the contentTypes property of the microsoft.graph.list entity.</summary>
     public class ContentTypeItemRequestBuilder {
-        /// <summary>The associateWithHubSites property</summary>
+        /// <summary>Provides operations to call the associateWithHubSites method.</summary>
         public AssociateWithHubSitesRequestBuilder AssociateWithHubSites { get =>
             new AssociateWithHubSitesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The base property</summary>
+        /// <summary>Provides operations to manage the base property of the microsoft.graph.contentType entity.</summary>
         public BaseRequestBuilder Base { get =>
             new BaseRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The baseTypes property</summary>
+        /// <summary>Provides operations to manage the baseTypes property of the microsoft.graph.contentType entity.</summary>
         public BaseTypesRequestBuilder BaseTypes { get =>
             new BaseTypesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The columnLinks property</summary>
+        /// <summary>Provides operations to manage the columnLinks property of the microsoft.graph.contentType entity.</summary>
         public ColumnLinksRequestBuilder ColumnLinks { get =>
             new ColumnLinksRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The columnPositions property</summary>
+        /// <summary>Provides operations to manage the columnPositions property of the microsoft.graph.contentType entity.</summary>
         public ColumnPositionsRequestBuilder ColumnPositions { get =>
             new ColumnPositionsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The columns property</summary>
+        /// <summary>Provides operations to manage the columns property of the microsoft.graph.contentType entity.</summary>
         public ColumnsRequestBuilder Columns { get =>
             new ColumnsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The copyToDefaultContentLocation property</summary>
+        /// <summary>Provides operations to call the copyToDefaultContentLocation method.</summary>
         public CopyToDefaultContentLocationRequestBuilder CopyToDefaultContentLocation { get =>
             new CopyToDefaultContentLocationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>The publish property</summary>
+        /// <summary>Provides operations to call the publish method.</summary>
         public PublishRequestBuilder Publish { get =>
             new PublishRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>The unpublish property</summary>
+        /// <summary>Provides operations to call the unpublish method.</summary>
         public UnpublishRequestBuilder Unpublish { get =>
             new UnpublishRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -65,9 +65,9 @@ namespace Microsoft.Graph.Beta.Me.Drives.Item.List.ContentTypes.Item {
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new ContentTypeItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public ContentTypeItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -78,9 +78,9 @@ namespace Microsoft.Graph.Beta.Me.Drives.Item.List.ContentTypes.Item {
         }
         /// <summary>
         /// Instantiates a new ContentTypeItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public ContentTypeItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -92,8 +92,8 @@ namespace Microsoft.Graph.Beta.Me.Drives.Item.List.ContentTypes.Item {
         }
         /// <summary>
         /// Delete navigation property contentTypes for me
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateDeleteRequestInformation(Action<ContentTypeItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.DELETE,
@@ -110,8 +110,8 @@ namespace Microsoft.Graph.Beta.Me.Drives.Item.List.ContentTypes.Item {
         }
         /// <summary>
         /// Get contentTypes from me
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<ContentTypeItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -130,9 +130,9 @@ namespace Microsoft.Graph.Beta.Me.Drives.Item.List.ContentTypes.Item {
         }
         /// <summary>
         /// Update the navigation property contentTypes in me
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(ContentType body, Action<ContentTypeItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -152,9 +152,9 @@ namespace Microsoft.Graph.Beta.Me.Drives.Item.List.ContentTypes.Item {
         }
         /// <summary>
         /// Delete navigation property contentTypes for me
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task DeleteAsync(Action<ContentTypeItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -165,9 +165,9 @@ namespace Microsoft.Graph.Beta.Me.Drives.Item.List.ContentTypes.Item {
         }
         /// <summary>
         /// Get contentTypes from me
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<ContentType> GetAsync(Action<ContentTypeItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -184,10 +184,10 @@ namespace Microsoft.Graph.Beta.Me.Drives.Item.List.ContentTypes.Item {
         }
         /// <summary>
         /// Update the navigation property contentTypes in me
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<ContentType> PatchAsync(ContentType body, Action<ContentTypeItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);

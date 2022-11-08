@@ -21,47 +21,47 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoices.Item {
     /// <summary>Provides operations to manage the salesInvoices property of the microsoft.graph.company entity.</summary>
     public class SalesInvoiceItemRequestBuilder {
-        /// <summary>The cancel property</summary>
+        /// <summary>Provides operations to call the cancel method.</summary>
         public CancelRequestBuilder Cancel { get =>
             new CancelRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The cancelAndSend property</summary>
+        /// <summary>Provides operations to call the cancelAndSend method.</summary>
         public CancelAndSendRequestBuilder CancelAndSend { get =>
             new CancelAndSendRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The currency property</summary>
+        /// <summary>Provides operations to manage the currency property of the microsoft.graph.salesInvoice entity.</summary>
         public CurrencyRequestBuilder Currency { get =>
             new CurrencyRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The customer property</summary>
+        /// <summary>Provides operations to manage the customer property of the microsoft.graph.salesInvoice entity.</summary>
         public CustomerRequestBuilder Customer { get =>
             new CustomerRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>The paymentTerm property</summary>
+        /// <summary>Provides operations to manage the paymentTerm property of the microsoft.graph.salesInvoice entity.</summary>
         public PaymentTermRequestBuilder PaymentTerm { get =>
             new PaymentTermRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The post property</summary>
+        /// <summary>Provides operations to call the post method.</summary>
         public PostRequestBuilder Post { get =>
             new PostRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The postAndSend property</summary>
+        /// <summary>Provides operations to call the postAndSend method.</summary>
         public PostAndSendRequestBuilder PostAndSend { get =>
             new PostAndSendRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>The salesInvoiceLines property</summary>
+        /// <summary>Provides operations to manage the salesInvoiceLines property of the microsoft.graph.salesInvoice entity.</summary>
         public SalesInvoiceLinesRequestBuilder SalesInvoiceLines { get =>
             new SalesInvoiceLinesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The send property</summary>
+        /// <summary>Provides operations to call the send method.</summary>
         public SendRequestBuilder Send { get =>
             new SendRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The shipmentMethod property</summary>
+        /// <summary>Provides operations to manage the shipmentMethod property of the microsoft.graph.salesInvoice entity.</summary>
         public ShipmentMethodRequestBuilder ShipmentMethod { get =>
             new ShipmentMethodRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -69,9 +69,9 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoices.Item {
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new SalesInvoiceItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public SalesInvoiceItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -82,9 +82,9 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoices.Item {
         }
         /// <summary>
         /// Instantiates a new SalesInvoiceItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public SalesInvoiceItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -96,8 +96,8 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoices.Item {
         }
         /// <summary>
         /// Get salesInvoices from financials
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<SalesInvoiceItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -116,9 +116,9 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoices.Item {
         }
         /// <summary>
         /// Update the navigation property salesInvoices in financials
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(SalesInvoice body, Action<SalesInvoiceItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -138,9 +138,9 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoices.Item {
         }
         /// <summary>
         /// Get salesInvoices from financials
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<SalesInvoice> GetAsync(Action<SalesInvoiceItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -151,10 +151,10 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoices.Item {
         }
         /// <summary>
         /// Update the navigation property salesInvoices in financials
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<SalesInvoice> PatchAsync(SalesInvoice body, Action<SalesInvoiceItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);

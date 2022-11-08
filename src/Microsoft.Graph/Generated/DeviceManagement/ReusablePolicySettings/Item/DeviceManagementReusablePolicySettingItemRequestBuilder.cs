@@ -13,13 +13,13 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.DeviceManagement.ReusablePolicySettings.Item {
     /// <summary>Provides operations to manage the reusablePolicySettings property of the microsoft.graph.deviceManagement entity.</summary>
     public class DeviceManagementReusablePolicySettingItemRequestBuilder {
-        /// <summary>The clone property</summary>
+        /// <summary>Provides operations to call the clone method.</summary>
         public CloneRequestBuilder Clone { get =>
             new CloneRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>The referencingConfigurationPolicies property</summary>
+        /// <summary>Provides operations to manage the referencingConfigurationPolicies property of the microsoft.graph.deviceManagementReusablePolicySetting entity.</summary>
         public ReferencingConfigurationPoliciesRequestBuilder ReferencingConfigurationPolicies { get =>
             new ReferencingConfigurationPoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -29,9 +29,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ReusablePolicySettings.Item {
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new DeviceManagementReusablePolicySettingItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public DeviceManagementReusablePolicySettingItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -42,9 +42,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ReusablePolicySettings.Item {
         }
         /// <summary>
         /// Instantiates a new DeviceManagementReusablePolicySettingItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public DeviceManagementReusablePolicySettingItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -56,8 +56,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ReusablePolicySettings.Item {
         }
         /// <summary>
         /// Delete navigation property reusablePolicySettings for deviceManagement
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateDeleteRequestInformation(Action<DeviceManagementReusablePolicySettingItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.DELETE,
@@ -74,8 +74,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ReusablePolicySettings.Item {
         }
         /// <summary>
         /// List of all reusable settings that can be referred in a policy
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<DeviceManagementReusablePolicySettingItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -94,9 +94,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ReusablePolicySettings.Item {
         }
         /// <summary>
         /// Update the navigation property reusablePolicySettings in deviceManagement
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(DeviceManagementReusablePolicySetting body, Action<DeviceManagementReusablePolicySettingItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -116,9 +116,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ReusablePolicySettings.Item {
         }
         /// <summary>
         /// Delete navigation property reusablePolicySettings for deviceManagement
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task DeleteAsync(Action<DeviceManagementReusablePolicySettingItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -129,9 +129,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ReusablePolicySettings.Item {
         }
         /// <summary>
         /// List of all reusable settings that can be referred in a policy
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<DeviceManagementReusablePolicySetting> GetAsync(Action<DeviceManagementReusablePolicySettingItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -142,10 +142,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ReusablePolicySettings.Item {
         }
         /// <summary>
         /// Update the navigation property reusablePolicySettings in deviceManagement
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<DeviceManagementReusablePolicySetting> PatchAsync(DeviceManagementReusablePolicySetting body, Action<DeviceManagementReusablePolicySettingItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);

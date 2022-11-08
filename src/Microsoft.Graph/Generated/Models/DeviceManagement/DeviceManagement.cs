@@ -465,16 +465,6 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.OemWarrantyInformationOnboarding>>("oemWarrantyInformationOnboarding"); }
             set { BackingStore?.Set("oemWarrantyInformationOnboarding", value); }
         }
-        /// <summary>A list of OrganizationalMessageDetails</summary>
-        public List<Microsoft.Graph.Beta.Models.OrganizationalMessageDetail> OrganizationalMessageDetails {
-            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.OrganizationalMessageDetail>>("organizationalMessageDetails"); }
-            set { BackingStore?.Set("organizationalMessageDetails", value); }
-        }
-        /// <summary>A list of OrganizationalMessageGuidedContents</summary>
-        public List<Microsoft.Graph.Beta.Models.OrganizationalMessageGuidedContent> OrganizationalMessageGuidedContents {
-            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.OrganizationalMessageGuidedContent>>("organizationalMessageGuidedContents"); }
-            set { BackingStore?.Set("organizationalMessageGuidedContents", value); }
-        }
         /// <summary>The list of device remote action audits with the tenant.</summary>
         public List<Microsoft.Graph.Beta.Models.RemoteActionAudit> RemoteActionAudits {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.RemoteActionAudit>>("remoteActionAudits"); }
@@ -775,11 +765,6 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsOverview>("userExperienceAnalyticsOverview"); }
             set { BackingStore?.Set("userExperienceAnalyticsOverview", value); }
         }
-        /// <summary>User experience analytics regression summary</summary>
-        public Microsoft.Graph.Beta.Models.UserExperienceAnalyticsRegressionSummary UserExperienceAnalyticsRegressionSummary {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsRegressionSummary>("userExperienceAnalyticsRegressionSummary"); }
-            set { BackingStore?.Set("userExperienceAnalyticsRegressionSummary", value); }
-        }
         /// <summary>User experience analytics remote connection</summary>
         public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsRemoteConnection> UserExperienceAnalyticsRemoteConnection {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsRemoteConnection>>("userExperienceAnalyticsRemoteConnection"); }
@@ -903,8 +888,8 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
-        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new DeviceManagement CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new DeviceManagement();
@@ -1006,8 +991,6 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
                 {"ndesConnectors", n => { NdesConnectors = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.NdesConnector>(Microsoft.Graph.Beta.Models.NdesConnector.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"notificationMessageTemplates", n => { NotificationMessageTemplates = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.NotificationMessageTemplate>(Microsoft.Graph.Beta.Models.NotificationMessageTemplate.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"oemWarrantyInformationOnboarding", n => { OemWarrantyInformationOnboarding = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.OemWarrantyInformationOnboarding>(Microsoft.Graph.Beta.Models.OemWarrantyInformationOnboarding.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"organizationalMessageDetails", n => { OrganizationalMessageDetails = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.OrganizationalMessageDetail>(Microsoft.Graph.Beta.Models.OrganizationalMessageDetail.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"organizationalMessageGuidedContents", n => { OrganizationalMessageGuidedContents = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.OrganizationalMessageGuidedContent>(Microsoft.Graph.Beta.Models.OrganizationalMessageGuidedContent.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"remoteActionAudits", n => { RemoteActionAudits = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.RemoteActionAudit>(Microsoft.Graph.Beta.Models.RemoteActionAudit.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"remoteAssistancePartners", n => { RemoteAssistancePartners = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.RemoteAssistancePartner>(Microsoft.Graph.Beta.Models.RemoteAssistancePartner.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"remoteAssistanceSettings", n => { RemoteAssistanceSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.RemoteAssistanceSettings>(Microsoft.Graph.Beta.Models.RemoteAssistanceSettings.CreateFromDiscriminatorValue); } },
@@ -1068,7 +1051,6 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
                 {"userExperienceAnalyticsModelScores", n => { UserExperienceAnalyticsModelScores = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsModelScores>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsModelScores.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"userExperienceAnalyticsNotAutopilotReadyDevice", n => { UserExperienceAnalyticsNotAutopilotReadyDevice = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsNotAutopilotReadyDevice>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsNotAutopilotReadyDevice.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"userExperienceAnalyticsOverview", n => { UserExperienceAnalyticsOverview = n.GetObjectValue<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsOverview>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsOverview.CreateFromDiscriminatorValue); } },
-                {"userExperienceAnalyticsRegressionSummary", n => { UserExperienceAnalyticsRegressionSummary = n.GetObjectValue<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsRegressionSummary>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsRegressionSummary.CreateFromDiscriminatorValue); } },
                 {"userExperienceAnalyticsRemoteConnection", n => { UserExperienceAnalyticsRemoteConnection = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsRemoteConnection>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsRemoteConnection.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"userExperienceAnalyticsResourcePerformance", n => { UserExperienceAnalyticsResourcePerformance = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsResourcePerformance>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsResourcePerformance.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"userExperienceAnalyticsScoreHistory", n => { UserExperienceAnalyticsScoreHistory = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsScoreHistory>(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsScoreHistory.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -1096,8 +1078,8 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         }
         /// <summary>
         /// Serializes information the current object
-        /// <param name="writer">Serialization writer to use to serialize this model</param>
         /// </summary>
+        /// <param name="writer">Serialization writer to use to serialize this model</param>
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
@@ -1190,8 +1172,6 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.NdesConnector>("ndesConnectors", NdesConnectors);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.NotificationMessageTemplate>("notificationMessageTemplates", NotificationMessageTemplates);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.OemWarrantyInformationOnboarding>("oemWarrantyInformationOnboarding", OemWarrantyInformationOnboarding);
-            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.OrganizationalMessageDetail>("organizationalMessageDetails", OrganizationalMessageDetails);
-            writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.OrganizationalMessageGuidedContent>("organizationalMessageGuidedContents", OrganizationalMessageGuidedContents);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.RemoteActionAudit>("remoteActionAudits", RemoteActionAudits);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.RemoteAssistancePartner>("remoteAssistancePartners", RemoteAssistancePartners);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.RemoteAssistanceSettings>("remoteAssistanceSettings", RemoteAssistanceSettings);
@@ -1251,7 +1231,6 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsModelScores>("userExperienceAnalyticsModelScores", UserExperienceAnalyticsModelScores);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsNotAutopilotReadyDevice>("userExperienceAnalyticsNotAutopilotReadyDevice", UserExperienceAnalyticsNotAutopilotReadyDevice);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsOverview>("userExperienceAnalyticsOverview", UserExperienceAnalyticsOverview);
-            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsRegressionSummary>("userExperienceAnalyticsRegressionSummary", UserExperienceAnalyticsRegressionSummary);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsRemoteConnection>("userExperienceAnalyticsRemoteConnection", UserExperienceAnalyticsRemoteConnection);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsResourcePerformance>("userExperienceAnalyticsResourcePerformance", UserExperienceAnalyticsResourcePerformance);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsScoreHistory>("userExperienceAnalyticsScoreHistory", UserExperienceAnalyticsScoreHistory);

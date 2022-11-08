@@ -15,17 +15,17 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("isStagedForDeletion"); }
             set { BackingStore?.Set("isStagedForDeletion", value); }
         }
-        /// <summary>ID of the scheduling group the shift is part of. Required.</summary>
+        /// <summary>The schedulingGroupId property</summary>
         public string SchedulingGroupId {
             get { return BackingStore?.Get<string>("schedulingGroupId"); }
             set { BackingStore?.Set("schedulingGroupId", value); }
         }
-        /// <summary>The shared version of this shift that is viewable by both employees and managers. Required.</summary>
+        /// <summary>The sharedShift property</summary>
         public ShiftItem SharedShift {
             get { return BackingStore?.Get<ShiftItem>("sharedShift"); }
             set { BackingStore?.Set("sharedShift", value); }
         }
-        /// <summary>ID of the user assigned to the shift. Required.</summary>
+        /// <summary>The userId property</summary>
         public string UserId {
             get { return BackingStore?.Get<string>("userId"); }
             set { BackingStore?.Set("userId", value); }
@@ -38,8 +38,8 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
-        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new Shift CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new Shift();
@@ -58,8 +58,8 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>
         /// Serializes information the current object
-        /// <param name="writer">Serialization writer to use to serialize this model</param>
         /// </summary>
+        /// <param name="writer">Serialization writer to use to serialize this model</param>
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);

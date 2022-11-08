@@ -15,15 +15,15 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.DeviceManagement.ChromeOSOnboardingSettings {
     /// <summary>Provides operations to manage the chromeOSOnboardingSettings property of the microsoft.graph.deviceManagement entity.</summary>
     public class ChromeOSOnboardingSettingsRequestBuilder {
-        /// <summary>The connect property</summary>
+        /// <summary>Provides operations to call the connect method.</summary>
         public ConnectRequestBuilder Connect { get =>
             new ConnectRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The Count property</summary>
+        /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The disconnect property</summary>
+        /// <summary>Provides operations to call the disconnect method.</summary>
         public DisconnectRequestBuilder Disconnect { get =>
             new DisconnectRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ChromeOSOnboardingSettings {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the Microsoft.Graph.Beta.deviceManagement.chromeOSOnboardingSettings.item collection</summary>
+        /// <summary>Provides operations to manage the chromeOSOnboardingSettings property of the microsoft.graph.deviceManagement entity.</summary>
         public ChromeOSOnboardingSettingsItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("chromeOSOnboardingSettings%2Did", position);
@@ -41,9 +41,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ChromeOSOnboardingSettings {
         } }
         /// <summary>
         /// Instantiates a new ChromeOSOnboardingSettingsRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public ChromeOSOnboardingSettingsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -54,9 +54,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ChromeOSOnboardingSettings {
         }
         /// <summary>
         /// Instantiates a new ChromeOSOnboardingSettingsRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public ChromeOSOnboardingSettingsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -68,8 +68,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ChromeOSOnboardingSettings {
         }
         /// <summary>
         /// Collection of ChromeOSOnboardingSettings settings associated with account.
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<ChromeOSOnboardingSettingsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -88,9 +88,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ChromeOSOnboardingSettings {
         }
         /// <summary>
         /// Create new navigation property to chromeOSOnboardingSettings for deviceManagement
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePostRequestInformation(Microsoft.Graph.Beta.Models.ChromeOSOnboardingSettings body, Action<ChromeOSOnboardingSettingsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -110,9 +110,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ChromeOSOnboardingSettings {
         }
         /// <summary>
         /// Collection of ChromeOSOnboardingSettings settings associated with account.
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<ChromeOSOnboardingSettingsCollectionResponse> GetAsync(Action<ChromeOSOnboardingSettingsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -123,10 +123,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ChromeOSOnboardingSettings {
         }
         /// <summary>
         /// Create new navigation property to chromeOSOnboardingSettings for deviceManagement
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<Microsoft.Graph.Beta.Models.ChromeOSOnboardingSettings> PostAsync(Microsoft.Graph.Beta.Models.ChromeOSOnboardingSettings body, Action<ChromeOSOnboardingSettingsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, requestConfiguration);

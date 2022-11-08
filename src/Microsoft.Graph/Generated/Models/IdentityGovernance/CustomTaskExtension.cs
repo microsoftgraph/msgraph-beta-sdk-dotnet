@@ -10,22 +10,22 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CustomExtensionCallbackConfiguration>("callbackConfiguration"); }
             set { BackingStore?.Set("callbackConfiguration", value); }
         }
-        /// <summary>The unique identifier of the Azure AD user that created the custom task extension.</summary>
+        /// <summary>The unique identifier of the Azure AD user that created the custom task extension.Supports $filter(eq, ne) and $expand.</summary>
         public Microsoft.Graph.Beta.Models.User CreatedBy {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.User>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
-        /// <summary>When the custom task extension was created.</summary>
+        /// <summary>When the custom task extension was created.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>The unique identifier of the Azure AD user that modified the custom task extension last.</summary>
+        /// <summary>The unique identifier of the Azure AD user that modified the custom task extension last.Supports $filter(eq, ne) and $expand.</summary>
         public Microsoft.Graph.Beta.Models.User LastModifiedBy {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.User>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
-        /// <summary>When the custom extension was last modified.</summary>
+        /// <summary>When the custom extension was last modified.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.</summary>
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
@@ -38,8 +38,8 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
-        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new CustomTaskExtension CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new CustomTaskExtension();
@@ -58,8 +58,8 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
         }
         /// <summary>
         /// Serializes information the current object
-        /// <param name="writer">Serialization writer to use to serialize this model</param>
         /// </summary>
+        /// <param name="writer">Serialization writer to use to serialize this model</param>
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);

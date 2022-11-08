@@ -18,33 +18,33 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Searches.Item {
     /// <summary>Provides operations to manage the searches property of the microsoft.graph.security.ediscoveryCase entity.</summary>
     public class EdiscoverySearchItemRequestBuilder {
-        /// <summary>The additionalSources property</summary>
+        /// <summary>Provides operations to manage the additionalSources property of the microsoft.graph.security.ediscoverySearch entity.</summary>
         public AdditionalSourcesRequestBuilder AdditionalSources { get =>
             new AdditionalSourcesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The addToReviewSetOperation property</summary>
+        /// <summary>Provides operations to manage the addToReviewSetOperation property of the microsoft.graph.security.ediscoverySearch entity.</summary>
         public AddToReviewSetOperationRequestBuilder AddToReviewSetOperation { get =>
             new AddToReviewSetOperationRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The custodianSources property</summary>
+        /// <summary>Provides operations to manage the custodianSources property of the microsoft.graph.security.ediscoverySearch entity.</summary>
         public CustodianSourcesRequestBuilder CustodianSources { get =>
             new CustodianSourcesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The estimateStatistics property</summary>
+        /// <summary>Provides operations to call the estimateStatistics method.</summary>
         public EstimateStatisticsRequestBuilder EstimateStatistics { get =>
             new EstimateStatisticsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The lastEstimateStatisticsOperation property</summary>
+        /// <summary>Provides operations to manage the lastEstimateStatisticsOperation property of the microsoft.graph.security.ediscoverySearch entity.</summary>
         public LastEstimateStatisticsOperationRequestBuilder LastEstimateStatisticsOperation { get =>
             new LastEstimateStatisticsOperationRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The noncustodialSources property</summary>
+        /// <summary>Provides operations to manage the noncustodialSources property of the microsoft.graph.security.ediscoverySearch entity.</summary>
         public NoncustodialSourcesRequestBuilder NoncustodialSources { get =>
             new NoncustodialSourcesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>The purgeData property</summary>
+        /// <summary>Provides operations to call the purgeData method.</summary>
         public PurgeDataRequestBuilder PurgeData { get =>
             new PurgeDataRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -54,9 +54,9 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Searches.Item
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new EdiscoverySearchItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public EdiscoverySearchItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -67,9 +67,9 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Searches.Item
         }
         /// <summary>
         /// Instantiates a new EdiscoverySearchItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public EdiscoverySearchItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -81,8 +81,8 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Searches.Item
         }
         /// <summary>
         /// Delete navigation property searches for security
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateDeleteRequestInformation(Action<EdiscoverySearchItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.DELETE,
@@ -99,8 +99,8 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Searches.Item
         }
         /// <summary>
         /// Returns a list of eDiscoverySearch objects associated with this case.
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<EdiscoverySearchItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -119,9 +119,9 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Searches.Item
         }
         /// <summary>
         /// Update the navigation property searches in security
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(EdiscoverySearch body, Action<EdiscoverySearchItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -141,9 +141,9 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Searches.Item
         }
         /// <summary>
         /// Delete navigation property searches for security
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task DeleteAsync(Action<EdiscoverySearchItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -154,9 +154,9 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Searches.Item
         }
         /// <summary>
         /// Returns a list of eDiscoverySearch objects associated with this case.
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<EdiscoverySearch> GetAsync(Action<EdiscoverySearchItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -167,10 +167,10 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Searches.Item
         }
         /// <summary>
         /// Update the navigation property searches in security
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<EdiscoverySearch> PatchAsync(EdiscoverySearch body, Action<EdiscoverySearchItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);

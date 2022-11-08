@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Groups.Item.Onenote.Notebooks.Item {
     /// <summary>Provides operations to manage the notebooks property of the microsoft.graph.onenote entity.</summary>
     public class NotebookItemRequestBuilder {
-        /// <summary>The copyNotebook property</summary>
+        /// <summary>Provides operations to call the copyNotebook method.</summary>
         public CopyNotebookRequestBuilder CopyNotebook { get =>
             new CopyNotebookRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -22,11 +22,11 @@ namespace Microsoft.Graph.Beta.Groups.Item.Onenote.Notebooks.Item {
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>The sectionGroups property</summary>
+        /// <summary>Provides operations to manage the sectionGroups property of the microsoft.graph.notebook entity.</summary>
         public SectionGroupsRequestBuilder SectionGroups { get =>
             new SectionGroupsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The sections property</summary>
+        /// <summary>Provides operations to manage the sections property of the microsoft.graph.notebook entity.</summary>
         public SectionsRequestBuilder Sections { get =>
             new SectionsRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -34,9 +34,9 @@ namespace Microsoft.Graph.Beta.Groups.Item.Onenote.Notebooks.Item {
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new NotebookItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public NotebookItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -47,9 +47,9 @@ namespace Microsoft.Graph.Beta.Groups.Item.Onenote.Notebooks.Item {
         }
         /// <summary>
         /// Instantiates a new NotebookItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public NotebookItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -61,8 +61,8 @@ namespace Microsoft.Graph.Beta.Groups.Item.Onenote.Notebooks.Item {
         }
         /// <summary>
         /// Delete navigation property notebooks for groups
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateDeleteRequestInformation(Action<NotebookItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.DELETE,
@@ -79,8 +79,8 @@ namespace Microsoft.Graph.Beta.Groups.Item.Onenote.Notebooks.Item {
         }
         /// <summary>
         /// The collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<NotebookItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -99,9 +99,9 @@ namespace Microsoft.Graph.Beta.Groups.Item.Onenote.Notebooks.Item {
         }
         /// <summary>
         /// Update the navigation property notebooks in groups
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(Notebook body, Action<NotebookItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -121,9 +121,9 @@ namespace Microsoft.Graph.Beta.Groups.Item.Onenote.Notebooks.Item {
         }
         /// <summary>
         /// Delete navigation property notebooks for groups
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task DeleteAsync(Action<NotebookItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -134,9 +134,9 @@ namespace Microsoft.Graph.Beta.Groups.Item.Onenote.Notebooks.Item {
         }
         /// <summary>
         /// The collection of OneNote notebooks that are owned by the user or group. Read-only. Nullable.
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<Notebook> GetAsync(Action<NotebookItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -147,10 +147,10 @@ namespace Microsoft.Graph.Beta.Groups.Item.Onenote.Notebooks.Item {
         }
         /// <summary>
         /// Update the navigation property notebooks in groups
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<Notebook> PatchAsync(Notebook body, Action<NotebookItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);

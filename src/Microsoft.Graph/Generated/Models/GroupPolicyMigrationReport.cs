@@ -51,6 +51,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("ouDistinguishedName"); }
             set { BackingStore?.Set("ouDistinguishedName", value); }
         }
+        /// <summary>The list of scope tags for the configuration.</summary>
+        public List<string> RoleScopeTagIds {
+            get { return BackingStore?.Get<List<string>>("roleScopeTagIds"); }
+            set { BackingStore?.Set("roleScopeTagIds", value); }
+        }
         /// <summary>The number of Group Policy Settings supported by Intune.</summary>
         public int? SupportedSettingsCount {
             get { return BackingStore?.Get<int?>("supportedSettingsCount"); }
@@ -84,8 +89,8 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
-        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new GroupPolicyMigrationReport CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new GroupPolicyMigrationReport();
@@ -104,6 +109,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"migrationReadiness", n => { MigrationReadiness = n.GetEnumValue<GroupPolicyMigrationReadiness>(); } },
                 {"ouDistinguishedName", n => { OuDistinguishedName = n.GetStringValue(); } },
+                {"roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"supportedSettingsCount", n => { SupportedSettingsCount = n.GetIntValue(); } },
                 {"supportedSettingsPercent", n => { SupportedSettingsPercent = n.GetIntValue(); } },
                 {"targetedInActiveDirectory", n => { TargetedInActiveDirectory = n.GetBoolValue(); } },
@@ -113,8 +119,8 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>
         /// Serializes information the current object
-        /// <param name="writer">Serialization writer to use to serialize this model</param>
         /// </summary>
+        /// <param name="writer">Serialization writer to use to serialize this model</param>
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
@@ -127,6 +133,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteEnumValue<GroupPolicyMigrationReadiness>("migrationReadiness", MigrationReadiness);
             writer.WriteStringValue("ouDistinguishedName", OuDistinguishedName);
+            writer.WriteCollectionOfPrimitiveValues<string>("roleScopeTagIds", RoleScopeTagIds);
             writer.WriteIntValue("supportedSettingsCount", SupportedSettingsCount);
             writer.WriteIntValue("supportedSettingsPercent", SupportedSettingsPercent);
             writer.WriteBoolValue("targetedInActiveDirectory", TargetedInActiveDirectory);

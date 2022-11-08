@@ -15,19 +15,19 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyCategories.Item {
     /// <summary>Provides operations to manage the groupPolicyCategories property of the microsoft.graph.deviceManagement entity.</summary>
     public class GroupPolicyCategoryItemRequestBuilder {
-        /// <summary>The children property</summary>
+        /// <summary>Provides operations to manage the children property of the microsoft.graph.groupPolicyCategory entity.</summary>
         public ChildrenRequestBuilder Children { get =>
             new ChildrenRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The definitionFile property</summary>
+        /// <summary>Provides operations to manage the definitionFile property of the microsoft.graph.groupPolicyCategory entity.</summary>
         public DefinitionFileRequestBuilder DefinitionFile { get =>
             new DefinitionFileRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The definitions property</summary>
+        /// <summary>Provides operations to manage the definitions property of the microsoft.graph.groupPolicyCategory entity.</summary>
         public DefinitionsRequestBuilder Definitions { get =>
             new DefinitionsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The parent property</summary>
+        /// <summary>Provides operations to manage the parent property of the microsoft.graph.groupPolicyCategory entity.</summary>
         public ParentRequestBuilder Parent { get =>
             new ParentRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -39,9 +39,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyCategories.Item {
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new GroupPolicyCategoryItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public GroupPolicyCategoryItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -52,9 +52,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyCategories.Item {
         }
         /// <summary>
         /// Instantiates a new GroupPolicyCategoryItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public GroupPolicyCategoryItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -66,8 +66,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyCategories.Item {
         }
         /// <summary>
         /// Delete navigation property groupPolicyCategories for deviceManagement
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateDeleteRequestInformation(Action<GroupPolicyCategoryItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.DELETE,
@@ -84,8 +84,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyCategories.Item {
         }
         /// <summary>
         /// The available group policy categories for this account.
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<GroupPolicyCategoryItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -104,9 +104,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyCategories.Item {
         }
         /// <summary>
         /// Update the navigation property groupPolicyCategories in deviceManagement
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(GroupPolicyCategory body, Action<GroupPolicyCategoryItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -126,9 +126,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyCategories.Item {
         }
         /// <summary>
         /// Delete navigation property groupPolicyCategories for deviceManagement
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task DeleteAsync(Action<GroupPolicyCategoryItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -139,9 +139,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyCategories.Item {
         }
         /// <summary>
         /// The available group policy categories for this account.
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<GroupPolicyCategory> GetAsync(Action<GroupPolicyCategoryItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -152,10 +152,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyCategories.Item {
         }
         /// <summary>
         /// Update the navigation property groupPolicyCategories in deviceManagement
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<GroupPolicyCategory> PatchAsync(GroupPolicyCategory body, Action<GroupPolicyCategoryItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);

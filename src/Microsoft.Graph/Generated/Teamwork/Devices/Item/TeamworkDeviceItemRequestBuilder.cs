@@ -18,19 +18,19 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Teamwork.Devices.Item {
     /// <summary>Provides operations to manage the devices property of the microsoft.graph.teamwork entity.</summary>
     public class TeamworkDeviceItemRequestBuilder {
-        /// <summary>The activity property</summary>
+        /// <summary>Provides operations to manage the activity property of the microsoft.graph.teamworkDevice entity.</summary>
         public ActivityRequestBuilder Activity { get =>
             new ActivityRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The configuration property</summary>
+        /// <summary>Provides operations to manage the configuration property of the microsoft.graph.teamworkDevice entity.</summary>
         public ConfigurationRequestBuilder Configuration { get =>
             new ConfigurationRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The health property</summary>
+        /// <summary>Provides operations to manage the health property of the microsoft.graph.teamworkDevice entity.</summary>
         public HealthRequestBuilder Health { get =>
             new HealthRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The operations property</summary>
+        /// <summary>Provides operations to manage the operations property of the microsoft.graph.teamworkDevice entity.</summary>
         public OperationsRequestBuilder Operations { get =>
             new OperationsRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -38,15 +38,15 @@ namespace Microsoft.Graph.Beta.Teamwork.Devices.Item {
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>The restart property</summary>
+        /// <summary>Provides operations to call the restart method.</summary>
         public RestartRequestBuilder Restart { get =>
             new RestartRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The runDiagnostics property</summary>
+        /// <summary>Provides operations to call the runDiagnostics method.</summary>
         public RunDiagnosticsRequestBuilder RunDiagnostics { get =>
             new RunDiagnosticsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The updateSoftware property</summary>
+        /// <summary>Provides operations to call the updateSoftware method.</summary>
         public UpdateSoftwareRequestBuilder UpdateSoftware { get =>
             new UpdateSoftwareRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -54,9 +54,9 @@ namespace Microsoft.Graph.Beta.Teamwork.Devices.Item {
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new TeamworkDeviceItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public TeamworkDeviceItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -67,9 +67,9 @@ namespace Microsoft.Graph.Beta.Teamwork.Devices.Item {
         }
         /// <summary>
         /// Instantiates a new TeamworkDeviceItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public TeamworkDeviceItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -81,8 +81,8 @@ namespace Microsoft.Graph.Beta.Teamwork.Devices.Item {
         }
         /// <summary>
         /// Delete navigation property devices for teamwork
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateDeleteRequestInformation(Action<TeamworkDeviceItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.DELETE,
@@ -99,8 +99,8 @@ namespace Microsoft.Graph.Beta.Teamwork.Devices.Item {
         }
         /// <summary>
         /// The Teams devices provisioned for the tenant.
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<TeamworkDeviceItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -119,9 +119,9 @@ namespace Microsoft.Graph.Beta.Teamwork.Devices.Item {
         }
         /// <summary>
         /// Update the navigation property devices in teamwork
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(TeamworkDevice body, Action<TeamworkDeviceItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -141,9 +141,9 @@ namespace Microsoft.Graph.Beta.Teamwork.Devices.Item {
         }
         /// <summary>
         /// Delete navigation property devices for teamwork
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task DeleteAsync(Action<TeamworkDeviceItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -154,9 +154,9 @@ namespace Microsoft.Graph.Beta.Teamwork.Devices.Item {
         }
         /// <summary>
         /// The Teams devices provisioned for the tenant.
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<TeamworkDevice> GetAsync(Action<TeamworkDeviceItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -167,10 +167,10 @@ namespace Microsoft.Graph.Beta.Teamwork.Devices.Item {
         }
         /// <summary>
         /// Update the navigation property devices in teamwork
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<TeamworkDevice> PatchAsync(TeamworkDevice body, Action<TeamworkDeviceItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);

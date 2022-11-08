@@ -13,13 +13,13 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Groups.Item.GroupLifecyclePolicies.Item {
     /// <summary>Provides operations to manage the groupLifecyclePolicies property of the microsoft.graph.group entity.</summary>
     public class GroupLifecyclePolicyItemRequestBuilder {
-        /// <summary>The addGroup property</summary>
+        /// <summary>Provides operations to call the addGroup method.</summary>
         public AddGroupRequestBuilder AddGroup { get =>
             new AddGroupRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>The removeGroup property</summary>
+        /// <summary>Provides operations to call the removeGroup method.</summary>
         public RemoveGroupRequestBuilder RemoveGroup { get =>
             new RemoveGroupRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -29,9 +29,9 @@ namespace Microsoft.Graph.Beta.Groups.Item.GroupLifecyclePolicies.Item {
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new GroupLifecyclePolicyItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public GroupLifecyclePolicyItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -42,9 +42,9 @@ namespace Microsoft.Graph.Beta.Groups.Item.GroupLifecyclePolicies.Item {
         }
         /// <summary>
         /// Instantiates a new GroupLifecyclePolicyItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public GroupLifecyclePolicyItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -56,8 +56,8 @@ namespace Microsoft.Graph.Beta.Groups.Item.GroupLifecyclePolicies.Item {
         }
         /// <summary>
         /// Delete navigation property groupLifecyclePolicies for groups
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateDeleteRequestInformation(Action<GroupLifecyclePolicyItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.DELETE,
@@ -74,8 +74,8 @@ namespace Microsoft.Graph.Beta.Groups.Item.GroupLifecyclePolicies.Item {
         }
         /// <summary>
         /// The collection of lifecycle policies for this group. Read-only. Nullable.
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<GroupLifecyclePolicyItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -94,9 +94,9 @@ namespace Microsoft.Graph.Beta.Groups.Item.GroupLifecyclePolicies.Item {
         }
         /// <summary>
         /// Update the navigation property groupLifecyclePolicies in groups
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(GroupLifecyclePolicy body, Action<GroupLifecyclePolicyItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -116,9 +116,9 @@ namespace Microsoft.Graph.Beta.Groups.Item.GroupLifecyclePolicies.Item {
         }
         /// <summary>
         /// Delete navigation property groupLifecyclePolicies for groups
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task DeleteAsync(Action<GroupLifecyclePolicyItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -129,9 +129,9 @@ namespace Microsoft.Graph.Beta.Groups.Item.GroupLifecyclePolicies.Item {
         }
         /// <summary>
         /// The collection of lifecycle policies for this group. Read-only. Nullable.
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<GroupLifecyclePolicy> GetAsync(Action<GroupLifecyclePolicyItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -142,10 +142,10 @@ namespace Microsoft.Graph.Beta.Groups.Item.GroupLifecyclePolicies.Item {
         }
         /// <summary>
         /// Update the navigation property groupLifecyclePolicies in groups
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<GroupLifecyclePolicy> PatchAsync(GroupLifecyclePolicy body, Action<GroupLifecyclePolicyItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);

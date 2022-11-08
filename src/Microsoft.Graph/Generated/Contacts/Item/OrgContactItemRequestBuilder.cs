@@ -21,31 +21,31 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Contacts.Item {
     /// <summary>Provides operations to manage the collection of orgContact entities.</summary>
     public class OrgContactItemRequestBuilder {
-        /// <summary>The checkMemberGroups property</summary>
+        /// <summary>Provides operations to call the checkMemberGroups method.</summary>
         public CheckMemberGroupsRequestBuilder CheckMemberGroups { get =>
             new CheckMemberGroupsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The checkMemberObjects property</summary>
+        /// <summary>Provides operations to call the checkMemberObjects method.</summary>
         public CheckMemberObjectsRequestBuilder CheckMemberObjects { get =>
             new CheckMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The directReports property</summary>
+        /// <summary>Provides operations to manage the directReports property of the microsoft.graph.orgContact entity.</summary>
         public DirectReportsRequestBuilder DirectReports { get =>
             new DirectReportsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The getMemberGroups property</summary>
+        /// <summary>Provides operations to call the getMemberGroups method.</summary>
         public GetMemberGroupsRequestBuilder GetMemberGroups { get =>
             new GetMemberGroupsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The getMemberObjects property</summary>
+        /// <summary>Provides operations to call the getMemberObjects method.</summary>
         public GetMemberObjectsRequestBuilder GetMemberObjects { get =>
             new GetMemberObjectsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The manager property</summary>
+        /// <summary>Provides operations to manage the manager property of the microsoft.graph.orgContact entity.</summary>
         public ManagerRequestBuilder Manager { get =>
             new ManagerRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The memberOf property</summary>
+        /// <summary>Provides operations to manage the memberOf property of the microsoft.graph.orgContact entity.</summary>
         public MemberOfRequestBuilder MemberOf { get =>
             new MemberOfRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -53,15 +53,15 @@ namespace Microsoft.Graph.Beta.Contacts.Item {
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>The restore property</summary>
+        /// <summary>Provides operations to call the restore method.</summary>
         public RestoreRequestBuilder Restore { get =>
             new RestoreRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The transitiveMemberOf property</summary>
+        /// <summary>Provides operations to manage the transitiveMemberOf property of the microsoft.graph.orgContact entity.</summary>
         public TransitiveMemberOfRequestBuilder TransitiveMemberOf { get =>
             new TransitiveMemberOfRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The transitiveReports property</summary>
+        /// <summary>Provides operations to manage the transitiveReports property of the microsoft.graph.orgContact entity.</summary>
         public TransitiveReportsRequestBuilder TransitiveReports { get =>
             new TransitiveReportsRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -69,9 +69,9 @@ namespace Microsoft.Graph.Beta.Contacts.Item {
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new OrgContactItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public OrgContactItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -82,9 +82,9 @@ namespace Microsoft.Graph.Beta.Contacts.Item {
         }
         /// <summary>
         /// Instantiates a new OrgContactItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public OrgContactItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -96,8 +96,8 @@ namespace Microsoft.Graph.Beta.Contacts.Item {
         }
         /// <summary>
         /// Delete entity from contacts
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateDeleteRequestInformation(Action<OrgContactItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.DELETE,
@@ -114,8 +114,8 @@ namespace Microsoft.Graph.Beta.Contacts.Item {
         }
         /// <summary>
         /// Get the properties and relationships of an organizational contact object.
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<OrgContactItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -134,9 +134,9 @@ namespace Microsoft.Graph.Beta.Contacts.Item {
         }
         /// <summary>
         /// Update entity in contacts
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(Microsoft.Graph.Beta.Models.OrgContact body, Action<OrgContactItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -156,9 +156,9 @@ namespace Microsoft.Graph.Beta.Contacts.Item {
         }
         /// <summary>
         /// Delete entity from contacts
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task DeleteAsync(Action<OrgContactItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -169,9 +169,9 @@ namespace Microsoft.Graph.Beta.Contacts.Item {
         }
         /// <summary>
         /// Get the properties and relationships of an organizational contact object.
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<Microsoft.Graph.Beta.Models.OrgContact> GetAsync(Action<OrgContactItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -182,10 +182,10 @@ namespace Microsoft.Graph.Beta.Contacts.Item {
         }
         /// <summary>
         /// Update entity in contacts
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<Microsoft.Graph.Beta.Models.OrgContact> PatchAsync(Microsoft.Graph.Beta.Models.OrgContact body, Action<OrgContactItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);

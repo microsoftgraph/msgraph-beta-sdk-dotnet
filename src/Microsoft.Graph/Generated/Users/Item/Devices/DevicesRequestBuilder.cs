@@ -17,15 +17,15 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Users.Item.Devices {
     /// <summary>Provides operations to manage the devices property of the microsoft.graph.user entity.</summary>
     public class DevicesRequestBuilder {
-        /// <summary>The Count property</summary>
+        /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The getByIds property</summary>
+        /// <summary>Provides operations to call the getByIds method.</summary>
         public GetByIdsRequestBuilder GetByIds { get =>
             new GetByIdsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The getUserOwnedObjects property</summary>
+        /// <summary>Provides operations to call the getUserOwnedObjects method.</summary>
         public GetUserOwnedObjectsRequestBuilder GetUserOwnedObjects { get =>
             new GetUserOwnedObjectsRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -35,11 +35,11 @@ namespace Microsoft.Graph.Beta.Users.Item.Devices {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>The validateProperties property</summary>
+        /// <summary>Provides operations to call the validateProperties method.</summary>
         public ValidatePropertiesRequestBuilder ValidateProperties { get =>
             new ValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Gets an item from the Microsoft.Graph.Beta.users.item.devices.item collection</summary>
+        /// <summary>Provides operations to manage the devices property of the microsoft.graph.user entity.</summary>
         public DeviceItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("device%2Did", position);
@@ -47,9 +47,9 @@ namespace Microsoft.Graph.Beta.Users.Item.Devices {
         } }
         /// <summary>
         /// Instantiates a new DevicesRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public DevicesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -60,9 +60,9 @@ namespace Microsoft.Graph.Beta.Users.Item.Devices {
         }
         /// <summary>
         /// Instantiates a new DevicesRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public DevicesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -74,8 +74,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Devices {
         }
         /// <summary>
         /// Get devices from users
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<DevicesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -94,9 +94,9 @@ namespace Microsoft.Graph.Beta.Users.Item.Devices {
         }
         /// <summary>
         /// Create new navigation property to devices for users
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePostRequestInformation(Microsoft.Graph.Beta.Models.Device body, Action<DevicesRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -122,9 +122,9 @@ namespace Microsoft.Graph.Beta.Users.Item.Devices {
         }
         /// <summary>
         /// Get devices from users
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<DeviceCollectionResponse> GetAsync(Action<DevicesRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -135,10 +135,10 @@ namespace Microsoft.Graph.Beta.Users.Item.Devices {
         }
         /// <summary>
         /// Create new navigation property to devices for users
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<Microsoft.Graph.Beta.Models.Device> PostAsync(Microsoft.Graph.Beta.Models.Device body, Action<DevicesRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, requestConfiguration);

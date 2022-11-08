@@ -15,15 +15,15 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.IdentityProtection.RiskyServicePrincipals {
     /// <summary>Provides operations to manage the riskyServicePrincipals property of the microsoft.graph.identityProtectionRoot entity.</summary>
     public class RiskyServicePrincipalsRequestBuilder {
-        /// <summary>The confirmCompromised property</summary>
+        /// <summary>Provides operations to call the confirmCompromised method.</summary>
         public ConfirmCompromisedRequestBuilder ConfirmCompromised { get =>
             new ConfirmCompromisedRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The Count property</summary>
+        /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The dismiss property</summary>
+        /// <summary>Provides operations to call the dismiss method.</summary>
         public DismissRequestBuilder Dismiss { get =>
             new DismissRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.IdentityProtection.RiskyServicePrincipals {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the Microsoft.Graph.Beta.identityProtection.riskyServicePrincipals.item collection</summary>
+        /// <summary>Provides operations to manage the riskyServicePrincipals property of the microsoft.graph.identityProtectionRoot entity.</summary>
         public RiskyServicePrincipalItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("riskyServicePrincipal%2Did", position);
@@ -41,9 +41,9 @@ namespace Microsoft.Graph.Beta.IdentityProtection.RiskyServicePrincipals {
         } }
         /// <summary>
         /// Instantiates a new RiskyServicePrincipalsRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public RiskyServicePrincipalsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -54,9 +54,9 @@ namespace Microsoft.Graph.Beta.IdentityProtection.RiskyServicePrincipals {
         }
         /// <summary>
         /// Instantiates a new RiskyServicePrincipalsRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public RiskyServicePrincipalsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -68,8 +68,8 @@ namespace Microsoft.Graph.Beta.IdentityProtection.RiskyServicePrincipals {
         }
         /// <summary>
         /// Retrieve the properties and relationships of riskyServicePrincipal objects.
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<RiskyServicePrincipalsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -88,9 +88,9 @@ namespace Microsoft.Graph.Beta.IdentityProtection.RiskyServicePrincipals {
         }
         /// <summary>
         /// Create new navigation property to riskyServicePrincipals for identityProtection
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePostRequestInformation(RiskyServicePrincipal body, Action<RiskyServicePrincipalsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -110,9 +110,9 @@ namespace Microsoft.Graph.Beta.IdentityProtection.RiskyServicePrincipals {
         }
         /// <summary>
         /// Retrieve the properties and relationships of riskyServicePrincipal objects.
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<RiskyServicePrincipalCollectionResponse> GetAsync(Action<RiskyServicePrincipalsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -123,10 +123,10 @@ namespace Microsoft.Graph.Beta.IdentityProtection.RiskyServicePrincipals {
         }
         /// <summary>
         /// Create new navigation property to riskyServicePrincipals for identityProtection
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<RiskyServicePrincipal> PostAsync(RiskyServicePrincipal body, Action<RiskyServicePrincipalsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, requestConfiguration);

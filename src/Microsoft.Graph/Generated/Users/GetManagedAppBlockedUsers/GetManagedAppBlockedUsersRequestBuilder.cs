@@ -18,9 +18,9 @@ namespace Microsoft.Graph.Beta.Users.GetManagedAppBlockedUsers {
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new GetManagedAppBlockedUsersRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public GetManagedAppBlockedUsersRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -31,9 +31,9 @@ namespace Microsoft.Graph.Beta.Users.GetManagedAppBlockedUsers {
         }
         /// <summary>
         /// Instantiates a new GetManagedAppBlockedUsersRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public GetManagedAppBlockedUsersRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -45,8 +45,8 @@ namespace Microsoft.Graph.Beta.Users.GetManagedAppBlockedUsers {
         }
         /// <summary>
         /// Invoke function getManagedAppBlockedUsers
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<GetManagedAppBlockedUsersRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -65,9 +65,9 @@ namespace Microsoft.Graph.Beta.Users.GetManagedAppBlockedUsers {
         }
         /// <summary>
         /// Invoke function getManagedAppBlockedUsers
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<GetManagedAppBlockedUsersResponse> GetAsync(Action<GetManagedAppBlockedUsersRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {

@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
     public class Workflow : WorkflowBase, IParsable {
-        /// <summary>When the workflow was deleted. Supports $filter(lt,gt) and $orderBy.</summary>
+        /// <summary>When the workflow was deleted.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.</summary>
         public DateTimeOffset? DeletedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("deletedDateTime"); }
             set { BackingStore?.Set("deletedDateTime", value); }
@@ -15,7 +15,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.User>>("executionScope"); }
             set { BackingStore?.Set("executionScope", value); }
         }
-        /// <summary>Identifier used for individually addressing a specific workflow. Supports $filter(eq, ne).</summary>
+        /// <summary>Identifier used for individually addressing a specific workflow.Supports $filter(eq, ne) and $orderby.</summary>
         public string Id {
             get { return BackingStore?.Get<string>("id"); }
             set { BackingStore?.Set("id", value); }
@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
             get { return BackingStore?.Get<List<UserProcessingResult>>("userProcessingResults"); }
             set { BackingStore?.Set("userProcessingResults", value); }
         }
-        /// <summary>The current version number of the workflow. Value is 1 when the workflow is first created. Supports $filter(eq, ne).</summary>
+        /// <summary>The current version number of the workflow. Value is 1 when the workflow is first created.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.</summary>
         public int? Version {
             get { return BackingStore?.Get<int?>("version"); }
             set { BackingStore?.Set("version", value); }
@@ -58,8 +58,8 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
-        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new Workflow CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new Workflow();
@@ -82,8 +82,8 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
         }
         /// <summary>
         /// Serializes information the current object
-        /// <param name="writer">Serialization writer to use to serialize this model</param>
         /// </summary>
+        /// <param name="writer">Serialization writer to use to serialize this model</param>
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);

@@ -25,51 +25,51 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement {
     /// <summary>Provides operations to manage the entitlementManagement property of the microsoft.graph.identityGovernance entity.</summary>
     public class EntitlementManagementRequestBuilder {
-        /// <summary>The accessPackageAssignmentApprovals property</summary>
+        /// <summary>Provides operations to manage the accessPackageAssignmentApprovals property of the microsoft.graph.entitlementManagement entity.</summary>
         public AccessPackageAssignmentApprovalsRequestBuilder AccessPackageAssignmentApprovals { get =>
             new AccessPackageAssignmentApprovalsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The accessPackageAssignmentPolicies property</summary>
+        /// <summary>Provides operations to manage the accessPackageAssignmentPolicies property of the microsoft.graph.entitlementManagement entity.</summary>
         public AccessPackageAssignmentPoliciesRequestBuilder AccessPackageAssignmentPolicies { get =>
             new AccessPackageAssignmentPoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The accessPackageAssignmentRequests property</summary>
+        /// <summary>Provides operations to manage the accessPackageAssignmentRequests property of the microsoft.graph.entitlementManagement entity.</summary>
         public AccessPackageAssignmentRequestsRequestBuilder AccessPackageAssignmentRequests { get =>
             new AccessPackageAssignmentRequestsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The accessPackageAssignmentResourceRoles property</summary>
+        /// <summary>Provides operations to manage the accessPackageAssignmentResourceRoles property of the microsoft.graph.entitlementManagement entity.</summary>
         public AccessPackageAssignmentResourceRolesRequestBuilder AccessPackageAssignmentResourceRoles { get =>
             new AccessPackageAssignmentResourceRolesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The accessPackageAssignments property</summary>
+        /// <summary>Provides operations to manage the accessPackageAssignments property of the microsoft.graph.entitlementManagement entity.</summary>
         public AccessPackageAssignmentsRequestBuilder AccessPackageAssignments { get =>
             new AccessPackageAssignmentsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The accessPackageCatalogs property</summary>
+        /// <summary>Provides operations to manage the accessPackageCatalogs property of the microsoft.graph.entitlementManagement entity.</summary>
         public AccessPackageCatalogsRequestBuilder AccessPackageCatalogs { get =>
             new AccessPackageCatalogsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The accessPackageResourceEnvironments property</summary>
+        /// <summary>Provides operations to manage the accessPackageResourceEnvironments property of the microsoft.graph.entitlementManagement entity.</summary>
         public AccessPackageResourceEnvironmentsRequestBuilder AccessPackageResourceEnvironments { get =>
             new AccessPackageResourceEnvironmentsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The accessPackageResourceRequests property</summary>
+        /// <summary>Provides operations to manage the accessPackageResourceRequests property of the microsoft.graph.entitlementManagement entity.</summary>
         public AccessPackageResourceRequestsRequestBuilder AccessPackageResourceRequests { get =>
             new AccessPackageResourceRequestsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The accessPackageResourceRoleScopes property</summary>
+        /// <summary>Provides operations to manage the accessPackageResourceRoleScopes property of the microsoft.graph.entitlementManagement entity.</summary>
         public AccessPackageResourceRoleScopesRequestBuilder AccessPackageResourceRoleScopes { get =>
             new AccessPackageResourceRoleScopesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The accessPackageResources property</summary>
+        /// <summary>Provides operations to manage the accessPackageResources property of the microsoft.graph.entitlementManagement entity.</summary>
         public AccessPackageResourcesRequestBuilder AccessPackageResources { get =>
             new AccessPackageResourcesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The accessPackages property</summary>
+        /// <summary>Provides operations to manage the accessPackages property of the microsoft.graph.entitlementManagement entity.</summary>
         public AccessPackagesRequestBuilder AccessPackages { get =>
             new AccessPackagesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The connectedOrganizations property</summary>
+        /// <summary>Provides operations to manage the connectedOrganizations property of the microsoft.graph.entitlementManagement entity.</summary>
         public ConnectedOrganizationsRequestBuilder ConnectedOrganizations { get =>
             new ConnectedOrganizationsRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -77,11 +77,11 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement {
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>The settings property</summary>
+        /// <summary>Provides operations to manage the settings property of the microsoft.graph.entitlementManagement entity.</summary>
         public SettingsRequestBuilder Settings { get =>
             new SettingsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The subjects property</summary>
+        /// <summary>Provides operations to manage the subjects property of the microsoft.graph.entitlementManagement entity.</summary>
         public SubjectsRequestBuilder Subjects { get =>
             new SubjectsRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -89,9 +89,9 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement {
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new EntitlementManagementRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public EntitlementManagementRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -102,9 +102,9 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement {
         }
         /// <summary>
         /// Instantiates a new EntitlementManagementRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public EntitlementManagementRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -116,8 +116,8 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement {
         }
         /// <summary>
         /// Delete navigation property entitlementManagement for identityGovernance
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateDeleteRequestInformation(Action<EntitlementManagementRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.DELETE,
@@ -134,8 +134,8 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement {
         }
         /// <summary>
         /// Get entitlementManagement from identityGovernance
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<EntitlementManagementRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -154,9 +154,9 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement {
         }
         /// <summary>
         /// Update the navigation property entitlementManagement in identityGovernance
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(Microsoft.Graph.Beta.Models.EntitlementManagement body, Action<EntitlementManagementRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -176,9 +176,9 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement {
         }
         /// <summary>
         /// Delete navigation property entitlementManagement for identityGovernance
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task DeleteAsync(Action<EntitlementManagementRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -189,9 +189,9 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement {
         }
         /// <summary>
         /// Get entitlementManagement from identityGovernance
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<Microsoft.Graph.Beta.Models.EntitlementManagement> GetAsync(Action<EntitlementManagementRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -202,10 +202,10 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement {
         }
         /// <summary>
         /// Update the navigation property entitlementManagement in identityGovernance
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<Microsoft.Graph.Beta.Models.EntitlementManagement> PatchAsync(Microsoft.Graph.Beta.Models.EntitlementManagement body, Action<EntitlementManagementRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);

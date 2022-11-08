@@ -18,10 +18,10 @@ namespace Microsoft.Graph.Beta.Print.Reports.GetYammerGroupsActivityCountsWithPe
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new GetYammerGroupsActivityCountsWithPeriodRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public GetYammerGroupsActivityCountsWithPeriodRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, string period = default) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -33,9 +33,9 @@ namespace Microsoft.Graph.Beta.Print.Reports.GetYammerGroupsActivityCountsWithPe
         }
         /// <summary>
         /// Instantiates a new GetYammerGroupsActivityCountsWithPeriodRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public GetYammerGroupsActivityCountsWithPeriodRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -47,8 +47,8 @@ namespace Microsoft.Graph.Beta.Print.Reports.GetYammerGroupsActivityCountsWithPe
         }
         /// <summary>
         /// Invoke function getYammerGroupsActivityCounts
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<GetYammerGroupsActivityCountsWithPeriodRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -65,9 +65,9 @@ namespace Microsoft.Graph.Beta.Print.Reports.GetYammerGroupsActivityCountsWithPe
         }
         /// <summary>
         /// Invoke function getYammerGroupsActivityCounts
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<Stream> GetAsync(Action<GetYammerGroupsActivityCountsWithPeriodRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {

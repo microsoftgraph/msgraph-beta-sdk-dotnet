@@ -17,23 +17,23 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.DeviceAppManagement.ManagedEBooks.Item {
     /// <summary>Provides operations to manage the managedEBooks property of the microsoft.graph.deviceAppManagement entity.</summary>
     public class ManagedEBookItemRequestBuilder {
-        /// <summary>The assign property</summary>
+        /// <summary>Provides operations to call the assign method.</summary>
         public AssignRequestBuilder Assign { get =>
             new AssignRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The assignments property</summary>
+        /// <summary>Provides operations to manage the assignments property of the microsoft.graph.managedEBook entity.</summary>
         public AssignmentsRequestBuilder Assignments { get =>
             new AssignmentsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The categories property</summary>
+        /// <summary>Provides operations to manage the categories property of the microsoft.graph.managedEBook entity.</summary>
         public CategoriesRequestBuilder Categories { get =>
             new CategoriesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The deviceStates property</summary>
+        /// <summary>Provides operations to manage the deviceStates property of the microsoft.graph.managedEBook entity.</summary>
         public DeviceStatesRequestBuilder DeviceStates { get =>
             new DeviceStatesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The installSummary property</summary>
+        /// <summary>Provides operations to manage the installSummary property of the microsoft.graph.managedEBook entity.</summary>
         public InstallSummaryRequestBuilder InstallSummary { get =>
             new InstallSummaryRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -43,15 +43,15 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.ManagedEBooks.Item {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>The userStateSummary property</summary>
+        /// <summary>Provides operations to manage the userStateSummary property of the microsoft.graph.managedEBook entity.</summary>
         public UserStateSummaryRequestBuilder UserStateSummary { get =>
             new UserStateSummaryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new ManagedEBookItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public ManagedEBookItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -62,9 +62,9 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.ManagedEBooks.Item {
         }
         /// <summary>
         /// Instantiates a new ManagedEBookItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public ManagedEBookItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -76,8 +76,8 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.ManagedEBooks.Item {
         }
         /// <summary>
         /// Delete navigation property managedEBooks for deviceAppManagement
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateDeleteRequestInformation(Action<ManagedEBookItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.DELETE,
@@ -94,8 +94,8 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.ManagedEBooks.Item {
         }
         /// <summary>
         /// The Managed eBook.
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<ManagedEBookItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -114,9 +114,9 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.ManagedEBooks.Item {
         }
         /// <summary>
         /// Update the navigation property managedEBooks in deviceAppManagement
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(ManagedEBook body, Action<ManagedEBookItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -136,9 +136,9 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.ManagedEBooks.Item {
         }
         /// <summary>
         /// Delete navigation property managedEBooks for deviceAppManagement
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task DeleteAsync(Action<ManagedEBookItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -149,9 +149,9 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.ManagedEBooks.Item {
         }
         /// <summary>
         /// The Managed eBook.
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<ManagedEBook> GetAsync(Action<ManagedEBookItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -162,10 +162,10 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.ManagedEBooks.Item {
         }
         /// <summary>
         /// Update the navigation property managedEBooks in deviceAppManagement
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<ManagedEBook> PatchAsync(ManagedEBook body, Action<ManagedEBookItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);

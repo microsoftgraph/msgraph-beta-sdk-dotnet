@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class TaskDefinition : Entity, IParsable {
         /// <summary>The category property</summary>
         public LifecycleTaskCategory? Category {
@@ -21,17 +21,17 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
-        /// <summary>The display name of the taskDefinition`.</summary>
+        /// <summary>The display name of the taskDefinition.Supports $filter(eq, ne) and $orderby.</summary>
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
-        /// <summary>The parameters that must be supplied when creating a workflow task object.</summary>
+        /// <summary>The parameters that must be supplied when creating a workflow task object.Supports $filter(any).</summary>
         public List<Parameter> Parameters {
             get { return BackingStore?.Get<List<Parameter>>("parameters"); }
             set { BackingStore?.Set("parameters", value); }
         }
-        /// <summary>The version number of the taskDefinition. New records are pushed when we add support for new parameters.</summary>
+        /// <summary>The version number of the taskDefinition. New records are pushed when we add support for new parameters.Supports $filter(ge, gt, le, lt, eq, ne) and $orderby.</summary>
         public int? Version {
             get { return BackingStore?.Get<int?>("version"); }
             set { BackingStore?.Set("version", value); }
@@ -44,8 +44,8 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
-        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new TaskDefinition CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new TaskDefinition();
@@ -65,8 +65,8 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
         }
         /// <summary>
         /// Serializes information the current object
-        /// <param name="writer">Serialization writer to use to serialize this model</param>
         /// </summary>
+        /// <param name="writer">Serialization writer to use to serialize this model</param>
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);

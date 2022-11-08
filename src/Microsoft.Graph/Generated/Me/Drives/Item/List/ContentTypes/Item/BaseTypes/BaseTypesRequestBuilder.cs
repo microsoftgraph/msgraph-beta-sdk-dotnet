@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Me.Drives.Item.List.ContentTypes.Item.BaseTypes {
     /// <summary>Provides operations to manage the baseTypes property of the microsoft.graph.contentType entity.</summary>
     public class BaseTypesRequestBuilder {
-        /// <summary>The Count property</summary>
+        /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -23,7 +23,7 @@ namespace Microsoft.Graph.Beta.Me.Drives.Item.List.ContentTypes.Item.BaseTypes {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the Microsoft.Graph.Beta.me.drives.item.list.contentTypes.item.baseTypes.item collection</summary>
+        /// <summary>Provides operations to manage the baseTypes property of the microsoft.graph.contentType entity.</summary>
         public Microsoft.Graph.Beta.Me.Drives.Item.List.ContentTypes.Item.BaseTypes.Item.ContentTypeItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("contentType%2Did1", position);
@@ -31,9 +31,9 @@ namespace Microsoft.Graph.Beta.Me.Drives.Item.List.ContentTypes.Item.BaseTypes {
         } }
         /// <summary>
         /// Instantiates a new BaseTypesRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public BaseTypesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -44,9 +44,9 @@ namespace Microsoft.Graph.Beta.Me.Drives.Item.List.ContentTypes.Item.BaseTypes {
         }
         /// <summary>
         /// Instantiates a new BaseTypesRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public BaseTypesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -58,8 +58,8 @@ namespace Microsoft.Graph.Beta.Me.Drives.Item.List.ContentTypes.Item.BaseTypes {
         }
         /// <summary>
         /// The collection of content types that are ancestors of this content type.
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<BaseTypesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -78,9 +78,9 @@ namespace Microsoft.Graph.Beta.Me.Drives.Item.List.ContentTypes.Item.BaseTypes {
         }
         /// <summary>
         /// The collection of content types that are ancestors of this content type.
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<ContentTypeCollectionResponse> GetAsync(Action<BaseTypesRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {

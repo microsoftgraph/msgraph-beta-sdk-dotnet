@@ -18,10 +18,10 @@ namespace Microsoft.Graph.Beta.Print.Reports.GetOffice365GroupsActivityDetailWit
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new GetOffice365GroupsActivityDetailWithDateRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="date">Usage: date={date}</param>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public GetOffice365GroupsActivityDetailWithDateRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter, Date? date = default) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -33,9 +33,9 @@ namespace Microsoft.Graph.Beta.Print.Reports.GetOffice365GroupsActivityDetailWit
         }
         /// <summary>
         /// Instantiates a new GetOffice365GroupsActivityDetailWithDateRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public GetOffice365GroupsActivityDetailWithDateRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -47,8 +47,8 @@ namespace Microsoft.Graph.Beta.Print.Reports.GetOffice365GroupsActivityDetailWit
         }
         /// <summary>
         /// Invoke function getOffice365GroupsActivityDetail
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<GetOffice365GroupsActivityDetailWithDateRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -67,9 +67,9 @@ namespace Microsoft.Graph.Beta.Print.Reports.GetOffice365GroupsActivityDetailWit
         }
         /// <summary>
         /// Invoke function getOffice365GroupsActivityDetail
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<GetOffice365GroupsActivityDetailWithDateResponse> GetAsync(Action<GetOffice365GroupsActivityDetailWithDateRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {

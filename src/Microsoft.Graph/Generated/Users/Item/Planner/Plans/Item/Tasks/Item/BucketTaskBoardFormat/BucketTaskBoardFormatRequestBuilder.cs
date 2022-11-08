@@ -19,9 +19,9 @@ namespace Microsoft.Graph.Beta.Users.Item.Planner.Plans.Item.Tasks.Item.BucketTa
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new BucketTaskBoardFormatRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public BucketTaskBoardFormatRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -32,9 +32,9 @@ namespace Microsoft.Graph.Beta.Users.Item.Planner.Plans.Item.Tasks.Item.BucketTa
         }
         /// <summary>
         /// Instantiates a new BucketTaskBoardFormatRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public BucketTaskBoardFormatRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -46,8 +46,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Planner.Plans.Item.Tasks.Item.BucketTa
         }
         /// <summary>
         /// Delete navigation property bucketTaskBoardFormat for users
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateDeleteRequestInformation(Action<BucketTaskBoardFormatRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.DELETE,
@@ -64,8 +64,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Planner.Plans.Item.Tasks.Item.BucketTa
         }
         /// <summary>
         /// Retrieve the properties and relationships of **plannerBucketTaskBoardTaskFormat** object.
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<BucketTaskBoardFormatRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -84,9 +84,9 @@ namespace Microsoft.Graph.Beta.Users.Item.Planner.Plans.Item.Tasks.Item.BucketTa
         }
         /// <summary>
         /// Update the properties of **plannerBucketTaskBoardTaskFormat** object.
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(PlannerBucketTaskBoardTaskFormat body, Action<BucketTaskBoardFormatRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -106,9 +106,9 @@ namespace Microsoft.Graph.Beta.Users.Item.Planner.Plans.Item.Tasks.Item.BucketTa
         }
         /// <summary>
         /// Delete navigation property bucketTaskBoardFormat for users
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task DeleteAsync(Action<BucketTaskBoardFormatRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -119,9 +119,9 @@ namespace Microsoft.Graph.Beta.Users.Item.Planner.Plans.Item.Tasks.Item.BucketTa
         }
         /// <summary>
         /// Retrieve the properties and relationships of **plannerBucketTaskBoardTaskFormat** object.
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<PlannerBucketTaskBoardTaskFormat> GetAsync(Action<BucketTaskBoardFormatRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -132,10 +132,10 @@ namespace Microsoft.Graph.Beta.Users.Item.Planner.Plans.Item.Tasks.Item.BucketTa
         }
         /// <summary>
         /// Update the properties of **plannerBucketTaskBoardTaskFormat** object.
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<PlannerBucketTaskBoardTaskFormat> PatchAsync(PlannerBucketTaskBoardTaskFormat body, Action<BucketTaskBoardFormatRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);

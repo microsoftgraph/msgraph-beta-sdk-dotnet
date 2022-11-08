@@ -15,7 +15,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.DeviceManagement.AuditEvents {
     /// <summary>Provides operations to manage the auditEvents property of the microsoft.graph.deviceManagement entity.</summary>
     public class AuditEventsRequestBuilder {
-        /// <summary>The Count property</summary>
+        /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AuditEvents {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the Microsoft.Graph.Beta.deviceManagement.auditEvents.item collection</summary>
+        /// <summary>Provides operations to manage the auditEvents property of the microsoft.graph.deviceManagement entity.</summary>
         public AuditEventItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("auditEvent%2Did", position);
@@ -33,9 +33,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AuditEvents {
         } }
         /// <summary>
         /// Instantiates a new AuditEventsRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public AuditEventsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -46,9 +46,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AuditEvents {
         }
         /// <summary>
         /// Instantiates a new AuditEventsRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public AuditEventsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -60,8 +60,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AuditEvents {
         }
         /// <summary>
         /// The Audit Events
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<AuditEventsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -80,9 +80,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AuditEvents {
         }
         /// <summary>
         /// Create new navigation property to auditEvents for deviceManagement
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePostRequestInformation(AuditEvent body, Action<AuditEventsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -102,9 +102,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AuditEvents {
         }
         /// <summary>
         /// The Audit Events
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<AuditEventCollectionResponse> GetAsync(Action<AuditEventsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -115,8 +115,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AuditEvents {
         }
         /// <summary>
         /// Provides operations to call the getAuditActivityTypes method.
-        /// <param name="category">Usage: category=&apos;{category}&apos;</param>
         /// </summary>
+        /// <param name="category">Usage: category=&apos;{category}&apos;</param>
         public GetAuditActivityTypesWithCategoryRequestBuilder GetAuditActivityTypesWithCategory(string category) {
             if(string.IsNullOrEmpty(category)) throw new ArgumentNullException(nameof(category));
             return new GetAuditActivityTypesWithCategoryRequestBuilder(PathParameters, RequestAdapter, category);
@@ -129,10 +129,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AuditEvents {
         }
         /// <summary>
         /// Create new navigation property to auditEvents for deviceManagement
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<AuditEvent> PostAsync(AuditEvent body, Action<AuditEventsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, requestConfiguration);

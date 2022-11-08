@@ -18,35 +18,35 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Shares.Item {
     /// <summary>Provides operations to manage the collection of sharedDriveItem entities.</summary>
     public class SharedDriveItemItemRequestBuilder {
-        /// <summary>The driveItem property</summary>
+        /// <summary>Provides operations to manage the driveItem property of the microsoft.graph.sharedDriveItem entity.</summary>
         public DriveItemRequestBuilder DriveItem { get =>
             new DriveItemRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The items property</summary>
+        /// <summary>Provides operations to manage the items property of the microsoft.graph.sharedDriveItem entity.</summary>
         public ItemsRequestBuilder Items { get =>
             new ItemsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The list property</summary>
+        /// <summary>Provides operations to manage the list property of the microsoft.graph.sharedDriveItem entity.</summary>
         public ListRequestBuilder List { get =>
             new ListRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The listItem property</summary>
+        /// <summary>Provides operations to manage the listItem property of the microsoft.graph.sharedDriveItem entity.</summary>
         public ListItemRequestBuilder ListItem { get =>
             new ListItemRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>The permission property</summary>
+        /// <summary>Provides operations to manage the permission property of the microsoft.graph.sharedDriveItem entity.</summary>
         public PermissionRequestBuilder Permission { get =>
             new PermissionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>The root property</summary>
+        /// <summary>Provides operations to manage the root property of the microsoft.graph.sharedDriveItem entity.</summary>
         public RootRequestBuilder Root { get =>
             new RootRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The site property</summary>
+        /// <summary>Provides operations to manage the site property of the microsoft.graph.sharedDriveItem entity.</summary>
         public SiteRequestBuilder Site { get =>
             new SiteRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -54,9 +54,9 @@ namespace Microsoft.Graph.Beta.Shares.Item {
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new SharedDriveItemItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public SharedDriveItemItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -67,9 +67,9 @@ namespace Microsoft.Graph.Beta.Shares.Item {
         }
         /// <summary>
         /// Instantiates a new SharedDriveItemItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public SharedDriveItemItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -81,8 +81,8 @@ namespace Microsoft.Graph.Beta.Shares.Item {
         }
         /// <summary>
         /// Delete entity from shares
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateDeleteRequestInformation(Action<SharedDriveItemItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.DELETE,
@@ -99,8 +99,8 @@ namespace Microsoft.Graph.Beta.Shares.Item {
         }
         /// <summary>
         /// Access a shared DriveItem or a collection of shared items by using a **shareId** or sharing URL. To use a sharing URL with this API, your app needs to transform the URL into a sharing token.
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<SharedDriveItemItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -119,9 +119,9 @@ namespace Microsoft.Graph.Beta.Shares.Item {
         }
         /// <summary>
         /// Update entity in shares
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(SharedDriveItem body, Action<SharedDriveItemItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -141,9 +141,9 @@ namespace Microsoft.Graph.Beta.Shares.Item {
         }
         /// <summary>
         /// Delete entity from shares
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task DeleteAsync(Action<SharedDriveItemItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -154,9 +154,9 @@ namespace Microsoft.Graph.Beta.Shares.Item {
         }
         /// <summary>
         /// Access a shared DriveItem or a collection of shared items by using a **shareId** or sharing URL. To use a sharing URL with this API, your app needs to transform the URL into a sharing token.
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<SharedDriveItem> GetAsync(Action<SharedDriveItemItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -167,10 +167,10 @@ namespace Microsoft.Graph.Beta.Shares.Item {
         }
         /// <summary>
         /// Update entity in shares
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<SharedDriveItem> PatchAsync(SharedDriveItem body, Action<SharedDriveItemItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);

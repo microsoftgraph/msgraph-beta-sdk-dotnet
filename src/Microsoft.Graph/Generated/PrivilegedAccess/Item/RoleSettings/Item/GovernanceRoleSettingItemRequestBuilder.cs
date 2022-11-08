@@ -17,11 +17,11 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleSettings.Item {
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>The resource property</summary>
+        /// <summary>Provides operations to manage the resource property of the microsoft.graph.governanceRoleSetting entity.</summary>
         public ResourceRequestBuilder Resource { get =>
             new ResourceRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The roleDefinition property</summary>
+        /// <summary>Provides operations to manage the roleDefinition property of the microsoft.graph.governanceRoleSetting entity.</summary>
         public RoleDefinitionRequestBuilder RoleDefinition { get =>
             new RoleDefinitionRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -29,9 +29,9 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleSettings.Item {
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new GovernanceRoleSettingItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public GovernanceRoleSettingItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -42,9 +42,9 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleSettings.Item {
         }
         /// <summary>
         /// Instantiates a new GovernanceRoleSettingItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public GovernanceRoleSettingItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -56,8 +56,8 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleSettings.Item {
         }
         /// <summary>
         /// Delete navigation property roleSettings for privilegedAccess
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateDeleteRequestInformation(Action<GovernanceRoleSettingItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.DELETE,
@@ -74,8 +74,8 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleSettings.Item {
         }
         /// <summary>
         /// A collection of role settings for the provider.
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<GovernanceRoleSettingItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -94,9 +94,9 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleSettings.Item {
         }
         /// <summary>
         /// Update the navigation property roleSettings in privilegedAccess
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(GovernanceRoleSetting body, Action<GovernanceRoleSettingItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -116,9 +116,9 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleSettings.Item {
         }
         /// <summary>
         /// Delete navigation property roleSettings for privilegedAccess
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task DeleteAsync(Action<GovernanceRoleSettingItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -129,9 +129,9 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleSettings.Item {
         }
         /// <summary>
         /// A collection of role settings for the provider.
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<GovernanceRoleSetting> GetAsync(Action<GovernanceRoleSettingItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -142,10 +142,10 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleSettings.Item {
         }
         /// <summary>
         /// Update the navigation property roleSettings in privilegedAccess
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<GovernanceRoleSetting> PatchAsync(GovernanceRoleSetting body, Action<GovernanceRoleSettingItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);

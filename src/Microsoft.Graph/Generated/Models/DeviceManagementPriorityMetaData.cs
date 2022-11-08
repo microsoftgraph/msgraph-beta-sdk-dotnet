@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Priority metadata of the policy.</summary>
     public class DeviceManagementPriorityMetaData : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
@@ -18,6 +19,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+        /// <summary>Priority of the policy. Valid values 1 to 500</summary>
+        public int? Priority {
+            get { return BackingStore?.Get<int?>("priority"); }
+            set { BackingStore?.Set("priority", value); }
+        }
         /// <summary>
         /// Instantiates a new deviceManagementPriorityMetaData and sets the default values.
         /// </summary>
@@ -28,8 +34,8 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
-        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static DeviceManagementPriorityMetaData CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new DeviceManagementPriorityMetaData();
@@ -40,15 +46,17 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
+                {"priority", n => { Priority = n.GetIntValue(); } },
             };
         }
         /// <summary>
         /// Serializes information the current object
-        /// <param name="writer">Serialization writer to use to serialize this model</param>
         /// </summary>
+        /// <param name="writer">Serialization writer to use to serialize this model</param>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("@odata.type", OdataType);
+            writer.WriteIntValue("priority", Priority);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

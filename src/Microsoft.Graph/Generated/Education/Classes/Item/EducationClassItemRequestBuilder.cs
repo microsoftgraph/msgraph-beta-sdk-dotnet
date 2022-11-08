@@ -19,27 +19,27 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Education.Classes.Item {
     /// <summary>Provides operations to manage the classes property of the microsoft.graph.educationRoot entity.</summary>
     public class EducationClassItemRequestBuilder {
-        /// <summary>The assignmentCategories property</summary>
+        /// <summary>Provides operations to manage the assignmentCategories property of the microsoft.graph.educationClass entity.</summary>
         public AssignmentCategoriesRequestBuilder AssignmentCategories { get =>
             new AssignmentCategoriesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The assignmentDefaults property</summary>
+        /// <summary>Provides operations to manage the assignmentDefaults property of the microsoft.graph.educationClass entity.</summary>
         public AssignmentDefaultsRequestBuilder AssignmentDefaults { get =>
             new AssignmentDefaultsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The assignments property</summary>
+        /// <summary>Provides operations to manage the assignments property of the microsoft.graph.educationClass entity.</summary>
         public AssignmentsRequestBuilder Assignments { get =>
             new AssignmentsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The assignmentSettings property</summary>
+        /// <summary>Provides operations to manage the assignmentSettings property of the microsoft.graph.educationClass entity.</summary>
         public AssignmentSettingsRequestBuilder AssignmentSettings { get =>
             new AssignmentSettingsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The group property</summary>
+        /// <summary>Provides operations to manage the group property of the microsoft.graph.educationClass entity.</summary>
         public GroupRequestBuilder Group { get =>
             new GroupRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The members property</summary>
+        /// <summary>Provides operations to manage the members property of the microsoft.graph.educationClass entity.</summary>
         public MembersRequestBuilder Members { get =>
             new MembersRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -47,11 +47,11 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item {
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>The schools property</summary>
+        /// <summary>Provides operations to manage the schools property of the microsoft.graph.educationClass entity.</summary>
         public SchoolsRequestBuilder Schools { get =>
             new SchoolsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The teachers property</summary>
+        /// <summary>Provides operations to manage the teachers property of the microsoft.graph.educationClass entity.</summary>
         public TeachersRequestBuilder Teachers { get =>
             new TeachersRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -59,9 +59,9 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item {
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new EducationClassItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public EducationClassItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -72,9 +72,9 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item {
         }
         /// <summary>
         /// Instantiates a new EducationClassItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public EducationClassItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -86,8 +86,8 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item {
         }
         /// <summary>
         /// Delete navigation property classes for education
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateDeleteRequestInformation(Action<EducationClassItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.DELETE,
@@ -104,8 +104,8 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item {
         }
         /// <summary>
         /// Get classes from education
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<EducationClassItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -124,9 +124,9 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item {
         }
         /// <summary>
         /// Update the navigation property classes in education
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(EducationClass body, Action<EducationClassItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -146,9 +146,9 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item {
         }
         /// <summary>
         /// Delete navigation property classes for education
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task DeleteAsync(Action<EducationClassItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -159,9 +159,9 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item {
         }
         /// <summary>
         /// Get classes from education
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<EducationClass> GetAsync(Action<EducationClassItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -172,10 +172,10 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item {
         }
         /// <summary>
         /// Update the navigation property classes in education
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<EducationClass> PatchAsync(EducationClass body, Action<EducationClassItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);

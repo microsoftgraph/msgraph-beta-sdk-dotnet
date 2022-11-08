@@ -16,7 +16,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.TrustFramework.KeySets.Item {
     /// <summary>Provides operations to manage the keySets property of the microsoft.graph.trustFramework entity.</summary>
     public class TrustFrameworkKeySetItemRequestBuilder {
-        /// <summary>The generateKey property</summary>
+        /// <summary>Provides operations to call the generateKey method.</summary>
         public GenerateKeyRequestBuilder GenerateKey { get =>
             new GenerateKeyRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -24,15 +24,15 @@ namespace Microsoft.Graph.Beta.TrustFramework.KeySets.Item {
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>The uploadCertificate property</summary>
+        /// <summary>Provides operations to call the uploadCertificate method.</summary>
         public UploadCertificateRequestBuilder UploadCertificate { get =>
             new UploadCertificateRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The uploadPkcs12 property</summary>
+        /// <summary>Provides operations to call the uploadPkcs12 method.</summary>
         public UploadPkcs12RequestBuilder UploadPkcs12 { get =>
             new UploadPkcs12RequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The uploadSecret property</summary>
+        /// <summary>Provides operations to call the uploadSecret method.</summary>
         public UploadSecretRequestBuilder UploadSecret { get =>
             new UploadSecretRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -40,9 +40,9 @@ namespace Microsoft.Graph.Beta.TrustFramework.KeySets.Item {
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new TrustFrameworkKeySetItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public TrustFrameworkKeySetItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -53,9 +53,9 @@ namespace Microsoft.Graph.Beta.TrustFramework.KeySets.Item {
         }
         /// <summary>
         /// Instantiates a new TrustFrameworkKeySetItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public TrustFrameworkKeySetItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -67,8 +67,8 @@ namespace Microsoft.Graph.Beta.TrustFramework.KeySets.Item {
         }
         /// <summary>
         /// Delete navigation property keySets for trustFramework
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateDeleteRequestInformation(Action<TrustFrameworkKeySetItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.DELETE,
@@ -85,8 +85,8 @@ namespace Microsoft.Graph.Beta.TrustFramework.KeySets.Item {
         }
         /// <summary>
         /// Get keySets from trustFramework
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<TrustFrameworkKeySetItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -105,9 +105,9 @@ namespace Microsoft.Graph.Beta.TrustFramework.KeySets.Item {
         }
         /// <summary>
         /// Update the navigation property keySets in trustFramework
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(TrustFrameworkKeySet body, Action<TrustFrameworkKeySetItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -127,9 +127,9 @@ namespace Microsoft.Graph.Beta.TrustFramework.KeySets.Item {
         }
         /// <summary>
         /// Delete navigation property keySets for trustFramework
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task DeleteAsync(Action<TrustFrameworkKeySetItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -146,9 +146,9 @@ namespace Microsoft.Graph.Beta.TrustFramework.KeySets.Item {
         }
         /// <summary>
         /// Get keySets from trustFramework
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<TrustFrameworkKeySet> GetAsync(Action<TrustFrameworkKeySetItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -159,10 +159,10 @@ namespace Microsoft.Graph.Beta.TrustFramework.KeySets.Item {
         }
         /// <summary>
         /// Update the navigation property keySets in trustFramework
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<TrustFrameworkKeySet> PatchAsync(TrustFrameworkKeySet body, Action<TrustFrameworkKeySetItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);

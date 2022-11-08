@@ -17,15 +17,15 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Sites.Item.Onenote {
     /// <summary>Provides operations to manage the onenote property of the microsoft.graph.site entity.</summary>
     public class OnenoteRequestBuilder {
-        /// <summary>The notebooks property</summary>
+        /// <summary>Provides operations to manage the notebooks property of the microsoft.graph.onenote entity.</summary>
         public NotebooksRequestBuilder Notebooks { get =>
             new NotebooksRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The operations property</summary>
+        /// <summary>Provides operations to manage the operations property of the microsoft.graph.onenote entity.</summary>
         public OperationsRequestBuilder Operations { get =>
             new OperationsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The pages property</summary>
+        /// <summary>Provides operations to manage the pages property of the microsoft.graph.onenote entity.</summary>
         public PagesRequestBuilder Pages { get =>
             new PagesRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -33,15 +33,15 @@ namespace Microsoft.Graph.Beta.Sites.Item.Onenote {
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>The resources property</summary>
+        /// <summary>Provides operations to manage the resources property of the microsoft.graph.onenote entity.</summary>
         public ResourcesRequestBuilder Resources { get =>
             new ResourcesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The sectionGroups property</summary>
+        /// <summary>Provides operations to manage the sectionGroups property of the microsoft.graph.onenote entity.</summary>
         public SectionGroupsRequestBuilder SectionGroups { get =>
             new SectionGroupsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The sections property</summary>
+        /// <summary>Provides operations to manage the sections property of the microsoft.graph.onenote entity.</summary>
         public SectionsRequestBuilder Sections { get =>
             new SectionsRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -49,9 +49,9 @@ namespace Microsoft.Graph.Beta.Sites.Item.Onenote {
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new OnenoteRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public OnenoteRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -62,9 +62,9 @@ namespace Microsoft.Graph.Beta.Sites.Item.Onenote {
         }
         /// <summary>
         /// Instantiates a new OnenoteRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public OnenoteRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -76,8 +76,8 @@ namespace Microsoft.Graph.Beta.Sites.Item.Onenote {
         }
         /// <summary>
         /// Delete navigation property onenote for sites
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateDeleteRequestInformation(Action<OnenoteRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.DELETE,
@@ -94,8 +94,8 @@ namespace Microsoft.Graph.Beta.Sites.Item.Onenote {
         }
         /// <summary>
         /// Get onenote from sites
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<OnenoteRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -114,9 +114,9 @@ namespace Microsoft.Graph.Beta.Sites.Item.Onenote {
         }
         /// <summary>
         /// Update the navigation property onenote in sites
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(Microsoft.Graph.Beta.Models.Onenote body, Action<OnenoteRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -136,9 +136,9 @@ namespace Microsoft.Graph.Beta.Sites.Item.Onenote {
         }
         /// <summary>
         /// Delete navigation property onenote for sites
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task DeleteAsync(Action<OnenoteRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -149,9 +149,9 @@ namespace Microsoft.Graph.Beta.Sites.Item.Onenote {
         }
         /// <summary>
         /// Get onenote from sites
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<Microsoft.Graph.Beta.Models.Onenote> GetAsync(Action<OnenoteRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -162,10 +162,10 @@ namespace Microsoft.Graph.Beta.Sites.Item.Onenote {
         }
         /// <summary>
         /// Update the navigation property onenote in sites
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<Microsoft.Graph.Beta.Models.Onenote> PatchAsync(Microsoft.Graph.Beta.Models.Onenote body, Action<OnenoteRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);

@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDevicePerformance {
     /// <summary>Provides operations to manage the userExperienceAnalyticsDevicePerformance property of the microsoft.graph.deviceManagement entity.</summary>
     public class UserExperienceAnalyticsDevicePerformanceRequestBuilder {
-        /// <summary>The Count property</summary>
+        /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDevicePer
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the Microsoft.Graph.Beta.deviceManagement.userExperienceAnalyticsDevicePerformance.item collection</summary>
+        /// <summary>Provides operations to manage the userExperienceAnalyticsDevicePerformance property of the microsoft.graph.deviceManagement entity.</summary>
         public UserExperienceAnalyticsDevicePerformanceItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("userExperienceAnalyticsDevicePerformance%2Did", position);
@@ -32,9 +32,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDevicePer
         } }
         /// <summary>
         /// Instantiates a new UserExperienceAnalyticsDevicePerformanceRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public UserExperienceAnalyticsDevicePerformanceRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -45,9 +45,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDevicePer
         }
         /// <summary>
         /// Instantiates a new UserExperienceAnalyticsDevicePerformanceRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public UserExperienceAnalyticsDevicePerformanceRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -59,8 +59,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDevicePer
         }
         /// <summary>
         /// User experience analytics device performance
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<UserExperienceAnalyticsDevicePerformanceRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -79,9 +79,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDevicePer
         }
         /// <summary>
         /// Create new navigation property to userExperienceAnalyticsDevicePerformance for deviceManagement
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePostRequestInformation(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDevicePerformance body, Action<UserExperienceAnalyticsDevicePerformanceRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -101,9 +101,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDevicePer
         }
         /// <summary>
         /// User experience analytics device performance
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<UserExperienceAnalyticsDevicePerformanceCollectionResponse> GetAsync(Action<UserExperienceAnalyticsDevicePerformanceRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -114,10 +114,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDevicePer
         }
         /// <summary>
         /// Create new navigation property to userExperienceAnalyticsDevicePerformance for deviceManagement
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDevicePerformance> PostAsync(Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDevicePerformance body, Action<UserExperienceAnalyticsDevicePerformanceRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, requestConfiguration);
@@ -129,8 +129,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDevicePer
         }
         /// <summary>
         /// Provides operations to call the summarizeDevicePerformanceDevices method.
-        /// <param name="summarizeBy">Usage: summarizeBy=&apos;{summarizeBy}&apos;</param>
         /// </summary>
+        /// <param name="summarizeBy">Usage: summarizeBy=&apos;{summarizeBy}&apos;</param>
         public SummarizeDevicePerformanceDevicesWithSummarizeByRequestBuilder SummarizeDevicePerformanceDevicesWithSummarizeBy(string summarizeBy) {
             if(string.IsNullOrEmpty(summarizeBy)) throw new ArgumentNullException(nameof(summarizeBy));
             return new SummarizeDevicePerformanceDevicesWithSummarizeByRequestBuilder(PathParameters, RequestAdapter, summarizeBy);

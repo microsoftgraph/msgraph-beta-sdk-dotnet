@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<Approval>>("approvals"); }
             set { BackingStore?.Set("approvals", value); }
         }
-        /// <summary>The licenses that are assigned to the user, including inherited (group-based) licenses. Not nullable. Supports $filter (eq, not, and counting empty collections).</summary>
+        /// <summary>The licenses that are assigned to the user, including inherited (group-based) licenses. This property doesn&apos;t differentiate directly-assigned and inherited licenses. Use the licenseAssignmentStates property to identify the directly-assigned and inherited licenses. Not nullable. Supports $filter (eq, not, and counting empty collections).</summary>
         public List<AssignedLicense> AssignedLicenses {
             get { return BackingStore?.Get<List<AssignedLicense>>("assignedLicenses"); }
             set { BackingStore?.Set("assignedLicenses", value); }
@@ -146,7 +146,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("country"); }
             set { BackingStore?.Set("country", value); }
         }
-        /// <summary>The date and time the user was created. The value cannot be modified and is automatically populated when the entity is created. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. Property is nullable. A null value indicates that an accurate creation time couldn&apos;t be determined for the user. Read-only. Supports $filter (eq, ne, not , ge, le, in).</summary>
+        /// <summary>The date and time the user was created, in ISO 8601 format and in UTC time. The value cannot be modified and is automatically populated when the entity is created. Nullable. For on-premises users, the value represents when they were first created in Azure AD. Property is null for some users created before June 2018 and on-premises users that were synced to Azure AD before June 2018. Read-only. Supports $filter (eq, ne, not , ge, le, in).</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
@@ -226,7 +226,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("employeeId"); }
             set { BackingStore?.Set("employeeId", value); }
         }
-        /// <summary>The date and time when the user left or will leave the organization. Read: Requires User-LifeCycleInfo.Read.All. For delegated scenarios, the admin needs one of the following Azure AD roles: Lifecycle Workflows Administrator, Global Reader, or Global Admin.  Write: Requires User-LifeCycleInfo.ReadWrite.All. For delegated scenarios, the admin needs the Global Administrator Azure AD role. Supports $filter (eq, ne, not , ge, le, in).</summary>
+        /// <summary>The date and time when the user left or will leave the organization. To read or write this property, the calling app must be assigned the User-LifeCycleInfo.Read.All or User-LifeCycleInfo.ReadWrite.All permissions respectively. To read this property in delegated scenarios, the admin needs one of the following Azure AD roles: Lifecycle Workflows Administrator, Global Reader, or Global Admin. To write this property in delegated scenarios, the admin needs the Global Administrator Azure AD role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.</summary>
         public DateTimeOffset? EmployeeLeaveDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("employeeLeaveDateTime"); }
             set { BackingStore?.Set("employeeLeaveDateTime", value); }
@@ -351,7 +351,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("legalAgeGroupClassification"); }
             set { BackingStore?.Set("legalAgeGroupClassification", value); }
         }
-        /// <summary>State of license assignments for this user. Read-only. Returned only on $select.</summary>
+        /// <summary>State of license assignments for this user. Also indicates licenses that are directly-assigned and those that the user has inherited through group memberships. Read-only. Returned only on $select.</summary>
         public List<LicenseAssignmentState> LicenseAssignmentStates {
             get { return BackingStore?.Get<List<LicenseAssignmentState>>("licenseAssignmentStates"); }
             set { BackingStore?.Set("licenseAssignmentStates", value); }
@@ -739,8 +739,8 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
-        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new User CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new User();
@@ -899,8 +899,8 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>
         /// Serializes information the current object
-        /// <param name="writer">Serialization writer to use to serialize this model</param>
         /// </summary>
+        /// <param name="writer">Serialization writer to use to serialize this model</param>
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);

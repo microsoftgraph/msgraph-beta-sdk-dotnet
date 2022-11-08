@@ -141,6 +141,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("showAzureADEnterpriseApps"); }
             set { BackingStore?.Set("showAzureADEnterpriseApps", value); }
         }
+        /// <summary>Boolean that indicates if Configuration Manager Apps will be shown in Company Portal</summary>
+        public bool? ShowConfigurationManagerApps {
+            get { return BackingStore?.Get<bool?>("showConfigurationManagerApps"); }
+            set { BackingStore?.Set("showConfigurationManagerApps", value); }
+        }
         /// <summary>Boolean that represents whether the administrator-supplied display name will be shown next to the logo image or not</summary>
         public bool? ShowDisplayNameNextToLogo {
             get { return BackingStore?.Get<bool?>("showDisplayNameNextToLogo"); }
@@ -174,8 +179,8 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
-        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new IntuneBrandingProfile CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new IntuneBrandingProfile();
@@ -212,6 +217,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"sendDeviceOwnershipChangePushNotification", n => { SendDeviceOwnershipChangePushNotification = n.GetBoolValue(); } },
                 {"showAzureADEnterpriseApps", n => { ShowAzureADEnterpriseApps = n.GetBoolValue(); } },
+                {"showConfigurationManagerApps", n => { ShowConfigurationManagerApps = n.GetBoolValue(); } },
                 {"showDisplayNameNextToLogo", n => { ShowDisplayNameNextToLogo = n.GetBoolValue(); } },
                 {"showLogo", n => { ShowLogo = n.GetBoolValue(); } },
                 {"showOfficeWebApps", n => { ShowOfficeWebApps = n.GetBoolValue(); } },
@@ -221,8 +227,8 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>
         /// Serializes information the current object
-        /// <param name="writer">Serialization writer to use to serialize this model</param>
         /// </summary>
+        /// <param name="writer">Serialization writer to use to serialize this model</param>
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
@@ -253,6 +259,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfPrimitiveValues<string>("roleScopeTagIds", RoleScopeTagIds);
             writer.WriteBoolValue("sendDeviceOwnershipChangePushNotification", SendDeviceOwnershipChangePushNotification);
             writer.WriteBoolValue("showAzureADEnterpriseApps", ShowAzureADEnterpriseApps);
+            writer.WriteBoolValue("showConfigurationManagerApps", ShowConfigurationManagerApps);
             writer.WriteBoolValue("showDisplayNameNextToLogo", ShowDisplayNameNextToLogo);
             writer.WriteBoolValue("showLogo", ShowLogo);
             writer.WriteBoolValue("showOfficeWebApps", ShowOfficeWebApps);

@@ -16,25 +16,25 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Communications {
     /// <summary>Provides operations to manage the cloudCommunications singleton.</summary>
     public class CommunicationsRequestBuilder {
-        /// <summary>The callRecords property</summary>
+        /// <summary>Provides operations to manage the callRecords property of the microsoft.graph.cloudCommunications entity.</summary>
         public CallRecordsRequestBuilder CallRecords { get =>
             new CallRecordsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The calls property</summary>
+        /// <summary>Provides operations to manage the calls property of the microsoft.graph.cloudCommunications entity.</summary>
         public CallsRequestBuilder Calls { get =>
             new CallsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The getPresencesByUserId property</summary>
+        /// <summary>Provides operations to call the getPresencesByUserId method.</summary>
         public GetPresencesByUserIdRequestBuilder GetPresencesByUserId { get =>
             new GetPresencesByUserIdRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The onlineMeetings property</summary>
+        /// <summary>Provides operations to manage the onlineMeetings property of the microsoft.graph.cloudCommunications entity.</summary>
         public OnlineMeetingsRequestBuilder OnlineMeetings { get =>
             new OnlineMeetingsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>The presences property</summary>
+        /// <summary>Provides operations to manage the presences property of the microsoft.graph.cloudCommunications entity.</summary>
         public PresencesRequestBuilder Presences { get =>
             new PresencesRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -44,9 +44,9 @@ namespace Microsoft.Graph.Beta.Communications {
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new CommunicationsRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public CommunicationsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -57,9 +57,9 @@ namespace Microsoft.Graph.Beta.Communications {
         }
         /// <summary>
         /// Instantiates a new CommunicationsRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public CommunicationsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -71,8 +71,8 @@ namespace Microsoft.Graph.Beta.Communications {
         }
         /// <summary>
         /// Get communications
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<CommunicationsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -91,9 +91,9 @@ namespace Microsoft.Graph.Beta.Communications {
         }
         /// <summary>
         /// Update communications
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(CloudCommunications body, Action<CommunicationsRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -113,9 +113,9 @@ namespace Microsoft.Graph.Beta.Communications {
         }
         /// <summary>
         /// Get communications
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<CloudCommunications> GetAsync(Action<CommunicationsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -126,10 +126,10 @@ namespace Microsoft.Graph.Beta.Communications {
         }
         /// <summary>
         /// Update communications
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<CloudCommunications> PatchAsync(CloudCommunications body, Action<CommunicationsRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);

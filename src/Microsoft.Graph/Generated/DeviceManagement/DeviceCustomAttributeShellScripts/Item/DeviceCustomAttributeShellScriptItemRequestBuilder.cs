@@ -17,19 +17,19 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCustomAttributeShellScripts.Item {
     /// <summary>Provides operations to manage the deviceCustomAttributeShellScripts property of the microsoft.graph.deviceManagement entity.</summary>
     public class DeviceCustomAttributeShellScriptItemRequestBuilder {
-        /// <summary>The assign property</summary>
+        /// <summary>Provides operations to call the assign method.</summary>
         public AssignRequestBuilder Assign { get =>
             new AssignRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The assignments property</summary>
+        /// <summary>Provides operations to manage the assignments property of the microsoft.graph.deviceCustomAttributeShellScript entity.</summary>
         public AssignmentsRequestBuilder Assignments { get =>
             new AssignmentsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The deviceRunStates property</summary>
+        /// <summary>Provides operations to manage the deviceRunStates property of the microsoft.graph.deviceCustomAttributeShellScript entity.</summary>
         public DeviceRunStatesRequestBuilder DeviceRunStates { get =>
             new DeviceRunStatesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The groupAssignments property</summary>
+        /// <summary>Provides operations to manage the groupAssignments property of the microsoft.graph.deviceCustomAttributeShellScript entity.</summary>
         public GroupAssignmentsRequestBuilder GroupAssignments { get =>
             new GroupAssignmentsRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -37,21 +37,21 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCustomAttributeShellScript
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>The runSummary property</summary>
+        /// <summary>Provides operations to manage the runSummary property of the microsoft.graph.deviceCustomAttributeShellScript entity.</summary>
         public RunSummaryRequestBuilder RunSummary { get =>
             new RunSummaryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>The userRunStates property</summary>
+        /// <summary>Provides operations to manage the userRunStates property of the microsoft.graph.deviceCustomAttributeShellScript entity.</summary>
         public UserRunStatesRequestBuilder UserRunStates { get =>
             new UserRunStatesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new DeviceCustomAttributeShellScriptItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public DeviceCustomAttributeShellScriptItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -62,9 +62,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCustomAttributeShellScript
         }
         /// <summary>
         /// Instantiates a new DeviceCustomAttributeShellScriptItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public DeviceCustomAttributeShellScriptItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -76,8 +76,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCustomAttributeShellScript
         }
         /// <summary>
         /// Delete navigation property deviceCustomAttributeShellScripts for deviceManagement
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateDeleteRequestInformation(Action<DeviceCustomAttributeShellScriptItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.DELETE,
@@ -94,8 +94,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCustomAttributeShellScript
         }
         /// <summary>
         /// The list of device custom attribute shell scripts associated with the tenant.
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<DeviceCustomAttributeShellScriptItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -114,9 +114,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCustomAttributeShellScript
         }
         /// <summary>
         /// Update the navigation property deviceCustomAttributeShellScripts in deviceManagement
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(DeviceCustomAttributeShellScript body, Action<DeviceCustomAttributeShellScriptItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -136,9 +136,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCustomAttributeShellScript
         }
         /// <summary>
         /// Delete navigation property deviceCustomAttributeShellScripts for deviceManagement
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task DeleteAsync(Action<DeviceCustomAttributeShellScriptItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -149,9 +149,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCustomAttributeShellScript
         }
         /// <summary>
         /// The list of device custom attribute shell scripts associated with the tenant.
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<DeviceCustomAttributeShellScript> GetAsync(Action<DeviceCustomAttributeShellScriptItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -162,10 +162,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCustomAttributeShellScript
         }
         /// <summary>
         /// Update the navigation property deviceCustomAttributeShellScripts in deviceManagement
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<DeviceCustomAttributeShellScript> PatchAsync(DeviceCustomAttributeShellScript body, Action<DeviceCustomAttributeShellScriptItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);

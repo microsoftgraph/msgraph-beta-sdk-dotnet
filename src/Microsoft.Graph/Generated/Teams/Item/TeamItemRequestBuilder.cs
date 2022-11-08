@@ -31,87 +31,87 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Teams.Item {
     /// <summary>Provides operations to manage the collection of team entities.</summary>
     public class TeamItemRequestBuilder {
-        /// <summary>The allChannels property</summary>
+        /// <summary>Provides operations to manage the allChannels property of the microsoft.graph.team entity.</summary>
         public AllChannelsRequestBuilder AllChannels { get =>
             new AllChannelsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The archive property</summary>
+        /// <summary>Provides operations to call the archive method.</summary>
         public ArchiveRequestBuilder Archive { get =>
             new ArchiveRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The channels property</summary>
+        /// <summary>Provides operations to manage the channels property of the microsoft.graph.team entity.</summary>
         public ChannelsRequestBuilder Channels { get =>
             new ChannelsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The clone property</summary>
+        /// <summary>Provides operations to call the clone method.</summary>
         public CloneRequestBuilder Clone { get =>
             new CloneRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The completeMigration property</summary>
+        /// <summary>Provides operations to call the completeMigration method.</summary>
         public CompleteMigrationRequestBuilder CompleteMigration { get =>
             new CompleteMigrationRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The group property</summary>
+        /// <summary>Provides operations to manage the group property of the microsoft.graph.team entity.</summary>
         public GroupRequestBuilder Group { get =>
             new GroupRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The incomingChannels property</summary>
+        /// <summary>Provides operations to manage the incomingChannels property of the microsoft.graph.team entity.</summary>
         public IncomingChannelsRequestBuilder IncomingChannels { get =>
             new IncomingChannelsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The installedApps property</summary>
+        /// <summary>Provides operations to manage the installedApps property of the microsoft.graph.team entity.</summary>
         public InstalledAppsRequestBuilder InstalledApps { get =>
             new InstalledAppsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The members property</summary>
+        /// <summary>Provides operations to manage the members property of the microsoft.graph.team entity.</summary>
         public MembersRequestBuilder Members { get =>
             new MembersRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The operations property</summary>
+        /// <summary>Provides operations to manage the operations property of the microsoft.graph.team entity.</summary>
         public OperationsRequestBuilder Operations { get =>
             new OperationsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The owners property</summary>
+        /// <summary>Provides operations to manage the owners property of the microsoft.graph.team entity.</summary>
         public OwnersRequestBuilder Owners { get =>
             new OwnersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>The permissionGrants property</summary>
+        /// <summary>Provides operations to manage the permissionGrants property of the microsoft.graph.team entity.</summary>
         public PermissionGrantsRequestBuilder PermissionGrants { get =>
             new PermissionGrantsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The photo property</summary>
+        /// <summary>Provides operations to manage the photo property of the microsoft.graph.team entity.</summary>
         public PhotoRequestBuilder Photo { get =>
             new PhotoRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The primaryChannel property</summary>
+        /// <summary>Provides operations to manage the primaryChannel property of the microsoft.graph.team entity.</summary>
         public PrimaryChannelRequestBuilder PrimaryChannel { get =>
             new PrimaryChannelRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>The schedule property</summary>
+        /// <summary>Provides operations to manage the schedule property of the microsoft.graph.team entity.</summary>
         public ScheduleRequestBuilder Schedule { get =>
             new ScheduleRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The sendActivityNotification property</summary>
+        /// <summary>Provides operations to call the sendActivityNotification method.</summary>
         public SendActivityNotificationRequestBuilder SendActivityNotification { get =>
             new SendActivityNotificationRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The tags property</summary>
+        /// <summary>Provides operations to manage the tags property of the microsoft.graph.team entity.</summary>
         public TagsRequestBuilder Tags { get =>
             new TagsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The template property</summary>
+        /// <summary>Provides operations to manage the template property of the microsoft.graph.team entity.</summary>
         public TemplateRequestBuilder Template { get =>
             new TemplateRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The templateDefinition property</summary>
+        /// <summary>Provides operations to manage the templateDefinition property of the microsoft.graph.team entity.</summary>
         public TemplateDefinitionRequestBuilder TemplateDefinition { get =>
             new TemplateDefinitionRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The unarchive property</summary>
+        /// <summary>Provides operations to call the unarchive method.</summary>
         public UnarchiveRequestBuilder Unarchive { get =>
             new UnarchiveRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -119,9 +119,9 @@ namespace Microsoft.Graph.Beta.Teams.Item {
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new TeamItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public TeamItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -132,9 +132,9 @@ namespace Microsoft.Graph.Beta.Teams.Item {
         }
         /// <summary>
         /// Instantiates a new TeamItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public TeamItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -146,8 +146,8 @@ namespace Microsoft.Graph.Beta.Teams.Item {
         }
         /// <summary>
         /// Delete entity from teams
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateDeleteRequestInformation(Action<TeamItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.DELETE,
@@ -164,8 +164,8 @@ namespace Microsoft.Graph.Beta.Teams.Item {
         }
         /// <summary>
         /// Retrieve the properties and relationships of the specified team.
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<TeamItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -184,9 +184,9 @@ namespace Microsoft.Graph.Beta.Teams.Item {
         }
         /// <summary>
         /// Update the properties of the specified team.
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(Microsoft.Graph.Beta.Models.Team body, Action<TeamItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -206,9 +206,9 @@ namespace Microsoft.Graph.Beta.Teams.Item {
         }
         /// <summary>
         /// Delete entity from teams
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task DeleteAsync(Action<TeamItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -219,9 +219,9 @@ namespace Microsoft.Graph.Beta.Teams.Item {
         }
         /// <summary>
         /// Retrieve the properties and relationships of the specified team.
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<Microsoft.Graph.Beta.Models.Team> GetAsync(Action<TeamItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -232,10 +232,10 @@ namespace Microsoft.Graph.Beta.Teams.Item {
         }
         /// <summary>
         /// Update the properties of the specified team.
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<Microsoft.Graph.Beta.Models.Team> PatchAsync(Microsoft.Graph.Beta.Models.Team body, Action<TeamItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);

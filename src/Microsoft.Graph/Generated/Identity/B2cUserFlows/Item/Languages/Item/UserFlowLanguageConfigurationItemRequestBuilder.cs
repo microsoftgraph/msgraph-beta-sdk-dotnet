@@ -13,11 +13,11 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.Languages.Item {
     /// <summary>Provides operations to manage the languages property of the microsoft.graph.b2cIdentityUserFlow entity.</summary>
     public class UserFlowLanguageConfigurationItemRequestBuilder {
-        /// <summary>The defaultPages property</summary>
+        /// <summary>Provides operations to manage the defaultPages property of the microsoft.graph.userFlowLanguageConfiguration entity.</summary>
         public DefaultPagesRequestBuilder DefaultPages { get =>
             new DefaultPagesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The overridesPages property</summary>
+        /// <summary>Provides operations to manage the overridesPages property of the microsoft.graph.userFlowLanguageConfiguration entity.</summary>
         public OverridesPagesRequestBuilder OverridesPages { get =>
             new OverridesPagesRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -29,9 +29,9 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.Languages.Item {
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new UserFlowLanguageConfigurationItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public UserFlowLanguageConfigurationItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -42,9 +42,9 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.Languages.Item {
         }
         /// <summary>
         /// Instantiates a new UserFlowLanguageConfigurationItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public UserFlowLanguageConfigurationItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -56,8 +56,8 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.Languages.Item {
         }
         /// <summary>
         /// Delete navigation property languages for identity
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateDeleteRequestInformation(Action<UserFlowLanguageConfigurationItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.DELETE,
@@ -74,8 +74,8 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.Languages.Item {
         }
         /// <summary>
         /// The languages supported for customization within the user flow. Language customization is not enabled by default in B2C user flows.
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<UserFlowLanguageConfigurationItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -94,9 +94,9 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.Languages.Item {
         }
         /// <summary>
         /// Update the navigation property languages in identity
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(UserFlowLanguageConfiguration body, Action<UserFlowLanguageConfigurationItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -116,9 +116,9 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.Languages.Item {
         }
         /// <summary>
         /// Delete navigation property languages for identity
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task DeleteAsync(Action<UserFlowLanguageConfigurationItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -129,9 +129,9 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.Languages.Item {
         }
         /// <summary>
         /// The languages supported for customization within the user flow. Language customization is not enabled by default in B2C user flows.
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<UserFlowLanguageConfiguration> GetAsync(Action<UserFlowLanguageConfigurationItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -142,10 +142,10 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.Languages.Item {
         }
         /// <summary>
         /// Update the navigation property languages in identity
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<UserFlowLanguageConfiguration> PatchAsync(UserFlowLanguageConfiguration body, Action<UserFlowLanguageConfigurationItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);

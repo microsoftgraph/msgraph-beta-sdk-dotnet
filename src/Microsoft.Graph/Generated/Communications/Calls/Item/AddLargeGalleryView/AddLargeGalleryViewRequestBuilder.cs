@@ -19,9 +19,9 @@ namespace Microsoft.Graph.Beta.Communications.Calls.Item.AddLargeGalleryView {
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new AddLargeGalleryViewRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public AddLargeGalleryViewRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -32,9 +32,9 @@ namespace Microsoft.Graph.Beta.Communications.Calls.Item.AddLargeGalleryView {
         }
         /// <summary>
         /// Instantiates a new AddLargeGalleryViewRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public AddLargeGalleryViewRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -45,10 +45,10 @@ namespace Microsoft.Graph.Beta.Communications.Calls.Item.AddLargeGalleryView {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Add the large gallery view to a call.
+        /// Add the large gallery view to a call.  For details about how to identify a large gallery view participant in a roster so that you can retrieve the relevant data to subscribe to the video feed, see Identify large gallery view participants in a roster.
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePostRequestInformation(AddLargeGalleryViewPostRequestBody body, Action<AddLargeGalleryViewRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -67,11 +67,11 @@ namespace Microsoft.Graph.Beta.Communications.Calls.Item.AddLargeGalleryView {
             return requestInfo;
         }
         /// <summary>
-        /// Add the large gallery view to a call.
+        /// Add the large gallery view to a call.  For details about how to identify a large gallery view participant in a roster so that you can retrieve the relevant data to subscribe to the video feed, see Identify large gallery view participants in a roster.
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<AddLargeGalleryViewOperation> PostAsync(AddLargeGalleryViewPostRequestBody body, Action<AddLargeGalleryViewRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, requestConfiguration);

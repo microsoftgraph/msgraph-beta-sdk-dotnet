@@ -37,105 +37,105 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Me.Drives.Item.Items.Item {
     /// <summary>Provides operations to manage the items property of the microsoft.graph.drive entity.</summary>
     public class DriveItemItemRequestBuilder {
-        /// <summary>The activities property</summary>
+        /// <summary>Provides operations to manage the activities property of the microsoft.graph.driveItem entity.</summary>
         public ActivitiesRequestBuilder Activities { get =>
             new ActivitiesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The analytics property</summary>
+        /// <summary>Provides operations to manage the analytics property of the microsoft.graph.driveItem entity.</summary>
         public AnalyticsRequestBuilder Analytics { get =>
             new AnalyticsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The assignSensitivityLabel property</summary>
+        /// <summary>Provides operations to call the assignSensitivityLabel method.</summary>
         public AssignSensitivityLabelRequestBuilder AssignSensitivityLabel { get =>
             new AssignSensitivityLabelRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The checkin property</summary>
+        /// <summary>Provides operations to call the checkin method.</summary>
         public CheckinRequestBuilder Checkin { get =>
             new CheckinRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The checkout property</summary>
+        /// <summary>Provides operations to call the checkout method.</summary>
         public CheckoutRequestBuilder Checkout { get =>
             new CheckoutRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The children property</summary>
+        /// <summary>Provides operations to manage the children property of the microsoft.graph.driveItem entity.</summary>
         public ChildrenRequestBuilder Children { get =>
             new ChildrenRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The content property</summary>
+        /// <summary>Provides operations to manage the media for the user entity.</summary>
         public ContentRequestBuilder Content { get =>
             new ContentRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The copy property</summary>
+        /// <summary>Provides operations to call the copy method.</summary>
         public CopyRequestBuilder Copy { get =>
             new CopyRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The createLink property</summary>
+        /// <summary>Provides operations to call the createLink method.</summary>
         public CreateLinkRequestBuilder CreateLink { get =>
             new CreateLinkRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The createUploadSession property</summary>
+        /// <summary>Provides operations to call the createUploadSession method.</summary>
         public CreateUploadSessionRequestBuilder CreateUploadSession { get =>
             new CreateUploadSessionRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The extractSensitivityLabels property</summary>
+        /// <summary>Provides operations to call the extractSensitivityLabels method.</summary>
         public ExtractSensitivityLabelsRequestBuilder ExtractSensitivityLabels { get =>
             new ExtractSensitivityLabelsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The follow property</summary>
+        /// <summary>Provides operations to call the follow method.</summary>
         public FollowRequestBuilder Follow { get =>
             new FollowRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The invite property</summary>
+        /// <summary>Provides operations to call the invite method.</summary>
         public InviteRequestBuilder Invite { get =>
             new InviteRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The listItem property</summary>
+        /// <summary>Provides operations to manage the listItem property of the microsoft.graph.driveItem entity.</summary>
         public ListItemRequestBuilder ListItem { get =>
             new ListItemRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>The permissions property</summary>
+        /// <summary>Provides operations to manage the permissions property of the microsoft.graph.driveItem entity.</summary>
         public PermissionsRequestBuilder Permissions { get =>
             new PermissionsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The preview property</summary>
+        /// <summary>Provides operations to call the preview method.</summary>
         public PreviewRequestBuilder Preview { get =>
             new PreviewRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>The restore property</summary>
+        /// <summary>Provides operations to call the restore method.</summary>
         public RestoreRequestBuilder Restore { get =>
             new RestoreRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The subscriptions property</summary>
+        /// <summary>Provides operations to manage the subscriptions property of the microsoft.graph.driveItem entity.</summary>
         public SubscriptionsRequestBuilder Subscriptions { get =>
             new SubscriptionsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The thumbnails property</summary>
+        /// <summary>Provides operations to manage the thumbnails property of the microsoft.graph.driveItem entity.</summary>
         public ThumbnailsRequestBuilder Thumbnails { get =>
             new ThumbnailsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The unfollow property</summary>
+        /// <summary>Provides operations to call the unfollow method.</summary>
         public UnfollowRequestBuilder Unfollow { get =>
             new UnfollowRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>The validatePermission property</summary>
+        /// <summary>Provides operations to call the validatePermission method.</summary>
         public ValidatePermissionRequestBuilder ValidatePermission { get =>
             new ValidatePermissionRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The versions property</summary>
+        /// <summary>Provides operations to manage the versions property of the microsoft.graph.driveItem entity.</summary>
         public VersionsRequestBuilder Versions { get =>
             new VersionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new DriveItemItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public DriveItemItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -146,9 +146,9 @@ namespace Microsoft.Graph.Beta.Me.Drives.Item.Items.Item {
         }
         /// <summary>
         /// Instantiates a new DriveItemItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public DriveItemItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -160,8 +160,8 @@ namespace Microsoft.Graph.Beta.Me.Drives.Item.Items.Item {
         }
         /// <summary>
         /// Delete navigation property items for me
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateDeleteRequestInformation(Action<DriveItemItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.DELETE,
@@ -178,8 +178,8 @@ namespace Microsoft.Graph.Beta.Me.Drives.Item.Items.Item {
         }
         /// <summary>
         /// All items contained in the drive. Read-only. Nullable.
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<DriveItemItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -198,9 +198,9 @@ namespace Microsoft.Graph.Beta.Me.Drives.Item.Items.Item {
         }
         /// <summary>
         /// Update the navigation property items in me
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(Microsoft.Graph.Beta.Models.DriveItem body, Action<DriveItemItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -220,9 +220,9 @@ namespace Microsoft.Graph.Beta.Me.Drives.Item.Items.Item {
         }
         /// <summary>
         /// Delete navigation property items for me
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task DeleteAsync(Action<DriveItemItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -239,18 +239,18 @@ namespace Microsoft.Graph.Beta.Me.Drives.Item.Items.Item {
         }
         /// <summary>
         /// Provides operations to call the delta method.
-        /// <param name="token">Usage: token=&apos;{token}&apos;</param>
         /// </summary>
+        /// <param name="token">Usage: token=&apos;{token}&apos;</param>
         public DeltaWithTokenRequestBuilder DeltaWithToken(string token) {
             if(string.IsNullOrEmpty(token)) throw new ArgumentNullException(nameof(token));
             return new DeltaWithTokenRequestBuilder(PathParameters, RequestAdapter, token);
         }
         /// <summary>
         /// Provides operations to call the getActivitiesByInterval method.
+        /// </summary>
         /// <param name="endDateTime">Usage: endDateTime=&apos;{endDateTime}&apos;</param>
         /// <param name="interval">Usage: interval=&apos;{interval}&apos;</param>
         /// <param name="startDateTime">Usage: startDateTime=&apos;{startDateTime}&apos;</param>
-        /// </summary>
         public GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval(string endDateTime, string interval, string startDateTime) {
             if(string.IsNullOrEmpty(endDateTime)) throw new ArgumentNullException(nameof(endDateTime));
             if(string.IsNullOrEmpty(interval)) throw new ArgumentNullException(nameof(interval));
@@ -259,9 +259,9 @@ namespace Microsoft.Graph.Beta.Me.Drives.Item.Items.Item {
         }
         /// <summary>
         /// All items contained in the drive. Read-only. Nullable.
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<Microsoft.Graph.Beta.Models.DriveItem> GetAsync(Action<DriveItemItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -272,10 +272,10 @@ namespace Microsoft.Graph.Beta.Me.Drives.Item.Items.Item {
         }
         /// <summary>
         /// Update the navigation property items in me
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<Microsoft.Graph.Beta.Models.DriveItem> PatchAsync(Microsoft.Graph.Beta.Models.DriveItem body, Action<DriveItemItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);
@@ -287,8 +287,8 @@ namespace Microsoft.Graph.Beta.Me.Drives.Item.Items.Item {
         }
         /// <summary>
         /// Provides operations to call the search method.
-        /// <param name="q">Usage: q=&apos;{q}&apos;</param>
         /// </summary>
+        /// <param name="q">Usage: q=&apos;{q}&apos;</param>
         public SearchWithQRequestBuilder SearchWithQ(string q) {
             if(string.IsNullOrEmpty(q)) throw new ArgumentNullException(nameof(q));
             return new SearchWithQRequestBuilder(PathParameters, RequestAdapter, q);

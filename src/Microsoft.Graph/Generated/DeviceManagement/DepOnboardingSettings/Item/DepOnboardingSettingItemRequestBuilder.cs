@@ -21,23 +21,23 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item {
     /// <summary>Provides operations to manage the depOnboardingSettings property of the microsoft.graph.deviceManagement entity.</summary>
     public class DepOnboardingSettingItemRequestBuilder {
-        /// <summary>The defaultIosEnrollmentProfile property</summary>
+        /// <summary>Provides operations to manage the defaultIosEnrollmentProfile property of the microsoft.graph.depOnboardingSetting entity.</summary>
         public DefaultIosEnrollmentProfileRequestBuilder DefaultIosEnrollmentProfile { get =>
             new DefaultIosEnrollmentProfileRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The defaultMacOsEnrollmentProfile property</summary>
+        /// <summary>Provides operations to manage the defaultMacOsEnrollmentProfile property of the microsoft.graph.depOnboardingSetting entity.</summary>
         public DefaultMacOsEnrollmentProfileRequestBuilder DefaultMacOsEnrollmentProfile { get =>
             new DefaultMacOsEnrollmentProfileRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The enrollmentProfiles property</summary>
+        /// <summary>Provides operations to manage the enrollmentProfiles property of the microsoft.graph.depOnboardingSetting entity.</summary>
         public EnrollmentProfilesRequestBuilder EnrollmentProfiles { get =>
             new EnrollmentProfilesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The generateEncryptionPublicKey property</summary>
+        /// <summary>Provides operations to call the generateEncryptionPublicKey method.</summary>
         public GenerateEncryptionPublicKeyRequestBuilder GenerateEncryptionPublicKey { get =>
             new GenerateEncryptionPublicKeyRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The importedAppleDeviceIdentities property</summary>
+        /// <summary>Provides operations to manage the importedAppleDeviceIdentities property of the microsoft.graph.depOnboardingSetting entity.</summary>
         public ImportedAppleDeviceIdentitiesRequestBuilder ImportedAppleDeviceIdentities { get =>
             new ImportedAppleDeviceIdentitiesRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -45,19 +45,19 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item {
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>The shareForSchoolDataSyncService property</summary>
+        /// <summary>Provides operations to call the shareForSchoolDataSyncService method.</summary>
         public ShareForSchoolDataSyncServiceRequestBuilder ShareForSchoolDataSyncService { get =>
             new ShareForSchoolDataSyncServiceRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The syncWithAppleDeviceEnrollmentProgram property</summary>
+        /// <summary>Provides operations to call the syncWithAppleDeviceEnrollmentProgram method.</summary>
         public SyncWithAppleDeviceEnrollmentProgramRequestBuilder SyncWithAppleDeviceEnrollmentProgram { get =>
             new SyncWithAppleDeviceEnrollmentProgramRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The unshareForSchoolDataSyncService property</summary>
+        /// <summary>Provides operations to call the unshareForSchoolDataSyncService method.</summary>
         public UnshareForSchoolDataSyncServiceRequestBuilder UnshareForSchoolDataSyncService { get =>
             new UnshareForSchoolDataSyncServiceRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The uploadDepToken property</summary>
+        /// <summary>Provides operations to call the uploadDepToken method.</summary>
         public UploadDepTokenRequestBuilder UploadDepToken { get =>
             new UploadDepTokenRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -65,9 +65,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item {
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new DepOnboardingSettingItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public DepOnboardingSettingItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -78,9 +78,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item {
         }
         /// <summary>
         /// Instantiates a new DepOnboardingSettingItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public DepOnboardingSettingItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -92,8 +92,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item {
         }
         /// <summary>
         /// Delete navigation property depOnboardingSettings for deviceManagement
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateDeleteRequestInformation(Action<DepOnboardingSettingItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.DELETE,
@@ -110,8 +110,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item {
         }
         /// <summary>
         /// This collections of multiple DEP tokens per-tenant.
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<DepOnboardingSettingItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -130,9 +130,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item {
         }
         /// <summary>
         /// Update the navigation property depOnboardingSettings in deviceManagement
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(DepOnboardingSetting body, Action<DepOnboardingSettingItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -152,9 +152,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item {
         }
         /// <summary>
         /// Delete navigation property depOnboardingSettings for deviceManagement
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task DeleteAsync(Action<DepOnboardingSettingItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -165,9 +165,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item {
         }
         /// <summary>
         /// This collections of multiple DEP tokens per-tenant.
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<DepOnboardingSetting> GetAsync(Action<DepOnboardingSettingItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -184,10 +184,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item {
         }
         /// <summary>
         /// Update the navigation property depOnboardingSettings in deviceManagement
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<DepOnboardingSetting> PatchAsync(DepOnboardingSetting body, Action<DepOnboardingSettingItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);

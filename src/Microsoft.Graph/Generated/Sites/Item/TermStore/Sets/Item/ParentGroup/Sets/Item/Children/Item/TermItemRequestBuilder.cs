@@ -14,19 +14,19 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Sites.Item.TermStore.Sets.Item.ParentGroup.Sets.Item.Children.Item {
     /// <summary>Provides operations to manage the children property of the microsoft.graph.termStore.set entity.</summary>
     public class TermItemRequestBuilder {
-        /// <summary>The children property</summary>
+        /// <summary>Provides operations to manage the children property of the microsoft.graph.termStore.term entity.</summary>
         public Microsoft.Graph.Beta.Sites.Item.TermStore.Sets.Item.ParentGroup.Sets.Item.Children.Item.Children.ChildrenRequestBuilder Children { get =>
             new Microsoft.Graph.Beta.Sites.Item.TermStore.Sets.Item.ParentGroup.Sets.Item.Children.Item.Children.ChildrenRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>The relations property</summary>
+        /// <summary>Provides operations to manage the relations property of the microsoft.graph.termStore.term entity.</summary>
         public RelationsRequestBuilder Relations { get =>
             new RelationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>The set property</summary>
+        /// <summary>Provides operations to manage the set property of the microsoft.graph.termStore.term entity.</summary>
         public SetRequestBuilder Set { get =>
             new SetRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -34,9 +34,9 @@ namespace Microsoft.Graph.Beta.Sites.Item.TermStore.Sets.Item.ParentGroup.Sets.I
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new TermItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public TermItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -47,9 +47,9 @@ namespace Microsoft.Graph.Beta.Sites.Item.TermStore.Sets.Item.ParentGroup.Sets.I
         }
         /// <summary>
         /// Instantiates a new TermItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public TermItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -61,8 +61,8 @@ namespace Microsoft.Graph.Beta.Sites.Item.TermStore.Sets.Item.ParentGroup.Sets.I
         }
         /// <summary>
         /// Delete navigation property children for sites
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateDeleteRequestInformation(Action<TermItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.DELETE,
@@ -79,8 +79,8 @@ namespace Microsoft.Graph.Beta.Sites.Item.TermStore.Sets.Item.ParentGroup.Sets.I
         }
         /// <summary>
         /// Children terms of set in term [store].
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<TermItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -99,9 +99,9 @@ namespace Microsoft.Graph.Beta.Sites.Item.TermStore.Sets.Item.ParentGroup.Sets.I
         }
         /// <summary>
         /// Update the navigation property children in sites
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(Term body, Action<TermItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -121,9 +121,9 @@ namespace Microsoft.Graph.Beta.Sites.Item.TermStore.Sets.Item.ParentGroup.Sets.I
         }
         /// <summary>
         /// Delete navigation property children for sites
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task DeleteAsync(Action<TermItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -134,9 +134,9 @@ namespace Microsoft.Graph.Beta.Sites.Item.TermStore.Sets.Item.ParentGroup.Sets.I
         }
         /// <summary>
         /// Children terms of set in term [store].
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<Term> GetAsync(Action<TermItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -147,10 +147,10 @@ namespace Microsoft.Graph.Beta.Sites.Item.TermStore.Sets.Item.ParentGroup.Sets.I
         }
         /// <summary>
         /// Update the navigation property children in sites
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<Term> PatchAsync(Term body, Action<TermItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);

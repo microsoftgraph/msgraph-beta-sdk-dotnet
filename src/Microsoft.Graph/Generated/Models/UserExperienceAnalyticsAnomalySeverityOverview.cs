@@ -39,11 +39,6 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
-        /// <summary>The number of anomalies which have been detected with undefined severity. Valid values -2147483648 to 2147483647</summary>
-        public int? OtherSeverityAnomalyCount {
-            get { return BackingStore?.Get<int?>("otherSeverityAnomalyCount"); }
-            set { BackingStore?.Set("otherSeverityAnomalyCount", value); }
-        }
         /// <summary>
         /// Instantiates a new userExperienceAnalyticsAnomalySeverityOverview and sets the default values.
         /// </summary>
@@ -54,8 +49,8 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
-        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static UserExperienceAnalyticsAnomalySeverityOverview CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new UserExperienceAnalyticsAnomalySeverityOverview();
@@ -70,13 +65,12 @@ namespace Microsoft.Graph.Beta.Models {
                 {"lowSeverityAnomalyCount", n => { LowSeverityAnomalyCount = n.GetIntValue(); } },
                 {"mediumSeverityAnomalyCount", n => { MediumSeverityAnomalyCount = n.GetIntValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"otherSeverityAnomalyCount", n => { OtherSeverityAnomalyCount = n.GetIntValue(); } },
             };
         }
         /// <summary>
         /// Serializes information the current object
-        /// <param name="writer">Serialization writer to use to serialize this model</param>
         /// </summary>
+        /// <param name="writer">Serialization writer to use to serialize this model</param>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("highSeverityAnomalyCount", HighSeverityAnomalyCount);
@@ -84,7 +78,6 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteIntValue("lowSeverityAnomalyCount", LowSeverityAnomalyCount);
             writer.WriteIntValue("mediumSeverityAnomalyCount", MediumSeverityAnomalyCount);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteIntValue("otherSeverityAnomalyCount", OtherSeverityAnomalyCount);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -18,27 +18,27 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Users.Item.Drives.Item.List {
     /// <summary>Provides operations to manage the list property of the microsoft.graph.drive entity.</summary>
     public class ListRequestBuilder {
-        /// <summary>The activities property</summary>
+        /// <summary>Provides operations to manage the activities property of the microsoft.graph.list entity.</summary>
         public ActivitiesRequestBuilder Activities { get =>
             new ActivitiesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The columns property</summary>
+        /// <summary>Provides operations to manage the columns property of the microsoft.graph.list entity.</summary>
         public ColumnsRequestBuilder Columns { get =>
             new ColumnsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The contentTypes property</summary>
+        /// <summary>Provides operations to manage the contentTypes property of the microsoft.graph.list entity.</summary>
         public ContentTypesRequestBuilder ContentTypes { get =>
             new ContentTypesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The drive property</summary>
+        /// <summary>Provides operations to manage the drive property of the microsoft.graph.list entity.</summary>
         public DriveRequestBuilder Drive { get =>
             new DriveRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The items property</summary>
+        /// <summary>Provides operations to manage the items property of the microsoft.graph.list entity.</summary>
         public ItemsRequestBuilder Items { get =>
             new ItemsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The operations property</summary>
+        /// <summary>Provides operations to manage the operations property of the microsoft.graph.list entity.</summary>
         public OperationsRequestBuilder Operations { get =>
             new OperationsRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -46,7 +46,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Drives.Item.List {
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>The subscriptions property</summary>
+        /// <summary>Provides operations to manage the subscriptions property of the microsoft.graph.list entity.</summary>
         public SubscriptionsRequestBuilder Subscriptions { get =>
             new SubscriptionsRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -54,9 +54,9 @@ namespace Microsoft.Graph.Beta.Users.Item.Drives.Item.List {
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new ListRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public ListRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -67,9 +67,9 @@ namespace Microsoft.Graph.Beta.Users.Item.Drives.Item.List {
         }
         /// <summary>
         /// Instantiates a new ListRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public ListRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -81,8 +81,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Drives.Item.List {
         }
         /// <summary>
         /// Delete navigation property list for users
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateDeleteRequestInformation(Action<ListRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.DELETE,
@@ -99,8 +99,8 @@ namespace Microsoft.Graph.Beta.Users.Item.Drives.Item.List {
         }
         /// <summary>
         /// For drives in SharePoint, the underlying document library list. Read-only. Nullable.
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<ListRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -119,9 +119,9 @@ namespace Microsoft.Graph.Beta.Users.Item.Drives.Item.List {
         }
         /// <summary>
         /// Update the navigation property list in users
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(Microsoft.Graph.Beta.Models.List body, Action<ListRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -141,9 +141,9 @@ namespace Microsoft.Graph.Beta.Users.Item.Drives.Item.List {
         }
         /// <summary>
         /// Delete navigation property list for users
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task DeleteAsync(Action<ListRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -154,9 +154,9 @@ namespace Microsoft.Graph.Beta.Users.Item.Drives.Item.List {
         }
         /// <summary>
         /// For drives in SharePoint, the underlying document library list. Read-only. Nullable.
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<Microsoft.Graph.Beta.Models.List> GetAsync(Action<ListRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -167,10 +167,10 @@ namespace Microsoft.Graph.Beta.Users.Item.Drives.Item.List {
         }
         /// <summary>
         /// Update the navigation property list in users
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<Microsoft.Graph.Beta.Models.List> PatchAsync(Microsoft.Graph.Beta.Models.List body, Action<ListRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);

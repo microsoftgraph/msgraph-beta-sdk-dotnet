@@ -27,71 +27,71 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Users.Item.MailFolders.Item.Messages.Item {
     /// <summary>Provides operations to manage the messages property of the microsoft.graph.mailFolder entity.</summary>
     public class MessageItemRequestBuilder {
-        /// <summary>The attachments property</summary>
+        /// <summary>Provides operations to manage the attachments property of the microsoft.graph.message entity.</summary>
         public AttachmentsRequestBuilder Attachments { get =>
             new AttachmentsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The Content property</summary>
+        /// <summary>Provides operations to manage the media for the user entity.</summary>
         public ContentRequestBuilder Content { get =>
             new ContentRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The copy property</summary>
+        /// <summary>Provides operations to call the copy method.</summary>
         public CopyRequestBuilder Copy { get =>
             new CopyRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The createForward property</summary>
+        /// <summary>Provides operations to call the createForward method.</summary>
         public CreateForwardRequestBuilder CreateForward { get =>
             new CreateForwardRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The createReply property</summary>
+        /// <summary>Provides operations to call the createReply method.</summary>
         public CreateReplyRequestBuilder CreateReply { get =>
             new CreateReplyRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The createReplyAll property</summary>
+        /// <summary>Provides operations to call the createReplyAll method.</summary>
         public CreateReplyAllRequestBuilder CreateReplyAll { get =>
             new CreateReplyAllRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The extensions property</summary>
+        /// <summary>Provides operations to manage the extensions property of the microsoft.graph.message entity.</summary>
         public ExtensionsRequestBuilder Extensions { get =>
             new ExtensionsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The forward property</summary>
+        /// <summary>Provides operations to call the forward method.</summary>
         public ForwardRequestBuilder Forward { get =>
             new ForwardRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The mentions property</summary>
+        /// <summary>Provides operations to manage the mentions property of the microsoft.graph.message entity.</summary>
         public MentionsRequestBuilder Mentions { get =>
             new MentionsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The move property</summary>
+        /// <summary>Provides operations to call the move method.</summary>
         public MoveRequestBuilder Move { get =>
             new MoveRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The multiValueExtendedProperties property</summary>
+        /// <summary>Provides operations to manage the multiValueExtendedProperties property of the microsoft.graph.message entity.</summary>
         public MultiValueExtendedPropertiesRequestBuilder MultiValueExtendedProperties { get =>
             new MultiValueExtendedPropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>The reply property</summary>
+        /// <summary>Provides operations to call the reply method.</summary>
         public ReplyRequestBuilder Reply { get =>
             new ReplyRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The replyAll property</summary>
+        /// <summary>Provides operations to call the replyAll method.</summary>
         public ReplyAllRequestBuilder ReplyAll { get =>
             new ReplyAllRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>The send property</summary>
+        /// <summary>Provides operations to call the send method.</summary>
         public SendRequestBuilder Send { get =>
             new SendRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The singleValueExtendedProperties property</summary>
+        /// <summary>Provides operations to manage the singleValueExtendedProperties property of the microsoft.graph.message entity.</summary>
         public SingleValueExtendedPropertiesRequestBuilder SingleValueExtendedProperties { get =>
             new SingleValueExtendedPropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The unsubscribe property</summary>
+        /// <summary>Provides operations to call the unsubscribe method.</summary>
         public UnsubscribeRequestBuilder Unsubscribe { get =>
             new UnsubscribeRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -99,9 +99,9 @@ namespace Microsoft.Graph.Beta.Users.Item.MailFolders.Item.Messages.Item {
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new MessageItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public MessageItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -112,9 +112,9 @@ namespace Microsoft.Graph.Beta.Users.Item.MailFolders.Item.Messages.Item {
         }
         /// <summary>
         /// Instantiates a new MessageItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public MessageItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -126,8 +126,8 @@ namespace Microsoft.Graph.Beta.Users.Item.MailFolders.Item.Messages.Item {
         }
         /// <summary>
         /// Delete navigation property messages for users
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateDeleteRequestInformation(Action<MessageItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.DELETE,
@@ -144,8 +144,8 @@ namespace Microsoft.Graph.Beta.Users.Item.MailFolders.Item.Messages.Item {
         }
         /// <summary>
         /// The collection of messages in the mailFolder.
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<MessageItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -164,9 +164,9 @@ namespace Microsoft.Graph.Beta.Users.Item.MailFolders.Item.Messages.Item {
         }
         /// <summary>
         /// Update the navigation property messages in users
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(Microsoft.Graph.Beta.Models.Message body, Action<MessageItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -186,9 +186,9 @@ namespace Microsoft.Graph.Beta.Users.Item.MailFolders.Item.Messages.Item {
         }
         /// <summary>
         /// Delete navigation property messages for users
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task DeleteAsync(Action<MessageItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -199,9 +199,9 @@ namespace Microsoft.Graph.Beta.Users.Item.MailFolders.Item.Messages.Item {
         }
         /// <summary>
         /// The collection of messages in the mailFolder.
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<Microsoft.Graph.Beta.Models.Message> GetAsync(Action<MessageItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -212,10 +212,10 @@ namespace Microsoft.Graph.Beta.Users.Item.MailFolders.Item.Messages.Item {
         }
         /// <summary>
         /// Update the navigation property messages in users
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<Microsoft.Graph.Beta.Models.Message> PatchAsync(Microsoft.Graph.Beta.Models.Message body, Action<MessageItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);

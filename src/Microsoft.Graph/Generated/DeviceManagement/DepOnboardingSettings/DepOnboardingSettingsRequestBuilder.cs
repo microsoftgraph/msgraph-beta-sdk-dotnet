@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings {
     /// <summary>Provides operations to manage the depOnboardingSettings property of the microsoft.graph.deviceManagement entity.</summary>
     public class DepOnboardingSettingsRequestBuilder {
-        /// <summary>The Count property</summary>
+        /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>Gets an item from the Microsoft.Graph.Beta.deviceManagement.depOnboardingSettings.item collection</summary>
+        /// <summary>Provides operations to manage the depOnboardingSettings property of the microsoft.graph.deviceManagement entity.</summary>
         public DepOnboardingSettingItemRequestBuilder this[string position] { get {
             var urlTplParams = new Dictionary<string, object>(PathParameters);
             urlTplParams.Add("depOnboardingSetting%2Did", position);
@@ -32,9 +32,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings {
         } }
         /// <summary>
         /// Instantiates a new DepOnboardingSettingsRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public DepOnboardingSettingsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -45,9 +45,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings {
         }
         /// <summary>
         /// Instantiates a new DepOnboardingSettingsRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public DepOnboardingSettingsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -59,8 +59,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings {
         }
         /// <summary>
         /// This collections of multiple DEP tokens per-tenant.
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<DepOnboardingSettingsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -79,9 +79,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings {
         }
         /// <summary>
         /// Create new navigation property to depOnboardingSettings for deviceManagement
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePostRequestInformation(DepOnboardingSetting body, Action<DepOnboardingSettingsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -101,9 +101,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings {
         }
         /// <summary>
         /// This collections of multiple DEP tokens per-tenant.
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<DepOnboardingSettingCollectionResponse> GetAsync(Action<DepOnboardingSettingsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -114,18 +114,18 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings {
         }
         /// <summary>
         /// Provides operations to call the getExpiringVppTokenCount method.
-        /// <param name="expiringBeforeDateTime">Usage: expiringBeforeDateTime=&apos;{expiringBeforeDateTime}&apos;</param>
         /// </summary>
+        /// <param name="expiringBeforeDateTime">Usage: expiringBeforeDateTime=&apos;{expiringBeforeDateTime}&apos;</param>
         public GetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilder GetExpiringVppTokenCountWithExpiringBeforeDateTime(string expiringBeforeDateTime) {
             if(string.IsNullOrEmpty(expiringBeforeDateTime)) throw new ArgumentNullException(nameof(expiringBeforeDateTime));
             return new GetExpiringVppTokenCountWithExpiringBeforeDateTimeRequestBuilder(PathParameters, RequestAdapter, expiringBeforeDateTime);
         }
         /// <summary>
         /// Create new navigation property to depOnboardingSettings for deviceManagement
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<DepOnboardingSetting> PostAsync(DepOnboardingSetting body, Action<DepOnboardingSettingsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, requestConfiguration);

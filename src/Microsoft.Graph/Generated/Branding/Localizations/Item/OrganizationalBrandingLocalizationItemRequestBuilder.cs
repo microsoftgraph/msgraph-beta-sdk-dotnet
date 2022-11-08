@@ -16,15 +16,15 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Branding.Localizations.Item {
     /// <summary>Provides operations to manage the localizations property of the microsoft.graph.organizationalBranding entity.</summary>
     public class OrganizationalBrandingLocalizationItemRequestBuilder {
-        /// <summary>The backgroundImage property</summary>
+        /// <summary>Provides operations to manage the media for the organizationalBranding entity.</summary>
         public BackgroundImageRequestBuilder BackgroundImage { get =>
             new BackgroundImageRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The bannerLogo property</summary>
+        /// <summary>Provides operations to manage the media for the organizationalBranding entity.</summary>
         public BannerLogoRequestBuilder BannerLogo { get =>
             new BannerLogoRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The favicon property</summary>
+        /// <summary>Provides operations to manage the media for the organizationalBranding entity.</summary>
         public FaviconRequestBuilder Favicon { get =>
             new FaviconRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -32,11 +32,11 @@ namespace Microsoft.Graph.Beta.Branding.Localizations.Item {
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>The squareLogo property</summary>
+        /// <summary>Provides operations to manage the media for the organizationalBranding entity.</summary>
         public SquareLogoRequestBuilder SquareLogo { get =>
             new SquareLogoRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The squareLogoDark property</summary>
+        /// <summary>Provides operations to manage the media for the organizationalBranding entity.</summary>
         public SquareLogoDarkRequestBuilder SquareLogoDark { get =>
             new SquareLogoDarkRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -44,9 +44,9 @@ namespace Microsoft.Graph.Beta.Branding.Localizations.Item {
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new OrganizationalBrandingLocalizationItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public OrganizationalBrandingLocalizationItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -57,9 +57,9 @@ namespace Microsoft.Graph.Beta.Branding.Localizations.Item {
         }
         /// <summary>
         /// Instantiates a new OrganizationalBrandingLocalizationItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public OrganizationalBrandingLocalizationItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -71,8 +71,8 @@ namespace Microsoft.Graph.Beta.Branding.Localizations.Item {
         }
         /// <summary>
         /// Delete navigation property localizations for branding
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateDeleteRequestInformation(Action<OrganizationalBrandingLocalizationItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.DELETE,
@@ -89,8 +89,8 @@ namespace Microsoft.Graph.Beta.Branding.Localizations.Item {
         }
         /// <summary>
         /// Add different branding based on a locale.
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<OrganizationalBrandingLocalizationItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -109,9 +109,9 @@ namespace Microsoft.Graph.Beta.Branding.Localizations.Item {
         }
         /// <summary>
         /// Update the navigation property localizations in branding
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(OrganizationalBrandingLocalization body, Action<OrganizationalBrandingLocalizationItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -131,9 +131,9 @@ namespace Microsoft.Graph.Beta.Branding.Localizations.Item {
         }
         /// <summary>
         /// Delete navigation property localizations for branding
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task DeleteAsync(Action<OrganizationalBrandingLocalizationItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -144,9 +144,9 @@ namespace Microsoft.Graph.Beta.Branding.Localizations.Item {
         }
         /// <summary>
         /// Add different branding based on a locale.
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<OrganizationalBrandingLocalization> GetAsync(Action<OrganizationalBrandingLocalizationItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -157,10 +157,10 @@ namespace Microsoft.Graph.Beta.Branding.Localizations.Item {
         }
         /// <summary>
         /// Update the navigation property localizations in branding
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<OrganizationalBrandingLocalization> PatchAsync(OrganizationalBrandingLocalization body, Action<OrganizationalBrandingLocalizationItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);

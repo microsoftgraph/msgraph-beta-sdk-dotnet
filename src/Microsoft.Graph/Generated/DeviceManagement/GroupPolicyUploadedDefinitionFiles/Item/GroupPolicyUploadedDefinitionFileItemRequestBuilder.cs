@@ -17,31 +17,31 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyUploadedDefinitionFiles.Item {
     /// <summary>Provides operations to manage the groupPolicyUploadedDefinitionFiles property of the microsoft.graph.deviceManagement entity.</summary>
     public class GroupPolicyUploadedDefinitionFileItemRequestBuilder {
-        /// <summary>The addLanguageFiles property</summary>
+        /// <summary>Provides operations to call the addLanguageFiles method.</summary>
         public AddLanguageFilesRequestBuilder AddLanguageFiles { get =>
             new AddLanguageFilesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The groupPolicyOperations property</summary>
+        /// <summary>Provides operations to manage the groupPolicyOperations property of the microsoft.graph.groupPolicyUploadedDefinitionFile entity.</summary>
         public GroupPolicyOperationsRequestBuilder GroupPolicyOperations { get =>
             new GroupPolicyOperationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>The remove property</summary>
+        /// <summary>Provides operations to call the remove method.</summary>
         public RemoveRequestBuilder Remove { get =>
             new RemoveRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The removeLanguageFiles property</summary>
+        /// <summary>Provides operations to call the removeLanguageFiles method.</summary>
         public RemoveLanguageFilesRequestBuilder RemoveLanguageFiles { get =>
             new RemoveLanguageFilesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>The updateLanguageFiles property</summary>
+        /// <summary>Provides operations to call the updateLanguageFiles method.</summary>
         public UpdateLanguageFilesRequestBuilder UpdateLanguageFiles { get =>
             new UpdateLanguageFilesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The uploadNewVersion property</summary>
+        /// <summary>Provides operations to call the uploadNewVersion method.</summary>
         public UploadNewVersionRequestBuilder UploadNewVersion { get =>
             new UploadNewVersionRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -49,9 +49,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyUploadedDefinitionFil
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new GroupPolicyUploadedDefinitionFileItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public GroupPolicyUploadedDefinitionFileItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -62,9 +62,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyUploadedDefinitionFil
         }
         /// <summary>
         /// Instantiates a new GroupPolicyUploadedDefinitionFileItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public GroupPolicyUploadedDefinitionFileItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -76,8 +76,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyUploadedDefinitionFil
         }
         /// <summary>
         /// Delete navigation property groupPolicyUploadedDefinitionFiles for deviceManagement
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateDeleteRequestInformation(Action<GroupPolicyUploadedDefinitionFileItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.DELETE,
@@ -94,8 +94,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyUploadedDefinitionFil
         }
         /// <summary>
         /// The available group policy uploaded definition files for this account.
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<GroupPolicyUploadedDefinitionFileItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -114,9 +114,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyUploadedDefinitionFil
         }
         /// <summary>
         /// Update the navigation property groupPolicyUploadedDefinitionFiles in deviceManagement
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(GroupPolicyUploadedDefinitionFile body, Action<GroupPolicyUploadedDefinitionFileItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -136,9 +136,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyUploadedDefinitionFil
         }
         /// <summary>
         /// Delete navigation property groupPolicyUploadedDefinitionFiles for deviceManagement
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task DeleteAsync(Action<GroupPolicyUploadedDefinitionFileItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -149,9 +149,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyUploadedDefinitionFil
         }
         /// <summary>
         /// The available group policy uploaded definition files for this account.
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<GroupPolicyUploadedDefinitionFile> GetAsync(Action<GroupPolicyUploadedDefinitionFileItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -162,10 +162,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyUploadedDefinitionFil
         }
         /// <summary>
         /// Update the navigation property groupPolicyUploadedDefinitionFiles in deviceManagement
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<GroupPolicyUploadedDefinitionFile> PatchAsync(GroupPolicyUploadedDefinitionFile body, Action<GroupPolicyUploadedDefinitionFileItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);

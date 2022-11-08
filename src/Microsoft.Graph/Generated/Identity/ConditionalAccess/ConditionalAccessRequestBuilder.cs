@@ -16,27 +16,27 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Identity.ConditionalAccess {
     /// <summary>Provides operations to manage the conditionalAccess property of the microsoft.graph.identityContainer entity.</summary>
     public class ConditionalAccessRequestBuilder {
-        /// <summary>The authenticationContextClassReferences property</summary>
+        /// <summary>Provides operations to manage the authenticationContextClassReferences property of the microsoft.graph.conditionalAccessRoot entity.</summary>
         public AuthenticationContextClassReferencesRequestBuilder AuthenticationContextClassReferences { get =>
             new AuthenticationContextClassReferencesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The authenticationStrengths property</summary>
+        /// <summary>Provides operations to manage the authenticationStrengths property of the microsoft.graph.conditionalAccessRoot entity.</summary>
         public AuthenticationStrengthsRequestBuilder AuthenticationStrengths { get =>
             new AuthenticationStrengthsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The namedLocations property</summary>
+        /// <summary>Provides operations to manage the namedLocations property of the microsoft.graph.conditionalAccessRoot entity.</summary>
         public NamedLocationsRequestBuilder NamedLocations { get =>
             new NamedLocationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>The policies property</summary>
+        /// <summary>Provides operations to manage the policies property of the microsoft.graph.conditionalAccessRoot entity.</summary>
         public PoliciesRequestBuilder Policies { get =>
             new PoliciesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>The templates property</summary>
+        /// <summary>Provides operations to manage the templates property of the microsoft.graph.conditionalAccessRoot entity.</summary>
         public TemplatesRequestBuilder Templates { get =>
             new TemplatesRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -44,9 +44,9 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess {
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new ConditionalAccessRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public ConditionalAccessRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -57,9 +57,9 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess {
         }
         /// <summary>
         /// Instantiates a new ConditionalAccessRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public ConditionalAccessRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -71,8 +71,8 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess {
         }
         /// <summary>
         /// Delete navigation property conditionalAccess for identity
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateDeleteRequestInformation(Action<ConditionalAccessRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.DELETE,
@@ -89,8 +89,8 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess {
         }
         /// <summary>
         /// the entry point for the Conditional Access (CA) object model.
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<ConditionalAccessRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -109,9 +109,9 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess {
         }
         /// <summary>
         /// Update the navigation property conditionalAccess in identity
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(ConditionalAccessRoot body, Action<ConditionalAccessRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -131,9 +131,9 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess {
         }
         /// <summary>
         /// Delete navigation property conditionalAccess for identity
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task DeleteAsync(Action<ConditionalAccessRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -144,9 +144,9 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess {
         }
         /// <summary>
         /// the entry point for the Conditional Access (CA) object model.
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<ConditionalAccessRoot> GetAsync(Action<ConditionalAccessRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -157,10 +157,10 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess {
         }
         /// <summary>
         /// Update the navigation property conditionalAccess in identity
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<ConditionalAccessRoot> PatchAsync(ConditionalAccessRoot body, Action<ConditionalAccessRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);

@@ -15,15 +15,15 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.DeviceAppManagement.WindowsManagedAppProtections.Item {
     /// <summary>Provides operations to manage the windowsManagedAppProtections property of the microsoft.graph.deviceAppManagement entity.</summary>
     public class WindowsManagedAppProtectionItemRequestBuilder {
-        /// <summary>The apps property</summary>
+        /// <summary>Provides operations to manage the apps property of the microsoft.graph.windowsManagedAppProtection entity.</summary>
         public AppsRequestBuilder Apps { get =>
             new AppsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The assign property</summary>
+        /// <summary>Provides operations to call the assign method.</summary>
         public AssignRequestBuilder Assign { get =>
             new AssignRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The assignments property</summary>
+        /// <summary>Provides operations to manage the assignments property of the microsoft.graph.windowsManagedAppProtection entity.</summary>
         public AssignmentsRequestBuilder Assignments { get =>
             new AssignmentsRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -31,7 +31,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.WindowsManagedAppProtections.
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>The targetApps property</summary>
+        /// <summary>Provides operations to call the targetApps method.</summary>
         public TargetAppsRequestBuilder TargetApps { get =>
             new TargetAppsRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -39,9 +39,9 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.WindowsManagedAppProtections.
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new WindowsManagedAppProtectionItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public WindowsManagedAppProtectionItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -52,9 +52,9 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.WindowsManagedAppProtections.
         }
         /// <summary>
         /// Instantiates a new WindowsManagedAppProtectionItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public WindowsManagedAppProtectionItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -66,8 +66,8 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.WindowsManagedAppProtections.
         }
         /// <summary>
         /// Delete navigation property windowsManagedAppProtections for deviceAppManagement
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateDeleteRequestInformation(Action<WindowsManagedAppProtectionItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.DELETE,
@@ -84,8 +84,8 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.WindowsManagedAppProtections.
         }
         /// <summary>
         /// Windows managed app policies.
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<WindowsManagedAppProtectionItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -104,9 +104,9 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.WindowsManagedAppProtections.
         }
         /// <summary>
         /// Update the navigation property windowsManagedAppProtections in deviceAppManagement
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(WindowsManagedAppProtection body, Action<WindowsManagedAppProtectionItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -126,9 +126,9 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.WindowsManagedAppProtections.
         }
         /// <summary>
         /// Delete navigation property windowsManagedAppProtections for deviceAppManagement
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task DeleteAsync(Action<WindowsManagedAppProtectionItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -139,9 +139,9 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.WindowsManagedAppProtections.
         }
         /// <summary>
         /// Windows managed app policies.
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<WindowsManagedAppProtection> GetAsync(Action<WindowsManagedAppProtectionItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -152,10 +152,10 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.WindowsManagedAppProtections.
         }
         /// <summary>
         /// Update the navigation property windowsManagedAppProtections in deviceAppManagement
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<WindowsManagedAppProtection> PatchAsync(WindowsManagedAppProtection body, Action<WindowsManagedAppProtectionItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);

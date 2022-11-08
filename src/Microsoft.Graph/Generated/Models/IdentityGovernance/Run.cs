@@ -4,24 +4,24 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class Run : Entity, IParsable {
-        /// <summary>The date time that the run completed. Value is null if the workflow hasn&apos;t completed. Optional.</summary>
+        /// <summary>The date time that the run completed. Value is null if the workflow hasn&apos;t completed.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.</summary>
         public DateTimeOffset? CompletedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("completedDateTime"); }
             set { BackingStore?.Set("completedDateTime", value); }
         }
-        /// <summary>The number of tasks that failed in the run execution. Required.</summary>
+        /// <summary>The number of tasks that failed in the run execution.</summary>
         public int? FailedTasksCount {
             get { return BackingStore?.Get<int?>("failedTasksCount"); }
             set { BackingStore?.Set("failedTasksCount", value); }
         }
-        /// <summary>The number of users that failed in the run execution. Required.</summary>
+        /// <summary>The number of users that failed in the run execution.</summary>
         public int? FailedUsersCount {
             get { return BackingStore?.Get<int?>("failedUsersCount"); }
             set { BackingStore?.Set("failedUsersCount", value); }
         }
-        /// <summary>The datetime that the run was last updated. Optional.</summary>
+        /// <summary>The datetime that the run was last updated.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.</summary>
         public DateTimeOffset? LastUpdatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastUpdatedDateTime"); }
             set { BackingStore?.Set("lastUpdatedDateTime", value); }
@@ -31,17 +31,17 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
             get { return BackingStore?.Get<LifecycleWorkflowProcessingStatus?>("processingStatus"); }
             set { BackingStore?.Set("processingStatus", value); }
         }
-        /// <summary>The date time that the run is scheduled to be executed for a workflow. Required.</summary>
+        /// <summary>The date time that the run is scheduled to be executed for a workflow.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.</summary>
         public DateTimeOffset? ScheduledDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("scheduledDateTime"); }
             set { BackingStore?.Set("scheduledDateTime", value); }
         }
-        /// <summary>The date time that the run execution started. Optional.</summary>
+        /// <summary>The date time that the run execution started.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.</summary>
         public DateTimeOffset? StartedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("startedDateTime"); }
             set { BackingStore?.Set("startedDateTime", value); }
         }
-        /// <summary>The number of successfully completed users in the run. Required.</summary>
+        /// <summary>The number of successfully completed users in the run.</summary>
         public int? SuccessfulUsersCount {
             get { return BackingStore?.Get<int?>("successfulUsersCount"); }
             set { BackingStore?.Set("successfulUsersCount", value); }
@@ -56,12 +56,12 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
             get { return BackingStore?.Get<int?>("totalTasksCount"); }
             set { BackingStore?.Set("totalTasksCount", value); }
         }
-        /// <summary>The total number of unprocessed tasks in the run execution. Required.</summary>
+        /// <summary>The total number of unprocessed tasks in the run execution.</summary>
         public int? TotalUnprocessedTasksCount {
             get { return BackingStore?.Get<int?>("totalUnprocessedTasksCount"); }
             set { BackingStore?.Set("totalUnprocessedTasksCount", value); }
         }
-        /// <summary>The total number of users in the workflow execution. Required.</summary>
+        /// <summary>The total number of users in the workflow execution.</summary>
         public int? TotalUsersCount {
             get { return BackingStore?.Get<int?>("totalUsersCount"); }
             set { BackingStore?.Set("totalUsersCount", value); }
@@ -84,8 +84,8 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
-        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new Run CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new Run();
@@ -113,8 +113,8 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
         }
         /// <summary>
         /// Serializes information the current object
-        /// <param name="writer">Serialization writer to use to serialize this model</param>
         /// </summary>
+        /// <param name="writer">Serialization writer to use to serialize this model</param>
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);

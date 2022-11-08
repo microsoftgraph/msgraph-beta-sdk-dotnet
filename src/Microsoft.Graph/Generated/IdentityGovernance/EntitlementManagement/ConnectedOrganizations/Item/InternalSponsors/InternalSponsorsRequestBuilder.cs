@@ -17,21 +17,21 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.ConnectedOrganizations.Item.InternalSponsors {
     /// <summary>Provides operations to manage the internalSponsors property of the microsoft.graph.connectedOrganization entity.</summary>
     public class InternalSponsorsRequestBuilder {
-        /// <summary>The Count property</summary>
+        /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The getByIds property</summary>
+        /// <summary>Provides operations to call the getByIds method.</summary>
         public GetByIdsRequestBuilder GetByIds { get =>
             new GetByIdsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The getUserOwnedObjects property</summary>
+        /// <summary>Provides operations to call the getUserOwnedObjects method.</summary>
         public GetUserOwnedObjectsRequestBuilder GetUserOwnedObjects { get =>
             new GetUserOwnedObjectsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>The Ref property</summary>
+        /// <summary>Provides operations to manage the collection of identityGovernance entities.</summary>
         public RefRequestBuilder Ref { get =>
             new RefRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.Connecte
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>The validateProperties property</summary>
+        /// <summary>Provides operations to call the validateProperties method.</summary>
         public ValidatePropertiesRequestBuilder ValidateProperties { get =>
             new ValidatePropertiesRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -51,9 +51,9 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.Connecte
         } }
         /// <summary>
         /// Instantiates a new InternalSponsorsRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public InternalSponsorsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -64,9 +64,9 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.Connecte
         }
         /// <summary>
         /// Instantiates a new InternalSponsorsRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public InternalSponsorsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -78,8 +78,8 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.Connecte
         }
         /// <summary>
         /// Retrieve a list of a connectedOrganization&apos;s internal sponsors.  The internal sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<InternalSponsorsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -98,9 +98,9 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.Connecte
         }
         /// <summary>
         /// Create new navigation property to internalSponsors for identityGovernance
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePostRequestInformation(DirectoryObject body, Action<InternalSponsorsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -120,9 +120,9 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.Connecte
         }
         /// <summary>
         /// Retrieve a list of a connectedOrganization&apos;s internal sponsors.  The internal sponsors are a set of users who can approve requests on behalf of other users from that connected organization.
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<DirectoryObjectCollectionResponse> GetAsync(Action<InternalSponsorsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -133,10 +133,10 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.Connecte
         }
         /// <summary>
         /// Create new navigation property to internalSponsors for identityGovernance
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<DirectoryObject> PostAsync(DirectoryObject body, Action<InternalSponsorsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePostRequestInformation(body, requestConfiguration);

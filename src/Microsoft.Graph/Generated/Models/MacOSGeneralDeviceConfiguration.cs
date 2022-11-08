@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>This topic provides descriptions of the declared methods, properties and relationships exposed by the macOSGeneralDeviceConfiguration resource.</summary>
     public class MacOSGeneralDeviceConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Yes prevents users from adding friends to Game Center. Available for devices running macOS versions 10.13 and later.</summary>
         public bool? AddingGameCenterFriendsBlocked {
@@ -301,15 +302,15 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("wallpaperModificationBlocked", value); }
         }
         /// <summary>
-        /// Instantiates a new MacOSGeneralDeviceConfiguration and sets the default values.
+        /// Instantiates a new macOSGeneralDeviceConfiguration and sets the default values.
         /// </summary>
         public MacOSGeneralDeviceConfiguration() : base() {
             OdataType = "#microsoft.graph.macOSGeneralDeviceConfiguration";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
-        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new MacOSGeneralDeviceConfiguration CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new MacOSGeneralDeviceConfiguration();
@@ -382,8 +383,8 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>
         /// Serializes information the current object
-        /// <param name="writer">Serialization writer to use to serialize this model</param>
         /// </summary>
+        /// <param name="writer">Serialization writer to use to serialize this model</param>
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);

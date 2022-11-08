@@ -205,6 +205,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("minimumWarningPatchVersion"); }
             set { BackingStore?.Set("minimumWarningPatchVersion", value); }
         }
+        /// <summary>Versions less than the specified version will result in warning message on the managed app from accessing company data. (iOS only)</summary>
+        public string MinimumWarningSdkVersion {
+            get { return BackingStore?.Get<string>("minimumWarningSdkVersion"); }
+            set { BackingStore?.Set("minimumWarningSdkVersion", value); }
+        }
         /// <summary>Minimum version of the Company portal that must be installed on the device or the company data on the app will be wiped</summary>
         public string MinimumWipeCompanyPortalVersion {
             get { return BackingStore?.Get<string>("minimumWipeCompanyPortalVersion"); }
@@ -278,8 +283,8 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
-        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         /// </summary>
+        /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new DefaultManagedAppProtection CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             return new DefaultManagedAppProtection();
@@ -329,6 +334,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"minimumRequiredSdkVersion", n => { MinimumRequiredSdkVersion = n.GetStringValue(); } },
                 {"minimumWarningCompanyPortalVersion", n => { MinimumWarningCompanyPortalVersion = n.GetStringValue(); } },
                 {"minimumWarningPatchVersion", n => { MinimumWarningPatchVersion = n.GetStringValue(); } },
+                {"minimumWarningSdkVersion", n => { MinimumWarningSdkVersion = n.GetStringValue(); } },
                 {"minimumWipeCompanyPortalVersion", n => { MinimumWipeCompanyPortalVersion = n.GetStringValue(); } },
                 {"minimumWipePatchVersion", n => { MinimumWipePatchVersion = n.GetStringValue(); } },
                 {"minimumWipeSdkVersion", n => { MinimumWipeSdkVersion = n.GetStringValue(); } },
@@ -346,8 +352,8 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>
         /// Serializes information the current object
-        /// <param name="writer">Serialization writer to use to serialize this model</param>
         /// </summary>
+        /// <param name="writer">Serialization writer to use to serialize this model</param>
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
@@ -391,6 +397,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("minimumRequiredSdkVersion", MinimumRequiredSdkVersion);
             writer.WriteStringValue("minimumWarningCompanyPortalVersion", MinimumWarningCompanyPortalVersion);
             writer.WriteStringValue("minimumWarningPatchVersion", MinimumWarningPatchVersion);
+            writer.WriteStringValue("minimumWarningSdkVersion", MinimumWarningSdkVersion);
             writer.WriteStringValue("minimumWipeCompanyPortalVersion", MinimumWipeCompanyPortalVersion);
             writer.WriteStringValue("minimumWipePatchVersion", MinimumWipePatchVersion);
             writer.WriteStringValue("minimumWipeSdkVersion", MinimumWipeSdkVersion);

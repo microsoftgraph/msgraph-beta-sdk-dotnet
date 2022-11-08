@@ -13,12 +13,14 @@ using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.DeviceConfigurat
 using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.Disable;
 using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.DisableLostMode;
 using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.EnableLostMode;
+using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.EndRemoteHelpSession;
 using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.EnrollNowAction;
 using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.GetCloudPcRemoteActionResults;
 using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.GetCloudPcReviewStatus;
 using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.GetFileVaultKey;
 using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.GetNonCompliantSettings;
 using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.GetOemWarranty;
+using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.InitiateMobileDeviceManagementKeyRecovery;
 using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.LocateDevice;
 using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.LogCollectionRequests;
 using Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.LogoutSharedAppleDeviceActiveUser;
@@ -67,217 +69,225 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item {
     /// <summary>Provides operations to manage the managedDevices property of the microsoft.graph.deviceManagement entity.</summary>
     public class ManagedDeviceItemRequestBuilder {
-        /// <summary>The activateDeviceEsim property</summary>
+        /// <summary>Provides operations to call the activateDeviceEsim method.</summary>
         public ActivateDeviceEsimRequestBuilder ActivateDeviceEsim { get =>
             new ActivateDeviceEsimRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The assignmentFilterEvaluationStatusDetails property</summary>
+        /// <summary>Provides operations to manage the assignmentFilterEvaluationStatusDetails property of the microsoft.graph.managedDevice entity.</summary>
         public AssignmentFilterEvaluationStatusDetailsRequestBuilder AssignmentFilterEvaluationStatusDetails { get =>
             new AssignmentFilterEvaluationStatusDetailsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The bypassActivationLock property</summary>
+        /// <summary>Provides operations to call the bypassActivationLock method.</summary>
         public BypassActivationLockRequestBuilder BypassActivationLock { get =>
             new BypassActivationLockRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The cleanWindowsDevice property</summary>
+        /// <summary>Provides operations to call the cleanWindowsDevice method.</summary>
         public CleanWindowsDeviceRequestBuilder CleanWindowsDevice { get =>
             new CleanWindowsDeviceRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The createDeviceLogCollectionRequest property</summary>
+        /// <summary>Provides operations to call the createDeviceLogCollectionRequest method.</summary>
         public CreateDeviceLogCollectionRequestRequestBuilder CreateDeviceLogCollectionRequest { get =>
             new CreateDeviceLogCollectionRequestRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The createRemoteHelpSession property</summary>
+        /// <summary>Provides operations to call the createRemoteHelpSession method.</summary>
         public CreateRemoteHelpSessionRequestBuilder CreateRemoteHelpSession { get =>
             new CreateRemoteHelpSessionRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The deleteUserFromSharedAppleDevice property</summary>
+        /// <summary>Provides operations to call the deleteUserFromSharedAppleDevice method.</summary>
         public DeleteUserFromSharedAppleDeviceRequestBuilder DeleteUserFromSharedAppleDevice { get =>
             new DeleteUserFromSharedAppleDeviceRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The deprovision property</summary>
+        /// <summary>Provides operations to call the deprovision method.</summary>
         public DeprovisionRequestBuilder Deprovision { get =>
             new DeprovisionRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The detectedApps property</summary>
+        /// <summary>Provides operations to manage the detectedApps property of the microsoft.graph.managedDevice entity.</summary>
         public DetectedAppsRequestBuilder DetectedApps { get =>
             new DetectedAppsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The deviceCategory property</summary>
+        /// <summary>Provides operations to manage the deviceCategory property of the microsoft.graph.managedDevice entity.</summary>
         public DeviceCategoryRequestBuilder DeviceCategory { get =>
             new DeviceCategoryRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The deviceCompliancePolicyStates property</summary>
+        /// <summary>Provides operations to manage the deviceCompliancePolicyStates property of the microsoft.graph.managedDevice entity.</summary>
         public DeviceCompliancePolicyStatesRequestBuilder DeviceCompliancePolicyStates { get =>
             new DeviceCompliancePolicyStatesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The deviceConfigurationStates property</summary>
+        /// <summary>Provides operations to manage the deviceConfigurationStates property of the microsoft.graph.managedDevice entity.</summary>
         public DeviceConfigurationStatesRequestBuilder DeviceConfigurationStates { get =>
             new DeviceConfigurationStatesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The disable property</summary>
+        /// <summary>Provides operations to call the disable method.</summary>
         public DisableRequestBuilder Disable { get =>
             new DisableRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The disableLostMode property</summary>
+        /// <summary>Provides operations to call the disableLostMode method.</summary>
         public DisableLostModeRequestBuilder DisableLostMode { get =>
             new DisableLostModeRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The enableLostMode property</summary>
+        /// <summary>Provides operations to call the enableLostMode method.</summary>
         public EnableLostModeRequestBuilder EnableLostMode { get =>
             new EnableLostModeRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The enrollNowAction property</summary>
+        /// <summary>Provides operations to call the endRemoteHelpSession method.</summary>
+        public EndRemoteHelpSessionRequestBuilder EndRemoteHelpSession { get =>
+            new EndRemoteHelpSessionRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the enrollNowAction method.</summary>
         public EnrollNowActionRequestBuilder EnrollNowAction { get =>
             new EnrollNowActionRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The locateDevice property</summary>
+        /// <summary>Provides operations to call the initiateMobileDeviceManagementKeyRecovery method.</summary>
+        public InitiateMobileDeviceManagementKeyRecoveryRequestBuilder InitiateMobileDeviceManagementKeyRecovery { get =>
+            new InitiateMobileDeviceManagementKeyRecoveryRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the locateDevice method.</summary>
         public LocateDeviceRequestBuilder LocateDevice { get =>
             new LocateDeviceRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The logCollectionRequests property</summary>
+        /// <summary>Provides operations to manage the logCollectionRequests property of the microsoft.graph.managedDevice entity.</summary>
         public LogCollectionRequestsRequestBuilder LogCollectionRequests { get =>
             new LogCollectionRequestsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The logoutSharedAppleDeviceActiveUser property</summary>
+        /// <summary>Provides operations to call the logoutSharedAppleDeviceActiveUser method.</summary>
         public LogoutSharedAppleDeviceActiveUserRequestBuilder LogoutSharedAppleDeviceActiveUser { get =>
             new LogoutSharedAppleDeviceActiveUserRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The managedDeviceMobileAppConfigurationStates property</summary>
+        /// <summary>Provides operations to manage the managedDeviceMobileAppConfigurationStates property of the microsoft.graph.managedDevice entity.</summary>
         public ManagedDeviceMobileAppConfigurationStatesRequestBuilder ManagedDeviceMobileAppConfigurationStates { get =>
             new ManagedDeviceMobileAppConfigurationStatesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The overrideComplianceState property</summary>
+        /// <summary>Provides operations to call the overrideComplianceState method.</summary>
         public OverrideComplianceStateRequestBuilder OverrideComplianceState { get =>
             new OverrideComplianceStateRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>The playLostModeSound property</summary>
+        /// <summary>Provides operations to call the playLostModeSound method.</summary>
         public PlayLostModeSoundRequestBuilder PlayLostModeSound { get =>
             new PlayLostModeSoundRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The rebootNow property</summary>
+        /// <summary>Provides operations to call the rebootNow method.</summary>
         public RebootNowRequestBuilder RebootNow { get =>
             new RebootNowRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The recoverPasscode property</summary>
+        /// <summary>Provides operations to call the recoverPasscode method.</summary>
         public RecoverPasscodeRequestBuilder RecoverPasscode { get =>
             new RecoverPasscodeRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The reenable property</summary>
+        /// <summary>Provides operations to call the reenable method.</summary>
         public ReenableRequestBuilder Reenable { get =>
             new ReenableRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The remoteLock property</summary>
+        /// <summary>Provides operations to call the remoteLock method.</summary>
         public RemoteLockRequestBuilder RemoteLock { get =>
             new RemoteLockRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The removeDeviceFirmwareConfigurationInterfaceManagement property</summary>
+        /// <summary>Provides operations to call the removeDeviceFirmwareConfigurationInterfaceManagement method.</summary>
         public RemoveDeviceFirmwareConfigurationInterfaceManagementRequestBuilder RemoveDeviceFirmwareConfigurationInterfaceManagement { get =>
             new RemoveDeviceFirmwareConfigurationInterfaceManagementRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The reprovisionCloudPc property</summary>
+        /// <summary>Provides operations to call the reprovisionCloudPc method.</summary>
         public ReprovisionCloudPcRequestBuilder ReprovisionCloudPc { get =>
             new ReprovisionCloudPcRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>The requestRemoteAssistance property</summary>
+        /// <summary>Provides operations to call the requestRemoteAssistance method.</summary>
         public RequestRemoteAssistanceRequestBuilder RequestRemoteAssistance { get =>
             new RequestRemoteAssistanceRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The requestRemoteHelpSessionAccess property</summary>
+        /// <summary>Provides operations to call the requestRemoteHelpSessionAccess method.</summary>
         public RequestRemoteHelpSessionAccessRequestBuilder RequestRemoteHelpSessionAccess { get =>
             new RequestRemoteHelpSessionAccessRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The resetPasscode property</summary>
+        /// <summary>Provides operations to call the resetPasscode method.</summary>
         public ResetPasscodeRequestBuilder ResetPasscode { get =>
             new ResetPasscodeRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The resizeCloudPc property</summary>
+        /// <summary>Provides operations to call the resizeCloudPc method.</summary>
         public ResizeCloudPcRequestBuilder ResizeCloudPc { get =>
             new ResizeCloudPcRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The restoreCloudPc property</summary>
+        /// <summary>Provides operations to call the restoreCloudPc method.</summary>
         public RestoreCloudPcRequestBuilder RestoreCloudPc { get =>
             new RestoreCloudPcRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The retire property</summary>
+        /// <summary>Provides operations to call the retire method.</summary>
         public RetireRequestBuilder Retire { get =>
             new RetireRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The revokeAppleVppLicenses property</summary>
+        /// <summary>Provides operations to call the revokeAppleVppLicenses method.</summary>
         public RevokeAppleVppLicensesRequestBuilder RevokeAppleVppLicenses { get =>
             new RevokeAppleVppLicensesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The rotateBitLockerKeys property</summary>
+        /// <summary>Provides operations to call the rotateBitLockerKeys method.</summary>
         public RotateBitLockerKeysRequestBuilder RotateBitLockerKeys { get =>
             new RotateBitLockerKeysRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The rotateFileVaultKey property</summary>
+        /// <summary>Provides operations to call the rotateFileVaultKey method.</summary>
         public RotateFileVaultKeyRequestBuilder RotateFileVaultKey { get =>
             new RotateFileVaultKeyRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The securityBaselineStates property</summary>
+        /// <summary>Provides operations to manage the securityBaselineStates property of the microsoft.graph.managedDevice entity.</summary>
         public SecurityBaselineStatesRequestBuilder SecurityBaselineStates { get =>
             new SecurityBaselineStatesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The sendCustomNotificationToCompanyPortal property</summary>
+        /// <summary>Provides operations to call the sendCustomNotificationToCompanyPortal method.</summary>
         public SendCustomNotificationToCompanyPortalRequestBuilder SendCustomNotificationToCompanyPortal { get =>
             new SendCustomNotificationToCompanyPortalRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The setCloudPcReviewStatus property</summary>
+        /// <summary>Provides operations to call the setCloudPcReviewStatus method.</summary>
         public SetCloudPcReviewStatusRequestBuilder SetCloudPcReviewStatus { get =>
             new SetCloudPcReviewStatusRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The setDeviceName property</summary>
+        /// <summary>Provides operations to call the setDeviceName method.</summary>
         public SetDeviceNameRequestBuilder SetDeviceName { get =>
             new SetDeviceNameRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The shutDown property</summary>
+        /// <summary>Provides operations to call the shutDown method.</summary>
         public ShutDownRequestBuilder ShutDown { get =>
             new ShutDownRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The syncDevice property</summary>
+        /// <summary>Provides operations to call the syncDevice method.</summary>
         public SyncDeviceRequestBuilder SyncDevice { get =>
             new SyncDeviceRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The triggerConfigurationManagerAction property</summary>
+        /// <summary>Provides operations to call the triggerConfigurationManagerAction method.</summary>
         public TriggerConfigurationManagerActionRequestBuilder TriggerConfigurationManagerAction { get =>
             new TriggerConfigurationManagerActionRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The updateWindowsDeviceAccount property</summary>
+        /// <summary>Provides operations to call the updateWindowsDeviceAccount method.</summary>
         public UpdateWindowsDeviceAccountRequestBuilder UpdateWindowsDeviceAccount { get =>
             new UpdateWindowsDeviceAccountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>The users property</summary>
+        /// <summary>Provides operations to manage the users property of the microsoft.graph.managedDevice entity.</summary>
         public UsersRequestBuilder Users { get =>
             new UsersRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The windowsDefenderScan property</summary>
+        /// <summary>Provides operations to call the windowsDefenderScan method.</summary>
         public WindowsDefenderScanRequestBuilder WindowsDefenderScan { get =>
             new WindowsDefenderScanRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The windowsDefenderUpdateSignatures property</summary>
+        /// <summary>Provides operations to call the windowsDefenderUpdateSignatures method.</summary>
         public WindowsDefenderUpdateSignaturesRequestBuilder WindowsDefenderUpdateSignatures { get =>
             new WindowsDefenderUpdateSignaturesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The windowsProtectionState property</summary>
+        /// <summary>Provides operations to manage the windowsProtectionState property of the microsoft.graph.managedDevice entity.</summary>
         public WindowsProtectionStateRequestBuilder WindowsProtectionState { get =>
             new WindowsProtectionStateRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The wipe property</summary>
+        /// <summary>Provides operations to call the wipe method.</summary>
         public WipeRequestBuilder Wipe { get =>
             new WipeRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new ManagedDeviceItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public ManagedDeviceItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -288,9 +298,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item {
         }
         /// <summary>
         /// Instantiates a new ManagedDeviceItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public ManagedDeviceItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -302,8 +312,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item {
         }
         /// <summary>
         /// Delete navigation property managedDevices for deviceManagement
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateDeleteRequestInformation(Action<ManagedDeviceItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.DELETE,
@@ -320,8 +330,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item {
         }
         /// <summary>
         /// The list of managed devices.
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<ManagedDeviceItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -340,9 +350,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item {
         }
         /// <summary>
         /// Update the navigation property managedDevices in deviceManagement
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(Microsoft.Graph.Beta.Models.ManagedDevice body, Action<ManagedDeviceItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -362,9 +372,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item {
         }
         /// <summary>
         /// Delete navigation property managedDevices for deviceManagement
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task DeleteAsync(Action<ManagedDeviceItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -375,9 +385,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item {
         }
         /// <summary>
         /// The list of managed devices.
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<Microsoft.Graph.Beta.Models.ManagedDevice> GetAsync(Action<ManagedDeviceItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -418,10 +428,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item {
         }
         /// <summary>
         /// Update the navigation property managedDevices in deviceManagement
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<Microsoft.Graph.Beta.Models.ManagedDevice> PatchAsync(Microsoft.Graph.Beta.Models.ManagedDevice body, Action<ManagedDeviceItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);
@@ -433,8 +443,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item {
         }
         /// <summary>
         /// Provides operations to call the retrieveRemoteHelpSession method.
-        /// <param name="sessionKey">Usage: sessionKey=&apos;{sessionKey}&apos;</param>
         /// </summary>
+        /// <param name="sessionKey">Usage: sessionKey=&apos;{sessionKey}&apos;</param>
         public RetrieveRemoteHelpSessionWithSessionKeyRequestBuilder RetrieveRemoteHelpSessionWithSessionKey(string sessionKey) {
             if(string.IsNullOrEmpty(sessionKey)) throw new ArgumentNullException(nameof(sessionKey));
             return new RetrieveRemoteHelpSessionWithSessionKeyRequestBuilder(PathParameters, RequestAdapter, sessionKey);

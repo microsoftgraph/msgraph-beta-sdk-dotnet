@@ -15,21 +15,21 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.IdentityGovernance.AccessReviews {
     /// <summary>Provides operations to manage the accessReviews property of the microsoft.graph.identityGovernance entity.</summary>
     public class AccessReviewsRequestBuilder {
-        /// <summary>The decisions property</summary>
+        /// <summary>Provides operations to manage the decisions property of the microsoft.graph.accessReviewSet entity.</summary>
         public DecisionsRequestBuilder Decisions { get =>
             new DecisionsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The definitions property</summary>
+        /// <summary>Provides operations to manage the definitions property of the microsoft.graph.accessReviewSet entity.</summary>
         public DefinitionsRequestBuilder Definitions { get =>
             new DefinitionsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The historyDefinitions property</summary>
+        /// <summary>Provides operations to manage the historyDefinitions property of the microsoft.graph.accessReviewSet entity.</summary>
         public HistoryDefinitionsRequestBuilder HistoryDefinitions { get =>
             new HistoryDefinitionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>The policy property</summary>
+        /// <summary>Provides operations to manage the policy property of the microsoft.graph.accessReviewSet entity.</summary>
         public PolicyRequestBuilder Policy { get =>
             new PolicyRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -39,9 +39,9 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AccessReviews {
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new AccessReviewsRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public AccessReviewsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -52,9 +52,9 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AccessReviews {
         }
         /// <summary>
         /// Instantiates a new AccessReviewsRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public AccessReviewsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -66,8 +66,8 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AccessReviews {
         }
         /// <summary>
         /// Delete navigation property accessReviews for identityGovernance
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateDeleteRequestInformation(Action<AccessReviewsRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.DELETE,
@@ -84,8 +84,8 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AccessReviews {
         }
         /// <summary>
         /// Get accessReviews from identityGovernance
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<AccessReviewsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -104,9 +104,9 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AccessReviews {
         }
         /// <summary>
         /// Update the navigation property accessReviews in identityGovernance
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(AccessReviewSet body, Action<AccessReviewsRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -126,9 +126,9 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AccessReviews {
         }
         /// <summary>
         /// Delete navigation property accessReviews for identityGovernance
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task DeleteAsync(Action<AccessReviewsRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -139,9 +139,9 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AccessReviews {
         }
         /// <summary>
         /// Get accessReviews from identityGovernance
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<AccessReviewSet> GetAsync(Action<AccessReviewsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -152,10 +152,10 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.AccessReviews {
         }
         /// <summary>
         /// Update the navigation property accessReviews in identityGovernance
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<AccessReviewSet> PatchAsync(AccessReviewSet body, Action<AccessReviewsRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);

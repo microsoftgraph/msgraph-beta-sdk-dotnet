@@ -14,11 +14,11 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminRelationships.Item {
     /// <summary>Provides operations to manage the delegatedAdminRelationships property of the microsoft.graph.tenantRelationship entity.</summary>
     public class DelegatedAdminRelationshipItemRequestBuilder {
-        /// <summary>The accessAssignments property</summary>
+        /// <summary>Provides operations to manage the accessAssignments property of the microsoft.graph.delegatedAdminRelationship entity.</summary>
         public AccessAssignmentsRequestBuilder AccessAssignments { get =>
             new AccessAssignmentsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The operations property</summary>
+        /// <summary>Provides operations to manage the operations property of the microsoft.graph.delegatedAdminRelationship entity.</summary>
         public OperationsRequestBuilder Operations { get =>
             new OperationsRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -26,7 +26,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminRelationships.I
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>The requests property</summary>
+        /// <summary>Provides operations to manage the requests property of the microsoft.graph.delegatedAdminRelationship entity.</summary>
         public RequestsRequestBuilder Requests { get =>
             new RequestsRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -34,9 +34,9 @@ namespace Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminRelationships.I
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new DelegatedAdminRelationshipItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public DelegatedAdminRelationshipItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -47,9 +47,9 @@ namespace Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminRelationships.I
         }
         /// <summary>
         /// Instantiates a new DelegatedAdminRelationshipItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public DelegatedAdminRelationshipItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -61,8 +61,8 @@ namespace Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminRelationships.I
         }
         /// <summary>
         /// Delete navigation property delegatedAdminRelationships for tenantRelationships
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateDeleteRequestInformation(Action<DelegatedAdminRelationshipItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.DELETE,
@@ -79,8 +79,8 @@ namespace Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminRelationships.I
         }
         /// <summary>
         /// The details of the delegated administrative privileges that a Microsoft partner has in a customer tenant.
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<DelegatedAdminRelationshipItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -99,9 +99,9 @@ namespace Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminRelationships.I
         }
         /// <summary>
         /// Update the navigation property delegatedAdminRelationships in tenantRelationships
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(DelegatedAdminRelationship body, Action<DelegatedAdminRelationshipItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -121,9 +121,9 @@ namespace Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminRelationships.I
         }
         /// <summary>
         /// Delete navigation property delegatedAdminRelationships for tenantRelationships
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task DeleteAsync(Action<DelegatedAdminRelationshipItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -134,9 +134,9 @@ namespace Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminRelationships.I
         }
         /// <summary>
         /// The details of the delegated administrative privileges that a Microsoft partner has in a customer tenant.
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<DelegatedAdminRelationship> GetAsync(Action<DelegatedAdminRelationshipItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -147,10 +147,10 @@ namespace Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminRelationships.I
         }
         /// <summary>
         /// Update the navigation property delegatedAdminRelationships in tenantRelationships
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<DelegatedAdminRelationship> PatchAsync(DelegatedAdminRelationship body, Action<DelegatedAdminRelationshipItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);

@@ -15,23 +15,23 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesCreditMemos.Item {
     /// <summary>Provides operations to manage the salesCreditMemos property of the microsoft.graph.company entity.</summary>
     public class SalesCreditMemoItemRequestBuilder {
-        /// <summary>The currency property</summary>
+        /// <summary>Provides operations to manage the currency property of the microsoft.graph.salesCreditMemo entity.</summary>
         public CurrencyRequestBuilder Currency { get =>
             new CurrencyRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The customer property</summary>
+        /// <summary>Provides operations to manage the customer property of the microsoft.graph.salesCreditMemo entity.</summary>
         public CustomerRequestBuilder Customer { get =>
             new CustomerRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>The paymentTerm property</summary>
+        /// <summary>Provides operations to manage the paymentTerm property of the microsoft.graph.salesCreditMemo entity.</summary>
         public PaymentTermRequestBuilder PaymentTerm { get =>
             new PaymentTermRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>The salesCreditMemoLines property</summary>
+        /// <summary>Provides operations to manage the salesCreditMemoLines property of the microsoft.graph.salesCreditMemo entity.</summary>
         public SalesCreditMemoLinesRequestBuilder SalesCreditMemoLines { get =>
             new SalesCreditMemoLinesRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -39,9 +39,9 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesCreditMemos.Item {
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new SalesCreditMemoItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public SalesCreditMemoItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -52,9 +52,9 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesCreditMemos.Item {
         }
         /// <summary>
         /// Instantiates a new SalesCreditMemoItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public SalesCreditMemoItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -66,8 +66,8 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesCreditMemos.Item {
         }
         /// <summary>
         /// Get salesCreditMemos from financials
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<SalesCreditMemoItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -86,9 +86,9 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesCreditMemos.Item {
         }
         /// <summary>
         /// Update the navigation property salesCreditMemos in financials
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(SalesCreditMemo body, Action<SalesCreditMemoItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -108,9 +108,9 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesCreditMemos.Item {
         }
         /// <summary>
         /// Get salesCreditMemos from financials
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<SalesCreditMemo> GetAsync(Action<SalesCreditMemoItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -121,10 +121,10 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesCreditMemos.Item {
         }
         /// <summary>
         /// Update the navigation property salesCreditMemos in financials
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<SalesCreditMemo> PatchAsync(SalesCreditMemo body, Action<SalesCreditMemoItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);

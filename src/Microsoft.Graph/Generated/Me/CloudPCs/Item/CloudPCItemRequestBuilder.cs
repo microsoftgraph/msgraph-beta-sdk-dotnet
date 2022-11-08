@@ -20,35 +20,35 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Me.CloudPCs.Item {
     /// <summary>Provides operations to manage the cloudPCs property of the microsoft.graph.user entity.</summary>
     public class CloudPCItemRequestBuilder {
-        /// <summary>The changeUserAccountType property</summary>
+        /// <summary>Provides operations to call the changeUserAccountType method.</summary>
         public ChangeUserAccountTypeRequestBuilder ChangeUserAccountType { get =>
             new ChangeUserAccountTypeRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The endGracePeriod property</summary>
+        /// <summary>Provides operations to call the endGracePeriod method.</summary>
         public EndGracePeriodRequestBuilder EndGracePeriod { get =>
             new EndGracePeriodRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>The reboot property</summary>
+        /// <summary>Provides operations to call the reboot method.</summary>
         public RebootRequestBuilder Reboot { get =>
             new RebootRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The rename property</summary>
+        /// <summary>Provides operations to call the rename method.</summary>
         public RenameRequestBuilder Rename { get =>
             new RenameRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The reprovision property</summary>
+        /// <summary>Provides operations to call the reprovision method.</summary>
         public ReprovisionRequestBuilder Reprovision { get =>
             new ReprovisionRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>The restore property</summary>
+        /// <summary>Provides operations to call the restore method.</summary>
         public RestoreRequestBuilder Restore { get =>
             new RestoreRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The troubleshoot property</summary>
+        /// <summary>Provides operations to call the troubleshoot method.</summary>
         public TroubleshootRequestBuilder Troubleshoot { get =>
             new TroubleshootRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -56,9 +56,9 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs.Item {
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new CloudPCItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public CloudPCItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -69,9 +69,9 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs.Item {
         }
         /// <summary>
         /// Instantiates a new CloudPCItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public CloudPCItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -83,8 +83,8 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs.Item {
         }
         /// <summary>
         /// Delete navigation property cloudPCs for me
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateDeleteRequestInformation(Action<CloudPCItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.DELETE,
@@ -101,8 +101,8 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs.Item {
         }
         /// <summary>
         /// Get cloudPCs from me
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<CloudPCItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -121,9 +121,9 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs.Item {
         }
         /// <summary>
         /// Update the navigation property cloudPCs in me
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(Microsoft.Graph.Beta.Models.CloudPC body, Action<CloudPCItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -143,9 +143,9 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs.Item {
         }
         /// <summary>
         /// Delete navigation property cloudPCs for me
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task DeleteAsync(Action<CloudPCItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -156,9 +156,9 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs.Item {
         }
         /// <summary>
         /// Get cloudPCs from me
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<Microsoft.Graph.Beta.Models.CloudPC> GetAsync(Action<CloudPCItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -181,10 +181,10 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs.Item {
         }
         /// <summary>
         /// Update the navigation property cloudPCs in me
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<Microsoft.Graph.Beta.Models.CloudPC> PatchAsync(Microsoft.Graph.Beta.Models.CloudPC body, Action<CloudPCItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);

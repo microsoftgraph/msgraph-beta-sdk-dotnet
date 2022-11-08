@@ -13,11 +13,11 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesQuoteLines.Item {
     /// <summary>Provides operations to manage the salesQuoteLines property of the microsoft.graph.company entity.</summary>
     public class SalesQuoteLineItemRequestBuilder {
-        /// <summary>The account property</summary>
+        /// <summary>Provides operations to manage the account property of the microsoft.graph.salesQuoteLine entity.</summary>
         public AccountRequestBuilder Account { get =>
             new AccountRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The item property</summary>
+        /// <summary>Provides operations to manage the item property of the microsoft.graph.salesQuoteLine entity.</summary>
         public ItemRequestBuilder Item { get =>
             new ItemRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -29,9 +29,9 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesQuoteLines.Item {
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new SalesQuoteLineItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public SalesQuoteLineItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -42,9 +42,9 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesQuoteLines.Item {
         }
         /// <summary>
         /// Instantiates a new SalesQuoteLineItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public SalesQuoteLineItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -56,8 +56,8 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesQuoteLines.Item {
         }
         /// <summary>
         /// Get salesQuoteLines from financials
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<SalesQuoteLineItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -76,9 +76,9 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesQuoteLines.Item {
         }
         /// <summary>
         /// Update the navigation property salesQuoteLines in financials
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(SalesQuoteLine body, Action<SalesQuoteLineItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -98,9 +98,9 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesQuoteLines.Item {
         }
         /// <summary>
         /// Get salesQuoteLines from financials
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<SalesQuoteLine> GetAsync(Action<SalesQuoteLineItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -111,10 +111,10 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesQuoteLines.Item {
         }
         /// <summary>
         /// Update the navigation property salesQuoteLines in financials
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<SalesQuoteLine> PatchAsync(SalesQuoteLine body, Action<SalesQuoteLineItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);

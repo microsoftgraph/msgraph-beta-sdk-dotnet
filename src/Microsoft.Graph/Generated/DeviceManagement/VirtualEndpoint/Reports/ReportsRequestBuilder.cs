@@ -17,19 +17,19 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports {
     /// <summary>Provides operations to manage the reports property of the microsoft.graph.virtualEndpoint entity.</summary>
     public class ReportsRequestBuilder {
-        /// <summary>The exportJobs property</summary>
+        /// <summary>Provides operations to manage the exportJobs property of the microsoft.graph.cloudPcReports entity.</summary>
         public ExportJobsRequestBuilder ExportJobs { get =>
             new ExportJobsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The getDailyAggregatedRemoteConnectionReports property</summary>
+        /// <summary>Provides operations to call the getDailyAggregatedRemoteConnectionReports method.</summary>
         public GetDailyAggregatedRemoteConnectionReportsRequestBuilder GetDailyAggregatedRemoteConnectionReports { get =>
             new GetDailyAggregatedRemoteConnectionReportsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The getRemoteConnectionHistoricalReports property</summary>
+        /// <summary>Provides operations to call the getRemoteConnectionHistoricalReports method.</summary>
         public GetRemoteConnectionHistoricalReportsRequestBuilder GetRemoteConnectionHistoricalReports { get =>
             new GetRemoteConnectionHistoricalReportsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The getTotalAggregatedRemoteConnectionReports property</summary>
+        /// <summary>Provides operations to call the getTotalAggregatedRemoteConnectionReports method.</summary>
         public GetTotalAggregatedRemoteConnectionReportsRequestBuilder GetTotalAggregatedRemoteConnectionReports { get =>
             new GetTotalAggregatedRemoteConnectionReportsRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -41,9 +41,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports {
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new ReportsRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public ReportsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -54,9 +54,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports {
         }
         /// <summary>
         /// Instantiates a new ReportsRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public ReportsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -68,8 +68,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports {
         }
         /// <summary>
         /// Delete navigation property reports for deviceManagement
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateDeleteRequestInformation(Action<ReportsRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.DELETE,
@@ -86,8 +86,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports {
         }
         /// <summary>
         /// Cloud PC related reports.
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<ReportsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -106,9 +106,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports {
         }
         /// <summary>
         /// Update the navigation property reports in deviceManagement
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(CloudPcReports body, Action<ReportsRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -128,9 +128,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports {
         }
         /// <summary>
         /// Delete navigation property reports for deviceManagement
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task DeleteAsync(Action<ReportsRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -141,9 +141,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports {
         }
         /// <summary>
         /// Cloud PC related reports.
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<CloudPcReports> GetAsync(Action<ReportsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -154,26 +154,26 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports {
         }
         /// <summary>
         /// Provides operations to call the getRealTimeRemoteConnectionLatency method.
-        /// <param name="cloudPcId">Usage: cloudPcId=&apos;{cloudPcId}&apos;</param>
         /// </summary>
+        /// <param name="cloudPcId">Usage: cloudPcId=&apos;{cloudPcId}&apos;</param>
         public GetRealTimeRemoteConnectionLatencyWithCloudPcIdRequestBuilder GetRealTimeRemoteConnectionLatencyWithCloudPcId(string cloudPcId) {
             if(string.IsNullOrEmpty(cloudPcId)) throw new ArgumentNullException(nameof(cloudPcId));
             return new GetRealTimeRemoteConnectionLatencyWithCloudPcIdRequestBuilder(PathParameters, RequestAdapter, cloudPcId);
         }
         /// <summary>
         /// Provides operations to call the getRealTimeRemoteConnectionStatus method.
-        /// <param name="cloudPcId">Usage: cloudPcId=&apos;{cloudPcId}&apos;</param>
         /// </summary>
+        /// <param name="cloudPcId">Usage: cloudPcId=&apos;{cloudPcId}&apos;</param>
         public GetRealTimeRemoteConnectionStatusWithCloudPcIdRequestBuilder GetRealTimeRemoteConnectionStatusWithCloudPcId(string cloudPcId) {
             if(string.IsNullOrEmpty(cloudPcId)) throw new ArgumentNullException(nameof(cloudPcId));
             return new GetRealTimeRemoteConnectionStatusWithCloudPcIdRequestBuilder(PathParameters, RequestAdapter, cloudPcId);
         }
         /// <summary>
         /// Update the navigation property reports in deviceManagement
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<CloudPcReports> PatchAsync(CloudPcReports body, Action<ReportsRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);

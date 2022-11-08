@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item {
     /// <summary>Provides operations to manage the exactMatchDataStores property of the microsoft.graph.dataClassificationService entity.</summary>
     public class ExactMatchDataStoreItemRequestBuilder {
-        /// <summary>The lookup property</summary>
+        /// <summary>Provides operations to call the lookup method.</summary>
         public LookupRequestBuilder Lookup { get =>
             new LookupRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item {
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>The sessions property</summary>
+        /// <summary>Provides operations to manage the sessions property of the microsoft.graph.exactMatchDataStore entity.</summary>
         public SessionsRequestBuilder Sessions { get =>
             new SessionsRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -29,9 +29,9 @@ namespace Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item {
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new ExactMatchDataStoreItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public ExactMatchDataStoreItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -42,9 +42,9 @@ namespace Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item {
         }
         /// <summary>
         /// Instantiates a new ExactMatchDataStoreItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public ExactMatchDataStoreItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -56,8 +56,8 @@ namespace Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item {
         }
         /// <summary>
         /// Delete navigation property exactMatchDataStores for dataClassification
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateDeleteRequestInformation(Action<ExactMatchDataStoreItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.DELETE,
@@ -74,8 +74,8 @@ namespace Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item {
         }
         /// <summary>
         /// Get exactMatchDataStores from dataClassification
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<ExactMatchDataStoreItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -94,9 +94,9 @@ namespace Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item {
         }
         /// <summary>
         /// Update the navigation property exactMatchDataStores in dataClassification
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(ExactMatchDataStore body, Action<ExactMatchDataStoreItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -116,9 +116,9 @@ namespace Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item {
         }
         /// <summary>
         /// Delete navigation property exactMatchDataStores for dataClassification
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task DeleteAsync(Action<ExactMatchDataStoreItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -129,9 +129,9 @@ namespace Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item {
         }
         /// <summary>
         /// Get exactMatchDataStores from dataClassification
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<ExactMatchDataStore> GetAsync(Action<ExactMatchDataStoreItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -142,10 +142,10 @@ namespace Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item {
         }
         /// <summary>
         /// Update the navigation property exactMatchDataStores in dataClassification
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<ExactMatchDataStore> PatchAsync(ExactMatchDataStore body, Action<ExactMatchDataStoreItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);

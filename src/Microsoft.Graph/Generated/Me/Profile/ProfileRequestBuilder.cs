@@ -30,93 +30,93 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Me.Profile {
     /// <summary>Provides operations to manage the profile property of the microsoft.graph.user entity.</summary>
     public class ProfileRequestBuilder {
-        /// <summary>The account property</summary>
+        /// <summary>Provides operations to manage the account property of the microsoft.graph.profile entity.</summary>
         public AccountRequestBuilder Account { get =>
             new AccountRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The addresses property</summary>
+        /// <summary>Provides operations to manage the addresses property of the microsoft.graph.profile entity.</summary>
         public AddressesRequestBuilder Addresses { get =>
             new AddressesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The anniversaries property</summary>
+        /// <summary>Provides operations to manage the anniversaries property of the microsoft.graph.profile entity.</summary>
         public AnniversariesRequestBuilder Anniversaries { get =>
             new AnniversariesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The awards property</summary>
+        /// <summary>Provides operations to manage the awards property of the microsoft.graph.profile entity.</summary>
         public AwardsRequestBuilder Awards { get =>
             new AwardsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The certifications property</summary>
+        /// <summary>Provides operations to manage the certifications property of the microsoft.graph.profile entity.</summary>
         public CertificationsRequestBuilder Certifications { get =>
             new CertificationsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The educationalActivities property</summary>
+        /// <summary>Provides operations to manage the educationalActivities property of the microsoft.graph.profile entity.</summary>
         public EducationalActivitiesRequestBuilder EducationalActivities { get =>
             new EducationalActivitiesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The emails property</summary>
+        /// <summary>Provides operations to manage the emails property of the microsoft.graph.profile entity.</summary>
         public EmailsRequestBuilder Emails { get =>
             new EmailsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The interests property</summary>
+        /// <summary>Provides operations to manage the interests property of the microsoft.graph.profile entity.</summary>
         public InterestsRequestBuilder Interests { get =>
             new InterestsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The languages property</summary>
+        /// <summary>Provides operations to manage the languages property of the microsoft.graph.profile entity.</summary>
         public LanguagesRequestBuilder Languages { get =>
             new LanguagesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The names property</summary>
+        /// <summary>Provides operations to manage the names property of the microsoft.graph.profile entity.</summary>
         public NamesRequestBuilder Names { get =>
             new NamesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The notes property</summary>
+        /// <summary>Provides operations to manage the notes property of the microsoft.graph.profile entity.</summary>
         public NotesRequestBuilder Notes { get =>
             new NotesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The patents property</summary>
+        /// <summary>Provides operations to manage the patents property of the microsoft.graph.profile entity.</summary>
         public PatentsRequestBuilder Patents { get =>
             new PatentsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>The phones property</summary>
+        /// <summary>Provides operations to manage the phones property of the microsoft.graph.profile entity.</summary>
         public PhonesRequestBuilder Phones { get =>
             new PhonesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The positions property</summary>
+        /// <summary>Provides operations to manage the positions property of the microsoft.graph.profile entity.</summary>
         public PositionsRequestBuilder Positions { get =>
             new PositionsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The projects property</summary>
+        /// <summary>Provides operations to manage the projects property of the microsoft.graph.profile entity.</summary>
         public ProjectsRequestBuilder Projects { get =>
             new ProjectsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The publications property</summary>
+        /// <summary>Provides operations to manage the publications property of the microsoft.graph.profile entity.</summary>
         public PublicationsRequestBuilder Publications { get =>
             new PublicationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>The skills property</summary>
+        /// <summary>Provides operations to manage the skills property of the microsoft.graph.profile entity.</summary>
         public SkillsRequestBuilder Skills { get =>
             new SkillsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
-        /// <summary>The webAccounts property</summary>
+        /// <summary>Provides operations to manage the webAccounts property of the microsoft.graph.profile entity.</summary>
         public WebAccountsRequestBuilder WebAccounts { get =>
             new WebAccountsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The websites property</summary>
+        /// <summary>Provides operations to manage the websites property of the microsoft.graph.profile entity.</summary>
         public WebsitesRequestBuilder Websites { get =>
             new WebsitesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new ProfileRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public ProfileRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -127,9 +127,9 @@ namespace Microsoft.Graph.Beta.Me.Profile {
         }
         /// <summary>
         /// Instantiates a new ProfileRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public ProfileRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -141,8 +141,8 @@ namespace Microsoft.Graph.Beta.Me.Profile {
         }
         /// <summary>
         /// Deletes a profile object from a user&apos;s account.
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateDeleteRequestInformation(Action<ProfileRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.DELETE,
@@ -159,8 +159,8 @@ namespace Microsoft.Graph.Beta.Me.Profile {
         }
         /// <summary>
         /// Retrieve the properties and relationships of a profile object for a given user. The **profile** resource exposes various rich properties that are descriptive of the user as relationships, for example, anniversaries and education activities. To get one of these navigation properties, use the corresponding GET method on that property. See the methods exposed by **profile**.
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<ProfileRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -179,9 +179,9 @@ namespace Microsoft.Graph.Beta.Me.Profile {
         }
         /// <summary>
         /// Update the navigation property profile in me
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(Microsoft.Graph.Beta.Models.Profile body, Action<ProfileRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -201,9 +201,9 @@ namespace Microsoft.Graph.Beta.Me.Profile {
         }
         /// <summary>
         /// Deletes a profile object from a user&apos;s account.
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task DeleteAsync(Action<ProfileRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -214,9 +214,9 @@ namespace Microsoft.Graph.Beta.Me.Profile {
         }
         /// <summary>
         /// Retrieve the properties and relationships of a profile object for a given user. The **profile** resource exposes various rich properties that are descriptive of the user as relationships, for example, anniversaries and education activities. To get one of these navigation properties, use the corresponding GET method on that property. See the methods exposed by **profile**.
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<Microsoft.Graph.Beta.Models.Profile> GetAsync(Action<ProfileRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -227,10 +227,10 @@ namespace Microsoft.Graph.Beta.Me.Profile {
         }
         /// <summary>
         /// Update the navigation property profile in me
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<Microsoft.Graph.Beta.Models.Profile> PatchAsync(Microsoft.Graph.Beta.Models.Profile body, Action<ProfileRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);

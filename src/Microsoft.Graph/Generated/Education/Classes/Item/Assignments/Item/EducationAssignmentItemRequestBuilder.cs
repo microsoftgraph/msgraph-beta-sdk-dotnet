@@ -18,35 +18,35 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item {
     /// <summary>Provides operations to manage the assignments property of the microsoft.graph.educationClass entity.</summary>
     public class EducationAssignmentItemRequestBuilder {
-        /// <summary>The categories property</summary>
+        /// <summary>Provides operations to manage the categories property of the microsoft.graph.educationAssignment entity.</summary>
         public CategoriesRequestBuilder Categories { get =>
             new CategoriesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>The publish property</summary>
+        /// <summary>Provides operations to call the publish method.</summary>
         public PublishRequestBuilder Publish { get =>
             new PublishRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>The resources property</summary>
+        /// <summary>Provides operations to manage the resources property of the microsoft.graph.educationAssignment entity.</summary>
         public ResourcesRequestBuilder Resources { get =>
             new ResourcesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The rubric property</summary>
+        /// <summary>Provides operations to manage the rubric property of the microsoft.graph.educationAssignment entity.</summary>
         public RubricRequestBuilder Rubric { get =>
             new RubricRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The setUpFeedbackResourcesFolder property</summary>
+        /// <summary>Provides operations to call the setUpFeedbackResourcesFolder method.</summary>
         public SetUpFeedbackResourcesFolderRequestBuilder SetUpFeedbackResourcesFolder { get =>
             new SetUpFeedbackResourcesFolderRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The setUpResourcesFolder property</summary>
+        /// <summary>Provides operations to call the setUpResourcesFolder method.</summary>
         public SetUpResourcesFolderRequestBuilder SetUpResourcesFolder { get =>
             new SetUpResourcesFolderRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The submissions property</summary>
+        /// <summary>Provides operations to manage the submissions property of the microsoft.graph.educationAssignment entity.</summary>
         public SubmissionsRequestBuilder Submissions { get =>
             new SubmissionsRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -54,9 +54,9 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item {
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new EducationAssignmentItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public EducationAssignmentItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -67,9 +67,9 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item {
         }
         /// <summary>
         /// Instantiates a new EducationAssignmentItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public EducationAssignmentItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -81,8 +81,8 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item {
         }
         /// <summary>
         /// Delete navigation property assignments for education
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateDeleteRequestInformation(Action<EducationAssignmentItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.DELETE,
@@ -99,8 +99,8 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item {
         }
         /// <summary>
         /// All assignments associated with this class. Nullable.
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<EducationAssignmentItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -119,9 +119,9 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item {
         }
         /// <summary>
         /// Update the navigation property assignments in education
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(EducationAssignment body, Action<EducationAssignmentItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -141,9 +141,9 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item {
         }
         /// <summary>
         /// Delete navigation property assignments for education
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task DeleteAsync(Action<EducationAssignmentItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -154,9 +154,9 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item {
         }
         /// <summary>
         /// All assignments associated with this class. Nullable.
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<EducationAssignment> GetAsync(Action<EducationAssignmentItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -167,10 +167,10 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item {
         }
         /// <summary>
         /// Update the navigation property assignments in education
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<EducationAssignment> PatchAsync(EducationAssignment body, Action<EducationAssignmentItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);

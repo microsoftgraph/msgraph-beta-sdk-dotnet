@@ -15,23 +15,23 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.AuditLogs {
     /// <summary>Provides operations to manage the auditLogRoot singleton.</summary>
     public class AuditLogsRequestBuilder {
-        /// <summary>The directoryAudits property</summary>
+        /// <summary>Provides operations to manage the directoryAudits property of the microsoft.graph.auditLogRoot entity.</summary>
         public DirectoryAuditsRequestBuilder DirectoryAudits { get =>
             new DirectoryAuditsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The directoryProvisioning property</summary>
+        /// <summary>Provides operations to manage the directoryProvisioning property of the microsoft.graph.auditLogRoot entity.</summary>
         public DirectoryProvisioningRequestBuilder DirectoryProvisioning { get =>
             new DirectoryProvisioningRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>The provisioning property</summary>
+        /// <summary>Provides operations to manage the provisioning property of the microsoft.graph.auditLogRoot entity.</summary>
         public ProvisioningRequestBuilder Provisioning { get =>
             new ProvisioningRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>The signIns property</summary>
+        /// <summary>Provides operations to manage the signIns property of the microsoft.graph.auditLogRoot entity.</summary>
         public SignInsRequestBuilder SignIns { get =>
             new SignInsRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -39,9 +39,9 @@ namespace Microsoft.Graph.Beta.AuditLogs {
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new AuditLogsRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public AuditLogsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -52,9 +52,9 @@ namespace Microsoft.Graph.Beta.AuditLogs {
         }
         /// <summary>
         /// Instantiates a new AuditLogsRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public AuditLogsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -66,8 +66,8 @@ namespace Microsoft.Graph.Beta.AuditLogs {
         }
         /// <summary>
         /// Get auditLogs
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<AuditLogsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -86,9 +86,9 @@ namespace Microsoft.Graph.Beta.AuditLogs {
         }
         /// <summary>
         /// Update auditLogs
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(AuditLogRoot body, Action<AuditLogsRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -108,9 +108,9 @@ namespace Microsoft.Graph.Beta.AuditLogs {
         }
         /// <summary>
         /// Get auditLogs
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<AuditLogRoot> GetAsync(Action<AuditLogsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -121,10 +121,10 @@ namespace Microsoft.Graph.Beta.AuditLogs {
         }
         /// <summary>
         /// Update auditLogs
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<AuditLogRoot> PatchAsync(AuditLogRoot body, Action<AuditLogsRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);

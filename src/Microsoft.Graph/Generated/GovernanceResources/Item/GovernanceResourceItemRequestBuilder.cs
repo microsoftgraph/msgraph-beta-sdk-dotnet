@@ -16,7 +16,7 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.GovernanceResources.Item {
     /// <summary>Provides operations to manage the collection of governanceResource entities.</summary>
     public class GovernanceResourceItemRequestBuilder {
-        /// <summary>The parent property</summary>
+        /// <summary>Provides operations to manage the parent property of the microsoft.graph.governanceResource entity.</summary>
         public ParentRequestBuilder Parent { get =>
             new ParentRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -24,19 +24,19 @@ namespace Microsoft.Graph.Beta.GovernanceResources.Item {
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>The roleAssignmentRequests property</summary>
+        /// <summary>Provides operations to manage the roleAssignmentRequests property of the microsoft.graph.governanceResource entity.</summary>
         public RoleAssignmentRequestsRequestBuilder RoleAssignmentRequests { get =>
             new RoleAssignmentRequestsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The roleAssignments property</summary>
+        /// <summary>Provides operations to manage the roleAssignments property of the microsoft.graph.governanceResource entity.</summary>
         public RoleAssignmentsRequestBuilder RoleAssignments { get =>
             new RoleAssignmentsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The roleDefinitions property</summary>
+        /// <summary>Provides operations to manage the roleDefinitions property of the microsoft.graph.governanceResource entity.</summary>
         public RoleDefinitionsRequestBuilder RoleDefinitions { get =>
             new RoleDefinitionsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The roleSettings property</summary>
+        /// <summary>Provides operations to manage the roleSettings property of the microsoft.graph.governanceResource entity.</summary>
         public RoleSettingsRequestBuilder RoleSettings { get =>
             new RoleSettingsRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -44,9 +44,9 @@ namespace Microsoft.Graph.Beta.GovernanceResources.Item {
         private string UrlTemplate { get; set; }
         /// <summary>
         /// Instantiates a new GovernanceResourceItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public GovernanceResourceItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -57,9 +57,9 @@ namespace Microsoft.Graph.Beta.GovernanceResources.Item {
         }
         /// <summary>
         /// Instantiates a new GovernanceResourceItemRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public GovernanceResourceItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -71,8 +71,8 @@ namespace Microsoft.Graph.Beta.GovernanceResources.Item {
         }
         /// <summary>
         /// Delete entity from governanceResources
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateDeleteRequestInformation(Action<GovernanceResourceItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.DELETE,
@@ -89,8 +89,8 @@ namespace Microsoft.Graph.Beta.GovernanceResources.Item {
         }
         /// <summary>
         /// Get entity from governanceResources by key
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<GovernanceResourceItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -109,9 +109,9 @@ namespace Microsoft.Graph.Beta.GovernanceResources.Item {
         }
         /// <summary>
         /// Update entity in governanceResources
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public RequestInformation CreatePatchRequestInformation(GovernanceResource body, Action<GovernanceResourceItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
@@ -131,9 +131,9 @@ namespace Microsoft.Graph.Beta.GovernanceResources.Item {
         }
         /// <summary>
         /// Delete entity from governanceResources
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task DeleteAsync(Action<GovernanceResourceItemRequestBuilderDeleteRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateDeleteRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -144,9 +144,9 @@ namespace Microsoft.Graph.Beta.GovernanceResources.Item {
         }
         /// <summary>
         /// Get entity from governanceResources by key
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<GovernanceResource> GetAsync(Action<GovernanceResourceItemRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
@@ -157,10 +157,10 @@ namespace Microsoft.Graph.Beta.GovernanceResources.Item {
         }
         /// <summary>
         /// Update entity in governanceResources
+        /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<GovernanceResource> PatchAsync(GovernanceResource body, Action<GovernanceResourceItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = CreatePatchRequestInformation(body, requestConfiguration);

@@ -14,13 +14,13 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Policies.MobileAppManagementPolicies.Item.IncludedGroups {
     /// <summary>Provides operations to manage the includedGroups property of the microsoft.graph.mobilityManagementPolicy entity.</summary>
     public class IncludedGroupsRequestBuilder {
-        /// <summary>The Count property</summary>
+        /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
             new CountRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
-        /// <summary>The Ref property</summary>
+        /// <summary>Provides operations to manage the collection of policyRoot entities.</summary>
         public RefRequestBuilder Ref { get =>
             new RefRequestBuilder(PathParameters, RequestAdapter);
         }
@@ -36,9 +36,9 @@ namespace Microsoft.Graph.Beta.Policies.MobileAppManagementPolicies.Item.Include
         } }
         /// <summary>
         /// Instantiates a new IncludedGroupsRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public IncludedGroupsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) {
             _ = pathParameters ?? throw new ArgumentNullException(nameof(pathParameters));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -49,9 +49,9 @@ namespace Microsoft.Graph.Beta.Policies.MobileAppManagementPolicies.Item.Include
         }
         /// <summary>
         /// Instantiates a new IncludedGroupsRequestBuilder and sets the default values.
+        /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        /// </summary>
         public IncludedGroupsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) {
             if(string.IsNullOrEmpty(rawUrl)) throw new ArgumentNullException(nameof(rawUrl));
             _ = requestAdapter ?? throw new ArgumentNullException(nameof(requestAdapter));
@@ -63,8 +63,8 @@ namespace Microsoft.Graph.Beta.Policies.MobileAppManagementPolicies.Item.Include
         }
         /// <summary>
         /// Get the list of groups that are included in a mobile app management policy.
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<IncludedGroupsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
@@ -83,9 +83,9 @@ namespace Microsoft.Graph.Beta.Policies.MobileAppManagementPolicies.Item.Include
         }
         /// <summary>
         /// Get the list of groups that are included in a mobile app management policy.
+        /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// </summary>
         public async Task<GroupCollectionResponse> GetAsync(Action<IncludedGroupsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
             var requestInfo = CreateGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
