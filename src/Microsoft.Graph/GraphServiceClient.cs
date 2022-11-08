@@ -1,4 +1,4 @@
-﻿// ------------------------------------------------------------------------------
+// ------------------------------------------------------------------------------
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
@@ -32,9 +32,13 @@ namespace Microsoft.Graph.Beta
         /// Constructs a new <see cref="GraphServiceClient"/>.
         /// </summary>
         /// <param name="requestAdapter">The custom <see cref="IRequestAdapter"/> to be used for making requests</param>
-        public GraphServiceClient(IRequestAdapter requestAdapter): base(requestAdapter)
+        /// <param name="baseUrl">The base service URL. For example, "https://graph.microsoft.com/beta"</param>
+        public GraphServiceClient(IRequestAdapter requestAdapter, string baseUrl = null): base(requestAdapter)
         {
             this.RequestAdapter = requestAdapter;
+            if (!string.IsNullOrEmpty(baseUrl)) {
+                this.RequestAdapter.BaseUrl = baseUrl;
+            }
         }
 
         /// <summary>
@@ -42,10 +46,12 @@ namespace Microsoft.Graph.Beta
         /// </summary>
         /// <param name="tokenCredential">The <see cref="TokenCredential"/> for authenticating request messages.</param>
         /// <param name="scopes">List of scopes for the authentication context.</param>
+        /// <param name="baseUrl">The base service URL. For example, "https://graph.microsoft.com/beta"</param>
         public GraphServiceClient(
             TokenCredential tokenCredential,
-            IEnumerable<string> scopes = null
-            ):this(new AzureIdentityAuthenticationProvider(tokenCredential, null, null,scopes?.ToArray() ?? Array.Empty<string>()))
+            IEnumerable<string> scopes = null,
+            string baseUrl = null
+            ):this(new AzureIdentityAuthenticationProvider(tokenCredential, null, null,scopes?.ToArray() ?? Array.Empty<string>()), baseUrl)
         {
         }
 
@@ -53,9 +59,11 @@ namespace Microsoft.Graph.Beta
         /// Constructs a new <see cref="GraphServiceClient"/>.
         /// </summary>
         /// <param name="authenticationProvider">The <see cref="IAuthenticationProvider"/> for authenticating request messages.</param>
+        /// <param name="baseUrl">The base service URL. For example, "https://graph.microsoft.com/beta"</param>
         public GraphServiceClient(
-            IAuthenticationProvider authenticationProvider
-            ): this(new BaseGraphRequestAdapter(authenticationProvider, graphClientOptions))
+            IAuthenticationProvider authenticationProvider,
+            string baseUrl = null
+            ): this(new BaseGraphRequestAdapter(authenticationProvider, graphClientOptions),baseUrl)
         {
         }
 
@@ -63,8 +71,10 @@ namespace Microsoft.Graph.Beta
         /// Constructs a new <see cref="GraphServiceClient"/>.
         /// </summary>
         /// <param name="httpClient">The customized <see cref="HttpClient"/> to be used for making requests</param>
+        /// <param name="baseUrl">The base service URL. For example, "https://graph.microsoft.com/beta"</param>
         public GraphServiceClient(
-            HttpClient httpClient):this(new BaseGraphRequestAdapter(new AnonymousAuthenticationProvider(), graphClientOptions, httpClient: httpClient))
+            HttpClient httpClient,
+            string baseUrl = null):this(new BaseGraphRequestAdapter(new AnonymousAuthenticationProvider(), graphClientOptions, httpClient: httpClient),baseUrl)
         {
         }
 

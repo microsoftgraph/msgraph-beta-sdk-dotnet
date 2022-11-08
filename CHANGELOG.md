@@ -11,6 +11,7 @@ and this project does NOT adhere to [Semantic Versioning](https://semver.org/spe
 
 ### Changed
 
+- Adds baseUrl parameter to GraphServiceClient constructor to allow for easier updating of target endpoint
 - Latest metadata updates from 1st November 2022 snapshot
 
 ## [5.13.0-preview] - 2022-10-18
