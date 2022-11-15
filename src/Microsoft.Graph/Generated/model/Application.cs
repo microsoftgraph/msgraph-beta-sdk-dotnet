@@ -212,6 +212,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets service principal lock configuration.
+        /// Specifies whether sensitive properties of a multi-tenant application should be locked for editing after the application is provisioned in a tenant. Nullable. null by default.
         /// </summary>
         [JsonPropertyName("servicePrincipalLockConfiguration")]
         public ServicePrincipalLockConfiguration ServicePrincipalLockConfiguration { get; set; }

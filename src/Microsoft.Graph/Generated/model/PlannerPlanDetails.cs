@@ -30,14 +30,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets category descriptions.
-        /// An object that specifies the descriptions of the 25 categories that can be associated with tasks in the plan
+        /// An object that specifies the descriptions of the 25 categories that can be associated with tasks in the plan.
         /// </summary>
         [JsonPropertyName("categoryDescriptions")]
         public PlannerCategoryDescriptions CategoryDescriptions { get; set; }
     
         /// <summary>
         /// Gets or sets context details.
-        /// Read-only. A collection of additional information associated with plannerPlanContext entries that are defined for the plannerPlan container.
+        /// A collection of additional information associated with plannerPlanContext entries that are defined for the plannerPlan container. Read-only.
         /// </summary>
         [JsonPropertyName("contextDetails")]
         public PlannerPlanContextDetailsCollection ContextDetails { get; set; }
