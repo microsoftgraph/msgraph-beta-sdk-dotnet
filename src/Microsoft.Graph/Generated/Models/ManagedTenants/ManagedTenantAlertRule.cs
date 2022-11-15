@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class ManagedTenantAlertRule : Entity, IParsable {
         /// <summary>The alertDisplayName property</summary>
         public string AlertDisplayName {

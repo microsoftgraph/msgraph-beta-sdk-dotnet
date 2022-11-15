@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class DirectoryObjectPartnerReference : DirectoryObject, IParsable {
         /// <summary>Description of the object returned. Read-only.</summary>
         public string Description {
@@ -27,7 +26,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("objectType", value); }
         }
         /// <summary>
-        /// Instantiates a new directoryObjectPartnerReference and sets the default values.
+        /// Instantiates a new DirectoryObjectPartnerReference and sets the default values.
         /// </summary>
         public DirectoryObjectPartnerReference() : base() {
             OdataType = "#microsoft.graph.directoryObjectPartnerReference";

@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class ChatMembersNotificationRecipient : TeamworkNotificationRecipient, IParsable {
-        /// <summary>The chat&apos;s identifier.</summary>
+        /// <summary>The unique identifier for the chat whose members should receive the notifications.</summary>
         public string ChatId {
             get { return BackingStore?.Get<string>("chatId"); }
             set { BackingStore?.Set("chatId", value); }

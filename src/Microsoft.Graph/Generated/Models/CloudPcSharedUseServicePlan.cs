@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class CloudPcSharedUseServicePlan : Entity, IParsable {
         /// <summary>The displayName property</summary>
         public string DisplayName {
@@ -21,7 +22,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("usedCount", value); }
         }
         /// <summary>
-        /// Instantiates a new CloudPcSharedUseServicePlan and sets the default values.
+        /// Instantiates a new cloudPcSharedUseServicePlan and sets the default values.
         /// </summary>
         public CloudPcSharedUseServicePlan() : base() {
             OdataType = "#microsoft.graph.cloudPcSharedUseServicePlan";

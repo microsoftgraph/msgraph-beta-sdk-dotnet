@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>OS X Trusted Root Certificate configuration profile.</summary>
     public class MacOSTrustedRootCertificate : DeviceConfiguration, IParsable {
         /// <summary>File name to display in UI.</summary>
         public string CertFileName {

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Entity that represents a collection of Microsoft Tunnel settings</summary>
     public class MicrosoftTunnelConfiguration : Entity, IParsable {
         /// <summary>Additional settings that may be applied to the server</summary>
         public List<KeyValuePair> AdvancedSettings {

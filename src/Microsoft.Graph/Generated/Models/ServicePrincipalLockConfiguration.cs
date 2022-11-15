@@ -11,24 +11,24 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
             set { BackingStore?.Set("additionalData", value); }
         }
-        /// <summary>The allProperties property</summary>
+        /// <summary>Enables locking all sensitive properties. The sensitive properties are keyCredentials, passwordCredentials, and tokenEncryptionKeyId.</summary>
         public bool? AllProperties {
             get { return BackingStore?.Get<bool?>("allProperties"); }
             set { BackingStore?.Set("allProperties", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The credentialsWithUsageSign property</summary>
+        /// <summary>Locks the keyCredentials and passwordCredentials properties for modification where credential usage type is Sign.</summary>
         public bool? CredentialsWithUsageSign {
             get { return BackingStore?.Get<bool?>("credentialsWithUsageSign"); }
             set { BackingStore?.Set("credentialsWithUsageSign", value); }
         }
-        /// <summary>The credentialsWithUsageVerify property</summary>
+        /// <summary>Locks the keyCredentials and passwordCredentials properties for modification where credential usage type is Verify. This locks OAuth service principals.</summary>
         public bool? CredentialsWithUsageVerify {
             get { return BackingStore?.Get<bool?>("credentialsWithUsageVerify"); }
             set { BackingStore?.Set("credentialsWithUsageVerify", value); }
         }
-        /// <summary>The isEnabled property</summary>
+        /// <summary>Enables or disables service principal lock configuration. To allow the sensitive properties to be updated, update this property to false to disable the lock on the service principal.</summary>
         public bool? IsEnabled {
             get { return BackingStore?.Get<bool?>("isEnabled"); }
             set { BackingStore?.Set("isEnabled", value); }
@@ -38,7 +38,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
-        /// <summary>The tokenEncryptionKeyId property</summary>
+        /// <summary>Locks the tokenEncryptionKeyId property for modification on the service principal.</summary>
         public bool? TokenEncryptionKeyId {
             get { return BackingStore?.Get<bool?>("tokenEncryptionKeyId"); }
             set { BackingStore?.Set("tokenEncryptionKeyId", value); }

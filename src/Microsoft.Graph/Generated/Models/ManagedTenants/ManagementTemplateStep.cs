@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class ManagementTemplateStep : Entity, IParsable {
         /// <summary>The acceptedVersion property</summary>
         public ManagementTemplateStepVersion AcceptedVersion {

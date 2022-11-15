@@ -5,10 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class CustomAuthenticationExtension : CustomCalloutExtension, IParsable {
         /// <summary>
-        /// Instantiates a new customAuthenticationExtension and sets the default values.
+        /// Instantiates a new CustomAuthenticationExtension and sets the default values.
         /// </summary>
         public CustomAuthenticationExtension() : base() {
             OdataType = "#microsoft.graph.customAuthenticationExtension";

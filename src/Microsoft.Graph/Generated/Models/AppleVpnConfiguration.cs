@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Apple VPN configuration profile.</summary>
     public class AppleVpnConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Associated Domains</summary>
         public List<string> AssociatedDomains {
@@ -117,7 +118,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("server", value); }
         }
         /// <summary>
-        /// Instantiates a new AppleVpnConfiguration and sets the default values.
+        /// Instantiates a new appleVpnConfiguration and sets the default values.
         /// </summary>
         public AppleVpnConfiguration() : base() {
             OdataType = "#microsoft.graph.appleVpnConfiguration";

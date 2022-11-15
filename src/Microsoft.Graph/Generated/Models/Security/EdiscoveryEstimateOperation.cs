@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("unindexedItemsSize", value); }
         }
         /// <summary>
-        /// Instantiates a new EdiscoveryEstimateOperation and sets the default values.
+        /// Instantiates a new ediscoveryEstimateOperation and sets the default values.
         /// </summary>
         public EdiscoveryEstimateOperation() : base() {
             OdataType = "#microsoft.graph.security.ediscoveryEstimateOperation";

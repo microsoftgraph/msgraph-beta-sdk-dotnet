@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class SubjectRightsRequest : Entity, IParsable {
         /// <summary>Identity that the request is assigned to.</summary>
         public Identity AssignedTo {
@@ -137,7 +136,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("type", value); }
         }
         /// <summary>
-        /// Instantiates a new subjectRightsRequest and sets the default values.
+        /// Instantiates a new SubjectRightsRequest and sets the default values.
         /// </summary>
         public SubjectRightsRequest() : base() {
             OdataType = "#microsoft.graph.subjectRightsRequest";

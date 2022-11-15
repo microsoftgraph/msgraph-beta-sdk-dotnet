@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class Invitation : Entity, IParsable {
         /// <summary>The user created as part of the invitation creation. Read-Only</summary>
         public User InvitedUser {
@@ -56,7 +57,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>
-        /// Instantiates a new Invitation and sets the default values.
+        /// Instantiates a new invitation and sets the default values.
         /// </summary>
         public Invitation() : base() {
             OdataType = "#microsoft.graph.invitation";

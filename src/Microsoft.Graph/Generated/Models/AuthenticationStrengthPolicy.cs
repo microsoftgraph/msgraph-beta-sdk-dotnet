@@ -46,7 +46,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("requirementsSatisfied", value); }
         }
         /// <summary>
-        /// Instantiates a new AuthenticationStrengthPolicy and sets the default values.
+        /// Instantiates a new authenticationStrengthPolicy and sets the default values.
         /// </summary>
         public AuthenticationStrengthPolicy() : base() {
             OdataType = "#microsoft.graph.authenticationStrengthPolicy";
