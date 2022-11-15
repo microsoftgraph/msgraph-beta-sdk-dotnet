@@ -175,7 +175,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("serviceManagementReference"); }
             set { BackingStore?.Set("serviceManagementReference", value); }
         }
-        /// <summary>The servicePrincipalLockConfiguration property</summary>
+        /// <summary>Specifies whether sensitive properties of a multi-tenant application should be locked for editing after the application is provisioned in a tenant. Nullable. null by default.</summary>
         public Microsoft.Graph.Beta.Models.ServicePrincipalLockConfiguration ServicePrincipalLockConfiguration {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ServicePrincipalLockConfiguration>("servicePrincipalLockConfiguration"); }
             set { BackingStore?.Set("servicePrincipalLockConfiguration", value); }

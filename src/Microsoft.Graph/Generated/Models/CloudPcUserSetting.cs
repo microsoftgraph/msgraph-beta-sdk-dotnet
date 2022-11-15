@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class CloudPcUserSetting : Entity, IParsable {
         /// <summary>Represents the set of Microsoft 365 groups and security groups in Azure Active Directory that have cloudPCUserSetting assigned. Returned only on $expand. For an example, see Get cloudPcUserSettingample.</summary>
         public List<CloudPcUserSettingAssignment> Assignments {
@@ -42,7 +41,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("selfServiceEnabled", value); }
         }
         /// <summary>
-        /// Instantiates a new cloudPcUserSetting and sets the default values.
+        /// Instantiates a new CloudPcUserSetting and sets the default values.
         /// </summary>
         public CloudPcUserSetting() : base() {
             OdataType = "#microsoft.graph.cloudPcUserSetting";

@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public enum MicrosoftEdgeChannel {
         /// <summary>The Dev Channel is intended to help you plan and develop with the latest capabilities of Microsoft Edge.</summary>
         Dev,

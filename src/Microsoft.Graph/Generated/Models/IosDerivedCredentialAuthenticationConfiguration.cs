@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>iOS Derived Credential profile.</summary>
     public class IosDerivedCredentialAuthenticationConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Tenant level settings for the Derived Credentials to be used for authentication.</summary>
         public DeviceManagementDerivedCredentialSettings DerivedCredentialSettings {
@@ -11,7 +12,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("derivedCredentialSettings", value); }
         }
         /// <summary>
-        /// Instantiates a new IosDerivedCredentialAuthenticationConfiguration and sets the default values.
+        /// Instantiates a new iosDerivedCredentialAuthenticationConfiguration and sets the default values.
         /// </summary>
         public IosDerivedCredentialAuthenticationConfiguration() : base() {
             OdataType = "#microsoft.graph.iosDerivedCredentialAuthenticationConfiguration";

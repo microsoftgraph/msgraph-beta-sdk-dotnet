@@ -77,7 +77,7 @@ namespace Microsoft.Graph.Beta.Planner.Buckets {
             return requestInfo;
         }
         /// <summary>
-        /// Use this API to create a new **plannerBucket**.
+        /// Create a new plannerBucket object.
         /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -112,7 +112,7 @@ namespace Microsoft.Graph.Beta.Planner.Buckets {
             return await RequestAdapter.SendAsync<PlannerBucketCollectionResponse>(requestInfo, PlannerBucketCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Use this API to create a new **plannerBucket**.
+        /// Create a new plannerBucket object.
         /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

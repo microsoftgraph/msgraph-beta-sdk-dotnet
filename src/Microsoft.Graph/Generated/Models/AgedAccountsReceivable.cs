@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class AgedAccountsReceivable : Entity, IParsable {
         /// <summary>The agedAsOfDate property</summary>
         public Date? AgedAsOfDate {
@@ -57,7 +58,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("periodLengthFilter", value); }
         }
         /// <summary>
-        /// Instantiates a new AgedAccountsReceivable and sets the default values.
+        /// Instantiates a new agedAccountsReceivable and sets the default values.
         /// </summary>
         public AgedAccountsReceivable() : base() {
             OdataType = "#microsoft.graph.agedAccountsReceivable";

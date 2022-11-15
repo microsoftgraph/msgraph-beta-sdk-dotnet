@@ -5,12 +5,12 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class PlannerPlanDetails : PlannerDelta, IParsable {
-        /// <summary>An object that specifies the descriptions of the 25 categories that can be associated with tasks in the plan</summary>
+        /// <summary>An object that specifies the descriptions of the 25 categories that can be associated with tasks in the plan.</summary>
         public PlannerCategoryDescriptions CategoryDescriptions {
             get { return BackingStore?.Get<PlannerCategoryDescriptions>("categoryDescriptions"); }
             set { BackingStore?.Set("categoryDescriptions", value); }
         }
-        /// <summary>Read-only. A collection of additional information associated with plannerPlanContext entries that are defined for the plannerPlan container.</summary>
+        /// <summary>A collection of additional information associated with plannerPlanContext entries that are defined for the plannerPlan container. Read-only.</summary>
         public PlannerPlanContextDetailsCollection ContextDetails {
             get { return BackingStore?.Get<PlannerPlanContextDetailsCollection>("contextDetails"); }
             set { BackingStore?.Set("contextDetails", value); }

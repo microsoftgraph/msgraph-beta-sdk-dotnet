@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class PrivilegedOperationEvent : Entity, IParsable {
         /// <summary>Detailed human readable information for the event.</summary>
         public string AdditionalInformation {
@@ -77,7 +76,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("userName", value); }
         }
         /// <summary>
-        /// Instantiates a new privilegedOperationEvent and sets the default values.
+        /// Instantiates a new PrivilegedOperationEvent and sets the default values.
         /// </summary>
         public PrivilegedOperationEvent() : base() {
             OdataType = "#microsoft.graph.privilegedOperationEvent";

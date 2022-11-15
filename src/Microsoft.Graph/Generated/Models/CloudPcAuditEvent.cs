@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class CloudPcAuditEvent : Entity, IParsable {
         /// <summary>Friendly name of the activity. Optional.</summary>
         public string Activity {
@@ -62,7 +61,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("resources", value); }
         }
         /// <summary>
-        /// Instantiates a new cloudPcAuditEvent and sets the default values.
+        /// Instantiates a new CloudPcAuditEvent and sets the default values.
         /// </summary>
         public CloudPcAuditEvent() : base() {
             OdataType = "#microsoft.graph.cloudPcAuditEvent";

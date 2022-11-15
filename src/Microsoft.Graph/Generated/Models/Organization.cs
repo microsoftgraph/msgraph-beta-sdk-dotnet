@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class Organization : DirectoryObject, IParsable {
         /// <summary>The collection of service plans associated with the tenant. Not nullable.</summary>
         public List<AssignedPlan> AssignedPlans {
@@ -152,7 +151,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("verifiedDomains", value); }
         }
         /// <summary>
-        /// Instantiates a new organization and sets the default values.
+        /// Instantiates a new Organization and sets the default values.
         /// </summary>
         public Organization() : base() {
             OdataType = "#microsoft.graph.organization";
