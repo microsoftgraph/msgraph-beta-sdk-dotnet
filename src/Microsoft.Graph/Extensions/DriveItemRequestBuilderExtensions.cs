@@ -85,6 +85,90 @@ public static class DriveItemRequestBuilderExtensions
         return new CustomDriveItemItemRequestBuilder(builder.Uri.OriginalString, requestAdapter);
     }
     
+    /// <summary>
+    /// Gets drive item request builder for the specified drive item path.
+    /// <returns>The drive item request builder.</returns>
+    /// </summary>
+    public static CustomDriveItemItemRequestBuilder ItemWithPath(this Microsoft.Graph.Beta.Drives.Item.Items.Item.DriveItemItemRequestBuilder rootRequestBuilder, string path)
+    {
+        if (!string.IsNullOrEmpty(path))
+        {
+            if (!path.StartsWith("/"))
+            {
+                path = string.Format("/{0}", path);
+            }
+        }
+
+        var requestInformation = rootRequestBuilder.CreateGetRequestInformation();
+        var requestAdapter = rootRequestBuilder.GetRequestAdapter();
+        requestInformation.PathParameters.Add("baseurl", requestAdapter.BaseUrl);
+        var requestUrl = requestInformation.URI.OriginalString;
+        
+        // Encode the path in accordance with the one drive spec 
+        // https://docs.microsoft.com/en-us/onedrive/developer/rest-api/concepts/addressing-driveitems
+        UriBuilder builder = new UriBuilder(requestUrl);
+        builder.Path += string.Format(":{0}:", path);
+        
+
+        return new CustomDriveItemItemRequestBuilder(builder.Uri.OriginalString, requestAdapter);
+    }
+    
+    /// <summary>
+    /// Gets drive item request builder for the specified drive item path.
+    /// <returns>The drive item request builder.</returns>
+    /// </summary>
+    public static CustomDriveItemItemRequestBuilder ItemWithPath(this Microsoft.Graph.Beta.Drive.Items.Item.DriveItemItemRequestBuilder rootRequestBuilder, string path)
+    {
+        if (!string.IsNullOrEmpty(path))
+        {
+            if (!path.StartsWith("/"))
+            {
+                path = string.Format("/{0}", path);
+            }
+        }
+
+        var requestInformation = rootRequestBuilder.CreateGetRequestInformation();
+        var requestAdapter = rootRequestBuilder.GetRequestAdapter();
+        requestInformation.PathParameters.Add("baseurl", requestAdapter.BaseUrl);
+        var requestUrl = requestInformation.URI.OriginalString;
+        
+        // Encode the path in accordance with the one drive spec 
+        // https://docs.microsoft.com/en-us/onedrive/developer/rest-api/concepts/addressing-driveitems
+        UriBuilder builder = new UriBuilder(requestUrl);
+        builder.Path += string.Format(":{0}:", path);
+        
+
+        return new CustomDriveItemItemRequestBuilder(builder.Uri.OriginalString, requestAdapter);
+    }
+    
+    /// <summary>
+    /// Gets drive item request builder for the specified drive item path.
+    /// <returns>The drive item request builder.</returns>
+    /// </summary>
+    public static CustomDriveItemItemRequestBuilder ItemWithPath(this Microsoft.Graph.Beta.Me.Drives.Item.Items.Item.DriveItemItemRequestBuilder rootRequestBuilder, string path)
+    {
+        if (!string.IsNullOrEmpty(path))
+        {
+            if (!path.StartsWith("/"))
+            {
+                path = string.Format("/{0}", path);
+            }
+        }
+
+        var requestInformation = rootRequestBuilder.CreateGetRequestInformation();
+        var requestAdapter = rootRequestBuilder.GetRequestAdapter();
+        requestInformation.PathParameters.Add("baseurl", requestAdapter.BaseUrl);
+        var requestUrl = requestInformation.URI.OriginalString;
+        
+        // Encode the path in accordance with the one drive spec 
+        // https://docs.microsoft.com/en-us/onedrive/developer/rest-api/concepts/addressing-driveitems
+        UriBuilder builder = new UriBuilder(requestUrl);
+        builder.Path += string.Format(":{0}:", path);
+        
+
+        return new CustomDriveItemItemRequestBuilder(builder.Uri.OriginalString, requestAdapter);
+    }
+    
     private static IRequestAdapter GetRequestAdapter(this object obj) {
         var field = obj.GetType()
                         .GetFields(BindingFlags.NonPublic | BindingFlags.Instance)

@@ -35,6 +35,18 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Extensions
             Assert.NotNull(itemRequestInformation);
             Assert.Equal(expectedRequestUri, itemRequestInformation.URI);
         }
+             
+        [Fact]
+        public void ItemByPath_BuildRequest2()
+        {
+            var graphServiceClient = new GraphServiceClient(new MockAuthenticationProvider().Object);
+            var expectedRequestUri = new Uri(string.Format(Constants.Url.GraphBaseUrlFormatString, "beta") + "/drives/driveId/items/itemId:/item/with/path:");
+            var itemRequestInformation = graphServiceClient.Drives["driveId"].Items["itemId"].ItemWithPath("item/with/path").CreateGetRequestInformation();
+            itemRequestInformation.PathParameters.Add("baseurl", graphServiceClient.RequestAdapter.BaseUrl);
+            
+            Assert.NotNull(itemRequestInformation);
+            Assert.Equal(expectedRequestUri, itemRequestInformation.URI);
+        }
 
         [Fact]
         public void ItemByPath_BuildRequestWithLeadingSlash()
