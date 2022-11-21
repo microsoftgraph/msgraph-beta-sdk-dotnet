@@ -2,33 +2,41 @@
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
-using System;
-using System.Collections.Generic;
-using Xunit;
-
 namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
 {
+    using Microsoft.Graph.Beta.Me.GetMailTips;
+    using Microsoft.Graph.Beta.Me.GetMemberGroups;
+    using AssignLicensePostRequestBody = Microsoft.Graph.Beta.Me.AssignLicense.AssignLicensePostRequestBody;
+    using Microsoft.Graph.DotnetCore.Test.Requests.Functional.Resources;
+    using Microsoft.Graph.Beta.Models;
+    using System;
+    using System.Collections.Generic;
+    using System.IO;
+    using System.Threading.Tasks;
+    using Xunit;
     public class UserTests : GraphTestBase
     {
-
-
         [Fact(Skip = "No CI set up for functional tests - add email addresses to run this test.")]
-        public async System.Threading.Tasks.Task UserGetMailtipsTestEnumFlags()
+        public async Task UserGetMailtipsTestEnumFlags()
         {
             try
             {
-                var emailAddresses = new List<string>();
-                emailAddresses.Add("katiej@MOD810997.onmicrosoft.com");
-                emailAddresses.Add("garretv@MOD810997.onmicrosoft.com");
-                emailAddresses.Add("annew@MOD810997.onmicrosoft.com");
+                var emailAddresses = new List<string>
+                {
+                    "katiej@MOD810997.onmicrosoft.com", 
+                    "garretv@MOD810997.onmicrosoft.com",
+                    "annew@MOD810997.onmicrosoft.com"
+                };
 
-                var mailTipsCollectionPage = await graphClient.Me.GetMailTips(emailAddresses, MailTipsType.AutomaticReplies |
-                                                                                              MailTipsType.CustomMailTip |
-                                                                                              MailTipsType.MaxMessageSize |
-                                                                                              MailTipsType.RecipientScope |
-                                                                                              MailTipsType.TotalMemberCount).Request().PostAsync();
+                var mailTipsOptions = MailTipsType.AutomaticReplies | MailTipsType.MailboxFullStatus;
 
-                foreach (var mt in mailTipsCollectionPage)
+                var requestBody = new GetMailTipsPostRequestBody()
+                {
+                    EmailAddresses = emailAddresses, MailTipsOptions = mailTipsOptions
+                };
+                var mailTipsCollectionPage = await graphClient.Me.GetMailTips.PostAsync(requestBody);
+
+                foreach (var mt in mailTipsCollectionPage.Value)
                 {
                     // All of the supplied users should have an email address.
                     Assert.NotNull(mt.EmailAddress);
@@ -42,33 +50,21 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
 
         // Currently (10/5/2016), you can only set the mailboxsettings directly on the property, 
         // not with a patched user. Opened issue against service API.
-        [Fact(Skip = "No CI set up for functional tests")]
-        public async System.Threading.Tasks.Task UserGetSetAutomaticReply()
+        [Fact(Skip = "No CI set up for functional tests. The service doesn't yet support PATCH on entity with mailboxsettings")]
+        public async Task UserGetSetAutomaticReply()
         {
-            try
-            {
-                var query = new List<Option>()
-                {
-                    new QueryOption("$select", "mailboxsettings")
-                };
+            var user = await graphClient.Me.GetAsync( requestConfiguration => requestConfiguration.QueryParameters.Select = new []{"mailboxsettings"});
 
-                var user = await graphClient.Me.Request(query).GetAsync();
-
-                await graphClient.Me.Request().UpdateAsync(user);
-            }
-            catch (Microsoft.Graph.ServiceException e)
-            {
-                Assert.True(false, $"The service doesn't yet support PATCH on entity with mailboxsettings: {e.Error.Code}");
-            }
+            await graphClient.Me.PatchAsync(user);
 
             /* Notes
              * 
-             * GET https://graph.microsoft.com/beta/me?$select=mailboxsettings 
+             * GET https://graph.microsoft.com/v1.0/me?$select=mailboxsettings 
              * 
              * RESPONSE
              * 
              * {
-                    "@odata.context": "https://graph.microsoft.com/beta/$metadata#users(mailboxSettings)/$entity",
+                    "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#users(mailboxSettings)/$entity",
                     "id": "c8616fa2-6a9e-4196-9912-e7fbea37fbd1@d0b7ccde-8426-4e94-a77b-a53e1bcd66c6",
                     "mailboxSettings": {
                         "automaticRepliesSetting": {
@@ -92,12 +88,12 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                         }
                     }
                 }
-             * GET https://graph.microsoft.com/beta/me/mailboxsettings
+             * GET https://graph.microsoft.com/v1.0/me/mailboxsettings
              * 
              * RESPONSE
              * 
              * {
-                    "@odata.context": "https://graph.microsoft.com/beta/$metadata#users('c8616fa2-6a9e-4196-9912-e7fbea37fbd1')/mailboxSettings",
+                    "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#users('c8616fa2-6a9e-4196-9912-e7fbea37fbd1')/mailboxSettings",
                     "automaticRepliesSetting": {
                         "status": "alwaysEnabled",
                         "externalAudience": "all",
@@ -119,10 +115,10 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                     }
                 }
              * This PATCH is successful
-             * PATCH https://graph.microsoft.com/beta/me/mailboxsettings
+             * PATCH https://graph.microsoft.com/v1.0/me/mailboxsettings
              * 
              * {
-                    "@odata.context": "https://graph.microsoft.com/beta/$metadata#users('c8616fa2-6a9e-4196-9912-e7fbea37fbd1')/mailboxSettings",
+                    "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#users('c8616fa2-6a9e-4196-9912-e7fbea37fbd1')/mailboxSettings",
                     "automaticRepliesSetting": {
                         "status": "alwaysEnabled",
                         "externalAudience": "all",
@@ -143,11 +139,11 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                     }
                 }
              * This PATCH is unsuccessful
-             * PATCH https://graph.microsoft.com/beta/me
+             * PATCH https://graph.microsoft.com/v1.0/me
              * 
              * {
              *      "id": "c8616fa2-6a9e-4196-9912-e7fbea37fbd1@d0b7ccde-8426-4e94-a77b-a53e1bcd66c6",
-                    "@odata.context": "https://graph.microsoft.com/beta/$metadata#users(mailboxSettings)/$entity"
+                    "@odata.context": "https://graph.microsoft.com/v1.0/$metadata#users(mailboxSettings)/$entity"
                     "mailboxSettings": {
                         "automaticRepliesSetting": {
                             "status": "alwaysEnabled",
@@ -171,21 +167,19 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                     },
                 }
              */
-
-
         }
 
         // Filter on displayname
         // https://github.com/microsoftgraph/msgraph-sdk-dotnet/issues/41
-        [Fact(Skip = "No CI set up for functional tests")]
-        public async System.Threading.Tasks.Task UserFilterStartsWith()
+        [Fact(Skip = "No CI set up for functional tests.")]
+        public async Task UserFilterStartsWith()
         {
             try
             {
-                var usersQuery = await graphClient.Users.Request().Filter("startswith(displayName,'A')").GetAsync();
-                foreach (User u in usersQuery)
+                var usersQuery = await graphClient.Users.GetAsync(requestConfiguration => requestConfiguration.QueryParameters.Filter = "startswith(displayName,'A')");
+                foreach (User u in usersQuery.Value)
                 {
-                    Assert.StartsWith("A", u.DisplayName); // Expected a display name that started with the letter A.
+                    Assert.StartsWith("A", u.DisplayName, StringComparison.OrdinalIgnoreCase);
                 }
             }
             catch (Microsoft.Graph.ServiceException e)
@@ -195,17 +189,17 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
         }
 
         // Get the test user's photo.
-        [Fact(Skip = "No CI set up for functional tests")]
-        public async System.Threading.Tasks.Task UserGetPhoto()
+        [Fact(Skip = "No CI set up for functional tests.")]
+        public async Task UserGetPhoto()
         {
             try
             {
                 // Gets the user's photo.
-                // http://graph.microsoft.io/en-us/docs/api-reference/beta/api/profilephoto_get
-                // GET https://graph.microsoft.com/beta/me/photo/$value
-                var originalPhoto = await graphClient.Me.Photo.Content.Request().GetAsync();
+                // http://graph.microsoft.io/en-us/docs/api-reference/v1.0/api/profilephoto_get
+                // GET https://graph.microsoft.com/v1.0/me/photo/$value
+                var originalPhoto = await graphClient.Me.Photo.Content.GetAsync();
 
-                Assert.NotNull(originalPhoto); // The photo value is null
+                Assert.NotNull(originalPhoto);
             }
             catch (Microsoft.Graph.ServiceException e)
             {
@@ -221,35 +215,33 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
         }
 
         // Update the test user's photo
-        //[Fact(Skip = "No CI set up for functional tests. Need to update with ImageSharp.")]
-        //public async System.Threading.Tasks.Task UserUpdatePhoto()
-        //{
-        //    try
-        //    {
-        //        System.Drawing.ImageConverter converter = new System.Drawing.ImageConverter();
-        //        var buff = (byte[])converter.ConvertTo(Microsoft.Graph.Test.Properties.Resources.hamilton, typeof(byte[]));
-        //        using (System.IO.MemoryStream ms = new System.IO.MemoryStream(buff))
-        //        {
-        //            // Sets the user's photo.
-        //            // http://graph.microsoft.io/en-us/docs/api-reference/beta/api/profilephoto_update
-        //            // PUT https://graph.microsoft.com/beta/me/photo/$value
-        //            await graphClient.Me.Photo.Content.Request().PutAsync(ms);
-        //        }
-        //    }
-        //    catch (Microsoft.Graph.ServiceException e)
-        //    {
-        //        Assert.True(false, $"Something happened, check out a trace. Error code: {e.Error.Code}");
-        //    }
-        //}
+        [Fact(Skip = "No CI set up for functional tests.")]
+        public async Task UserUpdatePhoto()
+        {
+            try
+            {
+                using (Stream ms = ResourceHelper.GetResourceAsStream(ResourceHelper.Hamilton))
+                {
+                    // Sets the user's photo.
+                    // http://graph.microsoft.io/en-us/docs/api-reference/v1.0/api/profilephoto_update
+                    // PUT https://graph.microsoft.com/v1.0/me/photo/$value
+                    await graphClient.Me.Photo.Content.PutAsync(ms);
+                }
+            }
+            catch (Microsoft.Graph.ServiceException e)
+            {
+                Assert.True(false, $"Something happened, check out a trace. Error code: {e.Error.Code}");
+            }
+        }
 
         // Get the test user.
-        [Fact(Skip = "No CI set up for functional tests")]
-        public async System.Threading.Tasks.Task UserGetUser()
+        [Fact(Skip = "No CI set up for functional tests.")]
+        public async Task UserGetUser()
         {
             try
             {
-                var user = await graphClient.Me.Request().GetAsync();
-                Assert.NotNull(user.UserPrincipalName); // User principal name is not set.
+                var user = await graphClient.Me.GetAsync();
+                Assert.NotNull(user.UserPrincipalName);
             }
             catch (Microsoft.Graph.ServiceException e)
             {
@@ -257,14 +249,15 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
             }
         }
 
-        [Fact(Skip = "No CI set up for functional tests")]
-        public async System.Threading.Tasks.Task UserGetManager()
+        [Fact(Skip = "No CI set up for functional tests.")]
+        public async Task UserGetManager()
         {
             try
             {
-                var managerDirObj = (User)await graphClient.Me.Manager.Request().GetAsync();
+                var managerDirObj = (User)await graphClient.Me.Manager.GetAsync();
 
-                Assert.NotNull(managerDirObj); // The manager wasn't returned.
+                Assert.NotNull(managerDirObj);
+                Assert.False(managerDirObj.DisplayName == "", "The display name of the user's manager is not set.");
             }
             catch (Microsoft.Graph.ServiceException e)
             {
@@ -272,20 +265,24 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
             }
         }
 
-        // PUT https://graph.microsoft.com/beta/me/manager/$ref
-        // {    "@odata.id": "https://graph.microsoft.com/beta/users/55aa3346-08cb-4e98-8567-879b039a72c1" }
-        // http://graph.microsoft.io/en-us/docs/api-reference/beta/api/user_post_manager
+        // PUT https://graph.microsoft.com/v1.0/me/manager/$ref
+        // {    "@odata.id": "https://graph.microsoft.com/v1.0/users/55aa3346-08cb-4e98-8567-879b039a72c1" }
+        // http://graph.microsoft.io/en-us/docs/api-reference/v1.0/api/user_post_manager
         // We are getting and setting the user's manager.
         // Must be an admin to set this
-        [Fact(Skip = "No CI set up for functional tests")]
-        public async System.Threading.Tasks.Task UserUpdateManager()
+        [Fact(Skip = "No CI set up for functional tests.")]
+        public async Task UserUpdateManager()
         {
             try
             {
-                var managerDirObj = (User)await graphClient.Me.Manager.Request().GetAsync();
+                var managerDirObj = (User)await graphClient.Me.Manager.GetAsync();
 
-                await graphClient.Me.Manager.Reference.Request().PutAsync(managerDirObj.Id);
-                Assert.NotNull(managerDirObj); // The manager wasn't returned.
+                var reference = new ReferenceUpdate
+                {
+                    OdataId = managerDirObj.Id
+                };
+                await graphClient.Me.Manager.Ref.PutAsync(reference);
+                Assert.NotNull(managerDirObj);
             }
             catch (Microsoft.Graph.ServiceException e)
             {
@@ -293,19 +290,24 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
             }
         }
 
-        [Fact(Skip = "No CI set up for functional tests")]
-        public async System.Threading.Tasks.Task UserAssignLicense()
+        [Fact(Skip = "No CI set up for functional tests.")]
+        public async Task UserAssignLicense()
         {
             try
             {
                 // This is expected to fail since we aren't providing licenses.
-                var user = await graphClient.Me.AssignLicense(new List<AssignedLicense>(), new List<System.Guid>()).Request().PostAsync();
-                Assert.Null(user); // Expected that the request would cause a ServiceException. Last assumption is that setting an empty collection of licenses causes an error.
+                var requestBody = new AssignLicensePostRequestBody
+                {
+                    AddLicenses = new List<AssignedLicense>(),
+                    RemoveLicenses = new List<string>()
+                };
+                var user = await graphClient.Me.AssignLicense.PostAsync(requestBody);
+                Assert.Null(user);
 
             }
             catch (Microsoft.Graph.ServiceException e)
             {
-                Assert.Equal("Request_BadRequest", e.Error.Code); // Expected error: Request_BadRequest, actual error: {0}
+                Assert.Equal("Request_BadRequest", e.Error.Code);
             }
         }
 
@@ -313,20 +315,21 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
         /// Tests building a request for an action with a required parameter that's set.
         /// Tests the get member groups action with a set parameter.
         /// </summary>
-        [Fact(Skip = "No CI set up for functional tests")]
-        public async System.Threading.Tasks.Task UserGetMemberGroups_SecurityEnabledOnly_ValueSet()
+        [Fact(Skip = "No CI set up for functional tests.")]
+        public async Task UserGetMemberGroups_SecurityEnabledOnly_ValueSet()
         {
             try
             {
-                var getMemberGroupsRequest = graphClient.Me
-                                                        .GetMemberGroups(true)
-                                                        .Request() as DirectoryObjectGetMemberGroupsRequest;
+                var getMemberGroupsRequest = graphClient.Me.GetMemberGroups;
+                var requestBody = new GetMemberGroupsPostRequestBody
+                {
+                    SecurityEnabledOnly = true
+                };
+                var directoryObjectGetMemberGroupsCollectionPage = await getMemberGroupsRequest.PostAsync(requestBody);
 
-                var directoryObjectGetMemberGroupsCollectionPage = await getMemberGroupsRequest.PostAsync();
-
-                Assert.NotNull(directoryObjectGetMemberGroupsCollectionPage); // Unexpected results.
-                Assert.Equal("POST", getMemberGroupsRequest.Method.ToString()); // Unexpected HTTP method
-                Assert.True(getMemberGroupsRequest.RequestBody.SecurityEnabledOnly.Value, "Unexpected value for SecurityEnabledOnly in request body.");
+                Assert.NotNull(directoryObjectGetMemberGroupsCollectionPage);
+                Assert.Equal("POST", getMemberGroupsRequest.CreatePostRequestInformation(requestBody).HttpMethod.ToString());
+                Assert.True(requestBody.SecurityEnabledOnly.Value);
             }
             catch (Microsoft.Graph.ServiceException e)
             {
@@ -338,31 +341,29 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
         /// Tests building a request for an action with a required parameter set to null.
         /// Tests the get member groups action without a set parameter, default is null.
         /// </summary>
-        [Fact(Skip = "No CI set up for functional tests")]
-        public async System.Threading.Tasks.Task UserGetMemberGroups_SecurityEnabledOnly_ValueNotSet()
+        [Fact(Skip = "No CI set up for functional tests.")]
+        public async Task UserGetMemberGroups_SecurityEnabledOnly_ValueNotSet()
         {
             try
             {
-                var getMemberGroupsRequest = graphClient.Me
-                                                        .GetMemberGroups()
-                                                        .Request() as DirectoryObjectGetMemberGroupsRequest;
-
-                var directoryObjectGetMemberGroupsCollectionPage = await getMemberGroupsRequest.PostAsync();
+                var getMemberGroupsRequest = graphClient.Me.GetMemberGroups;
+                var requestBody = new GetMemberGroupsPostRequestBody();
+                var directoryObjectGetMemberGroupsCollectionPage = await getMemberGroupsRequest.PostAsync(requestBody);
             }
             catch (Microsoft.Graph.ServiceException e)
             {
-                Assert.Equal("Request_BadRequest", e.Error.Code); // Unexpected error occurred.
+                Assert.Equal("Request_BadRequest", e.Error.Code);
             }
         }
 
         // Need admin perms.
-        [Fact(Skip = "No CI set up for functional tests")]
+        [Fact(Skip = "No CI set up for functional tests.")]
         // Addressing https://github.com/microsoftgraph/msgraph-sdk-dotnet/issues/28
-        public async System.Threading.Tasks.Task UpdateUser()
+        public async Task UpdateUser()
         {
             try
             {
-                var me = await graphClient.Me.Request().GetAsync();
+                var me = await graphClient.Me.GetAsync();
 
                 var oldMe = new User()
                 {
@@ -375,10 +376,10 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                 };
 
                 // Update the user to Beth
-                await graphClient.Users[me.UserPrincipalName].Request().UpdateAsync(betterMe);
+                await graphClient.Users[me.UserPrincipalName].PatchAsync(betterMe);
 
                 // Update the user back to me.
-                await graphClient.Users[me.UserPrincipalName].Request().UpdateAsync(oldMe);
+                await graphClient.Users[me.UserPrincipalName].PatchAsync(oldMe);
             }
             catch (Microsoft.Graph.ServiceException e)
             {

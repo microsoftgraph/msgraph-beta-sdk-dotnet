@@ -1,4 +1,4 @@
-﻿using Microsoft.Graph.Extensions;
+﻿using Microsoft.Graph.Beta.Models;
 using System;
 using Xunit;
 using System.Globalization;
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Extensions
                 DateTime = expectedDateTime
             };
 
-            var actualDateTimeTimeZone = DateTimeTimeZone.FromDateTime(dateTime, "UTC");
+            var actualDateTimeTimeZone = dateTime.ToDateTimeTimeZone("UTC");
 
             Assert.Equal(expectedDateTimeTimeZone.DateTime, actualDateTimeTimeZone.DateTime);
             Assert.Equal(expectedDateTimeTimeZone.TimeZone, actualDateTimeTimeZone.TimeZone);
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Extensions
 
                 var expectedDateTimeOffset = new DateTimeOffset(dateTime, offset);
                 expectedDateTimeOffset = TimeZoneInfo.ConvertTime(expectedDateTimeOffset, timeZoneInfo);
-                var actualDateTimeTimeZone = DateTimeTimeZone.FromDateTimeOffset(expectedDateTimeOffset, dateTimeTimeZone.TimeZone);
+                var actualDateTimeTimeZone = expectedDateTimeOffset.ToDateTimeTimeZone(dateTimeTimeZone.TimeZone);
 
                 Assert.Equal(expectedDateTimeOffset.ToString(DateTimeFormat, CultureInfo.InvariantCulture), actualDateTimeTimeZone.DateTime);
                 Assert.Equal(timeZoneInfo.Id, actualDateTimeTimeZone.TimeZone);
@@ -141,7 +141,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Extensions
 
                 var expectedDateTimeOffset = new DateTimeOffset(dateTime, offset);
                 expectedDateTimeOffset = TimeZoneInfo.ConvertTime(expectedDateTimeOffset, timeZoneInfo);
-                var actualDateTimeTimeZone = DateTimeTimeZone.FromDateTimeOffset(expectedDateTimeOffset);
+                var actualDateTimeTimeZone = expectedDateTimeOffset.ToDateTimeTimeZone();
 
                 Assert.Equal(expectedDateTimeOffset.ToString(DateTimeFormat, CultureInfo.InvariantCulture), actualDateTimeTimeZone.DateTime);
                 Assert.Empty(actualDateTimeTimeZone.TimeZone);

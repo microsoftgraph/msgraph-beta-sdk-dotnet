@@ -2,21 +2,26 @@
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
-using Microsoft.Graph;
 using Moq;
 using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Net.Http;
-using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
+using Microsoft.Graph.Beta;
+using Microsoft.Graph.DotnetCore.Test.Mocks;
+using Microsoft.Graph.Beta.Drives.Item.Items.Item.CreateLink;
+using Microsoft.Graph.Beta.Me.AssignLicense;
+using Microsoft.Graph.Beta.Me.CheckMemberGroups;
+using Microsoft.Graph.Beta.Me.GetMemberGroups;
+using Microsoft.Graph.Beta.Models;
+using Microsoft.Kiota.Abstractions;
+using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Serialization.Json;
 using Xunit;
 
 namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
 {
-    public class ActionRequestTests : RequestTestBase
+    public class ActionRequestTests
     {
         /// <summary>
         /// Tests building a request for an action with multiple required parameters (assignLicence).
@@ -24,21 +29,28 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
         [Fact]
         public void MultipleRequiredParameters()
         {
-            var expectedRequestUrl = string.Format("{0}/me/microsoft.graph.assignLicense", this.graphBaseUrl);
-
+            var mockRequestAdapter = new Mock<IRequestAdapter>();
+            var graphServiceClient = new GraphServiceClient(mockRequestAdapter.Object);
+            var expectedRequestUrl = $"{string.Format(Constants.Url.GraphBaseUrlFormatString, "beta")}/me/microsoft.graph.assignLicense";
+            
+            mockRequestAdapter.Setup(
+                adapter => adapter.SerializationWriterFactory.GetSerializationWriter(It.IsAny<string>())
+            ).Returns(new JsonSerializationWriter());
+            
             var addLicenses = new List<AssignedLicense> { new AssignedLicense() };
-            var removeLicenses = new List<Guid> { new Guid() };
+            var removeLicenses = new List<string> { new Guid().ToString() };
 
-            var assignLicenseRequestBuilder = this.graphServiceClient.Me.AssignLicense(addLicenses, removeLicenses) as UserAssignLicenseRequestBuilder;
-
-            Assert.NotNull(assignLicenseRequestBuilder);
-            Assert.Equal(expectedRequestUrl, assignLicenseRequestBuilder.RequestUrl);
-
-            var assignLicenseRequest = assignLicenseRequestBuilder.Request() as UserAssignLicenseRequest;
-            Assert.NotNull(assignLicenseRequest);
-            Assert.Equal(new Uri(expectedRequestUrl), new Uri(assignLicenseRequest.RequestUrl));
-            Assert.Equal(addLicenses, assignLicenseRequest.RequestBody.AddLicenses);
-            Assert.Equal(removeLicenses, assignLicenseRequest.RequestBody.RemoveLicenses);
+            var requestBody = new AssignLicensePostRequestBody
+            {
+                AddLicenses = addLicenses,
+                RemoveLicenses = removeLicenses
+            };
+            
+            var requestInformation = graphServiceClient.Me.AssignLicense.CreatePostRequestInformation(requestBody);
+            requestInformation.PathParameters.Add("baseurl", string.Format(Constants.Url.GraphBaseUrlFormatString, "beta"));
+            
+            Assert.NotNull(requestInformation);
+            Assert.Equal(new Uri(expectedRequestUrl), requestInformation.URI);
         }
 
         /// <summary>
@@ -47,17 +59,21 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
         [Fact]
         public void OptionalParameterWithNonNullableType_NullValue()
         {
-            var expectedRequestUrl = string.Format("{0}/me/microsoft.graph.getMemberGroups", this.graphBaseUrl);
-
-            var getMemberGroupsRequestBuilder = this.graphServiceClient.Me.GetMemberGroups() as DirectoryObjectGetMemberGroupsRequestBuilder;
-
-            Assert.NotNull(getMemberGroupsRequestBuilder);
-            Assert.Equal(expectedRequestUrl, getMemberGroupsRequestBuilder.RequestUrl);
-
-            var getMemberGroupsRequest = getMemberGroupsRequestBuilder.Request() as DirectoryObjectGetMemberGroupsRequest;
-            Assert.NotNull(getMemberGroupsRequest);
-            Assert.Equal(new Uri(expectedRequestUrl), new Uri(getMemberGroupsRequest.RequestUrl));
-            Assert.Null(getMemberGroupsRequest.RequestBody.SecurityEnabledOnly);
+            var mockRequestAdapter = new Mock<IRequestAdapter>();
+            var graphServiceClient = new GraphServiceClient(mockRequestAdapter.Object);
+            var expectedRequestUrl = $"{string.Format(Constants.Url.GraphBaseUrlFormatString, "beta")}/me/microsoft.graph.getMemberGroups";
+            
+            mockRequestAdapter.Setup(
+                adapter => adapter.SerializationWriterFactory.GetSerializationWriter(It.IsAny<string>())
+            ).Returns(new JsonSerializationWriter());
+            
+            var requestBody = new GetMemberGroupsPostRequestBody { };
+            var requestInformation = graphServiceClient.Me.GetMemberGroups.CreatePostRequestInformation(requestBody);
+            requestInformation.PathParameters.Add("baseurl", string.Format(Constants.Url.GraphBaseUrlFormatString, "beta"));
+            
+            Assert.NotNull(requestInformation);
+            Assert.Equal(new Uri(expectedRequestUrl), requestInformation.URI);
+            Assert.Null(requestBody.SecurityEnabledOnly);
         }
 
         /// <summary>
@@ -66,17 +82,21 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
         [Fact]
         public void OptionalParameterWithNonNullableType_ValueSet()
         {
-            var expectedRequestUrl = string.Format("{0}/me/microsoft.graph.getMemberGroups", this.graphBaseUrl);
+            var mockRequestAdapter = new Mock<IRequestAdapter>();
+            var graphServiceClient = new GraphServiceClient(mockRequestAdapter.Object);
+            var expectedRequestUrl = string.Format("{0}/me/microsoft.graph.getMemberGroups", string.Format(Constants.Url.GraphBaseUrlFormatString, "beta"));
 
-            var getMemberGroupsRequestBuilder = this.graphServiceClient.Me.GetMemberGroups(true) as DirectoryObjectGetMemberGroupsRequestBuilder;
-
-            Assert.NotNull(getMemberGroupsRequestBuilder);
-            Assert.Equal(expectedRequestUrl, getMemberGroupsRequestBuilder.RequestUrl);
-
-            var getMemberGroupsRequest = getMemberGroupsRequestBuilder.Request() as DirectoryObjectGetMemberGroupsRequest;
-            Assert.NotNull(getMemberGroupsRequest);
-            Assert.Equal(new Uri(expectedRequestUrl), new Uri(getMemberGroupsRequest.RequestUrl));
-            Assert.True(getMemberGroupsRequest.RequestBody.SecurityEnabledOnly.Value);
+            mockRequestAdapter.Setup(
+                adapter => adapter.SerializationWriterFactory.GetSerializationWriter(It.IsAny<string>())
+            ).Returns(new JsonSerializationWriter());
+            
+            var requestBody = new GetMemberGroupsPostRequestBody { SecurityEnabledOnly = true};
+            var requestInformation = graphServiceClient.Me.GetMemberGroups.CreatePostRequestInformation(requestBody);
+            requestInformation.PathParameters.Add("baseurl", string.Format(Constants.Url.GraphBaseUrlFormatString, "beta"));
+            
+            Assert.NotNull(requestInformation);
+            Assert.Equal(new Uri(expectedRequestUrl), requestInformation.URI);
+            Assert.True(requestBody.SecurityEnabledOnly.Value);
         }
 
         /// <summary>
@@ -85,18 +105,16 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
         [Fact]
         public void NoParameters()
         {
+            var mockRequestAdapter = new Mock<IRequestAdapter>();
+            var graphServiceClient = new GraphServiceClient(mockRequestAdapter.Object);
             var messageId = "messageId";
+            var expectedRequestUrl = string.Format("{0}/me/mailFolders/Drafts/messages/{1}/microsoft.graph.send", string.Format(Constants.Url.GraphBaseUrlFormatString, "beta"), messageId);
 
-            var expectedRequestUrl = string.Format("{0}/me/mailFolders/Drafts/messages/{1}/microsoft.graph.send", this.graphBaseUrl, messageId);
-
-            var sendRequestBuilder = this.graphServiceClient.Me.MailFolders.Drafts.Messages[messageId].Send() as MessageSendRequestBuilder;
-
-            Assert.NotNull(sendRequestBuilder);
-            Assert.Equal(expectedRequestUrl, sendRequestBuilder.RequestUrl);
-
-            var sendRequest = sendRequestBuilder.Request() as MessageSendRequest;
-            Assert.NotNull(sendRequest);
-            Assert.Equal(new Uri(expectedRequestUrl), new Uri(sendRequest.RequestUrl));
+            var requestInformation = graphServiceClient.Me.MailFolders["Drafts"].Messages[messageId].Send.CreatePostRequestInformation();
+            requestInformation.PathParameters.Add("baseurl", string.Format(Constants.Url.GraphBaseUrlFormatString, "beta"));
+            
+            Assert.NotNull(requestInformation);
+            Assert.Equal(new Uri(expectedRequestUrl), requestInformation.URI);
         }
 
         /// <summary>
@@ -105,44 +123,11 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
         [Fact]
         public void MultipleRequiredParameters_FirstParameterNull()
         {
+            var mockRequestAdapter = new Mock<IRequestAdapter>();
+            var graphServiceClient = new GraphServiceClient(mockRequestAdapter.Object);
             var removeLicenses = new List<Guid> { new Guid() };
-
-            try
-            {
-                Assert.Throws<ServiceException>(() => this.graphServiceClient.Me.AssignLicense(null, removeLicenses).Request());
-            }
-            catch (ServiceException serviceException)
-            {
-                Assert.True(serviceException.IsMatch(GraphErrorCode.InvalidRequest.ToString()));
-                Assert.Equal(
-                    "addLicenses is a required parameter for this method request.",
-                    serviceException.Error.Message);
-
-                throw;
-            }
-        }
-
-        /// <summary>
-        /// Tests that an exception is thrown when the second of required parameters passed to an action request is null (assignLicence).
-        /// </summary>
-        [Fact]
-        public void MultipleRequiredParameters_LastParameterNull()
-        {
-            var addLicenses = new List<AssignedLicense> { new AssignedLicense() };
-
-            try
-            {
-                Assert.Throws<ServiceException>(() => this.graphServiceClient.Me.AssignLicense(addLicenses, null).Request());
-            }
-            catch (ServiceException serviceException)
-            {
-                Assert.True(serviceException.IsMatch(GraphErrorCode.InvalidRequest.ToString()));
-                Assert.Equal(
-                    "removeLicenses is a required parameter for this method request.",
-                    serviceException.Error.Message);
-
-                throw;
-            }
+            
+            Assert.ThrowsAsync<ArgumentNullException>(() => graphServiceClient.Me.AssignLicense.PostAsync(null));
         }
 
         /// <summary>
@@ -152,60 +137,46 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
         [Fact]
         public async System.Threading.Tasks.Task PostAsync_CollectionOfPrimitivesReturnType()
         {
-            using (var httpResponseMessage = new HttpResponseMessage())
-            using (var responseStream = new MemoryStream())
-            using (var streamContent = new StreamContent(responseStream))
+            var mockRequestAdapter = new Mock<IRequestAdapter>();
+            var graphServiceClient = new GraphServiceClient(mockRequestAdapter.Object);
+            var nextQueryKey = "key";
+            var nextQueryValue = "value";
+
+            var requestUrl = string.Format("{0}/me/microsoft.graph.checkMemberGroups", string.Format(Constants.Url.GraphBaseUrlFormatString, "beta"));
+            var nextPageRequestUrl = string.Format("{0}?{1}={2}", requestUrl, nextQueryKey, nextQueryValue);
+
+            var checkMemberGroupsCollectionPage = new List<string>()
             {
-                httpResponseMessage.Content = streamContent;
+                "value 1",
+                "value 2",
+            };
 
-                var nextQueryKey = "key";
-                var nextQueryValue = "value";
+            var checkMemberGroupsCollectionResponse = new CheckMemberGroupsResponse
+            {
+                Value = checkMemberGroupsCollectionPage,
+                OdataNextLink = nextPageRequestUrl
+            };
 
-                var requestUrl = string.Format("{0}/me/microsoft.graph.checkMemberGroups", this.graphBaseUrl);
-                var nextPageRequestUrl = string.Format("{0}?{1}={2}", requestUrl, nextQueryKey, nextQueryValue);
-                var nextPageRequestUrlElement = JsonDocument.Parse(string.Format("\"{0}\"", nextPageRequestUrl)).RootElement;
+            mockRequestAdapter.Setup(
+                adapter => adapter.SendAsync(It.IsAny<RequestInformation>(),CheckMemberGroupsResponse.CreateFromDiscriminatorValue, It.IsAny<Dictionary<string, ParsableFactory<IParsable>>>(),It.IsAny<CancellationToken>() )
+                ).ReturnsAsync(checkMemberGroupsCollectionResponse);
+            
+            mockRequestAdapter.Setup(
+                adapter => adapter.SerializationWriterFactory.GetSerializationWriter(It.IsAny<string>())
+            ).Returns(new JsonSerializationWriter());
+            
+            var requestBody = new CheckMemberGroupsPostRequestBody
+            {
+                GroupIds = new List<string>()
+            };
+            var returnedCollectionPage = await graphServiceClient.Me.CheckMemberGroups.PostAsync(requestBody);
 
-                this.httpProvider.Setup(
-                    provider => provider.SendAsync(
-                        It.Is<HttpRequestMessage>(
-                            request => request.RequestUri.ToString().StartsWith(requestUrl)
-                                && request.Method == HttpMethod.Post),
-                        HttpCompletionOption.ResponseContentRead,
-                        CancellationToken.None))
-                    .Returns(System.Threading.Tasks.Task.FromResult(httpResponseMessage));
+            Assert.NotNull(returnedCollectionPage);
+            Assert.Equal(checkMemberGroupsCollectionPage, returnedCollectionPage.Value);
 
-                var checkMemberGroupsCollectionPage = new DirectoryObjectCheckMemberGroupsCollectionPage
-                {
-                    "value 1",
-                    "value 2",
-                };
+            var nextPageRequest = returnedCollectionPage.OdataNextLink;
 
-                var checkMemberGroupsCollectionResponse = new DirectoryObjectCheckMemberGroupsCollectionResponse
-                {
-                    Value = checkMemberGroupsCollectionPage,
-                    NextLink = nextPageRequestUrl
-                };
-                
-                this.serializer.Setup(
-                    serializer => serializer.DeserializeObject<DirectoryObjectCheckMemberGroupsCollectionResponse>(It.IsAny<Stream>()))
-                    .Returns(checkMemberGroupsCollectionResponse);
-
-                var returnedCollectionPage = await this.graphServiceClient.Me.CheckMemberGroups(new List<string>()).Request().PostAsync();
-
-                Assert.NotNull(returnedCollectionPage);
-                Assert.Equal(checkMemberGroupsCollectionPage, returnedCollectionPage);
-                Assert.Equal(
-                    checkMemberGroupsCollectionPage.AdditionalData,
-                    returnedCollectionPage.AdditionalData);
-
-                var nextPageRequest = returnedCollectionPage.NextPageRequest as DirectoryObjectCheckMemberGroupsRequest;
-
-                Assert.NotNull(nextPageRequest);
-                Assert.Equal(new Uri(requestUrl), new Uri(nextPageRequest.RequestUrl));
-                Assert.Equal(1, nextPageRequest.QueryOptions.Count);
-                Assert.Equal(nextQueryKey, nextPageRequest.QueryOptions[0].Name);
-                Assert.Equal(nextQueryValue, nextPageRequest.QueryOptions[0].Value);
-            }
+            Assert.NotNull(nextPageRequest);
         }
 
         /// <summary>
@@ -214,33 +185,24 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
         [Fact]
         public async System.Threading.Tasks.Task PostAsync_NonCollectionReturnType()
         {
-            using (var httpResponseMessage = new HttpResponseMessage())
-            using (var responseStream = new MemoryStream())
-            using (var streamContent = new StreamContent(responseStream))
-            {
-                httpResponseMessage.Content = streamContent;
+            var mockRequestAdapter = new Mock<IRequestAdapter>();
+            var graphServiceClient = new GraphServiceClient(mockRequestAdapter.Object);
+            var expectedPermission = new Permission { Id = "id", Link = new SharingLink { Type = "edit" } };
 
-                var requestUrl = string.Format(Constants.Url.GraphBaseUrlFormatString, "beta") + "/me/drive/items/id/microsoft.graph.createLink";
-                this.httpProvider.Setup(
-                    provider => provider.SendAsync(
-                        It.Is<HttpRequestMessage>(
-                            request => request.RequestUri.ToString().StartsWith(requestUrl)
-                                && request.Method == HttpMethod.Post),
-                        HttpCompletionOption.ResponseContentRead,
-                        CancellationToken.None))
-                    .Returns(System.Threading.Tasks.Task.FromResult(httpResponseMessage));
+            var requestBody = new CreateLinkPostRequestBody { };
+            
+            mockRequestAdapter.Setup(
+                adapter => adapter.SendAsync(It.IsAny<RequestInformation>(),Permission.CreateFromDiscriminatorValue, It.IsAny<Dictionary<string, ParsableFactory<IParsable>>>(),It.IsAny<CancellationToken>() )
+            ).ReturnsAsync(expectedPermission);
+            
+            mockRequestAdapter.Setup(
+                adapter => adapter.SerializationWriterFactory.GetSerializationWriter(It.IsAny<string>())
+            ).Returns(new JsonSerializationWriter());
+            
+            var permission = await graphServiceClient.Drives["driveId"].Items["id"].CreateLink.PostAsync(requestBody);
 
-                var expectedPermission = new Permission { Id = "id", Link = new SharingLink { Type = "edit" } };
-
-                this.serializer.Setup(
-                    serializer => serializer.DeserializeObject<Permission>(It.IsAny<Stream>()))
-                    .Returns(expectedPermission);
-
-                var permission = await this.graphServiceClient.Me.Drive.Items["id"].CreateLink("edit", "scope").Request().PostAsync();
-
-                Assert.NotNull(permission);
-                Assert.Equal(expectedPermission, permission);
-            }
+            Assert.NotNull(permission);
+            Assert.Equal(expectedPermission, permission);
         }
 
         /// <summary>
@@ -249,23 +211,13 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
         [Fact]
         public async System.Threading.Tasks.Task PostAsync_NoReturnValue()
         {
-            using (var httpResponseMessage = new HttpResponseMessage())
-            using (var responseStream = new MemoryStream())
-            using (var streamContent = new StreamContent(responseStream))
-            {
-                httpResponseMessage.Content = streamContent;
-
-                var requestUrl = string.Format(Constants.Url.GraphBaseUrlFormatString, "beta") + "/me/mailFolders/Drafts/messages/messageId/microsoft.graph.send";
-                this.httpProvider.Setup(
-                    provider => provider.SendAsync(
-                        It.Is<HttpRequestMessage>(
-                            request => request.RequestUri.ToString().StartsWith(requestUrl)),
-                        HttpCompletionOption.ResponseContentRead,
-                        CancellationToken.None))
-                    .Returns(System.Threading.Tasks.Task.FromResult(httpResponseMessage));
-
-                await this.graphServiceClient.Me.MailFolders.Drafts.Messages["messageId"].Send().Request().PostAsync();
-            }
+            var mockRequestAdapter = new Mock<IRequestAdapter>();
+            var graphServiceClient = new GraphServiceClient(mockRequestAdapter.Object);
+            mockRequestAdapter.Setup(
+                adapter => adapter.SendNoContentAsync(It.IsAny<RequestInformation>(), It.IsAny<Dictionary<string, ParsableFactory<IParsable>>>(),It.IsAny<CancellationToken>() )
+            ).Callback(() => {}).Returns(Task.CompletedTask);
+            
+            await graphServiceClient.Me.MailFolders["Drafts"].Messages["messageId"].Send.PostAsync();
         }
     }
 }
