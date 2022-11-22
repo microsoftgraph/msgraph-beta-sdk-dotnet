@@ -244,6 +244,18 @@ namespace Microsoft.Graph
         private void InitializeCollectionProperties(SolutionsRoot solutionsRootToInitialize)
         {
 
+            if (solutionsRootToInitialize != null)
+            {
+                if (solutionsRootToInitialize.BusinessScenarios != null && solutionsRootToInitialize.BusinessScenarios.CurrentPage != null)
+                {
+                    solutionsRootToInitialize.BusinessScenarios.InitializeNextPageRequest(this.Client, solutionsRootToInitialize.BusinessScenariosNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    solutionsRootToInitialize.BusinessScenarios.AdditionalData = solutionsRootToInitialize.AdditionalData;
+                }
+
+            }
+
+
         }
     }
 }

@@ -22,6 +22,19 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
+        /// Gets or sets business scenarios.
+        /// </summary>
+        [JsonPropertyName("businessScenarios")]
+        public ISolutionsRootBusinessScenariosCollectionPage BusinessScenarios { get; set; }
+
+        /// <summary>
+        /// Gets or sets businessScenariosNextLink.
+        /// </summary>
+        [JsonPropertyName("businessScenarios@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string BusinessScenariosNextLink { get; set; }
+    
+        /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
         [JsonPropertyName("@odata.type")]

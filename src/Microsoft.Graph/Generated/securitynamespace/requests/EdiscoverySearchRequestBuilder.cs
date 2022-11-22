@@ -125,11 +125,15 @@ namespace Microsoft.Graph.SecurityNamespace
         /// Gets the request builder for EdiscoverySearchPurgeData.
         /// </summary>
         /// <returns>The <see cref="IEdiscoverySearchPurgeDataRequestBuilder"/>.</returns>
-        public IEdiscoverySearchPurgeDataRequestBuilder PurgeData()
+        public IEdiscoverySearchPurgeDataRequestBuilder PurgeData(
+            PurgeType? purgeType = null,
+            PurgeAreas? purgeAreas = null)
         {
             return new EdiscoverySearchPurgeDataRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.security.purgeData"),
-                this.Client);
+                this.Client,
+                purgeType,
+                purgeAreas);
         }
     
     }

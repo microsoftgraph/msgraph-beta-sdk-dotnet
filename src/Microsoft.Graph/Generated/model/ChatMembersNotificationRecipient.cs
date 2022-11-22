@@ -29,7 +29,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets chatId.
-        /// The chat's identifier.
+        /// The unique identifier for the chat whose members should receive the notifications.
         /// </summary>
         [JsonPropertyName("chatId")]
         public string ChatId { get; set; }

@@ -93,6 +93,18 @@ namespace Microsoft.Graph
         public string CustomCannotAccessYourAccountUrl { get; set; }
     
         /// <summary>
+        /// Gets or sets custom css.
+        /// </summary>
+        [JsonPropertyName("customCSS")]
+        public Stream CustomCSS { get; set; }
+    
+        /// <summary>
+        /// Gets or sets custom cssrelative url.
+        /// </summary>
+        [JsonPropertyName("customCSSRelativeUrl")]
+        public string CustomCSSRelativeUrl { get; set; }
+    
+        /// <summary>
         /// Gets or sets custom forgot my password text.
         /// A string to replace the default 'Forgot my password' hyperlink text on the sign-in form. This text must be in Unicode format and not exceed 256 characters.
         /// </summary>
@@ -154,6 +166,24 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("headerBackgroundColor")]
         public string HeaderBackgroundColor { get; set; }
+    
+        /// <summary>
+        /// Gets or sets header logo.
+        /// </summary>
+        [JsonPropertyName("headerLogo")]
+        public Stream HeaderLogo { get; set; }
+    
+        /// <summary>
+        /// Gets or sets header logo relative url.
+        /// </summary>
+        [JsonPropertyName("headerLogoRelativeUrl")]
+        public string HeaderLogoRelativeUrl { get; set; }
+    
+        /// <summary>
+        /// Gets or sets login page layout configuration.
+        /// </summary>
+        [JsonPropertyName("loginPageLayoutConfiguration")]
+        public LoginPageLayoutConfiguration LoginPageLayoutConfiguration { get; set; }
     
         /// <summary>
         /// Gets or sets login page text visibility settings.

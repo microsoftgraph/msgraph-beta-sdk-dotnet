@@ -285,6 +285,16 @@ namespace Microsoft.Graph
         PermissionCheckUnknownError = 699,
 	
         /// <summary>
+        /// Udp Connectivity Check Stun Url Not Allow Listed
+        /// </summary>
+        UdpConnectivityCheckStunUrlNotAllowListed = 800,
+	
+        /// <summary>
+        /// Udp Connectivity Check Unknown Error
+        /// </summary>
+        UdpConnectivityCheckUnknownError = 899,
+	
+        /// <summary>
         /// Internal Server Error Deployment Canceled
         /// </summary>
         InternalServerErrorDeploymentCanceled = 900,
@@ -312,7 +322,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Unknown Future Value
         /// </summary>
-        UnknownFutureValue = 9999,
+        UnknownFutureValue = 1000,
 	
     }
 }

@@ -1293,12 +1293,6 @@ namespace Microsoft.Graph
         public Authentication Authentication { get; set; }
     
         /// <summary>
-        /// Gets or sets tasks.
-        /// </summary>
-        [JsonPropertyName("tasks")]
-        public Tasks Tasks { get; set; }
-    
-        /// <summary>
         /// Gets or sets chats.
         /// </summary>
         [JsonPropertyName("chats")]

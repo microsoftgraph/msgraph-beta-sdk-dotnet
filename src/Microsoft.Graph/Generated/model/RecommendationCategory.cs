@@ -30,6 +30,11 @@ namespace Microsoft.Graph
         Security = 1,
 	
         /// <summary>
+        /// Unknown Future Value
+        /// </summary>
+        UnknownFutureValue = 5,
+	
+        /// <summary>
         /// Productivity
         /// </summary>
         Productivity = 2,
@@ -43,11 +48,6 @@ namespace Microsoft.Graph
         /// Configuration
         /// </summary>
         Configuration = 4,
-	
-        /// <summary>
-        /// Unknown Future Value
-        /// </summary>
-        UnknownFutureValue = 5,
 	
     }
 }

@@ -50,5 +50,17 @@ namespace Microsoft.Graph
             return new SolutionsRootRequest(this.RequestUrl, this.Client, options);
         }
     
+        /// <summary>
+        /// Gets the request builder for BusinessScenarios.
+        /// </summary>
+        /// <returns>The <see cref="ISolutionsRootBusinessScenariosCollectionRequestBuilder"/>.</returns>
+        public ISolutionsRootBusinessScenariosCollectionRequestBuilder BusinessScenarios
+        {
+            get
+            {
+                return new SolutionsRootBusinessScenariosCollectionRequestBuilder(this.AppendSegmentToRequestUrl("businessScenarios"), this.Client);
+            }
+        }
+    
     }
 }

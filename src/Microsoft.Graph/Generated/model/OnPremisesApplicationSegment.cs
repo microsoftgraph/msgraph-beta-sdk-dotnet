@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type OnPremisesApplicationSegment.
     /// </summary>
+    [Obsolete("The onPremisesApplicationSegment type is deprecated and will being used on June 01, 2023. Please use the new applicationSegment type.")]
     [JsonConverter(typeof(DerivedTypeConverter<OnPremisesApplicationSegment>))]
     public partial class OnPremisesApplicationSegment
     {

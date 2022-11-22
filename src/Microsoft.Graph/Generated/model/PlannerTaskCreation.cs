@@ -22,6 +22,12 @@ namespace Microsoft.Graph
     {
 
         /// <summary>
+        /// Gets or sets creationSourceKind.
+        /// </summary>
+        [JsonPropertyName("creationSourceKind")]
+        public PlannerCreationSourceKind? CreationSourceKind { get; set; }
+    
+        /// <summary>
         /// Gets or sets teamsPublicationInfo.
         /// Information about the publication process that created this task. null value indicates that the task was not created by a publication process.
         /// </summary>

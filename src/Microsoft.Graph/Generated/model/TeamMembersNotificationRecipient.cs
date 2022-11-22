@@ -29,7 +29,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets teamId.
-        /// The team's identifier.
+        /// The unique identifier for the team whose members should receive the notification.
         /// </summary>
         [JsonPropertyName("teamId")]
         public string TeamId { get; set; }

@@ -29,6 +29,12 @@ namespace Microsoft.Graph
         public string OnPremisesConnectionId { get; set; }
     
         /// <summary>
+        /// Gets or sets regionGroup.
+        /// </summary>
+        [JsonPropertyName("regionGroup")]
+        public CloudPcRegionGroup? RegionGroup { get; set; }
+    
+        /// <summary>
         /// Gets or sets regionName.
         /// The supported Azure region where the IT admin wants the provisioning policy to create Cloud PCs. The underlying virtual network will be created and managed by the Windows 365 service. This can only be entered if the IT admin chooses Azure AD joined as the domain join type. If you enter a regionName, leave onPremisesConnectionId as empty.
         /// </summary>

@@ -23,30 +23,35 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets allProperties.
+        /// Enables locking all sensitive properties. The sensitive properties are keyCredentials, passwordCredentials, and tokenEncryptionKeyId.
         /// </summary>
         [JsonPropertyName("allProperties")]
         public bool? AllProperties { get; set; }
     
         /// <summary>
         /// Gets or sets credentialsWithUsageSign.
+        /// Locks the keyCredentials and passwordCredentials properties for modification where credential usage type is Sign.
         /// </summary>
         [JsonPropertyName("credentialsWithUsageSign")]
         public bool? CredentialsWithUsageSign { get; set; }
     
         /// <summary>
         /// Gets or sets credentialsWithUsageVerify.
+        /// Locks the keyCredentials and passwordCredentials properties for modification where credential usage type is Verify. This locks OAuth service principals.
         /// </summary>
         [JsonPropertyName("credentialsWithUsageVerify")]
         public bool? CredentialsWithUsageVerify { get; set; }
     
         /// <summary>
         /// Gets or sets isEnabled.
+        /// Enables or disables service principal lock configuration. To allow the sensitive properties to be updated, update this property to false to disable the lock on the service principal.
         /// </summary>
         [JsonPropertyName("isEnabled")]
         public bool? IsEnabled { get; set; }
     
         /// <summary>
         /// Gets or sets tokenEncryptionKeyId.
+        /// Locks the tokenEncryptionKeyId property for modification on the service principal.
         /// </summary>
         [JsonPropertyName("tokenEncryptionKeyId")]
         public bool? TokenEncryptionKeyId { get; set; }

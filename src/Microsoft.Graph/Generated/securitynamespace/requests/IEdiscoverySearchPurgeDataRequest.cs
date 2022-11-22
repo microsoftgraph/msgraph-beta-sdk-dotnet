@@ -20,6 +20,10 @@ namespace Microsoft.Graph.SecurityNamespace
     /// </summary>
     public partial interface IEdiscoverySearchPurgeDataRequest : Microsoft.Graph.IBaseRequest
     {
+        /// <summary>
+        /// Gets the request body.
+        /// </summary>
+        EdiscoverySearchPurgeDataRequestBody RequestBody { get; }
 
 
         /// <summary>

@@ -41,11 +41,23 @@ namespace Microsoft.Graph
         public string DisplayName { get; set; }
     
         /// <summary>
+        /// Gets or sets downloaded date time.
+        /// </summary>
+        [JsonPropertyName("downloadedDateTime")]
+        public DateTimeOffset? DownloadedDateTime { get; set; }
+    
+        /// <summary>
         /// Gets or sets size.
         /// The document's size in bytes. Read-only.
         /// </summary>
         [JsonPropertyName("size")]
         public Int64? Size { get; set; }
+    
+        /// <summary>
+        /// Gets or sets uploaded date time.
+        /// </summary>
+        [JsonPropertyName("uploadedDateTime")]
+        public DateTimeOffset? UploadedDateTime { get; set; }
     
     }
 }

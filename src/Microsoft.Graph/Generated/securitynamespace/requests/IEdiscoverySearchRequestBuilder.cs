@@ -71,7 +71,9 @@ namespace Microsoft.Graph.SecurityNamespace
         /// Gets the request builder for EdiscoverySearchPurgeData.
         /// </summary>
         /// <returns>The <see cref="IEdiscoverySearchPurgeDataRequestBuilder"/>.</returns>
-        IEdiscoverySearchPurgeDataRequestBuilder PurgeData();
+        IEdiscoverySearchPurgeDataRequestBuilder PurgeData(
+            PurgeType? purgeType = null,
+            PurgeAreas? purgeAreas = null);
     
     }
 }

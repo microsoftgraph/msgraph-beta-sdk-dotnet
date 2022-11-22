@@ -29,14 +29,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets channelId.
-        /// The channel's identifier.
+        /// The unique identifier for the channel whose members should receive the notification.
         /// </summary>
         [JsonPropertyName("channelId")]
         public string ChannelId { get; set; }
     
         /// <summary>
         /// Gets or sets teamId.
-        /// The team's identifier under which the channel resides.
+        /// The unique identifier for the team under which the channel resides.
         /// </summary>
         [JsonPropertyName("teamId")]
         public string TeamId { get; set; }

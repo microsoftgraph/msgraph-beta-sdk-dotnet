@@ -372,6 +372,12 @@ namespace Microsoft.Graph.ManagedTenants
                     // Copy the additional data collection to the page itself so that information is not lost
                     managedTenantToInitialize.ManagementTemplateCollections.AdditionalData = managedTenantToInitialize.AdditionalData;
                 }
+                if (managedTenantToInitialize.ManagementTemplateCollectionTenantSummaries != null && managedTenantToInitialize.ManagementTemplateCollectionTenantSummaries.CurrentPage != null)
+                {
+                    managedTenantToInitialize.ManagementTemplateCollectionTenantSummaries.InitializeNextPageRequest(this.Client, managedTenantToInitialize.ManagementTemplateCollectionTenantSummariesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    managedTenantToInitialize.ManagementTemplateCollectionTenantSummaries.AdditionalData = managedTenantToInitialize.AdditionalData;
+                }
                 if (managedTenantToInitialize.ManagementTemplates != null && managedTenantToInitialize.ManagementTemplates.CurrentPage != null)
                 {
                     managedTenantToInitialize.ManagementTemplates.InitializeNextPageRequest(this.Client, managedTenantToInitialize.ManagementTemplatesNextLink);
@@ -383,6 +389,12 @@ namespace Microsoft.Graph.ManagedTenants
                     managedTenantToInitialize.ManagementTemplateSteps.InitializeNextPageRequest(this.Client, managedTenantToInitialize.ManagementTemplateStepsNextLink);
                     // Copy the additional data collection to the page itself so that information is not lost
                     managedTenantToInitialize.ManagementTemplateSteps.AdditionalData = managedTenantToInitialize.AdditionalData;
+                }
+                if (managedTenantToInitialize.ManagementTemplateStepTenantSummaries != null && managedTenantToInitialize.ManagementTemplateStepTenantSummaries.CurrentPage != null)
+                {
+                    managedTenantToInitialize.ManagementTemplateStepTenantSummaries.InitializeNextPageRequest(this.Client, managedTenantToInitialize.ManagementTemplateStepTenantSummariesNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    managedTenantToInitialize.ManagementTemplateStepTenantSummaries.AdditionalData = managedTenantToInitialize.AdditionalData;
                 }
                 if (managedTenantToInitialize.ManagementTemplateStepVersions != null && managedTenantToInitialize.ManagementTemplateStepVersions.CurrentPage != null)
                 {

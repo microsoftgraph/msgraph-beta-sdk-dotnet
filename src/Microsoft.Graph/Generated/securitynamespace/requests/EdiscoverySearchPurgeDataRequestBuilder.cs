@@ -23,11 +23,17 @@ namespace Microsoft.Graph.SecurityNamespace
         /// </summary>
         /// <param name="requestUrl">The URL for the request.</param>
         /// <param name="client">The <see cref="Microsoft.Graph.IBaseClient"/> for handling requests.</param>
+        /// <param name="purgeType">A purgeType parameter for the OData method call.</param>
+        /// <param name="purgeAreas">A purgeAreas parameter for the OData method call.</param>
         public EdiscoverySearchPurgeDataRequestBuilder(
             string requestUrl,
-            Microsoft.Graph.IBaseClient client)
+            Microsoft.Graph.IBaseClient client,
+            PurgeType? purgeType,
+            PurgeAreas? purgeAreas)
             : base(requestUrl, client)
         {
+            this.SetParameter("purgeType", purgeType, true);
+            this.SetParameter("purgeAreas", purgeAreas, true);
         }
 
         /// <summary>
@@ -39,6 +45,16 @@ namespace Microsoft.Graph.SecurityNamespace
         protected override IEdiscoverySearchPurgeDataRequest CreateRequest(string functionUrl, IEnumerable<Microsoft.Graph.Option> options)
         {
             var request = new EdiscoverySearchPurgeDataRequest(functionUrl, this.Client, options);
+
+            if (this.HasParameter("purgeType"))
+            {
+                request.RequestBody.PurgeType = this.GetParameter<PurgeType?>("purgeType");
+            }
+
+            if (this.HasParameter("purgeAreas"))
+            {
+                request.RequestBody.PurgeAreas = this.GetParameter<PurgeAreas?>("purgeAreas");
+            }
 
             return request;
         }

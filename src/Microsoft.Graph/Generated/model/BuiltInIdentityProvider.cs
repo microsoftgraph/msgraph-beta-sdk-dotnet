@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Built In Identity Provider.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<BuiltInIdentityProvider>))]
     public partial class BuiltInIdentityProvider : IdentityProviderBase
     {
     
@@ -34,6 +35,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("identityProviderType")]
         public string IdentityProviderType { get; set; }
+    
+        /// <summary>
+        /// Gets or sets state.
+        /// </summary>
+        [JsonPropertyName("state")]
+        public IdentityProviderState? State { get; set; }
     
     }
 }

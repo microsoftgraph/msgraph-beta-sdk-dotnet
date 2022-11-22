@@ -94,17 +94,6 @@ namespace Microsoft.Graph
             IEnumerable<string> sensitiveTypeIds = null);
 
         /// <summary>
-        /// Gets the request builder for DataClassificationServiceClassifyText.
-        /// </summary>
-        /// <returns>The <see cref="IDataClassificationServiceClassifyTextRequestBuilder"/>.</returns>
-        IDataClassificationServiceClassifyTextRequestBuilder ClassifyText(
-            string text = null,
-            string fileExtension = null,
-            IEnumerable<string> sensitiveTypeIds = null,
-            SensitiveTypeScope? scopesToRun = null,
-            MlClassificationMatchTolerance? matchTolerancesToInclude = null);
-
-        /// <summary>
         /// Gets the request builder for DataClassificationServiceClassifyExactMatches.
         /// </summary>
         /// <returns>The <see cref="IDataClassificationServiceClassifyExactMatchesRequestBuilder"/>.</returns>
