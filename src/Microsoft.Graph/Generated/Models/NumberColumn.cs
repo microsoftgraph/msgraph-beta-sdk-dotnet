@@ -44,7 +44,6 @@ namespace Microsoft.Graph.Beta.Models {
         public NumberColumn() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
-            OdataType = "#microsoft.graph.numberColumn";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -5,14 +5,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class PlannerDelta : Entity, IParsable {
-        /// <summary>
-        /// Instantiates a new plannerDelta and sets the default values.
-        /// </summary>
-        public PlannerDelta() : base() {
-            OdataType = "#microsoft.graph.plannerDelta";
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -21,6 +15,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
             return mappingValue switch {
+                "#microsoft.graph.businessScenarioTask" => new BusinessScenarioTask(),
                 "#microsoft.graph.plannerAssignedToTaskBoardTaskFormat" => new PlannerAssignedToTaskBoardTaskFormat(),
                 "#microsoft.graph.plannerBucket" => new PlannerBucket(),
                 "#microsoft.graph.plannerBucketTaskBoardTaskFormat" => new PlannerBucketTaskBoardTaskFormat(),

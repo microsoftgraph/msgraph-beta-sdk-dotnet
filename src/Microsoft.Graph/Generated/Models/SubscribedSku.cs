@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class SubscribedSku : Entity, IParsable {
         /// <summary>For example, &apos;User&apos; or &apos;Company&apos;.</summary>
         public string AppliesTo {
@@ -40,12 +39,6 @@ namespace Microsoft.Graph.Beta.Models {
         public string SkuPartNumber {
             get { return BackingStore?.Get<string>("skuPartNumber"); }
             set { BackingStore?.Set("skuPartNumber", value); }
-        }
-        /// <summary>
-        /// Instantiates a new subscribedSku and sets the default values.
-        /// </summary>
-        public SubscribedSku() : base() {
-            OdataType = "#microsoft.graph.subscribedSku";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

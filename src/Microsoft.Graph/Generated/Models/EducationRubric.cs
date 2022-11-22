@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class EducationRubric : Entity, IParsable {
         /// <summary>The user who created this resource.</summary>
         public IdentitySet CreatedBy {
@@ -49,12 +50,6 @@ namespace Microsoft.Graph.Beta.Models {
         public List<RubricQuality> Qualities {
             get { return BackingStore?.Get<List<RubricQuality>>("qualities"); }
             set { BackingStore?.Set("qualities", value); }
-        }
-        /// <summary>
-        /// Instantiates a new educationRubric and sets the default values.
-        /// </summary>
-        public EducationRubric() : base() {
-            OdataType = "#microsoft.graph.educationRubric";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

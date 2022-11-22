@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class MobilityManagementPolicy : Entity, IParsable {
         /// <summary>Indicates the user scope of the mobility management policy. Possible values are: none, all, selected.</summary>
         public PolicyScope? AppliesTo {
@@ -45,12 +44,6 @@ namespace Microsoft.Graph.Beta.Models {
         public string TermsOfUseUrl {
             get { return BackingStore?.Get<string>("termsOfUseUrl"); }
             set { BackingStore?.Set("termsOfUseUrl", value); }
-        }
-        /// <summary>
-        /// Instantiates a new mobilityManagementPolicy and sets the default values.
-        /// </summary>
-        public MobilityManagementPolicy() : base() {
-            OdataType = "#microsoft.graph.mobilityManagementPolicy";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.DeviceManagement {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class AlertRecord : Entity, IParsable {
         /// <summary>The impact of the alert event. Consists of a number followed by the aggregation type. For example, 6 Count and 12 AffectedCloudPcPercentage.</summary>
         public Microsoft.Graph.Beta.Models.DeviceManagement.AlertImpact AlertImpact {
@@ -50,12 +50,6 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         public AlertStatusType? Status {
             get { return BackingStore?.Get<AlertStatusType?>("status"); }
             set { BackingStore?.Set("status", value); }
-        }
-        /// <summary>
-        /// Instantiates a new alertRecord and sets the default values.
-        /// </summary>
-        public AlertRecord() : base() {
-            OdataType = "#microsoft.graph.deviceManagement.alertRecord";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -4,8 +4,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class PlannerBucket : PlannerDelta, IParsable {
+        /// <summary>The creationSource property</summary>
+        public PlannerBucketCreation CreationSource {
+            get { return BackingStore?.Get<PlannerBucketCreation>("creationSource"); }
+            set { BackingStore?.Set("creationSource", value); }
+        }
         /// <summary>Name of the bucket.</summary>
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
@@ -27,12 +32,6 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("tasks", value); }
         }
         /// <summary>
-        /// Instantiates a new plannerBucket and sets the default values.
-        /// </summary>
-        public PlannerBucket() : base() {
-            OdataType = "#microsoft.graph.plannerBucket";
-        }
-        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
@@ -45,6 +44,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"creationSource", n => { CreationSource = n.GetObjectValue<PlannerBucketCreation>(PlannerBucketCreation.CreateFromDiscriminatorValue); } },
                 {"name", n => { Name = n.GetStringValue(); } },
                 {"orderHint", n => { OrderHint = n.GetStringValue(); } },
                 {"planId", n => { PlanId = n.GetStringValue(); } },
@@ -58,6 +58,7 @@ namespace Microsoft.Graph.Beta.Models {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteObjectValue<PlannerBucketCreation>("creationSource", CreationSource);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("orderHint", OrderHint);
             writer.WriteStringValue("planId", PlanId);

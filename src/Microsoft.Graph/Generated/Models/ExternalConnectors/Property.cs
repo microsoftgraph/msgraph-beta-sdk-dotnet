@@ -11,13 +11,18 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
             get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
             set { BackingStore?.Set("additionalData", value); }
         }
-        /// <summary>A set of aliases or a friendly names for the property. Maximum 32 characters. Only alphanumeric characters allowed. For example, each string may not contain control characters, whitespace, or any of the following: :, ;, ,, (, ), [, ], {, }, %, $, +, !, *, =, &amp;, ?, @, #, /, ~, &apos;, &apos;, &lt;, &gt;, `, ^. Optional.</summary>
+        /// <summary>A set of aliases or a friendly names for the property. Maximum 32 characters. Only alphanumeric characters allowed. For example, each string might not contain control characters, whitespace, or any of the following: :, ;, ,, (, ), [, ], {, }, %, $, +, !, *, =, &amp;, ?, @, #, /, ~, &apos;, &apos;, &lt;, &gt;, `, ^. Optional.</summary>
         public List<string> Aliases {
             get { return BackingStore?.Get<List<string>>("aliases"); }
             set { BackingStore?.Set("aliases", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
+        /// <summary>Specifies if the property will be matched exactly for queries. Exact matching can only be set to true for non-searchable properties of type string or stringCollection. Optional.</summary>
+        public bool? IsExactMatchRequired {
+            get { return BackingStore?.Get<bool?>("isExactMatchRequired"); }
+            set { BackingStore?.Set("isExactMatchRequired", value); }
+        }
         /// <summary>Specifies if the property is queryable. Queryable properties can be used in Keyword Query Language (KQL) queries. Optional.</summary>
         public bool? IsQueryable {
             get { return BackingStore?.Get<bool?>("isQueryable"); }
@@ -43,7 +48,7 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
             get { return BackingStore?.Get<List<Label?>>("labels"); }
             set { BackingStore?.Set("labels", value); }
         }
-        /// <summary>The name of the property. Maximum 32 characters. Only alphanumeric characters allowed. For example, each string may not contain control characters, whitespace, or any of the following: :, ;, ,, (, ), [, ], {, }, %, $, +, !, *, =, &amp;, ?, @, #, /, ~, &apos;, &apos;, &lt;, &gt;, `, ^.  Required.</summary>
+        /// <summary>The name of the property. Maximum 32 characters. Only alphanumeric characters allowed. For example, the property name may not contain control characters, whitespace, or any of the following: :, ;, ,, (, ), [, ], {, }, %, $, +, !, *, =, &amp;, ?, @, #, /, ~, &apos;, &apos;, &lt;, &gt;, `, ^.  Required.</summary>
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
@@ -64,7 +69,6 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
         public Property() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
-            OdataType = "#microsoft.graph.externalConnectors.property";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -80,6 +84,7 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"aliases", n => { Aliases = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"isExactMatchRequired", n => { IsExactMatchRequired = n.GetBoolValue(); } },
                 {"isQueryable", n => { IsQueryable = n.GetBoolValue(); } },
                 {"isRefinable", n => { IsRefinable = n.GetBoolValue(); } },
                 {"isRetrievable", n => { IsRetrievable = n.GetBoolValue(); } },
@@ -97,6 +102,7 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("aliases", Aliases);
+            writer.WriteBoolValue("isExactMatchRequired", IsExactMatchRequired);
             writer.WriteBoolValue("isQueryable", IsQueryable);
             writer.WriteBoolValue("isRefinable", IsRefinable);
             writer.WriteBoolValue("isRetrievable", IsRetrievable);

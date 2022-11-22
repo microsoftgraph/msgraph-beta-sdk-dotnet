@@ -92,12 +92,6 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
             set { BackingStore?.Set("tags", value); }
         }
         /// <summary>
-        /// Instantiates a new case and sets the default values.
-        /// </summary>
-        public Case() : base() {
-            OdataType = "#microsoft.graph.ediscovery.case";
-        }
-        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

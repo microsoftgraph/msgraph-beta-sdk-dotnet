@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class TeamTemplateDefinition : Entity, IParsable {
         /// <summary>The audience property</summary>
         public TeamTemplateAudience? Audience {
@@ -65,12 +64,6 @@ namespace Microsoft.Graph.Beta.Models {
         public Team TeamDefinition {
             get { return BackingStore?.Get<Team>("teamDefinition"); }
             set { BackingStore?.Set("teamDefinition", value); }
-        }
-        /// <summary>
-        /// Instantiates a new teamTemplateDefinition and sets the default values.
-        /// </summary>
-        public TeamTemplateDefinition() : base() {
-            OdataType = "#microsoft.graph.teamTemplateDefinition";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

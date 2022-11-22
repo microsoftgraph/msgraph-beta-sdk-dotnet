@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class TaxGroup : Entity, IParsable {
         /// <summary>The code property</summary>
         public string Code {
@@ -25,12 +25,6 @@ namespace Microsoft.Graph.Beta.Models {
         public string TaxType {
             get { return BackingStore?.Get<string>("taxType"); }
             set { BackingStore?.Set("taxType", value); }
-        }
-        /// <summary>
-        /// Instantiates a new taxGroup and sets the default values.
-        /// </summary>
-        public TaxGroup() : base() {
-            OdataType = "#microsoft.graph.taxGroup";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

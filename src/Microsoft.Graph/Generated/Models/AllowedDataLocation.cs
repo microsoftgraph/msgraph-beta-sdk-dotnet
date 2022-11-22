@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class AllowedDataLocation : Entity, IParsable {
         /// <summary>The appId property</summary>
         public string AppId {
@@ -25,12 +24,6 @@ namespace Microsoft.Graph.Beta.Models {
         public string Location {
             get { return BackingStore?.Get<string>("location"); }
             set { BackingStore?.Set("location", value); }
-        }
-        /// <summary>
-        /// Instantiates a new allowedDataLocation and sets the default values.
-        /// </summary>
-        public AllowedDataLocation() : base() {
-            OdataType = "#microsoft.graph.allowedDataLocation";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

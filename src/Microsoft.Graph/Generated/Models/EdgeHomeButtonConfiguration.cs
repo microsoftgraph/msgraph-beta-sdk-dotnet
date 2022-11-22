@@ -26,7 +26,6 @@ namespace Microsoft.Graph.Beta.Models {
         public EdgeHomeButtonConfiguration() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
-            OdataType = "#microsoft.graph.edgeHomeButtonConfiguration";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

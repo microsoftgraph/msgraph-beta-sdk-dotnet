@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class OutlookTaskGroup : Entity, IParsable {
         /// <summary>The version of the task group.</summary>
         public string ChangeKey {
@@ -30,12 +30,6 @@ namespace Microsoft.Graph.Beta.Models {
         public List<OutlookTaskFolder> TaskFolders {
             get { return BackingStore?.Get<List<OutlookTaskFolder>>("taskFolders"); }
             set { BackingStore?.Set("taskFolders", value); }
-        }
-        /// <summary>
-        /// Instantiates a new outlookTaskGroup and sets the default values.
-        /// </summary>
-        public OutlookTaskGroup() : base() {
-            OdataType = "#microsoft.graph.outlookTaskGroup";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

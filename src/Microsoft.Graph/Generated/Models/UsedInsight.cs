@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class UsedInsight : Entity, IParsable {
         /// <summary>Information about when the item was last viewed or modified by the user. Read only.</summary>
         public UsageDetails LastUsed {
@@ -25,12 +25,6 @@ namespace Microsoft.Graph.Beta.Models {
         public Microsoft.Graph.Beta.Models.ResourceVisualization ResourceVisualization {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ResourceVisualization>("resourceVisualization"); }
             set { BackingStore?.Set("resourceVisualization", value); }
-        }
-        /// <summary>
-        /// Instantiates a new usedInsight and sets the default values.
-        /// </summary>
-        public UsedInsight() : base() {
-            OdataType = "#microsoft.graph.usedInsight";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

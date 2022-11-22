@@ -31,12 +31,6 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("templates", value); }
         }
         /// <summary>
-        /// Instantiates a new ConditionalAccessRoot and sets the default values.
-        /// </summary>
-        public ConditionalAccessRoot() : base() {
-            OdataType = "#microsoft.graph.conditionalAccessRoot";
-        }
-        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

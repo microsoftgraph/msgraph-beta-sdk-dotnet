@@ -29,7 +29,6 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
         public ActivitySettings() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
-            OdataType = "#microsoft.graph.externalConnectors.activitySettings";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

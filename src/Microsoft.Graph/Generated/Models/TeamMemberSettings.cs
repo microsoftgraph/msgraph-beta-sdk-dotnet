@@ -54,7 +54,6 @@ namespace Microsoft.Graph.Beta.Models {
         public TeamMemberSettings() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
-            OdataType = "#microsoft.graph.teamMemberSettings";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

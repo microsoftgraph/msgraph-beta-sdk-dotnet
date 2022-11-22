@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class ContentType : Entity, IParsable {
         /// <summary>List of canonical URLs for hub sites with which this content type is associated to. This will contain all hubsites where this content type is queued to be enforced or is already enforced. Enforcing a content type means that the content type will be applied to the lists in the enforced sites.</summary>
         public List<string> AssociatedHubsUrls {
@@ -100,12 +100,6 @@ namespace Microsoft.Graph.Beta.Models {
         public bool? Sealed {
             get { return BackingStore?.Get<bool?>("sealed"); }
             set { BackingStore?.Set("sealed", value); }
-        }
-        /// <summary>
-        /// Instantiates a new contentType and sets the default values.
-        /// </summary>
-        public ContentType() : base() {
-            OdataType = "#microsoft.graph.contentType";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

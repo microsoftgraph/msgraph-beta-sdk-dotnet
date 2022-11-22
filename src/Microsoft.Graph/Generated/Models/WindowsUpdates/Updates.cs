@@ -26,12 +26,6 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
             set { BackingStore?.Set("updatableAssets", value); }
         }
         /// <summary>
-        /// Instantiates a new updates and sets the default values.
-        /// </summary>
-        public Updates() : base() {
-            OdataType = "#microsoft.graph.windowsUpdates.updates";
-        }
-        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

@@ -4,14 +4,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class AgreementFileVersion : AgreementFileProperties, IParsable {
-        /// <summary>
-        /// Instantiates a new agreementFileVersion and sets the default values.
-        /// </summary>
-        public AgreementFileVersion() : base() {
-            OdataType = "#microsoft.graph.agreementFileVersion";
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

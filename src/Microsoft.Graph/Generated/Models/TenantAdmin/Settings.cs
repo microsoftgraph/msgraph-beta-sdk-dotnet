@@ -151,12 +151,6 @@ namespace Microsoft.Graph.Beta.Models.TenantAdmin {
             set { BackingStore?.Set("tenantDefaultTimezone", value); }
         }
         /// <summary>
-        /// Instantiates a new settings and sets the default values.
-        /// </summary>
-        public Settings() : base() {
-            OdataType = "#microsoft.graph.tenantAdmin.settings";
-        }
-        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

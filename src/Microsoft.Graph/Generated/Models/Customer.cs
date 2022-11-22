@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class Customer : Entity, IParsable {
         /// <summary>The address property</summary>
         public PostalAddressType Address {
@@ -120,12 +119,6 @@ namespace Microsoft.Graph.Beta.Models {
         public string Website {
             get { return BackingStore?.Get<string>("website"); }
             set { BackingStore?.Set("website", value); }
-        }
-        /// <summary>
-        /// Instantiates a new customer and sets the default values.
-        /// </summary>
-        public Customer() : base() {
-            OdataType = "#microsoft.graph.customer";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

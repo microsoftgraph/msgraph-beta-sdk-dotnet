@@ -681,11 +681,6 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("surname"); }
             set { BackingStore?.Set("surname", value); }
         }
-        /// <summary>The tasks property</summary>
-        public Microsoft.Graph.Beta.Models.Tasks Tasks {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Tasks>("tasks"); }
-            set { BackingStore?.Set("tasks", value); }
-        }
         /// <summary>A container for Microsoft Teams features available for the user. Read-only. Nullable.</summary>
         public UserTeamwork Teamwork {
             get { return BackingStore?.Get<UserTeamwork>("teamwork"); }
@@ -885,7 +880,6 @@ namespace Microsoft.Graph.Beta.Models {
                 {"state", n => { State = n.GetStringValue(); } },
                 {"streetAddress", n => { StreetAddress = n.GetStringValue(); } },
                 {"surname", n => { Surname = n.GetStringValue(); } },
-                {"tasks", n => { Tasks = n.GetObjectValue<Microsoft.Graph.Beta.Models.Tasks>(Microsoft.Graph.Beta.Models.Tasks.CreateFromDiscriminatorValue); } },
                 {"teamwork", n => { Teamwork = n.GetObjectValue<UserTeamwork>(UserTeamwork.CreateFromDiscriminatorValue); } },
                 {"todo", n => { Todo = n.GetObjectValue<Microsoft.Graph.Beta.Models.Todo>(Microsoft.Graph.Beta.Models.Todo.CreateFromDiscriminatorValue); } },
                 {"transitiveMemberOf", n => { TransitiveMemberOf = n.GetCollectionOfObjectValues<DirectoryObject>(DirectoryObject.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -1039,7 +1033,6 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("state", State);
             writer.WriteStringValue("streetAddress", StreetAddress);
             writer.WriteStringValue("surname", Surname);
-            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Tasks>("tasks", Tasks);
             writer.WriteObjectValue<UserTeamwork>("teamwork", Teamwork);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Todo>("todo", Todo);
             writer.WriteCollectionOfObjectValues<DirectoryObject>("transitiveMemberOf", TransitiveMemberOf);

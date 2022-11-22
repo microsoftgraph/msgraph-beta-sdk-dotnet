@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class ActivityStatistics : Entity, IParsable {
         /// <summary>The type of activity for which statistics are returned. The possible values are: call, chat, email, focus, and meeting.</summary>
         public AnalyticsActivityType? Activity {
@@ -32,12 +32,6 @@ namespace Microsoft.Graph.Beta.Models {
         public string TimeZoneUsed {
             get { return BackingStore?.Get<string>("timeZoneUsed"); }
             set { BackingStore?.Set("timeZoneUsed", value); }
-        }
-        /// <summary>
-        /// Instantiates a new activityStatistics and sets the default values.
-        /// </summary>
-        public ActivityStatistics() : base() {
-            OdataType = "#microsoft.graph.activityStatistics";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

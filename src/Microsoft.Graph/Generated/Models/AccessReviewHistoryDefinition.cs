@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class AccessReviewHistoryDefinition : Entity, IParsable {
         /// <summary>The createdBy property</summary>
         public UserIdentity CreatedBy {
@@ -65,12 +65,6 @@ namespace Microsoft.Graph.Beta.Models {
         public AccessReviewHistoryStatus? Status {
             get { return BackingStore?.Get<AccessReviewHistoryStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
-        }
-        /// <summary>
-        /// Instantiates a new accessReviewHistoryDefinition and sets the default values.
-        /// </summary>
-        public AccessReviewHistoryDefinition() : base() {
-            OdataType = "#microsoft.graph.accessReviewHistoryDefinition";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

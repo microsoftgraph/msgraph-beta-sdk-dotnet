@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class CloudPcUserSettingAssignment : Entity, IParsable {
         /// <summary>The date and time this assignment was created. The Timestamp type represents the date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 looks like this: &apos;2014-01-01T00:00:00Z&apos;.</summary>
         public DateTimeOffset? CreatedDateTime {
@@ -15,12 +15,6 @@ namespace Microsoft.Graph.Beta.Models {
         public CloudPcManagementAssignmentTarget Target {
             get { return BackingStore?.Get<CloudPcManagementAssignmentTarget>("target"); }
             set { BackingStore?.Set("target", value); }
-        }
-        /// <summary>
-        /// Instantiates a new cloudPcUserSettingAssignment and sets the default values.
-        /// </summary>
-        public CloudPcUserSettingAssignment() : base() {
-            OdataType = "#microsoft.graph.cloudPcUserSettingAssignment";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -16,12 +16,6 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("storageAccountName", value); }
         }
         /// <summary>
-        /// Instantiates a new cloudPcForensicStorageAccount and sets the default values.
-        /// </summary>
-        public CloudPcForensicStorageAccount() : base() {
-            OdataType = "#microsoft.graph.cloudPcForensicStorageAccount";
-        }
-        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

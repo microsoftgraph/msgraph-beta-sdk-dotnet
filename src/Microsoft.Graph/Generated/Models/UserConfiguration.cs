@@ -4,18 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class UserConfiguration : Entity, IParsable {
         /// <summary>The binaryData property</summary>
         public byte[] BinaryData {
             get { return BackingStore?.Get<byte[]>("binaryData"); }
             set { BackingStore?.Set("binaryData", value); }
-        }
-        /// <summary>
-        /// Instantiates a new userConfiguration and sets the default values.
-        /// </summary>
-        public UserConfiguration() : base() {
-            OdataType = "#microsoft.graph.userConfiguration";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

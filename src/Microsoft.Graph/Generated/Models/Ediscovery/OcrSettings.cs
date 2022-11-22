@@ -39,7 +39,6 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
         public OcrSettings() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
-            OdataType = "#microsoft.graph.ediscovery.ocrSettings";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

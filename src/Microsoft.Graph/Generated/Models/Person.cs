@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class Person : Entity, IParsable {
         /// <summary>The person&apos;s birthday.</summary>
         public string Birthday {
@@ -105,12 +105,6 @@ namespace Microsoft.Graph.Beta.Models {
         public string YomiCompany {
             get { return BackingStore?.Get<string>("yomiCompany"); }
             set { BackingStore?.Set("yomiCompany", value); }
-        }
-        /// <summary>
-        /// Instantiates a new person and sets the default values.
-        /// </summary>
-        public Person() : base() {
-            OdataType = "#microsoft.graph.person";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class Run : Entity, IParsable {
         /// <summary>The date time that the run completed. Value is null if the workflow hasn&apos;t completed.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.</summary>
         public DateTimeOffset? CompletedDateTime {
@@ -75,12 +75,6 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
         public Microsoft.Graph.Beta.Models.IdentityGovernance.WorkflowExecutionType? WorkflowExecutionType {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentityGovernance.WorkflowExecutionType?>("workflowExecutionType"); }
             set { BackingStore?.Set("workflowExecutionType", value); }
-        }
-        /// <summary>
-        /// Instantiates a new run and sets the default values.
-        /// </summary>
-        public Run() : base() {
-            OdataType = "#microsoft.graph.identityGovernance.run";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

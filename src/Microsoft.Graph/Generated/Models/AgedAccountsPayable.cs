@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class AgedAccountsPayable : Entity, IParsable {
         /// <summary>The agedAsOfDate property</summary>
         public Date? AgedAsOfDate {
@@ -56,12 +55,6 @@ namespace Microsoft.Graph.Beta.Models {
         public string VendorNumber {
             get { return BackingStore?.Get<string>("vendorNumber"); }
             set { BackingStore?.Set("vendorNumber", value); }
-        }
-        /// <summary>
-        /// Instantiates a new agedAccountsPayable and sets the default values.
-        /// </summary>
-        public AgedAccountsPayable() : base() {
-            OdataType = "#microsoft.graph.agedAccountsPayable";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

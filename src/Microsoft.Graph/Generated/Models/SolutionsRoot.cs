@@ -13,6 +13,11 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
+        /// <summary>The businessScenarios property</summary>
+        public List<BusinessScenario> BusinessScenarios {
+            get { return BackingStore?.Get<List<BusinessScenario>>("businessScenarios"); }
+            set { BackingStore?.Set("businessScenarios", value); }
+        }
         /// <summary>The OdataType property</summary>
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -24,7 +29,6 @@ namespace Microsoft.Graph.Beta.Models {
         public SolutionsRoot() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
-            OdataType = "#microsoft.graph.solutionsRoot";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -39,6 +43,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
+                {"businessScenarios", n => { BusinessScenarios = n.GetCollectionOfObjectValues<BusinessScenario>(BusinessScenario.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
         }
@@ -48,6 +53,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteCollectionOfObjectValues<BusinessScenario>("businessScenarios", BusinessScenarios);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);
         }

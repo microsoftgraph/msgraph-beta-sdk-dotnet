@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class PrinterBase : Entity, IParsable {
         /// <summary>The capabilities property</summary>
         public PrinterCapabilities Capabilities {
@@ -56,12 +56,6 @@ namespace Microsoft.Graph.Beta.Models {
         public PrinterStatus Status {
             get { return BackingStore?.Get<PrinterStatus>("status"); }
             set { BackingStore?.Set("status", value); }
-        }
-        /// <summary>
-        /// Instantiates a new printerBase and sets the default values.
-        /// </summary>
-        public PrinterBase() : base() {
-            OdataType = "#microsoft.graph.printerBase";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

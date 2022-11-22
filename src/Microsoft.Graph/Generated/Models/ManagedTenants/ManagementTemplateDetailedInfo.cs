@@ -44,7 +44,6 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         public ManagementTemplateDetailedInfo() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
-            OdataType = "#microsoft.graph.managedTenants.managementTemplateDetailedInfo";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -50,7 +50,7 @@ namespace Microsoft.Graph.Beta.Me.OnlineMeetings.Item.Registration {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
+        /// Disable and delete the externalMeetingRegistration of an onlineMeeting.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateDeleteRequestInformation(Action<RegistrationRequestBuilderDeleteRequestConfiguration> requestConfiguration = default) {
@@ -110,7 +110,7 @@ namespace Microsoft.Graph.Beta.Me.OnlineMeetings.Item.Registration {
             return requestInfo;
         }
         /// <summary>
-        /// Disable and delete the meetingRegistration of an onlineMeeting on behalf of the organizer.
+        /// Disable and delete the externalMeetingRegistration of an onlineMeeting.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

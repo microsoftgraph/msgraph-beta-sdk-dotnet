@@ -45,7 +45,6 @@ namespace Microsoft.Graph.Beta.Models {
         public AndroidDeviceOwnerSystemUpdateFreezePeriod() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
-            OdataType = "#microsoft.graph.androidDeviceOwnerSystemUpdateFreezePeriod";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

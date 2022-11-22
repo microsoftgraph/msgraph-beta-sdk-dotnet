@@ -87,12 +87,6 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("userRunStates", value); }
         }
         /// <summary>
-        /// Instantiates a new deviceShellScript and sets the default values.
-        /// </summary>
-        public DeviceShellScript() : base() {
-            OdataType = "#microsoft.graph.deviceShellScript";
-        }
-        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

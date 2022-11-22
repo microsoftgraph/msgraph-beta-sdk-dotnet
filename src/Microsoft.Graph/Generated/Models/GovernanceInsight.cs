@@ -5,18 +5,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class GovernanceInsight : Entity, IParsable {
         /// <summary>Indicates when the insight was created.</summary>
         public DateTimeOffset? InsightCreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("insightCreatedDateTime"); }
             set { BackingStore?.Set("insightCreatedDateTime", value); }
-        }
-        /// <summary>
-        /// Instantiates a new governanceInsight and sets the default values.
-        /// </summary>
-        public GovernanceInsight() : base() {
-            OdataType = "#microsoft.graph.governanceInsight";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

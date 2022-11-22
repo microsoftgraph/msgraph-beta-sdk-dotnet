@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class DomainSecurityProfile : Entity, IParsable {
         /// <summary>The activityGroupNames property</summary>
         public List<string> ActivityGroupNames {
@@ -75,12 +75,6 @@ namespace Microsoft.Graph.Beta.Models {
         public SecurityVendorInformation VendorInformation {
             get { return BackingStore?.Get<SecurityVendorInformation>("vendorInformation"); }
             set { BackingStore?.Set("vendorInformation", value); }
-        }
-        /// <summary>
-        /// Instantiates a new domainSecurityProfile and sets the default values.
-        /// </summary>
-        public DomainSecurityProfile() : base() {
-            OdataType = "#microsoft.graph.domainSecurityProfile";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

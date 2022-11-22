@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class ExternalItem : Entity, IParsable {
         /// <summary>The acl property</summary>
         public List<Microsoft.Graph.Beta.Models.Acl> Acl {
@@ -20,12 +20,6 @@ namespace Microsoft.Graph.Beta.Models {
         public Microsoft.Graph.Beta.Models.Properties Properties {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Properties>("properties"); }
             set { BackingStore?.Set("properties", value); }
-        }
-        /// <summary>
-        /// Instantiates a new externalItem and sets the default values.
-        /// </summary>
-        public ExternalItem() : base() {
-            OdataType = "#microsoft.graph.externalItem";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

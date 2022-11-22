@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class DelegatedAdminAccessAssignment : Entity, IParsable {
         /// <summary>The accessContainer property</summary>
         public DelegatedAdminAccessContainer AccessContainer {
@@ -30,12 +30,6 @@ namespace Microsoft.Graph.Beta.Models {
         public DelegatedAdminAccessAssignmentStatus? Status {
             get { return BackingStore?.Get<DelegatedAdminAccessAssignmentStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
-        }
-        /// <summary>
-        /// Instantiates a new delegatedAdminAccessAssignment and sets the default values.
-        /// </summary>
-        public DelegatedAdminAccessAssignment() : base() {
-            OdataType = "#microsoft.graph.delegatedAdminAccessAssignment";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

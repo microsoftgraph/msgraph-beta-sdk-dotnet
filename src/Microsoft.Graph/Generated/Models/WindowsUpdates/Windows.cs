@@ -11,12 +11,6 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
             set { BackingStore?.Set("updates", value); }
         }
         /// <summary>
-        /// Instantiates a new Windows and sets the default values.
-        /// </summary>
-        public Windows() : base() {
-            OdataType = "#microsoft.graph.windowsUpdates.windows";
-        }
-        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

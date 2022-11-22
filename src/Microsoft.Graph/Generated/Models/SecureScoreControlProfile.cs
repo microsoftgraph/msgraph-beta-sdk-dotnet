@@ -102,12 +102,6 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("vendorInformation", value); }
         }
         /// <summary>
-        /// Instantiates a new secureScoreControlProfile and sets the default values.
-        /// </summary>
-        public SecureScoreControlProfile() : base() {
-            OdataType = "#microsoft.graph.secureScoreControlProfile";
-        }
-        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

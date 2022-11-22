@@ -5,18 +5,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class ResourceConnection : Entity, IParsable {
         /// <summary>The state of the connection. The possible values are: connected, notAuthorized, notFound, unknownFutureValue.</summary>
         public ResourceConnectionState? State {
             get { return BackingStore?.Get<ResourceConnectionState?>("state"); }
             set { BackingStore?.Set("state", value); }
-        }
-        /// <summary>
-        /// Instantiates a new resourceConnection and sets the default values.
-        /// </summary>
-        public ResourceConnection() : base() {
-            OdataType = "#microsoft.graph.windowsUpdates.resourceConnection";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

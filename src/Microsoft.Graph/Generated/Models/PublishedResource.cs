@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class PublishedResource : Entity, IParsable {
         /// <summary>List of onPremisesAgentGroups that a publishedResource is assigned to. Read-only. Nullable.</summary>
         public List<OnPremisesAgentGroup> AgentGroups {
@@ -25,12 +25,6 @@ namespace Microsoft.Graph.Beta.Models {
         public string ResourceName {
             get { return BackingStore?.Get<string>("resourceName"); }
             set { BackingStore?.Set("resourceName", value); }
-        }
-        /// <summary>
-        /// Instantiates a new publishedResource and sets the default values.
-        /// </summary>
-        public PublishedResource() : base() {
-            OdataType = "#microsoft.graph.publishedResource";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -59,7 +59,6 @@ namespace Microsoft.Graph.Beta.Models {
         public RecurrencePattern() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
-            OdataType = "#microsoft.graph.recurrencePattern";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -44,7 +44,6 @@ namespace Microsoft.Graph.Beta.Models {
         public FileSecurityState() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
-            OdataType = "#microsoft.graph.fileSecurityState";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

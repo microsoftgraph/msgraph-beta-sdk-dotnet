@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class WorkbookChartSeries : Entity, IParsable {
         /// <summary>Represents the formatting of a chart series, which includes fill and line formatting. Read-only.</summary>
         public WorkbookChartSeriesFormat Format {
@@ -20,12 +20,6 @@ namespace Microsoft.Graph.Beta.Models {
         public List<WorkbookChartPoint> Points {
             get { return BackingStore?.Get<List<WorkbookChartPoint>>("points"); }
             set { BackingStore?.Set("points", value); }
-        }
-        /// <summary>
-        /// Instantiates a new workbookChartSeries and sets the default values.
-        /// </summary>
-        public WorkbookChartSeries() : base() {
-            OdataType = "#microsoft.graph.workbookChartSeries";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

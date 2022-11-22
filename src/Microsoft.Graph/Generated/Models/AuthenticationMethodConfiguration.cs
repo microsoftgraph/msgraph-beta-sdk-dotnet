@@ -5,18 +5,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class AuthenticationMethodConfiguration : Entity, IParsable {
         /// <summary>The state of the policy. Possible values are: enabled, disabled.</summary>
         public AuthenticationMethodState? State {
             get { return BackingStore?.Get<AuthenticationMethodState?>("state"); }
             set { BackingStore?.Set("state", value); }
-        }
-        /// <summary>
-        /// Instantiates a new authenticationMethodConfiguration and sets the default values.
-        /// </summary>
-        public AuthenticationMethodConfiguration() : base() {
-            OdataType = "#microsoft.graph.authenticationMethodConfiguration";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

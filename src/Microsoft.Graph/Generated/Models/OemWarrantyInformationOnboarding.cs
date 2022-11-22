@@ -22,12 +22,6 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("oemName", value); }
         }
         /// <summary>
-        /// Instantiates a new oemWarrantyInformationOnboarding and sets the default values.
-        /// </summary>
-        public OemWarrantyInformationOnboarding() : base() {
-            OdataType = "#microsoft.graph.oemWarrantyInformationOnboarding";
-        }
-        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

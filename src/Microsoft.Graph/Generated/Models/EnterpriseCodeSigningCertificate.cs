@@ -47,12 +47,6 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("uploadDateTime", value); }
         }
         /// <summary>
-        /// Instantiates a new enterpriseCodeSigningCertificate and sets the default values.
-        /// </summary>
-        public EnterpriseCodeSigningCertificate() : base() {
-            OdataType = "#microsoft.graph.enterpriseCodeSigningCertificate";
-        }
-        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

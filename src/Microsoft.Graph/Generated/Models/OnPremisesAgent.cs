@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class OnPremisesAgent : Entity, IParsable {
         /// <summary>List of onPremisesAgentGroups that an onPremisesAgent is assigned to. Read-only. Nullable.</summary>
         public List<OnPremisesAgentGroup> AgentGroups {
@@ -30,12 +30,6 @@ namespace Microsoft.Graph.Beta.Models {
         public List<OnPremisesPublishingType?> SupportedPublishingTypes {
             get { return BackingStore?.Get<List<OnPremisesPublishingType?>>("supportedPublishingTypes"); }
             set { BackingStore?.Set("supportedPublishingTypes", value); }
-        }
-        /// <summary>
-        /// Instantiates a new onPremisesAgent and sets the default values.
-        /// </summary>
-        public OnPremisesAgent() : base() {
-            OdataType = "#microsoft.graph.onPremisesAgent";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

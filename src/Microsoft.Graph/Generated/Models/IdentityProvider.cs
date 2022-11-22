@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class IdentityProvider : Entity, IParsable {
         /// <summary>The client ID for the application obtained when registering the application with the identity provider. This is a required field.  Required. Not nullable.</summary>
         public string ClientId {
@@ -26,12 +26,6 @@ namespace Microsoft.Graph.Beta.Models {
         public string Type {
             get { return BackingStore?.Get<string>("type"); }
             set { BackingStore?.Set("type", value); }
-        }
-        /// <summary>
-        /// Instantiates a new identityProvider and sets the default values.
-        /// </summary>
-        public IdentityProvider() : base() {
-            OdataType = "#microsoft.graph.identityProvider";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

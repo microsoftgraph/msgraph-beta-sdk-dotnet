@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class PrintDocument : Entity, IParsable {
         /// <summary>The configuration property</summary>
         public PrinterDocumentConfiguration Configuration {
@@ -21,16 +21,20 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+        /// <summary>The downloadedDateTime property</summary>
+        public DateTimeOffset? DownloadedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>("downloadedDateTime"); }
+            set { BackingStore?.Set("downloadedDateTime", value); }
+        }
         /// <summary>The document&apos;s size in bytes. Read-only.</summary>
         public long? Size {
             get { return BackingStore?.Get<long?>("size"); }
             set { BackingStore?.Set("size", value); }
         }
-        /// <summary>
-        /// Instantiates a new printDocument and sets the default values.
-        /// </summary>
-        public PrintDocument() : base() {
-            OdataType = "#microsoft.graph.printDocument";
+        /// <summary>The uploadedDateTime property</summary>
+        public DateTimeOffset? UploadedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>("uploadedDateTime"); }
+            set { BackingStore?.Set("uploadedDateTime", value); }
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -48,7 +52,9 @@ namespace Microsoft.Graph.Beta.Models {
                 {"configuration", n => { Configuration = n.GetObjectValue<PrinterDocumentConfiguration>(PrinterDocumentConfiguration.CreateFromDiscriminatorValue); } },
                 {"contentType", n => { ContentType = n.GetStringValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"downloadedDateTime", n => { DownloadedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"size", n => { Size = n.GetLongValue(); } },
+                {"uploadedDateTime", n => { UploadedDateTime = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>
@@ -61,7 +67,9 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteObjectValue<PrinterDocumentConfiguration>("configuration", Configuration);
             writer.WriteStringValue("contentType", ContentType);
             writer.WriteStringValue("displayName", DisplayName);
+            writer.WriteDateTimeOffsetValue("downloadedDateTime", DownloadedDateTime);
             writer.WriteLongValue("size", Size);
+            writer.WriteDateTimeOffsetValue("uploadedDateTime", UploadedDateTime);
         }
     }
 }

@@ -27,12 +27,6 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("target", value); }
         }
         /// <summary>
-        /// Instantiates a new deviceConfigurationAssignment and sets the default values.
-        /// </summary>
-        public DeviceConfigurationAssignment() : base() {
-            OdataType = "#microsoft.graph.deviceConfigurationAssignment";
-        }
-        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

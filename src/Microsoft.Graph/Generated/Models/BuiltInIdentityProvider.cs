@@ -10,6 +10,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("identityProviderType"); }
             set { BackingStore?.Set("identityProviderType", value); }
         }
+        /// <summary>The state property</summary>
+        public IdentityProviderState? State {
+            get { return BackingStore?.Get<IdentityProviderState?>("state"); }
+            set { BackingStore?.Set("state", value); }
+        }
         /// <summary>
         /// Instantiates a new BuiltInIdentityProvider and sets the default values.
         /// </summary>
@@ -30,6 +35,7 @@ namespace Microsoft.Graph.Beta.Models {
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"identityProviderType", n => { IdentityProviderType = n.GetStringValue(); } },
+                {"state", n => { State = n.GetEnumValue<IdentityProviderState>(); } },
             };
         }
         /// <summary>
@@ -40,6 +46,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("identityProviderType", IdentityProviderType);
+            writer.WriteEnumValue<IdentityProviderState>("state", State);
         }
     }
 }

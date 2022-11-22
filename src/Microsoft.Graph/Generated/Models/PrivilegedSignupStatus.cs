@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class PrivilegedSignupStatus : Entity, IParsable {
         /// <summary>The isRegistered property</summary>
         public bool? IsRegistered {
@@ -15,12 +14,6 @@ namespace Microsoft.Graph.Beta.Models {
         public SetupStatus? Status {
             get { return BackingStore?.Get<SetupStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
-        }
-        /// <summary>
-        /// Instantiates a new privilegedSignupStatus and sets the default values.
-        /// </summary>
-        public PrivilegedSignupStatus() : base() {
-            OdataType = "#microsoft.graph.privilegedSignupStatus";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

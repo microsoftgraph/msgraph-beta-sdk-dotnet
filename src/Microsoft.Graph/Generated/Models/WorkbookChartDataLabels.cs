@@ -51,12 +51,6 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("showValue", value); }
         }
         /// <summary>
-        /// Instantiates a new workbookChartDataLabels and sets the default values.
-        /// </summary>
-        public WorkbookChartDataLabels() : base() {
-            OdataType = "#microsoft.graph.workbookChartDataLabels";
-        }
-        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

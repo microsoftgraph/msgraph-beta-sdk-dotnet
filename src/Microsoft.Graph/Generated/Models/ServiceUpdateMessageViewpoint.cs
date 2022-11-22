@@ -39,7 +39,6 @@ namespace Microsoft.Graph.Beta.Models {
         public ServiceUpdateMessageViewpoint() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
-            OdataType = "#microsoft.graph.serviceUpdateMessageViewpoint";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

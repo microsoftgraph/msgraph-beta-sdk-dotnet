@@ -34,7 +34,6 @@ namespace Microsoft.Graph.Beta.Models {
         public OutboundSharedUserProfile() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
-            OdataType = "#microsoft.graph.outboundSharedUserProfile";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

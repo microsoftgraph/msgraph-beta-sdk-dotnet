@@ -18,12 +18,6 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("contentType", value); }
         }
         /// <summary>
-        /// Instantiates a new teamworkHostedContent and sets the default values.
-        /// </summary>
-        public TeamworkHostedContent() : base() {
-            OdataType = "#microsoft.graph.teamworkHostedContent";
-        }
-        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

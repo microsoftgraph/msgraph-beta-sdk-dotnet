@@ -51,12 +51,6 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("targetGroupIds", value); }
         }
         /// <summary>
-        /// Instantiates a new androidForWorkSettings and sets the default values.
-        /// </summary>
-        public AndroidForWorkSettings() : base() {
-            OdataType = "#microsoft.graph.androidForWorkSettings";
-        }
-        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

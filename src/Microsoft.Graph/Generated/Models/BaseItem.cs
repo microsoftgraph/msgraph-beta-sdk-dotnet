@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class BaseItem : Entity, IParsable {
         /// <summary>Identity of the user, device, or application which created the item. Read-only.</summary>
         public IdentitySet CreatedBy {
@@ -61,12 +61,6 @@ namespace Microsoft.Graph.Beta.Models {
         public string WebUrl {
             get { return BackingStore?.Get<string>("webUrl"); }
             set { BackingStore?.Set("webUrl", value); }
-        }
-        /// <summary>
-        /// Instantiates a new baseItem and sets the default values.
-        /// </summary>
-        public BaseItem() : base() {
-            OdataType = "#microsoft.graph.baseItem";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

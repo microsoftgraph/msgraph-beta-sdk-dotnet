@@ -31,6 +31,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.HybridAgentUpdaterConfiguration>("hybridAgentUpdaterConfiguration"); }
             set { BackingStore?.Set("hybridAgentUpdaterConfiguration", value); }
         }
+        /// <summary>The isDefaultAccessEnabled property</summary>
+        public bool? IsDefaultAccessEnabled {
+            get { return BackingStore?.Get<bool?>("isDefaultAccessEnabled"); }
+            set { BackingStore?.Set("isDefaultAccessEnabled", value); }
+        }
         /// <summary>Represents if Azure AD Application Proxy is enabled for the tenant.</summary>
         public bool? IsEnabled {
             get { return BackingStore?.Get<bool?>("isEnabled"); }
@@ -40,12 +45,6 @@ namespace Microsoft.Graph.Beta.Models {
         public List<PublishedResource> PublishedResources {
             get { return BackingStore?.Get<List<PublishedResource>>("publishedResources"); }
             set { BackingStore?.Set("publishedResources", value); }
-        }
-        /// <summary>
-        /// Instantiates a new onPremisesPublishingProfile and sets the default values.
-        /// </summary>
-        public OnPremisesPublishingProfile() : base() {
-            OdataType = "#microsoft.graph.onPremisesPublishingProfile";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -65,6 +64,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"connectorGroups", n => { ConnectorGroups = n.GetCollectionOfObjectValues<ConnectorGroup>(ConnectorGroup.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"connectors", n => { Connectors = n.GetCollectionOfObjectValues<Connector>(Connector.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"hybridAgentUpdaterConfiguration", n => { HybridAgentUpdaterConfiguration = n.GetObjectValue<Microsoft.Graph.Beta.Models.HybridAgentUpdaterConfiguration>(Microsoft.Graph.Beta.Models.HybridAgentUpdaterConfiguration.CreateFromDiscriminatorValue); } },
+                {"isDefaultAccessEnabled", n => { IsDefaultAccessEnabled = n.GetBoolValue(); } },
                 {"isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
                 {"publishedResources", n => { PublishedResources = n.GetCollectionOfObjectValues<PublishedResource>(PublishedResource.CreateFromDiscriminatorValue)?.ToList(); } },
             };
@@ -81,6 +81,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfObjectValues<ConnectorGroup>("connectorGroups", ConnectorGroups);
             writer.WriteCollectionOfObjectValues<Connector>("connectors", Connectors);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.HybridAgentUpdaterConfiguration>("hybridAgentUpdaterConfiguration", HybridAgentUpdaterConfiguration);
+            writer.WriteBoolValue("isDefaultAccessEnabled", IsDefaultAccessEnabled);
             writer.WriteBoolValue("isEnabled", IsEnabled);
             writer.WriteCollectionOfObjectValues<PublishedResource>("publishedResources", PublishedResources);
         }

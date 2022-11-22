@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class PrivilegedRoleAssignmentRequest : Entity, IParsable {
         /// <summary>The state of the assignment. The value can be Eligible for eligible assignment Active - if it is directly assigned Active by administrators, or activated on an eligible assignment by the users.</summary>
         public string AssignmentState {
@@ -64,12 +65,6 @@ namespace Microsoft.Graph.Beta.Models {
         public string UserId {
             get { return BackingStore?.Get<string>("userId"); }
             set { BackingStore?.Set("userId", value); }
-        }
-        /// <summary>
-        /// Instantiates a new privilegedRoleAssignmentRequest and sets the default values.
-        /// </summary>
-        public PrivilegedRoleAssignmentRequest() : base() {
-            OdataType = "#microsoft.graph.privilegedRoleAssignmentRequest";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

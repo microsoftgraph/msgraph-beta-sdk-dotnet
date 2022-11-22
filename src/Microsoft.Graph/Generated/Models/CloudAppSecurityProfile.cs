@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class CloudAppSecurityProfile : Entity, IParsable {
         /// <summary>The azureSubscriptionId property</summary>
         public string AzureSubscriptionId {
@@ -90,12 +90,6 @@ namespace Microsoft.Graph.Beta.Models {
         public SecurityVendorInformation VendorInformation {
             get { return BackingStore?.Get<SecurityVendorInformation>("vendorInformation"); }
             set { BackingStore?.Set("vendorInformation", value); }
-        }
-        /// <summary>
-        /// Instantiates a new cloudAppSecurityProfile and sets the default values.
-        /// </summary>
-        public CloudAppSecurityProfile() : base() {
-            OdataType = "#microsoft.graph.cloudAppSecurityProfile";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

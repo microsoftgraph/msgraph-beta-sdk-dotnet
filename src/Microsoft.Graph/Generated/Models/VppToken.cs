@@ -92,12 +92,6 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("vppTokenAccountType", value); }
         }
         /// <summary>
-        /// Instantiates a new vppToken and sets the default values.
-        /// </summary>
-        public VppToken() : base() {
-            OdataType = "#microsoft.graph.vppToken";
-        }
-        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

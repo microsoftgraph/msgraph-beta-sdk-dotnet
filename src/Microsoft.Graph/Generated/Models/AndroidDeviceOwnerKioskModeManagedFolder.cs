@@ -40,7 +40,6 @@ namespace Microsoft.Graph.Beta.Models {
         public AndroidDeviceOwnerKioskModeManagedFolder() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
-            OdataType = "#microsoft.graph.androidDeviceOwnerKioskModeManagedFolder";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

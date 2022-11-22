@@ -8,12 +8,6 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
     /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class UpdatableAsset : Entity, IParsable {
         /// <summary>
-        /// Instantiates a new updatableAsset and sets the default values.
-        /// </summary>
-        public UpdatableAsset() : base() {
-            OdataType = "#microsoft.graph.windowsUpdates.updatableAsset";
-        }
-        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

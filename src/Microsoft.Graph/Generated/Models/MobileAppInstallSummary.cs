@@ -56,12 +56,6 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("pendingInstallUserCount", value); }
         }
         /// <summary>
-        /// Instantiates a new mobileAppInstallSummary and sets the default values.
-        /// </summary>
-        public MobileAppInstallSummary() : base() {
-            OdataType = "#microsoft.graph.mobileAppInstallSummary";
-        }
-        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

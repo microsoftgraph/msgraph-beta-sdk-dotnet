@@ -11,12 +11,6 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("insights", value); }
         }
         /// <summary>
-        /// Instantiates a new userExperienceAnalyticsOverview and sets the default values.
-        /// </summary>
-        public UserExperienceAnalyticsOverview() : base() {
-            OdataType = "#microsoft.graph.userExperienceAnalyticsOverview";
-        }
-        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

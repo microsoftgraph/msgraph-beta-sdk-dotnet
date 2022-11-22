@@ -29,7 +29,6 @@ namespace Microsoft.Graph.Beta.Models {
         public ResultTemplateOption() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
-            OdataType = "#microsoft.graph.resultTemplateOption";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

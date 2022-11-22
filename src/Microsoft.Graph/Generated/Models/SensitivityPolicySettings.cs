@@ -26,12 +26,6 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("isMandatory", value); }
         }
         /// <summary>
-        /// Instantiates a new sensitivityPolicySettings and sets the default values.
-        /// </summary>
-        public SensitivityPolicySettings() : base() {
-            OdataType = "#microsoft.graph.sensitivityPolicySettings";
-        }
-        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

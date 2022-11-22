@@ -34,7 +34,6 @@ namespace Microsoft.Graph.Beta.Models {
         public LabelPolicy() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
-            OdataType = "#microsoft.graph.labelPolicy";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

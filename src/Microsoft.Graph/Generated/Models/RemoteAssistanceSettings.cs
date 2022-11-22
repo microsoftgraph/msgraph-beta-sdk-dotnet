@@ -21,12 +21,6 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("remoteAssistanceState", value); }
         }
         /// <summary>
-        /// Instantiates a new remoteAssistanceSettings and sets the default values.
-        /// </summary>
-        public RemoteAssistanceSettings() : base() {
-            OdataType = "#microsoft.graph.remoteAssistanceSettings";
-        }
-        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

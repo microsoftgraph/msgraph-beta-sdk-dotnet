@@ -62,12 +62,6 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("windowsOnboarded", value); }
         }
         /// <summary>
-        /// Instantiates a new complianceManagementPartner and sets the default values.
-        /// </summary>
-        public ComplianceManagementPartner() : base() {
-            OdataType = "#microsoft.graph.complianceManagementPartner";
-        }
-        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

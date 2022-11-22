@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Beta.Models {
         public MacOSLaunchItem() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
-            OdataType = "#microsoft.graph.macOSLaunchItem";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

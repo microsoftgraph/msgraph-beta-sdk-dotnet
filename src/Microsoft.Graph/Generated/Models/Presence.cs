@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class Presence : Entity, IParsable {
         /// <summary>The supplemental information to a user&apos;s availability. Possible values are Available, Away, BeRightBack, Busy, DoNotDisturb, InACall, InAConferenceCall, Inactive,InAMeeting, Offline, OffWork,OutOfOffice, PresenceUnknown,Presenting, UrgentInterruptionsOnly.</summary>
         public string Activity {
@@ -19,12 +20,6 @@ namespace Microsoft.Graph.Beta.Models {
         public Microsoft.Graph.Beta.Models.OutOfOfficeSettings OutOfOfficeSettings {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OutOfOfficeSettings>("outOfOfficeSettings"); }
             set { BackingStore?.Set("outOfOfficeSettings", value); }
-        }
-        /// <summary>
-        /// Instantiates a new presence and sets the default values.
-        /// </summary>
-        public Presence() : base() {
-            OdataType = "#microsoft.graph.presence";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

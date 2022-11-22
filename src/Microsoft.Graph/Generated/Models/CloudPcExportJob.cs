@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class CloudPcExportJob : Entity, IParsable {
         /// <summary>The date time when the export job expires.</summary>
         public DateTimeOffset? ExpirationDateTime {
@@ -45,12 +44,6 @@ namespace Microsoft.Graph.Beta.Models {
         public List<string> Select {
             get { return BackingStore?.Get<List<string>>("select"); }
             set { BackingStore?.Set("select", value); }
-        }
-        /// <summary>
-        /// Instantiates a new cloudPcExportJob and sets the default values.
-        /// </summary>
-        public CloudPcExportJob() : base() {
-            OdataType = "#microsoft.graph.cloudPcExportJob";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

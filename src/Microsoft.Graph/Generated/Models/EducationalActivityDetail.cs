@@ -69,7 +69,6 @@ namespace Microsoft.Graph.Beta.Models {
         public EducationalActivityDetail() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
-            OdataType = "#microsoft.graph.educationalActivityDetail";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

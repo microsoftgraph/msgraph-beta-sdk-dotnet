@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class ExternalConnection : Entity, IParsable {
         /// <summary>The configuration property</summary>
         public Microsoft.Graph.Beta.Models.Configuration Configuration {
@@ -45,12 +45,6 @@ namespace Microsoft.Graph.Beta.Models {
         public ConnectionState? State {
             get { return BackingStore?.Get<ConnectionState?>("state"); }
             set { BackingStore?.Set("state", value); }
-        }
-        /// <summary>
-        /// Instantiates a new externalConnection and sets the default values.
-        /// </summary>
-        public ExternalConnection() : base() {
-            OdataType = "#microsoft.graph.externalConnection";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

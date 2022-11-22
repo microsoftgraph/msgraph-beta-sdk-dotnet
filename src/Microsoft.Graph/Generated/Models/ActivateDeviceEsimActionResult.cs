@@ -11,12 +11,6 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("carrierUrl", value); }
         }
         /// <summary>
-        /// Instantiates a new ActivateDeviceEsimActionResult and sets the default values.
-        /// </summary>
-        public ActivateDeviceEsimActionResult() : base() {
-            OdataType = "#microsoft.graph.activateDeviceEsimActionResult";
-        }
-        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

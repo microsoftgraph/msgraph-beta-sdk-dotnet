@@ -110,6 +110,11 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
             get { return BackingStore?.Get<List<ManagementTemplateCollection>>("managementTemplateCollections"); }
             set { BackingStore?.Set("managementTemplateCollections", value); }
         }
+        /// <summary>The managementTemplateCollectionTenantSummaries property</summary>
+        public List<ManagementTemplateCollectionTenantSummary> ManagementTemplateCollectionTenantSummaries {
+            get { return BackingStore?.Get<List<ManagementTemplateCollectionTenantSummary>>("managementTemplateCollectionTenantSummaries"); }
+            set { BackingStore?.Set("managementTemplateCollectionTenantSummaries", value); }
+        }
         /// <summary>The collection of baseline management templates across managed tenants.</summary>
         public List<ManagementTemplate> ManagementTemplates {
             get { return BackingStore?.Get<List<ManagementTemplate>>("managementTemplates"); }
@@ -119,6 +124,11 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         public List<ManagementTemplateStep> ManagementTemplateSteps {
             get { return BackingStore?.Get<List<ManagementTemplateStep>>("managementTemplateSteps"); }
             set { BackingStore?.Set("managementTemplateSteps", value); }
+        }
+        /// <summary>The managementTemplateStepTenantSummaries property</summary>
+        public List<ManagementTemplateStepTenantSummary> ManagementTemplateStepTenantSummaries {
+            get { return BackingStore?.Get<List<ManagementTemplateStepTenantSummary>>("managementTemplateStepTenantSummaries"); }
+            set { BackingStore?.Set("managementTemplateStepTenantSummaries", value); }
         }
         /// <summary>The managementTemplateStepVersions property</summary>
         public List<ManagementTemplateStepVersion> ManagementTemplateStepVersions {
@@ -166,12 +176,6 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
             set { BackingStore?.Set("windowsProtectionStates", value); }
         }
         /// <summary>
-        /// Instantiates a new managedTenant and sets the default values.
-        /// </summary>
-        public ManagedTenant() : base() {
-            OdataType = "#microsoft.graph.managedTenants.managedTenant";
-        }
-        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
@@ -205,8 +209,10 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
                 {"managementActionTenantDeploymentStatuses", n => { ManagementActionTenantDeploymentStatuses = n.GetCollectionOfObjectValues<ManagementActionTenantDeploymentStatus>(ManagementActionTenantDeploymentStatus.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"managementIntents", n => { ManagementIntents = n.GetCollectionOfObjectValues<ManagementIntent>(ManagementIntent.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"managementTemplateCollections", n => { ManagementTemplateCollections = n.GetCollectionOfObjectValues<ManagementTemplateCollection>(ManagementTemplateCollection.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"managementTemplateCollectionTenantSummaries", n => { ManagementTemplateCollectionTenantSummaries = n.GetCollectionOfObjectValues<ManagementTemplateCollectionTenantSummary>(ManagementTemplateCollectionTenantSummary.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"managementTemplates", n => { ManagementTemplates = n.GetCollectionOfObjectValues<ManagementTemplate>(ManagementTemplate.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"managementTemplateSteps", n => { ManagementTemplateSteps = n.GetCollectionOfObjectValues<ManagementTemplateStep>(ManagementTemplateStep.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"managementTemplateStepTenantSummaries", n => { ManagementTemplateStepTenantSummaries = n.GetCollectionOfObjectValues<ManagementTemplateStepTenantSummary>(ManagementTemplateStepTenantSummary.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"managementTemplateStepVersions", n => { ManagementTemplateStepVersions = n.GetCollectionOfObjectValues<ManagementTemplateStepVersion>(ManagementTemplateStepVersion.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"myRoles", n => { MyRoles = n.GetCollectionOfObjectValues<MyRole>(MyRole.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"tenantGroups", n => { TenantGroups = n.GetCollectionOfObjectValues<TenantGroup>(TenantGroup.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -246,8 +252,10 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
             writer.WriteCollectionOfObjectValues<ManagementActionTenantDeploymentStatus>("managementActionTenantDeploymentStatuses", ManagementActionTenantDeploymentStatuses);
             writer.WriteCollectionOfObjectValues<ManagementIntent>("managementIntents", ManagementIntents);
             writer.WriteCollectionOfObjectValues<ManagementTemplateCollection>("managementTemplateCollections", ManagementTemplateCollections);
+            writer.WriteCollectionOfObjectValues<ManagementTemplateCollectionTenantSummary>("managementTemplateCollectionTenantSummaries", ManagementTemplateCollectionTenantSummaries);
             writer.WriteCollectionOfObjectValues<ManagementTemplate>("managementTemplates", ManagementTemplates);
             writer.WriteCollectionOfObjectValues<ManagementTemplateStep>("managementTemplateSteps", ManagementTemplateSteps);
+            writer.WriteCollectionOfObjectValues<ManagementTemplateStepTenantSummary>("managementTemplateStepTenantSummaries", ManagementTemplateStepTenantSummaries);
             writer.WriteCollectionOfObjectValues<ManagementTemplateStepVersion>("managementTemplateStepVersions", ManagementTemplateStepVersions);
             writer.WriteCollectionOfObjectValues<MyRole>("myRoles", MyRoles);
             writer.WriteCollectionOfObjectValues<TenantGroup>("tenantGroups", TenantGroups);

@@ -44,7 +44,6 @@ namespace Microsoft.Graph.Beta.Models {
         public IdentityProtectionRoot() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
-            OdataType = "#microsoft.graph.identityProtectionRoot";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

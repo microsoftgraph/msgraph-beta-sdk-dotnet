@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public enum CloudPcOnPremisesConnectionHealthCheckErrorType {
         DnsCheckFqdnNotFound,
         DnsCheckNameWithInvalidCharacter,
@@ -54,6 +54,8 @@ namespace Microsoft.Graph.Beta.Models {
         PermissionCheckNoResourceGroupNetworkContributorRole,
         PermissionCheckTransientServiceError,
         PermissionCheckUnknownError,
+        UdpConnectivityCheckStunUrlNotAllowListed,
+        UdpConnectivityCheckUnknownError,
         InternalServerErrorDeploymentCanceled,
         InternalServerErrorAllocateResourceFailed,
         InternalServerErrorVMDeploymentTimeout,

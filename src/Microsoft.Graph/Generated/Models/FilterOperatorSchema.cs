@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class FilterOperatorSchema : Entity, IParsable {
         /// <summary>The arity property</summary>
         public ScopeOperatorType? Arity {
@@ -20,12 +19,6 @@ namespace Microsoft.Graph.Beta.Models {
         public List<AttributeType?> SupportedAttributeTypes {
             get { return BackingStore?.Get<List<AttributeType?>>("supportedAttributeTypes"); }
             set { BackingStore?.Set("supportedAttributeTypes", value); }
-        }
-        /// <summary>
-        /// Instantiates a new filterOperatorSchema and sets the default values.
-        /// </summary>
-        public FilterOperatorSchema() : base() {
-            OdataType = "#microsoft.graph.filterOperatorSchema";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

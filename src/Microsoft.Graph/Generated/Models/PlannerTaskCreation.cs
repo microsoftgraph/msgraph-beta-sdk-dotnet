@@ -1,3 +1,4 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions.Store;
 using System;
@@ -13,6 +14,11 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
+        /// <summary>The creationSourceKind property</summary>
+        public PlannerCreationSourceKind? CreationSourceKind {
+            get { return BackingStore?.Get<PlannerCreationSourceKind?>("creationSourceKind"); }
+            set { BackingStore?.Set("creationSourceKind", value); }
+        }
         /// <summary>The OdataType property</summary>
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -29,7 +35,6 @@ namespace Microsoft.Graph.Beta.Models {
         public PlannerTaskCreation() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
-            OdataType = "#microsoft.graph.plannerTaskCreation";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -37,13 +42,19 @@ namespace Microsoft.Graph.Beta.Models {
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static PlannerTaskCreation CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PlannerTaskCreation();
+            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.plannerExternalTaskSource" => new PlannerExternalTaskSource(),
+                "#microsoft.graph.plannerTeamsPublicationInfo" => new PlannerTeamsPublicationInfo(),
+                _ => new PlannerTaskCreation(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
+                {"creationSourceKind", n => { CreationSourceKind = n.GetEnumValue<PlannerCreationSourceKind>(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"teamsPublicationInfo", n => { TeamsPublicationInfo = n.GetObjectValue<PlannerTeamsPublicationInfo>(PlannerTeamsPublicationInfo.CreateFromDiscriminatorValue); } },
             };
@@ -54,6 +65,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
+            writer.WriteEnumValue<PlannerCreationSourceKind>("creationSourceKind", CreationSourceKind);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteObjectValue<PlannerTeamsPublicationInfo>("teamsPublicationInfo", TeamsPublicationInfo);
             writer.WriteAdditionalData(AdditionalData);

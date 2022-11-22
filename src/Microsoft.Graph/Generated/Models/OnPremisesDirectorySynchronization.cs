@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class OnPremisesDirectorySynchronization : Entity, IParsable {
         /// <summary>The configuration property</summary>
         public OnPremisesDirectorySynchronizationConfiguration Configuration {
@@ -15,12 +15,6 @@ namespace Microsoft.Graph.Beta.Models {
         public OnPremisesDirectorySynchronizationFeature Features {
             get { return BackingStore?.Get<OnPremisesDirectorySynchronizationFeature>("features"); }
             set { BackingStore?.Set("features", value); }
-        }
-        /// <summary>
-        /// Instantiates a new onPremisesDirectorySynchronization and sets the default values.
-        /// </summary>
-        public OnPremisesDirectorySynchronization() : base() {
-            OdataType = "#microsoft.graph.onPremisesDirectorySynchronization";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -23,12 +23,6 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("visibleHistoryStartDateTime", value); }
         }
         /// <summary>
-        /// Instantiates a new conversationMember and sets the default values.
-        /// </summary>
-        public ConversationMember() : base() {
-            OdataType = "#microsoft.graph.conversationMember";
-        }
-        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
@@ -38,6 +32,7 @@ namespace Microsoft.Graph.Beta.Models {
             return mappingValue switch {
                 "#microsoft.graph.aadUserConversationMember" => new AadUserConversationMember(),
                 "#microsoft.graph.anonymousGuestConversationMember" => new AnonymousGuestConversationMember(),
+                "#microsoft.graph.azureCommunicationServicesUserConversationMember" => new AzureCommunicationServicesUserConversationMember(),
                 "#microsoft.graph.microsoftAccountUserConversationMember" => new MicrosoftAccountUserConversationMember(),
                 "#microsoft.graph.skypeForBusinessUserConversationMember" => new SkypeForBusinessUserConversationMember(),
                 "#microsoft.graph.skypeUserConversationMember" => new SkypeUserConversationMember(),

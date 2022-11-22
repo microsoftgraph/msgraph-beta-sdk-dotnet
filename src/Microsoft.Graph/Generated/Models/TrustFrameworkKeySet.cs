@@ -4,18 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class TrustFrameworkKeySet : Entity, IParsable {
         /// <summary>A collection of the keys.</summary>
         public List<TrustFrameworkKey> Keys {
             get { return BackingStore?.Get<List<TrustFrameworkKey>>("keys"); }
             set { BackingStore?.Set("keys", value); }
-        }
-        /// <summary>
-        /// Instantiates a new trustFrameworkKeySet and sets the default values.
-        /// </summary>
-        public TrustFrameworkKeySet() : base() {
-            OdataType = "#microsoft.graph.trustFrameworkKeySet";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

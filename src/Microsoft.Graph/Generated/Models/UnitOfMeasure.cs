@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class UnitOfMeasure : Entity, IParsable {
         /// <summary>The code property</summary>
         public string Code {
@@ -25,12 +25,6 @@ namespace Microsoft.Graph.Beta.Models {
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
-        }
-        /// <summary>
-        /// Instantiates a new unitOfMeasure and sets the default values.
-        /// </summary>
-        public UnitOfMeasure() : base() {
-            OdataType = "#microsoft.graph.unitOfMeasure";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

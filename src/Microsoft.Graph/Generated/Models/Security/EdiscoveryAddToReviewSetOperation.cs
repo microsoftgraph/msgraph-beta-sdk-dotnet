@@ -16,12 +16,6 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("search", value); }
         }
         /// <summary>
-        /// Instantiates a new EdiscoveryAddToReviewSetOperation and sets the default values.
-        /// </summary>
-        public EdiscoveryAddToReviewSetOperation() : base() {
-            OdataType = "#microsoft.graph.security.ediscoveryAddToReviewSetOperation";
-        }
-        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

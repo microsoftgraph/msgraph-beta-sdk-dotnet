@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class CredentialUserRegistrationDetails : Entity, IParsable {
         /// <summary>Represents the authentication method that the user has registered. Possible values are: email, mobilePhone, officePhone,  securityQuestion (only used for self-service password reset), appNotification,  appCode, alternateMobilePhone (supported only in registration),  fido,  appPassword,  unknownFutureValue.</summary>
         public List<RegistrationAuthMethod?> AuthMethods {
@@ -40,12 +39,6 @@ namespace Microsoft.Graph.Beta.Models {
         public string UserPrincipalName {
             get { return BackingStore?.Get<string>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
-        }
-        /// <summary>
-        /// Instantiates a new credentialUserRegistrationDetails and sets the default values.
-        /// </summary>
-        public CredentialUserRegistrationDetails() : base() {
-            OdataType = "#microsoft.graph.credentialUserRegistrationDetails";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

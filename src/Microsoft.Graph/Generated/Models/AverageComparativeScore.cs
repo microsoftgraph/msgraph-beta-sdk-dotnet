@@ -34,7 +34,6 @@ namespace Microsoft.Graph.Beta.Models {
         public AverageComparativeScore() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
-            OdataType = "#microsoft.graph.averageComparativeScore";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

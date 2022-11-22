@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class Incident : Entity, IParsable {
         /// <summary>The list of related alerts. Supports $expand.</summary>
         public List<Alert> Alerts {
@@ -75,12 +75,6 @@ namespace Microsoft.Graph.Beta.Models.Security {
         public string TenantId {
             get { return BackingStore?.Get<string>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
-        }
-        /// <summary>
-        /// Instantiates a new incident and sets the default values.
-        /// </summary>
-        public Incident() : base() {
-            OdataType = "#microsoft.graph.security.incident";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

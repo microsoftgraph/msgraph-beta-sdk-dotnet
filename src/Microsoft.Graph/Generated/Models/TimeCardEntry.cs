@@ -39,7 +39,6 @@ namespace Microsoft.Graph.Beta.Models {
         public TimeCardEntry() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
-            OdataType = "#microsoft.graph.timeCardEntry";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

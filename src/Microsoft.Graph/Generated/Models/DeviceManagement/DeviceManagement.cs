@@ -881,12 +881,6 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
             set { BackingStore?.Set("zebraFotaDeployments", value); }
         }
         /// <summary>
-        /// Instantiates a new DeviceManagement and sets the default values.
-        /// </summary>
-        public DeviceManagement() : base() {
-            OdataType = "#microsoft.graph.deviceManagement";
-        }
-        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class PrintConnector : Entity, IParsable {
         /// <summary>The connector&apos;s version.</summary>
         public string AppVersion {
@@ -45,12 +45,6 @@ namespace Microsoft.Graph.Beta.Models {
         public DateTimeOffset? RegisteredDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("registeredDateTime"); }
             set { BackingStore?.Set("registeredDateTime", value); }
-        }
-        /// <summary>
-        /// Instantiates a new printConnector and sets the default values.
-        /// </summary>
-        public PrintConnector() : base() {
-            OdataType = "#microsoft.graph.printConnector";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

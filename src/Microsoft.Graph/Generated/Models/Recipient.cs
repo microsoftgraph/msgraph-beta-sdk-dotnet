@@ -30,7 +30,6 @@ namespace Microsoft.Graph.Beta.Models {
         public Recipient() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
-            OdataType = "#microsoft.graph.recipient";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

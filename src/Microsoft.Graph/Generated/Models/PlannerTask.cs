@@ -1,10 +1,11 @@
+using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class PlannerTask : PlannerDelta, IParsable {
         /// <summary>Number of checklist items with value set to false, representing incomplete items.</summary>
         public int? ActiveChecklistItemCount {
@@ -137,18 +138,16 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("title", value); }
         }
         /// <summary>
-        /// Instantiates a new plannerTask and sets the default values.
-        /// </summary>
-        public PlannerTask() : base() {
-            OdataType = "#microsoft.graph.plannerTask";
-        }
-        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new PlannerTask CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new PlannerTask();
+            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.businessScenarioTask" => new BusinessScenarioTask(),
+                _ => new PlannerTask(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model

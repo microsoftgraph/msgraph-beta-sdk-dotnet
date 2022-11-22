@@ -40,7 +40,6 @@ namespace Microsoft.Graph.Beta.Models {
         public RgbColor() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
-            OdataType = "#microsoft.graph.rgbColor";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

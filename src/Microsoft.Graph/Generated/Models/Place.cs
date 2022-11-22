@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class Place : Entity, IParsable {
         /// <summary>The street address of the place.</summary>
         public PhysicalAddress Address {
@@ -26,12 +26,6 @@ namespace Microsoft.Graph.Beta.Models {
         public string Phone {
             get { return BackingStore?.Get<string>("phone"); }
             set { BackingStore?.Set("phone", value); }
-        }
-        /// <summary>
-        /// Instantiates a new place and sets the default values.
-        /// </summary>
-        public Place() : base() {
-            OdataType = "#microsoft.graph.place";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

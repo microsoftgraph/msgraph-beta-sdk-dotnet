@@ -4,18 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class ColumnLink : Entity, IParsable {
         /// <summary>The name of the column  in this content type.</summary>
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
-        }
-        /// <summary>
-        /// Instantiates a new columnLink and sets the default values.
-        /// </summary>
-        public ColumnLink() : base() {
-            OdataType = "#microsoft.graph.columnLink";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

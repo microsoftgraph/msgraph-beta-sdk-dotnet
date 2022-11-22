@@ -11,12 +11,6 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("userRegistrationDetails", value); }
         }
         /// <summary>
-        /// Instantiates a new AuthenticationMethodsRoot and sets the default values.
-        /// </summary>
-        public AuthenticationMethodsRoot() : base() {
-            OdataType = "#microsoft.graph.authenticationMethodsRoot";
-        }
-        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

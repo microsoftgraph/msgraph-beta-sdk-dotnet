@@ -5,18 +5,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class IdentityProviderBase : Entity, IParsable {
         /// <summary>The display name of the identity provider.</summary>
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
-        }
-        /// <summary>
-        /// Instantiates a new identityProviderBase and sets the default values.
-        /// </summary>
-        public IdentityProviderBase() : base() {
-            OdataType = "#microsoft.graph.identityProviderBase";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

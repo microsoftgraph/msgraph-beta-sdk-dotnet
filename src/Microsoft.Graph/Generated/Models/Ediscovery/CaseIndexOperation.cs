@@ -6,12 +6,6 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Ediscovery {
     public class CaseIndexOperation : CaseOperation, IParsable {
         /// <summary>
-        /// Instantiates a new CaseIndexOperation and sets the default values.
-        /// </summary>
-        public CaseIndexOperation() : base() {
-            OdataType = "#microsoft.graph.ediscovery.caseIndexOperation";
-        }
-        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

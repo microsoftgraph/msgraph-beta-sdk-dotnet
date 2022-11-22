@@ -72,12 +72,6 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("technologies", value); }
         }
         /// <summary>
-        /// Instantiates a new deviceManagementCompliancePolicy and sets the default values.
-        /// </summary>
-        public DeviceManagementCompliancePolicy() : base() {
-            OdataType = "#microsoft.graph.deviceManagementCompliancePolicy";
-        }
-        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

@@ -21,8 +21,10 @@ using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementActions;
 using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementActionTenantDeploymentStatuses;
 using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementIntents;
 using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplateCollections;
+using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplateCollectionTenantSummaries;
 using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplates;
 using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplateSteps;
+using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplateStepTenantSummaries;
 using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.ManagementTemplateStepVersions;
 using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.MyRoles;
 using Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantGroups;
@@ -127,6 +129,10 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants {
         public ManagementTemplateCollectionsRequestBuilder ManagementTemplateCollections { get =>
             new ManagementTemplateCollectionsRequestBuilder(PathParameters, RequestAdapter);
         }
+        /// <summary>Provides operations to manage the managementTemplateCollectionTenantSummaries property of the microsoft.graph.managedTenants.managedTenant entity.</summary>
+        public ManagementTemplateCollectionTenantSummariesRequestBuilder ManagementTemplateCollectionTenantSummaries { get =>
+            new ManagementTemplateCollectionTenantSummariesRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the managementTemplates property of the microsoft.graph.managedTenants.managedTenant entity.</summary>
         public ManagementTemplatesRequestBuilder ManagementTemplates { get =>
             new ManagementTemplatesRequestBuilder(PathParameters, RequestAdapter);
@@ -134,6 +140,10 @@ namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants {
         /// <summary>Provides operations to manage the managementTemplateSteps property of the microsoft.graph.managedTenants.managedTenant entity.</summary>
         public ManagementTemplateStepsRequestBuilder ManagementTemplateSteps { get =>
             new ManagementTemplateStepsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the managementTemplateStepTenantSummaries property of the microsoft.graph.managedTenants.managedTenant entity.</summary>
+        public ManagementTemplateStepTenantSummariesRequestBuilder ManagementTemplateStepTenantSummaries { get =>
+            new ManagementTemplateStepTenantSummariesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the managementTemplateStepVersions property of the microsoft.graph.managedTenants.managedTenant entity.</summary>
         public ManagementTemplateStepVersionsRequestBuilder ManagementTemplateStepVersions { get =>

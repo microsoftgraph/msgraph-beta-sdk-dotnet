@@ -39,7 +39,6 @@ namespace Microsoft.Graph.Beta.Models {
         public MicrosoftAuthenticatorFeatureSettings() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
-            OdataType = "#microsoft.graph.microsoftAuthenticatorFeatureSettings";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

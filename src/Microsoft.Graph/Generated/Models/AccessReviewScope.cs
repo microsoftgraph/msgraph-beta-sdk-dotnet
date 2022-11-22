@@ -25,7 +25,6 @@ namespace Microsoft.Graph.Beta.Models {
         public AccessReviewScope() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
-            OdataType = "#microsoft.graph.accessReviewScope";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

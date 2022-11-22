@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class ProfileCardProperty : Entity, IParsable {
         /// <summary>Allows an administrator to set a custom display label for the directory property and localize it for the users in their tenant.</summary>
         public List<ProfileCardAnnotation> Annotations {
@@ -15,12 +15,6 @@ namespace Microsoft.Graph.Beta.Models {
         public string DirectoryPropertyName {
             get { return BackingStore?.Get<string>("directoryPropertyName"); }
             set { BackingStore?.Set("directoryPropertyName", value); }
-        }
-        /// <summary>
-        /// Instantiates a new profileCardProperty and sets the default values.
-        /// </summary>
-        public ProfileCardProperty() : base() {
-            OdataType = "#microsoft.graph.profileCardProperty";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

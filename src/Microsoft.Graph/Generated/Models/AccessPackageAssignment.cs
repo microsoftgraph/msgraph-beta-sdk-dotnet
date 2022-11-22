@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class AccessPackageAssignment : Entity, IParsable {
         /// <summary>Read-only. Nullable. Supports $filter (eq) on the id property and $expand query parameters.</summary>
         public Microsoft.Graph.Beta.Models.AccessPackage AccessPackage {
@@ -74,12 +75,6 @@ namespace Microsoft.Graph.Beta.Models {
         public string TargetId {
             get { return BackingStore?.Get<string>("targetId"); }
             set { BackingStore?.Set("targetId", value); }
-        }
-        /// <summary>
-        /// Instantiates a new accessPackageAssignment and sets the default values.
-        /// </summary>
-        public AccessPackageAssignment() : base() {
-            OdataType = "#microsoft.graph.accessPackageAssignment";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

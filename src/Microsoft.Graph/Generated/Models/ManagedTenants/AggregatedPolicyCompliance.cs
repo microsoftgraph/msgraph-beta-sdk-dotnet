@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class AggregatedPolicyCompliance : Entity, IParsable {
         /// <summary>Identifier for the device compliance policy. Optional. Read-only.</summary>
         public string CompliancePolicyId {
@@ -60,12 +60,6 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         public string TenantId {
             get { return BackingStore?.Get<string>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
-        }
-        /// <summary>
-        /// Instantiates a new aggregatedPolicyCompliance and sets the default values.
-        /// </summary>
-        public AggregatedPolicyCompliance() : base() {
-            OdataType = "#microsoft.graph.managedTenants.aggregatedPolicyCompliance";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class ConnectionOperation : Entity, IParsable {
         /// <summary>The error property</summary>
         public PublicError Error {
@@ -15,12 +15,6 @@ namespace Microsoft.Graph.Beta.Models {
         public ConnectionOperationStatus? Status {
             get { return BackingStore?.Get<ConnectionOperationStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
-        }
-        /// <summary>
-        /// Instantiates a new connectionOperation and sets the default values.
-        /// </summary>
-        public ConnectionOperation() : base() {
-            OdataType = "#microsoft.graph.connectionOperation";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -2,7 +2,9 @@ using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Graph.Beta.Organization.Item.Branding.BackgroundImage;
 using Microsoft.Graph.Beta.Organization.Item.Branding.BannerLogo;
+using Microsoft.Graph.Beta.Organization.Item.Branding.CustomCSS;
 using Microsoft.Graph.Beta.Organization.Item.Branding.Favicon;
+using Microsoft.Graph.Beta.Organization.Item.Branding.HeaderLogo;
 using Microsoft.Graph.Beta.Organization.Item.Branding.Localizations;
 using Microsoft.Graph.Beta.Organization.Item.Branding.SquareLogo;
 using Microsoft.Graph.Beta.Organization.Item.Branding.SquareLogoDark;
@@ -26,8 +28,16 @@ namespace Microsoft.Graph.Beta.Organization.Item.Branding {
             new BannerLogoRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the media for the organization entity.</summary>
+        public CustomCSSRequestBuilder CustomCSS { get =>
+            new CustomCSSRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the media for the organization entity.</summary>
         public FaviconRequestBuilder Favicon { get =>
             new FaviconRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the media for the organization entity.</summary>
+        public HeaderLogoRequestBuilder HeaderLogo { get =>
+            new HeaderLogoRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the localizations property of the microsoft.graph.organizationalBranding entity.</summary>
         public LocalizationsRequestBuilder Localizations { get =>

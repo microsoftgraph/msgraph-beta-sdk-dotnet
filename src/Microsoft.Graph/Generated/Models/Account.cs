@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class Account : Entity, IParsable {
         /// <summary>The blocked property</summary>
         public bool? Blocked {
@@ -34,12 +35,6 @@ namespace Microsoft.Graph.Beta.Models {
         public string SubCategory {
             get { return BackingStore?.Get<string>("subCategory"); }
             set { BackingStore?.Set("subCategory", value); }
-        }
-        /// <summary>
-        /// Instantiates a new account and sets the default values.
-        /// </summary>
-        public Account() : base() {
-            OdataType = "#microsoft.graph.account";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

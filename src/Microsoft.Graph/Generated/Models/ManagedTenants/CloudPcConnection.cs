@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class CloudPcConnection : Entity, IParsable {
         /// <summary>The display name of the cloud PC connection. Required. Read-only.</summary>
         public string DisplayName {
@@ -30,12 +30,6 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         public string TenantId {
             get { return BackingStore?.Get<string>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
-        }
-        /// <summary>
-        /// Instantiates a new cloudPcConnection and sets the default values.
-        /// </summary>
-        public CloudPcConnection() : base() {
-            OdataType = "#microsoft.graph.managedTenants.cloudPcConnection";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -41,12 +41,6 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("unknownUserCount", value); }
         }
         /// <summary>
-        /// Instantiates a new deviceConfigurationUserStateSummary and sets the default values.
-        /// </summary>
-        public DeviceConfigurationUserStateSummary() : base() {
-            OdataType = "#microsoft.graph.deviceConfigurationUserStateSummary";
-        }
-        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
