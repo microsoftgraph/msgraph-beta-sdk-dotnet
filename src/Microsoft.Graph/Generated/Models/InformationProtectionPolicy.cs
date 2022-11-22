@@ -11,12 +11,6 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("labels", value); }
         }
         /// <summary>
-        /// Instantiates a new informationProtectionPolicy and sets the default values.
-        /// </summary>
-        public InformationProtectionPolicy() : base() {
-            OdataType = "#microsoft.graph.informationProtectionPolicy";
-        }
-        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

@@ -49,7 +49,6 @@ namespace Microsoft.Graph.Beta.Models {
         public ChatMessagePolicyViolation() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
-            OdataType = "#microsoft.graph.chatMessagePolicyViolation";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

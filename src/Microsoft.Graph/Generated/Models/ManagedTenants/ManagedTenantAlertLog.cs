@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class ManagedTenantAlertLog : Entity, IParsable {
         /// <summary>The alert property</summary>
         public ManagedTenantAlert Alert {
@@ -35,12 +35,6 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         public DateTimeOffset? LastActionDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastActionDateTime"); }
             set { BackingStore?.Set("lastActionDateTime", value); }
-        }
-        /// <summary>
-        /// Instantiates a new managedTenantAlertLog and sets the default values.
-        /// </summary>
-        public ManagedTenantAlertLog() : base() {
-            OdataType = "#microsoft.graph.managedTenants.managedTenantAlertLog";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

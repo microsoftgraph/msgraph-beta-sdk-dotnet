@@ -36,12 +36,6 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
             set { BackingStore?.Set("workflowTemplates", value); }
         }
         /// <summary>
-        /// Instantiates a new LifecycleWorkflowsContainer and sets the default values.
-        /// </summary>
-        public LifecycleWorkflowsContainer() : base() {
-            OdataType = "#microsoft.graph.identityGovernance.lifecycleWorkflowsContainer";
-        }
-        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

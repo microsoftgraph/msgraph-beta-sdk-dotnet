@@ -49,7 +49,6 @@ namespace Microsoft.Graph.Beta.Models {
         public TeamworkFeaturesConfiguration() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
-            OdataType = "#microsoft.graph.teamworkFeaturesConfiguration";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -8,12 +8,6 @@ namespace Microsoft.Graph.Beta.Models {
     /// <summary>An abstract class that represents a contained app in a mobileApp acting as a package.</summary>
     public class MobileContainedApp : Entity, IParsable {
         /// <summary>
-        /// Instantiates a new mobileContainedApp and sets the default values.
-        /// </summary>
-        public MobileContainedApp() : base() {
-            OdataType = "#microsoft.graph.mobileContainedApp";
-        }
-        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

@@ -1,7 +1,6 @@
 using Microsoft.Graph.Beta.DataClassification.ClassifyExactMatches;
 using Microsoft.Graph.Beta.DataClassification.ClassifyFile;
 using Microsoft.Graph.Beta.DataClassification.ClassifyFileJobs;
-using Microsoft.Graph.Beta.DataClassification.ClassifyText;
 using Microsoft.Graph.Beta.DataClassification.ClassifyTextJobs;
 using Microsoft.Graph.Beta.DataClassification.EvaluateDlpPoliciesJobs;
 using Microsoft.Graph.Beta.DataClassification.EvaluateLabelJobs;
@@ -34,10 +33,6 @@ namespace Microsoft.Graph.Beta.DataClassification {
         /// <summary>Provides operations to manage the classifyFileJobs property of the microsoft.graph.dataClassificationService entity.</summary>
         public ClassifyFileJobsRequestBuilder ClassifyFileJobs { get =>
             new ClassifyFileJobsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to call the classifyText method.</summary>
-        public ClassifyTextRequestBuilder ClassifyText { get =>
-            new ClassifyTextRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the classifyTextJobs property of the microsoft.graph.dataClassificationService entity.</summary>
         public ClassifyTextJobsRequestBuilder ClassifyTextJobs { get =>

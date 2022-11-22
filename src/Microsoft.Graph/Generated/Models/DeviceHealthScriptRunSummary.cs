@@ -61,12 +61,6 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("remediationSkippedDeviceCount", value); }
         }
         /// <summary>
-        /// Instantiates a new deviceHealthScriptRunSummary and sets the default values.
-        /// </summary>
-        public DeviceHealthScriptRunSummary() : base() {
-            OdataType = "#microsoft.graph.deviceHealthScriptRunSummary";
-        }
-        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

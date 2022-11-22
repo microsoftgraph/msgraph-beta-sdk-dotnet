@@ -21,12 +21,6 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("redirectReason", value); }
         }
         /// <summary>
-        /// Instantiates a new DeviceManagementConfigurationRedirectSettingDefinition and sets the default values.
-        /// </summary>
-        public DeviceManagementConfigurationRedirectSettingDefinition() : base() {
-            OdataType = "#microsoft.graph.deviceManagementConfigurationRedirectSettingDefinition";
-        }
-        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

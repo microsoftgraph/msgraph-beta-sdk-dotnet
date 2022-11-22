@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class DirectorySetting : Entity, IParsable {
         /// <summary>Display name of this group of settings, which comes from the associated template. Read-only.</summary>
         public string DisplayName {
@@ -20,12 +20,6 @@ namespace Microsoft.Graph.Beta.Models {
         public List<SettingValue> Values {
             get { return BackingStore?.Get<List<SettingValue>>("values"); }
             set { BackingStore?.Set("values", value); }
-        }
-        /// <summary>
-        /// Instantiates a new directorySetting and sets the default values.
-        /// </summary>
-        public DirectorySetting() : base() {
-            OdataType = "#microsoft.graph.directorySetting";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

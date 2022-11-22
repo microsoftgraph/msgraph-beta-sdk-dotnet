@@ -50,7 +50,6 @@ namespace Microsoft.Graph.Beta.Models.TenantAdmin {
         public Admin() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
-            OdataType = "#microsoft.graph.admin";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

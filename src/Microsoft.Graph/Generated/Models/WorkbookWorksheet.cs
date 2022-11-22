@@ -46,12 +46,6 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("visibility", value); }
         }
         /// <summary>
-        /// Instantiates a new workbookWorksheet and sets the default values.
-        /// </summary>
-        public WorkbookWorksheet() : base() {
-            OdataType = "#microsoft.graph.workbookWorksheet";
-        }
-        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

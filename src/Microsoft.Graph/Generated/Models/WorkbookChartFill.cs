@@ -6,12 +6,6 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class WorkbookChartFill : Entity, IParsable {
         /// <summary>
-        /// Instantiates a new workbookChartFill and sets the default values.
-        /// </summary>
-        public WorkbookChartFill() : base() {
-            OdataType = "#microsoft.graph.workbookChartFill";
-        }
-        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

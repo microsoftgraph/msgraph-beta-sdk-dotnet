@@ -50,7 +50,6 @@ namespace Microsoft.Graph.Beta.Models {
         public AssignmentFilterStatusDetails() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
-            OdataType = "#microsoft.graph.assignmentFilterStatusDetails";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

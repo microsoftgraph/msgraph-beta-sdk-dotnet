@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class OutlookItem : Entity, IParsable {
         /// <summary>The categories property</summary>
         public List<string> Categories {
@@ -26,12 +26,6 @@ namespace Microsoft.Graph.Beta.Models {
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
-        }
-        /// <summary>
-        /// Instantiates a new outlookItem and sets the default values.
-        /// </summary>
-        public OutlookItem() : base() {
-            OdataType = "#microsoft.graph.outlookItem";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

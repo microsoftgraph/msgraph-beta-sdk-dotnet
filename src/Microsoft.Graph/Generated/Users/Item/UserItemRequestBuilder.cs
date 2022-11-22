@@ -87,7 +87,6 @@ using Microsoft.Graph.Beta.Users.Item.ScopedRoleMemberOf;
 using Microsoft.Graph.Beta.Users.Item.Security;
 using Microsoft.Graph.Beta.Users.Item.SendMail;
 using Microsoft.Graph.Beta.Users.Item.Settings;
-using Microsoft.Graph.Beta.Users.Item.Tasks;
 using Microsoft.Graph.Beta.Users.Item.Teamwork;
 using Microsoft.Graph.Beta.Users.Item.Todo;
 using Microsoft.Graph.Beta.Users.Item.TransitiveMemberOf;
@@ -410,10 +409,6 @@ namespace Microsoft.Graph.Beta.Users.Item {
         /// <summary>Provides operations to manage the settings property of the microsoft.graph.user entity.</summary>
         public SettingsRequestBuilder Settings { get =>
             new SettingsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to manage the tasks property of the microsoft.graph.user entity.</summary>
-        public TasksRequestBuilder Tasks { get =>
-            new TasksRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the teamwork property of the microsoft.graph.user entity.</summary>
         public TeamworkRequestBuilder Teamwork { get =>

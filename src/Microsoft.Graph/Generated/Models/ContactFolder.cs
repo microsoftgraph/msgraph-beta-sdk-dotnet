@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class ContactFolder : Entity, IParsable {
         /// <summary>The collection of child folders in the folder. Navigation property. Read-only. Nullable.</summary>
         public List<ContactFolder> ChildFolders {
@@ -40,12 +40,6 @@ namespace Microsoft.Graph.Beta.Models {
         public string WellKnownName {
             get { return BackingStore?.Get<string>("wellKnownName"); }
             set { BackingStore?.Set("wellKnownName", value); }
-        }
-        /// <summary>
-        /// Instantiates a new contactFolder and sets the default values.
-        /// </summary>
-        public ContactFolder() : base() {
-            OdataType = "#microsoft.graph.contactFolder";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

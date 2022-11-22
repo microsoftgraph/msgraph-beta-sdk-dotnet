@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class ManagementActionTenantDeploymentStatus : Entity, IParsable {
         /// <summary>The collection of deployment status for each instance of a management action. Optional.</summary>
         public List<ManagementActionDeploymentStatus> Statuses {
@@ -20,12 +20,6 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         public string TenantId {
             get { return BackingStore?.Get<string>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
-        }
-        /// <summary>
-        /// Instantiates a new managementActionTenantDeploymentStatus and sets the default values.
-        /// </summary>
-        public ManagementActionTenantDeploymentStatus() : base() {
-            OdataType = "#microsoft.graph.managedTenants.managementActionTenantDeploymentStatus";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

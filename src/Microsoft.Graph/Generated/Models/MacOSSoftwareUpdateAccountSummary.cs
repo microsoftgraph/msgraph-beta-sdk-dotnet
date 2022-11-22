@@ -62,12 +62,6 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("userPrincipalName", value); }
         }
         /// <summary>
-        /// Instantiates a new macOSSoftwareUpdateAccountSummary and sets the default values.
-        /// </summary>
-        public MacOSSoftwareUpdateAccountSummary() : base() {
-            OdataType = "#microsoft.graph.macOSSoftwareUpdateAccountSummary";
-        }
-        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

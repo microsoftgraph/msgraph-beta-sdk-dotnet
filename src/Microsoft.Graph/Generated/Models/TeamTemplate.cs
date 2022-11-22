@@ -4,18 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class TeamTemplate : Entity, IParsable {
         /// <summary>The definitions property</summary>
         public List<TeamTemplateDefinition> Definitions {
             get { return BackingStore?.Get<List<TeamTemplateDefinition>>("definitions"); }
             set { BackingStore?.Set("definitions", value); }
-        }
-        /// <summary>
-        /// Instantiates a new teamTemplate and sets the default values.
-        /// </summary>
-        public TeamTemplate() : base() {
-            OdataType = "#microsoft.graph.teamTemplate";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

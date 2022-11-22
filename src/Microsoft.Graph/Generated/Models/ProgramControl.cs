@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class ProgramControl : Entity, IParsable {
         /// <summary>The controlId of the control, in particular the identifier of an access review. Required on create.</summary>
         public string ControlId {
@@ -50,12 +50,6 @@ namespace Microsoft.Graph.Beta.Models {
         public string Status {
             get { return BackingStore?.Get<string>("status"); }
             set { BackingStore?.Set("status", value); }
-        }
-        /// <summary>
-        /// Instantiates a new programControl and sets the default values.
-        /// </summary>
-        public ProgramControl() : base() {
-            OdataType = "#microsoft.graph.programControl";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

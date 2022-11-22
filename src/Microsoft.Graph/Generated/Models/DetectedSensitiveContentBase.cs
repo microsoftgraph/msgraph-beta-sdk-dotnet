@@ -50,7 +50,6 @@ namespace Microsoft.Graph.Beta.Models {
         public DetectedSensitiveContentBase() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
-            OdataType = "#microsoft.graph.detectedSensitiveContentBase";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

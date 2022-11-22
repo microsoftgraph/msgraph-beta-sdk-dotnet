@@ -85,7 +85,6 @@ using Microsoft.Graph.Beta.Me.ScopedRoleMemberOf;
 using Microsoft.Graph.Beta.Me.Security;
 using Microsoft.Graph.Beta.Me.SendMail;
 using Microsoft.Graph.Beta.Me.Settings;
-using Microsoft.Graph.Beta.Me.Tasks;
 using Microsoft.Graph.Beta.Me.Teamwork;
 using Microsoft.Graph.Beta.Me.Todo;
 using Microsoft.Graph.Beta.Me.TransitiveMemberOf;
@@ -410,10 +409,6 @@ namespace Microsoft.Graph.Beta.Me {
         /// <summary>Provides operations to manage the settings property of the microsoft.graph.user entity.</summary>
         public SettingsRequestBuilder Settings { get =>
             new SettingsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to manage the tasks property of the microsoft.graph.user entity.</summary>
-        public TasksRequestBuilder Tasks { get =>
-            new TasksRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the teamwork property of the microsoft.graph.user entity.</summary>
         public TeamworkRequestBuilder Teamwork { get =>

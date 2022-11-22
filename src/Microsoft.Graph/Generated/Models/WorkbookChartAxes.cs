@@ -21,12 +21,6 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("valueAxis", value); }
         }
         /// <summary>
-        /// Instantiates a new workbookChartAxes and sets the default values.
-        /// </summary>
-        public WorkbookChartAxes() : base() {
-            OdataType = "#microsoft.graph.workbookChartAxes";
-        }
-        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

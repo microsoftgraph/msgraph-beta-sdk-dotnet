@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class Agreement : Entity, IParsable {
         /// <summary>Read-only. Information about acceptances of this agreement.</summary>
         public List<AgreementAcceptance> Acceptances {
@@ -45,12 +45,6 @@ namespace Microsoft.Graph.Beta.Models {
         public TimeSpan? UserReacceptRequiredFrequency {
             get { return BackingStore?.Get<TimeSpan?>("userReacceptRequiredFrequency"); }
             set { BackingStore?.Set("userReacceptRequiredFrequency", value); }
-        }
-        /// <summary>
-        /// Instantiates a new agreement and sets the default values.
-        /// </summary>
-        public Agreement() : base() {
-            OdataType = "#microsoft.graph.agreement";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

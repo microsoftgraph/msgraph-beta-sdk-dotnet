@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class Simulation : Entity, IParsable {
         /// <summary>The social engineering technique used in the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, credentialHarvesting, attachmentMalware, driveByUrl, linkInAttachment, linkToMalwareFile, unknownFutureValue. For more information on the types of social engineering attack techniques, see simulations.</summary>
         public SimulationAttackTechnique? AttackTechnique {
@@ -80,12 +80,6 @@ namespace Microsoft.Graph.Beta.Models {
         public SimulationStatus? Status {
             get { return BackingStore?.Get<SimulationStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
-        }
-        /// <summary>
-        /// Instantiates a new simulation and sets the default values.
-        /// </summary>
-        public Simulation() : base() {
-            OdataType = "#microsoft.graph.simulation";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

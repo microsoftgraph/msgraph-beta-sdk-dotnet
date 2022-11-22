@@ -39,7 +39,6 @@ namespace Microsoft.Graph.Beta.Models {
         public AttackSimulationUser() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
-            OdataType = "#microsoft.graph.attackSimulationUser";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -51,6 +51,16 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("customCannotAccessYourAccountUrl"); }
             set { BackingStore?.Set("customCannotAccessYourAccountUrl", value); }
         }
+        /// <summary>The customCSS property</summary>
+        public byte[] CustomCSS {
+            get { return BackingStore?.Get<byte[]>("customCSS"); }
+            set { BackingStore?.Set("customCSS", value); }
+        }
+        /// <summary>The customCSSRelativeUrl property</summary>
+        public string CustomCSSRelativeUrl {
+            get { return BackingStore?.Get<string>("customCSSRelativeUrl"); }
+            set { BackingStore?.Set("customCSSRelativeUrl", value); }
+        }
         /// <summary>A string to replace the default &apos;Forgot my password&apos; hyperlink text on the sign-in form. This text must be in Unicode format and not exceed 256 characters.</summary>
         public string CustomForgotMyPasswordText {
             get { return BackingStore?.Get<string>("customForgotMyPasswordText"); }
@@ -96,6 +106,21 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("headerBackgroundColor"); }
             set { BackingStore?.Set("headerBackgroundColor", value); }
         }
+        /// <summary>The headerLogo property</summary>
+        public byte[] HeaderLogo {
+            get { return BackingStore?.Get<byte[]>("headerLogo"); }
+            set { BackingStore?.Set("headerLogo", value); }
+        }
+        /// <summary>The headerLogoRelativeUrl property</summary>
+        public string HeaderLogoRelativeUrl {
+            get { return BackingStore?.Get<string>("headerLogoRelativeUrl"); }
+            set { BackingStore?.Set("headerLogoRelativeUrl", value); }
+        }
+        /// <summary>The loginPageLayoutConfiguration property</summary>
+        public Microsoft.Graph.Beta.Models.LoginPageLayoutConfiguration LoginPageLayoutConfiguration {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.LoginPageLayoutConfiguration>("loginPageLayoutConfiguration"); }
+            set { BackingStore?.Set("loginPageLayoutConfiguration", value); }
+        }
         /// <summary>Represents the various texts that can be hidden on the login page for a tenant.</summary>
         public Microsoft.Graph.Beta.Models.LoginPageTextVisibilitySettings LoginPageTextVisibilitySettings {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.LoginPageTextVisibilitySettings>("loginPageTextVisibilitySettings"); }
@@ -132,12 +157,6 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("usernameHintText", value); }
         }
         /// <summary>
-        /// Instantiates a new organizationalBrandingProperties and sets the default values.
-        /// </summary>
-        public OrganizationalBrandingProperties() : base() {
-            OdataType = "#microsoft.graph.organizationalBrandingProperties";
-        }
-        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
@@ -164,6 +183,8 @@ namespace Microsoft.Graph.Beta.Models {
                 {"customAccountResetCredentialsUrl", n => { CustomAccountResetCredentialsUrl = n.GetStringValue(); } },
                 {"customCannotAccessYourAccountText", n => { CustomCannotAccessYourAccountText = n.GetStringValue(); } },
                 {"customCannotAccessYourAccountUrl", n => { CustomCannotAccessYourAccountUrl = n.GetStringValue(); } },
+                {"customCSS", n => { CustomCSS = n.GetByteArrayValue(); } },
+                {"customCSSRelativeUrl", n => { CustomCSSRelativeUrl = n.GetStringValue(); } },
                 {"customForgotMyPasswordText", n => { CustomForgotMyPasswordText = n.GetStringValue(); } },
                 {"customPrivacyAndCookiesText", n => { CustomPrivacyAndCookiesText = n.GetStringValue(); } },
                 {"customPrivacyAndCookiesUrl", n => { CustomPrivacyAndCookiesUrl = n.GetStringValue(); } },
@@ -173,6 +194,9 @@ namespace Microsoft.Graph.Beta.Models {
                 {"favicon", n => { Favicon = n.GetByteArrayValue(); } },
                 {"faviconRelativeUrl", n => { FaviconRelativeUrl = n.GetStringValue(); } },
                 {"headerBackgroundColor", n => { HeaderBackgroundColor = n.GetStringValue(); } },
+                {"headerLogo", n => { HeaderLogo = n.GetByteArrayValue(); } },
+                {"headerLogoRelativeUrl", n => { HeaderLogoRelativeUrl = n.GetStringValue(); } },
+                {"loginPageLayoutConfiguration", n => { LoginPageLayoutConfiguration = n.GetObjectValue<Microsoft.Graph.Beta.Models.LoginPageLayoutConfiguration>(Microsoft.Graph.Beta.Models.LoginPageLayoutConfiguration.CreateFromDiscriminatorValue); } },
                 {"loginPageTextVisibilitySettings", n => { LoginPageTextVisibilitySettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.LoginPageTextVisibilitySettings>(Microsoft.Graph.Beta.Models.LoginPageTextVisibilitySettings.CreateFromDiscriminatorValue); } },
                 {"signInPageText", n => { SignInPageText = n.GetStringValue(); } },
                 {"squareLogo", n => { SquareLogo = n.GetByteArrayValue(); } },
@@ -198,6 +222,8 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("customAccountResetCredentialsUrl", CustomAccountResetCredentialsUrl);
             writer.WriteStringValue("customCannotAccessYourAccountText", CustomCannotAccessYourAccountText);
             writer.WriteStringValue("customCannotAccessYourAccountUrl", CustomCannotAccessYourAccountUrl);
+            writer.WriteByteArrayValue("customCSS", CustomCSS);
+            writer.WriteStringValue("customCSSRelativeUrl", CustomCSSRelativeUrl);
             writer.WriteStringValue("customForgotMyPasswordText", CustomForgotMyPasswordText);
             writer.WriteStringValue("customPrivacyAndCookiesText", CustomPrivacyAndCookiesText);
             writer.WriteStringValue("customPrivacyAndCookiesUrl", CustomPrivacyAndCookiesUrl);
@@ -207,6 +233,9 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteByteArrayValue("favicon", Favicon);
             writer.WriteStringValue("faviconRelativeUrl", FaviconRelativeUrl);
             writer.WriteStringValue("headerBackgroundColor", HeaderBackgroundColor);
+            writer.WriteByteArrayValue("headerLogo", HeaderLogo);
+            writer.WriteStringValue("headerLogoRelativeUrl", HeaderLogoRelativeUrl);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.LoginPageLayoutConfiguration>("loginPageLayoutConfiguration", LoginPageLayoutConfiguration);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.LoginPageTextVisibilitySettings>("loginPageTextVisibilitySettings", LoginPageTextVisibilitySettings);
             writer.WriteStringValue("signInPageText", SignInPageText);
             writer.WriteByteArrayValue("squareLogo", SquareLogo);

@@ -42,12 +42,6 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("scriptOutput", value); }
         }
         /// <summary>
-        /// Instantiates a new deviceComplianceScriptDeviceState and sets the default values.
-        /// </summary>
-        public DeviceComplianceScriptDeviceState() : base() {
-            OdataType = "#microsoft.graph.deviceComplianceScriptDeviceState";
-        }
-        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

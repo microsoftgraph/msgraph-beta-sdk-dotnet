@@ -34,7 +34,6 @@ namespace Microsoft.Graph.Beta.Models {
         public MetadataEntry() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
-            OdataType = "#microsoft.graph.metadataEntry";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

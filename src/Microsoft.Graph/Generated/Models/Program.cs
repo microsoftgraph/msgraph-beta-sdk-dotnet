@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class Program : Entity, IParsable {
         /// <summary>Controls associated with the program.</summary>
         public List<ProgramControl> Controls {
@@ -20,12 +20,6 @@ namespace Microsoft.Graph.Beta.Models {
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
-        }
-        /// <summary>
-        /// Instantiates a new program and sets the default values.
-        /// </summary>
-        public Program() : base() {
-            OdataType = "#microsoft.graph.program";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

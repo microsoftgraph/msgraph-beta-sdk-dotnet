@@ -23,12 +23,6 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("releaseDateTime", value); }
         }
         /// <summary>
-        /// Instantiates a new windowsUpdateCatalogItem and sets the default values.
-        /// </summary>
-        public WindowsUpdateCatalogItem() : base() {
-            OdataType = "#microsoft.graph.windowsUpdateCatalogItem";
-        }
-        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

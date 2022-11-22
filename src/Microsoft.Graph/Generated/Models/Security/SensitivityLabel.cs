@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class SensitivityLabel : Entity, IParsable {
         /// <summary>The color that the UI should display for the label, if configured.</summary>
         public string Color {
@@ -55,12 +55,6 @@ namespace Microsoft.Graph.Beta.Models.Security {
         public string Tooltip {
             get { return BackingStore?.Get<string>("tooltip"); }
             set { BackingStore?.Set("tooltip", value); }
-        }
-        /// <summary>
-        /// Instantiates a new sensitivityLabel and sets the default values.
-        /// </summary>
-        public SensitivityLabel() : base() {
-            OdataType = "#microsoft.graph.security.sensitivityLabel";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

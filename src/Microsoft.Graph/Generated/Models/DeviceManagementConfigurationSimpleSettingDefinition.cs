@@ -27,12 +27,6 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("valueDefinition", value); }
         }
         /// <summary>
-        /// Instantiates a new DeviceManagementConfigurationSimpleSettingDefinition and sets the default values.
-        /// </summary>
-        public DeviceManagementConfigurationSimpleSettingDefinition() : base() {
-            OdataType = "#microsoft.graph.deviceManagementConfigurationSimpleSettingDefinition";
-        }
-        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

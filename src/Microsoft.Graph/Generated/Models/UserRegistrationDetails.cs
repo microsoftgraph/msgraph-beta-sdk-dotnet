@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class UserRegistrationDetails : Entity, IParsable {
         /// <summary>The method the user or admin selected as default for performing multi-factor authentication for the user. The possible values are: none, mobilePhone, alternateMobilePhone, officePhone, microsoftAuthenticatorPush, softwareOneTimePasscode, unknownFutureValue.</summary>
         public DefaultMfaMethodType? DefaultMfaMethod {
@@ -65,12 +65,6 @@ namespace Microsoft.Graph.Beta.Models {
         public SignInUserType? UserType {
             get { return BackingStore?.Get<SignInUserType?>("userType"); }
             set { BackingStore?.Set("userType", value); }
-        }
-        /// <summary>
-        /// Instantiates a new userRegistrationDetails and sets the default values.
-        /// </summary>
-        public UserRegistrationDetails() : base() {
-            OdataType = "#microsoft.graph.userRegistrationDetails";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

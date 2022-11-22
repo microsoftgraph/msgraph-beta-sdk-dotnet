@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class ManagementIntent : Entity, IParsable {
         /// <summary>The display name for the management intent. Optional. Read-only.</summary>
         public string DisplayName {
@@ -20,12 +20,6 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         public List<ManagementTemplateDetailedInfo> ManagementTemplates {
             get { return BackingStore?.Get<List<ManagementTemplateDetailedInfo>>("managementTemplates"); }
             set { BackingStore?.Set("managementTemplates", value); }
-        }
-        /// <summary>
-        /// Instantiates a new managementIntent and sets the default values.
-        /// </summary>
-        public ManagementIntent() : base() {
-            OdataType = "#microsoft.graph.managedTenants.managementIntent";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -129,7 +129,6 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
         public DirectRoutingLogRow() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
-            OdataType = "#microsoft.graph.callRecords.directRoutingLogRow";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

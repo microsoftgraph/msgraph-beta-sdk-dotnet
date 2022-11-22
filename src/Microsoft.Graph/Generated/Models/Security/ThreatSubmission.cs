@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class ThreatSubmission : Entity, IParsable {
         /// <summary>Specifies the admin review property which constitutes of who reviewed the user submission, when and what was it identified as.</summary>
         public SubmissionAdminReview AdminReview {
@@ -56,12 +56,6 @@ namespace Microsoft.Graph.Beta.Models.Security {
         public string TenantId {
             get { return BackingStore?.Get<string>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
-        }
-        /// <summary>
-        /// Instantiates a new threatSubmission and sets the default values.
-        /// </summary>
-        public ThreatSubmission() : base() {
-            OdataType = "#microsoft.graph.security.threatSubmission";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

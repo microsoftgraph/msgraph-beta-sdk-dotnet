@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class EducationOutcome : Entity, IParsable {
         /// <summary>The individual who updated the resource.</summary>
         public IdentitySet LastModifiedBy {
@@ -16,12 +16,6 @@ namespace Microsoft.Graph.Beta.Models {
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
-        }
-        /// <summary>
-        /// Instantiates a new educationOutcome and sets the default values.
-        /// </summary>
-        public EducationOutcome() : base() {
-            OdataType = "#microsoft.graph.educationOutcome";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

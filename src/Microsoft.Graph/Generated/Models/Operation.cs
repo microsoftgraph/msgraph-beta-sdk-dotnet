@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class Operation : Entity, IParsable {
         /// <summary>The start time of the operation.</summary>
         public DateTimeOffset? CreatedDateTime {
@@ -21,12 +21,6 @@ namespace Microsoft.Graph.Beta.Models {
         public OperationStatus? Status {
             get { return BackingStore?.Get<OperationStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
-        }
-        /// <summary>
-        /// Instantiates a new operation and sets the default values.
-        /// </summary>
-        public Operation() : base() {
-            OdataType = "#microsoft.graph.operation";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -11,12 +11,6 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("steps", value); }
         }
         /// <summary>
-        /// Instantiates a new approval and sets the default values.
-        /// </summary>
-        public Approval() : base() {
-            OdataType = "#microsoft.graph.approval";
-        }
-        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

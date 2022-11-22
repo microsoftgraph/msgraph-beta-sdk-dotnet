@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>This topic provides descriptions of the declared methods, properties and relationships exposed by the macOSCustomAppConfiguration resource.</summary>
     public class MacOSCustomAppConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Bundle id for targeting.</summary>
         public string BundleId {
@@ -22,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("fileName", value); }
         }
         /// <summary>
-        /// Instantiates a new macOSCustomAppConfiguration and sets the default values.
+        /// Instantiates a new MacOSCustomAppConfiguration and sets the default values.
         /// </summary>
         public MacOSCustomAppConfiguration() : base() {
             OdataType = "#microsoft.graph.macOSCustomAppConfiguration";

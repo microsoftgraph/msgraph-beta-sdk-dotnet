@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class AuditEvent : Entity, IParsable {
         /// <summary>A string which uniquely represents the operation that occurred. Required. Read-only.</summary>
         public string Activity {
@@ -70,12 +70,6 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         public string TenantNames {
             get { return BackingStore?.Get<string>("tenantNames"); }
             set { BackingStore?.Set("tenantNames", value); }
-        }
-        /// <summary>
-        /// Instantiates a new auditEvent and sets the default values.
-        /// </summary>
-        public AuditEvent() : base() {
-            OdataType = "#microsoft.graph.managedTenants.auditEvent";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

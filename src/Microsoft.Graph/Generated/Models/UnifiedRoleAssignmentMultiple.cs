@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class UnifiedRoleAssignmentMultiple : Entity, IParsable {
         /// <summary>Ids of the app specific scopes when the assignment scopes are app specific. The scopes of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use / for tenant-wide scope. App scopes are scopes that are defined and understood by this application only.</summary>
         public List<string> AppScopeIds {
@@ -60,12 +60,6 @@ namespace Microsoft.Graph.Beta.Models {
         public string RoleDefinitionId {
             get { return BackingStore?.Get<string>("roleDefinitionId"); }
             set { BackingStore?.Set("roleDefinitionId", value); }
-        }
-        /// <summary>
-        /// Instantiates a new unifiedRoleAssignmentMultiple and sets the default values.
-        /// </summary>
-        public UnifiedRoleAssignmentMultiple() : base() {
-            OdataType = "#microsoft.graph.unifiedRoleAssignmentMultiple";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

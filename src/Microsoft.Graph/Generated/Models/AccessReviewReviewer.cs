@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class AccessReviewReviewer : Entity, IParsable {
         /// <summary>The date when the reviewer was added for the access review.</summary>
         public DateTimeOffset? CreatedDateTime {
@@ -20,12 +20,6 @@ namespace Microsoft.Graph.Beta.Models {
         public string UserPrincipalName {
             get { return BackingStore?.Get<string>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
-        }
-        /// <summary>
-        /// Instantiates a new accessReviewReviewer and sets the default values.
-        /// </summary>
-        public AccessReviewReviewer() : base() {
-            OdataType = "#microsoft.graph.accessReviewReviewer";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

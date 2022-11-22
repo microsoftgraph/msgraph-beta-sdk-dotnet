@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class EducationClass : Entity, IParsable {
         /// <summary>All categories associated with this class. Nullable.</summary>
         public List<EducationCategory> AssignmentCategories {
@@ -105,12 +105,6 @@ namespace Microsoft.Graph.Beta.Models {
         public EducationTerm Term {
             get { return BackingStore?.Get<EducationTerm>("term"); }
             set { BackingStore?.Set("term", value); }
-        }
-        /// <summary>
-        /// Instantiates a new educationClass and sets the default values.
-        /// </summary>
-        public EducationClass() : base() {
-            OdataType = "#microsoft.graph.educationClass";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

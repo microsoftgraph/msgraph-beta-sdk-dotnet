@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>An abstract class for Mobile app configuration for enrolled devices.</summary>
     public class ManagedDeviceMobileAppConfiguration : Entity, IParsable {
         /// <summary>The list of group assignemenets for app configration.</summary>
         public List<ManagedDeviceMobileAppConfigurationAssignment> Assignments {
@@ -66,12 +65,6 @@ namespace Microsoft.Graph.Beta.Models {
         public int? Version {
             get { return BackingStore?.Get<int?>("version"); }
             set { BackingStore?.Set("version", value); }
-        }
-        /// <summary>
-        /// Instantiates a new managedDeviceMobileAppConfiguration and sets the default values.
-        /// </summary>
-        public ManagedDeviceMobileAppConfiguration() : base() {
-            OdataType = "#microsoft.graph.managedDeviceMobileAppConfiguration";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

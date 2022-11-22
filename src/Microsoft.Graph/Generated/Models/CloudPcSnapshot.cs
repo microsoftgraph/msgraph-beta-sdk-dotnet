@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class CloudPcSnapshot : Entity, IParsable {
         /// <summary>The unique identifier for the Cloud PC.</summary>
         public string CloudPcId {
@@ -25,12 +24,6 @@ namespace Microsoft.Graph.Beta.Models {
         public CloudPcSnapshotStatus? Status {
             get { return BackingStore?.Get<CloudPcSnapshotStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
-        }
-        /// <summary>
-        /// Instantiates a new cloudPcSnapshot and sets the default values.
-        /// </summary>
-        public CloudPcSnapshot() : base() {
-            OdataType = "#microsoft.graph.cloudPcSnapshot";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class MessageEvent : Entity, IParsable {
         /// <summary>The dateTime property</summary>
         public DateTimeOffset? DateTime {
@@ -20,12 +20,6 @@ namespace Microsoft.Graph.Beta.Models {
         public MessageEventType? EventType {
             get { return BackingStore?.Get<MessageEventType?>("eventType"); }
             set { BackingStore?.Set("eventType", value); }
-        }
-        /// <summary>
-        /// Instantiates a new messageEvent and sets the default values.
-        /// </summary>
-        public MessageEvent() : base() {
-            OdataType = "#microsoft.graph.messageEvent";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class TeamworkPeripheral : Entity, IParsable {
         /// <summary>Display name for the peripheral.</summary>
         public string DisplayName {
@@ -20,12 +19,6 @@ namespace Microsoft.Graph.Beta.Models {
         public string VendorId {
             get { return BackingStore?.Get<string>("vendorId"); }
             set { BackingStore?.Set("vendorId", value); }
-        }
-        /// <summary>
-        /// Instantiates a new teamworkPeripheral and sets the default values.
-        /// </summary>
-        public TeamworkPeripheral() : base() {
-            OdataType = "#microsoft.graph.teamworkPeripheral";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

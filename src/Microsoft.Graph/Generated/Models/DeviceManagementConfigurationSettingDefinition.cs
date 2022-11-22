@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class DeviceManagementConfigurationSettingDefinition : Entity, IParsable {
         /// <summary>The accessTypes property</summary>
         public DeviceManagementConfigurationSettingAccessTypes? AccessTypes {
@@ -96,12 +96,6 @@ namespace Microsoft.Graph.Beta.Models {
         public DeviceManagementConfigurationSettingVisibility? Visibility {
             get { return BackingStore?.Get<DeviceManagementConfigurationSettingVisibility?>("visibility"); }
             set { BackingStore?.Set("visibility", value); }
-        }
-        /// <summary>
-        /// Instantiates a new deviceManagementConfigurationSettingDefinition and sets the default values.
-        /// </summary>
-        public DeviceManagementConfigurationSettingDefinition() : base() {
-            OdataType = "#microsoft.graph.deviceManagementConfigurationSettingDefinition";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

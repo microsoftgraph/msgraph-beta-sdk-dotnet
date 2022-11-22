@@ -35,7 +35,6 @@ namespace Microsoft.Graph.Beta.Models {
         public DeviceManagementSettingDependency() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
-            OdataType = "#microsoft.graph.deviceManagementSettingDependency";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -23,6 +23,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("onPremisesConnectionId"); }
             set { BackingStore?.Set("onPremisesConnectionId", value); }
         }
+        /// <summary>The regionGroup property</summary>
+        public CloudPcRegionGroup? RegionGroup {
+            get { return BackingStore?.Get<CloudPcRegionGroup?>("regionGroup"); }
+            set { BackingStore?.Set("regionGroup", value); }
+        }
         /// <summary>The supported Azure region where the IT admin wants the provisioning policy to create Cloud PCs. The underlying virtual network will be created and managed by the Windows 365 service. This can only be entered if the IT admin chooses Azure AD joined as the domain join type. If you enter a regionName, leave onPremisesConnectionId as empty.</summary>
         public string RegionName {
             get { return BackingStore?.Get<string>("regionName"); }
@@ -39,7 +44,6 @@ namespace Microsoft.Graph.Beta.Models {
         public CloudPcDomainJoinConfiguration() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
-            OdataType = "#microsoft.graph.cloudPcDomainJoinConfiguration";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -56,6 +60,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"onPremisesConnectionId", n => { OnPremisesConnectionId = n.GetStringValue(); } },
+                {"regionGroup", n => { RegionGroup = n.GetEnumValue<CloudPcRegionGroup>(); } },
                 {"regionName", n => { RegionName = n.GetStringValue(); } },
                 {"type", n => { Type = n.GetEnumValue<CloudPcDomainJoinType>(); } },
             };
@@ -68,6 +73,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("onPremisesConnectionId", OnPremisesConnectionId);
+            writer.WriteEnumValue<CloudPcRegionGroup>("regionGroup", RegionGroup);
             writer.WriteStringValue("regionName", RegionName);
             writer.WriteEnumValue<CloudPcDomainJoinType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);

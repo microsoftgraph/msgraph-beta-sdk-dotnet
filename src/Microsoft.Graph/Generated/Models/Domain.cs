@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class Domain : Entity, IParsable {
         /// <summary>Indicates the configured authentication type for the domain. The value is either Managed or Federated. Managed indicates a cloud managed domain where Azure AD performs user authentication. Federated indicates authentication is federated with an identity provider such as the tenant&apos;s on-premises Active Directory via Active Directory Federation Services. This property is read-only and is not nullable.</summary>
         public string AuthenticationType {
@@ -85,12 +84,6 @@ namespace Microsoft.Graph.Beta.Models {
         public List<DomainDnsRecord> VerificationDnsRecords {
             get { return BackingStore?.Get<List<DomainDnsRecord>>("verificationDnsRecords"); }
             set { BackingStore?.Set("verificationDnsRecords", value); }
-        }
-        /// <summary>
-        /// Instantiates a new domain and sets the default values.
-        /// </summary>
-        public Domain() : base() {
-            OdataType = "#microsoft.graph.domain";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

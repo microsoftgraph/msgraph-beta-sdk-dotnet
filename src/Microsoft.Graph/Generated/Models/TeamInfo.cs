@@ -23,12 +23,6 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("tenantId", value); }
         }
         /// <summary>
-        /// Instantiates a new teamInfo and sets the default values.
-        /// </summary>
-        public TeamInfo() : base() {
-            OdataType = "#microsoft.graph.teamInfo";
-        }
-        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

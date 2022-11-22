@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class LongRunningOperation : Entity, IParsable {
         /// <summary>The createdDateTime property</summary>
         public DateTimeOffset? CreatedDateTime {
@@ -31,12 +31,6 @@ namespace Microsoft.Graph.Beta.Models {
         public string StatusDetail {
             get { return BackingStore?.Get<string>("statusDetail"); }
             set { BackingStore?.Set("statusDetail", value); }
-        }
-        /// <summary>
-        /// Instantiates a new longRunningOperation and sets the default values.
-        /// </summary>
-        public LongRunningOperation() : base() {
-            OdataType = "#microsoft.graph.longRunningOperation";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class EducationSynchronizationProfile : Entity, IParsable {
         /// <summary>The dataProvider property</summary>
         public EducationSynchronizationDataProvider DataProvider {
@@ -51,12 +51,6 @@ namespace Microsoft.Graph.Beta.Models {
         public EducationSynchronizationProfileState? State {
             get { return BackingStore?.Get<EducationSynchronizationProfileState?>("state"); }
             set { BackingStore?.Set("state", value); }
-        }
-        /// <summary>
-        /// Instantiates a new educationSynchronizationProfile and sets the default values.
-        /// </summary>
-        public EducationSynchronizationProfile() : base() {
-            OdataType = "#microsoft.graph.educationSynchronizationProfile";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

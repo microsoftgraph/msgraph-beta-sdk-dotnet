@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class UnifiedRoleScheduleInstanceBase : Entity, IParsable {
         /// <summary>Read-only property with details of the app-specific scope when the assignment or role eligibility is scoped to an app. Nullable.</summary>
         public Microsoft.Graph.Beta.Models.AppScope AppScope {
@@ -46,12 +46,6 @@ namespace Microsoft.Graph.Beta.Models {
         public string RoleDefinitionId {
             get { return BackingStore?.Get<string>("roleDefinitionId"); }
             set { BackingStore?.Set("roleDefinitionId", value); }
-        }
-        /// <summary>
-        /// Instantiates a new unifiedRoleScheduleInstanceBase and sets the default values.
-        /// </summary>
-        public UnifiedRoleScheduleInstanceBase() : base() {
-            OdataType = "#microsoft.graph.unifiedRoleScheduleInstanceBase";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

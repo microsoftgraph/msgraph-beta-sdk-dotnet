@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Ediscovery {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class DataSourceContainer : Entity, IParsable {
         /// <summary>Created date and time of the dataSourceContainer entity.</summary>
         public DateTimeOffset? CreatedDateTime {
@@ -41,12 +41,6 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
         public DataSourceContainerStatus? Status {
             get { return BackingStore?.Get<DataSourceContainerStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
-        }
-        /// <summary>
-        /// Instantiates a new dataSourceContainer and sets the default values.
-        /// </summary>
-        public DataSourceContainer() : base() {
-            OdataType = "#microsoft.graph.ediscovery.dataSourceContainer";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class DeviceComplianceUserStatus : Entity, IParsable {
         /// <summary>Devices count for that user.</summary>
         public int? DevicesCount {
@@ -30,12 +30,6 @@ namespace Microsoft.Graph.Beta.Models {
         public string UserPrincipalName {
             get { return BackingStore?.Get<string>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
-        }
-        /// <summary>
-        /// Instantiates a new deviceComplianceUserStatus and sets the default values.
-        /// </summary>
-        public DeviceComplianceUserStatus() : base() {
-            OdataType = "#microsoft.graph.deviceComplianceUserStatus";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

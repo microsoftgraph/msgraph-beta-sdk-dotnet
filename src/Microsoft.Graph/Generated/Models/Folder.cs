@@ -34,7 +34,6 @@ namespace Microsoft.Graph.Beta.Models {
         public Folder() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
-            OdataType = "#microsoft.graph.folder";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

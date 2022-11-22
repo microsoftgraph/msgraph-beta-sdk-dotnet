@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class BrowserSharedCookie : Entity, IParsable {
         /// <summary>The comment for the shared cookie.</summary>
         public string Comment {
@@ -65,12 +65,6 @@ namespace Microsoft.Graph.Beta.Models {
         public BrowserSharedCookieStatus? Status {
             get { return BackingStore?.Get<BrowserSharedCookieStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
-        }
-        /// <summary>
-        /// Instantiates a new browserSharedCookie and sets the default values.
-        /// </summary>
-        public BrowserSharedCookie() : base() {
-            OdataType = "#microsoft.graph.browserSharedCookie";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

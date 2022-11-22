@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class ServiceAnnouncementAttachment : Entity, IParsable {
         /// <summary>The attachment content.</summary>
         public byte[] Content {
@@ -30,12 +30,6 @@ namespace Microsoft.Graph.Beta.Models {
         public int? Size {
             get { return BackingStore?.Get<int?>("size"); }
             set { BackingStore?.Set("size", value); }
-        }
-        /// <summary>
-        /// Instantiates a new serviceAnnouncementAttachment and sets the default values.
-        /// </summary>
-        public ServiceAnnouncementAttachment() : base() {
-            OdataType = "#microsoft.graph.serviceAnnouncementAttachment";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

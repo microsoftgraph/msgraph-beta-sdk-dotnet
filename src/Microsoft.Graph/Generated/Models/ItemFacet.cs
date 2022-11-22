@@ -48,12 +48,6 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("source", value); }
         }
         /// <summary>
-        /// Instantiates a new itemFacet and sets the default values.
-        /// </summary>
-        public ItemFacet() : base() {
-            OdataType = "#microsoft.graph.itemFacet";
-        }
-        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

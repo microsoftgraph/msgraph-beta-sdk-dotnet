@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.TermStore {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class Group : Entity, IParsable {
         /// <summary>Date and time of the group creation. Read-only.</summary>
         public DateTimeOffset? CreatedDateTime {
@@ -35,12 +35,6 @@ namespace Microsoft.Graph.Beta.Models.TermStore {
         public List<Set> Sets {
             get { return BackingStore?.Get<List<Set>>("sets"); }
             set { BackingStore?.Set("sets", value); }
-        }
-        /// <summary>
-        /// Instantiates a new group and sets the default values.
-        /// </summary>
-        public Group() : base() {
-            OdataType = "#microsoft.graph.termStore.group";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

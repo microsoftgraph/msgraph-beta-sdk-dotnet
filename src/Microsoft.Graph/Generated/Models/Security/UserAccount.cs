@@ -49,7 +49,6 @@ namespace Microsoft.Graph.Beta.Models.Security {
         public UserAccount() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
-            OdataType = "#microsoft.graph.security.userAccount";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

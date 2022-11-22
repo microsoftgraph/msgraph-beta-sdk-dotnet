@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class CloudPcGalleryImage : Entity, IParsable {
         /// <summary>The official display name of the gallery image. Read-only.</summary>
         public string DisplayName {
@@ -66,12 +65,6 @@ namespace Microsoft.Graph.Beta.Models {
         public CloudPcGalleryImageStatus? Status {
             get { return BackingStore?.Get<CloudPcGalleryImageStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
-        }
-        /// <summary>
-        /// Instantiates a new cloudPcGalleryImage and sets the default values.
-        /// </summary>
-        public CloudPcGalleryImage() : base() {
-            OdataType = "#microsoft.graph.cloudPcGalleryImage";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

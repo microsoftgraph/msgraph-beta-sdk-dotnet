@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Ediscovery {
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class CaseOperation : Entity, IParsable {
         /// <summary>The type of action the operation represents. Possible values are: addToReviewSet,applyTags,contentExport,convertToPdf,estimateStatistics, purgeData</summary>
         public CaseAction? Action {
@@ -40,12 +41,6 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
         public CaseOperationStatus? Status {
             get { return BackingStore?.Get<CaseOperationStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
-        }
-        /// <summary>
-        /// Instantiates a new caseOperation and sets the default values.
-        /// </summary>
-        public CaseOperation() : base() {
-            OdataType = "#microsoft.graph.ediscovery.caseOperation";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

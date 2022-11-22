@@ -5,14 +5,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class Extension : Entity, IParsable {
-        /// <summary>
-        /// Instantiates a new extension and sets the default values.
-        /// </summary>
-        public Extension() : base() {
-            OdataType = "#microsoft.graph.extension";
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

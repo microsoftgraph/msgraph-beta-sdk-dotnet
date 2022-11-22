@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class SharedInsight : Entity, IParsable {
         /// <summary>Details about the shared item. Read only.</summary>
         public SharingDetail LastShared {
@@ -35,12 +35,6 @@ namespace Microsoft.Graph.Beta.Models {
         public List<SharingDetail> SharingHistory {
             get { return BackingStore?.Get<List<SharingDetail>>("sharingHistory"); }
             set { BackingStore?.Set("sharingHistory", value); }
-        }
-        /// <summary>
-        /// Instantiates a new sharedInsight and sets the default values.
-        /// </summary>
-        public SharedInsight() : base() {
-            OdataType = "#microsoft.graph.sharedInsight";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -4,18 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class CertificateBasedAuthConfiguration : Entity, IParsable {
         /// <summary>Collection of certificate authorities which creates a trusted certificate chain.</summary>
         public List<CertificateAuthority> CertificateAuthorities {
             get { return BackingStore?.Get<List<CertificateAuthority>>("certificateAuthorities"); }
             set { BackingStore?.Set("certificateAuthorities", value); }
-        }
-        /// <summary>
-        /// Instantiates a new certificateBasedAuthConfiguration and sets the default values.
-        /// </summary>
-        public CertificateBasedAuthConfiguration() : base() {
-            OdataType = "#microsoft.graph.certificateBasedAuthConfiguration";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

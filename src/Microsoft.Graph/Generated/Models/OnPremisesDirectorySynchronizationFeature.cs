@@ -119,7 +119,6 @@ namespace Microsoft.Graph.Beta.Models {
         public OnPremisesDirectorySynchronizationFeature() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
-            OdataType = "#microsoft.graph.onPremisesDirectorySynchronizationFeature";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -4,18 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class DataLossPreventionPolicy : Entity, IParsable {
         /// <summary>The name property</summary>
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
-        }
-        /// <summary>
-        /// Instantiates a new dataLossPreventionPolicy and sets the default values.
-        /// </summary>
-        public DataLossPreventionPolicy() : base() {
-            OdataType = "#microsoft.graph.dataLossPreventionPolicy";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

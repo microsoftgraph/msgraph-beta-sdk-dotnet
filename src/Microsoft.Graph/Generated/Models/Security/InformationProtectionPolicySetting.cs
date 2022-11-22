@@ -26,12 +26,6 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("moreInfoUrl", value); }
         }
         /// <summary>
-        /// Instantiates a new informationProtectionPolicySetting and sets the default values.
-        /// </summary>
-        public InformationProtectionPolicySetting() : base() {
-            OdataType = "#microsoft.graph.security.informationProtectionPolicySetting";
-        }
-        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

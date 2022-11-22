@@ -70,7 +70,6 @@ namespace Microsoft.Graph.Beta.Models {
         public AndroidForWorkAppConfigurationSchemaItem() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
-            OdataType = "#microsoft.graph.androidForWorkAppConfigurationSchemaItem";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -22,12 +22,6 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("metricType", value); }
         }
         /// <summary>
-        /// Instantiates a new userExperienceAnalyticsMetricHistory and sets the default values.
-        /// </summary>
-        public UserExperienceAnalyticsMetricHistory() : base() {
-            OdataType = "#microsoft.graph.userExperienceAnalyticsMetricHistory";
-        }
-        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class SensitivityLabel : Entity, IParsable {
         /// <summary>The applicableTo property</summary>
         public SensitivityLabelTarget? ApplicableTo {
@@ -70,12 +70,6 @@ namespace Microsoft.Graph.Beta.Models {
         public string ToolTip {
             get { return BackingStore?.Get<string>("toolTip"); }
             set { BackingStore?.Set("toolTip", value); }
-        }
-        /// <summary>
-        /// Instantiates a new sensitivityLabel and sets the default values.
-        /// </summary>
-        public SensitivityLabel() : base() {
-            OdataType = "#microsoft.graph.sensitivityLabel";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

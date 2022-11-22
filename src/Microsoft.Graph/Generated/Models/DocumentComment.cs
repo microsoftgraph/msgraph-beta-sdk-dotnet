@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class DocumentComment : Entity, IParsable {
         /// <summary>The content property</summary>
         public string Content {
@@ -15,12 +14,6 @@ namespace Microsoft.Graph.Beta.Models {
         public List<DocumentCommentReply> Replies {
             get { return BackingStore?.Get<List<DocumentCommentReply>>("replies"); }
             set { BackingStore?.Set("replies", value); }
-        }
-        /// <summary>
-        /// Instantiates a new documentComment and sets the default values.
-        /// </summary>
-        public DocumentComment() : base() {
-            OdataType = "#microsoft.graph.documentComment";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -67,7 +67,7 @@ namespace Microsoft.Graph.Beta.IdentityProtection.RiskyUsers {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a collection of **riskyUser** objects.
+        /// Retrieve the properties and relationships of a **riskyUser** object.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<RiskyUsersRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -109,7 +109,7 @@ namespace Microsoft.Graph.Beta.IdentityProtection.RiskyUsers {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a collection of **riskyUser** objects.
+        /// Retrieve the properties and relationships of a **riskyUser** object.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -136,7 +136,7 @@ namespace Microsoft.Graph.Beta.IdentityProtection.RiskyUsers {
             };
             return await RequestAdapter.SendAsync<RiskyUser>(requestInfo, RiskyUser.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Retrieve the properties and relationships of a collection of **riskyUser** objects.</summary>
+        /// <summary>Retrieve the properties and relationships of a **riskyUser** object.</summary>
         public class RiskyUsersRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

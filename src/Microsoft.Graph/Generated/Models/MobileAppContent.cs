@@ -17,12 +17,6 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("files", value); }
         }
         /// <summary>
-        /// Instantiates a new mobileAppContent and sets the default values.
-        /// </summary>
-        public MobileAppContent() : base() {
-            OdataType = "#microsoft.graph.mobileAppContent";
-        }
-        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

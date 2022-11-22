@@ -4,18 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class DeletedTeam : Entity, IParsable {
         /// <summary>The channels those are either shared with this deleted team or created in this deleted team.</summary>
         public List<Channel> Channels {
             get { return BackingStore?.Get<List<Channel>>("channels"); }
             set { BackingStore?.Set("channels", value); }
-        }
-        /// <summary>
-        /// Instantiates a new deletedTeam and sets the default values.
-        /// </summary>
-        public DeletedTeam() : base() {
-            OdataType = "#microsoft.graph.deletedTeam";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

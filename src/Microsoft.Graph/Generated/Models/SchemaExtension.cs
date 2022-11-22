@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class SchemaExtension : Entity, IParsable {
         /// <summary>Description for the schema extension. Supports $filter (eq).</summary>
         public string Description {
@@ -30,12 +29,6 @@ namespace Microsoft.Graph.Beta.Models {
         public List<string> TargetTypes {
             get { return BackingStore?.Get<List<string>>("targetTypes"); }
             set { BackingStore?.Set("targetTypes", value); }
-        }
-        /// <summary>
-        /// Instantiates a new schemaExtension and sets the default values.
-        /// </summary>
-        public SchemaExtension() : base() {
-            OdataType = "#microsoft.graph.schemaExtension";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

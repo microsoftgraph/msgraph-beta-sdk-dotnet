@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class PaymentTerm : Entity, IParsable {
         /// <summary>The calculateDiscountOnCreditMemos property</summary>
         public bool? CalculateDiscountOnCreditMemos {
@@ -39,12 +40,6 @@ namespace Microsoft.Graph.Beta.Models {
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
-        }
-        /// <summary>
-        /// Instantiates a new paymentTerm and sets the default values.
-        /// </summary>
-        public PaymentTerm() : base() {
-            OdataType = "#microsoft.graph.paymentTerm";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

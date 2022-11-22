@@ -5,17 +5,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Booking entities that provide a display name.</summary>
     public class BookingNamedEntity : Entity, IParsable {
         /// <summary>A name for the derived entity, which interfaces with customers.</summary>
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
-        }
-        /// <summary>
-        /// Instantiates a new BookingNamedEntity and sets the default values.
-        /// </summary>
-        public BookingNamedEntity() : base() {
-            OdataType = "#microsoft.graph.bookingNamedEntity";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

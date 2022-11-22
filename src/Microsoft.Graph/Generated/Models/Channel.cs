@@ -61,6 +61,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<SharedWithChannelTeamInfo>>("sharedWithTeams"); }
             set { BackingStore?.Set("sharedWithTeams", value); }
         }
+        /// <summary>The summary property</summary>
+        public ChannelSummary Summary {
+            get { return BackingStore?.Get<ChannelSummary>("summary"); }
+            set { BackingStore?.Set("summary", value); }
+        }
         /// <summary>A collection of all the tabs in the channel. A navigation property.</summary>
         public List<TeamsTab> Tabs {
             get { return BackingStore?.Get<List<TeamsTab>>("tabs"); }
@@ -75,12 +80,6 @@ namespace Microsoft.Graph.Beta.Models {
         public string WebUrl {
             get { return BackingStore?.Get<string>("webUrl"); }
             set { BackingStore?.Set("webUrl", value); }
-        }
-        /// <summary>
-        /// Instantiates a new channel and sets the default values.
-        /// </summary>
-        public Channel() : base() {
-            OdataType = "#microsoft.graph.channel";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -106,6 +105,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"messages", n => { Messages = n.GetCollectionOfObjectValues<ChatMessage>(ChatMessage.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"moderationSettings", n => { ModerationSettings = n.GetObjectValue<ChannelModerationSettings>(ChannelModerationSettings.CreateFromDiscriminatorValue); } },
                 {"sharedWithTeams", n => { SharedWithTeams = n.GetCollectionOfObjectValues<SharedWithChannelTeamInfo>(SharedWithChannelTeamInfo.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"summary", n => { Summary = n.GetObjectValue<ChannelSummary>(ChannelSummary.CreateFromDiscriminatorValue); } },
                 {"tabs", n => { Tabs = n.GetCollectionOfObjectValues<TeamsTab>(TeamsTab.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"tenantId", n => { TenantId = n.GetStringValue(); } },
                 {"webUrl", n => { WebUrl = n.GetStringValue(); } },
@@ -129,6 +129,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfObjectValues<ChatMessage>("messages", Messages);
             writer.WriteObjectValue<ChannelModerationSettings>("moderationSettings", ModerationSettings);
             writer.WriteCollectionOfObjectValues<SharedWithChannelTeamInfo>("sharedWithTeams", SharedWithTeams);
+            writer.WriteObjectValue<ChannelSummary>("summary", Summary);
             writer.WriteCollectionOfObjectValues<TeamsTab>("tabs", Tabs);
             writer.WriteStringValue("tenantId", TenantId);
             writer.WriteStringValue("webUrl", WebUrl);

@@ -4,18 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class Identity : Entity, IParsable {
         /// <summary>The type property</summary>
         public IdentityType? Type {
             get { return BackingStore?.Get<IdentityType?>("type"); }
             set { BackingStore?.Set("type", value); }
-        }
-        /// <summary>
-        /// Instantiates a new identity and sets the default values.
-        /// </summary>
-        public Identity() : base() {
-            OdataType = "#microsoft.graph.externalConnectors.identity";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

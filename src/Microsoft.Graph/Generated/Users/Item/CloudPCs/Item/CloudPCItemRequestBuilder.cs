@@ -4,10 +4,13 @@ using Microsoft.Graph.Beta.Users.Item.CloudPCs.Item.ChangeUserAccountType;
 using Microsoft.Graph.Beta.Users.Item.CloudPCs.Item.EndGracePeriod;
 using Microsoft.Graph.Beta.Users.Item.CloudPCs.Item.GetCloudPcConnectivityHistory;
 using Microsoft.Graph.Beta.Users.Item.CloudPCs.Item.GetCloudPcLaunchInfo;
+using Microsoft.Graph.Beta.Users.Item.CloudPCs.Item.GetShiftWorkCloudPcAccessState;
+using Microsoft.Graph.Beta.Users.Item.CloudPCs.Item.GetSupportedCloudPcRemoteActions;
 using Microsoft.Graph.Beta.Users.Item.CloudPCs.Item.Reboot;
 using Microsoft.Graph.Beta.Users.Item.CloudPCs.Item.Rename;
 using Microsoft.Graph.Beta.Users.Item.CloudPCs.Item.Reprovision;
 using Microsoft.Graph.Beta.Users.Item.CloudPCs.Item.Restore;
+using Microsoft.Graph.Beta.Users.Item.CloudPCs.Item.RetryPartnerAgentInstallation;
 using Microsoft.Graph.Beta.Users.Item.CloudPCs.Item.Troubleshoot;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
@@ -47,6 +50,10 @@ namespace Microsoft.Graph.Beta.Users.Item.CloudPCs.Item {
         /// <summary>Provides operations to call the restore method.</summary>
         public RestoreRequestBuilder Restore { get =>
             new RestoreRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the retryPartnerAgentInstallation method.</summary>
+        public RetryPartnerAgentInstallationRequestBuilder RetryPartnerAgentInstallation { get =>
+            new RetryPartnerAgentInstallationRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the troubleshoot method.</summary>
         public TroubleshootRequestBuilder Troubleshoot { get =>
@@ -178,6 +185,18 @@ namespace Microsoft.Graph.Beta.Users.Item.CloudPCs.Item {
         /// </summary>
         public GetCloudPcLaunchInfoRequestBuilder GetCloudPcLaunchInfo() {
             return new GetCloudPcLaunchInfoRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>
+        /// Provides operations to call the getShiftWorkCloudPcAccessState method.
+        /// </summary>
+        public GetShiftWorkCloudPcAccessStateRequestBuilder GetShiftWorkCloudPcAccessState() {
+            return new GetShiftWorkCloudPcAccessStateRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>
+        /// Provides operations to call the getSupportedCloudPcRemoteActions method.
+        /// </summary>
+        public GetSupportedCloudPcRemoteActionsRequestBuilder GetSupportedCloudPcRemoteActions() {
+            return new GetSupportedCloudPcRemoteActionsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Update the navigation property cloudPCs in users

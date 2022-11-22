@@ -11,12 +11,6 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("text", value); }
         }
         /// <summary>
-        /// Instantiates a new DomainDnsTxtRecord and sets the default values.
-        /// </summary>
-        public DomainDnsTxtRecord() : base() {
-            OdataType = "#microsoft.graph.domainDnsTxtRecord";
-        }
-        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

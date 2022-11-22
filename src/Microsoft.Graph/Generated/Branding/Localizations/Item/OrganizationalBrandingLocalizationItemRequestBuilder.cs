@@ -1,6 +1,8 @@
 using Microsoft.Graph.Beta.Branding.Localizations.Item.BackgroundImage;
 using Microsoft.Graph.Beta.Branding.Localizations.Item.BannerLogo;
+using Microsoft.Graph.Beta.Branding.Localizations.Item.CustomCSS;
 using Microsoft.Graph.Beta.Branding.Localizations.Item.Favicon;
+using Microsoft.Graph.Beta.Branding.Localizations.Item.HeaderLogo;
 using Microsoft.Graph.Beta.Branding.Localizations.Item.SquareLogo;
 using Microsoft.Graph.Beta.Branding.Localizations.Item.SquareLogoDark;
 using Microsoft.Graph.Beta.Models;
@@ -25,8 +27,16 @@ namespace Microsoft.Graph.Beta.Branding.Localizations.Item {
             new BannerLogoRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the media for the organizationalBranding entity.</summary>
+        public CustomCSSRequestBuilder CustomCSS { get =>
+            new CustomCSSRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the media for the organizationalBranding entity.</summary>
         public FaviconRequestBuilder Favicon { get =>
             new FaviconRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the media for the organizationalBranding entity.</summary>
+        public HeaderLogoRequestBuilder HeaderLogo { get =>
+            new HeaderLogoRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

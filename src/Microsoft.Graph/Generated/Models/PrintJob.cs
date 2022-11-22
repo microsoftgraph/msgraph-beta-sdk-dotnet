@@ -4,8 +4,18 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class PrintJob : Entity, IParsable {
+        /// <summary>The acknowledgedDateTime property</summary>
+        public DateTimeOffset? AcknowledgedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>("acknowledgedDateTime"); }
+            set { BackingStore?.Set("acknowledgedDateTime", value); }
+        }
+        /// <summary>The completedDateTime property</summary>
+        public DateTimeOffset? CompletedDateTime {
+            get { return BackingStore?.Get<DateTimeOffset?>("completedDateTime"); }
+            set { BackingStore?.Set("completedDateTime", value); }
+        }
         /// <summary>A group of settings that a printer should use to print a job.</summary>
         public PrintJobConfiguration Configuration {
             get { return BackingStore?.Get<PrintJobConfiguration>("configuration"); }
@@ -30,6 +40,11 @@ namespace Microsoft.Graph.Beta.Models {
         public List<PrintDocument> Documents {
             get { return BackingStore?.Get<List<PrintDocument>>("documents"); }
             set { BackingStore?.Set("documents", value); }
+        }
+        /// <summary>The errorCode property</summary>
+        public int? ErrorCode {
+            get { return BackingStore?.Get<int?>("errorCode"); }
+            set { BackingStore?.Set("errorCode", value); }
         }
         /// <summary>If true, document can be fetched by printer.</summary>
         public bool? IsFetchable {
@@ -57,12 +72,6 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("tasks", value); }
         }
         /// <summary>
-        /// Instantiates a new printJob and sets the default values.
-        /// </summary>
-        public PrintJob() : base() {
-            OdataType = "#microsoft.graph.printJob";
-        }
-        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
@@ -75,11 +84,14 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"acknowledgedDateTime", n => { AcknowledgedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"completedDateTime", n => { CompletedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"configuration", n => { Configuration = n.GetObjectValue<PrintJobConfiguration>(PrintJobConfiguration.CreateFromDiscriminatorValue); } },
                 {"createdBy", n => { CreatedBy = n.GetObjectValue<UserIdentity>(UserIdentity.CreateFromDiscriminatorValue); } },
                 {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"documents", n => { Documents = n.GetCollectionOfObjectValues<PrintDocument>(PrintDocument.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"errorCode", n => { ErrorCode = n.GetIntValue(); } },
                 {"isFetchable", n => { IsFetchable = n.GetBoolValue(); } },
                 {"redirectedFrom", n => { RedirectedFrom = n.GetStringValue(); } },
                 {"redirectedTo", n => { RedirectedTo = n.GetStringValue(); } },
@@ -94,11 +106,14 @@ namespace Microsoft.Graph.Beta.Models {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteDateTimeOffsetValue("acknowledgedDateTime", AcknowledgedDateTime);
+            writer.WriteDateTimeOffsetValue("completedDateTime", CompletedDateTime);
             writer.WriteObjectValue<PrintJobConfiguration>("configuration", Configuration);
             writer.WriteObjectValue<UserIdentity>("createdBy", CreatedBy);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteCollectionOfObjectValues<PrintDocument>("documents", Documents);
+            writer.WriteIntValue("errorCode", ErrorCode);
             writer.WriteBoolValue("isFetchable", IsFetchable);
             writer.WriteStringValue("redirectedFrom", RedirectedFrom);
             writer.WriteStringValue("redirectedTo", RedirectedTo);

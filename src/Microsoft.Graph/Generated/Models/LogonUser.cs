@@ -59,7 +59,6 @@ namespace Microsoft.Graph.Beta.Models {
         public LogonUser() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
-            OdataType = "#microsoft.graph.logonUser";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

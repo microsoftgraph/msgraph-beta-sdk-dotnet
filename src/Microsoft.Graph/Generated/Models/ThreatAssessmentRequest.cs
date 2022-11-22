@@ -48,12 +48,6 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>
-        /// Instantiates a new threatAssessmentRequest and sets the default values.
-        /// </summary>
-        public ThreatAssessmentRequest() : base() {
-            OdataType = "#microsoft.graph.threatAssessmentRequest";
-        }
-        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

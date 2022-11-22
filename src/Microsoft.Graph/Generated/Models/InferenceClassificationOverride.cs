@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class InferenceClassificationOverride : Entity, IParsable {
         /// <summary>Specifies how incoming messages from a specific sender should always be classified as. Possible values are: focused, other.</summary>
         public InferenceClassificationType? ClassifyAs {
@@ -15,12 +15,6 @@ namespace Microsoft.Graph.Beta.Models {
         public EmailAddress SenderEmailAddress {
             get { return BackingStore?.Get<EmailAddress>("senderEmailAddress"); }
             set { BackingStore?.Set("senderEmailAddress", value); }
-        }
-        /// <summary>
-        /// Instantiates a new inferenceClassificationOverride and sets the default values.
-        /// </summary>
-        public InferenceClassificationOverride() : base() {
-            OdataType = "#microsoft.graph.inferenceClassificationOverride";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class WorkbookNamedItem : Entity, IParsable {
         /// <summary>Represents the comment associated with this name.</summary>
         public string Comment {
@@ -40,12 +40,6 @@ namespace Microsoft.Graph.Beta.Models {
         public WorkbookWorksheet Worksheet {
             get { return BackingStore?.Get<WorkbookWorksheet>("worksheet"); }
             set { BackingStore?.Set("worksheet", value); }
-        }
-        /// <summary>
-        /// Instantiates a new workbookNamedItem and sets the default values.
-        /// </summary>
-        public WorkbookNamedItem() : base() {
-            OdataType = "#microsoft.graph.workbookNamedItem";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

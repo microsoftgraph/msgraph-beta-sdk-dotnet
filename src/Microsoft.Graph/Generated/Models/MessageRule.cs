@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class MessageRule : Entity, IParsable {
         /// <summary>Actions to be taken on a message when the corresponding conditions are fulfilled.</summary>
         public MessageRuleActions Actions {
@@ -45,12 +45,6 @@ namespace Microsoft.Graph.Beta.Models {
         public int? Sequence {
             get { return BackingStore?.Get<int?>("sequence"); }
             set { BackingStore?.Set("sequence", value); }
-        }
-        /// <summary>
-        /// Instantiates a new messageRule and sets the default values.
-        /// </summary>
-        public MessageRule() : base() {
-            OdataType = "#microsoft.graph.messageRule";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

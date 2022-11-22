@@ -93,6 +93,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<OnPremisesApplicationSegment>>("onPremisesApplicationSegments"); }
             set { BackingStore?.Set("onPremisesApplicationSegments", value); }
         }
+        /// <summary>The segmentsConfiguration property</summary>
+        public SegmentConfiguration SegmentsConfiguration {
+            get { return BackingStore?.Get<SegmentConfiguration>("segmentsConfiguration"); }
+            set { BackingStore?.Set("segmentsConfiguration", value); }
+        }
         /// <summary>Represents the single sign-on configuration for the on-premises application.</summary>
         public OnPremisesPublishingSingleSignOn SingleSignOnSettings {
             get { return BackingStore?.Get<OnPremisesPublishingSingleSignOn>("singleSignOnSettings"); }
@@ -124,7 +129,6 @@ namespace Microsoft.Graph.Beta.Models {
         public OnPremisesPublishing() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
-            OdataType = "#microsoft.graph.onPremisesPublishing";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -155,6 +159,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"isTranslateLinksInBodyEnabled", n => { IsTranslateLinksInBodyEnabled = n.GetBoolValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"onPremisesApplicationSegments", n => { OnPremisesApplicationSegments = n.GetCollectionOfObjectValues<OnPremisesApplicationSegment>(OnPremisesApplicationSegment.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"segmentsConfiguration", n => { SegmentsConfiguration = n.GetObjectValue<SegmentConfiguration>(SegmentConfiguration.CreateFromDiscriminatorValue); } },
                 {"singleSignOnSettings", n => { SingleSignOnSettings = n.GetObjectValue<OnPremisesPublishingSingleSignOn>(OnPremisesPublishingSingleSignOn.CreateFromDiscriminatorValue); } },
                 {"useAlternateUrlForTranslationAndRedirect", n => { UseAlternateUrlForTranslationAndRedirect = n.GetBoolValue(); } },
                 {"verifiedCustomDomainCertificatesMetadata", n => { VerifiedCustomDomainCertificatesMetadata = n.GetObjectValue<Microsoft.Graph.Beta.Models.VerifiedCustomDomainCertificatesMetadata>(Microsoft.Graph.Beta.Models.VerifiedCustomDomainCertificatesMetadata.CreateFromDiscriminatorValue); } },
@@ -184,6 +189,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteBoolValue("isTranslateLinksInBodyEnabled", IsTranslateLinksInBodyEnabled);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteCollectionOfObjectValues<OnPremisesApplicationSegment>("onPremisesApplicationSegments", OnPremisesApplicationSegments);
+            writer.WriteObjectValue<SegmentConfiguration>("segmentsConfiguration", SegmentsConfiguration);
             writer.WriteObjectValue<OnPremisesPublishingSingleSignOn>("singleSignOnSettings", SingleSignOnSettings);
             writer.WriteBoolValue("useAlternateUrlForTranslationAndRedirect", UseAlternateUrlForTranslationAndRedirect);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.VerifiedCustomDomainCertificatesMetadata>("verifiedCustomDomainCertificatesMetadata", VerifiedCustomDomainCertificatesMetadata);

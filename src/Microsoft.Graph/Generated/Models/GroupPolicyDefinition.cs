@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>The entity describes all of the information about a single group policy.</summary>
     public class GroupPolicyDefinition : Entity, IParsable {
         /// <summary>The group policy category associated with the definition.</summary>
         public GroupPolicyCategory Category {
@@ -89,12 +90,6 @@ namespace Microsoft.Graph.Beta.Models {
         public string Version {
             get { return BackingStore?.Get<string>("version"); }
             set { BackingStore?.Set("version", value); }
-        }
-        /// <summary>
-        /// Instantiates a new groupPolicyDefinition and sets the default values.
-        /// </summary>
-        public GroupPolicyDefinition() : base() {
-            OdataType = "#microsoft.graph.groupPolicyDefinition";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -4,18 +4,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class LifecycleManagementSettings : Entity, IParsable {
         /// <summary>The interval in hours at which all workflows running in the tenant should be scheduled for execution. This interval has a minimum value of 1 and a maximum value of 24. The default value is 3 hours.</summary>
         public int? WorkflowScheduleIntervalInHours {
             get { return BackingStore?.Get<int?>("workflowScheduleIntervalInHours"); }
             set { BackingStore?.Set("workflowScheduleIntervalInHours", value); }
-        }
-        /// <summary>
-        /// Instantiates a new lifecycleManagementSettings and sets the default values.
-        /// </summary>
-        public LifecycleManagementSettings() : base() {
-            OdataType = "#microsoft.graph.identityGovernance.lifecycleManagementSettings";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

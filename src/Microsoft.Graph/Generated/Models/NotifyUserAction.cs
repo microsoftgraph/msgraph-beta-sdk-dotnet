@@ -31,12 +31,6 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("recipients", value); }
         }
         /// <summary>
-        /// Instantiates a new NotifyUserAction and sets the default values.
-        /// </summary>
-        public NotifyUserAction() : base() {
-            OdataType = "#microsoft.graph.notifyUserAction";
-        }
-        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

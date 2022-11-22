@@ -10,6 +10,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+        /// <summary>The regionGroup property</summary>
+        public CloudPcRegionGroup? RegionGroup {
+            get { return BackingStore?.Get<CloudPcRegionGroup?>("regionGroup"); }
+            set { BackingStore?.Set("regionGroup", value); }
+        }
         /// <summary>The status of the supported region. Possible values are: available, restricted, unavailable, unknownFutureValue. Read-only.</summary>
         public CloudPcSupportedRegionStatus? RegionStatus {
             get { return BackingStore?.Get<CloudPcSupportedRegionStatus?>("regionStatus"); }
@@ -19,12 +24,6 @@ namespace Microsoft.Graph.Beta.Models {
         public CloudPcManagementService? SupportedSolution {
             get { return BackingStore?.Get<CloudPcManagementService?>("supportedSolution"); }
             set { BackingStore?.Set("supportedSolution", value); }
-        }
-        /// <summary>
-        /// Instantiates a new CloudPcSupportedRegion and sets the default values.
-        /// </summary>
-        public CloudPcSupportedRegion() : base() {
-            OdataType = "#microsoft.graph.cloudPcSupportedRegion";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -40,6 +39,7 @@ namespace Microsoft.Graph.Beta.Models {
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"regionGroup", n => { RegionGroup = n.GetEnumValue<CloudPcRegionGroup>(); } },
                 {"regionStatus", n => { RegionStatus = n.GetEnumValue<CloudPcSupportedRegionStatus>(); } },
                 {"supportedSolution", n => { SupportedSolution = n.GetEnumValue<CloudPcManagementService>(); } },
             };
@@ -52,6 +52,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("displayName", DisplayName);
+            writer.WriteEnumValue<CloudPcRegionGroup>("regionGroup", RegionGroup);
             writer.WriteEnumValue<CloudPcSupportedRegionStatus>("regionStatus", RegionStatus);
             writer.WriteEnumValue<CloudPcManagementService>("supportedSolution", SupportedSolution);
         }

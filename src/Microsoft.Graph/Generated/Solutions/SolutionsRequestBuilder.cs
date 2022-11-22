@@ -1,5 +1,6 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Solutions.BusinessScenarios;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -11,6 +12,10 @@ using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Solutions {
     /// <summary>Provides operations to manage the solutionsRoot singleton.</summary>
     public class SolutionsRequestBuilder {
+        /// <summary>Provides operations to manage the businessScenarios property of the microsoft.graph.solutionsRoot entity.</summary>
+        public BusinessScenariosRequestBuilder BusinessScenarios { get =>
+            new BusinessScenariosRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>

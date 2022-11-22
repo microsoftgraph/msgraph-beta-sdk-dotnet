@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class ManagedTenantEmailNotification : Entity, IParsable {
         /// <summary>The alert property</summary>
         public ManagedTenantAlert Alert {
@@ -45,12 +45,6 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         public string Subject {
             get { return BackingStore?.Get<string>("subject"); }
             set { BackingStore?.Set("subject", value); }
-        }
-        /// <summary>
-        /// Instantiates a new managedTenantEmailNotification and sets the default values.
-        /// </summary>
-        public ManagedTenantEmailNotification() : base() {
-            OdataType = "#microsoft.graph.managedTenants.managedTenantEmailNotification";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

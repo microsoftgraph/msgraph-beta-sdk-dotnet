@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class ServiceHealth : Entity, IParsable {
         /// <summary>A collection of issues that happened on the service, with detailed information for each issue.</summary>
         public List<ServiceHealthIssue> Issues {
@@ -20,12 +20,6 @@ namespace Microsoft.Graph.Beta.Models {
         public ServiceHealthStatus? Status {
             get { return BackingStore?.Get<ServiceHealthStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
-        }
-        /// <summary>
-        /// Instantiates a new serviceHealth and sets the default values.
-        /// </summary>
-        public ServiceHealth() : base() {
-            OdataType = "#microsoft.graph.serviceHealth";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

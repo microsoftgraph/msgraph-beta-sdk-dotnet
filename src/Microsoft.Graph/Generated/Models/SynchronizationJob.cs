@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class SynchronizationJob : Entity, IParsable {
         /// <summary>Schedule used to run the job. Read-only.</summary>
         public SynchronizationSchedule Schedule {
@@ -30,12 +30,6 @@ namespace Microsoft.Graph.Beta.Models {
         public string TemplateId {
             get { return BackingStore?.Get<string>("templateId"); }
             set { BackingStore?.Set("templateId", value); }
-        }
-        /// <summary>
-        /// Instantiates a new synchronizationJob and sets the default values.
-        /// </summary>
-        public SynchronizationJob() : base() {
-            OdataType = "#microsoft.graph.synchronizationJob";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

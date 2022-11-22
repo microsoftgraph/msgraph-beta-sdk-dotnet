@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class AuthoredNote : Entity, IParsable {
         /// <summary>Identity information about the note&apos;s author.</summary>
         public Identity Author {
@@ -20,12 +19,6 @@ namespace Microsoft.Graph.Beta.Models {
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
-        }
-        /// <summary>
-        /// Instantiates a new authoredNote and sets the default values.
-        /// </summary>
-        public AuthoredNote() : base() {
-            OdataType = "#microsoft.graph.authoredNote";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

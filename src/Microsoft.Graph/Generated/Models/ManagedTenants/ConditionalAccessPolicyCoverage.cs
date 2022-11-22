@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class ConditionalAccessPolicyCoverage : Entity, IParsable {
         /// <summary>The state for the conditional access policy. Possible values are: enabled, disabled, enabledForReportingButNotEnforced. Required. Read-only.</summary>
         public string ConditionalAccessPolicyState {
@@ -25,12 +25,6 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         public string TenantDisplayName {
             get { return BackingStore?.Get<string>("tenantDisplayName"); }
             set { BackingStore?.Set("tenantDisplayName", value); }
-        }
-        /// <summary>
-        /// Instantiates a new conditionalAccessPolicyCoverage and sets the default values.
-        /// </summary>
-        public ConditionalAccessPolicyCoverage() : base() {
-            OdataType = "#microsoft.graph.managedTenants.conditionalAccessPolicyCoverage";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -26,7 +26,6 @@ namespace Microsoft.Graph.Beta.Models {
         public WindowsKioskAppConfiguration() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
-            OdataType = "#microsoft.graph.windowsKioskAppConfiguration";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

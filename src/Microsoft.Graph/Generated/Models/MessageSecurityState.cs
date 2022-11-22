@@ -69,7 +69,6 @@ namespace Microsoft.Graph.Beta.Models {
         public MessageSecurityState() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
-            OdataType = "#microsoft.graph.messageSecurityState";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

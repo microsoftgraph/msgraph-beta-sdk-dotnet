@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class AppRoleAssignment : Entity, IParsable {
         /// <summary>The identifier (id) for the app role which is assigned to the principal. This app role must be exposed in the appRoles property on the resource application&apos;s service principal (resourceId). If the resource application has not declared any app roles, a default app role ID of 00000000-0000-0000-0000-000000000000 can be specified to signal that the principal is assigned to the resource app without any specific app roles. Required on create.</summary>
         public string AppRoleId {
@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("principalDisplayName"); }
             set { BackingStore?.Set("principalDisplayName", value); }
         }
-        /// <summary>The unique identifier (id) for the user, group, or service principal being granted the app role. Required on create.</summary>
+        /// <summary>The unique identifier (id) for the user, security group, or service principal being granted the app role. Security groups with dynamic memberships are supported. Required on create.</summary>
         public string PrincipalId {
             get { return BackingStore?.Get<string>("principalId"); }
             set { BackingStore?.Set("principalId", value); }
@@ -40,12 +40,6 @@ namespace Microsoft.Graph.Beta.Models {
         public string ResourceId {
             get { return BackingStore?.Get<string>("resourceId"); }
             set { BackingStore?.Set("resourceId", value); }
-        }
-        /// <summary>
-        /// Instantiates a new appRoleAssignment and sets the default values.
-        /// </summary>
-        public AppRoleAssignment() : base() {
-            OdataType = "#microsoft.graph.appRoleAssignment";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

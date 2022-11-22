@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class RiskyUser : Entity, IParsable {
         /// <summary>The history property</summary>
         public List<RiskyUserHistoryItem> History {
@@ -51,12 +51,6 @@ namespace Microsoft.Graph.Beta.Models {
         public string UserPrincipalName {
             get { return BackingStore?.Get<string>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
-        }
-        /// <summary>
-        /// Instantiates a new riskyUser and sets the default values.
-        /// </summary>
-        public RiskyUser() : base() {
-            OdataType = "#microsoft.graph.riskyUser";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

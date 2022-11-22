@@ -24,7 +24,6 @@ namespace Microsoft.Graph.Beta.Models {
         public Root() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
-            OdataType = "#microsoft.graph.root";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -51,12 +51,6 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("reviewSetQuery", value); }
         }
         /// <summary>
-        /// Instantiates a new EdiscoveryExportOperation and sets the default values.
-        /// </summary>
-        public EdiscoveryExportOperation() : base() {
-            OdataType = "#microsoft.graph.security.ediscoveryExportOperation";
-        }
-        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

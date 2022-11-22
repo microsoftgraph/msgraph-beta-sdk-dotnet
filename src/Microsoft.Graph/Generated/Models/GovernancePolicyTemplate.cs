@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class GovernancePolicyTemplate : Entity, IParsable {
         /// <summary>The displayName property</summary>
         public string DisplayName {
@@ -20,12 +20,6 @@ namespace Microsoft.Graph.Beta.Models {
         public BusinessFlowSettings Settings {
             get { return BackingStore?.Get<BusinessFlowSettings>("settings"); }
             set { BackingStore?.Set("settings", value); }
-        }
-        /// <summary>
-        /// Instantiates a new governancePolicyTemplate and sets the default values.
-        /// </summary>
-        public GovernancePolicyTemplate() : base() {
-            OdataType = "#microsoft.graph.governancePolicyTemplate";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

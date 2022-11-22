@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class Case : Entity, IParsable {
         /// <summary>The createdDateTime property</summary>
         public DateTimeOffset? CreatedDateTime {
@@ -36,12 +36,6 @@ namespace Microsoft.Graph.Beta.Models.Security {
         public CaseStatus? Status {
             get { return BackingStore?.Get<CaseStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
-        }
-        /// <summary>
-        /// Instantiates a new case and sets the default values.
-        /// </summary>
-        public Case() : base() {
-            OdataType = "#microsoft.graph.security.case";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

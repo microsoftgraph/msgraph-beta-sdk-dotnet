@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class CredentialUserRegistrationsSummary : Entity, IParsable {
         /// <summary>Date and time the entity was last updated in the multi-tenant management platform. Optional. Read-only.</summary>
         public DateTimeOffset? LastRefreshedDateTime {
@@ -60,12 +60,6 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         public int? TotalUserCount {
             get { return BackingStore?.Get<int?>("totalUserCount"); }
             set { BackingStore?.Set("totalUserCount", value); }
-        }
-        /// <summary>
-        /// Instantiates a new credentialUserRegistrationsSummary and sets the default values.
-        /// </summary>
-        public CredentialUserRegistrationsSummary() : base() {
-            OdataType = "#microsoft.graph.managedTenants.credentialUserRegistrationsSummary";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

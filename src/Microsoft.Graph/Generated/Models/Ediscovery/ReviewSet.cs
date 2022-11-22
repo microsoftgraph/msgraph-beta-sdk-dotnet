@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Ediscovery {
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class ReviewSet : Entity, IParsable {
         /// <summary>The user who created the review set. Read-only.</summary>
         public Microsoft.Graph.Beta.Models.IdentitySet CreatedBy {
@@ -24,12 +25,6 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
         public List<ReviewSetQuery> Queries {
             get { return BackingStore?.Get<List<ReviewSetQuery>>("queries"); }
             set { BackingStore?.Set("queries", value); }
-        }
-        /// <summary>
-        /// Instantiates a new reviewSet and sets the default values.
-        /// </summary>
-        public ReviewSet() : base() {
-            OdataType = "#microsoft.graph.ediscovery.reviewSet";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

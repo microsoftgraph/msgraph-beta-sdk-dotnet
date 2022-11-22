@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class CloudPC : Entity, IParsable {
         /// <summary>The Azure Active Directory (Azure AD) device ID of the Cloud PC.</summary>
         public string AadDeviceId {
@@ -71,6 +71,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<CloudPcOperatingSystem?>("osVersion"); }
             set { BackingStore?.Set("osVersion", value); }
         }
+        /// <summary>The partnerAgentInstallResults property</summary>
+        public List<CloudPcPartnerAgentInstallResult> PartnerAgentInstallResults {
+            get { return BackingStore?.Get<List<CloudPcPartnerAgentInstallResult>>("partnerAgentInstallResults"); }
+            set { BackingStore?.Set("partnerAgentInstallResults", value); }
+        }
         /// <summary>The provisioning policy ID of the Cloud PC.</summary>
         public string ProvisioningPolicyId {
             get { return BackingStore?.Get<string>("provisioningPolicyId"); }
@@ -80,6 +85,11 @@ namespace Microsoft.Graph.Beta.Models {
         public string ProvisioningPolicyName {
             get { return BackingStore?.Get<string>("provisioningPolicyName"); }
             set { BackingStore?.Set("provisioningPolicyName", value); }
+        }
+        /// <summary>The provisioningType property</summary>
+        public CloudPcProvisioningType? ProvisioningType {
+            get { return BackingStore?.Get<CloudPcProvisioningType?>("provisioningType"); }
+            set { BackingStore?.Set("provisioningType", value); }
         }
         /// <summary>The service plan ID of the Cloud PC.</summary>
         public string ServicePlanId {
@@ -117,12 +127,6 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("userPrincipalName", value); }
         }
         /// <summary>
-        /// Instantiates a new cloudPC and sets the default values.
-        /// </summary>
-        public CloudPC() : base() {
-            OdataType = "#microsoft.graph.cloudPC";
-        }
-        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
@@ -148,8 +152,10 @@ namespace Microsoft.Graph.Beta.Models {
                 {"managedDeviceName", n => { ManagedDeviceName = n.GetStringValue(); } },
                 {"onPremisesConnectionName", n => { OnPremisesConnectionName = n.GetStringValue(); } },
                 {"osVersion", n => { OsVersion = n.GetEnumValue<CloudPcOperatingSystem>(); } },
+                {"partnerAgentInstallResults", n => { PartnerAgentInstallResults = n.GetCollectionOfObjectValues<CloudPcPartnerAgentInstallResult>(CloudPcPartnerAgentInstallResult.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"provisioningPolicyId", n => { ProvisioningPolicyId = n.GetStringValue(); } },
                 {"provisioningPolicyName", n => { ProvisioningPolicyName = n.GetStringValue(); } },
+                {"provisioningType", n => { ProvisioningType = n.GetEnumValue<CloudPcProvisioningType>(); } },
                 {"servicePlanId", n => { ServicePlanId = n.GetStringValue(); } },
                 {"servicePlanName", n => { ServicePlanName = n.GetStringValue(); } },
                 {"servicePlanType", n => { ServicePlanType = n.GetEnumValue<CloudPcServicePlanType>(); } },
@@ -179,8 +185,10 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("managedDeviceName", ManagedDeviceName);
             writer.WriteStringValue("onPremisesConnectionName", OnPremisesConnectionName);
             writer.WriteEnumValue<CloudPcOperatingSystem>("osVersion", OsVersion);
+            writer.WriteCollectionOfObjectValues<CloudPcPartnerAgentInstallResult>("partnerAgentInstallResults", PartnerAgentInstallResults);
             writer.WriteStringValue("provisioningPolicyId", ProvisioningPolicyId);
             writer.WriteStringValue("provisioningPolicyName", ProvisioningPolicyName);
+            writer.WriteEnumValue<CloudPcProvisioningType>("provisioningType", ProvisioningType);
             writer.WriteStringValue("servicePlanId", ServicePlanId);
             writer.WriteStringValue("servicePlanName", ServicePlanName);
             writer.WriteEnumValue<CloudPcServicePlanType>("servicePlanType", ServicePlanType);

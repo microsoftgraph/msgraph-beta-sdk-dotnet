@@ -107,12 +107,6 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
             set { BackingStore?.Set("totalEnterpriseLicenses", value); }
         }
         /// <summary>
-        /// Instantiates a new cloudPcOverview and sets the default values.
-        /// </summary>
-        public CloudPcOverview() : base() {
-            OdataType = "#microsoft.graph.managedTenants.cloudPcOverview";
-        }
-        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

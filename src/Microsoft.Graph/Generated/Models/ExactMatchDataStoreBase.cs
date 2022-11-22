@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class ExactMatchDataStoreBase : Entity, IParsable {
         /// <summary>The columns property</summary>
         public List<ExactDataMatchStoreColumn> Columns {
@@ -26,12 +26,6 @@ namespace Microsoft.Graph.Beta.Models {
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
-        }
-        /// <summary>
-        /// Instantiates a new exactMatchDataStoreBase and sets the default values.
-        /// </summary>
-        public ExactMatchDataStoreBase() : base() {
-            OdataType = "#microsoft.graph.exactMatchDataStoreBase";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

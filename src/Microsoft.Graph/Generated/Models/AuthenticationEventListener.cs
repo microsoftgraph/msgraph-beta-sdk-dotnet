@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class AuthenticationEventListener : Entity, IParsable {
         /// <summary>The authenticationEventsFlowId property</summary>
         public string AuthenticationEventsFlowId {
@@ -26,12 +25,6 @@ namespace Microsoft.Graph.Beta.Models {
         public List<KeyValuePair> Tags {
             get { return BackingStore?.Get<List<KeyValuePair>>("tags"); }
             set { BackingStore?.Set("tags", value); }
-        }
-        /// <summary>
-        /// Instantiates a new authenticationEventListener and sets the default values.
-        /// </summary>
-        public AuthenticationEventListener() : base() {
-            OdataType = "#microsoft.graph.authenticationEventListener";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

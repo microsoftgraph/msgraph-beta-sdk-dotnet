@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class ExternalActivity : Entity, IParsable {
         /// <summary>Represents an identity used to identify who is responsible for the activity.</summary>
         public Identity PerformedBy {
@@ -21,12 +21,6 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
         public ExternalActivityType? Type {
             get { return BackingStore?.Get<ExternalActivityType?>("type"); }
             set { BackingStore?.Set("type", value); }
-        }
-        /// <summary>
-        /// Instantiates a new externalActivity and sets the default values.
-        /// </summary>
-        public ExternalActivity() : base() {
-            OdataType = "#microsoft.graph.externalConnectors.externalActivity";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

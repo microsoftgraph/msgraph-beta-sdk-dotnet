@@ -11,12 +11,6 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
             set { BackingStore?.Set("itemsRemaining", value); }
         }
         /// <summary>
-        /// Instantiates a new connectionQuota and sets the default values.
-        /// </summary>
-        public ConnectionQuota() : base() {
-            OdataType = "#microsoft.graph.externalConnectors.connectionQuota";
-        }
-        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

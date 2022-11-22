@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class DelegatedAdminRelationshipOperation : Entity, IParsable {
         /// <summary>The time in ISO 8601 format and in UTC time when the long-running operation was created. Read-only.</summary>
         public DateTimeOffset? CreatedDateTime {
@@ -30,12 +30,6 @@ namespace Microsoft.Graph.Beta.Models {
         public LongRunningOperationStatus? Status {
             get { return BackingStore?.Get<LongRunningOperationStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
-        }
-        /// <summary>
-        /// Instantiates a new delegatedAdminRelationshipOperation and sets the default values.
-        /// </summary>
-        public DelegatedAdminRelationshipOperation() : base() {
-            OdataType = "#microsoft.graph.delegatedAdminRelationshipOperation";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

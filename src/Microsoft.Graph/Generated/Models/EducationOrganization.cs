@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class EducationOrganization : Entity, IParsable {
         /// <summary>Organization description.</summary>
         public string Description {
@@ -26,12 +26,6 @@ namespace Microsoft.Graph.Beta.Models {
         public string ExternalSourceDetail {
             get { return BackingStore?.Get<string>("externalSourceDetail"); }
             set { BackingStore?.Set("externalSourceDetail", value); }
-        }
-        /// <summary>
-        /// Instantiates a new educationOrganization and sets the default values.
-        /// </summary>
-        public EducationOrganization() : base() {
-            OdataType = "#microsoft.graph.educationOrganization";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class CustomCalloutExtension : Entity, IParsable {
         /// <summary>Configuration for securing the API call to the logic app. For example, using OAuth client credentials flow.</summary>
         public CustomExtensionAuthenticationConfiguration AuthenticationConfiguration {
@@ -32,12 +32,6 @@ namespace Microsoft.Graph.Beta.Models {
         public CustomExtensionEndpointConfiguration EndpointConfiguration {
             get { return BackingStore?.Get<CustomExtensionEndpointConfiguration>("endpointConfiguration"); }
             set { BackingStore?.Set("endpointConfiguration", value); }
-        }
-        /// <summary>
-        /// Instantiates a new customCalloutExtension and sets the default values.
-        /// </summary>
-        public CustomCalloutExtension() : base() {
-            OdataType = "#microsoft.graph.customCalloutExtension";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -31,12 +31,6 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("registryValueType", value); }
         }
         /// <summary>
-        /// Instantiates a new RegistryValueEvidence and sets the default values.
-        /// </summary>
-        public RegistryValueEvidence() : base() {
-            OdataType = "#microsoft.graph.security.registryValueEvidence";
-        }
-        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>

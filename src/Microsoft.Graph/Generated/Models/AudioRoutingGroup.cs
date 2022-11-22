@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class AudioRoutingGroup : Entity, IParsable {
         /// <summary>List of receiving participant ids.</summary>
         public List<string> Receivers {
@@ -20,12 +20,6 @@ namespace Microsoft.Graph.Beta.Models {
         public List<string> Sources {
             get { return BackingStore?.Get<List<string>>("sources"); }
             set { BackingStore?.Set("sources", value); }
-        }
-        /// <summary>
-        /// Instantiates a new audioRoutingGroup and sets the default values.
-        /// </summary>
-        public AudioRoutingGroup() : base() {
-            OdataType = "#microsoft.graph.audioRoutingGroup";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

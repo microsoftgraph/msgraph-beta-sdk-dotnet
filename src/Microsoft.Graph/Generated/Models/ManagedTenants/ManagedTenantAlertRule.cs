@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class ManagedTenantAlertRule : Entity, IParsable {
         /// <summary>The alertDisplayName property</summary>
         public string AlertDisplayName {
@@ -80,12 +79,6 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         public List<TenantInfo> TenantIds {
             get { return BackingStore?.Get<List<TenantInfo>>("tenantIds"); }
             set { BackingStore?.Set("tenantIds", value); }
-        }
-        /// <summary>
-        /// Instantiates a new managedTenantAlertRule and sets the default values.
-        /// </summary>
-        public ManagedTenantAlertRule() : base() {
-            OdataType = "#microsoft.graph.managedTenants.managedTenantAlertRule";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

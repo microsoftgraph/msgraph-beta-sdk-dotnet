@@ -34,7 +34,6 @@ namespace Microsoft.Graph.Beta.Models {
         public GovernancePolicy() {
             BackingStore = BackingStoreFactorySingleton.Instance.CreateBackingStore();
             AdditionalData = new Dictionary<string, object>();
-            OdataType = "#microsoft.graph.governancePolicy";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

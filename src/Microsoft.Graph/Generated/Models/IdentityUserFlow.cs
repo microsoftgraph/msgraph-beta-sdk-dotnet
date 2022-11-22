@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class IdentityUserFlow : Entity, IParsable {
         /// <summary>The userFlowType property</summary>
         public Microsoft.Graph.Beta.Models.UserFlowType? UserFlowType {
@@ -15,12 +16,6 @@ namespace Microsoft.Graph.Beta.Models {
         public float? UserFlowTypeVersion {
             get { return BackingStore?.Get<float?>("userFlowTypeVersion"); }
             set { BackingStore?.Set("userFlowTypeVersion", value); }
-        }
-        /// <summary>
-        /// Instantiates a new identityUserFlow and sets the default values.
-        /// </summary>
-        public IdentityUserFlow() : base() {
-            OdataType = "#microsoft.graph.identityUserFlow";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

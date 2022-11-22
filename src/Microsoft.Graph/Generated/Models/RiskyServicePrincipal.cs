@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class RiskyServicePrincipal : Entity, IParsable {
         /// <summary>true if the service principal account is enabled; otherwise, false.</summary>
         public bool? AccountEnabled {
@@ -56,12 +56,6 @@ namespace Microsoft.Graph.Beta.Models {
         public string ServicePrincipalType {
             get { return BackingStore?.Get<string>("servicePrincipalType"); }
             set { BackingStore?.Set("servicePrincipalType", value); }
-        }
-        /// <summary>
-        /// Instantiates a new riskyServicePrincipal and sets the default values.
-        /// </summary>
-        public RiskyServicePrincipal() : base() {
-            OdataType = "#microsoft.graph.riskyServicePrincipal";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class Attachment : Entity, IParsable {
         /// <summary>The MIME type.</summary>
         public string ContentType {
@@ -31,12 +31,6 @@ namespace Microsoft.Graph.Beta.Models {
         public int? Size {
             get { return BackingStore?.Get<int?>("size"); }
             set { BackingStore?.Set("size", value); }
-        }
-        /// <summary>
-        /// Instantiates a new attachment and sets the default values.
-        /// </summary>
-        public Attachment() : base() {
-            OdataType = "#microsoft.graph.attachment";
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
