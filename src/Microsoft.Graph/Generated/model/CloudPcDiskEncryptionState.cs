@@ -25,9 +25,9 @@ namespace Microsoft.Graph
         NotAvailable = 0,
 	
         /// <summary>
-        /// Not Encryped
+        /// Not Encrypted
         /// </summary>
-        NotEncryped = 1,
+        NotEncrypted = 1,
 	
         /// <summary>
         /// Encrypted Using Platform Managed Key

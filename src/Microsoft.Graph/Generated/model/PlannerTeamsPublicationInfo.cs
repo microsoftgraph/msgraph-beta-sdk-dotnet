@@ -17,9 +17,15 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type PlannerTeamsPublicationInfo.
     /// </summary>
-    [JsonConverter(typeof(DerivedTypeConverter<PlannerTeamsPublicationInfo>))]
-    public partial class PlannerTeamsPublicationInfo
+    public partial class PlannerTeamsPublicationInfo : PlannerTaskCreation
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="PlannerTeamsPublicationInfo"/> class.
+        /// </summary>
+        public PlannerTeamsPublicationInfo()
+        {
+            this.ODataType = "microsoft.graph.plannerTeamsPublicationInfo";
+        }
 
         /// <summary>
         /// Gets or sets lastModifiedDateTime.
@@ -55,18 +61,6 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("publishingTeamName")]
         public string PublishingTeamName { get; set; }
-    
-        /// <summary>
-        /// Gets or sets additional data.
-        /// </summary>
-        [JsonExtensionData]
-        public IDictionary<string, object> AdditionalData { get; set; }
-
-        /// <summary>
-        /// Gets or sets @odata.type.
-        /// </summary>
-        [JsonPropertyName("@odata.type")]
-        public string ODataType { get; set; }
     
     }
 }

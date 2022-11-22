@@ -392,12 +392,6 @@ namespace Microsoft.Graph
         IAuthenticationRequestBuilder Authentication { get; }
 
         /// <summary>
-        /// Gets the request builder for Tasks.
-        /// </summary>
-        /// <returns>The <see cref="ITasksRequestBuilder"/>.</returns>
-        ITasksRequestBuilder Tasks { get; }
-
-        /// <summary>
         /// Gets the request builder for Chats.
         /// </summary>
         /// <returns>The <see cref="IUserChatsCollectionRequestBuilder"/>.</returns>

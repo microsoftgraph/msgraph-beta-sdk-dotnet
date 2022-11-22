@@ -73,6 +73,12 @@ namespace Microsoft.Graph
             string cloudPcSnapshotId = null);
 
         /// <summary>
+        /// Gets the request builder for CloudPCRetryPartnerAgentInstallation.
+        /// </summary>
+        /// <returns>The <see cref="ICloudPCRetryPartnerAgentInstallationRequestBuilder"/>.</returns>
+        ICloudPCRetryPartnerAgentInstallationRequestBuilder RetryPartnerAgentInstallation();
+
+        /// <summary>
         /// Gets the request builder for CloudPCTroubleshoot.
         /// </summary>
         /// <returns>The <see cref="ICloudPCTroubleshootRequestBuilder"/>.</returns>
@@ -89,6 +95,18 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="ICloudPCGetCloudPcLaunchInfoRequestBuilder"/>.</returns>
         ICloudPCGetCloudPcLaunchInfoRequestBuilder GetCloudPcLaunchInfo();
+
+        /// <summary>
+        /// Gets the request builder for CloudPCGetShiftWorkCloudPcAccessState.
+        /// </summary>
+        /// <returns>The <see cref="ICloudPCGetShiftWorkCloudPcAccessStateRequestBuilder"/>.</returns>
+        ICloudPCGetShiftWorkCloudPcAccessStateRequestBuilder GetShiftWorkCloudPcAccessState();
+
+        /// <summary>
+        /// Gets the request builder for CloudPCGetSupportedCloudPcRemoteActions.
+        /// </summary>
+        /// <returns>The <see cref="ICloudPCGetSupportedCloudPcRemoteActionsRequestBuilder"/>.</returns>
+        ICloudPCGetSupportedCloudPcRemoteActionsRequestBuilder GetSupportedCloudPcRemoteActions();
     
     }
 }

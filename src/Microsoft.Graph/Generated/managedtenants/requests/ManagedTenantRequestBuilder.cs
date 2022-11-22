@@ -303,6 +303,18 @@ namespace Microsoft.Graph.ManagedTenants
         }
 
         /// <summary>
+        /// Gets the request builder for ManagementTemplateCollectionTenantSummaries.
+        /// </summary>
+        /// <returns>The <see cref="IManagedTenantManagementTemplateCollectionTenantSummariesCollectionRequestBuilder"/>.</returns>
+        public IManagedTenantManagementTemplateCollectionTenantSummariesCollectionRequestBuilder ManagementTemplateCollectionTenantSummaries
+        {
+            get
+            {
+                return new ManagedTenantManagementTemplateCollectionTenantSummariesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("managementTemplateCollectionTenantSummaries"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for ManagementTemplates.
         /// </summary>
         /// <returns>The <see cref="IManagedTenantManagementTemplatesCollectionRequestBuilder"/>.</returns>
@@ -323,6 +335,18 @@ namespace Microsoft.Graph.ManagedTenants
             get
             {
                 return new ManagedTenantManagementTemplateStepsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("managementTemplateSteps"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for ManagementTemplateStepTenantSummaries.
+        /// </summary>
+        /// <returns>The <see cref="IManagedTenantManagementTemplateStepTenantSummariesCollectionRequestBuilder"/>.</returns>
+        public IManagedTenantManagementTemplateStepTenantSummariesCollectionRequestBuilder ManagementTemplateStepTenantSummaries
+        {
+            get
+            {
+                return new ManagedTenantManagementTemplateStepTenantSummariesCollectionRequestBuilder(this.AppendSegmentToRequestUrl("managementTemplateStepTenantSummaries"), this.Client);
             }
         }
 

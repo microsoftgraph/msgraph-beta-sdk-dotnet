@@ -35,5 +35,10 @@ namespace Microsoft.Graph
         /// </summary>
         UnknownFutureValue = 4,
 	
+        /// <summary>
+        /// Rpa Box
+        /// </summary>
+        RpaBox = 8,
+	
     }
 }

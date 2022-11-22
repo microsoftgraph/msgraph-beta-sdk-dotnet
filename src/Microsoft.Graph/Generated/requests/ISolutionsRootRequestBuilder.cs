@@ -31,5 +31,11 @@ namespace Microsoft.Graph
         /// <returns>The built request.</returns>
         ISolutionsRootRequest Request(IEnumerable<Option> options);
     
+        /// <summary>
+        /// Gets the request builder for BusinessScenarios.
+        /// </summary>
+        /// <returns>The <see cref="ISolutionsRootBusinessScenariosCollectionRequestBuilder"/>.</returns>
+        ISolutionsRootBusinessScenariosCollectionRequestBuilder BusinessScenarios { get; }
+    
     }
 }

@@ -191,7 +191,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets required resource access.
-        /// Specifies the resources that the application needs to access. This property also specifies the set of delegated permissions and application roles that it needs for each of those resources. This configuration of access to the required resources drives the consent experience. No more than 50 resource services (APIs) can be configured. Beginning mid-October 2021, the total number of required permissions must not exceed 400. Not nullable. Supports $filter (eq, not, ge, le).
+        /// Specifies the resources that the application needs to access. This property also specifies the set of delegated permissions and application roles that it needs for each of those resources. This configuration of access to the required resources drives the consent experience. No more than 50 resource services (APIs) can be configured. Beginning mid-October 2021, the total number of required permissions must not exceed 400. For more information, see Limits on requested permissions per app. Not nullable. Supports $filter (eq, not, ge, le).
         /// </summary>
         [JsonPropertyName("requiredResourceAccess")]
         public IEnumerable<RequiredResourceAccess> RequiredResourceAccess { get; set; }
@@ -212,13 +212,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets service principal lock configuration.
+        /// Specifies whether sensitive properties of a multi-tenant application should be locked for editing after the application is provisioned in a tenant. Nullable. null by default.
         /// </summary>
         [JsonPropertyName("servicePrincipalLockConfiguration")]
         public ServicePrincipalLockConfiguration ServicePrincipalLockConfiguration { get; set; }
     
         /// <summary>
         /// Gets or sets sign in audience.
-        /// Specifies the Microsoft accounts that are supported for the current application. The possible values are: AzureADMyOrg, AzureADMultipleOrgs, AzureADandPersonalMicrosoftAccount (default), and PersonalMicrosoftAccount. See more in the table below. Supports $filter (eq, ne, not).
+        /// Specifies the Microsoft accounts that are supported for the current application. The possible values are: AzureADMyOrg, AzureADMultipleOrgs, AzureADandPersonalMicrosoftAccount (default), and PersonalMicrosoftAccount. See more in the table. The value of this object also limits the number of permissions an app can request. For more information, see Limits on requested permissions per app. Supports $filter (eq, ne, not).
         /// </summary>
         [JsonPropertyName("signInAudience")]
         public string SignInAudience { get; set; }

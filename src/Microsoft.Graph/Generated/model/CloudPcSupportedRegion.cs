@@ -29,6 +29,12 @@ namespace Microsoft.Graph
         public string DisplayName { get; set; }
     
         /// <summary>
+        /// Gets or sets region group.
+        /// </summary>
+        [JsonPropertyName("regionGroup")]
+        public CloudPcRegionGroup? RegionGroup { get; set; }
+    
+        /// <summary>
         /// Gets or sets region status.
         /// The status of the supported region. Possible values are: available, restricted, unavailable, unknownFutureValue. Read-only.
         /// </summary>

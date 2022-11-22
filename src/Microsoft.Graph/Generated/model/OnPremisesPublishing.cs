@@ -123,8 +123,15 @@ namespace Microsoft.Graph
         /// Gets or sets onPremisesApplicationSegments.
         /// Represents the application segment collection for an on-premises wildcard application.
         /// </summary>
+        [Obsolete("The onPremisesApplicationSegment type is deprecated and will being used on June 01, 2023. Please use the new applicationSegment type.")]
         [JsonPropertyName("onPremisesApplicationSegments")]
         public IEnumerable<OnPremisesApplicationSegment> OnPremisesApplicationSegments { get; set; }
+    
+        /// <summary>
+        /// Gets or sets segmentsConfiguration.
+        /// </summary>
+        [JsonPropertyName("segmentsConfiguration")]
+        public SegmentConfiguration SegmentsConfiguration { get; set; }
     
         /// <summary>
         /// Gets or sets singleSignOnSettings.

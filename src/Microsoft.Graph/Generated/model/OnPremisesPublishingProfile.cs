@@ -28,6 +28,12 @@ namespace Microsoft.Graph
         public HybridAgentUpdaterConfiguration HybridAgentUpdaterConfiguration { get; set; }
     
         /// <summary>
+        /// Gets or sets is default access enabled.
+        /// </summary>
+        [JsonPropertyName("isDefaultAccessEnabled")]
+        public bool? IsDefaultAccessEnabled { get; set; }
+    
+        /// <summary>
         /// Gets or sets is enabled.
         /// Represents if Azure AD Application Proxy is enabled for the tenant.
         /// </summary>

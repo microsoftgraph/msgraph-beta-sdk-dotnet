@@ -57,6 +57,12 @@ namespace Microsoft.Graph
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
+        /// Gets or sets creation source.
+        /// </summary>
+        [JsonPropertyName("creationSource")]
+        public PlannerPlanCreation CreationSource { get; set; }
+    
+        /// <summary>
         /// Gets or sets owner.
         /// </summary>
         [Obsolete("Owner property is deprecated and will be removed in January 2023. Please use the container property instead.")]

@@ -127,6 +127,17 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for CloudPCRetryPartnerAgentInstallation.
+        /// </summary>
+        /// <returns>The <see cref="ICloudPCRetryPartnerAgentInstallationRequestBuilder"/>.</returns>
+        public ICloudPCRetryPartnerAgentInstallationRequestBuilder RetryPartnerAgentInstallation()
+        {
+            return new CloudPCRetryPartnerAgentInstallationRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.retryPartnerAgentInstallation"),
+                this.Client);
+        }
+
+        /// <summary>
         /// Gets the request builder for CloudPCTroubleshoot.
         /// </summary>
         /// <returns>The <see cref="ICloudPCTroubleshootRequestBuilder"/>.</returns>
@@ -156,6 +167,28 @@ namespace Microsoft.Graph
         {
             return new CloudPCGetCloudPcLaunchInfoRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.getCloudPcLaunchInfo"),
+                this.Client);
+        }
+
+        /// <summary>
+        /// Gets the request builder for CloudPCGetShiftWorkCloudPcAccessState.
+        /// </summary>
+        /// <returns>The <see cref="ICloudPCGetShiftWorkCloudPcAccessStateRequestBuilder"/>.</returns>
+        public ICloudPCGetShiftWorkCloudPcAccessStateRequestBuilder GetShiftWorkCloudPcAccessState()
+        {
+            return new CloudPCGetShiftWorkCloudPcAccessStateRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getShiftWorkCloudPcAccessState"),
+                this.Client);
+        }
+
+        /// <summary>
+        /// Gets the request builder for CloudPCGetSupportedCloudPcRemoteActions.
+        /// </summary>
+        /// <returns>The <see cref="ICloudPCGetSupportedCloudPcRemoteActionsRequestBuilder"/>.</returns>
+        public ICloudPCGetSupportedCloudPcRemoteActionsRequestBuilder GetSupportedCloudPcRemoteActions()
+        {
+            return new CloudPCGetSupportedCloudPcRemoteActionsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getSupportedCloudPcRemoteActions"),
                 this.Client);
         }
     

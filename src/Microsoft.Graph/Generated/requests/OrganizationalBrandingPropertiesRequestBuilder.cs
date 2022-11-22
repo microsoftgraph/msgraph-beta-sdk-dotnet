@@ -75,6 +75,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for CustomCSS.
+        /// </summary>
+        /// <returns>The <see cref="IOrganizationalBrandingPropertiesCustomCSSRequestBuilder"/>.</returns>
+        public IOrganizationalBrandingPropertiesCustomCSSRequestBuilder CustomCSS
+        {
+            get
+            {
+                return new OrganizationalBrandingPropertiesCustomCSSRequestBuilder(this.AppendSegmentToRequestUrl("customCSS"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for Favicon.
         /// </summary>
         /// <returns>The <see cref="IOrganizationalBrandingPropertiesFaviconRequestBuilder"/>.</returns>
@@ -83,6 +95,18 @@ namespace Microsoft.Graph
             get
             {
                 return new OrganizationalBrandingPropertiesFaviconRequestBuilder(this.AppendSegmentToRequestUrl("favicon"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for HeaderLogo.
+        /// </summary>
+        /// <returns>The <see cref="IOrganizationalBrandingPropertiesHeaderLogoRequestBuilder"/>.</returns>
+        public IOrganizationalBrandingPropertiesHeaderLogoRequestBuilder HeaderLogo
+        {
+            get
+            {
+                return new OrganizationalBrandingPropertiesHeaderLogoRequestBuilder(this.AppendSegmentToRequestUrl("headerLogo"), this.Client);
             }
         }
 

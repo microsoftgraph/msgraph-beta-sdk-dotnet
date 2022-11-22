@@ -21,6 +21,18 @@ namespace Microsoft.Graph
     {
     
         /// <summary>
+        /// Gets or sets acknowledged date time.
+        /// </summary>
+        [JsonPropertyName("acknowledgedDateTime")]
+        public DateTimeOffset? AcknowledgedDateTime { get; set; }
+    
+        /// <summary>
+        /// Gets or sets completed date time.
+        /// </summary>
+        [JsonPropertyName("completedDateTime")]
+        public DateTimeOffset? CompletedDateTime { get; set; }
+    
+        /// <summary>
         /// Gets or sets configuration.
         /// A group of settings that a printer should use to print a job.
         /// </summary>
@@ -45,6 +57,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("displayName")]
         public string DisplayName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets error code.
+        /// </summary>
+        [JsonPropertyName("errorCode")]
+        public Int32? ErrorCode { get; set; }
     
         /// <summary>
         /// Gets or sets is fetchable.

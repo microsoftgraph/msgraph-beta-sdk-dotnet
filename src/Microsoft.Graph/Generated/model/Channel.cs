@@ -71,6 +71,12 @@ namespace Microsoft.Graph
         public ChannelModerationSettings ModerationSettings { get; set; }
     
         /// <summary>
+        /// Gets or sets summary.
+        /// </summary>
+        [JsonPropertyName("summary")]
+        public ChannelSummary Summary { get; set; }
+    
+        /// <summary>
         /// Gets or sets tenant id.
         /// The ID of the Azure Active Directory tenant.
         /// </summary>

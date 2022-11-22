@@ -158,6 +158,12 @@ namespace Microsoft.Graph.ManagedTenants
         IManagedTenantManagementTemplateCollectionsCollectionRequestBuilder ManagementTemplateCollections { get; }
 
         /// <summary>
+        /// Gets the request builder for ManagementTemplateCollectionTenantSummaries.
+        /// </summary>
+        /// <returns>The <see cref="IManagedTenantManagementTemplateCollectionTenantSummariesCollectionRequestBuilder"/>.</returns>
+        IManagedTenantManagementTemplateCollectionTenantSummariesCollectionRequestBuilder ManagementTemplateCollectionTenantSummaries { get; }
+
+        /// <summary>
         /// Gets the request builder for ManagementTemplates.
         /// </summary>
         /// <returns>The <see cref="IManagedTenantManagementTemplatesCollectionRequestBuilder"/>.</returns>
@@ -168,6 +174,12 @@ namespace Microsoft.Graph.ManagedTenants
         /// </summary>
         /// <returns>The <see cref="IManagedTenantManagementTemplateStepsCollectionRequestBuilder"/>.</returns>
         IManagedTenantManagementTemplateStepsCollectionRequestBuilder ManagementTemplateSteps { get; }
+
+        /// <summary>
+        /// Gets the request builder for ManagementTemplateStepTenantSummaries.
+        /// </summary>
+        /// <returns>The <see cref="IManagedTenantManagementTemplateStepTenantSummariesCollectionRequestBuilder"/>.</returns>
+        IManagedTenantManagementTemplateStepTenantSummariesCollectionRequestBuilder ManagementTemplateStepTenantSummaries { get; }
 
         /// <summary>
         /// Gets the request builder for ManagementTemplateStepVersions.

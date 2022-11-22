@@ -174,27 +174,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for DataClassificationServiceClassifyText.
-        /// </summary>
-        /// <returns>The <see cref="IDataClassificationServiceClassifyTextRequestBuilder"/>.</returns>
-        public IDataClassificationServiceClassifyTextRequestBuilder ClassifyText(
-            string text = null,
-            string fileExtension = null,
-            IEnumerable<string> sensitiveTypeIds = null,
-            SensitiveTypeScope? scopesToRun = null,
-            MlClassificationMatchTolerance? matchTolerancesToInclude = null)
-        {
-            return new DataClassificationServiceClassifyTextRequestBuilder(
-                this.AppendSegmentToRequestUrl("microsoft.graph.classifyText"),
-                this.Client,
-                text,
-                fileExtension,
-                sensitiveTypeIds,
-                scopesToRun,
-                matchTolerancesToInclude);
-        }
-
-        /// <summary>
         /// Gets the request builder for DataClassificationServiceClassifyExactMatches.
         /// </summary>
         /// <returns>The <see cref="IDataClassificationServiceClassifyExactMatchesRequestBuilder"/>.</returns>

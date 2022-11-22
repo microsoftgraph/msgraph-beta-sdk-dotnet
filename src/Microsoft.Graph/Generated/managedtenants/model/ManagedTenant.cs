@@ -307,6 +307,19 @@ namespace Microsoft.Graph.ManagedTenants
         public string ManagementTemplateCollectionsNextLink { get; set; }
     
         /// <summary>
+        /// Gets or sets management template collection tenant summaries.
+        /// </summary>
+        [JsonPropertyName("managementTemplateCollectionTenantSummaries")]
+        public IManagedTenantManagementTemplateCollectionTenantSummariesCollectionPage ManagementTemplateCollectionTenantSummaries { get; set; }
+
+        /// <summary>
+        /// Gets or sets managementTemplateCollectionTenantSummariesNextLink.
+        /// </summary>
+        [JsonPropertyName("managementTemplateCollectionTenantSummaries@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string ManagementTemplateCollectionTenantSummariesNextLink { get; set; }
+    
+        /// <summary>
         /// Gets or sets management templates.
         /// The collection of baseline management templates across managed tenants.
         /// </summary>
@@ -332,6 +345,19 @@ namespace Microsoft.Graph.ManagedTenants
         [JsonPropertyName("managementTemplateSteps@odata.nextLink")]
         [JsonConverter(typeof(NextLinkConverter))]
         public string ManagementTemplateStepsNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets management template step tenant summaries.
+        /// </summary>
+        [JsonPropertyName("managementTemplateStepTenantSummaries")]
+        public IManagedTenantManagementTemplateStepTenantSummariesCollectionPage ManagementTemplateStepTenantSummaries { get; set; }
+
+        /// <summary>
+        /// Gets or sets managementTemplateStepTenantSummariesNextLink.
+        /// </summary>
+        [JsonPropertyName("managementTemplateStepTenantSummaries@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string ManagementTemplateStepTenantSummariesNextLink { get; set; }
     
         /// <summary>
         /// Gets or sets management template step versions.

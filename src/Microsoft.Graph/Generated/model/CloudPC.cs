@@ -112,6 +112,12 @@ namespace Microsoft.Graph
         public CloudPcOperatingSystem? OsVersion { get; set; }
     
         /// <summary>
+        /// Gets or sets partner agent install results.
+        /// </summary>
+        [JsonPropertyName("partnerAgentInstallResults")]
+        public IEnumerable<CloudPcPartnerAgentInstallResult> PartnerAgentInstallResults { get; set; }
+    
+        /// <summary>
         /// Gets or sets provisioning policy id.
         /// The provisioning policy ID of the Cloud PC.
         /// </summary>
@@ -124,6 +130,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("provisioningPolicyName")]
         public string ProvisioningPolicyName { get; set; }
+    
+        /// <summary>
+        /// Gets or sets provisioning type.
+        /// </summary>
+        [JsonPropertyName("provisioningType")]
+        public CloudPcProvisioningType? ProvisioningType { get; set; }
     
         /// <summary>
         /// Gets or sets service plan id.
