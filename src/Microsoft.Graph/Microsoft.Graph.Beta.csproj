@@ -22,9 +22,10 @@
     <AssemblyOriginatorKeyFile>35MSSharedLib1024.snk</AssemblyOriginatorKeyFile>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <PackageReleaseNotes>
-- Adds OdataDeltaLink property to collection responses for delta
-- Changes the ResponeHandler parameter in request builders to be a RequestOption in dotnet [#1858](https://github.com/microsoft/kiota/issues/1858)
-- Latest metadata updates from 18th October 2022 snapshot
+- Adds baseUrl parameter to GraphServiceClient constructor to allow for easier updating of target endpoint
+- Adds ItemWithPath for request builder to enable path retrieval of drive items
+- Fix for default OdataType property in models causing errors from the API
+- Latest metadata updates from 22nd November 2022 snapshot
     </PackageReleaseNotes>
     <!-- edit this value to change the current major.minor.patch version -->
     <VersionPrefix>5.14.0</VersionPrefix>
@@ -60,7 +61,7 @@
     <None Include=".\..\..\LICENSE.txt" Pack="true" PackagePath="" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Microsoft.Graph.Core" Version="3.0.0-preview.16" />
+    <PackageReference Include="Microsoft.Graph.Core" Version="3.0.0-preview.17" />
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1" PrivateAssets="All" />
   </ItemGroup>
   <ItemGroup Condition=" '$(TargetFramework)' == 'netstandard2.0' ">
