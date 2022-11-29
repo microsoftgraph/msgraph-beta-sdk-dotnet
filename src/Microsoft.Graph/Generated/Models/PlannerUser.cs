@@ -10,7 +10,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<PlannerDelta>>("all"); }
             set { BackingStore?.Set("all", value); }
         }
-        /// <summary>A collection containing the references to the plans that the user has marked as favorites.</summary>
+        /// <summary>A collection that contains the references to the plans that the user has marked as favorites.</summary>
         public PlannerFavoritePlanReferenceCollection FavoritePlanReferences {
             get { return BackingStore?.Get<PlannerFavoritePlanReferenceCollection>("favoritePlanReferences"); }
             set { BackingStore?.Set("favoritePlanReferences", value); }
@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<PlannerPlan>>("plans"); }
             set { BackingStore?.Set("plans", value); }
         }
-        /// <summary>A collection containing references to the plans that were viewed recently by the user in apps that support recent plans.</summary>
+        /// <summary>A collection that contains references to the plans that were viewed recently by the user in apps that support recent plans.</summary>
         public PlannerRecentPlanReferenceCollection RecentPlanReferences {
             get { return BackingStore?.Get<PlannerRecentPlanReferenceCollection>("recentPlanReferences"); }
             set { BackingStore?.Set("recentPlanReferences", value); }

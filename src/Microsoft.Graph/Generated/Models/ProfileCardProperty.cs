@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class ProfileCardProperty : Entity, IParsable {
         /// <summary>Allows an administrator to set a custom display label for the directory property and localize it for the users in their tenant.</summary>
         public List<ProfileCardAnnotation> Annotations {

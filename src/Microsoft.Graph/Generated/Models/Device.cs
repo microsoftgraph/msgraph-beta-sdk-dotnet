@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class Device : DirectoryObject, IParsable {
         /// <summary>true if the account is enabled; otherwise, false. Default is true.  Supports $filter (eq, ne, not, in). Only callers in Global Administrator and Cloud Device Administrator roles can set this property.</summary>
         public bool? AccountEnabled {
@@ -35,7 +36,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("deviceCategory"); }
             set { BackingStore?.Set("deviceCategory", value); }
         }
-        /// <summary>Identifier set by Azure Device Registration Service at the time of registration. Supports $filter (eq, ne, not, startsWith).</summary>
+        /// <summary>Unique Identifier set by Azure Device Registration Service at the time of registration. This is an alternate key that can be used to reference the device object. Also Supports $filter (eq, ne, not, startsWith).</summary>
         public string DeviceId {
             get { return BackingStore?.Get<string>("deviceId"); }
             set { BackingStore?.Set("deviceId", value); }
@@ -165,7 +166,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("operatingSystemVersion"); }
             set { BackingStore?.Set("operatingSystemVersion", value); }
         }
-        /// <summary>For internal use only. Not nullable. Supports $filter (eq, not, ge, le, startsWith, and counting empty collections).</summary>
+        /// <summary>For internal use only. Not nullable. Supports $filter (eq, not, ge, le, startsWith, /$count eq 0, /$count ne 0.</summary>
         public List<string> PhysicalIds {
             get { return BackingStore?.Get<List<string>>("physicalIds"); }
             set { BackingStore?.Set("physicalIds", value); }
@@ -200,7 +201,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("status"); }
             set { BackingStore?.Set("status", value); }
         }
-        /// <summary>List of labels applied to the device by the system. Supports $filter (eq when counting empty collections).</summary>
+        /// <summary>List of labels applied to the device by the system. Supports $filter (/$count eq 0, /$count ne 0).</summary>
         public List<string> SystemLabels {
             get { return BackingStore?.Get<List<string>>("systemLabels"); }
             set { BackingStore?.Set("systemLabels", value); }

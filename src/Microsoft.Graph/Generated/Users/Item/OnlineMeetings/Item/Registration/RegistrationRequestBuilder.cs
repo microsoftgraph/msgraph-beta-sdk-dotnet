@@ -68,7 +68,7 @@ namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration {
             return requestInfo;
         }
         /// <summary>
-        /// Get the externalMeetingRegistration details associated with an onlineMeeting.
+        /// Get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<RegistrationRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -123,7 +123,7 @@ namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get the externalMeetingRegistration details associated with an onlineMeeting.
+        /// Get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -164,7 +164,7 @@ namespace Microsoft.Graph.Beta.Users.Item.OnlineMeetings.Item.Registration {
                 Headers = new Dictionary<string, string>();
             }
         }
-        /// <summary>Get the externalMeetingRegistration details associated with an onlineMeeting.</summary>
+        /// <summary>Get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.</summary>
         public class RegistrationRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

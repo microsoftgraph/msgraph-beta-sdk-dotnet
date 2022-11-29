@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("visibility", value); }
         }
         /// <summary>
-        /// Instantiates a new AdministrativeUnit and sets the default values.
+        /// Instantiates a new administrativeUnit and sets the default values.
         /// </summary>
         public AdministrativeUnit() : base() {
             OdataType = "#microsoft.graph.administrativeUnit";

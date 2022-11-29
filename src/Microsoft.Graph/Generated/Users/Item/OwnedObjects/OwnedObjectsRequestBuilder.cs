@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Beta.Users.Item.OwnedObjects {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Directory objects that are owned by the user. Read-only. Nullable. Supports $expand.
+        /// Directory objects that are owned by the user. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<OwnedObjectsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -92,7 +92,7 @@ namespace Microsoft.Graph.Beta.Users.Item.OwnedObjects {
             return requestInfo;
         }
         /// <summary>
-        /// Directory objects that are owned by the user. Read-only. Nullable. Supports $expand.
+        /// Directory objects that are owned by the user. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -104,7 +104,7 @@ namespace Microsoft.Graph.Beta.Users.Item.OwnedObjects {
             };
             return await RequestAdapter.SendAsync<DirectoryObjectCollectionResponse>(requestInfo, DirectoryObjectCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Directory objects that are owned by the user. Read-only. Nullable. Supports $expand.</summary>
+        /// <summary>Directory objects that are owned by the user. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).</summary>
         public class OwnedObjectsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

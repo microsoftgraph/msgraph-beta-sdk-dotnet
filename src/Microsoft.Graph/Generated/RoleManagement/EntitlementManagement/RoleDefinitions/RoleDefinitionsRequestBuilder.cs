@@ -77,7 +77,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.RoleDefiniti
             return requestInfo;
         }
         /// <summary>
-        /// Create a new unifiedRoleDefinition object for an RBAC provider. The following RBAC providers are currently supported:- Cloud PC- device management (Intune)- directory (Azure AD)
+        /// Create a new unifiedRoleDefinition object for an RBAC provider. This feature requires an Azure AD Premium P1 or P2 license. The following RBAC providers are currently supported:- Cloud PC- device management (Intune)- directory (Azure AD)
         /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -112,7 +112,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.RoleDefiniti
             return await RequestAdapter.SendAsync<UnifiedRoleDefinitionCollectionResponse>(requestInfo, UnifiedRoleDefinitionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create a new unifiedRoleDefinition object for an RBAC provider. The following RBAC providers are currently supported:- Cloud PC- device management (Intune)- directory (Azure AD)
+        /// Create a new unifiedRoleDefinition object for an RBAC provider. This feature requires an Azure AD Premium P1 or P2 license. The following RBAC providers are currently supported:- Cloud PC- device management (Intune)- directory (Azure AD)
         /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

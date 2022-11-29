@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class ServicePrincipal : DirectoryObject, IParsable {
         /// <summary>true if the service principal account is enabled; otherwise, false. If set to false, then no users will be able to sign in to this app, even if they are assigned to it. Supports $filter (eq, ne, not, in).</summary>
         public bool? AccountEnabled {
@@ -176,12 +176,12 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<OAuth2PermissionGrant>>("oauth2PermissionGrants"); }
             set { BackingStore?.Set("oauth2PermissionGrants", value); }
         }
-        /// <summary>Directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand.</summary>
+        /// <summary>Directory objects that are owned by this service principal. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).</summary>
         public List<DirectoryObject> OwnedObjects {
             get { return BackingStore?.Get<List<DirectoryObject>>("ownedObjects"); }
             set { BackingStore?.Set("ownedObjects", value); }
         }
-        /// <summary>Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable. Supports $expand.</summary>
+        /// <summary>Directory objects that are owners of this servicePrincipal. The owners are a set of non-admin users or servicePrincipals who are allowed to modify this object. Read-only. Nullable.  Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).</summary>
         public List<DirectoryObject> Owners {
             get { return BackingStore?.Get<List<DirectoryObject>>("owners"); }
             set { BackingStore?.Set("owners", value); }

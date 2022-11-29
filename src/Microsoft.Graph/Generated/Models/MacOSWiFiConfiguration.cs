@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>By providing the configurations in this profile you can instruct the macOS device to connect to desired Wi-Fi endpoint. By specifying the authentication method and security types expected by Wi-Fi endpoint you can make the Wi-Fi connection seamless for end user.</summary>
     public class MacOSWiFiConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Connect automatically when this network is in range. Setting this to true will skip the user prompt and automatically connect the device to Wi-Fi network.</summary>
         public bool? ConnectAutomatically {
@@ -58,7 +57,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("wiFiSecurityType", value); }
         }
         /// <summary>
-        /// Instantiates a new macOSWiFiConfiguration and sets the default values.
+        /// Instantiates a new MacOSWiFiConfiguration and sets the default values.
         /// </summary>
         public MacOSWiFiConfiguration() : base() {
             OdataType = "#microsoft.graph.macOSWiFiConfiguration";

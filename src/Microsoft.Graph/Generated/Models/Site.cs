@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class Site : BaseItem, IParsable {
         /// <summary>Analytics about the view activities that took place in this site.</summary>
         public ItemAnalytics Analytics {
@@ -108,7 +107,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("termStore", value); }
         }
         /// <summary>
-        /// Instantiates a new site and sets the default values.
+        /// Instantiates a new Site and sets the default values.
         /// </summary>
         public Site() : base() {
             OdataType = "#microsoft.graph.site";

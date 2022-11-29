@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Ediscovery {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class ReviewSet : Entity, IParsable {
         /// <summary>The user who created the review set. Read-only.</summary>
         public Microsoft.Graph.Beta.Models.IdentitySet CreatedBy {

@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class PlannerProgressTaskBoardTaskFormat : PlannerDelta, IParsable {
-        /// <summary>Hint value used to order the task on the Progress view of the Task Board. The format is defined as outlined here.</summary>
+        /// <summary>Hint value used to order the task on the progress view of the task board. For details about the supported format, see Using order hints in Planner.</summary>
         public string OrderHint {
             get { return BackingStore?.Get<string>("orderHint"); }
             set { BackingStore?.Set("orderHint", value); }
