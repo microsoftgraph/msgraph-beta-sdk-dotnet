@@ -44,7 +44,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets technologies.
-        /// Which technology channels this setting can be deployed through. Possible values are: none, mdm, windows10XManagement, configManager, appleRemoteManagement, microsoftSense, exchangeOnline, linuxMdm, unknownFutureValue.
+        /// Which technology channels this setting can be deployed through. Possible values are: none, mdm, windows10XManagement, configManager, appleRemoteManagement, microsoftSense, exchangeOnline, linuxMdm, enrollment, endpointPrivilegeManagement, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("technologies")]
         public DeviceManagementConfigurationTechnologies? Technologies { get; set; }
