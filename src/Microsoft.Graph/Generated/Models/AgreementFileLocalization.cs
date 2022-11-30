@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class AgreementFileLocalization : AgreementFileProperties, IParsable {
         /// <summary>Read-only. Customized versions of the terms of use agreement in the Azure AD tenant.</summary>
         public List<AgreementFileVersion> Versions {

@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Beta.Planner.Plans.Item.Buckets.Item.Tasks.Item.Detail
             return requestInfo;
         }
         /// <summary>
-        /// Update the properties of **plannertaskdetails** object.
+        /// Update the properties of **plannerTaskDetails** object.
         /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -131,7 +131,7 @@ namespace Microsoft.Graph.Beta.Planner.Plans.Item.Buckets.Item.Tasks.Item.Detail
             return await RequestAdapter.SendAsync<PlannerTaskDetails>(requestInfo, PlannerTaskDetails.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update the properties of **plannertaskdetails** object.
+        /// Update the properties of **plannerTaskDetails** object.
         /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

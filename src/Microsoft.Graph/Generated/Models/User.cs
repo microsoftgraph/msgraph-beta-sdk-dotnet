@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<Approval>>("approvals"); }
             set { BackingStore?.Set("approvals", value); }
         }
-        /// <summary>The licenses that are assigned to the user, including inherited (group-based) licenses. This property doesn&apos;t differentiate directly-assigned and inherited licenses. Use the licenseAssignmentStates property to identify the directly-assigned and inherited licenses. Not nullable. Supports $filter (eq, not, and counting empty collections).</summary>
+        /// <summary>The licenses that are assigned to the user, including inherited (group-based) licenses. This property doesn&apos;t differentiate directly-assigned and inherited licenses. Use the licenseAssignmentStates property to identify the directly-assigned and inherited licenses. Not nullable. Supports $filter (eq, not, /$count eq 0, /$count ne 0).</summary>
         public List<AssignedLicense> AssignedLicenses {
             get { return BackingStore?.Get<List<AssignedLicense>>("assignedLicenses"); }
             set { BackingStore?.Set("assignedLicenses", value); }
@@ -501,7 +501,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("onPremisesUserPrincipalName"); }
             set { BackingStore?.Set("onPremisesUserPrincipalName", value); }
         }
-        /// <summary>A list of additional email addresses for the user; for example: [&apos;bob@contoso.com&apos;, &apos;Robert@fabrikam.com&apos;].NOTE: This property cannot contain accent characters.Supports $filter (eq, not, ge, le, in, startsWith, endsWith, and counting empty collections).</summary>
+        /// <summary>A list of additional email addresses for the user; for example: [&apos;bob@contoso.com&apos;, &apos;Robert@fabrikam.com&apos;].NOTE: This property cannot contain accent characters.Supports $filter (eq, not, ge, le, in, startsWith, endsWith, /$count eq 0, /$count ne 0).</summary>
         public List<string> OtherMails {
             get { return BackingStore?.Get<List<string>>("otherMails"); }
             set { BackingStore?.Set("otherMails", value); }
@@ -516,7 +516,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<DirectoryObject>>("ownedDevices"); }
             set { BackingStore?.Set("ownedDevices", value); }
         }
-        /// <summary>Directory objects that are owned by the user. Read-only. Nullable. Supports $expand.</summary>
+        /// <summary>Directory objects that are owned by the user. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).</summary>
         public List<DirectoryObject> OwnedObjects {
             get { return BackingStore?.Get<List<DirectoryObject>>("ownedObjects"); }
             set { BackingStore?.Set("ownedObjects", value); }
@@ -601,7 +601,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<ProvisionedPlan>>("provisionedPlans"); }
             set { BackingStore?.Set("provisionedPlans", value); }
         }
-        /// <summary>For example: [&apos;SMTP: bob@contoso.com&apos;, &apos;smtp: bob@sales.contoso.com&apos;]. Changes to the mail property will also update this collection to include the value as an SMTP address. For more information, see mail and proxyAddresses properties. The proxy address prefixed with SMTP (capitalized) is the primary proxy address while those prefixed with smtp are the secondary proxy addresses. For Azure AD B2C accounts, this property has a limit of ten unique addresses. Read-only in Microsoft Graph; you can update this property only through the Microsoft 365 admin center. Not nullable. Supports $filter (eq, not, ge, le, startsWith, endsWith, and counting empty collections).</summary>
+        /// <summary>For example: [&apos;SMTP: bob@contoso.com&apos;, &apos;smtp: bob@sales.contoso.com&apos;]. Changes to the mail property will also update this collection to include the value as an SMTP address. For more information, see mail and proxyAddresses properties. The proxy address prefixed with SMTP (capitalized) is the primary proxy address while those prefixed with smtp are the secondary proxy addresses. For Azure AD B2C accounts, this property has a limit of ten unique addresses. Read-only in Microsoft Graph; you can update this property only through the Microsoft 365 admin center. Not nullable. Supports $filter (eq, not, ge, le, startsWith, endsWith, /$count eq 0, /$count ne 0).</summary>
         public List<string> ProxyAddresses {
             get { return BackingStore?.Get<List<string>>("proxyAddresses"); }
             set { BackingStore?.Set("proxyAddresses", value); }

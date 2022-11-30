@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Chats.Item.Messages {
             return requestInfo;
         }
         /// <summary>
-        /// Send a new chatMessage in the specified channel or a chat.
+        /// Send a new chatMessage in the specified chat. This API cannot create a new chat; you must use the list chats method to retrieve the ID of an existing chat before creating a chat message.
         /// </summary>
         /// <param name="body"></param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -119,7 +119,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Chats.Item.Messages {
             return await RequestAdapter.SendAsync<ChatMessageCollectionResponse>(requestInfo, ChatMessageCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Send a new chatMessage in the specified channel or a chat.
+        /// Send a new chatMessage in the specified chat. This API cannot create a new chat; you must use the list chats method to retrieve the ID of an existing chat before creating a chat message.
         /// </summary>
         /// <param name="body"></param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

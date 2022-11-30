@@ -18,7 +18,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Optional constraints that must be met for the permission to be effective.</summary>
+        /// <summary>Optional constraints that must be met for the permission to be effective. Not supported for custom roles.</summary>
         public string Condition {
             get { return BackingStore?.Get<string>("condition"); }
             set { BackingStore?.Set("condition", value); }

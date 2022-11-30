@@ -145,7 +145,7 @@ namespace Microsoft.Graph.Beta.Models.TenantAdmin {
             get { return BackingStore?.Get<int?>("siteCreationDefaultStorageLimitInMB"); }
             set { BackingStore?.Set("siteCreationDefaultStorageLimitInMB", value); }
         }
-        /// <summary>The default timezone of a tenant for newly created sites.</summary>
+        /// <summary>The default timezone of a tenant for newly created sites. For a list of possible values, see SPRegionalSettings.TimeZones property.</summary>
         public string TenantDefaultTimezone {
             get { return BackingStore?.Get<string>("tenantDefaultTimezone"); }
             set { BackingStore?.Set("tenantDefaultTimezone", value); }

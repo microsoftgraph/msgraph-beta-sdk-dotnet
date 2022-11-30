@@ -40,7 +40,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>Supports $filter (eq when counting empty collections). Read-only.</summary>
+        /// <summary>Supports $filter (/$count eq 0, /$count ne 0). Read-only.</summary>
         public DirectoryObject CreatedOnBehalfOf {
             get { return BackingStore?.Get<DirectoryObject>("createdOnBehalfOf"); }
             set { BackingStore?.Set("createdOnBehalfOf", value); }
@@ -65,12 +65,12 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
-        /// <summary>Read-only. Nullable. Supports $expand and $filter (eq and ne when counting empty collections and only with advanced query parameters).</summary>
+        /// <summary>Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0).</summary>
         public List<ExtensionProperty> ExtensionProperties {
             get { return BackingStore?.Get<List<ExtensionProperty>>("extensionProperties"); }
             set { BackingStore?.Set("extensionProperties", value); }
         }
-        /// <summary>Federated identities for applications. Supports $expand and $filter (startsWith, and eq, ne when counting empty collections and only with advanced query parameters).</summary>
+        /// <summary>Federated identities for applications. Supports $expand and $filter (startsWith, /$count eq 0, /$count ne 0).</summary>
         public List<FederatedIdentityCredential> FederatedIdentityCredentials {
             get { return BackingStore?.Get<List<FederatedIdentityCredential>>("federatedIdentityCredentials"); }
             set { BackingStore?.Set("federatedIdentityCredentials", value); }
@@ -130,7 +130,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OptionalClaims>("optionalClaims"); }
             set { BackingStore?.Set("optionalClaims", value); }
         }
-        /// <summary>Directory objects that are owners of the application. Read-only. Nullable. Supports $expand and $filter (eq and ne when counting empty collections).</summary>
+        /// <summary>Directory objects that are owners of the application. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).</summary>
         public List<DirectoryObject> Owners {
             get { return BackingStore?.Get<List<DirectoryObject>>("owners"); }
             set { BackingStore?.Set("owners", value); }

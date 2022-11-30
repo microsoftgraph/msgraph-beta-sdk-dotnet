@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public enum ZebraFotaScheduleMode {
         /// <summary>Instructs the device to install the update as soon as it is received.</summary>
         InstallNow,

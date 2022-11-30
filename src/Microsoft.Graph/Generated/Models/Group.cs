@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class Group : DirectoryObject, IParsable {
         /// <summary>The list of users or groups that are allowed to create post&apos;s or calendar events in this group. If this list is non-empty then only users or groups listed here are allowed to post.</summary>
         public List<DirectoryObject> AcceptedSenders {
@@ -266,7 +266,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("organizationId"); }
             set { BackingStore?.Set("organizationId", value); }
         }
-        /// <summary>The owners of the group who can be users or service principals. Nullable. If this property is not specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner. Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,&apos;Role&apos;)&amp;$select=id,displayName&amp;$expand=owners($select=id,userPrincipalName,displayName).</summary>
+        /// <summary>The owners of the group who can be users or service principals. Nullable. If this property is not specified when creating a Microsoft 365 group, the calling user is automatically assigned as the group owner.  Supports $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1); Supports $expand including nested $select. For example, /groups?$filter=startsWith(displayName,&apos;Role&apos;)&amp;$select=id,displayName&amp;$expand=owners($select=id,userPrincipalName,displayName).</summary>
         public List<DirectoryObject> Owners {
             get { return BackingStore?.Get<List<DirectoryObject>>("owners"); }
             set { BackingStore?.Set("owners", value); }
@@ -301,7 +301,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("preferredLanguage"); }
             set { BackingStore?.Set("preferredLanguage", value); }
         }
-        /// <summary>Email addresses for the group that direct to the same group mailbox. For example: [&apos;SMTP: bob@contoso.com&apos;, &apos;smtp: bob@sales.contoso.com&apos;]. The any operator is required for filter expressions on multi-valued properties. Returned by default. Read-only. Not nullable. Supports $filter (eq, not, ge, le, startsWith, endsWith, and counting empty collections).</summary>
+        /// <summary>Email addresses for the group that direct to the same group mailbox. For example: [&apos;SMTP: bob@contoso.com&apos;, &apos;smtp: bob@sales.contoso.com&apos;]. The any operator is required for filter expressions on multi-valued properties. Returned by default. Read-only. Not nullable. Supports $filter (eq, not, ge, le, startsWith, endsWith, /$count eq 0, /$count ne 0).</summary>
         public List<string> ProxyAddresses {
             get { return BackingStore?.Get<List<string>>("proxyAddresses"); }
             set { BackingStore?.Set("proxyAddresses", value); }

@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.CreatedOnBehalfOf {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Supports $filter (eq when counting empty collections). Read-only.
+        /// Supports $filter (/$count eq 0, /$count ne 0). Read-only.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<CreatedOnBehalfOfRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.CreatedOnBehalfOf {
             return requestInfo;
         }
         /// <summary>
-        /// Supports $filter (eq when counting empty collections). Read-only.
+        /// Supports $filter (/$count eq 0, /$count ne 0). Read-only.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -77,7 +77,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.CreatedOnBehalfOf {
             };
             return await RequestAdapter.SendAsync<DirectoryObject>(requestInfo, DirectoryObject.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Supports $filter (eq when counting empty collections). Read-only.</summary>
+        /// <summary>Supports $filter (/$count eq 0, /$count ne 0). Read-only.</summary>
         public class CreatedOnBehalfOfRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]

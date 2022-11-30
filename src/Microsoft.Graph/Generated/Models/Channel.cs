@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class Channel : Entity, IParsable {
         /// <summary>Read only. Timestamp at which the channel was created.</summary>
         public DateTimeOffset? CreatedDateTime {
@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
-        /// <summary>Channel name as it will appear to the user in Microsoft Teams.</summary>
+        /// <summary>Channel name as it will appear to the user in Microsoft Teams. The maximum length is 50 characters.</summary>
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
