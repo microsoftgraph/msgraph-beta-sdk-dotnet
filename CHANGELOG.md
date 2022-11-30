@@ -11,6 +11,12 @@ and this project does NOT adhere to [Semantic Versioning](https://semver.org/spe
 
 ### Changed
 
+- Latest metadata updates from 29nd November 2022 snapshot
+
+## [5.14.0-preview] - 2022-11-23
+
+### Changed
+
 - Adds baseUrl parameter to GraphServiceClient constructor to allow for easier updating of target endpoint
 - Adds ItemWithPath for request builder to enable path retrieval of drive items
 - Fix for default OdataType property in models causing errors from the API
