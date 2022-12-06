@@ -173,17 +173,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Adds the specified filter value to the request.
-        /// </summary>
-        /// <param name="value">The filter value.</param>
-        /// <returns>The request object to send.</returns>
-        public IGroupSettingsCollectionRequest Filter(string value)
-        {
-            this.QueryOptions.Add(new QueryOption("$filter", value));
-            return this;
-        }
-
-        /// <summary>
         /// Adds the specified skip value to the request.
         /// </summary>
         /// <param name="value">The skip value.</param>

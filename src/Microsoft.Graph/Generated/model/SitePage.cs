@@ -30,7 +30,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets content type.
-        /// The content type of the page.
+        /// Inherited from baseItem.
         /// </summary>
         [JsonPropertyName("contentType")]
         public ContentTypeInfo ContentType { get; set; }
@@ -43,12 +43,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets publishing state.
+        /// The publishing status and the MM.mm version of the page.
         /// </summary>
         [JsonPropertyName("publishingState")]
         public PublicationFacet PublishingState { get; set; }
     
         /// <summary>
         /// Gets or sets title.
+        /// Title of the sitePage.
         /// </summary>
         [JsonPropertyName("title")]
         public string Title { get; set; }
