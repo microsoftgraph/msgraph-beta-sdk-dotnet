@@ -21,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("fileOrFolderName", value); }
         }
         /// <summary>The file or folder path to detect Win32 Line of Business (LoB) app</summary>
-        public string PathObject {
+        public string Path {
             get { return BackingStore?.Get<string>("path"); }
             set { BackingStore?.Set("path", value); }
         }
@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"check32BitOn64System", n => { Check32BitOn64System = n.GetBoolValue(); } },
                 {"detectionType", n => { DetectionType = n.GetEnumValue<Win32LobAppFileSystemDetectionType>(); } },
                 {"fileOrFolderName", n => { FileOrFolderName = n.GetStringValue(); } },
-                {"path", n => { PathObject = n.GetStringValue(); } },
+                {"path", n => { Path = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteBoolValue("check32BitOn64System", Check32BitOn64System);
             writer.WriteEnumValue<Win32LobAppFileSystemDetectionType>("detectionType", DetectionType);
             writer.WriteStringValue("fileOrFolderName", FileOrFolderName);
-            writer.WriteStringValue("path", PathObject);
+            writer.WriteStringValue("path", Path);
         }
     }
 }

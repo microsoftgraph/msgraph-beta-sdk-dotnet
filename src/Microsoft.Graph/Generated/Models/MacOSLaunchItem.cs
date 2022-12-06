@@ -25,7 +25,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
         /// <summary>Path to the launch item.</summary>
-        public string PathObject {
+        public string Path {
             get { return BackingStore?.Get<string>("path"); }
             set { BackingStore?.Set("path", value); }
         }
@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"hide", n => { Hide = n.GetBoolValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"path", n => { PathObject = n.GetStringValue(); } },
+                {"path", n => { Path = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("hide", Hide);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteStringValue("path", PathObject);
+            writer.WriteStringValue("path", Path);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

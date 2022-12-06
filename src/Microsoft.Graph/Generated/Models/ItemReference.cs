@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
         /// <summary>Path that can be used to navigate to the item. Read-only.</summary>
-        public string PathObject {
+        public string Path {
             get { return BackingStore?.Get<string>("path"); }
             set { BackingStore?.Set("path", value); }
         }
@@ -83,7 +83,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"id", n => { Id = n.GetStringValue(); } },
                 {"name", n => { Name = n.GetStringValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"path", n => { PathObject = n.GetStringValue(); } },
+                {"path", n => { Path = n.GetStringValue(); } },
                 {"shareId", n => { ShareId = n.GetStringValue(); } },
                 {"sharepointIds", n => { SharepointIds = n.GetObjectValue<Microsoft.Graph.Beta.Models.SharepointIds>(Microsoft.Graph.Beta.Models.SharepointIds.CreateFromDiscriminatorValue); } },
                 {"siteId", n => { SiteId = n.GetStringValue(); } },
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteStringValue("path", PathObject);
+            writer.WriteStringValue("path", Path);
             writer.WriteStringValue("shareId", ShareId);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.SharepointIds>("sharepointIds", SharepointIds);
             writer.WriteStringValue("siteId", SiteId);

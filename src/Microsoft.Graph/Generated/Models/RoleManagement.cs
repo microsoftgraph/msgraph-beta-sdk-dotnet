@@ -24,7 +24,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("deviceManagement", value); }
         }
         /// <summary>The directory property</summary>
-        public RbacApplication DirectoryObject {
+        public RbacApplication Directory {
             get { return BackingStore?.Get<RbacApplication>("directory"); }
             set { BackingStore?.Set("directory", value); }
         }
@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"cloudPC", n => { CloudPC = n.GetObjectValue<RbacApplicationMultiple>(RbacApplicationMultiple.CreateFromDiscriminatorValue); } },
                 {"deviceManagement", n => { DeviceManagement = n.GetObjectValue<RbacApplicationMultiple>(RbacApplicationMultiple.CreateFromDiscriminatorValue); } },
-                {"directory", n => { DirectoryObject = n.GetObjectValue<RbacApplication>(RbacApplication.CreateFromDiscriminatorValue); } },
+                {"directory", n => { Directory = n.GetObjectValue<RbacApplication>(RbacApplication.CreateFromDiscriminatorValue); } },
                 {"entitlementManagement", n => { EntitlementManagement = n.GetObjectValue<RbacApplication>(RbacApplication.CreateFromDiscriminatorValue); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
@@ -73,7 +73,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<RbacApplicationMultiple>("cloudPC", CloudPC);
             writer.WriteObjectValue<RbacApplicationMultiple>("deviceManagement", DeviceManagement);
-            writer.WriteObjectValue<RbacApplication>("directory", DirectoryObject);
+            writer.WriteObjectValue<RbacApplication>("directory", Directory);
             writer.WriteObjectValue<RbacApplication>("entitlementManagement", EntitlementManagement);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class AuthenticationEventListener : Entity, IParsable {
         /// <summary>The authenticationEventsFlowId property</summary>
         public string AuthenticationEventsFlowId {

@@ -20,8 +20,8 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("dayofMonth", value); }
         }
         /// <summary>The dayofWeek property</summary>
-        public Microsoft.Graph.Beta.Models.DayOfWeek? DayofWeek {
-            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DayOfWeek?>("dayofWeek"); }
+        public Microsoft.Graph.Beta.Models.DayOfWeekObject? DayofWeekObject {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DayOfWeekObject?>("dayofWeek"); }
             set { BackingStore?.Set("dayofWeek", value); }
         }
         /// <summary>The OdataType property</summary>
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"dayofMonth", n => { DayofMonth = n.GetIntValue(); } },
-                {"dayofWeek", n => { DayofWeek = n.GetEnumValue<DayOfWeek>(); } },
+                {"dayofWeek", n => { DayofWeekObject = n.GetEnumValue<DayOfWeekObject>(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"recurrence", n => { Recurrence = n.GetEnumValue<Windows10AppsUpdateRecurrence>(); } },
                 {"runImmediatelyIfAfterStartDateTime", n => { RunImmediatelyIfAfterStartDateTime = n.GetBoolValue(); } },
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.Models {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("dayofMonth", DayofMonth);
-            writer.WriteEnumValue<DayOfWeek>("dayofWeek", DayofWeek);
+            writer.WriteEnumValue<DayOfWeekObject>("dayofWeek", DayofWeekObject);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteEnumValue<Windows10AppsUpdateRecurrence>("recurrence", Recurrence);
             writer.WriteBoolValue("runImmediatelyIfAfterStartDateTime", RunImmediatelyIfAfterStartDateTime);

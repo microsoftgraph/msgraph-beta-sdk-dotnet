@@ -6,7 +6,7 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class FileClassificationRequest : Entity, IParsable {
         /// <summary>The file property</summary>
-        public byte[] FileObject {
+        public byte[] File {
             get { return BackingStore?.Get<byte[]>("file"); }
             set { BackingStore?.Set("file", value); }
         }
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"file", n => { FileObject = n.GetByteArrayValue(); } },
+                {"file", n => { File = n.GetByteArrayValue(); } },
                 {"sensitiveTypeIds", n => { SensitiveTypeIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Beta.Models {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteByteArrayValue("file", FileObject);
+            writer.WriteByteArrayValue("file", File);
             writer.WriteCollectionOfPrimitiveValues<string>("sensitiveTypeIds", SensitiveTypeIds);
         }
     }

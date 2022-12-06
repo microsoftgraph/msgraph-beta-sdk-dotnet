@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class AgreementFileProperties : Entity, IParsable {
         /// <summary>The date time representing when the file was created.The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? CreatedDateTime {

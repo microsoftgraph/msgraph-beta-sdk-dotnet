@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class AttributeMappingFunctionSchema : Entity, IParsable {
         /// <summary>Collection of function parameters.</summary>
         public List<AttributeMappingParameterSchema> Parameters {

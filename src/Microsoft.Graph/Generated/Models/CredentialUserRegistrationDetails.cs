@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class CredentialUserRegistrationDetails : Entity, IParsable {
         /// <summary>Represents the authentication method that the user has registered. Possible values are: email, mobilePhone, officePhone,  securityQuestion (only used for self-service password reset), appNotification,  appCode, alternateMobilePhone (supported only in registration),  fido,  appPassword,  unknownFutureValue.</summary>
         public List<RegistrationAuthMethod?> AuthMethods {

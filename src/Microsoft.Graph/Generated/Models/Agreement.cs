@@ -17,7 +17,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>Default PDF linked to this agreement.</summary>
-        public AgreementFile FileObject {
+        public AgreementFile File {
             get { return BackingStore?.Get<AgreementFile>("file"); }
             set { BackingStore?.Set("file", value); }
         }
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"acceptances", n => { Acceptances = n.GetCollectionOfObjectValues<AgreementAcceptance>(AgreementAcceptance.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"file", n => { FileObject = n.GetObjectValue<AgreementFile>(AgreementFile.CreateFromDiscriminatorValue); } },
+                {"file", n => { File = n.GetObjectValue<AgreementFile>(AgreementFile.CreateFromDiscriminatorValue); } },
                 {"files", n => { Files = n.GetCollectionOfObjectValues<AgreementFileLocalization>(AgreementFileLocalization.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"isPerDeviceAcceptanceRequired", n => { IsPerDeviceAcceptanceRequired = n.GetBoolValue(); } },
                 {"isViewingBeforeAcceptanceRequired", n => { IsViewingBeforeAcceptanceRequired = n.GetBoolValue(); } },
@@ -78,7 +78,7 @@ namespace Microsoft.Graph.Beta.Models {
             base.Serialize(writer);
             writer.WriteCollectionOfObjectValues<AgreementAcceptance>("acceptances", Acceptances);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteObjectValue<AgreementFile>("file", FileObject);
+            writer.WriteObjectValue<AgreementFile>("file", File);
             writer.WriteCollectionOfObjectValues<AgreementFileLocalization>("files", Files);
             writer.WriteBoolValue("isPerDeviceAcceptanceRequired", IsPerDeviceAcceptanceRequired);
             writer.WriteBoolValue("isViewingBeforeAcceptanceRequired", IsViewingBeforeAcceptanceRequired);

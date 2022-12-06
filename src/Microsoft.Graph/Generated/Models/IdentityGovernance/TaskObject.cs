@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
             get { return BackingStore?.Get<LifecycleTaskCategory?>("category"); }
             set { BackingStore?.Set("category", value); }
         }
-        /// <summary>A boolean value that determines if the failure of this task stops the subsequent workflows from running. Optional.</summary>
+        /// <summary>A boolean value that specifies whether, if this task fails, the workflow will stop, and subsequent tasks will not run. Optional.</summary>
         public bool? ContinueOnError {
             get { return BackingStore?.Get<bool?>("continueOnError"); }
             set { BackingStore?.Set("continueOnError", value); }

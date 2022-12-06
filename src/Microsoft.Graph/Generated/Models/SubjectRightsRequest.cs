@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class SubjectRightsRequest : Entity, IParsable {
         /// <summary>Identity that the request is assigned to.</summary>
         public Identity AssignedTo {

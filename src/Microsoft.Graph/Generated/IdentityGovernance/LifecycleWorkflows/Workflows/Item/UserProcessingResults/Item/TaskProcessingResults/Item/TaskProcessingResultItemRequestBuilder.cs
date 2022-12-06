@@ -27,7 +27,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.I
             new SubjectRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the task property of the microsoft.graph.identityGovernance.taskProcessingResult entity.</summary>
-        public TaskRequestBuilder TaskObject { get =>
+        public TaskRequestBuilder Task { get =>
             new TaskRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Url template to use to build the URL for the current request builder</summary>

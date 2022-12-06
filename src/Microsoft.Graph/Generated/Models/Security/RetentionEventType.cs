@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class RetentionEventType : Entity, IParsable {
         /// <summary>The user who created the retentionEventType.</summary>
         public Microsoft.Graph.Beta.Models.IdentitySet CreatedBy {
