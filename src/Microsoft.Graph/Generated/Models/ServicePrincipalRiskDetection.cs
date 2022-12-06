@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class ServicePrincipalRiskDetection : Entity, IParsable {
-        /// <summary>Indicates the activity type the detected risk is linked to.  The possible values are: signin, unknownFutureValue, servicePrincipal. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: servicePrincipal.</summary>
+        /// <summary>Indicates the activity type the detected risk is linked to.  The possible values are: signin, servicePrincipal. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: servicePrincipal.</summary>
         public ActivityType? Activity {
             get { return BackingStore?.Get<ActivityType?>("activity"); }
             set { BackingStore?.Set("activity", value); }
@@ -65,22 +65,22 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("requestId"); }
             set { BackingStore?.Set("requestId", value); }
         }
-        /// <summary>Details of the detected risk. Note: Details for this property are only available for Azure AD Premium P2 customers. P1 customers will be returned hidden. The possible values are: none, hidden, unknownFutureValue, adminConfirmedServicePrincipalCompromised, adminDismissedAllRiskForServicePrincipal. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: adminConfirmedServicePrincipalCompromised , adminDismissedAllRiskForServicePrincipal.</summary>
+        /// <summary>Details of the detected risk. Note: Details for this property are only available for Workload Identities Premium customers. Events in tenants without this license will be returned hidden. The possible values are: none, hidden, adminConfirmedServicePrincipalCompromised, adminDismissedAllRiskForServicePrincipal. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: adminConfirmedServicePrincipalCompromised , adminDismissedAllRiskForServicePrincipal.</summary>
         public Microsoft.Graph.Beta.Models.RiskDetail? RiskDetail {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RiskDetail?>("riskDetail"); }
             set { BackingStore?.Set("riskDetail", value); }
         }
-        /// <summary>The type of risk event detected. The possible values are:  investigationsThreatIntelligence, generic, adminConfirmedServicePrincipalCompromised, suspiciousSignins, leakedCredentials, unknownFutureValue. Supports $filter (eq).</summary>
+        /// <summary>The type of risk event detected. The possible values are: investigationsThreatIntelligence, generic, adminConfirmedServicePrincipalCompromised, suspiciousSignins, leakedCredentials, anomalousServicePrincipalActivity, maliciousApplication, suspiciousApplication.</summary>
         public string RiskEventType {
             get { return BackingStore?.Get<string>("riskEventType"); }
             set { BackingStore?.Set("riskEventType", value); }
         }
-        /// <summary>Level of the detected risk. Note: Details for this property are only available for Azure AD Premium P2 customers. P1 customers will be returned hidden. The possible values are: low, medium, high, hidden, none, unknownFutureValue.</summary>
+        /// <summary>Level of the detected risk. Note: Details for this property are only available for Workload Identities Premium customers. Events in tenants without this license will be returned hidden. The possible values are: low, medium, high, hidden, none.</summary>
         public Microsoft.Graph.Beta.Models.RiskLevel? RiskLevel {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RiskLevel?>("riskLevel"); }
             set { BackingStore?.Set("riskLevel", value); }
         }
-        /// <summary>The state of a detected risky service principal or sign-in activity. The possible values are: none, dismissed, atRisk, confirmedCompromised, unknownFutureValue.</summary>
+        /// <summary>The state of a detected risky service principal or sign-in activity. The possible values are: none, dismissed, atRisk, confirmedCompromised.</summary>
         public Microsoft.Graph.Beta.Models.RiskState? RiskState {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RiskState?>("riskState"); }
             set { BackingStore?.Set("riskState", value); }
@@ -100,7 +100,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("source"); }
             set { BackingStore?.Set("source", value); }
         }
-        /// <summary>Indicates the type of token issuer for the detected sign-in risk. The possible values are: AzureAD, UnknownFutureValue.</summary>
+        /// <summary>Indicates the type of token issuer for the detected sign-in risk. The possible values are: AzureAD.</summary>
         public Microsoft.Graph.Beta.Models.TokenIssuerType? TokenIssuerType {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TokenIssuerType?>("tokenIssuerType"); }
             set { BackingStore?.Set("tokenIssuerType", value); }

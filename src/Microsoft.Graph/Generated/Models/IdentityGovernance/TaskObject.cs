@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class TaskObject : Entity, IParsable {
         /// <summary>Arguments included within the task.  For guidance to configure this property, see Configure the arguments for built-in Lifecycle Workflow tasks. Required.</summary>
         public List<Microsoft.Graph.Beta.Models.KeyValuePair> Arguments {
@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
             get { return BackingStore?.Get<LifecycleTaskCategory?>("category"); }
             set { BackingStore?.Set("category", value); }
         }
-        /// <summary>A boolean value that determines if the failure of this task stops the subsequent workflows from running. Optional.</summary>
+        /// <summary>A boolean value that specifies whether, if this task fails, the workflow will stop, and subsequent tasks will not run. Optional.</summary>
         public bool? ContinueOnError {
             get { return BackingStore?.Get<bool?>("continueOnError"); }
             set { BackingStore?.Set("continueOnError", value); }

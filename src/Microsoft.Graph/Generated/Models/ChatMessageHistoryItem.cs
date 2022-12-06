@@ -18,7 +18,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The modifiedDateTime property</summary>
+        /// <summary>The date and time when the message was modified.</summary>
         public DateTimeOffset? ModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("modifiedDateTime"); }
             set { BackingStore?.Set("modifiedDateTime", value); }
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
-        /// <summary>The reaction property</summary>
+        /// <summary>The reaction in the modified message.</summary>
         public ChatMessageReaction Reaction {
             get { return BackingStore?.Get<ChatMessageReaction>("reaction"); }
             set { BackingStore?.Set("reaction", value); }

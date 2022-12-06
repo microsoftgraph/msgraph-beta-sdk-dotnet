@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class PrivilegedSignupStatus : Entity, IParsable {
         /// <summary>The isRegistered property</summary>
         public bool? IsRegistered {

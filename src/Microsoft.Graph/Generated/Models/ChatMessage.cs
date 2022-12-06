@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class ChatMessage : Entity, IParsable {
         /// <summary>References to attached objects like files, tabs, meetings etc.</summary>
         public List<ChatMessageAttachment> Attachments {
@@ -81,7 +81,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<ChatMessageMention>>("mentions"); }
             set { BackingStore?.Set("mentions", value); }
         }
-        /// <summary>The messageHistory property</summary>
+        /// <summary>List of activity history of a message item, including modification time and actions, such as reactionAdded, reactionRemoved, or reaction changes, on the message.</summary>
         public List<ChatMessageHistoryItem> MessageHistory {
             get { return BackingStore?.Get<List<ChatMessageHistoryItem>>("messageHistory"); }
             set { BackingStore?.Set("messageHistory", value); }

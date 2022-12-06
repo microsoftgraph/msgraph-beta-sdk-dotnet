@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Casts the previous resource to application.</summary>
     public class Application : DirectoryObject, IParsable {
         /// <summary>Specifies settings for an application that implements a web API.</summary>
         public ApiApplication Api {
@@ -180,7 +181,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ServicePrincipalLockConfiguration>("servicePrincipalLockConfiguration"); }
             set { BackingStore?.Set("servicePrincipalLockConfiguration", value); }
         }
-        /// <summary>Specifies the Microsoft accounts that are supported for the current application. The possible values are: AzureADMyOrg, AzureADMultipleOrgs, AzureADandPersonalMicrosoftAccount (default), and PersonalMicrosoftAccount. See more in the table. The value of this object also limits the number of permissions an app can request. For more information, see Limits on requested permissions per app. Supports $filter (eq, ne, not).</summary>
+        /// <summary>Specifies the Microsoft accounts that are supported for the current application. The possible values are: AzureADMyOrg, AzureADMultipleOrgs, AzureADandPersonalMicrosoftAccount (default), and PersonalMicrosoftAccount. See more in the table. The value of this object also limits the number of permissions an app can request. For more information, see Limits on requested permissions per app. The value for this property has implications on other app object properties. As a result, if you change this property, you may need to change other properties first. For more information, see Validation differences for signInAudience.Supports $filter (eq, ne, not).</summary>
         public string SignInAudience {
             get { return BackingStore?.Get<string>("signInAudience"); }
             set { BackingStore?.Set("signInAudience", value); }
@@ -236,7 +237,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("windows", value); }
         }
         /// <summary>
-        /// Instantiates a new Application and sets the default values.
+        /// Instantiates a new application and sets the default values.
         /// </summary>
         public Application() : base() {
             OdataType = "#microsoft.graph.application";

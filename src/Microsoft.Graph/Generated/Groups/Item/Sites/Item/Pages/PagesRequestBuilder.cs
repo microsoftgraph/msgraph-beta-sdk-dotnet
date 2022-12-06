@@ -57,7 +57,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Pages {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get the collection of [sitePage][] objects from the site pages [list][] in a site [site][]. All pages in the site are returned (with pagination).
+        /// Get the collection of [sitePage][] objects from the site pages [list][] in a site [site][]. All pages in the site are returned (with pagination). Sort alphabetically by `name` in ascending order.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<PagesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -99,7 +99,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Pages {
             return requestInfo;
         }
         /// <summary>
-        /// Get the collection of [sitePage][] objects from the site pages [list][] in a site [site][]. All pages in the site are returned (with pagination).
+        /// Get the collection of [sitePage][] objects from the site pages [list][] in a site [site][]. All pages in the site are returned (with pagination). Sort alphabetically by `name` in ascending order.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -126,7 +126,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Pages {
             };
             return await RequestAdapter.SendAsync<SitePage>(requestInfo, SitePage.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Get the collection of [sitePage][] objects from the site pages [list][] in a site [site][]. All pages in the site are returned (with pagination).</summary>
+        /// <summary>Get the collection of [sitePage][] objects from the site pages [list][] in a site [site][]. All pages in the site are returned (with pagination). Sort alphabetically by `name` in ascending order.</summary>
         public class PagesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]

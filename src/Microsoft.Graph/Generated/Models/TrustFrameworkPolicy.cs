@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class TrustFrameworkPolicy : Entity, IParsable {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

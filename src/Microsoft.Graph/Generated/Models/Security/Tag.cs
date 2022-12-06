@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class Tag : Entity, IParsable {
         /// <summary>The createdBy property</summary>
         public Microsoft.Graph.Beta.Models.IdentitySet CreatedBy {

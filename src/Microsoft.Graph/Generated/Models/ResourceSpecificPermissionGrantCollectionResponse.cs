@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the permissionGrants property of the microsoft.graph.chat entity.</summary>
     public class ResourceSpecificPermissionGrantCollectionResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<ResourceSpecificPermissionGrant> Value {
