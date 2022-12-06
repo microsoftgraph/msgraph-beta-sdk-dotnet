@@ -17,35 +17,27 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type WebPart.
     /// </summary>
-    [JsonConverter(typeof(DerivedTypeConverter<WebPart>))]
-    public partial class WebPart
+    public partial class WebPart : Entity
     {
+        /// <summary>
+        /// Initializes a new instance of the <see cref="WebPart"/> class.
+        /// </summary>
+        public WebPart()
+        {
+            this.ODataType = "microsoft.graph.webPart";
+        }
 
         /// <summary>
         /// Gets or sets data.
-        /// The required properties for the webPart (varies by webPart)
         /// </summary>
         [JsonPropertyName("data")]
         public SitePageData Data { get; set; }
     
         /// <summary>
         /// Gets or sets type.
-        /// A unique identifier specifying the webPart type. Read-only.
         /// </summary>
         [JsonPropertyName("type")]
         public string Type { get; set; }
-    
-        /// <summary>
-        /// Gets or sets additional data.
-        /// </summary>
-        [JsonExtensionData]
-        public IDictionary<string, object> AdditionalData { get; set; }
-
-        /// <summary>
-        /// Gets or sets @odata.type.
-        /// </summary>
-        [JsonPropertyName("@odata.type")]
-        public string ODataType { get; set; }
     
     }
 }

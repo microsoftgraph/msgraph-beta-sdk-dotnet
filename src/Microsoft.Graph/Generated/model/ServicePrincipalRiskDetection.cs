@@ -23,7 +23,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets activity.
-        /// Indicates the activity type the detected risk is linked to.  The possible values are: signin, unknownFutureValue, servicePrincipal. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: servicePrincipal.
+        /// Indicates the activity type the detected risk is linked to.  The possible values are: signin, servicePrincipal. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: servicePrincipal.
         /// </summary>
         [JsonPropertyName("activity")]
         public ActivityType? Activity { get; set; }
@@ -107,28 +107,28 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets risk detail.
-        /// Details of the detected risk. Note: Details for this property are only available for Azure AD Premium P2 customers. P1 customers will be returned hidden. The possible values are: none, hidden, unknownFutureValue, adminConfirmedServicePrincipalCompromised, adminDismissedAllRiskForServicePrincipal. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: adminConfirmedServicePrincipalCompromised , adminDismissedAllRiskForServicePrincipal.
+        /// Details of the detected risk. Note: Details for this property are only available for Workload Identities Premium customers. Events in tenants without this license will be returned hidden. The possible values are: none, hidden, adminConfirmedServicePrincipalCompromised, adminDismissedAllRiskForServicePrincipal. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value(s) in this evolvable enum: adminConfirmedServicePrincipalCompromised , adminDismissedAllRiskForServicePrincipal.
         /// </summary>
         [JsonPropertyName("riskDetail")]
         public RiskDetail? RiskDetail { get; set; }
     
         /// <summary>
         /// Gets or sets risk event type.
-        /// The type of risk event detected. The possible values are:  investigationsThreatIntelligence, generic, adminConfirmedServicePrincipalCompromised, suspiciousSignins, leakedCredentials, unknownFutureValue. Supports $filter (eq).
+        /// The type of risk event detected. The possible values are: investigationsThreatIntelligence, generic, adminConfirmedServicePrincipalCompromised, suspiciousSignins, leakedCredentials, anomalousServicePrincipalActivity, maliciousApplication, suspiciousApplication.
         /// </summary>
         [JsonPropertyName("riskEventType")]
         public string RiskEventType { get; set; }
     
         /// <summary>
         /// Gets or sets risk level.
-        /// Level of the detected risk. Note: Details for this property are only available for Azure AD Premium P2 customers. P1 customers will be returned hidden. The possible values are: low, medium, high, hidden, none, unknownFutureValue.
+        /// Level of the detected risk. Note: Details for this property are only available for Workload Identities Premium customers. Events in tenants without this license will be returned hidden. The possible values are: low, medium, high, hidden, none.
         /// </summary>
         [JsonPropertyName("riskLevel")]
         public RiskLevel? RiskLevel { get; set; }
     
         /// <summary>
         /// Gets or sets risk state.
-        /// The state of a detected risky service principal or sign-in activity. The possible values are: none, dismissed, atRisk, confirmedCompromised, unknownFutureValue.
+        /// The state of a detected risky service principal or sign-in activity. The possible values are: none, dismissed, atRisk, confirmedCompromised.
         /// </summary>
         [JsonPropertyName("riskState")]
         public RiskState? RiskState { get; set; }
@@ -156,7 +156,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets token issuer type.
-        /// Indicates the type of token issuer for the detected sign-in risk. The possible values are: AzureAD, UnknownFutureValue.
+        /// Indicates the type of token issuer for the detected sign-in risk. The possible values are: AzureAD.
         /// </summary>
         [JsonPropertyName("tokenIssuerType")]
         public TokenIssuerType? TokenIssuerType { get; set; }

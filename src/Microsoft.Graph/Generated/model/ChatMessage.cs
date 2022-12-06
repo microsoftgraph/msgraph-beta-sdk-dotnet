@@ -121,6 +121,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets message history.
+        /// List of activity history of a message item, including modification time and actions, such as reactionAdded, reactionRemoved, or reaction changes, on the message.
         /// </summary>
         [JsonPropertyName("messageHistory")]
         public IEnumerable<ChatMessageHistoryItem> MessageHistory { get; set; }

@@ -30,14 +30,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets favorite plan references.
-        /// A collection containing the references to the plans that the user has marked as favorites.
+        /// A collection that contains the references to the plans that the user has marked as favorites.
         /// </summary>
         [JsonPropertyName("favoritePlanReferences")]
         public PlannerFavoritePlanReferenceCollection FavoritePlanReferences { get; set; }
     
         /// <summary>
         /// Gets or sets recent plan references.
-        /// A collection containing references to the plans that were viewed recently by the user in apps that support recent plans.
+        /// A collection that contains references to the plans that were viewed recently by the user in apps that support recent plans.
         /// </summary>
         [JsonPropertyName("recentPlanReferences")]
         public PlannerRecentPlanReferenceCollection RecentPlanReferences { get; set; }

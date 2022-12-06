@@ -219,7 +219,7 @@ namespace Microsoft.Graph.TenantAdmin
     
         /// <summary>
         /// Gets or sets tenant default timezone.
-        /// The default timezone of a tenant for newly created sites.
+        /// The default timezone of a tenant for newly created sites. For a list of possible values, see SPRegionalSettings.TimeZones property.
         /// </summary>
         [JsonPropertyName("tenantDefaultTimezone")]
         public string TenantDefaultTimezone { get; set; }

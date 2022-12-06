@@ -37,7 +37,7 @@ namespace Microsoft.Graph.IdentityGovernanceNamespace
     
         /// <summary>
         /// Gets or sets continue on error.
-        /// A boolean value that determines if the failure of this task stops the subsequent workflows from running. Optional.
+        /// A boolean value that specifies whether, if this task fails, the workflow will stop, and subsequent tasks will not run. Optional.
         /// </summary>
         [JsonPropertyName("continueOnError")]
         public bool? ContinueOnError { get; set; }

@@ -87,13 +87,6 @@ namespace Microsoft.Graph
         IGroupSettingsCollectionRequest Top(int value);
 
         /// <summary>
-        /// Adds the specified filter value to the request.
-        /// </summary>
-        /// <param name="value">The filter value.</param>
-        /// <returns>The request object to send.</returns>
-        IGroupSettingsCollectionRequest Filter(string value);
-
-        /// <summary>
         /// Adds the specified skip value to the request.
         /// </summary>
         /// <param name="value">The skip value.</param>
