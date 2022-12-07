@@ -6,7 +6,7 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class SitePage : BaseItem, IParsable {
-        /// <summary>The content type of the page.</summary>
+        /// <summary>Inherited from baseItem.</summary>
         public ContentTypeInfo ContentType {
             get { return BackingStore?.Get<ContentTypeInfo>("contentType"); }
             set { BackingStore?.Set("contentType", value); }
@@ -16,12 +16,12 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("pageLayoutType"); }
             set { BackingStore?.Set("pageLayoutType", value); }
         }
-        /// <summary>The publishingState property</summary>
+        /// <summary>The publishing status and the MM.mm version of the page.</summary>
         public PublicationFacet PublishingState {
             get { return BackingStore?.Get<PublicationFacet>("publishingState"); }
             set { BackingStore?.Set("publishingState", value); }
         }
-        /// <summary>The title property</summary>
+        /// <summary>Title of the sitePage.</summary>
         public string Title {
             get { return BackingStore?.Get<string>("title"); }
             set { BackingStore?.Set("title", value); }

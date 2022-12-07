@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.TermStore {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class Term : Entity, IParsable {
         /// <summary>Children of current term.</summary>
         public List<Term> Children {

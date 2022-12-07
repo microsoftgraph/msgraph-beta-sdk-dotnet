@@ -11,15 +11,15 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+        /// <summary>File as a byte array</summary>
+        public byte[] File {
+            get { return BackingStore?.Get<byte[]>("file"); }
+            set { BackingStore?.Set("file", value); }
+        }
         /// <summary>SHA256 hash of the file</summary>
         public string FileHash {
             get { return BackingStore?.Get<string>("fileHash"); }
             set { BackingStore?.Set("fileHash", value); }
-        }
-        /// <summary>File as a byte array</summary>
-        public byte[] FileObject {
-            get { return BackingStore?.Get<byte[]>("file"); }
-            set { BackingStore?.Set("file", value); }
         }
         /// <summary>Version of the entity.</summary>
         public string Version {
@@ -40,8 +40,8 @@ namespace Microsoft.Graph.Beta.Models {
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"file", n => { File = n.GetByteArrayValue(); } },
                 {"fileHash", n => { FileHash = n.GetStringValue(); } },
-                {"file", n => { FileObject = n.GetByteArrayValue(); } },
                 {"version", n => { Version = n.GetStringValue(); } },
             };
         }
@@ -53,8 +53,8 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("displayName", DisplayName);
+            writer.WriteByteArrayValue("file", File);
             writer.WriteStringValue("fileHash", FileHash);
-            writer.WriteByteArrayValue("file", FileObject);
             writer.WriteStringValue("version", Version);
         }
     }

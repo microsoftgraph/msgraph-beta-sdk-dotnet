@@ -31,7 +31,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("operator", value); }
         }
         /// <summary>The file or folder path to look up.</summary>
-        public string PathObject {
+        public string Path {
             get { return BackingStore?.Get<string>("path"); }
             set { BackingStore?.Set("path", value); }
         }
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"fileOrFolderName", n => { FileOrFolderName = n.GetStringValue(); } },
                 {"operationType", n => { OperationType = n.GetEnumValue<Win32LobAppFileSystemOperationType>(); } },
                 {"operator", n => { Operator = n.GetEnumValue<Win32LobAppRuleOperator>(); } },
-                {"path", n => { PathObject = n.GetStringValue(); } },
+                {"path", n => { Path = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("fileOrFolderName", FileOrFolderName);
             writer.WriteEnumValue<Win32LobAppFileSystemOperationType>("operationType", OperationType);
             writer.WriteEnumValue<Win32LobAppRuleOperator>("operator", Operator);
-            writer.WriteStringValue("path", PathObject);
+            writer.WriteStringValue("path", Path);
         }
     }
 }

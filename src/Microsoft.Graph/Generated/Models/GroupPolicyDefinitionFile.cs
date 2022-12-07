@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>The entity represents an ADMX (Administrative Template) XML file. The ADMX file contains a collection of group policy definitions and their locations by category path. The group policy definition file also contains the languages supported as determined by the language dependent ADML (Administrative Template) language files.</summary>
     public class GroupPolicyDefinitionFile : Entity, IParsable {
         /// <summary>The group policy definitions associated with the file.</summary>
         public List<GroupPolicyDefinition> Definitions {

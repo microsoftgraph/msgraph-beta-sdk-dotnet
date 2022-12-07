@@ -19,7 +19,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.TermsOfUse.Agreements.Item {
             new AcceptancesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the file property of the microsoft.graph.agreement entity.</summary>
-        public FileRequestBuilder FileObject { get =>
+        public FileRequestBuilder File { get =>
             new FileRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the files property of the microsoft.graph.agreement entity.</summary>

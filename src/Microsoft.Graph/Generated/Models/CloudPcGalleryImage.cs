@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class CloudPcGalleryImage : Entity, IParsable {
         /// <summary>The official display name of the gallery image. Read-only.</summary>
         public string DisplayName {

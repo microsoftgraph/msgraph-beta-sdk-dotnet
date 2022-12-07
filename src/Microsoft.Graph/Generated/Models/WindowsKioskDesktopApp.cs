@@ -16,7 +16,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("desktopApplicationLinkPath", value); }
         }
         /// <summary>Define the path of a desktop app</summary>
-        public string PathObject {
+        public string Path {
             get { return BackingStore?.Get<string>("path"); }
             set { BackingStore?.Set("path", value); }
         }
@@ -41,7 +41,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"desktopApplicationId", n => { DesktopApplicationId = n.GetStringValue(); } },
                 {"desktopApplicationLinkPath", n => { DesktopApplicationLinkPath = n.GetStringValue(); } },
-                {"path", n => { PathObject = n.GetStringValue(); } },
+                {"path", n => { Path = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.Models {
             base.Serialize(writer);
             writer.WriteStringValue("desktopApplicationId", DesktopApplicationId);
             writer.WriteStringValue("desktopApplicationLinkPath", DesktopApplicationLinkPath);
-            writer.WriteStringValue("path", PathObject);
+            writer.WriteStringValue("path", Path);
         }
     }
 }

@@ -15,8 +15,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The days of the week on which the user works.</summary>
-        public List<DayOfWeek?> DaysOfWeek {
-            get { return BackingStore?.Get<List<DayOfWeek?>>("daysOfWeek"); }
+        public List<DayOfWeekObject?> DaysOfWeek {
+            get { return BackingStore?.Get<List<DayOfWeekObject?>>("daysOfWeek"); }
             set { BackingStore?.Set("daysOfWeek", value); }
         }
         /// <summary>The time of the day that the user stops working.</summary>
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"daysOfWeek", n => { DaysOfWeek = n.GetCollectionOfEnumValues<DayOfWeek>()?.ToList(); } },
+                {"daysOfWeek", n => { DaysOfWeek = n.GetCollectionOfEnumValues<DayOfWeekObject>()?.ToList(); } },
                 {"endTime", n => { EndTime = n.GetTimeValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"startTime", n => { StartTime = n.GetTimeValue(); } },
@@ -72,7 +72,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfEnumValues<DayOfWeek>("daysOfWeek", DaysOfWeek);
+            writer.WriteCollectionOfEnumValues<DayOfWeekObject>("daysOfWeek", DaysOfWeek);
             writer.WriteTimeValue("endTime", EndTime);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteTimeValue("startTime", StartTime);

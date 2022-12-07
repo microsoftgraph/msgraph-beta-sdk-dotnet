@@ -37,8 +37,8 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("isEnabled", value); }
         }
         /// <summary>Days in week for which active hours are configured. This collection can contain a maximum of 7 elements.</summary>
-        public List<DayOfWeek?> ScheduledInstallDays {
-            get { return BackingStore?.Get<List<DayOfWeek?>>("scheduledInstallDays"); }
+        public List<DayOfWeekObject?> ScheduledInstallDays {
+            get { return BackingStore?.Get<List<DayOfWeekObject?>>("scheduledInstallDays"); }
             set { BackingStore?.Set("scheduledInstallDays", value); }
         }
         /// <summary>Update schedule type for iOS software updates.</summary>
@@ -76,7 +76,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"desiredOsVersion", n => { DesiredOsVersion = n.GetStringValue(); } },
                 {"enforcedSoftwareUpdateDelayInDays", n => { EnforcedSoftwareUpdateDelayInDays = n.GetIntValue(); } },
                 {"isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
-                {"scheduledInstallDays", n => { ScheduledInstallDays = n.GetCollectionOfEnumValues<DayOfWeek>()?.ToList(); } },
+                {"scheduledInstallDays", n => { ScheduledInstallDays = n.GetCollectionOfEnumValues<DayOfWeekObject>()?.ToList(); } },
                 {"updateScheduleType", n => { UpdateScheduleType = n.GetEnumValue<IosSoftwareUpdateScheduleType>(); } },
                 {"utcTimeOffsetInMinutes", n => { UtcTimeOffsetInMinutes = n.GetIntValue(); } },
             };
@@ -94,7 +94,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("desiredOsVersion", DesiredOsVersion);
             writer.WriteIntValue("enforcedSoftwareUpdateDelayInDays", EnforcedSoftwareUpdateDelayInDays);
             writer.WriteBoolValue("isEnabled", IsEnabled);
-            writer.WriteCollectionOfEnumValues<DayOfWeek>("scheduledInstallDays", ScheduledInstallDays);
+            writer.WriteCollectionOfEnumValues<DayOfWeekObject>("scheduledInstallDays", ScheduledInstallDays);
             writer.WriteEnumValue<IosSoftwareUpdateScheduleType>("updateScheduleType", UpdateScheduleType);
             writer.WriteIntValue("utcTimeOffsetInMinutes", UtcTimeOffsetInMinutes);
         }

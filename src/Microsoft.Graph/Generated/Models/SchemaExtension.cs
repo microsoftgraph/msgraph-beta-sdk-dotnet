@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class SchemaExtension : Entity, IParsable {
         /// <summary>Description for the schema extension. Supports $filter (eq).</summary>
         public string Description {

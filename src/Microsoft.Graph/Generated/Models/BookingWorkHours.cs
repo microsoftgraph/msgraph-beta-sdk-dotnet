@@ -15,8 +15,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The day property</summary>
-        public DayOfWeek? Day {
-            get { return BackingStore?.Get<DayOfWeek?>("day"); }
+        public DayOfWeekObject? Day {
+            get { return BackingStore?.Get<DayOfWeekObject?>("day"); }
             set { BackingStore?.Set("day", value); }
         }
         /// <summary>The OdataType property</summary>
@@ -49,7 +49,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"day", n => { Day = n.GetEnumValue<DayOfWeek>(); } },
+                {"day", n => { Day = n.GetEnumValue<DayOfWeekObject>(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"timeSlots", n => { TimeSlots = n.GetCollectionOfObjectValues<BookingWorkTimeSlot>(BookingWorkTimeSlot.CreateFromDiscriminatorValue)?.ToList(); } },
             };
@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<DayOfWeek>("day", Day);
+            writer.WriteEnumValue<DayOfWeekObject>("day", Day);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteCollectionOfObjectValues<BookingWorkTimeSlot>("timeSlots", TimeSlots);
             writer.WriteAdditionalData(AdditionalData);

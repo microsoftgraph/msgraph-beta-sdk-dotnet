@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("parentProcessName", value); }
         }
         /// <summary>Full path, including filename.</summary>
-        public string PathObject {
+        public string Path {
             get { return BackingStore?.Get<string>("path"); }
             set { BackingStore?.Set("path", value); }
         }
@@ -109,7 +109,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"parentProcessCreatedDateTime", n => { ParentProcessCreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"parentProcessId", n => { ParentProcessId = n.GetIntValue(); } },
                 {"parentProcessName", n => { ParentProcessName = n.GetStringValue(); } },
-                {"path", n => { PathObject = n.GetStringValue(); } },
+                {"path", n => { Path = n.GetStringValue(); } },
                 {"processId", n => { ProcessId = n.GetIntValue(); } },
             };
         }
@@ -130,7 +130,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteDateTimeOffsetValue("parentProcessCreatedDateTime", ParentProcessCreatedDateTime);
             writer.WriteIntValue("parentProcessId", ParentProcessId);
             writer.WriteStringValue("parentProcessName", ParentProcessName);
-            writer.WriteStringValue("path", PathObject);
+            writer.WriteStringValue("path", Path);
             writer.WriteIntValue("processId", ProcessId);
             writer.WriteAdditionalData(AdditionalData);
         }

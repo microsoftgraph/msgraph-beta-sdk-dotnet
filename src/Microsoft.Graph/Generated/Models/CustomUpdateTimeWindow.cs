@@ -16,8 +16,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The endDay property</summary>
-        public DayOfWeek? EndDay {
-            get { return BackingStore?.Get<DayOfWeek?>("endDay"); }
+        public DayOfWeekObject? EndDay {
+            get { return BackingStore?.Get<DayOfWeekObject?>("endDay"); }
             set { BackingStore?.Set("endDay", value); }
         }
         /// <summary>End time of the time window</summary>
@@ -31,8 +31,8 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
         /// <summary>The startDay property</summary>
-        public DayOfWeek? StartDay {
-            get { return BackingStore?.Get<DayOfWeek?>("startDay"); }
+        public DayOfWeekObject? StartDay {
+            get { return BackingStore?.Get<DayOfWeekObject?>("startDay"); }
             set { BackingStore?.Set("startDay", value); }
         }
         /// <summary>Start time of the time window</summary>
@@ -60,10 +60,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"endDay", n => { EndDay = n.GetEnumValue<DayOfWeek>(); } },
+                {"endDay", n => { EndDay = n.GetEnumValue<DayOfWeekObject>(); } },
                 {"endTime", n => { EndTime = n.GetTimeValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"startDay", n => { StartDay = n.GetEnumValue<DayOfWeek>(); } },
+                {"startDay", n => { StartDay = n.GetEnumValue<DayOfWeekObject>(); } },
                 {"startTime", n => { StartTime = n.GetTimeValue(); } },
             };
         }
@@ -73,10 +73,10 @@ namespace Microsoft.Graph.Beta.Models {
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<DayOfWeek>("endDay", EndDay);
+            writer.WriteEnumValue<DayOfWeekObject>("endDay", EndDay);
             writer.WriteTimeValue("endTime", EndTime);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteEnumValue<DayOfWeek>("startDay", StartDay);
+            writer.WriteEnumValue<DayOfWeekObject>("startDay", StartDay);
             writer.WriteTimeValue("startTime", StartTime);
             writer.WriteAdditionalData(AdditionalData);
         }

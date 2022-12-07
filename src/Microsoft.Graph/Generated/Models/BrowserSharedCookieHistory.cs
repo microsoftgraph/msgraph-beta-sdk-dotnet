@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
         /// <summary>The path of the cookie.</summary>
-        public string PathObject {
+        public string Path {
             get { return BackingStore?.Get<string>("path"); }
             set { BackingStore?.Set("path", value); }
         }
@@ -84,7 +84,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"hostOrDomain", n => { HostOrDomain = n.GetStringValue(); } },
                 {"lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<IdentitySet>(IdentitySet.CreateFromDiscriminatorValue); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"path", n => { PathObject = n.GetStringValue(); } },
+                {"path", n => { Path = n.GetStringValue(); } },
                 {"publishedDateTime", n => { PublishedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"sourceEnvironment", n => { SourceEnvironment = n.GetEnumValue<BrowserSharedCookieSourceEnvironment>(); } },
             };
@@ -101,7 +101,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("hostOrDomain", HostOrDomain);
             writer.WriteObjectValue<IdentitySet>("lastModifiedBy", LastModifiedBy);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteStringValue("path", PathObject);
+            writer.WriteStringValue("path", Path);
             writer.WriteDateTimeOffsetValue("publishedDateTime", PublishedDateTime);
             writer.WriteEnumValue<BrowserSharedCookieSourceEnvironment>("sourceEnvironment", SourceEnvironment);
             writer.WriteAdditionalData(AdditionalData);

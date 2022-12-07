@@ -18,13 +18,13 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.Workflows.I
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
+        /// <summary>Provides operations to manage the task property of the microsoft.graph.identityGovernance.taskReport entity.</summary>
+        public TaskRequestBuilder Task { get =>
+            new TaskRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Provides operations to manage the taskDefinition property of the microsoft.graph.identityGovernance.taskReport entity.</summary>
         public TaskDefinitionRequestBuilder TaskDefinition { get =>
             new TaskDefinitionRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>Provides operations to manage the task property of the microsoft.graph.identityGovernance.taskReport entity.</summary>
-        public TaskRequestBuilder TaskObject { get =>
-            new TaskRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the taskProcessingResults property of the microsoft.graph.identityGovernance.taskReport entity.</summary>
         public TaskProcessingResultsRequestBuilder TaskProcessingResults { get =>

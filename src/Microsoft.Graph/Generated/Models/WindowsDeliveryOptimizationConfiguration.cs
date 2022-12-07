@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>Windows Delivery Optimization configuration</summary>
     public class WindowsDeliveryOptimizationConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Specifies number of seconds to delay an HTTP source in a background download that is allowed to use peer-to-peer. Valid values 0 to 4294967295</summary>
         public long? BackgroundDownloadFromHttpDelayInSeconds {
@@ -91,7 +92,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("vpnPeerCaching", value); }
         }
         /// <summary>
-        /// Instantiates a new WindowsDeliveryOptimizationConfiguration and sets the default values.
+        /// Instantiates a new windowsDeliveryOptimizationConfiguration and sets the default values.
         /// </summary>
         public WindowsDeliveryOptimizationConfiguration() : base() {
             OdataType = "#microsoft.graph.windowsDeliveryOptimizationConfiguration";

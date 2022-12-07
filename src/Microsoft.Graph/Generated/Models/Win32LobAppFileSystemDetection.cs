@@ -31,7 +31,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("operator", value); }
         }
         /// <summary>The file or folder path to detect Win32 Line of Business (LoB) app</summary>
-        public string PathObject {
+        public string Path {
             get { return BackingStore?.Get<string>("path"); }
             set { BackingStore?.Set("path", value); }
         }
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"detectionValue", n => { DetectionValue = n.GetStringValue(); } },
                 {"fileOrFolderName", n => { FileOrFolderName = n.GetStringValue(); } },
                 {"operator", n => { Operator = n.GetEnumValue<Win32LobAppDetectionOperator>(); } },
-                {"path", n => { PathObject = n.GetStringValue(); } },
+                {"path", n => { Path = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("detectionValue", DetectionValue);
             writer.WriteStringValue("fileOrFolderName", FileOrFolderName);
             writer.WriteEnumValue<Win32LobAppDetectionOperator>("operator", Operator);
-            writer.WriteStringValue("path", PathObject);
+            writer.WriteStringValue("path", Path);
         }
     }
 }

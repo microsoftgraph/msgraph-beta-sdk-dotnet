@@ -15,7 +15,7 @@ namespace Microsoft.Graph.Beta.DataClassification.ClassifyFile {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The file property</summary>
-        public byte[] FileObject {
+        public byte[] File {
             get { return BackingStore?.Get<byte[]>("file"); }
             set { BackingStore?.Set("file", value); }
         }
@@ -44,7 +44,7 @@ namespace Microsoft.Graph.Beta.DataClassification.ClassifyFile {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"file", n => { FileObject = n.GetByteArrayValue(); } },
+                {"file", n => { File = n.GetByteArrayValue(); } },
                 {"sensitiveTypeIds", n => { SensitiveTypeIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.DataClassification.ClassifyFile {
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteByteArrayValue("file", FileObject);
+            writer.WriteByteArrayValue("file", File);
             writer.WriteCollectionOfPrimitiveValues<string>("sensitiveTypeIds", SensitiveTypeIds);
             writer.WriteAdditionalData(AdditionalData);
         }

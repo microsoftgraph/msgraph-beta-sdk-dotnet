@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class ResourceConnection : Entity, IParsable {
         /// <summary>The state of the connection. The possible values are: connected, notAuthorized, notFound, unknownFutureValue.</summary>
         public ResourceConnectionState? State {
