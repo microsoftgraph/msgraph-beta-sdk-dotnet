@@ -13,7 +13,7 @@ jobs:
     env:
       solutionName: Microsoft.Graph.Beta.sln
     steps:
-      - uses: actions/checkout@v3.1.0
+      - uses: actions/checkout@v3.2.0
       - name: Setup .NET
         uses: actions/setup-dotnet@v3.0.3
         with:
@@ -34,7 +34,7 @@ jobs:
         language: [ 'csharp' ]
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v3.1.0
+      uses: actions/checkout@v3.2.0
     - name: Initialize CodeQL
       uses: github/codeql-action/init@v2
       with:
