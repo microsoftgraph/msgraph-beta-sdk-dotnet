@@ -94,12 +94,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets custom css.
+        /// CSS styling that appears on the sign-in page. The allowed format is .css format only and not larger than 25 KB.
         /// </summary>
         [JsonPropertyName("customCSS")]
         public Stream CustomCSS { get; set; }
     
         /// <summary>
         /// Gets or sets custom cssrelative url.
+        /// A relative URL for the customCSS property that is combined with a CDN base URL from the cdnList to provide the version served by a CDN. Read-only.
         /// </summary>
         [JsonPropertyName("customCSSRelativeUrl")]
         public string CustomCSSRelativeUrl { get; set; }
@@ -169,18 +171,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets header logo.
+        /// A company logo that appears in the header of the sign-in page. The allowed types are PNG or JPEG not larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
         /// </summary>
         [JsonPropertyName("headerLogo")]
         public Stream HeaderLogo { get; set; }
     
         /// <summary>
         /// Gets or sets header logo relative url.
+        /// A relative URL for the headerLogo property that is combined with a CDN base URL from the cdnList to provide the read-only version served by a CDN. Read-only.
         /// </summary>
         [JsonPropertyName("headerLogoRelativeUrl")]
         public string HeaderLogoRelativeUrl { get; set; }
     
         /// <summary>
         /// Gets or sets login page layout configuration.
+        /// Represents the layout configuration to be displayed on the login page for a tenant.
         /// </summary>
         [JsonPropertyName("loginPageLayoutConfiguration")]
         public LoginPageLayoutConfiguration LoginPageLayoutConfiguration { get; set; }

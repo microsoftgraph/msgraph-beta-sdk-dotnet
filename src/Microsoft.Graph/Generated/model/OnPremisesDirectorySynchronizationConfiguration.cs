@@ -23,18 +23,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets accidentalDeletionPrevention.
+        /// Contains the accidental deletion prevention configuration for a tenant.
         /// </summary>
         [JsonPropertyName("accidentalDeletionPrevention")]
         public OnPremisesAccidentalDeletionPrevention AccidentalDeletionPrevention { get; set; }
     
         /// <summary>
         /// Gets or sets customerRequestedSynchronizationInterval.
+        /// Interval of time that the customer requested the sync client waits between sync cycles.
         /// </summary>
         [JsonPropertyName("customerRequestedSynchronizationInterval")]
         public Duration CustomerRequestedSynchronizationInterval { get; set; }
     
         /// <summary>
         /// Gets or sets synchronizationInterval.
+        /// Interval of time the sync client should honor between sync cycles
         /// </summary>
         [JsonPropertyName("synchronizationInterval")]
         public Duration SynchronizationInterval { get; set; }

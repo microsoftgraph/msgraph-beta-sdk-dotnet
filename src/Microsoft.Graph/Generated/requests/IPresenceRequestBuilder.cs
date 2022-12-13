@@ -55,6 +55,13 @@ namespace Microsoft.Graph
             Duration expirationDuration = null);
 
         /// <summary>
+        /// Gets the request builder for PresenceSetStatusMessage.
+        /// </summary>
+        /// <returns>The <see cref="IPresenceSetStatusMessageRequestBuilder"/>.</returns>
+        IPresenceSetStatusMessageRequestBuilder SetStatusMessage(
+            PresenceStatusMessage statusMessage = null);
+
+        /// <summary>
         /// Gets the request builder for PresenceSetUserPreferredPresence.
         /// </summary>
         /// <returns>The <see cref="IPresenceSetUserPreferredPresenceRequestBuilder"/>.</returns>

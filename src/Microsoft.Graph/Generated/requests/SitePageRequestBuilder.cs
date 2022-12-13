@@ -51,6 +51,30 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets the request builder for CanvasLayout.
+        /// </summary>
+        /// <returns>The <see cref="ICanvasLayoutRequestBuilder"/>.</returns>
+        public ICanvasLayoutRequestBuilder CanvasLayout
+        {
+            get
+            {
+                return new CanvasLayoutRequestBuilder(this.AppendSegmentToRequestUrl("canvasLayout"), this.Client);
+            }
+        }
+
+        /// <summary>
+        /// Gets the request builder for WebParts.
+        /// </summary>
+        /// <returns>The <see cref="ISitePageWebPartsCollectionRequestBuilder"/>.</returns>
+        public ISitePageWebPartsCollectionRequestBuilder WebParts
+        {
+            get
+            {
+                return new SitePageWebPartsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("webParts"), this.Client);
+            }
+        }
+    
+        /// <summary>
         /// Gets the request builder for SitePagePublish.
         /// </summary>
         /// <returns>The <see cref="ISitePagePublishRequestBuilder"/>.</returns>
@@ -59,6 +83,25 @@ namespace Microsoft.Graph
             return new SitePagePublishRequestBuilder(
                 this.AppendSegmentToRequestUrl("microsoft.graph.publish"),
                 this.Client);
+        }
+
+        /// <summary>
+        /// Gets the request builder for SitePageGetWebPartsByPosition.
+        /// </summary>
+        /// <returns>The <see cref="ISitePageGetWebPartsByPositionRequestBuilder"/>.</returns>
+        public ISitePageGetWebPartsByPositionRequestBuilder GetWebPartsByPosition(
+            double? webPartIndex = null,
+            double? horizontalSectionId = null,
+            bool? isInVerticalSection = null,
+            double? columnId = null)
+        {
+            return new SitePageGetWebPartsByPositionRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getWebPartsByPosition"),
+                this.Client,
+                webPartIndex,
+                horizontalSectionId,
+                isInVerticalSection,
+                columnId);
         }
     
     }

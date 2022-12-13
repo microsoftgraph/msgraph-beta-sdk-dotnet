@@ -133,6 +133,18 @@ namespace Microsoft.Graph
         public Int64? SharePointTotalFileCount { get; set; }
     
         /// <summary>
+        /// Gets or sets teams channel messages count.
+        /// </summary>
+        [JsonPropertyName("teamsChannelMessagesCount")]
+        public Int64? TeamsChannelMessagesCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets teams meetings organized count.
+        /// </summary>
+        [JsonPropertyName("teamsMeetingsOrganizedCount")]
+        public Int64? TeamsMeetingsOrganizedCount { get; set; }
+    
+        /// <summary>
         /// Gets or sets yammer liked message count.
         /// The number of messages liked in Yammer groups.
         /// </summary>

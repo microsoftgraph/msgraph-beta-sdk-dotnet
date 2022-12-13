@@ -23,24 +23,28 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets installStatus.
+        /// The status of a partner agent installation. Possible values are: installed, installFailed, installing, uninstalling, uninstallFailed and licensed. Read-Only.
         /// </summary>
         [JsonPropertyName("installStatus")]
         public CloudPcPartnerAgentInstallStatus? InstallStatus { get; set; }
     
         /// <summary>
         /// Gets or sets isThirdPartyPartner.
+        /// Indicates if the partner agent is a third party. When 'TRUE', the agent is a third-party (non-Microsoft) agent.  When 'FALSE', the agent is a Microsoft agent or is not known.  The default value is 'FALSE'.
         /// </summary>
         [JsonPropertyName("isThirdPartyPartner")]
         public bool? IsThirdPartyPartner { get; set; }
     
         /// <summary>
         /// Gets or sets partnerAgentName.
+        /// Indicates the name of a partner agent and includes first-party and third-party. Currently, Citrix is the only third-party value. Read-Only.
         /// </summary>
         [JsonPropertyName("partnerAgentName")]
         public CloudPcPartnerAgentName? PartnerAgentName { get; set; }
     
         /// <summary>
         /// Gets or sets retriable.
+        /// Indicates if the partner agent is a third party. When 'TRUE', the agent is a third-party (non-Microsoft) agent. When 'FALSE', the agent is a Microsoft agent or is not known. The default value is 'FALSE'.
         /// </summary>
         [JsonPropertyName("retriable")]
         public bool? Retriable { get; set; }

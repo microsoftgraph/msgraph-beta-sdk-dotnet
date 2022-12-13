@@ -32,10 +32,32 @@ namespace Microsoft.Graph
         new ISitePageRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for CanvasLayout.
+        /// </summary>
+        /// <returns>The <see cref="ICanvasLayoutRequestBuilder"/>.</returns>
+        ICanvasLayoutRequestBuilder CanvasLayout { get; }
+
+        /// <summary>
+        /// Gets the request builder for WebParts.
+        /// </summary>
+        /// <returns>The <see cref="ISitePageWebPartsCollectionRequestBuilder"/>.</returns>
+        ISitePageWebPartsCollectionRequestBuilder WebParts { get; }
+    
+        /// <summary>
         /// Gets the request builder for SitePagePublish.
         /// </summary>
         /// <returns>The <see cref="ISitePagePublishRequestBuilder"/>.</returns>
         ISitePagePublishRequestBuilder Publish();
+
+        /// <summary>
+        /// Gets the request builder for SitePageGetWebPartsByPosition.
+        /// </summary>
+        /// <returns>The <see cref="ISitePageGetWebPartsByPositionRequestBuilder"/>.</returns>
+        ISitePageGetWebPartsByPositionRequestBuilder GetWebPartsByPosition(
+            double? webPartIndex = null,
+            double? horizontalSectionId = null,
+            bool? isInVerticalSection = null,
+            double? columnId = null);
     
     }
 }

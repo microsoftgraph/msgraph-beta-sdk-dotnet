@@ -23,24 +23,28 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets appVersion.
+        /// The version of the client authentication app used during the authentication step.
         /// </summary>
         [JsonPropertyName("appVersion")]
         public string AppVersion { get; set; }
     
         /// <summary>
         /// Gets or sets clientApp.
+        /// The name of the client authentication app used during the authentication step.
         /// </summary>
         [JsonPropertyName("clientApp")]
         public string ClientApp { get; set; }
     
         /// <summary>
         /// Gets or sets deviceId.
+        /// ID of the device used during the authentication step.
         /// </summary>
         [JsonPropertyName("deviceId")]
         public string DeviceId { get; set; }
     
         /// <summary>
         /// Gets or sets operatingSystem.
+        /// The operating system running on the device used for the authentication step.
         /// </summary>
         [JsonPropertyName("operatingSystem")]
         public string OperatingSystem { get; set; }

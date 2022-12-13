@@ -22,12 +22,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets configuration.
+        /// Consists of configurations that can be fine-tuned and impact the on-premises directory synchronization process for a tenant.
         /// </summary>
         [JsonPropertyName("configuration")]
         public OnPremisesDirectorySynchronizationConfiguration Configuration { get; set; }
     
         /// <summary>
         /// Gets or sets features.
+        /// Consists of directory synchronization features that can be enabled or disabled.
         /// </summary>
         [JsonPropertyName("features")]
         public OnPremisesDirectorySynchronizationFeature Features { get; set; }

@@ -767,6 +767,13 @@ namespace Microsoft.Graph
             string period);
 
         /// <summary>
+        /// Gets the request builder for ReportRootGetTeamsTeamCounts.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetTeamsTeamCountsRequestBuilder"/>.</returns>
+        IReportRootGetTeamsTeamCountsRequestBuilder GetTeamsTeamCounts(
+            string period);
+
+        /// <summary>
         /// Gets the request builder for ReportRootGetTeamsUserActivityCounts.
         /// </summary>
         /// <returns>The <see cref="IReportRootGetTeamsUserActivityCountsRequestBuilder"/>.</returns>

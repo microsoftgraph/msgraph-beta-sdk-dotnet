@@ -23,7 +23,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets href.
-        /// The url of the link.
+        /// The URL of the link.
         /// </summary>
         [JsonPropertyName("href")]
         public string Href { get; set; }

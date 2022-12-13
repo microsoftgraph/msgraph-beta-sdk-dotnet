@@ -130,6 +130,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets on premises synchronization.
+        /// A container for on-premises directory synchronization functionalities that are available for the organization.
         /// </summary>
         [JsonPropertyName("onPremisesSynchronization")]
         public IDirectoryOnPremisesSynchronizationCollectionPage OnPremisesSynchronization { get; set; }

@@ -57,6 +57,12 @@ namespace Microsoft.Graph
         public CloudPcDomainJoinConfiguration DomainJoinConfiguration { get; set; }
     
         /// <summary>
+        /// Gets or sets enable single sign on.
+        /// </summary>
+        [JsonPropertyName("enableSingleSignOn")]
+        public bool? EnableSingleSignOn { get; set; }
+    
+        /// <summary>
         /// Gets or sets grace period in hours.
         /// The number of hours to wait before reprovisioning/deprovisioning happens. Read-only.
         /// </summary>

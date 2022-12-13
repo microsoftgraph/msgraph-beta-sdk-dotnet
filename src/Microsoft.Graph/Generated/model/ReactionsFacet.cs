@@ -15,12 +15,33 @@ namespace Microsoft.Graph
     using System.Text.Json.Serialization;
 
     /// <summary>
-    /// The type SitePageData.
+    /// The type ReactionsFacet.
     /// </summary>
-    [JsonConverter(typeof(DerivedTypeConverter<SitePageData>))]
-    public partial class SitePageData
+    [JsonConverter(typeof(DerivedTypeConverter<ReactionsFacet>))]
+    public partial class ReactionsFacet
     {
 
+        /// <summary>
+        /// Gets or sets commentCount.
+        /// Count of comments.
+        /// </summary>
+        [JsonPropertyName("commentCount")]
+        public Int32? CommentCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets likeCount.
+        /// Count of likes.
+        /// </summary>
+        [JsonPropertyName("likeCount")]
+        public Int32? LikeCount { get; set; }
+    
+        /// <summary>
+        /// Gets or sets shareCount.
+        /// Count of shares.
+        /// </summary>
+        [JsonPropertyName("shareCount")]
+        public Int32? ShareCount { get; set; }
+    
         /// <summary>
         /// Gets or sets additional data.
         /// </summary>

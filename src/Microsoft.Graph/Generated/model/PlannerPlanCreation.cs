@@ -31,6 +31,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets creationSourceKind.
+        /// Specifies what kind of creation source the plan is created with. The possible values are: external, publication and unknownFutureValue.
         /// </summary>
         [JsonPropertyName("creationSourceKind")]
         public PlannerCreationSourceKind? CreationSourceKind { get; set; }

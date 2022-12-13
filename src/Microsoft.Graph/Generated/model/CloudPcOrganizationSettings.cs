@@ -29,6 +29,12 @@ namespace Microsoft.Graph
         public bool? EnableMEMAutoEnroll { get; set; }
     
         /// <summary>
+        /// Gets or sets enable single sign on.
+        /// </summary>
+        [JsonPropertyName("enableSingleSignOn")]
+        public bool? EnableSingleSignOn { get; set; }
+    
+        /// <summary>
         /// Gets or sets os version.
         /// The version of the operating system (OS) to provision on Cloud PCs. The possible values are: windows10, windows11, unknownFutureValue.
         /// </summary>

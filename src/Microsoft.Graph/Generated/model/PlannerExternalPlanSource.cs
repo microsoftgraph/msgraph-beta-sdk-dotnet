@@ -29,18 +29,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets contextScenarioId.
+        /// Nullable. An identifier for the scenario associated with this external source. This should be in reverse DNS format. For example, Contoso company owned application for customer support would have a value like 'com.constoso.customerSupport'.
         /// </summary>
         [JsonPropertyName("contextScenarioId")]
         public string ContextScenarioId { get; set; }
     
         /// <summary>
         /// Gets or sets externalContextId.
+        /// Nullable. The id of the external entity's containing entity or context.
         /// </summary>
         [JsonPropertyName("externalContextId")]
         public string ExternalContextId { get; set; }
     
         /// <summary>
         /// Gets or sets externalObjectId.
+        /// Nullable. The id of the entity that an external service associates with a plan.
         /// </summary>
         [JsonPropertyName("externalObjectId")]
         public string ExternalObjectId { get; set; }

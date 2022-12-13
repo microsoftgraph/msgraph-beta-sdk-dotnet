@@ -17,6 +17,7 @@ namespace Microsoft.Graph.Ediscovery
     /// <summary>
     /// The type Ediscoveryroot.
     /// </summary>
+    [Obsolete("The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.")]
     public partial class Ediscoveryroot : Microsoft.Graph.Entity
     {
     

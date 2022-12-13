@@ -133,6 +133,12 @@ namespace Microsoft.Graph
         [JsonPropertyName("virtualNetworkId")]
         public string VirtualNetworkId { get; set; }
     
+        /// <summary>
+        /// Gets or sets virtual network location.
+        /// </summary>
+        [JsonPropertyName("virtualNetworkLocation")]
+        public string VirtualNetworkLocation { get; set; }
+    
     }
 }
 

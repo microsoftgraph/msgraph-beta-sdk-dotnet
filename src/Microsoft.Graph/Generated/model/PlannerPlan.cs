@@ -58,6 +58,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets creation source.
+        /// Contains information about the origin of the plan.
         /// </summary>
         [JsonPropertyName("creationSource")]
         public PlannerPlanCreation CreationSource { get; set; }

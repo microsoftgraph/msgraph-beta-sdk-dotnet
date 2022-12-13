@@ -35,6 +35,16 @@ namespace Microsoft.Graph
         TotalAggregatedRemoteConnectionReports = 2,
 	
         /// <summary>
+        /// Shared Use License Usage Report
+        /// </summary>
+        SharedUseLicenseUsageReport = 3,
+	
+        /// <summary>
+        /// Shared Use License Usage Real Time Report
+        /// </summary>
+        SharedUseLicenseUsageRealTimeReport = 4,
+	
+        /// <summary>
         /// Unknown Future Value
         /// </summary>
         UnknownFutureValue = 999,

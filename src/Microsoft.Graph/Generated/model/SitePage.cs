@@ -17,6 +17,7 @@ namespace Microsoft.Graph
     /// <summary>
     /// The type Site Page.
     /// </summary>
+    [JsonConverter(typeof(DerivedTypeConverter<SitePage>))]
     public partial class SitePage : BaseItem
     {
     
@@ -36,10 +37,18 @@ namespace Microsoft.Graph
         public ContentTypeInfo ContentType { get; set; }
     
         /// <summary>
-        /// Gets or sets page layout type.
+        /// Gets or sets page layout.
+        /// The name of the page layout of the page. The possible values are: microsoftReserved, article, home, unknownFutureValue.
         /// </summary>
-        [JsonPropertyName("pageLayoutType")]
-        public string PageLayoutType { get; set; }
+        [JsonPropertyName("pageLayout")]
+        public PageLayoutType? PageLayout { get; set; }
+    
+        /// <summary>
+        /// Gets or sets promotion kind.
+        /// Indicates the promotion kind of the sitePage. The possible values are: microsoftReserved, page, newsPost, unknownFutureValue.
+        /// </summary>
+        [JsonPropertyName("promotionKind")]
+        public PagePromotionType? PromotionKind { get; set; }
     
         /// <summary>
         /// Gets or sets publishing state.
@@ -49,6 +58,34 @@ namespace Microsoft.Graph
         public PublicationFacet PublishingState { get; set; }
     
         /// <summary>
+        /// Gets or sets reactions.
+        /// Reactions information for the page.
+        /// </summary>
+        [JsonPropertyName("reactions")]
+        public ReactionsFacet Reactions { get; set; }
+    
+        /// <summary>
+        /// Gets or sets show comments.
+        /// Determines whether or not to show comments at the bottom of the page.
+        /// </summary>
+        [JsonPropertyName("showComments")]
+        public bool? ShowComments { get; set; }
+    
+        /// <summary>
+        /// Gets or sets show recommended pages.
+        /// Determines whether or not to show recommended pages at the bottom of the page.
+        /// </summary>
+        [JsonPropertyName("showRecommendedPages")]
+        public bool? ShowRecommendedPages { get; set; }
+    
+        /// <summary>
+        /// Gets or sets thumbnail web url.
+        /// Url of the sitePage's thumbnail image
+        /// </summary>
+        [JsonPropertyName("thumbnailWebUrl")]
+        public string ThumbnailWebUrl { get; set; }
+    
+        /// <summary>
         /// Gets or sets title.
         /// Title of the sitePage.
         /// </summary>
@@ -56,10 +93,32 @@ namespace Microsoft.Graph
         public string Title { get; set; }
     
         /// <summary>
+        /// Gets or sets title area.
+        /// Title area on the SharePoint page.
+        /// </summary>
+        [JsonPropertyName("titleArea")]
+        public TitleArea TitleArea { get; set; }
+    
+        /// <summary>
+        /// Gets or sets canvas layout.
+        /// Indicates the layout of the content in a given SharePoint page, including horizontal sections and vertical section
+        /// </summary>
+        [JsonPropertyName("canvasLayout")]
+        public CanvasLayout CanvasLayout { get; set; }
+    
+        /// <summary>
         /// Gets or sets web parts.
+        /// Collection of webparts on the SharePoint page
         /// </summary>
         [JsonPropertyName("webParts")]
-        public IEnumerable<WebPart> WebParts { get; set; }
+        public ISitePageWebPartsCollectionPage WebParts { get; set; }
+
+        /// <summary>
+        /// Gets or sets webPartsNextLink.
+        /// </summary>
+        [JsonPropertyName("webParts@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string WebPartsNextLink { get; set; }
     
     }
 }
