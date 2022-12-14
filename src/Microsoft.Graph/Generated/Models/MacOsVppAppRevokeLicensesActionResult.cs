@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Defines results for actions on MacOS Vpp Apps, contains inherited properties for ActionResult.</summary>
+    /// <summary>
+    /// Defines results for actions on MacOS Vpp Apps, contains inherited properties for ActionResult.
+    /// </summary>
     public class MacOsVppAppRevokeLicensesActionResult : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Possible types of reasons for an Apple Volume Purchase Program token action failure.</summary>
         public VppTokenActionFailureReason? ActionFailureReason {

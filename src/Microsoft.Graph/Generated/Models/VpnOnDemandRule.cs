@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>VPN On-Demand Rule definition.</summary>
+    /// <summary>
+    /// VPN On-Demand Rule definition.
+    /// </summary>
     public class VpnOnDemandRule : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>VPN On-Demand Rule Connection Action.</summary>
         public VpnOnDemandRuleConnectionAction? Action {

@@ -9,7 +9,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.Resources.Item.Parent {
-    /// <summary>Provides operations to manage the parent property of the microsoft.graph.governanceResource entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the parent property of the microsoft.graph.governanceResource entity.
+    /// </summary>
     public class ParentRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -77,7 +79,9 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.Resources.Item.Parent {
             };
             return await RequestAdapter.SendAsync<GovernanceResource>(requestInfo, GovernanceResource.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Read-only. The parent resource. for pimforazurerbac scenario, it can represent the subscription the resource belongs to.</summary>
+        /// <summary>
+        /// Read-only. The parent resource. for pimforazurerbac scenario, it can represent the subscription the resource belongs to.
+        /// </summary>
         public class ParentRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]
@@ -86,10 +90,12 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.Resources.Item.Parent {
             [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class ParentRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -99,7 +105,7 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.Resources.Item.Parent {
             /// </summary>
             public ParentRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

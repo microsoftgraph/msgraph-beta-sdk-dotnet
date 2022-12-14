@@ -10,7 +10,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Groups.Item.Onenote.Resources.Item {
-    /// <summary>Provides operations to manage the resources property of the microsoft.graph.onenote entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the resources property of the microsoft.graph.onenote entity.
+    /// </summary>
     public class OnenoteResourceItemRequestBuilder {
         /// <summary>Provides operations to manage the media for the group entity.</summary>
         public ContentRequestBuilder Content { get =>
@@ -90,7 +92,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Onenote.Resources.Item {
         /// <summary>
         /// Update the navigation property resources in groups
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreatePatchRequestInformation(OnenoteResource body, Action<OnenoteResourceItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -138,7 +140,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Onenote.Resources.Item {
         /// <summary>
         /// Update the navigation property resources in groups
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public async Task<OnenoteResource> PatchAsync(OnenoteResource body, Action<OnenoteResourceItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -150,10 +152,12 @@ namespace Microsoft.Graph.Beta.Groups.Item.Onenote.Resources.Item {
             };
             return await RequestAdapter.SendAsync<OnenoteResource>(requestInfo, OnenoteResource.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class OnenoteResourceItemRequestBuilderDeleteRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -161,10 +165,12 @@ namespace Microsoft.Graph.Beta.Groups.Item.Onenote.Resources.Item {
             /// </summary>
             public OnenoteResourceItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>The image and other file resources in OneNote pages. Getting a resources collection is not supported, but you can get the binary content of a specific resource. Read-only. Nullable.</summary>
+        /// <summary>
+        /// The image and other file resources in OneNote pages. Getting a resources collection is not supported, but you can get the binary content of a specific resource. Read-only. Nullable.
+        /// </summary>
         public class OnenoteResourceItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]
@@ -173,10 +179,12 @@ namespace Microsoft.Graph.Beta.Groups.Item.Onenote.Resources.Item {
             [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class OnenoteResourceItemRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -186,13 +194,15 @@ namespace Microsoft.Graph.Beta.Groups.Item.Onenote.Resources.Item {
             /// </summary>
             public OnenoteResourceItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class OnenoteResourceItemRequestBuilderPatchRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -200,7 +210,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Onenote.Resources.Item {
             /// </summary>
             public OnenoteResourceItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

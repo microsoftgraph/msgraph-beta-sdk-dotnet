@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public class TeamTemplate : Entity, IParsable {
         /// <summary>The definitions property</summary>
         public List<TeamTemplateDefinition> Definitions {

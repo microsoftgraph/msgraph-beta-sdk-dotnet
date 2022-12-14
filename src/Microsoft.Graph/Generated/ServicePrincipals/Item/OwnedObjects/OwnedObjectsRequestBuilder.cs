@@ -15,7 +15,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.ServicePrincipals.Item.OwnedObjects {
-    /// <summary>Provides operations to manage the ownedObjects property of the microsoft.graph.servicePrincipal entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the ownedObjects property of the microsoft.graph.servicePrincipal entity.
+    /// </summary>
     public class OwnedObjectsRequestBuilder {
         /// <summary>Casts the previous resource to application.</summary>
         public ApplicationRequestBuilder Application { get =>
@@ -98,6 +100,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.OwnedObjects {
         }
         /// <summary>
         /// Retrieve a list of objects owned by the servicePrincipal.  This could include applications or groups.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/serviceprincipal-list-ownedobjects?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -109,7 +112,9 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.OwnedObjects {
             };
             return await RequestAdapter.SendAsync<DirectoryObjectCollectionResponse>(requestInfo, DirectoryObjectCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Retrieve a list of objects owned by the servicePrincipal.  This could include applications or groups.</summary>
+        /// <summary>
+        /// Retrieve a list of objects owned by the servicePrincipal.  This could include applications or groups.
+        /// </summary>
         public class OwnedObjectsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -136,10 +141,12 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.OwnedObjects {
             [QueryParameter("%24top")]
             public int? Top { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class OwnedObjectsRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -149,7 +156,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.OwnedObjects {
             /// </summary>
             public OwnedObjectsRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

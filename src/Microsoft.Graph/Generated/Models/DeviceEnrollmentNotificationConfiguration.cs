@@ -16,8 +16,8 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("defaultLocale", value); }
         }
         /// <summary>Notification Message Template Id</summary>
-        public string NotificationMessageTemplateId {
-            get { return BackingStore?.Get<string>("notificationMessageTemplateId"); }
+        public Guid? NotificationMessageTemplateId {
+            get { return BackingStore?.Get<Guid?>("notificationMessageTemplateId"); }
             set { BackingStore?.Set("notificationMessageTemplateId", value); }
         }
         /// <summary>The list of notification data -</summary>
@@ -56,7 +56,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"brandingOptions", n => { BrandingOptions = n.GetEnumValue<EnrollmentNotificationBrandingOptions>(); } },
                 {"defaultLocale", n => { DefaultLocale = n.GetStringValue(); } },
-                {"notificationMessageTemplateId", n => { NotificationMessageTemplateId = n.GetStringValue(); } },
+                {"notificationMessageTemplateId", n => { NotificationMessageTemplateId = n.GetGuidValue(); } },
                 {"notificationTemplates", n => { NotificationTemplates = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"platformType", n => { PlatformType = n.GetEnumValue<EnrollmentRestrictionPlatformType>(); } },
                 {"templateType", n => { TemplateType = n.GetEnumValue<EnrollmentNotificationTemplateType>(); } },
@@ -71,7 +71,7 @@ namespace Microsoft.Graph.Beta.Models {
             base.Serialize(writer);
             writer.WriteEnumValue<EnrollmentNotificationBrandingOptions>("brandingOptions", BrandingOptions);
             writer.WriteStringValue("defaultLocale", DefaultLocale);
-            writer.WriteStringValue("notificationMessageTemplateId", NotificationMessageTemplateId);
+            writer.WriteGuidValue("notificationMessageTemplateId", NotificationMessageTemplateId);
             writer.WriteCollectionOfPrimitiveValues<string>("notificationTemplates", NotificationTemplates);
             writer.WriteEnumValue<EnrollmentRestrictionPlatformType>("platformType", PlatformType);
             writer.WriteEnumValue<EnrollmentNotificationTemplateType>("templateType", TemplateType);

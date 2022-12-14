@@ -11,7 +11,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.UserFlowIdentityProviders {
-    /// <summary>Provides operations to manage the userFlowIdentityProviders property of the microsoft.graph.b2cIdentityUserFlow entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the userFlowIdentityProviders property of the microsoft.graph.b2cIdentityUserFlow entity.
+    /// </summary>
     public class UserFlowIdentityProvidersRequestBuilder {
         /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
@@ -89,7 +91,9 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.UserFlowIdentityProvid
             };
             return await RequestAdapter.SendAsync<IdentityProviderBaseCollectionResponse>(requestInfo, IdentityProviderBaseCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Get userFlowIdentityProviders from identity</summary>
+        /// <summary>
+        /// Get userFlowIdentityProviders from identity
+        /// </summary>
         public class UserFlowIdentityProvidersRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -116,10 +120,12 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.UserFlowIdentityProvid
             [QueryParameter("%24top")]
             public int? Top { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class UserFlowIdentityProvidersRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -129,7 +135,7 @@ namespace Microsoft.Graph.Beta.Identity.B2cUserFlows.Item.UserFlowIdentityProvid
             /// </summary>
             public UserFlowIdentityProvidersRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

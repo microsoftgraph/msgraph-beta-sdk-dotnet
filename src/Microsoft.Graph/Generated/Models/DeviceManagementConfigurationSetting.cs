@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Setting instance within policy</summary>
+    /// <summary>
+    /// Setting instance within policy
+    /// </summary>
     public class DeviceManagementConfigurationSetting : Entity, IParsable {
         /// <summary>List of related Setting Definitions. This property is read-only.</summary>
         public List<DeviceManagementConfigurationSettingDefinition> SettingDefinitions {

@@ -11,7 +11,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationContextClassReferences {
-    /// <summary>Provides operations to manage the authenticationContextClassReferences property of the microsoft.graph.conditionalAccessRoot entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the authenticationContextClassReferences property of the microsoft.graph.conditionalAccessRoot entity.
+    /// </summary>
     public class AuthenticationContextClassReferencesRequestBuilder {
         /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
@@ -79,7 +81,7 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationContextC
         /// <summary>
         /// Create a new authenticationContextClassReference.
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreatePostRequestInformation(AuthenticationContextClassReference body, Action<AuthenticationContextClassReferencesRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -100,6 +102,7 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationContextC
         }
         /// <summary>
         /// Retrieve a list of authenticationContextClassReference objects.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/conditionalaccessroot-list-authenticationcontextclassreferences?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -113,8 +116,9 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationContextC
         }
         /// <summary>
         /// Create a new authenticationContextClassReference.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/conditionalaccessroot-post-authenticationcontextclassreferences?view=graph-rest-1.0" />
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public async Task<AuthenticationContextClassReference> PostAsync(AuthenticationContextClassReference body, Action<AuthenticationContextClassReferencesRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -126,7 +130,9 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationContextC
             };
             return await RequestAdapter.SendAsync<AuthenticationContextClassReference>(requestInfo, AuthenticationContextClassReference.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Retrieve a list of authenticationContextClassReference objects.</summary>
+        /// <summary>
+        /// Retrieve a list of authenticationContextClassReference objects.
+        /// </summary>
         public class AuthenticationContextClassReferencesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -153,10 +159,12 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationContextC
             [QueryParameter("%24top")]
             public int? Top { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class AuthenticationContextClassReferencesRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -166,13 +174,15 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationContextC
             /// </summary>
             public AuthenticationContextClassReferencesRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class AuthenticationContextClassReferencesRequestBuilderPostRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -180,7 +190,7 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.AuthenticationContextC
             /// </summary>
             public AuthenticationContextClassReferencesRequestBuilderPostRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

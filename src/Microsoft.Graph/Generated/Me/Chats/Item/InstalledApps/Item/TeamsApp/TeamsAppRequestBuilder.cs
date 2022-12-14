@@ -9,7 +9,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Me.Chats.Item.InstalledApps.Item.TeamsApp {
-    /// <summary>Provides operations to manage the teamsApp property of the microsoft.graph.teamsAppInstallation entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the teamsApp property of the microsoft.graph.teamsAppInstallation entity.
+    /// </summary>
     public class TeamsAppRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -77,7 +79,9 @@ namespace Microsoft.Graph.Beta.Me.Chats.Item.InstalledApps.Item.TeamsApp {
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.TeamsApp>(requestInfo, Microsoft.Graph.Beta.Models.TeamsApp.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>The app that is installed.</summary>
+        /// <summary>
+        /// The app that is installed.
+        /// </summary>
         public class TeamsAppRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]
@@ -86,10 +90,12 @@ namespace Microsoft.Graph.Beta.Me.Chats.Item.InstalledApps.Item.TeamsApp {
             [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class TeamsAppRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -99,7 +105,7 @@ namespace Microsoft.Graph.Beta.Me.Chats.Item.InstalledApps.Item.TeamsApp {
             /// </summary>
             public TeamsAppRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

@@ -4,32 +4,28 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Provides operations to manage the collection of accessReviewDecision entities.
+    /// </summary>
     public class WebPart : Entity, IParsable {
-        /// <summary>The data property</summary>
-        public SitePageData Data {
-            get { return BackingStore?.Get<SitePageData>("data"); }
-            set { BackingStore?.Set("data", value); }
-        }
-        /// <summary>The type property</summary>
-        public string Type {
-            get { return BackingStore?.Get<string>("type"); }
-            set { BackingStore?.Set("type", value); }
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
         public static new WebPart CreateFromDiscriminatorValue(IParseNode parseNode) {
             _ = parseNode ?? throw new ArgumentNullException(nameof(parseNode));
-            return new WebPart();
+            var mappingValue = parseNode.GetChildNode("@odata.type")?.GetStringValue();
+            return mappingValue switch {
+                "#microsoft.graph.standardWebPart" => new StandardWebPart(),
+                "#microsoft.graph.textWebPart" => new TextWebPart(),
+                _ => new WebPart(),
+            };
         }
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"data", n => { Data = n.GetObjectValue<SitePageData>(SitePageData.CreateFromDiscriminatorValue); } },
-                {"type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -39,8 +35,6 @@ namespace Microsoft.Graph.Beta.Models {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<SitePageData>("data", Data);
-            writer.WriteStringValue("type", Type);
         }
     }
 }

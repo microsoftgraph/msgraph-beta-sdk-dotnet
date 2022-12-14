@@ -10,7 +10,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.DeviceManagement.Templates.Item.Categories.Item {
-    /// <summary>Provides operations to manage the categories property of the microsoft.graph.deviceManagementTemplate entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the categories property of the microsoft.graph.deviceManagementTemplate entity.
+    /// </summary>
     public class DeviceManagementTemplateSettingCategoryItemRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -90,7 +92,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Templates.Item.Categories.Item {
         /// <summary>
         /// Update the navigation property categories in deviceManagement
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreatePatchRequestInformation(DeviceManagementTemplateSettingCategory body, Action<DeviceManagementTemplateSettingCategoryItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -138,7 +140,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Templates.Item.Categories.Item {
         /// <summary>
         /// Update the navigation property categories in deviceManagement
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public async Task<DeviceManagementTemplateSettingCategory> PatchAsync(DeviceManagementTemplateSettingCategory body, Action<DeviceManagementTemplateSettingCategoryItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -150,10 +152,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Templates.Item.Categories.Item {
             };
             return await RequestAdapter.SendAsync<DeviceManagementTemplateSettingCategory>(requestInfo, DeviceManagementTemplateSettingCategory.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class DeviceManagementTemplateSettingCategoryItemRequestBuilderDeleteRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -161,10 +165,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Templates.Item.Categories.Item {
             /// </summary>
             public DeviceManagementTemplateSettingCategoryItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Collection of setting categories within the template</summary>
+        /// <summary>
+        /// Collection of setting categories within the template
+        /// </summary>
         public class DeviceManagementTemplateSettingCategoryItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]
@@ -173,10 +179,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Templates.Item.Categories.Item {
             [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class DeviceManagementTemplateSettingCategoryItemRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -186,13 +194,15 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Templates.Item.Categories.Item {
             /// </summary>
             public DeviceManagementTemplateSettingCategoryItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class DeviceManagementTemplateSettingCategoryItemRequestBuilderPatchRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -200,7 +210,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Templates.Item.Categories.Item {
             /// </summary>
             public DeviceManagementTemplateSettingCategoryItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

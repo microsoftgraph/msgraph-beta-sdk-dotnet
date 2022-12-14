@@ -14,7 +14,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleAssignmentRequests.Item {
-    /// <summary>Provides operations to manage the roleAssignmentRequests property of the microsoft.graph.privilegedAccess entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the roleAssignmentRequests property of the microsoft.graph.privilegedAccess entity.
+    /// </summary>
     public class GovernanceRoleAssignmentRequestItemRequestBuilder {
         /// <summary>Provides operations to call the cancel method.</summary>
         public CancelRequestBuilder Cancel { get =>
@@ -110,7 +112,7 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleAssignmentRequests.Item
         /// <summary>
         /// Update the navigation property roleAssignmentRequests in privilegedAccess
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreatePatchRequestInformation(GovernanceRoleAssignmentRequest body, Action<GovernanceRoleAssignmentRequestItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -158,7 +160,7 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleAssignmentRequests.Item
         /// <summary>
         /// Update the navigation property roleAssignmentRequests in privilegedAccess
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public async Task<GovernanceRoleAssignmentRequest> PatchAsync(GovernanceRoleAssignmentRequest body, Action<GovernanceRoleAssignmentRequestItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -170,10 +172,12 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleAssignmentRequests.Item
             };
             return await RequestAdapter.SendAsync<GovernanceRoleAssignmentRequest>(requestInfo, GovernanceRoleAssignmentRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class GovernanceRoleAssignmentRequestItemRequestBuilderDeleteRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -181,10 +185,12 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleAssignmentRequests.Item
             /// </summary>
             public GovernanceRoleAssignmentRequestItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>A collection of role assignment requests for the provider.</summary>
+        /// <summary>
+        /// A collection of role assignment requests for the provider.
+        /// </summary>
         public class GovernanceRoleAssignmentRequestItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]
@@ -193,10 +199,12 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleAssignmentRequests.Item
             [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class GovernanceRoleAssignmentRequestItemRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -206,13 +214,15 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleAssignmentRequests.Item
             /// </summary>
             public GovernanceRoleAssignmentRequestItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class GovernanceRoleAssignmentRequestItemRequestBuilderPatchRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -220,7 +230,7 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.RoleAssignmentRequests.Item
             /// </summary>
             public GovernanceRoleAssignmentRequestItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

@@ -11,7 +11,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Users.Item.Planner.RosterPlans {
-    /// <summary>Provides operations to manage the rosterPlans property of the microsoft.graph.plannerUser entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the rosterPlans property of the microsoft.graph.plannerUser entity.
+    /// </summary>
     public class RosterPlansRequestBuilder {
         /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
@@ -78,6 +80,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Planner.RosterPlans {
         }
         /// <summary>
         /// Get the list of plannerPlans that are contained by the plannerRosters of which the user is a member.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/planneruser-list-rosterplans?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -89,7 +92,9 @@ namespace Microsoft.Graph.Beta.Users.Item.Planner.RosterPlans {
             };
             return await RequestAdapter.SendAsync<PlannerPlanCollectionResponse>(requestInfo, PlannerPlanCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Get the list of plannerPlans that are contained by the plannerRosters of which the user is a member.</summary>
+        /// <summary>
+        /// Get the list of plannerPlans that are contained by the plannerRosters of which the user is a member.
+        /// </summary>
         public class RosterPlansRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -116,10 +121,12 @@ namespace Microsoft.Graph.Beta.Users.Item.Planner.RosterPlans {
             [QueryParameter("%24top")]
             public int? Top { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class RosterPlansRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -129,7 +136,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Planner.RosterPlans {
             /// </summary>
             public RosterPlansRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

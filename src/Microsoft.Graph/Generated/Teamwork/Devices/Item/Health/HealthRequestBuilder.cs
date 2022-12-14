@@ -9,7 +9,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Teamwork.Devices.Item.Health {
-    /// <summary>Provides operations to manage the health property of the microsoft.graph.teamworkDevice entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the health property of the microsoft.graph.teamworkDevice entity.
+    /// </summary>
     public class HealthRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -85,7 +87,7 @@ namespace Microsoft.Graph.Beta.Teamwork.Devices.Item.Health {
         /// <summary>
         /// Update the navigation property health in teamwork
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreatePatchRequestInformation(TeamworkDeviceHealth body, Action<HealthRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -119,6 +121,7 @@ namespace Microsoft.Graph.Beta.Teamwork.Devices.Item.Health {
         }
         /// <summary>
         /// Get the health details of a Microsoft Teams-enabled device. Device health is calculated based on the device configuration and other device parameters.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/teamworkdevicehealth-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -133,7 +136,7 @@ namespace Microsoft.Graph.Beta.Teamwork.Devices.Item.Health {
         /// <summary>
         /// Update the navigation property health in teamwork
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public async Task<TeamworkDeviceHealth> PatchAsync(TeamworkDeviceHealth body, Action<HealthRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -145,10 +148,12 @@ namespace Microsoft.Graph.Beta.Teamwork.Devices.Item.Health {
             };
             return await RequestAdapter.SendAsync<TeamworkDeviceHealth>(requestInfo, TeamworkDeviceHealth.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class HealthRequestBuilderDeleteRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -156,10 +161,12 @@ namespace Microsoft.Graph.Beta.Teamwork.Devices.Item.Health {
             /// </summary>
             public HealthRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Get the health details of a Microsoft Teams-enabled device. Device health is calculated based on the device configuration and other device parameters.</summary>
+        /// <summary>
+        /// Get the health details of a Microsoft Teams-enabled device. Device health is calculated based on the device configuration and other device parameters.
+        /// </summary>
         public class HealthRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]
@@ -168,10 +175,12 @@ namespace Microsoft.Graph.Beta.Teamwork.Devices.Item.Health {
             [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class HealthRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -181,13 +190,15 @@ namespace Microsoft.Graph.Beta.Teamwork.Devices.Item.Health {
             /// </summary>
             public HealthRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class HealthRequestBuilderPatchRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -195,7 +206,7 @@ namespace Microsoft.Graph.Beta.Teamwork.Devices.Item.Health {
             /// </summary>
             public HealthRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

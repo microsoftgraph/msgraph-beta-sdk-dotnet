@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>The Group Policy migration report.</summary>
+    /// <summary>
+    /// The Group Policy migration report.
+    /// </summary>
     public class GroupPolicyMigrationReport : Entity, IParsable {
         /// <summary>The date and time at which the GroupPolicyMigrationReport was created.</summary>
         public DateTimeOffset? CreatedDateTime {
@@ -27,8 +29,8 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("groupPolicyLastModifiedDateTime", value); }
         }
         /// <summary>The Group Policy Object GUID from GPO Xml content</summary>
-        public string GroupPolicyObjectId {
-            get { return BackingStore?.Get<string>("groupPolicyObjectId"); }
+        public Guid? GroupPolicyObjectId {
+            get { return BackingStore?.Get<Guid?>("groupPolicyObjectId"); }
             set { BackingStore?.Set("groupPolicyObjectId", value); }
         }
         /// <summary>A list of group policy settings to MDM/Intune mappings.</summary>
@@ -98,7 +100,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"groupPolicyCreatedDateTime", n => { GroupPolicyCreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"groupPolicyLastModifiedDateTime", n => { GroupPolicyLastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"groupPolicyObjectId", n => { GroupPolicyObjectId = n.GetStringValue(); } },
+                {"groupPolicyObjectId", n => { GroupPolicyObjectId = n.GetGuidValue(); } },
                 {"groupPolicySettingMappings", n => { GroupPolicySettingMappings = n.GetCollectionOfObjectValues<GroupPolicySettingMapping>(GroupPolicySettingMapping.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"migrationReadiness", n => { MigrationReadiness = n.GetEnumValue<GroupPolicyMigrationReadiness>(); } },
@@ -122,7 +124,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteDateTimeOffsetValue("groupPolicyCreatedDateTime", GroupPolicyCreatedDateTime);
             writer.WriteDateTimeOffsetValue("groupPolicyLastModifiedDateTime", GroupPolicyLastModifiedDateTime);
-            writer.WriteStringValue("groupPolicyObjectId", GroupPolicyObjectId);
+            writer.WriteGuidValue("groupPolicyObjectId", GroupPolicyObjectId);
             writer.WriteCollectionOfObjectValues<GroupPolicySettingMapping>("groupPolicySettingMappings", GroupPolicySettingMappings);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteEnumValue<GroupPolicyMigrationReadiness>("migrationReadiness", MigrationReadiness);

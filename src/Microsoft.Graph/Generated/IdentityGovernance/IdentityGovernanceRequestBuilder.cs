@@ -14,7 +14,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.IdentityGovernance {
-    /// <summary>Provides operations to manage the identityGovernance singleton.</summary>
+    /// <summary>
+    /// Provides operations to manage the identityGovernance singleton.
+    /// </summary>
     public class IdentityGovernanceRequestBuilder {
         /// <summary>Provides operations to manage the accessReviews property of the microsoft.graph.identityGovernance entity.</summary>
         public AccessReviewsRequestBuilder AccessReviews { get =>
@@ -92,7 +94,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance {
         /// <summary>
         /// Update identityGovernance
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreatePatchRequestInformation(Microsoft.Graph.Beta.Models.IdentityGovernance.IdentityGovernance body, Action<IdentityGovernanceRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -127,7 +129,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance {
         /// <summary>
         /// Update identityGovernance
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public async Task<Microsoft.Graph.Beta.Models.IdentityGovernance.IdentityGovernance> PatchAsync(Microsoft.Graph.Beta.Models.IdentityGovernance.IdentityGovernance body, Action<IdentityGovernanceRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -139,7 +141,9 @@ namespace Microsoft.Graph.Beta.IdentityGovernance {
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.IdentityGovernance.IdentityGovernance>(requestInfo, Microsoft.Graph.Beta.Models.IdentityGovernance.IdentityGovernance.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Get identityGovernance</summary>
+        /// <summary>
+        /// Get identityGovernance
+        /// </summary>
         public class IdentityGovernanceRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]
@@ -148,10 +152,12 @@ namespace Microsoft.Graph.Beta.IdentityGovernance {
             [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class IdentityGovernanceRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -161,13 +167,15 @@ namespace Microsoft.Graph.Beta.IdentityGovernance {
             /// </summary>
             public IdentityGovernanceRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class IdentityGovernanceRequestBuilderPatchRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -175,7 +183,7 @@ namespace Microsoft.Graph.Beta.IdentityGovernance {
             /// </summary>
             public IdentityGovernanceRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

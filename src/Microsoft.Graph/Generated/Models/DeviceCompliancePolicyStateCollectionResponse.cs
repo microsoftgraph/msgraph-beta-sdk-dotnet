@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Provides operations to manage the deviceCompliancePolicyStates property of the microsoft.graph.managedDevice entity.
+    /// </summary>
     public class DeviceCompliancePolicyStateCollectionResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<DeviceCompliancePolicyState> Value {

@@ -1,4 +1,3 @@
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions.Store;
 using System;
@@ -25,8 +24,8 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The id property</summary>
-        public string Id {
-            get { return BackingStore?.Get<string>("id"); }
+        public Guid? Id {
+            get { return BackingStore?.Get<Guid?>("id"); }
             set { BackingStore?.Set("id", value); }
         }
         /// <summary>The OdataType property</summary>
@@ -72,7 +71,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"confidence", n => { Confidence = n.GetIntValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"id", n => { Id = n.GetStringValue(); } },
+                {"id", n => { Id = n.GetGuidValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"recommendedConfidence", n => { RecommendedConfidence = n.GetIntValue(); } },
                 {"uniqueCount", n => { UniqueCount = n.GetIntValue(); } },
@@ -86,7 +85,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("confidence", Confidence);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteStringValue("id", Id);
+            writer.WriteGuidValue("id", Id);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteIntValue("recommendedConfidence", RecommendedConfidence);
             writer.WriteIntValue("uniqueCount", UniqueCount);

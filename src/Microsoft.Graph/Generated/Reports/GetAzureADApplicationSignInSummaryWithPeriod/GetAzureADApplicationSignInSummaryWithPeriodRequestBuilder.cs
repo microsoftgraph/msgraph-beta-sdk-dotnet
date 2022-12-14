@@ -8,7 +8,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Reports.GetAzureADApplicationSignInSummaryWithPeriod {
-    /// <summary>Provides operations to call the getAzureADApplicationSignInSummary method.</summary>
+    /// <summary>
+    /// Provides operations to call the getAzureADApplicationSignInSummary method.
+    /// </summary>
     public class GetAzureADApplicationSignInSummaryWithPeriodRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -78,7 +80,9 @@ namespace Microsoft.Graph.Beta.Reports.GetAzureADApplicationSignInSummaryWithPer
             };
             return await RequestAdapter.SendAsync<GetAzureADApplicationSignInSummaryWithPeriodResponse>(requestInfo, GetAzureADApplicationSignInSummaryWithPeriodResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Invoke function getAzureADApplicationSignInSummary</summary>
+        /// <summary>
+        /// Invoke function getAzureADApplicationSignInSummary
+        /// </summary>
         public class GetAzureADApplicationSignInSummaryWithPeriodRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -102,10 +106,12 @@ namespace Microsoft.Graph.Beta.Reports.GetAzureADApplicationSignInSummaryWithPer
             [QueryParameter("%24top")]
             public int? Top { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class GetAzureADApplicationSignInSummaryWithPeriodRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -115,7 +121,7 @@ namespace Microsoft.Graph.Beta.Reports.GetAzureADApplicationSignInSummaryWithPer
             /// </summary>
             public GetAzureADApplicationSignInSummaryWithPeriodRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

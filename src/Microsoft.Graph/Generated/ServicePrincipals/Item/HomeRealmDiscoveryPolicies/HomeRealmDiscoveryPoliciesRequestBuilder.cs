@@ -12,7 +12,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.ServicePrincipals.Item.HomeRealmDiscoveryPolicies {
-    /// <summary>Provides operations to manage the homeRealmDiscoveryPolicies property of the microsoft.graph.servicePrincipal entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the homeRealmDiscoveryPolicies property of the microsoft.graph.servicePrincipal entity.
+    /// </summary>
     public class HomeRealmDiscoveryPoliciesRequestBuilder {
         /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
@@ -83,6 +85,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.HomeRealmDiscoveryPolicies
         }
         /// <summary>
         /// List the homeRealmDiscoveryPolicy objects that are assigned to a servicePrincipal.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/serviceprincipal-list-homerealmdiscoverypolicies?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -94,7 +97,9 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.HomeRealmDiscoveryPolicies
             };
             return await RequestAdapter.SendAsync<HomeRealmDiscoveryPolicyCollectionResponse>(requestInfo, HomeRealmDiscoveryPolicyCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>List the homeRealmDiscoveryPolicy objects that are assigned to a servicePrincipal.</summary>
+        /// <summary>
+        /// List the homeRealmDiscoveryPolicy objects that are assigned to a servicePrincipal.
+        /// </summary>
         public class HomeRealmDiscoveryPoliciesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -121,10 +126,12 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.HomeRealmDiscoveryPolicies
             [QueryParameter("%24top")]
             public int? Top { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class HomeRealmDiscoveryPoliciesRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -134,7 +141,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.HomeRealmDiscoveryPolicies
             /// </summary>
             public HomeRealmDiscoveryPoliciesRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

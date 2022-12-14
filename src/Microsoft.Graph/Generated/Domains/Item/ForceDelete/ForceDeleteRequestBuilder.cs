@@ -8,7 +8,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Domains.Item.ForceDelete {
-    /// <summary>Provides operations to call the forceDelete method.</summary>
+    /// <summary>
+    /// Provides operations to call the forceDelete method.
+    /// </summary>
     public class ForceDeleteRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -46,7 +48,7 @@ namespace Microsoft.Graph.Beta.Domains.Item.ForceDelete {
         /// <summary>
         /// Deletes a domain using an asynchronous operation. Prior to calling forceDelete, you must update or remove any references to **Exchange** as the provisioning service. The following actions are performed as part of this operation: After the domain deletion completes, API operations for the deleted domain will return a 404 HTTP response code. To verify deletion of a domain, you can perform a get domain. If the domain was successfully deleted, a 404 HTTP response code will be returned in the response.
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreatePostRequestInformation(ForceDeletePostRequestBody body, Action<ForceDeleteRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -66,8 +68,9 @@ namespace Microsoft.Graph.Beta.Domains.Item.ForceDelete {
         }
         /// <summary>
         /// Deletes a domain using an asynchronous operation. Prior to calling forceDelete, you must update or remove any references to **Exchange** as the provisioning service. The following actions are performed as part of this operation: After the domain deletion completes, API operations for the deleted domain will return a 404 HTTP response code. To verify deletion of a domain, you can perform a get domain. If the domain was successfully deleted, a 404 HTTP response code will be returned in the response.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/domain-forcedelete?view=graph-rest-1.0" />
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public async Task PostAsync(ForceDeletePostRequestBody body, Action<ForceDeleteRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -79,10 +82,12 @@ namespace Microsoft.Graph.Beta.Domains.Item.ForceDelete {
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class ForceDeleteRequestBuilderPostRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -90,7 +95,7 @@ namespace Microsoft.Graph.Beta.Domains.Item.ForceDelete {
             /// </summary>
             public ForceDeleteRequestBuilderPostRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

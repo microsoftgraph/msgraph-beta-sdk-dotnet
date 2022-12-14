@@ -12,7 +12,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Me.MailFolders.Item.Messages {
-    /// <summary>Provides operations to manage the messages property of the microsoft.graph.mailFolder entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the messages property of the microsoft.graph.mailFolder entity.
+    /// </summary>
     public class MessagesRequestBuilder {
         /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
@@ -80,7 +82,7 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item.Messages {
         /// <summary>
         /// Use this API to create a new Message in a mailfolder.
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreatePostRequestInformation(Microsoft.Graph.Beta.Models.Message body, Action<MessagesRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -107,6 +109,7 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item.Messages {
         }
         /// <summary>
         /// List all the messages in the specified user&apos;s mailbox, or those messages in a specified folder in the mailbox.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/mailfolder-list-messages?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,8 +123,9 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item.Messages {
         }
         /// <summary>
         /// Use this API to create a new Message in a mailfolder.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/mailfolder-post-messages?view=graph-rest-1.0" />
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public async Task<Microsoft.Graph.Beta.Models.Message> PostAsync(Microsoft.Graph.Beta.Models.Message body, Action<MessagesRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -133,7 +137,9 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item.Messages {
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Message>(requestInfo, Microsoft.Graph.Beta.Models.Message.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>List all the messages in the specified user&apos;s mailbox, or those messages in a specified folder in the mailbox.</summary>
+        /// <summary>
+        /// List all the messages in the specified user&apos;s mailbox, or those messages in a specified folder in the mailbox.
+        /// </summary>
         public class MessagesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -160,10 +166,12 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item.Messages {
             [QueryParameter("%24top")]
             public int? Top { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class MessagesRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -173,13 +181,15 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item.Messages {
             /// </summary>
             public MessagesRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class MessagesRequestBuilderPostRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -187,7 +197,7 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item.Messages {
             /// </summary>
             public MessagesRequestBuilderPostRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

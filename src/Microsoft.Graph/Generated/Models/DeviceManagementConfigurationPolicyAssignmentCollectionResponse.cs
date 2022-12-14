@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Provides operations to manage the assignments property of the microsoft.graph.deviceManagementCompliancePolicy entity.
+    /// </summary>
     public class DeviceManagementConfigurationPolicyAssignmentCollectionResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<DeviceManagementConfigurationPolicyAssignment> Value {

@@ -11,7 +11,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.ServicePrincipals.Item.DelegatedPermissionClassifications {
-    /// <summary>Provides operations to manage the delegatedPermissionClassifications property of the microsoft.graph.servicePrincipal entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the delegatedPermissionClassifications property of the microsoft.graph.servicePrincipal entity.
+    /// </summary>
     public class DelegatedPermissionClassificationsRequestBuilder {
         /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
@@ -79,7 +81,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.DelegatedPermissionClassif
         /// <summary>
         /// Classify a delegated permission by adding a delegatedPermissionClassification to the servicePrincipal representing the API.
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreatePostRequestInformation(DelegatedPermissionClassification body, Action<DelegatedPermissionClassificationsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -100,6 +102,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.DelegatedPermissionClassif
         }
         /// <summary>
         /// Retrieve the list of delegatedPermissionClassification currently configured for the delegated permissions exposed by an API.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/serviceprincipal-list-delegatedpermissionclassifications?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -113,8 +116,9 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.DelegatedPermissionClassif
         }
         /// <summary>
         /// Classify a delegated permission by adding a delegatedPermissionClassification to the servicePrincipal representing the API.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/serviceprincipal-post-delegatedpermissionclassifications?view=graph-rest-1.0" />
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public async Task<DelegatedPermissionClassification> PostAsync(DelegatedPermissionClassification body, Action<DelegatedPermissionClassificationsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -126,7 +130,9 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.DelegatedPermissionClassif
             };
             return await RequestAdapter.SendAsync<DelegatedPermissionClassification>(requestInfo, DelegatedPermissionClassification.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Retrieve the list of delegatedPermissionClassification currently configured for the delegated permissions exposed by an API.</summary>
+        /// <summary>
+        /// Retrieve the list of delegatedPermissionClassification currently configured for the delegated permissions exposed by an API.
+        /// </summary>
         public class DelegatedPermissionClassificationsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -153,10 +159,12 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.DelegatedPermissionClassif
             [QueryParameter("%24top")]
             public int? Top { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class DelegatedPermissionClassificationsRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -166,13 +174,15 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.DelegatedPermissionClassif
             /// </summary>
             public DelegatedPermissionClassificationsRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class DelegatedPermissionClassificationsRequestBuilderPostRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -180,7 +190,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.DelegatedPermissionClassif
             /// </summary>
             public DelegatedPermissionClassificationsRequestBuilderPostRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

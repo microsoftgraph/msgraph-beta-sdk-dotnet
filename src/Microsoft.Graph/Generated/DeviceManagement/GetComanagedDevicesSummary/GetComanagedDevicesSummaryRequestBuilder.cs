@@ -9,7 +9,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.DeviceManagement.GetComanagedDevicesSummary {
-    /// <summary>Provides operations to call the getComanagedDevicesSummary method.</summary>
+    /// <summary>
+    /// Provides operations to call the getComanagedDevicesSummary method.
+    /// </summary>
     public class GetComanagedDevicesSummaryRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -76,10 +78,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GetComanagedDevicesSummary {
             };
             return await RequestAdapter.SendAsync<ComanagedDevicesSummary>(requestInfo, ComanagedDevicesSummary.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class GetComanagedDevicesSummaryRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -87,7 +91,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GetComanagedDevicesSummary {
             /// </summary>
             public GetComanagedDevicesSummaryRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

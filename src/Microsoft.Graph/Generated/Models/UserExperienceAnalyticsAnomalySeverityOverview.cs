@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>The user experience analytics anomaly severity overview entity contains the count information for each severity of anomaly.</summary>
+    /// <summary>
+    /// The user experience analytics anomaly severity overview entity contains the count information for each severity of anomaly.
+    /// </summary>
     public class UserExperienceAnalyticsAnomalySeverityOverview : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {

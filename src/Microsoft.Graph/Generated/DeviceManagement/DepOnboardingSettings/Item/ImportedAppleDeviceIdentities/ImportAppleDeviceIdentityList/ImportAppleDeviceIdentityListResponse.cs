@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.DeviceManagement.DepOnboardingSettings.Item.ImportedAppleDeviceIdentities.ImportAppleDeviceIdentityList {
-    /// <summary>Provides operations to call the importAppleDeviceIdentityList method.</summary>
+    /// <summary>
+    /// Provides operations to call the importAppleDeviceIdentityList method.
+    /// </summary>
     public class ImportAppleDeviceIdentityListResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<ImportedAppleDeviceIdentityResult> Value {

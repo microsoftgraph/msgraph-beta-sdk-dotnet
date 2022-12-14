@@ -1,11 +1,12 @@
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Entity representing the defintion for a given setting</summary>
+    /// <summary>
+    /// Entity representing the defintion for a given setting
+    /// </summary>
     public class DeviceManagementSettingDefinition : Entity, IParsable {
         /// <summary>Collection of constraints for the setting value</summary>
         public List<DeviceManagementConstraint> Constraints {

@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provides operations to manage the admin singleton.</summary>
     public enum BrowserSharedCookieSourceEnvironment {
         /// <summary>Share session cookies from Microsoft Edge to Internet Explorer.</summary>
         MicrosoftEdge,

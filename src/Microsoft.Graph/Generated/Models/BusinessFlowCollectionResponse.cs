@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Provides operations to manage the businessFlows property of the microsoft.graph.approvalWorkflowProvider entity.
+    /// </summary>
     public class BusinessFlowCollectionResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<BusinessFlow> Value {

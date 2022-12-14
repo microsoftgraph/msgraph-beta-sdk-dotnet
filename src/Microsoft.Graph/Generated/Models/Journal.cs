@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>
+    /// Provides operations to manage the collection of accessReviewDecision entities.
+    /// </summary>
     public class Journal : Entity, IParsable {
         /// <summary>The account property</summary>
         public Microsoft.Graph.Beta.Models.Account Account {
@@ -12,8 +14,8 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("account", value); }
         }
         /// <summary>The balancingAccountId property</summary>
-        public string BalancingAccountId {
-            get { return BackingStore?.Get<string>("balancingAccountId"); }
+        public Guid? BalancingAccountId {
+            get { return BackingStore?.Get<Guid?>("balancingAccountId"); }
             set { BackingStore?.Set("balancingAccountId", value); }
         }
         /// <summary>The balancingAccountNumber property</summary>
@@ -55,7 +57,7 @@ namespace Microsoft.Graph.Beta.Models {
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"account", n => { Account = n.GetObjectValue<Microsoft.Graph.Beta.Models.Account>(Microsoft.Graph.Beta.Models.Account.CreateFromDiscriminatorValue); } },
-                {"balancingAccountId", n => { BalancingAccountId = n.GetStringValue(); } },
+                {"balancingAccountId", n => { BalancingAccountId = n.GetGuidValue(); } },
                 {"balancingAccountNumber", n => { BalancingAccountNumber = n.GetStringValue(); } },
                 {"code", n => { Code = n.GetStringValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
@@ -71,7 +73,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Account>("account", Account);
-            writer.WriteStringValue("balancingAccountId", BalancingAccountId);
+            writer.WriteGuidValue("balancingAccountId", BalancingAccountId);
             writer.WriteStringValue("balancingAccountNumber", BalancingAccountNumber);
             writer.WriteStringValue("code", Code);
             writer.WriteStringValue("displayName", DisplayName);

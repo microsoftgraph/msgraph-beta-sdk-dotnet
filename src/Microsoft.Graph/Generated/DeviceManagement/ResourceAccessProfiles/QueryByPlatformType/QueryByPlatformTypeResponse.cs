@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.DeviceManagement.ResourceAccessProfiles.QueryByPlatformType {
-    /// <summary>Provides operations to call the queryByPlatformType method.</summary>
+    /// <summary>
+    /// Provides operations to call the queryByPlatformType method.
+    /// </summary>
     public class QueryByPlatformTypeResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<DeviceManagementResourceAccessProfileBase> Value {

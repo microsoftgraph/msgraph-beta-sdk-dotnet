@@ -9,7 +9,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Operations.Item.CaseExportOperation {
-    /// <summary>Casts the previous resource to caseExportOperation.</summary>
+    /// <summary>
+    /// Casts the previous resource to caseExportOperation.
+    /// </summary>
     public class CaseExportOperationRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -77,7 +79,9 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Operations.Item.
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Ediscovery.CaseExportOperation>(requestInfo, Microsoft.Graph.Beta.Models.Ediscovery.CaseExportOperation.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Get the item of type microsoft.graph.ediscovery.caseOperation as microsoft.graph.ediscovery.caseExportOperation</summary>
+        /// <summary>
+        /// Get the item of type microsoft.graph.ediscovery.caseOperation as microsoft.graph.ediscovery.caseExportOperation
+        /// </summary>
         public class CaseExportOperationRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]
@@ -86,10 +90,12 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Operations.Item.
             [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class CaseExportOperationRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -99,7 +105,7 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.Operations.Item.
             /// </summary>
             public CaseExportOperationRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

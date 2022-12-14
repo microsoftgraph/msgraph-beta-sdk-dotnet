@@ -9,7 +9,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBaselines.Item.RebootAnalyticsMetrics {
-    /// <summary>Provides operations to manage the rebootAnalyticsMetrics property of the microsoft.graph.userExperienceAnalyticsBaseline entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the rebootAnalyticsMetrics property of the microsoft.graph.userExperienceAnalyticsBaseline entity.
+    /// </summary>
     public class RebootAnalyticsMetricsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -77,7 +79,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBaselines
             };
             return await RequestAdapter.SendAsync<UserExperienceAnalyticsCategory>(requestInfo, UserExperienceAnalyticsCategory.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>The user experience analytics reboot analytics metrics.</summary>
+        /// <summary>
+        /// The user experience analytics reboot analytics metrics.
+        /// </summary>
         public class RebootAnalyticsMetricsRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]
@@ -86,10 +90,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBaselines
             [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class RebootAnalyticsMetricsRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -99,7 +105,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsBaselines
             /// </summary>
             public RebootAnalyticsMetricsRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

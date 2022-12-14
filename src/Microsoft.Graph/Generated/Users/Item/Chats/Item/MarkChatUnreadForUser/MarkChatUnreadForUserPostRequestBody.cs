@@ -6,7 +6,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Users.Item.Chats.Item.MarkChatUnreadForUser {
-    /// <summary>Provides operations to call the markChatUnreadForUser method.</summary>
+    /// <summary>
+    /// Provides operations to call the markChatUnreadForUser method.
+    /// </summary>
     public class MarkChatUnreadForUserPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {

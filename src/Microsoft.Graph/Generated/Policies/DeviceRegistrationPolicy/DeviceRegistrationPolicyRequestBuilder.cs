@@ -9,7 +9,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Policies.DeviceRegistrationPolicy {
-    /// <summary>Provides operations to manage the deviceRegistrationPolicy property of the microsoft.graph.policyRoot entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the deviceRegistrationPolicy property of the microsoft.graph.policyRoot entity.
+    /// </summary>
     public class DeviceRegistrationPolicyRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -66,6 +68,7 @@ namespace Microsoft.Graph.Beta.Policies.DeviceRegistrationPolicy {
         }
         /// <summary>
         /// Read the properties and relationships of a deviceRegistrationPolicy object. Represents deviceRegistrationPolicy quota restrictions, additional authentication, and authorization policies to register device identities to your organization.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/deviceregistrationpolicy-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -77,7 +80,9 @@ namespace Microsoft.Graph.Beta.Policies.DeviceRegistrationPolicy {
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.DeviceRegistrationPolicy>(requestInfo, Microsoft.Graph.Beta.Models.DeviceRegistrationPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Read the properties and relationships of a deviceRegistrationPolicy object. Represents deviceRegistrationPolicy quota restrictions, additional authentication, and authorization policies to register device identities to your organization.</summary>
+        /// <summary>
+        /// Read the properties and relationships of a deviceRegistrationPolicy object. Represents deviceRegistrationPolicy quota restrictions, additional authentication, and authorization policies to register device identities to your organization.
+        /// </summary>
         public class DeviceRegistrationPolicyRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]
@@ -86,10 +91,12 @@ namespace Microsoft.Graph.Beta.Policies.DeviceRegistrationPolicy {
             [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class DeviceRegistrationPolicyRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -99,7 +106,7 @@ namespace Microsoft.Graph.Beta.Policies.DeviceRegistrationPolicy {
             /// </summary>
             public DeviceRegistrationPolicyRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>A class containing information about the payloads on which filter has been applied.</summary>
+    /// <summary>
+    /// A class containing information about the payloads on which filter has been applied.
+    /// </summary>
     public class AssignmentFilterEvaluationStatusDetails : Entity, IParsable {
         /// <summary>PayloadId on which filter has been applied.</summary>
         public string PayloadId {

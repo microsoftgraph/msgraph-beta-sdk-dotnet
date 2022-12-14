@@ -10,7 +10,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Shares.Item.DriveItem {
-    /// <summary>Provides operations to manage the driveItem property of the microsoft.graph.sharedDriveItem entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the driveItem property of the microsoft.graph.sharedDriveItem entity.
+    /// </summary>
     public class DriveItemRequestBuilder {
         /// <summary>Provides operations to manage the media for the sharedDriveItem entity.</summary>
         public ContentRequestBuilder Content { get =>
@@ -71,6 +73,7 @@ namespace Microsoft.Graph.Beta.Shares.Item.DriveItem {
         }
         /// <summary>
         /// Access a shared DriveItem or a collection of shared items by using a **shareId** or sharing URL. To use a sharing URL with this API, your app needs to transform the URL into a sharing token.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/shares-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -82,7 +85,9 @@ namespace Microsoft.Graph.Beta.Shares.Item.DriveItem {
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.DriveItem>(requestInfo, Microsoft.Graph.Beta.Models.DriveItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Access a shared DriveItem or a collection of shared items by using a **shareId** or sharing URL. To use a sharing URL with this API, your app needs to transform the URL into a sharing token.</summary>
+        /// <summary>
+        /// Access a shared DriveItem or a collection of shared items by using a **shareId** or sharing URL. To use a sharing URL with this API, your app needs to transform the URL into a sharing token.
+        /// </summary>
         public class DriveItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]
@@ -91,10 +96,12 @@ namespace Microsoft.Graph.Beta.Shares.Item.DriveItem {
             [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class DriveItemRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -104,7 +111,7 @@ namespace Microsoft.Graph.Beta.Shares.Item.DriveItem {
             /// </summary>
             public DriveItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

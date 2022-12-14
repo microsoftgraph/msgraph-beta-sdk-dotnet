@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Contain the package ID that has the pre-granted access to the certificate.</summary>
+    /// <summary>
+    /// Contain the package ID that has the pre-granted access to the certificate.
+    /// </summary>
     public class AndroidDeviceOwnerSilentCertificateAccess : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {

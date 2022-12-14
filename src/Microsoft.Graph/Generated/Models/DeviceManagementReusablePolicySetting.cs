@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Graph model for a reusable setting</summary>
+    /// <summary>
+    /// Graph model for a reusable setting
+    /// </summary>
     public class DeviceManagementReusablePolicySetting : Entity, IParsable {
         /// <summary>reusable setting creation date and time. This property is read-only.</summary>
         public DateTimeOffset? CreatedDateTime {

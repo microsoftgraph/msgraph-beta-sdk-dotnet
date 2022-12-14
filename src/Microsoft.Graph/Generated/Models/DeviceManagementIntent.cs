@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Entity that represents an intent to apply settings to a device</summary>
+    /// <summary>
+    /// Entity that represents an intent to apply settings to a device
+    /// </summary>
     public class DeviceManagementIntent : Entity, IParsable {
         /// <summary>Collection of assignments</summary>
         public List<DeviceManagementIntentAssignment> Assignments {

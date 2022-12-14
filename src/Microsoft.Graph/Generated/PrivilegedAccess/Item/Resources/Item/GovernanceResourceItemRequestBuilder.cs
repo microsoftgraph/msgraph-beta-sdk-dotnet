@@ -14,7 +14,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.Resources.Item {
-    /// <summary>Provides operations to manage the resources property of the microsoft.graph.privilegedAccess entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the resources property of the microsoft.graph.privilegedAccess entity.
+    /// </summary>
     public class GovernanceResourceItemRequestBuilder {
         /// <summary>Provides operations to manage the parent property of the microsoft.graph.governanceResource entity.</summary>
         public ParentRequestBuilder Parent { get =>
@@ -110,7 +112,7 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.Resources.Item {
         /// <summary>
         /// Update the navigation property resources in privilegedAccess
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreatePatchRequestInformation(GovernanceResource body, Action<GovernanceResourceItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -158,7 +160,7 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.Resources.Item {
         /// <summary>
         /// Update the navigation property resources in privilegedAccess
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public async Task<GovernanceResource> PatchAsync(GovernanceResource body, Action<GovernanceResourceItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -170,10 +172,12 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.Resources.Item {
             };
             return await RequestAdapter.SendAsync<GovernanceResource>(requestInfo, GovernanceResource.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class GovernanceResourceItemRequestBuilderDeleteRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -181,10 +185,12 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.Resources.Item {
             /// </summary>
             public GovernanceResourceItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>A collection of resources for the provider.</summary>
+        /// <summary>
+        /// A collection of resources for the provider.
+        /// </summary>
         public class GovernanceResourceItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]
@@ -193,10 +199,12 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.Resources.Item {
             [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class GovernanceResourceItemRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -206,13 +214,15 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.Resources.Item {
             /// </summary>
             public GovernanceResourceItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class GovernanceResourceItemRequestBuilderPatchRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -220,7 +230,7 @@ namespace Microsoft.Graph.Beta.PrivilegedAccess.Item.Resources.Item {
             /// </summary>
             public GovernanceResourceItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

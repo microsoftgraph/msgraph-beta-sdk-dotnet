@@ -16,8 +16,8 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>The tenant identifier for the partner tenant. Read-only.</summary>
-        public string ExternalPartnerTenantId {
-            get { return BackingStore?.Get<string>("externalPartnerTenantId"); }
+        public Guid? ExternalPartnerTenantId {
+            get { return BackingStore?.Get<Guid?>("externalPartnerTenantId"); }
             set { BackingStore?.Set("externalPartnerTenantId", value); }
         }
         /// <summary>The type of the referenced object in the partner tenant. Read-only.</summary>
@@ -46,7 +46,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"externalPartnerTenantId", n => { ExternalPartnerTenantId = n.GetStringValue(); } },
+                {"externalPartnerTenantId", n => { ExternalPartnerTenantId = n.GetGuidValue(); } },
                 {"objectType", n => { ObjectType = n.GetStringValue(); } },
             };
         }
@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Models {
             base.Serialize(writer);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteStringValue("externalPartnerTenantId", ExternalPartnerTenantId);
+            writer.WriteGuidValue("externalPartnerTenantId", ExternalPartnerTenantId);
             writer.WriteStringValue("objectType", ObjectType);
         }
     }

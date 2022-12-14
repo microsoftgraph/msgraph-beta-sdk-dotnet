@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>
+    /// Provides operations to manage the collection of accessReviewDecision entities.
+    /// </summary>
     public class OutlookTaskFolder : Entity, IParsable {
         /// <summary>The version of the task folder.</summary>
         public string ChangeKey {
@@ -27,8 +29,8 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("name", value); }
         }
         /// <summary>The unique GUID identifier for the task folder&apos;s parent group.</summary>
-        public string ParentGroupKey {
-            get { return BackingStore?.Get<string>("parentGroupKey"); }
+        public Guid? ParentGroupKey {
+            get { return BackingStore?.Get<Guid?>("parentGroupKey"); }
             set { BackingStore?.Set("parentGroupKey", value); }
         }
         /// <summary>The collection of single-value extended properties defined for the task folder. Read-only. Nullable.</summary>
@@ -58,7 +60,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"isDefaultFolder", n => { IsDefaultFolder = n.GetBoolValue(); } },
                 {"multiValueExtendedProperties", n => { MultiValueExtendedProperties = n.GetCollectionOfObjectValues<MultiValueLegacyExtendedProperty>(MultiValueLegacyExtendedProperty.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"name", n => { Name = n.GetStringValue(); } },
-                {"parentGroupKey", n => { ParentGroupKey = n.GetStringValue(); } },
+                {"parentGroupKey", n => { ParentGroupKey = n.GetGuidValue(); } },
                 {"singleValueExtendedProperties", n => { SingleValueExtendedProperties = n.GetCollectionOfObjectValues<SingleValueLegacyExtendedProperty>(SingleValueLegacyExtendedProperty.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"tasks", n => { Tasks = n.GetCollectionOfObjectValues<OutlookTask>(OutlookTask.CreateFromDiscriminatorValue)?.ToList(); } },
             };
@@ -74,7 +76,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteBoolValue("isDefaultFolder", IsDefaultFolder);
             writer.WriteCollectionOfObjectValues<MultiValueLegacyExtendedProperty>("multiValueExtendedProperties", MultiValueExtendedProperties);
             writer.WriteStringValue("name", Name);
-            writer.WriteStringValue("parentGroupKey", ParentGroupKey);
+            writer.WriteGuidValue("parentGroupKey", ParentGroupKey);
             writer.WriteCollectionOfObjectValues<SingleValueLegacyExtendedProperty>("singleValueExtendedProperties", SingleValueExtendedProperties);
             writer.WriteCollectionOfObjectValues<OutlookTask>("tasks", Tasks);
         }

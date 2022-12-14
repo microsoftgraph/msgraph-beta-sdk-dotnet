@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Single configuration item inside an Android for Work application&apos;s custom configuration schema.</summary>
+    /// <summary>
+    /// Single configuration item inside an Android for Work application&apos;s custom configuration schema.
+    /// </summary>
     public class AndroidForWorkAppConfigurationSchemaItem : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {

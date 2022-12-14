@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>This entity contains the properties used to assign a windows driver update profile to a group.</summary>
+    /// <summary>
+    /// This entity contains the properties used to assign a windows driver update profile to a group.
+    /// </summary>
     public class WindowsDriverUpdateProfileAssignment : Entity, IParsable {
         /// <summary>Base type for assignment targets.</summary>
         public DeviceAndAppManagementAssignmentTarget Target {

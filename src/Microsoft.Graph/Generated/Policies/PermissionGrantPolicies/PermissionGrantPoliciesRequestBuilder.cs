@@ -11,7 +11,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Policies.PermissionGrantPolicies {
-    /// <summary>Provides operations to manage the permissionGrantPolicies property of the microsoft.graph.policyRoot entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the permissionGrantPolicies property of the microsoft.graph.policyRoot entity.
+    /// </summary>
     public class PermissionGrantPoliciesRequestBuilder {
         /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
@@ -79,7 +81,7 @@ namespace Microsoft.Graph.Beta.Policies.PermissionGrantPolicies {
         /// <summary>
         /// Creates a permissionGrantPolicy. A permission grant policy is used to describe the conditions under which permissions can be granted (for example, during application consent). After creating the permission grant policy, you can add include condition sets to add matching rules, and add exclude condition sets to add exclusion rules.
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreatePostRequestInformation(PermissionGrantPolicy body, Action<PermissionGrantPoliciesRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -100,6 +102,7 @@ namespace Microsoft.Graph.Beta.Policies.PermissionGrantPolicies {
         }
         /// <summary>
         /// Retrieve the list of permissionGrantPolicy objects.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/permissiongrantpolicy-list?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -113,8 +116,9 @@ namespace Microsoft.Graph.Beta.Policies.PermissionGrantPolicies {
         }
         /// <summary>
         /// Creates a permissionGrantPolicy. A permission grant policy is used to describe the conditions under which permissions can be granted (for example, during application consent). After creating the permission grant policy, you can add include condition sets to add matching rules, and add exclude condition sets to add exclusion rules.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/permissiongrantpolicy-post-permissiongrantpolicies?view=graph-rest-1.0" />
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public async Task<PermissionGrantPolicy> PostAsync(PermissionGrantPolicy body, Action<PermissionGrantPoliciesRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -126,7 +130,9 @@ namespace Microsoft.Graph.Beta.Policies.PermissionGrantPolicies {
             };
             return await RequestAdapter.SendAsync<PermissionGrantPolicy>(requestInfo, PermissionGrantPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Retrieve the list of permissionGrantPolicy objects.</summary>
+        /// <summary>
+        /// Retrieve the list of permissionGrantPolicy objects.
+        /// </summary>
         public class PermissionGrantPoliciesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -153,10 +159,12 @@ namespace Microsoft.Graph.Beta.Policies.PermissionGrantPolicies {
             [QueryParameter("%24top")]
             public int? Top { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class PermissionGrantPoliciesRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -166,13 +174,15 @@ namespace Microsoft.Graph.Beta.Policies.PermissionGrantPolicies {
             /// </summary>
             public PermissionGrantPoliciesRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class PermissionGrantPoliciesRequestBuilderPostRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -180,7 +190,7 @@ namespace Microsoft.Graph.Beta.Policies.PermissionGrantPolicies {
             /// </summary>
             public PermissionGrantPoliciesRequestBuilderPostRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

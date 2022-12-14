@@ -11,7 +11,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Me.Calendars {
-    /// <summary>Provides operations to manage the calendars property of the microsoft.graph.user entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the calendars property of the microsoft.graph.user entity.
+    /// </summary>
     public class CalendarsRequestBuilder {
         /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
@@ -79,7 +81,7 @@ namespace Microsoft.Graph.Beta.Me.Calendars {
         /// <summary>
         /// Create a new calendar for a user.
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreatePostRequestInformation(Microsoft.Graph.Beta.Models.Calendar body, Action<CalendarsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -100,6 +102,7 @@ namespace Microsoft.Graph.Beta.Me.Calendars {
         }
         /// <summary>
         /// Get all the user&apos;s calendars (`/calendars` navigation property), get the calendars from the default calendar group or from a specific calendar group. 
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/user-list-calendars?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -113,8 +116,9 @@ namespace Microsoft.Graph.Beta.Me.Calendars {
         }
         /// <summary>
         /// Create a new calendar for a user.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/user-post-calendars?view=graph-rest-1.0" />
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public async Task<Microsoft.Graph.Beta.Models.Calendar> PostAsync(Microsoft.Graph.Beta.Models.Calendar body, Action<CalendarsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -126,7 +130,9 @@ namespace Microsoft.Graph.Beta.Me.Calendars {
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Calendar>(requestInfo, Microsoft.Graph.Beta.Models.Calendar.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Get all the user&apos;s calendars (`/calendars` navigation property), get the calendars from the default calendar group or from a specific calendar group. </summary>
+        /// <summary>
+        /// Get all the user&apos;s calendars (`/calendars` navigation property), get the calendars from the default calendar group or from a specific calendar group. 
+        /// </summary>
         public class CalendarsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -147,10 +153,12 @@ namespace Microsoft.Graph.Beta.Me.Calendars {
             [QueryParameter("%24top")]
             public int? Top { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class CalendarsRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -160,13 +168,15 @@ namespace Microsoft.Graph.Beta.Me.Calendars {
             /// </summary>
             public CalendarsRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class CalendarsRequestBuilderPostRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -174,7 +184,7 @@ namespace Microsoft.Graph.Beta.Me.Calendars {
             /// </summary>
             public CalendarsRequestBuilderPostRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

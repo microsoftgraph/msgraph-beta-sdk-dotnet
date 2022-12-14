@@ -8,7 +8,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Users.Item.SendMail {
-    /// <summary>Provides operations to call the sendMail method.</summary>
+    /// <summary>
+    /// Provides operations to call the sendMail method.
+    /// </summary>
     public class SendMailRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -46,7 +48,7 @@ namespace Microsoft.Graph.Beta.Users.Item.SendMail {
         /// <summary>
         /// Send the message specified in the request body using either JSON or MIME format. When using JSON format you can include an attachment and use a mention to call out another user in the new message. When using MIME format:- Provide the applicable Internet message headers and the MIME content, all encoded in **base64** format in the request body.- Add any attachments and S/MIME properties to the MIME content. This method saves the message in the **Sent Items** folder. Alternatively, create a draft message to send later. To learn more about the steps involved in the backend before a mail is delivered to recipients, see here.
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreatePostRequestInformation(SendMailPostRequestBody body, Action<SendMailRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -66,8 +68,9 @@ namespace Microsoft.Graph.Beta.Users.Item.SendMail {
         }
         /// <summary>
         /// Send the message specified in the request body using either JSON or MIME format. When using JSON format you can include an attachment and use a mention to call out another user in the new message. When using MIME format:- Provide the applicable Internet message headers and the MIME content, all encoded in **base64** format in the request body.- Add any attachments and S/MIME properties to the MIME content. This method saves the message in the **Sent Items** folder. Alternatively, create a draft message to send later. To learn more about the steps involved in the backend before a mail is delivered to recipients, see here.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/user-sendmail?view=graph-rest-1.0" />
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public async Task PostAsync(SendMailPostRequestBody body, Action<SendMailRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -79,10 +82,12 @@ namespace Microsoft.Graph.Beta.Users.Item.SendMail {
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class SendMailRequestBuilderPostRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -90,7 +95,7 @@ namespace Microsoft.Graph.Beta.Users.Item.SendMail {
             /// </summary>
             public SendMailRequestBuilderPostRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

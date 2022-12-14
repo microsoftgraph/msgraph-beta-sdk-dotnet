@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>The user experience analytics application performance entity contains app performance details by app version.</summary>
+    /// <summary>
+    /// The user experience analytics application performance entity contains app performance details by app version.
+    /// </summary>
     public class UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion : Entity, IParsable {
         /// <summary>The number of crashes for the app. Valid values -2147483648 to 2147483647</summary>
         public int? AppCrashCount {

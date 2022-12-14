@@ -11,7 +11,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.AllowedDataLocations {
-    /// <summary>Provides operations to manage the collection of allowedDataLocation entities.</summary>
+    /// <summary>
+    /// Provides operations to manage the collection of allowedDataLocation entities.
+    /// </summary>
     public class AllowedDataLocationsRequestBuilder {
         /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
@@ -79,7 +81,7 @@ namespace Microsoft.Graph.Beta.AllowedDataLocations {
         /// <summary>
         /// Add new entity to allowedDataLocations
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreatePostRequestInformation(AllowedDataLocation body, Action<AllowedDataLocationsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -114,7 +116,7 @@ namespace Microsoft.Graph.Beta.AllowedDataLocations {
         /// <summary>
         /// Add new entity to allowedDataLocations
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public async Task<AllowedDataLocation> PostAsync(AllowedDataLocation body, Action<AllowedDataLocationsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -126,7 +128,9 @@ namespace Microsoft.Graph.Beta.AllowedDataLocations {
             };
             return await RequestAdapter.SendAsync<AllowedDataLocation>(requestInfo, AllowedDataLocation.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Get entities from allowedDataLocations</summary>
+        /// <summary>
+        /// Get entities from allowedDataLocations
+        /// </summary>
         public class AllowedDataLocationsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -153,10 +157,12 @@ namespace Microsoft.Graph.Beta.AllowedDataLocations {
             [QueryParameter("%24top")]
             public int? Top { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class AllowedDataLocationsRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -166,13 +172,15 @@ namespace Microsoft.Graph.Beta.AllowedDataLocations {
             /// </summary>
             public AllowedDataLocationsRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class AllowedDataLocationsRequestBuilderPostRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -180,7 +188,7 @@ namespace Microsoft.Graph.Beta.AllowedDataLocations {
             /// </summary>
             public AllowedDataLocationsRequestBuilderPostRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

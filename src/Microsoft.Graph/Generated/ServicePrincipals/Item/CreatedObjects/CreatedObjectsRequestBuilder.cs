@@ -12,7 +12,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.ServicePrincipals.Item.CreatedObjects {
-    /// <summary>Provides operations to manage the createdObjects property of the microsoft.graph.servicePrincipal entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the createdObjects property of the microsoft.graph.servicePrincipal entity.
+    /// </summary>
     public class CreatedObjectsRequestBuilder {
         /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
@@ -83,6 +85,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.CreatedObjects {
         }
         /// <summary>
         /// Retrieve a list of directoryobject objects.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/serviceprincipal-list-createdobjects?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -94,7 +97,9 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.CreatedObjects {
             };
             return await RequestAdapter.SendAsync<DirectoryObjectCollectionResponse>(requestInfo, DirectoryObjectCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Retrieve a list of directoryobject objects.</summary>
+        /// <summary>
+        /// Retrieve a list of directoryobject objects.
+        /// </summary>
         public class CreatedObjectsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -121,10 +126,12 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.CreatedObjects {
             [QueryParameter("%24top")]
             public int? Top { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class CreatedObjectsRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -134,7 +141,7 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.CreatedObjects {
             /// </summary>
             public CreatedObjectsRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

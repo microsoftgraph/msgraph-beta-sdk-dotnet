@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Me.Authentication.PasswordlessMicrosoftAuthenticatorMethods.Item.Device.CheckMemberObjects {
-    /// <summary>Provides operations to call the checkMemberObjects method.</summary>
+    /// <summary>
+    /// Provides operations to call the checkMemberObjects method.
+    /// </summary>
     public class CheckMemberObjectsResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<string> Value {

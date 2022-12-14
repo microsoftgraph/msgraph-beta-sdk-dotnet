@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>A class containing the properties for Audit Event.</summary>
+    /// <summary>
+    /// A class containing the properties for Audit Event.
+    /// </summary>
     public class AuditEvent : Entity, IParsable {
         /// <summary>Friendly name of the activity.</summary>
         public string Activity {
@@ -47,8 +49,8 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("componentName", value); }
         }
         /// <summary>The client request Id that is used to correlate activity within the system.</summary>
-        public string CorrelationId {
-            get { return BackingStore?.Get<string>("correlationId"); }
+        public Guid? CorrelationId {
+            get { return BackingStore?.Get<Guid?>("correlationId"); }
             set { BackingStore?.Set("correlationId", value); }
         }
         /// <summary>Event display name.</summary>
@@ -82,7 +84,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"actor", n => { Actor = n.GetObjectValue<AuditActor>(AuditActor.CreateFromDiscriminatorValue); } },
                 {"category", n => { Category = n.GetStringValue(); } },
                 {"componentName", n => { ComponentName = n.GetStringValue(); } },
-                {"correlationId", n => { CorrelationId = n.GetStringValue(); } },
+                {"correlationId", n => { CorrelationId = n.GetGuidValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"resources", n => { Resources = n.GetCollectionOfObjectValues<AuditResource>(AuditResource.CreateFromDiscriminatorValue)?.ToList(); } },
             };
@@ -102,7 +104,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteObjectValue<AuditActor>("actor", Actor);
             writer.WriteStringValue("category", Category);
             writer.WriteStringValue("componentName", ComponentName);
-            writer.WriteStringValue("correlationId", CorrelationId);
+            writer.WriteGuidValue("correlationId", CorrelationId);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteCollectionOfObjectValues<AuditResource>("resources", Resources);
         }

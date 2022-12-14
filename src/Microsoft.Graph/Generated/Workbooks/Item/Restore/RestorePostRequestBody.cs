@@ -6,7 +6,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Workbooks.Item.Restore {
-    /// <summary>Provides operations to call the restore method.</summary>
+    /// <summary>
+    /// Provides operations to call the restore method.
+    /// </summary>
     public class RestorePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {

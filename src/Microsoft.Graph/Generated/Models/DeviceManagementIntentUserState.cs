@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Entity that represents user state for an intent</summary>
+    /// <summary>
+    /// Entity that represents user state for an intent
+    /// </summary>
     public class DeviceManagementIntentUserState : Entity, IParsable {
         /// <summary>Count of Devices that belongs to a user for an intent</summary>
         public int? DeviceCount {

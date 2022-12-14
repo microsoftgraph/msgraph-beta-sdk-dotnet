@@ -8,7 +8,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Users.Item.CloudPCs.Item.GetCloudPcConnectivityHistory {
-    /// <summary>Provides operations to call the getCloudPcConnectivityHistory method.</summary>
+    /// <summary>
+    /// Provides operations to call the getCloudPcConnectivityHistory method.
+    /// </summary>
     public class GetCloudPcConnectivityHistoryRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -76,7 +78,9 @@ namespace Microsoft.Graph.Beta.Users.Item.CloudPCs.Item.GetCloudPcConnectivityHi
             };
             return await RequestAdapter.SendAsync<GetCloudPcConnectivityHistoryResponse>(requestInfo, GetCloudPcConnectivityHistoryResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Invoke function getCloudPcConnectivityHistory</summary>
+        /// <summary>
+        /// Invoke function getCloudPcConnectivityHistory
+        /// </summary>
         public class GetCloudPcConnectivityHistoryRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -94,10 +98,12 @@ namespace Microsoft.Graph.Beta.Users.Item.CloudPCs.Item.GetCloudPcConnectivityHi
             [QueryParameter("%24top")]
             public int? Top { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class GetCloudPcConnectivityHistoryRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -107,7 +113,7 @@ namespace Microsoft.Graph.Beta.Users.Item.CloudPCs.Item.GetCloudPcConnectivityHi
             /// </summary>
             public GetCloudPcConnectivityHistoryRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

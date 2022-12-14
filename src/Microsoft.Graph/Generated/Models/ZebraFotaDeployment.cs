@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>The Zebra FOTA deployment entity that describes settings, deployment device groups required to create a FOTA deployment, and deployment status.</summary>
+    /// <summary>
+    /// The Zebra FOTA deployment entity that describes settings, deployment device groups required to create a FOTA deployment, and deployment status.
+    /// </summary>
     public class ZebraFotaDeployment : Entity, IParsable {
         /// <summary>Collection of Android FOTA Assignment</summary>
         public List<AndroidFotaDeploymentAssignment> DeploymentAssignments {

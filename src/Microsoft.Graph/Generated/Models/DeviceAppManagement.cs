@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Singleton entity that acts as a container for all device app management functionality.
+    /// </summary>
     public class DeviceAppManagement : Entity, IParsable {
         /// <summary>Android managed app policies.</summary>
         public List<AndroidManagedAppProtection> AndroidManagedAppProtections {

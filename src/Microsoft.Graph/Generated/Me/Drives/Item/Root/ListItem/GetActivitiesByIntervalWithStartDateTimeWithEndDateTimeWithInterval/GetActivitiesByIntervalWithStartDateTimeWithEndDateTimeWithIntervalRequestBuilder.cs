@@ -8,7 +8,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Me.Drives.Item.Root.ListItem.GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval {
-    /// <summary>Provides operations to call the getActivitiesByInterval method.</summary>
+    /// <summary>
+    /// Provides operations to call the getActivitiesByInterval method.
+    /// </summary>
     public class GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -82,7 +84,9 @@ namespace Microsoft.Graph.Beta.Me.Drives.Item.Root.ListItem.GetActivitiesByInter
             };
             return await RequestAdapter.SendAsync<GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalResponse>(requestInfo, GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Invoke function getActivitiesByInterval</summary>
+        /// <summary>
+        /// Invoke function getActivitiesByInterval
+        /// </summary>
         public class GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -106,10 +110,12 @@ namespace Microsoft.Graph.Beta.Me.Drives.Item.Root.ListItem.GetActivitiesByInter
             [QueryParameter("%24top")]
             public int? Top { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -119,7 +125,7 @@ namespace Microsoft.Graph.Beta.Me.Drives.Item.Root.ListItem.GetActivitiesByInter
             /// </summary>
             public GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

@@ -86,6 +86,16 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<long?>("sharePointTotalFileCount"); }
             set { BackingStore?.Set("sharePointTotalFileCount", value); }
         }
+        /// <summary>The teamsChannelMessagesCount property</summary>
+        public long? TeamsChannelMessagesCount {
+            get { return BackingStore?.Get<long?>("teamsChannelMessagesCount"); }
+            set { BackingStore?.Set("teamsChannelMessagesCount", value); }
+        }
+        /// <summary>The teamsMeetingsOrganizedCount property</summary>
+        public long? TeamsMeetingsOrganizedCount {
+            get { return BackingStore?.Get<long?>("teamsMeetingsOrganizedCount"); }
+            set { BackingStore?.Set("teamsMeetingsOrganizedCount", value); }
+        }
         /// <summary>The number of messages liked in Yammer groups.</summary>
         public long? YammerLikedMessageCount {
             get { return BackingStore?.Get<long?>("yammerLikedMessageCount"); }
@@ -130,6 +140,8 @@ namespace Microsoft.Graph.Beta.Models {
                 {"sharePointActiveFileCount", n => { SharePointActiveFileCount = n.GetLongValue(); } },
                 {"sharePointSiteStorageUsedInBytes", n => { SharePointSiteStorageUsedInBytes = n.GetLongValue(); } },
                 {"sharePointTotalFileCount", n => { SharePointTotalFileCount = n.GetLongValue(); } },
+                {"teamsChannelMessagesCount", n => { TeamsChannelMessagesCount = n.GetLongValue(); } },
+                {"teamsMeetingsOrganizedCount", n => { TeamsMeetingsOrganizedCount = n.GetLongValue(); } },
                 {"yammerLikedMessageCount", n => { YammerLikedMessageCount = n.GetLongValue(); } },
                 {"yammerPostedMessageCount", n => { YammerPostedMessageCount = n.GetLongValue(); } },
                 {"yammerReadMessageCount", n => { YammerReadMessageCount = n.GetLongValue(); } },
@@ -158,6 +170,8 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteLongValue("sharePointActiveFileCount", SharePointActiveFileCount);
             writer.WriteLongValue("sharePointSiteStorageUsedInBytes", SharePointSiteStorageUsedInBytes);
             writer.WriteLongValue("sharePointTotalFileCount", SharePointTotalFileCount);
+            writer.WriteLongValue("teamsChannelMessagesCount", TeamsChannelMessagesCount);
+            writer.WriteLongValue("teamsMeetingsOrganizedCount", TeamsMeetingsOrganizedCount);
             writer.WriteLongValue("yammerLikedMessageCount", YammerLikedMessageCount);
             writer.WriteLongValue("yammerPostedMessageCount", YammerPostedMessageCount);
             writer.WriteLongValue("yammerReadMessageCount", YammerReadMessageCount);

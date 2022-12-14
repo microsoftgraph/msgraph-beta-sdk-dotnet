@@ -1,11 +1,12 @@
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Base type for a setting instance</summary>
+    /// <summary>
+    /// Base type for a setting instance
+    /// </summary>
     public class DeviceManagementSettingInstance : Entity, IParsable {
         /// <summary>The ID of the setting definition for this instance</summary>
         public string DefinitionId {

@@ -5,6 +5,11 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
     public class IpEvidence : AlertEvidence, IParsable {
+        /// <summary>The countryLetterCode property</summary>
+        public string CountryLetterCode {
+            get { return BackingStore?.Get<string>("countryLetterCode"); }
+            set { BackingStore?.Set("countryLetterCode", value); }
+        }
         /// <summary>The value of the IP Address, can be either in V4 address or V6 address format.</summary>
         public string IpAddress {
             get { return BackingStore?.Get<string>("ipAddress"); }
@@ -23,6 +28,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"countryLetterCode", n => { CountryLetterCode = n.GetStringValue(); } },
                 {"ipAddress", n => { IpAddress = n.GetStringValue(); } },
             };
         }
@@ -33,6 +39,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteStringValue("countryLetterCode", CountryLetterCode);
             writer.WriteStringValue("ipAddress", IpAddress);
         }
     }

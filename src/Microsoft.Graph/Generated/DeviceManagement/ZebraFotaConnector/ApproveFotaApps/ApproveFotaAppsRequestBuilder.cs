@@ -8,7 +8,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector.ApproveFotaApps {
-    /// <summary>Provides operations to call the approveFotaApps method.</summary>
+    /// <summary>
+    /// Provides operations to call the approveFotaApps method.
+    /// </summary>
     public class ApproveFotaAppsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -75,10 +77,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector.ApproveFotaAp
             };
             return await RequestAdapter.SendAsync<ApproveFotaAppsResponse>(requestInfo, ApproveFotaAppsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class ApproveFotaAppsRequestBuilderPostRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -86,7 +90,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector.ApproveFotaAp
             /// </summary>
             public ApproveFotaAppsRequestBuilderPostRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

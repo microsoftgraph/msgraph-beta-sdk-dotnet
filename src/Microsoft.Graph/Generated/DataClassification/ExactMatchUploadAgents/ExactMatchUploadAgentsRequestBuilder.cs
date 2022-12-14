@@ -11,7 +11,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.DataClassification.ExactMatchUploadAgents {
-    /// <summary>Provides operations to manage the exactMatchUploadAgents property of the microsoft.graph.dataClassificationService entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the exactMatchUploadAgents property of the microsoft.graph.dataClassificationService entity.
+    /// </summary>
     public class ExactMatchUploadAgentsRequestBuilder {
         /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
@@ -79,7 +81,7 @@ namespace Microsoft.Graph.Beta.DataClassification.ExactMatchUploadAgents {
         /// <summary>
         /// Create new navigation property to exactMatchUploadAgents for dataClassification
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreatePostRequestInformation(ExactMatchUploadAgent body, Action<ExactMatchUploadAgentsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -114,7 +116,7 @@ namespace Microsoft.Graph.Beta.DataClassification.ExactMatchUploadAgents {
         /// <summary>
         /// Create new navigation property to exactMatchUploadAgents for dataClassification
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public async Task<ExactMatchUploadAgent> PostAsync(ExactMatchUploadAgent body, Action<ExactMatchUploadAgentsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -126,7 +128,9 @@ namespace Microsoft.Graph.Beta.DataClassification.ExactMatchUploadAgents {
             };
             return await RequestAdapter.SendAsync<ExactMatchUploadAgent>(requestInfo, ExactMatchUploadAgent.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Get exactMatchUploadAgents from dataClassification</summary>
+        /// <summary>
+        /// Get exactMatchUploadAgents from dataClassification
+        /// </summary>
         public class ExactMatchUploadAgentsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -153,10 +157,12 @@ namespace Microsoft.Graph.Beta.DataClassification.ExactMatchUploadAgents {
             [QueryParameter("%24top")]
             public int? Top { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class ExactMatchUploadAgentsRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -166,13 +172,15 @@ namespace Microsoft.Graph.Beta.DataClassification.ExactMatchUploadAgents {
             /// </summary>
             public ExactMatchUploadAgentsRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class ExactMatchUploadAgentsRequestBuilderPostRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -180,7 +188,7 @@ namespace Microsoft.Graph.Beta.DataClassification.ExactMatchUploadAgents {
             /// </summary>
             public ExactMatchUploadAgentsRequestBuilderPostRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

@@ -11,7 +11,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminCustomers {
-    /// <summary>Provides operations to manage the delegatedAdminCustomers property of the microsoft.graph.tenantRelationship entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the delegatedAdminCustomers property of the microsoft.graph.tenantRelationship entity.
+    /// </summary>
     public class DelegatedAdminCustomersRequestBuilder {
         /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
@@ -79,7 +81,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminCustomers {
         /// <summary>
         /// Create new navigation property to delegatedAdminCustomers for tenantRelationships
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreatePostRequestInformation(DelegatedAdminCustomer body, Action<DelegatedAdminCustomersRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -100,6 +102,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminCustomers {
         }
         /// <summary>
         /// Get a list of the delegatedAdminCustomer objects and their properties.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/tenantrelationship-list-delegatedadmincustomers?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -114,7 +117,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminCustomers {
         /// <summary>
         /// Create new navigation property to delegatedAdminCustomers for tenantRelationships
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public async Task<DelegatedAdminCustomer> PostAsync(DelegatedAdminCustomer body, Action<DelegatedAdminCustomersRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -126,7 +129,9 @@ namespace Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminCustomers {
             };
             return await RequestAdapter.SendAsync<DelegatedAdminCustomer>(requestInfo, DelegatedAdminCustomer.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Get a list of the delegatedAdminCustomer objects and their properties.</summary>
+        /// <summary>
+        /// Get a list of the delegatedAdminCustomer objects and their properties.
+        /// </summary>
         public class DelegatedAdminCustomersRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -153,10 +158,12 @@ namespace Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminCustomers {
             [QueryParameter("%24top")]
             public int? Top { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class DelegatedAdminCustomersRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -166,13 +173,15 @@ namespace Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminCustomers {
             /// </summary>
             public DelegatedAdminCustomersRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class DelegatedAdminCustomersRequestBuilderPostRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -180,7 +189,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.DelegatedAdminCustomers {
             /// </summary>
             public DelegatedAdminCustomersRequestBuilderPostRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

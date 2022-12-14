@@ -13,7 +13,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Admin.Windows.Updates {
-    /// <summary>Provides operations to manage the updates property of the microsoft.graph.windowsUpdates.windows entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the updates property of the microsoft.graph.windowsUpdates.windows entity.
+    /// </summary>
     public class UpdatesRequestBuilder {
         /// <summary>Provides operations to manage the catalog property of the microsoft.graph.windowsUpdates.updates entity.</summary>
         public CatalogRequestBuilder Catalog { get =>
@@ -105,7 +107,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates {
         /// <summary>
         /// Update the navigation property updates in admin
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreatePatchRequestInformation(Microsoft.Graph.Beta.Models.WindowsUpdates.Updates body, Action<UpdatesRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -153,7 +155,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates {
         /// <summary>
         /// Update the navigation property updates in admin
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public async Task<Microsoft.Graph.Beta.Models.WindowsUpdates.Updates> PatchAsync(Microsoft.Graph.Beta.Models.WindowsUpdates.Updates body, Action<UpdatesRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -165,10 +167,12 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates {
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.WindowsUpdates.Updates>(requestInfo, Microsoft.Graph.Beta.Models.WindowsUpdates.Updates.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class UpdatesRequestBuilderDeleteRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -176,10 +180,12 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates {
             /// </summary>
             public UpdatesRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Entity that acts as a container for the functionality of the Windows Update for Business deployment service. Read-only.</summary>
+        /// <summary>
+        /// Entity that acts as a container for the functionality of the Windows Update for Business deployment service. Read-only.
+        /// </summary>
         public class UpdatesRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]
@@ -188,10 +194,12 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates {
             [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class UpdatesRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -201,13 +209,15 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates {
             /// </summary>
             public UpdatesRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class UpdatesRequestBuilderPatchRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -215,7 +225,7 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates {
             /// </summary>
             public UpdatesRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

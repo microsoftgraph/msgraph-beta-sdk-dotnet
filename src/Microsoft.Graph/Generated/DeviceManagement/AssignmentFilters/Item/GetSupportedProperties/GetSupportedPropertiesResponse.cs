@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.DeviceManagement.AssignmentFilters.Item.GetSupportedProperties {
-    /// <summary>Provides operations to call the getSupportedProperties method.</summary>
+    /// <summary>
+    /// Provides operations to call the getSupportedProperties method.
+    /// </summary>
     public class GetSupportedPropertiesResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<AssignmentFilterSupportedProperty> Value {

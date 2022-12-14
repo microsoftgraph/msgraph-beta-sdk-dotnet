@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Mapping between an Android app permission and the action Android should take when that permission is requested.</summary>
+    /// <summary>
+    /// Mapping between an Android app permission and the action Android should take when that permission is requested.
+    /// </summary>
     public class AndroidPermissionAction : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Android action taken when an app requests a dangerous permission.</summary>
         public AndroidPermissionActionType? Action {

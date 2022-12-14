@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>This type represents when and to whom to send an e-mail reminder.</summary>
+    /// <summary>
+    /// This type represents when and to whom to send an e-mail reminder.
+    /// </summary>
     public class BookingReminder : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {

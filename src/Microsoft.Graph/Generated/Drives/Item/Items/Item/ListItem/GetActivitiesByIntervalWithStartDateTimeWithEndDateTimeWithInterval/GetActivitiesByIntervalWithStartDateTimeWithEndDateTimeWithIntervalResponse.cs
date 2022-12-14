@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.ListItem.GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithInterval {
-    /// <summary>Provides operations to call the getActivitiesByInterval method.</summary>
+    /// <summary>
+    /// Provides operations to call the getActivitiesByInterval method.
+    /// </summary>
     public class GetActivitiesByIntervalWithStartDateTimeWithEndDateTimeWithIntervalResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<ItemActivityStat> Value {

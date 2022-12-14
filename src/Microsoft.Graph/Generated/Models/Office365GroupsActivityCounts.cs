@@ -26,6 +26,16 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<Date?>("reportRefreshDate"); }
             set { BackingStore?.Set("reportRefreshDate", value); }
         }
+        /// <summary>The teamsChannelMessages property</summary>
+        public long? TeamsChannelMessages {
+            get { return BackingStore?.Get<long?>("teamsChannelMessages"); }
+            set { BackingStore?.Set("teamsChannelMessages", value); }
+        }
+        /// <summary>The teamsMeetingsOrganized property</summary>
+        public long? TeamsMeetingsOrganized {
+            get { return BackingStore?.Get<long?>("teamsMeetingsOrganized"); }
+            set { BackingStore?.Set("teamsMeetingsOrganized", value); }
+        }
         /// <summary>The number of messages liked in Yammer groups.</summary>
         public long? YammerMessagesLiked {
             get { return BackingStore?.Get<long?>("yammerMessagesLiked"); }
@@ -58,6 +68,8 @@ namespace Microsoft.Graph.Beta.Models {
                 {"reportDate", n => { ReportDate = n.GetDateValue(); } },
                 {"reportPeriod", n => { ReportPeriod = n.GetStringValue(); } },
                 {"reportRefreshDate", n => { ReportRefreshDate = n.GetDateValue(); } },
+                {"teamsChannelMessages", n => { TeamsChannelMessages = n.GetLongValue(); } },
+                {"teamsMeetingsOrganized", n => { TeamsMeetingsOrganized = n.GetLongValue(); } },
                 {"yammerMessagesLiked", n => { YammerMessagesLiked = n.GetLongValue(); } },
                 {"yammerMessagesPosted", n => { YammerMessagesPosted = n.GetLongValue(); } },
                 {"yammerMessagesRead", n => { YammerMessagesRead = n.GetLongValue(); } },
@@ -74,6 +86,8 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteDateValue("reportDate", ReportDate);
             writer.WriteStringValue("reportPeriod", ReportPeriod);
             writer.WriteDateValue("reportRefreshDate", ReportRefreshDate);
+            writer.WriteLongValue("teamsChannelMessages", TeamsChannelMessages);
+            writer.WriteLongValue("teamsMeetingsOrganized", TeamsMeetingsOrganized);
             writer.WriteLongValue("yammerMessagesLiked", YammerMessagesLiked);
             writer.WriteLongValue("yammerMessagesPosted", YammerMessagesPosted);
             writer.WriteLongValue("yammerMessagesRead", YammerMessagesRead);

@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class ManagedTenantAlertRuleDefinition : Entity, IParsable {
         /// <summary>The alertRules property</summary>
         public List<ManagedTenantAlertRule> AlertRules {

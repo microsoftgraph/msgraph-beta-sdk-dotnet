@@ -13,17 +13,17 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The isFooterShown property</summary>
+        /// <summary>Option to show the footer on the sign-in page.</summary>
         public bool? IsFooterShown {
             get { return BackingStore?.Get<bool?>("isFooterShown"); }
             set { BackingStore?.Set("isFooterShown", value); }
         }
-        /// <summary>The isHeaderShown property</summary>
+        /// <summary>Option to show the header on the sign-in page.</summary>
         public bool? IsHeaderShown {
             get { return BackingStore?.Get<bool?>("isHeaderShown"); }
             set { BackingStore?.Set("isHeaderShown", value); }
         }
-        /// <summary>The layoutTemplateType property</summary>
+        /// <summary>Represents the layout template to be displayed on the login page for a tenant. The possible values are  default - Represents the default Microsoft layout with a centered lightbox.  verticalSplit - Represents a layout with a backgound on the left side and a full-height lightbox to the right.  unknownFutureValue - Evolvable enumeration sentinel value. Do not use.</summary>
         public Microsoft.Graph.Beta.Models.LayoutTemplateType? LayoutTemplateType {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.LayoutTemplateType?>("layoutTemplateType"); }
             set { BackingStore?.Set("layoutTemplateType", value); }

@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>The user experience analytics top impacting process entity.</summary>
+    /// <summary>
+    /// The user experience analytics top impacting process entity.
+    /// </summary>
     public class UserExperienceAnalyticsImpactingProcess : Entity, IParsable {
         /// <summary>The category of impacting process.</summary>
         public string Category {

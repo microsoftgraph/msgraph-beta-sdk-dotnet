@@ -8,7 +8,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.GetDevicesScheduledToRetire {
-    /// <summary>Provides operations to call the getDevicesScheduledToRetire method.</summary>
+    /// <summary>
+    /// Provides operations to call the getDevicesScheduledToRetire method.
+    /// </summary>
     public class GetDevicesScheduledToRetireRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -76,7 +78,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.GetDevi
             };
             return await RequestAdapter.SendAsync<GetDevicesScheduledToRetireResponse>(requestInfo, GetDevicesScheduledToRetireResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Invoke function getDevicesScheduledToRetire</summary>
+        /// <summary>
+        /// Invoke function getDevicesScheduledToRetire
+        /// </summary>
         public class GetDevicesScheduledToRetireRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -94,10 +98,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.GetDevi
             [QueryParameter("%24top")]
             public int? Top { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class GetDevicesScheduledToRetireRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -107,7 +113,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.GetDevi
             /// </summary>
             public GetDevicesScheduledToRetireRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

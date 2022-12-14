@@ -9,7 +9,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Security.Labels.RetentionLabels.Item.RetentionEventType {
-    /// <summary>Provides operations to manage the retentionEventType property of the microsoft.graph.security.retentionLabel entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the retentionEventType property of the microsoft.graph.security.retentionLabel entity.
+    /// </summary>
     public class RetentionEventTypeRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -77,7 +79,9 @@ namespace Microsoft.Graph.Beta.Security.Labels.RetentionLabels.Item.RetentionEve
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Security.RetentionEventType>(requestInfo, Microsoft.Graph.Beta.Models.Security.RetentionEventType.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Get retentionEventType from security</summary>
+        /// <summary>
+        /// Get retentionEventType from security
+        /// </summary>
         public class RetentionEventTypeRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]
@@ -86,10 +90,12 @@ namespace Microsoft.Graph.Beta.Security.Labels.RetentionLabels.Item.RetentionEve
             [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class RetentionEventTypeRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -99,7 +105,7 @@ namespace Microsoft.Graph.Beta.Security.Labels.RetentionLabels.Item.RetentionEve
             /// </summary>
             public RetentionEventTypeRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

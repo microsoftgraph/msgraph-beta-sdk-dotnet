@@ -8,7 +8,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Groups.Item.AddFavorite {
-    /// <summary>Provides operations to call the addFavorite method.</summary>
+    /// <summary>
+    /// Provides operations to call the addFavorite method.
+    /// </summary>
     public class AddFavoriteRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -63,6 +65,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.AddFavorite {
         }
         /// <summary>
         /// Add the group to the list of the current user&apos;s favorite groups. Supported for Microsoft 365 groups only.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/group-addfavorite?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -74,10 +77,12 @@ namespace Microsoft.Graph.Beta.Groups.Item.AddFavorite {
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class AddFavoriteRequestBuilderPostRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -85,7 +90,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.AddFavorite {
             /// </summary>
             public AddFavoriteRequestBuilderPostRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

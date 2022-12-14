@@ -6,7 +6,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.DeviceManagement.WindowsDriverUpdateProfiles.Item.ExecuteAction {
-    /// <summary>Provides operations to call the executeAction method.</summary>
+    /// <summary>
+    /// Provides operations to call the executeAction method.
+    /// </summary>
     public class ExecuteActionPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>An enum type to represent approval actions of single or list of drivers.</summary>
         public DriverApprovalAction? ActionName {

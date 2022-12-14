@@ -8,7 +8,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Print.Reports.GetSharePointSiteUsagePagesWithPeriod {
-    /// <summary>Provides operations to call the getSharePointSiteUsagePages method.</summary>
+    /// <summary>
+    /// Provides operations to call the getSharePointSiteUsagePages method.
+    /// </summary>
     public class GetSharePointSiteUsagePagesWithPeriodRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -76,10 +78,12 @@ namespace Microsoft.Graph.Beta.Print.Reports.GetSharePointSiteUsagePagesWithPeri
             };
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken);
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class GetSharePointSiteUsagePagesWithPeriodRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -87,7 +91,7 @@ namespace Microsoft.Graph.Beta.Print.Reports.GetSharePointSiteUsagePagesWithPeri
             /// </summary>
             public GetSharePointSiteUsagePagesWithPeriodRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

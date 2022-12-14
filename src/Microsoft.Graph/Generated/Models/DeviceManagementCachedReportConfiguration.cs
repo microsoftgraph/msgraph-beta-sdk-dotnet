@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Entity representing the configuration of a cached report</summary>
+    /// <summary>
+    /// Entity representing the configuration of a cached report
+    /// </summary>
     public class DeviceManagementCachedReportConfiguration : Entity, IParsable {
         /// <summary>Time that the cached report expires</summary>
         public DateTimeOffset? ExpirationDateTime {

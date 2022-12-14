@@ -8,7 +8,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Branding.Localizations.Item.HeaderLogo {
-    /// <summary>Provides operations to manage the media for the organizationalBranding entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the media for the organizationalBranding entity.
+    /// </summary>
     public class HeaderLogoRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -44,7 +46,7 @@ namespace Microsoft.Graph.Beta.Branding.Localizations.Item.HeaderLogo {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get headerLogo for the navigation property localizations from branding
+        /// A company logo that appears in the header of the sign-in page. The allowed types are PNG or JPEG not larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<HeaderLogoRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -62,7 +64,7 @@ namespace Microsoft.Graph.Beta.Branding.Localizations.Item.HeaderLogo {
             return requestInfo;
         }
         /// <summary>
-        /// Update headerLogo for the navigation property localizations in branding
+        /// A company logo that appears in the header of the sign-in page. The allowed types are PNG or JPEG not larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
         /// </summary>
         /// <param name="body">Binary request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -83,7 +85,8 @@ namespace Microsoft.Graph.Beta.Branding.Localizations.Item.HeaderLogo {
             return requestInfo;
         }
         /// <summary>
-        /// Get headerLogo for the navigation property localizations from branding
+        /// A company logo that appears in the header of the sign-in page. The allowed types are PNG or JPEG not larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/organizationalbranding-list-localizations?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -96,7 +99,7 @@ namespace Microsoft.Graph.Beta.Branding.Localizations.Item.HeaderLogo {
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update headerLogo for the navigation property localizations in branding
+        /// A company logo that appears in the header of the sign-in page. The allowed types are PNG or JPEG not larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.
         /// </summary>
         /// <param name="body">Binary request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -110,10 +113,12 @@ namespace Microsoft.Graph.Beta.Branding.Localizations.Item.HeaderLogo {
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class HeaderLogoRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -121,13 +126,15 @@ namespace Microsoft.Graph.Beta.Branding.Localizations.Item.HeaderLogo {
             /// </summary>
             public HeaderLogoRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class HeaderLogoRequestBuilderPutRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -135,7 +142,7 @@ namespace Microsoft.Graph.Beta.Branding.Localizations.Item.HeaderLogo {
             /// </summary>
             public HeaderLogoRequestBuilderPutRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Contains properties, inherited properties and actions for an MDM mobile app configuration status for a user.</summary>
+    /// <summary>
+    /// Contains properties, inherited properties and actions for an MDM mobile app configuration status for a user.
+    /// </summary>
     public class ManagedDeviceMobileAppConfigurationUserStatus : Entity, IParsable {
         /// <summary>Devices count for that user.</summary>
         public int? DevicesCount {

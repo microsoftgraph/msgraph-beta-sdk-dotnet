@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelSites.Item.MicrosoftTunnelServers.Item.GetHealthMetricTimeSeries {
-    /// <summary>Provides operations to call the getHealthMetricTimeSeries method.</summary>
+    /// <summary>
+    /// Provides operations to call the getHealthMetricTimeSeries method.
+    /// </summary>
     public class GetHealthMetricTimeSeriesResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<MetricTimeSeriesDataPoint> Value {

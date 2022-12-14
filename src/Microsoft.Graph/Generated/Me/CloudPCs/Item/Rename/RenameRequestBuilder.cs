@@ -8,7 +8,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Me.CloudPCs.Item.Rename {
-    /// <summary>Provides operations to call the rename method.</summary>
+    /// <summary>
+    /// Provides operations to call the rename method.
+    /// </summary>
     public class RenameRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -46,7 +48,7 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs.Item.Rename {
         /// <summary>
         /// Rename a specific Cloud PC. Use this API to update the **displayName** for the Cloud PC entity.
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreatePostRequestInformation(RenamePostRequestBody body, Action<RenameRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -66,8 +68,9 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs.Item.Rename {
         }
         /// <summary>
         /// Rename a specific Cloud PC. Use this API to update the **displayName** for the Cloud PC entity.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/cloudpc-rename?view=graph-rest-1.0" />
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public async Task PostAsync(RenamePostRequestBody body, Action<RenameRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -79,10 +82,12 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs.Item.Rename {
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class RenameRequestBuilderPostRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -90,7 +95,7 @@ namespace Microsoft.Graph.Beta.Me.CloudPCs.Item.Rename {
             /// </summary>
             public RenameRequestBuilderPostRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

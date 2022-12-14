@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Communications.Presences.Item.SetUserPreferredPresence {
-    /// <summary>Provides operations to call the setUserPreferredPresence method.</summary>
+    /// <summary>
+    /// Provides operations to call the setUserPreferredPresence method.
+    /// </summary>
     public class SetUserPreferredPresencePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>The activity property</summary>
         public string Activity {

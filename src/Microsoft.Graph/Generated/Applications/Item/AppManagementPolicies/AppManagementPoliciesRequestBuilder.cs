@@ -12,7 +12,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Applications.Item.AppManagementPolicies {
-    /// <summary>Provides operations to manage the appManagementPolicies property of the microsoft.graph.application entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the appManagementPolicies property of the microsoft.graph.application entity.
+    /// </summary>
     public class AppManagementPoliciesRequestBuilder {
         /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
@@ -94,7 +96,9 @@ namespace Microsoft.Graph.Beta.Applications.Item.AppManagementPolicies {
             };
             return await RequestAdapter.SendAsync<AppManagementPolicyCollectionResponse>(requestInfo, AppManagementPolicyCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>The appManagementPolicy applied to this application.</summary>
+        /// <summary>
+        /// The appManagementPolicy applied to this application.
+        /// </summary>
         public class AppManagementPoliciesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -121,10 +125,12 @@ namespace Microsoft.Graph.Beta.Applications.Item.AppManagementPolicies {
             [QueryParameter("%24top")]
             public int? Top { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class AppManagementPoliciesRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -134,7 +140,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.AppManagementPolicies {
             /// </summary>
             public AppManagementPoliciesRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

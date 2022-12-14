@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Entity which represents a connection to Mobile threat defense partner.</summary>
+    /// <summary>
+    /// Entity which represents a connection to Mobile threat defense partner.
+    /// </summary>
     public class MobileThreatDefenseConnector : Entity, IParsable {
         /// <summary>For IOS devices, allows the admin to configure whether the data sync partner may also collect metadata about installed applications from Intune</summary>
         public bool? AllowPartnerToCollectIOSApplicationMetadata {

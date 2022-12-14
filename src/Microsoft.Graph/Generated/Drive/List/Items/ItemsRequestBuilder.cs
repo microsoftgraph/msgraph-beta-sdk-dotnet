@@ -13,7 +13,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Drive.List.Items {
-    /// <summary>Provides operations to manage the items property of the microsoft.graph.list entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the items property of the microsoft.graph.list entity.
+    /// </summary>
     public class ItemsRequestBuilder {
         /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
@@ -81,7 +83,7 @@ namespace Microsoft.Graph.Beta.Drive.List.Items {
         /// <summary>
         /// Create a new [listItem][] in a [list][].
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreatePostRequestInformation(Microsoft.Graph.Beta.Models.ListItem body, Action<ItemsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -116,6 +118,7 @@ namespace Microsoft.Graph.Beta.Drive.List.Items {
         }
         /// <summary>
         /// Get the collection of [items][item] in a [list][].
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/listitem-list?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -129,8 +132,9 @@ namespace Microsoft.Graph.Beta.Drive.List.Items {
         }
         /// <summary>
         /// Create a new [listItem][] in a [list][].
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/listitem-create?view=graph-rest-1.0" />
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public async Task<Microsoft.Graph.Beta.Models.ListItem> PostAsync(Microsoft.Graph.Beta.Models.ListItem body, Action<ItemsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -142,7 +146,9 @@ namespace Microsoft.Graph.Beta.Drive.List.Items {
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ListItem>(requestInfo, Microsoft.Graph.Beta.Models.ListItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Get the collection of [items][item] in a [list][].</summary>
+        /// <summary>
+        /// Get the collection of [items][item] in a [list][].
+        /// </summary>
         public class ItemsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -169,10 +175,12 @@ namespace Microsoft.Graph.Beta.Drive.List.Items {
             [QueryParameter("%24top")]
             public int? Top { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class ItemsRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -182,13 +190,15 @@ namespace Microsoft.Graph.Beta.Drive.List.Items {
             /// </summary>
             public ItemsRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class ItemsRequestBuilderPostRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -196,7 +206,7 @@ namespace Microsoft.Graph.Beta.Drive.List.Items {
             /// </summary>
             public ItemsRequestBuilderPostRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

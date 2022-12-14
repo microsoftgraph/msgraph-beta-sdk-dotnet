@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Setting Template</summary>
+    /// <summary>
+    /// Setting Template
+    /// </summary>
     public class DeviceManagementConfigurationSettingTemplate : Entity, IParsable {
         /// <summary>List of related Setting Definitions</summary>
         public List<DeviceManagementConfigurationSettingDefinition> SettingDefinitions {

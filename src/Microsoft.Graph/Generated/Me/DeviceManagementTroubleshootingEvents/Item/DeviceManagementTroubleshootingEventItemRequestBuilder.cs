@@ -9,7 +9,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Me.DeviceManagementTroubleshootingEvents.Item {
-    /// <summary>Provides operations to manage the deviceManagementTroubleshootingEvents property of the microsoft.graph.user entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the deviceManagementTroubleshootingEvents property of the microsoft.graph.user entity.
+    /// </summary>
     public class DeviceManagementTroubleshootingEventItemRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -85,7 +87,7 @@ namespace Microsoft.Graph.Beta.Me.DeviceManagementTroubleshootingEvents.Item {
         /// <summary>
         /// Update the navigation property deviceManagementTroubleshootingEvents in me
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreatePatchRequestInformation(DeviceManagementTroubleshootingEvent body, Action<DeviceManagementTroubleshootingEventItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -133,7 +135,7 @@ namespace Microsoft.Graph.Beta.Me.DeviceManagementTroubleshootingEvents.Item {
         /// <summary>
         /// Update the navigation property deviceManagementTroubleshootingEvents in me
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public async Task<DeviceManagementTroubleshootingEvent> PatchAsync(DeviceManagementTroubleshootingEvent body, Action<DeviceManagementTroubleshootingEventItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -145,10 +147,12 @@ namespace Microsoft.Graph.Beta.Me.DeviceManagementTroubleshootingEvents.Item {
             };
             return await RequestAdapter.SendAsync<DeviceManagementTroubleshootingEvent>(requestInfo, DeviceManagementTroubleshootingEvent.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class DeviceManagementTroubleshootingEventItemRequestBuilderDeleteRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -156,10 +160,12 @@ namespace Microsoft.Graph.Beta.Me.DeviceManagementTroubleshootingEvents.Item {
             /// </summary>
             public DeviceManagementTroubleshootingEventItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>The list of troubleshooting events for this user.</summary>
+        /// <summary>
+        /// The list of troubleshooting events for this user.
+        /// </summary>
         public class DeviceManagementTroubleshootingEventItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]
@@ -168,10 +174,12 @@ namespace Microsoft.Graph.Beta.Me.DeviceManagementTroubleshootingEvents.Item {
             [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class DeviceManagementTroubleshootingEventItemRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -181,13 +189,15 @@ namespace Microsoft.Graph.Beta.Me.DeviceManagementTroubleshootingEvents.Item {
             /// </summary>
             public DeviceManagementTroubleshootingEventItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class DeviceManagementTroubleshootingEventItemRequestBuilderPatchRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -195,7 +205,7 @@ namespace Microsoft.Graph.Beta.Me.DeviceManagementTroubleshootingEvents.Item {
             /// </summary>
             public DeviceManagementTroubleshootingEventItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

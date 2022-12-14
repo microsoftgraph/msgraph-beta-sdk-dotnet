@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Remote help - response we provide back to the helper on retrieve session API call</summary>
+    /// <summary>
+    /// Remote help - response we provide back to the helper on retrieve session API call
+    /// </summary>
     public class RetrieveRemoteHelpSessionResponse : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>ACS Group Id</summary>
         public string AcsGroupId {

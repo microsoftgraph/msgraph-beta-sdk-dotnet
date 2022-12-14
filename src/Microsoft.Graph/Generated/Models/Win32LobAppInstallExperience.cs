@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Contains installation experience properties for a Win32 App</summary>
+    /// <summary>
+    /// Contains installation experience properties for a Win32 App
+    /// </summary>
     public class Win32LobAppInstallExperience : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {

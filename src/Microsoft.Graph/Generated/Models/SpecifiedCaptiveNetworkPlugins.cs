@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Specifies all the Captive network plugins allowed during the IKEv2 AlwaysOn VPN connection</summary>
+    /// <summary>
+    /// Specifies all the Captive network plugins allowed during the IKEv2 AlwaysOn VPN connection
+    /// </summary>
     public class SpecifiedCaptiveNetworkPlugins : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {

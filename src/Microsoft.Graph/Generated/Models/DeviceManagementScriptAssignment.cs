@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Contains properties used to assign a device management script to a group.</summary>
+    /// <summary>
+    /// Contains properties used to assign a device management script to a group.
+    /// </summary>
     public class DeviceManagementScriptAssignment : Entity, IParsable {
         /// <summary>The Id of the Azure Active Directory group we are targeting the script to.</summary>
         public DeviceAndAppManagementAssignmentTarget Target {

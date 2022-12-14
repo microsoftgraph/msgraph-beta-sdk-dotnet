@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.AppDiagnosticsWithUpn {
-    /// <summary>Provides operations to call the appDiagnostics method.</summary>
+    /// <summary>
+    /// Provides operations to call the appDiagnostics method.
+    /// </summary>
     public class AppDiagnosticsWithUpnResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<PowerliftIncidentMetadata> Value {

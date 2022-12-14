@@ -59,13 +59,13 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("subscriptionExpirationDateTime", value); }
         }
         /// <summary>The unique identifier of the subscription that generated the notification. Required.</summary>
-        public string SubscriptionId {
-            get { return BackingStore?.Get<string>("subscriptionId"); }
+        public Guid? SubscriptionId {
+            get { return BackingStore?.Get<Guid?>("subscriptionId"); }
             set { BackingStore?.Set("subscriptionId", value); }
         }
         /// <summary>The unique identifier of the tenant from which the change notification originated. Required.</summary>
-        public string TenantId {
-            get { return BackingStore?.Get<string>("tenantId"); }
+        public Guid? TenantId {
+            get { return BackingStore?.Get<Guid?>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
         /// <summary>
@@ -97,8 +97,8 @@ namespace Microsoft.Graph.Beta.Models {
                 {"resource", n => { Resource = n.GetStringValue(); } },
                 {"resourceData", n => { ResourceData = n.GetObjectValue<Microsoft.Graph.Beta.Models.ResourceData>(Microsoft.Graph.Beta.Models.ResourceData.CreateFromDiscriminatorValue); } },
                 {"subscriptionExpirationDateTime", n => { SubscriptionExpirationDateTime = n.GetDateTimeOffsetValue(); } },
-                {"subscriptionId", n => { SubscriptionId = n.GetStringValue(); } },
-                {"tenantId", n => { TenantId = n.GetStringValue(); } },
+                {"subscriptionId", n => { SubscriptionId = n.GetGuidValue(); } },
+                {"tenantId", n => { TenantId = n.GetGuidValue(); } },
             };
         }
         /// <summary>
@@ -116,8 +116,8 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("resource", Resource);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ResourceData>("resourceData", ResourceData);
             writer.WriteDateTimeOffsetValue("subscriptionExpirationDateTime", SubscriptionExpirationDateTime);
-            writer.WriteStringValue("subscriptionId", SubscriptionId);
-            writer.WriteStringValue("tenantId", TenantId);
+            writer.WriteGuidValue("subscriptionId", SubscriptionId);
+            writer.WriteGuidValue("tenantId", TenantId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

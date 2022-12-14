@@ -8,7 +8,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.InformationProtection.Policy.Labels.EvaluateClassificationResults {
-    /// <summary>Provides operations to call the evaluateClassificationResults method.</summary>
+    /// <summary>
+    /// Provides operations to call the evaluateClassificationResults method.
+    /// </summary>
     public class EvaluateClassificationResultsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -46,7 +48,7 @@ namespace Microsoft.Graph.Beta.InformationProtection.Policy.Labels.EvaluateClass
         /// <summary>
         /// Using classification results, compute the information protection label that should be applied and return the set of actions that must be taken to correctly label the information. This API is useful when a label should be set automatically based on classification of the file contents, rather than labeled directly by a user or service.  To evaluate based on classification results, provide contentInfo, which includes existing content metadata key/value pairs, and classification results. The API returns an informationProtectionAction that contains one of more of the following: 
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreatePostRequestInformation(EvaluateClassificationResultsPostRequestBody body, Action<EvaluateClassificationResultsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -67,8 +69,9 @@ namespace Microsoft.Graph.Beta.InformationProtection.Policy.Labels.EvaluateClass
         }
         /// <summary>
         /// Using classification results, compute the information protection label that should be applied and return the set of actions that must be taken to correctly label the information. This API is useful when a label should be set automatically based on classification of the file contents, rather than labeled directly by a user or service.  To evaluate based on classification results, provide contentInfo, which includes existing content metadata key/value pairs, and classification results. The API returns an informationProtectionAction that contains one of more of the following: 
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/informationprotectionlabel-evaluateclassificationresults?view=graph-rest-1.0" />
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public async Task<EvaluateClassificationResultsResponse> PostAsync(EvaluateClassificationResultsPostRequestBody body, Action<EvaluateClassificationResultsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -80,10 +83,12 @@ namespace Microsoft.Graph.Beta.InformationProtection.Policy.Labels.EvaluateClass
             };
             return await RequestAdapter.SendAsync<EvaluateClassificationResultsResponse>(requestInfo, EvaluateClassificationResultsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class EvaluateClassificationResultsRequestBuilderPostRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -91,7 +96,7 @@ namespace Microsoft.Graph.Beta.InformationProtection.Policy.Labels.EvaluateClass
             /// </summary>
             public EvaluateClassificationResultsRequestBuilderPostRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

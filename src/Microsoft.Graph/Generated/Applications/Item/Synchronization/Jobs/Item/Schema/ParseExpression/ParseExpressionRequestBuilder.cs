@@ -9,7 +9,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Item.Schema.ParseExpression {
-    /// <summary>Provides operations to call the parseExpression method.</summary>
+    /// <summary>
+    /// Provides operations to call the parseExpression method.
+    /// </summary>
     public class ParseExpressionRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -47,7 +49,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Item.Schem
         /// <summary>
         /// Parse a given string expression into an attributeMappingSource object. For more information about expressions, see Writing Expressions for Attribute Mappings in Azure Active Directory.
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreatePostRequestInformation(ParseExpressionPostRequestBody body, Action<ParseExpressionRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -68,8 +70,9 @@ namespace Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Item.Schem
         }
         /// <summary>
         /// Parse a given string expression into an attributeMappingSource object. For more information about expressions, see Writing Expressions for Attribute Mappings in Azure Active Directory.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/synchronization-synchronizationschema-parseexpression?view=graph-rest-1.0" />
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public async Task<ParseExpressionResponse> PostAsync(ParseExpressionPostRequestBody body, Action<ParseExpressionRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -81,10 +84,12 @@ namespace Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Item.Schem
             };
             return await RequestAdapter.SendAsync<ParseExpressionResponse>(requestInfo, ParseExpressionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class ParseExpressionRequestBuilderPostRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -92,7 +97,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Item.Schem
             /// </summary>
             public ParseExpressionRequestBuilderPostRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

@@ -9,7 +9,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.DeviceManagement.ExchangeOnPremisesPolicy.ConditionalAccessSettings {
-    /// <summary>Provides operations to manage the conditionalAccessSettings property of the microsoft.graph.deviceManagementExchangeOnPremisesPolicy entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the conditionalAccessSettings property of the microsoft.graph.deviceManagementExchangeOnPremisesPolicy entity.
+    /// </summary>
     public class ConditionalAccessSettingsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -85,7 +87,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ExchangeOnPremisesPolicy.Conditi
         /// <summary>
         /// Update the navigation property conditionalAccessSettings in deviceManagement
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreatePatchRequestInformation(OnPremisesConditionalAccessSettings body, Action<ConditionalAccessSettingsRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -133,7 +135,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ExchangeOnPremisesPolicy.Conditi
         /// <summary>
         /// Update the navigation property conditionalAccessSettings in deviceManagement
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public async Task<OnPremisesConditionalAccessSettings> PatchAsync(OnPremisesConditionalAccessSettings body, Action<ConditionalAccessSettingsRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -145,10 +147,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ExchangeOnPremisesPolicy.Conditi
             };
             return await RequestAdapter.SendAsync<OnPremisesConditionalAccessSettings>(requestInfo, OnPremisesConditionalAccessSettings.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class ConditionalAccessSettingsRequestBuilderDeleteRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -156,10 +160,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ExchangeOnPremisesPolicy.Conditi
             /// </summary>
             public ConditionalAccessSettingsRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>The Exchange on premises conditional access settings. On premises conditional access will require devices to be both enrolled and compliant for mail access</summary>
+        /// <summary>
+        /// The Exchange on premises conditional access settings. On premises conditional access will require devices to be both enrolled and compliant for mail access
+        /// </summary>
         public class ConditionalAccessSettingsRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]
@@ -168,10 +174,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ExchangeOnPremisesPolicy.Conditi
             [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class ConditionalAccessSettingsRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -181,13 +189,15 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ExchangeOnPremisesPolicy.Conditi
             /// </summary>
             public ConditionalAccessSettingsRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class ConditionalAccessSettingsRequestBuilderPatchRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -195,7 +205,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ExchangeOnPremisesPolicy.Conditi
             /// </summary>
             public ConditionalAccessSettingsRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

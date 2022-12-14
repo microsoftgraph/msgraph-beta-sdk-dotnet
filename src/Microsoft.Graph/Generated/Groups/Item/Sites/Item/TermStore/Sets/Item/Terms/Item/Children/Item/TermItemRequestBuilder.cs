@@ -11,7 +11,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.TermStore.Sets.Item.Terms.Item.Children.Item {
-    /// <summary>Provides operations to manage the children property of the microsoft.graph.termStore.term entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the children property of the microsoft.graph.termStore.term entity.
+    /// </summary>
     public class TermItemRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -95,7 +97,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.TermStore.Sets.Item.Terms.
         /// <summary>
         /// Update the navigation property children in groups
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreatePatchRequestInformation(Term body, Action<TermItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -143,7 +145,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.TermStore.Sets.Item.Terms.
         /// <summary>
         /// Update the navigation property children in groups
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public async Task<Term> PatchAsync(Term body, Action<TermItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -155,10 +157,12 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.TermStore.Sets.Item.Terms.
             };
             return await RequestAdapter.SendAsync<Term>(requestInfo, Term.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class TermItemRequestBuilderDeleteRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -166,10 +170,12 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.TermStore.Sets.Item.Terms.
             /// </summary>
             public TermItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Children of current term.</summary>
+        /// <summary>
+        /// Children of current term.
+        /// </summary>
         public class TermItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]
@@ -178,10 +184,12 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.TermStore.Sets.Item.Terms.
             [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class TermItemRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -191,13 +199,15 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.TermStore.Sets.Item.Terms.
             /// </summary>
             public TermItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class TermItemRequestBuilderPatchRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -205,7 +215,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.TermStore.Sets.Item.Terms.
             /// </summary>
             public TermItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

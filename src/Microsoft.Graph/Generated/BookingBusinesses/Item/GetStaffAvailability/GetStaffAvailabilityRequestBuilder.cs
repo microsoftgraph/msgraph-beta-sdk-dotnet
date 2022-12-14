@@ -8,7 +8,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.BookingBusinesses.Item.GetStaffAvailability {
-    /// <summary>Provides operations to call the getStaffAvailability method.</summary>
+    /// <summary>
+    /// Provides operations to call the getStaffAvailability method.
+    /// </summary>
     public class GetStaffAvailabilityRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -46,7 +48,7 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item.GetStaffAvailability {
         /// <summary>
         /// Get the availability information of staff members of a Microsoft Bookings calendar.
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreatePostRequestInformation(GetStaffAvailabilityPostRequestBody body, Action<GetStaffAvailabilityRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -67,8 +69,9 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item.GetStaffAvailability {
         }
         /// <summary>
         /// Get the availability information of staff members of a Microsoft Bookings calendar.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/bookingbusiness-getstaffavailability?view=graph-rest-1.0" />
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public async Task<GetStaffAvailabilityResponse> PostAsync(GetStaffAvailabilityPostRequestBody body, Action<GetStaffAvailabilityRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -80,10 +83,12 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item.GetStaffAvailability {
             };
             return await RequestAdapter.SendAsync<GetStaffAvailabilityResponse>(requestInfo, GetStaffAvailabilityResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class GetStaffAvailabilityRequestBuilderPostRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -91,7 +96,7 @@ namespace Microsoft.Graph.Beta.BookingBusinesses.Item.GetStaffAvailability {
             /// </summary>
             public GetStaffAvailabilityRequestBuilderPostRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

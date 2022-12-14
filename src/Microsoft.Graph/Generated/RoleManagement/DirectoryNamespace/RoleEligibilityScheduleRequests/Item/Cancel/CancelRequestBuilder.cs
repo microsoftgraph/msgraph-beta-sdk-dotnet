@@ -8,7 +8,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.RoleEligibilityScheduleRequests.Item.Cancel {
-    /// <summary>Provides operations to call the cancel method.</summary>
+    /// <summary>
+    /// Provides operations to call the cancel method.
+    /// </summary>
     public class CancelRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -63,6 +65,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.RoleEligibility
         }
         /// <summary>
         /// Immediately cancel a unifiedRoleEligibilityScheduleRequest that is in a `Granted` status, and have the system automatically delete the cancelled request after 30 days. After calling this action, the **status** of the cancelled unifiedRoleEligibilityScheduleRequest changes to `Revoked`.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/unifiedroleeligibilityschedulerequest-cancel?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -74,10 +77,12 @@ namespace Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.RoleEligibility
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class CancelRequestBuilderPostRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -85,7 +90,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.DirectoryNamespace.RoleEligibility
             /// </summary>
             public CancelRequestBuilderPostRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

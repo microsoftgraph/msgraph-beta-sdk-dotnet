@@ -9,7 +9,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Education.Me.User {
-    /// <summary>Provides operations to manage the user property of the microsoft.graph.educationUser entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the user property of the microsoft.graph.educationUser entity.
+    /// </summary>
     public class UserRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -66,6 +68,7 @@ namespace Microsoft.Graph.Beta.Education.Me.User {
         }
         /// <summary>
         /// Retrieve the simple directory **user** that corresponds to this **educationUser**.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/educationuser-get-user?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -77,7 +80,9 @@ namespace Microsoft.Graph.Beta.Education.Me.User {
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.User>(requestInfo, Microsoft.Graph.Beta.Models.User.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Retrieve the simple directory **user** that corresponds to this **educationUser**.</summary>
+        /// <summary>
+        /// Retrieve the simple directory **user** that corresponds to this **educationUser**.
+        /// </summary>
         public class UserRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]
@@ -86,10 +91,12 @@ namespace Microsoft.Graph.Beta.Education.Me.User {
             [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class UserRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -99,7 +106,7 @@ namespace Microsoft.Graph.Beta.Education.Me.User {
             /// </summary>
             public UserRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

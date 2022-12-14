@@ -14,7 +14,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.DirectorySettingTemplates {
-    /// <summary>Provides operations to manage the collection of directorySettingTemplate entities.</summary>
+    /// <summary>
+    /// Provides operations to manage the collection of directorySettingTemplate entities.
+    /// </summary>
     public class DirectorySettingTemplatesRequestBuilder {
         /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
@@ -94,7 +96,7 @@ namespace Microsoft.Graph.Beta.DirectorySettingTemplates {
         /// <summary>
         /// Add new entity to directorySettingTemplates
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreatePostRequestInformation(DirectorySettingTemplate body, Action<DirectorySettingTemplatesRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -115,6 +117,7 @@ namespace Microsoft.Graph.Beta.DirectorySettingTemplates {
         }
         /// <summary>
         /// Directory setting templates represents a set of templates of directory settings, from which directory settings may be created and used within a tenant.  This operation retrieves the list of available **directorySettingTemplates** objects.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/directorysettingtemplate-list?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -129,7 +132,7 @@ namespace Microsoft.Graph.Beta.DirectorySettingTemplates {
         /// <summary>
         /// Add new entity to directorySettingTemplates
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public async Task<DirectorySettingTemplate> PostAsync(DirectorySettingTemplate body, Action<DirectorySettingTemplatesRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -141,7 +144,9 @@ namespace Microsoft.Graph.Beta.DirectorySettingTemplates {
             };
             return await RequestAdapter.SendAsync<DirectorySettingTemplate>(requestInfo, DirectorySettingTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Directory setting templates represents a set of templates of directory settings, from which directory settings may be created and used within a tenant.  This operation retrieves the list of available **directorySettingTemplates** objects.</summary>
+        /// <summary>
+        /// Directory setting templates represents a set of templates of directory settings, from which directory settings may be created and used within a tenant.  This operation retrieves the list of available **directorySettingTemplates** objects.
+        /// </summary>
         public class DirectorySettingTemplatesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -168,10 +173,12 @@ namespace Microsoft.Graph.Beta.DirectorySettingTemplates {
             [QueryParameter("%24top")]
             public int? Top { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class DirectorySettingTemplatesRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -181,13 +188,15 @@ namespace Microsoft.Graph.Beta.DirectorySettingTemplates {
             /// </summary>
             public DirectorySettingTemplatesRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class DirectorySettingTemplatesRequestBuilderPostRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -195,7 +204,7 @@ namespace Microsoft.Graph.Beta.DirectorySettingTemplates {
             /// </summary>
             public DirectorySettingTemplatesRequestBuilderPostRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

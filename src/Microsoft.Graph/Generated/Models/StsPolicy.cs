@@ -1,11 +1,9 @@
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
     public class StsPolicy : PolicyBase, IParsable {
         /// <summary>The appliesTo property</summary>
         public List<DirectoryObject> AppliesTo {
@@ -23,7 +21,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("isOrganizationDefault", value); }
         }
         /// <summary>
-        /// Instantiates a new stsPolicy and sets the default values.
+        /// Instantiates a new StsPolicy and sets the default values.
         /// </summary>
         public StsPolicy() : base() {
             OdataType = "#microsoft.graph.stsPolicy";

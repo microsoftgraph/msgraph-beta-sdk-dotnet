@@ -23,7 +23,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Me.Calendars.Item.CalendarView.Item {
-    /// <summary>Provides operations to manage the calendarView property of the microsoft.graph.calendar entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the calendarView property of the microsoft.graph.calendar entity.
+    /// </summary>
     public class EventItemRequestBuilder {
         /// <summary>Provides operations to call the accept method.</summary>
         public AcceptRequestBuilder Accept { get =>
@@ -147,7 +149,9 @@ namespace Microsoft.Graph.Beta.Me.Calendars.Item.CalendarView.Item {
             };
             return await RequestAdapter.SendAsync<Event>(requestInfo, Event.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>The calendar view for the calendar. Navigation property. Read-only.</summary>
+        /// <summary>
+        /// The calendar view for the calendar. Navigation property. Read-only.
+        /// </summary>
         public class EventItemRequestBuilderGetQueryParameters {
             /// <summary>The end date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T20:00:00-08:00</summary>
             public string EndDateTime { get; set; }
@@ -157,10 +161,12 @@ namespace Microsoft.Graph.Beta.Me.Calendars.Item.CalendarView.Item {
             /// <summary>The start date and time of the time range, represented in ISO 8601 format. For example, 2019-11-08T19:00:00-08:00</summary>
             public string StartDateTime { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class EventItemRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -170,7 +176,7 @@ namespace Microsoft.Graph.Beta.Me.Calendars.Item.CalendarView.Item {
             /// </summary>
             public EventItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

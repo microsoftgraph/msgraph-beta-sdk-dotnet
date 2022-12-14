@@ -1,11 +1,12 @@
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>The security baseline compliance state summary for the security baseline of the account.</summary>
+    /// <summary>
+    /// The security baseline compliance state summary for the security baseline of the account.
+    /// </summary>
     public class SecurityBaselineStateSummary : Entity, IParsable {
         /// <summary>Number of conflict devices</summary>
         public int? ConflictCount {

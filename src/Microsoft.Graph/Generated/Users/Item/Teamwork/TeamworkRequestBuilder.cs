@@ -12,7 +12,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Users.Item.Teamwork {
-    /// <summary>Provides operations to manage the teamwork property of the microsoft.graph.user entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the teamwork property of the microsoft.graph.user entity.
+    /// </summary>
     public class TeamworkRequestBuilder {
         /// <summary>Provides operations to manage the associatedTeams property of the microsoft.graph.userTeamwork entity.</summary>
         public AssociatedTeamsRequestBuilder AssociatedTeams { get =>
@@ -100,7 +102,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Teamwork {
         /// <summary>
         /// Update the navigation property teamwork in users
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreatePatchRequestInformation(UserTeamwork body, Action<TeamworkRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -148,7 +150,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Teamwork {
         /// <summary>
         /// Update the navigation property teamwork in users
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public async Task<UserTeamwork> PatchAsync(UserTeamwork body, Action<TeamworkRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -160,10 +162,12 @@ namespace Microsoft.Graph.Beta.Users.Item.Teamwork {
             };
             return await RequestAdapter.SendAsync<UserTeamwork>(requestInfo, UserTeamwork.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class TeamworkRequestBuilderDeleteRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -171,10 +175,12 @@ namespace Microsoft.Graph.Beta.Users.Item.Teamwork {
             /// </summary>
             public TeamworkRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>A container for Microsoft Teams features available for the user. Read-only. Nullable.</summary>
+        /// <summary>
+        /// A container for Microsoft Teams features available for the user. Read-only. Nullable.
+        /// </summary>
         public class TeamworkRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]
@@ -183,10 +189,12 @@ namespace Microsoft.Graph.Beta.Users.Item.Teamwork {
             [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class TeamworkRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -196,13 +204,15 @@ namespace Microsoft.Graph.Beta.Users.Item.Teamwork {
             /// </summary>
             public TeamworkRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class TeamworkRequestBuilderPatchRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -210,7 +220,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Teamwork {
             /// </summary>
             public TeamworkRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

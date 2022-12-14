@@ -6,7 +6,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyConfigurations.Item.UpdateDefinitionValues {
-    /// <summary>Provides operations to call the updateDefinitionValues method.</summary>
+    /// <summary>
+    /// Provides operations to call the updateDefinitionValues method.
+    /// </summary>
     public class UpdateDefinitionValuesPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>The added property</summary>
         public List<GroupPolicyDefinitionValue> Added {

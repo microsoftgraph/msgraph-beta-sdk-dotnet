@@ -9,7 +9,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Groups.Item.EvaluateDynamicMembership {
-    /// <summary>Provides operations to call the evaluateDynamicMembership method.</summary>
+    /// <summary>
+    /// Provides operations to call the evaluateDynamicMembership method.
+    /// </summary>
     public class EvaluateDynamicMembershipRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -47,7 +49,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.EvaluateDynamicMembership {
         /// <summary>
         /// Evaluate whether a user or device is or would be a member of a dynamic group. The membership rule is returned along with other details that were used in the evaluation. You can complete this operation in the following ways:
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreatePostRequestInformation(EvaluateDynamicMembershipPostRequestBody body, Action<EvaluateDynamicMembershipRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -68,8 +70,9 @@ namespace Microsoft.Graph.Beta.Groups.Item.EvaluateDynamicMembership {
         }
         /// <summary>
         /// Evaluate whether a user or device is or would be a member of a dynamic group. The membership rule is returned along with other details that were used in the evaluation. You can complete this operation in the following ways:
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/group-evaluatedynamicmembership?view=graph-rest-1.0" />
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public async Task<EvaluateDynamicMembershipResult> PostAsync(EvaluateDynamicMembershipPostRequestBody body, Action<EvaluateDynamicMembershipRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -81,10 +84,12 @@ namespace Microsoft.Graph.Beta.Groups.Item.EvaluateDynamicMembership {
             };
             return await RequestAdapter.SendAsync<EvaluateDynamicMembershipResult>(requestInfo, EvaluateDynamicMembershipResult.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class EvaluateDynamicMembershipRequestBuilderPostRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -92,7 +97,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.EvaluateDynamicMembership {
             /// </summary>
             public EvaluateDynamicMembershipRequestBuilderPostRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

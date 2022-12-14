@@ -51,8 +51,8 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("renewalThresholdPercentage", value); }
         }
         /// <summary>Trusted Root Certificate ID</summary>
-        public string RootCertificateId {
-            get { return BackingStore?.Get<string>("rootCertificateId"); }
+        public Guid? RootCertificateId {
+            get { return BackingStore?.Get<Guid?>("rootCertificateId"); }
             set { BackingStore?.Set("rootCertificateId", value); }
         }
         /// <summary>SCEP Server Url(s).</summary>
@@ -98,7 +98,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"keyStorageProvider", n => { KeyStorageProvider = n.GetEnumValue<KeyStorageProviderOption>(); } },
                 {"keyUsage", n => { KeyUsage = n.GetEnumValue<KeyUsages>(); } },
                 {"renewalThresholdPercentage", n => { RenewalThresholdPercentage = n.GetIntValue(); } },
-                {"rootCertificateId", n => { RootCertificateId = n.GetStringValue(); } },
+                {"rootCertificateId", n => { RootCertificateId = n.GetGuidValue(); } },
                 {"scepServerUrls", n => { ScepServerUrls = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"subjectAlternativeNameFormats", n => { SubjectAlternativeNameFormats = n.GetCollectionOfObjectValues<Windows10XCustomSubjectAlternativeName>(Windows10XCustomSubjectAlternativeName.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"subjectNameFormatString", n => { SubjectNameFormatString = n.GetStringValue(); } },
@@ -120,7 +120,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteEnumValue<KeyStorageProviderOption>("keyStorageProvider", KeyStorageProvider);
             writer.WriteEnumValue<KeyUsages>("keyUsage", KeyUsage);
             writer.WriteIntValue("renewalThresholdPercentage", RenewalThresholdPercentage);
-            writer.WriteStringValue("rootCertificateId", RootCertificateId);
+            writer.WriteGuidValue("rootCertificateId", RootCertificateId);
             writer.WriteCollectionOfPrimitiveValues<string>("scepServerUrls", ScepServerUrls);
             writer.WriteCollectionOfObjectValues<Windows10XCustomSubjectAlternativeName>("subjectAlternativeNameFormats", SubjectAlternativeNameFormats);
             writer.WriteStringValue("subjectNameFormatString", SubjectNameFormatString);

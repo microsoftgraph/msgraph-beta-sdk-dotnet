@@ -25,7 +25,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Me.MailFolders.Item.Messages.Item {
-    /// <summary>Provides operations to manage the messages property of the microsoft.graph.mailFolder entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the messages property of the microsoft.graph.mailFolder entity.
+    /// </summary>
     public class MessageItemRequestBuilder {
         /// <summary>Provides operations to manage the attachments property of the microsoft.graph.message entity.</summary>
         public AttachmentsRequestBuilder Attachments { get =>
@@ -165,7 +167,7 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item.Messages.Item {
         /// <summary>
         /// Update the navigation property messages in me
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreatePatchRequestInformation(Microsoft.Graph.Beta.Models.Message body, Action<MessageItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -213,7 +215,7 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item.Messages.Item {
         /// <summary>
         /// Update the navigation property messages in me
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public async Task<Microsoft.Graph.Beta.Models.Message> PatchAsync(Microsoft.Graph.Beta.Models.Message body, Action<MessageItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -225,10 +227,12 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item.Messages.Item {
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Message>(requestInfo, Microsoft.Graph.Beta.Models.Message.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class MessageItemRequestBuilderDeleteRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -236,10 +240,12 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item.Messages.Item {
             /// </summary>
             public MessageItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>The collection of messages in the mailFolder.</summary>
+        /// <summary>
+        /// The collection of messages in the mailFolder.
+        /// </summary>
         public class MessageItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]
@@ -248,10 +254,12 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item.Messages.Item {
             [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class MessageItemRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -261,13 +269,15 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item.Messages.Item {
             /// </summary>
             public MessageItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class MessageItemRequestBuilderPatchRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -275,7 +285,7 @@ namespace Microsoft.Graph.Beta.Me.MailFolders.Item.Messages.Item {
             /// </summary>
             public MessageItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

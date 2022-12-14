@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>The user experience analytics metric history.</summary>
+    /// <summary>
+    /// The user experience analytics metric history.
+    /// </summary>
     public class UserExperienceAnalyticsMetricHistory : Entity, IParsable {
         /// <summary>The user experience analytics device id.</summary>
         public string DeviceId {

@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Role Scope Tag</summary>
+    /// <summary>
+    /// Role Scope Tag
+    /// </summary>
     public class RoleScopeTag : Entity, IParsable {
         /// <summary>The list of assignments for this Role Scope Tag.</summary>
         public List<RoleScopeTagAutoAssignment> Assignments {

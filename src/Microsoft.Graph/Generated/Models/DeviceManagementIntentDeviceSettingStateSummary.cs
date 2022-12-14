@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Entity that represents device setting state summary for an intent</summary>
+    /// <summary>
+    /// Entity that represents device setting state summary for an intent
+    /// </summary>
     public class DeviceManagementIntentDeviceSettingStateSummary : Entity, IParsable {
         /// <summary>Number of compliant devices</summary>
         public int? CompliantCount {

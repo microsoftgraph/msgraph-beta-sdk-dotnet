@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Users.Item.CloudPCs.Item.GetSupportedCloudPcRemoteActions {
-    /// <summary>Provides operations to call the getSupportedCloudPcRemoteActions method.</summary>
+    /// <summary>
+    /// Provides operations to call the getSupportedCloudPcRemoteActions method.
+    /// </summary>
     public class GetSupportedCloudPcRemoteActionsResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<CloudPcRemoteActionCapability> Value {

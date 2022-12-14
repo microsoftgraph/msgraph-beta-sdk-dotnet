@@ -35,6 +35,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<CloudPcDomainJoinConfiguration>("domainJoinConfiguration"); }
             set { BackingStore?.Set("domainJoinConfiguration", value); }
         }
+        /// <summary>The enableSingleSignOn property</summary>
+        public bool? EnableSingleSignOn {
+            get { return BackingStore?.Get<bool?>("enableSingleSignOn"); }
+            set { BackingStore?.Set("enableSingleSignOn", value); }
+        }
         /// <summary>The number of hours to wait before reprovisioning/deprovisioning happens. Read-only.</summary>
         public int? GracePeriodInHours {
             get { return BackingStore?.Get<int?>("gracePeriodInHours"); }
@@ -104,6 +109,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"domainJoinConfiguration", n => { DomainJoinConfiguration = n.GetObjectValue<CloudPcDomainJoinConfiguration>(CloudPcDomainJoinConfiguration.CreateFromDiscriminatorValue); } },
+                {"enableSingleSignOn", n => { EnableSingleSignOn = n.GetBoolValue(); } },
                 {"gracePeriodInHours", n => { GracePeriodInHours = n.GetIntValue(); } },
                 {"imageDisplayName", n => { ImageDisplayName = n.GetStringValue(); } },
                 {"imageId", n => { ImageId = n.GetStringValue(); } },
@@ -129,6 +135,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteObjectValue<CloudPcDomainJoinConfiguration>("domainJoinConfiguration", DomainJoinConfiguration);
+            writer.WriteBoolValue("enableSingleSignOn", EnableSingleSignOn);
             writer.WriteIntValue("gracePeriodInHours", GracePeriodInHours);
             writer.WriteStringValue("imageDisplayName", ImageDisplayName);
             writer.WriteStringValue("imageId", ImageId);

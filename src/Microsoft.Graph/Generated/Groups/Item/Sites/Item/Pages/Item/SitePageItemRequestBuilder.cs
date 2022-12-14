@@ -1,4 +1,7 @@
+using Microsoft.Graph.Beta.Groups.Item.Sites.Item.Pages.Item.CanvasLayout;
+using Microsoft.Graph.Beta.Groups.Item.Sites.Item.Pages.Item.GetWebPartsByPosition;
 using Microsoft.Graph.Beta.Groups.Item.Sites.Item.Pages.Item.Publish;
+using Microsoft.Graph.Beta.Groups.Item.Sites.Item.Pages.Item.WebParts;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
 using Microsoft.Kiota.Abstractions;
@@ -10,8 +13,18 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Pages.Item {
-    /// <summary>Provides operations to manage the pages property of the microsoft.graph.site entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the pages property of the microsoft.graph.site entity.
+    /// </summary>
     public class SitePageItemRequestBuilder {
+        /// <summary>Provides operations to manage the canvasLayout property of the microsoft.graph.sitePage entity.</summary>
+        public CanvasLayoutRequestBuilder CanvasLayout { get =>
+            new CanvasLayoutRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the getWebPartsByPosition method.</summary>
+        public GetWebPartsByPositionRequestBuilder GetWebPartsByPosition { get =>
+            new GetWebPartsByPositionRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
         /// <summary>Provides operations to call the publish method.</summary>
@@ -22,6 +35,10 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Pages.Item {
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>
         private string UrlTemplate { get; set; }
+        /// <summary>Provides operations to manage the webParts property of the microsoft.graph.sitePage entity.</summary>
+        public WebPartsRequestBuilder WebParts { get =>
+            new WebPartsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new SitePageItemRequestBuilder and sets the default values.
         /// </summary>
@@ -90,7 +107,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Pages.Item {
         /// <summary>
         /// Update the navigation property pages in groups
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreatePatchRequestInformation(SitePage body, Action<SitePageItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -138,7 +155,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Pages.Item {
         /// <summary>
         /// Update the navigation property pages in groups
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public async Task<SitePage> PatchAsync(SitePage body, Action<SitePageItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -150,10 +167,12 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Pages.Item {
             };
             return await RequestAdapter.SendAsync<SitePage>(requestInfo, SitePage.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class SitePageItemRequestBuilderDeleteRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -161,10 +180,12 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Pages.Item {
             /// </summary>
             public SitePageItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>The collection of pages in the SitePages list in this site.</summary>
+        /// <summary>
+        /// The collection of pages in the SitePages list in this site.
+        /// </summary>
         public class SitePageItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]
@@ -173,10 +194,12 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Pages.Item {
             [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class SitePageItemRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -186,13 +209,15 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Pages.Item {
             /// </summary>
             public SitePageItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class SitePageItemRequestBuilderPatchRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -200,7 +225,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Pages.Item {
             /// </summary>
             public SitePageItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

@@ -9,7 +9,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.ManagedMobileLobApp {
-    /// <summary>Casts the previous resource to managedMobileLobApp.</summary>
+    /// <summary>
+    /// Casts the previous resource to managedMobileLobApp.
+    /// </summary>
     public class ManagedMobileLobAppRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -77,7 +79,9 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.ManagedMobile
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ManagedMobileLobApp>(requestInfo, Microsoft.Graph.Beta.Models.ManagedMobileLobApp.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Get the item of type microsoft.graph.mobileApp as microsoft.graph.managedMobileLobApp</summary>
+        /// <summary>
+        /// Get the item of type microsoft.graph.mobileApp as microsoft.graph.managedMobileLobApp
+        /// </summary>
         public class ManagedMobileLobAppRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]
@@ -86,10 +90,12 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.ManagedMobile
             [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class ManagedMobileLobAppRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -99,7 +105,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.ManagedMobile
             /// </summary>
             public ManagedMobileLobAppRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

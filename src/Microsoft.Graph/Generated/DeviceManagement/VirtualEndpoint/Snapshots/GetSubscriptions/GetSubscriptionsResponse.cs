@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.GetSubscriptions {
-    /// <summary>Provides operations to call the getSubscriptions method.</summary>
+    /// <summary>
+    /// Provides operations to call the getSubscriptions method.
+    /// </summary>
     public class GetSubscriptionsResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<CloudPcSubscription> Value {

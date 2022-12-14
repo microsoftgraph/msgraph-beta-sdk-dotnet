@@ -6,7 +6,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Users.Item.CalendarGroups.Item.Calendars.Item.Events.Item.TentativelyAccept {
-    /// <summary>Provides operations to call the tentativelyAccept method.</summary>
+    /// <summary>
+    /// Provides operations to call the tentativelyAccept method.
+    /// </summary>
     public class TentativelyAcceptPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {

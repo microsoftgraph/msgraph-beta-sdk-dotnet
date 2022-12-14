@@ -14,8 +14,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The id property</summary>
-        public string Id {
-            get { return BackingStore?.Get<string>("id"); }
+        public Guid? Id {
+            get { return BackingStore?.Get<Guid?>("id"); }
             set { BackingStore?.Set("id", value); }
         }
         /// <summary>The OdataType property</summary>
@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"id", n => { Id = n.GetStringValue(); } },
+                {"id", n => { Id = n.GetGuidValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"properties", n => { Properties = n.GetCollectionOfObjectValues<KeyValue>(KeyValue.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"type", n => { Type = n.GetStringValue(); } },
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("id", Id);
+            writer.WriteGuidValue("id", Id);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteCollectionOfObjectValues<KeyValue>("properties", Properties);
             writer.WriteStringValue("type", Type);

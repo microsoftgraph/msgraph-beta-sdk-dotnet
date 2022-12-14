@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Blocked actions on the company portal as per platform and device ownership types</summary>
+    /// <summary>
+    /// Blocked actions on the company portal as per platform and device ownership types
+    /// </summary>
     public class CompanyPortalBlockedAction : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Action on a device that can be executed in the Company Portal</summary>
         public CompanyPortalAction? Action {

@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>The type for deployment of groups or apps.</summary>
+    /// <summary>
+    /// The type for deployment of groups or apps.
+    /// </summary>
     public class TargetedManagedAppPolicyAssignment : Entity, IParsable {
         /// <summary>Represents source of assignment.</summary>
         public DeviceAndAppManagementAssignmentSource? Source {

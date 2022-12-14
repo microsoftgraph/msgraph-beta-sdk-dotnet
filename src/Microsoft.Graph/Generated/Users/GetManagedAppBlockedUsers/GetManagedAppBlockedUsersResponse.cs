@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Users.GetManagedAppBlockedUsers {
-    /// <summary>Provides operations to call the getManagedAppBlockedUsers method.</summary>
+    /// <summary>
+    /// Provides operations to call the getManagedAppBlockedUsers method.
+    /// </summary>
     public class GetManagedAppBlockedUsersResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<string> Value {

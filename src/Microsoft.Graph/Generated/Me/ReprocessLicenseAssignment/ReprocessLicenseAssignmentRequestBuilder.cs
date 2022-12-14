@@ -9,7 +9,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Me.ReprocessLicenseAssignment {
-    /// <summary>Provides operations to call the reprocessLicenseAssignment method.</summary>
+    /// <summary>
+    /// Provides operations to call the reprocessLicenseAssignment method.
+    /// </summary>
     public class ReprocessLicenseAssignmentRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -65,6 +67,7 @@ namespace Microsoft.Graph.Beta.Me.ReprocessLicenseAssignment {
         }
         /// <summary>
         /// Reprocess all group-based license assignments for the user. To learn more about group-based licensing, see What is group-based licensing in Azure Active Directory. Also see Identify and resolve license assignment problems for a group in Azure Active Directory for more details.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/user-reprocesslicenseassignment?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -76,10 +79,12 @@ namespace Microsoft.Graph.Beta.Me.ReprocessLicenseAssignment {
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.User>(requestInfo, Microsoft.Graph.Beta.Models.User.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class ReprocessLicenseAssignmentRequestBuilderPostRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -87,7 +92,7 @@ namespace Microsoft.Graph.Beta.Me.ReprocessLicenseAssignment {
             /// </summary>
             public ReprocessLicenseAssignmentRequestBuilderPostRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

@@ -16,7 +16,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Groups.Item.Calendar {
-    /// <summary>Provides operations to manage the calendar property of the microsoft.graph.group entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the calendar property of the microsoft.graph.group entity.
+    /// </summary>
     public class CalendarRequestBuilder {
         /// <summary>Provides operations to manage the calendarPermissions property of the microsoft.graph.calendar entity.</summary>
         public CalendarPermissionsRequestBuilder CalendarPermissions { get =>
@@ -116,16 +118,20 @@ namespace Microsoft.Graph.Beta.Groups.Item.Calendar {
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Calendar>(requestInfo, Microsoft.Graph.Beta.Models.Calendar.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>The group&apos;s calendar. Read-only.</summary>
+        /// <summary>
+        /// The group&apos;s calendar. Read-only.
+        /// </summary>
         public class CalendarRequestBuilderGetQueryParameters {
             /// <summary>Select properties to be returned</summary>
             [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class CalendarRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -135,7 +141,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Calendar {
             /// </summary>
             public CalendarRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

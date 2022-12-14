@@ -12,7 +12,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.AgentGroups.Item.Agents.Item.AgentGroups {
-    /// <summary>Provides operations to manage the agentGroups property of the microsoft.graph.onPremisesAgent entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the agentGroups property of the microsoft.graph.onPremisesAgent entity.
+    /// </summary>
     public class AgentGroupsRequestBuilder {
         /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
@@ -94,7 +96,9 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.AgentGroups.Ite
             };
             return await RequestAdapter.SendAsync<OnPremisesAgentGroupCollectionResponse>(requestInfo, OnPremisesAgentGroupCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>List of onPremisesAgentGroups that an onPremisesAgent is assigned to. Read-only. Nullable.</summary>
+        /// <summary>
+        /// List of onPremisesAgentGroups that an onPremisesAgent is assigned to. Read-only. Nullable.
+        /// </summary>
         public class AgentGroupsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -121,10 +125,12 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.AgentGroups.Ite
             [QueryParameter("%24top")]
             public int? Top { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class AgentGroupsRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -134,7 +140,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item.AgentGroups.Ite
             /// </summary>
             public AgentGroupsRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

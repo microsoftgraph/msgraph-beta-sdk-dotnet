@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Remote help - response we provide back to the helper after getting response from pubSub</summary>
+    /// <summary>
+    /// Remote help - response we provide back to the helper after getting response from pubSub
+    /// </summary>
     public class RequestRemoteHelpSessionAccessResponse : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {

@@ -1,11 +1,12 @@
-using Microsoft.Graph.Beta.Models.WindowsUpdates;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>
+    /// Provides operations to manage the admin singleton.
+    /// </summary>
     public class CatalogEntry : Entity, IParsable {
         /// <summary>The date on which the content is no longer available to deploy using the service. Read-only.</summary>
         public DateTimeOffset? DeployableUntilDateTime {

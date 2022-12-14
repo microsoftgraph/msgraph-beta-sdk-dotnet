@@ -9,7 +9,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Tags.Item.Parent {
-    /// <summary>Provides operations to manage the parent property of the microsoft.graph.security.ediscoveryReviewTag entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the parent property of the microsoft.graph.security.ediscoveryReviewTag entity.
+    /// </summary>
     public class ParentRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -77,7 +79,9 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Tags.Item.Par
             };
             return await RequestAdapter.SendAsync<EdiscoveryReviewTag>(requestInfo, EdiscoveryReviewTag.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Returns the parent tag of the specified tag.</summary>
+        /// <summary>
+        /// Returns the parent tag of the specified tag.
+        /// </summary>
         public class ParentRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]
@@ -86,10 +90,12 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Tags.Item.Par
             [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class ParentRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -99,7 +105,7 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Tags.Item.Par
             /// </summary>
             public ParentRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

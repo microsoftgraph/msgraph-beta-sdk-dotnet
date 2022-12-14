@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>The user experience analytics battery health runtime history entity contains the trend of runtime of a device over a period of 30 days</summary>
+    /// <summary>
+    /// The user experience analytics battery health runtime history entity contains the trend of runtime of a device over a period of 30 days
+    /// </summary>
     public class UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory : Entity, IParsable {
         /// <summary>The unique identifier of the device, Intune DeviceID or SCCM device id.</summary>
         public string DeviceId {

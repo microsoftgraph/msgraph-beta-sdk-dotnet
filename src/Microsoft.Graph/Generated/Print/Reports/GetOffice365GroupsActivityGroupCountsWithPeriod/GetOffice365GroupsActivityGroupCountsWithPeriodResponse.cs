@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Print.Reports.GetOffice365GroupsActivityGroupCountsWithPeriod {
-    /// <summary>Provides operations to call the getOffice365GroupsActivityGroupCounts method.</summary>
+    /// <summary>
+    /// Provides operations to call the getOffice365GroupsActivityGroupCounts method.
+    /// </summary>
     public class GetOffice365GroupsActivityGroupCountsWithPeriodResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<Office365GroupsActivityGroupCounts> Value {

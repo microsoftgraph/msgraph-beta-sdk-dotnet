@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Me.ActivateServicePlan {
-    /// <summary>Provides operations to call the activateServicePlan method.</summary>
+    /// <summary>
+    /// Provides operations to call the activateServicePlan method.
+    /// </summary>
     public class ActivateServicePlanPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
@@ -15,13 +17,13 @@ namespace Microsoft.Graph.Beta.Me.ActivateServicePlan {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The servicePlanId property</summary>
-        public string ServicePlanId {
-            get { return BackingStore?.Get<string>("servicePlanId"); }
+        public Guid? ServicePlanId {
+            get { return BackingStore?.Get<Guid?>("servicePlanId"); }
             set { BackingStore?.Set("servicePlanId", value); }
         }
         /// <summary>The skuId property</summary>
-        public string SkuId {
-            get { return BackingStore?.Get<string>("skuId"); }
+        public Guid? SkuId {
+            get { return BackingStore?.Get<Guid?>("skuId"); }
             set { BackingStore?.Set("skuId", value); }
         }
         /// <summary>
@@ -44,8 +46,8 @@ namespace Microsoft.Graph.Beta.Me.ActivateServicePlan {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"servicePlanId", n => { ServicePlanId = n.GetStringValue(); } },
-                {"skuId", n => { SkuId = n.GetStringValue(); } },
+                {"servicePlanId", n => { ServicePlanId = n.GetGuidValue(); } },
+                {"skuId", n => { SkuId = n.GetGuidValue(); } },
             };
         }
         /// <summary>
@@ -54,8 +56,8 @@ namespace Microsoft.Graph.Beta.Me.ActivateServicePlan {
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("servicePlanId", ServicePlanId);
-            writer.WriteStringValue("skuId", SkuId);
+            writer.WriteGuidValue("servicePlanId", ServicePlanId);
+            writer.WriteGuidValue("skuId", SkuId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

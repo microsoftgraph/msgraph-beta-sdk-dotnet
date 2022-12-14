@@ -1,11 +1,12 @@
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>A device app management task.</summary>
+    /// <summary>
+    /// A device app management task.
+    /// </summary>
     public class DeviceAppManagementTask : Entity, IParsable {
         /// <summary>The name or email of the admin this task is assigned to.</summary>
         public string AssignedTo {

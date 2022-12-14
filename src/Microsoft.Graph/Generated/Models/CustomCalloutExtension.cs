@@ -1,4 +1,3 @@
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.IdentityGovernance;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -6,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>
+    /// Provides operations to manage the collection of accessReviewDecision entities.
+    /// </summary>
     public class CustomCalloutExtension : Entity, IParsable {
         /// <summary>Configuration for securing the API call to the logic app. For example, using OAuth client credentials flow.</summary>
         public CustomExtensionAuthenticationConfiguration AuthenticationConfiguration {

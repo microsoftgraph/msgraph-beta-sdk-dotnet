@@ -3,6 +3,7 @@ using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetDailyAggr
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetRealTimeRemoteConnectionLatencyWithCloudPcId;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetRealTimeRemoteConnectionStatusWithCloudPcId;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetRemoteConnectionHistoricalReports;
+using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetSharedUseLicenseUsageReport;
 using Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports.GetTotalAggregatedRemoteConnectionReports;
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
@@ -15,7 +16,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports {
-    /// <summary>Provides operations to manage the reports property of the microsoft.graph.virtualEndpoint entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the reports property of the microsoft.graph.virtualEndpoint entity.
+    /// </summary>
     public class ReportsRequestBuilder {
         /// <summary>Provides operations to manage the exportJobs property of the microsoft.graph.cloudPcReports entity.</summary>
         public ExportJobsRequestBuilder ExportJobs { get =>
@@ -28,6 +31,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports {
         /// <summary>Provides operations to call the getRemoteConnectionHistoricalReports method.</summary>
         public GetRemoteConnectionHistoricalReportsRequestBuilder GetRemoteConnectionHistoricalReports { get =>
             new GetRemoteConnectionHistoricalReportsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the getSharedUseLicenseUsageReport method.</summary>
+        public GetSharedUseLicenseUsageReportRequestBuilder GetSharedUseLicenseUsageReport { get =>
+            new GetSharedUseLicenseUsageReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getTotalAggregatedRemoteConnectionReports method.</summary>
         public GetTotalAggregatedRemoteConnectionReportsRequestBuilder GetTotalAggregatedRemoteConnectionReports { get =>
@@ -107,7 +114,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports {
         /// <summary>
         /// Update the navigation property reports in deviceManagement
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreatePatchRequestInformation(CloudPcReports body, Action<ReportsRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -171,7 +178,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports {
         /// <summary>
         /// Update the navigation property reports in deviceManagement
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public async Task<CloudPcReports> PatchAsync(CloudPcReports body, Action<ReportsRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -183,10 +190,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports {
             };
             return await RequestAdapter.SendAsync<CloudPcReports>(requestInfo, CloudPcReports.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class ReportsRequestBuilderDeleteRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -194,10 +203,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports {
             /// </summary>
             public ReportsRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Cloud PC related reports.</summary>
+        /// <summary>
+        /// Cloud PC related reports.
+        /// </summary>
         public class ReportsRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]
@@ -206,10 +217,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports {
             [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class ReportsRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -219,13 +232,15 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports {
             /// </summary>
             public ReportsRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class ReportsRequestBuilderPatchRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -233,7 +248,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Reports {
             /// </summary>
             public ReportsRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

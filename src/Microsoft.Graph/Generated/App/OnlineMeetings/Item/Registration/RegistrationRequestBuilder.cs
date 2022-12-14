@@ -10,7 +10,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.App.OnlineMeetings.Item.Registration {
-    /// <summary>Provides operations to manage the registration property of the microsoft.graph.onlineMeeting entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the registration property of the microsoft.graph.onlineMeeting entity.
+    /// </summary>
     public class RegistrationRequestBuilder {
         /// <summary>Provides operations to manage the customQuestions property of the microsoft.graph.meetingRegistration entity.</summary>
         public CustomQuestionsRequestBuilder CustomQuestions { get =>
@@ -90,7 +92,7 @@ namespace Microsoft.Graph.Beta.App.OnlineMeetings.Item.Registration {
         /// <summary>
         /// Update the details of a meetingRegistration object assciated with an onlineMeeting on behalf of the organizer.
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreatePatchRequestInformation(MeetingRegistration body, Action<RegistrationRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -111,6 +113,7 @@ namespace Microsoft.Graph.Beta.App.OnlineMeetings.Item.Registration {
         }
         /// <summary>
         /// Disable and delete the externalMeetingRegistration of an onlineMeeting.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/externalmeetingregistration-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -124,6 +127,7 @@ namespace Microsoft.Graph.Beta.App.OnlineMeetings.Item.Registration {
         }
         /// <summary>
         /// Get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/meetingregistration-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -137,8 +141,9 @@ namespace Microsoft.Graph.Beta.App.OnlineMeetings.Item.Registration {
         }
         /// <summary>
         /// Update the details of a meetingRegistration object assciated with an onlineMeeting on behalf of the organizer.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/meetingregistration-update?view=graph-rest-1.0" />
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public async Task<MeetingRegistration> PatchAsync(MeetingRegistration body, Action<RegistrationRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -150,10 +155,12 @@ namespace Microsoft.Graph.Beta.App.OnlineMeetings.Item.Registration {
             };
             return await RequestAdapter.SendAsync<MeetingRegistration>(requestInfo, MeetingRegistration.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class RegistrationRequestBuilderDeleteRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -161,10 +168,12 @@ namespace Microsoft.Graph.Beta.App.OnlineMeetings.Item.Registration {
             /// </summary>
             public RegistrationRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.</summary>
+        /// <summary>
+        /// Get the meetingRegistration details associated with an onlineMeeting on behalf of the organizer.
+        /// </summary>
         public class RegistrationRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]
@@ -173,10 +182,12 @@ namespace Microsoft.Graph.Beta.App.OnlineMeetings.Item.Registration {
             [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class RegistrationRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -186,13 +197,15 @@ namespace Microsoft.Graph.Beta.App.OnlineMeetings.Item.Registration {
             /// </summary>
             public RegistrationRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class RegistrationRequestBuilderPatchRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -200,7 +213,7 @@ namespace Microsoft.Graph.Beta.App.OnlineMeetings.Item.Registration {
             /// </summary>
             public RegistrationRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

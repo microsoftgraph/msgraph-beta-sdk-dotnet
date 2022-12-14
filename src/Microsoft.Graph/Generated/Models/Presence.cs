@@ -20,6 +20,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OutOfOfficeSettings>("outOfOfficeSettings"); }
             set { BackingStore?.Set("outOfOfficeSettings", value); }
         }
+        /// <summary>The statusMessage property</summary>
+        public PresenceStatusMessage StatusMessage {
+            get { return BackingStore?.Get<PresenceStatusMessage>("statusMessage"); }
+            set { BackingStore?.Set("statusMessage", value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -36,6 +41,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"activity", n => { Activity = n.GetStringValue(); } },
                 {"availability", n => { Availability = n.GetStringValue(); } },
                 {"outOfOfficeSettings", n => { OutOfOfficeSettings = n.GetObjectValue<Microsoft.Graph.Beta.Models.OutOfOfficeSettings>(Microsoft.Graph.Beta.Models.OutOfOfficeSettings.CreateFromDiscriminatorValue); } },
+                {"statusMessage", n => { StatusMessage = n.GetObjectValue<PresenceStatusMessage>(PresenceStatusMessage.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -48,6 +54,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("activity", Activity);
             writer.WriteStringValue("availability", Availability);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.OutOfOfficeSettings>("outOfOfficeSettings", OutOfOfficeSettings);
+            writer.WriteObjectValue<PresenceStatusMessage>("statusMessage", StatusMessage);
         }
     }
 }

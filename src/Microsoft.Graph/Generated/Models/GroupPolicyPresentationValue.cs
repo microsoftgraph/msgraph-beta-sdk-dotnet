@@ -1,11 +1,12 @@
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>The base presentation value entity that stores the value for a single group policy presentation.</summary>
+    /// <summary>
+    /// The base presentation value entity that stores the value for a single group policy presentation.
+    /// </summary>
     public class GroupPolicyPresentationValue : Entity, IParsable {
         /// <summary>The date and time the object was created.</summary>
         public DateTimeOffset? CreatedDateTime {

@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>
+    /// Provides operations to manage the collection of accessReviewDecision entities.
+    /// </summary>
     public class DelegatedAdminRelationship : Entity, IParsable {
         /// <summary>The access assignments associated with the delegated admin relationship.</summary>
         public List<DelegatedAdminAccessAssignment> AccessAssignments {

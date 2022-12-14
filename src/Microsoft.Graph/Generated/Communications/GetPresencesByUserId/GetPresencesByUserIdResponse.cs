@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Communications.GetPresencesByUserId {
-    /// <summary>Provides operations to call the getPresencesByUserId method.</summary>
+    /// <summary>
+    /// Provides operations to call the getPresencesByUserId method.
+    /// </summary>
     public class GetPresencesByUserIdResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<Microsoft.Graph.Beta.Models.Presence> Value {

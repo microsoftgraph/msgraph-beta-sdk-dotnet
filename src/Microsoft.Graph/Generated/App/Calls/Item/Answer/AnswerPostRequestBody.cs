@@ -6,7 +6,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.App.Calls.Item.Answer {
-    /// <summary>Provides operations to call the answer method.</summary>
+    /// <summary>
+    /// Provides operations to call the answer method.
+    /// </summary>
     public class AnswerPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>The acceptedModalities property</summary>
         public List<Modality?> AcceptedModalities {

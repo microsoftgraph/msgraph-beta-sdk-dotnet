@@ -8,7 +8,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Organization.Item.SetMobileDeviceManagementAuthority {
-    /// <summary>Provides operations to call the setMobileDeviceManagementAuthority method.</summary>
+    /// <summary>
+    /// Provides operations to call the setMobileDeviceManagementAuthority method.
+    /// </summary>
     public class SetMobileDeviceManagementAuthorityRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -75,10 +77,12 @@ namespace Microsoft.Graph.Beta.Organization.Item.SetMobileDeviceManagementAuthor
             };
             return await RequestAdapter.SendAsync<SetMobileDeviceManagementAuthorityResponse>(requestInfo, SetMobileDeviceManagementAuthorityResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class SetMobileDeviceManagementAuthorityRequestBuilderPostRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -86,7 +90,7 @@ namespace Microsoft.Graph.Beta.Organization.Item.SetMobileDeviceManagementAuthor
             /// </summary>
             public SetMobileDeviceManagementAuthorityRequestBuilderPostRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

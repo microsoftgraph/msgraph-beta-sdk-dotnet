@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>
+    /// Casts the previous resource to device.
+    /// </summary>
     public class Command : Entity, IParsable {
         /// <summary>The appServiceName property</summary>
         public string AppServiceName {

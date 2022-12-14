@@ -10,6 +10,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("enableMEMAutoEnroll"); }
             set { BackingStore?.Set("enableMEMAutoEnroll", value); }
         }
+        /// <summary>The enableSingleSignOn property</summary>
+        public bool? EnableSingleSignOn {
+            get { return BackingStore?.Get<bool?>("enableSingleSignOn"); }
+            set { BackingStore?.Set("enableSingleSignOn", value); }
+        }
         /// <summary>The version of the operating system (OS) to provision on Cloud PCs. The possible values are: windows10, windows11, unknownFutureValue.</summary>
         public CloudPcOperatingSystem? OsVersion {
             get { return BackingStore?.Get<CloudPcOperatingSystem?>("osVersion"); }
@@ -39,6 +44,7 @@ namespace Microsoft.Graph.Beta.Models {
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"enableMEMAutoEnroll", n => { EnableMEMAutoEnroll = n.GetBoolValue(); } },
+                {"enableSingleSignOn", n => { EnableSingleSignOn = n.GetBoolValue(); } },
                 {"osVersion", n => { OsVersion = n.GetEnumValue<CloudPcOperatingSystem>(); } },
                 {"userAccountType", n => { UserAccountType = n.GetEnumValue<CloudPcUserAccountType>(); } },
                 {"windowsSettings", n => { WindowsSettings = n.GetObjectValue<CloudPcWindowsSettings>(CloudPcWindowsSettings.CreateFromDiscriminatorValue); } },
@@ -52,6 +58,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteBoolValue("enableMEMAutoEnroll", EnableMEMAutoEnroll);
+            writer.WriteBoolValue("enableSingleSignOn", EnableSingleSignOn);
             writer.WriteEnumValue<CloudPcOperatingSystem>("osVersion", OsVersion);
             writer.WriteEnumValue<CloudPcUserAccountType>("userAccountType", UserAccountType);
             writer.WriteObjectValue<CloudPcWindowsSettings>("windowsSettings", WindowsSettings);

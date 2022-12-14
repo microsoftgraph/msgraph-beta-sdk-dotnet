@@ -8,7 +8,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Users.Item.ContactFolders.Item.Contacts.Delta {
-    /// <summary>Provides operations to call the delta method.</summary>
+    /// <summary>
+    /// Provides operations to call the delta method.
+    /// </summary>
     public class DeltaRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -65,6 +67,7 @@ namespace Microsoft.Graph.Beta.Users.Item.ContactFolders.Item.Contacts.Delta {
         }
         /// <summary>
         /// Get a set of contacts that have been added, deleted, or updated in a specified folder. A **delta** function call for contacts in a folder is similar to a GET request, except that by appropriately applying state tokens in one or more of these calls, you can query for incremental changes in the contacts in that folder. This allows you to maintain and synchronize a local store of a user&apos;s contacts without having to fetch the entire set of contacts from the server every time.  
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/contact-delta?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -76,7 +79,9 @@ namespace Microsoft.Graph.Beta.Users.Item.ContactFolders.Item.Contacts.Delta {
             };
             return await RequestAdapter.SendAsync<DeltaResponse>(requestInfo, DeltaResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Get a set of contacts that have been added, deleted, or updated in a specified folder. A **delta** function call for contacts in a folder is similar to a GET request, except that by appropriately applying state tokens in one or more of these calls, you can query for incremental changes in the contacts in that folder. This allows you to maintain and synchronize a local store of a user&apos;s contacts without having to fetch the entire set of contacts from the server every time.  </summary>
+        /// <summary>
+        /// Get a set of contacts that have been added, deleted, or updated in a specified folder. A **delta** function call for contacts in a folder is similar to a GET request, except that by appropriately applying state tokens in one or more of these calls, you can query for incremental changes in the contacts in that folder. This allows you to maintain and synchronize a local store of a user&apos;s contacts without having to fetch the entire set of contacts from the server every time.  
+        /// </summary>
         public class DeltaRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -100,10 +105,12 @@ namespace Microsoft.Graph.Beta.Users.Item.ContactFolders.Item.Contacts.Delta {
             [QueryParameter("%24top")]
             public int? Top { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class DeltaRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -113,7 +120,7 @@ namespace Microsoft.Graph.Beta.Users.Item.ContactFolders.Item.Contacts.Delta {
             /// </summary>
             public DeltaRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

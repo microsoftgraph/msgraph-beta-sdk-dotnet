@@ -17,7 +17,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Me.Authentication.PasswordlessMicrosoftAuthenticatorMethods.Item.Device.TransitiveMemberOf {
-    /// <summary>Provides operations to manage the transitiveMemberOf property of the microsoft.graph.device entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the transitiveMemberOf property of the microsoft.graph.device entity.
+    /// </summary>
     public class TransitiveMemberOfRequestBuilder {
         /// <summary>Casts the previous resource to application.</summary>
         public ApplicationRequestBuilder Application { get =>
@@ -108,6 +110,7 @@ namespace Microsoft.Graph.Beta.Me.Authentication.PasswordlessMicrosoftAuthentica
         }
         /// <summary>
         /// Groups and administrative units that this device is a member of. This operation is transitive. Supports $expand.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/device-list-transitivememberof?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -119,7 +122,9 @@ namespace Microsoft.Graph.Beta.Me.Authentication.PasswordlessMicrosoftAuthentica
             };
             return await RequestAdapter.SendAsync<DirectoryObjectCollectionResponse>(requestInfo, DirectoryObjectCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Groups and administrative units that this device is a member of. This operation is transitive. Supports $expand.</summary>
+        /// <summary>
+        /// Groups and administrative units that this device is a member of. This operation is transitive. Supports $expand.
+        /// </summary>
         public class TransitiveMemberOfRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -146,10 +151,12 @@ namespace Microsoft.Graph.Beta.Me.Authentication.PasswordlessMicrosoftAuthentica
             [QueryParameter("%24top")]
             public int? Top { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class TransitiveMemberOfRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -159,7 +166,7 @@ namespace Microsoft.Graph.Beta.Me.Authentication.PasswordlessMicrosoftAuthentica
             /// </summary>
             public TransitiveMemberOfRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

@@ -15,7 +15,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Users.Item.Planner {
-    /// <summary>Provides operations to manage the planner property of the microsoft.graph.user entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the planner property of the microsoft.graph.user entity.
+    /// </summary>
     public class PlannerRequestBuilder {
         /// <summary>Provides operations to manage the all property of the microsoft.graph.plannerUser entity.</summary>
         public AllRequestBuilder All { get =>
@@ -115,7 +117,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Planner {
         /// <summary>
         /// Update the properties of a plannerUser object. You can use this operation to add or remove plans from a user&apos;s favorite plans list, and to indicate which plans the user has recently viewed.
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreatePatchRequestInformation(PlannerUser body, Action<PlannerRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -149,6 +151,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Planner {
         }
         /// <summary>
         /// Retrieve the properties and relationships of a plannerUser object. The returned properties include the user&apos;s favorite plans and recently viewed plans. 
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/planneruser-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -162,8 +165,9 @@ namespace Microsoft.Graph.Beta.Users.Item.Planner {
         }
         /// <summary>
         /// Update the properties of a plannerUser object. You can use this operation to add or remove plans from a user&apos;s favorite plans list, and to indicate which plans the user has recently viewed.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/planneruser-update?view=graph-rest-1.0" />
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public async Task<PlannerUser> PatchAsync(PlannerUser body, Action<PlannerRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -175,10 +179,12 @@ namespace Microsoft.Graph.Beta.Users.Item.Planner {
             };
             return await RequestAdapter.SendAsync<PlannerUser>(requestInfo, PlannerUser.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class PlannerRequestBuilderDeleteRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -186,10 +192,12 @@ namespace Microsoft.Graph.Beta.Users.Item.Planner {
             /// </summary>
             public PlannerRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Retrieve the properties and relationships of a plannerUser object. The returned properties include the user&apos;s favorite plans and recently viewed plans. </summary>
+        /// <summary>
+        /// Retrieve the properties and relationships of a plannerUser object. The returned properties include the user&apos;s favorite plans and recently viewed plans. 
+        /// </summary>
         public class PlannerRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]
@@ -198,10 +206,12 @@ namespace Microsoft.Graph.Beta.Users.Item.Planner {
             [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class PlannerRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -211,13 +221,15 @@ namespace Microsoft.Graph.Beta.Users.Item.Planner {
             /// </summary>
             public PlannerRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class PlannerRequestBuilderPatchRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -225,7 +237,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Planner {
             /// </summary>
             public PlannerRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

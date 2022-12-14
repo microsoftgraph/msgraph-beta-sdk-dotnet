@@ -12,7 +12,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.DeviceManagement.DeviceManagementScripts {
-    /// <summary>Provides operations to manage the deviceManagementScripts property of the microsoft.graph.deviceManagement entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the deviceManagementScripts property of the microsoft.graph.deviceManagement entity.
+    /// </summary>
     public class DeviceManagementScriptsRequestBuilder {
         /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
@@ -84,7 +86,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceManagementScripts {
         /// <summary>
         /// Create new navigation property to deviceManagementScripts for deviceManagement
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreatePostRequestInformation(DeviceManagementScript body, Action<DeviceManagementScriptsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -119,7 +121,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceManagementScripts {
         /// <summary>
         /// Create new navigation property to deviceManagementScripts for deviceManagement
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public async Task<DeviceManagementScript> PostAsync(DeviceManagementScript body, Action<DeviceManagementScriptsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -131,7 +133,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceManagementScripts {
             };
             return await RequestAdapter.SendAsync<DeviceManagementScript>(requestInfo, DeviceManagementScript.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>The list of device management scripts associated with the tenant.</summary>
+        /// <summary>
+        /// The list of device management scripts associated with the tenant.
+        /// </summary>
         public class DeviceManagementScriptsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -158,10 +162,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceManagementScripts {
             [QueryParameter("%24top")]
             public int? Top { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class DeviceManagementScriptsRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -171,13 +177,15 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceManagementScripts {
             /// </summary>
             public DeviceManagementScriptsRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class DeviceManagementScriptsRequestBuilderPostRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -185,7 +193,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceManagementScripts {
             /// </summary>
             public DeviceManagementScriptsRequestBuilderPostRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

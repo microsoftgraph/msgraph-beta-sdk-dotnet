@@ -12,7 +12,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Users.Item.ContactFolders {
-    /// <summary>Provides operations to manage the contactFolders property of the microsoft.graph.user entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the contactFolders property of the microsoft.graph.user entity.
+    /// </summary>
     public class ContactFoldersRequestBuilder {
         /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
@@ -80,7 +82,7 @@ namespace Microsoft.Graph.Beta.Users.Item.ContactFolders {
         /// <summary>
         /// Create a new contactFolder under the user&apos;s default contacts folder. You can also create a new contactfolder as a child of any specified contact folder.
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreatePostRequestInformation(ContactFolder body, Action<ContactFoldersRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -107,6 +109,7 @@ namespace Microsoft.Graph.Beta.Users.Item.ContactFolders {
         }
         /// <summary>
         /// Get all the contact folders in the signed-in user&apos;s mailbox.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/user-list-contactfolders?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,8 +123,9 @@ namespace Microsoft.Graph.Beta.Users.Item.ContactFolders {
         }
         /// <summary>
         /// Create a new contactFolder under the user&apos;s default contacts folder. You can also create a new contactfolder as a child of any specified contact folder.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/user-post-contactfolders?view=graph-rest-1.0" />
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public async Task<ContactFolder> PostAsync(ContactFolder body, Action<ContactFoldersRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -133,7 +137,9 @@ namespace Microsoft.Graph.Beta.Users.Item.ContactFolders {
             };
             return await RequestAdapter.SendAsync<ContactFolder>(requestInfo, ContactFolder.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Get all the contact folders in the signed-in user&apos;s mailbox.</summary>
+        /// <summary>
+        /// Get all the contact folders in the signed-in user&apos;s mailbox.
+        /// </summary>
         public class ContactFoldersRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -154,10 +160,12 @@ namespace Microsoft.Graph.Beta.Users.Item.ContactFolders {
             [QueryParameter("%24top")]
             public int? Top { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class ContactFoldersRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -167,13 +175,15 @@ namespace Microsoft.Graph.Beta.Users.Item.ContactFolders {
             /// </summary>
             public ContactFoldersRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class ContactFoldersRequestBuilderPostRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -181,7 +191,7 @@ namespace Microsoft.Graph.Beta.Users.Item.ContactFolders {
             /// </summary>
             public ContactFoldersRequestBuilderPostRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

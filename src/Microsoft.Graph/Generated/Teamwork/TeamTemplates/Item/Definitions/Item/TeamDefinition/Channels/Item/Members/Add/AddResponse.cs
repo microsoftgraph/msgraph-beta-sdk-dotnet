@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.Channels.Item.Members.Add {
-    /// <summary>Provides operations to call the add method.</summary>
+    /// <summary>
+    /// Provides operations to call the add method.
+    /// </summary>
     public class AddResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<ActionResultPart> Value {

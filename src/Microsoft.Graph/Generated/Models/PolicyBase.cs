@@ -1,11 +1,12 @@
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>
+    /// Casts the previous resource to application.
+    /// </summary>
     public class PolicyBase : DirectoryObject, IParsable {
         /// <summary>Description for this policy. Required.</summary>
         public string Description {

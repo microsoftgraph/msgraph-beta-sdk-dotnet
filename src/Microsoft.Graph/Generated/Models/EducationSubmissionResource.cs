@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>
+    /// Provides operations to manage the collection of accessReviewDecision entities.
+    /// </summary>
     public class EducationSubmissionResource : Entity, IParsable {
         /// <summary>Pointer to the assignment from which this resource was copied. If this is null, the student uploaded the resource.</summary>
         public string AssignmentResourceUrl {

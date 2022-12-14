@@ -14,8 +14,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>A collection of the unique identifiers for plans that have been disabled.</summary>
-        public List<string> DisabledPlans {
-            get { return BackingStore?.Get<List<string>>("disabledPlans"); }
+        public List<Guid?> DisabledPlans {
+            get { return BackingStore?.Get<List<Guid?>>("disabledPlans"); }
             set { BackingStore?.Set("disabledPlans", value); }
         }
         /// <summary>The OdataType property</summary>
@@ -24,8 +24,8 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
         /// <summary>The unique identifier for the SKU.</summary>
-        public string SkuId {
-            get { return BackingStore?.Get<string>("skuId"); }
+        public Guid? SkuId {
+            get { return BackingStore?.Get<Guid?>("skuId"); }
             set { BackingStore?.Set("skuId", value); }
         }
         /// <summary>
@@ -48,9 +48,9 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"disabledPlans", n => { DisabledPlans = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"disabledPlans", n => { DisabledPlans = n.GetCollectionOfPrimitiveValues<Guid?>()?.ToList(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"skuId", n => { SkuId = n.GetStringValue(); } },
+                {"skuId", n => { SkuId = n.GetGuidValue(); } },
             };
         }
         /// <summary>
@@ -59,9 +59,9 @@ namespace Microsoft.Graph.Beta.Models {
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfPrimitiveValues<string>("disabledPlans", DisabledPlans);
+            writer.WriteCollectionOfPrimitiveValues<Guid?>("disabledPlans", DisabledPlans);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteStringValue("skuId", SkuId);
+            writer.WriteGuidValue("skuId", SkuId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

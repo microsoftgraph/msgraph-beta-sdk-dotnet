@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>The embedded SIM activation code as provided by the mobile operator.</summary>
+    /// <summary>
+    /// The embedded SIM activation code as provided by the mobile operator.
+    /// </summary>
     public class EmbeddedSIMActivationCode : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {

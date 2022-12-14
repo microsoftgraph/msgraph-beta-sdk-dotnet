@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Device Access Rules in Exchange.</summary>
+    /// <summary>
+    /// Device Access Rules in Exchange.
+    /// </summary>
     public class DeviceManagementExchangeAccessRule : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Access Level in Exchange.</summary>
         public DeviceManagementExchangeAccessLevel? AccessLevel {

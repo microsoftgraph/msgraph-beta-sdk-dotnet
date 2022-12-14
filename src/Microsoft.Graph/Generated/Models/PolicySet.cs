@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>A class containing the properties used for PolicySet.</summary>
+    /// <summary>
+    /// A class containing the properties used for PolicySet.
+    /// </summary>
     public class PolicySet : Entity, IParsable {
         /// <summary>Assignments of the PolicySet.</summary>
         public List<PolicySetAssignment> Assignments {

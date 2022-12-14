@@ -11,7 +11,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Reports.MonthlyPrintUsageByUser {
-    /// <summary>Provides operations to manage the monthlyPrintUsageByUser property of the microsoft.graph.reportRoot entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the monthlyPrintUsageByUser property of the microsoft.graph.reportRoot entity.
+    /// </summary>
     public class MonthlyPrintUsageByUserRequestBuilder {
         /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
@@ -79,7 +81,7 @@ namespace Microsoft.Graph.Beta.Reports.MonthlyPrintUsageByUser {
         /// <summary>
         /// Create new navigation property to monthlyPrintUsageByUser for reports
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreatePostRequestInformation(PrintUsageByUser body, Action<MonthlyPrintUsageByUserRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -100,6 +102,7 @@ namespace Microsoft.Graph.Beta.Reports.MonthlyPrintUsageByUser {
         }
         /// <summary>
         /// Retrieve a list of monthly print usage summaries, grouped by user.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/reportroot-list-monthlyprintusagebyuser?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -114,7 +117,7 @@ namespace Microsoft.Graph.Beta.Reports.MonthlyPrintUsageByUser {
         /// <summary>
         /// Create new navigation property to monthlyPrintUsageByUser for reports
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public async Task<PrintUsageByUser> PostAsync(PrintUsageByUser body, Action<MonthlyPrintUsageByUserRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -126,7 +129,9 @@ namespace Microsoft.Graph.Beta.Reports.MonthlyPrintUsageByUser {
             };
             return await RequestAdapter.SendAsync<PrintUsageByUser>(requestInfo, PrintUsageByUser.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Retrieve a list of monthly print usage summaries, grouped by user.</summary>
+        /// <summary>
+        /// Retrieve a list of monthly print usage summaries, grouped by user.
+        /// </summary>
         public class MonthlyPrintUsageByUserRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -153,10 +158,12 @@ namespace Microsoft.Graph.Beta.Reports.MonthlyPrintUsageByUser {
             [QueryParameter("%24top")]
             public int? Top { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class MonthlyPrintUsageByUserRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -166,13 +173,15 @@ namespace Microsoft.Graph.Beta.Reports.MonthlyPrintUsageByUser {
             /// </summary>
             public MonthlyPrintUsageByUserRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class MonthlyPrintUsageByUserRequestBuilderPostRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -180,7 +189,7 @@ namespace Microsoft.Graph.Beta.Reports.MonthlyPrintUsageByUser {
             /// </summary>
             public MonthlyPrintUsageByUserRequestBuilderPostRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

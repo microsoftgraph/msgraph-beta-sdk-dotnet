@@ -11,7 +11,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Policies.ServicePrincipalCreationPolicies.Item.Includes {
-    /// <summary>Provides operations to manage the includes property of the microsoft.graph.servicePrincipalCreationPolicy entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the includes property of the microsoft.graph.servicePrincipalCreationPolicy entity.
+    /// </summary>
     public class IncludesRequestBuilder {
         /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
@@ -79,7 +81,7 @@ namespace Microsoft.Graph.Beta.Policies.ServicePrincipalCreationPolicies.Item.In
         /// <summary>
         /// Create new navigation property to includes for policies
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreatePostRequestInformation(ServicePrincipalCreationConditionSet body, Action<IncludesRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -114,7 +116,7 @@ namespace Microsoft.Graph.Beta.Policies.ServicePrincipalCreationPolicies.Item.In
         /// <summary>
         /// Create new navigation property to includes for policies
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public async Task<ServicePrincipalCreationConditionSet> PostAsync(ServicePrincipalCreationConditionSet body, Action<IncludesRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -126,7 +128,9 @@ namespace Microsoft.Graph.Beta.Policies.ServicePrincipalCreationPolicies.Item.In
             };
             return await RequestAdapter.SendAsync<ServicePrincipalCreationConditionSet>(requestInfo, ServicePrincipalCreationConditionSet.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Get includes from policies</summary>
+        /// <summary>
+        /// Get includes from policies
+        /// </summary>
         public class IncludesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -153,10 +157,12 @@ namespace Microsoft.Graph.Beta.Policies.ServicePrincipalCreationPolicies.Item.In
             [QueryParameter("%24top")]
             public int? Top { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class IncludesRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -166,13 +172,15 @@ namespace Microsoft.Graph.Beta.Policies.ServicePrincipalCreationPolicies.Item.In
             /// </summary>
             public IncludesRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class IncludesRequestBuilderPostRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -180,7 +188,7 @@ namespace Microsoft.Graph.Beta.Policies.ServicePrincipalCreationPolicies.Item.In
             /// </summary>
             public IncludesRequestBuilderPostRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

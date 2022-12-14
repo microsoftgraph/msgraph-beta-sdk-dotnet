@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Communications.Calls.Item.Participants.Item.StopHoldMusic {
-    /// <summary>Provides operations to call the stopHoldMusic method.</summary>
+    /// <summary>
+    /// Provides operations to call the stopHoldMusic method.
+    /// </summary>
     public class StopHoldMusicPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {

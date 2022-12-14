@@ -13,7 +13,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.PermissionGrants {
-    /// <summary>Provides operations to manage the collection of resourceSpecificPermissionGrant entities.</summary>
+    /// <summary>
+    /// Provides operations to manage the collection of resourceSpecificPermissionGrant entities.
+    /// </summary>
     public class PermissionGrantsRequestBuilder {
         /// <summary>Provides operations to call the getByIds method.</summary>
         public GetByIdsRequestBuilder GetByIds { get =>
@@ -89,7 +91,7 @@ namespace Microsoft.Graph.Beta.PermissionGrants {
         /// <summary>
         /// Add new entity to permissionGrants
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreatePostRequestInformation(ResourceSpecificPermissionGrant body, Action<PermissionGrantsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -124,7 +126,7 @@ namespace Microsoft.Graph.Beta.PermissionGrants {
         /// <summary>
         /// Add new entity to permissionGrants
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public async Task<ResourceSpecificPermissionGrant> PostAsync(ResourceSpecificPermissionGrant body, Action<PermissionGrantsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -136,7 +138,9 @@ namespace Microsoft.Graph.Beta.PermissionGrants {
             };
             return await RequestAdapter.SendAsync<ResourceSpecificPermissionGrant>(requestInfo, ResourceSpecificPermissionGrant.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Get entities from permissionGrants</summary>
+        /// <summary>
+        /// Get entities from permissionGrants
+        /// </summary>
         public class PermissionGrantsRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]
@@ -154,10 +158,12 @@ namespace Microsoft.Graph.Beta.PermissionGrants {
             [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class PermissionGrantsRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -167,13 +173,15 @@ namespace Microsoft.Graph.Beta.PermissionGrants {
             /// </summary>
             public PermissionGrantsRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class PermissionGrantsRequestBuilderPostRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -181,7 +189,7 @@ namespace Microsoft.Graph.Beta.PermissionGrants {
             /// </summary>
             public PermissionGrantsRequestBuilderPostRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

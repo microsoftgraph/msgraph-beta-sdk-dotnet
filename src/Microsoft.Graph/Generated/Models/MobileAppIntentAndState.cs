@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>MobileApp Intent and Install State for a given device.</summary>
+    /// <summary>
+    /// MobileApp Intent and Install State for a given device.
+    /// </summary>
     public class MobileAppIntentAndState : Entity, IParsable {
         /// <summary>Device identifier created or collected by Intune.</summary>
         public string ManagedDeviceIdentifier {

@@ -34,8 +34,8 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("key", value); }
         }
         /// <summary>The unique identifier (GUID) for the key.</summary>
-        public string KeyId {
-            get { return BackingStore?.Get<string>("keyId"); }
+        public Guid? KeyId {
+            get { return BackingStore?.Get<Guid?>("keyId"); }
             set { BackingStore?.Set("keyId", value); }
         }
         /// <summary>The OdataType property</summary>
@@ -87,7 +87,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"endDateTime", n => { EndDateTime = n.GetDateTimeOffsetValue(); } },
                 {"key", n => { Key = n.GetByteArrayValue(); } },
-                {"keyId", n => { KeyId = n.GetStringValue(); } },
+                {"keyId", n => { KeyId = n.GetGuidValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"startDateTime", n => { StartDateTime = n.GetDateTimeOffsetValue(); } },
                 {"thumbprint", n => { Thumbprint = n.GetStringValue(); } },
@@ -105,7 +105,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteDateTimeOffsetValue("endDateTime", EndDateTime);
             writer.WriteByteArrayValue("key", Key);
-            writer.WriteStringValue("keyId", KeyId);
+            writer.WriteGuidValue("keyId", KeyId);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteDateTimeOffsetValue("startDateTime", StartDateTime);
             writer.WriteStringValue("thumbprint", Thumbprint);

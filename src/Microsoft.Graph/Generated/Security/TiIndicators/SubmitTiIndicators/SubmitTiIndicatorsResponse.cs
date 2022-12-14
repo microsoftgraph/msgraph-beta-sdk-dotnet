@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Security.TiIndicators.SubmitTiIndicators {
-    /// <summary>Provides operations to call the submitTiIndicators method.</summary>
+    /// <summary>
+    /// Provides operations to call the submitTiIndicators method.
+    /// </summary>
     public class SubmitTiIndicatorsResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<TiIndicator> Value {

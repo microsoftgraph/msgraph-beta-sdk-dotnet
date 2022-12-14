@@ -12,7 +12,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Education.Schools.Item.Users {
-    /// <summary>Provides operations to manage the users property of the microsoft.graph.educationSchool entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the users property of the microsoft.graph.educationSchool entity.
+    /// </summary>
     public class UsersRequestBuilder {
         /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
@@ -83,6 +85,7 @@ namespace Microsoft.Graph.Beta.Education.Schools.Item.Users {
         }
         /// <summary>
         /// Retrieve a list of users at a school.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/educationschool-list-users?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -94,7 +97,9 @@ namespace Microsoft.Graph.Beta.Education.Schools.Item.Users {
             };
             return await RequestAdapter.SendAsync<EducationUserCollectionResponse>(requestInfo, EducationUserCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Retrieve a list of users at a school.</summary>
+        /// <summary>
+        /// Retrieve a list of users at a school.
+        /// </summary>
         public class UsersRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -121,10 +126,12 @@ namespace Microsoft.Graph.Beta.Education.Schools.Item.Users {
             [QueryParameter("%24top")]
             public int? Top { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class UsersRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -134,7 +141,7 @@ namespace Microsoft.Graph.Beta.Education.Schools.Item.Users {
             /// </summary>
             public UsersRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

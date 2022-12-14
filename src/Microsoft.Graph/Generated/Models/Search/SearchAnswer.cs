@@ -1,11 +1,12 @@
-using Microsoft.Graph.Beta.Models.Search;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Search {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>
+    /// Provides operations to manage the collection of accessReviewDecision entities.
+    /// </summary>
     public class SearchAnswer : Entity, IParsable {
         /// <summary>Search answer description shown on search results page.</summary>
         public string Description {

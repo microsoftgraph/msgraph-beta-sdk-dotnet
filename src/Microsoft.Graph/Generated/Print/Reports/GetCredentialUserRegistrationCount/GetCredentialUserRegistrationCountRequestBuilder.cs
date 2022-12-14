@@ -8,7 +8,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Print.Reports.GetCredentialUserRegistrationCount {
-    /// <summary>Provides operations to call the getCredentialUserRegistrationCount method.</summary>
+    /// <summary>
+    /// Provides operations to call the getCredentialUserRegistrationCount method.
+    /// </summary>
     public class GetCredentialUserRegistrationCountRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -65,6 +67,7 @@ namespace Microsoft.Graph.Beta.Print.Reports.GetCredentialUserRegistrationCount 
         }
         /// <summary>
         /// Report the current state of how many users in your organization are registered for self-service password reset and multi-factor authentication (MFA) capabilities.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/reportroot-getcredentialuserregistrationcount?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -76,7 +79,9 @@ namespace Microsoft.Graph.Beta.Print.Reports.GetCredentialUserRegistrationCount 
             };
             return await RequestAdapter.SendAsync<GetCredentialUserRegistrationCountResponse>(requestInfo, GetCredentialUserRegistrationCountResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Report the current state of how many users in your organization are registered for self-service password reset and multi-factor authentication (MFA) capabilities.</summary>
+        /// <summary>
+        /// Report the current state of how many users in your organization are registered for self-service password reset and multi-factor authentication (MFA) capabilities.
+        /// </summary>
         public class GetCredentialUserRegistrationCountRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -100,10 +105,12 @@ namespace Microsoft.Graph.Beta.Print.Reports.GetCredentialUserRegistrationCount 
             [QueryParameter("%24top")]
             public int? Top { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class GetCredentialUserRegistrationCountRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -113,7 +120,7 @@ namespace Microsoft.Graph.Beta.Print.Reports.GetCredentialUserRegistrationCount 
             /// </summary>
             public GetCredentialUserRegistrationCountRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

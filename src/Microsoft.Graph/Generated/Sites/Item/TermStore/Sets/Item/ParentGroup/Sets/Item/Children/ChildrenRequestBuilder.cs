@@ -11,7 +11,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Sites.Item.TermStore.Sets.Item.ParentGroup.Sets.Item.Children {
-    /// <summary>Provides operations to manage the children property of the microsoft.graph.termStore.set entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the children property of the microsoft.graph.termStore.set entity.
+    /// </summary>
     public class ChildrenRequestBuilder {
         /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
@@ -79,7 +81,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.TermStore.Sets.Item.ParentGroup.Sets.I
         /// <summary>
         /// Create a new term object.
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreatePostRequestInformation(Term body, Action<ChildrenRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -100,6 +102,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.TermStore.Sets.Item.ParentGroup.Sets.I
         }
         /// <summary>
         /// Get the first level children of a [set] or [term] resource using the children navigation property.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/termstore-term-list-children?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -113,8 +116,9 @@ namespace Microsoft.Graph.Beta.Sites.Item.TermStore.Sets.Item.ParentGroup.Sets.I
         }
         /// <summary>
         /// Create a new term object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/termstore-term-post?view=graph-rest-1.0" />
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public async Task<Term> PostAsync(Term body, Action<ChildrenRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -126,7 +130,9 @@ namespace Microsoft.Graph.Beta.Sites.Item.TermStore.Sets.Item.ParentGroup.Sets.I
             };
             return await RequestAdapter.SendAsync<Term>(requestInfo, Term.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Get the first level children of a [set] or [term] resource using the children navigation property.</summary>
+        /// <summary>
+        /// Get the first level children of a [set] or [term] resource using the children navigation property.
+        /// </summary>
         public class ChildrenRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -153,10 +159,12 @@ namespace Microsoft.Graph.Beta.Sites.Item.TermStore.Sets.Item.ParentGroup.Sets.I
             [QueryParameter("%24top")]
             public int? Top { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class ChildrenRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -166,13 +174,15 @@ namespace Microsoft.Graph.Beta.Sites.Item.TermStore.Sets.Item.ParentGroup.Sets.I
             /// </summary>
             public ChildrenRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class ChildrenRequestBuilderPostRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -180,7 +190,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.TermStore.Sets.Item.ParentGroup.Sets.I
             /// </summary>
             public ChildrenRequestBuilderPostRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

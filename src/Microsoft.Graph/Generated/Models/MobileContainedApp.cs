@@ -1,11 +1,12 @@
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>An abstract class that represents a contained app in a mobileApp acting as a package.</summary>
+    /// <summary>
+    /// An abstract class that represents a contained app in a mobileApp acting as a package.
+    /// </summary>
     public class MobileContainedApp : Entity, IParsable {
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

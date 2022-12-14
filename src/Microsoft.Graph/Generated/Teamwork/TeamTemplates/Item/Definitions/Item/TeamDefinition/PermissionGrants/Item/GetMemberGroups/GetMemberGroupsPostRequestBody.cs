@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.PermissionGrants.Item.GetMemberGroups {
-    /// <summary>Provides operations to call the getMemberGroups method.</summary>
+    /// <summary>
+    /// Provides operations to call the getMemberGroups method.
+    /// </summary>
     public class GetMemberGroupsPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {

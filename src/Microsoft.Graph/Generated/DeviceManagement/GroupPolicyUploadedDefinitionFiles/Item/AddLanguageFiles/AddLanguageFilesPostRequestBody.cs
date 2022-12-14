@@ -6,7 +6,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyUploadedDefinitionFiles.Item.AddLanguageFiles {
-    /// <summary>Provides operations to call the addLanguageFiles method.</summary>
+    /// <summary>
+    /// Provides operations to call the addLanguageFiles method.
+    /// </summary>
     public class AddLanguageFilesPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {

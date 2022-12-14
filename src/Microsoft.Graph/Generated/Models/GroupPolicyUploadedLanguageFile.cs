@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>The entity represents an ADML (Administrative Template language) XML file uploaded by Administrator.</summary>
+    /// <summary>
+    /// The entity represents an ADML (Administrative Template language) XML file uploaded by Administrator.
+    /// </summary>
     public class GroupPolicyUploadedLanguageFile : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {

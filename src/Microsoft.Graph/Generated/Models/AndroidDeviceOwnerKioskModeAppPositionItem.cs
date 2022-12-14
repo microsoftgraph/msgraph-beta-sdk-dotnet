@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>An item in the list of app positions that sets the order of items on the Managed Home Screen</summary>
+    /// <summary>
+    /// An item in the list of app positions that sets the order of items on the Managed Home Screen
+    /// </summary>
     public class AndroidDeviceOwnerKioskModeAppPositionItem : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {

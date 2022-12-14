@@ -6,7 +6,9 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Education.Schools.Item.Users.Item {
-    /// <summary>Builds and executes requests for operations under \education\schools\{educationSchool-id}\users\{educationUser-id}</summary>
+    /// <summary>
+    /// Builds and executes requests for operations under \education\schools\{educationSchool-id}\users\{educationUser-id}
+    /// </summary>
     public class EducationUserItemRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

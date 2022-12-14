@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>The user experience analytics Device for work from anywhere report</summary>
+    /// <summary>
+    /// The user experience analytics Device for work from anywhere report
+    /// </summary>
     public class UserExperienceAnalyticsWorkFromAnywhereDevice : Entity, IParsable {
         /// <summary>The user experience analytics work from anywhere intune device&apos;s autopilotProfileAssigned.</summary>
         public bool? AutoPilotProfileAssigned {

@@ -19,7 +19,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.InformationProtection {
-    /// <summary>Provides operations to manage the informationProtection singleton.</summary>
+    /// <summary>
+    /// Provides operations to manage the informationProtection singleton.
+    /// </summary>
     public class InformationProtectionRequestBuilder {
         /// <summary>Provides operations to manage the bitlocker property of the microsoft.graph.informationProtection entity.</summary>
         public BitlockerRequestBuilder Bitlocker { get =>
@@ -117,7 +119,7 @@ namespace Microsoft.Graph.Beta.InformationProtection {
         /// <summary>
         /// Update informationProtection
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreatePatchRequestInformation(Microsoft.Graph.Beta.Models.InformationProtection body, Action<InformationProtectionRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -152,7 +154,7 @@ namespace Microsoft.Graph.Beta.InformationProtection {
         /// <summary>
         /// Update informationProtection
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public async Task<Microsoft.Graph.Beta.Models.InformationProtection> PatchAsync(Microsoft.Graph.Beta.Models.InformationProtection body, Action<InformationProtectionRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -164,7 +166,9 @@ namespace Microsoft.Graph.Beta.InformationProtection {
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.InformationProtection>(requestInfo, Microsoft.Graph.Beta.Models.InformationProtection.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Get informationProtection</summary>
+        /// <summary>
+        /// Get informationProtection
+        /// </summary>
         public class InformationProtectionRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]
@@ -173,10 +177,12 @@ namespace Microsoft.Graph.Beta.InformationProtection {
             [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class InformationProtectionRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -186,13 +192,15 @@ namespace Microsoft.Graph.Beta.InformationProtection {
             /// </summary>
             public InformationProtectionRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class InformationProtectionRequestBuilderPatchRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -200,7 +208,7 @@ namespace Microsoft.Graph.Beta.InformationProtection {
             /// </summary>
             public InformationProtectionRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

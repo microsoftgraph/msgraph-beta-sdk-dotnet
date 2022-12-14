@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Contains properties used to assign a device management script to a group.</summary>
+    /// <summary>
+    /// Contains properties used to assign a device management script to a group.
+    /// </summary>
     public class DeviceHealthScriptAssignment : Entity, IParsable {
         /// <summary>Determine whether we want to run detection script only or run both detection script and remediation script</summary>
         public bool? RunRemediationScript {

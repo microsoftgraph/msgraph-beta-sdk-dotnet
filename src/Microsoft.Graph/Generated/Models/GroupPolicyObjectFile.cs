@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>The Group Policy Object file uploaded by admin.</summary>
+    /// <summary>
+    /// The Group Policy Object file uploaded by admin.
+    /// </summary>
     public class GroupPolicyObjectFile : Entity, IParsable {
         /// <summary>The Group Policy Object file content.</summary>
         public string Content {
@@ -17,8 +19,8 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The Group Policy Object GUID from GPO Xml content</summary>
-        public string GroupPolicyObjectId {
-            get { return BackingStore?.Get<string>("groupPolicyObjectId"); }
+        public Guid? GroupPolicyObjectId {
+            get { return BackingStore?.Get<Guid?>("groupPolicyObjectId"); }
             set { BackingStore?.Set("groupPolicyObjectId", value); }
         }
         /// <summary>The date and time at which the GroupPolicyObjectFile was last modified.</summary>
@@ -51,7 +53,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"content", n => { Content = n.GetStringValue(); } },
                 {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
-                {"groupPolicyObjectId", n => { GroupPolicyObjectId = n.GetStringValue(); } },
+                {"groupPolicyObjectId", n => { GroupPolicyObjectId = n.GetGuidValue(); } },
                 {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"ouDistinguishedName", n => { OuDistinguishedName = n.GetStringValue(); } },
                 {"roleScopeTagIds", n => { RoleScopeTagIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
@@ -66,7 +68,7 @@ namespace Microsoft.Graph.Beta.Models {
             base.Serialize(writer);
             writer.WriteStringValue("content", Content);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
-            writer.WriteStringValue("groupPolicyObjectId", GroupPolicyObjectId);
+            writer.WriteGuidValue("groupPolicyObjectId", GroupPolicyObjectId);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteStringValue("ouDistinguishedName", OuDistinguishedName);
             writer.WriteCollectionOfPrimitiveValues<string>("roleScopeTagIds", RoleScopeTagIds);

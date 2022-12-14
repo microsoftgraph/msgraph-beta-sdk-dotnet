@@ -9,7 +9,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.BulkReprovisionCloudPc {
-    /// <summary>Provides operations to call the bulkReprovisionCloudPc method.</summary>
+    /// <summary>
+    /// Provides operations to call the bulkReprovisionCloudPc method.
+    /// </summary>
     public class BulkReprovisionCloudPcRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -47,7 +49,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.BulkReprovisionCl
         /// <summary>
         /// Bulk reprovision a set of Cloud PC devices with Intune managed device IDs.
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreatePostRequestInformation(BulkReprovisionCloudPcPostRequestBody body, Action<BulkReprovisionCloudPcRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -68,8 +70,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.BulkReprovisionCl
         }
         /// <summary>
         /// Bulk reprovision a set of Cloud PC devices with Intune managed device IDs.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/manageddevice-bulkreprovisioncloudpc?view=graph-rest-1.0" />
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public async Task<CloudPcBulkRemoteActionResult> PostAsync(BulkReprovisionCloudPcPostRequestBody body, Action<BulkReprovisionCloudPcRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -81,10 +84,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.BulkReprovisionCl
             };
             return await RequestAdapter.SendAsync<CloudPcBulkRemoteActionResult>(requestInfo, CloudPcBulkRemoteActionResult.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class BulkReprovisionCloudPcRequestBuilderPostRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -92,7 +97,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.BulkReprovisionCl
             /// </summary>
             public BulkReprovisionCloudPcRequestBuilderPostRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

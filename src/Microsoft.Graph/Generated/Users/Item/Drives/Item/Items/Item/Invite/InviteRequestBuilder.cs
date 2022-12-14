@@ -8,7 +8,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Users.Item.Drives.Item.Items.Item.Invite {
-    /// <summary>Provides operations to call the invite method.</summary>
+    /// <summary>
+    /// Provides operations to call the invite method.
+    /// </summary>
     public class InviteRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -46,7 +48,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Drives.Item.Items.Item.Invite {
         /// <summary>
         /// Sends a sharing invitation for a **DriveItem**.A sharing invitation provides permissions to the recipients and optionally sends an email to the recipients to notify them the item was shared.
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreatePostRequestInformation(InvitePostRequestBody body, Action<InviteRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -67,8 +69,9 @@ namespace Microsoft.Graph.Beta.Users.Item.Drives.Item.Items.Item.Invite {
         }
         /// <summary>
         /// Sends a sharing invitation for a **DriveItem**.A sharing invitation provides permissions to the recipients and optionally sends an email to the recipients to notify them the item was shared.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/driveitem-invite?view=graph-rest-1.0" />
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public async Task<InviteResponse> PostAsync(InvitePostRequestBody body, Action<InviteRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -80,10 +83,12 @@ namespace Microsoft.Graph.Beta.Users.Item.Drives.Item.Items.Item.Invite {
             };
             return await RequestAdapter.SendAsync<InviteResponse>(requestInfo, InviteResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class InviteRequestBuilderPostRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -91,7 +96,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Drives.Item.Items.Item.Invite {
             /// </summary>
             public InviteRequestBuilderPostRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

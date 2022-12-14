@@ -36,7 +36,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.DeviceAppManagement {
-    /// <summary>Provides operations to manage the deviceAppManagement singleton.</summary>
+    /// <summary>
+    /// Provides operations to manage the deviceAppManagement singleton.
+    /// </summary>
     public class DeviceAppManagementRequestBuilder {
         /// <summary>Provides operations to manage the androidManagedAppProtections property of the microsoft.graph.deviceAppManagement entity.</summary>
         public AndroidManagedAppProtectionsRequestBuilder AndroidManagedAppProtections { get =>
@@ -202,7 +204,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement {
         /// <summary>
         /// Update deviceAppManagement
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreatePatchRequestInformation(Microsoft.Graph.Beta.Models.DeviceAppManagement body, Action<DeviceAppManagementRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -237,7 +239,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement {
         /// <summary>
         /// Update deviceAppManagement
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public async Task<Microsoft.Graph.Beta.Models.DeviceAppManagement> PatchAsync(Microsoft.Graph.Beta.Models.DeviceAppManagement body, Action<DeviceAppManagementRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -249,7 +251,9 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement {
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.DeviceAppManagement>(requestInfo, Microsoft.Graph.Beta.Models.DeviceAppManagement.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Get deviceAppManagement</summary>
+        /// <summary>
+        /// Get deviceAppManagement
+        /// </summary>
         public class DeviceAppManagementRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]
@@ -258,10 +262,12 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement {
             [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class DeviceAppManagementRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -271,13 +277,15 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement {
             /// </summary>
             public DeviceAppManagementRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class DeviceAppManagementRequestBuilderPatchRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -285,7 +293,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement {
             /// </summary>
             public DeviceAppManagementRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

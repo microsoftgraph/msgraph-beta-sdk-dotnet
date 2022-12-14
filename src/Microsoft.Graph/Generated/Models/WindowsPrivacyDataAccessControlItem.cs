@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Specify access control level per privacy data category</summary>
+    /// <summary>
+    /// Specify access control level per privacy data category
+    /// </summary>
     public class WindowsPrivacyDataAccessControlItem : Entity, IParsable {
         /// <summary>Determine the access level to specific Windows privacy data category.</summary>
         public WindowsPrivacyDataAccessLevel? AccessLevel {

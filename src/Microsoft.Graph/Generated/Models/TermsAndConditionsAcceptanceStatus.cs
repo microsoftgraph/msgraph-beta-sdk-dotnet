@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>A termsAndConditionsAcceptanceStatus entity represents the acceptance status of a given Terms and Conditions (T&amp;C) policy by a given user. Users must accept the most up-to-date version of the terms in order to retain access to the Company Portal.</summary>
+    /// <summary>
+    /// A termsAndConditionsAcceptanceStatus entity represents the acceptance status of a given Terms and Conditions (T&amp;C) policy by a given user. Users must accept the most up-to-date version of the terms in order to retain access to the Company Portal.
+    /// </summary>
     public class TermsAndConditionsAcceptanceStatus : Entity, IParsable {
         /// <summary>DateTime when the terms were last accepted by the user.</summary>
         public DateTimeOffset? AcceptedDateTime {

@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageAssignments.AdditionalAccess {
-    /// <summary>Provides operations to call the additionalAccess method.</summary>
+    /// <summary>
+    /// Provides operations to call the additionalAccess method.
+    /// </summary>
     public class AdditionalAccessResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<Microsoft.Graph.Beta.Models.AccessPackageAssignment> Value {

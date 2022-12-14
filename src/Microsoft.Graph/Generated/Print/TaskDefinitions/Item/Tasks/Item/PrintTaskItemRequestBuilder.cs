@@ -11,7 +11,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Print.TaskDefinitions.Item.Tasks.Item {
-    /// <summary>Provides operations to manage the tasks property of the microsoft.graph.printTaskDefinition entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the tasks property of the microsoft.graph.printTaskDefinition entity.
+    /// </summary>
     public class PrintTaskItemRequestBuilder {
         /// <summary>Provides operations to manage the definition property of the microsoft.graph.printTask entity.</summary>
         public DefinitionRequestBuilder Definition { get =>
@@ -95,7 +97,7 @@ namespace Microsoft.Graph.Beta.Print.TaskDefinitions.Item.Tasks.Item {
         /// <summary>
         /// Update the navigation property tasks in print
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreatePatchRequestInformation(PrintTask body, Action<PrintTaskItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -143,7 +145,7 @@ namespace Microsoft.Graph.Beta.Print.TaskDefinitions.Item.Tasks.Item {
         /// <summary>
         /// Update the navigation property tasks in print
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public async Task<PrintTask> PatchAsync(PrintTask body, Action<PrintTaskItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -155,10 +157,12 @@ namespace Microsoft.Graph.Beta.Print.TaskDefinitions.Item.Tasks.Item {
             };
             return await RequestAdapter.SendAsync<PrintTask>(requestInfo, PrintTask.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class PrintTaskItemRequestBuilderDeleteRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -166,10 +170,12 @@ namespace Microsoft.Graph.Beta.Print.TaskDefinitions.Item.Tasks.Item {
             /// </summary>
             public PrintTaskItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>A list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.</summary>
+        /// <summary>
+        /// A list of tasks that have been created based on this definition. The list includes currently running tasks and recently completed tasks. Read-only.
+        /// </summary>
         public class PrintTaskItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]
@@ -178,10 +184,12 @@ namespace Microsoft.Graph.Beta.Print.TaskDefinitions.Item.Tasks.Item {
             [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class PrintTaskItemRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -191,13 +199,15 @@ namespace Microsoft.Graph.Beta.Print.TaskDefinitions.Item.Tasks.Item {
             /// </summary>
             public PrintTaskItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class PrintTaskItemRequestBuilderPatchRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -205,7 +215,7 @@ namespace Microsoft.Graph.Beta.Print.TaskDefinitions.Item.Tasks.Item {
             /// </summary>
             public PrintTaskItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

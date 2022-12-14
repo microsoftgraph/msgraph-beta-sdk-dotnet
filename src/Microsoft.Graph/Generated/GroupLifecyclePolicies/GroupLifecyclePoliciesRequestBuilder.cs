@@ -12,7 +12,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.GroupLifecyclePolicies {
-    /// <summary>Provides operations to manage the collection of groupLifecyclePolicy entities.</summary>
+    /// <summary>
+    /// Provides operations to manage the collection of groupLifecyclePolicy entities.
+    /// </summary>
     public class GroupLifecyclePoliciesRequestBuilder {
         /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
@@ -84,7 +86,7 @@ namespace Microsoft.Graph.Beta.GroupLifecyclePolicies {
         /// <summary>
         /// Creates a new groupLifecyclePolicy.
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreatePostRequestInformation(GroupLifecyclePolicy body, Action<GroupLifecyclePoliciesRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -105,6 +107,7 @@ namespace Microsoft.Graph.Beta.GroupLifecyclePolicies {
         }
         /// <summary>
         /// List all the groupLifecyclePolicies.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/grouplifecyclepolicy-list?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -118,8 +121,9 @@ namespace Microsoft.Graph.Beta.GroupLifecyclePolicies {
         }
         /// <summary>
         /// Creates a new groupLifecyclePolicy.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/grouplifecyclepolicy-post-grouplifecyclepolicies?view=graph-rest-1.0" />
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public async Task<GroupLifecyclePolicy> PostAsync(GroupLifecyclePolicy body, Action<GroupLifecyclePoliciesRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -131,7 +135,9 @@ namespace Microsoft.Graph.Beta.GroupLifecyclePolicies {
             };
             return await RequestAdapter.SendAsync<GroupLifecyclePolicy>(requestInfo, GroupLifecyclePolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>List all the groupLifecyclePolicies.</summary>
+        /// <summary>
+        /// List all the groupLifecyclePolicies.
+        /// </summary>
         public class GroupLifecyclePoliciesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -158,10 +164,12 @@ namespace Microsoft.Graph.Beta.GroupLifecyclePolicies {
             [QueryParameter("%24top")]
             public int? Top { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class GroupLifecyclePoliciesRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -171,13 +179,15 @@ namespace Microsoft.Graph.Beta.GroupLifecyclePolicies {
             /// </summary>
             public GroupLifecyclePoliciesRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class GroupLifecyclePoliciesRequestBuilderPostRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -185,7 +195,7 @@ namespace Microsoft.Graph.Beta.GroupLifecyclePolicies {
             /// </summary>
             public GroupLifecyclePoliciesRequestBuilderPostRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

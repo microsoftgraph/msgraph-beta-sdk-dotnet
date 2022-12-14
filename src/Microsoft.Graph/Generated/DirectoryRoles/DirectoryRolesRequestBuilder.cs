@@ -15,7 +15,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.DirectoryRoles {
-    /// <summary>Provides operations to manage the collection of directoryRole entities.</summary>
+    /// <summary>
+    /// Provides operations to manage the collection of directoryRole entities.
+    /// </summary>
     public class DirectoryRolesRequestBuilder {
         /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
@@ -95,7 +97,7 @@ namespace Microsoft.Graph.Beta.DirectoryRoles {
         /// <summary>
         /// Activate a directory role. To read a directory role or update its members, it must first be activated in the tenant. The Company Administrators and the implicit user directory roles (**User**, **Guest User**, and **Restricted Guest User** roles) are activated by default. To access and assign members to other directory roles, you must first activate it with its corresponding directory role template ID.
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreatePostRequestInformation(DirectoryRole body, Action<DirectoryRolesRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -122,6 +124,7 @@ namespace Microsoft.Graph.Beta.DirectoryRoles {
         }
         /// <summary>
         /// List the directory roles that are activated in the tenant. This operation only returns roles that have been activated. A role becomes activated when an admin activates the role using the Activate directoryRole API. Not all built-in roles are initially activated.  When assigning a role using the Azure portal, the role activation step is implicitly done on the admin&apos;s behalf. To get the full list of roles that are available in Azure AD, use List directoryRoleTemplates.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/directoryrole-list?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -135,8 +138,9 @@ namespace Microsoft.Graph.Beta.DirectoryRoles {
         }
         /// <summary>
         /// Activate a directory role. To read a directory role or update its members, it must first be activated in the tenant. The Company Administrators and the implicit user directory roles (**User**, **Guest User**, and **Restricted Guest User** roles) are activated by default. To access and assign members to other directory roles, you must first activate it with its corresponding directory role template ID.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/directoryrole-post-directoryroles?view=graph-rest-1.0" />
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public async Task<DirectoryRole> PostAsync(DirectoryRole body, Action<DirectoryRolesRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -148,7 +152,9 @@ namespace Microsoft.Graph.Beta.DirectoryRoles {
             };
             return await RequestAdapter.SendAsync<DirectoryRole>(requestInfo, DirectoryRole.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>List the directory roles that are activated in the tenant. This operation only returns roles that have been activated. A role becomes activated when an admin activates the role using the Activate directoryRole API. Not all built-in roles are initially activated.  When assigning a role using the Azure portal, the role activation step is implicitly done on the admin&apos;s behalf. To get the full list of roles that are available in Azure AD, use List directoryRoleTemplates.</summary>
+        /// <summary>
+        /// List the directory roles that are activated in the tenant. This operation only returns roles that have been activated. A role becomes activated when an admin activates the role using the Activate directoryRole API. Not all built-in roles are initially activated.  When assigning a role using the Azure portal, the role activation step is implicitly done on the admin&apos;s behalf. To get the full list of roles that are available in Azure AD, use List directoryRoleTemplates.
+        /// </summary>
         public class DirectoryRolesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -172,10 +178,12 @@ namespace Microsoft.Graph.Beta.DirectoryRoles {
             [QueryParameter("%24skip")]
             public int? Skip { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class DirectoryRolesRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -185,13 +193,15 @@ namespace Microsoft.Graph.Beta.DirectoryRoles {
             /// </summary>
             public DirectoryRolesRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class DirectoryRolesRequestBuilderPostRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -199,7 +209,7 @@ namespace Microsoft.Graph.Beta.DirectoryRoles {
             /// </summary>
             public DirectoryRolesRequestBuilderPostRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>This topic provides descriptions of the declared methods, properties and relationships exposed by the iOS Lob App Provisioning Configuration resource.</summary>
+    /// <summary>
+    /// This topic provides descriptions of the declared methods, properties and relationships exposed by the iOS Lob App Provisioning Configuration resource.
+    /// </summary>
     public class IosLobAppProvisioningConfiguration : Entity, IParsable {
         /// <summary>The associated group assignments for IosLobAppProvisioningConfiguration.</summary>
         public List<IosLobAppProvisioningConfigurationAssignment> Assignments {

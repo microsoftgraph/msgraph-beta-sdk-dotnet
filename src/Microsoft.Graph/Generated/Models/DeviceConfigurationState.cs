@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Device Configuration State for a given device.</summary>
+    /// <summary>
+    /// Device Configuration State for a given device.
+    /// </summary>
     public class DeviceConfigurationState : Entity, IParsable {
         /// <summary>The name of the policy for this policyBase</summary>
         public string DisplayName {

@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Enrollment Configuration Assignment</summary>
+    /// <summary>
+    /// Enrollment Configuration Assignment
+    /// </summary>
     public class EnrollmentConfigurationAssignment : Entity, IParsable {
         /// <summary>Represents source of assignment.</summary>
         public DeviceAndAppManagementAssignmentSource? Source {

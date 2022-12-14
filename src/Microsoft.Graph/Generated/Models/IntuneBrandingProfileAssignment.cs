@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>This entity contains the properties used to assign a branding profile to a group.</summary>
+    /// <summary>
+    /// This entity contains the properties used to assign a branding profile to a group.
+    /// </summary>
     public class IntuneBrandingProfileAssignment : Entity, IParsable {
         /// <summary>Assignment target that the branding profile is assigned to.</summary>
         public DeviceAndAppManagementAssignmentTarget Target {

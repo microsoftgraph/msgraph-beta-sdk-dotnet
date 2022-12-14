@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>The entity represents an group policy operation.</summary>
+    /// <summary>
+    /// The entity represents an group policy operation.
+    /// </summary>
     public class GroupPolicyOperation : Entity, IParsable {
         /// <summary>The date and time the entity was last modified.</summary>
         public DateTimeOffset? LastModifiedDateTime {

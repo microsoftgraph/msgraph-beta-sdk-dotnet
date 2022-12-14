@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>
+    /// Provides operations to manage the admin singleton.
+    /// </summary>
     public class Deployment : Entity, IParsable {
         /// <summary>Specifies the audience to which content is deployed.</summary>
         public DeploymentAudience Audience {

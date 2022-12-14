@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>
+    /// Provides operations to manage the collection of accessReviewDecision entities.
+    /// </summary>
     public class PurchaseInvoice : Entity, IParsable {
         /// <summary>The buyFromAddress property</summary>
         public PostalAddressType BuyFromAddress {
@@ -23,8 +25,8 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("currencyCode", value); }
         }
         /// <summary>The currencyId property</summary>
-        public string CurrencyId {
-            get { return BackingStore?.Get<string>("currencyId"); }
+        public Guid? CurrencyId {
+            get { return BackingStore?.Get<Guid?>("currencyId"); }
             set { BackingStore?.Set("currencyId", value); }
         }
         /// <summary>The discountAmount property</summary>
@@ -73,8 +75,8 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("payToName", value); }
         }
         /// <summary>The payToVendorId property</summary>
-        public string PayToVendorId {
-            get { return BackingStore?.Get<string>("payToVendorId"); }
+        public Guid? PayToVendorId {
+            get { return BackingStore?.Get<Guid?>("payToVendorId"); }
             set { BackingStore?.Set("payToVendorId", value); }
         }
         /// <summary>The payToVendorNumber property</summary>
@@ -133,8 +135,8 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("vendor", value); }
         }
         /// <summary>The vendorId property</summary>
-        public string VendorId {
-            get { return BackingStore?.Get<string>("vendorId"); }
+        public Guid? VendorId {
+            get { return BackingStore?.Get<Guid?>("vendorId"); }
             set { BackingStore?.Set("vendorId", value); }
         }
         /// <summary>The vendorInvoiceNumber property</summary>
@@ -168,7 +170,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"buyFromAddress", n => { BuyFromAddress = n.GetObjectValue<PostalAddressType>(PostalAddressType.CreateFromDiscriminatorValue); } },
                 {"currency", n => { Currency = n.GetObjectValue<Microsoft.Graph.Beta.Models.Currency>(Microsoft.Graph.Beta.Models.Currency.CreateFromDiscriminatorValue); } },
                 {"currencyCode", n => { CurrencyCode = n.GetStringValue(); } },
-                {"currencyId", n => { CurrencyId = n.GetStringValue(); } },
+                {"currencyId", n => { CurrencyId = n.GetGuidValue(); } },
                 {"discountAmount", n => { DiscountAmount = n.GetDecimalValue(); } },
                 {"discountAppliedBeforeTax", n => { DiscountAppliedBeforeTax = n.GetBoolValue(); } },
                 {"dueDate", n => { DueDate = n.GetDateValue(); } },
@@ -178,7 +180,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"payToAddress", n => { PayToAddress = n.GetObjectValue<PostalAddressType>(PostalAddressType.CreateFromDiscriminatorValue); } },
                 {"payToContact", n => { PayToContact = n.GetStringValue(); } },
                 {"payToName", n => { PayToName = n.GetStringValue(); } },
-                {"payToVendorId", n => { PayToVendorId = n.GetStringValue(); } },
+                {"payToVendorId", n => { PayToVendorId = n.GetGuidValue(); } },
                 {"payToVendorNumber", n => { PayToVendorNumber = n.GetStringValue(); } },
                 {"pricesIncludeTax", n => { PricesIncludeTax = n.GetBoolValue(); } },
                 {"purchaseInvoiceLines", n => { PurchaseInvoiceLines = n.GetCollectionOfObjectValues<PurchaseInvoiceLine>(PurchaseInvoiceLine.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -190,7 +192,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"totalAmountIncludingTax", n => { TotalAmountIncludingTax = n.GetDecimalValue(); } },
                 {"totalTaxAmount", n => { TotalTaxAmount = n.GetDecimalValue(); } },
                 {"vendor", n => { Vendor = n.GetObjectValue<Microsoft.Graph.Beta.Models.Vendor>(Microsoft.Graph.Beta.Models.Vendor.CreateFromDiscriminatorValue); } },
-                {"vendorId", n => { VendorId = n.GetStringValue(); } },
+                {"vendorId", n => { VendorId = n.GetGuidValue(); } },
                 {"vendorInvoiceNumber", n => { VendorInvoiceNumber = n.GetStringValue(); } },
                 {"vendorName", n => { VendorName = n.GetStringValue(); } },
                 {"vendorNumber", n => { VendorNumber = n.GetStringValue(); } },
@@ -206,7 +208,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteObjectValue<PostalAddressType>("buyFromAddress", BuyFromAddress);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Currency>("currency", Currency);
             writer.WriteStringValue("currencyCode", CurrencyCode);
-            writer.WriteStringValue("currencyId", CurrencyId);
+            writer.WriteGuidValue("currencyId", CurrencyId);
             writer.WriteDecimalValue("discountAmount", DiscountAmount);
             writer.WriteBoolValue("discountAppliedBeforeTax", DiscountAppliedBeforeTax);
             writer.WriteDateValue("dueDate", DueDate);
@@ -216,7 +218,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteObjectValue<PostalAddressType>("payToAddress", PayToAddress);
             writer.WriteStringValue("payToContact", PayToContact);
             writer.WriteStringValue("payToName", PayToName);
-            writer.WriteStringValue("payToVendorId", PayToVendorId);
+            writer.WriteGuidValue("payToVendorId", PayToVendorId);
             writer.WriteStringValue("payToVendorNumber", PayToVendorNumber);
             writer.WriteBoolValue("pricesIncludeTax", PricesIncludeTax);
             writer.WriteCollectionOfObjectValues<PurchaseInvoiceLine>("purchaseInvoiceLines", PurchaseInvoiceLines);
@@ -228,7 +230,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteDecimalValue("totalAmountIncludingTax", TotalAmountIncludingTax);
             writer.WriteDecimalValue("totalTaxAmount", TotalTaxAmount);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Vendor>("vendor", Vendor);
-            writer.WriteStringValue("vendorId", VendorId);
+            writer.WriteGuidValue("vendorId", VendorId);
             writer.WriteStringValue("vendorInvoiceNumber", VendorInvoiceNumber);
             writer.WriteStringValue("vendorName", VendorName);
             writer.WriteStringValue("vendorNumber", VendorNumber);

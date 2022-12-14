@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>A class containing the properties used for assignment of a WindowsDefenderApplicationControl supplemental policy to a group.</summary>
+    /// <summary>
+    /// A class containing the properties used for assignment of a WindowsDefenderApplicationControl supplemental policy to a group.
+    /// </summary>
     public class WindowsDefenderApplicationControlSupplementalPolicyAssignment : Entity, IParsable {
         /// <summary>The target group assignment defined by the admin.</summary>
         public DeviceAndAppManagementAssignmentTarget Target {

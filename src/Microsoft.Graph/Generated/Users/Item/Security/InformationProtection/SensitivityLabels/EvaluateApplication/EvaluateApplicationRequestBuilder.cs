@@ -8,7 +8,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Users.Item.Security.InformationProtection.SensitivityLabels.EvaluateApplication {
-    /// <summary>Provides operations to call the evaluateApplication method.</summary>
+    /// <summary>
+    /// Provides operations to call the evaluateApplication method.
+    /// </summary>
     public class EvaluateApplicationRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -44,9 +46,9 @@ namespace Microsoft.Graph.Beta.Users.Item.Security.InformationProtection.Sensiti
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action evaluateApplication
+        /// Compute the sensitivity label that should be applied and return the set of actions that must be taken to correctly label the information. This API is useful when a label should be set manually or explicitly by a user or service, rather than automatically based on file contents. Given contentInfo, which includes existing content metadata key-value pairs, and labelingOptions as an input, the API returns an informationProtectionAction object that contains one of more of the following: 
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreatePostRequestInformation(EvaluateApplicationPostRequestBody body, Action<EvaluateApplicationRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -66,9 +68,10 @@ namespace Microsoft.Graph.Beta.Users.Item.Security.InformationProtection.Sensiti
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action evaluateApplication
+        /// Compute the sensitivity label that should be applied and return the set of actions that must be taken to correctly label the information. This API is useful when a label should be set manually or explicitly by a user or service, rather than automatically based on file contents. Given contentInfo, which includes existing content metadata key-value pairs, and labelingOptions as an input, the API returns an informationProtectionAction object that contains one of more of the following: 
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/security-sensitivitylabel-evaluateapplication?view=graph-rest-1.0" />
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public async Task<EvaluateApplicationResponse> PostAsync(EvaluateApplicationPostRequestBody body, Action<EvaluateApplicationRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -80,10 +83,12 @@ namespace Microsoft.Graph.Beta.Users.Item.Security.InformationProtection.Sensiti
             };
             return await RequestAdapter.SendAsync<EvaluateApplicationResponse>(requestInfo, EvaluateApplicationResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class EvaluateApplicationRequestBuilderPostRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -91,7 +96,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Security.InformationProtection.Sensiti
             /// </summary>
             public EvaluateApplicationRequestBuilderPostRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

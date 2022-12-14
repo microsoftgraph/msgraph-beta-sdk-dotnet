@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>AppLogCollectionRequest Entity.</summary>
+    /// <summary>
+    /// AppLogCollectionRequest Entity.
+    /// </summary>
     public class AppLogCollectionRequest : Entity, IParsable {
         /// <summary>Time at which the upload log request reached a terminal state</summary>
         public DateTimeOffset? CompletedDateTime {

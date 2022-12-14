@@ -8,7 +8,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Branding.Localizations.Item.CustomCSS {
-    /// <summary>Provides operations to manage the media for the organizationalBranding entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the media for the organizationalBranding entity.
+    /// </summary>
     public class CustomCSSRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -44,7 +46,7 @@ namespace Microsoft.Graph.Beta.Branding.Localizations.Item.CustomCSS {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get customCSS for the navigation property localizations from branding
+        /// CSS styling that appears on the sign-in page. The allowed format is .css format only and not larger than 25 KB.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<CustomCSSRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -62,7 +64,7 @@ namespace Microsoft.Graph.Beta.Branding.Localizations.Item.CustomCSS {
             return requestInfo;
         }
         /// <summary>
-        /// Update customCSS for the navigation property localizations in branding
+        /// CSS styling that appears on the sign-in page. The allowed format is .css format only and not larger than 25 KB.
         /// </summary>
         /// <param name="body">Binary request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -83,7 +85,8 @@ namespace Microsoft.Graph.Beta.Branding.Localizations.Item.CustomCSS {
             return requestInfo;
         }
         /// <summary>
-        /// Get customCSS for the navigation property localizations from branding
+        /// CSS styling that appears on the sign-in page. The allowed format is .css format only and not larger than 25 KB.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/organizationalbranding-list-localizations?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -96,7 +99,7 @@ namespace Microsoft.Graph.Beta.Branding.Localizations.Item.CustomCSS {
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Update customCSS for the navigation property localizations in branding
+        /// CSS styling that appears on the sign-in page. The allowed format is .css format only and not larger than 25 KB.
         /// </summary>
         /// <param name="body">Binary request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -110,10 +113,12 @@ namespace Microsoft.Graph.Beta.Branding.Localizations.Item.CustomCSS {
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class CustomCSSRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -121,13 +126,15 @@ namespace Microsoft.Graph.Beta.Branding.Localizations.Item.CustomCSS {
             /// </summary>
             public CustomCSSRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class CustomCSSRequestBuilderPutRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -135,7 +142,7 @@ namespace Microsoft.Graph.Beta.Branding.Localizations.Item.CustomCSS {
             /// </summary>
             public CustomCSSRequestBuilderPutRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

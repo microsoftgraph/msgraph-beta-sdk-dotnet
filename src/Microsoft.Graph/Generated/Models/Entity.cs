@@ -1,4 +1,3 @@
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.CallRecords;
 using Microsoft.Graph.Beta.Models.DeviceManagement;
 using Microsoft.Graph.Beta.Models.Ediscovery;
@@ -267,6 +266,7 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.callRecords.session" => new Session(),
                 "#microsoft.graph.callTranscript" => new CallTranscript(),
                 "#microsoft.graph.cancelMediaProcessingOperation" => new CancelMediaProcessingOperation(),
+                "#microsoft.graph.canvasLayout" => new CanvasLayout(),
                 "#microsoft.graph.cartToClassAssociation" => new CartToClassAssociation(),
                 "#microsoft.graph.certificateBasedAuthConfiguration" => new CertificateBasedAuthConfiguration(),
                 "#microsoft.graph.certificateConnectorDetails" => new CertificateConnectorDetails(),
@@ -661,6 +661,8 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.groupPolicyUploadedDefinitionFile" => new GroupPolicyUploadedDefinitionFile(),
                 "#microsoft.graph.groupPolicyUploadedPresentation" => new GroupPolicyUploadedPresentation(),
                 "#microsoft.graph.homeRealmDiscoveryPolicy" => new HomeRealmDiscoveryPolicy(),
+                "#microsoft.graph.horizontalSection" => new HorizontalSection(),
+                "#microsoft.graph.horizontalSectionColumn" => new HorizontalSectionColumn(),
                 "#microsoft.graph.hostSecurityProfile" => new HostSecurityProfile(),
                 "#microsoft.graph.identityApiConnector" => new IdentityApiConnector(),
                 "#microsoft.graph.identityBuiltInUserFlowAttribute" => new IdentityBuiltInUserFlowAttribute(),
@@ -1212,6 +1214,7 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.socialIdentityProvider" => new SocialIdentityProvider(),
                 "#microsoft.graph.softwareOathAuthenticationMethod" => new SoftwareOathAuthenticationMethod(),
                 "#microsoft.graph.softwareUpdateStatusSummary" => new SoftwareUpdateStatusSummary(),
+                "#microsoft.graph.standardWebPart" => new StandardWebPart(),
                 "#microsoft.graph.startHoldMusicOperation" => new StartHoldMusicOperation(),
                 "#microsoft.graph.stopHoldMusicOperation" => new StopHoldMusicOperation(),
                 "#microsoft.graph.strongAuthenticationDetail" => new StrongAuthenticationDetail(),
@@ -1278,6 +1281,7 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.termStore.store" => new Store(),
                 "#microsoft.graph.termStore.term" => new Term(),
                 "#microsoft.graph.textClassificationRequest" => new TextClassificationRequest(),
+                "#microsoft.graph.textWebPart" => new TextWebPart(),
                 "#microsoft.graph.threatAssessmentRequest" => new ThreatAssessmentRequest(),
                 "#microsoft.graph.threatAssessmentResult" => new ThreatAssessmentResult(),
                 "#microsoft.graph.thumbnailSet" => new ThumbnailSet(),
@@ -1386,6 +1390,7 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.userSignInInsight" => new UserSignInInsight(),
                 "#microsoft.graph.userTeamwork" => new UserTeamwork(),
                 "#microsoft.graph.vendor" => new Vendor(),
+                "#microsoft.graph.verticalSection" => new VerticalSection(),
                 "#microsoft.graph.virtualAppointment" => new VirtualAppointment(),
                 "#microsoft.graph.virtualEndpoint" => new VirtualEndpoint(),
                 "#microsoft.graph.vpnConfiguration" => new VpnConfiguration(),
@@ -1394,6 +1399,7 @@ namespace Microsoft.Graph.Beta.Models {
                 "#microsoft.graph.webAccount" => new WebAccount(),
                 "#microsoft.graph.webApp" => new WebApp(),
                 "#microsoft.graph.webApplicationSegment" => new WebApplicationSegment(),
+                "#microsoft.graph.webPart" => new WebPart(),
                 "#microsoft.graph.win32LobApp" => new Win32LobApp(),
                 "#microsoft.graph.windows10CertificateProfileBase" => new Windows10CertificateProfileBase(),
                 "#microsoft.graph.windows10CompliancePolicy" => new Windows10CompliancePolicy(),

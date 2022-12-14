@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Entity that encapsulates all information required for a user&apos;s PFX certificates.</summary>
+    /// <summary>
+    /// Entity that encapsulates all information required for a user&apos;s PFX certificates.
+    /// </summary>
     public class UserPFXCertificate : Entity, IParsable {
         /// <summary>Date/time when this PFX certificate was imported.</summary>
         public DateTimeOffset? CreatedDateTime {

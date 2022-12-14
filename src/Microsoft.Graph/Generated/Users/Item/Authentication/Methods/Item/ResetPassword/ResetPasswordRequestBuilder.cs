@@ -9,7 +9,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Users.Item.Authentication.Methods.Item.ResetPassword {
-    /// <summary>Provides operations to call the resetPassword method.</summary>
+    /// <summary>
+    /// Provides operations to call the resetPassword method.
+    /// </summary>
     public class ResetPasswordRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -47,7 +49,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication.Methods.Item.ResetPassw
         /// <summary>
         /// Invoke action resetPassword
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreatePostRequestInformation(ResetPasswordPostRequestBody body, Action<ResetPasswordRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -69,7 +71,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication.Methods.Item.ResetPassw
         /// <summary>
         /// Invoke action resetPassword
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public async Task<PasswordResetResponse> PostAsync(ResetPasswordPostRequestBody body, Action<ResetPasswordRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -81,10 +83,12 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication.Methods.Item.ResetPassw
             };
             return await RequestAdapter.SendAsync<PasswordResetResponse>(requestInfo, PasswordResetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class ResetPasswordRequestBuilderPostRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -92,7 +96,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication.Methods.Item.ResetPassw
             /// </summary>
             public ResetPasswordRequestBuilderPostRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

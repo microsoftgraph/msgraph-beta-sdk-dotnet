@@ -11,12 +11,12 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
             set { BackingStore?.Set("additionalData", value); }
         }
-        /// <summary>The adminConfiguration property</summary>
+        /// <summary>The admin configuration of the policy on the user&apos;s authentication app. For a policy that does not impact the success/failure of the authentication, the evaluation defaults to notApplicable. The possible values are: notApplicable, enabled, disabled, unknownFutureValue.</summary>
         public AuthenticationAppAdminConfiguration? AdminConfiguration {
             get { return BackingStore?.Get<AuthenticationAppAdminConfiguration?>("adminConfiguration"); }
             set { BackingStore?.Set("adminConfiguration", value); }
         }
-        /// <summary>The authenticationEvaluation property</summary>
+        /// <summary>Evaluates the success/failure of the authentication based on the admin configuration of the policy on the user&apos;s client authentication app. The possible values are: success, failure, unknownFutureValue.</summary>
         public AuthenticationAppEvaluation? AuthenticationEvaluation {
             get { return BackingStore?.Get<AuthenticationAppEvaluation?>("authenticationEvaluation"); }
             set { BackingStore?.Set("authenticationEvaluation", value); }
@@ -28,12 +28,12 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
-        /// <summary>The policyName property</summary>
+        /// <summary>The name of the policy enforced on the user&apos;s authentication app.</summary>
         public string PolicyName {
             get { return BackingStore?.Get<string>("policyName"); }
             set { BackingStore?.Set("policyName", value); }
         }
-        /// <summary>The status property</summary>
+        /// <summary>Refers to whether the policy executed as expected on the user&apos;s client authentication app. The possible values are: unknown, appLockOutOfDate, appLockEnabled, appLockDisabled, appContextOutOfDate, appContextShown, appContextNotShown, locationContextOutOfDate, locationContextShown, locationContextNotShown, numberMatchOutOfDate, numberMatchCorrectNumberEntered, numberMatchIncorrectNumberEntered, numberMatchDeny, tamperResistantHardwareOutOfDate, tamperResistantHardwareUsed, tamperResistantHardwareNotUsed, unknownFutureValue.</summary>
         public AuthenticationAppPolicyStatus? Status {
             get { return BackingStore?.Get<AuthenticationAppPolicyStatus?>("status"); }
             set { BackingStore?.Set("status", value); }

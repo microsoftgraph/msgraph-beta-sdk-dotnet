@@ -11,7 +11,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesQuotes.Item.SalesQuoteLines {
-    /// <summary>Provides operations to manage the salesQuoteLines property of the microsoft.graph.salesQuote entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the salesQuoteLines property of the microsoft.graph.salesQuote entity.
+    /// </summary>
     public class SalesQuoteLinesRequestBuilder {
         /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
@@ -89,7 +91,9 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesQuotes.Item.SalesQ
             };
             return await RequestAdapter.SendAsync<SalesQuoteLineCollectionResponse>(requestInfo, SalesQuoteLineCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Get salesQuoteLines from financials</summary>
+        /// <summary>
+        /// Get salesQuoteLines from financials
+        /// </summary>
         public class SalesQuoteLinesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -116,10 +120,12 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesQuotes.Item.SalesQ
             [QueryParameter("%24top")]
             public int? Top { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class SalesQuoteLinesRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -129,7 +135,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesQuotes.Item.SalesQ
             /// </summary>
             public SalesQuoteLinesRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

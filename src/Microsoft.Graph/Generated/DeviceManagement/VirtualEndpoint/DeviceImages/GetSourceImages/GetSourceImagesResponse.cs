@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.DeviceImages.GetSourceImages {
-    /// <summary>Provides operations to call the getSourceImages method.</summary>
+    /// <summary>
+    /// Provides operations to call the getSourceImages method.
+    /// </summary>
     public class GetSourceImagesResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<CloudPcSourceDeviceImage> Value {

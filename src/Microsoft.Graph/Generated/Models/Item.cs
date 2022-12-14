@@ -4,10 +4,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Provides operations to manage the collection of accessReviewDecision entities.
+    /// </summary>
     public class Item : Entity, IParsable {
         /// <summary>The baseUnitOfMeasureId property</summary>
-        public string BaseUnitOfMeasureId {
-            get { return BackingStore?.Get<string>("baseUnitOfMeasureId"); }
+        public Guid? BaseUnitOfMeasureId {
+            get { return BackingStore?.Get<Guid?>("baseUnitOfMeasureId"); }
             set { BackingStore?.Set("baseUnitOfMeasureId", value); }
         }
         /// <summary>The blocked property</summary>
@@ -41,8 +44,8 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("itemCategoryCode", value); }
         }
         /// <summary>The itemCategoryId property</summary>
-        public string ItemCategoryId {
-            get { return BackingStore?.Get<string>("itemCategoryId"); }
+        public Guid? ItemCategoryId {
+            get { return BackingStore?.Get<Guid?>("itemCategoryId"); }
             set { BackingStore?.Set("itemCategoryId", value); }
         }
         /// <summary>The lastModifiedDateTime property</summary>
@@ -71,8 +74,8 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("taxGroupCode", value); }
         }
         /// <summary>The taxGroupId property</summary>
-        public string TaxGroupId {
-            get { return BackingStore?.Get<string>("taxGroupId"); }
+        public Guid? TaxGroupId {
+            get { return BackingStore?.Get<Guid?>("taxGroupId"); }
             set { BackingStore?.Set("taxGroupId", value); }
         }
         /// <summary>The type property</summary>
@@ -103,20 +106,20 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"baseUnitOfMeasureId", n => { BaseUnitOfMeasureId = n.GetStringValue(); } },
+                {"baseUnitOfMeasureId", n => { BaseUnitOfMeasureId = n.GetGuidValue(); } },
                 {"blocked", n => { Blocked = n.GetBoolValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"gtin", n => { Gtin = n.GetStringValue(); } },
                 {"inventory", n => { Inventory = n.GetDecimalValue(); } },
                 {"itemCategory", n => { ItemCategory = n.GetObjectValue<Microsoft.Graph.Beta.Models.ItemCategory>(Microsoft.Graph.Beta.Models.ItemCategory.CreateFromDiscriminatorValue); } },
                 {"itemCategoryCode", n => { ItemCategoryCode = n.GetStringValue(); } },
-                {"itemCategoryId", n => { ItemCategoryId = n.GetStringValue(); } },
+                {"itemCategoryId", n => { ItemCategoryId = n.GetGuidValue(); } },
                 {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"number", n => { Number = n.GetStringValue(); } },
                 {"picture", n => { Picture = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Picture>(Microsoft.Graph.Beta.Models.Picture.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"priceIncludesTax", n => { PriceIncludesTax = n.GetBoolValue(); } },
                 {"taxGroupCode", n => { TaxGroupCode = n.GetStringValue(); } },
-                {"taxGroupId", n => { TaxGroupId = n.GetStringValue(); } },
+                {"taxGroupId", n => { TaxGroupId = n.GetGuidValue(); } },
                 {"type", n => { Type = n.GetStringValue(); } },
                 {"unitCost", n => { UnitCost = n.GetDecimalValue(); } },
                 {"unitPrice", n => { UnitPrice = n.GetDecimalValue(); } },
@@ -129,20 +132,20 @@ namespace Microsoft.Graph.Beta.Models {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteStringValue("baseUnitOfMeasureId", BaseUnitOfMeasureId);
+            writer.WriteGuidValue("baseUnitOfMeasureId", BaseUnitOfMeasureId);
             writer.WriteBoolValue("blocked", Blocked);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("gtin", Gtin);
             writer.WriteDecimalValue("inventory", Inventory);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.ItemCategory>("itemCategory", ItemCategory);
             writer.WriteStringValue("itemCategoryCode", ItemCategoryCode);
-            writer.WriteStringValue("itemCategoryId", ItemCategoryId);
+            writer.WriteGuidValue("itemCategoryId", ItemCategoryId);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteStringValue("number", Number);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Picture>("picture", Picture);
             writer.WriteBoolValue("priceIncludesTax", PriceIncludesTax);
             writer.WriteStringValue("taxGroupCode", TaxGroupCode);
-            writer.WriteStringValue("taxGroupId", TaxGroupId);
+            writer.WriteGuidValue("taxGroupId", TaxGroupId);
             writer.WriteStringValue("type", Type);
             writer.WriteDecimalValue("unitCost", UnitCost);
             writer.WriteDecimalValue("unitPrice", UnitPrice);

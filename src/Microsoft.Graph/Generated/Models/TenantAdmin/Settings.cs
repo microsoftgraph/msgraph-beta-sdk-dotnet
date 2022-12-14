@@ -6,8 +6,8 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.TenantAdmin {
     public class Settings : Entity, IParsable {
         /// <summary>Collection of trusted domain GUIDs for the OneDrive sync app.</summary>
-        public List<string> AllowedDomainGuidsForSyncApp {
-            get { return BackingStore?.Get<List<string>>("allowedDomainGuidsForSyncApp"); }
+        public List<Guid?> AllowedDomainGuidsForSyncApp {
+            get { return BackingStore?.Get<List<Guid?>>("allowedDomainGuidsForSyncApp"); }
             set { BackingStore?.Set("allowedDomainGuidsForSyncApp", value); }
         }
         /// <summary>Collection of managed paths available for site creation. Read-only.</summary>
@@ -163,7 +163,7 @@ namespace Microsoft.Graph.Beta.Models.TenantAdmin {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"allowedDomainGuidsForSyncApp", n => { AllowedDomainGuidsForSyncApp = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"allowedDomainGuidsForSyncApp", n => { AllowedDomainGuidsForSyncApp = n.GetCollectionOfPrimitiveValues<Guid?>()?.ToList(); } },
                 {"availableManagedPathsForSiteCreation", n => { AvailableManagedPathsForSiteCreation = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"deletedUserPersonalSiteRetentionPeriodInDays", n => { DeletedUserPersonalSiteRetentionPeriodInDays = n.GetIntValue(); } },
                 {"excludedFileExtensionsForSyncApp", n => { ExcludedFileExtensionsForSyncApp = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
@@ -201,7 +201,7 @@ namespace Microsoft.Graph.Beta.Models.TenantAdmin {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfPrimitiveValues<string>("allowedDomainGuidsForSyncApp", AllowedDomainGuidsForSyncApp);
+            writer.WriteCollectionOfPrimitiveValues<Guid?>("allowedDomainGuidsForSyncApp", AllowedDomainGuidsForSyncApp);
             writer.WriteCollectionOfPrimitiveValues<string>("availableManagedPathsForSiteCreation", AvailableManagedPathsForSiteCreation);
             writer.WriteIntValue("deletedUserPersonalSiteRetentionPeriodInDays", DeletedUserPersonalSiteRetentionPeriodInDays);
             writer.WriteCollectionOfPrimitiveValues<string>("excludedFileExtensionsForSyncApp", ExcludedFileExtensionsForSyncApp);

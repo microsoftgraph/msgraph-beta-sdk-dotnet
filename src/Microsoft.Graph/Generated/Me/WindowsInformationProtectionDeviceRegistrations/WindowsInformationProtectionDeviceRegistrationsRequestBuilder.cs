@@ -11,7 +11,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Me.WindowsInformationProtectionDeviceRegistrations {
-    /// <summary>Provides operations to manage the windowsInformationProtectionDeviceRegistrations property of the microsoft.graph.user entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the windowsInformationProtectionDeviceRegistrations property of the microsoft.graph.user entity.
+    /// </summary>
     public class WindowsInformationProtectionDeviceRegistrationsRequestBuilder {
         /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
@@ -89,7 +91,9 @@ namespace Microsoft.Graph.Beta.Me.WindowsInformationProtectionDeviceRegistration
             };
             return await RequestAdapter.SendAsync<WindowsInformationProtectionDeviceRegistrationCollectionResponse>(requestInfo, WindowsInformationProtectionDeviceRegistrationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Zero or more WIP device registrations that belong to the user.</summary>
+        /// <summary>
+        /// Zero or more WIP device registrations that belong to the user.
+        /// </summary>
         public class WindowsInformationProtectionDeviceRegistrationsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -116,10 +120,12 @@ namespace Microsoft.Graph.Beta.Me.WindowsInformationProtectionDeviceRegistration
             [QueryParameter("%24top")]
             public int? Top { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class WindowsInformationProtectionDeviceRegistrationsRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -129,7 +135,7 @@ namespace Microsoft.Graph.Beta.Me.WindowsInformationProtectionDeviceRegistration
             /// </summary>
             public WindowsInformationProtectionDeviceRegistrationsRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

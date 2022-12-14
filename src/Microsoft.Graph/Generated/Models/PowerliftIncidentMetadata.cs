@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Collection of app diagnostics associated with a user.</summary>
+    /// <summary>
+    /// Collection of app diagnostics associated with a user.
+    /// </summary>
     public class PowerliftIncidentMetadata : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
@@ -55,8 +57,8 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("platform", value); }
         }
         /// <summary>The unique identifier of the app diagnostic. Example: 8520467a-49a9-44a4-8447-8dfb8bec6726</summary>
-        public string PowerliftId {
-            get { return BackingStore?.Get<string>("powerliftId"); }
+        public Guid? PowerliftId {
+            get { return BackingStore?.Get<Guid?>("powerliftId"); }
             set { BackingStore?.Set("powerliftId", value); }
         }
         /// <summary>
@@ -87,7 +89,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"locale", n => { Locale = n.GetStringValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"platform", n => { Platform = n.GetStringValue(); } },
-                {"powerliftId", n => { PowerliftId = n.GetStringValue(); } },
+                {"powerliftId", n => { PowerliftId = n.GetGuidValue(); } },
             };
         }
         /// <summary>
@@ -104,7 +106,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("locale", Locale);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("platform", Platform);
-            writer.WriteStringValue("powerliftId", PowerliftId);
+            writer.WriteGuidValue("powerliftId", PowerliftId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

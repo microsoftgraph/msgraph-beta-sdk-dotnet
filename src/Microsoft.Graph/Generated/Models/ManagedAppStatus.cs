@@ -1,11 +1,12 @@
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Represents app protection and configuration status for the organization.</summary>
+    /// <summary>
+    /// Represents app protection and configuration status for the organization.
+    /// </summary>
     public class ManagedAppStatus : Entity, IParsable {
         /// <summary>Friendly name of the status report.</summary>
         public string DisplayName {

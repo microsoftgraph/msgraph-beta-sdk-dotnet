@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Users.Item.GetEffectiveDeviceEnrollmentConfigurations {
-    /// <summary>Provides operations to call the getEffectiveDeviceEnrollmentConfigurations method.</summary>
+    /// <summary>
+    /// Provides operations to call the getEffectiveDeviceEnrollmentConfigurations method.
+    /// </summary>
     public class GetEffectiveDeviceEnrollmentConfigurationsResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<DeviceEnrollmentConfiguration> Value {

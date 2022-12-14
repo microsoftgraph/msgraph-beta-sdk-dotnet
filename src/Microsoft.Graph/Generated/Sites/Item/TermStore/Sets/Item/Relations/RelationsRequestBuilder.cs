@@ -11,7 +11,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Sites.Item.TermStore.Sets.Item.Relations {
-    /// <summary>Provides operations to manage the relations property of the microsoft.graph.termStore.set entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the relations property of the microsoft.graph.termStore.set entity.
+    /// </summary>
     public class RelationsRequestBuilder {
         /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
@@ -79,7 +81,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.TermStore.Sets.Item.Relations {
         /// <summary>
         /// Create new navigation property to relations for sites
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreatePostRequestInformation(Relation body, Action<RelationsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -100,6 +102,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.TermStore.Sets.Item.Relations {
         }
         /// <summary>
         /// Get the different relation of a [term] or [set] from the relations navigation property.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/termstore-term-list-relations?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -114,7 +117,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.TermStore.Sets.Item.Relations {
         /// <summary>
         /// Create new navigation property to relations for sites
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public async Task<Relation> PostAsync(Relation body, Action<RelationsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -126,7 +129,9 @@ namespace Microsoft.Graph.Beta.Sites.Item.TermStore.Sets.Item.Relations {
             };
             return await RequestAdapter.SendAsync<Relation>(requestInfo, Relation.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Get the different relation of a [term] or [set] from the relations navigation property.</summary>
+        /// <summary>
+        /// Get the different relation of a [term] or [set] from the relations navigation property.
+        /// </summary>
         public class RelationsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -153,10 +158,12 @@ namespace Microsoft.Graph.Beta.Sites.Item.TermStore.Sets.Item.Relations {
             [QueryParameter("%24top")]
             public int? Top { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class RelationsRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -166,13 +173,15 @@ namespace Microsoft.Graph.Beta.Sites.Item.TermStore.Sets.Item.Relations {
             /// </summary>
             public RelationsRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class RelationsRequestBuilderPostRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -180,7 +189,7 @@ namespace Microsoft.Graph.Beta.Sites.Item.TermStore.Sets.Item.Relations {
             /// </summary>
             public RelationsRequestBuilderPostRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

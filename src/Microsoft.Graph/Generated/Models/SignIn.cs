@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Provides operations to manage the auditLogRoot singleton.
+    /// </summary>
     public class SignIn : Entity, IParsable {
         /// <summary>The application name displayed in the Azure Portal. Supports $filter (eq and startsWith operators only).</summary>
         public string AppDisplayName {
@@ -25,12 +28,12 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<AppliedAuthenticationEventListener>>("appliedEventListeners"); }
             set { BackingStore?.Set("appliedEventListeners", value); }
         }
-        /// <summary>The authenticationAppDeviceDetails property</summary>
+        /// <summary>Provides details about the app and device used during an Azure AD authentication step.</summary>
         public Microsoft.Graph.Beta.Models.AuthenticationAppDeviceDetails AuthenticationAppDeviceDetails {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AuthenticationAppDeviceDetails>("authenticationAppDeviceDetails"); }
             set { BackingStore?.Set("authenticationAppDeviceDetails", value); }
         }
-        /// <summary>The authenticationAppPolicyEvaluationDetails property</summary>
+        /// <summary>Provides details of the Azure AD policies applied to a user and client authentication app during an authentication step.</summary>
         public List<AuthenticationAppPolicyDetails> AuthenticationAppPolicyEvaluationDetails {
             get { return BackingStore?.Get<List<AuthenticationAppPolicyDetails>>("authenticationAppPolicyEvaluationDetails"); }
             set { BackingStore?.Set("authenticationAppPolicyEvaluationDetails", value); }

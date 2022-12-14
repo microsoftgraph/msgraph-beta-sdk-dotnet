@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Represents a user-facing message with locale information as well as a default message to be used if the user&apos;s locale doesn&apos;t match with any of the localized messages</summary>
+    /// <summary>
+    /// Represents a user-facing message with locale information as well as a default message to be used if the user&apos;s locale doesn&apos;t match with any of the localized messages
+    /// </summary>
     public class AndroidDeviceOwnerUserFacingMessage : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {

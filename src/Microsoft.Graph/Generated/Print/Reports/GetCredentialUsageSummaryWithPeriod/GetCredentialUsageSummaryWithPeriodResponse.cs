@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Print.Reports.GetCredentialUsageSummaryWithPeriod {
-    /// <summary>Provides operations to call the getCredentialUsageSummary method.</summary>
+    /// <summary>
+    /// Provides operations to call the getCredentialUsageSummary method.
+    /// </summary>
     public class GetCredentialUsageSummaryWithPeriodResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<CredentialUsageSummary> Value {

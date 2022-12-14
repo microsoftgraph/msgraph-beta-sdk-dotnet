@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Represents wipe requests issued by tenant admin for Bring-Your-Own-Device(BYOD) Windows devices.</summary>
+    /// <summary>
+    /// Represents wipe requests issued by tenant admin for Bring-Your-Own-Device(BYOD) Windows devices.
+    /// </summary>
     public class WindowsInformationProtectionWipeAction : Entity, IParsable {
         /// <summary>Last checkin time of the device that was targeted by this wipe action.</summary>
         public DateTimeOffset? LastCheckInDateTime {

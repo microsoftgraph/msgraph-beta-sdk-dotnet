@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.InformationProtection.EncryptBuffer {
-    /// <summary>Provides operations to call the encryptBuffer method.</summary>
+    /// <summary>
+    /// Provides operations to call the encryptBuffer method.
+    /// </summary>
     public class EncryptBufferPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
@@ -20,8 +22,8 @@ namespace Microsoft.Graph.Beta.InformationProtection.EncryptBuffer {
             set { BackingStore?.Set("buffer", value); }
         }
         /// <summary>The labelId property</summary>
-        public string LabelId {
-            get { return BackingStore?.Get<string>("labelId"); }
+        public Guid? LabelId {
+            get { return BackingStore?.Get<Guid?>("labelId"); }
             set { BackingStore?.Set("labelId", value); }
         }
         /// <summary>
@@ -45,7 +47,7 @@ namespace Microsoft.Graph.Beta.InformationProtection.EncryptBuffer {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"buffer", n => { Buffer = n.GetByteArrayValue(); } },
-                {"labelId", n => { LabelId = n.GetStringValue(); } },
+                {"labelId", n => { LabelId = n.GetGuidValue(); } },
             };
         }
         /// <summary>
@@ -55,7 +57,7 @@ namespace Microsoft.Graph.Beta.InformationProtection.EncryptBuffer {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteByteArrayValue("buffer", Buffer);
-            writer.WriteStringValue("labelId", LabelId);
+            writer.WriteGuidValue("labelId", LabelId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

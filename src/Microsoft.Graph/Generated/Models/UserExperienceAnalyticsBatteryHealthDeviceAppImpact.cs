@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>The user experience analytics battery health device app impact entity contains battery usage related information at an app level for a given device.</summary>
+    /// <summary>
+    /// The user experience analytics battery health device app impact entity contains battery usage related information at an app level for a given device.
+    /// </summary>
     public class UserExperienceAnalyticsBatteryHealthDeviceAppImpact : Entity, IParsable {
         /// <summary>User friendly display name for the app. Eg: Outlook</summary>
         public string AppDisplayName {

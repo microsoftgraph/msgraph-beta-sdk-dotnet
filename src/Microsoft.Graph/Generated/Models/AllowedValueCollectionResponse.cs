@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Provides operations to manage the allowedValues property of the microsoft.graph.customSecurityAttributeDefinition entity.
+    /// </summary>
     public class AllowedValueCollectionResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<AllowedValue> Value {

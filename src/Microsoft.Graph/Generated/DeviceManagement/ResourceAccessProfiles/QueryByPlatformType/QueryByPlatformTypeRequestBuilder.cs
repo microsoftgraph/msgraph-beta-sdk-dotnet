@@ -8,7 +8,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.DeviceManagement.ResourceAccessProfiles.QueryByPlatformType {
-    /// <summary>Provides operations to call the queryByPlatformType method.</summary>
+    /// <summary>
+    /// Provides operations to call the queryByPlatformType method.
+    /// </summary>
     public class QueryByPlatformTypeRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -46,7 +48,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ResourceAccessProfiles.QueryByPl
         /// <summary>
         /// Invoke action queryByPlatformType
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreatePostRequestInformation(QueryByPlatformTypePostRequestBody body, Action<QueryByPlatformTypeRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -68,7 +70,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ResourceAccessProfiles.QueryByPl
         /// <summary>
         /// Invoke action queryByPlatformType
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public async Task<QueryByPlatformTypeResponse> PostAsync(QueryByPlatformTypePostRequestBody body, Action<QueryByPlatformTypeRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -80,10 +82,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ResourceAccessProfiles.QueryByPl
             };
             return await RequestAdapter.SendAsync<QueryByPlatformTypeResponse>(requestInfo, QueryByPlatformTypeResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class QueryByPlatformTypeRequestBuilderPostRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -91,7 +95,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ResourceAccessProfiles.QueryByPl
             /// </summary>
             public QueryByPlatformTypeRequestBuilderPostRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

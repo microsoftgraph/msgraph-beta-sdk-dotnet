@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>
+    /// Provides operations to manage the collection of accessReviewDecision entities.
+    /// </summary>
     public class CustomerPayment : Entity, IParsable {
         /// <summary>The amount property</summary>
         public decimal? Amount {
@@ -13,8 +15,8 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("amount", value); }
         }
         /// <summary>The appliesToInvoiceId property</summary>
-        public string AppliesToInvoiceId {
-            get { return BackingStore?.Get<string>("appliesToInvoiceId"); }
+        public Guid? AppliesToInvoiceId {
+            get { return BackingStore?.Get<Guid?>("appliesToInvoiceId"); }
             set { BackingStore?.Set("appliesToInvoiceId", value); }
         }
         /// <summary>The appliesToInvoiceNumber property</summary>
@@ -38,8 +40,8 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("customer", value); }
         }
         /// <summary>The customerId property</summary>
-        public string CustomerId {
-            get { return BackingStore?.Get<string>("customerId"); }
+        public Guid? CustomerId {
+            get { return BackingStore?.Get<Guid?>("customerId"); }
             set { BackingStore?.Set("customerId", value); }
         }
         /// <summary>The customerNumber property</summary>
@@ -96,12 +98,12 @@ namespace Microsoft.Graph.Beta.Models {
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"amount", n => { Amount = n.GetDecimalValue(); } },
-                {"appliesToInvoiceId", n => { AppliesToInvoiceId = n.GetStringValue(); } },
+                {"appliesToInvoiceId", n => { AppliesToInvoiceId = n.GetGuidValue(); } },
                 {"appliesToInvoiceNumber", n => { AppliesToInvoiceNumber = n.GetStringValue(); } },
                 {"comment", n => { Comment = n.GetStringValue(); } },
                 {"contactId", n => { ContactId = n.GetStringValue(); } },
                 {"customer", n => { Customer = n.GetObjectValue<Microsoft.Graph.Beta.Models.Customer>(Microsoft.Graph.Beta.Models.Customer.CreateFromDiscriminatorValue); } },
-                {"customerId", n => { CustomerId = n.GetStringValue(); } },
+                {"customerId", n => { CustomerId = n.GetGuidValue(); } },
                 {"customerNumber", n => { CustomerNumber = n.GetStringValue(); } },
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"documentNumber", n => { DocumentNumber = n.GetStringValue(); } },
@@ -120,12 +122,12 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteDecimalValue("amount", Amount);
-            writer.WriteStringValue("appliesToInvoiceId", AppliesToInvoiceId);
+            writer.WriteGuidValue("appliesToInvoiceId", AppliesToInvoiceId);
             writer.WriteStringValue("appliesToInvoiceNumber", AppliesToInvoiceNumber);
             writer.WriteStringValue("comment", Comment);
             writer.WriteStringValue("contactId", ContactId);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Customer>("customer", Customer);
-            writer.WriteStringValue("customerId", CustomerId);
+            writer.WriteGuidValue("customerId", CustomerId);
             writer.WriteStringValue("customerNumber", CustomerNumber);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("documentNumber", DocumentNumber);

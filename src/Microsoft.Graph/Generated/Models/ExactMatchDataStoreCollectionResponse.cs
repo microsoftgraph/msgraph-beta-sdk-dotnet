@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Provides operations to manage the exactMatchDataStores property of the microsoft.graph.dataClassificationService entity.
+    /// </summary>
     public class ExactMatchDataStoreCollectionResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<ExactMatchDataStore> Value {

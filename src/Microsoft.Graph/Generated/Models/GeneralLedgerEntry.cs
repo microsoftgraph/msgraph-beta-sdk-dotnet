@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>
+    /// Provides operations to manage the collection of accessReviewDecision entities.
+    /// </summary>
     public class GeneralLedgerEntry : Entity, IParsable {
         /// <summary>The account property</summary>
         public Microsoft.Graph.Beta.Models.Account Account {
@@ -13,8 +15,8 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("account", value); }
         }
         /// <summary>The accountId property</summary>
-        public string AccountId {
-            get { return BackingStore?.Get<string>("accountId"); }
+        public Guid? AccountId {
+            get { return BackingStore?.Get<Guid?>("accountId"); }
             set { BackingStore?.Set("accountId", value); }
         }
         /// <summary>The accountNumber property</summary>
@@ -71,7 +73,7 @@ namespace Microsoft.Graph.Beta.Models {
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"account", n => { Account = n.GetObjectValue<Microsoft.Graph.Beta.Models.Account>(Microsoft.Graph.Beta.Models.Account.CreateFromDiscriminatorValue); } },
-                {"accountId", n => { AccountId = n.GetStringValue(); } },
+                {"accountId", n => { AccountId = n.GetGuidValue(); } },
                 {"accountNumber", n => { AccountNumber = n.GetStringValue(); } },
                 {"creditAmount", n => { CreditAmount = n.GetDecimalValue(); } },
                 {"debitAmount", n => { DebitAmount = n.GetDecimalValue(); } },
@@ -90,7 +92,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Account>("account", Account);
-            writer.WriteStringValue("accountId", AccountId);
+            writer.WriteGuidValue("accountId", AccountId);
             writer.WriteStringValue("accountNumber", AccountNumber);
             writer.WriteDecimalValue("creditAmount", CreditAmount);
             writer.WriteDecimalValue("debitAmount", DebitAmount);

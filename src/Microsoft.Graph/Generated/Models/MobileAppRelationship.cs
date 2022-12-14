@@ -1,11 +1,12 @@
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Describes a relationship between two mobile apps.</summary>
+    /// <summary>
+    /// Describes a relationship between two mobile apps.
+    /// </summary>
     public class MobileAppRelationship : Entity, IParsable {
         /// <summary>The target mobile app&apos;s display name.</summary>
         public string TargetDisplayName {

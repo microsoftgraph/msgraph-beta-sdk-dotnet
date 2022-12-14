@@ -10,7 +10,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.DeviceManagement.ExchangeOnPremisesPolicy {
-    /// <summary>Provides operations to manage the exchangeOnPremisesPolicy property of the microsoft.graph.deviceManagement entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the exchangeOnPremisesPolicy property of the microsoft.graph.deviceManagement entity.
+    /// </summary>
     public class ExchangeOnPremisesPolicyRequestBuilder {
         /// <summary>Provides operations to manage the conditionalAccessSettings property of the microsoft.graph.deviceManagementExchangeOnPremisesPolicy entity.</summary>
         public ConditionalAccessSettingsRequestBuilder ConditionalAccessSettings { get =>
@@ -90,7 +92,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ExchangeOnPremisesPolicy {
         /// <summary>
         /// Update the navigation property exchangeOnPremisesPolicy in deviceManagement
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreatePatchRequestInformation(DeviceManagementExchangeOnPremisesPolicy body, Action<ExchangeOnPremisesPolicyRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -138,7 +140,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ExchangeOnPremisesPolicy {
         /// <summary>
         /// Update the navigation property exchangeOnPremisesPolicy in deviceManagement
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public async Task<DeviceManagementExchangeOnPremisesPolicy> PatchAsync(DeviceManagementExchangeOnPremisesPolicy body, Action<ExchangeOnPremisesPolicyRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -150,10 +152,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ExchangeOnPremisesPolicy {
             };
             return await RequestAdapter.SendAsync<DeviceManagementExchangeOnPremisesPolicy>(requestInfo, DeviceManagementExchangeOnPremisesPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class ExchangeOnPremisesPolicyRequestBuilderDeleteRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -161,10 +165,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ExchangeOnPremisesPolicy {
             /// </summary>
             public ExchangeOnPremisesPolicyRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>The policy which controls mobile device access to Exchange On Premises</summary>
+        /// <summary>
+        /// The policy which controls mobile device access to Exchange On Premises
+        /// </summary>
         public class ExchangeOnPremisesPolicyRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]
@@ -173,10 +179,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ExchangeOnPremisesPolicy {
             [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class ExchangeOnPremisesPolicyRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -186,13 +194,15 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ExchangeOnPremisesPolicy {
             /// </summary>
             public ExchangeOnPremisesPolicyRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class ExchangeOnPremisesPolicyRequestBuilderPatchRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -200,7 +210,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ExchangeOnPremisesPolicy {
             /// </summary>
             public ExchangeOnPremisesPolicyRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

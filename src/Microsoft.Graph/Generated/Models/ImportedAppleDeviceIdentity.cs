@@ -1,11 +1,12 @@
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>The importedAppleDeviceIdentity resource represents the imported device identity of an Apple device .</summary>
+    /// <summary>
+    /// The importedAppleDeviceIdentity resource represents the imported device identity of an Apple device .
+    /// </summary>
     public class ImportedAppleDeviceIdentity : Entity, IParsable {
         /// <summary>Created Date Time of the device</summary>
         public DateTimeOffset? CreatedDateTime {

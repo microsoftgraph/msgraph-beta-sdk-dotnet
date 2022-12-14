@@ -1,11 +1,9 @@
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class RiskyServicePrincipal : Entity, IParsable {
         /// <summary>true if the service principal account is enabled; otherwise, false.</summary>
         public bool? AccountEnabled {

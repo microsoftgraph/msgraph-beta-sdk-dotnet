@@ -1,4 +1,3 @@
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions.Store;
 using System;
@@ -14,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The creationSourceKind property</summary>
+        /// <summary>Specifies what kind of creation source the task is created with. The possible values are: external, publication and unknownFutureValue.</summary>
         public PlannerCreationSourceKind? CreationSourceKind {
             get { return BackingStore?.Get<PlannerCreationSourceKind?>("creationSourceKind"); }
             set { BackingStore?.Set("creationSourceKind", value); }
@@ -24,7 +23,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
-        /// <summary>Information about the publication process that created this task. null value indicates that the task was not created by a publication process.</summary>
+        /// <summary>Information about the publication process that created this task. This field is deprecated and clients should move to using the new inheritance model.</summary>
         public PlannerTeamsPublicationInfo TeamsPublicationInfo {
             get { return BackingStore?.Get<PlannerTeamsPublicationInfo>("teamsPublicationInfo"); }
             set { BackingStore?.Set("teamsPublicationInfo", value); }

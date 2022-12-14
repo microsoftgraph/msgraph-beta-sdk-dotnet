@@ -14,7 +14,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item {
-    /// <summary>Provides operations to manage the collection of onPremisesPublishingProfile entities.</summary>
+    /// <summary>
+    /// Provides operations to manage the collection of onPremisesPublishingProfile entities.
+    /// </summary>
     public class OnPremisesPublishingProfileItemRequestBuilder {
         /// <summary>Provides operations to manage the agentGroups property of the microsoft.graph.onPremisesPublishingProfile entity.</summary>
         public AgentGroupsRequestBuilder AgentGroups { get =>
@@ -110,7 +112,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item {
         /// <summary>
         /// Update entity in onPremisesPublishingProfiles
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreatePatchRequestInformation(OnPremisesPublishingProfile body, Action<OnPremisesPublishingProfileItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -158,7 +160,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item {
         /// <summary>
         /// Update entity in onPremisesPublishingProfiles
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public async Task<OnPremisesPublishingProfile> PatchAsync(OnPremisesPublishingProfile body, Action<OnPremisesPublishingProfileItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -170,10 +172,12 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item {
             };
             return await RequestAdapter.SendAsync<OnPremisesPublishingProfile>(requestInfo, OnPremisesPublishingProfile.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class OnPremisesPublishingProfileItemRequestBuilderDeleteRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -181,10 +185,12 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item {
             /// </summary>
             public OnPremisesPublishingProfileItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Get entity from onPremisesPublishingProfiles by key</summary>
+        /// <summary>
+        /// Get entity from onPremisesPublishingProfiles by key
+        /// </summary>
         public class OnPremisesPublishingProfileItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]
@@ -193,10 +199,12 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item {
             [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class OnPremisesPublishingProfileItemRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -206,13 +214,15 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item {
             /// </summary>
             public OnPremisesPublishingProfileItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class OnPremisesPublishingProfileItemRequestBuilderPatchRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -220,7 +230,7 @@ namespace Microsoft.Graph.Beta.OnPremisesPublishingProfiles.Item {
             /// </summary>
             public OnPremisesPublishingProfileItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

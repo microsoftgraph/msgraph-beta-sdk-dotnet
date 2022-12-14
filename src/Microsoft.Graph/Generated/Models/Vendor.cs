@@ -31,8 +31,8 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("currencyCode", value); }
         }
         /// <summary>The currencyId property</summary>
-        public string CurrencyId {
-            get { return BackingStore?.Get<string>("currencyId"); }
+        public Guid? CurrencyId {
+            get { return BackingStore?.Get<Guid?>("currencyId"); }
             set { BackingStore?.Set("currencyId", value); }
         }
         /// <summary>The displayName property</summary>
@@ -61,8 +61,8 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("paymentMethod", value); }
         }
         /// <summary>The paymentMethodId property</summary>
-        public string PaymentMethodId {
-            get { return BackingStore?.Get<string>("paymentMethodId"); }
+        public Guid? PaymentMethodId {
+            get { return BackingStore?.Get<Guid?>("paymentMethodId"); }
             set { BackingStore?.Set("paymentMethodId", value); }
         }
         /// <summary>The paymentTerm property</summary>
@@ -71,8 +71,8 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("paymentTerm", value); }
         }
         /// <summary>The paymentTermsId property</summary>
-        public string PaymentTermsId {
-            get { return BackingStore?.Get<string>("paymentTermsId"); }
+        public Guid? PaymentTermsId {
+            get { return BackingStore?.Get<Guid?>("paymentTermsId"); }
             set { BackingStore?.Set("paymentTermsId", value); }
         }
         /// <summary>The phoneNumber property</summary>
@@ -118,15 +118,15 @@ namespace Microsoft.Graph.Beta.Models {
                 {"blocked", n => { Blocked = n.GetStringValue(); } },
                 {"currency", n => { Currency = n.GetObjectValue<Microsoft.Graph.Beta.Models.Currency>(Microsoft.Graph.Beta.Models.Currency.CreateFromDiscriminatorValue); } },
                 {"currencyCode", n => { CurrencyCode = n.GetStringValue(); } },
-                {"currencyId", n => { CurrencyId = n.GetStringValue(); } },
+                {"currencyId", n => { CurrencyId = n.GetGuidValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"email", n => { Email = n.GetStringValue(); } },
                 {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"number", n => { Number = n.GetStringValue(); } },
                 {"paymentMethod", n => { PaymentMethod = n.GetObjectValue<Microsoft.Graph.Beta.Models.PaymentMethod>(Microsoft.Graph.Beta.Models.PaymentMethod.CreateFromDiscriminatorValue); } },
-                {"paymentMethodId", n => { PaymentMethodId = n.GetStringValue(); } },
+                {"paymentMethodId", n => { PaymentMethodId = n.GetGuidValue(); } },
                 {"paymentTerm", n => { PaymentTerm = n.GetObjectValue<Microsoft.Graph.Beta.Models.PaymentTerm>(Microsoft.Graph.Beta.Models.PaymentTerm.CreateFromDiscriminatorValue); } },
-                {"paymentTermsId", n => { PaymentTermsId = n.GetStringValue(); } },
+                {"paymentTermsId", n => { PaymentTermsId = n.GetGuidValue(); } },
                 {"phoneNumber", n => { PhoneNumber = n.GetStringValue(); } },
                 {"picture", n => { Picture = n.GetCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Picture>(Microsoft.Graph.Beta.Models.Picture.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"taxLiable", n => { TaxLiable = n.GetBoolValue(); } },
@@ -146,15 +146,15 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("blocked", Blocked);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Currency>("currency", Currency);
             writer.WriteStringValue("currencyCode", CurrencyCode);
-            writer.WriteStringValue("currencyId", CurrencyId);
+            writer.WriteGuidValue("currencyId", CurrencyId);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("email", Email);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteStringValue("number", Number);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PaymentMethod>("paymentMethod", PaymentMethod);
-            writer.WriteStringValue("paymentMethodId", PaymentMethodId);
+            writer.WriteGuidValue("paymentMethodId", PaymentMethodId);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PaymentTerm>("paymentTerm", PaymentTerm);
-            writer.WriteStringValue("paymentTermsId", PaymentTermsId);
+            writer.WriteGuidValue("paymentTermsId", PaymentTermsId);
             writer.WriteStringValue("phoneNumber", PhoneNumber);
             writer.WriteCollectionOfObjectValues<Microsoft.Graph.Beta.Models.Picture>("picture", Picture);
             writer.WriteBoolValue("taxLiable", TaxLiable);

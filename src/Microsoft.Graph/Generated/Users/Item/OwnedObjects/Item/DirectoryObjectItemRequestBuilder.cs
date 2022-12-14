@@ -12,7 +12,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Users.Item.OwnedObjects.Item {
-    /// <summary>Provides operations to manage the ownedObjects property of the microsoft.graph.user entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the ownedObjects property of the microsoft.graph.user entity.
+    /// </summary>
     public class DirectoryObjectItemRequestBuilder {
         /// <summary>Casts the previous resource to application.</summary>
         public ApplicationRequestBuilder Application { get =>
@@ -92,7 +94,9 @@ namespace Microsoft.Graph.Beta.Users.Item.OwnedObjects.Item {
             };
             return await RequestAdapter.SendAsync<DirectoryObject>(requestInfo, DirectoryObject.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Directory objects that are owned by the user. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).</summary>
+        /// <summary>
+        /// Directory objects that are owned by the user. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).
+        /// </summary>
         public class DirectoryObjectItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]
@@ -101,10 +105,12 @@ namespace Microsoft.Graph.Beta.Users.Item.OwnedObjects.Item {
             [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class DirectoryObjectItemRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -114,7 +120,7 @@ namespace Microsoft.Graph.Beta.Users.Item.OwnedObjects.Item {
             /// </summary>
             public DirectoryObjectItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

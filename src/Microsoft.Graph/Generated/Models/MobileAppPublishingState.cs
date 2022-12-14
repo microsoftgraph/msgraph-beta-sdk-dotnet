@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the deviceAppManagement singleton.</summary>
     public enum MobileAppPublishingState {
         /// <summary>The app is not yet published.</summary>
         NotPublished,

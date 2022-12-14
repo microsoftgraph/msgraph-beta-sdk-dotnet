@@ -12,7 +12,9 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.AdministrativeUnits.Item.Members.Item {
-    /// <summary>Builds and executes requests for operations under \administrativeUnits\{administrativeUnit-id}\members\{directoryObject-id}</summary>
+    /// <summary>
+    /// Builds and executes requests for operations under \administrativeUnits\{administrativeUnit-id}\members\{directoryObject-id}
+    /// </summary>
     public class DirectoryObjectItemRequestBuilder {
         /// <summary>Casts the previous resource to application.</summary>
         public ApplicationRequestBuilder Application { get =>

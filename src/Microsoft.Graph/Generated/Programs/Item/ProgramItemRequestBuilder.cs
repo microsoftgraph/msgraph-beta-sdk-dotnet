@@ -10,7 +10,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Programs.Item {
-    /// <summary>Provides operations to manage the collection of program entities.</summary>
+    /// <summary>
+    /// Provides operations to manage the collection of program entities.
+    /// </summary>
     public class ProgramItemRequestBuilder {
         /// <summary>Provides operations to manage the controls property of the microsoft.graph.program entity.</summary>
         public ControlsRequestBuilder Controls { get =>
@@ -90,7 +92,7 @@ namespace Microsoft.Graph.Beta.Programs.Item {
         /// <summary>
         /// In the Azure AD access reviews feature, update an existing program object.
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreatePatchRequestInformation(Microsoft.Graph.Beta.Models.Program body, Action<ProgramItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -111,6 +113,7 @@ namespace Microsoft.Graph.Beta.Programs.Item {
         }
         /// <summary>
         /// In the Azure AD access reviews feature, delete a program object. Do not delete a program which still has `programControl` linked to it, those access reviews should first be deleted or unlinked from the program and linked to a different program.  Also, please note that the built-in default program cannot be deleted.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/program-delete?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -137,8 +140,9 @@ namespace Microsoft.Graph.Beta.Programs.Item {
         }
         /// <summary>
         /// In the Azure AD access reviews feature, update an existing program object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/program-update?view=graph-rest-1.0" />
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public async Task<Microsoft.Graph.Beta.Models.Program> PatchAsync(Microsoft.Graph.Beta.Models.Program body, Action<ProgramItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -150,10 +154,12 @@ namespace Microsoft.Graph.Beta.Programs.Item {
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Program>(requestInfo, Microsoft.Graph.Beta.Models.Program.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class ProgramItemRequestBuilderDeleteRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -161,10 +167,12 @@ namespace Microsoft.Graph.Beta.Programs.Item {
             /// </summary>
             public ProgramItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Get entity from programs by key</summary>
+        /// <summary>
+        /// Get entity from programs by key
+        /// </summary>
         public class ProgramItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]
@@ -173,10 +181,12 @@ namespace Microsoft.Graph.Beta.Programs.Item {
             [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class ProgramItemRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -186,13 +196,15 @@ namespace Microsoft.Graph.Beta.Programs.Item {
             /// </summary>
             public ProgramItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class ProgramItemRequestBuilderPatchRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -200,7 +212,7 @@ namespace Microsoft.Graph.Beta.Programs.Item {
             /// </summary>
             public ProgramItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>
+    /// Provides operations to manage the collection of accessReviewDecision entities.
+    /// </summary>
     public class SalesInvoiceLine : Entity, IParsable {
         /// <summary>The account property</summary>
         public Microsoft.Graph.Beta.Models.Account Account {
@@ -13,8 +15,8 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("account", value); }
         }
         /// <summary>The accountId property</summary>
-        public string AccountId {
-            get { return BackingStore?.Get<string>("accountId"); }
+        public Guid? AccountId {
+            get { return BackingStore?.Get<Guid?>("accountId"); }
             set { BackingStore?.Set("accountId", value); }
         }
         /// <summary>The amountExcludingTax property</summary>
@@ -48,8 +50,8 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("discountPercent", value); }
         }
         /// <summary>The documentId property</summary>
-        public string DocumentId {
-            get { return BackingStore?.Get<string>("documentId"); }
+        public Guid? DocumentId {
+            get { return BackingStore?.Get<Guid?>("documentId"); }
             set { BackingStore?.Set("documentId", value); }
         }
         /// <summary>The invoiceDiscountAllocation property</summary>
@@ -63,8 +65,8 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("item", value); }
         }
         /// <summary>The itemId property</summary>
-        public string ItemId {
-            get { return BackingStore?.Get<string>("itemId"); }
+        public Guid? ItemId {
+            get { return BackingStore?.Get<Guid?>("itemId"); }
             set { BackingStore?.Set("itemId", value); }
         }
         /// <summary>The lineType property</summary>
@@ -118,8 +120,8 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("totalTaxAmount", value); }
         }
         /// <summary>The unitOfMeasureId property</summary>
-        public string UnitOfMeasureId {
-            get { return BackingStore?.Get<string>("unitOfMeasureId"); }
+        public Guid? UnitOfMeasureId {
+            get { return BackingStore?.Get<Guid?>("unitOfMeasureId"); }
             set { BackingStore?.Set("unitOfMeasureId", value); }
         }
         /// <summary>The unitPrice property</summary>
@@ -141,17 +143,17 @@ namespace Microsoft.Graph.Beta.Models {
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"account", n => { Account = n.GetObjectValue<Microsoft.Graph.Beta.Models.Account>(Microsoft.Graph.Beta.Models.Account.CreateFromDiscriminatorValue); } },
-                {"accountId", n => { AccountId = n.GetStringValue(); } },
+                {"accountId", n => { AccountId = n.GetGuidValue(); } },
                 {"amountExcludingTax", n => { AmountExcludingTax = n.GetDecimalValue(); } },
                 {"amountIncludingTax", n => { AmountIncludingTax = n.GetDecimalValue(); } },
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"discountAmount", n => { DiscountAmount = n.GetDecimalValue(); } },
                 {"discountAppliedBeforeTax", n => { DiscountAppliedBeforeTax = n.GetBoolValue(); } },
                 {"discountPercent", n => { DiscountPercent = n.GetDecimalValue(); } },
-                {"documentId", n => { DocumentId = n.GetStringValue(); } },
+                {"documentId", n => { DocumentId = n.GetGuidValue(); } },
                 {"invoiceDiscountAllocation", n => { InvoiceDiscountAllocation = n.GetDecimalValue(); } },
                 {"item", n => { Item = n.GetObjectValue<Microsoft.Graph.Beta.Models.Item>(Microsoft.Graph.Beta.Models.Item.CreateFromDiscriminatorValue); } },
-                {"itemId", n => { ItemId = n.GetStringValue(); } },
+                {"itemId", n => { ItemId = n.GetGuidValue(); } },
                 {"lineType", n => { LineType = n.GetStringValue(); } },
                 {"netAmount", n => { NetAmount = n.GetDecimalValue(); } },
                 {"netAmountIncludingTax", n => { NetAmountIncludingTax = n.GetDecimalValue(); } },
@@ -162,7 +164,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"taxCode", n => { TaxCode = n.GetStringValue(); } },
                 {"taxPercent", n => { TaxPercent = n.GetDecimalValue(); } },
                 {"totalTaxAmount", n => { TotalTaxAmount = n.GetDecimalValue(); } },
-                {"unitOfMeasureId", n => { UnitOfMeasureId = n.GetStringValue(); } },
+                {"unitOfMeasureId", n => { UnitOfMeasureId = n.GetGuidValue(); } },
                 {"unitPrice", n => { UnitPrice = n.GetDecimalValue(); } },
             };
         }
@@ -174,17 +176,17 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Account>("account", Account);
-            writer.WriteStringValue("accountId", AccountId);
+            writer.WriteGuidValue("accountId", AccountId);
             writer.WriteDecimalValue("amountExcludingTax", AmountExcludingTax);
             writer.WriteDecimalValue("amountIncludingTax", AmountIncludingTax);
             writer.WriteStringValue("description", Description);
             writer.WriteDecimalValue("discountAmount", DiscountAmount);
             writer.WriteBoolValue("discountAppliedBeforeTax", DiscountAppliedBeforeTax);
             writer.WriteDecimalValue("discountPercent", DiscountPercent);
-            writer.WriteStringValue("documentId", DocumentId);
+            writer.WriteGuidValue("documentId", DocumentId);
             writer.WriteDecimalValue("invoiceDiscountAllocation", InvoiceDiscountAllocation);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Item>("item", Item);
-            writer.WriteStringValue("itemId", ItemId);
+            writer.WriteGuidValue("itemId", ItemId);
             writer.WriteStringValue("lineType", LineType);
             writer.WriteDecimalValue("netAmount", NetAmount);
             writer.WriteDecimalValue("netAmountIncludingTax", NetAmountIncludingTax);
@@ -195,7 +197,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("taxCode", TaxCode);
             writer.WriteDecimalValue("taxPercent", TaxPercent);
             writer.WriteDecimalValue("totalTaxAmount", TotalTaxAmount);
-            writer.WriteStringValue("unitOfMeasureId", UnitOfMeasureId);
+            writer.WriteGuidValue("unitOfMeasureId", UnitOfMeasureId);
             writer.WriteDecimalValue("unitPrice", UnitPrice);
         }
     }

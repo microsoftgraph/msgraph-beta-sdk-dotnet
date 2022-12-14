@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageCatalogs.Item.AccessPackages.Search {
-    /// <summary>Provides operations to call the Search method.</summary>
+    /// <summary>
+    /// Provides operations to call the Search method.
+    /// </summary>
     public class SearchResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<Microsoft.Graph.Beta.Models.AccessPackage> Value {

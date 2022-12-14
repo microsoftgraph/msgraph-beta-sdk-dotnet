@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Describes the embedded SIM activation code deployment state in relation to a device.</summary>
+    /// <summary>
+    /// Describes the embedded SIM activation code deployment state in relation to a device.
+    /// </summary>
     public class EmbeddedSIMDeviceState : Entity, IParsable {
         /// <summary>The time the embedded SIM device status was created. Generated service side.</summary>
         public DateTimeOffset? CreatedDateTime {

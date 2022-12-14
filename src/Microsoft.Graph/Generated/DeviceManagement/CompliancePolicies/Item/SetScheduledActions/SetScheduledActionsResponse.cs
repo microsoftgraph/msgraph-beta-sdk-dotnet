@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.DeviceManagement.CompliancePolicies.Item.SetScheduledActions {
-    /// <summary>Provides operations to call the setScheduledActions method.</summary>
+    /// <summary>
+    /// Provides operations to call the setScheduledActions method.
+    /// </summary>
     public class SetScheduledActionsResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<DeviceManagementComplianceScheduledActionForRule> Value {

@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.Channels.GetAllMessages {
-    /// <summary>Provides operations to call the getAllMessages method.</summary>
+    /// <summary>
+    /// Provides operations to call the getAllMessages method.
+    /// </summary>
     public class GetAllMessagesResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<ChatMessage> Value {

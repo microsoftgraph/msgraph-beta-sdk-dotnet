@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.MoveDevicesToOU {
-    /// <summary>Provides operations to call the moveDevicesToOU method.</summary>
+    /// <summary>
+    /// Provides operations to call the moveDevicesToOU method.
+    /// </summary>
     public class MoveDevicesToOUPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
@@ -15,8 +17,8 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.MoveDevicesToOU {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The deviceIds property</summary>
-        public List<string> DeviceIds {
-            get { return BackingStore?.Get<List<string>>("deviceIds"); }
+        public List<Guid?> DeviceIds {
+            get { return BackingStore?.Get<List<Guid?>>("deviceIds"); }
             set { BackingStore?.Set("deviceIds", value); }
         }
         /// <summary>The organizationalUnitPath property</summary>
@@ -44,7 +46,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.MoveDevicesToOU {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"deviceIds", n => { DeviceIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"deviceIds", n => { DeviceIds = n.GetCollectionOfPrimitiveValues<Guid?>()?.ToList(); } },
                 {"organizationalUnitPath", n => { OrganizationalUnitPath = n.GetStringValue(); } },
             };
         }
@@ -54,7 +56,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.MoveDevicesToOU {
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfPrimitiveValues<string>("deviceIds", DeviceIds);
+            writer.WriteCollectionOfPrimitiveValues<Guid?>("deviceIds", DeviceIds);
             writer.WriteStringValue("organizationalUnitPath", OrganizationalUnitPath);
             writer.WriteAdditionalData(AdditionalData);
         }

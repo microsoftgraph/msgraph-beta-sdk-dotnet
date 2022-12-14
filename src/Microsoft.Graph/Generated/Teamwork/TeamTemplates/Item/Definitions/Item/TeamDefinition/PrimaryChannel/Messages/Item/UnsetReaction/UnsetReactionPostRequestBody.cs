@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Teamwork.TeamTemplates.Item.Definitions.Item.TeamDefinition.PrimaryChannel.Messages.Item.UnsetReaction {
-    /// <summary>Provides operations to call the unsetReaction method.</summary>
+    /// <summary>
+    /// Provides operations to call the unsetReaction method.
+    /// </summary>
     public class UnsetReactionPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {

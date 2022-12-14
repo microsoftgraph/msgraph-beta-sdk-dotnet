@@ -11,8 +11,8 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("contractType", value); }
         }
         /// <summary>The customerId property</summary>
-        public string CustomerId {
-            get { return BackingStore?.Get<string>("customerId"); }
+        public Guid? CustomerId {
+            get { return BackingStore?.Get<Guid?>("customerId"); }
             set { BackingStore?.Set("customerId", value); }
         }
         /// <summary>The defaultDomainName property</summary>
@@ -45,7 +45,7 @@ namespace Microsoft.Graph.Beta.Models {
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"contractType", n => { ContractType = n.GetStringValue(); } },
-                {"customerId", n => { CustomerId = n.GetStringValue(); } },
+                {"customerId", n => { CustomerId = n.GetGuidValue(); } },
                 {"defaultDomainName", n => { DefaultDomainName = n.GetStringValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
             };
@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("contractType", ContractType);
-            writer.WriteStringValue("customerId", CustomerId);
+            writer.WriteGuidValue("customerId", CustomerId);
             writer.WriteStringValue("defaultDomainName", DefaultDomainName);
             writer.WriteStringValue("displayName", DisplayName);
         }

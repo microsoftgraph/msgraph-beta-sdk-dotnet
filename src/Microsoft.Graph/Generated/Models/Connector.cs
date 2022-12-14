@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>
+    /// Casts the previous resource to application.
+    /// </summary>
     public class Connector : Entity, IParsable {
         /// <summary>The external IP address as detected by the the connector server. Read-only.</summary>
         public string ExternalIp {

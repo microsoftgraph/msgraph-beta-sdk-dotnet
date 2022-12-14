@@ -11,7 +11,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelConfigurations {
-    /// <summary>Provides operations to manage the microsoftTunnelConfigurations property of the microsoft.graph.deviceManagement entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the microsoftTunnelConfigurations property of the microsoft.graph.deviceManagement entity.
+    /// </summary>
     public class MicrosoftTunnelConfigurationsRequestBuilder {
         /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
@@ -79,7 +81,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelConfigurations {
         /// <summary>
         /// Create new navigation property to microsoftTunnelConfigurations for deviceManagement
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreatePostRequestInformation(Microsoft.Graph.Beta.Models.MicrosoftTunnelConfiguration body, Action<MicrosoftTunnelConfigurationsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -114,7 +116,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelConfigurations {
         /// <summary>
         /// Create new navigation property to microsoftTunnelConfigurations for deviceManagement
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public async Task<Microsoft.Graph.Beta.Models.MicrosoftTunnelConfiguration> PostAsync(Microsoft.Graph.Beta.Models.MicrosoftTunnelConfiguration body, Action<MicrosoftTunnelConfigurationsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -126,7 +128,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelConfigurations {
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.MicrosoftTunnelConfiguration>(requestInfo, Microsoft.Graph.Beta.Models.MicrosoftTunnelConfiguration.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Collection of MicrosoftTunnelConfiguration settings associated with account.</summary>
+        /// <summary>
+        /// Collection of MicrosoftTunnelConfiguration settings associated with account.
+        /// </summary>
         public class MicrosoftTunnelConfigurationsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -153,10 +157,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelConfigurations {
             [QueryParameter("%24top")]
             public int? Top { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class MicrosoftTunnelConfigurationsRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -166,13 +172,15 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelConfigurations {
             /// </summary>
             public MicrosoftTunnelConfigurationsRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class MicrosoftTunnelConfigurationsRequestBuilderPostRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -180,7 +188,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelConfigurations {
             /// </summary>
             public MicrosoftTunnelConfigurationsRequestBuilderPostRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

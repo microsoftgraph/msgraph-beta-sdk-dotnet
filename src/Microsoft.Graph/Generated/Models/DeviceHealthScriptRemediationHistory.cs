@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>The number of devices remediated by a device health script on a given date with the last modified time.</summary>
+    /// <summary>
+    /// The number of devices remediated by a device health script on a given date with the last modified time.
+    /// </summary>
     public class DeviceHealthScriptRemediationHistory : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {

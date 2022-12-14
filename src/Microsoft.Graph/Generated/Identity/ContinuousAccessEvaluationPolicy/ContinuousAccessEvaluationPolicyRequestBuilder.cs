@@ -9,7 +9,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Identity.ContinuousAccessEvaluationPolicy {
-    /// <summary>Provides operations to manage the continuousAccessEvaluationPolicy property of the microsoft.graph.identityContainer entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the continuousAccessEvaluationPolicy property of the microsoft.graph.identityContainer entity.
+    /// </summary>
     public class ContinuousAccessEvaluationPolicyRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -85,7 +87,7 @@ namespace Microsoft.Graph.Beta.Identity.ContinuousAccessEvaluationPolicy {
         /// <summary>
         /// Update the properties of a continuousAccessEvaluationPolicy object.
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreatePatchRequestInformation(Microsoft.Graph.Beta.Models.ContinuousAccessEvaluationPolicy body, Action<ContinuousAccessEvaluationPolicyRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -119,6 +121,7 @@ namespace Microsoft.Graph.Beta.Identity.ContinuousAccessEvaluationPolicy {
         }
         /// <summary>
         /// Read the properties and relationships of a continuousAccessEvaluationPolicy object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/continuousaccessevaluationpolicy-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -132,8 +135,9 @@ namespace Microsoft.Graph.Beta.Identity.ContinuousAccessEvaluationPolicy {
         }
         /// <summary>
         /// Update the properties of a continuousAccessEvaluationPolicy object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/continuousaccessevaluationpolicy-update?view=graph-rest-1.0" />
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public async Task<Microsoft.Graph.Beta.Models.ContinuousAccessEvaluationPolicy> PatchAsync(Microsoft.Graph.Beta.Models.ContinuousAccessEvaluationPolicy body, Action<ContinuousAccessEvaluationPolicyRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -145,10 +149,12 @@ namespace Microsoft.Graph.Beta.Identity.ContinuousAccessEvaluationPolicy {
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ContinuousAccessEvaluationPolicy>(requestInfo, Microsoft.Graph.Beta.Models.ContinuousAccessEvaluationPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class ContinuousAccessEvaluationPolicyRequestBuilderDeleteRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -156,10 +162,12 @@ namespace Microsoft.Graph.Beta.Identity.ContinuousAccessEvaluationPolicy {
             /// </summary>
             public ContinuousAccessEvaluationPolicyRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Read the properties and relationships of a continuousAccessEvaluationPolicy object.</summary>
+        /// <summary>
+        /// Read the properties and relationships of a continuousAccessEvaluationPolicy object.
+        /// </summary>
         public class ContinuousAccessEvaluationPolicyRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]
@@ -168,10 +176,12 @@ namespace Microsoft.Graph.Beta.Identity.ContinuousAccessEvaluationPolicy {
             [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class ContinuousAccessEvaluationPolicyRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -181,13 +191,15 @@ namespace Microsoft.Graph.Beta.Identity.ContinuousAccessEvaluationPolicy {
             /// </summary>
             public ContinuousAccessEvaluationPolicyRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class ContinuousAccessEvaluationPolicyRequestBuilderPatchRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -195,7 +207,7 @@ namespace Microsoft.Graph.Beta.Identity.ContinuousAccessEvaluationPolicy {
             /// </summary>
             public ContinuousAccessEvaluationPolicyRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

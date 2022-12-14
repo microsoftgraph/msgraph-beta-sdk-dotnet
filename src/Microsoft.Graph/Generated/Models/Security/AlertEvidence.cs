@@ -1,4 +1,3 @@
-using Microsoft.Graph.Beta.Models.Security;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions.Store;
 using System;

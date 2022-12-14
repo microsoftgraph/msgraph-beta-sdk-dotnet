@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Print.Reports.GetOffice365ActiveUserDetailWithPeriod {
-    /// <summary>Provides operations to call the getOffice365ActiveUserDetail method.</summary>
+    /// <summary>
+    /// Provides operations to call the getOffice365ActiveUserDetail method.
+    /// </summary>
     public class GetOffice365ActiveUserDetailWithPeriodResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<Office365ActiveUserDetail> Value {

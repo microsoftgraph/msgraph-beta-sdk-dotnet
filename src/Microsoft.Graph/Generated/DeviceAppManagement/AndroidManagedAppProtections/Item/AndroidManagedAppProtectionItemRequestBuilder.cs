@@ -11,7 +11,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.DeviceAppManagement.AndroidManagedAppProtections.Item {
-    /// <summary>Provides operations to manage the androidManagedAppProtections property of the microsoft.graph.deviceAppManagement entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the androidManagedAppProtections property of the microsoft.graph.deviceAppManagement entity.
+    /// </summary>
     public class AndroidManagedAppProtectionItemRequestBuilder {
         /// <summary>Provides operations to manage the apps property of the microsoft.graph.androidManagedAppProtection entity.</summary>
         public AppsRequestBuilder Apps { get =>
@@ -95,7 +97,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.AndroidManagedAppProtections.
         /// <summary>
         /// Update the navigation property androidManagedAppProtections in deviceAppManagement
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreatePatchRequestInformation(AndroidManagedAppProtection body, Action<AndroidManagedAppProtectionItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -143,7 +145,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.AndroidManagedAppProtections.
         /// <summary>
         /// Update the navigation property androidManagedAppProtections in deviceAppManagement
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public async Task<AndroidManagedAppProtection> PatchAsync(AndroidManagedAppProtection body, Action<AndroidManagedAppProtectionItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -155,10 +157,12 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.AndroidManagedAppProtections.
             };
             return await RequestAdapter.SendAsync<AndroidManagedAppProtection>(requestInfo, AndroidManagedAppProtection.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class AndroidManagedAppProtectionItemRequestBuilderDeleteRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -166,10 +170,12 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.AndroidManagedAppProtections.
             /// </summary>
             public AndroidManagedAppProtectionItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Android managed app policies.</summary>
+        /// <summary>
+        /// Android managed app policies.
+        /// </summary>
         public class AndroidManagedAppProtectionItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]
@@ -178,10 +184,12 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.AndroidManagedAppProtections.
             [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class AndroidManagedAppProtectionItemRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -191,13 +199,15 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.AndroidManagedAppProtections.
             /// </summary>
             public AndroidManagedAppProtectionItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class AndroidManagedAppProtectionItemRequestBuilderPatchRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -205,7 +215,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.AndroidManagedAppProtections.
             /// </summary>
             public AndroidManagedAppProtectionItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

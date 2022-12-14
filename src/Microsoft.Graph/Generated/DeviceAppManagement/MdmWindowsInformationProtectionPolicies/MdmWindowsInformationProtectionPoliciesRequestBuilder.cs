@@ -12,7 +12,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.DeviceAppManagement.MdmWindowsInformationProtectionPolicies {
-    /// <summary>Provides operations to manage the mdmWindowsInformationProtectionPolicies property of the microsoft.graph.deviceAppManagement entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the mdmWindowsInformationProtectionPolicies property of the microsoft.graph.deviceAppManagement entity.
+    /// </summary>
     public class MdmWindowsInformationProtectionPoliciesRequestBuilder {
         /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
@@ -84,7 +86,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MdmWindowsInformationProtecti
         /// <summary>
         /// Create new navigation property to mdmWindowsInformationProtectionPolicies for deviceAppManagement
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreatePostRequestInformation(MdmWindowsInformationProtectionPolicy body, Action<MdmWindowsInformationProtectionPoliciesRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -119,7 +121,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MdmWindowsInformationProtecti
         /// <summary>
         /// Create new navigation property to mdmWindowsInformationProtectionPolicies for deviceAppManagement
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public async Task<MdmWindowsInformationProtectionPolicy> PostAsync(MdmWindowsInformationProtectionPolicy body, Action<MdmWindowsInformationProtectionPoliciesRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -131,7 +133,9 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MdmWindowsInformationProtecti
             };
             return await RequestAdapter.SendAsync<MdmWindowsInformationProtectionPolicy>(requestInfo, MdmWindowsInformationProtectionPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Windows information protection for apps running on devices which are MDM enrolled.</summary>
+        /// <summary>
+        /// Windows information protection for apps running on devices which are MDM enrolled.
+        /// </summary>
         public class MdmWindowsInformationProtectionPoliciesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -158,10 +162,12 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MdmWindowsInformationProtecti
             [QueryParameter("%24top")]
             public int? Top { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class MdmWindowsInformationProtectionPoliciesRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -171,13 +177,15 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MdmWindowsInformationProtecti
             /// </summary>
             public MdmWindowsInformationProtectionPoliciesRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class MdmWindowsInformationProtectionPoliciesRequestBuilderPostRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -185,7 +193,7 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MdmWindowsInformationProtecti
             /// </summary>
             public MdmWindowsInformationProtectionPoliciesRequestBuilderPostRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

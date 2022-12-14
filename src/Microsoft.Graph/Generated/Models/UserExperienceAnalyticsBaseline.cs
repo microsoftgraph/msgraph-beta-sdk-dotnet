@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>The user experience analytics baseline entity contains baseline values against which to compare the user experience analytics scores.</summary>
+    /// <summary>
+    /// The user experience analytics baseline entity contains baseline values against which to compare the user experience analytics scores.
+    /// </summary>
     public class UserExperienceAnalyticsBaseline : Entity, IParsable {
         /// <summary>The user experience analytics app health metrics.</summary>
         public UserExperienceAnalyticsCategory AppHealthMetrics {

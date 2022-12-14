@@ -19,7 +19,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Me.Drives.Item {
-    /// <summary>Provides operations to manage the drives property of the microsoft.graph.user entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the drives property of the microsoft.graph.user entity.
+    /// </summary>
     public class DriveItemRequestBuilder {
         /// <summary>Provides operations to manage the activities property of the microsoft.graph.drive entity.</summary>
         public ActivitiesRequestBuilder Activities { get =>
@@ -123,7 +125,7 @@ namespace Microsoft.Graph.Beta.Me.Drives.Item {
         /// <summary>
         /// Update the navigation property drives in me
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreatePatchRequestInformation(Microsoft.Graph.Beta.Models.Drive body, Action<DriveItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -171,7 +173,7 @@ namespace Microsoft.Graph.Beta.Me.Drives.Item {
         /// <summary>
         /// Update the navigation property drives in me
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public async Task<Microsoft.Graph.Beta.Models.Drive> PatchAsync(Microsoft.Graph.Beta.Models.Drive body, Action<DriveItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -203,10 +205,12 @@ namespace Microsoft.Graph.Beta.Me.Drives.Item {
         public SharedWithMeRequestBuilder SharedWithMe() {
             return new SharedWithMeRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class DriveItemRequestBuilderDeleteRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -214,10 +218,12 @@ namespace Microsoft.Graph.Beta.Me.Drives.Item {
             /// </summary>
             public DriveItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>A collection of drives available for this user. Read-only.</summary>
+        /// <summary>
+        /// A collection of drives available for this user. Read-only.
+        /// </summary>
         public class DriveItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]
@@ -226,10 +232,12 @@ namespace Microsoft.Graph.Beta.Me.Drives.Item {
             [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class DriveItemRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -239,13 +247,15 @@ namespace Microsoft.Graph.Beta.Me.Drives.Item {
             /// </summary>
             public DriveItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class DriveItemRequestBuilderPatchRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -253,7 +263,7 @@ namespace Microsoft.Graph.Beta.Me.Drives.Item {
             /// </summary>
             public DriveItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

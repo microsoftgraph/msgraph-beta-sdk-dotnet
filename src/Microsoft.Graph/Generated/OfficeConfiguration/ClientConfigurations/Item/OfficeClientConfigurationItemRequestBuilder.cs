@@ -13,7 +13,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.OfficeConfiguration.ClientConfigurations.Item {
-    /// <summary>Provides operations to manage the clientConfigurations property of the microsoft.graph.officeConfiguration entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the clientConfigurations property of the microsoft.graph.officeConfiguration entity.
+    /// </summary>
     public class OfficeClientConfigurationItemRequestBuilder {
         /// <summary>Provides operations to call the assign method.</summary>
         public AssignRequestBuilder Assign { get =>
@@ -105,7 +107,7 @@ namespace Microsoft.Graph.Beta.OfficeConfiguration.ClientConfigurations.Item {
         /// <summary>
         /// Update the navigation property clientConfigurations in officeConfiguration
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreatePatchRequestInformation(OfficeClientConfiguration body, Action<OfficeClientConfigurationItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -153,7 +155,7 @@ namespace Microsoft.Graph.Beta.OfficeConfiguration.ClientConfigurations.Item {
         /// <summary>
         /// Update the navigation property clientConfigurations in officeConfiguration
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public async Task<OfficeClientConfiguration> PatchAsync(OfficeClientConfiguration body, Action<OfficeClientConfigurationItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -165,10 +167,12 @@ namespace Microsoft.Graph.Beta.OfficeConfiguration.ClientConfigurations.Item {
             };
             return await RequestAdapter.SendAsync<OfficeClientConfiguration>(requestInfo, OfficeClientConfiguration.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class OfficeClientConfigurationItemRequestBuilderDeleteRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -176,10 +180,12 @@ namespace Microsoft.Graph.Beta.OfficeConfiguration.ClientConfigurations.Item {
             /// </summary>
             public OfficeClientConfigurationItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>List of office Client configuration.</summary>
+        /// <summary>
+        /// List of office Client configuration.
+        /// </summary>
         public class OfficeClientConfigurationItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]
@@ -188,10 +194,12 @@ namespace Microsoft.Graph.Beta.OfficeConfiguration.ClientConfigurations.Item {
             [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class OfficeClientConfigurationItemRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -201,13 +209,15 @@ namespace Microsoft.Graph.Beta.OfficeConfiguration.ClientConfigurations.Item {
             /// </summary>
             public OfficeClientConfigurationItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class OfficeClientConfigurationItemRequestBuilderPatchRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -215,7 +225,7 @@ namespace Microsoft.Graph.Beta.OfficeConfiguration.ClientConfigurations.Item {
             /// </summary>
             public OfficeClientConfigurationItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

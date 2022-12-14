@@ -15,7 +15,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.InformationProtection.Policy.Labels {
-    /// <summary>Provides operations to manage the labels property of the microsoft.graph.informationProtectionPolicy entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the labels property of the microsoft.graph.informationProtectionPolicy entity.
+    /// </summary>
     public class LabelsRequestBuilder {
         /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
@@ -99,7 +101,7 @@ namespace Microsoft.Graph.Beta.InformationProtection.Policy.Labels {
         /// <summary>
         /// Create new navigation property to labels for informationProtection
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreatePostRequestInformation(InformationProtectionLabel body, Action<LabelsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -120,6 +122,7 @@ namespace Microsoft.Graph.Beta.InformationProtection.Policy.Labels {
         }
         /// <summary>
         /// Get a collection of information protection labels available to the user or to the organization.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/informationprotectionpolicy-list-labels?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -134,7 +137,7 @@ namespace Microsoft.Graph.Beta.InformationProtection.Policy.Labels {
         /// <summary>
         /// Create new navigation property to labels for informationProtection
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public async Task<InformationProtectionLabel> PostAsync(InformationProtectionLabel body, Action<LabelsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -146,7 +149,9 @@ namespace Microsoft.Graph.Beta.InformationProtection.Policy.Labels {
             };
             return await RequestAdapter.SendAsync<InformationProtectionLabel>(requestInfo, InformationProtectionLabel.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Get a collection of information protection labels available to the user or to the organization.</summary>
+        /// <summary>
+        /// Get a collection of information protection labels available to the user or to the organization.
+        /// </summary>
         public class LabelsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -173,10 +178,12 @@ namespace Microsoft.Graph.Beta.InformationProtection.Policy.Labels {
             [QueryParameter("%24top")]
             public int? Top { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class LabelsRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -186,13 +193,15 @@ namespace Microsoft.Graph.Beta.InformationProtection.Policy.Labels {
             /// </summary>
             public LabelsRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class LabelsRequestBuilderPostRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -200,7 +209,7 @@ namespace Microsoft.Graph.Beta.InformationProtection.Policy.Labels {
             /// </summary>
             public LabelsRequestBuilderPostRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

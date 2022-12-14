@@ -8,7 +8,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Me.RemoveAllDevicesFromManagement {
-    /// <summary>Provides operations to call the removeAllDevicesFromManagement method.</summary>
+    /// <summary>
+    /// Provides operations to call the removeAllDevicesFromManagement method.
+    /// </summary>
     public class RemoveAllDevicesFromManagementRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -74,10 +76,12 @@ namespace Microsoft.Graph.Beta.Me.RemoveAllDevicesFromManagement {
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class RemoveAllDevicesFromManagementRequestBuilderPostRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -85,7 +89,7 @@ namespace Microsoft.Graph.Beta.Me.RemoveAllDevicesFromManagement {
             /// </summary>
             public RemoveAllDevicesFromManagementRequestBuilderPostRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

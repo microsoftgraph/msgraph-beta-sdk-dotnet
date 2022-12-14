@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Managed Device Mobile App Configuration State for a given device.</summary>
+    /// <summary>
+    /// Managed Device Mobile App Configuration State for a given device.
+    /// </summary>
     public class ManagedDeviceMobileAppConfigurationState : Entity, IParsable {
         /// <summary>The name of the policy for this policyBase</summary>
         public string DisplayName {

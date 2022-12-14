@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>A complex type to store the expedited quality update settings such as release date and days until forced reboot.</summary>
+    /// <summary>
+    /// A complex type to store the expedited quality update settings such as release date and days until forced reboot.
+    /// </summary>
     public class ExpeditedWindowsQualityUpdateSettings : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {

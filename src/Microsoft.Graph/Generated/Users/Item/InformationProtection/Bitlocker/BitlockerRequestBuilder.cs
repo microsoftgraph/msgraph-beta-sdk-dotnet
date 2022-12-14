@@ -10,7 +10,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Users.Item.InformationProtection.Bitlocker {
-    /// <summary>Provides operations to manage the bitlocker property of the microsoft.graph.informationProtection entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the bitlocker property of the microsoft.graph.informationProtection entity.
+    /// </summary>
     public class BitlockerRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -82,7 +84,9 @@ namespace Microsoft.Graph.Beta.Users.Item.InformationProtection.Bitlocker {
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Bitlocker>(requestInfo, Microsoft.Graph.Beta.Models.Bitlocker.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Get bitlocker from users</summary>
+        /// <summary>
+        /// Get bitlocker from users
+        /// </summary>
         public class BitlockerRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]
@@ -91,10 +95,12 @@ namespace Microsoft.Graph.Beta.Users.Item.InformationProtection.Bitlocker {
             [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class BitlockerRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -104,7 +110,7 @@ namespace Microsoft.Graph.Beta.Users.Item.InformationProtection.Bitlocker {
             /// </summary>
             public BitlockerRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

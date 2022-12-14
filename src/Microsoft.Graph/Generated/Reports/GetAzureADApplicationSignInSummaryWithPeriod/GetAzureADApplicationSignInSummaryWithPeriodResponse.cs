@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Reports.GetAzureADApplicationSignInSummaryWithPeriod {
-    /// <summary>Provides operations to call the getAzureADApplicationSignInSummary method.</summary>
+    /// <summary>
+    /// Provides operations to call the getAzureADApplicationSignInSummary method.
+    /// </summary>
     public class GetAzureADApplicationSignInSummaryWithPeriodResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<ApplicationSignInSummary> Value {

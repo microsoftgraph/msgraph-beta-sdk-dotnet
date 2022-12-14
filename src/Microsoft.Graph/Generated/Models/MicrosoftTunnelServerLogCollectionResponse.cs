@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Entity that stores the server log collection status.</summary>
+    /// <summary>
+    /// Entity that stores the server log collection status.
+    /// </summary>
     public class MicrosoftTunnelServerLogCollectionResponse : Entity, IParsable {
         /// <summary>The end time of the logs collected</summary>
         public DateTimeOffset? EndDateTime {

@@ -1,4 +1,3 @@
-using Microsoft.Graph.Beta.Models.CallRecords;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions.Store;
 using System;

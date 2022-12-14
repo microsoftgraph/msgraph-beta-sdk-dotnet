@@ -11,7 +11,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.DirectoryNamespace.OnPremisesSynchronization {
-    /// <summary>Provides operations to manage the onPremisesSynchronization property of the microsoft.graph.directory entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the onPremisesSynchronization property of the microsoft.graph.directory entity.
+    /// </summary>
     public class OnPremisesSynchronizationRequestBuilder {
         /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
@@ -57,7 +59,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.OnPremisesSynchronization {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get onPremisesSynchronization from directory
+        /// A container for on-premises directory synchronization functionalities that are available for the organization.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<OnPremisesSynchronizationRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -79,7 +81,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.OnPremisesSynchronization {
         /// <summary>
         /// Create new navigation property to onPremisesSynchronization for directory
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreatePostRequestInformation(OnPremisesDirectorySynchronization body, Action<OnPremisesSynchronizationRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -99,7 +101,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.OnPremisesSynchronization {
             return requestInfo;
         }
         /// <summary>
-        /// Get onPremisesSynchronization from directory
+        /// A container for on-premises directory synchronization functionalities that are available for the organization.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -114,7 +116,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.OnPremisesSynchronization {
         /// <summary>
         /// Create new navigation property to onPremisesSynchronization for directory
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public async Task<OnPremisesDirectorySynchronization> PostAsync(OnPremisesDirectorySynchronization body, Action<OnPremisesSynchronizationRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -126,7 +128,9 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.OnPremisesSynchronization {
             };
             return await RequestAdapter.SendAsync<OnPremisesDirectorySynchronization>(requestInfo, OnPremisesDirectorySynchronization.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Get onPremisesSynchronization from directory</summary>
+        /// <summary>
+        /// A container for on-premises directory synchronization functionalities that are available for the organization.
+        /// </summary>
         public class OnPremisesSynchronizationRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -153,10 +157,12 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.OnPremisesSynchronization {
             [QueryParameter("%24top")]
             public int? Top { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class OnPremisesSynchronizationRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -166,13 +172,15 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.OnPremisesSynchronization {
             /// </summary>
             public OnPremisesSynchronizationRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class OnPremisesSynchronizationRequestBuilderPostRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -180,7 +188,7 @@ namespace Microsoft.Graph.Beta.DirectoryNamespace.OnPremisesSynchronization {
             /// </summary>
             public OnPremisesSynchronizationRequestBuilderPostRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

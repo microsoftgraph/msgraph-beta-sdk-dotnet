@@ -4,9 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>
+    /// Provides operations to manage the collection of accessReviewDecision entities.
+    /// </summary>
     public class OnPremisesDirectorySynchronization : Entity, IParsable {
-        /// <summary>The configuration property</summary>
+        /// <summary>Consists of configurations that can be fine-tuned and impact the on-premises directory synchronization process for a tenant.</summary>
         public OnPremisesDirectorySynchronizationConfiguration Configuration {
             get { return BackingStore?.Get<OnPremisesDirectorySynchronizationConfiguration>("configuration"); }
             set { BackingStore?.Set("configuration", value); }

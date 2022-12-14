@@ -46,8 +46,8 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("vppOrganizationName", value); }
         }
         /// <summary>The Vpp token ID.</summary>
-        public string VppTokenId {
-            get { return BackingStore?.Get<string>("vppTokenId"); }
+        public Guid? VppTokenId {
+            get { return BackingStore?.Get<Guid?>("vppTokenId"); }
             set { BackingStore?.Set("vppTokenId", value); }
         }
         /// <summary>
@@ -77,7 +77,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"totalLicenseCount", n => { TotalLicenseCount = n.GetIntValue(); } },
                 {"usedLicenseCount", n => { UsedLicenseCount = n.GetIntValue(); } },
                 {"vppOrganizationName", n => { VppOrganizationName = n.GetStringValue(); } },
-                {"vppTokenId", n => { VppTokenId = n.GetStringValue(); } },
+                {"vppTokenId", n => { VppTokenId = n.GetGuidValue(); } },
             };
         }
         /// <summary>
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteIntValue("totalLicenseCount", TotalLicenseCount);
             writer.WriteIntValue("usedLicenseCount", UsedLicenseCount);
             writer.WriteStringValue("vppOrganizationName", VppOrganizationName);
-            writer.WriteStringValue("vppTokenId", VppTokenId);
+            writer.WriteGuidValue("vppTokenId", VppTokenId);
         }
     }
 }

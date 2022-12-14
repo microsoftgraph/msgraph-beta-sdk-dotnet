@@ -6,7 +6,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Connections.Item.Items.Item.AddActivities {
-    /// <summary>Provides operations to call the addActivities method.</summary>
+    /// <summary>
+    /// Provides operations to call the addActivities method.
+    /// </summary>
     public class AddActivitiesResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<ExternalActivityResult> Value {

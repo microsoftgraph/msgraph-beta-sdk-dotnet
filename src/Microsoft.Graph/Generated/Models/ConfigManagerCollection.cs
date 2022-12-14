@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>A ConfigManager defined collection of devices or users.</summary>
+    /// <summary>
+    /// A ConfigManager defined collection of devices or users.
+    /// </summary>
     public class ConfigManagerCollection : Entity, IParsable {
         /// <summary>The collection identifier in SCCM.</summary>
         public string CollectionIdentifier {

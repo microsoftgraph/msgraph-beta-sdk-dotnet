@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Request used to download app diagnostic files.</summary>
+    /// <summary>
+    /// Request used to download app diagnostic files.
+    /// </summary>
     public class PowerliftDownloadRequest : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
@@ -25,8 +27,8 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
         /// <summary>The unique id for the request</summary>
-        public string PowerliftId {
-            get { return BackingStore?.Get<string>("powerliftId"); }
+        public Guid? PowerliftId {
+            get { return BackingStore?.Get<Guid?>("powerliftId"); }
             set { BackingStore?.Set("powerliftId", value); }
         }
         /// <summary>
@@ -51,7 +53,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"files", n => { Files = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"powerliftId", n => { PowerliftId = n.GetStringValue(); } },
+                {"powerliftId", n => { PowerliftId = n.GetGuidValue(); } },
             };
         }
         /// <summary>
@@ -62,7 +64,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("files", Files);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteStringValue("powerliftId", PowerliftId);
+            writer.WriteGuidValue("powerliftId", PowerliftId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -12,7 +12,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Financials.Companies.Item.Journals.Item {
-    /// <summary>Provides operations to manage the journals property of the microsoft.graph.company entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the journals property of the microsoft.graph.company entity.
+    /// </summary>
     public class JournalItemRequestBuilder {
         /// <summary>Provides operations to manage the account property of the microsoft.graph.journal entity.</summary>
         public AccountRequestBuilder Account { get =>
@@ -100,7 +102,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.Journals.Item {
         /// <summary>
         /// Update the navigation property journals in financials
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreatePatchRequestInformation(Journal body, Action<JournalItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -148,7 +150,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.Journals.Item {
         /// <summary>
         /// Update the navigation property journals in financials
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public async Task<Journal> PatchAsync(Journal body, Action<JournalItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -160,10 +162,12 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.Journals.Item {
             };
             return await RequestAdapter.SendAsync<Journal>(requestInfo, Journal.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class JournalItemRequestBuilderDeleteRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -171,10 +175,12 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.Journals.Item {
             /// </summary>
             public JournalItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Get journals from financials</summary>
+        /// <summary>
+        /// Get journals from financials
+        /// </summary>
         public class JournalItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]
@@ -183,10 +189,12 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.Journals.Item {
             [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class JournalItemRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -196,13 +204,15 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.Journals.Item {
             /// </summary>
             public JournalItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class JournalItemRequestBuilderPatchRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -210,7 +220,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.Journals.Item {
             /// </summary>
             public JournalItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

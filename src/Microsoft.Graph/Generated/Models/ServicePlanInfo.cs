@@ -29,8 +29,8 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("provisioningStatus", value); }
         }
         /// <summary>The unique identifier of the service plan.</summary>
-        public string ServicePlanId {
-            get { return BackingStore?.Get<string>("servicePlanId"); }
+        public Guid? ServicePlanId {
+            get { return BackingStore?.Get<Guid?>("servicePlanId"); }
             set { BackingStore?.Set("servicePlanId", value); }
         }
         /// <summary>The name of the service plan.</summary>
@@ -61,7 +61,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"appliesTo", n => { AppliesTo = n.GetStringValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"provisioningStatus", n => { ProvisioningStatus = n.GetStringValue(); } },
-                {"servicePlanId", n => { ServicePlanId = n.GetStringValue(); } },
+                {"servicePlanId", n => { ServicePlanId = n.GetGuidValue(); } },
                 {"servicePlanName", n => { ServicePlanName = n.GetStringValue(); } },
             };
         }
@@ -74,7 +74,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("appliesTo", AppliesTo);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("provisioningStatus", ProvisioningStatus);
-            writer.WriteStringValue("servicePlanId", ServicePlanId);
+            writer.WriteGuidValue("servicePlanId", ServicePlanId);
             writer.WriteStringValue("servicePlanName", ServicePlanName);
             writer.WriteAdditionalData(AdditionalData);
         }

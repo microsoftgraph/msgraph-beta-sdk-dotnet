@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Contains properties for a single installer file that is associated with a given mobileAppContent version.</summary>
+    /// <summary>
+    /// Contains properties for a single installer file that is associated with a given mobileAppContent version.
+    /// </summary>
     public class MobileAppContentFile : Entity, IParsable {
         /// <summary>The Azure Storage URI.</summary>
         public string AzureStorageUri {

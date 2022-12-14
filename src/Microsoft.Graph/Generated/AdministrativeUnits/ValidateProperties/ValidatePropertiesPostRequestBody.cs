@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.AdministrativeUnits.ValidateProperties {
-    /// <summary>Provides operations to call the validateProperties method.</summary>
+    /// <summary>
+    /// Provides operations to call the validateProperties method.
+    /// </summary>
     public class ValidatePropertiesPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
@@ -30,8 +32,8 @@ namespace Microsoft.Graph.Beta.AdministrativeUnits.ValidateProperties {
             set { BackingStore?.Set("mailNickname", value); }
         }
         /// <summary>The onBehalfOfUserId property</summary>
-        public string OnBehalfOfUserId {
-            get { return BackingStore?.Get<string>("onBehalfOfUserId"); }
+        public Guid? OnBehalfOfUserId {
+            get { return BackingStore?.Get<Guid?>("onBehalfOfUserId"); }
             set { BackingStore?.Set("onBehalfOfUserId", value); }
         }
         /// <summary>
@@ -57,7 +59,7 @@ namespace Microsoft.Graph.Beta.AdministrativeUnits.ValidateProperties {
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"entityType", n => { EntityType = n.GetStringValue(); } },
                 {"mailNickname", n => { MailNickname = n.GetStringValue(); } },
-                {"onBehalfOfUserId", n => { OnBehalfOfUserId = n.GetStringValue(); } },
+                {"onBehalfOfUserId", n => { OnBehalfOfUserId = n.GetGuidValue(); } },
             };
         }
         /// <summary>
@@ -69,7 +71,7 @@ namespace Microsoft.Graph.Beta.AdministrativeUnits.ValidateProperties {
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("entityType", EntityType);
             writer.WriteStringValue("mailNickname", MailNickname);
-            writer.WriteStringValue("onBehalfOfUserId", OnBehalfOfUserId);
+            writer.WriteGuidValue("onBehalfOfUserId", OnBehalfOfUserId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

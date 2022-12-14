@@ -11,7 +11,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.ResourceNamespaces {
-    /// <summary>Provides operations to manage the resourceNamespaces property of the microsoft.graph.rbacApplication entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the resourceNamespaces property of the microsoft.graph.rbacApplication entity.
+    /// </summary>
     public class ResourceNamespacesRequestBuilder {
         /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
@@ -79,7 +81,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.ResourceName
         /// <summary>
         /// Create new navigation property to resourceNamespaces for roleManagement
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreatePostRequestInformation(UnifiedRbacResourceNamespace body, Action<ResourceNamespacesRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -100,6 +102,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.ResourceName
         }
         /// <summary>
         /// Get a list of the unifiedRbacResourceNamespace objects and their properties.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/rbacapplicationmultiple-list-resourcenamespaces?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -114,7 +117,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.ResourceName
         /// <summary>
         /// Create new navigation property to resourceNamespaces for roleManagement
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public async Task<UnifiedRbacResourceNamespace> PostAsync(UnifiedRbacResourceNamespace body, Action<ResourceNamespacesRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -126,7 +129,9 @@ namespace Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.ResourceName
             };
             return await RequestAdapter.SendAsync<UnifiedRbacResourceNamespace>(requestInfo, UnifiedRbacResourceNamespace.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Get a list of the unifiedRbacResourceNamespace objects and their properties.</summary>
+        /// <summary>
+        /// Get a list of the unifiedRbacResourceNamespace objects and their properties.
+        /// </summary>
         public class ResourceNamespacesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -153,10 +158,12 @@ namespace Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.ResourceName
             [QueryParameter("%24top")]
             public int? Top { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class ResourceNamespacesRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -166,13 +173,15 @@ namespace Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.ResourceName
             /// </summary>
             public ResourceNamespacesRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class ResourceNamespacesRequestBuilderPostRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -180,7 +189,7 @@ namespace Microsoft.Graph.Beta.RoleManagement.EntitlementManagement.ResourceName
             /// </summary>
             public ResourceNamespacesRequestBuilderPostRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

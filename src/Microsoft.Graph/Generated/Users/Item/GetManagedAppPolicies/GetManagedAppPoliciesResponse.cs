@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Users.Item.GetManagedAppPolicies {
-    /// <summary>Provides operations to call the getManagedAppPolicies method.</summary>
+    /// <summary>
+    /// Provides operations to call the getManagedAppPolicies method.
+    /// </summary>
     public class GetManagedAppPoliciesResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<ManagedAppPolicy> Value {

@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>The user experience analytics metric contains the score and units of a metric of a user experience anlaytics category.</summary>
+    /// <summary>
+    /// The user experience analytics metric contains the score and units of a metric of a user experience anlaytics category.
+    /// </summary>
     public class UserExperienceAnalyticsMetric : Entity, IParsable {
         /// <summary>The unit of the user experience analytics metric.</summary>
         public string Unit {

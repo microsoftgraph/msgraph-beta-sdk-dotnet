@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.PrivilegedSignupStatus.CompleteSetup {
-    /// <summary>Provides operations to call the completeSetup method.</summary>
+    /// <summary>
+    /// Provides operations to call the completeSetup method.
+    /// </summary>
     public class CompleteSetupResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<RoleSuccessStatistics> Value {

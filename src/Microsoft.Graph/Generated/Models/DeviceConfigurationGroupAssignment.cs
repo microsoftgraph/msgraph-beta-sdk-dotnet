@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Device configuration group assignment.</summary>
+    /// <summary>
+    /// Device configuration group assignment.
+    /// </summary>
     public class DeviceConfigurationGroupAssignment : Entity, IParsable {
         /// <summary>The navigation link to the Device Configuration being targeted.</summary>
         public Microsoft.Graph.Beta.Models.DeviceConfiguration DeviceConfiguration {

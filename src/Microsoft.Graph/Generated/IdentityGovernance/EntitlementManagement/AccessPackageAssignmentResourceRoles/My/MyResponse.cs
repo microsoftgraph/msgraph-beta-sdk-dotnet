@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageAssignmentResourceRoles.My {
-    /// <summary>Provides operations to call the My method.</summary>
+    /// <summary>
+    /// Provides operations to call the My method.
+    /// </summary>
     public class MyResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<AccessPackageAssignmentResourceRole> Value {

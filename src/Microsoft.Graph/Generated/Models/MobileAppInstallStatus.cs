@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Contains properties for the installation state of a mobile app for a device.</summary>
+    /// <summary>
+    /// Contains properties for the installation state of a mobile app for a device.
+    /// </summary>
     public class MobileAppInstallStatus : Entity, IParsable {
         /// <summary>The navigation link to the mobile app.</summary>
         public MobileApp App {

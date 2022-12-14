@@ -6,8 +6,8 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class Windows10XVpnConfiguration : DeviceManagementResourceAccessProfileBase, IParsable {
         /// <summary>ID to the Authentication Certificate</summary>
-        public string AuthenticationCertificateId {
-            get { return BackingStore?.Get<string>("authenticationCertificateId"); }
+        public Guid? AuthenticationCertificateId {
+            get { return BackingStore?.Get<Guid?>("authenticationCertificateId"); }
             set { BackingStore?.Set("authenticationCertificateId", value); }
         }
         /// <summary>Custom XML commands that configures the VPN connection. (UTF8 byte encoding)</summary>
@@ -39,7 +39,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"authenticationCertificateId", n => { AuthenticationCertificateId = n.GetStringValue(); } },
+                {"authenticationCertificateId", n => { AuthenticationCertificateId = n.GetGuidValue(); } },
                 {"customXml", n => { CustomXml = n.GetByteArrayValue(); } },
                 {"customXmlFileName", n => { CustomXmlFileName = n.GetStringValue(); } },
             };
@@ -51,7 +51,7 @@ namespace Microsoft.Graph.Beta.Models {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteStringValue("authenticationCertificateId", AuthenticationCertificateId);
+            writer.WriteGuidValue("authenticationCertificateId", AuthenticationCertificateId);
             writer.WriteByteArrayValue("customXml", CustomXml);
             writer.WriteStringValue("customXmlFileName", CustomXmlFileName);
         }

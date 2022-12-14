@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.DeviceManagement.Templates.Item.MigratableTo.ImportOffice365DeviceConfigurationPolicies {
-    /// <summary>Provides operations to call the importOffice365DeviceConfigurationPolicies method.</summary>
+    /// <summary>
+    /// Provides operations to call the importOffice365DeviceConfigurationPolicies method.
+    /// </summary>
     public class ImportOffice365DeviceConfigurationPoliciesResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<DeviceManagementIntent> Value {

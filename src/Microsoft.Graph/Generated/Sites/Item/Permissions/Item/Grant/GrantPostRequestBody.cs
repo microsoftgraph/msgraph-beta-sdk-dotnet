@@ -6,7 +6,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Sites.Item.Permissions.Item.Grant {
-    /// <summary>Provides operations to call the grant method.</summary>
+    /// <summary>
+    /// Provides operations to call the grant method.
+    /// </summary>
     public class GrantPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {

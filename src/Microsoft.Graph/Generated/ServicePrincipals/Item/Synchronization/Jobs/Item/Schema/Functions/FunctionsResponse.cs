@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs.Item.Schema.Functions {
-    /// <summary>Provides operations to call the functions method.</summary>
+    /// <summary>
+    /// Provides operations to call the functions method.
+    /// </summary>
     public class FunctionsResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<AttributeMappingFunctionSchema> Value {

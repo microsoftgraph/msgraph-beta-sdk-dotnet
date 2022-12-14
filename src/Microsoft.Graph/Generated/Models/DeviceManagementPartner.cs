@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Entity which represents a connection to device management partner.</summary>
+    /// <summary>
+    /// Entity which represents a connection to device management partner.
+    /// </summary>
     public class DeviceManagementPartner : Entity, IParsable {
         /// <summary>Partner display name</summary>
         public string DisplayName {

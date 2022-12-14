@@ -11,7 +11,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Me.Onenote.SectionGroups.Item.SectionGroups {
-    /// <summary>Provides operations to manage the sectionGroups property of the microsoft.graph.sectionGroup entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the sectionGroups property of the microsoft.graph.sectionGroup entity.
+    /// </summary>
     public class SectionGroupsRequestBuilder {
         /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
@@ -78,6 +80,7 @@ namespace Microsoft.Graph.Beta.Me.Onenote.SectionGroups.Item.SectionGroups {
         }
         /// <summary>
         /// Retrieve a list of section groups from the specified section group.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/sectiongroup-list-sectiongroups?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -89,7 +92,9 @@ namespace Microsoft.Graph.Beta.Me.Onenote.SectionGroups.Item.SectionGroups {
             };
             return await RequestAdapter.SendAsync<SectionGroupCollectionResponse>(requestInfo, SectionGroupCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Retrieve a list of section groups from the specified section group.</summary>
+        /// <summary>
+        /// Retrieve a list of section groups from the specified section group.
+        /// </summary>
         public class SectionGroupsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -116,10 +121,12 @@ namespace Microsoft.Graph.Beta.Me.Onenote.SectionGroups.Item.SectionGroups {
             [QueryParameter("%24top")]
             public int? Top { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class SectionGroupsRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -129,7 +136,7 @@ namespace Microsoft.Graph.Beta.Me.Onenote.SectionGroups.Item.SectionGroups {
             /// </summary>
             public SectionGroupsRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

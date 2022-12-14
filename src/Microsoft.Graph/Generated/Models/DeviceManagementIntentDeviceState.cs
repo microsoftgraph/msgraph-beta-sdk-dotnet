@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Entity that represents device state for an intent</summary>
+    /// <summary>
+    /// Entity that represents device state for an intent
+    /// </summary>
     public class DeviceManagementIntentDeviceState : Entity, IParsable {
         /// <summary>Device name that is being reported</summary>
         public string DeviceDisplayName {

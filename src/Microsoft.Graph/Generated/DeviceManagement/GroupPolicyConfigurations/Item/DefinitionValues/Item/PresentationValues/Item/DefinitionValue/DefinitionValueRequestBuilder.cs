@@ -9,7 +9,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyConfigurations.Item.DefinitionValues.Item.PresentationValues.Item.DefinitionValue {
-    /// <summary>Provides operations to manage the definitionValue property of the microsoft.graph.groupPolicyPresentationValue entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the definitionValue property of the microsoft.graph.groupPolicyPresentationValue entity.
+    /// </summary>
     public class DefinitionValueRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -77,7 +79,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyConfigurations.Item.D
             };
             return await RequestAdapter.SendAsync<GroupPolicyDefinitionValue>(requestInfo, GroupPolicyDefinitionValue.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>The group policy definition value associated with the presentation value.</summary>
+        /// <summary>
+        /// The group policy definition value associated with the presentation value.
+        /// </summary>
         public class DefinitionValueRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]
@@ -86,10 +90,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyConfigurations.Item.D
             [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class DefinitionValueRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -99,7 +105,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyConfigurations.Item.D
             /// </summary>
             public DefinitionValueRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

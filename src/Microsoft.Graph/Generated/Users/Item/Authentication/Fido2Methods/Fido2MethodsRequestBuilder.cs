@@ -11,7 +11,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Users.Item.Authentication.Fido2Methods {
-    /// <summary>Provides operations to manage the fido2Methods property of the microsoft.graph.authentication entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the fido2Methods property of the microsoft.graph.authentication entity.
+    /// </summary>
     public class Fido2MethodsRequestBuilder {
         /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
@@ -78,6 +80,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication.Fido2Methods {
         }
         /// <summary>
         /// Retrieve a list of a user&apos;s FIDO2 Security Key Authentication Method objects and their properties.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/fido2authenticationmethod-list?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -89,7 +92,9 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication.Fido2Methods {
             };
             return await RequestAdapter.SendAsync<Fido2AuthenticationMethodCollectionResponse>(requestInfo, Fido2AuthenticationMethodCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Retrieve a list of a user&apos;s FIDO2 Security Key Authentication Method objects and their properties.</summary>
+        /// <summary>
+        /// Retrieve a list of a user&apos;s FIDO2 Security Key Authentication Method objects and their properties.
+        /// </summary>
         public class Fido2MethodsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -116,10 +121,12 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication.Fido2Methods {
             [QueryParameter("%24top")]
             public int? Top { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class Fido2MethodsRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -129,7 +136,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication.Fido2Methods {
             /// </summary>
             public Fido2MethodsRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

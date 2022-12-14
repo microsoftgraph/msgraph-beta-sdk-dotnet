@@ -10,7 +10,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Rubric {
-    /// <summary>Provides operations to manage the rubric property of the microsoft.graph.educationAssignment entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the rubric property of the microsoft.graph.educationAssignment entity.
+    /// </summary>
     public class RubricRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -90,7 +92,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Rubric {
         /// <summary>
         /// Update the navigation property rubric in education
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreatePatchRequestInformation(EducationRubric body, Action<RubricRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -124,6 +126,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Rubric {
         }
         /// <summary>
         /// Get the educationRubric object attached to an educationAssignment, if one exists.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/educationassignment-get-rubric?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -138,7 +141,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Rubric {
         /// <summary>
         /// Update the navigation property rubric in education
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public async Task<EducationRubric> PatchAsync(EducationRubric body, Action<RubricRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -150,10 +153,12 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Rubric {
             };
             return await RequestAdapter.SendAsync<EducationRubric>(requestInfo, EducationRubric.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class RubricRequestBuilderDeleteRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -161,10 +166,12 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Rubric {
             /// </summary>
             public RubricRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Get the educationRubric object attached to an educationAssignment, if one exists.</summary>
+        /// <summary>
+        /// Get the educationRubric object attached to an educationAssignment, if one exists.
+        /// </summary>
         public class RubricRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]
@@ -173,10 +180,12 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Rubric {
             [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class RubricRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -186,13 +195,15 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Rubric {
             /// </summary>
             public RubricRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class RubricRequestBuilderPatchRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -200,7 +211,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Rubric {
             /// </summary>
             public RubricRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

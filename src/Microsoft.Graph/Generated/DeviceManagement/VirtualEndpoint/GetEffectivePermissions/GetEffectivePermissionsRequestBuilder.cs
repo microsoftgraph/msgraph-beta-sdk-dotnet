@@ -8,7 +8,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.GetEffectivePermissions {
-    /// <summary>Provides operations to call the getEffectivePermissions method.</summary>
+    /// <summary>
+    /// Provides operations to call the getEffectivePermissions method.
+    /// </summary>
     public class GetEffectivePermissionsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -76,7 +78,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.GetEffectivePerm
             };
             return await RequestAdapter.SendAsync<GetEffectivePermissionsResponse>(requestInfo, GetEffectivePermissionsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Invoke function getEffectivePermissions</summary>
+        /// <summary>
+        /// Invoke function getEffectivePermissions
+        /// </summary>
         public class GetEffectivePermissionsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -94,10 +98,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.GetEffectivePerm
             [QueryParameter("%24top")]
             public int? Top { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class GetEffectivePermissionsRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -107,7 +113,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.GetEffectivePerm
             /// </summary>
             public GetEffectivePermissionsRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

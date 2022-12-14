@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>A class containing the properties used for PolicySet Assignment.</summary>
+    /// <summary>
+    /// A class containing the properties used for PolicySet Assignment.
+    /// </summary>
     public class PolicySetAssignment : Entity, IParsable {
         /// <summary>Last modified time of the PolicySetAssignment.</summary>
         public DateTimeOffset? LastModifiedDateTime {

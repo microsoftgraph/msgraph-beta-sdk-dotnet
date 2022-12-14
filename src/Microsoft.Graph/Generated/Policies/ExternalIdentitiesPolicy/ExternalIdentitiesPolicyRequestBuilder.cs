@@ -9,7 +9,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Policies.ExternalIdentitiesPolicy {
-    /// <summary>Provides operations to manage the externalIdentitiesPolicy property of the microsoft.graph.policyRoot entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the externalIdentitiesPolicy property of the microsoft.graph.policyRoot entity.
+    /// </summary>
     public class ExternalIdentitiesPolicyRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -85,7 +87,7 @@ namespace Microsoft.Graph.Beta.Policies.ExternalIdentitiesPolicy {
         /// <summary>
         /// Update the settings of the tenant-wide externalIdentitiesPolicy object that controls whether external users can leave an Azure AD tenant via self-service controls.
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreatePatchRequestInformation(Microsoft.Graph.Beta.Models.ExternalIdentitiesPolicy body, Action<ExternalIdentitiesPolicyRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -119,6 +121,7 @@ namespace Microsoft.Graph.Beta.Policies.ExternalIdentitiesPolicy {
         }
         /// <summary>
         /// Read the properties and relationships of the tenant-wide externalIdentitiesPolicy object that controls whether external users can leave an Azure AD tenant via self-service controls.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/externalidentitiespolicy-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -132,8 +135,9 @@ namespace Microsoft.Graph.Beta.Policies.ExternalIdentitiesPolicy {
         }
         /// <summary>
         /// Update the settings of the tenant-wide externalIdentitiesPolicy object that controls whether external users can leave an Azure AD tenant via self-service controls.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/externalidentitiespolicy-update?view=graph-rest-1.0" />
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public async Task<Microsoft.Graph.Beta.Models.ExternalIdentitiesPolicy> PatchAsync(Microsoft.Graph.Beta.Models.ExternalIdentitiesPolicy body, Action<ExternalIdentitiesPolicyRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -145,10 +149,12 @@ namespace Microsoft.Graph.Beta.Policies.ExternalIdentitiesPolicy {
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ExternalIdentitiesPolicy>(requestInfo, Microsoft.Graph.Beta.Models.ExternalIdentitiesPolicy.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class ExternalIdentitiesPolicyRequestBuilderDeleteRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -156,10 +162,12 @@ namespace Microsoft.Graph.Beta.Policies.ExternalIdentitiesPolicy {
             /// </summary>
             public ExternalIdentitiesPolicyRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Read the properties and relationships of the tenant-wide externalIdentitiesPolicy object that controls whether external users can leave an Azure AD tenant via self-service controls.</summary>
+        /// <summary>
+        /// Read the properties and relationships of the tenant-wide externalIdentitiesPolicy object that controls whether external users can leave an Azure AD tenant via self-service controls.
+        /// </summary>
         public class ExternalIdentitiesPolicyRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]
@@ -168,10 +176,12 @@ namespace Microsoft.Graph.Beta.Policies.ExternalIdentitiesPolicy {
             [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class ExternalIdentitiesPolicyRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -181,13 +191,15 @@ namespace Microsoft.Graph.Beta.Policies.ExternalIdentitiesPolicy {
             /// </summary>
             public ExternalIdentitiesPolicyRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class ExternalIdentitiesPolicyRequestBuilderPatchRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -195,7 +207,7 @@ namespace Microsoft.Graph.Beta.Policies.ExternalIdentitiesPolicy {
             /// </summary>
             public ExternalIdentitiesPolicyRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

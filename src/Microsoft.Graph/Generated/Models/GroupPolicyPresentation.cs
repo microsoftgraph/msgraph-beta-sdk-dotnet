@@ -1,11 +1,12 @@
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>The base entity for the display presentation of any of the additional options in a group policy definition.</summary>
+    /// <summary>
+    /// The base entity for the display presentation of any of the additional options in a group policy definition.
+    /// </summary>
     public class GroupPolicyPresentation : Entity, IParsable {
         /// <summary>The group policy definition associated with the presentation.</summary>
         public GroupPolicyDefinition Definition {

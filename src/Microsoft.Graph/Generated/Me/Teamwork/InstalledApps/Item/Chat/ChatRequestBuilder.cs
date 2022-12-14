@@ -9,7 +9,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Me.Teamwork.InstalledApps.Item.Chat {
-    /// <summary>Provides operations to manage the chat property of the microsoft.graph.userScopeTeamsAppInstallation entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the chat property of the microsoft.graph.userScopeTeamsAppInstallation entity.
+    /// </summary>
     public class ChatRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -66,6 +68,7 @@ namespace Microsoft.Graph.Beta.Me.Teamwork.InstalledApps.Item.Chat {
         }
         /// <summary>
         /// Retrieve the chat of the specified user and Teams app.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/userscopeteamsappinstallation-get-chat?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -77,7 +80,9 @@ namespace Microsoft.Graph.Beta.Me.Teamwork.InstalledApps.Item.Chat {
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Chat>(requestInfo, Microsoft.Graph.Beta.Models.Chat.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Retrieve the chat of the specified user and Teams app.</summary>
+        /// <summary>
+        /// Retrieve the chat of the specified user and Teams app.
+        /// </summary>
         public class ChatRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]
@@ -86,10 +91,12 @@ namespace Microsoft.Graph.Beta.Me.Teamwork.InstalledApps.Item.Chat {
             [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class ChatRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -99,7 +106,7 @@ namespace Microsoft.Graph.Beta.Me.Teamwork.InstalledApps.Item.Chat {
             /// </summary>
             public ChatRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

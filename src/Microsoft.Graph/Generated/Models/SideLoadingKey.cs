@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>SideLoadingKey entity is required for Windows 8 and 8.1 devices to intall Line Of Business Apps for a tenant.</summary>
+    /// <summary>
+    /// SideLoadingKey entity is required for Windows 8 and 8.1 devices to intall Line Of Business Apps for a tenant.
+    /// </summary>
     public class SideLoadingKey : Entity, IParsable {
         /// <summary>Side Loading Key description displayed to the ITPro Admins..</summary>
         public string Description {

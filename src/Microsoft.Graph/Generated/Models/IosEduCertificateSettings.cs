@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Trusted Root and PFX certificates for iOS EDU.</summary>
+    /// <summary>
+    /// Trusted Root and PFX certificates for iOS EDU.
+    /// </summary>
     public class IosEduCertificateSettings : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {

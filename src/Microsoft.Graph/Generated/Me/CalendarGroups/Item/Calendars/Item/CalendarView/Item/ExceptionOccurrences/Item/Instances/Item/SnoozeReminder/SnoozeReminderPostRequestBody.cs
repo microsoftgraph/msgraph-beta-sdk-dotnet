@@ -6,7 +6,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Me.CalendarGroups.Item.Calendars.Item.CalendarView.Item.ExceptionOccurrences.Item.Instances.Item.SnoozeReminder {
-    /// <summary>Provides operations to call the snoozeReminder method.</summary>
+    /// <summary>
+    /// Provides operations to call the snoozeReminder method.
+    /// </summary>
     public class SnoozeReminderPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {

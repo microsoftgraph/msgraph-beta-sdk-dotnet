@@ -1,11 +1,12 @@
-using Microsoft.Graph.Beta.Models.Security;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>
+    /// Provides operations to manage the collection of accessReviewDecision entities.
+    /// </summary>
     public class PolicyBase : Entity, IParsable {
         /// <summary>The createdBy property</summary>
         public Microsoft.Graph.Beta.Models.IdentitySet CreatedBy {

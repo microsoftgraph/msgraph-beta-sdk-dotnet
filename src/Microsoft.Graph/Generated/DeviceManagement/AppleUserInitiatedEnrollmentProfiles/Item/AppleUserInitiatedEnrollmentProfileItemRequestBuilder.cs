@@ -11,7 +11,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.DeviceManagement.AppleUserInitiatedEnrollmentProfiles.Item {
-    /// <summary>Provides operations to manage the appleUserInitiatedEnrollmentProfiles property of the microsoft.graph.deviceManagement entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the appleUserInitiatedEnrollmentProfiles property of the microsoft.graph.deviceManagement entity.
+    /// </summary>
     public class AppleUserInitiatedEnrollmentProfileItemRequestBuilder {
         /// <summary>Provides operations to manage the assignments property of the microsoft.graph.appleUserInitiatedEnrollmentProfile entity.</summary>
         public AssignmentsRequestBuilder Assignments { get =>
@@ -95,7 +97,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AppleUserInitiatedEnrollmentProf
         /// <summary>
         /// Update the navigation property appleUserInitiatedEnrollmentProfiles in deviceManagement
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreatePatchRequestInformation(AppleUserInitiatedEnrollmentProfile body, Action<AppleUserInitiatedEnrollmentProfileItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -143,7 +145,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AppleUserInitiatedEnrollmentProf
         /// <summary>
         /// Update the navigation property appleUserInitiatedEnrollmentProfiles in deviceManagement
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public async Task<AppleUserInitiatedEnrollmentProfile> PatchAsync(AppleUserInitiatedEnrollmentProfile body, Action<AppleUserInitiatedEnrollmentProfileItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -155,10 +157,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AppleUserInitiatedEnrollmentProf
             };
             return await RequestAdapter.SendAsync<AppleUserInitiatedEnrollmentProfile>(requestInfo, AppleUserInitiatedEnrollmentProfile.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class AppleUserInitiatedEnrollmentProfileItemRequestBuilderDeleteRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -166,10 +170,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AppleUserInitiatedEnrollmentProf
             /// </summary>
             public AppleUserInitiatedEnrollmentProfileItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Apple user initiated enrollment profiles</summary>
+        /// <summary>
+        /// Apple user initiated enrollment profiles
+        /// </summary>
         public class AppleUserInitiatedEnrollmentProfileItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]
@@ -178,10 +184,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AppleUserInitiatedEnrollmentProf
             [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class AppleUserInitiatedEnrollmentProfileItemRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -191,13 +199,15 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AppleUserInitiatedEnrollmentProf
             /// </summary>
             public AppleUserInitiatedEnrollmentProfileItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class AppleUserInitiatedEnrollmentProfileItemRequestBuilderPatchRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -205,7 +215,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AppleUserInitiatedEnrollmentProf
             /// </summary>
             public AppleUserInitiatedEnrollmentProfileItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

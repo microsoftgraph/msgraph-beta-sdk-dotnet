@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>
+    /// Casts the previous resource to application.
+    /// </summary>
     public class ServicePrincipalCreationConditionSet : Entity, IParsable {
         /// <summary>The applicationIds property</summary>
         public List<string> ApplicationIds {

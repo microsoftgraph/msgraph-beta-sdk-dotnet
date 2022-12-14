@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>
+    /// Provides operations to manage the collection of accessReviewDecision entities.
+    /// </summary>
     public class OutlookTaskGroup : Entity, IParsable {
         /// <summary>The version of the task group.</summary>
         public string ChangeKey {
@@ -12,8 +14,8 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("changeKey", value); }
         }
         /// <summary>The unique GUID identifier for the task group.</summary>
-        public string GroupKey {
-            get { return BackingStore?.Get<string>("groupKey"); }
+        public Guid? GroupKey {
+            get { return BackingStore?.Get<Guid?>("groupKey"); }
             set { BackingStore?.Set("groupKey", value); }
         }
         /// <summary>True if the task group is the default task group.</summary>
@@ -45,7 +47,7 @@ namespace Microsoft.Graph.Beta.Models {
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"changeKey", n => { ChangeKey = n.GetStringValue(); } },
-                {"groupKey", n => { GroupKey = n.GetStringValue(); } },
+                {"groupKey", n => { GroupKey = n.GetGuidValue(); } },
                 {"isDefaultGroup", n => { IsDefaultGroup = n.GetBoolValue(); } },
                 {"name", n => { Name = n.GetStringValue(); } },
                 {"taskFolders", n => { TaskFolders = n.GetCollectionOfObjectValues<OutlookTaskFolder>(OutlookTaskFolder.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -59,7 +61,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteStringValue("changeKey", ChangeKey);
-            writer.WriteStringValue("groupKey", GroupKey);
+            writer.WriteGuidValue("groupKey", GroupKey);
             writer.WriteBoolValue("isDefaultGroup", IsDefaultGroup);
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfObjectValues<OutlookTaskFolder>("taskFolders", TaskFolders);

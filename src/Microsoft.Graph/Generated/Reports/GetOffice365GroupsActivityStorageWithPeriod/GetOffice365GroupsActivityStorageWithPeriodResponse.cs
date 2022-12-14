@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Reports.GetOffice365GroupsActivityStorageWithPeriod {
-    /// <summary>Provides operations to call the getOffice365GroupsActivityStorage method.</summary>
+    /// <summary>
+    /// Provides operations to call the getOffice365GroupsActivityStorage method.
+    /// </summary>
     public class GetOffice365GroupsActivityStorageWithPeriodResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<Office365GroupsActivityStorage> Value {

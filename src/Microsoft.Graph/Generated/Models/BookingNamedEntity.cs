@@ -1,11 +1,12 @@
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Booking entities that provide a display name.</summary>
+    /// <summary>
+    /// Booking entities that provide a display name.
+    /// </summary>
     public class BookingNamedEntity : Entity, IParsable {
         /// <summary>A name for the derived entity, which interfaces with customers.</summary>
         public string DisplayName {

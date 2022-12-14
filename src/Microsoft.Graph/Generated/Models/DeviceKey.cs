@@ -14,8 +14,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The deviceId property</summary>
-        public string DeviceId {
-            get { return BackingStore?.Get<string>("deviceId"); }
+        public Guid? DeviceId {
+            get { return BackingStore?.Get<Guid?>("deviceId"); }
             set { BackingStore?.Set("deviceId", value); }
         }
         /// <summary>The keyMaterial property</summary>
@@ -53,7 +53,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"deviceId", n => { DeviceId = n.GetStringValue(); } },
+                {"deviceId", n => { DeviceId = n.GetGuidValue(); } },
                 {"keyMaterial", n => { KeyMaterial = n.GetByteArrayValue(); } },
                 {"keyType", n => { KeyType = n.GetStringValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("deviceId", DeviceId);
+            writer.WriteGuidValue("deviceId", DeviceId);
             writer.WriteByteArrayValue("keyMaterial", KeyMaterial);
             writer.WriteStringValue("keyType", KeyType);
             writer.WriteStringValue("@odata.type", OdataType);

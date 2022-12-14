@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>The user experience analytics work from anywhere cloud identity devices summary.</summary>
+    /// <summary>
+    /// The user experience analytics work from anywhere cloud identity devices summary.
+    /// </summary>
     public class UserExperienceAnalyticsCloudIdentityDevicesSummary : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {

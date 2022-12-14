@@ -9,7 +9,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Users.Item.Calendar.CalendarView.Item.Instances.Item.Calendar {
-    /// <summary>Provides operations to manage the calendar property of the microsoft.graph.event entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the calendar property of the microsoft.graph.event entity.
+    /// </summary>
     public class CalendarRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -77,16 +79,20 @@ namespace Microsoft.Graph.Beta.Users.Item.Calendar.CalendarView.Item.Instances.I
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Calendar>(requestInfo, Microsoft.Graph.Beta.Models.Calendar.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>The calendar that contains the event. Navigation property. Read-only.</summary>
+        /// <summary>
+        /// The calendar that contains the event. Navigation property. Read-only.
+        /// </summary>
         public class CalendarRequestBuilderGetQueryParameters {
             /// <summary>Select properties to be returned</summary>
             [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class CalendarRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -96,7 +102,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Calendar.CalendarView.Item.Instances.I
             /// </summary>
             public CalendarRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

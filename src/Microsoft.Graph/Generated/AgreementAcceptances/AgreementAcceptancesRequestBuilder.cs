@@ -10,7 +10,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.AgreementAcceptances {
-    /// <summary>Provides operations to manage the collection of agreementAcceptance entities.</summary>
+    /// <summary>
+    /// Provides operations to manage the collection of agreementAcceptance entities.
+    /// </summary>
     public class AgreementAcceptancesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -74,7 +76,7 @@ namespace Microsoft.Graph.Beta.AgreementAcceptances {
         /// <summary>
         /// Add new entity to agreementAcceptances
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreatePostRequestInformation(AgreementAcceptance body, Action<AgreementAcceptancesRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -109,7 +111,7 @@ namespace Microsoft.Graph.Beta.AgreementAcceptances {
         /// <summary>
         /// Add new entity to agreementAcceptances
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public async Task<AgreementAcceptance> PostAsync(AgreementAcceptance body, Action<AgreementAcceptancesRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -121,7 +123,9 @@ namespace Microsoft.Graph.Beta.AgreementAcceptances {
             };
             return await RequestAdapter.SendAsync<AgreementAcceptance>(requestInfo, AgreementAcceptance.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Get entities from agreementAcceptances</summary>
+        /// <summary>
+        /// Get entities from agreementAcceptances
+        /// </summary>
         public class AgreementAcceptancesRequestBuilderGetQueryParameters {
             /// <summary>Search items by search phrases</summary>
             [QueryParameter("%24search")]
@@ -130,10 +134,12 @@ namespace Microsoft.Graph.Beta.AgreementAcceptances {
             [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class AgreementAcceptancesRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -143,13 +149,15 @@ namespace Microsoft.Graph.Beta.AgreementAcceptances {
             /// </summary>
             public AgreementAcceptancesRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class AgreementAcceptancesRequestBuilderPostRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -157,7 +165,7 @@ namespace Microsoft.Graph.Beta.AgreementAcceptances {
             /// </summary>
             public AgreementAcceptancesRequestBuilderPostRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

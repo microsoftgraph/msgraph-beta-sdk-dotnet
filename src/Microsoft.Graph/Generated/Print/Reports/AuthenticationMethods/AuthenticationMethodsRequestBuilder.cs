@@ -14,7 +14,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Print.Reports.AuthenticationMethods {
-    /// <summary>Provides operations to manage the authenticationMethods property of the microsoft.graph.reportRoot entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the authenticationMethods property of the microsoft.graph.reportRoot entity.
+    /// </summary>
     public class AuthenticationMethodsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -94,7 +96,7 @@ namespace Microsoft.Graph.Beta.Print.Reports.AuthenticationMethods {
         /// <summary>
         /// Update the navigation property authenticationMethods in print
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreatePatchRequestInformation(AuthenticationMethodsRoot body, Action<AuthenticationMethodsRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -142,7 +144,7 @@ namespace Microsoft.Graph.Beta.Print.Reports.AuthenticationMethods {
         /// <summary>
         /// Update the navigation property authenticationMethods in print
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public async Task<AuthenticationMethodsRoot> PatchAsync(AuthenticationMethodsRoot body, Action<AuthenticationMethodsRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -186,10 +188,12 @@ namespace Microsoft.Graph.Beta.Print.Reports.AuthenticationMethods {
             if(string.IsNullOrEmpty(includedUserTypes)) throw new ArgumentNullException(nameof(includedUserTypes));
             return new UsersRegisteredByMethodWithIncludedUserTypesWithIncludedUserRolesRequestBuilder(PathParameters, RequestAdapter, includedUserRoles, includedUserTypes);
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class AuthenticationMethodsRequestBuilderDeleteRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -197,10 +201,12 @@ namespace Microsoft.Graph.Beta.Print.Reports.AuthenticationMethods {
             /// </summary>
             public AuthenticationMethodsRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Container for navigation properties for Azure AD authentication methods resources.</summary>
+        /// <summary>
+        /// Container for navigation properties for Azure AD authentication methods resources.
+        /// </summary>
         public class AuthenticationMethodsRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]
@@ -209,10 +215,12 @@ namespace Microsoft.Graph.Beta.Print.Reports.AuthenticationMethods {
             [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class AuthenticationMethodsRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -222,13 +230,15 @@ namespace Microsoft.Graph.Beta.Print.Reports.AuthenticationMethods {
             /// </summary>
             public AuthenticationMethodsRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class AuthenticationMethodsRequestBuilderPatchRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -236,7 +246,7 @@ namespace Microsoft.Graph.Beta.Print.Reports.AuthenticationMethods {
             /// </summary>
             public AuthenticationMethodsRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

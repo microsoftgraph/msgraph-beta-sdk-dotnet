@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Ediscovery {
+    /// <summary>
+    /// Provides operations to manage the queries property of the microsoft.graph.ediscovery.reviewSet entity.
+    /// </summary>
     public class ReviewSetQueryCollectionResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<ReviewSetQuery> Value {

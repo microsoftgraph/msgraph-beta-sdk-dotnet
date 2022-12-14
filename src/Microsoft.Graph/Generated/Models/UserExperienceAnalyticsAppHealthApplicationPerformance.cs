@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>The user experience analytics application performance entity contains app performance details.</summary>
+    /// <summary>
+    /// The user experience analytics application performance entity contains app performance details.
+    /// </summary>
     public class UserExperienceAnalyticsAppHealthApplicationPerformance : Entity, IParsable {
         /// <summary>The number of devices where the app has been active. Valid values -2147483648 to 2147483647</summary>
         public int? ActiveDeviceCount {

@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>
+    /// Provides operations to manage the collection of accessReviewDecision entities.
+    /// </summary>
     public class Incident : Entity, IParsable {
         /// <summary>The list of related alerts. Supports $expand.</summary>
         public List<Alert> Alerts {
@@ -30,6 +32,11 @@ namespace Microsoft.Graph.Beta.Models.Security {
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
+        }
+        /// <summary>The customTags property</summary>
+        public List<string> CustomTags {
+            get { return BackingStore?.Get<List<string>>("customTags"); }
+            set { BackingStore?.Set("customTags", value); }
         }
         /// <summary>Specifies the determination of the incident. Possible values are: unknown, apt, malware, securityPersonnel, securityTesting, unwantedSoftware, other, multiStagedAttack, compromisedUser, phishing, maliciousUserActivity, clean, insufficientData, confirmedUserActivity, lineOfBusinessApplication, unknownFutureValue.</summary>
         public AlertDetermination? Determination {
@@ -66,11 +73,6 @@ namespace Microsoft.Graph.Beta.Models.Security {
             get { return BackingStore?.Get<IncidentStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
-        /// <summary>Array of custom tags associated with an incident.</summary>
-        public List<string> Tags {
-            get { return BackingStore?.Get<List<string>>("tags"); }
-            set { BackingStore?.Set("tags", value); }
-        }
         /// <summary>The Azure Active Directory tenant in which the alert was created.</summary>
         public string TenantId {
             get { return BackingStore?.Get<string>("tenantId"); }
@@ -94,6 +96,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
                 {"classification", n => { Classification = n.GetEnumValue<AlertClassification>(); } },
                 {"comments", n => { Comments = n.GetCollectionOfObjectValues<AlertComment>(AlertComment.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
+                {"customTags", n => { CustomTags = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"determination", n => { Determination = n.GetEnumValue<AlertDetermination>(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"incidentWebUrl", n => { IncidentWebUrl = n.GetStringValue(); } },
@@ -101,7 +104,6 @@ namespace Microsoft.Graph.Beta.Models.Security {
                 {"redirectIncidentId", n => { RedirectIncidentId = n.GetStringValue(); } },
                 {"severity", n => { Severity = n.GetEnumValue<AlertSeverity>(); } },
                 {"status", n => { Status = n.GetEnumValue<IncidentStatus>(); } },
-                {"tags", n => { Tags = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"tenantId", n => { TenantId = n.GetStringValue(); } },
             };
         }
@@ -117,6 +119,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             writer.WriteEnumValue<AlertClassification>("classification", Classification);
             writer.WriteCollectionOfObjectValues<AlertComment>("comments", Comments);
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
+            writer.WriteCollectionOfPrimitiveValues<string>("customTags", CustomTags);
             writer.WriteEnumValue<AlertDetermination>("determination", Determination);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("incidentWebUrl", IncidentWebUrl);
@@ -124,7 +127,6 @@ namespace Microsoft.Graph.Beta.Models.Security {
             writer.WriteStringValue("redirectIncidentId", RedirectIncidentId);
             writer.WriteEnumValue<AlertSeverity>("severity", Severity);
             writer.WriteEnumValue<IncidentStatus>("status", Status);
-            writer.WriteCollectionOfPrimitiveValues<string>("tags", Tags);
             writer.WriteStringValue("tenantId", TenantId);
         }
     }

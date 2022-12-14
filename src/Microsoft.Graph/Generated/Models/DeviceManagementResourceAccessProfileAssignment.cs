@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Entity that describes tenant level settings for derived credentials</summary>
+    /// <summary>
+    /// Entity that describes tenant level settings for derived credentials
+    /// </summary>
     public class DeviceManagementResourceAccessProfileAssignment : Entity, IParsable {
         /// <summary>The administrator intent for the assignment of the profile.</summary>
         public DeviceManagementResourceAccessProfileIntent? Intent {

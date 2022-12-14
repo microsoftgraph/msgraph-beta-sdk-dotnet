@@ -9,7 +9,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.DetectedApps.Item {
-    /// <summary>Provides operations to manage the detectedApps property of the microsoft.graph.managedDevice entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the detectedApps property of the microsoft.graph.managedDevice entity.
+    /// </summary>
     public class DetectedAppItemRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -77,7 +79,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.DetectedAp
             };
             return await RequestAdapter.SendAsync<DetectedApp>(requestInfo, DetectedApp.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>All applications currently installed on the device</summary>
+        /// <summary>
+        /// All applications currently installed on the device
+        /// </summary>
         public class DetectedAppItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]
@@ -86,10 +90,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.DetectedAp
             [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class DetectedAppItemRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -99,7 +105,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.DetectedAp
             /// </summary>
             public DetectedAppItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

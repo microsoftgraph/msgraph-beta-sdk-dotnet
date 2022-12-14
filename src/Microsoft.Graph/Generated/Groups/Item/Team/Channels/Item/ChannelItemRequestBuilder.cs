@@ -18,7 +18,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item {
-    /// <summary>Provides operations to manage the channels property of the microsoft.graph.team entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the channels property of the microsoft.graph.team entity.
+    /// </summary>
     public class ChannelItemRequestBuilder {
         /// <summary>Provides operations to call the completeMigration method.</summary>
         public CompleteMigrationRequestBuilder CompleteMigration { get =>
@@ -126,7 +128,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item {
         /// <summary>
         /// Update the navigation property channels in groups
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreatePatchRequestInformation(Channel body, Action<ChannelItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -180,7 +182,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item {
         /// <summary>
         /// Update the navigation property channels in groups
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public async Task<Channel> PatchAsync(Channel body, Action<ChannelItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -192,10 +194,12 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item {
             };
             return await RequestAdapter.SendAsync<Channel>(requestInfo, Channel.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class ChannelItemRequestBuilderDeleteRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -203,10 +207,12 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item {
             /// </summary>
             public ChannelItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>The collection of channels and messages associated with the team.</summary>
+        /// <summary>
+        /// The collection of channels and messages associated with the team.
+        /// </summary>
         public class ChannelItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]
@@ -215,10 +221,12 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item {
             [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class ChannelItemRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -228,13 +236,15 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item {
             /// </summary>
             public ChannelItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class ChannelItemRequestBuilderPatchRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -242,7 +252,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Team.Channels.Item {
             /// </summary>
             public ChannelItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

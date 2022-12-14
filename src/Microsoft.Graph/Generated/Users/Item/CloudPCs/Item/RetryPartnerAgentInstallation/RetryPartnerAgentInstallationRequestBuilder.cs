@@ -8,7 +8,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Users.Item.CloudPCs.Item.RetryPartnerAgentInstallation {
-    /// <summary>Provides operations to call the retryPartnerAgentInstallation method.</summary>
+    /// <summary>
+    /// Provides operations to call the retryPartnerAgentInstallation method.
+    /// </summary>
     public class RetryPartnerAgentInstallationRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -44,7 +46,7 @@ namespace Microsoft.Graph.Beta.Users.Item.CloudPCs.Item.RetryPartnerAgentInstall
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action retryPartnerAgentInstallation
+        /// Retry installation for the partner agents which failed to install on the Cloud PC. Service side will check which agent installation failed firstly and retry.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreatePostRequestInformation(Action<RetryPartnerAgentInstallationRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
@@ -62,7 +64,8 @@ namespace Microsoft.Graph.Beta.Users.Item.CloudPCs.Item.RetryPartnerAgentInstall
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action retryPartnerAgentInstallation
+        /// Retry installation for the partner agents which failed to install on the Cloud PC. Service side will check which agent installation failed firstly and retry.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/cloudpc-retrypartneragentinstallation?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -74,10 +77,12 @@ namespace Microsoft.Graph.Beta.Users.Item.CloudPCs.Item.RetryPartnerAgentInstall
             };
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class RetryPartnerAgentInstallationRequestBuilderPostRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -85,7 +90,7 @@ namespace Microsoft.Graph.Beta.Users.Item.CloudPCs.Item.RetryPartnerAgentInstall
             /// </summary>
             public RetryPartnerAgentInstallationRequestBuilderPostRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

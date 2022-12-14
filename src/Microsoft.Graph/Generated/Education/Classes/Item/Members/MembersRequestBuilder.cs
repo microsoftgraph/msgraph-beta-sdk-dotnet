@@ -12,7 +12,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Education.Classes.Item.Members {
-    /// <summary>Provides operations to manage the members property of the microsoft.graph.educationClass entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the members property of the microsoft.graph.educationClass entity.
+    /// </summary>
     public class MembersRequestBuilder {
         /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
@@ -83,6 +85,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Members {
         }
         /// <summary>
         /// Retrieves the teachers and students for a class. Note that if the delegated token is used, members can only be seen by other members of the class.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/educationclass-list-members?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -94,7 +97,9 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Members {
             };
             return await RequestAdapter.SendAsync<EducationUserCollectionResponse>(requestInfo, EducationUserCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Retrieves the teachers and students for a class. Note that if the delegated token is used, members can only be seen by other members of the class.</summary>
+        /// <summary>
+        /// Retrieves the teachers and students for a class. Note that if the delegated token is used, members can only be seen by other members of the class.
+        /// </summary>
         public class MembersRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -121,10 +126,12 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Members {
             [QueryParameter("%24top")]
             public int? Top { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class MembersRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -134,7 +141,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Members {
             /// </summary>
             public MembersRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

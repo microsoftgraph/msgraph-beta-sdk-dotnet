@@ -9,7 +9,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.DeviceManagement.ConfigManagerCollections.GetPolicySummaryWithPolicyId {
-    /// <summary>Provides operations to call the getPolicySummary method.</summary>
+    /// <summary>
+    /// Provides operations to call the getPolicySummary method.
+    /// </summary>
     public class GetPolicySummaryWithPolicyIdRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -78,10 +80,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ConfigManagerCollections.GetPoli
             };
             return await RequestAdapter.SendAsync<ConfigManagerPolicySummary>(requestInfo, ConfigManagerPolicySummary.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class GetPolicySummaryWithPolicyIdRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -89,7 +93,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ConfigManagerCollections.GetPoli
             /// </summary>
             public GetPolicySummaryWithPolicyIdRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

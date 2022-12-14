@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Contains the properties used to assign an App provisioning configuration to a group.</summary>
+    /// <summary>
+    /// Contains the properties used to assign an App provisioning configuration to a group.
+    /// </summary>
     public class MobileAppProvisioningConfigGroupAssignment : Entity, IParsable {
         /// <summary>The ID of the AAD group in which the app provisioning configuration is being targeted.</summary>
         public string TargetGroupId {
