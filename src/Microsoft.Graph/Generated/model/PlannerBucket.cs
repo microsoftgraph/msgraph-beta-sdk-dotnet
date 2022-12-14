@@ -30,6 +30,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets creation source.
+        /// Contains information about the origin of the bucket.
         /// </summary>
         [JsonPropertyName("creationSource")]
         public PlannerBucketCreation CreationSource { get; set; }

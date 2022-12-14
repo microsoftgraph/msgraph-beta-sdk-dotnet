@@ -41,6 +41,12 @@ namespace Microsoft.Graph
         [JsonPropertyName("outOfOfficeSettings")]
         public OutOfOfficeSettings OutOfOfficeSettings { get; set; }
     
+        /// <summary>
+        /// Gets or sets status message.
+        /// </summary>
+        [JsonPropertyName("statusMessage")]
+        public PresenceStatusMessage StatusMessage { get; set; }
+    
     }
 }
 

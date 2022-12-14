@@ -23,18 +23,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets isFooterShown.
+        /// Option to show the footer on the sign-in page.
         /// </summary>
         [JsonPropertyName("isFooterShown")]
         public bool? IsFooterShown { get; set; }
     
         /// <summary>
         /// Gets or sets isHeaderShown.
+        /// Option to show the header on the sign-in page.
         /// </summary>
         [JsonPropertyName("isHeaderShown")]
         public bool? IsHeaderShown { get; set; }
     
         /// <summary>
         /// Gets or sets layoutTemplateType.
+        /// Represents the layout template to be displayed on the login page for a tenant. The possible values are  default - Represents the default Microsoft layout with a centered lightbox.  verticalSplit - Represents a layout with a backgound on the left side and a full-height lightbox to the right.  unknownFutureValue - Evolvable enumeration sentinel value. Do not use.
         /// </summary>
         [JsonPropertyName("layoutTemplateType")]
         public LayoutTemplateType? LayoutTemplateType { get; set; }

@@ -1428,6 +1428,19 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for ReportRootGetTeamsTeamCounts.
+        /// </summary>
+        /// <returns>The <see cref="IReportRootGetTeamsTeamCountsRequestBuilder"/>.</returns>
+        public IReportRootGetTeamsTeamCountsRequestBuilder GetTeamsTeamCounts(
+            string period)
+        {
+            return new ReportRootGetTeamsTeamCountsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getTeamsTeamCounts"),
+                this.Client,
+                period);
+        }
+
+        /// <summary>
         /// Gets the request builder for ReportRootGetTeamsUserActivityCounts.
         /// </summary>
         /// <returns>The <see cref="IReportRootGetTeamsUserActivityCountsRequestBuilder"/>.</returns>

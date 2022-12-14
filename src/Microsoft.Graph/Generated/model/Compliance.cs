@@ -24,6 +24,7 @@ namespace Microsoft.Graph
         /// <summary>
         /// Gets or sets ediscovery.
         /// </summary>
+        [Obsolete("The ediscovery Apis are deprecated under /compliance and will stop returning data from February 01, 2023. Please use the new ediscovery Apis under /security.")]
         [JsonPropertyName("ediscovery")]
         public Microsoft.Graph.Ediscovery.Ediscoveryroot Ediscovery { get; set; }
     

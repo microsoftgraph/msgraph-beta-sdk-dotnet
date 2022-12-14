@@ -50,6 +50,12 @@ namespace Microsoft.Graph.SecurityNamespace
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
+        /// Gets or sets custom tags.
+        /// </summary>
+        [JsonPropertyName("customTags")]
+        public IEnumerable<string> CustomTags { get; set; }
+    
+        /// <summary>
         /// Gets or sets determination.
         /// Specifies the determination of the incident. Possible values are: unknown, apt, malware, securityPersonnel, securityTesting, unwantedSoftware, other, multiStagedAttack, compromisedUser, phishing, maliciousUserActivity, clean, insufficientData, confirmedUserActivity, lineOfBusinessApplication, unknownFutureValue.
         /// </summary>
@@ -97,13 +103,6 @@ namespace Microsoft.Graph.SecurityNamespace
         /// </summary>
         [JsonPropertyName("status")]
         public IncidentStatus? Status { get; set; }
-    
-        /// <summary>
-        /// Gets or sets tags.
-        /// Array of custom tags associated with an incident.
-        /// </summary>
-        [JsonPropertyName("tags")]
-        public IEnumerable<string> Tags { get; set; }
     
         /// <summary>
         /// Gets or sets tenant id.

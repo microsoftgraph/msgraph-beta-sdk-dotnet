@@ -64,6 +64,20 @@ namespace Microsoft.Graph
             Int32? top = null);
 
         /// <summary>
+        /// Gets the request builder for CloudPcReportsGetSharedUseLicenseUsageReport.
+        /// </summary>
+        /// <returns>The <see cref="ICloudPcReportsGetSharedUseLicenseUsageReportRequestBuilder"/>.</returns>
+        ICloudPcReportsGetSharedUseLicenseUsageReportRequestBuilder GetSharedUseLicenseUsageReport(
+            CloudPcReportName? reportName = null,
+            string filter = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null);
+
+        /// <summary>
         /// Gets the request builder for CloudPcReportsGetTotalAggregatedRemoteConnectionReports.
         /// </summary>
         /// <returns>The <see cref="ICloudPcReportsGetTotalAggregatedRemoteConnectionReportsRequestBuilder"/>.</returns>

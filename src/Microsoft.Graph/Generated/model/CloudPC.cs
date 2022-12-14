@@ -113,6 +113,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets partner agent install results.
+        /// The results of every partner agent's installation status on Cloud PC.
         /// </summary>
         [JsonPropertyName("partnerAgentInstallResults")]
         public IEnumerable<CloudPcPartnerAgentInstallResult> PartnerAgentInstallResults { get; set; }

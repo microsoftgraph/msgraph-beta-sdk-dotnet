@@ -23,13 +23,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets creationSourceKind.
+        /// Specifies what kind of creation source the task is created with. The possible values are: external, publication and unknownFutureValue.
         /// </summary>
         [JsonPropertyName("creationSourceKind")]
         public PlannerCreationSourceKind? CreationSourceKind { get; set; }
     
         /// <summary>
         /// Gets or sets teamsPublicationInfo.
-        /// Information about the publication process that created this task. null value indicates that the task was not created by a publication process.
+        /// Information about the publication process that created this task. This field is deprecated and clients should move to using the new inheritance model.
         /// </summary>
         [JsonPropertyName("teamsPublicationInfo")]
         public PlannerTeamsPublicationInfo TeamsPublicationInfo { get; set; }

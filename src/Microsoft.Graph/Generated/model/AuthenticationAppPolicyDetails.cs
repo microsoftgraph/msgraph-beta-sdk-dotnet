@@ -23,24 +23,28 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets adminConfiguration.
+        /// The admin configuration of the policy on the user's authentication app. For a policy that does not impact the success/failure of the authentication, the evaluation defaults to notApplicable. The possible values are: notApplicable, enabled, disabled, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("adminConfiguration")]
         public AuthenticationAppAdminConfiguration? AdminConfiguration { get; set; }
     
         /// <summary>
         /// Gets or sets authenticationEvaluation.
+        /// Evaluates the success/failure of the authentication based on the admin configuration of the policy on the user's client authentication app. The possible values are: success, failure, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("authenticationEvaluation")]
         public AuthenticationAppEvaluation? AuthenticationEvaluation { get; set; }
     
         /// <summary>
         /// Gets or sets policyName.
+        /// The name of the policy enforced on the user's authentication app.
         /// </summary>
         [JsonPropertyName("policyName")]
         public string PolicyName { get; set; }
     
         /// <summary>
         /// Gets or sets status.
+        /// Refers to whether the policy executed as expected on the user's client authentication app. The possible values are: unknown, appLockOutOfDate, appLockEnabled, appLockDisabled, appContextOutOfDate, appContextShown, appContextNotShown, locationContextOutOfDate, locationContextShown, locationContextNotShown, numberMatchOutOfDate, numberMatchCorrectNumberEntered, numberMatchIncorrectNumberEntered, numberMatchDeny, tamperResistantHardwareOutOfDate, tamperResistantHardwareUsed, tamperResistantHardwareNotUsed, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("status")]
         public AuthenticationAppPolicyStatus? Status { get; set; }

@@ -28,6 +28,12 @@ namespace Microsoft.Graph.SecurityNamespace
         }
 
         /// <summary>
+        /// Gets or sets countryLetterCode.
+        /// </summary>
+        [JsonPropertyName("countryLetterCode")]
+        public string CountryLetterCode { get; set; }
+    
+        /// <summary>
         /// Gets or sets ipAddress.
         /// The value of the IP Address, can be either in V4 address or V6 address format.
         /// </summary>

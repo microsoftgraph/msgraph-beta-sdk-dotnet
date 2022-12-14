@@ -113,6 +113,33 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for CloudPcReportsGetSharedUseLicenseUsageReport.
+        /// </summary>
+        /// <returns>The <see cref="ICloudPcReportsGetSharedUseLicenseUsageReportRequestBuilder"/>.</returns>
+        public ICloudPcReportsGetSharedUseLicenseUsageReportRequestBuilder GetSharedUseLicenseUsageReport(
+            CloudPcReportName? reportName = null,
+            string filter = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null)
+        {
+            return new CloudPcReportsGetSharedUseLicenseUsageReportRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getSharedUseLicenseUsageReport"),
+                this.Client,
+                reportName,
+                filter,
+                select,
+                search,
+                groupBy,
+                orderBy,
+                skip,
+                top);
+        }
+
+        /// <summary>
         /// Gets the request builder for CloudPcReportsGetTotalAggregatedRemoteConnectionReports.
         /// </summary>
         /// <returns>The <see cref="ICloudPcReportsGetTotalAggregatedRemoteConnectionReportsRequestBuilder"/>.</returns>

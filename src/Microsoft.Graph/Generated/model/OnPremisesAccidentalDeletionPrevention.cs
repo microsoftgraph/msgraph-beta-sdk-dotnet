@@ -23,12 +23,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets alertThreshold.
+        /// Threshold value which triggers accidental deletion prevention. The threshold is either an absolute number of objects or a percentage number of objects.
         /// </summary>
         [JsonPropertyName("alertThreshold")]
         public Int32? AlertThreshold { get; set; }
     
         /// <summary>
         /// Gets or sets synchronizationPreventionType.
+        /// The status of the accidental deletion prevention feature. The possible values are: disabled, enabledForCount, enabledForPercentage.
         /// </summary>
         [JsonPropertyName("synchronizationPreventionType")]
         public OnPremisesDirectorySynchronizationDeletionPreventionType? SynchronizationPreventionType { get; set; }

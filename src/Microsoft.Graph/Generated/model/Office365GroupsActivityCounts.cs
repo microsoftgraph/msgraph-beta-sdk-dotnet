@@ -49,6 +49,18 @@ namespace Microsoft.Graph
         public Date ReportRefreshDate { get; set; }
     
         /// <summary>
+        /// Gets or sets teams channel messages.
+        /// </summary>
+        [JsonPropertyName("teamsChannelMessages")]
+        public Int64? TeamsChannelMessages { get; set; }
+    
+        /// <summary>
+        /// Gets or sets teams meetings organized.
+        /// </summary>
+        [JsonPropertyName("teamsMeetingsOrganized")]
+        public Int64? TeamsMeetingsOrganized { get; set; }
+    
+        /// <summary>
         /// Gets or sets yammer messages liked.
         /// The number of messages liked in Yammer groups.
         /// </summary>

@@ -94,6 +94,19 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for PresenceSetStatusMessage.
+        /// </summary>
+        /// <returns>The <see cref="IPresenceSetStatusMessageRequestBuilder"/>.</returns>
+        public IPresenceSetStatusMessageRequestBuilder SetStatusMessage(
+            PresenceStatusMessage statusMessage = null)
+        {
+            return new PresenceSetStatusMessageRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.setStatusMessage"),
+                this.Client,
+                statusMessage);
+        }
+
+        /// <summary>
         /// Gets the request builder for PresenceSetUserPreferredPresence.
         /// </summary>
         /// <returns>The <see cref="IPresenceSetUserPreferredPresenceRequestBuilder"/>.</returns>

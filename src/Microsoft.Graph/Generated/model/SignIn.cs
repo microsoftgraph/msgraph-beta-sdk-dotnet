@@ -50,12 +50,14 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets authentication app device details.
+        /// Provides details about the app and device used during an Azure AD authentication step.
         /// </summary>
         [JsonPropertyName("authenticationAppDeviceDetails")]
         public AuthenticationAppDeviceDetails AuthenticationAppDeviceDetails { get; set; }
     
         /// <summary>
         /// Gets or sets authentication app policy evaluation details.
+        /// Provides details of the Azure AD policies applied to a user and client authentication app during an authentication step.
         /// </summary>
         [JsonPropertyName("authenticationAppPolicyEvaluationDetails")]
         public IEnumerable<AuthenticationAppPolicyDetails> AuthenticationAppPolicyEvaluationDetails { get; set; }

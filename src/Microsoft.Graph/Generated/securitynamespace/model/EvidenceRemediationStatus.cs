@@ -45,34 +45,9 @@ namespace Microsoft.Graph.SecurityNamespace
         NotFound = 4,
 	
         /// <summary>
-        /// Active
-        /// </summary>
-        Active = 5,
-	
-        /// <summary>
-        /// Pending Approval
-        /// </summary>
-        PendingApproval = 6,
-	
-        /// <summary>
-        /// Declined
-        /// </summary>
-        Declined = 7,
-	
-        /// <summary>
-        /// Not Remediated
-        /// </summary>
-        NotRemediated = 8,
-	
-        /// <summary>
-        /// Running
-        /// </summary>
-        Running = 9,
-	
-        /// <summary>
         /// Unknown Future Value
         /// </summary>
-        UnknownFutureValue = 10,
+        UnknownFutureValue = 5,
 	
     }
 }
