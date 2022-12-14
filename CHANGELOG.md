@@ -9,9 +9,12 @@ and this project does NOT adhere to [Semantic Versioning](https://semver.org/spe
 
 ### Added
 
+- Adds support for multi value headers
+
 ### Changed
 
-- Latest metadata updates from 29nd November 2022 snapshot
+- Fixes Guid types represented as strings
+- Latest metadata updates from 14th December 2022 snapshot
 
 ## [5.14.0-preview] - 2022-11-23
 
