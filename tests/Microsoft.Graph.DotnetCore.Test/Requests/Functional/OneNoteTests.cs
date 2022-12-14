@@ -32,7 +32,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
             firstSectionID = sectionPage.Value[0].Id;
         }
         
-        public async void TestPageCleanUp()
+        internal async Task TestPageCleanUp()
         {
             await graphClient.Me.Onenote.Pages[testPage.Id].DeleteAsync();
         }
@@ -364,7 +364,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                     Assert.Contains(testPage.Title, title);
                     Assert.Null(testPage.Content);
 
-                    TestPageCleanUp();
+                    await TestPageCleanUp();
                 }
                 else
                     throw new ServiceException(
@@ -424,7 +424,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                 Assert.NotNull(testPage);
                 Assert.Contains(testPage.Title, title);
 
-                TestPageCleanUp();
+                await TestPageCleanUp();
 
             }
             catch (Microsoft.Graph.ServiceException e)
@@ -490,7 +490,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                     Assert.True(testPage.GetType() == typeof(OnenotePage));
                     Assert.Contains(testPage.Title, title);
 
-                    TestPageCleanUp();
+                    await TestPageCleanUp();
                 }
             }
             catch (Microsoft.Graph.ServiceException e)
@@ -594,7 +594,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
             Assert.NotNull(testPage);
             Assert.Contains(testString, testPage.Title);
 
-            TestPageCleanUp();
+            await TestPageCleanUp();
         }
 
         /// <summary>
@@ -619,7 +619,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
             Assert.NotNull(testPage);
             Assert.Contains(testString, testPage.Title);
 
-            TestPageCleanUp();
+            await TestPageCleanUp();
         }
 
         /// <summary>
@@ -677,7 +677,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                 Assert.True(testPage.GetType() == typeof(OnenotePage));
                 Assert.Contains(testPage.Title, htmlBody);
 
-                TestPageCleanUp();
+                await TestPageCleanUp();
             }
             catch (Microsoft.Graph.ServiceException e)
             {

@@ -52,7 +52,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
             // Create the schema extension. This results in a call to Microsoft Graph.
             SchemaExtension schemaExtension = await graphClient.SchemaExtensions.PostAsync(extensionDefinition);
             Assert.NotNull(schemaExtension);
-            Assert.Equal(schemaExtension.Status, "InDevelopment");
+            Assert.Equal("InDevelopment", schemaExtension.Status);
             Assert.Contains(extensionDefinition.Id, schemaExtension.Id);
             Assert.NotNull(schemaExtension.Owner);
 

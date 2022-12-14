@@ -38,12 +38,11 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
             ).Returns(new JsonSerializationWriter());
             
             var addLicenses = new List<AssignedLicense> { new AssignedLicense() };
-            var removeLicenses = new List<string> { new Guid().ToString() };
 
             var requestBody = new AssignLicensePostRequestBody
             {
                 AddLicenses = addLicenses,
-                RemoveLicenses = removeLicenses
+                RemoveLicenses = new ()
             };
             
             var requestInformation = graphServiceClient.Me.AssignLicense.CreatePostRequestInformation(requestBody);

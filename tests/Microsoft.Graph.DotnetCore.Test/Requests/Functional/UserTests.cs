@@ -299,7 +299,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                 var requestBody = new AssignLicensePostRequestBody
                 {
                     AddLicenses = new List<AssignedLicense>(),
-                    RemoveLicenses = new List<string>()
+                    RemoveLicenses = new ()
                 };
                 var user = await graphClient.Me.AssignLicense.PostAsync(requestBody);
                 Assert.Null(user);
