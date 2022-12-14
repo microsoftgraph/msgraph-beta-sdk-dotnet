@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Entity that represents a Microsoft Tunnel site</summary>
+    /// <summary>
+    /// Entity that represents a Microsoft Tunnel site
+    /// </summary>
     public class MicrosoftTunnelSite : Entity, IParsable {
         /// <summary>The site&apos;s description (optional)</summary>
         public string Description {

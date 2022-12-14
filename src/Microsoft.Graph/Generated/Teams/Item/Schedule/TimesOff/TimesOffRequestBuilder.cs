@@ -11,7 +11,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Teams.Item.Schedule.TimesOff {
-    /// <summary>Provides operations to manage the timesOff property of the microsoft.graph.schedule entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the timesOff property of the microsoft.graph.schedule entity.
+    /// </summary>
     public class TimesOffRequestBuilder {
         /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
@@ -79,7 +81,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.TimesOff {
         /// <summary>
         /// Create a new timeOff instance in a schedule.
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreatePostRequestInformation(TimeOff body, Action<TimesOffRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -100,6 +102,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.TimesOff {
         }
         /// <summary>
         /// Get the list of timeOff instances in a schedule.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/schedule-list-timesoff?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -113,8 +116,9 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.TimesOff {
         }
         /// <summary>
         /// Create a new timeOff instance in a schedule.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/schedule-post-timesoff?view=graph-rest-1.0" />
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public async Task<TimeOff> PostAsync(TimeOff body, Action<TimesOffRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -126,7 +130,9 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.TimesOff {
             };
             return await RequestAdapter.SendAsync<TimeOff>(requestInfo, TimeOff.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Get the list of timeOff instances in a schedule.</summary>
+        /// <summary>
+        /// Get the list of timeOff instances in a schedule.
+        /// </summary>
         public class TimesOffRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -150,10 +156,12 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.TimesOff {
             [QueryParameter("%24top")]
             public int? Top { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class TimesOffRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -163,13 +171,15 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.TimesOff {
             /// </summary>
             public TimesOffRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class TimesOffRequestBuilderPostRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -177,7 +187,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.TimesOff {
             /// </summary>
             public TimesOffRequestBuilderPostRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

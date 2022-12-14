@@ -8,7 +8,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Monitoring.AlertRecords.GetPortalNotifications {
-    /// <summary>Provides operations to call the getPortalNotifications method.</summary>
+    /// <summary>
+    /// Provides operations to call the getPortalNotifications method.
+    /// </summary>
     public class GetPortalNotificationsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -76,7 +78,9 @@ namespace Microsoft.Graph.Beta.Monitoring.AlertRecords.GetPortalNotifications {
             };
             return await RequestAdapter.SendAsync<GetPortalNotificationsResponse>(requestInfo, GetPortalNotificationsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Invoke function getPortalNotifications</summary>
+        /// <summary>
+        /// Invoke function getPortalNotifications
+        /// </summary>
         public class GetPortalNotificationsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -94,10 +98,12 @@ namespace Microsoft.Graph.Beta.Monitoring.AlertRecords.GetPortalNotifications {
             [QueryParameter("%24top")]
             public int? Top { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class GetPortalNotificationsRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -107,7 +113,7 @@ namespace Microsoft.Graph.Beta.Monitoring.AlertRecords.GetPortalNotifications {
             /// </summary>
             public GetPortalNotificationsRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

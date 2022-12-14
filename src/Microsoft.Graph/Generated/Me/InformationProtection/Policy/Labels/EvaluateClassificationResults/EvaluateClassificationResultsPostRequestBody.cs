@@ -6,7 +6,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Me.InformationProtection.Policy.Labels.EvaluateClassificationResults {
-    /// <summary>Provides operations to call the evaluateClassificationResults method.</summary>
+    /// <summary>
+    /// Provides operations to call the evaluateClassificationResults method.
+    /// </summary>
     public class EvaluateClassificationResultsPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {

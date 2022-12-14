@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>The embedded SIM activation code pool assignment entity assigns a specific embeddedSIMActivationCodePool to an AAD device group.</summary>
+    /// <summary>
+    /// The embedded SIM activation code pool assignment entity assigns a specific embeddedSIMActivationCodePool to an AAD device group.
+    /// </summary>
     public class EmbeddedSIMActivationCodePoolAssignment : Entity, IParsable {
         /// <summary>Base type for assignment targets.</summary>
         public DeviceAndAppManagementAssignmentTarget Target {

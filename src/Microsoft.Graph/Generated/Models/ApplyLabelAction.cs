@@ -21,8 +21,8 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("label", value); }
         }
         /// <summary>If the label was the result of an automatic classification, supply the list of sensitive info type GUIDs that resulted in the returned label.</summary>
-        public List<string> ResponsibleSensitiveTypeIds {
-            get { return BackingStore?.Get<List<string>>("responsibleSensitiveTypeIds"); }
+        public List<Guid?> ResponsibleSensitiveTypeIds {
+            get { return BackingStore?.Get<List<Guid?>>("responsibleSensitiveTypeIds"); }
             set { BackingStore?.Set("responsibleSensitiveTypeIds", value); }
         }
         /// <summary>
@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"actions", n => { Actions = n.GetCollectionOfObjectValues<InformationProtectionAction>(InformationProtectionAction.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"actionSource", n => { ActionSource = n.GetEnumValue<ActionSource>(); } },
                 {"label", n => { Label = n.GetObjectValue<LabelDetails>(LabelDetails.CreateFromDiscriminatorValue); } },
-                {"responsibleSensitiveTypeIds", n => { ResponsibleSensitiveTypeIds = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"responsibleSensitiveTypeIds", n => { ResponsibleSensitiveTypeIds = n.GetCollectionOfPrimitiveValues<Guid?>()?.ToList(); } },
             };
         }
         /// <summary>
@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfObjectValues<InformationProtectionAction>("actions", Actions);
             writer.WriteEnumValue<ActionSource>("actionSource", ActionSource);
             writer.WriteObjectValue<LabelDetails>("label", Label);
-            writer.WriteCollectionOfPrimitiveValues<string>("responsibleSensitiveTypeIds", ResponsibleSensitiveTypeIds);
+            writer.WriteCollectionOfPrimitiveValues<Guid?>("responsibleSensitiveTypeIds", ResponsibleSensitiveTypeIds);
         }
     }
 }

@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>
+    /// Provides operations to manage the collection of accessReviewDecision entities.
+    /// </summary>
     public class CloudPC : Entity, IParsable {
         /// <summary>The Azure Active Directory (Azure AD) device ID of the Cloud PC.</summary>
         public string AadDeviceId {
@@ -71,7 +73,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<CloudPcOperatingSystem?>("osVersion"); }
             set { BackingStore?.Set("osVersion", value); }
         }
-        /// <summary>The partnerAgentInstallResults property</summary>
+        /// <summary>The results of every partner agent&apos;s installation status on Cloud PC.</summary>
         public List<CloudPcPartnerAgentInstallResult> PartnerAgentInstallResults {
             get { return BackingStore?.Get<List<CloudPcPartnerAgentInstallResult>>("partnerAgentInstallResults"); }
             set { BackingStore?.Set("partnerAgentInstallResults", value); }

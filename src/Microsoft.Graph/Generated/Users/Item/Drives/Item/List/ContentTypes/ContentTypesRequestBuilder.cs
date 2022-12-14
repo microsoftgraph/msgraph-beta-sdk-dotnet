@@ -14,7 +14,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Users.Item.Drives.Item.List.ContentTypes {
-    /// <summary>Provides operations to manage the contentTypes property of the microsoft.graph.list entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the contentTypes property of the microsoft.graph.list entity.
+    /// </summary>
     public class ContentTypesRequestBuilder {
         /// <summary>Provides operations to call the addCopy method.</summary>
         public AddCopyRequestBuilder AddCopy { get =>
@@ -90,7 +92,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Drives.Item.List.ContentTypes {
         /// <summary>
         /// Create new navigation property to contentTypes for users
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreatePostRequestInformation(ContentType body, Action<ContentTypesRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -111,6 +113,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Drives.Item.List.ContentTypes {
         }
         /// <summary>
         /// Get the collection of [contentType][contentType] resources in a [list][].
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/list-list-contenttypes?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -131,7 +134,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Drives.Item.List.ContentTypes {
         /// <summary>
         /// Create new navigation property to contentTypes for users
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public async Task<ContentType> PostAsync(ContentType body, Action<ContentTypesRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -143,7 +146,9 @@ namespace Microsoft.Graph.Beta.Users.Item.Drives.Item.List.ContentTypes {
             };
             return await RequestAdapter.SendAsync<ContentType>(requestInfo, ContentType.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Get the collection of [contentType][contentType] resources in a [list][].</summary>
+        /// <summary>
+        /// Get the collection of [contentType][contentType] resources in a [list][].
+        /// </summary>
         public class ContentTypesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -170,10 +175,12 @@ namespace Microsoft.Graph.Beta.Users.Item.Drives.Item.List.ContentTypes {
             [QueryParameter("%24top")]
             public int? Top { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class ContentTypesRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -183,13 +190,15 @@ namespace Microsoft.Graph.Beta.Users.Item.Drives.Item.List.ContentTypes {
             /// </summary>
             public ContentTypesRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class ContentTypesRequestBuilderPostRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -197,7 +206,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Drives.Item.List.ContentTypes {
             /// </summary>
             public ContentTypesRequestBuilderPostRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

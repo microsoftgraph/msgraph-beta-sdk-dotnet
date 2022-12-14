@@ -1,11 +1,12 @@
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>A class containing the properties used for PolicySet Item.</summary>
+    /// <summary>
+    /// A class containing the properties used for PolicySet Item.
+    /// </summary>
     public class PolicySetItem : Entity, IParsable {
         /// <summary>Creation time of the PolicySetItem.</summary>
         public DateTimeOffset? CreatedDateTime {

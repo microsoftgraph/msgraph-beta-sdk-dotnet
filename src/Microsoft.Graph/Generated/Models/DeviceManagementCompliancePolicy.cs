@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Device Management Compliance Policy</summary>
+    /// <summary>
+    /// Device Management Compliance Policy
+    /// </summary>
     public class DeviceManagementCompliancePolicy : Entity, IParsable {
         /// <summary>Policy assignments</summary>
         public List<DeviceManagementConfigurationPolicyAssignment> Assignments {

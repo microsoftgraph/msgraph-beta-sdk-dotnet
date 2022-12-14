@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.DeviceManagement.GroupPolicyConfigurations.Item.Assign {
-    /// <summary>Provides operations to call the assign method.</summary>
+    /// <summary>
+    /// Provides operations to call the assign method.
+    /// </summary>
     public class AssignResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<GroupPolicyConfigurationAssignment> Value {

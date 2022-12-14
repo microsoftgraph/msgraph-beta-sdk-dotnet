@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Me.Calendar.Events.Item.Instances.Item.ExceptionOccurrences.Delta {
-    /// <summary>Provides operations to call the delta method.</summary>
+    /// <summary>
+    /// Provides operations to call the delta method.
+    /// </summary>
     public class DeltaResponse : BaseDeltaFunctionResponse, IParsable {
         /// <summary>The value property</summary>
         public List<Event> Value {

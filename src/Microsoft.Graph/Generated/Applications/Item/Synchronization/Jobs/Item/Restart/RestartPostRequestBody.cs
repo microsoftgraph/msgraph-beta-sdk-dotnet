@@ -6,7 +6,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Applications.Item.Synchronization.Jobs.Item.Restart {
-    /// <summary>Provides operations to call the restart method.</summary>
+    /// <summary>
+    /// Provides operations to call the restart method.
+    /// </summary>
     public class RestartPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {

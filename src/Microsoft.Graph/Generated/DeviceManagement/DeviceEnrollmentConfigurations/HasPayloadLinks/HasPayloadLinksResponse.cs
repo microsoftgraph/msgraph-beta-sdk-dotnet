@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.DeviceManagement.DeviceEnrollmentConfigurations.HasPayloadLinks {
-    /// <summary>Provides operations to call the hasPayloadLinks method.</summary>
+    /// <summary>
+    /// Provides operations to call the hasPayloadLinks method.
+    /// </summary>
     public class HasPayloadLinksResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<HasPayloadLinkResultItem> Value {

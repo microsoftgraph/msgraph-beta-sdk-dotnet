@@ -1,11 +1,12 @@
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Windows Autopilot Deployment Profile</summary>
+    /// <summary>
+    /// Windows Autopilot Deployment Profile
+    /// </summary>
     public class WindowsAutopilotDeploymentProfile : Entity, IParsable {
         /// <summary>The list of assigned devices for the profile.</summary>
         public List<WindowsAutopilotDeviceIdentity> AssignedDevices {

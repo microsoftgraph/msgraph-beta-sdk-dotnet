@@ -6,7 +6,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Users.Item.Security.InformationProtection.SensitivityLabels.EvaluateClassificationResults {
-    /// <summary>Provides operations to call the evaluateClassificationResults method.</summary>
+    /// <summary>
+    /// Provides operations to call the evaluateClassificationResults method.
+    /// </summary>
     public class EvaluateClassificationResultsResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<Microsoft.Graph.Beta.Models.Security.InformationProtectionAction> Value {

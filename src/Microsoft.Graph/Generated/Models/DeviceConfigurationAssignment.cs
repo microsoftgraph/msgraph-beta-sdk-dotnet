@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>The device configuration assignment entity assigns an AAD group to a specific device configuration.</summary>
+    /// <summary>
+    /// The device configuration assignment entity assigns an AAD group to a specific device configuration.
+    /// </summary>
     public class DeviceConfigurationAssignment : Entity, IParsable {
         /// <summary>The admin intent to apply or remove the profile. Possible values are: apply, remove.</summary>
         public DeviceConfigAssignmentIntent? Intent {

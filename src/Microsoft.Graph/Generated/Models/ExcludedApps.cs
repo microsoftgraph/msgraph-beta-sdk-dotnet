@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Contains properties for Excluded Office365 Apps.</summary>
+    /// <summary>
+    /// Contains properties for Excluded Office365 Apps.
+    /// </summary>
     public class ExcludedApps : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>The value for if MS Office Access should be excluded or not.</summary>
         public bool? Access {

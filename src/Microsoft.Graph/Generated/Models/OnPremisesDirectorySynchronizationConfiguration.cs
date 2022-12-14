@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class OnPremisesDirectorySynchronizationConfiguration : IAdditionalDataHolder, IBackedModel, IParsable {
-        /// <summary>The accidentalDeletionPrevention property</summary>
+        /// <summary>Contains the accidental deletion prevention configuration for a tenant.</summary>
         public OnPremisesAccidentalDeletionPrevention AccidentalDeletionPrevention {
             get { return BackingStore?.Get<OnPremisesAccidentalDeletionPrevention>("accidentalDeletionPrevention"); }
             set { BackingStore?.Set("accidentalDeletionPrevention", value); }
@@ -18,7 +18,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The customerRequestedSynchronizationInterval property</summary>
+        /// <summary>Interval of time that the customer requested the sync client waits between sync cycles.</summary>
         public TimeSpan? CustomerRequestedSynchronizationInterval {
             get { return BackingStore?.Get<TimeSpan?>("customerRequestedSynchronizationInterval"); }
             set { BackingStore?.Set("customerRequestedSynchronizationInterval", value); }
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
-        /// <summary>The synchronizationInterval property</summary>
+        /// <summary>Interval of time the sync client should honor between sync cycles</summary>
         public TimeSpan? SynchronizationInterval {
             get { return BackingStore?.Get<TimeSpan?>("synchronizationInterval"); }
             set { BackingStore?.Set("synchronizationInterval", value); }

@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Entity that represents a single Microsoft Tunnel server</summary>
+    /// <summary>
+    /// Entity that represents a single Microsoft Tunnel server
+    /// </summary>
     public class MicrosoftTunnelServer : Entity, IParsable {
         /// <summary>The digest of the current agent image running on this server</summary>
         public string AgentImageDigest {

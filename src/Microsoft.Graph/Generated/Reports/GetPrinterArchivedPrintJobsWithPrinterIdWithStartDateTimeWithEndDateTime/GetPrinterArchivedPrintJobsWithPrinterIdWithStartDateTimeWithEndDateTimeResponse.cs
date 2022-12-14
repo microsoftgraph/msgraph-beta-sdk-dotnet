@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Reports.GetPrinterArchivedPrintJobsWithPrinterIdWithStartDateTimeWithEndDateTime {
-    /// <summary>Provides operations to call the getPrinterArchivedPrintJobs method.</summary>
+    /// <summary>
+    /// Provides operations to call the getPrinterArchivedPrintJobs method.
+    /// </summary>
     public class GetPrinterArchivedPrintJobsWithPrinterIdWithStartDateTimeWithEndDateTimeResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<ArchivedPrintJob> Value {

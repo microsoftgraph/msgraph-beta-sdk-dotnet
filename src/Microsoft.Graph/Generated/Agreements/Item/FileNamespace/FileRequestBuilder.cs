@@ -10,7 +10,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Agreements.Item.FileNamespace {
-    /// <summary>Provides operations to manage the file property of the microsoft.graph.agreement entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the file property of the microsoft.graph.agreement entity.
+    /// </summary>
     public class FileRequestBuilder {
         /// <summary>Provides operations to manage the localizations property of the microsoft.graph.agreementFile entity.</summary>
         public LocalizationsRequestBuilder Localizations { get =>
@@ -90,7 +92,7 @@ namespace Microsoft.Graph.Beta.Agreements.Item.FileNamespace {
         /// <summary>
         /// Update the navigation property file in agreements
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreatePatchRequestInformation(AgreementFile body, Action<FileRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -124,6 +126,7 @@ namespace Microsoft.Graph.Beta.Agreements.Item.FileNamespace {
         }
         /// <summary>
         /// Retrieve the details of the default file for an agreement, including the language and version information. The file information is specified through the agreementFile object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/agreementfile-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -138,7 +141,7 @@ namespace Microsoft.Graph.Beta.Agreements.Item.FileNamespace {
         /// <summary>
         /// Update the navigation property file in agreements
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public async Task<AgreementFile> PatchAsync(AgreementFile body, Action<FileRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -150,10 +153,12 @@ namespace Microsoft.Graph.Beta.Agreements.Item.FileNamespace {
             };
             return await RequestAdapter.SendAsync<AgreementFile>(requestInfo, AgreementFile.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class FileRequestBuilderDeleteRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -161,10 +166,12 @@ namespace Microsoft.Graph.Beta.Agreements.Item.FileNamespace {
             /// </summary>
             public FileRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Retrieve the details of the default file for an agreement, including the language and version information. The file information is specified through the agreementFile object.</summary>
+        /// <summary>
+        /// Retrieve the details of the default file for an agreement, including the language and version information. The file information is specified through the agreementFile object.
+        /// </summary>
         public class FileRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]
@@ -173,10 +180,12 @@ namespace Microsoft.Graph.Beta.Agreements.Item.FileNamespace {
             [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class FileRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -186,13 +195,15 @@ namespace Microsoft.Graph.Beta.Agreements.Item.FileNamespace {
             /// </summary>
             public FileRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class FileRequestBuilderPatchRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -200,7 +211,7 @@ namespace Microsoft.Graph.Beta.Agreements.Item.FileNamespace {
             /// </summary>
             public FileRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

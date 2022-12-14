@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Contains properties for device run state of the device compliance script.</summary>
+    /// <summary>
+    /// Contains properties for device run state of the device compliance script.
+    /// </summary>
     public class DeviceComplianceScriptDeviceState : Entity, IParsable {
         /// <summary>Indicates the type of execution status of the device management script.</summary>
         public RunState? DetectionState {

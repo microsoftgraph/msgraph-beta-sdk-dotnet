@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Contains properties of the possible iOS device types the mobile app can run on.</summary>
+    /// <summary>
+    /// Contains properties of the possible iOS device types the mobile app can run on.
+    /// </summary>
     public class IosDeviceType : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {

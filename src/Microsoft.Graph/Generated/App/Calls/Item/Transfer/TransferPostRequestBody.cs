@@ -6,7 +6,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.App.Calls.Item.Transfer {
-    /// <summary>Provides operations to call the transfer method.</summary>
+    /// <summary>
+    /// Provides operations to call the transfer method.
+    /// </summary>
     public class TransferPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {

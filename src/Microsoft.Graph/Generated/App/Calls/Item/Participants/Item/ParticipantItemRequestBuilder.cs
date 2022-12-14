@@ -12,7 +12,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.App.Calls.Item.Participants.Item {
-    /// <summary>Provides operations to manage the participants property of the microsoft.graph.call entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the participants property of the microsoft.graph.call entity.
+    /// </summary>
     public class ParticipantItemRequestBuilder {
         /// <summary>Provides operations to call the mute method.</summary>
         public MuteRequestBuilder Mute { get =>
@@ -100,7 +102,7 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.Participants.Item {
         /// <summary>
         /// Update the navigation property participants in app
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreatePatchRequestInformation(Participant body, Action<ParticipantItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -148,7 +150,7 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.Participants.Item {
         /// <summary>
         /// Update the navigation property participants in app
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public async Task<Participant> PatchAsync(Participant body, Action<ParticipantItemRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -160,10 +162,12 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.Participants.Item {
             };
             return await RequestAdapter.SendAsync<Participant>(requestInfo, Participant.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class ParticipantItemRequestBuilderDeleteRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -171,10 +175,12 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.Participants.Item {
             /// </summary>
             public ParticipantItemRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Get participants from app</summary>
+        /// <summary>
+        /// Get participants from app
+        /// </summary>
         public class ParticipantItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]
@@ -183,10 +189,12 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.Participants.Item {
             [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class ParticipantItemRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -196,13 +204,15 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.Participants.Item {
             /// </summary>
             public ParticipantItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class ParticipantItemRequestBuilderPatchRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -210,7 +220,7 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.Participants.Item {
             /// </summary>
             public ParticipantItemRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

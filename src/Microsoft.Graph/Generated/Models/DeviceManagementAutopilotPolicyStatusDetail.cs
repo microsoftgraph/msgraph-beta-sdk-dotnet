@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Policy status detail item contained by an autopilot event.</summary>
+    /// <summary>
+    /// Policy status detail item contained by an autopilot event.
+    /// </summary>
     public class DeviceManagementAutopilotPolicyStatusDetail : Entity, IParsable {
         /// <summary>The complianceStatus property</summary>
         public DeviceManagementAutopilotPolicyComplianceStatus? ComplianceStatus {

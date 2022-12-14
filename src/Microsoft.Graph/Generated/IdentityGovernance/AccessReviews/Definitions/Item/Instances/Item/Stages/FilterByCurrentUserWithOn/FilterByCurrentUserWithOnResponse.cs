@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Definitions.Item.Instances.Item.Stages.FilterByCurrentUserWithOn {
-    /// <summary>Provides operations to call the filterByCurrentUser method.</summary>
+    /// <summary>
+    /// Provides operations to call the filterByCurrentUser method.
+    /// </summary>
     public class FilterByCurrentUserWithOnResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<AccessReviewStage> Value {

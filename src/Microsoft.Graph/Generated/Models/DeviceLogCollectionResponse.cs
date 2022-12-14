@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Windows Log Collection request entity.</summary>
+    /// <summary>
+    /// Windows Log Collection request entity.
+    /// </summary>
     public class DeviceLogCollectionResponse : Entity, IParsable {
         /// <summary>The User Principal Name (UPN) of the user that enrolled the device</summary>
         public string EnrolledByUser {
@@ -27,8 +29,8 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("initiatedByUserPrincipalName", value); }
         }
         /// <summary>The device Id</summary>
-        public string ManagedDeviceId {
-            get { return BackingStore?.Get<string>("managedDeviceId"); }
+        public Guid? ManagedDeviceId {
+            get { return BackingStore?.Get<Guid?>("managedDeviceId"); }
             set { BackingStore?.Set("managedDeviceId", value); }
         }
         /// <summary>The DateTime the request was received</summary>
@@ -68,7 +70,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"errorCode", n => { ErrorCode = n.GetLongValue(); } },
                 {"expirationDateTimeUTC", n => { ExpirationDateTimeUTC = n.GetDateTimeOffsetValue(); } },
                 {"initiatedByUserPrincipalName", n => { InitiatedByUserPrincipalName = n.GetStringValue(); } },
-                {"managedDeviceId", n => { ManagedDeviceId = n.GetStringValue(); } },
+                {"managedDeviceId", n => { ManagedDeviceId = n.GetGuidValue(); } },
                 {"receivedDateTimeUTC", n => { ReceivedDateTimeUTC = n.GetDateTimeOffsetValue(); } },
                 {"requestedDateTimeUTC", n => { RequestedDateTimeUTC = n.GetDateTimeOffsetValue(); } },
                 {"size", n => { Size = n.GetDoubleValue(); } },
@@ -86,7 +88,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteLongValue("errorCode", ErrorCode);
             writer.WriteDateTimeOffsetValue("expirationDateTimeUTC", ExpirationDateTimeUTC);
             writer.WriteStringValue("initiatedByUserPrincipalName", InitiatedByUserPrincipalName);
-            writer.WriteStringValue("managedDeviceId", ManagedDeviceId);
+            writer.WriteGuidValue("managedDeviceId", ManagedDeviceId);
             writer.WriteDateTimeOffsetValue("receivedDateTimeUTC", ReceivedDateTimeUTC);
             writer.WriteDateTimeOffsetValue("requestedDateTimeUTC", RequestedDateTimeUTC);
             writer.WriteDoubleValue("size", Size);

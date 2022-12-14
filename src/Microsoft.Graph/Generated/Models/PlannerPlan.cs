@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>
+    /// Provides operations to manage the collection of accessReviewDecision entities.
+    /// </summary>
     public class PlannerPlan : PlannerDelta, IParsable {
         /// <summary>Collection of buckets in the plan. Read-only. Nullable.</summary>
         public List<PlannerBucket> Buckets {
@@ -31,7 +33,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>The creationSource property</summary>
+        /// <summary>Contains information about the origin of the plan.</summary>
         public PlannerPlanCreation CreationSource {
             get { return BackingStore?.Get<PlannerPlanCreation>("creationSource"); }
             set { BackingStore?.Set("creationSource", value); }

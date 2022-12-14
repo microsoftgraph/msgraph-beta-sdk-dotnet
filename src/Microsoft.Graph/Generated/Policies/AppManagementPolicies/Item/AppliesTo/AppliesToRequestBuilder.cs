@@ -11,7 +11,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Policies.AppManagementPolicies.Item.AppliesTo {
-    /// <summary>Provides operations to manage the appliesTo property of the microsoft.graph.appManagementPolicy entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the appliesTo property of the microsoft.graph.appManagementPolicy entity.
+    /// </summary>
     public class AppliesToRequestBuilder {
         /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
@@ -78,6 +80,7 @@ namespace Microsoft.Graph.Beta.Policies.AppManagementPolicies.Item.AppliesTo {
         }
         /// <summary>
         /// List application and service principal objects assigned an appManagementPolicy policy object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/appManagementPolicy-list-appliesTo?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -89,7 +92,9 @@ namespace Microsoft.Graph.Beta.Policies.AppManagementPolicies.Item.AppliesTo {
             };
             return await RequestAdapter.SendAsync<DirectoryObjectCollectionResponse>(requestInfo, DirectoryObjectCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>List application and service principal objects assigned an appManagementPolicy policy object.</summary>
+        /// <summary>
+        /// List application and service principal objects assigned an appManagementPolicy policy object.
+        /// </summary>
         public class AppliesToRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -116,10 +121,12 @@ namespace Microsoft.Graph.Beta.Policies.AppManagementPolicies.Item.AppliesTo {
             [QueryParameter("%24top")]
             public int? Top { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class AppliesToRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -129,7 +136,7 @@ namespace Microsoft.Graph.Beta.Policies.AppManagementPolicies.Item.AppliesTo {
             /// </summary>
             public AppliesToRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

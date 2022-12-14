@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.DeviceManagement.Templates.Item.CompareWithTemplateId {
-    /// <summary>Provides operations to call the compare method.</summary>
+    /// <summary>
+    /// Provides operations to call the compare method.
+    /// </summary>
     public class CompareWithTemplateIdResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<DeviceManagementSettingComparison> Value {

@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>The user experience analyte connectivity issue entity.</summary>
+    /// <summary>
+    /// The user experience analyte connectivity issue entity.
+    /// </summary>
     public class CloudPCConnectivityIssue : Entity, IParsable {
         /// <summary>The Intune DeviceId of the device the connection is associated with.</summary>
         public string DeviceId {

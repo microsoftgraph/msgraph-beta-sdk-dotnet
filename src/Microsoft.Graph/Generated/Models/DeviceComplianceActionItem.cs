@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Scheduled Action Configuration</summary>
+    /// <summary>
+    /// Scheduled Action Configuration
+    /// </summary>
     public class DeviceComplianceActionItem : Entity, IParsable {
         /// <summary>Scheduled Action Type Enum</summary>
         public DeviceComplianceActionType? ActionType {

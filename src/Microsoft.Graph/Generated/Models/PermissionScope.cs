@@ -24,8 +24,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Unique delegated permission identifier inside the collection of delegated permissions defined for a resource application.</summary>
-        public string Id {
-            get { return BackingStore?.Get<string>("id"); }
+        public Guid? Id {
+            get { return BackingStore?.Get<Guid?>("id"); }
             set { BackingStore?.Set("id", value); }
         }
         /// <summary>When creating or updating a permission, this property must be set to true (which is the default). To delete a permission, this property must first be set to false.  At that point, in a subsequent call, the permission may be removed.</summary>
@@ -85,7 +85,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>> {
                 {"adminConsentDescription", n => { AdminConsentDescription = n.GetStringValue(); } },
                 {"adminConsentDisplayName", n => { AdminConsentDisplayName = n.GetStringValue(); } },
-                {"id", n => { Id = n.GetStringValue(); } },
+                {"id", n => { Id = n.GetGuidValue(); } },
                 {"isEnabled", n => { IsEnabled = n.GetBoolValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"origin", n => { Origin = n.GetStringValue(); } },
@@ -103,7 +103,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("adminConsentDescription", AdminConsentDescription);
             writer.WriteStringValue("adminConsentDisplayName", AdminConsentDisplayName);
-            writer.WriteStringValue("id", Id);
+            writer.WriteGuidValue("id", Id);
             writer.WriteBoolValue("isEnabled", IsEnabled);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("origin", Origin);

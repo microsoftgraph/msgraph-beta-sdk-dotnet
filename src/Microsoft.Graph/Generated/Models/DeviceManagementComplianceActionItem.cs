@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Scheduled Action for Rule</summary>
+    /// <summary>
+    /// Scheduled Action for Rule
+    /// </summary>
     public class DeviceManagementComplianceActionItem : Entity, IParsable {
         /// <summary>Scheduled Action Type Enum</summary>
         public DeviceManagementComplianceActionType? ActionType {

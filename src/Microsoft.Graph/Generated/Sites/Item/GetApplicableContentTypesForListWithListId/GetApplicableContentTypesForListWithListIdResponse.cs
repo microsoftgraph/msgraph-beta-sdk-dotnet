@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Sites.Item.GetApplicableContentTypesForListWithListId {
-    /// <summary>Provides operations to call the getApplicableContentTypesForList method.</summary>
+    /// <summary>
+    /// Provides operations to call the getApplicableContentTypesForList method.
+    /// </summary>
     public class GetApplicableContentTypesForListWithListIdResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<ContentType> Value {

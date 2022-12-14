@@ -13,7 +13,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Search {
-    /// <summary>Provides operations to manage the searchEntity singleton.</summary>
+    /// <summary>
+    /// Provides operations to manage the searchEntity singleton.
+    /// </summary>
     public class SearchRequestBuilder {
         /// <summary>Provides operations to manage the acronyms property of the microsoft.graph.searchEntity entity.</summary>
         public AcronymsRequestBuilder Acronyms { get =>
@@ -87,7 +89,7 @@ namespace Microsoft.Graph.Beta.Search {
         /// <summary>
         /// Update search
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreatePatchRequestInformation(SearchEntity body, Action<SearchRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -122,7 +124,7 @@ namespace Microsoft.Graph.Beta.Search {
         /// <summary>
         /// Update search
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public async Task<SearchEntity> PatchAsync(SearchEntity body, Action<SearchRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -134,7 +136,9 @@ namespace Microsoft.Graph.Beta.Search {
             };
             return await RequestAdapter.SendAsync<SearchEntity>(requestInfo, SearchEntity.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Get search</summary>
+        /// <summary>
+        /// Get search
+        /// </summary>
         public class SearchRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]
@@ -143,10 +147,12 @@ namespace Microsoft.Graph.Beta.Search {
             [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class SearchRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -156,13 +162,15 @@ namespace Microsoft.Graph.Beta.Search {
             /// </summary>
             public SearchRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class SearchRequestBuilderPatchRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -170,7 +178,7 @@ namespace Microsoft.Graph.Beta.Search {
             /// </summary>
             public SearchRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

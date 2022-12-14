@@ -8,7 +8,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.HasPayloadLinks {
-    /// <summary>Provides operations to call the hasPayloadLinks method.</summary>
+    /// <summary>
+    /// Provides operations to call the hasPayloadLinks method.
+    /// </summary>
     public class HasPayloadLinksRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -46,7 +48,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.HasPayloadL
         /// <summary>
         /// Invoke action hasPayloadLinks
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreatePostRequestInformation(HasPayloadLinksPostRequestBody body, Action<HasPayloadLinksRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -68,7 +70,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.HasPayloadL
         /// <summary>
         /// Invoke action hasPayloadLinks
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public async Task<HasPayloadLinksResponse> PostAsync(HasPayloadLinksPostRequestBody body, Action<HasPayloadLinksRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -80,10 +82,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.HasPayloadL
             };
             return await RequestAdapter.SendAsync<HasPayloadLinksResponse>(requestInfo, HasPayloadLinksResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class HasPayloadLinksRequestBuilderPostRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -91,7 +95,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.HasPayloadL
             /// </summary>
             public HasPayloadLinksRequestBuilderPostRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

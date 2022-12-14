@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Print.Reports.Security.GetAttackSimulationRepeatOffenders {
-    /// <summary>Provides operations to call the getAttackSimulationRepeatOffenders method.</summary>
+    /// <summary>
+    /// Provides operations to call the getAttackSimulationRepeatOffenders method.
+    /// </summary>
     public class GetAttackSimulationRepeatOffendersResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<AttackSimulationRepeatOffender> Value {

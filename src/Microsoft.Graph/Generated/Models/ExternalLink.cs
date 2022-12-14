@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The url of the link.</summary>
+        /// <summary>The URL of the link.</summary>
         public string Href {
             get { return BackingStore?.Get<string>("href"); }
             set { BackingStore?.Set("href", value); }

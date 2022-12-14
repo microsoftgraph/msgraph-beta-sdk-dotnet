@@ -14,7 +14,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Me.JoinedGroups {
-    /// <summary>Provides operations to manage the joinedGroups property of the microsoft.graph.user entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the joinedGroups property of the microsoft.graph.user entity.
+    /// </summary>
     public class JoinedGroupsRequestBuilder {
         /// <summary>Provides operations to call the evaluateDynamicMembership method.</summary>
         public EvaluateDynamicMembershipRequestBuilder EvaluateDynamicMembership { get =>
@@ -104,7 +106,9 @@ namespace Microsoft.Graph.Beta.Me.JoinedGroups {
             };
             return await RequestAdapter.SendAsync<GroupCollectionResponse>(requestInfo, GroupCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Get joinedGroups from me</summary>
+        /// <summary>
+        /// Get joinedGroups from me
+        /// </summary>
         public class JoinedGroupsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -125,10 +129,12 @@ namespace Microsoft.Graph.Beta.Me.JoinedGroups {
             [QueryParameter("%24top")]
             public int? Top { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class JoinedGroupsRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -138,7 +144,7 @@ namespace Microsoft.Graph.Beta.Me.JoinedGroups {
             /// </summary>
             public JoinedGroupsRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

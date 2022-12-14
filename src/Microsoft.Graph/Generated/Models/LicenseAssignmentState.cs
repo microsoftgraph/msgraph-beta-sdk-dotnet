@@ -19,8 +19,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The service plans that are disabled in this assignment. Read-Only.</summary>
-        public List<string> DisabledPlans {
-            get { return BackingStore?.Get<List<string>>("disabledPlans"); }
+        public List<Guid?> DisabledPlans {
+            get { return BackingStore?.Get<List<Guid?>>("disabledPlans"); }
             set { BackingStore?.Set("disabledPlans", value); }
         }
         /// <summary>License assignment failure error. If the license is assigned successfully, this field will be Null. Read-Only. The possible values are CountViolation, MutuallyExclusiveViolation, DependencyViolation, ProhibitedInUsageLocationViolation, UniquenessViolation, and Other. For more information on how to identify and resolve license assignment errors see here.</summary>
@@ -39,8 +39,8 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("@odata.type", value); }
         }
         /// <summary>The unique identifier for the SKU. Read-Only.</summary>
-        public string SkuId {
-            get { return BackingStore?.Get<string>("skuId"); }
+        public Guid? SkuId {
+            get { return BackingStore?.Get<Guid?>("skuId"); }
             set { BackingStore?.Set("skuId", value); }
         }
         /// <summary>Indicate the current state of this assignment. Read-Only. The possible values are Active, ActiveWithError, Disabled, and Error.</summary>
@@ -69,11 +69,11 @@ namespace Microsoft.Graph.Beta.Models {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"assignedByGroup", n => { AssignedByGroup = n.GetStringValue(); } },
-                {"disabledPlans", n => { DisabledPlans = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"disabledPlans", n => { DisabledPlans = n.GetCollectionOfPrimitiveValues<Guid?>()?.ToList(); } },
                 {"error", n => { Error = n.GetStringValue(); } },
                 {"lastUpdatedDateTime", n => { LastUpdatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
-                {"skuId", n => { SkuId = n.GetStringValue(); } },
+                {"skuId", n => { SkuId = n.GetGuidValue(); } },
                 {"state", n => { State = n.GetStringValue(); } },
             };
         }
@@ -84,11 +84,11 @@ namespace Microsoft.Graph.Beta.Models {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("assignedByGroup", AssignedByGroup);
-            writer.WriteCollectionOfPrimitiveValues<string>("disabledPlans", DisabledPlans);
+            writer.WriteCollectionOfPrimitiveValues<Guid?>("disabledPlans", DisabledPlans);
             writer.WriteStringValue("error", Error);
             writer.WriteDateTimeOffsetValue("lastUpdatedDateTime", LastUpdatedDateTime);
             writer.WriteStringValue("@odata.type", OdataType);
-            writer.WriteStringValue("skuId", SkuId);
+            writer.WriteGuidValue("skuId", SkuId);
             writer.WriteStringValue("state", State);
             writer.WriteAdditionalData(AdditionalData);
         }

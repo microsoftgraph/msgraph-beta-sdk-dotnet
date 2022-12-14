@@ -6,7 +6,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Me.AssignLicense {
-    /// <summary>Provides operations to call the assignLicense method.</summary>
+    /// <summary>
+    /// Provides operations to call the assignLicense method.
+    /// </summary>
     public class AssignLicensePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
@@ -21,8 +23,8 @@ namespace Microsoft.Graph.Beta.Me.AssignLicense {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The removeLicenses property</summary>
-        public List<string> RemoveLicenses {
-            get { return BackingStore?.Get<List<string>>("removeLicenses"); }
+        public List<Guid?> RemoveLicenses {
+            get { return BackingStore?.Get<List<Guid?>>("removeLicenses"); }
             set { BackingStore?.Set("removeLicenses", value); }
         }
         /// <summary>
@@ -46,7 +48,7 @@ namespace Microsoft.Graph.Beta.Me.AssignLicense {
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
                 {"addLicenses", n => { AddLicenses = n.GetCollectionOfObjectValues<AssignedLicense>(AssignedLicense.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"removeLicenses", n => { RemoveLicenses = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"removeLicenses", n => { RemoveLicenses = n.GetCollectionOfPrimitiveValues<Guid?>()?.ToList(); } },
             };
         }
         /// <summary>
@@ -56,7 +58,7 @@ namespace Microsoft.Graph.Beta.Me.AssignLicense {
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<AssignedLicense>("addLicenses", AddLicenses);
-            writer.WriteCollectionOfPrimitiveValues<string>("removeLicenses", RemoveLicenses);
+            writer.WriteCollectionOfPrimitiveValues<Guid?>("removeLicenses", RemoveLicenses);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

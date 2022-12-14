@@ -22,8 +22,8 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("attackSimDurationTime", value); }
         }
         /// <summary>The activity ID for the attack simulation.</summary>
-        public string AttackSimId {
-            get { return BackingStore?.Get<string>("attackSimId"); }
+        public Guid? AttackSimId {
+            get { return BackingStore?.Get<Guid?>("attackSimId"); }
             set { BackingStore?.Set("attackSimId", value); }
         }
         /// <summary>The unique identifier for the user who got the attack simulation email.</summary>
@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             return new Dictionary<string, Action<IParseNode>> {
                 {"attackSimDateTime", n => { AttackSimDateTime = n.GetDateTimeOffsetValue(); } },
                 {"attackSimDurationTime", n => { AttackSimDurationTime = n.GetTimeSpanValue(); } },
-                {"attackSimId", n => { AttackSimId = n.GetStringValue(); } },
+                {"attackSimId", n => { AttackSimId = n.GetGuidValue(); } },
                 {"attackSimUserId", n => { AttackSimUserId = n.GetStringValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
             };
@@ -73,7 +73,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("attackSimDateTime", AttackSimDateTime);
             writer.WriteTimeSpanValue("attackSimDurationTime", AttackSimDurationTime);
-            writer.WriteStringValue("attackSimId", AttackSimId);
+            writer.WriteGuidValue("attackSimId", AttackSimId);
             writer.WriteStringValue("attackSimUserId", AttackSimUserId);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteAdditionalData(AdditionalData);

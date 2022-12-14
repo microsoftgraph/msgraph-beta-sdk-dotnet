@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>The user experience analytics metric for work from anywhere report</summary>
+    /// <summary>
+    /// The user experience analytics metric for work from anywhere report
+    /// </summary>
     public class UserExperienceAnalyticsWorkFromAnywhereMetric : Entity, IParsable {
         /// <summary>The work from anywhere metric devices.</summary>
         public List<UserExperienceAnalyticsWorkFromAnywhereDevice> MetricDevices {

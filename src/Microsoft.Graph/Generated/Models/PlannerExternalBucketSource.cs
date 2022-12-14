@@ -5,17 +5,17 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class PlannerExternalBucketSource : PlannerBucketCreation, IParsable {
-        /// <summary>The contextScenarioId property</summary>
+        /// <summary>Nullable. An identifier for the scenario associated with this external source. This should be in reverse DNS format. For example, Contoso company owned application for customer support would have a value like &apos;com.constoso.customerSupport&apos;.</summary>
         public string ContextScenarioId {
             get { return BackingStore?.Get<string>("contextScenarioId"); }
             set { BackingStore?.Set("contextScenarioId", value); }
         }
-        /// <summary>The externalContextId property</summary>
+        /// <summary>Nullable. The id of the external entity&apos;s containing entity or context.</summary>
         public string ExternalContextId {
             get { return BackingStore?.Get<string>("externalContextId"); }
             set { BackingStore?.Set("externalContextId", value); }
         }
-        /// <summary>The externalObjectId property</summary>
+        /// <summary>Nullable. The id of the entity that an external service associates with a bucket.</summary>
         public string ExternalObjectId {
             get { return BackingStore?.Get<string>("externalObjectId"); }
             set { BackingStore?.Set("externalObjectId", value); }

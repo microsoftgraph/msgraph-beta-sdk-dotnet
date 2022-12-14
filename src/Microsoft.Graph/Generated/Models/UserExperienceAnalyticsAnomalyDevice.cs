@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>The user experience analytics anomaly entity contains device details.</summary>
+    /// <summary>
+    /// The user experience analytics anomaly entity contains device details.
+    /// </summary>
     public class UserExperienceAnalyticsAnomalyDevice : Entity, IParsable {
         /// <summary>The unique identifier of the anomaly.</summary>
         public string AnomalyId {

@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.DeviceAppManagement.ManagedAppRegistrations.GetUserIdsWithFlaggedAppRegistration {
-    /// <summary>Provides operations to call the getUserIdsWithFlaggedAppRegistration method.</summary>
+    /// <summary>
+    /// Provides operations to call the getUserIdsWithFlaggedAppRegistration method.
+    /// </summary>
     public class GetUserIdsWithFlaggedAppRegistrationResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<string> Value {

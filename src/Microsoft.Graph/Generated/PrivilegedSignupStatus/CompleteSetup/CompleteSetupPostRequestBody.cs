@@ -6,7 +6,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.PrivilegedSignupStatus.CompleteSetup {
-    /// <summary>Provides operations to call the completeSetup method.</summary>
+    /// <summary>
+    /// Provides operations to call the completeSetup method.
+    /// </summary>
     public class CompleteSetupPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {

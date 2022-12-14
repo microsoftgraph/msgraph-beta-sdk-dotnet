@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.DeviceManagement.ResourceOperations.Item.GetScopesForUserWithUserid {
-    /// <summary>Provides operations to call the getScopesForUser method.</summary>
+    /// <summary>
+    /// Provides operations to call the getScopesForUser method.
+    /// </summary>
     public class GetScopesForUserWithUseridResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<string> Value {

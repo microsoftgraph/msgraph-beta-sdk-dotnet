@@ -11,7 +11,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.Templates {
-    /// <summary>Provides operations to manage the templates property of the microsoft.graph.conditionalAccessRoot entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the templates property of the microsoft.graph.conditionalAccessRoot entity.
+    /// </summary>
     public class TemplatesRequestBuilder {
         /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
@@ -78,6 +80,7 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.Templates {
         }
         /// <summary>
         /// Get a list of the conditionalAccessTemplate objects and their properties.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/conditionalaccessroot-list-templates?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -89,7 +92,9 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.Templates {
             };
             return await RequestAdapter.SendAsync<ConditionalAccessTemplateCollectionResponse>(requestInfo, ConditionalAccessTemplateCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Get a list of the conditionalAccessTemplate objects and their properties.</summary>
+        /// <summary>
+        /// Get a list of the conditionalAccessTemplate objects and their properties.
+        /// </summary>
         public class TemplatesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -116,10 +121,12 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.Templates {
             [QueryParameter("%24top")]
             public int? Top { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class TemplatesRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -129,7 +136,7 @@ namespace Microsoft.Graph.Beta.Identity.ConditionalAccess.Templates {
             /// </summary>
             public TemplatesRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

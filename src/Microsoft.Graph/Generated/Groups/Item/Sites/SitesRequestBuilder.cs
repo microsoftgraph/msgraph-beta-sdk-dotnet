@@ -14,7 +14,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Groups.Item.Sites {
-    /// <summary>Provides operations to manage the sites property of the microsoft.graph.group entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the sites property of the microsoft.graph.group entity.
+    /// </summary>
     public class SitesRequestBuilder {
         /// <summary>Provides operations to call the add method.</summary>
         public AddRequestBuilder Add { get =>
@@ -106,7 +108,9 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites {
             };
             return await RequestAdapter.SendAsync<SiteCollectionResponse>(requestInfo, SiteCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>The list of SharePoint sites in this group. Access the default site with /sites/root.</summary>
+        /// <summary>
+        /// The list of SharePoint sites in this group. Access the default site with /sites/root.
+        /// </summary>
         public class SitesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -133,10 +137,12 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites {
             [QueryParameter("%24top")]
             public int? Top { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class SitesRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -146,7 +152,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Sites {
             /// </summary>
             public SitesRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

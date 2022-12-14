@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Security.TiIndicators.DeleteTiIndicators {
-    /// <summary>Provides operations to call the deleteTiIndicators method.</summary>
+    /// <summary>
+    /// Provides operations to call the deleteTiIndicators method.
+    /// </summary>
     public class DeleteTiIndicatorsResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<ResultInfo> Value {

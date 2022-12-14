@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Ediscovery {
+    /// <summary>
+    /// Provides operations to manage the operations property of the microsoft.graph.ediscovery.case entity.
+    /// </summary>
     public class CaseOperationCollectionResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<CaseOperation> Value {

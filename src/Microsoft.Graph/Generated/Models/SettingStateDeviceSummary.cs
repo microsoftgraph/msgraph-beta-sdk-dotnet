@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Device Compilance Policy and Configuration for a Setting State summary</summary>
+    /// <summary>
+    /// Device Compilance Policy and Configuration for a Setting State summary
+    /// </summary>
     public class SettingStateDeviceSummary : Entity, IParsable {
         /// <summary>Device Compliant count for the setting</summary>
         public int? CompliantDeviceCount {

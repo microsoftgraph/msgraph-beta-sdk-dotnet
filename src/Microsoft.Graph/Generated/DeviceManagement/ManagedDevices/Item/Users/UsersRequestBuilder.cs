@@ -9,7 +9,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.Users {
-    /// <summary>Provides operations to manage the users property of the microsoft.graph.managedDevice entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the users property of the microsoft.graph.managedDevice entity.
+    /// </summary>
     public class UsersRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -77,7 +79,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.Users {
             };
             return await RequestAdapter.SendAsync<UserCollectionResponse>(requestInfo, UserCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>The primary users associated with the managed device.</summary>
+        /// <summary>
+        /// The primary users associated with the managed device.
+        /// </summary>
         public class UsersRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -104,10 +108,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.Users {
             [QueryParameter("%24top")]
             public int? Top { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class UsersRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -117,7 +123,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.Users {
             /// </summary>
             public UsersRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

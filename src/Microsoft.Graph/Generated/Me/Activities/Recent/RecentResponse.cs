@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Me.Activities.Recent {
-    /// <summary>Provides operations to call the recent method.</summary>
+    /// <summary>
+    /// Provides operations to call the recent method.
+    /// </summary>
     public class RecentResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<UserActivity> Value {

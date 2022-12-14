@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>
+    /// Provides operations to manage the collection of externalConnection entities.
+    /// </summary>
     public class ExternalConnection : Entity, IParsable {
         /// <summary>Collects configurable settings related to activities involving connector content.</summary>
         public Microsoft.Graph.Beta.Models.ExternalConnectors.ActivitySettings ActivitySettings {

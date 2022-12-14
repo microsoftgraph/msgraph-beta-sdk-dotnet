@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Singleton entity which is used to specify IE mode site metadata</summary>
+    /// <summary>
+    /// Singleton entity which is used to specify IE mode site metadata
+    /// </summary>
     public class BrowserSite : Entity, IParsable {
         /// <summary>Controls the behavior of redirected sites. If true, indicates that the site will open in Internet Explorer 11 or Microsoft Edge even if the site is navigated to as part of a HTTP or meta refresh redirection chain.</summary>
         public bool? AllowRedirect {

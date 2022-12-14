@@ -11,13 +11,13 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("enabled", value); }
         }
         /// <summary>User groups that will be exempt by on premises conditional access. All users in these groups will be exempt from the conditional access policy.</summary>
-        public List<string> ExcludedGroups {
-            get { return BackingStore?.Get<List<string>>("excludedGroups"); }
+        public List<Guid?> ExcludedGroups {
+            get { return BackingStore?.Get<List<Guid?>>("excludedGroups"); }
             set { BackingStore?.Set("excludedGroups", value); }
         }
         /// <summary>User groups that will be targeted by on premises conditional access. All users in these groups will be required to have mobile device managed and compliant for mail access.</summary>
-        public List<string> IncludedGroups {
-            get { return BackingStore?.Get<List<string>>("includedGroups"); }
+        public List<Guid?> IncludedGroups {
+            get { return BackingStore?.Get<List<Guid?>>("includedGroups"); }
             set { BackingStore?.Set("includedGroups", value); }
         }
         /// <summary>Override the default access rule when allowing a device to ensure access is granted.</summary>
@@ -39,8 +39,8 @@ namespace Microsoft.Graph.Beta.Models {
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"enabled", n => { Enabled = n.GetBoolValue(); } },
-                {"excludedGroups", n => { ExcludedGroups = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"includedGroups", n => { IncludedGroups = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
+                {"excludedGroups", n => { ExcludedGroups = n.GetCollectionOfPrimitiveValues<Guid?>()?.ToList(); } },
+                {"includedGroups", n => { IncludedGroups = n.GetCollectionOfPrimitiveValues<Guid?>()?.ToList(); } },
                 {"overrideDefaultRule", n => { OverrideDefaultRule = n.GetBoolValue(); } },
             };
         }
@@ -52,8 +52,8 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteBoolValue("enabled", Enabled);
-            writer.WriteCollectionOfPrimitiveValues<string>("excludedGroups", ExcludedGroups);
-            writer.WriteCollectionOfPrimitiveValues<string>("includedGroups", IncludedGroups);
+            writer.WriteCollectionOfPrimitiveValues<Guid?>("excludedGroups", ExcludedGroups);
+            writer.WriteCollectionOfPrimitiveValues<Guid?>("includedGroups", IncludedGroups);
             writer.WriteBoolValue("overrideDefaultRule", OverrideDefaultRule);
         }
     }

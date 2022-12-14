@@ -9,7 +9,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CrossCloudGovernmentOrganizationMapping {
-    /// <summary>Provides operations to manage the crossCloudGovernmentOrganizationMapping property of the microsoft.graph.virtualEndpoint entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the crossCloudGovernmentOrganizationMapping property of the microsoft.graph.virtualEndpoint entity.
+    /// </summary>
     public class CrossCloudGovernmentOrganizationMappingRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -85,7 +87,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CrossCloudGovern
         /// <summary>
         /// Update the navigation property crossCloudGovernmentOrganizationMapping in deviceManagement
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreatePatchRequestInformation(CloudPcCrossCloudGovernmentOrganizationMapping body, Action<CrossCloudGovernmentOrganizationMappingRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -119,6 +121,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CrossCloudGovern
         }
         /// <summary>
         /// Read the properties and relationships of a cloudPcCrossCloudGovernmentOrganizationMapping object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/cloudpccrosscloudgovernmentorganizationmapping-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -133,7 +136,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CrossCloudGovern
         /// <summary>
         /// Update the navigation property crossCloudGovernmentOrganizationMapping in deviceManagement
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public async Task<CloudPcCrossCloudGovernmentOrganizationMapping> PatchAsync(CloudPcCrossCloudGovernmentOrganizationMapping body, Action<CrossCloudGovernmentOrganizationMappingRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -145,10 +148,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CrossCloudGovern
             };
             return await RequestAdapter.SendAsync<CloudPcCrossCloudGovernmentOrganizationMapping>(requestInfo, CloudPcCrossCloudGovernmentOrganizationMapping.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class CrossCloudGovernmentOrganizationMappingRequestBuilderDeleteRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -156,10 +161,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CrossCloudGovern
             /// </summary>
             public CrossCloudGovernmentOrganizationMappingRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Read the properties and relationships of a cloudPcCrossCloudGovernmentOrganizationMapping object.</summary>
+        /// <summary>
+        /// Read the properties and relationships of a cloudPcCrossCloudGovernmentOrganizationMapping object.
+        /// </summary>
         public class CrossCloudGovernmentOrganizationMappingRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]
@@ -168,10 +175,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CrossCloudGovern
             [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class CrossCloudGovernmentOrganizationMappingRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -181,13 +190,15 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CrossCloudGovern
             /// </summary>
             public CrossCloudGovernmentOrganizationMappingRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class CrossCloudGovernmentOrganizationMappingRequestBuilderPatchRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -195,7 +206,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.CrossCloudGovern
             /// </summary>
             public CrossCloudGovernmentOrganizationMappingRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

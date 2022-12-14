@@ -6,7 +6,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Me.ManagedDevices.ExecuteAction {
-    /// <summary>Provides operations to call the executeAction method.</summary>
+    /// <summary>
+    /// Provides operations to call the executeAction method.
+    /// </summary>
     public class ExecuteActionPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>The actionName property</summary>
         public ManagedDeviceRemoteAction? ActionName {

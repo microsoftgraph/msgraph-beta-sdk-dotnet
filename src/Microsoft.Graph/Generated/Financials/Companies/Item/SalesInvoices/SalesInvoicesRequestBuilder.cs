@@ -11,7 +11,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoices {
-    /// <summary>Provides operations to manage the salesInvoices property of the microsoft.graph.company entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the salesInvoices property of the microsoft.graph.company entity.
+    /// </summary>
     public class SalesInvoicesRequestBuilder {
         /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
@@ -89,7 +91,9 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoices {
             };
             return await RequestAdapter.SendAsync<SalesInvoiceCollectionResponse>(requestInfo, SalesInvoiceCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Get salesInvoices from financials</summary>
+        /// <summary>
+        /// Get salesInvoices from financials
+        /// </summary>
         public class SalesInvoicesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -116,10 +120,12 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoices {
             [QueryParameter("%24top")]
             public int? Top { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class SalesInvoicesRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -129,7 +135,7 @@ namespace Microsoft.Graph.Beta.Financials.Companies.Item.SalesInvoices {
             /// </summary>
             public SalesInvoicesRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

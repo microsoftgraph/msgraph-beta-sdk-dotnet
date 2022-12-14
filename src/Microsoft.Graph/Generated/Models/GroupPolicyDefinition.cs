@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// The entity describes all of the information about a single group policy.
+    /// </summary>
     public class GroupPolicyDefinition : Entity, IParsable {
         /// <summary>The group policy category associated with the definition.</summary>
         public GroupPolicyCategory Category {
@@ -36,8 +39,8 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("explainText", value); }
         }
         /// <summary>The category id of the parent category</summary>
-        public string GroupPolicyCategoryId {
-            get { return BackingStore?.Get<string>("groupPolicyCategoryId"); }
+        public Guid? GroupPolicyCategoryId {
+            get { return BackingStore?.Get<Guid?>("groupPolicyCategoryId"); }
             set { BackingStore?.Set("groupPolicyCategoryId", value); }
         }
         /// <summary>Signifies whether or not there are related definitions to this definition</summary>
@@ -109,7 +112,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"definitionFile", n => { DefinitionFile = n.GetObjectValue<GroupPolicyDefinitionFile>(GroupPolicyDefinitionFile.CreateFromDiscriminatorValue); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
                 {"explainText", n => { ExplainText = n.GetStringValue(); } },
-                {"groupPolicyCategoryId", n => { GroupPolicyCategoryId = n.GetStringValue(); } },
+                {"groupPolicyCategoryId", n => { GroupPolicyCategoryId = n.GetGuidValue(); } },
                 {"hasRelatedDefinitions", n => { HasRelatedDefinitions = n.GetBoolValue(); } },
                 {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"minDeviceCspVersion", n => { MinDeviceCspVersion = n.GetStringValue(); } },
@@ -135,7 +138,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteObjectValue<GroupPolicyDefinitionFile>("definitionFile", DefinitionFile);
             writer.WriteStringValue("displayName", DisplayName);
             writer.WriteStringValue("explainText", ExplainText);
-            writer.WriteStringValue("groupPolicyCategoryId", GroupPolicyCategoryId);
+            writer.WriteGuidValue("groupPolicyCategoryId", GroupPolicyCategoryId);
             writer.WriteBoolValue("hasRelatedDefinitions", HasRelatedDefinitions);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteStringValue("minDeviceCspVersion", MinDeviceCspVersion);

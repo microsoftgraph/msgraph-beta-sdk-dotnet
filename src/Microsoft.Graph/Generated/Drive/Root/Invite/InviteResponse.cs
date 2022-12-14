@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Drive.Root.Invite {
-    /// <summary>Provides operations to call the invite method.</summary>
+    /// <summary>
+    /// Provides operations to call the invite method.
+    /// </summary>
     public class InviteResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<Microsoft.Graph.Beta.Models.Permission> Value {

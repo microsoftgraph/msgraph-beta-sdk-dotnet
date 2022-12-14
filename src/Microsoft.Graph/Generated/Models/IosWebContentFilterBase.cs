@@ -1,4 +1,3 @@
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions.Store;
 using System;
@@ -6,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Represents an iOS Web Content Filter setting base type. An empty and abstract base. Caller should use one of derived types for configurations.</summary>
+    /// <summary>
+    /// Represents an iOS Web Content Filter setting base type. An empty and abstract base. Caller should use one of derived types for configurations.
+    /// </summary>
     public class IosWebContentFilterBase : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {

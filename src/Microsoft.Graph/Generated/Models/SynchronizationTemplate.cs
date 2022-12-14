@@ -4,11 +4,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>
+    /// Casts the previous resource to application.
+    /// </summary>
     public class SynchronizationTemplate : Entity, IParsable {
         /// <summary>Identifier of the application this template belongs to.</summary>
-        public string ApplicationId {
-            get { return BackingStore?.Get<string>("applicationId"); }
+        public Guid? ApplicationId {
+            get { return BackingStore?.Get<Guid?>("applicationId"); }
             set { BackingStore?.Set("applicationId", value); }
         }
         /// <summary>true if this template is recommended to be the default for the application.</summary>
@@ -54,7 +56,7 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
-                {"applicationId", n => { ApplicationId = n.GetStringValue(); } },
+                {"applicationId", n => { ApplicationId = n.GetGuidValue(); } },
                 {"default", n => { Default = n.GetBoolValue(); } },
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"discoverable", n => { Discoverable = n.GetBoolValue(); } },
@@ -70,7 +72,7 @@ namespace Microsoft.Graph.Beta.Models {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteStringValue("applicationId", ApplicationId);
+            writer.WriteGuidValue("applicationId", ApplicationId);
             writer.WriteBoolValue("default", Default);
             writer.WriteStringValue("description", Description);
             writer.WriteBoolValue("discoverable", Discoverable);

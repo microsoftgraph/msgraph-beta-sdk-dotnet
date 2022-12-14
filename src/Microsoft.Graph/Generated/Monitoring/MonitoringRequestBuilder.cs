@@ -11,7 +11,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Monitoring {
-    /// <summary>Provides operations to manage the monitoring singleton.</summary>
+    /// <summary>
+    /// Provides operations to manage the monitoring singleton.
+    /// </summary>
     public class MonitoringRequestBuilder {
         /// <summary>Provides operations to manage the alertRecords property of the microsoft.graph.deviceManagement.monitoring entity.</summary>
         public AlertRecordsRequestBuilder AlertRecords { get =>
@@ -77,7 +79,7 @@ namespace Microsoft.Graph.Beta.Monitoring {
         /// <summary>
         /// Update monitoring
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreatePatchRequestInformation(Microsoft.Graph.Beta.Models.DeviceManagement.Monitoring body, Action<MonitoringRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -112,7 +114,7 @@ namespace Microsoft.Graph.Beta.Monitoring {
         /// <summary>
         /// Update monitoring
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public async Task<Microsoft.Graph.Beta.Models.DeviceManagement.Monitoring> PatchAsync(Microsoft.Graph.Beta.Models.DeviceManagement.Monitoring body, Action<MonitoringRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -124,7 +126,9 @@ namespace Microsoft.Graph.Beta.Monitoring {
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.DeviceManagement.Monitoring>(requestInfo, Microsoft.Graph.Beta.Models.DeviceManagement.Monitoring.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Get monitoring</summary>
+        /// <summary>
+        /// Get monitoring
+        /// </summary>
         public class MonitoringRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]
@@ -133,10 +137,12 @@ namespace Microsoft.Graph.Beta.Monitoring {
             [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class MonitoringRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -146,13 +152,15 @@ namespace Microsoft.Graph.Beta.Monitoring {
             /// </summary>
             public MonitoringRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class MonitoringRequestBuilderPatchRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -160,7 +168,7 @@ namespace Microsoft.Graph.Beta.Monitoring {
             /// </summary>
             public MonitoringRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

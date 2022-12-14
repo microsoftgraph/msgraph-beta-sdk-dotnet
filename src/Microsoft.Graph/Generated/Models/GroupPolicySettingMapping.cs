@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>The Group Policy setting to MDM/Intune mapping.</summary>
+    /// <summary>
+    /// The Group Policy setting to MDM/Intune mapping.
+    /// </summary>
     public class GroupPolicySettingMapping : Entity, IParsable {
         /// <summary>Admx Group Policy Id</summary>
         public string AdmxSettingDefinitionId {

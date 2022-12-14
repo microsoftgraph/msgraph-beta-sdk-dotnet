@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Security.Alerts.UpdateAlerts {
-    /// <summary>Provides operations to call the updateAlerts method.</summary>
+    /// <summary>
+    /// Provides operations to call the updateAlerts method.
+    /// </summary>
     public class UpdateAlertsResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<Microsoft.Graph.Beta.Models.Alert> Value {

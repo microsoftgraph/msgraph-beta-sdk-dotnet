@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Object representing a link to troubleshooting information, the link could be to the Azure Portal or a Microsoft doc.</summary>
+    /// <summary>
+    /// Object representing a link to troubleshooting information, the link could be to the Azure Portal or a Microsoft doc.
+    /// </summary>
     public class DeviceManagementTroubleshootingErrorResource : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {

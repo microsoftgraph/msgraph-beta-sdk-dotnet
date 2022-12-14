@@ -8,7 +8,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Print.Reports.GetOffice365ServicesUserCountsWithPeriod {
-    /// <summary>Provides operations to call the getOffice365ServicesUserCounts method.</summary>
+    /// <summary>
+    /// Provides operations to call the getOffice365ServicesUserCounts method.
+    /// </summary>
     public class GetOffice365ServicesUserCountsWithPeriodRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -78,7 +80,9 @@ namespace Microsoft.Graph.Beta.Print.Reports.GetOffice365ServicesUserCountsWithP
             };
             return await RequestAdapter.SendAsync<GetOffice365ServicesUserCountsWithPeriodResponse>(requestInfo, GetOffice365ServicesUserCountsWithPeriodResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Invoke function getOffice365ServicesUserCounts</summary>
+        /// <summary>
+        /// Invoke function getOffice365ServicesUserCounts
+        /// </summary>
         public class GetOffice365ServicesUserCountsWithPeriodRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -102,10 +106,12 @@ namespace Microsoft.Graph.Beta.Print.Reports.GetOffice365ServicesUserCountsWithP
             [QueryParameter("%24top")]
             public int? Top { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class GetOffice365ServicesUserCountsWithPeriodRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -115,7 +121,7 @@ namespace Microsoft.Graph.Beta.Print.Reports.GetOffice365ServicesUserCountsWithP
             /// </summary>
             public GetOffice365ServicesUserCountsWithPeriodRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

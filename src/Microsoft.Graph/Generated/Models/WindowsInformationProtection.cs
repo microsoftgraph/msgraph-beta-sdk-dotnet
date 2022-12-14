@@ -1,4 +1,3 @@
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
 using System.Collections.Generic;
@@ -122,8 +121,8 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("revokeOnUnenrollDisabled", value); }
         }
         /// <summary>TemplateID GUID to use for RMS encryption. The RMS template allows the IT admin to configure the details about who has access to RMS-protected file and how long they have access</summary>
-        public string RightsManagementServicesTemplateId {
-            get { return BackingStore?.Get<string>("rightsManagementServicesTemplateId"); }
+        public Guid? RightsManagementServicesTemplateId {
+            get { return BackingStore?.Get<Guid?>("rightsManagementServicesTemplateId"); }
             set { BackingStore?.Set("rightsManagementServicesTemplateId", value); }
         }
         /// <summary>Specifies a list of file extensions, so that files with these extensions are encrypted when copying from an SMB share within the corporate boundary</summary>
@@ -178,7 +177,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"protectedApps", n => { ProtectedApps = n.GetCollectionOfObjectValues<WindowsInformationProtectionApp>(WindowsInformationProtectionApp.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"protectionUnderLockConfigRequired", n => { ProtectionUnderLockConfigRequired = n.GetBoolValue(); } },
                 {"revokeOnUnenrollDisabled", n => { RevokeOnUnenrollDisabled = n.GetBoolValue(); } },
-                {"rightsManagementServicesTemplateId", n => { RightsManagementServicesTemplateId = n.GetStringValue(); } },
+                {"rightsManagementServicesTemplateId", n => { RightsManagementServicesTemplateId = n.GetGuidValue(); } },
                 {"smbAutoEncryptedFileExtensions", n => { SmbAutoEncryptedFileExtensions = n.GetCollectionOfObjectValues<WindowsInformationProtectionResourceCollection>(WindowsInformationProtectionResourceCollection.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
@@ -212,7 +211,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfObjectValues<WindowsInformationProtectionApp>("protectedApps", ProtectedApps);
             writer.WriteBoolValue("protectionUnderLockConfigRequired", ProtectionUnderLockConfigRequired);
             writer.WriteBoolValue("revokeOnUnenrollDisabled", RevokeOnUnenrollDisabled);
-            writer.WriteStringValue("rightsManagementServicesTemplateId", RightsManagementServicesTemplateId);
+            writer.WriteGuidValue("rightsManagementServicesTemplateId", RightsManagementServicesTemplateId);
             writer.WriteCollectionOfObjectValues<WindowsInformationProtectionResourceCollection>("smbAutoEncryptedFileExtensions", SmbAutoEncryptedFileExtensions);
         }
     }

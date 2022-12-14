@@ -34,8 +34,8 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("service", value); }
         }
         /// <summary>A GUID that identifies the service plan. For a complete list of GUIDs and their equivalent friendly service names, see Product names and service plan identifiers for licensing.</summary>
-        public string ServicePlanId {
-            get { return BackingStore?.Get<string>("servicePlanId"); }
+        public Guid? ServicePlanId {
+            get { return BackingStore?.Get<Guid?>("servicePlanId"); }
             set { BackingStore?.Set("servicePlanId", value); }
         }
         /// <summary>
@@ -62,7 +62,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"capabilityStatus", n => { CapabilityStatus = n.GetStringValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"service", n => { Service = n.GetStringValue(); } },
-                {"servicePlanId", n => { ServicePlanId = n.GetStringValue(); } },
+                {"servicePlanId", n => { ServicePlanId = n.GetGuidValue(); } },
             };
         }
         /// <summary>
@@ -75,7 +75,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("capabilityStatus", CapabilityStatus);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteStringValue("service", Service);
-            writer.WriteStringValue("servicePlanId", ServicePlanId);
+            writer.WriteGuidValue("servicePlanId", ServicePlanId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

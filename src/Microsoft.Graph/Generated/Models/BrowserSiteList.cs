@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>A singleton entity which is used to specify IE mode site list metadata</summary>
+    /// <summary>
+    /// A singleton entity which is used to specify IE mode site list metadata
+    /// </summary>
     public class BrowserSiteList : Entity, IParsable {
         /// <summary>The description of the site list.</summary>
         public string Description {

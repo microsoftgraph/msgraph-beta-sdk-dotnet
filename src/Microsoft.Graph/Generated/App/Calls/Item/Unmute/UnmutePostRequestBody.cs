@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.App.Calls.Item.Unmute {
-    /// <summary>Provides operations to call the unmute method.</summary>
+    /// <summary>
+    /// Provides operations to call the unmute method.
+    /// </summary>
     public class UnmutePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {

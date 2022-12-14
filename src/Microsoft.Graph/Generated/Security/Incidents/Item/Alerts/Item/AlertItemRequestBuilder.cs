@@ -9,7 +9,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Security.Incidents.Item.Alerts.Item {
-    /// <summary>Provides operations to manage the alerts property of the microsoft.graph.security.incident entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the alerts property of the microsoft.graph.security.incident entity.
+    /// </summary>
     public class AlertItemRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -77,7 +79,9 @@ namespace Microsoft.Graph.Beta.Security.Incidents.Item.Alerts.Item {
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.Security.Alert>(requestInfo, Microsoft.Graph.Beta.Models.Security.Alert.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>The list of related alerts. Supports $expand.</summary>
+        /// <summary>
+        /// The list of related alerts. Supports $expand.
+        /// </summary>
         public class AlertItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]
@@ -86,10 +90,12 @@ namespace Microsoft.Graph.Beta.Security.Incidents.Item.Alerts.Item {
             [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class AlertItemRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -99,7 +105,7 @@ namespace Microsoft.Graph.Beta.Security.Incidents.Item.Alerts.Item {
             /// </summary>
             public AlertItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

@@ -6,7 +6,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.DeviceAppManagement.PolicySets.Item.Update {
-    /// <summary>Provides operations to call the update method.</summary>
+    /// <summary>
+    /// Provides operations to call the update method.
+    /// </summary>
     public class UpdatePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>The addedPolicySetItems property</summary>
         public List<PolicySetItem> AddedPolicySetItems {

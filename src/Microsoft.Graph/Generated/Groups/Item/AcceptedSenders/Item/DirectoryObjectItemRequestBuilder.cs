@@ -6,7 +6,9 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Groups.Item.AcceptedSenders.Item {
-    /// <summary>Builds and executes requests for operations under \groups\{group-id}\acceptedSenders\{directoryObject-id}</summary>
+    /// <summary>
+    /// Builds and executes requests for operations under \groups\{group-id}\acceptedSenders\{directoryObject-id}
+    /// </summary>
     public class DirectoryObjectItemRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

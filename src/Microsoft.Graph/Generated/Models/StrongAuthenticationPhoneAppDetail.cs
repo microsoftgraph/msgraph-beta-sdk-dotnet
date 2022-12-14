@@ -16,8 +16,8 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("authenticatorFlavor", value); }
         }
         /// <summary>The deviceId property</summary>
-        public string DeviceId {
-            get { return BackingStore?.Get<string>("deviceId"); }
+        public Guid? DeviceId {
+            get { return BackingStore?.Get<Guid?>("deviceId"); }
             set { BackingStore?.Set("deviceId", value); }
         }
         /// <summary>The deviceName property</summary>
@@ -95,7 +95,7 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"authenticationType", n => { AuthenticationType = n.GetStringValue(); } },
                 {"authenticatorFlavor", n => { AuthenticatorFlavor = n.GetStringValue(); } },
-                {"deviceId", n => { DeviceId = n.GetStringValue(); } },
+                {"deviceId", n => { DeviceId = n.GetGuidValue(); } },
                 {"deviceName", n => { DeviceName = n.GetStringValue(); } },
                 {"deviceTag", n => { DeviceTag = n.GetStringValue(); } },
                 {"deviceToken", n => { DeviceToken = n.GetStringValue(); } },
@@ -119,7 +119,7 @@ namespace Microsoft.Graph.Beta.Models {
             base.Serialize(writer);
             writer.WriteStringValue("authenticationType", AuthenticationType);
             writer.WriteStringValue("authenticatorFlavor", AuthenticatorFlavor);
-            writer.WriteStringValue("deviceId", DeviceId);
+            writer.WriteGuidValue("deviceId", DeviceId);
             writer.WriteStringValue("deviceName", DeviceName);
             writer.WriteStringValue("deviceTag", DeviceTag);
             writer.WriteStringValue("deviceToken", DeviceToken);

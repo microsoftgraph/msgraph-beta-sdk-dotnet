@@ -6,7 +6,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.DeviceManagement.Monitoring.AlertRecords.GetPortalNotifications {
-    /// <summary>Provides operations to call the getPortalNotifications method.</summary>
+    /// <summary>
+    /// Provides operations to call the getPortalNotifications method.
+    /// </summary>
     public class GetPortalNotificationsResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<PortalNotification> Value {

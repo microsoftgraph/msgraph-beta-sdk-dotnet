@@ -16,7 +16,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Users.Item.Outlook {
-    /// <summary>Provides operations to manage the outlook property of the microsoft.graph.user entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the outlook property of the microsoft.graph.user entity.
+    /// </summary>
     public class OutlookRequestBuilder {
         /// <summary>Provides operations to manage the masterCategories property of the microsoft.graph.outlookUser entity.</summary>
         public MasterCategoriesRequestBuilder MasterCategories { get =>
@@ -120,16 +122,20 @@ namespace Microsoft.Graph.Beta.Users.Item.Outlook {
             if(string.IsNullOrEmpty(timeZoneStandard)) throw new ArgumentNullException(nameof(timeZoneStandard));
             return new SupportedTimeZonesWithTimeZoneStandardRequestBuilder(PathParameters, RequestAdapter, timeZoneStandard);
         }
-        /// <summary>Selective Outlook services available to the user. Read-only. Nullable.</summary>
+        /// <summary>
+        /// Selective Outlook services available to the user. Read-only. Nullable.
+        /// </summary>
         public class OutlookRequestBuilderGetQueryParameters {
             /// <summary>Select properties to be returned</summary>
             [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class OutlookRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -139,7 +145,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Outlook {
             /// </summary>
             public OutlookRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

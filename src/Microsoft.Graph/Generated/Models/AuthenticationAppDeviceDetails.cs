@@ -11,19 +11,19 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
             set { BackingStore?.Set("additionalData", value); }
         }
-        /// <summary>The appVersion property</summary>
+        /// <summary>The version of the client authentication app used during the authentication step.</summary>
         public string AppVersion {
             get { return BackingStore?.Get<string>("appVersion"); }
             set { BackingStore?.Set("appVersion", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The clientApp property</summary>
+        /// <summary>The name of the client authentication app used during the authentication step.</summary>
         public string ClientApp {
             get { return BackingStore?.Get<string>("clientApp"); }
             set { BackingStore?.Set("clientApp", value); }
         }
-        /// <summary>The deviceId property</summary>
+        /// <summary>ID of the device used during the authentication step.</summary>
         public string DeviceId {
             get { return BackingStore?.Get<string>("deviceId"); }
             set { BackingStore?.Set("deviceId", value); }
@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
-        /// <summary>The operatingSystem property</summary>
+        /// <summary>The operating system running on the device used for the authentication step.</summary>
         public string OperatingSystem {
             get { return BackingStore?.Get<string>("operatingSystem"); }
             set { BackingStore?.Set("operatingSystem", value); }

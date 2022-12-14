@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class SubscribedSku : Entity, IParsable {
         /// <summary>For example, &apos;User&apos; or &apos;Company&apos;.</summary>
         public string AppliesTo {
@@ -32,8 +31,8 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("servicePlans", value); }
         }
         /// <summary>The unique identifier (GUID) for the service SKU.</summary>
-        public string SkuId {
-            get { return BackingStore?.Get<string>("skuId"); }
+        public Guid? SkuId {
+            get { return BackingStore?.Get<Guid?>("skuId"); }
             set { BackingStore?.Set("skuId", value); }
         }
         /// <summary>The SKU part number; for example: &apos;AAD_PREMIUM&apos; or &apos;RMSBASIC&apos;. To get a list of commercial subscriptions that an organization has acquired, see List subscribedSkus.</summary>
@@ -59,7 +58,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"consumedUnits", n => { ConsumedUnits = n.GetIntValue(); } },
                 {"prepaidUnits", n => { PrepaidUnits = n.GetObjectValue<LicenseUnitsDetail>(LicenseUnitsDetail.CreateFromDiscriminatorValue); } },
                 {"servicePlans", n => { ServicePlans = n.GetCollectionOfObjectValues<ServicePlanInfo>(ServicePlanInfo.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"skuId", n => { SkuId = n.GetStringValue(); } },
+                {"skuId", n => { SkuId = n.GetGuidValue(); } },
                 {"skuPartNumber", n => { SkuPartNumber = n.GetStringValue(); } },
             };
         }
@@ -75,7 +74,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteIntValue("consumedUnits", ConsumedUnits);
             writer.WriteObjectValue<LicenseUnitsDetail>("prepaidUnits", PrepaidUnits);
             writer.WriteCollectionOfObjectValues<ServicePlanInfo>("servicePlans", ServicePlans);
-            writer.WriteStringValue("skuId", SkuId);
+            writer.WriteGuidValue("skuId", SkuId);
             writer.WriteStringValue("skuPartNumber", SkuPartNumber);
         }
     }

@@ -6,7 +6,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.TenantRelationships.ManagedTenants.TenantGroups.TenantSearch {
-    /// <summary>Provides operations to call the tenantSearch method.</summary>
+    /// <summary>
+    /// Provides operations to call the tenantSearch method.
+    /// </summary>
     public class TenantSearchResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<TenantGroup> Value {

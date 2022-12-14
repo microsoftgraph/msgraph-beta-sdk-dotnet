@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class EdiscoveryReviewSetQuery : Search, IParsable {
         /// <summary>
-        /// Instantiates a new ediscoveryReviewSetQuery and sets the default values.
+        /// Instantiates a new EdiscoveryReviewSetQuery and sets the default values.
         /// </summary>
         public EdiscoveryReviewSetQuery() : base() {
             OdataType = "#microsoft.graph.security.ediscoveryReviewSetQuery";

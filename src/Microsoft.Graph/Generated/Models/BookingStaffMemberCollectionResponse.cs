@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Provides operations to manage the staffMembers property of the microsoft.graph.bookingBusiness entity.
+    /// </summary>
     public class BookingStaffMemberCollectionResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<BookingStaffMember> Value {

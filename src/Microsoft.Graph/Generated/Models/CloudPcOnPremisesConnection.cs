@@ -85,6 +85,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("virtualNetworkId"); }
             set { BackingStore?.Set("virtualNetworkId", value); }
         }
+        /// <summary>The virtualNetworkLocation property</summary>
+        public string VirtualNetworkLocation {
+            get { return BackingStore?.Get<string>("virtualNetworkLocation"); }
+            set { BackingStore?.Set("virtualNetworkLocation", value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -114,6 +119,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"subscriptionName", n => { SubscriptionName = n.GetStringValue(); } },
                 {"type", n => { Type = n.GetEnumValue<CloudPcOnPremisesConnectionType>(); } },
                 {"virtualNetworkId", n => { VirtualNetworkId = n.GetStringValue(); } },
+                {"virtualNetworkLocation", n => { VirtualNetworkLocation = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -139,6 +145,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("subscriptionName", SubscriptionName);
             writer.WriteEnumValue<CloudPcOnPremisesConnectionType>("type", Type);
             writer.WriteStringValue("virtualNetworkId", VirtualNetworkId);
+            writer.WriteStringValue("virtualNetworkLocation", VirtualNetworkLocation);
         }
     }
 }

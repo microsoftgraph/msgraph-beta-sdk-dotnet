@@ -9,7 +9,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Users.Item.Settings.ContactMergeSuggestions {
-    /// <summary>Provides operations to manage the contactMergeSuggestions property of the microsoft.graph.userSettings entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the contactMergeSuggestions property of the microsoft.graph.userSettings entity.
+    /// </summary>
     public class ContactMergeSuggestionsRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -85,7 +87,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Settings.ContactMergeSuggestions {
         /// <summary>
         /// Update the properties of a contactMergeSuggestions object.
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreatePatchRequestInformation(Microsoft.Graph.Beta.Models.ContactMergeSuggestions body, Action<ContactMergeSuggestionsRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -119,6 +121,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Settings.ContactMergeSuggestions {
         }
         /// <summary>
         /// Read the properties and relationships of a contactMergeSuggestions object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/contactmergesuggestions-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -132,8 +135,9 @@ namespace Microsoft.Graph.Beta.Users.Item.Settings.ContactMergeSuggestions {
         }
         /// <summary>
         /// Update the properties of a contactMergeSuggestions object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/contactmergesuggestions-update?view=graph-rest-1.0" />
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public async Task<Microsoft.Graph.Beta.Models.ContactMergeSuggestions> PatchAsync(Microsoft.Graph.Beta.Models.ContactMergeSuggestions body, Action<ContactMergeSuggestionsRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -145,10 +149,12 @@ namespace Microsoft.Graph.Beta.Users.Item.Settings.ContactMergeSuggestions {
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ContactMergeSuggestions>(requestInfo, Microsoft.Graph.Beta.Models.ContactMergeSuggestions.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class ContactMergeSuggestionsRequestBuilderDeleteRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -156,10 +162,12 @@ namespace Microsoft.Graph.Beta.Users.Item.Settings.ContactMergeSuggestions {
             /// </summary>
             public ContactMergeSuggestionsRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Read the properties and relationships of a contactMergeSuggestions object.</summary>
+        /// <summary>
+        /// Read the properties and relationships of a contactMergeSuggestions object.
+        /// </summary>
         public class ContactMergeSuggestionsRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]
@@ -168,10 +176,12 @@ namespace Microsoft.Graph.Beta.Users.Item.Settings.ContactMergeSuggestions {
             [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class ContactMergeSuggestionsRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -181,13 +191,15 @@ namespace Microsoft.Graph.Beta.Users.Item.Settings.ContactMergeSuggestions {
             /// </summary>
             public ContactMergeSuggestionsRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class ContactMergeSuggestionsRequestBuilderPatchRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -195,7 +207,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Settings.ContactMergeSuggestions {
             /// </summary>
             public ContactMergeSuggestionsRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

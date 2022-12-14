@@ -12,7 +12,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Teams.Item.Schedule.TimeCards {
-    /// <summary>Provides operations to manage the timeCards property of the microsoft.graph.schedule entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the timeCards property of the microsoft.graph.schedule entity.
+    /// </summary>
     public class TimeCardsRequestBuilder {
         /// <summary>Provides operations to call the clockIn method.</summary>
         public ClockInRequestBuilder ClockIn { get =>
@@ -84,7 +86,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.TimeCards {
         /// <summary>
         /// Create new navigation property to timeCards for teams
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreatePostRequestInformation(TimeCard body, Action<TimeCardsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -105,6 +107,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.TimeCards {
         }
         /// <summary>
         /// Retrieve a list of timeCard entries in a schedule.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/timecard-list?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -119,7 +122,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.TimeCards {
         /// <summary>
         /// Create new navigation property to timeCards for teams
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public async Task<TimeCard> PostAsync(TimeCard body, Action<TimeCardsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -131,7 +134,9 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.TimeCards {
             };
             return await RequestAdapter.SendAsync<TimeCard>(requestInfo, TimeCard.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Retrieve a list of timeCard entries in a schedule.</summary>
+        /// <summary>
+        /// Retrieve a list of timeCard entries in a schedule.
+        /// </summary>
         public class TimeCardsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -158,10 +163,12 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.TimeCards {
             [QueryParameter("%24top")]
             public int? Top { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class TimeCardsRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -171,13 +178,15 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.TimeCards {
             /// </summary>
             public TimeCardsRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class TimeCardsRequestBuilderPostRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -185,7 +194,7 @@ namespace Microsoft.Graph.Beta.Teams.Item.Schedule.TimeCards {
             /// </summary>
             public TimeCardsRequestBuilderPostRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

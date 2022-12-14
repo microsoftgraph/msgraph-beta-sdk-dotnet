@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.DeviceManagement.RoleScopeTags.GetRoleScopeTagsById {
-    /// <summary>Provides operations to call the getRoleScopeTagsById method.</summary>
+    /// <summary>
+    /// Provides operations to call the getRoleScopeTagsById method.
+    /// </summary>
     public class GetRoleScopeTagsByIdResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<RoleScopeTag> Value {

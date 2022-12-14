@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the deviceAppManagement singleton.</summary>
     public enum Win32LobAppMsiPackageType {
         /// <summary>Indicates a per-machine app package.</summary>
         PerMachine,

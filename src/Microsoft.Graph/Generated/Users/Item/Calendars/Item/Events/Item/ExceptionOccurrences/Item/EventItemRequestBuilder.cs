@@ -22,7 +22,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Users.Item.Calendars.Item.Events.Item.ExceptionOccurrences.Item {
-    /// <summary>Provides operations to manage the exceptionOccurrences property of the microsoft.graph.event entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the exceptionOccurrences property of the microsoft.graph.event entity.
+    /// </summary>
     public class EventItemRequestBuilder {
         /// <summary>Provides operations to call the accept method.</summary>
         public AcceptRequestBuilder Accept { get =>
@@ -142,7 +144,9 @@ namespace Microsoft.Graph.Beta.Users.Item.Calendars.Item.Events.Item.ExceptionOc
             };
             return await RequestAdapter.SendAsync<Event>(requestInfo, Event.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Get exceptionOccurrences from users</summary>
+        /// <summary>
+        /// Get exceptionOccurrences from users
+        /// </summary>
         public class EventItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]
@@ -151,10 +155,12 @@ namespace Microsoft.Graph.Beta.Users.Item.Calendars.Item.Events.Item.ExceptionOc
             [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class EventItemRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -164,7 +170,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Calendars.Item.Events.Item.ExceptionOc
             /// </summary>
             public EventItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

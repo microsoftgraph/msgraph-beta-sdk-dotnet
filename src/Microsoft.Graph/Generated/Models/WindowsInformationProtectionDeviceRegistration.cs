@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Represents device registration records for Bring-Your-Own-Device(BYOD) Windows devices.</summary>
+    /// <summary>
+    /// Represents device registration records for Bring-Your-Own-Device(BYOD) Windows devices.
+    /// </summary>
     public class WindowsInformationProtectionDeviceRegistration : Entity, IParsable {
         /// <summary>Device Mac address.</summary>
         public string DeviceMacAddress {

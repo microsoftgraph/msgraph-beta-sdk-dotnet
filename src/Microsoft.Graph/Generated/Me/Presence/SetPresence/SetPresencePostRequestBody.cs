@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Me.Presence.SetPresence {
-    /// <summary>Provides operations to call the setPresence method.</summary>
+    /// <summary>
+    /// Provides operations to call the setPresence method.
+    /// </summary>
     public class SetPresencePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>The activity property</summary>
         public string Activity {

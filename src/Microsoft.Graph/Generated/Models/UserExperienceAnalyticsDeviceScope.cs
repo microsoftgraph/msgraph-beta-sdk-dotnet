@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>The user experience analytics device scope entity contains device scope configuration values use to apply filtering on the endpoint analytics reports.</summary>
     public class UserExperienceAnalyticsDeviceScope : Entity, IParsable {
         /// <summary>Indicates the creation date and time for the custom device scope.</summary>
         public DateTimeOffset? CreatedDateTime {

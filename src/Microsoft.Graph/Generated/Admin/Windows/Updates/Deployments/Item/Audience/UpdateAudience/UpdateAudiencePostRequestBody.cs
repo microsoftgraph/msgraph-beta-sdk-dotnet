@@ -6,7 +6,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.UpdateAudience {
-    /// <summary>Provides operations to call the updateAudience method.</summary>
+    /// <summary>
+    /// Provides operations to call the updateAudience method.
+    /// </summary>
     public class UpdateAudiencePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>The addExclusions property</summary>
         public List<UpdatableAsset> AddExclusions {

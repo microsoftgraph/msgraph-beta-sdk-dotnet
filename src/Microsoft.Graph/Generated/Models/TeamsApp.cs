@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Provides operations to manage the appCatalogs singleton.
+    /// </summary>
     public class TeamsApp : Entity, IParsable {
         /// <summary>The details for each version of the app.</summary>
         public List<TeamsAppDefinition> AppDefinitions {

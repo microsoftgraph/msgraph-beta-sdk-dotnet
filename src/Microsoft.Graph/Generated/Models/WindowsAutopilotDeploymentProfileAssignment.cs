@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>An assignment of a Windows Autopilot deployment profile to an AAD group.</summary>
+    /// <summary>
+    /// An assignment of a Windows Autopilot deployment profile to an AAD group.
+    /// </summary>
     public class WindowsAutopilotDeploymentProfileAssignment : Entity, IParsable {
         /// <summary>Represents source of assignment.</summary>
         public DeviceAndAppManagementAssignmentSource? Source {

@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.GetTopMobileAppsWithStatusWithCount {
-    /// <summary>Provides operations to call the getTopMobileApps method.</summary>
+    /// <summary>
+    /// Provides operations to call the getTopMobileApps method.
+    /// </summary>
     public class GetTopMobileAppsWithStatusWithCountResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<MobileApp> Value {

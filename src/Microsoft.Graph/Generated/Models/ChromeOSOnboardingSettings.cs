@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Entity that represents a Chromebook tenant settings</summary>
+    /// <summary>
+    /// Entity that represents a Chromebook tenant settings
+    /// </summary>
     public class ChromeOSOnboardingSettings : Entity, IParsable {
         /// <summary>The ChromebookTenant&apos;s LastDirectorySyncDateTime</summary>
         public DateTimeOffset? LastDirectorySyncDateTime {

@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Ediscovery {
+    /// <summary>
+    /// Provides operations to manage the legalHolds property of the microsoft.graph.ediscovery.case entity.
+    /// </summary>
     public class LegalHoldCollectionResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<LegalHold> Value {

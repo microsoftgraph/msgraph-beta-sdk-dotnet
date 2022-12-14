@@ -9,7 +9,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Connections.Item.Items.Item.Activities.Item.PerformedBy {
-    /// <summary>Provides operations to manage the performedBy property of the microsoft.graph.externalConnectors.externalActivity entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the performedBy property of the microsoft.graph.externalConnectors.externalActivity entity.
+    /// </summary>
     public class PerformedByRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -77,7 +79,9 @@ namespace Microsoft.Graph.Beta.Connections.Item.Items.Item.Activities.Item.Perfo
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.ExternalConnectors.Identity>(requestInfo, Microsoft.Graph.Beta.Models.ExternalConnectors.Identity.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Represents an identity used to identify who is responsible for the activity.</summary>
+        /// <summary>
+        /// Represents an identity used to identify who is responsible for the activity.
+        /// </summary>
         public class PerformedByRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]
@@ -86,10 +90,12 @@ namespace Microsoft.Graph.Beta.Connections.Item.Items.Item.Activities.Item.Perfo
             [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class PerformedByRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -99,7 +105,7 @@ namespace Microsoft.Graph.Beta.Connections.Item.Items.Item.Activities.Item.Perfo
             /// </summary>
             public PerformedByRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

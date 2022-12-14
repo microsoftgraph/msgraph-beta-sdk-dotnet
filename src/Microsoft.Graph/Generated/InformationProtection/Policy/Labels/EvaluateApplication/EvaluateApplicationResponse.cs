@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.InformationProtection.Policy.Labels.EvaluateApplication {
-    /// <summary>Provides operations to call the evaluateApplication method.</summary>
+    /// <summary>
+    /// Provides operations to call the evaluateApplication method.
+    /// </summary>
     public class EvaluateApplicationResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<InformationProtectionAction> Value {

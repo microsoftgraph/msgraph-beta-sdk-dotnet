@@ -1,11 +1,12 @@
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>
+    /// Provides operations to manage the dataClassificationService singleton.
+    /// </summary>
     public class JobResponseBase : Entity, IParsable {
         /// <summary>The creationDateTime property</summary>
         public DateTimeOffset? CreationDateTime {

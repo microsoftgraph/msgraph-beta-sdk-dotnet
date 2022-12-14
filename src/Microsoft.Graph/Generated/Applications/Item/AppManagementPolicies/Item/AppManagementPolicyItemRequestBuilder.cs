@@ -6,7 +6,9 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Applications.Item.AppManagementPolicies.Item {
-    /// <summary>Builds and executes requests for operations under \applications\{application-id}\appManagementPolicies\{appManagementPolicy-id}</summary>
+    /// <summary>
+    /// Builds and executes requests for operations under \applications\{application-id}\appManagementPolicies\{appManagementPolicy-id}
+    /// </summary>
     public class AppManagementPolicyItemRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

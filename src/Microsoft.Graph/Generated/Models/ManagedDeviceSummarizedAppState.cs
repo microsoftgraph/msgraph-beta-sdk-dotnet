@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Event representing a user&apos;s devices with failed or pending apps.</summary>
+    /// <summary>
+    /// Event representing a user&apos;s devices with failed or pending apps.
+    /// </summary>
     public class ManagedDeviceSummarizedAppState : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {

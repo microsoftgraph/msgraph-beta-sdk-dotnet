@@ -12,7 +12,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.PrivilegedRoleAssignmentRequests {
-    /// <summary>Provides operations to manage the collection of privilegedRoleAssignmentRequest entities.</summary>
+    /// <summary>
+    /// Provides operations to manage the collection of privilegedRoleAssignmentRequest entities.
+    /// </summary>
     public class PrivilegedRoleAssignmentRequestsRequestBuilder {
         /// <summary>Provides operations to count the resources in the collection.</summary>
         public CountRequestBuilder Count { get =>
@@ -80,7 +82,7 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignmentRequests {
         /// <summary>
         /// Create a privilegedroleassignmentrequest object.
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreatePostRequestInformation(PrivilegedRoleAssignmentRequest body, Action<PrivilegedRoleAssignmentRequestsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -101,6 +103,7 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignmentRequests {
         }
         /// <summary>
         /// Retrieve a collection of privilegedRoleAssignmentRequest.  **Note:** This requester must have at least one role assignment on the resource.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/privilegedroleassignmentrequest-list?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -120,8 +123,9 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignmentRequests {
         }
         /// <summary>
         /// Create a privilegedroleassignmentrequest object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/privilegedroleassignmentrequest-post?view=graph-rest-1.0" />
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public async Task<PrivilegedRoleAssignmentRequest> PostAsync(PrivilegedRoleAssignmentRequest body, Action<PrivilegedRoleAssignmentRequestsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -133,7 +137,9 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignmentRequests {
             };
             return await RequestAdapter.SendAsync<PrivilegedRoleAssignmentRequest>(requestInfo, PrivilegedRoleAssignmentRequest.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Retrieve a collection of privilegedRoleAssignmentRequest.  **Note:** This requester must have at least one role assignment on the resource.</summary>
+        /// <summary>
+        /// Retrieve a collection of privilegedRoleAssignmentRequest.  **Note:** This requester must have at least one role assignment on the resource.
+        /// </summary>
         public class PrivilegedRoleAssignmentRequestsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -160,10 +166,12 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignmentRequests {
             [QueryParameter("%24top")]
             public int? Top { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class PrivilegedRoleAssignmentRequestsRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -173,13 +181,15 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignmentRequests {
             /// </summary>
             public PrivilegedRoleAssignmentRequestsRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class PrivilegedRoleAssignmentRequestsRequestBuilderPostRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -187,7 +197,7 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignmentRequests {
             /// </summary>
             public PrivilegedRoleAssignmentRequestsRequestBuilderPostRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

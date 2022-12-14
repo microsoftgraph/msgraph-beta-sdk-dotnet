@@ -8,7 +8,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Me.FindRoomsWithRoomList {
-    /// <summary>Provides operations to call the findRooms method.</summary>
+    /// <summary>
+    /// Provides operations to call the findRooms method.
+    /// </summary>
     public class FindRoomsWithRoomListRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -78,7 +80,9 @@ namespace Microsoft.Graph.Beta.Me.FindRoomsWithRoomList {
             };
             return await RequestAdapter.SendAsync<FindRoomsWithRoomListResponse>(requestInfo, FindRoomsWithRoomListResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Invoke function findRooms</summary>
+        /// <summary>
+        /// Invoke function findRooms
+        /// </summary>
         public class FindRoomsWithRoomListRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -96,10 +100,12 @@ namespace Microsoft.Graph.Beta.Me.FindRoomsWithRoomList {
             [QueryParameter("%24top")]
             public int? Top { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class FindRoomsWithRoomListRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -109,7 +115,7 @@ namespace Microsoft.Graph.Beta.Me.FindRoomsWithRoomList {
             /// </summary>
             public FindRoomsWithRoomListRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

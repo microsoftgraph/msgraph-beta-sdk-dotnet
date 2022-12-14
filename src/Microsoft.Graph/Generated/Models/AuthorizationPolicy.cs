@@ -51,8 +51,8 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("enabledPreviewFeatures", value); }
         }
         /// <summary>Represents role templateId for the role that should be granted to guest user. Refer to List unifiedRoleDefinitions to find the list of available role templates. Currently following roles are supported:  User (a0b1b346-4d3e-4e8b-98f8-753987be4970), Guest User (10dae51f-b6af-4016-8d66-8c2a99b929b3), and Restricted Guest User (2af84b1e-32c8-42b7-82bc-daa82404023b).</summary>
-        public string GuestUserRoleId {
-            get { return BackingStore?.Get<string>("guestUserRoleId"); }
+        public Guid? GuestUserRoleId {
+            get { return BackingStore?.Get<Guid?>("guestUserRoleId"); }
             set { BackingStore?.Set("guestUserRoleId", value); }
         }
         /// <summary>Indicates if user consent to apps is allowed, and if it is, which app consent policy (permissionGrantPolicy) governs the permission for users to grant consent. Values should be in the format managePermissionGrantsForSelf.{id}, where {id} is the id of a built-in or custom app consent policy. An empty list indicates user consent to apps is disabled.</summary>
@@ -88,7 +88,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"defaultUserRoleOverrides", n => { DefaultUserRoleOverrides = n.GetCollectionOfObjectValues<DefaultUserRoleOverride>(DefaultUserRoleOverride.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"defaultUserRolePermissions", n => { DefaultUserRolePermissions = n.GetObjectValue<Microsoft.Graph.Beta.Models.DefaultUserRolePermissions>(Microsoft.Graph.Beta.Models.DefaultUserRolePermissions.CreateFromDiscriminatorValue); } },
                 {"enabledPreviewFeatures", n => { EnabledPreviewFeatures = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
-                {"guestUserRoleId", n => { GuestUserRoleId = n.GetStringValue(); } },
+                {"guestUserRoleId", n => { GuestUserRoleId = n.GetGuidValue(); } },
                 {"permissionGrantPolicyIdsAssignedToDefaultUserRole", n => { PermissionGrantPolicyIdsAssignedToDefaultUserRole = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
             };
         }
@@ -108,7 +108,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfObjectValues<DefaultUserRoleOverride>("defaultUserRoleOverrides", DefaultUserRoleOverrides);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.DefaultUserRolePermissions>("defaultUserRolePermissions", DefaultUserRolePermissions);
             writer.WriteCollectionOfPrimitiveValues<string>("enabledPreviewFeatures", EnabledPreviewFeatures);
-            writer.WriteStringValue("guestUserRoleId", GuestUserRoleId);
+            writer.WriteGuidValue("guestUserRoleId", GuestUserRoleId);
             writer.WriteCollectionOfPrimitiveValues<string>("permissionGrantPolicyIdsAssignedToDefaultUserRole", PermissionGrantPolicyIdsAssignedToDefaultUserRole);
         }
     }

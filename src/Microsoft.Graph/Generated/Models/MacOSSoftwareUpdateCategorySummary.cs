@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>MacOS software update category summary report for a device and user</summary>
+    /// <summary>
+    /// MacOS software update category summary report for a device and user
+    /// </summary>
     public class MacOSSoftwareUpdateCategorySummary : Entity, IParsable {
         /// <summary>The device ID.</summary>
         public string DeviceId {

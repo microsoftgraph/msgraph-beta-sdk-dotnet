@@ -6,7 +6,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.DeletedItems.Workflows.Item.CreateNewVersion {
-    /// <summary>Provides operations to call the createNewVersion method.</summary>
+    /// <summary>
+    /// Provides operations to call the createNewVersion method.
+    /// </summary>
     public class CreateNewVersionPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {

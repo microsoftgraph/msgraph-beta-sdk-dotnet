@@ -10,7 +10,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Groups.Item.Photos.Item {
-    /// <summary>Provides operations to manage the photos property of the microsoft.graph.group entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the photos property of the microsoft.graph.group entity.
+    /// </summary>
     public class ProfilePhotoItemRequestBuilder {
         /// <summary>Provides operations to manage the media for the group entity.</summary>
         public ContentRequestBuilder Content { get =>
@@ -82,16 +84,20 @@ namespace Microsoft.Graph.Beta.Groups.Item.Photos.Item {
             };
             return await RequestAdapter.SendAsync<ProfilePhoto>(requestInfo, ProfilePhoto.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>The profile photos owned by the group. Read-only. Nullable.</summary>
+        /// <summary>
+        /// The profile photos owned by the group. Read-only. Nullable.
+        /// </summary>
         public class ProfilePhotoItemRequestBuilderGetQueryParameters {
             /// <summary>Select properties to be returned</summary>
             [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class ProfilePhotoItemRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -101,7 +107,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Photos.Item {
             /// </summary>
             public ProfilePhotoItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

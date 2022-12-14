@@ -1,4 +1,3 @@
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions.Store;
 using System;
@@ -6,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>The status of the action performed with an Apple Volume Purchase Program token.</summary>
+    /// <summary>
+    /// The status of the action performed with an Apple Volume Purchase Program token.
+    /// </summary>
     public class VppTokenActionResult : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Action name</summary>
         public string ActionName {

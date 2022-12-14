@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Represents a custom attribute script for macOS.</summary>
+    /// <summary>
+    /// Represents a custom attribute script for macOS.
+    /// </summary>
     public class DeviceCustomAttributeShellScript : Entity, IParsable {
         /// <summary>The list of group assignments for the device management script.</summary>
         public List<DeviceManagementScriptAssignment> Assignments {

@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.DeviceManagement.Reports.GetQuietTimePolicyUserSummaryReport {
-    /// <summary>Provides operations to call the getQuietTimePolicyUserSummaryReport method.</summary>
+    /// <summary>
+    /// Provides operations to call the getQuietTimePolicyUserSummaryReport method.
+    /// </summary>
     public class GetQuietTimePolicyUserSummaryReportPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {

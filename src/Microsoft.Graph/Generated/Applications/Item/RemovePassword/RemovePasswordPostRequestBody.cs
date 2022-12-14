@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Applications.Item.RemovePassword {
-    /// <summary>Provides operations to call the removePassword method.</summary>
+    /// <summary>
+    /// Provides operations to call the removePassword method.
+    /// </summary>
     public class RemovePasswordPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
@@ -15,8 +17,8 @@ namespace Microsoft.Graph.Beta.Applications.Item.RemovePassword {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The keyId property</summary>
-        public string KeyId {
-            get { return BackingStore?.Get<string>("keyId"); }
+        public Guid? KeyId {
+            get { return BackingStore?.Get<Guid?>("keyId"); }
             set { BackingStore?.Set("keyId", value); }
         }
         /// <summary>
@@ -39,7 +41,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.RemovePassword {
         /// </summary>
         public IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>> {
-                {"keyId", n => { KeyId = n.GetStringValue(); } },
+                {"keyId", n => { KeyId = n.GetGuidValue(); } },
             };
         }
         /// <summary>
@@ -48,7 +50,7 @@ namespace Microsoft.Graph.Beta.Applications.Item.RemovePassword {
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("keyId", KeyId);
+            writer.WriteGuidValue("keyId", KeyId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

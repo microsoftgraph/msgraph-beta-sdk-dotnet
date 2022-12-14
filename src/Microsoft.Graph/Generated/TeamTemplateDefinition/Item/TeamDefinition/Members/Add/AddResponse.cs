@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.Members.Add {
-    /// <summary>Provides operations to call the add method.</summary>
+    /// <summary>
+    /// Provides operations to call the add method.
+    /// </summary>
     public class AddResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<ActionResultPart> Value {

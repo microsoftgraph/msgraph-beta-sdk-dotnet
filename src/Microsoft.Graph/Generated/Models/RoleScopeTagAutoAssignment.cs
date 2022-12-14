@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Contains the properties for auto-assigning a Role Scope Tag to a group to be applied to Devices.</summary>
+    /// <summary>
+    /// Contains the properties for auto-assigning a Role Scope Tag to a group to be applied to Devices.
+    /// </summary>
     public class RoleScopeTagAutoAssignment : Entity, IParsable {
         /// <summary>The auto-assignment target for the specific Role Scope Tag.</summary>
         public DeviceAndAppManagementAssignmentTarget Target {

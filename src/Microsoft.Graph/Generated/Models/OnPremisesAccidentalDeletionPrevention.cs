@@ -11,7 +11,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
             set { BackingStore?.Set("additionalData", value); }
         }
-        /// <summary>The alertThreshold property</summary>
+        /// <summary>Threshold value which triggers accidental deletion prevention. The threshold is either an absolute number of objects or a percentage number of objects.</summary>
         public int? AlertThreshold {
             get { return BackingStore?.Get<int?>("alertThreshold"); }
             set { BackingStore?.Set("alertThreshold", value); }
@@ -23,7 +23,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
-        /// <summary>The synchronizationPreventionType property</summary>
+        /// <summary>The status of the accidental deletion prevention feature. The possible values are: disabled, enabledForCount, enabledForPercentage.</summary>
         public OnPremisesDirectorySynchronizationDeletionPreventionType? SynchronizationPreventionType {
             get { return BackingStore?.Get<OnPremisesDirectorySynchronizationDeletionPreventionType?>("synchronizationPreventionType"); }
             set { BackingStore?.Set("synchronizationPreventionType", value); }

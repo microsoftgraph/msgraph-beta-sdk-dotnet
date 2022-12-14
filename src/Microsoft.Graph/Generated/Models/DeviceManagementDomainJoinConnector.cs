@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>A Domain Join Connector is a connector that is responsible to allocate (and delete) machine account blobs</summary>
+    /// <summary>
+    /// A Domain Join Connector is a connector that is responsible to allocate (and delete) machine account blobs
+    /// </summary>
     public class DeviceManagementDomainJoinConnector : Entity, IParsable {
         /// <summary>The connector display name.</summary>
         public string DisplayName {

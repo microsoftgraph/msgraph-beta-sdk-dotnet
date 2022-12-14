@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>A new entity to represent driver inventories.</summary>
+    /// <summary>
+    /// A new entity to represent driver inventories.
+    /// </summary>
     public class WindowsDriverUpdateInventory : Entity, IParsable {
         /// <summary>The number of devices for which this driver is applicable.</summary>
         public int? ApplicableDeviceCount {

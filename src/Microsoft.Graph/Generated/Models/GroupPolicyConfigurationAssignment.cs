@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>The group policy configuration assignment entity assigns one or more AAD groups to a specific group policy configuration.</summary>
+    /// <summary>
+    /// The group policy configuration assignment entity assigns one or more AAD groups to a specific group policy configuration.
+    /// </summary>
     public class GroupPolicyConfigurationAssignment : Entity, IParsable {
         /// <summary>The date and time the entity was last modified.</summary>
         public DateTimeOffset? LastModifiedDateTime {

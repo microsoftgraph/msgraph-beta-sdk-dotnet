@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>This entity contains the properties used to assign a windows feature update profile to a group.</summary>
+    /// <summary>
+    /// This entity contains the properties used to assign a windows feature update profile to a group.
+    /// </summary>
     public class WindowsFeatureUpdateProfileAssignment : Entity, IParsable {
         /// <summary>The assignment target that the feature update profile is assigned to.</summary>
         public DeviceAndAppManagementAssignmentTarget Target {

@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>A class containing the properties used for Group Assignment of a Mobile App.</summary>
+    /// <summary>
+    /// A class containing the properties used for Group Assignment of a Mobile App.
+    /// </summary>
     public class MobileAppAssignment : Entity, IParsable {
         /// <summary>Possible values for the install intent chosen by the admin.</summary>
         public InstallIntent? Intent {

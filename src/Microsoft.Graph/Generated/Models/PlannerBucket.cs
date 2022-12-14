@@ -4,9 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>
+    /// Provides operations to manage the collection of accessReviewDecision entities.
+    /// </summary>
     public class PlannerBucket : PlannerDelta, IParsable {
-        /// <summary>The creationSource property</summary>
+        /// <summary>Contains information about the origin of the bucket.</summary>
         public PlannerBucketCreation CreationSource {
             get { return BackingStore?.Get<PlannerBucketCreation>("creationSource"); }
             set { BackingStore?.Set("creationSource", value); }

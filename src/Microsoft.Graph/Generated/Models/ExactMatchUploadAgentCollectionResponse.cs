@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Provides operations to manage the exactMatchUploadAgents property of the microsoft.graph.dataClassificationService entity.
+    /// </summary>
     public class ExactMatchUploadAgentCollectionResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<ExactMatchUploadAgent> Value {

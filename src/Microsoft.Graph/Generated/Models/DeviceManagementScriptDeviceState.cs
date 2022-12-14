@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Contains properties for device run state of the device management script.</summary>
+    /// <summary>
+    /// Contains properties for device run state of the device management script.
+    /// </summary>
     public class DeviceManagementScriptDeviceState : Entity, IParsable {
         /// <summary>Error code corresponding to erroneous execution of the device management script.</summary>
         public int? ErrorCode {

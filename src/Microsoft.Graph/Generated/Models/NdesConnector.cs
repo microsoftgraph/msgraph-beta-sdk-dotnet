@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Entity which represents an OnPrem Ndes connector.</summary>
+    /// <summary>
+    /// Entity which represents an OnPrem Ndes connector.
+    /// </summary>
     public class NdesConnector : Entity, IParsable {
         /// <summary>The build version of the Ndes Connector.</summary>
         public string ConnectorVersion {

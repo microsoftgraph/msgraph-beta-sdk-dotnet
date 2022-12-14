@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Users.Item.CloudPCs.Item.GetCloudPcConnectivityHistory {
-    /// <summary>Provides operations to call the getCloudPcConnectivityHistory method.</summary>
+    /// <summary>
+    /// Provides operations to call the getCloudPcConnectivityHistory method.
+    /// </summary>
     public class GetCloudPcConnectivityHistoryResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<CloudPcConnectivityEvent> Value {

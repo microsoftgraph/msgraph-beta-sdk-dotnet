@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Identity.IdentityProviders.AvailableProviderTypes {
-    /// <summary>Provides operations to call the availableProviderTypes method.</summary>
+    /// <summary>
+    /// Provides operations to call the availableProviderTypes method.
+    /// </summary>
     public class AvailableProviderTypesResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<string> Value {

@@ -9,7 +9,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.TenantRelationships.FindTenantInformationByDomainNameWithDomainName {
-    /// <summary>Provides operations to call the findTenantInformationByDomainName method.</summary>
+    /// <summary>
+    /// Provides operations to call the findTenantInformationByDomainName method.
+    /// </summary>
     public class FindTenantInformationByDomainNameWithDomainNameRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -78,10 +80,12 @@ namespace Microsoft.Graph.Beta.TenantRelationships.FindTenantInformationByDomain
             };
             return await RequestAdapter.SendAsync<TenantInformation>(requestInfo, TenantInformation.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class FindTenantInformationByDomainNameWithDomainNameRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -89,7 +93,7 @@ namespace Microsoft.Graph.Beta.TenantRelationships.FindTenantInformationByDomain
             /// </summary>
             public FindTenantInformationByDomainNameWithDomainNameRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

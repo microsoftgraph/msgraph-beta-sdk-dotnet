@@ -6,7 +6,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Communications.CallRecords.GetPstnCallsWithFromDateTimeWithToDateTime {
-    /// <summary>Provides operations to call the getPstnCalls method.</summary>
+    /// <summary>
+    /// Provides operations to call the getPstnCalls method.
+    /// </summary>
     public class GetPstnCallsWithFromDateTimeWithToDateTimeResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<PstnCallLogRow> Value {

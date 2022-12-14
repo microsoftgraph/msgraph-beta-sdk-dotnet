@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDeviceScope.TriggerDeviceScopeAction {
-    /// <summary>Provides operations to call the triggerDeviceScopeAction method.</summary>
+    /// <summary>
+    /// Provides operations to call the triggerDeviceScopeAction method.
+    /// </summary>
     public class TriggerDeviceScopeActionPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Trigger on the service to either START or STOP computing metrics data based on a device scope configuration.</summary>
         public string ActionName {

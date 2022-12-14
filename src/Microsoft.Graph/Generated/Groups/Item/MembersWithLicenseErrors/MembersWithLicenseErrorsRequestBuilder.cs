@@ -17,7 +17,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Groups.Item.MembersWithLicenseErrors {
-    /// <summary>Provides operations to manage the membersWithLicenseErrors property of the microsoft.graph.group entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the membersWithLicenseErrors property of the microsoft.graph.group entity.
+    /// </summary>
     public class MembersWithLicenseErrorsRequestBuilder {
         /// <summary>Casts the previous resource to application.</summary>
         public ApplicationRequestBuilder Application { get =>
@@ -119,7 +121,9 @@ namespace Microsoft.Graph.Beta.Groups.Item.MembersWithLicenseErrors {
             };
             return await RequestAdapter.SendAsync<DirectoryObjectCollectionResponse>(requestInfo, DirectoryObjectCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>A list of group members with license errors from this group-based license assignment. Read-only.</summary>
+        /// <summary>
+        /// A list of group members with license errors from this group-based license assignment. Read-only.
+        /// </summary>
         public class MembersWithLicenseErrorsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -146,10 +150,12 @@ namespace Microsoft.Graph.Beta.Groups.Item.MembersWithLicenseErrors {
             [QueryParameter("%24top")]
             public int? Top { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class MembersWithLicenseErrorsRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -159,7 +165,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.MembersWithLicenseErrors {
             /// </summary>
             public MembersWithLicenseErrorsRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>The user experience analytics anomaly entity contains anomaly details.</summary>
+    /// <summary>
+    /// The user experience analytics anomaly entity contains anomaly details.
+    /// </summary>
     public class UserExperienceAnalyticsAnomaly : Entity, IParsable {
         /// <summary>Indicates the first occurrence date and time for the anomaly.</summary>
         public DateTimeOffset? AnomalyFirstOccurrenceDateTime {

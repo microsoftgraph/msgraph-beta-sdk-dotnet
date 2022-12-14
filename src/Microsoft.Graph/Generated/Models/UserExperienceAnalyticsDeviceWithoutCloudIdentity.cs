@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>The user experience analytics Device without Cloud Identity.</summary>
+    /// <summary>
+    /// The user experience analytics Device without Cloud Identity.
+    /// </summary>
     public class UserExperienceAnalyticsDeviceWithoutCloudIdentity : Entity, IParsable {
         /// <summary>Azure Active Directory Device Id</summary>
         public string AzureAdDeviceId {

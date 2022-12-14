@@ -6,7 +6,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Security.InformationProtection.SensitivityLabels.EvaluateRemoval {
-    /// <summary>Provides operations to call the evaluateRemoval method.</summary>
+    /// <summary>
+    /// Provides operations to call the evaluateRemoval method.
+    /// </summary>
     public class EvaluateRemovalResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<Microsoft.Graph.Beta.Models.Security.InformationProtectionAction> Value {

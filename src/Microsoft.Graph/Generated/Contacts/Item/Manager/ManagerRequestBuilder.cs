@@ -9,7 +9,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Contacts.Item.Manager {
-    /// <summary>Provides operations to manage the manager property of the microsoft.graph.orgContact entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the manager property of the microsoft.graph.orgContact entity.
+    /// </summary>
     public class ManagerRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -66,6 +68,7 @@ namespace Microsoft.Graph.Beta.Contacts.Item.Manager {
         }
         /// <summary>
         /// Get the contact&apos;s manager
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/orgcontact-get-manager?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -77,7 +80,9 @@ namespace Microsoft.Graph.Beta.Contacts.Item.Manager {
             };
             return await RequestAdapter.SendAsync<DirectoryObject>(requestInfo, DirectoryObject.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Get the contact&apos;s manager</summary>
+        /// <summary>
+        /// Get the contact&apos;s manager
+        /// </summary>
         public class ManagerRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]
@@ -86,10 +91,12 @@ namespace Microsoft.Graph.Beta.Contacts.Item.Manager {
             [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class ManagerRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -99,7 +106,7 @@ namespace Microsoft.Graph.Beta.Contacts.Item.Manager {
             /// </summary>
             public ManagerRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

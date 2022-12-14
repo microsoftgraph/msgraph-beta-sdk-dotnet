@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Represents the filter type and evalaution result of the filter.</summary>
+    /// <summary>
+    /// Represents the filter type and evalaution result of the filter.
+    /// </summary>
     public class AssignmentFilterTypeAndEvaluationResult : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {

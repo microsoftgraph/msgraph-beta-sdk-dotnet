@@ -1,11 +1,12 @@
-using Microsoft.Graph.Beta.Models.ExternalConnectors;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>
+    /// Provides operations to manage the collection of externalConnection entities.
+    /// </summary>
     public class ExternalActivity : Entity, IParsable {
         /// <summary>Represents an identity used to identify who is responsible for the activity.</summary>
         public Identity PerformedBy {

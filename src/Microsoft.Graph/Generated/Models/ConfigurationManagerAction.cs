@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Parameter for action triggerConfigurationManagerAction</summary>
+    /// <summary>
+    /// Parameter for action triggerConfigurationManagerAction
+    /// </summary>
     public class ConfigurationManagerAction : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Action type on Configuration Manager client</summary>
         public ConfigurationManagerActionType? Action {

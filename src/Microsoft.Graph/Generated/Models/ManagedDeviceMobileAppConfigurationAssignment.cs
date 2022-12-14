@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Contains the properties used to assign an MDM app configuration to a group.</summary>
+    /// <summary>
+    /// Contains the properties used to assign an MDM app configuration to a group.
+    /// </summary>
     public class ManagedDeviceMobileAppConfigurationAssignment : Entity, IParsable {
         /// <summary>Assignment target that the T&amp;C policy is assigned to.</summary>
         public DeviceAndAppManagementAssignmentTarget Target {

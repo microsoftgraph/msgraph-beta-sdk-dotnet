@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>A rule controlling traffic through the Windows Firewall.</summary>
+    /// <summary>
+    /// A rule controlling traffic through the Windows Firewall.
+    /// </summary>
     public class WindowsFirewallRule : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>State Management Setting.</summary>
         public StateManagementSetting? Action {

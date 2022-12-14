@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Security.TiIndicators.UpdateTiIndicators {
-    /// <summary>Provides operations to call the updateTiIndicators method.</summary>
+    /// <summary>
+    /// Provides operations to call the updateTiIndicators method.
+    /// </summary>
     public class UpdateTiIndicatorsResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<TiIndicator> Value {

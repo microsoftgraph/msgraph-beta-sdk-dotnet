@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Unsupported Group Policy Extension.</summary>
+    /// <summary>
+    /// Unsupported Group Policy Extension.
+    /// </summary>
     public class UnsupportedGroupPolicyExtension : Entity, IParsable {
         /// <summary>ExtensionType of the unsupported extension.</summary>
         public string ExtensionType {

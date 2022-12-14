@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Provides operations to manage the windowsManagedAppProtections property of the microsoft.graph.deviceAppManagement entity.
+    /// </summary>
     public class WindowsManagedAppProtectionCollectionResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<WindowsManagedAppProtection> Value {

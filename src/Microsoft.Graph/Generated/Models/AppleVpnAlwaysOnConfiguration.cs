@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Always On VPN configuration for MacOS and iOS IKEv2</summary>
+    /// <summary>
+    /// Always On VPN configuration for MacOS and iOS IKEv2
+    /// </summary>
     public class AppleVpnAlwaysOnConfiguration : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {

@@ -1,4 +1,3 @@
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions.Store;
 using System;
@@ -14,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The creationSourceKind property</summary>
+        /// <summary>Specifies what kind of creation source the plan is created with. The possible values are: external, publication and unknownFutureValue.</summary>
         public PlannerCreationSourceKind? CreationSourceKind {
             get { return BackingStore?.Get<PlannerCreationSourceKind?>("creationSourceKind"); }
             set { BackingStore?.Set("creationSourceKind", value); }

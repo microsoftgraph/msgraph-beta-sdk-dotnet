@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>
+    /// Provides operations to manage the collection of accessReviewDecision entities.
+    /// </summary>
     public class SalesOrder : Entity, IParsable {
         /// <summary>The billingPostalAddress property</summary>
         public PostalAddressType BillingPostalAddress {
@@ -13,8 +15,8 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("billingPostalAddress", value); }
         }
         /// <summary>The billToCustomerId property</summary>
-        public string BillToCustomerId {
-            get { return BackingStore?.Get<string>("billToCustomerId"); }
+        public Guid? BillToCustomerId {
+            get { return BackingStore?.Get<Guid?>("billToCustomerId"); }
             set { BackingStore?.Set("billToCustomerId", value); }
         }
         /// <summary>The billToCustomerNumber property</summary>
@@ -38,8 +40,8 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("currencyCode", value); }
         }
         /// <summary>The currencyId property</summary>
-        public string CurrencyId {
-            get { return BackingStore?.Get<string>("currencyId"); }
+        public Guid? CurrencyId {
+            get { return BackingStore?.Get<Guid?>("currencyId"); }
             set { BackingStore?.Set("currencyId", value); }
         }
         /// <summary>The customer property</summary>
@@ -48,8 +50,8 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("customer", value); }
         }
         /// <summary>The customerId property</summary>
-        public string CustomerId {
-            get { return BackingStore?.Get<string>("customerId"); }
+        public Guid? CustomerId {
+            get { return BackingStore?.Get<Guid?>("customerId"); }
             set { BackingStore?.Set("customerId", value); }
         }
         /// <summary>The customerName property</summary>
@@ -113,8 +115,8 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("paymentTerm", value); }
         }
         /// <summary>The paymentTermsId property</summary>
-        public string PaymentTermsId {
-            get { return BackingStore?.Get<string>("paymentTermsId"); }
+        public Guid? PaymentTermsId {
+            get { return BackingStore?.Get<Guid?>("paymentTermsId"); }
             set { BackingStore?.Set("paymentTermsId", value); }
         }
         /// <summary>The phoneNumber property</summary>
@@ -196,14 +198,14 @@ namespace Microsoft.Graph.Beta.Models {
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"billingPostalAddress", n => { BillingPostalAddress = n.GetObjectValue<PostalAddressType>(PostalAddressType.CreateFromDiscriminatorValue); } },
-                {"billToCustomerId", n => { BillToCustomerId = n.GetStringValue(); } },
+                {"billToCustomerId", n => { BillToCustomerId = n.GetGuidValue(); } },
                 {"billToCustomerNumber", n => { BillToCustomerNumber = n.GetStringValue(); } },
                 {"billToName", n => { BillToName = n.GetStringValue(); } },
                 {"currency", n => { Currency = n.GetObjectValue<Microsoft.Graph.Beta.Models.Currency>(Microsoft.Graph.Beta.Models.Currency.CreateFromDiscriminatorValue); } },
                 {"currencyCode", n => { CurrencyCode = n.GetStringValue(); } },
-                {"currencyId", n => { CurrencyId = n.GetStringValue(); } },
+                {"currencyId", n => { CurrencyId = n.GetGuidValue(); } },
                 {"customer", n => { Customer = n.GetObjectValue<Microsoft.Graph.Beta.Models.Customer>(Microsoft.Graph.Beta.Models.Customer.CreateFromDiscriminatorValue); } },
-                {"customerId", n => { CustomerId = n.GetStringValue(); } },
+                {"customerId", n => { CustomerId = n.GetGuidValue(); } },
                 {"customerName", n => { CustomerName = n.GetStringValue(); } },
                 {"customerNumber", n => { CustomerNumber = n.GetStringValue(); } },
                 {"discountAmount", n => { DiscountAmount = n.GetDecimalValue(); } },
@@ -216,7 +218,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"orderDate", n => { OrderDate = n.GetDateValue(); } },
                 {"partialShipping", n => { PartialShipping = n.GetBoolValue(); } },
                 {"paymentTerm", n => { PaymentTerm = n.GetObjectValue<Microsoft.Graph.Beta.Models.PaymentTerm>(Microsoft.Graph.Beta.Models.PaymentTerm.CreateFromDiscriminatorValue); } },
-                {"paymentTermsId", n => { PaymentTermsId = n.GetStringValue(); } },
+                {"paymentTermsId", n => { PaymentTermsId = n.GetGuidValue(); } },
                 {"phoneNumber", n => { PhoneNumber = n.GetStringValue(); } },
                 {"pricesIncludeTax", n => { PricesIncludeTax = n.GetBoolValue(); } },
                 {"requestedDeliveryDate", n => { RequestedDeliveryDate = n.GetDateValue(); } },
@@ -240,14 +242,14 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteObjectValue<PostalAddressType>("billingPostalAddress", BillingPostalAddress);
-            writer.WriteStringValue("billToCustomerId", BillToCustomerId);
+            writer.WriteGuidValue("billToCustomerId", BillToCustomerId);
             writer.WriteStringValue("billToCustomerNumber", BillToCustomerNumber);
             writer.WriteStringValue("billToName", BillToName);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Currency>("currency", Currency);
             writer.WriteStringValue("currencyCode", CurrencyCode);
-            writer.WriteStringValue("currencyId", CurrencyId);
+            writer.WriteGuidValue("currencyId", CurrencyId);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Customer>("customer", Customer);
-            writer.WriteStringValue("customerId", CustomerId);
+            writer.WriteGuidValue("customerId", CustomerId);
             writer.WriteStringValue("customerName", CustomerName);
             writer.WriteStringValue("customerNumber", CustomerNumber);
             writer.WriteDecimalValue("discountAmount", DiscountAmount);
@@ -260,7 +262,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteDateValue("orderDate", OrderDate);
             writer.WriteBoolValue("partialShipping", PartialShipping);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.PaymentTerm>("paymentTerm", PaymentTerm);
-            writer.WriteStringValue("paymentTermsId", PaymentTermsId);
+            writer.WriteGuidValue("paymentTermsId", PaymentTermsId);
             writer.WriteStringValue("phoneNumber", PhoneNumber);
             writer.WriteBoolValue("pricesIncludeTax", PricesIncludeTax);
             writer.WriteDateValue("requestedDeliveryDate", RequestedDeliveryDate);

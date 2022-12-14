@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>MacOS Volume Purchase Program license assignment. This class does not support Create, Delete, or Update.</summary>
+    /// <summary>
+    /// MacOS Volume Purchase Program license assignment. This class does not support Create, Delete, or Update.
+    /// </summary>
     public class MacOsVppAppAssignedLicense : Entity, IParsable {
         /// <summary>The user email address.</summary>
         public string UserEmailAddress {

@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Windows management app health state entity.</summary>
+    /// <summary>
+    /// Windows management app health state entity.
+    /// </summary>
     public class WindowsManagementAppHealthState : Entity, IParsable {
         /// <summary>Name of the device on which Windows management app is installed.</summary>
         public string DeviceName {

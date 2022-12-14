@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Represents per-process privacy preferences.</summary>
+    /// <summary>
+    /// Represents per-process privacy preferences.
+    /// </summary>
     public class MacOSPrivacyAccessControlItem : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Possible values of a property</summary>
         public Enablement? Accessibility {

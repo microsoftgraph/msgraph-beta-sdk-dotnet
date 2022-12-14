@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Groups.Item.CheckMemberGroups {
-    /// <summary>Provides operations to call the checkMemberGroups method.</summary>
+    /// <summary>
+    /// Provides operations to call the checkMemberGroups method.
+    /// </summary>
     public class CheckMemberGroupsResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<string> Value {

@@ -1,4 +1,3 @@
-using Microsoft.Graph.Beta.Models.ExternalConnectors;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions.Store;
 using System;

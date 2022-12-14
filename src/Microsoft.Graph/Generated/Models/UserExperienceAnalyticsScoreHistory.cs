@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>The user experience analytics device startup score history.</summary>
+    /// <summary>
+    /// The user experience analytics device startup score history.
+    /// </summary>
     public class UserExperienceAnalyticsScoreHistory : Entity, IParsable {
         /// <summary>The user experience analytics device startup date time.</summary>
         public DateTimeOffset? StartupDateTime {

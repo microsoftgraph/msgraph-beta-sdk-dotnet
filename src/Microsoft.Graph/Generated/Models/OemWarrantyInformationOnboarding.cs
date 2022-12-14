@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Warranty status entity for a given OEM</summary>
+    /// <summary>
+    /// Warranty status entity for a given OEM
+    /// </summary>
     public class OemWarrantyInformationOnboarding : Entity, IParsable {
         /// <summary>Specifies whether warranty API is available. This property is read-only.</summary>
         public bool? Available {

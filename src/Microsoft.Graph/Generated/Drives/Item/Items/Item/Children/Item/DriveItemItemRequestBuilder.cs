@@ -10,7 +10,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Children.Item {
-    /// <summary>Provides operations to manage the children property of the microsoft.graph.driveItem entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the children property of the microsoft.graph.driveItem entity.
+    /// </summary>
     public class DriveItemItemRequestBuilder {
         /// <summary>Provides operations to manage the media for the drive entity.</summary>
         public ContentRequestBuilder Content { get =>
@@ -82,7 +84,9 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Children.Item {
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.DriveItem>(requestInfo, Microsoft.Graph.Beta.Models.DriveItem.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Collection containing Item objects for the immediate children of Item. Only items representing folders have children. Read-only. Nullable.</summary>
+        /// <summary>
+        /// Collection containing Item objects for the immediate children of Item. Only items representing folders have children. Read-only. Nullable.
+        /// </summary>
         public class DriveItemItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]
@@ -91,10 +95,12 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Children.Item {
             [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class DriveItemItemRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -104,7 +110,7 @@ namespace Microsoft.Graph.Beta.Drives.Item.Items.Item.Children.Item {
             /// </summary>
             public DriveItemItemRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

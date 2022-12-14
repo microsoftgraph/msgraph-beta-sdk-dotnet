@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDevicePerformance.SummarizeDevicePerformanceDevicesWithSummarizeBy {
-    /// <summary>Provides operations to call the summarizeDevicePerformanceDevices method.</summary>
+    /// <summary>
+    /// Provides operations to call the summarizeDevicePerformanceDevices method.
+    /// </summary>
     public class SummarizeDevicePerformanceDevicesWithSummarizeByResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDevicePerformance> Value {

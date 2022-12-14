@@ -8,7 +8,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Communications.CallRecords.GetDirectRoutingCallsWithFromDateTimeWithToDateTime {
-    /// <summary>Provides operations to call the getDirectRoutingCalls method.</summary>
+    /// <summary>
+    /// Provides operations to call the getDirectRoutingCalls method.
+    /// </summary>
     public class GetDirectRoutingCallsWithFromDateTimeWithToDateTimeRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -80,7 +82,9 @@ namespace Microsoft.Graph.Beta.Communications.CallRecords.GetDirectRoutingCallsW
             };
             return await RequestAdapter.SendAsync<GetDirectRoutingCallsWithFromDateTimeWithToDateTimeResponse>(requestInfo, GetDirectRoutingCallsWithFromDateTimeWithToDateTimeResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Invoke function getDirectRoutingCalls</summary>
+        /// <summary>
+        /// Invoke function getDirectRoutingCalls
+        /// </summary>
         public class GetDirectRoutingCallsWithFromDateTimeWithToDateTimeRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -98,10 +102,12 @@ namespace Microsoft.Graph.Beta.Communications.CallRecords.GetDirectRoutingCallsW
             [QueryParameter("%24top")]
             public int? Top { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class GetDirectRoutingCallsWithFromDateTimeWithToDateTimeRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -111,7 +117,7 @@ namespace Microsoft.Graph.Beta.Communications.CallRecords.GetDirectRoutingCallsW
             /// </summary>
             public GetDirectRoutingCallsWithFromDateTimeWithToDateTimeRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

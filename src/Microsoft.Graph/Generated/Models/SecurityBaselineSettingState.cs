@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>The security baseline compliance state of a setting for a device</summary>
+    /// <summary>
+    /// The security baseline compliance state of a setting for a device
+    /// </summary>
     public class SecurityBaselineSettingState : Entity, IParsable {
         /// <summary>The policies that contribute to this setting instance</summary>
         public List<SecurityBaselineContributingPolicy> ContributingPolicies {

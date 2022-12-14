@@ -1,11 +1,12 @@
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>The ManagedAppEntity is the base entity type for all other entity types under app management workflow.</summary>
+    /// <summary>
+    /// The ManagedAppEntity is the base entity type for all other entity types under app management workflow.
+    /// </summary>
     public class ManagedAppRegistration : Entity, IParsable {
         /// <summary>The app package Identifier</summary>
         public MobileAppIdentifier AppIdentifier {

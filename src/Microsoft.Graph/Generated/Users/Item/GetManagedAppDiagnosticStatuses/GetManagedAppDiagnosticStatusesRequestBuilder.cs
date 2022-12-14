@@ -8,7 +8,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Users.Item.GetManagedAppDiagnosticStatuses {
-    /// <summary>Provides operations to call the getManagedAppDiagnosticStatuses method.</summary>
+    /// <summary>
+    /// Provides operations to call the getManagedAppDiagnosticStatuses method.
+    /// </summary>
     public class GetManagedAppDiagnosticStatusesRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -76,7 +78,9 @@ namespace Microsoft.Graph.Beta.Users.Item.GetManagedAppDiagnosticStatuses {
             };
             return await RequestAdapter.SendAsync<GetManagedAppDiagnosticStatusesResponse>(requestInfo, GetManagedAppDiagnosticStatusesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Gets diagnostics validation status for a given user.</summary>
+        /// <summary>
+        /// Gets diagnostics validation status for a given user.
+        /// </summary>
         public class GetManagedAppDiagnosticStatusesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -94,10 +98,12 @@ namespace Microsoft.Graph.Beta.Users.Item.GetManagedAppDiagnosticStatuses {
             [QueryParameter("%24top")]
             public int? Top { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class GetManagedAppDiagnosticStatusesRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -107,7 +113,7 @@ namespace Microsoft.Graph.Beta.Users.Item.GetManagedAppDiagnosticStatuses {
             /// </summary>
             public GetManagedAppDiagnosticStatusesRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

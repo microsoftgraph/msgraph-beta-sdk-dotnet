@@ -13,7 +13,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.IdentityProtection.RiskyServicePrincipals {
-    /// <summary>Provides operations to manage the riskyServicePrincipals property of the microsoft.graph.identityProtectionRoot entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the riskyServicePrincipals property of the microsoft.graph.identityProtectionRoot entity.
+    /// </summary>
     public class RiskyServicePrincipalsRequestBuilder {
         /// <summary>Provides operations to call the confirmCompromised method.</summary>
         public ConfirmCompromisedRequestBuilder ConfirmCompromised { get =>
@@ -89,7 +91,7 @@ namespace Microsoft.Graph.Beta.IdentityProtection.RiskyServicePrincipals {
         /// <summary>
         /// Create new navigation property to riskyServicePrincipals for identityProtection
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreatePostRequestInformation(RiskyServicePrincipal body, Action<RiskyServicePrincipalsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -110,6 +112,7 @@ namespace Microsoft.Graph.Beta.IdentityProtection.RiskyServicePrincipals {
         }
         /// <summary>
         /// Retrieve the properties and relationships of riskyServicePrincipal objects.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/identityprotectionroot-list-riskyserviceprincipals?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -124,7 +127,7 @@ namespace Microsoft.Graph.Beta.IdentityProtection.RiskyServicePrincipals {
         /// <summary>
         /// Create new navigation property to riskyServicePrincipals for identityProtection
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public async Task<RiskyServicePrincipal> PostAsync(RiskyServicePrincipal body, Action<RiskyServicePrincipalsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -136,7 +139,9 @@ namespace Microsoft.Graph.Beta.IdentityProtection.RiskyServicePrincipals {
             };
             return await RequestAdapter.SendAsync<RiskyServicePrincipal>(requestInfo, RiskyServicePrincipal.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Retrieve the properties and relationships of riskyServicePrincipal objects.</summary>
+        /// <summary>
+        /// Retrieve the properties and relationships of riskyServicePrincipal objects.
+        /// </summary>
         public class RiskyServicePrincipalsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -163,10 +168,12 @@ namespace Microsoft.Graph.Beta.IdentityProtection.RiskyServicePrincipals {
             [QueryParameter("%24top")]
             public int? Top { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class RiskyServicePrincipalsRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -176,13 +183,15 @@ namespace Microsoft.Graph.Beta.IdentityProtection.RiskyServicePrincipals {
             /// </summary>
             public RiskyServicePrincipalsRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class RiskyServicePrincipalsRequestBuilderPostRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -190,7 +199,7 @@ namespace Microsoft.Graph.Beta.IdentityProtection.RiskyServicePrincipals {
             /// </summary>
             public RiskyServicePrincipalsRequestBuilderPostRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

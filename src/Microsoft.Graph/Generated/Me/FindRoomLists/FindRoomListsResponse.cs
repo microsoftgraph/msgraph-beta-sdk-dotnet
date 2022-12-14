@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Me.FindRoomLists {
-    /// <summary>Provides operations to call the findRoomLists method.</summary>
+    /// <summary>
+    /// Provides operations to call the findRoomLists method.
+    /// </summary>
     public class FindRoomListsResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<EmailAddress> Value {

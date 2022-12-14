@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.DeviceManagement.GetEffectivePermissionsWithScope {
-    /// <summary>Provides operations to call the getEffectivePermissions method.</summary>
+    /// <summary>
+    /// Provides operations to call the getEffectivePermissions method.
+    /// </summary>
     public class GetEffectivePermissionsWithScopeResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<RolePermission> Value {

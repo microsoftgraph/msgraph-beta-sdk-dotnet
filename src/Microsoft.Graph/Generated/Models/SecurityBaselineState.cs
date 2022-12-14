@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Security baseline state for a device.</summary>
+    /// <summary>
+    /// Security baseline state for a device.
+    /// </summary>
     public class SecurityBaselineState : Entity, IParsable {
         /// <summary>The display name of the security baseline</summary>
         public string DisplayName {

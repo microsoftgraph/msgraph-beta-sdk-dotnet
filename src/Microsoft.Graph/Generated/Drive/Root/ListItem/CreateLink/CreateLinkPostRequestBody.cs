@@ -6,7 +6,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Drive.Root.ListItem.CreateLink {
-    /// <summary>Provides operations to call the createLink method.</summary>
+    /// <summary>
+    /// Provides operations to call the createLink method.
+    /// </summary>
     public class CreateLinkPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {

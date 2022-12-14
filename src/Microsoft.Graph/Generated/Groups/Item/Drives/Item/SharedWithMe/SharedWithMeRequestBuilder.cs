@@ -8,7 +8,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Groups.Item.Drives.Item.SharedWithMe {
-    /// <summary>Provides operations to call the sharedWithMe method.</summary>
+    /// <summary>
+    /// Provides operations to call the sharedWithMe method.
+    /// </summary>
     public class SharedWithMeRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -76,7 +78,9 @@ namespace Microsoft.Graph.Beta.Groups.Item.Drives.Item.SharedWithMe {
             };
             return await RequestAdapter.SendAsync<SharedWithMeResponse>(requestInfo, SharedWithMeResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Invoke function sharedWithMe</summary>
+        /// <summary>
+        /// Invoke function sharedWithMe
+        /// </summary>
         public class SharedWithMeRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -100,10 +104,12 @@ namespace Microsoft.Graph.Beta.Groups.Item.Drives.Item.SharedWithMe {
             [QueryParameter("%24top")]
             public int? Top { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class SharedWithMeRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -113,7 +119,7 @@ namespace Microsoft.Graph.Beta.Groups.Item.Drives.Item.SharedWithMe {
             /// </summary>
             public SharedWithMeRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

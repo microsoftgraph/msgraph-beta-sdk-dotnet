@@ -13,12 +13,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The installStatus property</summary>
+        /// <summary>The status of a partner agent installation. Possible values are: installed, installFailed, installing, uninstalling, uninstallFailed and licensed. Read-Only.</summary>
         public CloudPcPartnerAgentInstallStatus? InstallStatus {
             get { return BackingStore?.Get<CloudPcPartnerAgentInstallStatus?>("installStatus"); }
             set { BackingStore?.Set("installStatus", value); }
         }
-        /// <summary>The isThirdPartyPartner property</summary>
+        /// <summary>Indicates if the partner agent is a third party. When &apos;TRUE&apos;, the agent is a third-party (non-Microsoft) agent.  When &apos;FALSE&apos;, the agent is a Microsoft agent or is not known.  The default value is &apos;FALSE&apos;.</summary>
         public bool? IsThirdPartyPartner {
             get { return BackingStore?.Get<bool?>("isThirdPartyPartner"); }
             set { BackingStore?.Set("isThirdPartyPartner", value); }
@@ -28,12 +28,12 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
-        /// <summary>The partnerAgentName property</summary>
+        /// <summary>Indicates the name of a partner agent and includes first-party and third-party. Currently, Citrix is the only third-party value. Read-Only.</summary>
         public CloudPcPartnerAgentName? PartnerAgentName {
             get { return BackingStore?.Get<CloudPcPartnerAgentName?>("partnerAgentName"); }
             set { BackingStore?.Set("partnerAgentName", value); }
         }
-        /// <summary>The retriable property</summary>
+        /// <summary>Indicates if the partner agent is a third party. When &apos;TRUE&apos;, the agent is a third-party (non-Microsoft) agent. When &apos;FALSE&apos;, the agent is a Microsoft agent or is not known. The default value is &apos;FALSE&apos;.</summary>
         public bool? Retriable {
             get { return BackingStore?.Get<bool?>("retriable"); }
             set { BackingStore?.Set("retriable", value); }

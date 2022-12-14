@@ -8,7 +8,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDevicePerformance.SummarizeDevicePerformanceDevicesWithSummarizeBy {
-    /// <summary>Provides operations to call the summarizeDevicePerformanceDevices method.</summary>
+    /// <summary>
+    /// Provides operations to call the summarizeDevicePerformanceDevices method.
+    /// </summary>
     public class SummarizeDevicePerformanceDevicesWithSummarizeByRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
@@ -78,7 +80,9 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDevicePer
             };
             return await RequestAdapter.SendAsync<SummarizeDevicePerformanceDevicesWithSummarizeByResponse>(requestInfo, SummarizeDevicePerformanceDevicesWithSummarizeByResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Invoke function summarizeDevicePerformanceDevices</summary>
+        /// <summary>
+        /// Invoke function summarizeDevicePerformanceDevices
+        /// </summary>
         public class SummarizeDevicePerformanceDevicesWithSummarizeByRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>
             [QueryParameter("%24count")]
@@ -102,10 +106,12 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDevicePer
             [QueryParameter("%24top")]
             public int? Top { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class SummarizeDevicePerformanceDevicesWithSummarizeByRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -115,7 +121,7 @@ namespace Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDevicePer
             /// </summary>
             public SummarizeDevicePerformanceDevicesWithSummarizeByRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

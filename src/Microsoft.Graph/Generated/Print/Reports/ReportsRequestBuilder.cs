@@ -99,6 +99,7 @@ using Microsoft.Graph.Beta.Print.Reports.GetTeamsTeamActivityCountsWithPeriod;
 using Microsoft.Graph.Beta.Print.Reports.GetTeamsTeamActivityDetailWithDate;
 using Microsoft.Graph.Beta.Print.Reports.GetTeamsTeamActivityDetailWithPeriod;
 using Microsoft.Graph.Beta.Print.Reports.GetTeamsTeamActivityDistributionCountsWithPeriod;
+using Microsoft.Graph.Beta.Print.Reports.GetTeamsTeamCountsWithPeriod;
 using Microsoft.Graph.Beta.Print.Reports.GetTeamsUserActivityCountsWithPeriod;
 using Microsoft.Graph.Beta.Print.Reports.GetTeamsUserActivityDistributionTotalUserCountsWithPeriod;
 using Microsoft.Graph.Beta.Print.Reports.GetTeamsUserActivityDistributionUserCountsWithPeriod;
@@ -143,7 +144,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Print.Reports {
-    /// <summary>Provides operations to manage the reports property of the microsoft.graph.print entity.</summary>
+    /// <summary>
+    /// Provides operations to manage the reports property of the microsoft.graph.print entity.
+    /// </summary>
     public class ReportsRequestBuilder {
         /// <summary>Provides operations to manage the applicationSignInDetailedSummary property of the microsoft.graph.reportRoot entity.</summary>
         public ApplicationSignInDetailedSummaryRequestBuilder ApplicationSignInDetailedSummary { get =>
@@ -275,7 +278,7 @@ namespace Microsoft.Graph.Beta.Print.Reports {
         /// <summary>
         /// Update the navigation property reports in print
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreatePatchRequestInformation(ReportRoot body, Action<ReportsRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -1039,6 +1042,14 @@ namespace Microsoft.Graph.Beta.Print.Reports {
             return new GetTeamsTeamActivityDistributionCountsWithPeriodRequestBuilder(PathParameters, RequestAdapter, period);
         }
         /// <summary>
+        /// Provides operations to call the getTeamsTeamCounts method.
+        /// </summary>
+        /// <param name="period">Usage: period=&apos;{period}&apos;</param>
+        public GetTeamsTeamCountsWithPeriodRequestBuilder GetTeamsTeamCountsWithPeriod(string period) {
+            if(string.IsNullOrEmpty(period)) throw new ArgumentNullException(nameof(period));
+            return new GetTeamsTeamCountsWithPeriodRequestBuilder(PathParameters, RequestAdapter, period);
+        }
+        /// <summary>
         /// Provides operations to call the getTeamsUserActivityCounts method.
         /// </summary>
         /// <param name="period">Usage: period=&apos;{period}&apos;</param>
@@ -1289,7 +1300,7 @@ namespace Microsoft.Graph.Beta.Print.Reports {
         /// <summary>
         /// Update the navigation property reports in print
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public async Task<ReportRoot> PatchAsync(ReportRoot body, Action<ReportsRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -1301,10 +1312,12 @@ namespace Microsoft.Graph.Beta.Print.Reports {
             };
             return await RequestAdapter.SendAsync<ReportRoot>(requestInfo, ReportRoot.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class ReportsRequestBuilderDeleteRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -1312,10 +1325,12 @@ namespace Microsoft.Graph.Beta.Print.Reports {
             /// </summary>
             public ReportsRequestBuilderDeleteRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Get reports from print</summary>
+        /// <summary>
+        /// Get reports from print
+        /// </summary>
         public class ReportsRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]
@@ -1324,10 +1339,12 @@ namespace Microsoft.Graph.Beta.Print.Reports {
             [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class ReportsRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -1337,13 +1354,15 @@ namespace Microsoft.Graph.Beta.Print.Reports {
             /// </summary>
             public ReportsRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class ReportsRequestBuilderPatchRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -1351,7 +1370,7 @@ namespace Microsoft.Graph.Beta.Print.Reports {
             /// </summary>
             public ReportsRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

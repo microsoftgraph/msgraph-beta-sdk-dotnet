@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Contains properties for device run state of the device health script.</summary>
+    /// <summary>
+    /// Contains properties for device run state of the device health script.
+    /// </summary>
     public class DeviceHealthScriptDeviceState : Entity, IParsable {
         /// <summary>A list of the assignment filter ids used for health script applicability evaluation</summary>
         public List<string> AssignmentFilterIds {

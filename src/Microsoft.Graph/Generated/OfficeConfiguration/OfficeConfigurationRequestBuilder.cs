@@ -10,7 +10,9 @@ using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.OfficeConfiguration {
-    /// <summary>Provides operations to manage the officeConfiguration singleton.</summary>
+    /// <summary>
+    /// Provides operations to manage the officeConfiguration singleton.
+    /// </summary>
     public class OfficeConfigurationRequestBuilder {
         /// <summary>Provides operations to manage the clientConfigurations property of the microsoft.graph.officeConfiguration entity.</summary>
         public ClientConfigurationsRequestBuilder ClientConfigurations { get =>
@@ -72,7 +74,7 @@ namespace Microsoft.Graph.Beta.OfficeConfiguration {
         /// <summary>
         /// Update officeConfiguration
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreatePatchRequestInformation(Microsoft.Graph.Beta.Models.OfficeConfiguration body, Action<OfficeConfigurationRequestBuilderPatchRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
@@ -107,7 +109,7 @@ namespace Microsoft.Graph.Beta.OfficeConfiguration {
         /// <summary>
         /// Update officeConfiguration
         /// </summary>
-        /// <param name="body"></param>
+        /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public async Task<Microsoft.Graph.Beta.Models.OfficeConfiguration> PatchAsync(Microsoft.Graph.Beta.Models.OfficeConfiguration body, Action<OfficeConfigurationRequestBuilderPatchRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
@@ -119,7 +121,9 @@ namespace Microsoft.Graph.Beta.OfficeConfiguration {
             };
             return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.OfficeConfiguration>(requestInfo, Microsoft.Graph.Beta.Models.OfficeConfiguration.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
-        /// <summary>Get officeConfiguration</summary>
+        /// <summary>
+        /// Get officeConfiguration
+        /// </summary>
         public class OfficeConfigurationRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>
             [QueryParameter("%24expand")]
@@ -128,10 +132,12 @@ namespace Microsoft.Graph.Beta.OfficeConfiguration {
             [QueryParameter("%24select")]
             public string[] Select { get; set; }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class OfficeConfigurationRequestBuilderGetRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>Request query parameters</summary>
@@ -141,13 +147,15 @@ namespace Microsoft.Graph.Beta.OfficeConfiguration {
             /// </summary>
             public OfficeConfigurationRequestBuilderGetRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
-        /// <summary>Configuration for the request such as headers, query parameters, and middleware options.</summary>
+        /// <summary>
+        /// Configuration for the request such as headers, query parameters, and middleware options.
+        /// </summary>
         public class OfficeConfigurationRequestBuilderPatchRequestConfiguration {
             /// <summary>Request headers</summary>
-            public IDictionary<string, string> Headers { get; set; }
+            public RequestHeaders Headers { get; set; }
             /// <summary>Request options</summary>
             public IList<IRequestOption> Options { get; set; }
             /// <summary>
@@ -155,7 +163,7 @@ namespace Microsoft.Graph.Beta.OfficeConfiguration {
             /// </summary>
             public OfficeConfigurationRequestBuilderPatchRequestConfiguration() {
                 Options = new List<IRequestOption>();
-                Headers = new Dictionary<string, string>();
+                Headers = new RequestHeaders();
             }
         }
     }

@@ -6,7 +6,9 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 namespace Microsoft.Graph.Beta.Print.PrinterShares.Item.AllowedUsers.Item {
-    /// <summary>Builds and executes requests for operations under \print\printerShares\{printerShare-id}\allowedUsers\{user-id}</summary>
+    /// <summary>
+    /// Builds and executes requests for operations under \print\printerShares\{printerShare-id}\allowedUsers\{user-id}
+    /// </summary>
     public class UserItemRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }

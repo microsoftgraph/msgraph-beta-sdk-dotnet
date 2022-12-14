@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Me.GetLoggedOnManagedDevices {
-    /// <summary>Provides operations to call the getLoggedOnManagedDevices method.</summary>
+    /// <summary>
+    /// Provides operations to call the getLoggedOnManagedDevices method.
+    /// </summary>
     public class GetLoggedOnManagedDevicesResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<Microsoft.Graph.Beta.Models.ManagedDevice> Value {

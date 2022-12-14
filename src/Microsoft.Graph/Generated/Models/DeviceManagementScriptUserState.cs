@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Contains properties for user run state of the device management script.</summary>
+    /// <summary>
+    /// Contains properties for user run state of the device management script.
+    /// </summary>
     public class DeviceManagementScriptUserState : Entity, IParsable {
         /// <summary>List of run states for this script across all devices of specific user.</summary>
         public List<DeviceManagementScriptDeviceState> DeviceRunStates {

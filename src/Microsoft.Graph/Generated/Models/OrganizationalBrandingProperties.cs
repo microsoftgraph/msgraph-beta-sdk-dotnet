@@ -1,4 +1,3 @@
-using Microsoft.Graph.Beta.Models;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
 using System.Collections.Generic;
@@ -51,12 +50,12 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("customCannotAccessYourAccountUrl"); }
             set { BackingStore?.Set("customCannotAccessYourAccountUrl", value); }
         }
-        /// <summary>The customCSS property</summary>
+        /// <summary>CSS styling that appears on the sign-in page. The allowed format is .css format only and not larger than 25 KB.</summary>
         public byte[] CustomCSS {
             get { return BackingStore?.Get<byte[]>("customCSS"); }
             set { BackingStore?.Set("customCSS", value); }
         }
-        /// <summary>The customCSSRelativeUrl property</summary>
+        /// <summary>A relative URL for the customCSS property that is combined with a CDN base URL from the cdnList to provide the version served by a CDN. Read-only.</summary>
         public string CustomCSSRelativeUrl {
             get { return BackingStore?.Get<string>("customCSSRelativeUrl"); }
             set { BackingStore?.Set("customCSSRelativeUrl", value); }
@@ -106,17 +105,17 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("headerBackgroundColor"); }
             set { BackingStore?.Set("headerBackgroundColor", value); }
         }
-        /// <summary>The headerLogo property</summary>
+        /// <summary>A company logo that appears in the header of the sign-in page. The allowed types are PNG or JPEG not larger than 36 × 245 pixels. We recommend using a transparent image with no padding around the logo.</summary>
         public byte[] HeaderLogo {
             get { return BackingStore?.Get<byte[]>("headerLogo"); }
             set { BackingStore?.Set("headerLogo", value); }
         }
-        /// <summary>The headerLogoRelativeUrl property</summary>
+        /// <summary>A relative URL for the headerLogo property that is combined with a CDN base URL from the cdnList to provide the read-only version served by a CDN. Read-only.</summary>
         public string HeaderLogoRelativeUrl {
             get { return BackingStore?.Get<string>("headerLogoRelativeUrl"); }
             set { BackingStore?.Set("headerLogoRelativeUrl", value); }
         }
-        /// <summary>The loginPageLayoutConfiguration property</summary>
+        /// <summary>Represents the layout configuration to be displayed on the login page for a tenant.</summary>
         public Microsoft.Graph.Beta.Models.LoginPageLayoutConfiguration LoginPageLayoutConfiguration {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.LoginPageLayoutConfiguration>("loginPageLayoutConfiguration"); }
             set { BackingStore?.Set("loginPageLayoutConfiguration", value); }

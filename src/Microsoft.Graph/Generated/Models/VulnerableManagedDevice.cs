@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>This entity represents a device associated with a task.</summary>
+    /// <summary>
+    /// This entity represents a device associated with a task.
+    /// </summary>
     public class VulnerableManagedDevice : Entity, IParsable {
         /// <summary>The device name.</summary>
         public string DisplayName {

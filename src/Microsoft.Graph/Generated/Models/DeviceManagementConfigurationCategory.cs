@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Device Management Configuration Policy</summary>
+    /// <summary>
+    /// Device Management Configuration Policy
+    /// </summary>
     public class DeviceManagementConfigurationCategory : Entity, IParsable {
         /// <summary>Description of the category header</summary>
         public string CategoryDescription {

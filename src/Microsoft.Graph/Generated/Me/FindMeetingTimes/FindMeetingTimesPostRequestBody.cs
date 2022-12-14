@@ -6,7 +6,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Me.FindMeetingTimes {
-    /// <summary>Provides operations to call the findMeetingTimes method.</summary>
+    /// <summary>
+    /// Provides operations to call the findMeetingTimes method.
+    /// </summary>
     public class FindMeetingTimesPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {

@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>A termsAndConditionsAssignment entity represents the assignment of a given Terms and Conditions (T&amp;C) policy to a given group. Users in the group will be required to accept the terms in order to have devices enrolled into Intune.</summary>
+    /// <summary>
+    /// A termsAndConditionsAssignment entity represents the assignment of a given Terms and Conditions (T&amp;C) policy to a given group. Users in the group will be required to accept the terms in order to have devices enrolled into Intune.
+    /// </summary>
     public class TermsAndConditionsAssignment : Entity, IParsable {
         /// <summary>Assignment target that the T&amp;C policy is assigned to.</summary>
         public DeviceAndAppManagementAssignmentTarget Target {

@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Users.Item.TranslateExchangeIds {
-    /// <summary>Provides operations to call the translateExchangeIds method.</summary>
+    /// <summary>
+    /// Provides operations to call the translateExchangeIds method.
+    /// </summary>
     public class TranslateExchangeIdsResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<ConvertIdResult> Value {

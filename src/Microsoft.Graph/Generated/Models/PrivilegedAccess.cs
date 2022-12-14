@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public class PrivilegedAccess : Entity, IParsable {
         /// <summary>The display name of the provider managed by PIM.</summary>
         public string DisplayName {

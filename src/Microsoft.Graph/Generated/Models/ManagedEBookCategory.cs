@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Contains properties for a single Intune eBook category.</summary>
+    /// <summary>
+    /// Contains properties for a single Intune eBook category.
+    /// </summary>
     public class ManagedEBookCategory : Entity, IParsable {
         /// <summary>The name of the eBook category.</summary>
         public string DisplayName {

@@ -5,7 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Me.Outlook.SupportedTimeZones {
-    /// <summary>Provides operations to call the supportedTimeZones method.</summary>
+    /// <summary>
+    /// Provides operations to call the supportedTimeZones method.
+    /// </summary>
     public class SupportedTimeZonesResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<TimeZoneInformation> Value {
