@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Ediscovery {
     /// <summary>
-    /// Provides operations to manage the compliance singleton.
+    /// Provides operations to manage the collection of accessReviewDecision entities.
     /// </summary>
     public class LegalHold : Entity, IParsable {
         /// <summary>KQL query that specifies content to be held in the specified locations. To learn more, see Keyword queries and search conditions for Content Search and eDiscovery.  To hold all content in the specified locations, leave contentQuery blank.</summary>

@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>
-    /// Provides operations to manage the collection of accessReviewDecision entities.
+    /// Provides operations to manage the collection of activityStatistics entities.
     /// </summary>
     public class SimulationAutomationRun : Entity, IParsable {
         /// <summary>Date and time when the run ends in an attack simulation automation.</summary>

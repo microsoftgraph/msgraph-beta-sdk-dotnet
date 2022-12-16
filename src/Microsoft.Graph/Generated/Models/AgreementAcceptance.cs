@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>
-    /// Provides operations to manage the collection of agreementAcceptance entities.
+    /// Provides operations to manage the admin singleton.
     /// </summary>
     public class AgreementAcceptance : Entity, IParsable {
         /// <summary>ID of the agreement file accepted by the user.</summary>

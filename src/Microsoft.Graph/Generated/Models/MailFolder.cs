@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>
-    /// Provides operations to manage the collection of accessReviewDecision entities.
+    /// Provides operations to manage the admin singleton.
     /// </summary>
     public class MailFolder : Entity, IParsable {
         /// <summary>The number of immediate child mailFolders in the current mailFolder.</summary>

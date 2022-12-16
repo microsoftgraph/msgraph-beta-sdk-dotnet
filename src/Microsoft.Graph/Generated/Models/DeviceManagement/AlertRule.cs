@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.DeviceManagement {
     /// <summary>
-    /// Provides operations to manage the collection of accessReviewDecision entities.
+    /// Provides operations to manage the admin singleton.
     /// </summary>
     public class AlertRule : Entity, IParsable {
         /// <summary>The rule template of the alert event. The possible values are: cloudPcProvisionScenario, cloudPcImageUploadScenario, cloudPcOnPremiseNetworkConnectionCheckScenario, unknownFutureValue.</summary>

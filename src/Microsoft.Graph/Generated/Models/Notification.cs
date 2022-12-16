@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>
-    /// Provides operations to manage the collection of accessReviewDecision entities.
+    /// Provides operations to manage the admin singleton.
     /// </summary>
     public class Notification : Entity, IParsable {
         /// <summary>Sets how long (in seconds) this notification content will stay in each platform&apos;s notification viewer. For example, when the notification is delivered to a Windows device, the value of this property is passed on to ToastNotification.ExpirationTime, which determines how long the toast notification will stay in the user&apos;s Windows Action Center.</summary>

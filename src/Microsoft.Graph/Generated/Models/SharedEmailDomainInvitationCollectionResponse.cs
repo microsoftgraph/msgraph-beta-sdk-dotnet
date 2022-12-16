@@ -4,9 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>
-    /// Provides operations to manage the sharedEmailDomainInvitations property of the microsoft.graph.domain entity.
-    /// </summary>
     public class SharedEmailDomainInvitationCollectionResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<SharedEmailDomainInvitation> Value {

@@ -4,9 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>
-    /// Provides operations to manage the assignments property of the microsoft.graph.mobileApp entity.
-    /// </summary>
     public class MobileAppAssignmentCollectionResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<MobileAppAssignment> Value {

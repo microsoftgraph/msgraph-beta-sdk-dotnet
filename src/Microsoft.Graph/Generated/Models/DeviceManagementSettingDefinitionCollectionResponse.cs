@@ -4,9 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>
-    /// Provides operations to manage the settingDefinitions property of the microsoft.graph.deviceManagementSettingCategory entity.
-    /// </summary>
     public class DeviceManagementSettingDefinitionCollectionResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<DeviceManagementSettingDefinition> Value {

@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>
-    /// Provides operations to manage the collection of accessReviewDecision entities.
+    /// Provides operations to manage the collection of activityStatistics entities.
     /// </summary>
     public class DeviceComplianceUserStatus : Entity, IParsable {
         /// <summary>Devices count for that user.</summary>

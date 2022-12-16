@@ -4,9 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>
-    /// Provides operations to manage the collection of agreementAcceptance entities.
-    /// </summary>
     public class AgreementAcceptanceCollectionResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<AgreementAcceptance> Value {

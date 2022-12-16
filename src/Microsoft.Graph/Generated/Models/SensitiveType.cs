@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>
-    /// Provides operations to manage the dataClassificationService singleton.
+    /// Provides operations to manage the admin singleton.
     /// </summary>
     public class SensitiveType : Entity, IParsable {
         /// <summary>The classificationMethod property</summary>

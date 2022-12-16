@@ -4,9 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>
-    /// Provides operations to manage the customQuestions property of the microsoft.graph.meetingRegistration entity.
-    /// </summary>
     public class MeetingRegistrationQuestionCollectionResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<MeetingRegistrationQuestion> Value {

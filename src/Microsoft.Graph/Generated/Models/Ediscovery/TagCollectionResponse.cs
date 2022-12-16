@@ -4,9 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Ediscovery {
-    /// <summary>
-    /// Provides operations to manage the tags property of the microsoft.graph.ediscovery.case entity.
-    /// </summary>
     public class TagCollectionResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<Tag> Value {

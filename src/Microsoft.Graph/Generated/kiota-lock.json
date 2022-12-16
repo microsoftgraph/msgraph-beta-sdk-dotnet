@@ -1,5 +1,5 @@
 {
-  "descriptionHash": "19334296806BC1A81E536EEC005FF28C3218A29333C37BE03488015558F997B4531701AF3D2D0C63B7B09F31C67A2588FB195434A90A4EBD4E89DF57C5BF6D11",
+  "descriptionHash": "BC55BB191300CA336E370C29335806ED4A6C954F211FBF7BAB8EC187911A48EF0218EE5817F49546883A38EFDD24CDE14B79685A62C5FE1E685008A73BE5FE72",
   "descriptionLocation": "/home/vsts/work/1/s/msgraph-metadata/clean_beta_openapi/openapi.yaml",
   "lockFileVersion": "1.0.0",
   "kiotaVersion": "0.8.3.0",
@@ -10,18 +10,18 @@
   "includeAdditionalData": true,
   "serializers": [
     "Microsoft.Kiota.Serialization.Json.JsonSerializationWriterFactory",
-    "Microsoft.Kiota.Serialization.Text.TextSerializationWriterFactory"
+    "Microsoft.Kiota.Serialization.Text.TextSerializationWriterFactory",
+    "Microsoft.Kiota.Serialization.Form.FormSerializationWriterFactory"
   ],
   "deserializers": [
     "Microsoft.Kiota.Serialization.Json.JsonParseNodeFactory",
-    "Microsoft.Kiota.Serialization.Text.TextParseNodeFactory"
+    "Microsoft.Kiota.Serialization.Text.TextParseNodeFactory",
+    "Microsoft.Kiota.Serialization.Form.FormParseNodeFactory"
   ],
   "structuredMimeTypes": [
     "application/json",
-    "application/xml",
     "text/plain",
-    "text/xml",
-    "text/yaml"
+    "application/x-www-form-urlencoded"
   ],
   "includePatterns": [],
   "excludePatterns": [],

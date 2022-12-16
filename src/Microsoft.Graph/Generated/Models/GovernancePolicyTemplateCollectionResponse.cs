@@ -4,9 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>
-    /// Provides operations to manage the policyTemplates property of the microsoft.graph.approvalWorkflowProvider entity.
-    /// </summary>
     public class GovernancePolicyTemplateCollectionResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<GovernancePolicyTemplate> Value {

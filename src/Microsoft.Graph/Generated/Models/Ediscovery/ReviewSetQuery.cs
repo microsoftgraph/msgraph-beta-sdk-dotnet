@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Ediscovery {
     /// <summary>
-    /// Provides operations to manage the compliance singleton.
+    /// Provides operations to manage the collection of activityStatistics entities.
     /// </summary>
     public class ReviewSetQuery : Entity, IParsable {
         /// <summary>The user who created the query.</summary>

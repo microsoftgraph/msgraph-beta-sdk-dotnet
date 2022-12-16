@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>
-    /// Provides operations to manage the collection of accessReviewDecision entities.
+    /// Provides operations to manage the collection of activityStatistics entities.
     /// </summary>
     public class LearningContent : Entity, IParsable {
         /// <summary>Keywords, topics, and other tags associated with the learning content. Optional.</summary>

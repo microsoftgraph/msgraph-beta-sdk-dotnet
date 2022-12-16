@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of bookingBusiness entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public enum BookingReminderRecipients {
         AllAttendees,
         Staff,

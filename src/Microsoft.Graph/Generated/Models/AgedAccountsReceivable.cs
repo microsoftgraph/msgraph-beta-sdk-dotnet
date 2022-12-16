@@ -5,6 +5,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Provides operations to manage the collection of accessReviewDecision entities.
+    /// </summary>
     public class AgedAccountsReceivable : Entity, IParsable {
         /// <summary>The agedAsOfDate property</summary>
         public Date? AgedAsOfDate {

@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>
-    /// Provides operations to manage the commsApplication singleton.
+    /// Provides operations to manage the admin singleton.
     /// </summary>
     public class CallTranscript : Entity, IParsable {
         /// <summary>A field representing the content of the transcript. Read-only.</summary>

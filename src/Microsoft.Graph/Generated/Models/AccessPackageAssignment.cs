@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Provides operations to manage the collection of accessReviewDecision entities.
+    /// </summary>
     public class AccessPackageAssignment : Entity, IParsable {
         /// <summary>Read-only. Nullable. Supports $filter (eq) on the id property and $expand query parameters.</summary>
         public Microsoft.Graph.Beta.Models.AccessPackage AccessPackage {

@@ -4,9 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>
-    /// Provides operations to manage the authenticationMethodsPolicy singleton.
-    /// </summary>
     public class AuthenticationMethodsPolicy : Entity, IParsable {
         /// <summary>Represents the settings for each authentication method. Automatically expanded on GET /policies/authenticationMethodsPolicy.</summary>
         public List<AuthenticationMethodConfiguration> AuthenticationMethodConfigurations {

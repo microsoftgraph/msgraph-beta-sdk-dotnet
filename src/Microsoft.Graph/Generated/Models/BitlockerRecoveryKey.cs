@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>
-    /// Provides operations to manage the collection of accessReviewDecision entities.
+    /// Provides operations to manage the admin singleton.
     /// </summary>
     public class BitlockerRecoveryKey : Entity, IParsable {
         /// <summary>The date and time when the key was originally backed up to Azure Active Directory.</summary>

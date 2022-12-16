@@ -4,9 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>
-    /// Provides operations to manage the customerPayments property of the microsoft.graph.customerPaymentJournal entity.
-    /// </summary>
     public class CustomerPaymentCollectionResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<CustomerPayment> Value {

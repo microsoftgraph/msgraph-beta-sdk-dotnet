@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>
-    /// Provides operations to manage the collection of accessReviewDecision entities.
+    /// Provides operations to manage the admin singleton.
     /// </summary>
     public class ConversationThread : Entity, IParsable {
         /// <summary>The Cc: recipients for the thread. Returned only on $select.</summary>

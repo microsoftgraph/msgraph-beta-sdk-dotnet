@@ -4,9 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>
-    /// Provides operations to manage the sharedEmailDomains property of the microsoft.graph.directory entity.
-    /// </summary>
     public class SharedEmailDomainCollectionResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<SharedEmailDomain> Value {

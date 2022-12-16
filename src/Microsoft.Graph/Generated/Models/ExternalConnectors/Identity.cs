@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
     /// <summary>
-    /// Provides operations to manage the collection of externalConnection entities.
+    /// Provides operations to manage the collection of activityStatistics entities.
     /// </summary>
     public class Identity : Entity, IParsable {
         /// <summary>The type property</summary>

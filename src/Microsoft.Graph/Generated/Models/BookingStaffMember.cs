@@ -15,7 +15,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<int?>("colorIndex"); }
             set { BackingStore?.Set("colorIndex", value); }
         }
-        /// <summary>The isEmailNotificationEnabled property</summary>
+        /// <summary>True indicates that a staff member will be notified via email when a booking assigned to them is created or changed.</summary>
         public bool? IsEmailNotificationEnabled {
             get { return BackingStore?.Get<bool?>("isEmailNotificationEnabled"); }
             set { BackingStore?.Set("isEmailNotificationEnabled", value); }

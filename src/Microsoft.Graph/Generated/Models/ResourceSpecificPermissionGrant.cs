@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>
-    /// Provides operations to manage the collection of accessReviewDecision entities.
+    /// Provides operations to manage the admin singleton.
     /// </summary>
     public class ResourceSpecificPermissionGrant : DirectoryObject, IParsable {
         /// <summary>ID of the service principal of the Azure AD app that has been granted access. Read-only.</summary>

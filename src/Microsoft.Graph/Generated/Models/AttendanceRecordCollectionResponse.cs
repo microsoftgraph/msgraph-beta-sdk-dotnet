@@ -4,9 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>
-    /// Provides operations to manage the attendanceRecords property of the microsoft.graph.meetingAttendanceReport entity.
-    /// </summary>
     public class AttendanceRecordCollectionResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<AttendanceRecord> Value {

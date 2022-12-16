@@ -4,9 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>
-    /// Provides operations to manage the settingStates property of the microsoft.graph.securityBaselineState entity.
-    /// </summary>
     public class SecurityBaselineSettingStateCollectionResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<SecurityBaselineSettingState> Value {

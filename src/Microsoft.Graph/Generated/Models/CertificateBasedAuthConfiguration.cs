@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>
-    /// Provides operations to manage the collection of certificateBasedAuthConfiguration entities.
+    /// Provides operations to manage the admin singleton.
     /// </summary>
     public class CertificateBasedAuthConfiguration : Entity, IParsable {
         /// <summary>Collection of certificate authorities which creates a trusted certificate chain.</summary>
