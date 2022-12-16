@@ -7,9 +7,12 @@ and this project does NOT adhere to [Semantic Versioning](https://semver.org/spe
 
 ## [Unreleased]
 
+## [5.15.0-preview] - 2022-12-16
+
 ### Added
 
 - Adds support for multi value headers
+- Adds support for URI Form Encoded(`application/x-www-form-urlencoded`) serialization
 
 ### Changed
 
