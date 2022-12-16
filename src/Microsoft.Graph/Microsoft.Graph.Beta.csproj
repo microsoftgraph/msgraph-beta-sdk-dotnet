@@ -22,13 +22,12 @@
     <AssemblyOriginatorKeyFile>35MSSharedLib1024.snk</AssemblyOriginatorKeyFile>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <PackageReleaseNotes>
-- Adds baseUrl parameter to GraphServiceClient constructor to allow for easier updating of target endpoint
-- Adds ItemWithPath for request builder to enable path retrieval of drive items
-- Fix for default OdataType property in models causing errors from the API
-- Latest metadata updates from 22nd November 2022 snapshot
+- Adds support for multi-value headers
+- Fixes Guid types represented as strings
+- Latest metadata updates from 14th December 2022 snapshot
     </PackageReleaseNotes>
     <!-- edit this value to change the current major.minor.patch version -->
-    <VersionPrefix>5.14.0</VersionPrefix>
+    <VersionPrefix>5.15.0</VersionPrefix>
     <!-- adds a version suffix if the Prerelease environment variable is set. BUILD_BUILDID is an
     environment variable set by Azure pipelines from the build. We can use the buildid to correlate
     which commit was used to generate the preview build. -->
