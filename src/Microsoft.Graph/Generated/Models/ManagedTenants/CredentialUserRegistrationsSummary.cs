@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
     /// <summary>
-    /// Provides operations to manage the collection of accessReviewDecision entities.
+    /// Provides operations to manage the admin singleton.
     /// </summary>
     public class CredentialUserRegistrationsSummary : Entity, IParsable {
         /// <summary>Date and time the entity was last updated in the multi-tenant management platform. Optional. Read-only.</summary>

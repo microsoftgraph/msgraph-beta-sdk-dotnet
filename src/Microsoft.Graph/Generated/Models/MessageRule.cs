@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>
-    /// Provides operations to manage the collection of accessReviewDecision entities.
+    /// Provides operations to manage the admin singleton.
     /// </summary>
     public class MessageRule : Entity, IParsable {
         /// <summary>Actions to be taken on a message when the corresponding conditions are fulfilled.</summary>

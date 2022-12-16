@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>
-    /// Provides operations to manage the authenticationMethodsPolicy singleton.
+    /// Provides operations to manage the collection of activityStatistics entities.
     /// </summary>
     public class AuthenticationMethodConfiguration : Entity, IParsable {
         /// <summary>The state of the policy. Possible values are: enabled, disabled.</summary>

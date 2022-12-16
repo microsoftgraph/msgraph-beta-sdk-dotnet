@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models.Ediscovery {
-    /// <summary>Provides operations to manage the compliance singleton.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public enum LegalHoldStatus {
         Pending,
         Error,

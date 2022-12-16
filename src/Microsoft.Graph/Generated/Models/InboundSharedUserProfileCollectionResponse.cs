@@ -4,9 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>
-    /// Provides operations to manage the inboundSharedUserProfiles property of the microsoft.graph.directory entity.
-    /// </summary>
     public class InboundSharedUserProfileCollectionResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<InboundSharedUserProfile> Value {

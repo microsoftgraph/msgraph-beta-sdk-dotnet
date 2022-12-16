@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the deviceAppManagement singleton.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public enum DeviceAppManagementTaskStatus {
         /// <summary>State is undefined.</summary>
         Unknown,

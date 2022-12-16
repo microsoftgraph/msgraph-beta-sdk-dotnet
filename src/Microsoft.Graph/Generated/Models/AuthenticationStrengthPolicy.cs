@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Provides operations to manage the collection of accessReviewDecision entities.
+    /// </summary>
     public class AuthenticationStrengthPolicy : Entity, IParsable {
         /// <summary>A collection of authentication method modes that are required be used to satify this authentication strength.</summary>
         public List<AuthenticationMethodModes?> AllowedCombinations {

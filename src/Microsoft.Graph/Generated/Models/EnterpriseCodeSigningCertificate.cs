@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>
-    /// Provides operations to manage the deviceAppManagement singleton.
+    /// Provides operations to manage the admin singleton.
     /// </summary>
     public class EnterpriseCodeSigningCertificate : Entity, IParsable {
         /// <summary>The Windows Enterprise Code-Signing Certificate in the raw data format.</summary>

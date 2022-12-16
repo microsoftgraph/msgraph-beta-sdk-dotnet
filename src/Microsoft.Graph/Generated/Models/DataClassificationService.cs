@@ -4,9 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>
-    /// Provides operations to manage the dataClassificationService singleton.
-    /// </summary>
     public class DataClassificationService : Entity, IParsable {
         /// <summary>The classifyFileJobs property</summary>
         public List<JobResponseBase> ClassifyFileJobs {

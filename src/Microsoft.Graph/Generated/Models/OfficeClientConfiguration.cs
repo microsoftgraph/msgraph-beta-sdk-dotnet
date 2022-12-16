@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Provides operations to manage the collection of accessReviewDecision entities.
+    /// </summary>
     public class OfficeClientConfiguration : Entity, IParsable {
         /// <summary>The list of group assignments for the policy.</summary>
         public List<OfficeClientConfigurationAssignment> Assignments {

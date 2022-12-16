@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public enum RemoteAssistanceOnboardingStatus {
         /// <summary>The status reported when there is no active TeamViewer connector configured or active</summary>
         NotOnboarded,

@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
     /// <summary>
-    /// Provides operations to manage the collection of accessReviewDecision entities.
+    /// Provides operations to manage the collection of activityStatistics entities.
     /// </summary>
     public class Case : Entity, IParsable {
         /// <summary>The createdDateTime property</summary>

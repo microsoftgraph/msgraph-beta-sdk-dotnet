@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>
-    /// Provides operations to manage the collection of accessReviewDecision entities.
+    /// Provides operations to manage the admin singleton.
     /// </summary>
     public class UnifiedRoleAssignment : Entity, IParsable {
         /// <summary>Details of the app specific scope when the assignment scope is app specific. Containment entity.</summary>

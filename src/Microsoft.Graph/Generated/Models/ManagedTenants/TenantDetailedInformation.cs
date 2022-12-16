@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
     /// <summary>
-    /// Provides operations to manage the collection of accessReviewDecision entities.
+    /// Provides operations to manage the admin singleton.
     /// </summary>
     public class TenantDetailedInformation : Entity, IParsable {
         /// <summary>The city where the managed tenant is located. Optional. Read-only.</summary>

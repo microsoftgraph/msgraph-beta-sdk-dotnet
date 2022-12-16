@@ -4,9 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>
-    /// Provides operations to manage the deviceStatuses property of the microsoft.graph.mobileApp entity.
-    /// </summary>
     public class MobileAppInstallStatusCollectionResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<MobileAppInstallStatus> Value {

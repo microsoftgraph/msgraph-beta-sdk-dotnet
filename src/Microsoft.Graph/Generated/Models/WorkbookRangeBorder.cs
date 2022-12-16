@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>
-    /// Provides operations to manage the collection of accessReviewDecision entities.
+    /// Provides operations to manage the collection of activityStatistics entities.
     /// </summary>
     public class WorkbookRangeBorder : Entity, IParsable {
         /// <summary>HTML color code representing the color of the border line, of the form #RRGGBB (e.g. &apos;FFA500&apos;) or as a named HTML color (e.g. &apos;orange&apos;).</summary>

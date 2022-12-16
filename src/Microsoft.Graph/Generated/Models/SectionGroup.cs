@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>
-    /// Provides operations to manage the collection of accessReviewDecision entities.
+    /// Provides operations to manage the admin singleton.
     /// </summary>
     public class SectionGroup : OnenoteEntityHierarchyModel, IParsable {
         /// <summary>The notebook that contains the section group. Read-only.</summary>

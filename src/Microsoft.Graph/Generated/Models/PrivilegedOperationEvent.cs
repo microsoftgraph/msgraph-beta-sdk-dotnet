@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Provides operations to manage the collection of accessReviewDecision entities.
+    /// </summary>
     public class PrivilegedOperationEvent : Entity, IParsable {
         /// <summary>Detailed human readable information for the event.</summary>
         public string AdditionalInformation {

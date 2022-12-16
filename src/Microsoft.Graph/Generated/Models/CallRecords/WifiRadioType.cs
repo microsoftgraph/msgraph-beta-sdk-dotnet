@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models.CallRecords {
-    /// <summary>Provides operations to manage the cloudCommunications singleton.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public enum WifiRadioType {
         Unknown,
         Wifi80211a,

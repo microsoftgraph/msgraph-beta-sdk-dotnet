@@ -4,9 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>
-    /// Provides operations to manage the cartToClassAssociations property of the microsoft.graph.deviceManagement entity.
-    /// </summary>
     public class CartToClassAssociationCollectionResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<CartToClassAssociation> Value {

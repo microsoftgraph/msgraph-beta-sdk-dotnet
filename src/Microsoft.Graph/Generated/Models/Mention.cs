@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>
-    /// Provides operations to manage the collection of accessReviewDecision entities.
+    /// Provides operations to manage the admin singleton.
     /// </summary>
     public class Mention : Entity, IParsable {
         /// <summary>The name of the application where the mention is created. Optional. Not used and defaulted as null for message.</summary>

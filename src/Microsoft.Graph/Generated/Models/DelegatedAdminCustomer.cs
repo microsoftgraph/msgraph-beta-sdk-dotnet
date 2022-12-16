@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>
-    /// Provides operations to manage the collection of accessReviewDecision entities.
+    /// Provides operations to manage the admin singleton.
     /// </summary>
     public class DelegatedAdminCustomer : Entity, IParsable {
         /// <summary>The Azure AD display name of the customer tenant. Read-only. Supports $orderBy.</summary>

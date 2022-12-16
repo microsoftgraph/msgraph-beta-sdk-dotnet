@@ -4,9 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
-    /// <summary>
-    /// Provides operations to manage the entries property of the microsoft.graph.windowsUpdates.catalog entity.
-    /// </summary>
     public class CatalogEntryCollectionResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<CatalogEntry> Value {

@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>
-    /// Provides operations to manage the collection of accessReviewDecision entities.
+    /// Provides operations to manage the admin singleton.
     /// </summary>
     public class GroupLifecyclePolicy : Entity, IParsable {
         /// <summary>List of email address to send notifications for groups without owners. Multiple email address can be defined by separating email address with a semicolon.</summary>

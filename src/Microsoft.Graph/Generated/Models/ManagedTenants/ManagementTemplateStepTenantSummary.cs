@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
     /// <summary>
-    /// Provides operations to manage the collection of accessReviewDecision entities.
+    /// Provides operations to manage the collection of activityStatistics entities.
     /// </summary>
     public class ManagementTemplateStepTenantSummary : Entity, IParsable {
         /// <summary>The assignedTenantsCount property</summary>

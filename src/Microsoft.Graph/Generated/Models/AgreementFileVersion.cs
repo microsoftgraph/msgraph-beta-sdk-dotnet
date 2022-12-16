@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>
-    /// Provides operations to manage the collection of agreement entities.
+    /// Provides operations to manage the admin singleton.
     /// </summary>
     public class AgreementFileVersion : AgreementFileProperties, IParsable {
         /// <summary>

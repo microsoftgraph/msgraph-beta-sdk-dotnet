@@ -4,9 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>
-    /// Provides operations to manage the logCollectionRequests property of the microsoft.graph.managedDevice entity.
-    /// </summary>
     public class DeviceLogCollectionResponseCollectionResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<DeviceLogCollectionResponse> Value {
