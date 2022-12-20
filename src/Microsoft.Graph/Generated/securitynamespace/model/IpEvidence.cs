@@ -29,6 +29,7 @@ namespace Microsoft.Graph.SecurityNamespace
 
         /// <summary>
         /// Gets or sets countryLetterCode.
+        /// The two-letter country code according to ISO 3166 format, for example: US, UK, CA, etc..).
         /// </summary>
         [JsonPropertyName("countryLetterCode")]
         public string CountryLetterCode { get; set; }

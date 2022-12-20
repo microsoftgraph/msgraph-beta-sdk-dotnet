@@ -51,6 +51,7 @@ namespace Microsoft.Graph.SecurityNamespace
     
         /// <summary>
         /// Gets or sets custom tags.
+        /// Array of custom tags associated with an incident.
         /// </summary>
         [JsonPropertyName("customTags")]
         public IEnumerable<string> CustomTags { get; set; }
