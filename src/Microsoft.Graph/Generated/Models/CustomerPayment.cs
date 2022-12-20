@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>
-    /// Provides operations to manage the collection of activityStatistics entities.
+    /// Provides operations to manage the collection of accessReview entities.
     /// </summary>
     public class CustomerPayment : Entity, IParsable {
         /// <summary>The amount property</summary>

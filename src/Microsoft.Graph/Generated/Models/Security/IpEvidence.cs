@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
     public class IpEvidence : AlertEvidence, IParsable {
-        /// <summary>The countryLetterCode property</summary>
+        /// <summary>The two-letter country code according to ISO 3166 format, for example: US, UK, CA, etc..).</summary>
         public string CountryLetterCode {
             get { return BackingStore?.Get<string>("countryLetterCode"); }
             set { BackingStore?.Set("countryLetterCode", value); }

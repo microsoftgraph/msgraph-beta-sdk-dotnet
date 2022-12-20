@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
     /// <summary>
-    /// Provides operations to manage the collection of activityStatistics entities.
+    /// Provides operations to manage the admin singleton.
     /// </summary>
     public class AuditEvent : Entity, IParsable {
         /// <summary>A string which uniquely represents the operation that occurred. Required. Read-only.</summary>

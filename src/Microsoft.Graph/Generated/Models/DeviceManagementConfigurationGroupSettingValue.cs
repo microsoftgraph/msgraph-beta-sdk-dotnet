@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Value of the GroupSetting
+    /// </summary>
     public class DeviceManagementConfigurationGroupSettingValue : DeviceManagementConfigurationSettingValue, IParsable {
         /// <summary>Collection of child setting instances contained within this GroupSetting</summary>
         public List<DeviceManagementConfigurationSettingInstance> Children {
@@ -11,7 +14,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("children", value); }
         }
         /// <summary>
-        /// Instantiates a new DeviceManagementConfigurationGroupSettingValue and sets the default values.
+        /// Instantiates a new deviceManagementConfigurationGroupSettingValue and sets the default values.
         /// </summary>
         public DeviceManagementConfigurationGroupSettingValue() : base() {
             OdataType = "#microsoft.graph.deviceManagementConfigurationGroupSettingValue";

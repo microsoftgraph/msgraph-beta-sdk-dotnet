@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
     /// <summary>
-    /// Provides operations to manage the collection of accessReviewDecision entities.
+    /// Provides operations to manage the collection of accessReview entities.
     /// </summary>
     public class CatalogEntry : Entity, IParsable {
         /// <summary>The date on which the content is no longer available to deploy using the service. Read-only.</summary>

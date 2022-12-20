@@ -20,7 +20,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OutOfOfficeSettings>("outOfOfficeSettings"); }
             set { BackingStore?.Set("outOfOfficeSettings", value); }
         }
-        /// <summary>The statusMessage property</summary>
+        /// <summary>The presence status message of a user.</summary>
         public PresenceStatusMessage StatusMessage {
             get { return BackingStore?.Get<PresenceStatusMessage>("statusMessage"); }
             set { BackingStore?.Set("statusMessage", value); }

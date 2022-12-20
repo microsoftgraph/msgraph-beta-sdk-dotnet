@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the admin singleton.</summary>
     public enum DeviceManagementExportJobLocalizationType {
         /// <summary>Configures the export job to expose localized values as an additional column</summary>
         LocalizedValuesAsAdditionalColumn,

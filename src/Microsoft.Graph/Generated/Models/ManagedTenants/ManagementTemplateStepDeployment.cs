@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
     /// <summary>
-    /// Provides operations to manage the collection of accessReviewDecision entities.
+    /// Provides operations to manage the collection of accessReview entities.
     /// </summary>
     public class ManagementTemplateStepDeployment : Entity, IParsable {
         /// <summary>The createdByUserId property</summary>

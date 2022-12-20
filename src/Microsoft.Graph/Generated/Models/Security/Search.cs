@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
     /// <summary>
-    /// Provides operations to manage the collection of activityStatistics entities.
+    /// Provides operations to manage the collection of accessReview entities.
     /// </summary>
     public class Search : Entity, IParsable {
         /// <summary>The contentQuery property</summary>

@@ -69,7 +69,7 @@ namespace Microsoft.Graph.Beta.IdentityProtection.RiskyUsers {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a **riskyUser** object.
+        /// Retrieve the properties and relationships of a collection of **riskyUser** objects.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<RiskyUsersRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -111,8 +111,8 @@ namespace Microsoft.Graph.Beta.IdentityProtection.RiskyUsers {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a **riskyUser** object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/riskyusers-get?view=graph-rest-1.0" />
+        /// Retrieve the properties and relationships of a collection of **riskyUser** objects.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/riskyusers-list?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -140,7 +140,7 @@ namespace Microsoft.Graph.Beta.IdentityProtection.RiskyUsers {
             return await RequestAdapter.SendAsync<RiskyUser>(requestInfo, RiskyUser.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Retrieve the properties and relationships of a **riskyUser** object.
+        /// Retrieve the properties and relationships of a collection of **riskyUser** objects.
         /// </summary>
         public class RiskyUsersRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

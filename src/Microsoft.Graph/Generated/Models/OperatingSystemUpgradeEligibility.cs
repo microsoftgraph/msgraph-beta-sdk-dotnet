@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the admin singleton.</summary>
     public enum OperatingSystemUpgradeEligibility {
         /// <summary>The device is upgraded to latest version of windows</summary>
         Upgraded,

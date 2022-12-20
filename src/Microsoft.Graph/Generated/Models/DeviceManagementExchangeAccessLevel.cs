@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the admin singleton.</summary>
     public enum DeviceManagementExchangeAccessLevel {
         /// <summary>No device access rule has been configured in Exchange.</summary>
         None,

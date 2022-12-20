@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>
-    /// Provides operations to manage the decisions property of the microsoft.graph.accessReview entity.
+    /// Provides operations to manage the collection of accessReviewDecision entities.
     /// </summary>
     public class AccessReviewDecisionCollectionResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>

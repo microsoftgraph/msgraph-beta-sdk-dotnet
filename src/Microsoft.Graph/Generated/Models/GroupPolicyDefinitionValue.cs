@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// The definition value entity stores the value for a single group policy definition.
+    /// </summary>
     public class GroupPolicyDefinitionValue : Entity, IParsable {
         /// <summary>Group Policy Configuration Type</summary>
         public GroupPolicyConfigurationType? ConfigurationType {
