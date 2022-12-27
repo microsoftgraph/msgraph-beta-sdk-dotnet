@@ -23,21 +23,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets application.
-        /// Optional. The application associated with this action.
+        /// The Identity of the Application. This property is read-only.
         /// </summary>
         [JsonPropertyName("application")]
         public Identity Application { get; set; }
     
         /// <summary>
         /// Gets or sets device.
-        /// Optional. The device associated with this action.
+        /// The Identity of the Device. This property is read-only.
         /// </summary>
         [JsonPropertyName("device")]
         public Identity Device { get; set; }
     
         /// <summary>
         /// Gets or sets user.
-        /// Optional. The user associated with this action.
+        /// The Identity of the User. This property is read-only.
         /// </summary>
         [JsonPropertyName("user")]
         public Identity User { get; set; }
