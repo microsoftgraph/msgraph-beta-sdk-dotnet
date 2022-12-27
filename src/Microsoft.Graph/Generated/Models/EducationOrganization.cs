@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>
-    /// Provides operations to manage the collection of activityStatistics entities.
+    /// Provides operations to manage the admin singleton.
     /// </summary>
     public class EducationOrganization : Entity, IParsable {
         /// <summary>Organization description.</summary>

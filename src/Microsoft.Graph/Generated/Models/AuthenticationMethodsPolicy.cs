@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Provides operations to manage the authenticationMethodsPolicy singleton.
+    /// </summary>
     public class AuthenticationMethodsPolicy : Entity, IParsable {
         /// <summary>Represents the settings for each authentication method. Automatically expanded on GET /policies/authenticationMethodsPolicy.</summary>
         public List<AuthenticationMethodConfiguration> AuthenticationMethodConfigurations {
@@ -30,7 +33,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("policyVersion"); }
             set { BackingStore?.Set("policyVersion", value); }
         }
-        /// <summary>The reconfirmationInDays property</summary>
+        /// <summary>Days before the user will be asked to reconfirm their method.</summary>
         public int? ReconfirmationInDays {
             get { return BackingStore?.Get<int?>("reconfirmationInDays"); }
             set { BackingStore?.Set("reconfirmationInDays", value); }

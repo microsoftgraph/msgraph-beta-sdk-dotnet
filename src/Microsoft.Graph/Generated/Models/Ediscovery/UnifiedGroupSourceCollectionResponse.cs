@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Ediscovery {
+    /// <summary>
+    /// Provides operations to manage the unifiedGroupSources property of the microsoft.graph.ediscovery.custodian entity.
+    /// </summary>
     public class UnifiedGroupSourceCollectionResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<UnifiedGroupSource> Value {

@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>
-    /// Provides operations to manage the collection of activityStatistics entities.
+    /// Provides operations to manage the commsApplication singleton.
     /// </summary>
     public class CommsOperation : Entity, IParsable {
         /// <summary>Unique Client Context string. Max limit is 256 chars.</summary>

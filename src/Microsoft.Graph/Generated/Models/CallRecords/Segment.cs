@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.CallRecords {
     /// <summary>
-    /// Provides operations to manage the collection of accessReviewDecision entities.
+    /// Provides operations to manage the cloudCommunications singleton.
     /// </summary>
     public class Segment : Entity, IParsable {
         /// <summary>Endpoint that answered this segment.</summary>

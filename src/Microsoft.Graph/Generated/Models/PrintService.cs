@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Provides operations to manage the collection of accessReviewDecision entities.
+    /// </summary>
     public class PrintService : Entity, IParsable {
         /// <summary>Endpoints that can be used to access the service. Read-only. Nullable.</summary>
         public List<PrintServiceEndpoint> Endpoints {

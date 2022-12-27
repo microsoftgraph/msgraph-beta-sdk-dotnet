@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Provides operations to manage the directoryProvisioning property of the microsoft.graph.auditLogRoot entity.
+    /// </summary>
     public class ProvisioningObjectSummaryCollectionResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<ProvisioningObjectSummary> Value {

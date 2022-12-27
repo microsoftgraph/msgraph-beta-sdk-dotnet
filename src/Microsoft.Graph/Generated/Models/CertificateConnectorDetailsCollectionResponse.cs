@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Provides operations to manage the certificateConnectorDetails property of the microsoft.graph.deviceManagement entity.
+    /// </summary>
     public class CertificateConnectorDetailsCollectionResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<CertificateConnectorDetails> Value {

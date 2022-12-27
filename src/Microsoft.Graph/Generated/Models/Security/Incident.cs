@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
     /// <summary>
-    /// Provides operations to manage the collection of accessReviewDecision entities.
+    /// Provides operations to manage the admin singleton.
     /// </summary>
     public class Incident : Entity, IParsable {
         /// <summary>The list of related alerts. Supports $expand.</summary>
@@ -33,7 +33,7 @@ namespace Microsoft.Graph.Beta.Models.Security {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
-        /// <summary>The customTags property</summary>
+        /// <summary>Array of custom tags associated with an incident.</summary>
         public List<string> CustomTags {
             get { return BackingStore?.Get<List<string>>("customTags"); }
             set { BackingStore?.Set("customTags", value); }

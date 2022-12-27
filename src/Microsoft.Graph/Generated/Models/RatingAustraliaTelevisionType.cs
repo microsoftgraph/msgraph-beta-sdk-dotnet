@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
     public enum RatingAustraliaTelevisionType {
         /// <summary>Default value, allow all TV shows content</summary>
         AllAllowed,

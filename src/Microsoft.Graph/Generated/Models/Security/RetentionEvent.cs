@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
     /// <summary>
-    /// Provides operations to manage the collection of activityStatistics entities.
+    /// Provides operations to manage the admin singleton.
     /// </summary>
     public class RetentionEvent : Entity, IParsable {
         /// <summary>The user who created the retentionEvent.</summary>

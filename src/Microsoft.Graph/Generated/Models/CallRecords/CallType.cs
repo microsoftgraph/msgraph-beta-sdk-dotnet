@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models.CallRecords {
-    /// <summary>Provides operations to manage the admin singleton.</summary>
+    /// <summary>Provides operations to manage the cloudCommunications singleton.</summary>
     public enum CallType {
         Unknown,
         GroupCall,

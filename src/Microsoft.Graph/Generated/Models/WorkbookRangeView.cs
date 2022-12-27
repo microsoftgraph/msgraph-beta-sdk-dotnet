@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>
-    /// Provides operations to manage the collection of activityStatistics entities.
+    /// Provides operations to manage the collection of accessReviewDecision entities.
     /// </summary>
     public class WorkbookRangeView : Entity, IParsable {
         /// <summary>The cellAddresses property</summary>

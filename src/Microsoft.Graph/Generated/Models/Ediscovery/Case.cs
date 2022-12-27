@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Ediscovery {
     /// <summary>
-    /// Provides operations to manage the admin singleton.
+    /// Provides operations to manage the compliance singleton.
     /// </summary>
     public class Case : Entity, IParsable {
         /// <summary>The user who closed the case.</summary>

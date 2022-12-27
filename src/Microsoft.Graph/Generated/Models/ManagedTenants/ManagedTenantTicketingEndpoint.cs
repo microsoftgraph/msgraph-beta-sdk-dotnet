@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
     /// <summary>
-    /// Provides operations to manage the collection of activityStatistics entities.
+    /// Provides operations to manage the admin singleton.
     /// </summary>
     public class ManagedTenantTicketingEndpoint : Entity, IParsable {
         /// <summary>The createdByUserId property</summary>
