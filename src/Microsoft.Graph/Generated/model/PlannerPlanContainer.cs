@@ -23,21 +23,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets containerId.
-        /// The identifier of the resource that contains the plan.
+        /// The identifier of the resource that contains the plan. Optional.
         /// </summary>
         [JsonPropertyName("containerId")]
         public string ContainerId { get; set; }
     
         /// <summary>
         /// Gets or sets type.
-        /// The type of the resource that contains the plan. See the previous table for supported types. Possible values are: group, unknownFutureValue, roster and project. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: roster, project.
+        /// The type of the resource that contains the plan. For supported types, see the previous table. Possible values are: group, unknownFutureValue, roster, and project. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: roster, project. Optional.
         /// </summary>
         [JsonPropertyName("type")]
         public PlannerContainerType? Type { get; set; }
     
         /// <summary>
         /// Gets or sets url.
-        /// The full canonical URL of the container.
+        /// The full canonical URL of the container. Optional.
         /// </summary>
         [JsonPropertyName("url")]
         public string Url { get; set; }

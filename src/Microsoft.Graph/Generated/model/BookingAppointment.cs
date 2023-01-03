@@ -30,7 +30,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets anonymous join web url.
-        /// Url of meeting to join anonymously.
+        /// The URL of the meeting to join anonymously.
         /// </summary>
         [JsonPropertyName("anonymousJoinWebUrl")]
         public string AnonymousJoinWebUrl { get; set; }
@@ -79,7 +79,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets customers.
-        /// It lists down the customer properties for an appointment. An appointment will contain a list of customer information and each unit will indicate the properties of a customer who is part of that appointment. Optional.
+        /// A collection of the customer properties for an appointment. An appointment will contain a list of customer information and each unit will indicate the properties of a customer who is part of that appointment. Optional.
         /// </summary>
         [JsonPropertyName("customers")]
         public IEnumerable<BookingCustomerInformationBase> Customers { get; set; }

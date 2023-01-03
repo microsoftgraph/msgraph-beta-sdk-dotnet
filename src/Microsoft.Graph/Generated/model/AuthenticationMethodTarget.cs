@@ -30,7 +30,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets target type.
-        /// Possible values are: user, group, and unknownFutureValue.
+        /// Possible values are: group, and unknownFutureValue. From December 2022, targeting individual users using user is no longer recommended. Existing targets will remain but we recommend to move the individual users to a targeted group.
         /// </summary>
         [JsonPropertyName("targetType")]
         public AuthenticationMethodTargetType? TargetType { get; set; }

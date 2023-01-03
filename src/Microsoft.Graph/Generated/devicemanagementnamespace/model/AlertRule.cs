@@ -51,25 +51,28 @@ namespace Microsoft.Graph.DeviceManagementNamespace
     
         /// <summary>
         /// Gets or sets is system rule.
-        /// Indicates whether the rule is a system rule. If true, the rule is a system rule; otherwise, the rule is a custom defined rule and can be edited. System rules are built-in and only
+        /// Indicates whether the rule is a system rule. If true, the rule is a system rule; otherwise, the rule is a custom defined rule and can be edited. System rules are built-in and only a few properties can be edited.
         /// </summary>
         [JsonPropertyName("isSystemRule")]
         public bool? IsSystemRule { get; set; }
     
         /// <summary>
         /// Gets or sets notification channels.
+        /// The notification channels of the rule selected by the user.
         /// </summary>
         [JsonPropertyName("notificationChannels")]
         public IEnumerable<NotificationChannel> NotificationChannels { get; set; }
     
         /// <summary>
         /// Gets or sets severity.
+        /// The severity of the rule. The possible values are: unknown, informational, warning, critical, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("severity")]
         public RuleSeverityType? Severity { get; set; }
     
         /// <summary>
         /// Gets or sets threshold.
+        /// The conditions to send alerts. For example, send alert when provisioning has failed for greater than or equal to 6 Cloud PCs.
         /// </summary>
         [JsonPropertyName("threshold")]
         public RuleThreshold Threshold { get; set; }
