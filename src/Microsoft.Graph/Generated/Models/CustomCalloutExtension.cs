@@ -6,7 +6,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>
-    /// Provides operations to manage the admin singleton.
+    /// Provides operations to manage the collection of activityStatistics entities.
     /// </summary>
     public class CustomCalloutExtension : Entity, IParsable {
         /// <summary>Configuration for securing the API call to the logic app. For example, using OAuth client credentials flow.</summary>

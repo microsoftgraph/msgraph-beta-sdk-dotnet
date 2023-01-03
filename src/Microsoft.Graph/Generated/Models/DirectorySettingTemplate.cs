@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Provides operations to manage the collection of accessReviewDecision entities.
+    /// </summary>
     public class DirectorySettingTemplate : DirectoryObject, IParsable {
         /// <summary>Description of the template. Read-only.</summary>
         public string Description {
@@ -21,7 +24,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("values", value); }
         }
         /// <summary>
-        /// Instantiates a new DirectorySettingTemplate and sets the default values.
+        /// Instantiates a new directorySettingTemplate and sets the default values.
         /// </summary>
         public DirectorySettingTemplate() : base() {
             OdataType = "#microsoft.graph.directorySettingTemplate";

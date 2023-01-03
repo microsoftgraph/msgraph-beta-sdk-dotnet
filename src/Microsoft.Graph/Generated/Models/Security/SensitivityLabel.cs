@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
     /// <summary>
-    /// Provides operations to manage the admin singleton.
+    /// Provides operations to manage the collection of activityStatistics entities.
     /// </summary>
     public class SensitivityLabel : Entity, IParsable {
         /// <summary>The color that the UI should display for the label, if configured.</summary>

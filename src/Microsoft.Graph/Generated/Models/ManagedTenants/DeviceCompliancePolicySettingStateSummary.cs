@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
     /// <summary>
-    /// Provides operations to manage the admin singleton.
+    /// Provides operations to manage the collection of accessReviewDecision entities.
     /// </summary>
     public class DeviceCompliancePolicySettingStateSummary : Entity, IParsable {
         /// <summary>The number of devices in a conflict state. Optional. Read-only.</summary>

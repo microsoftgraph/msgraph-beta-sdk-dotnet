@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>
-    /// Provides operations to manage the admin singleton.
+    /// Provides operations to manage the collection of accessReview entities.
     /// </summary>
     public class MeetingRegistrantBase : Entity, IParsable {
         /// <summary>A unique web URL for the registrant to join the meeting. Read-only.</summary>

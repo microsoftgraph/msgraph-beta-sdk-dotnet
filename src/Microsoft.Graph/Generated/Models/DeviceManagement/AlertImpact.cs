@@ -23,7 +23,7 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
-        /// <summary>The number value of the impact.</summary>
+        /// <summary>The number value of the impact. For the aggregation types of count and affectedCloudPcCount, the value indicates the number of affected instances. For example, 6 affectedCloudPcCount means that 6 Cloud PCs are affected. For the aggregation types of percentage and affectedCloudPcPercentage, the value indicates the percent of affected instances. For example, 12 affectedCloudPcPercentage means that 12% of Cloud PCs are affected.</summary>
         public int? Value {
             get { return BackingStore?.Get<int?>("value"); }
             set { BackingStore?.Set("value", value); }

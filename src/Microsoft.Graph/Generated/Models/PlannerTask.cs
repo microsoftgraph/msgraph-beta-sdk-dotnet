@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>
-    /// Provides operations to manage the admin singleton.
+    /// Provides operations to manage the collection of activityStatistics entities.
     /// </summary>
     public class PlannerTask : PlannerDelta, IParsable {
         /// <summary>Number of checklist items with value set to false, representing incomplete items.</summary>

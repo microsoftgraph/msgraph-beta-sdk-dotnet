@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>
-    /// Casts the previous resource to device.
+    /// Provides operations to manage the collection of accessReview entities.
     /// </summary>
     public class Command : Entity, IParsable {
         /// <summary>The appServiceName property</summary>

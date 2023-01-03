@@ -43,7 +43,7 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
             get { return BackingStore?.Get<string>("id"); }
             set { BackingStore?.Set("id", value); }
         }
-        /// <summary>If true, the portal notification has already been sent for the user; otherwise, the portal notification hasn&apos;t been sent yet.</summary>
+        /// <summary>true if the portal notification has already been sent to the user; false otherwise.</summary>
         public bool? IsPortalNotificationSent {
             get { return BackingStore?.Get<bool?>("isPortalNotificationSent"); }
             set { BackingStore?.Set("isPortalNotificationSent", value); }

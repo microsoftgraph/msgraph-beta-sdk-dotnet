@@ -46,7 +46,7 @@ namespace Microsoft.Graph.Beta.Me.Presence.SetStatusMessage {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Invoke action setStatusMessage
+        /// Set a presence status message for a user. An optional expiration date and time can be supplied.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -67,7 +67,8 @@ namespace Microsoft.Graph.Beta.Me.Presence.SetStatusMessage {
             return requestInfo;
         }
         /// <summary>
-        /// Invoke action setStatusMessage
+        /// Set a presence status message for a user. An optional expiration date and time can be supplied.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/presence-setstatusmessage?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

@@ -54,7 +54,7 @@ namespace Microsoft.Graph.Beta.RiskDetections {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Retrieve the properties of a **riskDetection** object.
+        /// Retrieve the properties of a collection of **riskDetection** objects.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<RiskDetectionsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -96,8 +96,8 @@ namespace Microsoft.Graph.Beta.RiskDetections {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve the properties of a **riskDetection** object.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/riskdetection-get?view=graph-rest-1.0" />
+        /// Retrieve the properties of a collection of **riskDetection** objects.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/riskdetection-list?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -125,7 +125,7 @@ namespace Microsoft.Graph.Beta.RiskDetections {
             return await RequestAdapter.SendAsync<RiskDetection>(requestInfo, RiskDetection.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Retrieve the properties of a **riskDetection** object.
+        /// Retrieve the properties of a collection of **riskDetection** objects.
         /// </summary>
         public class RiskDetectionsRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

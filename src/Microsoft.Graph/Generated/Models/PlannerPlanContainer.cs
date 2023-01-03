@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The identifier of the resource that contains the plan.</summary>
+        /// <summary>The identifier of the resource that contains the plan. Optional.</summary>
         public string ContainerId {
             get { return BackingStore?.Get<string>("containerId"); }
             set { BackingStore?.Set("containerId", value); }
@@ -23,12 +23,12 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
-        /// <summary>The type of the resource that contains the plan. See the previous table for supported types. Possible values are: group, unknownFutureValue, roster and project. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: roster, project.</summary>
+        /// <summary>The type of the resource that contains the plan. For supported types, see the previous table. Possible values are: group, unknownFutureValue, roster, and project. Note that you must use the Prefer: include-unknown-enum-members request header to get the following value in this evolvable enum: roster, project. Optional.</summary>
         public PlannerContainerType? Type {
             get { return BackingStore?.Get<PlannerContainerType?>("type"); }
             set { BackingStore?.Set("type", value); }
         }
-        /// <summary>The full canonical URL of the container.</summary>
+        /// <summary>The full canonical URL of the container. Optional.</summary>
         public string Url {
             get { return BackingStore?.Get<string>("url"); }
             set { BackingStore?.Set("url", value); }

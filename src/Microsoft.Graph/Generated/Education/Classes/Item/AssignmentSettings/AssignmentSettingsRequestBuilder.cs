@@ -65,7 +65,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.AssignmentSettings {
             return requestInfo;
         }
         /// <summary>
-        /// Read the properties and relationships of an educationAssignmentSettings object.
+        /// Read the properties and relationships of an educationAssignmentSettings object. Only teachers can perform this operation.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<AssignmentSettingsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -120,7 +120,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.AssignmentSettings {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Read the properties and relationships of an educationAssignmentSettings object.
+        /// Read the properties and relationships of an educationAssignmentSettings object. Only teachers can perform this operation.
         /// Find more info here <see href="https://docs.microsoft.com/graph/api/educationassignmentsettings-get?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -166,7 +166,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.AssignmentSettings {
             }
         }
         /// <summary>
-        /// Read the properties and relationships of an educationAssignmentSettings object.
+        /// Read the properties and relationships of an educationAssignmentSettings object. Only teachers can perform this operation.
         /// </summary>
         public class AssignmentSettingsRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Provides operations to manage the collection of accessReviewDecision entities.
+    /// </summary>
     public class ExactMatchUploadAgent : Entity, IParsable {
         /// <summary>The creationDateTime property</summary>
         public DateTimeOffset? CreationDateTime {

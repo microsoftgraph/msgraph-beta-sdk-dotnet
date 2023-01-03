@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Resources
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get all the educationAssignmentResource objects associated with an assignment.
+        /// Get all the educationAssignmentResource objects associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<ResourcesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -79,7 +79,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Resources
             return requestInfo;
         }
         /// <summary>
-        /// Create an assignment resource. You can create the following types of assignment resources: Every resource has an @odata.type property to indicate which type of resource is being created. 
+        /// Create an assignment resource. Only teachers can perform this operation. You can create the following types of assignment resources: Every resource has an **@odata.type** property to indicate which type of resource is being created. 
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -101,7 +101,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Resources
             return requestInfo;
         }
         /// <summary>
-        /// Get all the educationAssignmentResource objects associated with an assignment.
+        /// Get all the educationAssignmentResource objects associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.
         /// Find more info here <see href="https://docs.microsoft.com/graph/api/educationassignment-list-resources?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -115,7 +115,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Resources
             return await RequestAdapter.SendAsync<EducationAssignmentResourceCollectionResponse>(requestInfo, EducationAssignmentResourceCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create an assignment resource. You can create the following types of assignment resources: Every resource has an @odata.type property to indicate which type of resource is being created. 
+        /// Create an assignment resource. Only teachers can perform this operation. You can create the following types of assignment resources: Every resource has an **@odata.type** property to indicate which type of resource is being created. 
         /// Find more info here <see href="https://docs.microsoft.com/graph/api/educationassignment-post-resources?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
@@ -131,7 +131,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.Resources
             return await RequestAdapter.SendAsync<EducationAssignmentResource>(requestInfo, EducationAssignmentResource.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get all the educationAssignmentResource objects associated with an assignment.
+        /// Get all the educationAssignmentResource objects associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.
         /// </summary>
         public class ResourcesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
     /// <summary>
-    /// Provides operations to manage the collection of activityStatistics entities.
+    /// Provides operations to manage the collection of accessReview entities.
     /// </summary>
     public class ThreatSubmission : Entity, IParsable {
         /// <summary>Specifies the admin review property which constitutes of who reviewed the user submission, when and what was it identified as.</summary>

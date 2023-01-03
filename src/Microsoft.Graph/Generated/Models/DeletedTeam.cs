@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>
-    /// Provides operations to manage the collection of accessReviewDecision entities.
+    /// Provides operations to manage the collection of accessReview entities.
     /// </summary>
     public class DeletedTeam : Entity, IParsable {
         /// <summary>The channels those are either shared with this deleted team or created in this deleted team.</summary>
