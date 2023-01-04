@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Windows VPN configuration profile.
+    /// </summary>
     public class WindowsVpnConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Connection name displayed to the user.</summary>
         public string ConnectionName {
@@ -21,7 +24,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("servers", value); }
         }
         /// <summary>
-        /// Instantiates a new WindowsVpnConfiguration and sets the default values.
+        /// Instantiates a new windowsVpnConfiguration and sets the default values.
         /// </summary>
         public WindowsVpnConfiguration() : base() {
             OdataType = "#microsoft.graph.windowsVpnConfiguration";

@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Provides operations to manage the collection of accessReview entities.
+    /// </summary>
     public class SharedDriveItem : BaseItem, IParsable {
         /// <summary>Used to access the underlying driveItem</summary>
         public Microsoft.Graph.Beta.Models.DriveItem DriveItem {
@@ -46,7 +49,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("site", value); }
         }
         /// <summary>
-        /// Instantiates a new SharedDriveItem and sets the default values.
+        /// Instantiates a new sharedDriveItem and sets the default values.
         /// </summary>
         public SharedDriveItem() : base() {
             OdataType = "#microsoft.graph.sharedDriveItem";

@@ -7,6 +7,10 @@ and this project does NOT adhere to [Semantic Versioning](https://semver.org/spe
 
 ## [Unreleased]
 
+### Changed
+
+- Latest metadata updates from 3rd January 2023 snapshot
+
 ## [5.15.0-preview] - 2022-12-16
 
 ### Added

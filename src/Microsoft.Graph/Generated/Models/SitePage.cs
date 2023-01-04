@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>
-    /// Provides operations to manage the admin singleton.
+    /// Provides operations to manage the collection of accessReview entities.
     /// </summary>
     public class SitePage : BaseItem, IParsable {
         /// <summary>Indicates the layout of the content in a given SharePoint page, including horizontal sections and vertical section</summary>

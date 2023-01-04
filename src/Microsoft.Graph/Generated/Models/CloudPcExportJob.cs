@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Provides operations to manage the collection of accessReview entities.
+    /// </summary>
     public class CloudPcExportJob : Entity, IParsable {
         /// <summary>The date time when the export job expires.</summary>
         public DateTimeOffset? ExpirationDateTime {

@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
     /// <summary>
-    /// Provides operations to manage the admin singleton.
+    /// Provides operations to manage the collection of accessReviewDecision entities.
     /// </summary>
     public class TaskDefinition : Entity, IParsable {
         /// <summary>The category property</summary>

@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Education.Me.Assignments.Item.Categories.Ref {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// List all the categories associated with an assignment.
+        /// List all the categories associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<RefRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -88,7 +88,7 @@ namespace Microsoft.Graph.Beta.Education.Me.Assignments.Item.Categories.Ref {
             return requestInfo;
         }
         /// <summary>
-        /// List all the categories associated with an assignment.
+        /// List all the categories associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.
         /// Find more info here <see href="https://docs.microsoft.com/graph/api/educationassignment-list-categories?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -117,7 +117,7 @@ namespace Microsoft.Graph.Beta.Education.Me.Assignments.Item.Categories.Ref {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// List all the categories associated with an assignment.
+        /// List all the categories associated with an assignment. Only teachers, students, and applications with application permissions can perform this operation.
         /// </summary>
         public class RefRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

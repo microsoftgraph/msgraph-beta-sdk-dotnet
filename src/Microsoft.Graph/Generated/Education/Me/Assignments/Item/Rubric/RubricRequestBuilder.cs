@@ -70,7 +70,7 @@ namespace Microsoft.Graph.Beta.Education.Me.Assignments.Item.Rubric {
             return requestInfo;
         }
         /// <summary>
-        /// Get the educationRubric object attached to an educationAssignment, if one exists.
+        /// Get the educationRubric object attached to an educationAssignment, if one exists. Only teachers, students, and applications with application permissions can perform this operation.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<RubricRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -125,7 +125,7 @@ namespace Microsoft.Graph.Beta.Education.Me.Assignments.Item.Rubric {
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get the educationRubric object attached to an educationAssignment, if one exists.
+        /// Get the educationRubric object attached to an educationAssignment, if one exists. Only teachers, students, and applications with application permissions can perform this operation.
         /// Find more info here <see href="https://docs.microsoft.com/graph/api/educationassignment-get-rubric?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -170,7 +170,7 @@ namespace Microsoft.Graph.Beta.Education.Me.Assignments.Item.Rubric {
             }
         }
         /// <summary>
-        /// Get the educationRubric object attached to an educationAssignment, if one exists.
+        /// Get the educationRubric object attached to an educationAssignment, if one exists. Only teachers, students, and applications with application permissions can perform this operation.
         /// </summary>
         public class RubricRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

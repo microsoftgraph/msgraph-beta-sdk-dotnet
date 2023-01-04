@@ -5,12 +5,12 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class EducationTeamsAppResource : EducationResource, IParsable {
-        /// <summary>URL that points to the app&apos;s icon.</summary>
+        /// <summary>URL that points to the icon of the app.</summary>
         public string AppIconWebUrl {
             get { return BackingStore?.Get<string>("appIconWebUrl"); }
             set { BackingStore?.Set("appIconWebUrl", value); }
         }
-        /// <summary>Teams App ID of the application.</summary>
+        /// <summary>Teams app ID of the application.</summary>
         public string AppId {
             get { return BackingStore?.Get<string>("appId"); }
             set { BackingStore?.Set("appId", value); }

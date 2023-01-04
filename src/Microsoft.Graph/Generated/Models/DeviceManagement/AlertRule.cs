@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.DeviceManagement {
     /// <summary>
-    /// Provides operations to manage the admin singleton.
+    /// Provides operations to manage the collection of activityStatistics entities.
     /// </summary>
     public class AlertRule : Entity, IParsable {
         /// <summary>The rule template of the alert event. The possible values are: cloudPcProvisionScenario, cloudPcImageUploadScenario, cloudPcOnPremiseNetworkConnectionCheckScenario, unknownFutureValue.</summary>
@@ -28,22 +28,22 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
             get { return BackingStore?.Get<bool?>("enabled"); }
             set { BackingStore?.Set("enabled", value); }
         }
-        /// <summary>Indicates whether the rule is a system rule. If true, the rule is a system rule; otherwise, the rule is a custom defined rule and can be edited. System rules are built-in and only</summary>
+        /// <summary>Indicates whether the rule is a system rule. If true, the rule is a system rule; otherwise, the rule is a custom defined rule and can be edited. System rules are built-in and only a few properties can be edited.</summary>
         public bool? IsSystemRule {
             get { return BackingStore?.Get<bool?>("isSystemRule"); }
             set { BackingStore?.Set("isSystemRule", value); }
         }
-        /// <summary>The notificationChannels property</summary>
+        /// <summary>The notification channels of the rule selected by the user.</summary>
         public List<NotificationChannel> NotificationChannels {
             get { return BackingStore?.Get<List<NotificationChannel>>("notificationChannels"); }
             set { BackingStore?.Set("notificationChannels", value); }
         }
-        /// <summary>The severity property</summary>
+        /// <summary>The severity of the rule. The possible values are: unknown, informational, warning, critical, unknownFutureValue.</summary>
         public RuleSeverityType? Severity {
             get { return BackingStore?.Get<RuleSeverityType?>("severity"); }
             set { BackingStore?.Set("severity", value); }
         }
-        /// <summary>The threshold property</summary>
+        /// <summary>The conditions to send alerts. For example, send alert when provisioning has failed for greater than or equal to 6 Cloud PCs.</summary>
         public RuleThreshold Threshold {
             get { return BackingStore?.Get<RuleThreshold>("threshold"); }
             set { BackingStore?.Set("threshold", value); }

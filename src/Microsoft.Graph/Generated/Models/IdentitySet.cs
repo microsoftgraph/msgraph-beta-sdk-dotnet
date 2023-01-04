@@ -11,14 +11,14 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
             set { BackingStore?.Set("additionalData", value); }
         }
-        /// <summary>Optional. The application associated with this action.</summary>
+        /// <summary>The Identity of the Application. This property is read-only.</summary>
         public Identity Application {
             get { return BackingStore?.Get<Identity>("application"); }
             set { BackingStore?.Set("application", value); }
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>Optional. The device associated with this action.</summary>
+        /// <summary>The Identity of the Device. This property is read-only.</summary>
         public Identity Device {
             get { return BackingStore?.Get<Identity>("device"); }
             set { BackingStore?.Set("device", value); }
@@ -28,7 +28,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
-        /// <summary>Optional. The user associated with this action.</summary>
+        /// <summary>The Identity of the User. This property is read-only.</summary>
         public Identity User {
             get { return BackingStore?.Get<Identity>("user"); }
             set { BackingStore?.Set("user", value); }

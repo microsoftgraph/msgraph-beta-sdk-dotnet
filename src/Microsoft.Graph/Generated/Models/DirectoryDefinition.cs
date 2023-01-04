@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>
-    /// Casts the previous resource to application.
+    /// Provides operations to manage the collection of activityStatistics entities.
     /// </summary>
     public class DirectoryDefinition : Entity, IParsable {
         /// <summary>The discoverabilities property</summary>

@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>
-    /// Casts the previous resource to application.
+    /// Provides operations to manage the collection of accessReviewDecision entities.
     /// </summary>
     public class DefaultUserRoleOverride : Entity, IParsable {
         /// <summary>The isDefault property</summary>

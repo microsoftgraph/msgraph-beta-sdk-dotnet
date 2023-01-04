@@ -47,7 +47,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.SetUpReso
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Create a SharePoint folder to upload files for a given educationAssignment.  The teacher determines the resources to upload in the assignment&apos;s folder. 
+        /// Create a SharePoint folder to upload files for a given educationAssignment. Only teachers can perform this operation. The teacher determines the resources to upload in the assignment&apos;s folder.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreatePostRequestInformation(Action<SetUpResourcesFolderRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
@@ -66,7 +66,7 @@ namespace Microsoft.Graph.Beta.Education.Classes.Item.Assignments.Item.SetUpReso
             return requestInfo;
         }
         /// <summary>
-        /// Create a SharePoint folder to upload files for a given educationAssignment.  The teacher determines the resources to upload in the assignment&apos;s folder. 
+        /// Create a SharePoint folder to upload files for a given educationAssignment. Only teachers can perform this operation. The teacher determines the resources to upload in the assignment&apos;s folder.
         /// Find more info here <see href="https://docs.microsoft.com/graph/api/educationassignment-setupresourcesfolder?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>

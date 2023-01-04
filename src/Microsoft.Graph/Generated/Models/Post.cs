@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Provides operations to manage the collection of activityStatistics entities.
+    /// </summary>
     public class Post : OutlookItem, IParsable {
         /// <summary>The collection of fileAttachment, itemAttachment, and referenceAttachment attachments for the post. Read-only. Nullable. Supports $expand.</summary>
         public List<Attachment> Attachments {
@@ -81,7 +84,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("singleValueExtendedProperties", value); }
         }
         /// <summary>
-        /// Instantiates a new Post and sets the default values.
+        /// Instantiates a new post and sets the default values.
         /// </summary>
         public Post() : base() {
             OdataType = "#microsoft.graph.post";

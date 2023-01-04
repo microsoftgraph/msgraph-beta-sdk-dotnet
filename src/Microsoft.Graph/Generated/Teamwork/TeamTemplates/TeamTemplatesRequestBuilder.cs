@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Teamwork.TeamTemplates {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// List the teamTemplateDefinition objects associated with a teamTemplate. 
+        /// Get the list of teamTemplate objects that are available for a tenant. 
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation CreateGetRequestInformation(Action<TeamTemplatesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -101,8 +101,8 @@ namespace Microsoft.Graph.Beta.Teamwork.TeamTemplates {
             return requestInfo;
         }
         /// <summary>
-        /// List the teamTemplateDefinition objects associated with a teamTemplate. 
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/teamtemplate-list-definitions?view=graph-rest-1.0" />
+        /// Get the list of teamTemplate objects that are available for a tenant. 
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/teamwork-list-teamtemplates?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -130,7 +130,7 @@ namespace Microsoft.Graph.Beta.Teamwork.TeamTemplates {
             return await RequestAdapter.SendAsync<TeamTemplate>(requestInfo, TeamTemplate.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// List the teamTemplateDefinition objects associated with a teamTemplate. 
+        /// Get the list of teamTemplate objects that are available for a tenant. 
         /// </summary>
         public class TeamTemplatesRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

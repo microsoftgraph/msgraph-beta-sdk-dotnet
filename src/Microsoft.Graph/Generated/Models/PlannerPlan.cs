@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     /// <summary>
-    /// Provides operations to manage the admin singleton.
+    /// Provides operations to manage the collection of activityStatistics entities.
     /// </summary>
     public class PlannerPlan : PlannerDelta, IParsable {
         /// <summary>Collection of buckets in the plan. Read-only. Nullable.</summary>
@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<PlannerBucket>>("buckets"); }
             set { BackingStore?.Set("buckets", value); }
         }
-        /// <summary>Identifies the container of the plan. After it is set, this property can’t be updated. Required.</summary>
+        /// <summary>Identifies the container of the plan. Specify only the url, the containerId and type, or all properties. After it is set, this property can’t be updated. Required.</summary>
         public PlannerPlanContainer Container {
             get { return BackingStore?.Get<PlannerPlanContainer>("container"); }
             set { BackingStore?.Set("container", value); }

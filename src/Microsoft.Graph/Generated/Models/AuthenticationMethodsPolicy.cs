@@ -30,7 +30,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("policyVersion"); }
             set { BackingStore?.Set("policyVersion", value); }
         }
-        /// <summary>The reconfirmationInDays property</summary>
+        /// <summary>Days before the user will be asked to reconfirm their method.</summary>
         public int? ReconfirmationInDays {
             get { return BackingStore?.Get<int?>("reconfirmationInDays"); }
             set { BackingStore?.Set("reconfirmationInDays", value); }

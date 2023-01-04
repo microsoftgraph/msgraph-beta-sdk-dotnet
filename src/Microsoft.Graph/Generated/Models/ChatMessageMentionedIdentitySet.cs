@@ -10,13 +10,18 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<TeamworkConversationIdentity>("conversation"); }
             set { BackingStore?.Set("conversation", value); }
         }
+        /// <summary>The OdataType property</summary>
+        public string OdataType {
+            get { return BackingStore?.Get<string>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
         /// <summary>If present, represents a tag @mentioned in a team message.</summary>
         public TeamworkTagIdentity Tag {
             get { return BackingStore?.Get<TeamworkTagIdentity>("tag"); }
             set { BackingStore?.Set("tag", value); }
         }
         /// <summary>
-        /// Instantiates a new ChatMessageMentionedIdentitySet and sets the default values.
+        /// Instantiates a new chatMessageMentionedIdentitySet and sets the default values.
         /// </summary>
         public ChatMessageMentionedIdentitySet() : base() {
             OdataType = "#microsoft.graph.chatMessageMentionedIdentitySet";
@@ -35,6 +40,7 @@ namespace Microsoft.Graph.Beta.Models {
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"conversation", n => { Conversation = n.GetObjectValue<TeamworkConversationIdentity>(TeamworkConversationIdentity.CreateFromDiscriminatorValue); } },
+                {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"tag", n => { Tag = n.GetObjectValue<TeamworkTagIdentity>(TeamworkTagIdentity.CreateFromDiscriminatorValue); } },
             };
         }
@@ -46,6 +52,7 @@ namespace Microsoft.Graph.Beta.Models {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
             writer.WriteObjectValue<TeamworkConversationIdentity>("conversation", Conversation);
+            writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteObjectValue<TeamworkTagIdentity>("tag", Tag);
         }
     }
