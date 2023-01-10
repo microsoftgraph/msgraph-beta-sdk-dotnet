@@ -23,18 +23,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets expiryDateTime.
+        /// Time in which the status message expires.If not provided, the status message does not expire.expiryDateTime.dateTime should not include time zone.expiryDateTime is not available when requesting presence of another user.
         /// </summary>
         [JsonPropertyName("expiryDateTime")]
         public DateTimeTimeZone ExpiryDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets message.
+        /// Status message item. The only supported format currently is message.contentType = 'text'.
         /// </summary>
         [JsonPropertyName("message")]
         public ItemBody Message { get; set; }
     
         /// <summary>
         /// Gets or sets publishedDateTime.
+        /// Time in which the status message was published.Read-only.publishedDateTime is not available when requesting presence of another user.
         /// </summary>
         [JsonPropertyName("publishedDateTime")]
         public DateTimeOffset? PublishedDateTime { get; set; }

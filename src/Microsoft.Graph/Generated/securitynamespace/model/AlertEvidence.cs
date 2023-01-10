@@ -30,7 +30,7 @@ namespace Microsoft.Graph.SecurityNamespace
     
         /// <summary>
         /// Gets or sets remediationStatus.
-        /// Status of the remediation action taken. The possible values are: none, remediated, prevented, blocked, notFound, active, pendingApproval, declined, notRemediated, running, unknownFutureValue.
+        /// Status of the remediation action taken. The possible values are: none, remediated, prevented, blocked, notFound, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("remediationStatus")]
         public EvidenceRemediationStatus? RemediationStatus { get; set; }
