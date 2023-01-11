@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>The Enum to specify the Office365 ProductIds that represent the Office365 Suite SKUs.</summary>
     public enum OfficeProductId {
         O365ProPlusRetail,
         O365BusinessRetail,

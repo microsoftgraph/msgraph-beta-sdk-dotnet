@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Restrict managed app notification</summary>
     public enum ManagedAppNotificationRestriction {
         /// <summary>Share all notifications.</summary>
         Allow,

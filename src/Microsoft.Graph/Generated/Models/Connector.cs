@@ -4,9 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>
-    /// Provides operations to manage the collection of activityStatistics entities.
-    /// </summary>
     public class Connector : Entity, IParsable {
         /// <summary>The external IP address as detected by the the connector server. Read-only.</summary>
         public string ExternalIp {

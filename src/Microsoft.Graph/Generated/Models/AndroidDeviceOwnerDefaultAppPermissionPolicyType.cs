@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Android Device Owner default app permission policy type.</summary>
     public enum AndroidDeviceOwnerDefaultAppPermissionPolicyType {
         /// <summary>Device default value, no intent.</summary>
         DeviceDefault,

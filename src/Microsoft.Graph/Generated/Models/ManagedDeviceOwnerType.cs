@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Owner type of device.</summary>
     public enum ManagedDeviceOwnerType {
         /// <summary>Unknown.</summary>
         Unknown,

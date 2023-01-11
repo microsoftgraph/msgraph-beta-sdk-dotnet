@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Management state of device in Microsoft Intune.</summary>
     public enum ManagementState {
         /// <summary>The device is under management</summary>
         Managed,

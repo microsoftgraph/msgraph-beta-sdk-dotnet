@@ -4,9 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>
-    /// Provides operations to manage the collection of accessReviewDecision entities.
-    /// </summary>
     public class ManagedDeviceCertificateState : Entity, IParsable {
         /// <summary>Extended key usage</summary>
         public string CertificateEnhancedKeyUsage {

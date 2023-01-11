@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Possible values for the DeliveryOptimizationGroupIdOptionsType setting.</summary>
     public enum DeliveryOptimizationGroupIdOptionsType {
         /// <summary>Not configured.</summary>
         NotConfigured,

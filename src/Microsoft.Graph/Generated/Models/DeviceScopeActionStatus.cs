@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to call the triggerDeviceScopeAction method.</summary>
+    /// <summary>Indicates the status of the attempted device scope action</summary>
     public enum DeviceScopeActionStatus {
         /// <summary>Indicates the device scope action failed to trigger.</summary>
         Failed,

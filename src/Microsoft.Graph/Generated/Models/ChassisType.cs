@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Chassis type.</summary>
     public enum ChassisType {
         /// <summary>Unknown.</summary>
         Unknown,

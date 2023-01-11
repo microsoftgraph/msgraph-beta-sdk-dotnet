@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>An enum representing possible values for cross profile data sharing.</summary>
     public enum AndroidDeviceOwnerCertificateAccessType {
         /// <summary>Require user approval for all apps</summary>
         UserApproval,

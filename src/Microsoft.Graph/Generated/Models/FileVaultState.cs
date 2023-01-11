@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>FileVault State</summary>
     public enum FileVaultState {
         /// <summary>FileVault State Success</summary>
         Success,

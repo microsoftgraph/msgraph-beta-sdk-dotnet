@@ -47,9 +47,23 @@ namespace Microsoft.Graph.Beta.Reports.GetCredentialUserRegistrationCount {
         }
         /// <summary>
         /// Report the current state of how many users in your organization are registered for self-service password reset and multi-factor authentication (MFA) capabilities.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/reportroot-getcredentialuserregistrationcount?view=graph-rest-1.0" />
+        /// </summary>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        public async Task<GetCredentialUserRegistrationCountResponse> GetAsync(Action<GetCredentialUserRegistrationCountRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+            var requestInfo = ToGetRequestInformation(requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<GetCredentialUserRegistrationCountResponse>(requestInfo, GetCredentialUserRegistrationCountResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+        }
+        /// <summary>
+        /// Report the current state of how many users in your organization are registered for self-service password reset and multi-factor authentication (MFA) capabilities.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        public RequestInformation CreateGetRequestInformation(Action<GetCredentialUserRegistrationCountRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<GetCredentialUserRegistrationCountRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
                 UrlTemplate = UrlTemplate,
@@ -64,20 +78,6 @@ namespace Microsoft.Graph.Beta.Reports.GetCredentialUserRegistrationCount {
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
             return requestInfo;
-        }
-        /// <summary>
-        /// Report the current state of how many users in your organization are registered for self-service password reset and multi-factor authentication (MFA) capabilities.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/reportroot-getcredentialuserregistrationcount?view=graph-rest-1.0" />
-        /// </summary>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        public async Task<GetCredentialUserRegistrationCountResponse> GetAsync(Action<GetCredentialUserRegistrationCountRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
-            var requestInfo = CreateGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
-            };
-            return await RequestAdapter.SendAsync<GetCredentialUserRegistrationCountResponse>(requestInfo, GetCredentialUserRegistrationCountResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Report the current state of how many users in your organization are registered for self-service password reset and multi-factor authentication (MFA) capabilities.

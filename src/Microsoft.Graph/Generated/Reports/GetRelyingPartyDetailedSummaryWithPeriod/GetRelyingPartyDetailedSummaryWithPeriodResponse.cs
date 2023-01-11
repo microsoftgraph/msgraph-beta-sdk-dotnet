@@ -5,9 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Reports.GetRelyingPartyDetailedSummaryWithPeriod {
-    /// <summary>
-    /// Provides operations to call the getRelyingPartyDetailedSummary method.
-    /// </summary>
     public class GetRelyingPartyDetailedSummaryWithPeriodResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<RelyingPartyDetailedSummary> Value {

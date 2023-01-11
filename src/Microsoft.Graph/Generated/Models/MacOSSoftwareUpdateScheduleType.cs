@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Update schedule type for macOS software updates.</summary>
     public enum MacOSSoftwareUpdateScheduleType {
         /// <summary>Always update.</summary>
         AlwaysUpdate,

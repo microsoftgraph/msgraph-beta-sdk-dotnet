@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Determines which content caches other content caches will peer with.</summary>
     public enum MacOSContentCachingPeerPolicy {
         /// <summary>Defaults to peers in local network.</summary>
         NotConfigured,

@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Scheduled the update installation on the weeks of the month</summary>
     public enum WindowsUpdateForBusinessUpdateWeeks {
         /// <summary>Allow the user to set.</summary>
         UserDefined,

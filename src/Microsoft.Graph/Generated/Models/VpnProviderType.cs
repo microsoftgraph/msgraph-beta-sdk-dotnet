@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Provider type for per-app VPN.</summary>
     public enum VpnProviderType {
         /// <summary>Tunnel traffic is not explicitly configured.</summary>
         NotConfigured,

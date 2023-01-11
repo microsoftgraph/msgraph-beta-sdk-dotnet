@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Possible values for username source or email source.</summary>
     public enum UserEmailSource {
         /// <summary>User principal name.</summary>
         UserPrincipalName,

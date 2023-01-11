@@ -5,9 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Groups.Item.Sites.Item.Pages.Item.GetWebPartsByPosition {
-    /// <summary>
-    /// Provides operations to call the getWebPartsByPosition method.
-    /// </summary>
     public class GetWebPartsByPositionResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<WebPart> Value {

@@ -5,9 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Communications.GetPresencesByUserId {
-    /// <summary>
-    /// Provides operations to call the getPresencesByUserId method.
-    /// </summary>
     public class GetPresencesByUserIdPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {

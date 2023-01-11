@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Supported platform types.</summary>
     public enum DeviceManagementConfigurationPlatforms {
         /// <summary>None.</summary>
         None,

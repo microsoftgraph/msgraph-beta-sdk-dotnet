@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Defender’s action to take on detected Potentially Unwanted Application (PUA).</summary>
     public enum DefenderPotentiallyUnwantedAppAction {
         /// <summary>PUA Protection is off. Defender will not protect against potentially unwanted applications.</summary>
         DeviceDefault,

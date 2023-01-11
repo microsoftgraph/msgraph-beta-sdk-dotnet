@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Describes the TemplateFamily for the Template entity</summary>
     public enum DeviceManagementConfigurationTemplateFamily {
         /// <summary>Default for Template Family when Policy is not linked to a Template</summary>
         None,

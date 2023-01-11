@@ -4,9 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>
-    /// Provides operations to manage the admin singleton.
-    /// </summary>
     public class BrowserSharedCookie : Entity, IParsable {
         /// <summary>The comment for the shared cookie.</summary>
         public string Comment {

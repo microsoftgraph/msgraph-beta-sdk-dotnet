@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Contains all supported Powershell Script output detection type.</summary>
     public enum Win32LobAppPowerShellScriptRuleOperationType {
         /// <summary>Not configured.</summary>
         NotConfigured,

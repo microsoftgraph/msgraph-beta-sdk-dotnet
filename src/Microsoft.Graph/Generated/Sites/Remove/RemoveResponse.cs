@@ -5,9 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Sites.Remove {
-    /// <summary>
-    /// Provides operations to call the remove method.
-    /// </summary>
     public class RemoveResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<Microsoft.Graph.Beta.Models.Site> Value {

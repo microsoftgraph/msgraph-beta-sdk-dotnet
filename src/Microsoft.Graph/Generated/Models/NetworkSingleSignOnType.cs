@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Wi-Fi Network Single Sign On Type Settings.</summary>
     public enum NetworkSingleSignOnType {
         /// <summary>Disabled</summary>
         Disabled,

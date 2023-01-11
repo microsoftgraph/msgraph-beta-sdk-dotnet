@@ -4,9 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>
-    /// Provides operations to manage the collection of accessReview entities.
-    /// </summary>
     public class DirectoryRole : DirectoryObject, IParsable {
         /// <summary>The description for the directory role. Read-only. Supports $filter (eq), $search, $select.</summary>
         public string Description {
@@ -34,7 +31,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("scopedMembers", value); }
         }
         /// <summary>
-        /// Instantiates a new directoryRole and sets the default values.
+        /// Instantiates a new DirectoryRole and sets the default values.
         /// </summary>
         public DirectoryRole() : base() {
             OdataType = "#microsoft.graph.directoryRole";

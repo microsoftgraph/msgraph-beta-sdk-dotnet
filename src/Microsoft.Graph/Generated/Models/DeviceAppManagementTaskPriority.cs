@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Device app management task priority.</summary>
     public enum DeviceAppManagementTaskPriority {
         /// <summary>No priority set.</summary>
         None,

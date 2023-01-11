@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Indicates the state of the anomaly. Eg: anomaly severity can be new, active, disabled, removed or other.</summary>
     public enum UserExperienceAnalyticsAnomalyState {
         /// <summary>Indicates the state of anomaly is new.</summary>
         New,

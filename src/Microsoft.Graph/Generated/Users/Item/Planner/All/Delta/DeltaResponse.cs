@@ -5,9 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Users.Item.Planner.All.Delta {
-    /// <summary>
-    /// Provides operations to call the delta method.
-    /// </summary>
     public class DeltaResponse : BaseDeltaFunctionResponse, IParsable {
         /// <summary>The value property</summary>
         public List<PlannerDelta> Value {

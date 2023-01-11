@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>An enum representing possible values for cross profile data sharing.</summary>
     public enum AndroidDeviceOwnerCrossProfileDataSharing {
         /// <summary>Not configured; this value defaults to CROSS_PROFILE_DATA_SHARING_UNSPECIFIED.</summary>
         NotConfigured,

@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to call the createDeviceLogCollectionRequest method.</summary>
+    /// <summary>Enum for the template type used for collecting logs</summary>
     public enum DeviceLogCollectionTemplateType {
         /// <summary>Predefined template for what will be collected</summary>
         Predefined,

@@ -36,7 +36,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("subjectNameFormat", value); }
         }
         /// <summary>
-        /// Instantiates a new windowsCertificateProfileBase and sets the default values.
+        /// Instantiates a new WindowsCertificateProfileBase and sets the default values.
         /// </summary>
         public WindowsCertificateProfileBase() : base() {
             OdataType = "#microsoft.graph.windowsCertificateProfileBase";

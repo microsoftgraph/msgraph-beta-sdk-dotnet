@@ -115,6 +115,7 @@ using Microsoft.Graph.Beta.TrustFramework;
 using Microsoft.Graph.Beta.Users;
 using Microsoft.Graph.Beta.Workbooks;
 using Microsoft.Kiota.Abstractions;
+using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Store;
 using Microsoft.Kiota.Serialization.Form;
 using Microsoft.Kiota.Serialization.Json;
@@ -618,6 +619,7 @@ namespace Microsoft.Graph.Beta {
             if (string.IsNullOrEmpty(RequestAdapter.BaseUrl)) {
                 RequestAdapter.BaseUrl = "https://graph.microsoft.com/beta";
             }
+            PathParameters.TryAdd("baseurl", RequestAdapter.BaseUrl);
             RequestAdapter.EnableBackingStore(backingStore);
         }
     }

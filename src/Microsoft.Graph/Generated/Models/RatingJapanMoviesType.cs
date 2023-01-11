@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Movies rating labels in Japan</summary>
     public enum RatingJapanMoviesType {
         /// <summary>Default value, allow all movies content</summary>
         AllAllowed,

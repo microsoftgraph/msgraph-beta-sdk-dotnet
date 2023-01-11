@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Supported values for the derived credential issuer.</summary>
     public enum DeviceManagementDerivedCredentialIssuer {
         /// <summary>Intercede</summary>
         Intercede,

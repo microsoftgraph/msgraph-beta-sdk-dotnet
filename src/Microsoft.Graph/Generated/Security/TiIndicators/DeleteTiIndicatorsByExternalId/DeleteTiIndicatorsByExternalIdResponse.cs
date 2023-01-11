@@ -5,9 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Security.TiIndicators.DeleteTiIndicatorsByExternalId {
-    /// <summary>
-    /// Provides operations to call the deleteTiIndicatorsByExternalId method.
-    /// </summary>
     public class DeleteTiIndicatorsByExternalIdResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<ResultInfo> Value {

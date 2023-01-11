@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Apple VPN connection type.</summary>
     public enum AppleVpnConnectionType {
         /// <summary>Cisco AnyConnect.</summary>
         CiscoAnyConnect,

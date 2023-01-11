@@ -50,8 +50,23 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.RequestRem
         /// Remote help - Request Remote help session access permission for an existing session
         /// </summary>
         /// <param name="body">The request body</param>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        public RequestInformation CreatePostRequestInformation(RequestRemoteHelpSessionAccessPostRequestBody body, Action<RequestRemoteHelpSessionAccessRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
+        public async Task<RequestRemoteHelpSessionAccessResponse> PostAsync(RequestRemoteHelpSessionAccessPostRequestBody body, Action<RequestRemoteHelpSessionAccessRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+            _ = body ?? throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<RequestRemoteHelpSessionAccessResponse>(requestInfo, RequestRemoteHelpSessionAccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+        }
+        /// <summary>
+        /// Remote help - Request Remote help session access permission for an existing session
+        /// </summary>
+        /// <param name="body">The request body</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        public RequestInformation ToPostRequestInformation(RequestRemoteHelpSessionAccessPostRequestBody body, Action<RequestRemoteHelpSessionAccessRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.POST,
@@ -67,21 +82,6 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.RequestRem
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
             return requestInfo;
-        }
-        /// <summary>
-        /// Remote help - Request Remote help session access permission for an existing session
-        /// </summary>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        public async Task<RequestRemoteHelpSessionAccessResponse> PostAsync(RequestRemoteHelpSessionAccessPostRequestBody body, Action<RequestRemoteHelpSessionAccessRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
-            _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = CreatePostRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
-            };
-            return await RequestAdapter.SendAsync<RequestRemoteHelpSessionAccessResponse>(requestInfo, RequestRemoteHelpSessionAccessResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Authoring source of a policy</summary>
     public enum SecurityBaselinePolicySourceType {
         DeviceConfiguration,
         DeviceIntent,

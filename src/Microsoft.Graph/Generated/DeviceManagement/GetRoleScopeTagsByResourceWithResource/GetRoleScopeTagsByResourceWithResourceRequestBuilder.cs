@@ -50,8 +50,21 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GetRoleScopeTagsByResourceWithRe
         /// <summary>
         /// Invoke function getRoleScopeTagsByResource
         /// </summary>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        public RequestInformation CreateGetRequestInformation(Action<GetRoleScopeTagsByResourceWithResourceRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
+        public async Task<GetRoleScopeTagsByResourceWithResourceResponse> GetAsync(Action<GetRoleScopeTagsByResourceWithResourceRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+            var requestInfo = ToGetRequestInformation(requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<GetRoleScopeTagsByResourceWithResourceResponse>(requestInfo, GetRoleScopeTagsByResourceWithResourceResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+        }
+        /// <summary>
+        /// Invoke function getRoleScopeTagsByResource
+        /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        public RequestInformation ToGetRequestInformation(Action<GetRoleScopeTagsByResourceWithResourceRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
                 UrlTemplate = UrlTemplate,
@@ -66,19 +79,6 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GetRoleScopeTagsByResourceWithRe
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
             return requestInfo;
-        }
-        /// <summary>
-        /// Invoke function getRoleScopeTagsByResource
-        /// </summary>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        public async Task<GetRoleScopeTagsByResourceWithResourceResponse> GetAsync(Action<GetRoleScopeTagsByResourceWithResourceRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
-            var requestInfo = CreateGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
-            };
-            return await RequestAdapter.SendAsync<GetRoleScopeTagsByResourceWithResourceResponse>(requestInfo, GetRoleScopeTagsByResourceWithResourceResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Invoke function getRoleScopeTagsByResource

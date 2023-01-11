@@ -5,9 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.DeviceAppManagement.PolicySets.GetPolicySets {
-    /// <summary>
-    /// Provides operations to call the getPolicySets method.
-    /// </summary>
     public class GetPolicySetsResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<PolicySet> Value {

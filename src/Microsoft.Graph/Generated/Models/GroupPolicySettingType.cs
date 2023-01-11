@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Setting type of the group policy.</summary>
     public enum GroupPolicySettingType {
         /// <summary>GroupPolicySettingType unknown</summary>
         Unknown,

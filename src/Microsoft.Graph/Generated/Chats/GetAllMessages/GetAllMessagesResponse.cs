@@ -5,9 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Chats.GetAllMessages {
-    /// <summary>
-    /// Provides operations to call the getAllMessages method.
-    /// </summary>
     public class GetAllMessagesResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<ChatMessage> Value {

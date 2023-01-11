@@ -4,9 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>
-    /// Provides operations to manage the collection of accessReviewDecision entities.
-    /// </summary>
     public class Contract : DirectoryObject, IParsable {
         /// <summary>The contractType property</summary>
         public string ContractType {
@@ -29,7 +26,7 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("displayName", value); }
         }
         /// <summary>
-        /// Instantiates a new contract and sets the default values.
+        /// Instantiates a new Contract and sets the default values.
         /// </summary>
         public Contract() : base() {
             OdataType = "#microsoft.graph.contract";

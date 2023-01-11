@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Possible values for monitoring file activity.</summary>
     public enum DefenderRealtimeScanDirection {
         /// <summary>0 (default) – Monitor all files(bi-directional)</summary>
         MonitorAllFiles,

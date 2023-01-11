@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Firewall rule traffic directions.</summary>
     public enum WindowsFirewallRuleTrafficDirectionType {
         /// <summary>Not configured.</summary>
         NotConfigured,

@@ -5,9 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.Item.GetRelatedAppStatesWithUserPrincipalNameWithDeviceId {
-    /// <summary>
-    /// Provides operations to call the getRelatedAppStates method.
-    /// </summary>
     public class GetRelatedAppStatesWithUserPrincipalNameWithDeviceIdResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<MobileAppRelationshipState> Value {

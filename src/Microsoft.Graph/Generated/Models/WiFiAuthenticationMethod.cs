@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Wi-Fi authentication method.</summary>
     public enum WiFiAuthenticationMethod {
         /// <summary>Use an identity certificate for authentication.</summary>
         Certificate,

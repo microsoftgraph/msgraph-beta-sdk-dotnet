@@ -5,9 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.DeviceManagement.ZebraFotaConnector.HasActiveDeployments {
-    /// <summary>
-    /// Provides operations to call the hasActiveDeployments method.
-    /// </summary>
     public class HasActiveDeploymentsResponse : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {

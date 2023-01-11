@@ -5,9 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Print.Reports.GetOffice365ServicesUserCountsWithPeriod {
-    /// <summary>
-    /// Provides operations to call the getOffice365ServicesUserCounts method.
-    /// </summary>
     public class GetOffice365ServicesUserCountsWithPeriodResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<Office365ServicesUserCounts> Value {

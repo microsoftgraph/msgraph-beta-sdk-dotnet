@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Possible values for LocalSecurityOptionsInformationDisplayedOnLockScreen</summary>
     public enum LocalSecurityOptionsInformationDisplayedOnLockScreenType {
         /// <summary>Not Configured</summary>
         NotConfigured,

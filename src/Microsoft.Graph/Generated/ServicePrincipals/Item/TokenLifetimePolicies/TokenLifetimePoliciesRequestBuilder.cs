@@ -61,8 +61,21 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.TokenLifetimePolicies {
         /// <summary>
         /// The tokenLifetimePolicies assigned to this service principal. Supports $expand.
         /// </summary>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        public RequestInformation CreateGetRequestInformation(Action<TokenLifetimePoliciesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
+        public async Task<TokenLifetimePolicyCollectionResponse> GetAsync(Action<TokenLifetimePoliciesRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+            var requestInfo = ToGetRequestInformation(requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<TokenLifetimePolicyCollectionResponse>(requestInfo, TokenLifetimePolicyCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+        }
+        /// <summary>
+        /// The tokenLifetimePolicies assigned to this service principal. Supports $expand.
+        /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        public RequestInformation ToGetRequestInformation(Action<TokenLifetimePoliciesRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
                 UrlTemplate = UrlTemplate,
@@ -77,19 +90,6 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.TokenLifetimePolicies {
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
             return requestInfo;
-        }
-        /// <summary>
-        /// The tokenLifetimePolicies assigned to this service principal. Supports $expand.
-        /// </summary>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        public async Task<TokenLifetimePolicyCollectionResponse> GetAsync(Action<TokenLifetimePoliciesRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
-            var requestInfo = CreateGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
-            };
-            return await RequestAdapter.SendAsync<TokenLifetimePolicyCollectionResponse>(requestInfo, TokenLifetimePolicyCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
         /// The tokenLifetimePolicies assigned to this service principal. Supports $expand.

@@ -5,9 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.TrustFramework.KeySets.Item.UploadSecret {
-    /// <summary>
-    /// Provides operations to call the uploadSecret method.
-    /// </summary>
     public class UploadSecretPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {

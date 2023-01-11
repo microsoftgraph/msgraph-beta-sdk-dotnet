@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>An enum representing the Android SafetyNet attestation evaluation types.</summary>
     public enum AndroidSafetyNetEvaluationType {
         /// <summary>Default value. Typical measurements and reference data were used.</summary>
         Basic,

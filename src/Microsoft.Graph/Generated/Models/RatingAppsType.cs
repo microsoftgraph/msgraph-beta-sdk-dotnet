@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Apps rating as in media content</summary>
     public enum RatingAppsType {
         /// <summary>Default value, allow all apps content</summary>
         AllAllowed,

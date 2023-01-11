@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Partner state of this tenant.</summary>
     public enum DeviceManagementPartnerTenantState {
         /// <summary>Partner state is unknown.</summary>
         Unknown,

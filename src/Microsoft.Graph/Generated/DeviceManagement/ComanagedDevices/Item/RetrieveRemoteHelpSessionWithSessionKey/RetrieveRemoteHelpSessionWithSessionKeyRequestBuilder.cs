@@ -51,8 +51,21 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.RetrieveRe
         /// <summary>
         /// Invoke function retrieveRemoteHelpSession
         /// </summary>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        public RequestInformation CreateGetRequestInformation(Action<RetrieveRemoteHelpSessionWithSessionKeyRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
+        public async Task<RetrieveRemoteHelpSessionResponse> GetAsync(Action<RetrieveRemoteHelpSessionWithSessionKeyRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+            var requestInfo = ToGetRequestInformation(requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<RetrieveRemoteHelpSessionResponse>(requestInfo, RetrieveRemoteHelpSessionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+        }
+        /// <summary>
+        /// Invoke function retrieveRemoteHelpSession
+        /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        public RequestInformation ToGetRequestInformation(Action<RetrieveRemoteHelpSessionWithSessionKeyRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
                 UrlTemplate = UrlTemplate,
@@ -66,19 +79,6 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.RetrieveRe
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
             return requestInfo;
-        }
-        /// <summary>
-        /// Invoke function retrieveRemoteHelpSession
-        /// </summary>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        public async Task<RetrieveRemoteHelpSessionResponse> GetAsync(Action<RetrieveRemoteHelpSessionWithSessionKeyRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
-            var requestInfo = CreateGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
-            };
-            return await RequestAdapter.SendAsync<RetrieveRemoteHelpSessionResponse>(requestInfo, RetrieveRemoteHelpSessionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

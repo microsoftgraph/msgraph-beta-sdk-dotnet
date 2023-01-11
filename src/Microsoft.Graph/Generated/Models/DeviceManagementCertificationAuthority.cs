@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Device Management Certification Authority Types.</summary>
     public enum DeviceManagementCertificationAuthority {
         /// <summary>Not configured.</summary>
         NotConfigured,

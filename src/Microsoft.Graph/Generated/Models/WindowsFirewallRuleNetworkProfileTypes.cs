@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Flags representing which network profile types apply to a firewall rule.</summary>
     public enum WindowsFirewallRuleNetworkProfileTypes {
         /// <summary>No flags set.</summary>
         NotConfigured,

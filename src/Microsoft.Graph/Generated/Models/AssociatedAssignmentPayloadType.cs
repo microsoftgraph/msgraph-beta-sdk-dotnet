@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>This enum represents associated assignment payload type</summary>
     public enum AssociatedAssignmentPayloadType {
         /// <summary>Invalid payload type</summary>
         Unknown,

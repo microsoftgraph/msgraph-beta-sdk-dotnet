@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>type tracking the encryption state of a secret setting value</summary>
     public enum DeviceManagementConfigurationSecretSettingValueState {
         /// <summary>default invalid value</summary>
         Invalid,

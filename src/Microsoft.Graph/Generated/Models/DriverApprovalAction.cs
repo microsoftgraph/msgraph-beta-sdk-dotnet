@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to call the executeAction method.</summary>
+    /// <summary>An enum type to represent approval actions of single or list of drivers.</summary>
     public enum DriverApprovalAction {
         /// <summary>This indicates the action to approve single or list of drivers.</summary>
         Approve,

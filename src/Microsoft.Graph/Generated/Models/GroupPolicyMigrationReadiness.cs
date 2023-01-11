@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Indicates if the Group Policy Object file is covered and ready for Intune migration.</summary>
     public enum GroupPolicyMigrationReadiness {
         /// <summary>No Intune coverage</summary>
         None,

@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Edition Upgrade License type</summary>
     public enum EditionUpgradeLicenseType {
         /// <summary>Product Key Type</summary>
         ProductKey,

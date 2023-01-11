@@ -5,9 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Me.Drives.Item.List.ContentTypes.GetCompatibleHubContentTypes {
-    /// <summary>
-    /// Provides operations to call the getCompatibleHubContentTypes method.
-    /// </summary>
     public class GetCompatibleHubContentTypesResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<ContentType> Value {

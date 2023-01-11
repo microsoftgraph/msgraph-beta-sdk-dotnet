@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Indicates the type of app that a VPN traffic rule is associated with.</summary>
     public enum VpnTrafficRuleAppType {
         /// <summary>The traffic rule is not associated with an app.</summary>
         None,

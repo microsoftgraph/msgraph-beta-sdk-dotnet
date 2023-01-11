@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Operator for rules.</summary>
     public enum Operator {
         /// <summary>None operator.</summary>
         None,

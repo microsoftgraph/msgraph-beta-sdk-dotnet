@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>ManagedInstallerStatus</summary>
     public enum ManagedInstallerStatus {
         /// <summary>Managed Installer is Disabled</summary>
         Disabled,

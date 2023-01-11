@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Forward Secrecy Group values for Windows10 VPN policies with IKEv2 connection type.</summary>
     public enum PerfectForwardSecrecyGroup {
         /// <summary>PFS1</summary>
         Pfs1,

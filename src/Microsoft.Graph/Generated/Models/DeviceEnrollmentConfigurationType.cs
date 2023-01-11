@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Describes the TemplateFamily for the Template entity</summary>
     public enum DeviceEnrollmentConfigurationType {
         /// <summary>Default. Set to unknown if the configuration type cannot be determined.</summary>
         Unknown,

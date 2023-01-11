@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>The enrollment token type for an enrollment profile.</summary>
     public enum AndroidDeviceOwnerEnrollmentTokenType {
         /// <summary>Default token type.</summary>
         Default,

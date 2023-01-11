@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to call the areGlobalScriptsAvailable method.</summary>
+    /// <summary>Indicates whether global device health scripts are enabled and are in which state</summary>
     public enum GlobalDeviceHealthScriptState {
         /// <summary>Global device health scripts are not configured</summary>
         NotConfigured,

@@ -60,9 +60,23 @@ namespace Microsoft.Graph.Beta.Me.People {
         }
         /// <summary>
         /// Retrieve a list of person objects ordered by their relevance to the user, which is determined by the user&apos;s communication and collaboration patterns, and business relationships.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/user-list-people?view=graph-rest-1.0" />
+        /// </summary>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        public async Task<PersonCollectionResponse> GetAsync(Action<PeopleRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+            var requestInfo = ToGetRequestInformation(requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<PersonCollectionResponse>(requestInfo, PersonCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+        }
+        /// <summary>
+        /// Retrieve a list of person objects ordered by their relevance to the user, which is determined by the user&apos;s communication and collaboration patterns, and business relationships.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        public RequestInformation CreateGetRequestInformation(Action<PeopleRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
+        public RequestInformation ToGetRequestInformation(Action<PeopleRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
                 UrlTemplate = UrlTemplate,
@@ -77,20 +91,6 @@ namespace Microsoft.Graph.Beta.Me.People {
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
             return requestInfo;
-        }
-        /// <summary>
-        /// Retrieve a list of person objects ordered by their relevance to the user, which is determined by the user&apos;s communication and collaboration patterns, and business relationships.
-        /// Find more info here <see href="https://docs.microsoft.com/graph/api/user-list-people?view=graph-rest-1.0" />
-        /// </summary>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        public async Task<PersonCollectionResponse> GetAsync(Action<PeopleRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
-            var requestInfo = CreateGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
-            };
-            return await RequestAdapter.SendAsync<PersonCollectionResponse>(requestInfo, PersonCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Retrieve a list of person objects ordered by their relevance to the user, which is determined by the user&apos;s communication and collaboration patterns, and business relationships.

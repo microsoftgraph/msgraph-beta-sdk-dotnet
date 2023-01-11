@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Device Exchange Access State.</summary>
     public enum DeviceManagementExchangeAccessState {
         /// <summary>No access state discovered from Exchange</summary>
         None,

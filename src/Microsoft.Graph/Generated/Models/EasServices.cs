@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Exchange Active Sync services.</summary>
     public enum EasServices {
         None,
         /// <summary>Enables synchronization of calendars.</summary>

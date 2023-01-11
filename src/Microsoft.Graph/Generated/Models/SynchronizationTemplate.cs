@@ -4,9 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>
-    /// Provides operations to manage the collection of activityStatistics entities.
-    /// </summary>
     public class SynchronizationTemplate : Entity, IParsable {
         /// <summary>Identifier of the application this template belongs to.</summary>
         public Guid? ApplicationId {

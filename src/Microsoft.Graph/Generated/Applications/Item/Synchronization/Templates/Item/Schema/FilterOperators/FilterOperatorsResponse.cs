@@ -5,9 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Applications.Item.Synchronization.Templates.Item.Schema.FilterOperators {
-    /// <summary>
-    /// Provides operations to call the filterOperators method.
-    /// </summary>
     public class FilterOperatorsResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<FilterOperatorSchema> Value {

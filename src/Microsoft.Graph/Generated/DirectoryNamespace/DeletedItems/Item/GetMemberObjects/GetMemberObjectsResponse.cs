@@ -5,9 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.DirectoryNamespace.DeletedItems.Item.GetMemberObjects {
-    /// <summary>
-    /// Provides operations to call the getMemberObjects method.
-    /// </summary>
     public class GetMemberObjectsResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<string> Value {

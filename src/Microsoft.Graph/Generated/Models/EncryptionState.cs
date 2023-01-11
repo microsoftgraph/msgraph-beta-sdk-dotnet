@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Encryption state</summary>
     public enum EncryptionState {
         /// <summary>Not encrypted</summary>
         NotEncrypted,

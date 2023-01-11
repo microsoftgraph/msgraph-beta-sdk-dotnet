@@ -4,9 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>
-    /// Provides operations to manage the collection of activityStatistics entities.
-    /// </summary>
     public class TodoTask : Entity, IParsable {
         /// <summary>A collection of file attachments for the task.</summary>
         public List<AttachmentBase> Attachments {

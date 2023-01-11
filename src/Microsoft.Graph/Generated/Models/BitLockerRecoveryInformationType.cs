@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>BitLockerRecoveryInformationType types</summary>
     public enum BitLockerRecoveryInformationType {
         /// <summary>Store recovery passwords and key packages.</summary>
         PasswordAndKey,

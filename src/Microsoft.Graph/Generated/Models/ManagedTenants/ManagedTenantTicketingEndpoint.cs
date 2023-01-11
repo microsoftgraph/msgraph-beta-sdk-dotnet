@@ -4,9 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
-    /// <summary>
-    /// Provides operations to manage the collection of activityStatistics entities.
-    /// </summary>
     public class ManagedTenantTicketingEndpoint : Entity, IParsable {
         /// <summary>The createdByUserId property</summary>
         public string CreatedByUserId {

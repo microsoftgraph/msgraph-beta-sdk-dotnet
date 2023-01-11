@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>An enum type to represent which category a driver belongs to.</summary>
     public enum DriverCategory {
         /// <summary>This indicates a driver is recommended by Microsoft.</summary>
         Recommended,

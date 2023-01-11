@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Type of accounts that are allowed to share the PC.</summary>
     public enum SharedPCAllowedAccountType {
         /// <summary>Not configured. Default value.</summary>
         NotConfigured,

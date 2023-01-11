@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Possible values of Android Kiosk Mode.</summary>
     public enum KioskModeType {
         /// <summary>Not configured</summary>
         NotConfigured,

@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Windows update for business configuration device states</summary>
     public enum WindowsUpdateStatus {
         /// <summary>There are no pending updates, no pending reboot updates and no failed updates.</summary>
         UpToDate,

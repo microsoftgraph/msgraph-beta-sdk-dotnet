@@ -4,9 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
-    /// <summary>
-    /// Provides operations to manage the collection of accessReviewDecision entities.
-    /// </summary>
     public class RetentionLabel : Entity, IParsable {
         /// <summary>Specifies the action to take on a document with this label applied during the retention period. The possible values are: none, delete, startDispositionReview, unknownFutureValue.</summary>
         public Microsoft.Graph.Beta.Models.Security.ActionAfterRetentionPeriod? ActionAfterRetentionPeriod {

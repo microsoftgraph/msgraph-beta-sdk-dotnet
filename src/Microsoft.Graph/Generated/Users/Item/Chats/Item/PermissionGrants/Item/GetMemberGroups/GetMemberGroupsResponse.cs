@@ -5,9 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Users.Item.Chats.Item.PermissionGrants.Item.GetMemberGroups {
-    /// <summary>
-    /// Provides operations to call the getMemberGroups method.
-    /// </summary>
     public class GetMemberGroupsResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<string> Value {

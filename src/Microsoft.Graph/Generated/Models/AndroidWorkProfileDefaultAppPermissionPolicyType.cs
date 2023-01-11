@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Android Work Profile default app permission policy type.</summary>
     public enum AndroidWorkProfileDefaultAppPermissionPolicyType {
         /// <summary>Device default value, no intent.</summary>
         DeviceDefault,

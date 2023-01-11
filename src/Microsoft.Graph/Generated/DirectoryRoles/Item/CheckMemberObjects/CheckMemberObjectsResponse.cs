@@ -5,9 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.DirectoryRoles.Item.CheckMemberObjects {
-    /// <summary>
-    /// Provides operations to call the checkMemberObjects method.
-    /// </summary>
     public class CheckMemberObjectsResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<string> Value {

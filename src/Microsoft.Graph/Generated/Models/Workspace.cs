@@ -4,9 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>
-    /// Provides operations to manage the collection of accessReviewDecision entities.
-    /// </summary>
     public class Workspace : Place, IParsable {
         /// <summary>Specifies the building name or building number that the workspace is in.</summary>
         public string Building {

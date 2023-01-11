@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Possible values for when accounts are deleted on a shared PC.</summary>
     public enum SharedPCAccountDeletionPolicyType {
         /// <summary>Delete immediately.</summary>
         Immediate,

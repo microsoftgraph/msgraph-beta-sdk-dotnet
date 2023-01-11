@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Admin consent state.</summary>
     public enum AdminConsentState {
         /// <summary>Admin did not configure the item</summary>
         NotConfigured,

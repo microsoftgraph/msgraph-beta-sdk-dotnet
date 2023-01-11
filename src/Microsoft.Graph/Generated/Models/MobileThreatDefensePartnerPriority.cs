@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Determines the conflict resolution strategy, when more than one Mobile Threat Defense provider is enabled.</summary>
     public enum MobileThreatDefensePartnerPriority {
         /// <summary>Indicates use of Microsoft Defender Endpoint over 3rd party MTD connectors</summary>
         DefenderOverThirdPartyPartner,

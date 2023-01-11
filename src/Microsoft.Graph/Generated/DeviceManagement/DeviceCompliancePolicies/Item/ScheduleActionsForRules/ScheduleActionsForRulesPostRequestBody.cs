@@ -6,9 +6,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.Item.ScheduleActionsForRules {
-    /// <summary>
-    /// Provides operations to call the scheduleActionsForRules method.
-    /// </summary>
     public class ScheduleActionsForRulesPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {

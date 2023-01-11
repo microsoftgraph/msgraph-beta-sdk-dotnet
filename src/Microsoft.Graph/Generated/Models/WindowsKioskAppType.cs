@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>The type of Windows kiosk app.</summary>
     public enum WindowsKioskAppType {
         /// <summary>Unknown.</summary>
         Unknown,

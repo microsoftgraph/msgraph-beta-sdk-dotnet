@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Power action types</summary>
     public enum PowerActionType {
         /// <summary>Not configured</summary>
         NotConfigured,

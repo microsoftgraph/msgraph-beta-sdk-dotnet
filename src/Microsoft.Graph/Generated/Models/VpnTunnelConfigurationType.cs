@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>The type of tunnels that will be present to the VPN client for configuration</summary>
     public enum VpnTunnelConfigurationType {
         /// <summary>WiFi and Cellular Tunnels</summary>
         WifiAndCellular,

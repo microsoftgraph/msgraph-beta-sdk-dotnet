@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Auto restart required notification dismissal method</summary>
     public enum AutoRestartNotificationDismissalMethod {
         /// <summary>Not configured</summary>
         NotConfigured,

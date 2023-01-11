@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Determines how content caches select a parent cache.</summary>
     public enum MacOSContentCachingParentSelectionPolicy {
         /// <summary>Defaults to round-robin strategy.</summary>
         NotConfigured,

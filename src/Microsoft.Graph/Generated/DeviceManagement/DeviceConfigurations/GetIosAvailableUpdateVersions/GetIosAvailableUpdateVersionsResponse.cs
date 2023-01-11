@@ -5,9 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.GetIosAvailableUpdateVersions {
-    /// <summary>
-    /// Provides operations to call the getIosAvailableUpdateVersions method.
-    /// </summary>
     public class GetIosAvailableUpdateVersionsResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<IosAvailableUpdateVersion> Value {

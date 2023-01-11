@@ -6,9 +6,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Connections.Item.Items.Item.AddActivities {
-    /// <summary>
-    /// Provides operations to call the addActivities method.
-    /// </summary>
     public class AddActivitiesPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>The activities property</summary>
         public List<ExternalActivity> Activities {

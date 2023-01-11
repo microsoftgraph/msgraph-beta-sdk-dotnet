@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Domainname source.</summary>
     public enum DomainNameSource {
         /// <summary>Full domain name.</summary>
         FullDomainName,

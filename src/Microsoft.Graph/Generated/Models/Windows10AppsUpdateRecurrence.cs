@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Possible values for App update on Windows10 recurrence.</summary>
     public enum Windows10AppsUpdateRecurrence {
         /// <summary>Default value, specifies a single occurence.</summary>
         None,

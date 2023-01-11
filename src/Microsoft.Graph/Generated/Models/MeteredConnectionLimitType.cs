@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Metered Connection Limit Settings.</summary>
     public enum MeteredConnectionLimitType {
         /// <summary>Unrestricted</summary>
         Unrestricted,

@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Contains value for delivery optimization priority.</summary>
     public enum Win32LobAppDeliveryOptimizationPriority {
         /// <summary>Not configured or background normal delivery optimization priority.</summary>
         NotConfigured,

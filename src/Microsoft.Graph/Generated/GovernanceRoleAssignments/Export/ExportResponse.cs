@@ -5,9 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.GovernanceRoleAssignments.Export {
-    /// <summary>
-    /// Provides operations to call the export method.
-    /// </summary>
     public class ExportResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<string> Value {

@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Non-EAP methods for authentication when PEAP is the selected EAP type.</summary>
     public enum NonEapAuthenticationMethodForPeap {
         /// <summary>None.</summary>
         None,

@@ -54,8 +54,21 @@ namespace Microsoft.Graph.Beta.DirectoryRoles.Item.Members.OrgContact {
         /// <summary>
         /// Get the items of type microsoft.graph.orgContact in the microsoft.graph.directoryObject collection
         /// </summary>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        public RequestInformation CreateGetRequestInformation(Action<OrgContactRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
+        public async Task<OrgContactCollectionResponse> GetAsync(Action<OrgContactRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+            var requestInfo = ToGetRequestInformation(requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<OrgContactCollectionResponse>(requestInfo, OrgContactCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+        }
+        /// <summary>
+        /// Get the items of type microsoft.graph.orgContact in the microsoft.graph.directoryObject collection
+        /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        public RequestInformation ToGetRequestInformation(Action<OrgContactRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
                 UrlTemplate = UrlTemplate,
@@ -70,19 +83,6 @@ namespace Microsoft.Graph.Beta.DirectoryRoles.Item.Members.OrgContact {
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
             return requestInfo;
-        }
-        /// <summary>
-        /// Get the items of type microsoft.graph.orgContact in the microsoft.graph.directoryObject collection
-        /// </summary>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        public async Task<OrgContactCollectionResponse> GetAsync(Action<OrgContactRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
-            var requestInfo = CreateGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
-            };
-            return await RequestAdapter.SendAsync<OrgContactCollectionResponse>(requestInfo, OrgContactCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Get the items of type microsoft.graph.orgContact in the microsoft.graph.directoryObject collection

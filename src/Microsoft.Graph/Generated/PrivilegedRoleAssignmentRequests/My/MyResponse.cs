@@ -5,9 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.PrivilegedRoleAssignmentRequests.My {
-    /// <summary>
-    /// Provides operations to call the my method.
-    /// </summary>
     public class MyResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<PrivilegedRoleAssignmentRequest> Value {

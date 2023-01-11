@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>The classes of apps that are allowed to click-to-open a phone number, for making phone calls or sending text messages.</summary>
     public enum ManagedAppPhoneNumberRedirectLevel {
         /// <summary>Sharing is allowed to all apps.</summary>
         AllApps,

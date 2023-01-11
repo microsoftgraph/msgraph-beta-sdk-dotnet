@@ -5,9 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Reports.Security.GetAttackSimulationSimulationUserCoverage {
-    /// <summary>
-    /// Provides operations to call the getAttackSimulationSimulationUserCoverage method.
-    /// </summary>
     public class GetAttackSimulationSimulationUserCoverageResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<AttackSimulationSimulationUserCoverage> Value {

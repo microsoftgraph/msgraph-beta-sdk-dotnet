@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Specifies the routing policy for a VPN traffic rule.</summary>
     public enum VpnTrafficRuleRoutingPolicyType {
         /// <summary>No routing policy specified.</summary>
         None,

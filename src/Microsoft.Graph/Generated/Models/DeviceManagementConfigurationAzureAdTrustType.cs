@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Required AAD Trust Type</summary>
     public enum DeviceManagementConfigurationAzureAdTrustType {
         /// <summary>No AAD Trust Type specified</summary>
         None,

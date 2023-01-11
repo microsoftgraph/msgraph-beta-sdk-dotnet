@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Describes current lifecycle state of a template</summary>
     public enum DeviceManagementTemplateLifecycleState {
         /// <summary>Invalid</summary>
         Invalid,

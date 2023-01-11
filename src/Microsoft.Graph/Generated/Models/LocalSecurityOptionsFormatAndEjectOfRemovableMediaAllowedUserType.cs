@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Possible values for LocalSecurityOptionsFormatAndEjectOfRemovableMediaAllowedUser</summary>
     public enum LocalSecurityOptionsFormatAndEjectOfRemovableMediaAllowedUserType {
         /// <summary>Not Configured</summary>
         NotConfigured,

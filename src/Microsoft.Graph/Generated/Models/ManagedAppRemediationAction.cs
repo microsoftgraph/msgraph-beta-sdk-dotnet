@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>An admin initiated action to be applied on a managed app.</summary>
     public enum ManagedAppRemediationAction {
         /// <summary>app and the corresponding company data to be blocked</summary>
         Block,

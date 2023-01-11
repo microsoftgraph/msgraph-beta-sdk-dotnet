@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Describes the various states for an embedded SIM activation code.</summary>
     public enum EmbeddedSIMDeviceStateValue {
         /// <summary>Designates that the embedded SIM activation code is free and available to be assigned to a device.</summary>
         NotEvaluated,

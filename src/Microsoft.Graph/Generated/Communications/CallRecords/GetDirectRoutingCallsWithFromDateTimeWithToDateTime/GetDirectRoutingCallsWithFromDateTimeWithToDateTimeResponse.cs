@@ -6,9 +6,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Communications.CallRecords.GetDirectRoutingCallsWithFromDateTimeWithToDateTime {
-    /// <summary>
-    /// Provides operations to call the getDirectRoutingCalls method.
-    /// </summary>
     public class GetDirectRoutingCallsWithFromDateTimeWithToDateTimeResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<DirectRoutingLogRow> Value {

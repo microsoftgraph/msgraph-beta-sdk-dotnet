@@ -5,9 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.InformationProtection.Policy.Labels.EvaluateRemoval {
-    /// <summary>
-    /// Provides operations to call the evaluateRemoval method.
-    /// </summary>
     public class EvaluateRemovalResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<InformationProtectionAction> Value {

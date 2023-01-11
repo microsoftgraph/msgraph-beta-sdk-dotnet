@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Represents the payload type AssignmentFilter is being assigned to.</summary>
     public enum AssignmentFilterPayloadType {
         /// <summary>NotSet</summary>
         NotSet,

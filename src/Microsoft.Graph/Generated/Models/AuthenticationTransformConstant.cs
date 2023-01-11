@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Authentication transform values for Windows10 VPN policies with IKEv2 connection type.</summary>
     public enum AuthenticationTransformConstant {
         /// <summary>MD596</summary>
         Md5_96,

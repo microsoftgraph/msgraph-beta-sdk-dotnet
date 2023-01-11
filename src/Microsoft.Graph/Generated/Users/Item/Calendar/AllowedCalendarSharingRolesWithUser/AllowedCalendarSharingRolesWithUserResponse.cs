@@ -5,9 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Users.Item.Calendar.AllowedCalendarSharingRolesWithUser {
-    /// <summary>
-    /// Provides operations to call the allowedCalendarSharingRoles method.
-    /// </summary>
     public class AllowedCalendarSharingRolesWithUserResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<CalendarRoleType?> Value {

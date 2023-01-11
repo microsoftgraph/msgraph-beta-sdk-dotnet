@@ -6,9 +6,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Groups.Item.Team.SendActivityNotification {
-    /// <summary>
-    /// Provides operations to call the sendActivityNotification method.
-    /// </summary>
     public class SendActivityNotificationPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>The activityType property</summary>
         public string ActivityType {

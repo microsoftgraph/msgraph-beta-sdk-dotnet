@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>App source options for iOS kiosk mode.</summary>
     public enum IosKioskModeAppType {
         /// <summary>Device default value, no intent.</summary>
         NotConfigured,

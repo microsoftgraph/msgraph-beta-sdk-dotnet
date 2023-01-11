@@ -5,9 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.DeviceManagement.ImportedDeviceIdentities.ImportDeviceIdentityList {
-    /// <summary>
-    /// Provides operations to call the importDeviceIdentityList method.
-    /// </summary>
     public class ImportDeviceIdentityListResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<ImportedDeviceIdentityResult> Value {

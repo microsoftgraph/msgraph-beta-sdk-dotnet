@@ -5,9 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.IdentityGovernance.AccessReviews.Definitions.FilterByCurrentUserWithOn {
-    /// <summary>
-    /// Provides operations to call the filterByCurrentUser method.
-    /// </summary>
     public class FilterByCurrentUserWithOnResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<AccessReviewScheduleDefinition> Value {

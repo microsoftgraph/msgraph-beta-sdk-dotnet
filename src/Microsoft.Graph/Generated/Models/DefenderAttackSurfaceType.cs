@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Possible values of Defender Attack Surface Reduction Rules</summary>
     public enum DefenderAttackSurfaceType {
         /// <summary>Default, which disables attack surface reduction rule.</summary>
         UserDefined,

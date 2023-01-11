@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Type of browsing data sent to Microsoft 365 analytics</summary>
     public enum EdgeTelemetryMode {
         /// <summary>Default – No telemetry data collected or sent</summary>
         NotConfigured,

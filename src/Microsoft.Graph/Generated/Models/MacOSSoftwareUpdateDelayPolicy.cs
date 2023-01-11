@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Flag enum to determine whether to delay software updates for macOS.</summary>
     public enum MacOSSoftwareUpdateDelayPolicy {
         /// <summary>Software update delays will not be enforced.</summary>
         None,

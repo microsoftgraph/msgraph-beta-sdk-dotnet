@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Work From Anywhere windows device upgrade eligibility status</summary>
     public enum OperatingSystemUpgradeEligibility {
         /// <summary>The device is upgraded to latest version of windows</summary>
         Upgraded,

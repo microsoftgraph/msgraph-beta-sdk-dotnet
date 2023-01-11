@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>The VPN action to take for a specific service.</summary>
     public enum VpnServiceExceptionAction {
         /// <summary>Make all traffic from that service go through the VPN</summary>
         ForceTrafficViaVPN,

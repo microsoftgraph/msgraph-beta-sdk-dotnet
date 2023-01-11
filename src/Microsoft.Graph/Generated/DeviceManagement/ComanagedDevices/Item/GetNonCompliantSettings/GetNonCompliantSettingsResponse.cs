@@ -5,9 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.GetNonCompliantSettings {
-    /// <summary>
-    /// Provides operations to call the getNonCompliantSettings method.
-    /// </summary>
     public class GetNonCompliantSettingsResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<DeviceCompliancePolicySettingState> Value {

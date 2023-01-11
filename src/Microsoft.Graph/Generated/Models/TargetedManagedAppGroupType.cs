@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Indicates a collection of apps to target which can be one of several pre-defined lists of apps or a manually selected list of apps</summary>
     public enum TargetedManagedAppGroupType {
         /// <summary>Target the collection of apps manually selected by the admin.</summary>
         SelectedPublicApps,

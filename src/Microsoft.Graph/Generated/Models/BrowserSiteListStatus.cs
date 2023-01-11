@@ -1,5 +1,4 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the admin singleton.</summary>
     public enum BrowserSiteListStatus {
         /// <summary>A site list that has not yet been published</summary>
         Draft,

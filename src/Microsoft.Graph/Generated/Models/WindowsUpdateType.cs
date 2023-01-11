@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Which branch devices will receive their updates from</summary>
     public enum WindowsUpdateType {
         /// <summary>Allow the user to set.</summary>
         UserDefined,

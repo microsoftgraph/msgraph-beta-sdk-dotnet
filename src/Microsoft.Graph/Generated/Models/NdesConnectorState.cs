@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>The current status of the Ndes Connector.</summary>
     public enum NdesConnectorState {
         /// <summary>State not available yet for this connector.</summary>
         None,

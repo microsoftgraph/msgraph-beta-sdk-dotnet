@@ -4,9 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>
-    /// Provides operations to manage the collection of activityStatistics entities.
-    /// </summary>
     public class OnlineMeeting : Entity, IParsable {
         /// <summary>Indicates whether attendees can turn on their camera.</summary>
         public bool? AllowAttendeeToEnableCamera {
@@ -98,7 +95,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<ItemBody>("joinInformation"); }
             set { BackingStore?.Set("joinInformation", value); }
         }
-        /// <summary>Specifies the joinMeetingId, the meeting passcode, and the requirement for the passcode.</summary>
+        /// <summary>Specifies the joinMeetingId, the meeting passcode, and the requirement for the passcode. Once an onlineMeeting is created, the joinMeetingIdSettings cannot be modified. To make any changes to this property, the meeting needs to be canceled and a new one needs to be created.</summary>
         public Microsoft.Graph.Beta.Models.JoinMeetingIdSettings JoinMeetingIdSettings {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.JoinMeetingIdSettings>("joinMeetingIdSettings"); }
             set { BackingStore?.Set("joinMeetingIdSettings", value); }

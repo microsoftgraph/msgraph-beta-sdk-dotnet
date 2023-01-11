@@ -5,9 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.BookingBusinesses.Item.GetStaffAvailability {
-    /// <summary>
-    /// Provides operations to call the getStaffAvailability method.
-    /// </summary>
     public class GetStaffAvailabilityResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<StaffAvailabilityItem> Value {

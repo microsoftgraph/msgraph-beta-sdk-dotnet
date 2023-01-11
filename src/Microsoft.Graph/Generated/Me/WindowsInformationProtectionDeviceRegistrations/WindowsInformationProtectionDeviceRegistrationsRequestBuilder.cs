@@ -61,8 +61,21 @@ namespace Microsoft.Graph.Beta.Me.WindowsInformationProtectionDeviceRegistration
         /// <summary>
         /// Zero or more WIP device registrations that belong to the user.
         /// </summary>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        public RequestInformation CreateGetRequestInformation(Action<WindowsInformationProtectionDeviceRegistrationsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
+        public async Task<WindowsInformationProtectionDeviceRegistrationCollectionResponse> GetAsync(Action<WindowsInformationProtectionDeviceRegistrationsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+            var requestInfo = ToGetRequestInformation(requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<WindowsInformationProtectionDeviceRegistrationCollectionResponse>(requestInfo, WindowsInformationProtectionDeviceRegistrationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+        }
+        /// <summary>
+        /// Zero or more WIP device registrations that belong to the user.
+        /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        public RequestInformation ToGetRequestInformation(Action<WindowsInformationProtectionDeviceRegistrationsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.GET,
                 UrlTemplate = UrlTemplate,
@@ -77,19 +90,6 @@ namespace Microsoft.Graph.Beta.Me.WindowsInformationProtectionDeviceRegistration
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
             return requestInfo;
-        }
-        /// <summary>
-        /// Zero or more WIP device registrations that belong to the user.
-        /// </summary>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        public async Task<WindowsInformationProtectionDeviceRegistrationCollectionResponse> GetAsync(Action<WindowsInformationProtectionDeviceRegistrationsRequestBuilderGetRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
-            var requestInfo = CreateGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
-            };
-            return await RequestAdapter.SendAsync<WindowsInformationProtectionDeviceRegistrationCollectionResponse>(requestInfo, WindowsInformationProtectionDeviceRegistrationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Zero or more WIP device registrations that belong to the user.

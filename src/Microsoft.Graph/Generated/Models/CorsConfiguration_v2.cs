@@ -4,9 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>
-    /// Provides operations to manage the collection of activityStatistics entities.
-    /// </summary>
     public class CorsConfiguration_v2 : Entity, IParsable {
         /// <summary>The allowedHeaders property</summary>
         public List<string> AllowedHeaders {

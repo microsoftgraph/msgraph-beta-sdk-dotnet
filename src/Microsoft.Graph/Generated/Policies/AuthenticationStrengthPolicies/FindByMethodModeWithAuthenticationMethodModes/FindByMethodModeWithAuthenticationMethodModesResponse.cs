@@ -5,9 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Policies.AuthenticationStrengthPolicies.FindByMethodModeWithAuthenticationMethodModes {
-    /// <summary>
-    /// Provides operations to call the findByMethodMode method.
-    /// </summary>
     public class FindByMethodModeWithAuthenticationMethodModesResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<AuthenticationStrengthPolicy> Value {

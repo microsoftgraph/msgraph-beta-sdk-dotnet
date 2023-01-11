@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Describes the OfficeSuiteApp file format types that can be selected.</summary>
     public enum OfficeSuiteDefaultFileFormatType {
         /// <summary>No file format selected</summary>
         NotConfigured,

@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Android Device Owner Play Store mode type.</summary>
     public enum AndroidDeviceOwnerPlayStoreMode {
         /// <summary>Not Configured</summary>
         NotConfigured,

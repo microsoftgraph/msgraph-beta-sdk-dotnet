@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Flag enum representing the allowed macOS system extension types.</summary>
     public enum MacOSSystemExtensionType {
         /// <summary>Enables driver extensions.</summary>
         DriverExtensionsAllowed,

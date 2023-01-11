@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>The ODJ request states.</summary>
     public enum DeviceManagementDomainJoinConnectorState {
         /// <summary>Connector is actively pinging Intune.</summary>
         Active,

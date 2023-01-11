@@ -4,9 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>
-    /// Provides operations to manage the collection of accessReviewDecision entities.
-    /// </summary>
     public class ExactMatchDataStoreBase : Entity, IParsable {
         /// <summary>The columns property</summary>
         public List<ExactDataMatchStoreColumn> Columns {

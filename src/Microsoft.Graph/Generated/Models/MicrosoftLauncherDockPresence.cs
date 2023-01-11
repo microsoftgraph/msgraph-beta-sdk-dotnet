@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Microsoft Launcher Dock Presence selection.</summary>
     public enum MicrosoftLauncherDockPresence {
         /// <summary>Not configured; this value is ignored.</summary>
         NotConfigured,

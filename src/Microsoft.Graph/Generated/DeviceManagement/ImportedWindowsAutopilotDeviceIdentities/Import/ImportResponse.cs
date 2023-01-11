@@ -5,9 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.DeviceManagement.ImportedWindowsAutopilotDeviceIdentities.Import {
-    /// <summary>
-    /// Provides operations to call the import method.
-    /// </summary>
     public class ImportResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<ImportedWindowsAutopilotDeviceIdentity> Value {

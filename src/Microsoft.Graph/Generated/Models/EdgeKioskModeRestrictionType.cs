@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Specify how the Microsoft Edge settings are restricted based on kiosk mode.</summary>
     public enum EdgeKioskModeRestrictionType {
         /// <summary>Not configured (unrestricted).</summary>
         NotConfigured,

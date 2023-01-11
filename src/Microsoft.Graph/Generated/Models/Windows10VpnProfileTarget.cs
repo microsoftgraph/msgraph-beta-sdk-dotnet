@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Windows 10 VPN profile target types.</summary>
     public enum Windows10VpnProfileTarget {
         /// <summary>User targeted VPN profile.</summary>
         User,

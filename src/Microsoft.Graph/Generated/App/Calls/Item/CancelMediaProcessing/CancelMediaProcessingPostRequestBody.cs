@@ -5,9 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.App.Calls.Item.CancelMediaProcessing {
-    /// <summary>
-    /// Provides operations to call the cancelMediaProcessing method.
-    /// </summary>
     public class CancelMediaProcessingPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {

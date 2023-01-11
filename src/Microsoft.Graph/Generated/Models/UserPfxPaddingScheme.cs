@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Supported values for the padding scheme used by encryption provider.</summary>
     public enum UserPfxPaddingScheme {
         /// <summary>Unknown padding Scheme.</summary>
         None,

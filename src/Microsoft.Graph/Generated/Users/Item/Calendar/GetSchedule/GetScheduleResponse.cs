@@ -5,9 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Users.Item.Calendar.GetSchedule {
-    /// <summary>
-    /// Provides operations to call the getSchedule method.
-    /// </summary>
     public class GetScheduleResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<ScheduleInformation> Value {

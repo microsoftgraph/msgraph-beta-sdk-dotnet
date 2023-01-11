@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Windows quality update classification</summary>
     public enum WindowsQualityUpdateClassification {
         /// <summary>All update type</summary>
         All,

@@ -5,9 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Print.Reports.GetOffice365GroupsActivityDetailWithDate {
-    /// <summary>
-    /// Provides operations to call the getOffice365GroupsActivityDetail method.
-    /// </summary>
     public class GetOffice365GroupsActivityDetailWithDateResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<Office365GroupsActivityDetail> Value {

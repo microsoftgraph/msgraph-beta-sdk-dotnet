@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Possible values for firewallPacketQueueingMethod</summary>
     public enum FirewallPacketQueueingMethodType {
         /// <summary>No value configured by Intune, do not override the user-configured device default value</summary>
         DeviceDefault,

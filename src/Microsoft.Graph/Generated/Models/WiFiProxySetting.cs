@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Wi-Fi Proxy Settings.</summary>
     public enum WiFiProxySetting {
         /// <summary>No Proxy.</summary>
         None,

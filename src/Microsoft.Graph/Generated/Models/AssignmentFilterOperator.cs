@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to call the getSupportedProperties method.</summary>
+    /// <summary>Represents the different type of operators which can be used to craft the AssignmentFilter rule.</summary>
     public enum AssignmentFilterOperator {
         /// <summary>NotSet.</summary>
         NotSet,

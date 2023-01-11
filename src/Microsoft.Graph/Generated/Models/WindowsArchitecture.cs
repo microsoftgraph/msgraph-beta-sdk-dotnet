@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Contains properties for Windows architecture.</summary>
     public enum WindowsArchitecture {
         /// <summary>No flags set.</summary>
         None,

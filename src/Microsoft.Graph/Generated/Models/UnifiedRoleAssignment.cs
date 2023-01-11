@@ -4,9 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>
-    /// Provides operations to manage the collection of activityStatistics entities.
-    /// </summary>
     public class UnifiedRoleAssignment : Entity, IParsable {
         /// <summary>Details of the app specific scope when the assignment scope is app specific. Containment entity.</summary>
         public Microsoft.Graph.Beta.Models.AppScope AppScope {

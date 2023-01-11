@@ -5,9 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.DeviceManagement.AuditEvents.GetAuditCategories {
-    /// <summary>
-    /// Provides operations to call the getAuditCategories method.
-    /// </summary>
     public class GetAuditCategoriesResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<string> Value {

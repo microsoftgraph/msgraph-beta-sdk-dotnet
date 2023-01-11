@@ -4,9 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>
-    /// Provides operations to manage the admin singleton.
-    /// </summary>
     public class ServiceAnnouncementBase : Entity, IParsable {
         /// <summary>Additional details about service event. This property doesn&apos;t support filters.</summary>
         public List<KeyValuePair> Details {

@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Possible values of the DmaGuardDeviceEnumerationPolicy.</summary>
     public enum DmaGuardDeviceEnumerationPolicyType {
         /// <summary>Default value. Devices with DMA remapping incompatible drivers will only be enumerated after the user unlocks the screen.</summary>
         DeviceDefault,

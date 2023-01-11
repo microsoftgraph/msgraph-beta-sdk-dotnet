@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>An enum type for wallpaper display location specifier.</summary>
     public enum IosWallpaperDisplayLocation {
         /// <summary>No location specified for wallpaper display.</summary>
         NotConfigured,
