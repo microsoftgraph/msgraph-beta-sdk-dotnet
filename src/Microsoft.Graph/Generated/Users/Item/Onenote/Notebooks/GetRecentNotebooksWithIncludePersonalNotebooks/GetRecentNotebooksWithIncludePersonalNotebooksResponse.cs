@@ -5,9 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Users.Item.Onenote.Notebooks.GetRecentNotebooksWithIncludePersonalNotebooks {
-    /// <summary>
-    /// Provides operations to call the getRecentNotebooks method.
-    /// </summary>
     public class GetRecentNotebooksWithIncludePersonalNotebooksResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<RecentNotebook> Value {

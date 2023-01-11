@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Provider type for Derived Credentials.</summary>
     public enum DerivedCredentialProviderType {
         /// <summary>No Derived Credential Provider Configured.</summary>
         NotConfigured,

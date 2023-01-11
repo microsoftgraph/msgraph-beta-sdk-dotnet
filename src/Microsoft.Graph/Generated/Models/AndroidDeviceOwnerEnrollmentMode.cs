@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>The enrollment mode for an enrollment profile.</summary>
     public enum AndroidDeviceOwnerEnrollmentMode {
         CorporateOwnedDedicatedDevice,
         CorporateOwnedFullyManaged,

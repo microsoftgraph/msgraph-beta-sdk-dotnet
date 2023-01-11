@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Management agent type.</summary>
     public enum ManagementAgentType {
         /// <summary>The device is managed by Exchange server.</summary>
         Eas,

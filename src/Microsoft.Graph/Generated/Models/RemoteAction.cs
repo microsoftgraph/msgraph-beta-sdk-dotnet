@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Remote actions Intune supports.</summary>
     public enum RemoteAction {
         /// <summary>Indicate user initiates an unknown action.</summary>
         Unknown,

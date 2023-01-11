@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>VPN Authentication Method.</summary>
     public enum VpnAuthenticationMethod {
         /// <summary>Authenticate with a certificate.</summary>
         Certificate,

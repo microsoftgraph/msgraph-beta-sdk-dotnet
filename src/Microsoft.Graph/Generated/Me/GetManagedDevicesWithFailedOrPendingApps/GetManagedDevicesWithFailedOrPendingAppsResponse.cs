@@ -5,9 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Me.GetManagedDevicesWithFailedOrPendingApps {
-    /// <summary>
-    /// Provides operations to call the getManagedDevicesWithFailedOrPendingApps method.
-    /// </summary>
     public class GetManagedDevicesWithFailedOrPendingAppsResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<ManagedDeviceSummarizedAppState> Value {

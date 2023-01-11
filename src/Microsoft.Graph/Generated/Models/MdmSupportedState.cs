@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Mdm Support Status of the setting.</summary>
     public enum MdmSupportedState {
         /// <summary>Mdm support status of the setting is not known.</summary>
         Unknown,

@@ -6,9 +6,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.Tags.AsHierarchy {
-    /// <summary>
-    /// Provides operations to call the asHierarchy method.
-    /// </summary>
     public class AsHierarchyResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<EdiscoveryReviewTag> Value {

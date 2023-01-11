@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Possible values for DefenderSubmitSamplesConsentType</summary>
     public enum DefenderSubmitSamplesConsentType {
         /// <summary>Send safe samples automatically</summary>
         SendSafeSamplesAutomatically,

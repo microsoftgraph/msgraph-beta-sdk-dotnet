@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Restricted apps state</summary>
     public enum RestrictedAppsState {
         /// <summary>Prohibited apps</summary>
         ProhibitedApps,

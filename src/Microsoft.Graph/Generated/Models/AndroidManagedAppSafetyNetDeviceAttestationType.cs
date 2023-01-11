@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>An admin enforced Android SafetyNet Device Attestation requirement on a managed app.</summary>
     public enum AndroidManagedAppSafetyNetDeviceAttestationType {
         /// <summary>no requirement set</summary>
         None,

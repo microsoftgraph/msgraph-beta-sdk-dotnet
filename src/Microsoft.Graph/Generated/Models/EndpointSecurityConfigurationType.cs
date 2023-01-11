@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>The endpoint security policy type.</summary>
     public enum EndpointSecurityConfigurationType {
         /// <summary>Unknown.</summary>
         Unknown,

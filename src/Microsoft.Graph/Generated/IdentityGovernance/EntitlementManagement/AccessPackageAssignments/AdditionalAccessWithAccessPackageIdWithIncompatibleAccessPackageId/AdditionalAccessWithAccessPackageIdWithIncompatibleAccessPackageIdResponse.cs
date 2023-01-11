@@ -5,9 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackageAssignments.AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageId {
-    /// <summary>
-    /// Provides operations to call the additionalAccess method.
-    /// </summary>
     public class AdditionalAccessWithAccessPackageIdWithIncompatibleAccessPackageIdResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<Microsoft.Graph.Beta.Models.AccessPackageAssignment> Value {

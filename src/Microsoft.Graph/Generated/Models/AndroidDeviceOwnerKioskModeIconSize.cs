@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Android Device Owner Kiosk Mode managed home screen icon size.</summary>
     public enum AndroidDeviceOwnerKioskModeIconSize {
         /// <summary>Not configured; this value is ignored.</summary>
         NotConfigured,

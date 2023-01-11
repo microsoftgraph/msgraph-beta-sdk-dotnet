@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Template type</summary>
     public enum DeviceManagementTemplateType {
         /// <summary>Security baseline template</summary>
         SecurityBaseline,

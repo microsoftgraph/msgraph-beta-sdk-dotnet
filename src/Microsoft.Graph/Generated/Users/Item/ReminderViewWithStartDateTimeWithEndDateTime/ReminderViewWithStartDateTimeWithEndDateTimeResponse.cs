@@ -5,9 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Users.Item.ReminderViewWithStartDateTimeWithEndDateTime {
-    /// <summary>
-    /// Provides operations to call the reminderView method.
-    /// </summary>
     public class ReminderViewWithStartDateTimeWithEndDateTimeResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<Reminder> Value {

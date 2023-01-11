@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>The administrator intent for the assignment of the profile.</summary>
     public enum DeviceManagementResourceAccessProfileIntent {
         /// <summary>Apply the profile.</summary>
         Apply,

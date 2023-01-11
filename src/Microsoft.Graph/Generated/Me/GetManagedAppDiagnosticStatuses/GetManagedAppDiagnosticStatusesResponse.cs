@@ -5,9 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Me.GetManagedAppDiagnosticStatuses {
-    /// <summary>
-    /// Provides operations to call the getManagedAppDiagnosticStatuses method.
-    /// </summary>
     public class GetManagedAppDiagnosticStatusesResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<ManagedAppDiagnosticStatus> Value {

@@ -4,9 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>
-    /// Provides operations to manage the collection of accessReview entities.
-    /// </summary>
     public class HorizontalSectionColumn : Entity, IParsable {
         /// <summary>The collection of WebParts in this column.</summary>
         public List<WebPart> Webparts {

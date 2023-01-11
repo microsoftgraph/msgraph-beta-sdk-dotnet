@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Models and Manufactures meatadata for managed devices in the account</summary>
     public enum WarrantyType {
         /// <summary>Unknown warranty type</summary>
         Unknown,

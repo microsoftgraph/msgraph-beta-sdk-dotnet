@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Possible values for site security level.</summary>
     public enum SiteSecurityLevel {
         /// <summary>User Defined, default value, no intent.</summary>
         UserDefined,

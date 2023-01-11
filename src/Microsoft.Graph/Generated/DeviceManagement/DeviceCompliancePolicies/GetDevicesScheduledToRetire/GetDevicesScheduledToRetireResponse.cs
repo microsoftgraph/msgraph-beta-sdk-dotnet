@@ -5,9 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCompliancePolicies.GetDevicesScheduledToRetire {
-    /// <summary>
-    /// Provides operations to call the getDevicesScheduledToRetire method.
-    /// </summary>
     public class GetDevicesScheduledToRetireResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<RetireScheduledManagedDevice> Value {

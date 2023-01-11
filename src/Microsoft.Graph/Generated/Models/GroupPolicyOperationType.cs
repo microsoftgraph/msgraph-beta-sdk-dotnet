@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Type of Group Policy operation.</summary>
     public enum GroupPolicyOperationType {
         /// <summary>Group Policy invalid operation type.</summary>
         None,

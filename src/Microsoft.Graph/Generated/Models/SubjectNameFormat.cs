@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Subject Name Format Options.</summary>
     public enum SubjectNameFormat {
         /// <summary>Common name.</summary>
         CommonName,

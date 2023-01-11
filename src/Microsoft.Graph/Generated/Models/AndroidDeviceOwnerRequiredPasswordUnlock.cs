@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>An enum representing possible values for required password unlock.</summary>
     public enum AndroidDeviceOwnerRequiredPasswordUnlock {
         /// <summary>Timeout period before strong authentication is required is set to the device&apos;s default.</summary>
         DeviceDefault,

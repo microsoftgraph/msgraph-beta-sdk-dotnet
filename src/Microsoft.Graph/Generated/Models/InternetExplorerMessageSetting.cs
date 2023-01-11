@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>What message will be displayed by Edge before switching to Internet Explorer.</summary>
     public enum InternetExplorerMessageSetting {
         /// <summary>Not configured.</summary>
         NotConfigured,

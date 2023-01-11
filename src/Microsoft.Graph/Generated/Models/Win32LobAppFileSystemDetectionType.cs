@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Contains all supported file system detection type.</summary>
     public enum Win32LobAppFileSystemDetectionType {
         /// <summary>Not configured.</summary>
         NotConfigured,

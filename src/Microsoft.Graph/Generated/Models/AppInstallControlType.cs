@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>App Install control Setting</summary>
     public enum AppInstallControlType {
         /// <summary>Not configured</summary>
         NotConfigured,

@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Indicates the type of content allowed to be cached by Apple&apos;s content caching service.</summary>
     public enum MacOSContentCachingType {
         /// <summary>Default. Both user iCloud data and non-iCloud data will be cached.</summary>
         NotConfigured,

@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>MacOS Software Update Category</summary>
     public enum MacOSSoftwareUpdateCategory {
         /// <summary>A critical update</summary>
         Critical,

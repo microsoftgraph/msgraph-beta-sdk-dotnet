@@ -5,9 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Teamwork.DeletedTeams.Item.Channels.AllMessages {
-    /// <summary>
-    /// Provides operations to call the allMessages method.
-    /// </summary>
     public class AllMessagesResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<ChatMessage> Value {

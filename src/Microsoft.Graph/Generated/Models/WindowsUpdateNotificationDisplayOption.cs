@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Windows Update Notification Display Options</summary>
     public enum WindowsUpdateNotificationDisplayOption {
         /// <summary>Not configured</summary>
         NotConfigured,

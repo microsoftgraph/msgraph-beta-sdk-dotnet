@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Defender TamperProtection setting options</summary>
     public enum WindowsDefenderTamperProtectionOptions {
         /// <summary>Not Configured</summary>
         NotConfigured,

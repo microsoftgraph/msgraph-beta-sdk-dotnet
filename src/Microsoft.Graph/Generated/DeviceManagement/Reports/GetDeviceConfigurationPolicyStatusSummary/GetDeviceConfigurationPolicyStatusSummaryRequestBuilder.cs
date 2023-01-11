@@ -49,8 +49,23 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceConfigurationPo
         /// Invoke action getDeviceConfigurationPolicyStatusSummary
         /// </summary>
         /// <param name="body">The request body</param>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        public RequestInformation CreatePostRequestInformation(GetDeviceConfigurationPolicyStatusSummaryPostRequestBody body, Action<GetDeviceConfigurationPolicyStatusSummaryRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
+        public async Task<Stream> PostAsync(GetDeviceConfigurationPolicyStatusSummaryPostRequestBody body, Action<GetDeviceConfigurationPolicyStatusSummaryRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+            _ = body ?? throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken);
+        }
+        /// <summary>
+        /// Invoke action getDeviceConfigurationPolicyStatusSummary
+        /// </summary>
+        /// <param name="body">The request body</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        public RequestInformation ToPostRequestInformation(GetDeviceConfigurationPolicyStatusSummaryPostRequestBody body, Action<GetDeviceConfigurationPolicyStatusSummaryRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             _ = body ?? throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.POST,
@@ -65,21 +80,6 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceConfigurationPo
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
             return requestInfo;
-        }
-        /// <summary>
-        /// Invoke action getDeviceConfigurationPolicyStatusSummary
-        /// </summary>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        public async Task<Stream> PostAsync(GetDeviceConfigurationPolicyStatusSummaryPostRequestBody body, Action<GetDeviceConfigurationPolicyStatusSummaryRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
-            _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = CreatePostRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
-            };
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Defines the Action Types for an Intune Application.</summary>
     public enum MobileAppActionType {
         /// <summary>Unknown result.</summary>
         Unknown,

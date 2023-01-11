@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>BitLocker recovery password rotation type</summary>
     public enum BitLockerRecoveryPasswordRotationType {
         /// <summary>Not configured</summary>
         NotConfigured,

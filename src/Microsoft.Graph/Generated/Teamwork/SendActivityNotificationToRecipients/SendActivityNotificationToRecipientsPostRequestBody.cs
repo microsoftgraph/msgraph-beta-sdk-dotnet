@@ -6,9 +6,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Teamwork.SendActivityNotificationToRecipients {
-    /// <summary>
-    /// Provides operations to call the sendActivityNotificationToRecipients method.
-    /// </summary>
     public class SendActivityNotificationToRecipientsPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>The activityType property</summary>
         public string ActivityType {

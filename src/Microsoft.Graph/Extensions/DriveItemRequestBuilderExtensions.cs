@@ -45,7 +45,6 @@ public static class DriveItemRequestBuilderExtensions
 
         var requestInformation = rootRequestBuilder.ToGetRequestInformation();
         var requestAdapter = rootRequestBuilder.GetRequestAdapter();
-        requestInformation.PathParameters.Add("baseurl", requestAdapter.BaseUrl);
         var requestUrl = requestInformation.URI.OriginalString;
         
         // Encode the path in accordance with the one drive spec 
@@ -73,7 +72,6 @@ public static class DriveItemRequestBuilderExtensions
 
         var requestInformation = rootRequestBuilder.ToGetRequestInformation();
         var requestAdapter = rootRequestBuilder.GetRequestAdapter();
-        requestInformation.PathParameters.Add("baseurl", requestAdapter.BaseUrl);
         var requestUrl = requestInformation.URI.OriginalString;
         
         // Encode the path in accordance with the one drive spec 
@@ -101,7 +99,6 @@ public static class DriveItemRequestBuilderExtensions
 
         var requestInformation = rootRequestBuilder.ToGetRequestInformation();
         var requestAdapter = rootRequestBuilder.GetRequestAdapter();
-        requestInformation.PathParameters.Add("baseurl", requestAdapter.BaseUrl);
         var requestUrl = requestInformation.URI.OriginalString;
         
         // Encode the path in accordance with the one drive spec 
@@ -129,7 +126,6 @@ public static class DriveItemRequestBuilderExtensions
 
         var requestInformation = rootRequestBuilder.ToGetRequestInformation();
         var requestAdapter = rootRequestBuilder.GetRequestAdapter();
-        requestInformation.PathParameters.Add("baseurl", requestAdapter.BaseUrl);
         var requestUrl = requestInformation.URI.OriginalString;
         
         // Encode the path in accordance with the one drive spec 
@@ -157,7 +153,6 @@ public static class DriveItemRequestBuilderExtensions
 
         var requestInformation = rootRequestBuilder.ToGetRequestInformation();
         var requestAdapter = rootRequestBuilder.GetRequestAdapter();
-        requestInformation.PathParameters.Add("baseurl", requestAdapter.BaseUrl);
         var requestUrl = requestInformation.URI.OriginalString;
         
         // Encode the path in accordance with the one drive spec 

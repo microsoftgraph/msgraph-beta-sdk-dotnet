@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to call the overrideComplianceState method.</summary>
+    /// <summary>Administrator configured device compliance state Enum</summary>
     public enum AdministratorConfiguredDeviceComplianceState {
         /// <summary>Set compliance state based on other compliance polices</summary>
         BasedOnDeviceCompliancePolicy,

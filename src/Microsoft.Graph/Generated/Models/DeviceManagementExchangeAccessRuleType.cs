@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Criteria which defines the type of device this access rule will apply to</summary>
     public enum DeviceManagementExchangeAccessRuleType {
         /// <summary>Family of devices</summary>
         Family,

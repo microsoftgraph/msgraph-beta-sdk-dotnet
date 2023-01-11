@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Complexity of PIN for Managed Home Screen sign-in session.</summary>
     public enum KioskModeManagedHomeScreenPinComplexity {
         /// <summary>Not configured.</summary>
         NotConfigured,

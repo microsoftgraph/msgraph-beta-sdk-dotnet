@@ -5,9 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Me.GetManagedDevicesWithAppFailures {
-    /// <summary>
-    /// Provides operations to call the getManagedDevicesWithAppFailures method.
-    /// </summary>
     public class GetManagedDevicesWithAppFailuresResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<string> Value {

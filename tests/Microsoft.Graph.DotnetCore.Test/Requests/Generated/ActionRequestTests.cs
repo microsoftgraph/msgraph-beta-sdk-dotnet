@@ -29,14 +29,9 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
         [Fact]
         public void MultipleRequiredParameters()
         {
-            var mockRequestAdapter = new Mock<IRequestAdapter>();
-            var graphServiceClient = new GraphServiceClient(mockRequestAdapter.Object);
+            var graphServiceClient = new GraphServiceClient(new MockAuthenticationProvider().Object);
             var expectedRequestUrl = $"{string.Format(Constants.Url.GraphBaseUrlFormatString, "beta")}/me/microsoft.graph.assignLicense";
-            
-            mockRequestAdapter.Setup(
-                adapter => adapter.SerializationWriterFactory.GetSerializationWriter(It.IsAny<string>())
-            ).Returns(new JsonSerializationWriter());
-            
+
             var addLicenses = new List<AssignedLicense> { new AssignedLicense() };
 
             var requestBody = new AssignLicensePostRequestBody
@@ -46,7 +41,6 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
             };
             
             var requestInformation = graphServiceClient.Me.AssignLicense.ToPostRequestInformation(requestBody);
-            requestInformation.PathParameters.Add("baseurl", string.Format(Constants.Url.GraphBaseUrlFormatString, "beta"));
             
             Assert.NotNull(requestInformation);
             Assert.Equal(new Uri(expectedRequestUrl), requestInformation.URI);
@@ -58,17 +52,11 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
         [Fact]
         public void OptionalParameterWithNonNullableType_NullValue()
         {
-            var mockRequestAdapter = new Mock<IRequestAdapter>();
-            var graphServiceClient = new GraphServiceClient(mockRequestAdapter.Object);
+            var graphServiceClient = new GraphServiceClient(new MockAuthenticationProvider().Object);
             var expectedRequestUrl = $"{string.Format(Constants.Url.GraphBaseUrlFormatString, "beta")}/me/microsoft.graph.getMemberGroups";
-            
-            mockRequestAdapter.Setup(
-                adapter => adapter.SerializationWriterFactory.GetSerializationWriter(It.IsAny<string>())
-            ).Returns(new JsonSerializationWriter());
-            
+
             var requestBody = new GetMemberGroupsPostRequestBody { };
             var requestInformation = graphServiceClient.Me.GetMemberGroups.ToPostRequestInformation(requestBody);
-            requestInformation.PathParameters.Add("baseurl", string.Format(Constants.Url.GraphBaseUrlFormatString, "beta"));
             
             Assert.NotNull(requestInformation);
             Assert.Equal(new Uri(expectedRequestUrl), requestInformation.URI);
@@ -81,17 +69,11 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
         [Fact]
         public void OptionalParameterWithNonNullableType_ValueSet()
         {
-            var mockRequestAdapter = new Mock<IRequestAdapter>();
-            var graphServiceClient = new GraphServiceClient(mockRequestAdapter.Object);
+            var graphServiceClient = new GraphServiceClient(new MockAuthenticationProvider().Object);
             var expectedRequestUrl = string.Format("{0}/me/microsoft.graph.getMemberGroups", string.Format(Constants.Url.GraphBaseUrlFormatString, "beta"));
 
-            mockRequestAdapter.Setup(
-                adapter => adapter.SerializationWriterFactory.GetSerializationWriter(It.IsAny<string>())
-            ).Returns(new JsonSerializationWriter());
-            
             var requestBody = new GetMemberGroupsPostRequestBody { SecurityEnabledOnly = true};
             var requestInformation = graphServiceClient.Me.GetMemberGroups.ToPostRequestInformation(requestBody);
-            requestInformation.PathParameters.Add("baseurl", string.Format(Constants.Url.GraphBaseUrlFormatString, "beta"));
             
             Assert.NotNull(requestInformation);
             Assert.Equal(new Uri(expectedRequestUrl), requestInformation.URI);
@@ -104,14 +86,12 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
         [Fact]
         public void NoParameters()
         {
-            var mockRequestAdapter = new Mock<IRequestAdapter>();
-            var graphServiceClient = new GraphServiceClient(mockRequestAdapter.Object);
+            var graphServiceClient = new GraphServiceClient(new MockAuthenticationProvider().Object);
             var messageId = "messageId";
             var expectedRequestUrl = string.Format("{0}/me/mailFolders/Drafts/messages/{1}/microsoft.graph.send", string.Format(Constants.Url.GraphBaseUrlFormatString, "beta"), messageId);
 
             var requestInformation = graphServiceClient.Me.MailFolders["Drafts"].Messages[messageId].Send.ToPostRequestInformation();
-            requestInformation.PathParameters.Add("baseurl", string.Format(Constants.Url.GraphBaseUrlFormatString, "beta"));
-            
+
             Assert.NotNull(requestInformation);
             Assert.Equal(new Uri(expectedRequestUrl), requestInformation.URI);
         }

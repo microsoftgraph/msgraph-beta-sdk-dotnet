@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Web Browser Cookie Settings.</summary>
     public enum WebBrowserCookieSettings {
         /// <summary>Browser default value, no intent.</summary>
         BrowserDefault,

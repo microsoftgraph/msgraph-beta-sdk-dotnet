@@ -5,9 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Users.Item.GetMailTips {
-    /// <summary>
-    /// Provides operations to call the getMailTips method.
-    /// </summary>
     public class GetMailTipsResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<MailTips> Value {

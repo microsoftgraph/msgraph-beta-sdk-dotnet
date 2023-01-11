@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to call the triggerConfigurationManagerAction method.</summary>
+    /// <summary>Action type on Configuration Manager client</summary>
     public enum ConfigurationManagerActionType {
         /// <summary>Refresh machine policy on Configuration Manager client</summary>
         RefreshMachinePolicy,

@@ -5,9 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Teams.Item.PermissionGrants.GetByIds {
-    /// <summary>
-    /// Provides operations to call the getByIds method.
-    /// </summary>
     public class GetByIdsResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<DirectoryObject> Value {

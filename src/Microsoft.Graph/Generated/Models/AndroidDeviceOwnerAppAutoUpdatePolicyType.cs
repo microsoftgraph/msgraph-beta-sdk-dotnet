@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Android Device Owner possible values for states of the device&apos;s app auto update policy.</summary>
     public enum AndroidDeviceOwnerAppAutoUpdatePolicyType {
         /// <summary>Not configured; this value is ignored.</summary>
         NotConfigured,

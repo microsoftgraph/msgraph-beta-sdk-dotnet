@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>State Management Setting.</summary>
     public enum StateManagementSetting {
         /// <summary>Not configured.</summary>
         NotConfigured,

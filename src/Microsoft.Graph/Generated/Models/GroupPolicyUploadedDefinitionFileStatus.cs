@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Type of Group Policy uploaded definition file status.</summary>
     public enum GroupPolicyUploadedDefinitionFileStatus {
         /// <summary>Group Policy uploaded definition file invalid upload status.</summary>
         None,

@@ -5,9 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.TeamTemplateDefinition.Item.TeamDefinition.PermissionGrants.Item.CheckMemberGroups {
-    /// <summary>
-    /// Provides operations to call the checkMemberGroups method.
-    /// </summary>
     public class CheckMemberGroupsResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<string> Value {

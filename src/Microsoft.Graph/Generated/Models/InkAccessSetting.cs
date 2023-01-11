@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Values for the InkWorkspaceAccess setting.</summary>
     public enum InkAccessSetting {
         /// <summary>Not configured.</summary>
         NotConfigured,

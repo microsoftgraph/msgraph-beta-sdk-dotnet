@@ -4,9 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>
-    /// Provides operations to manage the collection of accessReviewDecision entities.
-    /// </summary>
     public class PaymentTerm : Entity, IParsable {
         /// <summary>The calculateDiscountOnCreditMemos property</summary>
         public bool? CalculateDiscountOnCreditMemos {

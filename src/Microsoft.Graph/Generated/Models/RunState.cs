@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Indicates the type of execution status of the device management script.</summary>
     public enum RunState {
         /// <summary>Unknown result.</summary>
         Unknown,

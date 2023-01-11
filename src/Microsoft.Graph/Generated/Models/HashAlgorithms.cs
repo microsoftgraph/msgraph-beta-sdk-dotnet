@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Hash Algorithm Options.</summary>
     public enum HashAlgorithms {
         /// <summary>SHA-1 Hash Algorithm.</summary>
         Sha1,

@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Type of start menu app list visibility.</summary>
     public enum WindowsStartMenuAppListVisibilityType {
         /// <summary>User defined. Default value.</summary>
         UserDefined,

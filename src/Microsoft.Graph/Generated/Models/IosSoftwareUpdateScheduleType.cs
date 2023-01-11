@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Update schedule type for iOS software updates.</summary>
     public enum IosSoftwareUpdateScheduleType {
         /// <summary>Update outside of active hours.</summary>
         UpdateOutsideOfActiveHours,

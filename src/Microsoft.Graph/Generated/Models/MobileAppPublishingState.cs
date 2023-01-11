@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Indicates the publishing state of an app.</summary>
     public enum MobileAppPublishingState {
         /// <summary>The app is not yet published.</summary>
         NotPublished,

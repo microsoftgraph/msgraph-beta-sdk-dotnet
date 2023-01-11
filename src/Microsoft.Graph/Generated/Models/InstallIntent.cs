@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Possible values for the install intent chosen by the admin.</summary>
     public enum InstallIntent {
         /// <summary>Available install intent.</summary>
         Available,

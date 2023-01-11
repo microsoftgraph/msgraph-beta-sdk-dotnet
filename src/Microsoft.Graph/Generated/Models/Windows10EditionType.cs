@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Windows 10 Edition type.</summary>
     public enum Windows10EditionType {
         /// <summary>Windows 10 Enterprise</summary>
         Windows10Enterprise,

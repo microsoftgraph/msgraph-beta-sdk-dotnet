@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Error code for rule validation.</summary>
     public enum DeviceComplianceScriptRulesValidationError {
         /// <summary>None error.</summary>
         None,

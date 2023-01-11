@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Supported certificate sources for email signing and encryption.</summary>
     public enum EmailCertificateType {
         /// <summary>Do not use a certificate as a source.</summary>
         None,

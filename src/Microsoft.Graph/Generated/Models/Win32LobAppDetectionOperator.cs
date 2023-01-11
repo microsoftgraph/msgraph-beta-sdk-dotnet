@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Contains properties for detection operator.</summary>
     public enum Win32LobAppDetectionOperator {
         /// <summary>Not configured.</summary>
         NotConfigured,

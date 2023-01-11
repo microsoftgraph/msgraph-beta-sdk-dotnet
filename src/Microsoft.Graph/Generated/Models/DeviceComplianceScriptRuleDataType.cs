@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Data types for rules.</summary>
     public enum DeviceComplianceScriptRuleDataType {
         /// <summary>None data type.</summary>
         None,

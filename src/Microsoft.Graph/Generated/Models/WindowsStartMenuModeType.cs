@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Type of display modes for the start menu.</summary>
     public enum WindowsStartMenuModeType {
         /// <summary>User defined. Default value.</summary>
         UserDefined,

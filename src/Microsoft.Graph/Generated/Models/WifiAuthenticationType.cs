@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Wi-Fi Authentication Type Settings.</summary>
     public enum WifiAuthenticationType {
         /// <summary>None</summary>
         None,

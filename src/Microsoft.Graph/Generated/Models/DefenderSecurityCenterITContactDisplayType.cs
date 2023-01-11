@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Possible values for defenderSecurityCenterITContactDisplay</summary>
     public enum DefenderSecurityCenterITContactDisplayType {
         /// <summary>Not Configured</summary>
         NotConfigured,

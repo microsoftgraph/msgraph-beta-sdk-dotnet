@@ -5,9 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Me.Outlook.SupportedLanguages {
-    /// <summary>
-    /// Provides operations to call the supportedLanguages method.
-    /// </summary>
     public class SupportedLanguagesResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<LocaleInfo> Value {

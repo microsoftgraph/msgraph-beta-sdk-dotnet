@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Specifies the type of scope for a Role Assignment.</summary>
     public enum RoleAssignmentScopeType {
         /// <summary>Allow assignments to the specified ResourceScopes.</summary>
         ResourceScope,

@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Prioritization for automatic updates of Android Managed Store apps set on assignment.</summary>
     public enum AndroidManagedStoreAutoUpdateMode {
         /// <summary>Default update behavior (device must be connected to Wifi, charging and not actively used).</summary>
         Default,

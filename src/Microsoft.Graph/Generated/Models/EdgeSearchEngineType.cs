@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Allows IT admind to set a predefined default search engine for MDM-Controlled devices</summary>
     public enum EdgeSearchEngineType {
         /// <summary>Uses factory settings of Edge to assign the default search engine as per the user market</summary>
         Default,

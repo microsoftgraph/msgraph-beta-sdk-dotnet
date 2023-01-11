@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Possible values of Secure Boot with DMA</summary>
     public enum SecureBootWithDMAType {
         /// <summary>Not configured, no operation</summary>
         NotConfigured,

@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to call the connect method.</summary>
+    /// <summary>The onboarding status of the tenant.</summary>
     public enum ChromeOSOnboardingStatus {
         /// <summary>Unknown</summary>
         Unknown,

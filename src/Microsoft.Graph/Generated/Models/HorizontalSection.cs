@@ -4,9 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>
-    /// Provides operations to manage the collection of accessReview entities.
-    /// </summary>
     public class HorizontalSection : Entity, IParsable {
         /// <summary>The set of vertical columns in this section.</summary>
         public List<HorizontalSectionColumn> Columns {

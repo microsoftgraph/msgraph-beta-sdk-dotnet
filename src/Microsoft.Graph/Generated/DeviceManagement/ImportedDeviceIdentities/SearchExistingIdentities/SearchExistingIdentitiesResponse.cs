@@ -5,9 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.DeviceManagement.ImportedDeviceIdentities.SearchExistingIdentities {
-    /// <summary>
-    /// Provides operations to call the searchExistingIdentities method.
-    /// </summary>
     public class SearchExistingIdentitiesResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<ImportedDeviceIdentity> Value {

@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Possible values of the ConfigurationUsage list.</summary>
     public enum ConfigurationUsage {
         /// <summary>Disallowed.</summary>
         Blocked,

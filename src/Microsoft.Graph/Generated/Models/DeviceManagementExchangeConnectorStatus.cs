@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>The current status of the Exchange Connector.</summary>
     public enum DeviceManagementExchangeConnectorStatus {
         /// <summary>No Connector exists.</summary>
         None,

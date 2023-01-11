@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Wi-Fi Security Types for Android Device Owner.</summary>
     public enum AndroidDeviceOwnerWiFiSecurityType {
         /// <summary>Open (No Authentication).</summary>
         Open,

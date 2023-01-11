@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Device app management task status.</summary>
     public enum DeviceAppManagementTaskStatus {
         /// <summary>State is undefined.</summary>
         Unknown,

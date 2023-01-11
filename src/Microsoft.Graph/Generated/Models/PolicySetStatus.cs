@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>The enum to specify the status of PolicySet.</summary>
     public enum PolicySetStatus {
         /// <summary>Default Value.</summary>
         Unknown,

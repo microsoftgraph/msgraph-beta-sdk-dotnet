@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>This enum indicates the Template type for which the enrollment notification applies.</summary>
     public enum EnrollmentNotificationTemplateType {
         /// <summary>Email Notification</summary>
         Email,

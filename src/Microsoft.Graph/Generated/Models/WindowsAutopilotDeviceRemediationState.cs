@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Device remediation status, indicating whether or not hardware has been changed for an Autopilot-registered device.</summary>
     public enum WindowsAutopilotDeviceRemediationState {
         /// <summary>Unknown status.</summary>
         Unknown,

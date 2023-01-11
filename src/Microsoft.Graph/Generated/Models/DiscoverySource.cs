@@ -1,5 +1,4 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
     public enum DiscoverySource {
         /// <summary>DiscoverySource is Unknown.</summary>
         Unknown,

@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Top level failure categories for enrollment.</summary>
     public enum DeviceEnrollmentFailureReason {
         /// <summary>Default value, failure reason is unknown.</summary>
         Unknown,

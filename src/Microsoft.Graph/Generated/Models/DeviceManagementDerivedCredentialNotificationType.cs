@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Supported values for the notification type to use.</summary>
     public enum DeviceManagementDerivedCredentialNotificationType {
         /// <summary>None</summary>
         None,

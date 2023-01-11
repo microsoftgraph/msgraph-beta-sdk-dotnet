@@ -5,9 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.GetTargetedUsersAndDevices {
-    /// <summary>
-    /// Provides operations to call the getTargetedUsersAndDevices method.
-    /// </summary>
     public class GetTargetedUsersAndDevicesResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<DeviceConfigurationTargetedUserAndDevice> Value {

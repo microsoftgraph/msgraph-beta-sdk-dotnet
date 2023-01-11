@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Indicates the package type of an MSI Win32LobApp.</summary>
     public enum Win32LobAppMsiPackageType {
         /// <summary>Indicates a per-machine app package.</summary>
         PerMachine,

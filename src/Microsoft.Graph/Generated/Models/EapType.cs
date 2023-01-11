@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Extensible Authentication Protocol (EAP) configuration types.</summary>
     public enum EapType {
         /// <summary>EAP-Transport Layer Security (EAP-TLS).</summary>
         EapTls,

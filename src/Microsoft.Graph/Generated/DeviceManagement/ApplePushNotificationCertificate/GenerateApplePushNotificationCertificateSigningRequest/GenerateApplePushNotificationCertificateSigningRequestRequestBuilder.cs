@@ -48,8 +48,21 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ApplePushNotificationCertificate
         /// <summary>
         /// Download Apple push notification certificate signing request
         /// </summary>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        public RequestInformation CreatePostRequestInformation(Action<GenerateApplePushNotificationCertificateSigningRequestRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
+        public async Task<GenerateApplePushNotificationCertificateSigningRequestResponse> PostAsync(Action<GenerateApplePushNotificationCertificateSigningRequestRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
+            var requestInfo = ToPostRequestInformation(requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
+                {"4XX", ODataError.CreateFromDiscriminatorValue},
+                {"5XX", ODataError.CreateFromDiscriminatorValue},
+            };
+            return await RequestAdapter.SendAsync<GenerateApplePushNotificationCertificateSigningRequestResponse>(requestInfo, GenerateApplePushNotificationCertificateSigningRequestResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
+        }
+        /// <summary>
+        /// Download Apple push notification certificate signing request
+        /// </summary>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        public RequestInformation ToPostRequestInformation(Action<GenerateApplePushNotificationCertificateSigningRequestRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
             var requestInfo = new RequestInformation {
                 HttpMethod = Method.POST,
                 UrlTemplate = UrlTemplate,
@@ -63,19 +76,6 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ApplePushNotificationCertificate
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
             return requestInfo;
-        }
-        /// <summary>
-        /// Download Apple push notification certificate signing request
-        /// </summary>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        public async Task<GenerateApplePushNotificationCertificateSigningRequestResponse> PostAsync(Action<GenerateApplePushNotificationCertificateSigningRequestRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
-            var requestInfo = CreatePostRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
-            };
-            return await RequestAdapter.SendAsync<GenerateApplePushNotificationCertificateSigningRequestResponse>(requestInfo, GenerateApplePushNotificationCertificateSigningRequestResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
         /// Configuration for the request such as headers, query parameters, and middleware options.

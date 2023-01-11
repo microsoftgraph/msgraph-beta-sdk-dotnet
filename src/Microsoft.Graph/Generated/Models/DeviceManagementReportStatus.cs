@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Possible statuses associated with a generated report</summary>
     public enum DeviceManagementReportStatus {
         /// <summary>Report generation status is unknown</summary>
         Unknown,

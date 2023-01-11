@@ -5,9 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPackages.Item.GetApplicablePolicyRequirements {
-    /// <summary>
-    /// Provides operations to call the getApplicablePolicyRequirements method.
-    /// </summary>
     public class GetApplicablePolicyRequirementsResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<AccessPackageAssignmentRequestRequirements> Value {

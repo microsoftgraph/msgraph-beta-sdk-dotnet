@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>The maxium threat level allowed for an app to be compliant.</summary>
     public enum ManagedAppDeviceThreatLevel {
         /// <summary>Value not configured</summary>
         NotConfigured,

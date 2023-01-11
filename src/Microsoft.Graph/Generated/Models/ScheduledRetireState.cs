@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to call the setScheduledRetireState method.</summary>
+    /// <summary>Cancel or confirm scheduled retire </summary>
     public enum ScheduledRetireState {
         /// <summary>CancelRetire</summary>
         CancelRetire,

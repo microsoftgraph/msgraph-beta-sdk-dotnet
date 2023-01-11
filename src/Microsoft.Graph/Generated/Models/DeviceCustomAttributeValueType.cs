@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Represents the expected type for a macOS custom attribute script value.</summary>
     public enum DeviceCustomAttributeValueType {
         /// <summary>Indicates the value for a custom attribute script is an integer.</summary>
         Integer,

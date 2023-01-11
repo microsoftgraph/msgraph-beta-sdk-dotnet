@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>TV content rating labels in United States</summary>
     public enum RatingUnitedStatesTelevisionType {
         /// <summary>Default value, allow all TV shows content</summary>
         AllAllowed,

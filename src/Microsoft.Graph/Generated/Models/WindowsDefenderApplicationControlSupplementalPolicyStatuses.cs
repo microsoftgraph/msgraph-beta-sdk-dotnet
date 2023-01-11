@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Enum values for the various WindowsDefenderApplicationControl supplemental policy deployment statuses.</summary>
     public enum WindowsDefenderApplicationControlSupplementalPolicyStatuses {
         /// <summary>The status of the WindowsDefenderApplicationControl supplemental policy is not known.</summary>
         Unknown,

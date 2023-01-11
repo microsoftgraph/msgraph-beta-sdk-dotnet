@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Possible values for the EdgeOpensWith setting.</summary>
     public enum EdgeOpenOptions {
         /// <summary>Not configured.</summary>
         NotConfigured,

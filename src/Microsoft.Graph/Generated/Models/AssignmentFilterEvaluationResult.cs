@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Supported evaluation results for filter.</summary>
     public enum AssignmentFilterEvaluationResult {
         /// <summary>Unknown.</summary>
         Unknown,

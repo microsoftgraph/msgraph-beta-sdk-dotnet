@@ -5,9 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.Snapshots.GetStorageAccountsWithSubscriptionId {
-    /// <summary>
-    /// Provides operations to call the getStorageAccounts method.
-    /// </summary>
     public class GetStorageAccountsWithSubscriptionIdResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<CloudPcForensicStorageAccount> Value {

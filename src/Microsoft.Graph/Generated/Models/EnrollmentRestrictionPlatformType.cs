@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>This enum indicates the platform type for which the enrollment restriction applies.</summary>
     public enum EnrollmentRestrictionPlatformType {
         /// <summary>Applies to all platforms</summary>
         AllPlatforms,

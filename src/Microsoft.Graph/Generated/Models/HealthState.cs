@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Indicates health state of the Windows management app.</summary>
     public enum HealthState {
         /// <summary>Unknown state.</summary>
         Unknown,

@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Subject Alternative Name Options.</summary>
     public enum SubjectAlternativeNameType {
         /// <summary>No subject alternative name.</summary>
         None,

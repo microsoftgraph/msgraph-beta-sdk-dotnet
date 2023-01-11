@@ -5,9 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Lookup {
-    /// <summary>
-    /// Provides operations to call the lookup method.
-    /// </summary>
     public class LookupResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<string> Value {

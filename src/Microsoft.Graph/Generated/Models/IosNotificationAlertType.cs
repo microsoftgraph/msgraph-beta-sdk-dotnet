@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Notification Settings Alert Type.</summary>
     public enum IosNotificationAlertType {
         /// <summary>Device default value, no intent.</summary>
         DeviceDefault,

@@ -5,9 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.GetCloudPcRemoteActionResults {
-    /// <summary>
-    /// Provides operations to call the getCloudPcRemoteActionResults method.
-    /// </summary>
     public class GetCloudPcRemoteActionResultsResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<CloudPcRemoteActionResult> Value {

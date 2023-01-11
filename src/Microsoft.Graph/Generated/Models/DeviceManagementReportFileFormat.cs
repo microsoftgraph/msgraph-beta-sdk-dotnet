@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Possible values for the file format of a report</summary>
     public enum DeviceManagementReportFileFormat {
         /// <summary>CSV Format</summary>
         Csv,

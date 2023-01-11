@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Possible values of Folder Protection</summary>
     public enum FolderProtectionType {
         /// <summary>Device default value, no intent.</summary>
         UserDefined,

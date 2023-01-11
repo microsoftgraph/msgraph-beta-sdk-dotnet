@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Supported Applicability rule types for Device Configuration</summary>
     public enum DeviceManagementApplicabilityRuleType {
         /// <summary>Include</summary>
         Include,

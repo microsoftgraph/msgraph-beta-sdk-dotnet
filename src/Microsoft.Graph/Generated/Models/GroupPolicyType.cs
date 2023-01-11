@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Type of Group Policy File or Definition.</summary>
     public enum GroupPolicyType {
         /// <summary>Group Policy administrative templates built-in to the Policy configuration service provider (CSP).</summary>
         AdmxBacked,

@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Wired Network Authentication Type Settings.</summary>
     public enum WiredNetworkAuthenticationType {
         /// <summary>None</summary>
         None,

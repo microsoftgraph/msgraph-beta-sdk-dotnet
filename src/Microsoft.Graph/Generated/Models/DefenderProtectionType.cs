@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Possible values of Defender PUA Protection</summary>
     public enum DefenderProtectionType {
         /// <summary>Device default value, no intent.</summary>
         UserDefined,

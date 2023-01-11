@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>VPN On-Demand Rule Connection network interface type.</summary>
     public enum VpnOnDemandRuleInterfaceTypeMatch {
         /// <summary>NotConfigured</summary>
         NotConfigured,

@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Scheduled Action Type Enum</summary>
     public enum DeviceManagementComplianceActionType {
         /// <summary>No Action</summary>
         NoAction,

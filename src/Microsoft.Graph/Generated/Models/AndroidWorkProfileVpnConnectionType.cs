@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Android Work Profile VPN connection type.</summary>
     public enum AndroidWorkProfileVpnConnectionType {
         /// <summary>Cisco AnyConnect.</summary>
         CiscoAnyConnect,

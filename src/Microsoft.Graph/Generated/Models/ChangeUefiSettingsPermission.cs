@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Defines the permission level granted to users to enable them change Uefi settings</summary>
     public enum ChangeUefiSettingsPermission {
         /// <summary>Device default value, no intent.</summary>
         NotConfiguredOnly,

@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Locations which can be used to bring data into organization documents</summary>
     public enum ManagedAppDataIngestionLocation {
         /// <summary>OneDrive for business</summary>
         OneDriveForBusiness,

@@ -5,9 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.Item.Assign {
-    /// <summary>
-    /// Provides operations to call the assign method.
-    /// </summary>
     public class AssignResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<DeviceConfigurationAssignment> Value {

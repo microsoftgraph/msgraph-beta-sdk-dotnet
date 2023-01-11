@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Supported values for the intended purpose of a user PFX certificate.</summary>
     public enum UserPfxIntendedPurpose {
         /// <summary>No roles/usages assigned.</summary>
         Unassigned,

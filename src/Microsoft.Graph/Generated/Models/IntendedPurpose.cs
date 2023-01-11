@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>PFX Import Options.</summary>
     public enum IntendedPurpose {
         /// <summary>Unassigned</summary>
         Unassigned,

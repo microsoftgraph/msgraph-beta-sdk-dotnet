@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Android Work Profile required password type.</summary>
     public enum AndroidWorkProfileRequiredPasswordType {
         /// <summary>Device default value, no intent.</summary>
         DeviceDefault,

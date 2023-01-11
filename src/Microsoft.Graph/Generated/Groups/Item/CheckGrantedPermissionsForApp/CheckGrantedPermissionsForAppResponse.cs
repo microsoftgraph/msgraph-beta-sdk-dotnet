@@ -5,9 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Groups.Item.CheckGrantedPermissionsForApp {
-    /// <summary>
-    /// Provides operations to call the checkGrantedPermissionsForApp method.
-    /// </summary>
     public class CheckGrantedPermissionsForAppResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<ResourceSpecificPermissionGrant> Value {

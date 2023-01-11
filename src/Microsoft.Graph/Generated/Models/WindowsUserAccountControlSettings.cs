@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Possible values for Windows user account control settings.</summary>
     public enum WindowsUserAccountControlSettings {
         /// <summary>User Defined, default value, no intent.</summary>
         UserDefined,

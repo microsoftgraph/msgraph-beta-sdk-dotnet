@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Describes applicability for the mode the device is in</summary>
     public enum DeviceManagementConfigurationDeviceMode {
         /// <summary>No Device Mode specified</summary>
         None,

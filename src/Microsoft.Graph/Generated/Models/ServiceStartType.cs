@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Possible values of xbox service start type</summary>
     public enum ServiceStartType {
         /// <summary>Manual service start type(default)</summary>
         Manual,

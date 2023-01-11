@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Available settings for EAP-FAST Configuration.</summary>
     public enum EapFastConfiguration {
         /// <summary>Use EAP-FAST without Protected Access Credential (PAC).</summary>
         NoProtectedAccessCredential,

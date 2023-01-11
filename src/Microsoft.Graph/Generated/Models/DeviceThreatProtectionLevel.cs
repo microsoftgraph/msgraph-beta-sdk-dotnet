@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Device threat protection levels for the Device Threat Protection API.</summary>
     public enum DeviceThreatProtectionLevel {
         /// <summary>Default Value. Do not use.</summary>
         Unavailable,

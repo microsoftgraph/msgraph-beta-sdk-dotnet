@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>The reason for which a user has been flagged</summary>
     public enum ManagedAppFlaggedReason {
         /// <summary>No issue.</summary>
         None,

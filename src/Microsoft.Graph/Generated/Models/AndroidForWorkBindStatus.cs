@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Bind status of the tenant with the Google EMM API</summary>
     public enum AndroidForWorkBindStatus {
         NotBound,
         Bound,

@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Android Device Owner possible values for states of the device&apos;s plugged-in power modes.</summary>
     public enum AndroidDeviceOwnerBatteryPluggedMode {
         /// <summary>Not configured; this value is ignored.</summary>
         NotConfigured,

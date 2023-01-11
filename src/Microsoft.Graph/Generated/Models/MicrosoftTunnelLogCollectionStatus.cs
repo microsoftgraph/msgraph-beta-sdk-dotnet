@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Enum type that represent the status of log collection</summary>
     public enum MicrosoftTunnelLogCollectionStatus {
         /// <summary>Indicates that the log collection is in progress</summary>
         Pending,

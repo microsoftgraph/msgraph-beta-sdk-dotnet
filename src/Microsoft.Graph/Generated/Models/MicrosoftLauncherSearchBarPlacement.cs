@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Microsoft Launcher Search Bar Placement selection.</summary>
     public enum MicrosoftLauncherSearchBarPlacement {
         /// <summary>Not configured; this value is ignored.</summary>
         NotConfigured,

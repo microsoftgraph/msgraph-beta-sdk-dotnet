@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Enum indicating additional details regarding why an application has a particular install state.</summary>
     public enum ResultantAppStateDetail {
         /// <summary>Device architecture (e.g. x86/amd64) is not applicable for the application.</summary>
         ProcessorArchitectureNotApplicable,

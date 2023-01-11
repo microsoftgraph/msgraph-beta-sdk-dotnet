@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Mobile device management authority.</summary>
     public enum MdmAuthority {
         /// <summary>Unknown</summary>
         Unknown,

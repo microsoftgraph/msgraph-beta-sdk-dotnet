@@ -4,9 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
-    /// <summary>
-    /// Provides operations to manage the deployments property of the microsoft.graph.windowsUpdates.updates entity.
-    /// </summary>
     public class DeploymentCollectionResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<Deployment> Value {

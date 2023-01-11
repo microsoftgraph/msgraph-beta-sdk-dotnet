@@ -9,7 +9,8 @@ and this project does NOT adhere to [Semantic Versioning](https://semver.org/spe
 
 ### Changed
 
-- Latest metadata updates from 3rd January 2023 snapshot
+- [Breaking] Renames `CreateXXXRequestInformation` methods to `ToXXXRequestInformation`
+- Latest metadata updates from 12th January 2023 snapshot
 
 ## [5.15.0-preview] - 2022-12-16
 

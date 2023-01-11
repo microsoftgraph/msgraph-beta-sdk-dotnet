@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>System Update Types for Android Device Owner.</summary>
     public enum AndroidDeviceOwnerSystemUpdateInstallType {
         /// <summary>Device default behavior, which typically prompts the user to accept system updates.</summary>
         DeviceDefault,

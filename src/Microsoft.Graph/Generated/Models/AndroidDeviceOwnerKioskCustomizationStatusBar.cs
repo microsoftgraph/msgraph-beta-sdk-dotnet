@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>An enum representing possible values for kiosk customization system navigation.</summary>
     public enum AndroidDeviceOwnerKioskCustomizationStatusBar {
         /// <summary>Not configured; this value defaults to STATUS_BAR_UNSPECIFIED.</summary>
         NotConfigured,

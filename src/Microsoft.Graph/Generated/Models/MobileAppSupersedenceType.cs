@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReview entities.</summary>
+    /// <summary>Indicates the supersedence type associated with a relationship between two mobile apps.</summary>
     public enum MobileAppSupersedenceType {
         /// <summary>Indicates that the child app should be updated by the internal logic of the parent app.</summary>
         Update,

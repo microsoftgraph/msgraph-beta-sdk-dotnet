@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Android For Work cross profile data sharing type.</summary>
     public enum AndroidForWorkCrossProfileDataSharingType {
         /// <summary>Device default value, no intent.</summary>
         DeviceDefault,

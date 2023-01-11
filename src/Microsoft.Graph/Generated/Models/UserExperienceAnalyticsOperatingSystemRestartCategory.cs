@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of activityStatistics entities.</summary>
+    /// <summary>Operating System restart category</summary>
     public enum UserExperienceAnalyticsOperatingSystemRestartCategory {
         /// <summary>Unknown</summary>
         Unknown,

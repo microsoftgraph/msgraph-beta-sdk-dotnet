@@ -5,9 +5,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Drive.Root.Permissions.Item.Grant {
-    /// <summary>
-    /// Provides operations to call the grant method.
-    /// </summary>
     public class GrantResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
         public List<Microsoft.Graph.Beta.Models.Permission> Value {

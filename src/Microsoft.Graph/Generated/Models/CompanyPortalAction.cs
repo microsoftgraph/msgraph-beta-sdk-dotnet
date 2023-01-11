@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Action on a device that can be executed in the Company Portal</summary>
     public enum CompanyPortalAction {
         /// <summary>Unknown device action</summary>
         Unknown,

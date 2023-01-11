@@ -1,5 +1,5 @@
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>Provides operations to manage the collection of accessReviewDecision entities.</summary>
+    /// <summary>Wired Network authentication method.</summary>
     public enum WiredNetworkAuthenticationMethod {
         /// <summary>Use an identity certificate for authentication.</summary>
         Certificate,
