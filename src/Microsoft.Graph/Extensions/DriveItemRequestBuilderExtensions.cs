@@ -43,7 +43,7 @@ public static class DriveItemRequestBuilderExtensions
             }
         }
 
-        var requestInformation = rootRequestBuilder.CreateGetRequestInformation();
+        var requestInformation = rootRequestBuilder.ToGetRequestInformation();
         var requestAdapter = rootRequestBuilder.GetRequestAdapter();
         requestInformation.PathParameters.Add("baseurl", requestAdapter.BaseUrl);
         var requestUrl = requestInformation.URI.OriginalString;
@@ -71,7 +71,7 @@ public static class DriveItemRequestBuilderExtensions
             }
         }
 
-        var requestInformation = rootRequestBuilder.CreateGetRequestInformation();
+        var requestInformation = rootRequestBuilder.ToGetRequestInformation();
         var requestAdapter = rootRequestBuilder.GetRequestAdapter();
         requestInformation.PathParameters.Add("baseurl", requestAdapter.BaseUrl);
         var requestUrl = requestInformation.URI.OriginalString;
@@ -99,7 +99,7 @@ public static class DriveItemRequestBuilderExtensions
             }
         }
 
-        var requestInformation = rootRequestBuilder.CreateGetRequestInformation();
+        var requestInformation = rootRequestBuilder.ToGetRequestInformation();
         var requestAdapter = rootRequestBuilder.GetRequestAdapter();
         requestInformation.PathParameters.Add("baseurl", requestAdapter.BaseUrl);
         var requestUrl = requestInformation.URI.OriginalString;
@@ -127,7 +127,7 @@ public static class DriveItemRequestBuilderExtensions
             }
         }
 
-        var requestInformation = rootRequestBuilder.CreateGetRequestInformation();
+        var requestInformation = rootRequestBuilder.ToGetRequestInformation();
         var requestAdapter = rootRequestBuilder.GetRequestAdapter();
         requestInformation.PathParameters.Add("baseurl", requestAdapter.BaseUrl);
         var requestUrl = requestInformation.URI.OriginalString;
@@ -155,7 +155,7 @@ public static class DriveItemRequestBuilderExtensions
             }
         }
 
-        var requestInformation = rootRequestBuilder.CreateGetRequestInformation();
+        var requestInformation = rootRequestBuilder.ToGetRequestInformation();
         var requestAdapter = rootRequestBuilder.GetRequestAdapter();
         requestInformation.PathParameters.Add("baseurl", requestAdapter.BaseUrl);
         var requestUrl = requestInformation.URI.OriginalString;
