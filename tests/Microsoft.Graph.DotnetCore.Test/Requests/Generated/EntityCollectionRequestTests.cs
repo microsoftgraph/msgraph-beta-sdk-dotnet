@@ -13,6 +13,7 @@ using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Serialization.Json;
 using Xunit;
+using Microsoft.Graph.DotnetCore.Test.Mocks;
 
 namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
 {
@@ -24,11 +25,9 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
         [Fact]
         public void BuildRequest()
         {
-            var mockRequestAdapter = new Mock<IRequestAdapter>();
-            var graphServiceClient = new GraphServiceClient(mockRequestAdapter.Object);
+            var graphServiceClient = new GraphServiceClient(new MockAuthenticationProvider().Object);
             var expectedRequestUri = new Uri(string.Format(Constants.Url.GraphBaseUrlFormatString, "beta") + "/me/calendars");
             var requestInformation = graphServiceClient.Me.Calendars.ToGetRequestInformation();
-            requestInformation.PathParameters.Add("baseurl", string.Format(Constants.Url.GraphBaseUrlFormatString, "beta"));
             
             Assert.NotNull(requestInformation);
             Assert.Equal(expectedRequestUri, requestInformation.URI);
@@ -139,13 +138,11 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
         [Fact]
         public void Expand()
         {
-            var mockRequestAdapter = new Mock<IRequestAdapter>();
-            var graphServiceClient = new GraphServiceClient(mockRequestAdapter.Object);
+            var graphServiceClient = new GraphServiceClient(new MockAuthenticationProvider().Object);
             
             var expectedRequestUrl = string.Format("{0}/me/contactFolders?%24select=contacts", string.Format(Constants.Url.GraphBaseUrlFormatString, "beta"));
 
             var requestInformation = graphServiceClient.Me.ContactFolders.ToGetRequestInformation( requestConfiguration => requestConfiguration.QueryParameters.Select = new []{"contacts"});
-            requestInformation.PathParameters.Add("baseurl", string.Format(Constants.Url.GraphBaseUrlFormatString, "beta"));
             
             Assert.NotNull(requestInformation);
             Assert.Equal(new Uri(expectedRequestUrl), requestInformation.URI);
@@ -157,12 +154,10 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
         [Fact]
         public void Select()
         {
-            var mockRequestAdapter = new Mock<IRequestAdapter>();
-            var graphServiceClient = new GraphServiceClient(mockRequestAdapter.Object);
+            var graphServiceClient = new GraphServiceClient(new MockAuthenticationProvider().Object);
             var expectedRequestUrl = string.Format("{0}/me/contactFolders?%24select=value", string.Format(Constants.Url.GraphBaseUrlFormatString, "beta"));
 
             var requestInformation = graphServiceClient.Me.ContactFolders.ToGetRequestInformation( requestConfiguration => requestConfiguration.QueryParameters.Select = new []{"value"});
-            requestInformation.PathParameters.Add("baseurl", string.Format(Constants.Url.GraphBaseUrlFormatString, "beta"));
             
             Assert.NotNull(requestInformation);
             Assert.Equal(new Uri(expectedRequestUrl), requestInformation.URI);
@@ -174,12 +169,10 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
         [Fact]
         public void Top()
         {
-            var mockRequestAdapter = new Mock<IRequestAdapter>();
-            var graphServiceClient = new GraphServiceClient(mockRequestAdapter.Object);
+            var graphServiceClient = new GraphServiceClient(new MockAuthenticationProvider().Object);
             var expectedRequestUrl = string.Format("{0}/me/contactFolders?%24top=1", string.Format(Constants.Url.GraphBaseUrlFormatString, "beta"));
 
             var requestInformation = graphServiceClient.Me.ContactFolders.ToGetRequestInformation( requestConfiguration => requestConfiguration.QueryParameters.Top = 1);
-            requestInformation.PathParameters.Add("baseurl", string.Format(Constants.Url.GraphBaseUrlFormatString, "beta"));
             
             Assert.NotNull(requestInformation);
             Assert.Equal(new Uri(expectedRequestUrl), requestInformation.URI);
@@ -191,12 +184,10 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
         [Fact]
         public void Filter()
         {
-            var mockRequestAdapter = new Mock<IRequestAdapter>();
-            var graphServiceClient = new GraphServiceClient(mockRequestAdapter.Object);
+            var graphServiceClient = new GraphServiceClient(new MockAuthenticationProvider().Object);
             var expectedRequestUrl = string.Format("{0}/me/contactFolders?%24filter=value", string.Format(Constants.Url.GraphBaseUrlFormatString, "beta"));
 
             var requestInformation = graphServiceClient.Me.ContactFolders.ToGetRequestInformation( requestConfiguration => requestConfiguration.QueryParameters.Filter = "value");
-            requestInformation.PathParameters.Add("baseurl", string.Format(Constants.Url.GraphBaseUrlFormatString, "beta"));
             
             Assert.NotNull(requestInformation);
             Assert.Equal(new Uri(expectedRequestUrl), requestInformation.URI);
@@ -208,12 +199,10 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
         [Fact]
         public void Skip()
         {
-            var mockRequestAdapter = new Mock<IRequestAdapter>();
-            var graphServiceClient = new GraphServiceClient(mockRequestAdapter.Object);
+            var graphServiceClient = new GraphServiceClient(new MockAuthenticationProvider().Object);
             var expectedRequestUrl = string.Format("{0}/me/contactFolders?%24skip=2", string.Format(Constants.Url.GraphBaseUrlFormatString, "beta"));
 
             var requestInformation = graphServiceClient.Me.ContactFolders.ToGetRequestInformation( requestConfiguration => requestConfiguration.QueryParameters.Skip = 2);
-            requestInformation.PathParameters.Add("baseurl", string.Format(Constants.Url.GraphBaseUrlFormatString, "beta"));
             
             Assert.NotNull(requestInformation);
             Assert.Equal(new Uri(expectedRequestUrl), requestInformation.URI);
@@ -225,12 +214,10 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
         [Fact]
         public void OrderBy()
         {
-            var mockRequestAdapter = new Mock<IRequestAdapter>();
-            var graphServiceClient = new GraphServiceClient(mockRequestAdapter.Object);
+            var graphServiceClient = new GraphServiceClient(new MockAuthenticationProvider().Object);
             var expectedRequestUrl = string.Format("{0}/me/contactFolders?%24orderby=value", string.Format(Constants.Url.GraphBaseUrlFormatString, "beta"));
 
             var requestInformation = graphServiceClient.Me.ContactFolders.ToGetRequestInformation( requestConfiguration => requestConfiguration.QueryParameters.Orderby = new []{"value"});
-            requestInformation.PathParameters.Add("baseurl", string.Format(Constants.Url.GraphBaseUrlFormatString, "beta"));
             
             Assert.NotNull(requestInformation);
             Assert.Equal(new Uri(expectedRequestUrl), requestInformation.URI);
