@@ -20,7 +20,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
             try
             {
                 // Create the request message.
-                var getOffice365ActiveUserCountsRequest = graphClient.Reports.GetOffice365ActiveUserCountsWithPeriod("D7").CreateGetRequestInformation();
+                var getOffice365ActiveUserCountsRequest = graphClient.Reports.GetOffice365ActiveUserCountsWithPeriod("D7").ToGetRequestInformation();
 
                 // Send the request and get the response. It will automatically follow the redirect to get the Report file.
                 var responseStream = await graphClient.RequestAdapter.SendPrimitiveAsync<Stream>(getOffice365ActiveUserCountsRequest);

@@ -1,4 +1,4 @@
-// ------------------------------------------------------------------------------
+﻿// ------------------------------------------------------------------------------
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
@@ -22,7 +22,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
             var graphServiceClient = new GraphServiceClient(mockRequestAdapter.Object);
             var expectedRequestUrl = string.Format("{0}/drives/id/root/microsoft.graph.delta()", string.Format(Constants.Url.GraphBaseUrlFormatString, "beta"));
 
-            var requestInformation = graphServiceClient.Drives["id"].Root.Delta().CreateGetRequestInformation();
+            var requestInformation = graphServiceClient.Drives["id"].Root.Delta().ToGetRequestInformation();
             requestInformation.PathParameters.Add("baseurl", string.Format(Constants.Url.GraphBaseUrlFormatString, "beta"));
             
             Assert.NotNull(requestInformation);
@@ -42,7 +42,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
             var methodBaseUrl = string.Format("{0}/drives/id/root/microsoft.graph.search", string.Format(Constants.Url.GraphBaseUrlFormatString, "beta"));
             var expectedRequestUrl = string.Format("{0}(q='{1}')", methodBaseUrl, q);
 
-            var requestInformation = graphServiceClient.Drives["id"].Root.SearchWithQ(q).CreateGetRequestInformation();
+            var requestInformation = graphServiceClient.Drives["id"].Root.SearchWithQ(q).ToGetRequestInformation();
             requestInformation.PathParameters.Add("baseurl", string.Format(Constants.Url.GraphBaseUrlFormatString, "beta"));
             
             Assert.NotNull(requestInformation);
@@ -63,7 +63,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
             var methodBaseUrl = string.Format("{0}/me/microsoft.graph.reminderView", string.Format(Constants.Url.GraphBaseUrlFormatString, "beta"));
             var expectedRequestUrl = string.Format("{0}(StartDateTime='{2}',EndDateTime='{1}')", methodBaseUrl, startDateTime, endDateTime);
 
-            var requestInformation = graphServiceClient.Me.ReminderViewWithStartDateTimeWithEndDateTime(startDateTime, endDateTime).CreateGetRequestInformation();
+            var requestInformation = graphServiceClient.Me.ReminderViewWithStartDateTimeWithEndDateTime(startDateTime, endDateTime).ToGetRequestInformation();
             requestInformation.PathParameters.Add("baseurl", string.Format(Constants.Url.GraphBaseUrlFormatString, "beta"));
             
             Assert.NotNull(requestInformation);
@@ -103,7 +103,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
             var graphServiceClient = new GraphServiceClient(mockRequestAdapter.Object);
             var expectedRequestUrl = string.Format("{0}/me/microsoft.graph.reminderView(StartDateTime='now',EndDateTime='then')?%24top=1", string.Format(Constants.Url.GraphBaseUrlFormatString, "beta"));
 
-            var requestInformation = graphServiceClient.Me.ReminderViewWithStartDateTimeWithEndDateTime("then","now").CreateGetRequestInformation( requestConfiguration =>requestConfiguration.QueryParameters.Top =1 );
+            var requestInformation = graphServiceClient.Me.ReminderViewWithStartDateTimeWithEndDateTime("then","now").ToGetRequestInformation( requestConfiguration =>requestConfiguration.QueryParameters.Top =1 );
             requestInformation.PathParameters.Add("baseurl", string.Format(Constants.Url.GraphBaseUrlFormatString, "beta"));
             
             Assert.NotNull(requestInformation);
@@ -120,7 +120,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
             var graphServiceClient = new GraphServiceClient(mockRequestAdapter.Object);
             var expectedRequestUrl = string.Format("{0}/me/microsoft.graph.reminderView(StartDateTime='now',EndDateTime='then')?%24skip=1", string.Format(Constants.Url.GraphBaseUrlFormatString, "beta"));
 
-            var requestInformation = graphServiceClient.Me.ReminderViewWithStartDateTimeWithEndDateTime("then","now").CreateGetRequestInformation( requestConfiguration =>requestConfiguration.QueryParameters.Skip =1 );
+            var requestInformation = graphServiceClient.Me.ReminderViewWithStartDateTimeWithEndDateTime("then","now").ToGetRequestInformation( requestConfiguration =>requestConfiguration.QueryParameters.Skip =1 );
             requestInformation.PathParameters.Add("baseurl", string.Format(Constants.Url.GraphBaseUrlFormatString, "beta"));
             
             Assert.NotNull(requestInformation);

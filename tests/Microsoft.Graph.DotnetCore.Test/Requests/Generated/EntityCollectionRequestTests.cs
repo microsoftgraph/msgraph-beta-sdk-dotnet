@@ -27,7 +27,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
             var mockRequestAdapter = new Mock<IRequestAdapter>();
             var graphServiceClient = new GraphServiceClient(mockRequestAdapter.Object);
             var expectedRequestUri = new Uri(string.Format(Constants.Url.GraphBaseUrlFormatString, "beta") + "/me/calendars");
-            var requestInformation = graphServiceClient.Me.Calendars.CreateGetRequestInformation();
+            var requestInformation = graphServiceClient.Me.Calendars.ToGetRequestInformation();
             requestInformation.PathParameters.Add("baseurl", string.Format(Constants.Url.GraphBaseUrlFormatString, "beta"));
             
             Assert.NotNull(requestInformation);
@@ -144,7 +144,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
             
             var expectedRequestUrl = string.Format("{0}/me/contactFolders?%24select=contacts", string.Format(Constants.Url.GraphBaseUrlFormatString, "beta"));
 
-            var requestInformation = graphServiceClient.Me.ContactFolders.CreateGetRequestInformation( requestConfiguration => requestConfiguration.QueryParameters.Select = new []{"contacts"});
+            var requestInformation = graphServiceClient.Me.ContactFolders.ToGetRequestInformation( requestConfiguration => requestConfiguration.QueryParameters.Select = new []{"contacts"});
             requestInformation.PathParameters.Add("baseurl", string.Format(Constants.Url.GraphBaseUrlFormatString, "beta"));
             
             Assert.NotNull(requestInformation);
@@ -161,7 +161,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
             var graphServiceClient = new GraphServiceClient(mockRequestAdapter.Object);
             var expectedRequestUrl = string.Format("{0}/me/contactFolders?%24select=value", string.Format(Constants.Url.GraphBaseUrlFormatString, "beta"));
 
-            var requestInformation = graphServiceClient.Me.ContactFolders.CreateGetRequestInformation( requestConfiguration => requestConfiguration.QueryParameters.Select = new []{"value"});
+            var requestInformation = graphServiceClient.Me.ContactFolders.ToGetRequestInformation( requestConfiguration => requestConfiguration.QueryParameters.Select = new []{"value"});
             requestInformation.PathParameters.Add("baseurl", string.Format(Constants.Url.GraphBaseUrlFormatString, "beta"));
             
             Assert.NotNull(requestInformation);
@@ -178,7 +178,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
             var graphServiceClient = new GraphServiceClient(mockRequestAdapter.Object);
             var expectedRequestUrl = string.Format("{0}/me/contactFolders?%24top=1", string.Format(Constants.Url.GraphBaseUrlFormatString, "beta"));
 
-            var requestInformation = graphServiceClient.Me.ContactFolders.CreateGetRequestInformation( requestConfiguration => requestConfiguration.QueryParameters.Top = 1);
+            var requestInformation = graphServiceClient.Me.ContactFolders.ToGetRequestInformation( requestConfiguration => requestConfiguration.QueryParameters.Top = 1);
             requestInformation.PathParameters.Add("baseurl", string.Format(Constants.Url.GraphBaseUrlFormatString, "beta"));
             
             Assert.NotNull(requestInformation);
@@ -195,7 +195,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
             var graphServiceClient = new GraphServiceClient(mockRequestAdapter.Object);
             var expectedRequestUrl = string.Format("{0}/me/contactFolders?%24filter=value", string.Format(Constants.Url.GraphBaseUrlFormatString, "beta"));
 
-            var requestInformation = graphServiceClient.Me.ContactFolders.CreateGetRequestInformation( requestConfiguration => requestConfiguration.QueryParameters.Filter = "value");
+            var requestInformation = graphServiceClient.Me.ContactFolders.ToGetRequestInformation( requestConfiguration => requestConfiguration.QueryParameters.Filter = "value");
             requestInformation.PathParameters.Add("baseurl", string.Format(Constants.Url.GraphBaseUrlFormatString, "beta"));
             
             Assert.NotNull(requestInformation);
@@ -212,7 +212,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
             var graphServiceClient = new GraphServiceClient(mockRequestAdapter.Object);
             var expectedRequestUrl = string.Format("{0}/me/contactFolders?%24skip=2", string.Format(Constants.Url.GraphBaseUrlFormatString, "beta"));
 
-            var requestInformation = graphServiceClient.Me.ContactFolders.CreateGetRequestInformation( requestConfiguration => requestConfiguration.QueryParameters.Skip = 2);
+            var requestInformation = graphServiceClient.Me.ContactFolders.ToGetRequestInformation( requestConfiguration => requestConfiguration.QueryParameters.Skip = 2);
             requestInformation.PathParameters.Add("baseurl", string.Format(Constants.Url.GraphBaseUrlFormatString, "beta"));
             
             Assert.NotNull(requestInformation);
@@ -229,7 +229,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
             var graphServiceClient = new GraphServiceClient(mockRequestAdapter.Object);
             var expectedRequestUrl = string.Format("{0}/me/contactFolders?%24orderby=value", string.Format(Constants.Url.GraphBaseUrlFormatString, "beta"));
 
-            var requestInformation = graphServiceClient.Me.ContactFolders.CreateGetRequestInformation( requestConfiguration => requestConfiguration.QueryParameters.Orderby = new []{"value"});
+            var requestInformation = graphServiceClient.Me.ContactFolders.ToGetRequestInformation( requestConfiguration => requestConfiguration.QueryParameters.Orderby = new []{"value"});
             requestInformation.PathParameters.Add("baseurl", string.Format(Constants.Url.GraphBaseUrlFormatString, "beta"));
             
             Assert.NotNull(requestInformation);

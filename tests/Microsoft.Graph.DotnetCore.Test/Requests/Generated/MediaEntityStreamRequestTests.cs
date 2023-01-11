@@ -24,7 +24,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
             var mockRequestAdapter = new Mock<IRequestAdapter>();
             var graphServiceClient = new GraphServiceClient(mockRequestAdapter.Object);
             var expectedRequestUri = new Uri(string.Format(Constants.Url.GraphBaseUrlFormatString, "beta") + "/me/photo/$value");
-            var requestInformation = graphServiceClient.Me.Photo.Content.CreateGetRequestInformation();
+            var requestInformation = graphServiceClient.Me.Photo.Content.ToGetRequestInformation();
             requestInformation.PathParameters.Add("baseurl", string.Format(Constants.Url.GraphBaseUrlFormatString, "beta"));
             
             Assert.NotNull(requestInformation);
@@ -64,7 +64,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
             var responseHandler = new NativeResponseHandler(){ Value = httpResponseMessage };
             using var contentStream = new MemoryStream();
             
-            var requestInformation =  graphServiceClient.Me.Photo.Content.CreatePutRequestInformation(contentStream);
+            var requestInformation =  graphServiceClient.Me.Photo.Content.ToPutRequestInformation(contentStream);
             requestInformation.SetResponseHandler(responseHandler);
 
             await graphServiceClient.RequestAdapter.SendPrimitiveAsync<Stream>(requestInformation);

@@ -1,4 +1,4 @@
-// ------------------------------------------------------------------------------
+﻿// ------------------------------------------------------------------------------
 //  Copyright (c) Microsoft Corporation.  All Rights Reserved.  Licensed under the MIT License.  See License in the project root for license information.
 // ------------------------------------------------------------------------------
 
@@ -67,7 +67,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
             var mockRequestAdapter = new Mock<IRequestAdapter>();
             var graphServiceClient = new GraphServiceClient(mockRequestAdapter.Object);
             var expectedRequestUri = new Uri(string.Format(Constants.Url.GraphBaseUrlFormatString, "beta") + "/drives/driveId/items/id?%24expand=value");
-            var requestInformation = graphServiceClient.Drives["driveId"].Items["id"].CreateGetRequestInformation( requestConfiguration => requestConfiguration.QueryParameters.Expand = new []{"value"});
+            var requestInformation = graphServiceClient.Drives["driveId"].Items["id"].ToGetRequestInformation( requestConfiguration => requestConfiguration.QueryParameters.Expand = new []{"value"});
             requestInformation.PathParameters.Add("baseurl", string.Format(Constants.Url.GraphBaseUrlFormatString, "beta"));
             
             Assert.NotNull(requestInformation);
@@ -80,7 +80,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Generated
             var mockRequestAdapter = new Mock<IRequestAdapter>();
             var graphServiceClient = new GraphServiceClient(mockRequestAdapter.Object);
             var expectedRequestUri = new Uri(string.Format(Constants.Url.GraphBaseUrlFormatString, "beta") + "/drives/driveId/items/id?%24select=value");
-            var requestInformation = graphServiceClient.Drives["driveId"].Items["id"].CreateGetRequestInformation( requestConfiguration => requestConfiguration.QueryParameters.Select = new []{"value"});
+            var requestInformation = graphServiceClient.Drives["driveId"].Items["id"].ToGetRequestInformation( requestConfiguration => requestConfiguration.QueryParameters.Select = new []{"value"});
             requestInformation.PathParameters.Add("baseurl", string.Format(Constants.Url.GraphBaseUrlFormatString, "beta"));
             
             Assert.NotNull(requestInformation);

@@ -328,7 +328,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                 var directoryObjectGetMemberGroupsCollectionPage = await getMemberGroupsRequest.PostAsync(requestBody);
 
                 Assert.NotNull(directoryObjectGetMemberGroupsCollectionPage);
-                Assert.Equal("POST", getMemberGroupsRequest.CreatePostRequestInformation(requestBody).HttpMethod.ToString());
+                Assert.Equal("POST", getMemberGroupsRequest.ToPostRequestInformation(requestBody).HttpMethod.ToString());
                 Assert.True(requestBody.SecurityEnabledOnly.Value);
             }
             catch (Microsoft.Graph.ServiceException e)

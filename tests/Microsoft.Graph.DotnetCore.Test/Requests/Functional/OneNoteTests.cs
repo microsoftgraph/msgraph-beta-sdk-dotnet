@@ -341,7 +341,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                 string htmlBody = $"<!DOCTYPE html><html><head><title>{title}</title></head>" +
                                     "<body>Generated from the test</body></html> ";
 
-                var requestInformation = graphClient.Me.Onenote.Sections[firstSectionID].Pages.CreatePostRequestInformation(null);
+                var requestInformation = graphClient.Me.Onenote.Sections[firstSectionID].Pages.ToPostRequestInformation(null);
                 requestInformation.SetStreamContent(new MemoryStream(Encoding.UTF8.GetBytes(htmlBody)));
                 requestInformation.Headers.Add("Content-Type","text/html");
 
@@ -396,7 +396,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
             {
                 // Get the request URL for adding a page. You don't have to use the request builder to 
                 // get the URL. We use it here for convenience.
-                var requestInformation = graphClient.Me.Onenote.Sections[firstSectionID].Pages.CreateGetRequestInformation();
+                var requestInformation = graphClient.Me.Onenote.Sections[firstSectionID].Pages.ToGetRequestInformation();
 
                 // Create the request body.
                 string title = "OneNoteAddPageHtmlWithStream test created this";
@@ -448,7 +448,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
             try
             {
                 // Get the request URL for adding a page.
-                var requestInformation = graphClient.Me.Onenote.Sections[firstSectionID].Pages.CreateGetRequestInformation();
+                var requestInformation = graphClient.Me.Onenote.Sections[firstSectionID].Pages.ToGetRequestInformation();
                 string title = "OneNoteAddPageMultipart test created this";
                 string htmlBody = $@"<!DOCTYPE html><html><head><title>{title}</title></head>
                                     <body>Generated from the test
@@ -528,7 +528,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                 string pageId = pageCollection.Value[0].Id;
 
                 // URL to update a page. https://graph.microsoft.com/v1.0/me/onenote/sections/{id}/pages/{id}/content
-                var requestInformation = graphClient.Me.Onenote.Pages[pageId].Content.CreateGetRequestInformation();
+                var requestInformation = graphClient.Me.Onenote.Pages[pageId].Content.ToGetRequestInformation();
 
                 // Create the patch command to update thebody of the OneNote page.
                 OnenotePatchContentCommand updateBodyCommand = new OnenotePatchContentCommand() {
@@ -585,7 +585,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
             {
                 // Create a OneNote page.
                 var requestInformation =
-                    graphClient.Me.Onenote.Sections[firstSectionID].Pages.CreateGetRequestInformation();
+                    graphClient.Me.Onenote.Sections[firstSectionID].Pages.ToGetRequestInformation();
                 requestInformation.HttpMethod = Method.POST;
                 requestInformation.Headers.Add("Content-Type","text/html");
                 testPage = await graphClient.RequestAdapter.SendAsync(requestInformation,OnenotePage.CreateFromDiscriminatorValue);
@@ -610,7 +610,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
                                     "<body>Generated from the test with the partial</body></html> ";
 
             var requestInformation =
-                graphClient.Me.Onenote.Sections[firstSectionID].Pages.CreateGetRequestInformation();
+                graphClient.Me.Onenote.Sections[firstSectionID].Pages.ToGetRequestInformation();
             requestInformation.HttpMethod = Method.POST;
             requestInformation.SetStreamContent(new MemoryStream(System.Text.Encoding.UTF8.GetBytes(htmlBody)));
             requestInformation.Headers.Add("Content-Type","text/html");
@@ -666,7 +666,7 @@ namespace Microsoft.Graph.DotnetCore.Test.Requests.Functional
 
                     // Get the multiPart stream and then send the request to add a page using the stream.
                     var requestInformation =
-                        graphClient.Me.Onenote.Sections[firstSectionID].Pages.CreateGetRequestInformation();
+                        graphClient.Me.Onenote.Sections[firstSectionID].Pages.ToGetRequestInformation();
                     requestInformation.HttpMethod = Method.POST;
                     requestInformation.SetStreamContent(await multiPartContent.ReadAsStreamAsync());
                     requestInformation.Headers.Add("Content-Type",contentType);
