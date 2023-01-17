@@ -30,12 +30,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets business scenario properties.
+        /// Scenario-specific properties of the task. externalObjectId and externalBucketId properties must be specified when creating a task.
         /// </summary>
         [JsonPropertyName("businessScenarioProperties")]
         public BusinessScenarioProperties BusinessScenarioProperties { get; set; }
     
         /// <summary>
         /// Gets or sets target.
+        /// Target of the task that specifies where the task should be placed. Must be specified when creating a task.
         /// </summary>
         [JsonPropertyName("target")]
         public BusinessScenarioTaskTargetBase Target { get; set; }

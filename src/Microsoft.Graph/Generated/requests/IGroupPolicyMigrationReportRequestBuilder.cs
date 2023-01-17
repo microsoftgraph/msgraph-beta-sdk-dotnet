@@ -43,7 +43,12 @@ namespace Microsoft.Graph
         /// <returns>The <see cref="IGroupPolicyMigrationReportUnsupportedGroupPolicyExtensionsCollectionRequestBuilder"/>.</returns>
         IGroupPolicyMigrationReportUnsupportedGroupPolicyExtensionsCollectionRequestBuilder UnsupportedGroupPolicyExtensions { get; }
     
-        
+        /// <summary>
+        /// Gets the request builder for GroupPolicyMigrationReportUpdateScopeTags.
+        /// </summary>
+        /// <returns>The <see cref="IGroupPolicyMigrationReportUpdateScopeTagsRequestBuilder"/>.</returns>
+        IGroupPolicyMigrationReportUpdateScopeTagsRequestBuilder UpdateScopeTags(
+            IEnumerable<string> roleScopeTagIds = null);
     
     }
 }

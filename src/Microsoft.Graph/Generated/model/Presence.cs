@@ -43,6 +43,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets status message.
+        /// The presence status message of a user.
         /// </summary>
         [JsonPropertyName("statusMessage")]
         public PresenceStatusMessage StatusMessage { get; set; }

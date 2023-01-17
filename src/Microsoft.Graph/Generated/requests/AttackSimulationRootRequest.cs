@@ -246,6 +246,18 @@ namespace Microsoft.Graph
 
             if (attackSimulationRootToInitialize != null)
             {
+                if (attackSimulationRootToInitialize.Operations != null && attackSimulationRootToInitialize.Operations.CurrentPage != null)
+                {
+                    attackSimulationRootToInitialize.Operations.InitializeNextPageRequest(this.Client, attackSimulationRootToInitialize.OperationsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    attackSimulationRootToInitialize.Operations.AdditionalData = attackSimulationRootToInitialize.AdditionalData;
+                }
+                if (attackSimulationRootToInitialize.Payloads != null && attackSimulationRootToInitialize.Payloads.CurrentPage != null)
+                {
+                    attackSimulationRootToInitialize.Payloads.InitializeNextPageRequest(this.Client, attackSimulationRootToInitialize.PayloadsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    attackSimulationRootToInitialize.Payloads.AdditionalData = attackSimulationRootToInitialize.AdditionalData;
+                }
                 if (attackSimulationRootToInitialize.SimulationAutomations != null && attackSimulationRootToInitialize.SimulationAutomations.CurrentPage != null)
                 {
                     attackSimulationRootToInitialize.SimulationAutomations.InitializeNextPageRequest(this.Client, attackSimulationRootToInitialize.SimulationAutomationsNextLink);

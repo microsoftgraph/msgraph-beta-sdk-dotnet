@@ -30,42 +30,42 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets fileDigest.
-        /// The file digest prior to encryption.
+        /// The file digest prior to encryption. ProfileVersion1 requires a non-null FileDigest.
         /// </summary>
         [JsonPropertyName("fileDigest")]
         public byte[] FileDigest { get; set; }
     
         /// <summary>
         /// Gets or sets fileDigestAlgorithm.
-        /// The file digest algorithm.
+        /// The file digest algorithm. ProfileVersion1 currently only supports SHA256 for the FileDigestAlgorithm.
         /// </summary>
         [JsonPropertyName("fileDigestAlgorithm")]
         public string FileDigestAlgorithm { get; set; }
     
         /// <summary>
         /// Gets or sets initializationVector.
-        /// The initialization vector used for the encryption algorithm.
+        /// The initialization vector (IV) used for the encryption algorithm. Must be 16 bytes.
         /// </summary>
         [JsonPropertyName("initializationVector")]
         public byte[] InitializationVector { get; set; }
     
         /// <summary>
         /// Gets or sets mac.
-        /// The hash of the encrypted file content + IV (content hash).
+        /// The hash of the concatenation of the IV and encrypted file content. Must be 32 bytes.
         /// </summary>
         [JsonPropertyName("mac")]
         public byte[] Mac { get; set; }
     
         /// <summary>
         /// Gets or sets macKey.
-        /// The key used to get mac.
+        /// The key used to compute the message authentication code of the concatenation of the IV and encrypted file content. Must be 32 bytes.
         /// </summary>
         [JsonPropertyName("macKey")]
         public byte[] MacKey { get; set; }
     
         /// <summary>
         /// Gets or sets profileIdentifier.
-        /// The the profile identifier.
+        /// The profile identifier. Maps to the strategy used to encrypt the file. Currently, only ProfileVersion1 is supported.
         /// </summary>
         [JsonPropertyName("profileIdentifier")]
         public string ProfileIdentifier { get; set; }

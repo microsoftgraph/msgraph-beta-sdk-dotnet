@@ -762,6 +762,21 @@ namespace Microsoft.Graph
             string filter = null);
 
         /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetDevicesWithoutCompliancePolicyReportRequestBuilder"/>.</returns>
+        IDeviceManagementReportsGetDevicesWithoutCompliancePolicyReportRequestBuilder GetDevicesWithoutCompliancePolicyReport(
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null);
+
+        /// <summary>
         /// Gets the request builder for DeviceManagementReportsGetHistoricalReport.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementReportsGetHistoricalReportRequestBuilder"/>.</returns>

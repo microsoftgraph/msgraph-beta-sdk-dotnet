@@ -23,56 +23,56 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets v10_0.
-        /// Version 10.0 or later.
+        /// When TRUE, only Version 10.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
         /// </summary>
         [JsonPropertyName("v10_0")]
         public bool? V10_0 { get; set; }
     
         /// <summary>
         /// Gets or sets v11_0.
-        /// Version 11.0 or later.
+        /// When TRUE, only Version 11.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
         /// </summary>
         [JsonPropertyName("v11_0")]
         public bool? V11_0 { get; set; }
     
         /// <summary>
         /// Gets or sets v12_0.
-        /// Version 12.0 or later.
+        /// When TRUE, only Version 12.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
         /// </summary>
         [JsonPropertyName("v12_0")]
         public bool? V12_0 { get; set; }
     
         /// <summary>
         /// Gets or sets v13_0.
-        /// Version 13.0 or later.
+        /// When TRUE, only Version 13.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
         /// </summary>
         [JsonPropertyName("v13_0")]
         public bool? V13_0 { get; set; }
     
         /// <summary>
         /// Gets or sets v14_0.
-        /// Version 14.0 or later.
+        /// When TRUE, only Version 14.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
         /// </summary>
         [JsonPropertyName("v14_0")]
         public bool? V14_0 { get; set; }
     
         /// <summary>
         /// Gets or sets v15_0.
-        /// Version 15.0 or later.
+        /// When TRUE, only Version 15.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
         /// </summary>
         [JsonPropertyName("v15_0")]
         public bool? V15_0 { get; set; }
     
         /// <summary>
         /// Gets or sets v8_0.
-        /// Version 8.0 or later.
+        /// When TRUE, only Version 8.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
         /// </summary>
         [JsonPropertyName("v8_0")]
         public bool? V8_0 { get; set; }
     
         /// <summary>
         /// Gets or sets v9_0.
-        /// Version 9.0 or later.
+        /// When TRUE, only Version 9.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.
         /// </summary>
         [JsonPropertyName("v9_0")]
         public bool? V9_0 { get; set; }

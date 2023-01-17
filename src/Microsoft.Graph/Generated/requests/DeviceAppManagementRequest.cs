@@ -294,12 +294,6 @@ namespace Microsoft.Graph
                     // Copy the additional data collection to the page itself so that information is not lost
                     deviceAppManagementToInitialize.PolicySets.AdditionalData = deviceAppManagementToInitialize.AdditionalData;
                 }
-                if (deviceAppManagementToInitialize.SideLoadingKeys != null && deviceAppManagementToInitialize.SideLoadingKeys.CurrentPage != null)
-                {
-                    deviceAppManagementToInitialize.SideLoadingKeys.InitializeNextPageRequest(this.Client, deviceAppManagementToInitialize.SideLoadingKeysNextLink);
-                    // Copy the additional data collection to the page itself so that information is not lost
-                    deviceAppManagementToInitialize.SideLoadingKeys.AdditionalData = deviceAppManagementToInitialize.AdditionalData;
-                }
                 if (deviceAppManagementToInitialize.VppTokens != null && deviceAppManagementToInitialize.VppTokens.CurrentPage != null)
                 {
                     deviceAppManagementToInitialize.VppTokens.InitializeNextPageRequest(this.Client, deviceAppManagementToInitialize.VppTokensNextLink);

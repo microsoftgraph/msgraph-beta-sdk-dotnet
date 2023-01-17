@@ -36,6 +36,12 @@ namespace Microsoft.Graph
         public string HitId { get; set; }
     
         /// <summary>
+        /// Gets or sets isCollapsed.
+        /// </summary>
+        [JsonPropertyName("isCollapsed")]
+        public bool? IsCollapsed { get; set; }
+    
+        /// <summary>
         /// Gets or sets rank.
         /// The rank or the order of the result.
         /// </summary>

@@ -86,12 +86,6 @@ namespace Microsoft.Graph
         IDeviceAppManagementPolicySetsCollectionRequestBuilder PolicySets { get; }
 
         /// <summary>
-        /// Gets the request builder for SideLoadingKeys.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceAppManagementSideLoadingKeysCollectionRequestBuilder"/>.</returns>
-        IDeviceAppManagementSideLoadingKeysCollectionRequestBuilder SideLoadingKeys { get; }
-
-        /// <summary>
         /// Gets the request builder for VppTokens.
         /// </summary>
         /// <returns>The <see cref="IDeviceAppManagementVppTokensCollectionRequestBuilder"/>.</returns>

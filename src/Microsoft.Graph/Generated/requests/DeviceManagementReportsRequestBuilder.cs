@@ -1463,6 +1463,35 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for DeviceManagementReportsGetDevicesWithoutCompliancePolicyReport.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementReportsGetDevicesWithoutCompliancePolicyReportRequestBuilder"/>.</returns>
+        public IDeviceManagementReportsGetDevicesWithoutCompliancePolicyReportRequestBuilder GetDevicesWithoutCompliancePolicyReport(
+            string name = null,
+            IEnumerable<string> select = null,
+            string search = null,
+            IEnumerable<string> groupBy = null,
+            IEnumerable<string> orderBy = null,
+            Int32? skip = null,
+            Int32? top = null,
+            string sessionId = null,
+            string filter = null)
+        {
+            return new DeviceManagementReportsGetDevicesWithoutCompliancePolicyReportRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.getDevicesWithoutCompliancePolicyReport"),
+                this.Client,
+                name,
+                select,
+                search,
+                groupBy,
+                orderBy,
+                skip,
+                top,
+                sessionId,
+                filter);
+        }
+
+        /// <summary>
         /// Gets the request builder for DeviceManagementReportsGetHistoricalReport.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementReportsGetHistoricalReportRequestBuilder"/>.</returns>

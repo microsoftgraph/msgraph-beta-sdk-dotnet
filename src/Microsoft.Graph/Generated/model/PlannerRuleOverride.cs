@@ -23,12 +23,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets name.
+        /// Name of the override. Allowed override values will be dependent on the property affected by the rule.
         /// </summary>
         [JsonPropertyName("name")]
         public string Name { get; set; }
     
         /// <summary>
         /// Gets or sets rules.
+        /// Overridden rules. These are used as rules for the override instead of the default rules.
         /// </summary>
         [JsonPropertyName("rules")]
         public IEnumerable<string> Rules { get; set; }

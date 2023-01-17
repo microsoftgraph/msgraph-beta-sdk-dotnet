@@ -35,13 +35,6 @@ namespace Microsoft.Graph
         public string DisplayName { get; set; }
     
         /// <summary>
-        /// Gets or sets enable certificate pinning.
-        /// When set to true, certificate pinning will be enforced on connections between the Microsoft Tunnel server and Microsoft Tunnel clients. When set to false, certificate pinning will be disabled.
-        /// </summary>
-        [JsonPropertyName("enableCertificatePinning")]
-        public bool? EnableCertificatePinning { get; set; }
-    
-        /// <summary>
         /// Gets or sets internal network probe url.
         /// The site's Internal Network Access Probe URL
         /// </summary>

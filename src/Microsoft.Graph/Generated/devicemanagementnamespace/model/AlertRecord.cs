@@ -23,7 +23,7 @@ namespace Microsoft.Graph.DeviceManagementNamespace
     
         /// <summary>
         /// Gets or sets alert impact.
-        /// The impact of the alert event. Consists of a number followed by the aggregation type. For example, 6 Count and 12 AffectedCloudPcPercentage.
+        /// The impact of the alert event. Consists of a number followed by the aggregation type. For example, 6 affectedCloudPcCount means that 6 Cloud PCs are affected. 12 affectedCloudPcPercentage means 12% of Cloud PCs are affected.
         /// </summary>
         [JsonPropertyName("alertImpact")]
         public AlertImpact AlertImpact { get; set; }

@@ -31,6 +31,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets taskTargetKind.
+        /// Represents the kind of the target. The possible values are: group, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("taskTargetKind")]
         public PlannerTaskTargetKind? TaskTargetKind { get; set; }

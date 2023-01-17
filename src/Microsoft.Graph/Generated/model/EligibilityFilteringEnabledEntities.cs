@@ -40,5 +40,10 @@ namespace Microsoft.Graph
         /// </summary>
         UnknownFutureValue = 4,
 	
+        /// <summary>
+        /// Time Off Reason
+        /// </summary>
+        TimeOffReason = 8,
+	
     }
 }

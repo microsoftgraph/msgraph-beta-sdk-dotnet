@@ -72,6 +72,13 @@ namespace Microsoft.Graph
         public bool? DisplayToneSetupDisabled { get; set; }
     
         /// <summary>
+        /// Gets or sets enabled skip keys.
+        /// enabledSkipKeys contains all the enabled skip keys as strings
+        /// </summary>
+        [JsonPropertyName("enabledSkipKeys")]
+        public IEnumerable<string> EnabledSkipKeys { get; set; }
+    
+        /// <summary>
         /// Gets or sets is default.
         /// Indicates if this is the default profile
         /// </summary>
@@ -129,7 +136,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets supervised mode enabled.
-        /// Supervised mode, True to enable, false otherwise. See https://learn.microsoft.com/intune/deploy-use/enroll-devices-in-microsoft-intune for additional information.
+        /// Supervised mode, True to enable, false otherwise. See https://learn.microsoft.com/en-us/intune/deploy-use/enroll-devices-in-microsoft-intune for additional information.
         /// </summary>
         [JsonPropertyName("supervisedModeEnabled")]
         public bool? SupervisedModeEnabled { get; set; }

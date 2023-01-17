@@ -121,6 +121,12 @@ namespace Microsoft.Graph
         public bool? OnPremisesSyncEnabled { get; set; }
     
         /// <summary>
+        /// Gets or sets partner tenant type.
+        /// </summary>
+        [JsonPropertyName("partnerTenantType")]
+        public PartnerTenantType? PartnerTenantType { get; set; }
+    
+        /// <summary>
         /// Gets or sets postal code.
         /// Postal code of the address for the organization.
         /// </summary>

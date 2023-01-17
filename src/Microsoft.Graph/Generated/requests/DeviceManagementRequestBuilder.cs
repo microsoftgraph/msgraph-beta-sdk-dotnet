@@ -1239,6 +1239,18 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
+        /// Gets the request builder for UserExperienceAnalyticsDeviceTimelineEvents.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsDeviceTimelineEventsCollectionRequestBuilder"/>.</returns>
+        public IDeviceManagementUserExperienceAnalyticsDeviceTimelineEventsCollectionRequestBuilder UserExperienceAnalyticsDeviceTimelineEvents
+        {
+            get
+            {
+                return new DeviceManagementUserExperienceAnalyticsDeviceTimelineEventsCollectionRequestBuilder(this.AppendSegmentToRequestUrl("userExperienceAnalyticsDeviceTimelineEvents"), this.Client);
+            }
+        }
+
+        /// <summary>
         /// Gets the request builder for UserExperienceAnalyticsImpactingProcess.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsImpactingProcessCollectionRequestBuilder"/>.</returns>

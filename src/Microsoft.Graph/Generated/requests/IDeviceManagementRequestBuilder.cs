@@ -626,6 +626,12 @@ namespace Microsoft.Graph
         IDeviceManagementUserExperienceAnalyticsDevicesWithoutCloudIdentityCollectionRequestBuilder UserExperienceAnalyticsDevicesWithoutCloudIdentity { get; }
 
         /// <summary>
+        /// Gets the request builder for UserExperienceAnalyticsDeviceTimelineEvents.
+        /// </summary>
+        /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsDeviceTimelineEventsCollectionRequestBuilder"/>.</returns>
+        IDeviceManagementUserExperienceAnalyticsDeviceTimelineEventsCollectionRequestBuilder UserExperienceAnalyticsDeviceTimelineEvents { get; }
+
+        /// <summary>
         /// Gets the request builder for UserExperienceAnalyticsImpactingProcess.
         /// </summary>
         /// <returns>The <see cref="IDeviceManagementUserExperienceAnalyticsImpactingProcessCollectionRequestBuilder"/>.</returns>

@@ -30,6 +30,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets role.
+        /// Identifies the relationship of the caller to the task. The possible values are: defaultRules, groupOwners, groupMembers, taskAssignees, applications, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("role")]
         public PlannerRelationshipUserRoles? Role { get; set; }

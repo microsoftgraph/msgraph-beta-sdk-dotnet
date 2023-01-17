@@ -23,6 +23,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets rules.
+        /// The rules that should be enforced on the tasks when they are being changed outside of the scenario, based on the role of the caller.
         /// </summary>
         [JsonPropertyName("rules")]
         public IEnumerable<PlannerTaskRoleBasedRule> Rules { get; set; }

@@ -31,6 +31,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets ruleKind.
+        /// Identifies which type of property rules is represented by this instance. The possible values are: taskRule, bucketRule, planRule, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("ruleKind")]
         public PlannerRuleKind? RuleKind { get; set; }

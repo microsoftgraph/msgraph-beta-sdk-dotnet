@@ -22,6 +22,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets edit policy.
+        /// Policy configuration for tasks created for the businessScenario when they are being changed outside of the scenario.
         /// </summary>
         [JsonPropertyName("editPolicy")]
         public PlannerTaskPolicy EditPolicy { get; set; }

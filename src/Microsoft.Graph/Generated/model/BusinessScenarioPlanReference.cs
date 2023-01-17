@@ -22,6 +22,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets title.
+        /// The title property of the plannerPlan.
         /// </summary>
         [JsonPropertyName("title")]
         public string Title { get; set; }

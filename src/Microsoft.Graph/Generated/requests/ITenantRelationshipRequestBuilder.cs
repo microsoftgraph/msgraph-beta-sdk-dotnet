@@ -16,20 +16,20 @@ namespace Microsoft.Graph
     /// <summary>
     /// The interface ITenantRelationshipRequestBuilder.
     /// </summary>
-    public partial interface ITenantRelationshipRequestBuilder : IEntityRequestBuilder
+    public partial interface ITenantRelationshipRequestBuilder : IBaseRequestBuilder
     {
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <returns>The built request.</returns>
-        new ITenantRelationshipRequest Request();
+        ITenantRelationshipRequest Request();
 
         /// <summary>
         /// Builds the request.
         /// </summary>
         /// <param name="options">The query and header options for the request.</param>
         /// <returns>The built request.</returns>
-        new ITenantRelationshipRequest Request(IEnumerable<Option> options);
+        ITenantRelationshipRequest Request(IEnumerable<Option> options);
     
         /// <summary>
         /// Gets the request builder for ManagedTenants.

@@ -23,28 +23,28 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets highSeverityAnomalyCount.
-        /// The number of high severity anomalies which have been detected. Valid values -2147483648 to 2147483647
+        /// Indicates count of high severity anomalies which have been detected. Valid values -2147483648 to 2147483647
         /// </summary>
         [JsonPropertyName("highSeverityAnomalyCount")]
         public Int32? HighSeverityAnomalyCount { get; set; }
     
         /// <summary>
         /// Gets or sets informationalSeverityAnomalyCount.
-        /// The number of informational severity anomalies which have been detected. Valid values -2147483648 to 2147483647
+        /// Indicates count of informational severity anomalies which have been detected. Valid values -2147483648 to 2147483647
         /// </summary>
         [JsonPropertyName("informationalSeverityAnomalyCount")]
         public Int32? InformationalSeverityAnomalyCount { get; set; }
     
         /// <summary>
         /// Gets or sets lowSeverityAnomalyCount.
-        /// The number of low severity anomalies which have been detected. Valid values -2147483648 to 2147483647
+        /// Indicates count of low severity anomalies which have been detected. Valid values -2147483648 to 2147483647
         /// </summary>
         [JsonPropertyName("lowSeverityAnomalyCount")]
         public Int32? LowSeverityAnomalyCount { get; set; }
     
         /// <summary>
         /// Gets or sets mediumSeverityAnomalyCount.
-        /// The number of medium severity anomalies which have been detected. Valid values -2147483648 to 2147483647
+        /// Indicates count of medium severity anomalies which have been detected. Valid values -2147483648 to 2147483647
         /// </summary>
         [JsonPropertyName("mediumSeverityAnomalyCount")]
         public Int32? MediumSeverityAnomalyCount { get; set; }

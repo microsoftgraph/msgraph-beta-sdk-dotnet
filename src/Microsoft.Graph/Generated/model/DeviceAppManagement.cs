@@ -176,20 +176,6 @@ namespace Microsoft.Graph
         public string PolicySetsNextLink { get; set; }
     
         /// <summary>
-        /// Gets or sets side loading keys.
-        /// Side Loading Keys that are required for the Windows 8 and 8.1 Apps installation.
-        /// </summary>
-        [JsonPropertyName("sideLoadingKeys")]
-        public IDeviceAppManagementSideLoadingKeysCollectionPage SideLoadingKeys { get; set; }
-
-        /// <summary>
-        /// Gets or sets sideLoadingKeysNextLink.
-        /// </summary>
-        [JsonPropertyName("sideLoadingKeys@odata.nextLink")]
-        [JsonConverter(typeof(NextLinkConverter))]
-        public string SideLoadingKeysNextLink { get; set; }
-    
-        /// <summary>
         /// Gets or sets vpp tokens.
         /// List of Vpp tokens for this organization.
         /// </summary>

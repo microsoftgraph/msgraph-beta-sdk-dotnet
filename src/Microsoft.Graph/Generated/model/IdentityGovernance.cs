@@ -52,6 +52,12 @@ namespace Microsoft.Graph
         public EntitlementManagement EntitlementManagement { get; set; }
     
         /// <summary>
+        /// Gets or sets privileged access.
+        /// </summary>
+        [JsonPropertyName("privilegedAccess")]
+        public PrivilegedAccessRoot PrivilegedAccess { get; set; }
+    
+        /// <summary>
         /// Gets or sets @odata.type.
         /// </summary>
         [JsonPropertyName("@odata.type")]

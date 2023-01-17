@@ -23,30 +23,35 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets externalBucketId.
+        /// The identifier for the bucketDefinition configured in the plannerPlanConfiguration for the scenario. The task will be placed in the corresponding plannerBucket in the target plan. Required.
         /// </summary>
         [JsonPropertyName("externalBucketId")]
         public string ExternalBucketId { get; set; }
     
         /// <summary>
         /// Gets or sets externalContextId.
+        /// The identifier for the context of the task. Context is an application controlled value, and tasks can be queried by their externalContextId. Optional.
         /// </summary>
         [JsonPropertyName("externalContextId")]
         public string ExternalContextId { get; set; }
     
         /// <summary>
         /// Gets or sets externalObjectId.
+        /// Application-specific identifier for the task. Every task for the same scenario must have a unique identifier specified for this property. Required.
         /// </summary>
         [JsonPropertyName("externalObjectId")]
         public string ExternalObjectId { get; set; }
     
         /// <summary>
         /// Gets or sets externalObjectVersion.
+        /// Application-specific version of the task. Optional.
         /// </summary>
         [JsonPropertyName("externalObjectVersion")]
         public string ExternalObjectVersion { get; set; }
     
         /// <summary>
         /// Gets or sets webUrl.
+        /// The URL to the application-specific experience for this task. Optional.
         /// </summary>
         [JsonPropertyName("webUrl")]
         public string WebUrl { get; set; }

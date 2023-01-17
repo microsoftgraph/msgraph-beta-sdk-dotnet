@@ -23,12 +23,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets defaultRules.
+        /// The default rules that apply if no override matches to the current data.
         /// </summary>
         [JsonPropertyName("defaultRules")]
         public IEnumerable<string> DefaultRules { get; set; }
     
         /// <summary>
         /// Gets or sets overrides.
+        /// Overrides that specify different rules for specific data associated with the field.
         /// </summary>
         [JsonPropertyName("overrides")]
         public IEnumerable<PlannerRuleOverride> Overrides { get; set; }
