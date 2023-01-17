@@ -31,5 +31,11 @@ namespace Microsoft.Graph
         /// <returns>The built request.</returns>
         new ISimulationRequest Request(IEnumerable<Option> options);
     
+        /// <summary>
+        /// Gets the request builder for Payload.
+        /// </summary>
+        /// <returns>The <see cref="IPayloadWithReferenceRequestBuilder"/>.</returns>
+        IPayloadWithReferenceRequestBuilder Payload { get; }
+    
     }
 }

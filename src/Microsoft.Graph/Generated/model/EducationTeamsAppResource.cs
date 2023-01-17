@@ -29,14 +29,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets appIconWebUrl.
-        /// URL that points to the app's icon.
+        /// URL that points to the icon of the app.
         /// </summary>
         [JsonPropertyName("appIconWebUrl")]
         public string AppIconWebUrl { get; set; }
     
         /// <summary>
         /// Gets or sets appId.
-        /// Teams App ID of the application.
+        /// Teams app ID of the application.
         /// </summary>
         [JsonPropertyName("appId")]
         public string AppId { get; set; }

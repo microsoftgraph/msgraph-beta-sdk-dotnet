@@ -109,6 +109,18 @@ namespace Microsoft.Graph
                 return new EntitlementManagementRequestBuilder(this.AppendSegmentToRequestUrl("entitlementManagement"), this.Client);
             }
         }
+
+        /// <summary>
+        /// Gets the request builder for PrivilegedAccess.
+        /// </summary>
+        /// <returns>The <see cref="IPrivilegedAccessRootRequestBuilder"/>.</returns>
+        public IPrivilegedAccessRootRequestBuilder PrivilegedAccess
+        {
+            get
+            {
+                return new PrivilegedAccessRootRequestBuilder(this.AppendSegmentToRequestUrl("privilegedAccess"), this.Client);
+            }
+        }
     
     }
 }

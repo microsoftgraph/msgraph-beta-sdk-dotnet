@@ -23,14 +23,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets id.
-        /// The object identifier of an Azure AD user or group.
+        /// The object identifier of an Azure AD group.
         /// </summary>
         [JsonPropertyName("id")]
         public string Id { get; set; }
     
         /// <summary>
         /// Gets or sets targetType.
-        /// The type of the authentication method target. Possible values are: user, group, unknownFutureValue.
+        /// The type of the authentication method target. Possible values are: group and unknownFutureValue.
         /// </summary>
         [JsonPropertyName("targetType")]
         public AuthenticationMethodTargetType? TargetType { get; set; }

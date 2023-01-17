@@ -50,6 +50,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets reconfirmation in days.
+        /// Days before the user will be asked to reconfirm their method.
         /// </summary>
         [JsonPropertyName("reconfirmationInDays")]
         public Int32? ReconfirmationInDays { get; set; }

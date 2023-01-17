@@ -23,18 +23,21 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets defaultRule.
+        /// Default rule that applies when a property or action-specific rule is not provided. Possible values are: Allow, Block
         /// </summary>
         [JsonPropertyName("defaultRule")]
         public string DefaultRule { get; set; }
     
         /// <summary>
         /// Gets or sets propertyRule.
+        /// Rules for specific properties and actions.
         /// </summary>
         [JsonPropertyName("propertyRule")]
         public PlannerTaskPropertyRule PropertyRule { get; set; }
     
         /// <summary>
         /// Gets or sets role.
+        /// The role these rules apply to.
         /// </summary>
         [JsonPropertyName("role")]
         public PlannerTaskConfigurationRoleBase Role { get; set; }

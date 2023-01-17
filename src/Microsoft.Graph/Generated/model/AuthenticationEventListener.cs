@@ -47,12 +47,6 @@ namespace Microsoft.Graph
         [JsonPropertyName("priority")]
         public Int32? Priority { get; set; }
     
-        /// <summary>
-        /// Gets or sets tags.
-        /// </summary>
-        [JsonPropertyName("tags")]
-        public IEnumerable<KeyValuePair> Tags { get; set; }
-    
     }
 }
 

@@ -159,18 +159,6 @@ namespace Microsoft.Graph
         }
 
         /// <summary>
-        /// Gets the request builder for SideLoadingKeys.
-        /// </summary>
-        /// <returns>The <see cref="IDeviceAppManagementSideLoadingKeysCollectionRequestBuilder"/>.</returns>
-        public IDeviceAppManagementSideLoadingKeysCollectionRequestBuilder SideLoadingKeys
-        {
-            get
-            {
-                return new DeviceAppManagementSideLoadingKeysCollectionRequestBuilder(this.AppendSegmentToRequestUrl("sideLoadingKeys"), this.Client);
-            }
-        }
-
-        /// <summary>
         /// Gets the request builder for VppTokens.
         /// </summary>
         /// <returns>The <see cref="IDeviceAppManagementVppTokensCollectionRequestBuilder"/>.</returns>

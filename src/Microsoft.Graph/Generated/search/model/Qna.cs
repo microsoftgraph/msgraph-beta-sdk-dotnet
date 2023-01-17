@@ -58,7 +58,7 @@ namespace Microsoft.Graph.Search
     
         /// <summary>
         /// Gets or sets language tags.
-        /// A list of language names that are geographically specific and that this QnA can be viewed in. Each language tag value follows the pattern {language}-{region}. As an example, en-us is English as used in the United States. See supported language tags for the list of possible values.
+        /// A list of language names that are geographically specific and that this QnA can be viewed in. Each language tag value follows the pattern {language}-{region}. As an example, en-us is English as used in the United States. For the list of possible values, see supported language tags.
         /// </summary>
         [JsonPropertyName("languageTags")]
         public IEnumerable<string> LanguageTags { get; set; }

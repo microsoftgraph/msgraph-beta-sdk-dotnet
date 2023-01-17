@@ -50,5 +50,17 @@ namespace Microsoft.Graph
             return new SimulationRequest(this.RequestUrl, this.Client, options);
         }
     
+        /// <summary>
+        /// Gets the request builder for Payload.
+        /// </summary>
+        /// <returns>The <see cref="IPayloadWithReferenceRequestBuilder"/>.</returns>
+        public IPayloadWithReferenceRequestBuilder Payload
+        {
+            get
+            {
+                return new PayloadWithReferenceRequestBuilder(this.AppendSegmentToRequestUrl("payload"), this.Client);
+            }
+        }
+    
     }
 }

@@ -68,6 +68,12 @@ namespace Microsoft.Graph
         [JsonPropertyName("recordingInfo")]
         public RecordingInfo RecordingInfo { get; set; }
     
+        /// <summary>
+        /// Gets or sets restricted experience.
+        /// </summary>
+        [JsonPropertyName("restrictedExperience")]
+        public OnlineMeetingRestricted RestrictedExperience { get; set; }
+    
     }
 }
 

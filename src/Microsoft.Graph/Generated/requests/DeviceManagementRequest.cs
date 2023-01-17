@@ -732,6 +732,12 @@ namespace Microsoft.Graph
                     // Copy the additional data collection to the page itself so that information is not lost
                     deviceManagementToInitialize.UserExperienceAnalyticsDevicesWithoutCloudIdentity.AdditionalData = deviceManagementToInitialize.AdditionalData;
                 }
+                if (deviceManagementToInitialize.UserExperienceAnalyticsDeviceTimelineEvents != null && deviceManagementToInitialize.UserExperienceAnalyticsDeviceTimelineEvents.CurrentPage != null)
+                {
+                    deviceManagementToInitialize.UserExperienceAnalyticsDeviceTimelineEvents.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.UserExperienceAnalyticsDeviceTimelineEventsNextLink);
+                    // Copy the additional data collection to the page itself so that information is not lost
+                    deviceManagementToInitialize.UserExperienceAnalyticsDeviceTimelineEvents.AdditionalData = deviceManagementToInitialize.AdditionalData;
+                }
                 if (deviceManagementToInitialize.UserExperienceAnalyticsImpactingProcess != null && deviceManagementToInitialize.UserExperienceAnalyticsImpactingProcess.CurrentPage != null)
                 {
                     deviceManagementToInitialize.UserExperienceAnalyticsImpactingProcess.InitializeNextPageRequest(this.Client, deviceManagementToInitialize.UserExperienceAnalyticsImpactingProcessNextLink);

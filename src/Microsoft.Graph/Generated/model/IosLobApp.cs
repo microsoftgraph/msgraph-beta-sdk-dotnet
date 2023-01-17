@@ -57,13 +57,6 @@ namespace Microsoft.Graph
         public DateTimeOffset? ExpirationDateTime { get; set; }
     
         /// <summary>
-        /// Gets or sets identity version.
-        /// The identity version. This property is being deprecated in 2211(November 2022)
-        /// </summary>
-        [JsonPropertyName("identityVersion")]
-        public string IdentityVersion { get; set; }
-    
-        /// <summary>
         /// Gets or sets minimum supported operating system.
         /// The value for the minimum applicable operating system.
         /// </summary>

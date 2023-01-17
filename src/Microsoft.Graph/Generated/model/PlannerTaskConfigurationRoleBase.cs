@@ -31,6 +31,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets roleKind.
+        /// Type of the role. The possible values are: relationship, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("roleKind")]
         public PlannerUserRoleKind? RoleKind { get; set; }

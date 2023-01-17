@@ -22,42 +22,49 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets buckets.
+        /// List the buckets that should be created in the plan.
         /// </summary>
         [JsonPropertyName("buckets")]
         public IEnumerable<PlannerPlanConfigurationBucketDefinition> Buckets { get; set; }
     
         /// <summary>
         /// Gets or sets created by.
+        /// The identity of the creator of the plan configuration.
         /// </summary>
         [JsonPropertyName("createdBy")]
         public IdentitySet CreatedBy { get; set; }
     
         /// <summary>
         /// Gets or sets created date time.
+        /// The date and time when the plan configuration was created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
         /// </summary>
         [JsonPropertyName("createdDateTime")]
         public DateTimeOffset? CreatedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets default language.
+        /// The language code for the default language to be used for the names of the objects created for the plan.
         /// </summary>
         [JsonPropertyName("defaultLanguage")]
         public string DefaultLanguage { get; set; }
     
         /// <summary>
         /// Gets or sets last modified by.
+        /// The identity of the user who last modified the plan configuration.
         /// </summary>
         [JsonPropertyName("lastModifiedBy")]
         public IdentitySet LastModifiedBy { get; set; }
     
         /// <summary>
         /// Gets or sets last modified date time.
+        /// The date and time when the plan configuration was last modified. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.
         /// </summary>
         [JsonPropertyName("lastModifiedDateTime")]
         public DateTimeOffset? LastModifiedDateTime { get; set; }
     
         /// <summary>
         /// Gets or sets localizations.
+        /// Localized names for the plan configuration.
         /// </summary>
         [JsonPropertyName("localizations")]
         public IPlannerPlanConfigurationLocalizationsCollectionPage Localizations { get; set; }

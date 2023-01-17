@@ -22,18 +22,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets buckets.
+        /// Localized names for configured buckets in the plan configuration.
         /// </summary>
         [JsonPropertyName("buckets")]
         public IEnumerable<PlannerPlanConfigurationBucketLocalization> Buckets { get; set; }
     
         /// <summary>
         /// Gets or sets language tag.
+        /// The language code associated with the localized names in this object.
         /// </summary>
         [JsonPropertyName("languageTag")]
         public string LanguageTag { get; set; }
     
         /// <summary>
         /// Gets or sets plan title.
+        /// Localized title of the plan.
         /// </summary>
         [JsonPropertyName("planTitle")]
         public string PlanTitle { get; set; }

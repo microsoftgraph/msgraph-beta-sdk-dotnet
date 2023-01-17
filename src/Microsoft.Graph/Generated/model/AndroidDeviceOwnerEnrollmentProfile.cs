@@ -85,6 +85,13 @@ namespace Microsoft.Graph
         public Int32? EnrollmentTokenUsageCount { get; set; }
     
         /// <summary>
+        /// Gets or sets is teams device profile.
+        /// Boolean indicating if this profile is an Android AOSP for Teams device profile.
+        /// </summary>
+        [JsonPropertyName("isTeamsDeviceProfile")]
+        public bool? IsTeamsDeviceProfile { get; set; }
+    
+        /// <summary>
         /// Gets or sets last modified date time.
         /// Date time the enrollment profile was last modified.
         /// </summary>

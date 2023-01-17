@@ -60,6 +60,12 @@ namespace Microsoft.Graph
         /// </summary>
         /// <returns>The <see cref="IEntitlementManagementRequestBuilder"/>.</returns>
         IEntitlementManagementRequestBuilder EntitlementManagement { get; }
+
+        /// <summary>
+        /// Gets the request builder for PrivilegedAccess.
+        /// </summary>
+        /// <returns>The <see cref="IPrivilegedAccessRootRequestBuilder"/>.</returns>
+        IPrivilegedAccessRootRequestBuilder PrivilegedAccess { get; }
     
     }
 }

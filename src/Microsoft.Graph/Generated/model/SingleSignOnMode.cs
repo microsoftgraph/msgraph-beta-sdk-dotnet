@@ -45,9 +45,14 @@ namespace Microsoft.Graph
         AadHeaderBased = 5,
 	
         /// <summary>
+        /// OAuth Token
+        /// </summary>
+        OAuthToken = 6,
+	
+        /// <summary>
         /// Unknown Future Value
         /// </summary>
-        UnknownFutureValue = 6,
+        UnknownFutureValue = 7,
 	
     }
 }

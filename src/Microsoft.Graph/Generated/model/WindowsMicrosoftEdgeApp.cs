@@ -31,7 +31,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets channel.
-        /// The channel to install on target devices. Possible values are: dev, beta, stable, unknownFutureValue.
+        /// The channel to install on target devices. The possible values are dev, beta, and stable. By default, this property is set to dev. Possible values are: dev, beta, stable, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("channel")]
         public MicrosoftEdgeChannel? Channel { get; set; }

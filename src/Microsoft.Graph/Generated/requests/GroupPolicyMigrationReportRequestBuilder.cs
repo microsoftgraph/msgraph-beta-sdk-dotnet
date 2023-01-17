@@ -74,7 +74,18 @@ namespace Microsoft.Graph
             }
         }
     
-        
+        /// <summary>
+        /// Gets the request builder for GroupPolicyMigrationReportUpdateScopeTags.
+        /// </summary>
+        /// <returns>The <see cref="IGroupPolicyMigrationReportUpdateScopeTagsRequestBuilder"/>.</returns>
+        public IGroupPolicyMigrationReportUpdateScopeTagsRequestBuilder UpdateScopeTags(
+            IEnumerable<string> roleScopeTagIds = null)
+        {
+            return new GroupPolicyMigrationReportUpdateScopeTagsRequestBuilder(
+                this.AppendSegmentToRequestUrl("microsoft.graph.updateScopeTags"),
+                this.Client,
+                roleScopeTagIds);
+        }
     
     }
 }

@@ -23,12 +23,14 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets externalBucketId.
+        /// Application-specified identifier of the bucket.
         /// </summary>
         [JsonPropertyName("externalBucketId")]
         public string ExternalBucketId { get; set; }
     
         /// <summary>
         /// Gets or sets name.
+        /// Name of the bucket.
         /// </summary>
         [JsonPropertyName("name")]
         public string Name { get; set; }

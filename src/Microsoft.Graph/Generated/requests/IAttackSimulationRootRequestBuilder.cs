@@ -32,6 +32,18 @@ namespace Microsoft.Graph
         new IAttackSimulationRootRequest Request(IEnumerable<Option> options);
     
         /// <summary>
+        /// Gets the request builder for Operations.
+        /// </summary>
+        /// <returns>The <see cref="IAttackSimulationRootOperationsCollectionRequestBuilder"/>.</returns>
+        IAttackSimulationRootOperationsCollectionRequestBuilder Operations { get; }
+
+        /// <summary>
+        /// Gets the request builder for Payloads.
+        /// </summary>
+        /// <returns>The <see cref="IAttackSimulationRootPayloadsCollectionRequestBuilder"/>.</returns>
+        IAttackSimulationRootPayloadsCollectionRequestBuilder Payloads { get; }
+
+        /// <summary>
         /// Gets the request builder for SimulationAutomations.
         /// </summary>
         /// <returns>The <see cref="IAttackSimulationRootSimulationAutomationsCollectionRequestBuilder"/>.</returns>

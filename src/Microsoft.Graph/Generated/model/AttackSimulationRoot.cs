@@ -30,6 +30,32 @@ namespace Microsoft.Graph
         }
     
         /// <summary>
+        /// Gets or sets operations.
+        /// </summary>
+        [JsonPropertyName("operations")]
+        public IAttackSimulationRootOperationsCollectionPage Operations { get; set; }
+
+        /// <summary>
+        /// Gets or sets operationsNextLink.
+        /// </summary>
+        [JsonPropertyName("operations@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string OperationsNextLink { get; set; }
+    
+        /// <summary>
+        /// Gets or sets payloads.
+        /// </summary>
+        [JsonPropertyName("payloads")]
+        public IAttackSimulationRootPayloadsCollectionPage Payloads { get; set; }
+
+        /// <summary>
+        /// Gets or sets payloadsNextLink.
+        /// </summary>
+        [JsonPropertyName("payloads@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string PayloadsNextLink { get; set; }
+    
+        /// <summary>
         /// Gets or sets simulation automations.
         /// Represents simulation automation created to run on a tenant.
         /// </summary>

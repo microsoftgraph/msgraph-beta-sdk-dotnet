@@ -29,6 +29,7 @@ namespace Microsoft.Graph
 
         /// <summary>
         /// Gets or sets groupId.
+        /// The unique identifier for the group.
         /// </summary>
         [JsonPropertyName("groupId")]
         public string GroupId { get; set; }

@@ -59,7 +59,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets platform type.
-        /// Platform type of the Enrollment Notification. Possible values are: allPlatforms, ios, windows, windowsPhone, android, androidForWork, mac.
+        /// Platform type of the Enrollment Notification. Possible values are: allPlatforms, ios, windows, windowsPhone, android, androidForWork, mac, linux, unknownFutureValue.
         /// </summary>
         [JsonPropertyName("platformType")]
         public EnrollmentRestrictionPlatformType? PlatformType { get; set; }

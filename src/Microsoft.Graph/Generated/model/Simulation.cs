@@ -78,6 +78,24 @@ namespace Microsoft.Graph
         public string DisplayName { get; set; }
     
         /// <summary>
+        /// Gets or sets duration in days.
+        /// </summary>
+        [JsonPropertyName("durationInDays")]
+        public Int32? DurationInDays { get; set; }
+    
+        /// <summary>
+        /// Gets or sets excluded account target.
+        /// </summary>
+        [JsonPropertyName("excludedAccountTarget")]
+        public AccountTargetContent ExcludedAccountTarget { get; set; }
+    
+        /// <summary>
+        /// Gets or sets included account target.
+        /// </summary>
+        [JsonPropertyName("includedAccountTarget")]
+        public AccountTargetContent IncludedAccountTarget { get; set; }
+    
+        /// <summary>
         /// Gets or sets is automated.
         /// Flag that represents if the attack simulation and training campaign was created from a simulation automation flow. Supports $filter and $orderby.
         /// </summary>
@@ -125,6 +143,12 @@ namespace Microsoft.Graph
         /// </summary>
         [JsonPropertyName("status")]
         public SimulationStatus? Status { get; set; }
+    
+        /// <summary>
+        /// Gets or sets payload.
+        /// </summary>
+        [JsonPropertyName("payload")]
+        public Payload Payload { get; set; }
     
     }
 }

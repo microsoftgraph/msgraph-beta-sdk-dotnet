@@ -54,5 +54,15 @@ namespace Microsoft.Graph
         /// </summary>
         Mac = 7,
 	
+        /// <summary>
+        /// Linux
+        /// </summary>
+        Linux = 8,
+	
+        /// <summary>
+        /// Unknown Future Value
+        /// </summary>
+        UnknownFutureValue = 9,
+	
     }
 }

@@ -66,7 +66,7 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets managed device count.
-        /// The number of vulnerable devices.
+        /// The number of vulnerable devices. Valid values 0 to 65536
         /// </summary>
         [JsonPropertyName("managedDeviceCount")]
         public Int32? ManagedDeviceCount { get; set; }

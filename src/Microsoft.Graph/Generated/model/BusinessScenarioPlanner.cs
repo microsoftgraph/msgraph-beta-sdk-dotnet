@@ -22,18 +22,21 @@ namespace Microsoft.Graph
     
         /// <summary>
         /// Gets or sets plan configuration.
+        /// The configuration of Planner plans that will be created for the scenario.
         /// </summary>
         [JsonPropertyName("planConfiguration")]
         public PlannerPlanConfiguration PlanConfiguration { get; set; }
     
         /// <summary>
         /// Gets or sets task configuration.
+        /// The configuration of Planner tasks that will be created for the scenario.
         /// </summary>
         [JsonPropertyName("taskConfiguration")]
         public PlannerTaskConfiguration TaskConfiguration { get; set; }
     
         /// <summary>
         /// Gets or sets tasks.
+        /// The Planner tasks for the scenario.
         /// </summary>
         [JsonPropertyName("tasks")]
         public IBusinessScenarioPlannerTasksCollectionPage Tasks { get; set; }

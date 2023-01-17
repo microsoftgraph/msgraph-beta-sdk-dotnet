@@ -1406,6 +1406,20 @@ namespace Microsoft.Graph
         public string UserExperienceAnalyticsDevicesWithoutCloudIdentityNextLink { get; set; }
     
         /// <summary>
+        /// Gets or sets user experience analytics device timeline events.
+        /// The user experience analytics device events entity contains NRT device timeline events details.
+        /// </summary>
+        [JsonPropertyName("userExperienceAnalyticsDeviceTimelineEvents")]
+        public IDeviceManagementUserExperienceAnalyticsDeviceTimelineEventsCollectionPage UserExperienceAnalyticsDeviceTimelineEvents { get; set; }
+
+        /// <summary>
+        /// Gets or sets userExperienceAnalyticsDeviceTimelineEventsNextLink.
+        /// </summary>
+        [JsonPropertyName("userExperienceAnalyticsDeviceTimelineEvents@odata.nextLink")]
+        [JsonConverter(typeof(NextLinkConverter))]
+        public string UserExperienceAnalyticsDeviceTimelineEventsNextLink { get; set; }
+    
+        /// <summary>
         /// Gets or sets user experience analytics impacting process.
         /// User experience analytics impacting process
         /// </summary>
