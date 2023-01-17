@@ -125,7 +125,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("updateCompleteScreenDisabled"); }
             set { BackingStore?.Set("updateCompleteScreenDisabled", value); }
         }
-        /// <summary>Indicates that this apple device is designated to support &apos;shared device mode&apos; scenarios. This is distinct from the &apos;shared iPad&apos; scenario. See https://learn.microsoft.com/mem/intune/enrollment/device-enrollment-shared-ios</summary>
+        /// <summary>Indicates that this apple device is designated to support &apos;shared device mode&apos; scenarios. This is distinct from the &apos;shared iPad&apos; scenario. See https://learn.microsoft.com/en-us/mem/intune/enrollment/device-enrollment-shared-ios</summary>
         public bool? UserlessSharedAadModeEnabled {
             get { return BackingStore?.Get<bool?>("userlessSharedAadModeEnabled"); }
             set { BackingStore?.Set("userlessSharedAadModeEnabled", value); }

@@ -1,0 +1,26 @@
+namespace Microsoft.Graph.Beta.Models {
+    public enum PayloadIndustry {
+        Unknown,
+        Other,
+        Banking,
+        BusinessServices,
+        ConsumerServices,
+        Education,
+        Energy,
+        Construction,
+        Consulting,
+        FinancialServices,
+        Government,
+        Hospitality,
+        Insurance,
+        Legal,
+        CourierServices,
+        IT,
+        Healthcare,
+        Manufacturing,
+        Retail,
+        Telecom,
+        RealEstate,
+        UnknownFutureValue,
+    }
+}

@@ -45,6 +45,21 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+        /// <summary>The durationInDays property</summary>
+        public int? DurationInDays {
+            get { return BackingStore?.Get<int?>("durationInDays"); }
+            set { BackingStore?.Set("durationInDays", value); }
+        }
+        /// <summary>The excludedAccountTarget property</summary>
+        public AccountTargetContent ExcludedAccountTarget {
+            get { return BackingStore?.Get<AccountTargetContent>("excludedAccountTarget"); }
+            set { BackingStore?.Set("excludedAccountTarget", value); }
+        }
+        /// <summary>The includedAccountTarget property</summary>
+        public AccountTargetContent IncludedAccountTarget {
+            get { return BackingStore?.Get<AccountTargetContent>("includedAccountTarget"); }
+            set { BackingStore?.Set("includedAccountTarget", value); }
+        }
         /// <summary>Flag that represents if the attack simulation and training campaign was created from a simulation automation flow. Supports $filter and $orderby.</summary>
         public bool? IsAutomated {
             get { return BackingStore?.Get<bool?>("isAutomated"); }
@@ -64,6 +79,11 @@ namespace Microsoft.Graph.Beta.Models {
         public DateTimeOffset? LaunchDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("launchDateTime"); }
             set { BackingStore?.Set("launchDateTime", value); }
+        }
+        /// <summary>The payload property</summary>
+        public Microsoft.Graph.Beta.Models.Payload Payload {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Payload>("payload"); }
+            set { BackingStore?.Set("payload", value); }
         }
         /// <summary>Method of delivery of the phishing payload used in the attack simulation and training campaign. Possible values are: unknown, sms, email, teams, unknownFutureValue.</summary>
         public Microsoft.Graph.Beta.Models.PayloadDeliveryPlatform? PayloadDeliveryPlatform {
@@ -101,10 +121,14 @@ namespace Microsoft.Graph.Beta.Models {
                 {"createdDateTime", n => { CreatedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
+                {"durationInDays", n => { DurationInDays = n.GetIntValue(); } },
+                {"excludedAccountTarget", n => { ExcludedAccountTarget = n.GetObjectValue<AccountTargetContent>(AccountTargetContent.CreateFromDiscriminatorValue); } },
+                {"includedAccountTarget", n => { IncludedAccountTarget = n.GetObjectValue<AccountTargetContent>(AccountTargetContent.CreateFromDiscriminatorValue); } },
                 {"isAutomated", n => { IsAutomated = n.GetBoolValue(); } },
                 {"lastModifiedBy", n => { LastModifiedBy = n.GetObjectValue<EmailIdentity>(EmailIdentity.CreateFromDiscriminatorValue); } },
                 {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"launchDateTime", n => { LaunchDateTime = n.GetDateTimeOffsetValue(); } },
+                {"payload", n => { Payload = n.GetObjectValue<Microsoft.Graph.Beta.Models.Payload>(Microsoft.Graph.Beta.Models.Payload.CreateFromDiscriminatorValue); } },
                 {"payloadDeliveryPlatform", n => { PayloadDeliveryPlatform = n.GetEnumValue<PayloadDeliveryPlatform>(); } },
                 {"report", n => { Report = n.GetObjectValue<SimulationReport>(SimulationReport.CreateFromDiscriminatorValue); } },
                 {"status", n => { Status = n.GetEnumValue<SimulationStatus>(); } },
@@ -125,10 +149,14 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteDateTimeOffsetValue("createdDateTime", CreatedDateTime);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
+            writer.WriteIntValue("durationInDays", DurationInDays);
+            writer.WriteObjectValue<AccountTargetContent>("excludedAccountTarget", ExcludedAccountTarget);
+            writer.WriteObjectValue<AccountTargetContent>("includedAccountTarget", IncludedAccountTarget);
             writer.WriteBoolValue("isAutomated", IsAutomated);
             writer.WriteObjectValue<EmailIdentity>("lastModifiedBy", LastModifiedBy);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteDateTimeOffsetValue("launchDateTime", LaunchDateTime);
+            writer.WriteObjectValue<Microsoft.Graph.Beta.Models.Payload>("payload", Payload);
             writer.WriteEnumValue<PayloadDeliveryPlatform>("payloadDeliveryPlatform", PayloadDeliveryPlatform);
             writer.WriteObjectValue<SimulationReport>("report", Report);
             writer.WriteEnumValue<SimulationStatus>("status", Status);

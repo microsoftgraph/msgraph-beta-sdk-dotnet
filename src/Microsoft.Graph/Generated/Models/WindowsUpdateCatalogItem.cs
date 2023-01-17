@@ -4,9 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>
-    /// Windows update catalog item entity
-    /// </summary>
     public class WindowsUpdateCatalogItem : Entity, IParsable {
         /// <summary>The display name for the catalog item.</summary>
         public string DisplayName {

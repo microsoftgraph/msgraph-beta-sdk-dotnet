@@ -5,6 +5,7 @@ namespace Microsoft.Graph.Beta.Models {
         Saml,
         PingHeaderBased,
         AadHeaderBased,
+        OAuthToken,
         UnknownFutureValue,
     }
 }

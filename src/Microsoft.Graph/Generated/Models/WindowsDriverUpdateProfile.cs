@@ -4,9 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>
-    /// Windows Driver Update Profile
-    /// </summary>
     public class WindowsDriverUpdateProfile : Entity, IParsable {
         /// <summary>An enum type to represent approval type of a driver update profile.</summary>
         public DriverUpdateProfileApprovalType? ApprovalType {

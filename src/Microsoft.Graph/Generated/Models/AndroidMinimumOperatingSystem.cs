@@ -21,82 +21,82 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
-        /// <summary>Version 10.0 or later.</summary>
+        /// <summary>When TRUE, only Version 10.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.</summary>
         public bool? V10_0 {
             get { return BackingStore?.Get<bool?>("v10_0"); }
             set { BackingStore?.Set("v10_0", value); }
         }
-        /// <summary>Version 11.0 or later.</summary>
+        /// <summary>When TRUE, only Version 11.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.</summary>
         public bool? V11_0 {
             get { return BackingStore?.Get<bool?>("v11_0"); }
             set { BackingStore?.Set("v11_0", value); }
         }
-        /// <summary>Version 4.0 or later.</summary>
+        /// <summary>When TRUE, only Version 4.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.</summary>
         public bool? V4_0 {
             get { return BackingStore?.Get<bool?>("v4_0"); }
             set { BackingStore?.Set("v4_0", value); }
         }
-        /// <summary>Version 4.0.3 or later.</summary>
+        /// <summary>When TRUE, only Version 4.0.3 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.</summary>
         public bool? V4_0_3 {
             get { return BackingStore?.Get<bool?>("v4_0_3"); }
             set { BackingStore?.Set("v4_0_3", value); }
         }
-        /// <summary>Version 4.1 or later.</summary>
+        /// <summary>When TRUE, only Version 4.1 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.</summary>
         public bool? V4_1 {
             get { return BackingStore?.Get<bool?>("v4_1"); }
             set { BackingStore?.Set("v4_1", value); }
         }
-        /// <summary>Version 4.2 or later.</summary>
+        /// <summary>When TRUE, only Version 4.2 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.</summary>
         public bool? V4_2 {
             get { return BackingStore?.Get<bool?>("v4_2"); }
             set { BackingStore?.Set("v4_2", value); }
         }
-        /// <summary>Version 4.3 or later.</summary>
+        /// <summary>When TRUE, only Version 4.3 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.</summary>
         public bool? V4_3 {
             get { return BackingStore?.Get<bool?>("v4_3"); }
             set { BackingStore?.Set("v4_3", value); }
         }
-        /// <summary>Version 4.4 or later.</summary>
+        /// <summary>When TRUE, only Version 4.4 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.</summary>
         public bool? V4_4 {
             get { return BackingStore?.Get<bool?>("v4_4"); }
             set { BackingStore?.Set("v4_4", value); }
         }
-        /// <summary>Version 5.0 or later.</summary>
+        /// <summary>When TRUE, only Version 5.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.</summary>
         public bool? V5_0 {
             get { return BackingStore?.Get<bool?>("v5_0"); }
             set { BackingStore?.Set("v5_0", value); }
         }
-        /// <summary>Version 5.1 or later.</summary>
+        /// <summary>When TRUE, only Version 5.1 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.</summary>
         public bool? V5_1 {
             get { return BackingStore?.Get<bool?>("v5_1"); }
             set { BackingStore?.Set("v5_1", value); }
         }
-        /// <summary>Version 6.0 or later.</summary>
+        /// <summary>When TRUE, only Version 6.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.</summary>
         public bool? V6_0 {
             get { return BackingStore?.Get<bool?>("v6_0"); }
             set { BackingStore?.Set("v6_0", value); }
         }
-        /// <summary>Version 7.0 or later.</summary>
+        /// <summary>When TRUE, only Version 7.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.</summary>
         public bool? V7_0 {
             get { return BackingStore?.Get<bool?>("v7_0"); }
             set { BackingStore?.Set("v7_0", value); }
         }
-        /// <summary>Version 7.1 or later.</summary>
+        /// <summary>When TRUE, only Version 7.1 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.</summary>
         public bool? V7_1 {
             get { return BackingStore?.Get<bool?>("v7_1"); }
             set { BackingStore?.Set("v7_1", value); }
         }
-        /// <summary>Version 8.0 or later.</summary>
+        /// <summary>When TRUE, only Version 8.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.</summary>
         public bool? V8_0 {
             get { return BackingStore?.Get<bool?>("v8_0"); }
             set { BackingStore?.Set("v8_0", value); }
         }
-        /// <summary>Version 8.1 or later.</summary>
+        /// <summary>When TRUE, only Version 8.1 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.</summary>
         public bool? V8_1 {
             get { return BackingStore?.Get<bool?>("v8_1"); }
             set { BackingStore?.Set("v8_1", value); }
         }
-        /// <summary>Version 9.0 or later.</summary>
+        /// <summary>When TRUE, only Version 9.0 or later is supported. Default value is FALSE. Exactly one of the minimum operating system boolean values will be TRUE.</summary>
         public bool? V9_0 {
             get { return BackingStore?.Get<bool?>("v9_0"); }
             set { BackingStore?.Set("v9_0", value); }

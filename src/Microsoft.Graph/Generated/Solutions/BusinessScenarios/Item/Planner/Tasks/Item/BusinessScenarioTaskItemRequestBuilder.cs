@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.Tasks.It
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get tasks from solutions
+        /// The Planner tasks for the scenario.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -106,7 +106,7 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.Tasks.It
             return requestInfo;
         }
         /// <summary>
-        /// Get tasks from solutions
+        /// The Planner tasks for the scenario.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation ToGetRequestInformation(Action<BusinessScenarioTaskItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -164,7 +164,7 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.Tasks.It
             }
         }
         /// <summary>
-        /// Get tasks from solutions
+        /// The Planner tasks for the scenario.
         /// </summary>
         public class BusinessScenarioTaskItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

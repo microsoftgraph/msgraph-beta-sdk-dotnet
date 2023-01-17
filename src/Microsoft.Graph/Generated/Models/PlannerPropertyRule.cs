@@ -18,7 +18,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
-        /// <summary>The ruleKind property</summary>
+        /// <summary>Identifies which type of property rules is represented by this instance. The possible values are: taskRule, bucketRule, planRule, unknownFutureValue.</summary>
         public PlannerRuleKind? RuleKind {
             get { return BackingStore?.Get<PlannerRuleKind?>("ruleKind"); }
             set { BackingStore?.Set("ruleKind", value); }

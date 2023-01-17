@@ -31,6 +31,7 @@ using Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceInstallStatusReport
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceManagementIntentPerSettingContributingProfiles;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceManagementIntentSettingsReport;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetDeviceNonComplianceReport;
+using Microsoft.Graph.Beta.DeviceManagement.Reports.GetDevicesWithoutCompliancePolicyReport;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetEncryptionReportForDevices;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetEnrollmentConfigurationPoliciesByDevice;
 using Microsoft.Graph.Beta.DeviceManagement.Reports.GetFailedMobileAppsReport;
@@ -205,6 +206,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Reports {
         /// <summary>Provides operations to call the getDeviceNonComplianceReport method.</summary>
         public GetDeviceNonComplianceReportRequestBuilder GetDeviceNonComplianceReport { get =>
             new GetDeviceNonComplianceReportRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to call the getDevicesWithoutCompliancePolicyReport method.</summary>
+        public GetDevicesWithoutCompliancePolicyReportRequestBuilder GetDevicesWithoutCompliancePolicyReport { get =>
+            new GetDevicesWithoutCompliancePolicyReportRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to call the getEncryptionReportForDevices method.</summary>
         public GetEncryptionReportForDevicesRequestBuilder GetEncryptionReportForDevices { get =>

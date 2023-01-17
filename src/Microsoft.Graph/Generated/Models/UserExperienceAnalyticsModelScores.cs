@@ -4,9 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>
-    /// The user experience analytics model scores entity consolidates the various endpoint analytics scores.
-    /// </summary>
     public class UserExperienceAnalyticsModelScores : Entity, IParsable {
         /// <summary>The user experience analytics model app reliability score. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
         public double? AppReliabilityScore {

@@ -30,7 +30,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<KeyValuePair>>("intendedSettings"); }
             set { BackingStore?.Set("intendedSettings", value); }
         }
-        /// <summary>The number of vulnerable devices.</summary>
+        /// <summary>The number of vulnerable devices. Valid values 0 to 65536</summary>
         public int? ManagedDeviceCount {
             get { return BackingStore?.Get<int?>("managedDeviceCount"); }
             set { BackingStore?.Set("managedDeviceCount", value); }

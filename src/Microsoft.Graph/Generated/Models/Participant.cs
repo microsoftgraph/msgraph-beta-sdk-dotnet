@@ -40,6 +40,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RecordingInfo>("recordingInfo"); }
             set { BackingStore?.Set("recordingInfo", value); }
         }
+        /// <summary>The restrictedExperience property</summary>
+        public OnlineMeetingRestricted RestrictedExperience {
+            get { return BackingStore?.Get<OnlineMeetingRestricted>("restrictedExperience"); }
+            set { BackingStore?.Set("restrictedExperience", value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -60,6 +65,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"mediaStreams", n => { MediaStreams = n.GetCollectionOfObjectValues<MediaStream>(MediaStream.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"metadata", n => { Metadata = n.GetStringValue(); } },
                 {"recordingInfo", n => { RecordingInfo = n.GetObjectValue<Microsoft.Graph.Beta.Models.RecordingInfo>(Microsoft.Graph.Beta.Models.RecordingInfo.CreateFromDiscriminatorValue); } },
+                {"restrictedExperience", n => { RestrictedExperience = n.GetObjectValue<OnlineMeetingRestricted>(OnlineMeetingRestricted.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -76,6 +82,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfObjectValues<MediaStream>("mediaStreams", MediaStreams);
             writer.WriteStringValue("metadata", Metadata);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.RecordingInfo>("recordingInfo", RecordingInfo);
+            writer.WriteObjectValue<OnlineMeetingRestricted>("restrictedExperience", RestrictedExperience);
         }
     }
 }

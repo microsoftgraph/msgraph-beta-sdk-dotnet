@@ -5,17 +5,17 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class PlannerPlanConfigurationLocalization : Entity, IParsable {
-        /// <summary>The buckets property</summary>
+        /// <summary>Localized names for configured buckets in the plan configuration.</summary>
         public List<PlannerPlanConfigurationBucketLocalization> Buckets {
             get { return BackingStore?.Get<List<PlannerPlanConfigurationBucketLocalization>>("buckets"); }
             set { BackingStore?.Set("buckets", value); }
         }
-        /// <summary>The languageTag property</summary>
+        /// <summary>The language code associated with the localized names in this object.</summary>
         public string LanguageTag {
             get { return BackingStore?.Get<string>("languageTag"); }
             set { BackingStore?.Set("languageTag", value); }
         }
-        /// <summary>The planTitle property</summary>
+        /// <summary>Localized title of the plan.</summary>
         public string PlanTitle {
             get { return BackingStore?.Get<string>("planTitle"); }
             set { BackingStore?.Set("planTitle", value); }

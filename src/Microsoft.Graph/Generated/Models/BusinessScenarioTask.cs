@@ -5,12 +5,12 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class BusinessScenarioTask : PlannerTask, IParsable {
-        /// <summary>The businessScenarioProperties property</summary>
+        /// <summary>Scenario-specific properties of the task. externalObjectId and externalBucketId properties must be specified when creating a task.</summary>
         public Microsoft.Graph.Beta.Models.BusinessScenarioProperties BusinessScenarioProperties {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.BusinessScenarioProperties>("businessScenarioProperties"); }
             set { BackingStore?.Set("businessScenarioProperties", value); }
         }
-        /// <summary>The target property</summary>
+        /// <summary>Target of the task that specifies where the task should be placed. Must be specified when creating a task.</summary>
         public BusinessScenarioTaskTargetBase Target {
             get { return BackingStore?.Get<BusinessScenarioTaskTargetBase>("target"); }
             set { BackingStore?.Set("target", value); }

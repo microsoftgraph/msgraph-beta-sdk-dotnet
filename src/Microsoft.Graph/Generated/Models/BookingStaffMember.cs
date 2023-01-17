@@ -20,6 +20,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("isEmailNotificationEnabled"); }
             set { BackingStore?.Set("isEmailNotificationEnabled", value); }
         }
+        /// <summary>The membershipStatus property</summary>
+        public BookingStaffMembershipStatus? MembershipStatus {
+            get { return BackingStore?.Get<BookingStaffMembershipStatus?>("membershipStatus"); }
+            set { BackingStore?.Set("membershipStatus", value); }
+        }
         /// <summary>The role property</summary>
         public BookingStaffRole? Role {
             get { return BackingStore?.Get<BookingStaffRole?>("role"); }
@@ -56,6 +61,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"availabilityIsAffectedByPersonalCalendar", n => { AvailabilityIsAffectedByPersonalCalendar = n.GetBoolValue(); } },
                 {"colorIndex", n => { ColorIndex = n.GetIntValue(); } },
                 {"isEmailNotificationEnabled", n => { IsEmailNotificationEnabled = n.GetBoolValue(); } },
+                {"membershipStatus", n => { MembershipStatus = n.GetEnumValue<BookingStaffMembershipStatus>(); } },
                 {"role", n => { Role = n.GetEnumValue<BookingStaffRole>(); } },
                 {"timeZone", n => { TimeZone = n.GetStringValue(); } },
                 {"useBusinessHours", n => { UseBusinessHours = n.GetBoolValue(); } },
@@ -72,6 +78,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteBoolValue("availabilityIsAffectedByPersonalCalendar", AvailabilityIsAffectedByPersonalCalendar);
             writer.WriteIntValue("colorIndex", ColorIndex);
             writer.WriteBoolValue("isEmailNotificationEnabled", IsEmailNotificationEnabled);
+            writer.WriteEnumValue<BookingStaffMembershipStatus>("membershipStatus", MembershipStatus);
             writer.WriteEnumValue<BookingStaffRole>("role", Role);
             writer.WriteStringValue("timeZone", TimeZone);
             writer.WriteBoolValue("useBusinessHours", UseBusinessHours);

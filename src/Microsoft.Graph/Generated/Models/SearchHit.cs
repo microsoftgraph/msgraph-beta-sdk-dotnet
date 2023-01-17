@@ -43,6 +43,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("hitId"); }
             set { BackingStore?.Set("hitId", value); }
         }
+        /// <summary>The isCollapsed property</summary>
+        public bool? IsCollapsed {
+            get { return BackingStore?.Get<bool?>("isCollapsed"); }
+            set { BackingStore?.Set("isCollapsed", value); }
+        }
         /// <summary>The OdataType property</summary>
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
@@ -94,6 +99,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"_summary", n => { _summary = n.GetStringValue(); } },
                 {"contentSource", n => { ContentSource = n.GetStringValue(); } },
                 {"hitId", n => { HitId = n.GetStringValue(); } },
+                {"isCollapsed", n => { IsCollapsed = n.GetBoolValue(); } },
                 {"@odata.type", n => { OdataType = n.GetStringValue(); } },
                 {"rank", n => { Rank = n.GetIntValue(); } },
                 {"resource", n => { Resource = n.GetObjectValue<Entity>(Entity.CreateFromDiscriminatorValue); } },
@@ -113,6 +119,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("_summary", _summary);
             writer.WriteStringValue("contentSource", ContentSource);
             writer.WriteStringValue("hitId", HitId);
+            writer.WriteBoolValue("isCollapsed", IsCollapsed);
             writer.WriteStringValue("@odata.type", OdataType);
             writer.WriteIntValue("rank", Rank);
             writer.WriteObjectValue<Entity>("resource", Resource);

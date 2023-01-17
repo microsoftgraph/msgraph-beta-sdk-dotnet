@@ -4,9 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>
-    /// CartToClassAssociation for associating device carts with classrooms.
-    /// </summary>
     public class CartToClassAssociation : Entity, IParsable {
         /// <summary>Identifiers of classrooms to be associated with device carts.</summary>
         public List<string> ClassroomIds {

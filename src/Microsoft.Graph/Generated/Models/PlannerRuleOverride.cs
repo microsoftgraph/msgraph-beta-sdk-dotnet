@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The name property</summary>
+        /// <summary>Name of the override. Allowed override values will be dependent on the property affected by the rule.</summary>
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
@@ -23,7 +23,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
-        /// <summary>The rules property</summary>
+        /// <summary>Overridden rules. These are used as rules for the override instead of the default rules.</summary>
         public List<string> Rules {
             get { return BackingStore?.Get<List<string>>("rules"); }
             set { BackingStore?.Set("rules", value); }

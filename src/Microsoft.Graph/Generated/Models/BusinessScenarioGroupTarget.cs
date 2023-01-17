@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class BusinessScenarioGroupTarget : BusinessScenarioTaskTargetBase, IParsable {
-        /// <summary>The groupId property</summary>
+        /// <summary>The unique identifier for the group.</summary>
         public string GroupId {
             get { return BackingStore?.Get<string>("groupId"); }
             set { BackingStore?.Set("groupId", value); }

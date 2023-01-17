@@ -1,5 +1,7 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Security.AttackSimulation.Operations;
+using Microsoft.Graph.Beta.Security.AttackSimulation.Payloads;
 using Microsoft.Graph.Beta.Security.AttackSimulation.SimulationAutomations;
 using Microsoft.Graph.Beta.Security.AttackSimulation.Simulations;
 using Microsoft.Kiota.Abstractions;
@@ -15,8 +17,16 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation {
     /// Provides operations to manage the attackSimulation property of the microsoft.graph.security entity.
     /// </summary>
     public class AttackSimulationRequestBuilder {
+        /// <summary>Provides operations to manage the operations property of the microsoft.graph.attackSimulationRoot entity.</summary>
+        public OperationsRequestBuilder Operations { get =>
+            new OperationsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
+        /// <summary>Provides operations to manage the payloads property of the microsoft.graph.attackSimulationRoot entity.</summary>
+        public PayloadsRequestBuilder Payloads { get =>
+            new PayloadsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Provides operations to manage the simulationAutomations property of the microsoft.graph.attackSimulationRoot entity.</summary>

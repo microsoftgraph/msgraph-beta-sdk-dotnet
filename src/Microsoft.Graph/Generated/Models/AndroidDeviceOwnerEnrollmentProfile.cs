@@ -4,9 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>
-    /// Enrollment Profile used to enroll Android Enterprise devices using Google&apos;s Cloud Management.
-    /// </summary>
     public class AndroidDeviceOwnerEnrollmentProfile : Entity, IParsable {
         /// <summary>Tenant GUID the enrollment profile belongs to.</summary>
         public string AccountId {
@@ -52,6 +49,11 @@ namespace Microsoft.Graph.Beta.Models {
         public int? EnrollmentTokenUsageCount {
             get { return BackingStore?.Get<int?>("enrollmentTokenUsageCount"); }
             set { BackingStore?.Set("enrollmentTokenUsageCount", value); }
+        }
+        /// <summary>Boolean indicating if this profile is an Android AOSP for Teams device profile.</summary>
+        public bool? IsTeamsDeviceProfile {
+            get { return BackingStore?.Get<bool?>("isTeamsDeviceProfile"); }
+            set { BackingStore?.Set("isTeamsDeviceProfile", value); }
         }
         /// <summary>Date time the enrollment profile was last modified.</summary>
         public DateTimeOffset? LastModifiedDateTime {
@@ -130,6 +132,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"enrollmentMode", n => { EnrollmentMode = n.GetEnumValue<AndroidDeviceOwnerEnrollmentMode>(); } },
                 {"enrollmentTokenType", n => { EnrollmentTokenType = n.GetEnumValue<AndroidDeviceOwnerEnrollmentTokenType>(); } },
                 {"enrollmentTokenUsageCount", n => { EnrollmentTokenUsageCount = n.GetIntValue(); } },
+                {"isTeamsDeviceProfile", n => { IsTeamsDeviceProfile = n.GetBoolValue(); } },
                 {"lastModifiedDateTime", n => { LastModifiedDateTime = n.GetDateTimeOffsetValue(); } },
                 {"qrCodeContent", n => { QrCodeContent = n.GetStringValue(); } },
                 {"qrCodeImage", n => { QrCodeImage = n.GetObjectValue<MimeContent>(MimeContent.CreateFromDiscriminatorValue); } },
@@ -159,6 +162,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteEnumValue<AndroidDeviceOwnerEnrollmentMode>("enrollmentMode", EnrollmentMode);
             writer.WriteEnumValue<AndroidDeviceOwnerEnrollmentTokenType>("enrollmentTokenType", EnrollmentTokenType);
             writer.WriteIntValue("enrollmentTokenUsageCount", EnrollmentTokenUsageCount);
+            writer.WriteBoolValue("isTeamsDeviceProfile", IsTeamsDeviceProfile);
             writer.WriteDateTimeOffsetValue("lastModifiedDateTime", LastModifiedDateTime);
             writer.WriteStringValue("qrCodeContent", QrCodeContent);
             writer.WriteObjectValue<MimeContent>("qrCodeImage", QrCodeImage);

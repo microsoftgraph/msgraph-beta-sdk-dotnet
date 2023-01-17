@@ -20,11 +20,6 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<int?>("priority"); }
             set { BackingStore?.Set("priority", value); }
         }
-        /// <summary>The tags property</summary>
-        public List<KeyValuePair> Tags {
-            get { return BackingStore?.Get<List<KeyValuePair>>("tags"); }
-            set { BackingStore?.Set("tags", value); }
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -45,7 +40,6 @@ namespace Microsoft.Graph.Beta.Models {
                 {"authenticationEventsFlowId", n => { AuthenticationEventsFlowId = n.GetStringValue(); } },
                 {"conditions", n => { Conditions = n.GetObjectValue<AuthenticationConditions>(AuthenticationConditions.CreateFromDiscriminatorValue); } },
                 {"priority", n => { Priority = n.GetIntValue(); } },
-                {"tags", n => { Tags = n.GetCollectionOfObjectValues<KeyValuePair>(KeyValuePair.CreateFromDiscriminatorValue)?.ToList(); } },
             };
         }
         /// <summary>
@@ -58,7 +52,6 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("authenticationEventsFlowId", AuthenticationEventsFlowId);
             writer.WriteObjectValue<AuthenticationConditions>("conditions", Conditions);
             writer.WriteIntValue("priority", Priority);
-            writer.WriteCollectionOfObjectValues<KeyValuePair>("tags", Tags);
         }
     }
 }

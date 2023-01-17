@@ -14,7 +14,6 @@ using Microsoft.Graph.Beta.DeviceAppManagement.MobileAppCategories;
 using Microsoft.Graph.Beta.DeviceAppManagement.MobileAppConfigurations;
 using Microsoft.Graph.Beta.DeviceAppManagement.MobileApps;
 using Microsoft.Graph.Beta.DeviceAppManagement.PolicySets;
-using Microsoft.Graph.Beta.DeviceAppManagement.SideLoadingKeys;
 using Microsoft.Graph.Beta.DeviceAppManagement.SymantecCodeSigningCertificate;
 using Microsoft.Graph.Beta.DeviceAppManagement.SyncMicrosoftStoreForBusinessApps;
 using Microsoft.Graph.Beta.DeviceAppManagement.TargetedManagedAppConfigurations;
@@ -108,10 +107,6 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement {
         }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
-        /// <summary>Provides operations to manage the sideLoadingKeys property of the microsoft.graph.deviceAppManagement entity.</summary>
-        public SideLoadingKeysRequestBuilder SideLoadingKeys { get =>
-            new SideLoadingKeysRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>Provides operations to manage the symantecCodeSigningCertificate property of the microsoft.graph.deviceAppManagement entity.</summary>
         public SymantecCodeSigningCertificateRequestBuilder SymantecCodeSigningCertificate { get =>
             new SymantecCodeSigningCertificateRequestBuilder(PathParameters, RequestAdapter);

@@ -13,12 +13,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The externalBucketId property</summary>
+        /// <summary>Application-specified identifier of the bucket.</summary>
         public string ExternalBucketId {
             get { return BackingStore?.Get<string>("externalBucketId"); }
             set { BackingStore?.Set("externalBucketId", value); }
         }
-        /// <summary>The name property</summary>
+        /// <summary>Name of the bucket.</summary>
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
