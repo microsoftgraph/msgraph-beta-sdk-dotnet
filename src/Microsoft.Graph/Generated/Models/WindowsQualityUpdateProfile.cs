@@ -4,9 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>
-    /// Windows Quality Update Profile
-    /// </summary>
     public class WindowsQualityUpdateProfile : Entity, IParsable {
         /// <summary>The list of group assignments of the profile.</summary>
         public List<WindowsQualityUpdateProfileAssignment> Assignments {

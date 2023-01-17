@@ -4,9 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>
-    /// The category entity stores the category of a group policy definition
-    /// </summary>
     public class GroupPolicyCategory : Entity, IParsable {
         /// <summary>The children categories</summary>
         public List<GroupPolicyCategory> Children {

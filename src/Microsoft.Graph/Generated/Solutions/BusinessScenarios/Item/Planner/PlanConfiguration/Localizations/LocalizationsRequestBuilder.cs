@@ -59,7 +59,8 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.PlanConf
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Get localizations from solutions
+        /// Get a list of the plannerPlanConfigurationLocalization objects and their properties.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/plannerplanconfiguration-list-localizations?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -72,7 +73,8 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.PlanConf
             return await RequestAdapter.SendAsync<PlannerPlanConfigurationLocalizationCollectionResponse>(requestInfo, PlannerPlanConfigurationLocalizationCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create new navigation property to localizations for solutions
+        /// Create a new plannerPlanConfigurationLocalization object.
+        /// Find more info here <see href="https://docs.microsoft.com/graph/api/plannerplanconfiguration-post-localizations?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -87,7 +89,7 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.PlanConf
             return await RequestAdapter.SendAsync<PlannerPlanConfigurationLocalization>(requestInfo, PlannerPlanConfigurationLocalization.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get localizations from solutions
+        /// Get a list of the plannerPlanConfigurationLocalization objects and their properties.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation ToGetRequestInformation(Action<LocalizationsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -107,7 +109,7 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.PlanConf
             return requestInfo;
         }
         /// <summary>
-        /// Create new navigation property to localizations for solutions
+        /// Create a new plannerPlanConfigurationLocalization object.
         /// </summary>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -129,7 +131,7 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.PlanConf
             return requestInfo;
         }
         /// <summary>
-        /// Get localizations from solutions
+        /// Get a list of the plannerPlanConfigurationLocalization objects and their properties.
         /// </summary>
         public class LocalizationsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

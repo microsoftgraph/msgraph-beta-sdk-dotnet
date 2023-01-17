@@ -73,21 +73,6 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.TaskDefinit
             return await RequestAdapter.SendAsync<TaskDefinitionCollectionResponse>(requestInfo, TaskDefinitionCollectionResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Create new navigation property to taskDefinitions for identityGovernance
-        /// </summary>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        public async Task<Microsoft.Graph.Beta.Models.IdentityGovernance.TaskDefinition> PostAsync(Microsoft.Graph.Beta.Models.IdentityGovernance.TaskDefinition body, Action<TaskDefinitionsRequestBuilderPostRequestConfiguration> requestConfiguration = default, CancellationToken cancellationToken = default) {
-            _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>> {
-                {"4XX", ODataError.CreateFromDiscriminatorValue},
-                {"5XX", ODataError.CreateFromDiscriminatorValue},
-            };
-            return await RequestAdapter.SendAsync<Microsoft.Graph.Beta.Models.IdentityGovernance.TaskDefinition>(requestInfo, Microsoft.Graph.Beta.Models.IdentityGovernance.TaskDefinition.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
-        }
-        /// <summary>
         /// Get a list of the taskDefinition objects and their properties.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -102,28 +87,6 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.TaskDefinit
                 var requestConfig = new TaskDefinitionsRequestBuilderGetRequestConfiguration();
                 requestConfiguration.Invoke(requestConfig);
                 requestInfo.AddQueryParameters(requestConfig.QueryParameters);
-                requestInfo.AddRequestOptions(requestConfig.Options);
-                requestInfo.AddHeaders(requestConfig.Headers);
-            }
-            return requestInfo;
-        }
-        /// <summary>
-        /// Create new navigation property to taskDefinitions for identityGovernance
-        /// </summary>
-        /// <param name="body">The request body</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        public RequestInformation ToPostRequestInformation(Microsoft.Graph.Beta.Models.IdentityGovernance.TaskDefinition body, Action<TaskDefinitionsRequestBuilderPostRequestConfiguration> requestConfiguration = default) {
-            _ = body ?? throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation {
-                HttpMethod = Method.POST,
-                UrlTemplate = UrlTemplate,
-                PathParameters = PathParameters,
-            };
-            requestInfo.Headers.Add("Accept", "application/json");
-            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
-            if (requestConfiguration != null) {
-                var requestConfig = new TaskDefinitionsRequestBuilderPostRequestConfiguration();
-                requestConfiguration.Invoke(requestConfig);
                 requestInfo.AddRequestOptions(requestConfig.Options);
                 requestInfo.AddHeaders(requestConfig.Headers);
             }
@@ -172,22 +135,6 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.TaskDefinit
             /// Instantiates a new taskDefinitionsRequestBuilderGetRequestConfiguration and sets the default values.
             /// </summary>
             public TaskDefinitionsRequestBuilderGetRequestConfiguration() {
-                Options = new List<IRequestOption>();
-                Headers = new RequestHeaders();
-            }
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        public class TaskDefinitionsRequestBuilderPostRequestConfiguration {
-            /// <summary>Request headers</summary>
-            public RequestHeaders Headers { get; set; }
-            /// <summary>Request options</summary>
-            public IList<IRequestOption> Options { get; set; }
-            /// <summary>
-            /// Instantiates a new taskDefinitionsRequestBuilderPostRequestConfiguration and sets the default values.
-            /// </summary>
-            public TaskDefinitionsRequestBuilderPostRequestConfiguration() {
                 Options = new List<IRequestOption>();
                 Headers = new RequestHeaders();
             }

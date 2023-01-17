@@ -1,5 +1,6 @@
 using Microsoft.Graph.Beta.Models;
 using Microsoft.Graph.Beta.Models.ODataErrors;
+using Microsoft.Graph.Beta.Security.AttackSimulation.Simulations.Item.Payload;
 using Microsoft.Kiota.Abstractions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using System;
@@ -15,6 +16,10 @@ namespace Microsoft.Graph.Beta.Security.AttackSimulation.Simulations.Item {
     public class SimulationItemRequestBuilder {
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
+        /// <summary>Provides operations to manage the payload property of the microsoft.graph.simulation entity.</summary>
+        public PayloadRequestBuilder Payload { get =>
+            new PayloadRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Url template to use to build the URL for the current request builder</summary>

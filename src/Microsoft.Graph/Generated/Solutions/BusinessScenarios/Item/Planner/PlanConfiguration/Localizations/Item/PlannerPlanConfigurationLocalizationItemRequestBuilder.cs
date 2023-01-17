@@ -60,7 +60,7 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.PlanConf
             await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Get localizations from solutions
+        /// Localized names for the plan configuration.
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -106,7 +106,7 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.PlanConf
             return requestInfo;
         }
         /// <summary>
-        /// Get localizations from solutions
+        /// Localized names for the plan configuration.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation ToGetRequestInformation(Action<PlannerPlanConfigurationLocalizationItemRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -164,7 +164,7 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.PlanConf
             }
         }
         /// <summary>
-        /// Get localizations from solutions
+        /// Localized names for the plan configuration.
         /// </summary>
         public class PlannerPlanConfigurationLocalizationItemRequestBuilderGetQueryParameters {
             /// <summary>Expand related entities</summary>

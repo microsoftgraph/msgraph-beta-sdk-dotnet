@@ -4,9 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>
-    /// Schema describing an Android application&apos;s custom configurations.
-    /// </summary>
     public class AndroidManagedStoreAppConfigurationSchema : Entity, IParsable {
         /// <summary>UTF8 encoded byte array containing example JSON string conforming to this schema that demonstrates how to set the configuration for this app</summary>
         public byte[] ExampleJson {

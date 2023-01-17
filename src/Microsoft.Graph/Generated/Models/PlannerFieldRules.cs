@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The defaultRules property</summary>
+        /// <summary>The default rules that apply if no override matches to the current data.</summary>
         public List<string> DefaultRules {
             get { return BackingStore?.Get<List<string>>("defaultRules"); }
             set { BackingStore?.Set("defaultRules", value); }
@@ -23,7 +23,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
-        /// <summary>The overrides property</summary>
+        /// <summary>Overrides that specify different rules for specific data associated with the field.</summary>
         public List<PlannerRuleOverride> Overrides {
             get { return BackingStore?.Get<List<PlannerRuleOverride>>("overrides"); }
             set { BackingStore?.Set("overrides", value); }

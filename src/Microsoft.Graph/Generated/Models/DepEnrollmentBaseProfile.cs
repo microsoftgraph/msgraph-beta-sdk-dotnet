@@ -35,6 +35,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("displayToneSetupDisabled"); }
             set { BackingStore?.Set("displayToneSetupDisabled", value); }
         }
+        /// <summary>enabledSkipKeys contains all the enabled skip keys as strings</summary>
+        public List<string> EnabledSkipKeys {
+            get { return BackingStore?.Get<List<string>>("enabledSkipKeys"); }
+            set { BackingStore?.Set("enabledSkipKeys", value); }
+        }
         /// <summary>Indicates if this is the default profile</summary>
         public bool? IsDefault {
             get { return BackingStore?.Get<bool?>("isDefault"); }
@@ -75,7 +80,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<bool?>("siriDisabled"); }
             set { BackingStore?.Set("siriDisabled", value); }
         }
-        /// <summary>Supervised mode, True to enable, false otherwise. See https://learn.microsoft.com/intune/deploy-use/enroll-devices-in-microsoft-intune for additional information.</summary>
+        /// <summary>Supervised mode, True to enable, false otherwise. See https://learn.microsoft.com/en-us/intune/deploy-use/enroll-devices-in-microsoft-intune for additional information.</summary>
         public bool? SupervisedModeEnabled {
             get { return BackingStore?.Get<bool?>("supervisedModeEnabled"); }
             set { BackingStore?.Set("supervisedModeEnabled", value); }
@@ -130,6 +135,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"deviceNameTemplate", n => { DeviceNameTemplate = n.GetStringValue(); } },
                 {"diagnosticsDisabled", n => { DiagnosticsDisabled = n.GetBoolValue(); } },
                 {"displayToneSetupDisabled", n => { DisplayToneSetupDisabled = n.GetBoolValue(); } },
+                {"enabledSkipKeys", n => { EnabledSkipKeys = n.GetCollectionOfPrimitiveValues<string>()?.ToList(); } },
                 {"isDefault", n => { IsDefault = n.GetBoolValue(); } },
                 {"isMandatory", n => { IsMandatory = n.GetBoolValue(); } },
                 {"locationDisabled", n => { LocationDisabled = n.GetBoolValue(); } },
@@ -158,6 +164,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("deviceNameTemplate", DeviceNameTemplate);
             writer.WriteBoolValue("diagnosticsDisabled", DiagnosticsDisabled);
             writer.WriteBoolValue("displayToneSetupDisabled", DisplayToneSetupDisabled);
+            writer.WriteCollectionOfPrimitiveValues<string>("enabledSkipKeys", EnabledSkipKeys);
             writer.WriteBoolValue("isDefault", IsDefault);
             writer.WriteBoolValue("isMandatory", IsMandatory);
             writer.WriteBoolValue("locationDisabled", LocationDisabled);

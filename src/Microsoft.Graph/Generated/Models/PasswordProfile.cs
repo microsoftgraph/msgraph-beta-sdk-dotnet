@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>true if the user must change her password on the next login; otherwise false. If not set, default is false. NOTE:  For Azure B2C tenants, set to false and instead use custom policies and user flows to force password reset at first sign in. See Force password reset at first logon.</summary>
+        /// <summary>true if the user must change her password on the next login; otherwise false. If not set, default is false.</summary>
         public bool? ForceChangePasswordNextSignIn {
             get { return BackingStore?.Get<bool?>("forceChangePasswordNextSignIn"); }
             set { BackingStore?.Set("forceChangePasswordNextSignIn", value); }

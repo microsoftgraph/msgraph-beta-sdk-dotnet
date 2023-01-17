@@ -4,9 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>
-    /// Base Profile Type for Resource Access
-    /// </summary>
     public class DeviceManagementResourceAccessProfileBase : Entity, IParsable {
         /// <summary>The list of assignments for the device configuration profile.</summary>
         public List<DeviceManagementResourceAccessProfileAssignment> Assignments {

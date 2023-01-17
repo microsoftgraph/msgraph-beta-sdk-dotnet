@@ -4,9 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>
-    /// Violation of restricted apps configuration profile per device per user
-    /// </summary>
     public class RestrictedAppsViolation : Entity, IParsable {
         /// <summary>Device configuration profile unique identifier, must be Guid</summary>
         public string DeviceConfigurationId {

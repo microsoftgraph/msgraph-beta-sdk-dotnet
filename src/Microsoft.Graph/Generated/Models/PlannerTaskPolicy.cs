@@ -18,7 +18,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
-        /// <summary>The rules property</summary>
+        /// <summary>The rules that should be enforced on the tasks when they are being changed outside of the scenario, based on the role of the caller.</summary>
         public List<PlannerTaskRoleBasedRule> Rules {
             get { return BackingStore?.Get<List<PlannerTaskRoleBasedRule>>("rules"); }
             set { BackingStore?.Set("rules", value); }

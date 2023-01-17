@@ -110,11 +110,6 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<List<PolicySet>>("policySets"); }
             set { BackingStore?.Set("policySets", value); }
         }
-        /// <summary>Side Loading Keys that are required for the Windows 8 and 8.1 Apps installation.</summary>
-        public List<SideLoadingKey> SideLoadingKeys {
-            get { return BackingStore?.Get<List<SideLoadingKey>>("sideLoadingKeys"); }
-            set { BackingStore?.Set("sideLoadingKeys", value); }
-        }
         /// <summary>The WinPhone Symantec Code Signing Certificate.</summary>
         public Microsoft.Graph.Beta.Models.SymantecCodeSigningCertificate SymantecCodeSigningCertificate {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SymantecCodeSigningCertificate>("symantecCodeSigningCertificate"); }
@@ -194,7 +189,6 @@ namespace Microsoft.Graph.Beta.Models {
                 {"mobileAppConfigurations", n => { MobileAppConfigurations = n.GetCollectionOfObjectValues<ManagedDeviceMobileAppConfiguration>(ManagedDeviceMobileAppConfiguration.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"mobileApps", n => { MobileApps = n.GetCollectionOfObjectValues<MobileApp>(MobileApp.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"policySets", n => { PolicySets = n.GetCollectionOfObjectValues<PolicySet>(PolicySet.CreateFromDiscriminatorValue)?.ToList(); } },
-                {"sideLoadingKeys", n => { SideLoadingKeys = n.GetCollectionOfObjectValues<SideLoadingKey>(SideLoadingKey.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"symantecCodeSigningCertificate", n => { SymantecCodeSigningCertificate = n.GetObjectValue<Microsoft.Graph.Beta.Models.SymantecCodeSigningCertificate>(Microsoft.Graph.Beta.Models.SymantecCodeSigningCertificate.CreateFromDiscriminatorValue); } },
                 {"targetedManagedAppConfigurations", n => { TargetedManagedAppConfigurations = n.GetCollectionOfObjectValues<TargetedManagedAppConfiguration>(TargetedManagedAppConfiguration.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"vppTokens", n => { VppTokens = n.GetCollectionOfObjectValues<VppToken>(VppToken.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -234,7 +228,6 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfObjectValues<ManagedDeviceMobileAppConfiguration>("mobileAppConfigurations", MobileAppConfigurations);
             writer.WriteCollectionOfObjectValues<MobileApp>("mobileApps", MobileApps);
             writer.WriteCollectionOfObjectValues<PolicySet>("policySets", PolicySets);
-            writer.WriteCollectionOfObjectValues<SideLoadingKey>("sideLoadingKeys", SideLoadingKeys);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.SymantecCodeSigningCertificate>("symantecCodeSigningCertificate", SymantecCodeSigningCertificate);
             writer.WriteCollectionOfObjectValues<TargetedManagedAppConfiguration>("targetedManagedAppConfigurations", TargetedManagedAppConfigurations);
             writer.WriteCollectionOfObjectValues<VppToken>("vppTokens", VppTokens);

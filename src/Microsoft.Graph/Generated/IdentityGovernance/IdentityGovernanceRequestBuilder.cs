@@ -2,6 +2,7 @@ using Microsoft.Graph.Beta.IdentityGovernance.AccessReviews;
 using Microsoft.Graph.Beta.IdentityGovernance.AppConsent;
 using Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement;
 using Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows;
+using Microsoft.Graph.Beta.IdentityGovernance.PrivilegedAccess;
 using Microsoft.Graph.Beta.IdentityGovernance.TermsOfUse;
 using Microsoft.Graph.Beta.Models.IdentityGovernance;
 using Microsoft.Graph.Beta.Models.ODataErrors;
@@ -36,6 +37,10 @@ namespace Microsoft.Graph.Beta.IdentityGovernance {
         }
         /// <summary>Path parameters for the request</summary>
         private Dictionary<string, object> PathParameters { get; set; }
+        /// <summary>Provides operations to manage the privilegedAccess property of the microsoft.graph.identityGovernance entity.</summary>
+        public PrivilegedAccessRequestBuilder PrivilegedAccess { get =>
+            new PrivilegedAccessRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The request adapter to use to execute the requests.</summary>
         private IRequestAdapter RequestAdapter { get; set; }
         /// <summary>Provides operations to manage the termsOfUse property of the microsoft.graph.identityGovernance entity.</summary>

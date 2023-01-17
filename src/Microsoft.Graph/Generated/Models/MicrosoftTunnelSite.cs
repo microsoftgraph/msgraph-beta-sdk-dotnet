@@ -19,11 +19,6 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
-        /// <summary>When set to true, certificate pinning will be enforced on connections between the Microsoft Tunnel server and Microsoft Tunnel clients. When set to false, certificate pinning will be disabled.</summary>
-        public bool? EnableCertificatePinning {
-            get { return BackingStore?.Get<bool?>("enableCertificatePinning"); }
-            set { BackingStore?.Set("enableCertificatePinning", value); }
-        }
         /// <summary>The site&apos;s Internal Network Access Probe URL</summary>
         public string InternalNetworkProbeUrl {
             get { return BackingStore?.Get<string>("internalNetworkProbeUrl"); }
@@ -89,7 +84,6 @@ namespace Microsoft.Graph.Beta.Models {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
                 {"description", n => { Description = n.GetStringValue(); } },
                 {"displayName", n => { DisplayName = n.GetStringValue(); } },
-                {"enableCertificatePinning", n => { EnableCertificatePinning = n.GetBoolValue(); } },
                 {"internalNetworkProbeUrl", n => { InternalNetworkProbeUrl = n.GetStringValue(); } },
                 {"microsoftTunnelConfiguration", n => { MicrosoftTunnelConfiguration = n.GetObjectValue<Microsoft.Graph.Beta.Models.MicrosoftTunnelConfiguration>(Microsoft.Graph.Beta.Models.MicrosoftTunnelConfiguration.CreateFromDiscriminatorValue); } },
                 {"microsoftTunnelServers", n => { MicrosoftTunnelServers = n.GetCollectionOfObjectValues<MicrosoftTunnelServer>(MicrosoftTunnelServer.CreateFromDiscriminatorValue)?.ToList(); } },
@@ -111,7 +105,6 @@ namespace Microsoft.Graph.Beta.Models {
             base.Serialize(writer);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("displayName", DisplayName);
-            writer.WriteBoolValue("enableCertificatePinning", EnableCertificatePinning);
             writer.WriteStringValue("internalNetworkProbeUrl", InternalNetworkProbeUrl);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.MicrosoftTunnelConfiguration>("microsoftTunnelConfiguration", MicrosoftTunnelConfiguration);
             writer.WriteCollectionOfObjectValues<MicrosoftTunnelServer>("microsoftTunnelServers", MicrosoftTunnelServers);

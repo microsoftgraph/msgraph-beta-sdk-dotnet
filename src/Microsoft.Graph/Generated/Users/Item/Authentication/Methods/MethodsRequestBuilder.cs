@@ -59,7 +59,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication.Methods {
             RequestAdapter = requestAdapter;
         }
         /// <summary>
-        /// Retrieve a list of authenticationMethod objects. This API returns only authentication methods supported on this API version. See Azure AD authentication methods API overview for a list of currently supported methods.
+        /// Retrieve a list of authentication methods registered to a user. The authentication methods are defined by the types derived from the authenticationMethod resource type, and only the methods supported on this API version. See Azure AD authentication methods API overview for a list of currently supported methods.
         /// Find more info here <see href="https://docs.microsoft.com/graph/api/authentication-list-methods?view=graph-rest-1.0" />
         /// </summary>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -88,7 +88,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication.Methods {
             return await RequestAdapter.SendAsync<AuthenticationMethod>(requestInfo, AuthenticationMethod.CreateFromDiscriminatorValue, errorMapping, cancellationToken);
         }
         /// <summary>
-        /// Retrieve a list of authenticationMethod objects. This API returns only authentication methods supported on this API version. See Azure AD authentication methods API overview for a list of currently supported methods.
+        /// Retrieve a list of authentication methods registered to a user. The authentication methods are defined by the types derived from the authenticationMethod resource type, and only the methods supported on this API version. See Azure AD authentication methods API overview for a list of currently supported methods.
         /// </summary>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         public RequestInformation ToGetRequestInformation(Action<MethodsRequestBuilderGetRequestConfiguration> requestConfiguration = default) {
@@ -130,7 +130,7 @@ namespace Microsoft.Graph.Beta.Users.Item.Authentication.Methods {
             return requestInfo;
         }
         /// <summary>
-        /// Retrieve a list of authenticationMethod objects. This API returns only authentication methods supported on this API version. See Azure AD authentication methods API overview for a list of currently supported methods.
+        /// Retrieve a list of authentication methods registered to a user. The authentication methods are defined by the types derived from the authenticationMethod resource type, and only the methods supported on this API version. See Azure AD authentication methods API overview for a list of currently supported methods.
         /// </summary>
         public class MethodsRequestBuilderGetQueryParameters {
             /// <summary>Include count of items</summary>

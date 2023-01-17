@@ -14,12 +14,12 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The display name of the identity. This property is read-only.</summary>
+        /// <summary>The display name of the identity. Note that this might not always be available or up to date. For example, if a user changes their display name, the API might show the new value in a future response, but the items associated with the user won&apos;t show up as having changed when using delta.</summary>
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
-        /// <summary>The identifier of the identity. This property is read-only.</summary>
+        /// <summary>Unique identifier for the identity.</summary>
         public string Id {
             get { return BackingStore?.Get<string>("id"); }
             set { BackingStore?.Set("id", value); }

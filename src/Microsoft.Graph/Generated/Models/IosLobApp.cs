@@ -25,11 +25,6 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
             set { BackingStore?.Set("expirationDateTime", value); }
         }
-        /// <summary>The identity version. This property is being deprecated in 2211(November 2022)</summary>
-        public string IdentityVersion {
-            get { return BackingStore?.Get<string>("identityVersion"); }
-            set { BackingStore?.Set("identityVersion", value); }
-        }
         /// <summary>The value for the minimum applicable operating system.</summary>
         public IosMinimumOperatingSystem MinimumSupportedOperatingSystem {
             get { return BackingStore?.Get<IosMinimumOperatingSystem>("minimumSupportedOperatingSystem"); }
@@ -63,7 +58,6 @@ namespace Microsoft.Graph.Beta.Models {
                 {"buildNumber", n => { BuildNumber = n.GetStringValue(); } },
                 {"bundleId", n => { BundleId = n.GetStringValue(); } },
                 {"expirationDateTime", n => { ExpirationDateTime = n.GetDateTimeOffsetValue(); } },
-                {"identityVersion", n => { IdentityVersion = n.GetStringValue(); } },
                 {"minimumSupportedOperatingSystem", n => { MinimumSupportedOperatingSystem = n.GetObjectValue<IosMinimumOperatingSystem>(IosMinimumOperatingSystem.CreateFromDiscriminatorValue); } },
                 {"versionNumber", n => { VersionNumber = n.GetStringValue(); } },
             };
@@ -79,7 +73,6 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteStringValue("buildNumber", BuildNumber);
             writer.WriteStringValue("bundleId", BundleId);
             writer.WriteDateTimeOffsetValue("expirationDateTime", ExpirationDateTime);
-            writer.WriteStringValue("identityVersion", IdentityVersion);
             writer.WriteObjectValue<IosMinimumOperatingSystem>("minimumSupportedOperatingSystem", MinimumSupportedOperatingSystem);
             writer.WriteStringValue("versionNumber", VersionNumber);
         }

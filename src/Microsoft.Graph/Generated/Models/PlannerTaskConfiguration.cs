@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class PlannerTaskConfiguration : Entity, IParsable {
-        /// <summary>The editPolicy property</summary>
+        /// <summary>Policy configuration for tasks created for the businessScenario when they are being changed outside of the scenario.</summary>
         public PlannerTaskPolicy EditPolicy {
             get { return BackingStore?.Get<PlannerTaskPolicy>("editPolicy"); }
             set { BackingStore?.Set("editPolicy", value); }

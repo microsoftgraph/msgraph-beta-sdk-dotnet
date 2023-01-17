@@ -4,9 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>
-    /// A pool represents a group of embedded SIM activation codes.
-    /// </summary>
     public class EmbeddedSIMActivationCodePool : Entity, IParsable {
         /// <summary>The total count of activation codes which belong to this pool.</summary>
         public int? ActivationCodeCount {

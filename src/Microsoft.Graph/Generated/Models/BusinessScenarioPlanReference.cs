@@ -5,7 +5,7 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class BusinessScenarioPlanReference : Entity, IParsable {
-        /// <summary>The title property</summary>
+        /// <summary>The title property of the plannerPlan.</summary>
         public string Title {
             get { return BackingStore?.Get<string>("title"); }
             set { BackingStore?.Set("title", value); }

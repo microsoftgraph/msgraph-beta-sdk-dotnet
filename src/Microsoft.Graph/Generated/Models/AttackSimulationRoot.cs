@@ -5,6 +5,16 @@ using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class AttackSimulationRoot : Entity, IParsable {
+        /// <summary>The operations property</summary>
+        public List<AttackSimulationOperation> Operations {
+            get { return BackingStore?.Get<List<AttackSimulationOperation>>("operations"); }
+            set { BackingStore?.Set("operations", value); }
+        }
+        /// <summary>The payloads property</summary>
+        public List<Payload> Payloads {
+            get { return BackingStore?.Get<List<Payload>>("payloads"); }
+            set { BackingStore?.Set("payloads", value); }
+        }
         /// <summary>Represents simulation automation created to run on a tenant.</summary>
         public List<SimulationAutomation> SimulationAutomations {
             get { return BackingStore?.Get<List<SimulationAutomation>>("simulationAutomations"); }
@@ -28,6 +38,8 @@ namespace Microsoft.Graph.Beta.Models {
         /// </summary>
         public new IDictionary<string, Action<IParseNode>> GetFieldDeserializers() {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers()) {
+                {"operations", n => { Operations = n.GetCollectionOfObjectValues<AttackSimulationOperation>(AttackSimulationOperation.CreateFromDiscriminatorValue)?.ToList(); } },
+                {"payloads", n => { Payloads = n.GetCollectionOfObjectValues<Payload>(Payload.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"simulationAutomations", n => { SimulationAutomations = n.GetCollectionOfObjectValues<SimulationAutomation>(SimulationAutomation.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"simulations", n => { Simulations = n.GetCollectionOfObjectValues<Simulation>(Simulation.CreateFromDiscriminatorValue)?.ToList(); } },
             };
@@ -39,6 +51,8 @@ namespace Microsoft.Graph.Beta.Models {
         public new void Serialize(ISerializationWriter writer) {
             _ = writer ?? throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
+            writer.WriteCollectionOfObjectValues<AttackSimulationOperation>("operations", Operations);
+            writer.WriteCollectionOfObjectValues<Payload>("payloads", Payloads);
             writer.WriteCollectionOfObjectValues<SimulationAutomation>("simulationAutomations", SimulationAutomations);
             writer.WriteCollectionOfObjectValues<Simulation>("simulations", Simulations);
         }

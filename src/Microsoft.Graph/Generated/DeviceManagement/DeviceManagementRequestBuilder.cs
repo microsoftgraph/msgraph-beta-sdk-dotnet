@@ -144,6 +144,7 @@ using Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDeviceStartup
 using Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDeviceStartupProcesses;
 using Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDeviceStartupProcessPerformance;
 using Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDevicesWithoutCloudIdentity;
+using Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsDeviceTimelineEvents;
 using Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsImpactingProcess;
 using Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsMetricHistory;
 using Microsoft.Graph.Beta.DeviceManagement.UserExperienceAnalyticsModelScores;
@@ -741,6 +742,10 @@ namespace Microsoft.Graph.Beta.DeviceManagement {
         /// <summary>Provides operations to manage the userExperienceAnalyticsDevicesWithoutCloudIdentity property of the microsoft.graph.deviceManagement entity.</summary>
         public UserExperienceAnalyticsDevicesWithoutCloudIdentityRequestBuilder UserExperienceAnalyticsDevicesWithoutCloudIdentity { get =>
             new UserExperienceAnalyticsDevicesWithoutCloudIdentityRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>Provides operations to manage the userExperienceAnalyticsDeviceTimelineEvents property of the microsoft.graph.deviceManagement entity.</summary>
+        public UserExperienceAnalyticsDeviceTimelineEventsRequestBuilder UserExperienceAnalyticsDeviceTimelineEvents { get =>
+            new UserExperienceAnalyticsDeviceTimelineEventsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Provides operations to manage the userExperienceAnalyticsImpactingProcess property of the microsoft.graph.deviceManagement entity.</summary>
         public UserExperienceAnalyticsImpactingProcessRequestBuilder UserExperienceAnalyticsImpactingProcess { get =>

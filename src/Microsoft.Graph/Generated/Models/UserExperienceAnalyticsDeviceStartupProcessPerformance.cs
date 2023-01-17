@@ -4,9 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>
-    /// The user experience analytics device startup process performance.
-    /// </summary>
     public class UserExperienceAnalyticsDeviceStartupProcessPerformance : Entity, IParsable {
         /// <summary>User experience analytics device startup process summarized count.</summary>
         public long? DeviceCount {

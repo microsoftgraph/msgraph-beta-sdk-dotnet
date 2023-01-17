@@ -13,22 +13,22 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The externalBucketId property</summary>
+        /// <summary>The identifier for the bucketDefinition configured in the plannerPlanConfiguration for the scenario. The task will be placed in the corresponding plannerBucket in the target plan. Required.</summary>
         public string ExternalBucketId {
             get { return BackingStore?.Get<string>("externalBucketId"); }
             set { BackingStore?.Set("externalBucketId", value); }
         }
-        /// <summary>The externalContextId property</summary>
+        /// <summary>The identifier for the context of the task. Context is an application controlled value, and tasks can be queried by their externalContextId. Optional.</summary>
         public string ExternalContextId {
             get { return BackingStore?.Get<string>("externalContextId"); }
             set { BackingStore?.Set("externalContextId", value); }
         }
-        /// <summary>The externalObjectId property</summary>
+        /// <summary>Application-specific identifier for the task. Every task for the same scenario must have a unique identifier specified for this property. Required.</summary>
         public string ExternalObjectId {
             get { return BackingStore?.Get<string>("externalObjectId"); }
             set { BackingStore?.Set("externalObjectId", value); }
         }
-        /// <summary>The externalObjectVersion property</summary>
+        /// <summary>Application-specific version of the task. Optional.</summary>
         public string ExternalObjectVersion {
             get { return BackingStore?.Get<string>("externalObjectVersion"); }
             set { BackingStore?.Set("externalObjectVersion", value); }
@@ -38,7 +38,7 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
-        /// <summary>The webUrl property</summary>
+        /// <summary>The URL to the application-specific experience for this task. Optional.</summary>
         public string WebUrl {
             get { return BackingStore?.Get<string>("webUrl"); }
             set { BackingStore?.Set("webUrl", value); }

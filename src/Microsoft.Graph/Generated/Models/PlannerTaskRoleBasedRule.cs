@@ -13,7 +13,7 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The defaultRule property</summary>
+        /// <summary>Default rule that applies when a property or action-specific rule is not provided. Possible values are: Allow, Block</summary>
         public string DefaultRule {
             get { return BackingStore?.Get<string>("defaultRule"); }
             set { BackingStore?.Set("defaultRule", value); }
@@ -23,12 +23,12 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
-        /// <summary>The propertyRule property</summary>
+        /// <summary>Rules for specific properties and actions.</summary>
         public PlannerTaskPropertyRule PropertyRule {
             get { return BackingStore?.Get<PlannerTaskPropertyRule>("propertyRule"); }
             set { BackingStore?.Set("propertyRule", value); }
         }
-        /// <summary>The role property</summary>
+        /// <summary>The role these rules apply to.</summary>
         public PlannerTaskConfigurationRoleBase Role {
             get { return BackingStore?.Get<PlannerTaskConfigurationRoleBase>("role"); }
             set { BackingStore?.Set("role", value); }

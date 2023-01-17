@@ -16,22 +16,22 @@ namespace Microsoft.Graph.Beta.Models {
         }
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
-        /// <summary>The number of high severity anomalies which have been detected. Valid values -2147483648 to 2147483647</summary>
+        /// <summary>Indicates count of high severity anomalies which have been detected. Valid values -2147483648 to 2147483647</summary>
         public int? HighSeverityAnomalyCount {
             get { return BackingStore?.Get<int?>("highSeverityAnomalyCount"); }
             set { BackingStore?.Set("highSeverityAnomalyCount", value); }
         }
-        /// <summary>The number of informational severity anomalies which have been detected. Valid values -2147483648 to 2147483647</summary>
+        /// <summary>Indicates count of informational severity anomalies which have been detected. Valid values -2147483648 to 2147483647</summary>
         public int? InformationalSeverityAnomalyCount {
             get { return BackingStore?.Get<int?>("informationalSeverityAnomalyCount"); }
             set { BackingStore?.Set("informationalSeverityAnomalyCount", value); }
         }
-        /// <summary>The number of low severity anomalies which have been detected. Valid values -2147483648 to 2147483647</summary>
+        /// <summary>Indicates count of low severity anomalies which have been detected. Valid values -2147483648 to 2147483647</summary>
         public int? LowSeverityAnomalyCount {
             get { return BackingStore?.Get<int?>("lowSeverityAnomalyCount"); }
             set { BackingStore?.Set("lowSeverityAnomalyCount", value); }
         }
-        /// <summary>The number of medium severity anomalies which have been detected. Valid values -2147483648 to 2147483647</summary>
+        /// <summary>Indicates count of medium severity anomalies which have been detected. Valid values -2147483648 to 2147483647</summary>
         public int? MediumSeverityAnomalyCount {
             get { return BackingStore?.Get<int?>("mediumSeverityAnomalyCount"); }
             set { BackingStore?.Set("mediumSeverityAnomalyCount", value); }

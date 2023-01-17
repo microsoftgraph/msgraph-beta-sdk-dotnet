@@ -165,6 +165,11 @@ namespace Microsoft.Graph.Beta.Models {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.VirtualAppointment>("virtualAppointment"); }
             set { BackingStore?.Set("virtualAppointment", value); }
         }
+        /// <summary>The watermarkProtection property</summary>
+        public WatermarkProtectionValues WatermarkProtection {
+            get { return BackingStore?.Get<WatermarkProtectionValues>("watermarkProtection"); }
+            set { BackingStore?.Set("watermarkProtection", value); }
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -210,6 +215,7 @@ namespace Microsoft.Graph.Beta.Models {
                 {"transcripts", n => { Transcripts = n.GetCollectionOfObjectValues<CallTranscript>(CallTranscript.CreateFromDiscriminatorValue)?.ToList(); } },
                 {"videoTeleconferenceId", n => { VideoTeleconferenceId = n.GetStringValue(); } },
                 {"virtualAppointment", n => { VirtualAppointment = n.GetObjectValue<Microsoft.Graph.Beta.Models.VirtualAppointment>(Microsoft.Graph.Beta.Models.VirtualAppointment.CreateFromDiscriminatorValue); } },
+                {"watermarkProtection", n => { WatermarkProtection = n.GetObjectValue<WatermarkProtectionValues>(WatermarkProtectionValues.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -251,6 +257,7 @@ namespace Microsoft.Graph.Beta.Models {
             writer.WriteCollectionOfObjectValues<CallTranscript>("transcripts", Transcripts);
             writer.WriteStringValue("videoTeleconferenceId", VideoTeleconferenceId);
             writer.WriteObjectValue<Microsoft.Graph.Beta.Models.VirtualAppointment>("virtualAppointment", VirtualAppointment);
+            writer.WriteObjectValue<WatermarkProtectionValues>("watermarkProtection", WatermarkProtection);
         }
     }
 }

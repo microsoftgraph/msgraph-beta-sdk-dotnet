@@ -4,9 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>
-    /// The Group Policy Object file uploaded by admin.
-    /// </summary>
     public class GroupPolicyObjectFile : Entity, IParsable {
         /// <summary>The Group Policy Object file content.</summary>
         public string Content {
