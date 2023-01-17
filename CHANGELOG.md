@@ -7,11 +7,12 @@ and this project does NOT adhere to [Semantic Versioning](https://semver.org/spe
 
 ## [Unreleased]
 
-## [5.16.1-preview] - 2023-01-16
+## [5.17.0-preview] - 2023-01-16
 
 ### Changed
 
 - Fixed a regression where passing custom base url would not be reflected in the requests.
+- Latest metadata updates from 12th January 2023 snapshot
 
 ## [5.16.0-preview] - 2023-01-11
 
