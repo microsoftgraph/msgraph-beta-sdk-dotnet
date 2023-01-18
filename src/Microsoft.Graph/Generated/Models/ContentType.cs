@@ -6,85 +6,183 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class ContentType : Entity, IParsable {
         /// <summary>List of canonical URLs for hub sites with which this content type is associated to. This will contain all hubsites where this content type is queued to be enforced or is already enforced. Enforcing a content type means that the content type will be applied to the lists in the enforced sites.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? AssociatedHubsUrls {
+            get { return BackingStore?.Get<List<string>?>("associatedHubsUrls"); }
+            set { BackingStore?.Set("associatedHubsUrls", value); }
+        }
+#else
         public List<string> AssociatedHubsUrls {
             get { return BackingStore?.Get<List<string>>("associatedHubsUrls"); }
             set { BackingStore?.Set("associatedHubsUrls", value); }
         }
+#endif
         /// <summary>Parent contentType from which this content type is derived.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ContentType? Base {
+            get { return BackingStore?.Get<ContentType?>("base"); }
+            set { BackingStore?.Set("base", value); }
+        }
+#else
         public ContentType Base {
             get { return BackingStore?.Get<ContentType>("base"); }
             set { BackingStore?.Set("base", value); }
         }
+#endif
         /// <summary>The collection of content types that are ancestors of this content type.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ContentType>? BaseTypes {
+            get { return BackingStore?.Get<List<ContentType>?>("baseTypes"); }
+            set { BackingStore?.Set("baseTypes", value); }
+        }
+#else
         public List<ContentType> BaseTypes {
             get { return BackingStore?.Get<List<ContentType>>("baseTypes"); }
             set { BackingStore?.Set("baseTypes", value); }
         }
+#endif
         /// <summary>The collection of columns that are required by this content type</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ColumnLink>? ColumnLinks {
+            get { return BackingStore?.Get<List<ColumnLink>?>("columnLinks"); }
+            set { BackingStore?.Set("columnLinks", value); }
+        }
+#else
         public List<ColumnLink> ColumnLinks {
             get { return BackingStore?.Get<List<ColumnLink>>("columnLinks"); }
             set { BackingStore?.Set("columnLinks", value); }
         }
+#endif
         /// <summary>Column order information in a content type.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ColumnDefinition>? ColumnPositions {
+            get { return BackingStore?.Get<List<ColumnDefinition>?>("columnPositions"); }
+            set { BackingStore?.Set("columnPositions", value); }
+        }
+#else
         public List<ColumnDefinition> ColumnPositions {
             get { return BackingStore?.Get<List<ColumnDefinition>>("columnPositions"); }
             set { BackingStore?.Set("columnPositions", value); }
         }
+#endif
         /// <summary>The collection of column definitions for this contentType.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ColumnDefinition>? Columns {
+            get { return BackingStore?.Get<List<ColumnDefinition>?>("columns"); }
+            set { BackingStore?.Set("columns", value); }
+        }
+#else
         public List<ColumnDefinition> Columns {
             get { return BackingStore?.Get<List<ColumnDefinition>>("columns"); }
             set { BackingStore?.Set("columns", value); }
         }
+#endif
         /// <summary>The descriptive text for the item.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>Document Set metadata.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.DocumentSet? DocumentSet {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DocumentSet?>("documentSet"); }
+            set { BackingStore?.Set("documentSet", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.DocumentSet DocumentSet {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DocumentSet>("documentSet"); }
             set { BackingStore?.Set("documentSet", value); }
         }
+#endif
         /// <summary>Document template metadata. To make sure that documents have consistent content across a site and its subsites, you can associate a Word, Excel, or PowerPoint template with a site content type.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DocumentSetContent? DocumentTemplate {
+            get { return BackingStore?.Get<DocumentSetContent?>("documentTemplate"); }
+            set { BackingStore?.Set("documentTemplate", value); }
+        }
+#else
         public DocumentSetContent DocumentTemplate {
             get { return BackingStore?.Get<DocumentSetContent>("documentTemplate"); }
             set { BackingStore?.Set("documentTemplate", value); }
         }
+#endif
         /// <summary>The name of the group this content type belongs to. Helps organize related content types.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Group {
+            get { return BackingStore?.Get<string?>("group"); }
+            set { BackingStore?.Set("group", value); }
+        }
+#else
         public string Group {
             get { return BackingStore?.Get<string>("group"); }
             set { BackingStore?.Set("group", value); }
         }
+#endif
         /// <summary>Indicates whether the content type is hidden in the list&apos;s &apos;New&apos; menu.</summary>
         public bool? Hidden {
             get { return BackingStore?.Get<bool?>("hidden"); }
             set { BackingStore?.Set("hidden", value); }
         }
         /// <summary>If this content type is inherited from another scope (like a site), provides a reference to the item where the content type is defined.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ItemReference? InheritedFrom {
+            get { return BackingStore?.Get<ItemReference?>("inheritedFrom"); }
+            set { BackingStore?.Set("inheritedFrom", value); }
+        }
+#else
         public ItemReference InheritedFrom {
             get { return BackingStore?.Get<ItemReference>("inheritedFrom"); }
             set { BackingStore?.Set("inheritedFrom", value); }
         }
+#endif
         /// <summary>Specifies if a content type is a built-in content type.</summary>
         public bool? IsBuiltIn {
             get { return BackingStore?.Get<bool?>("isBuiltIn"); }
             set { BackingStore?.Set("isBuiltIn", value); }
         }
         /// <summary>The name of the content type.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Name {
+            get { return BackingStore?.Get<string?>("name"); }
+            set { BackingStore?.Set("name", value); }
+        }
+#else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#endif
         /// <summary>Specifies the order in which the content type appears in the selection UI.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ContentTypeOrder? Order {
+            get { return BackingStore?.Get<ContentTypeOrder?>("order"); }
+            set { BackingStore?.Set("order", value); }
+        }
+#else
         public ContentTypeOrder Order {
             get { return BackingStore?.Get<ContentTypeOrder>("order"); }
             set { BackingStore?.Set("order", value); }
         }
+#endif
         /// <summary>The unique identifier of the content type.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ParentId {
+            get { return BackingStore?.Get<string?>("parentId"); }
+            set { BackingStore?.Set("parentId", value); }
+        }
+#else
         public string ParentId {
             get { return BackingStore?.Get<string>("parentId"); }
             set { BackingStore?.Set("parentId", value); }
         }
+#endif
         /// <summary>If true, any changes made to the content type will be pushed to inherited content types and lists that implement the content type.</summary>
         public bool? PropagateChanges {
             get { return BackingStore?.Get<bool?>("propagateChanges"); }

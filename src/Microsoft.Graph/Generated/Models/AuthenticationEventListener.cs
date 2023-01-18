@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class AuthenticationEventListener : Entity, IParsable {
         /// <summary>The authenticationEventsFlowId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AuthenticationEventsFlowId {
+            get { return BackingStore?.Get<string?>("authenticationEventsFlowId"); }
+            set { BackingStore?.Set("authenticationEventsFlowId", value); }
+        }
+#else
         public string AuthenticationEventsFlowId {
             get { return BackingStore?.Get<string>("authenticationEventsFlowId"); }
             set { BackingStore?.Set("authenticationEventsFlowId", value); }
         }
+#endif
         /// <summary>The conditions property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public AuthenticationConditions? Conditions {
+            get { return BackingStore?.Get<AuthenticationConditions?>("conditions"); }
+            set { BackingStore?.Set("conditions", value); }
+        }
+#else
         public AuthenticationConditions Conditions {
             get { return BackingStore?.Get<AuthenticationConditions>("conditions"); }
             set { BackingStore?.Set("conditions", value); }
         }
+#endif
         /// <summary>The priority property</summary>
         public int? Priority {
             get { return BackingStore?.Get<int?>("priority"); }

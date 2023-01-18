@@ -6,20 +6,41 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class WindowsUpdateState : Entity, IParsable {
         /// <summary>Device display name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeviceDisplayName {
+            get { return BackingStore?.Get<string?>("deviceDisplayName"); }
+            set { BackingStore?.Set("deviceDisplayName", value); }
+        }
+#else
         public string DeviceDisplayName {
             get { return BackingStore?.Get<string>("deviceDisplayName"); }
             set { BackingStore?.Set("deviceDisplayName", value); }
         }
+#endif
         /// <summary>The id of the device.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeviceId {
+            get { return BackingStore?.Get<string?>("deviceId"); }
+            set { BackingStore?.Set("deviceId", value); }
+        }
+#else
         public string DeviceId {
             get { return BackingStore?.Get<string>("deviceId"); }
             set { BackingStore?.Set("deviceId", value); }
         }
+#endif
         /// <summary>The current feature update version of the device.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? FeatureUpdateVersion {
+            get { return BackingStore?.Get<string?>("featureUpdateVersion"); }
+            set { BackingStore?.Set("featureUpdateVersion", value); }
+        }
+#else
         public string FeatureUpdateVersion {
             get { return BackingStore?.Get<string>("featureUpdateVersion"); }
             set { BackingStore?.Set("featureUpdateVersion", value); }
         }
+#endif
         /// <summary>The date time that the Windows Update Agent did a successful scan.</summary>
         public DateTimeOffset? LastScanDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastScanDateTime"); }
@@ -31,25 +52,46 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("lastSyncDateTime", value); }
         }
         /// <summary>The Quality Update Version of the device.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? QualityUpdateVersion {
+            get { return BackingStore?.Get<string?>("qualityUpdateVersion"); }
+            set { BackingStore?.Set("qualityUpdateVersion", value); }
+        }
+#else
         public string QualityUpdateVersion {
             get { return BackingStore?.Get<string>("qualityUpdateVersion"); }
             set { BackingStore?.Set("qualityUpdateVersion", value); }
         }
+#endif
         /// <summary>Windows update for business configuration device states</summary>
         public WindowsUpdateStatus? Status {
             get { return BackingStore?.Get<WindowsUpdateStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>The id of the user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UserId {
+            get { return BackingStore?.Get<string?>("userId"); }
+            set { BackingStore?.Set("userId", value); }
+        }
+#else
         public string UserId {
             get { return BackingStore?.Get<string>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
+#endif
         /// <summary>User principal name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UserPrincipalName {
+            get { return BackingStore?.Get<string?>("userPrincipalName"); }
+            set { BackingStore?.Set("userPrincipalName", value); }
+        }
+#else
         public string UserPrincipalName {
             get { return BackingStore?.Get<string>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

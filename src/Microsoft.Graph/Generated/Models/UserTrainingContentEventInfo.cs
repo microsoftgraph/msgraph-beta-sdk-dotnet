@@ -14,30 +14,58 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Browser of the user from where the training event was generated.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Browser {
+            get { return BackingStore?.Get<string?>("browser"); }
+            set { BackingStore?.Set("browser", value); }
+        }
+#else
         public string Browser {
             get { return BackingStore?.Get<string>("browser"); }
             set { BackingStore?.Set("browser", value); }
         }
+#endif
         /// <summary>Date and time of the training content playback by the user.</summary>
         public DateTimeOffset? ContentDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("contentDateTime"); }
             set { BackingStore?.Set("contentDateTime", value); }
         }
         /// <summary>IP address of the user for the training event.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? IpAddress {
+            get { return BackingStore?.Get<string?>("ipAddress"); }
+            set { BackingStore?.Set("ipAddress", value); }
+        }
+#else
         public string IpAddress {
             get { return BackingStore?.Get<string>("ipAddress"); }
             set { BackingStore?.Set("ipAddress", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The operating system, platform, and device details of the user for the training event.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OsPlatformDeviceDetails {
+            get { return BackingStore?.Get<string?>("osPlatformDeviceDetails"); }
+            set { BackingStore?.Set("osPlatformDeviceDetails", value); }
+        }
+#else
         public string OsPlatformDeviceDetails {
             get { return BackingStore?.Get<string>("osPlatformDeviceDetails"); }
             set { BackingStore?.Set("osPlatformDeviceDetails", value); }
         }
+#endif
         /// <summary>Potential improvement in the tenant security posture after completion of the training by the user.</summary>
         public double? PotentialScoreImpact {
             get { return BackingStore?.Get<double?>("potentialScoreImpact"); }

@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class ItemAttachment : Attachment, IParsable {
         /// <summary>The attached contact, message or event. Navigation property.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public OutlookItem? Item {
+            get { return BackingStore?.Get<OutlookItem?>("item"); }
+            set { BackingStore?.Set("item", value); }
+        }
+#else
         public OutlookItem Item {
             get { return BackingStore?.Get<OutlookItem>("item"); }
             set { BackingStore?.Set("item", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new ItemAttachment and sets the default values.
         /// </summary>

@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class AuditUserIdentity : UserIdentity, IParsable {
         /// <summary>For user sign ins, the identifier of the tenant that the user is a member of.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? HomeTenantId {
+            get { return BackingStore?.Get<string?>("homeTenantId"); }
+            set { BackingStore?.Set("homeTenantId", value); }
+        }
+#else
         public string HomeTenantId {
             get { return BackingStore?.Get<string>("homeTenantId"); }
             set { BackingStore?.Set("homeTenantId", value); }
         }
+#endif
         /// <summary>For user sign ins, the name of the tenant that the user is a member of. Only populated in cases where the home tenant has provided affirmative consent to Azure AD to show the tenant content.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? HomeTenantName {
+            get { return BackingStore?.Get<string?>("homeTenantName"); }
+            set { BackingStore?.Set("homeTenantName", value); }
+        }
+#else
         public string HomeTenantName {
             get { return BackingStore?.Get<string>("homeTenantName"); }
             set { BackingStore?.Set("homeTenantName", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new AuditUserIdentity and sets the default values.
         /// </summary>

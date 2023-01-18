@@ -11,10 +11,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("isDefault", value); }
         }
         /// <summary>The rolePermissions property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<UnifiedRolePermission>? RolePermissions {
+            get { return BackingStore?.Get<List<UnifiedRolePermission>?>("rolePermissions"); }
+            set { BackingStore?.Set("rolePermissions", value); }
+        }
+#else
         public List<UnifiedRolePermission> RolePermissions {
             get { return BackingStore?.Get<List<UnifiedRolePermission>>("rolePermissions"); }
             set { BackingStore?.Set("rolePermissions", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

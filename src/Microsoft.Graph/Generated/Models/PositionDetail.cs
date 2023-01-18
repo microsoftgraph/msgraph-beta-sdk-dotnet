@@ -15,45 +15,87 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Detail about the company or employer.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public CompanyDetail? Company {
+            get { return BackingStore?.Get<CompanyDetail?>("company"); }
+            set { BackingStore?.Set("company", value); }
+        }
+#else
         public CompanyDetail Company {
             get { return BackingStore?.Get<CompanyDetail>("company"); }
             set { BackingStore?.Set("company", value); }
         }
+#endif
         /// <summary>Description of the position in question.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>When the position ended.</summary>
         public Date? EndMonthYear {
             get { return BackingStore?.Get<Date?>("endMonthYear"); }
             set { BackingStore?.Set("endMonthYear", value); }
         }
         /// <summary>The title held when in that position.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? JobTitle {
+            get { return BackingStore?.Get<string?>("jobTitle"); }
+            set { BackingStore?.Set("jobTitle", value); }
+        }
+#else
         public string JobTitle {
             get { return BackingStore?.Get<string>("jobTitle"); }
             set { BackingStore?.Set("jobTitle", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The role the position entailed.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Role {
+            get { return BackingStore?.Get<string?>("role"); }
+            set { BackingStore?.Set("role", value); }
+        }
+#else
         public string Role {
             get { return BackingStore?.Get<string>("role"); }
             set { BackingStore?.Set("role", value); }
         }
+#endif
         /// <summary>The start month and year of the position.</summary>
         public Date? StartMonthYear {
             get { return BackingStore?.Get<Date?>("startMonthYear"); }
             set { BackingStore?.Set("startMonthYear", value); }
         }
         /// <summary>Short summary of the position.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Summary {
+            get { return BackingStore?.Get<string?>("summary"); }
+            set { BackingStore?.Set("summary", value); }
+        }
+#else
         public string Summary {
             get { return BackingStore?.Get<string>("summary"); }
             set { BackingStore?.Set("summary", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new positionDetail and sets the default values.
         /// </summary>

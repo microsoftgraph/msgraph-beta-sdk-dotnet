@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class OnenoteEntityBaseModel : Entity, IParsable {
         /// <summary>The self property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Self {
+            get { return BackingStore?.Get<string?>("self"); }
+            set { BackingStore?.Set("self", value); }
+        }
+#else
         public string Self {
             get { return BackingStore?.Get<string>("self"); }
             set { BackingStore?.Set("self", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

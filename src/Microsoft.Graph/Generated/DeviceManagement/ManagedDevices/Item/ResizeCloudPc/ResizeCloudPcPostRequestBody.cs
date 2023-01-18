@@ -14,10 +14,17 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.ResizeCloudP
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The targetServicePlanId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TargetServicePlanId {
+            get { return BackingStore?.Get<string?>("targetServicePlanId"); }
+            set { BackingStore?.Set("targetServicePlanId", value); }
+        }
+#else
         public string TargetServicePlanId {
             get { return BackingStore?.Get<string>("targetServicePlanId"); }
             set { BackingStore?.Set("targetServicePlanId", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new resizeCloudPcPostRequestBody and sets the default values.
         /// </summary>

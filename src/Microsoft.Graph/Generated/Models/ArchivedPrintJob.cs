@@ -44,10 +44,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("copiesPrinted", value); }
         }
         /// <summary>The user who created the print job. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public UserIdentity? CreatedBy {
+            get { return BackingStore?.Get<UserIdentity?>("createdBy"); }
+            set { BackingStore?.Set("createdBy", value); }
+        }
+#else
         public UserIdentity CreatedBy {
             get { return BackingStore?.Get<UserIdentity>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
+#endif
         /// <summary>The dateTimeOffset when the job was created. Read-only.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
@@ -59,25 +66,46 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("duplexPageCount", value); }
         }
         /// <summary>The archived print job&apos;s GUID. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Id {
+            get { return BackingStore?.Get<string?>("id"); }
+            set { BackingStore?.Set("id", value); }
+        }
+#else
         public string Id {
             get { return BackingStore?.Get<string>("id"); }
             set { BackingStore?.Set("id", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The total number of pages that were printed. Read-only.</summary>
         public int? PageCount {
             get { return BackingStore?.Get<int?>("pageCount"); }
             set { BackingStore?.Set("pageCount", value); }
         }
         /// <summary>The printer ID that the job was queued for. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PrinterId {
+            get { return BackingStore?.Get<string?>("printerId"); }
+            set { BackingStore?.Set("printerId", value); }
+        }
+#else
         public string PrinterId {
             get { return BackingStore?.Get<string>("printerId"); }
             set { BackingStore?.Set("printerId", value); }
         }
+#endif
         /// <summary>The processingState property</summary>
         public PrintJobProcessingState? ProcessingState {
             get { return BackingStore?.Get<PrintJobProcessingState?>("processingState"); }

@@ -12,37 +12,79 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The software version for the admin agent running on the device.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AdminAgentSoftwareVersion {
+            get { return BackingStore?.Get<string?>("adminAgentSoftwareVersion"); }
+            set { BackingStore?.Set("adminAgentSoftwareVersion", value); }
+        }
+#else
         public string AdminAgentSoftwareVersion {
             get { return BackingStore?.Get<string>("adminAgentSoftwareVersion"); }
             set { BackingStore?.Set("adminAgentSoftwareVersion", value); }
         }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The software version for the firmware running on the device.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? FirmwareSoftwareVersion {
+            get { return BackingStore?.Get<string?>("firmwareSoftwareVersion"); }
+            set { BackingStore?.Set("firmwareSoftwareVersion", value); }
+        }
+#else
         public string FirmwareSoftwareVersion {
             get { return BackingStore?.Get<string>("firmwareSoftwareVersion"); }
             set { BackingStore?.Set("firmwareSoftwareVersion", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The software version for the operating system on the device.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OperatingSystemSoftwareVersion {
+            get { return BackingStore?.Get<string?>("operatingSystemSoftwareVersion"); }
+            set { BackingStore?.Set("operatingSystemSoftwareVersion", value); }
+        }
+#else
         public string OperatingSystemSoftwareVersion {
             get { return BackingStore?.Get<string>("operatingSystemSoftwareVersion"); }
             set { BackingStore?.Set("operatingSystemSoftwareVersion", value); }
         }
+#endif
         /// <summary>The software version for the partner agent running on the device.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PartnerAgentSoftwareVersion {
+            get { return BackingStore?.Get<string?>("partnerAgentSoftwareVersion"); }
+            set { BackingStore?.Set("partnerAgentSoftwareVersion", value); }
+        }
+#else
         public string PartnerAgentSoftwareVersion {
             get { return BackingStore?.Get<string>("partnerAgentSoftwareVersion"); }
             set { BackingStore?.Set("partnerAgentSoftwareVersion", value); }
         }
+#endif
         /// <summary>The software version for the Teams client running on the device.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TeamsClientSoftwareVersion {
+            get { return BackingStore?.Get<string?>("teamsClientSoftwareVersion"); }
+            set { BackingStore?.Set("teamsClientSoftwareVersion", value); }
+        }
+#else
         public string TeamsClientSoftwareVersion {
             get { return BackingStore?.Get<string>("teamsClientSoftwareVersion"); }
             set { BackingStore?.Set("teamsClientSoftwareVersion", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new teamworkDeviceSoftwareVersions and sets the default values.
         /// </summary>

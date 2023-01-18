@@ -14,35 +14,70 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Represents the strings that should appear in the body of an incoming message in order for the condition or exception to apply.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? BodyContains {
+            get { return BackingStore?.Get<List<string>?>("bodyContains"); }
+            set { BackingStore?.Set("bodyContains", value); }
+        }
+#else
         public List<string> BodyContains {
             get { return BackingStore?.Get<List<string>>("bodyContains"); }
             set { BackingStore?.Set("bodyContains", value); }
         }
+#endif
         /// <summary>Represents the strings that should appear in the body or subject of an incoming message in order for the condition or exception to apply.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? BodyOrSubjectContains {
+            get { return BackingStore?.Get<List<string>?>("bodyOrSubjectContains"); }
+            set { BackingStore?.Set("bodyOrSubjectContains", value); }
+        }
+#else
         public List<string> BodyOrSubjectContains {
             get { return BackingStore?.Get<List<string>>("bodyOrSubjectContains"); }
             set { BackingStore?.Set("bodyOrSubjectContains", value); }
         }
+#endif
         /// <summary>Represents the categories that an incoming message should be labeled with in order for the condition or exception to apply.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? Categories {
+            get { return BackingStore?.Get<List<string>?>("categories"); }
+            set { BackingStore?.Set("categories", value); }
+        }
+#else
         public List<string> Categories {
             get { return BackingStore?.Get<List<string>>("categories"); }
             set { BackingStore?.Set("categories", value); }
         }
+#endif
         /// <summary>Represents the specific sender email addresses of an incoming message in order for the condition or exception to apply.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Recipient>? FromAddresses {
+            get { return BackingStore?.Get<List<Recipient>?>("fromAddresses"); }
+            set { BackingStore?.Set("fromAddresses", value); }
+        }
+#else
         public List<Recipient> FromAddresses {
             get { return BackingStore?.Get<List<Recipient>>("fromAddresses"); }
             set { BackingStore?.Set("fromAddresses", value); }
         }
+#endif
         /// <summary>Indicates whether an incoming message must have attachments in order for the condition or exception to apply.</summary>
         public bool? HasAttachments {
             get { return BackingStore?.Get<bool?>("hasAttachments"); }
             set { BackingStore?.Set("hasAttachments", value); }
         }
         /// <summary>Represents the strings that appear in the headers of an incoming message in order for the condition or exception to apply.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? HeaderContains {
+            get { return BackingStore?.Get<List<string>?>("headerContains"); }
+            set { BackingStore?.Set("headerContains", value); }
+        }
+#else
         public List<string> HeaderContains {
             get { return BackingStore?.Get<List<string>>("headerContains"); }
             set { BackingStore?.Set("headerContains", value); }
         }
+#endif
         /// <summary>The importance that is stamped on an incoming message in order for the condition or exception to apply: low, normal, high.</summary>
         public Microsoft.Graph.Beta.Models.Importance? Importance {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Importance?>("importance"); }
@@ -114,20 +149,41 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("notSentToMe", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Represents the strings that appear in either the toRecipients or ccRecipients properties of an incoming message in order for the condition or exception to apply.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? RecipientContains {
+            get { return BackingStore?.Get<List<string>?>("recipientContains"); }
+            set { BackingStore?.Set("recipientContains", value); }
+        }
+#else
         public List<string> RecipientContains {
             get { return BackingStore?.Get<List<string>>("recipientContains"); }
             set { BackingStore?.Set("recipientContains", value); }
         }
+#endif
         /// <summary>Represents the strings that appear in the from property of an incoming message in order for the condition or exception to apply.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? SenderContains {
+            get { return BackingStore?.Get<List<string>?>("senderContains"); }
+            set { BackingStore?.Set("senderContains", value); }
+        }
+#else
         public List<string> SenderContains {
             get { return BackingStore?.Get<List<string>>("senderContains"); }
             set { BackingStore?.Set("senderContains", value); }
         }
+#endif
         /// <summary>Represents the sensitivity level that must be stamped on an incoming message in order for the condition or exception to apply. The possible values are: normal, personal, private, confidential.</summary>
         public Microsoft.Graph.Beta.Models.Sensitivity? Sensitivity {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Sensitivity?>("sensitivity"); }
@@ -144,10 +200,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("sentOnlyToMe", value); }
         }
         /// <summary>Represents the email addresses that an incoming message must have been sent to in order for the condition or exception to apply.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Recipient>? SentToAddresses {
+            get { return BackingStore?.Get<List<Recipient>?>("sentToAddresses"); }
+            set { BackingStore?.Set("sentToAddresses", value); }
+        }
+#else
         public List<Recipient> SentToAddresses {
             get { return BackingStore?.Get<List<Recipient>>("sentToAddresses"); }
             set { BackingStore?.Set("sentToAddresses", value); }
         }
+#endif
         /// <summary>Indicates whether the owner of the mailbox must be in the toRecipients property of an incoming message in order for the condition or exception to apply.</summary>
         public bool? SentToMe {
             get { return BackingStore?.Get<bool?>("sentToMe"); }
@@ -159,15 +222,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("sentToOrCcMe", value); }
         }
         /// <summary>Represents the strings that appear in the subject of an incoming message in order for the condition or exception to apply.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? SubjectContains {
+            get { return BackingStore?.Get<List<string>?>("subjectContains"); }
+            set { BackingStore?.Set("subjectContains", value); }
+        }
+#else
         public List<string> SubjectContains {
             get { return BackingStore?.Get<List<string>>("subjectContains"); }
             set { BackingStore?.Set("subjectContains", value); }
         }
+#endif
         /// <summary>Represents the minimum and maximum sizes (in kilobytes) that an incoming message must fall in between in order for the condition or exception to apply.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public SizeRange? WithinSizeRange {
+            get { return BackingStore?.Get<SizeRange?>("withinSizeRange"); }
+            set { BackingStore?.Set("withinSizeRange", value); }
+        }
+#else
         public SizeRange WithinSizeRange {
             get { return BackingStore?.Get<SizeRange>("withinSizeRange"); }
             set { BackingStore?.Set("withinSizeRange", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new messageRulePredicates and sets the default values.
         /// </summary>

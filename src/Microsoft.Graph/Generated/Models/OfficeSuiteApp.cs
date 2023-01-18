@@ -11,25 +11,46 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("autoAcceptEula", value); }
         }
         /// <summary>The property to represent the apps which are excluded from the selected Office365 Product Id.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.ExcludedApps? ExcludedApps {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ExcludedApps?>("excludedApps"); }
+            set { BackingStore?.Set("excludedApps", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.ExcludedApps ExcludedApps {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ExcludedApps>("excludedApps"); }
             set { BackingStore?.Set("excludedApps", value); }
         }
+#endif
         /// <summary>The Enum to specify the level of display for the Installation Progress Setup UI on the Device.</summary>
         public OfficeSuiteInstallProgressDisplayLevel? InstallProgressDisplayLevel {
             get { return BackingStore?.Get<OfficeSuiteInstallProgressDisplayLevel?>("installProgressDisplayLevel"); }
             set { BackingStore?.Set("installProgressDisplayLevel", value); }
         }
         /// <summary>The property to represent the locales which are installed when the apps from Office365 is installed. It uses standard RFC 6033. Ref: https://technet.microsoft.com/library/cc179219(v=office.16).aspx</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? LocalesToInstall {
+            get { return BackingStore?.Get<List<string>?>("localesToInstall"); }
+            set { BackingStore?.Set("localesToInstall", value); }
+        }
+#else
         public List<string> LocalesToInstall {
             get { return BackingStore?.Get<List<string>>("localesToInstall"); }
             set { BackingStore?.Set("localesToInstall", value); }
         }
+#endif
         /// <summary>The property to represent the XML configuration file that can be specified for Office ProPlus Apps. Takes precedence over all other properties. When present, the XML configuration file will be used to create the app.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public byte[]? OfficeConfigurationXml {
+            get { return BackingStore?.Get<byte[]?>("officeConfigurationXml"); }
+            set { BackingStore?.Set("officeConfigurationXml", value); }
+        }
+#else
         public byte[] OfficeConfigurationXml {
             get { return BackingStore?.Get<byte[]>("officeConfigurationXml"); }
             set { BackingStore?.Set("officeConfigurationXml", value); }
         }
+#endif
         /// <summary>Contains properties for Windows architecture.</summary>
         public WindowsArchitecture? OfficePlatformArchitecture {
             get { return BackingStore?.Get<WindowsArchitecture?>("officePlatformArchitecture"); }
@@ -41,30 +62,51 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("officeSuiteAppDefaultFileFormat", value); }
         }
         /// <summary>The Product Ids that represent the Office365 Suite SKU.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<OfficeProductId?>? ProductIds {
+            get { return BackingStore?.Get<List<OfficeProductId?>?>("productIds"); }
+            set { BackingStore?.Set("productIds", value); }
+        }
+#else
         public List<OfficeProductId?> ProductIds {
             get { return BackingStore?.Get<List<OfficeProductId?>>("productIds"); }
             set { BackingStore?.Set("productIds", value); }
         }
+#endif
         /// <summary>The property to determine whether to uninstall existing Office MSI if an Office365 app suite is deployed to the device or not.</summary>
         public bool? ShouldUninstallOlderVersionsOfOffice {
             get { return BackingStore?.Get<bool?>("shouldUninstallOlderVersionsOfOffice"); }
             set { BackingStore?.Set("shouldUninstallOlderVersionsOfOffice", value); }
         }
         /// <summary>The property to represent the specific target version for the Office365 app suite that should be remained deployed on the devices.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TargetVersion {
+            get { return BackingStore?.Get<string?>("targetVersion"); }
+            set { BackingStore?.Set("targetVersion", value); }
+        }
+#else
         public string TargetVersion {
             get { return BackingStore?.Get<string>("targetVersion"); }
             set { BackingStore?.Set("targetVersion", value); }
         }
+#endif
         /// <summary>The Enum to specify the Office365 Updates Channel.</summary>
         public OfficeUpdateChannel? UpdateChannel {
             get { return BackingStore?.Get<OfficeUpdateChannel?>("updateChannel"); }
             set { BackingStore?.Set("updateChannel", value); }
         }
         /// <summary>The property to represent the update version in which the specific target version is available for the Office365 app suite.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UpdateVersion {
+            get { return BackingStore?.Get<string?>("updateVersion"); }
+            set { BackingStore?.Set("updateVersion", value); }
+        }
+#else
         public string UpdateVersion {
             get { return BackingStore?.Get<string>("updateVersion"); }
             set { BackingStore?.Set("updateVersion", value); }
         }
+#endif
         /// <summary>The property to represent that whether the shared computer activation is used not for Office365 app suite.</summary>
         public bool? UseSharedComputerActivation {
             get { return BackingStore?.Get<bool?>("useSharedComputerActivation"); }

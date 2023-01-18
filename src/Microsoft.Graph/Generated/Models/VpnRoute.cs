@@ -17,15 +17,29 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Destination prefix (IPv4/v6 address).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DestinationPrefix {
+            get { return BackingStore?.Get<string?>("destinationPrefix"); }
+            set { BackingStore?.Set("destinationPrefix", value); }
+        }
+#else
         public string DestinationPrefix {
             get { return BackingStore?.Get<string>("destinationPrefix"); }
             set { BackingStore?.Set("destinationPrefix", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Prefix size. (1-32). Valid values 1 to 32</summary>
         public int? PrefixSize {
             get { return BackingStore?.Get<int?>("prefixSize"); }

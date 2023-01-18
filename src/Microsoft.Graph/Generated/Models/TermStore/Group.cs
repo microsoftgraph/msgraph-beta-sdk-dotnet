@@ -11,30 +11,58 @@ namespace Microsoft.Graph.Beta.Models.TermStore {
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Description that gives details on the term usage.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>Name of the group.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>ID of the parent site of this group.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ParentSiteId {
+            get { return BackingStore?.Get<string?>("parentSiteId"); }
+            set { BackingStore?.Set("parentSiteId", value); }
+        }
+#else
         public string ParentSiteId {
             get { return BackingStore?.Get<string>("parentSiteId"); }
             set { BackingStore?.Set("parentSiteId", value); }
         }
+#endif
         /// <summary>Returns the type of the group. Possible values are: global, system, and siteCollection.</summary>
         public TermGroupScope? Scope {
             get { return BackingStore?.Get<TermGroupScope?>("scope"); }
             set { BackingStore?.Set("scope", value); }
         }
         /// <summary>All sets under the group in a term [store].</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Set>? Sets {
+            get { return BackingStore?.Get<List<Set>?>("sets"); }
+            set { BackingStore?.Set("sets", value); }
+        }
+#else
         public List<Set> Sets {
             get { return BackingStore?.Get<List<Set>>("sets"); }
             set { BackingStore?.Set("sets", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

@@ -14,20 +14,34 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Total number of users in the tenant.</summary>
         public long? TotalUserCount {
             get { return BackingStore?.Get<long?>("totalUserCount"); }
             set { BackingStore?.Set("totalUserCount", value); }
         }
         /// <summary>Number of users registered for each authentication method.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<UserRegistrationMethodCount>? UserRegistrationMethodCounts {
+            get { return BackingStore?.Get<List<UserRegistrationMethodCount>?>("userRegistrationMethodCounts"); }
+            set { BackingStore?.Set("userRegistrationMethodCounts", value); }
+        }
+#else
         public List<UserRegistrationMethodCount> UserRegistrationMethodCounts {
             get { return BackingStore?.Get<List<UserRegistrationMethodCount>>("userRegistrationMethodCounts"); }
             set { BackingStore?.Set("userRegistrationMethodCounts", value); }
         }
+#endif
         /// <summary>User role type. Possible values are: all, privilegedAdmin, admin, user.</summary>
         public IncludedUserRoles? UserRoles {
             get { return BackingStore?.Get<IncludedUserRoles?>("userRoles"); }

@@ -14,10 +14,17 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterp
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The enterpriseToken property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? EnterpriseToken {
+            get { return BackingStore?.Get<string?>("enterpriseToken"); }
+            set { BackingStore?.Set("enterpriseToken", value); }
+        }
+#else
         public string EnterpriseToken {
             get { return BackingStore?.Get<string>("enterpriseToken"); }
             set { BackingStore?.Set("enterpriseToken", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new completeSignupPostRequestBody and sets the default values.
         /// </summary>

@@ -14,20 +14,41 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The signature property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public byte[]? Signature {
+            get { return BackingStore?.Get<byte[]?>("signature"); }
+            set { BackingStore?.Set("signature", value); }
+        }
+#else
         public byte[] Signature {
             get { return BackingStore?.Get<byte[]>("signature"); }
             set { BackingStore?.Set("signature", value); }
         }
+#endif
         /// <summary>The signingKeyId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SigningKeyId {
+            get { return BackingStore?.Get<string?>("signingKeyId"); }
+            set { BackingStore?.Set("signingKeyId", value); }
+        }
+#else
         public string SigningKeyId {
             get { return BackingStore?.Get<string>("signingKeyId"); }
             set { BackingStore?.Set("signingKeyId", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new signingResult and sets the default values.
         /// </summary>

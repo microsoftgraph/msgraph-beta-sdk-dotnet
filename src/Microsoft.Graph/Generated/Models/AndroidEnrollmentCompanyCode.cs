@@ -17,25 +17,53 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Enrollment Token used by the User to enroll their device.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? EnrollmentToken {
+            get { return BackingStore?.Get<string?>("enrollmentToken"); }
+            set { BackingStore?.Set("enrollmentToken", value); }
+        }
+#else
         public string EnrollmentToken {
             get { return BackingStore?.Get<string>("enrollmentToken"); }
             set { BackingStore?.Set("enrollmentToken", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>String used to generate a QR code for the token.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? QrCodeContent {
+            get { return BackingStore?.Get<string?>("qrCodeContent"); }
+            set { BackingStore?.Set("qrCodeContent", value); }
+        }
+#else
         public string QrCodeContent {
             get { return BackingStore?.Get<string>("qrCodeContent"); }
             set { BackingStore?.Set("qrCodeContent", value); }
         }
+#endif
         /// <summary>Generated QR code for the token.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public MimeContent? QrCodeImage {
+            get { return BackingStore?.Get<MimeContent?>("qrCodeImage"); }
+            set { BackingStore?.Set("qrCodeImage", value); }
+        }
+#else
         public MimeContent QrCodeImage {
             get { return BackingStore?.Get<MimeContent>("qrCodeImage"); }
             set { BackingStore?.Set("qrCodeImage", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new androidEnrollmentCompanyCode and sets the default values.
         /// </summary>

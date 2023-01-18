@@ -6,90 +6,202 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class BookingBusiness : BookingNamedEntity, IParsable {
         /// <summary>The street address of the business. The address property, together with phone and webSiteUrl, appear in the footer of a business scheduling page.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public PhysicalAddress? Address {
+            get { return BackingStore?.Get<PhysicalAddress?>("address"); }
+            set { BackingStore?.Set("address", value); }
+        }
+#else
         public PhysicalAddress Address {
             get { return BackingStore?.Get<PhysicalAddress>("address"); }
             set { BackingStore?.Set("address", value); }
         }
+#endif
         /// <summary>All the appointments of this business. Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<BookingAppointment>? Appointments {
+            get { return BackingStore?.Get<List<BookingAppointment>?>("appointments"); }
+            set { BackingStore?.Set("appointments", value); }
+        }
+#else
         public List<BookingAppointment> Appointments {
             get { return BackingStore?.Get<List<BookingAppointment>>("appointments"); }
             set { BackingStore?.Set("appointments", value); }
         }
+#endif
         /// <summary>The hours of operation for the business.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<BookingWorkHours>? BusinessHours {
+            get { return BackingStore?.Get<List<BookingWorkHours>?>("businessHours"); }
+            set { BackingStore?.Set("businessHours", value); }
+        }
+#else
         public List<BookingWorkHours> BusinessHours {
             get { return BackingStore?.Get<List<BookingWorkHours>>("businessHours"); }
             set { BackingStore?.Set("businessHours", value); }
         }
+#endif
         /// <summary>The type of business.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? BusinessType {
+            get { return BackingStore?.Get<string?>("businessType"); }
+            set { BackingStore?.Set("businessType", value); }
+        }
+#else
         public string BusinessType {
             get { return BackingStore?.Get<string>("businessType"); }
             set { BackingStore?.Set("businessType", value); }
         }
+#endif
         /// <summary>The set of appointments of this business in a specified date range. Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<BookingAppointment>? CalendarView {
+            get { return BackingStore?.Get<List<BookingAppointment>?>("calendarView"); }
+            set { BackingStore?.Set("calendarView", value); }
+        }
+#else
         public List<BookingAppointment> CalendarView {
             get { return BackingStore?.Get<List<BookingAppointment>>("calendarView"); }
             set { BackingStore?.Set("calendarView", value); }
         }
+#endif
         /// <summary>All the customers of this business. Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<BookingCustomer>? Customers {
+            get { return BackingStore?.Get<List<BookingCustomer>?>("customers"); }
+            set { BackingStore?.Set("customers", value); }
+        }
+#else
         public List<BookingCustomer> Customers {
             get { return BackingStore?.Get<List<BookingCustomer>>("customers"); }
             set { BackingStore?.Set("customers", value); }
         }
+#endif
         /// <summary>All the custom questions of this business. Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<BookingCustomQuestion>? CustomQuestions {
+            get { return BackingStore?.Get<List<BookingCustomQuestion>?>("customQuestions"); }
+            set { BackingStore?.Set("customQuestions", value); }
+        }
+#else
         public List<BookingCustomQuestion> CustomQuestions {
             get { return BackingStore?.Get<List<BookingCustomQuestion>>("customQuestions"); }
             set { BackingStore?.Set("customQuestions", value); }
         }
+#endif
         /// <summary>The code for the currency that the business operates in on Microsoft Bookings.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DefaultCurrencyIso {
+            get { return BackingStore?.Get<string?>("defaultCurrencyIso"); }
+            set { BackingStore?.Set("defaultCurrencyIso", value); }
+        }
+#else
         public string DefaultCurrencyIso {
             get { return BackingStore?.Get<string>("defaultCurrencyIso"); }
             set { BackingStore?.Set("defaultCurrencyIso", value); }
         }
+#endif
         /// <summary>The email address for the business.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Email {
+            get { return BackingStore?.Get<string?>("email"); }
+            set { BackingStore?.Set("email", value); }
+        }
+#else
         public string Email {
             get { return BackingStore?.Get<string>("email"); }
             set { BackingStore?.Set("email", value); }
         }
+#endif
         /// <summary>The scheduling page has been made available to external customers. Use the publish and unpublish actions to set this property. Read-only.</summary>
         public bool? IsPublished {
             get { return BackingStore?.Get<bool?>("isPublished"); }
             set { BackingStore?.Set("isPublished", value); }
         }
         /// <summary>The language of the self service booking page</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? LanguageTag {
+            get { return BackingStore?.Get<string?>("languageTag"); }
+            set { BackingStore?.Set("languageTag", value); }
+        }
+#else
         public string LanguageTag {
             get { return BackingStore?.Get<string>("languageTag"); }
             set { BackingStore?.Set("languageTag", value); }
         }
+#endif
         /// <summary>The telephone number for the business. The phone property, together with address and webSiteUrl, appear in the footer of a business scheduling page.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Phone {
+            get { return BackingStore?.Get<string?>("phone"); }
+            set { BackingStore?.Set("phone", value); }
+        }
+#else
         public string Phone {
             get { return BackingStore?.Get<string>("phone"); }
             set { BackingStore?.Set("phone", value); }
         }
+#endif
         /// <summary>The URL for the scheduling page, which is set after you publish or unpublish the page. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PublicUrl {
+            get { return BackingStore?.Get<string?>("publicUrl"); }
+            set { BackingStore?.Set("publicUrl", value); }
+        }
+#else
         public string PublicUrl {
             get { return BackingStore?.Get<string>("publicUrl"); }
             set { BackingStore?.Set("publicUrl", value); }
         }
+#endif
         /// <summary>Specifies how bookings can be created for this business.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public BookingSchedulingPolicy? SchedulingPolicy {
+            get { return BackingStore?.Get<BookingSchedulingPolicy?>("schedulingPolicy"); }
+            set { BackingStore?.Set("schedulingPolicy", value); }
+        }
+#else
         public BookingSchedulingPolicy SchedulingPolicy {
             get { return BackingStore?.Get<BookingSchedulingPolicy>("schedulingPolicy"); }
             set { BackingStore?.Set("schedulingPolicy", value); }
         }
+#endif
         /// <summary>All the services offered by this business. Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<BookingService>? Services {
+            get { return BackingStore?.Get<List<BookingService>?>("services"); }
+            set { BackingStore?.Set("services", value); }
+        }
+#else
         public List<BookingService> Services {
             get { return BackingStore?.Get<List<BookingService>>("services"); }
             set { BackingStore?.Set("services", value); }
         }
+#endif
         /// <summary>All the staff members that provide services in this business. Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<BookingStaffMember>? StaffMembers {
+            get { return BackingStore?.Get<List<BookingStaffMember>?>("staffMembers"); }
+            set { BackingStore?.Set("staffMembers", value); }
+        }
+#else
         public List<BookingStaffMember> StaffMembers {
             get { return BackingStore?.Get<List<BookingStaffMember>>("staffMembers"); }
             set { BackingStore?.Set("staffMembers", value); }
         }
+#endif
         /// <summary>The URL of the business web site. The webSiteUrl property, together with address, phone, appear in the footer of a business scheduling page.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? WebSiteUrl {
+            get { return BackingStore?.Get<string?>("webSiteUrl"); }
+            set { BackingStore?.Set("webSiteUrl", value); }
+        }
+#else
         public string WebSiteUrl {
             get { return BackingStore?.Get<string>("webSiteUrl"); }
             set { BackingStore?.Set("webSiteUrl", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new BookingBusiness and sets the default values.
         /// </summary>

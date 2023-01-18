@@ -6,20 +6,41 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementConfigurationWindowsSettingApplicability : DeviceManagementConfigurationSettingApplicability, IParsable {
         /// <summary>Version of CSP setting is a part of</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ConfigurationServiceProviderVersion {
+            get { return BackingStore?.Get<string?>("configurationServiceProviderVersion"); }
+            set { BackingStore?.Set("configurationServiceProviderVersion", value); }
+        }
+#else
         public string ConfigurationServiceProviderVersion {
             get { return BackingStore?.Get<string>("configurationServiceProviderVersion"); }
             set { BackingStore?.Set("configurationServiceProviderVersion", value); }
         }
+#endif
         /// <summary>Maximum supported version of Windows</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MaximumSupportedVersion {
+            get { return BackingStore?.Get<string?>("maximumSupportedVersion"); }
+            set { BackingStore?.Set("maximumSupportedVersion", value); }
+        }
+#else
         public string MaximumSupportedVersion {
             get { return BackingStore?.Get<string>("maximumSupportedVersion"); }
             set { BackingStore?.Set("maximumSupportedVersion", value); }
         }
+#endif
         /// <summary>Minimum supported version of Windows</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MinimumSupportedVersion {
+            get { return BackingStore?.Get<string?>("minimumSupportedVersion"); }
+            set { BackingStore?.Set("minimumSupportedVersion", value); }
+        }
+#else
         public string MinimumSupportedVersion {
             get { return BackingStore?.Get<string>("minimumSupportedVersion"); }
             set { BackingStore?.Set("minimumSupportedVersion", value); }
         }
+#endif
         /// <summary>Required AAD Trust Type</summary>
         public DeviceManagementConfigurationAzureAdTrustType? RequiredAzureAdTrustType {
             get { return BackingStore?.Get<DeviceManagementConfigurationAzureAdTrustType?>("requiredAzureAdTrustType"); }
@@ -31,10 +52,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("requiresAzureAd", value); }
         }
         /// <summary>List of Windows SKUs that the setting is applicable for</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DeviceManagementConfigurationWindowsSkus?>? WindowsSkus {
+            get { return BackingStore?.Get<List<DeviceManagementConfigurationWindowsSkus?>?>("windowsSkus"); }
+            set { BackingStore?.Set("windowsSkus", value); }
+        }
+#else
         public List<DeviceManagementConfigurationWindowsSkus?> WindowsSkus {
             get { return BackingStore?.Get<List<DeviceManagementConfigurationWindowsSkus?>>("windowsSkus"); }
             set { BackingStore?.Set("windowsSkus", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new DeviceManagementConfigurationWindowsSettingApplicability and sets the default values.
         /// </summary>

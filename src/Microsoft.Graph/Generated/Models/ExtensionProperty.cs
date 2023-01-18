@@ -6,30 +6,58 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class ExtensionProperty : DirectoryObject, IParsable {
         /// <summary>Display name of the application object on which this extension property is defined. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AppDisplayName {
+            get { return BackingStore?.Get<string?>("appDisplayName"); }
+            set { BackingStore?.Set("appDisplayName", value); }
+        }
+#else
         public string AppDisplayName {
             get { return BackingStore?.Get<string>("appDisplayName"); }
             set { BackingStore?.Set("appDisplayName", value); }
         }
+#endif
         /// <summary>Specifies the data type of the value the extension property can hold. Following values are supported. Not nullable. Binary - 256 bytes maximumBooleanDateTime - Must be specified in ISO 8601 format. Will be stored in UTC.Integer - 32-bit value.LargeInteger - 64-bit value.String - 256 characters maximum</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DataType {
+            get { return BackingStore?.Get<string?>("dataType"); }
+            set { BackingStore?.Set("dataType", value); }
+        }
+#else
         public string DataType {
             get { return BackingStore?.Get<string>("dataType"); }
             set { BackingStore?.Set("dataType", value); }
         }
+#endif
         /// <summary>Indicates if this extension property was synced from on-premises active directory using Azure AD Connect. Read-only.</summary>
         public bool? IsSyncedFromOnPremises {
             get { return BackingStore?.Get<bool?>("isSyncedFromOnPremises"); }
             set { BackingStore?.Set("isSyncedFromOnPremises", value); }
         }
         /// <summary>Name of the extension property. Not nullable. Supports $filter (eq).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Name {
+            get { return BackingStore?.Get<string?>("name"); }
+            set { BackingStore?.Set("name", value); }
+        }
+#else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#endif
         /// <summary>Following values are supported. Not nullable. UserGroupAdministrativeUnitApplicationDeviceOrganization</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? TargetObjects {
+            get { return BackingStore?.Get<List<string>?>("targetObjects"); }
+            set { BackingStore?.Set("targetObjects", value); }
+        }
+#else
         public List<string> TargetObjects {
             get { return BackingStore?.Get<List<string>>("targetObjects"); }
             set { BackingStore?.Set("targetObjects", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new extensionProperty and sets the default values.
         /// </summary>

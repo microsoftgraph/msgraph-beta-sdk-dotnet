@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class IdentityUserFlowAttributeAssignment : Entity, IParsable {
         /// <summary>The display name of the identityUserFlowAttribute within a user flow.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>Determines whether the identityUserFlowAttribute is optional. true means the user doesn&apos;t have to provide a value. false means the user cannot complete sign-up without providing a value.</summary>
         public bool? IsOptional {
             get { return BackingStore?.Get<bool?>("isOptional"); }
@@ -21,15 +28,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("requiresVerification", value); }
         }
         /// <summary>The user attribute that you want to add to your user flow.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public IdentityUserFlowAttribute? UserAttribute {
+            get { return BackingStore?.Get<IdentityUserFlowAttribute?>("userAttribute"); }
+            set { BackingStore?.Set("userAttribute", value); }
+        }
+#else
         public IdentityUserFlowAttribute UserAttribute {
             get { return BackingStore?.Get<IdentityUserFlowAttribute>("userAttribute"); }
             set { BackingStore?.Set("userAttribute", value); }
         }
+#endif
         /// <summary>The input options for the user flow attribute. Only applicable when the userInputType is radioSingleSelect, dropdownSingleSelect, or checkboxMultiSelect.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<UserAttributeValuesItem>? UserAttributeValues {
+            get { return BackingStore?.Get<List<UserAttributeValuesItem>?>("userAttributeValues"); }
+            set { BackingStore?.Set("userAttributeValues", value); }
+        }
+#else
         public List<UserAttributeValuesItem> UserAttributeValues {
             get { return BackingStore?.Get<List<UserAttributeValuesItem>>("userAttributeValues"); }
             set { BackingStore?.Set("userAttributeValues", value); }
         }
+#endif
         /// <summary>The userInputType property</summary>
         public IdentityUserFlowAttributeInputType? UserInputType {
             get { return BackingStore?.Get<IdentityUserFlowAttributeInputType?>("userInputType"); }

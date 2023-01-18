@@ -14,10 +14,17 @@ namespace Microsoft.Graph.Beta.Me.Authentication.Methods.Item.ResetPassword {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The newPassword property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? NewPassword {
+            get { return BackingStore?.Get<string?>("newPassword"); }
+            set { BackingStore?.Set("newPassword", value); }
+        }
+#else
         public string NewPassword {
             get { return BackingStore?.Get<string>("newPassword"); }
             set { BackingStore?.Set("newPassword", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new resetPasswordPostRequestBody and sets the default values.
         /// </summary>

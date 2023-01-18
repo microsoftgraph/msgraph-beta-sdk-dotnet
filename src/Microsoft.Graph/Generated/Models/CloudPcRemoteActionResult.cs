@@ -7,10 +7,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class CloudPcRemoteActionResult : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>The specified action. Supported values in the Microsoft Endpoint Manager portal are: Reprovision, Resize, Restore. Supported values in enterprise Cloud PC devices are: Reboot, Rename, Reprovision, Troubleshoot.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ActionName {
+            get { return BackingStore?.Get<string?>("actionName"); }
+            set { BackingStore?.Set("actionName", value); }
+        }
+#else
         public string ActionName {
             get { return BackingStore?.Get<string>("actionName"); }
             set { BackingStore?.Set("actionName", value); }
         }
+#endif
         /// <summary>State of the action. Possible values are: None, pending, canceled, active, done, failed, notSupported. Read-only.</summary>
         public Microsoft.Graph.Beta.Models.ActionState? ActionState {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ActionState?>("actionState"); }
@@ -24,35 +31,63 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The ID of the Cloud PC device on which the remote action is performed. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CloudPcId {
+            get { return BackingStore?.Get<string?>("cloudPcId"); }
+            set { BackingStore?.Set("cloudPcId", value); }
+        }
+#else
         public string CloudPcId {
             get { return BackingStore?.Get<string>("cloudPcId"); }
             set { BackingStore?.Set("cloudPcId", value); }
         }
+#endif
         /// <summary>Last update time for action. The Timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as &apos;2014-01-01T00:00:00Z&apos;.</summary>
         public DateTimeOffset? LastUpdatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastUpdatedDateTime"); }
             set { BackingStore?.Set("lastUpdatedDateTime", value); }
         }
         /// <summary>The ID of the Intune managed device on which the remote action is performed. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ManagedDeviceId {
+            get { return BackingStore?.Get<string?>("managedDeviceId"); }
+            set { BackingStore?.Set("managedDeviceId", value); }
+        }
+#else
         public string ManagedDeviceId {
             get { return BackingStore?.Get<string>("managedDeviceId"); }
             set { BackingStore?.Set("managedDeviceId", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Time the action was initiated. The Timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as &apos;2014-01-01T00:00:00Z&apos;.</summary>
         public DateTimeOffset? StartDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }
             set { BackingStore?.Set("startDateTime", value); }
         }
         /// <summary>The details of the Cloud PC status.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public CloudPcStatusDetails? StatusDetails {
+            get { return BackingStore?.Get<CloudPcStatusDetails?>("statusDetails"); }
+            set { BackingStore?.Set("statusDetails", value); }
+        }
+#else
         public CloudPcStatusDetails StatusDetails {
             get { return BackingStore?.Get<CloudPcStatusDetails>("statusDetails"); }
             set { BackingStore?.Set("statusDetails", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new cloudPcRemoteActionResult and sets the default values.
         /// </summary>

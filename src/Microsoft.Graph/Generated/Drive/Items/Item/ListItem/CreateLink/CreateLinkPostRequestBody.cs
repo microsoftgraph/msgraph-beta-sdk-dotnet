@@ -20,30 +20,58 @@ namespace Microsoft.Graph.Beta.Drive.Items.Item.ListItem.CreateLink {
             set { BackingStore?.Set("expirationDateTime", value); }
         }
         /// <summary>The password property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Password {
+            get { return BackingStore?.Get<string?>("password"); }
+            set { BackingStore?.Set("password", value); }
+        }
+#else
         public string Password {
             get { return BackingStore?.Get<string>("password"); }
             set { BackingStore?.Set("password", value); }
         }
+#endif
         /// <summary>The recipients property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DriveRecipient>? Recipients {
+            get { return BackingStore?.Get<List<DriveRecipient>?>("recipients"); }
+            set { BackingStore?.Set("recipients", value); }
+        }
+#else
         public List<DriveRecipient> Recipients {
             get { return BackingStore?.Get<List<DriveRecipient>>("recipients"); }
             set { BackingStore?.Set("recipients", value); }
         }
+#endif
         /// <summary>The retainInheritedPermissions property</summary>
         public bool? RetainInheritedPermissions {
             get { return BackingStore?.Get<bool?>("retainInheritedPermissions"); }
             set { BackingStore?.Set("retainInheritedPermissions", value); }
         }
         /// <summary>The scope property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Scope {
+            get { return BackingStore?.Get<string?>("scope"); }
+            set { BackingStore?.Set("scope", value); }
+        }
+#else
         public string Scope {
             get { return BackingStore?.Get<string>("scope"); }
             set { BackingStore?.Set("scope", value); }
         }
+#endif
         /// <summary>The type property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Type {
+            get { return BackingStore?.Get<string?>("type"); }
+            set { BackingStore?.Set("type", value); }
+        }
+#else
         public string Type {
             get { return BackingStore?.Get<string>("type"); }
             set { BackingStore?.Set("type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new createLinkPostRequestBody and sets the default values.
         /// </summary>

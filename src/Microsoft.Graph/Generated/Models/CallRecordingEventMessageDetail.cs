@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class CallRecordingEventMessageDetail : EventMessageDetail, IParsable {
         /// <summary>Unique identifier of the call.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CallId {
+            get { return BackingStore?.Get<string?>("callId"); }
+            set { BackingStore?.Set("callId", value); }
+        }
+#else
         public string CallId {
             get { return BackingStore?.Get<string>("callId"); }
             set { BackingStore?.Set("callId", value); }
         }
+#endif
         /// <summary>Display name for the call recording.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CallRecordingDisplayName {
+            get { return BackingStore?.Get<string?>("callRecordingDisplayName"); }
+            set { BackingStore?.Set("callRecordingDisplayName", value); }
+        }
+#else
         public string CallRecordingDisplayName {
             get { return BackingStore?.Get<string>("callRecordingDisplayName"); }
             set { BackingStore?.Set("callRecordingDisplayName", value); }
         }
+#endif
         /// <summary>Duration of the call recording.</summary>
         public TimeSpan? CallRecordingDuration {
             get { return BackingStore?.Get<TimeSpan?>("callRecordingDuration"); }
@@ -26,20 +40,41 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("callRecordingStatus", value); }
         }
         /// <summary>Call recording URL.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CallRecordingUrl {
+            get { return BackingStore?.Get<string?>("callRecordingUrl"); }
+            set { BackingStore?.Set("callRecordingUrl", value); }
+        }
+#else
         public string CallRecordingUrl {
             get { return BackingStore?.Get<string>("callRecordingUrl"); }
             set { BackingStore?.Set("callRecordingUrl", value); }
         }
+#endif
         /// <summary>Initiator of the event.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public IdentitySet? Initiator {
+            get { return BackingStore?.Get<IdentitySet?>("initiator"); }
+            set { BackingStore?.Set("initiator", value); }
+        }
+#else
         public IdentitySet Initiator {
             get { return BackingStore?.Get<IdentitySet>("initiator"); }
             set { BackingStore?.Set("initiator", value); }
         }
+#endif
         /// <summary>Organizer of the meeting.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public IdentitySet? MeetingOrganizer {
+            get { return BackingStore?.Get<IdentitySet?>("meetingOrganizer"); }
+            set { BackingStore?.Set("meetingOrganizer", value); }
+        }
+#else
         public IdentitySet MeetingOrganizer {
             get { return BackingStore?.Get<IdentitySet>("meetingOrganizer"); }
             set { BackingStore?.Set("meetingOrganizer", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new CallRecordingEventMessageDetail and sets the default values.
         /// </summary>

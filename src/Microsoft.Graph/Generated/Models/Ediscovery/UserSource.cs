@@ -6,20 +6,34 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Ediscovery {
     public class UserSource : DataSource, IParsable {
         /// <summary>Email address of the user&apos;s mailbox.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Email {
+            get { return BackingStore?.Get<string?>("email"); }
+            set { BackingStore?.Set("email", value); }
+        }
+#else
         public string Email {
             get { return BackingStore?.Get<string>("email"); }
             set { BackingStore?.Set("email", value); }
         }
+#endif
         /// <summary>Specifies which sources are included in this group. Possible values are: mailbox, site.</summary>
         public SourceType? IncludedSources {
             get { return BackingStore?.Get<SourceType?>("includedSources"); }
             set { BackingStore?.Set("includedSources", value); }
         }
         /// <summary>The URL of the user&apos;s OneDrive for Business site. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SiteWebUrl {
+            get { return BackingStore?.Get<string?>("siteWebUrl"); }
+            set { BackingStore?.Set("siteWebUrl", value); }
+        }
+#else
         public string SiteWebUrl {
             get { return BackingStore?.Get<string>("siteWebUrl"); }
             set { BackingStore?.Set("siteWebUrl", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new UserSource and sets the default values.
         /// </summary>

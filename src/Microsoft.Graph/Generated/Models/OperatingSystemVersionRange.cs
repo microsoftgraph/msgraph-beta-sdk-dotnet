@@ -17,25 +17,53 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The description of this range (e.g. Valid 1702 builds)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>The highest inclusive version that this range contains.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? HighestVersion {
+            get { return BackingStore?.Get<string?>("highestVersion"); }
+            set { BackingStore?.Set("highestVersion", value); }
+        }
+#else
         public string HighestVersion {
             get { return BackingStore?.Get<string>("highestVersion"); }
             set { BackingStore?.Set("highestVersion", value); }
         }
+#endif
         /// <summary>The lowest inclusive version that this range contains.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? LowestVersion {
+            get { return BackingStore?.Get<string?>("lowestVersion"); }
+            set { BackingStore?.Set("lowestVersion", value); }
+        }
+#else
         public string LowestVersion {
             get { return BackingStore?.Get<string>("lowestVersion"); }
             set { BackingStore?.Set("lowestVersion", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new operatingSystemVersionRange and sets the default values.
         /// </summary>

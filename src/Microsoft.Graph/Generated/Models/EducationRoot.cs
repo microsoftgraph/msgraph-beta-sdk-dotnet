@@ -14,35 +14,77 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The classes property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<EducationClass>? Classes {
+            get { return BackingStore?.Get<List<EducationClass>?>("classes"); }
+            set { BackingStore?.Set("classes", value); }
+        }
+#else
         public List<EducationClass> Classes {
             get { return BackingStore?.Get<List<EducationClass>>("classes"); }
             set { BackingStore?.Set("classes", value); }
         }
+#endif
         /// <summary>The me property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public EducationUser? Me {
+            get { return BackingStore?.Get<EducationUser?>("me"); }
+            set { BackingStore?.Set("me", value); }
+        }
+#else
         public EducationUser Me {
             get { return BackingStore?.Get<EducationUser>("me"); }
             set { BackingStore?.Set("me", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The schools property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<EducationSchool>? Schools {
+            get { return BackingStore?.Get<List<EducationSchool>?>("schools"); }
+            set { BackingStore?.Set("schools", value); }
+        }
+#else
         public List<EducationSchool> Schools {
             get { return BackingStore?.Get<List<EducationSchool>>("schools"); }
             set { BackingStore?.Set("schools", value); }
         }
+#endif
         /// <summary>The synchronizationProfiles property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<EducationSynchronizationProfile>? SynchronizationProfiles {
+            get { return BackingStore?.Get<List<EducationSynchronizationProfile>?>("synchronizationProfiles"); }
+            set { BackingStore?.Set("synchronizationProfiles", value); }
+        }
+#else
         public List<EducationSynchronizationProfile> SynchronizationProfiles {
             get { return BackingStore?.Get<List<EducationSynchronizationProfile>>("synchronizationProfiles"); }
             set { BackingStore?.Set("synchronizationProfiles", value); }
         }
+#endif
         /// <summary>The users property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<EducationUser>? Users {
+            get { return BackingStore?.Get<List<EducationUser>?>("users"); }
+            set { BackingStore?.Set("users", value); }
+        }
+#else
         public List<EducationUser> Users {
             get { return BackingStore?.Get<List<EducationUser>>("users"); }
             set { BackingStore?.Set("users", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new EducationRoot and sets the default values.
         /// </summary>

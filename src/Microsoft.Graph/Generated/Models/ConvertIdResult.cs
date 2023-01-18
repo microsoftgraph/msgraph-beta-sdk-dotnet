@@ -14,25 +14,53 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>An error object indicating the reason for the conversion failure. This value is not present if the conversion succeeded.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public GenericError? ErrorDetails {
+            get { return BackingStore?.Get<GenericError?>("errorDetails"); }
+            set { BackingStore?.Set("errorDetails", value); }
+        }
+#else
         public GenericError ErrorDetails {
             get { return BackingStore?.Get<GenericError>("errorDetails"); }
             set { BackingStore?.Set("errorDetails", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The identifier that was converted. This value is the original, un-converted identifier.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SourceId {
+            get { return BackingStore?.Get<string?>("sourceId"); }
+            set { BackingStore?.Set("sourceId", value); }
+        }
+#else
         public string SourceId {
             get { return BackingStore?.Get<string>("sourceId"); }
             set { BackingStore?.Set("sourceId", value); }
         }
+#endif
         /// <summary>The converted identifier. This value is not present if the conversion failed.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TargetId {
+            get { return BackingStore?.Get<string?>("targetId"); }
+            set { BackingStore?.Set("targetId", value); }
+        }
+#else
         public string TargetId {
             get { return BackingStore?.Get<string>("targetId"); }
             set { BackingStore?.Set("targetId", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new convertIdResult and sets the default values.
         /// </summary>

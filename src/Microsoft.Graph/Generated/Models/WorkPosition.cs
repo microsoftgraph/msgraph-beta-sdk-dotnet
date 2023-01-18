@@ -6,30 +6,58 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class WorkPosition : ItemFacet, IParsable {
         /// <summary>Categories that the user has associated with this position.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? Categories {
+            get { return BackingStore?.Get<List<string>?>("categories"); }
+            set { BackingStore?.Set("categories", value); }
+        }
+#else
         public List<string> Categories {
             get { return BackingStore?.Get<List<string>>("categories"); }
             set { BackingStore?.Set("categories", value); }
         }
+#endif
         /// <summary>Colleagues that are associated with this position.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<RelatedPerson>? Colleagues {
+            get { return BackingStore?.Get<List<RelatedPerson>?>("colleagues"); }
+            set { BackingStore?.Set("colleagues", value); }
+        }
+#else
         public List<RelatedPerson> Colleagues {
             get { return BackingStore?.Get<List<RelatedPerson>>("colleagues"); }
             set { BackingStore?.Set("colleagues", value); }
         }
+#endif
         /// <summary>The detail property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public PositionDetail? Detail {
+            get { return BackingStore?.Get<PositionDetail?>("detail"); }
+            set { BackingStore?.Set("detail", value); }
+        }
+#else
         public PositionDetail Detail {
             get { return BackingStore?.Get<PositionDetail>("detail"); }
             set { BackingStore?.Set("detail", value); }
         }
+#endif
         /// <summary>Denotes whether or not the position is current.</summary>
         public bool? IsCurrent {
             get { return BackingStore?.Get<bool?>("isCurrent"); }
             set { BackingStore?.Set("isCurrent", value); }
         }
         /// <summary>Contains detail of the user&apos;s manager in this position.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public RelatedPerson? Manager {
+            get { return BackingStore?.Get<RelatedPerson?>("manager"); }
+            set { BackingStore?.Set("manager", value); }
+        }
+#else
         public RelatedPerson Manager {
             get { return BackingStore?.Get<RelatedPerson>("manager"); }
             set { BackingStore?.Set("manager", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new WorkPosition and sets the default values.
         /// </summary>

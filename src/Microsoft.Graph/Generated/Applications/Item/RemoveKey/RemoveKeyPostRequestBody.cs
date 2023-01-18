@@ -19,10 +19,17 @@ namespace Microsoft.Graph.Beta.Applications.Item.RemoveKey {
             set { BackingStore?.Set("keyId", value); }
         }
         /// <summary>The proof property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Proof {
+            get { return BackingStore?.Get<string?>("proof"); }
+            set { BackingStore?.Set("proof", value); }
+        }
+#else
         public string Proof {
             get { return BackingStore?.Get<string>("proof"); }
             set { BackingStore?.Set("proof", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new removeKeyPostRequestBody and sets the default values.
         /// </summary>

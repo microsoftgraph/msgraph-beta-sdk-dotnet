@@ -6,35 +6,70 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class CustomerPaymentJournal : Entity, IParsable {
         /// <summary>The account property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.Account? Account {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Account?>("account"); }
+            set { BackingStore?.Set("account", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.Account Account {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Account>("account"); }
             set { BackingStore?.Set("account", value); }
         }
+#endif
         /// <summary>The balancingAccountId property</summary>
         public Guid? BalancingAccountId {
             get { return BackingStore?.Get<Guid?>("balancingAccountId"); }
             set { BackingStore?.Set("balancingAccountId", value); }
         }
         /// <summary>The balancingAccountNumber property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? BalancingAccountNumber {
+            get { return BackingStore?.Get<string?>("balancingAccountNumber"); }
+            set { BackingStore?.Set("balancingAccountNumber", value); }
+        }
+#else
         public string BalancingAccountNumber {
             get { return BackingStore?.Get<string>("balancingAccountNumber"); }
             set { BackingStore?.Set("balancingAccountNumber", value); }
         }
+#endif
         /// <summary>The code property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Code {
+            get { return BackingStore?.Get<string?>("code"); }
+            set { BackingStore?.Set("code", value); }
+        }
+#else
         public string Code {
             get { return BackingStore?.Get<string>("code"); }
             set { BackingStore?.Set("code", value); }
         }
+#endif
         /// <summary>The customerPayments property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<CustomerPayment>? CustomerPayments {
+            get { return BackingStore?.Get<List<CustomerPayment>?>("customerPayments"); }
+            set { BackingStore?.Set("customerPayments", value); }
+        }
+#else
         public List<CustomerPayment> CustomerPayments {
             get { return BackingStore?.Get<List<CustomerPayment>>("customerPayments"); }
             set { BackingStore?.Set("customerPayments", value); }
         }
+#endif
         /// <summary>The displayName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The lastModifiedDateTime property</summary>
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }

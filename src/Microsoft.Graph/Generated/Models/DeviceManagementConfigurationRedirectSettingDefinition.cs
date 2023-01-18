@@ -6,20 +6,41 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementConfigurationRedirectSettingDefinition : DeviceManagementConfigurationSettingDefinition, IParsable {
         /// <summary>A deep link that points to the specific location in the Intune console where feature support must be managed from.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeepLink {
+            get { return BackingStore?.Get<string?>("deepLink"); }
+            set { BackingStore?.Set("deepLink", value); }
+        }
+#else
         public string DeepLink {
             get { return BackingStore?.Get<string>("deepLink"); }
             set { BackingStore?.Set("deepLink", value); }
         }
+#endif
         /// <summary>A message that explains that clicking the link will redirect the user to a supported page to manage the settings.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? RedirectMessage {
+            get { return BackingStore?.Get<string?>("redirectMessage"); }
+            set { BackingStore?.Set("redirectMessage", value); }
+        }
+#else
         public string RedirectMessage {
             get { return BackingStore?.Get<string>("redirectMessage"); }
             set { BackingStore?.Set("redirectMessage", value); }
         }
+#endif
         /// <summary>Indicates the reason for redirecting the user to an alternative location in the console.  For example: WiFi profiles are not supported in the settings catalog and must be created with a template policy.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? RedirectReason {
+            get { return BackingStore?.Get<string?>("redirectReason"); }
+            set { BackingStore?.Set("redirectReason", value); }
+        }
+#else
         public string RedirectReason {
             get { return BackingStore?.Get<string>("redirectReason"); }
             set { BackingStore?.Set("redirectReason", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

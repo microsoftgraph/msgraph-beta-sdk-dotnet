@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementComplexSettingDefinition : DeviceManagementSettingDefinition, IParsable {
         /// <summary>The definitions of each property of the complex setting</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? PropertyDefinitionIds {
+            get { return BackingStore?.Get<List<string>?>("propertyDefinitionIds"); }
+            set { BackingStore?.Set("propertyDefinitionIds", value); }
+        }
+#else
         public List<string> PropertyDefinitionIds {
             get { return BackingStore?.Get<List<string>>("propertyDefinitionIds"); }
             set { BackingStore?.Set("propertyDefinitionIds", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

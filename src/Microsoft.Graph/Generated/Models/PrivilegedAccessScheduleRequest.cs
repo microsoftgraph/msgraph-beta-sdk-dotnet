@@ -16,20 +16,41 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("isValidationOnly", value); }
         }
         /// <summary>The justification property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Justification {
+            get { return BackingStore?.Get<string?>("justification"); }
+            set { BackingStore?.Set("justification", value); }
+        }
+#else
         public string Justification {
             get { return BackingStore?.Get<string>("justification"); }
             set { BackingStore?.Set("justification", value); }
         }
+#endif
         /// <summary>The scheduleInfo property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public RequestSchedule? ScheduleInfo {
+            get { return BackingStore?.Get<RequestSchedule?>("scheduleInfo"); }
+            set { BackingStore?.Set("scheduleInfo", value); }
+        }
+#else
         public RequestSchedule ScheduleInfo {
             get { return BackingStore?.Get<RequestSchedule>("scheduleInfo"); }
             set { BackingStore?.Set("scheduleInfo", value); }
         }
+#endif
         /// <summary>The ticketInfo property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.TicketInfo? TicketInfo {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TicketInfo?>("ticketInfo"); }
+            set { BackingStore?.Set("ticketInfo", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.TicketInfo TicketInfo {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TicketInfo>("ticketInfo"); }
             set { BackingStore?.Set("ticketInfo", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new PrivilegedAccessScheduleRequest and sets the default values.
         /// </summary>

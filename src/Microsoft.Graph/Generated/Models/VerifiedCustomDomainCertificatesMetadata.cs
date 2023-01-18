@@ -24,25 +24,53 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("issueDate", value); }
         }
         /// <summary>The issuer name of the custom domain certificate.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? IssuerName {
+            get { return BackingStore?.Get<string?>("issuerName"); }
+            set { BackingStore?.Set("issuerName", value); }
+        }
+#else
         public string IssuerName {
             get { return BackingStore?.Get<string>("issuerName"); }
             set { BackingStore?.Set("issuerName", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The subject name of the custom domain certificate.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SubjectName {
+            get { return BackingStore?.Get<string?>("subjectName"); }
+            set { BackingStore?.Set("subjectName", value); }
+        }
+#else
         public string SubjectName {
             get { return BackingStore?.Get<string>("subjectName"); }
             set { BackingStore?.Set("subjectName", value); }
         }
+#endif
         /// <summary>The thumbprint associated with the custom domain certificate.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Thumbprint {
+            get { return BackingStore?.Get<string?>("thumbprint"); }
+            set { BackingStore?.Set("thumbprint", value); }
+        }
+#else
         public string Thumbprint {
             get { return BackingStore?.Get<string>("thumbprint"); }
             set { BackingStore?.Set("thumbprint", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new verifiedCustomDomainCertificatesMetadata and sets the default values.
         /// </summary>

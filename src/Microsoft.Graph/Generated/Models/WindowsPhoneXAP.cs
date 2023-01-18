@@ -6,20 +6,41 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class WindowsPhoneXAP : MobileLobApp, IParsable {
         /// <summary>The identity version.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? IdentityVersion {
+            get { return BackingStore?.Get<string?>("identityVersion"); }
+            set { BackingStore?.Set("identityVersion", value); }
+        }
+#else
         public string IdentityVersion {
             get { return BackingStore?.Get<string>("identityVersion"); }
             set { BackingStore?.Set("identityVersion", value); }
         }
+#endif
         /// <summary>The minimum operating system required for a Windows mobile app.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public WindowsMinimumOperatingSystem? MinimumSupportedOperatingSystem {
+            get { return BackingStore?.Get<WindowsMinimumOperatingSystem?>("minimumSupportedOperatingSystem"); }
+            set { BackingStore?.Set("minimumSupportedOperatingSystem", value); }
+        }
+#else
         public WindowsMinimumOperatingSystem MinimumSupportedOperatingSystem {
             get { return BackingStore?.Get<WindowsMinimumOperatingSystem>("minimumSupportedOperatingSystem"); }
             set { BackingStore?.Set("minimumSupportedOperatingSystem", value); }
         }
+#endif
         /// <summary>The Product Identifier.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ProductIdentifier {
+            get { return BackingStore?.Get<string?>("productIdentifier"); }
+            set { BackingStore?.Set("productIdentifier", value); }
+        }
+#else
         public string ProductIdentifier {
             get { return BackingStore?.Get<string>("productIdentifier"); }
             set { BackingStore?.Set("productIdentifier", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new WindowsPhoneXAP and sets the default values.
         /// </summary>

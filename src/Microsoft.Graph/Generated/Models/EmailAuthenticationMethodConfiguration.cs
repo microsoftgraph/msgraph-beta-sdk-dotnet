@@ -11,10 +11,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("allowExternalIdToUseEmailOtp", value); }
         }
         /// <summary>A collection of groups that are enabled to use the authentication method.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AuthenticationMethodTarget>? IncludeTargets {
+            get { return BackingStore?.Get<List<AuthenticationMethodTarget>?>("includeTargets"); }
+            set { BackingStore?.Set("includeTargets", value); }
+        }
+#else
         public List<AuthenticationMethodTarget> IncludeTargets {
             get { return BackingStore?.Get<List<AuthenticationMethodTarget>>("includeTargets"); }
             set { BackingStore?.Set("includeTargets", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new EmailAuthenticationMethodConfiguration and sets the default values.
         /// </summary>

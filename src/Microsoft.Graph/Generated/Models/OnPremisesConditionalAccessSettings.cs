@@ -11,15 +11,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("enabled", value); }
         }
         /// <summary>User groups that will be exempt by on premises conditional access. All users in these groups will be exempt from the conditional access policy.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Guid?>? ExcludedGroups {
+            get { return BackingStore?.Get<List<Guid?>?>("excludedGroups"); }
+            set { BackingStore?.Set("excludedGroups", value); }
+        }
+#else
         public List<Guid?> ExcludedGroups {
             get { return BackingStore?.Get<List<Guid?>>("excludedGroups"); }
             set { BackingStore?.Set("excludedGroups", value); }
         }
+#endif
         /// <summary>User groups that will be targeted by on premises conditional access. All users in these groups will be required to have mobile device managed and compliant for mail access.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Guid?>? IncludedGroups {
+            get { return BackingStore?.Get<List<Guid?>?>("includedGroups"); }
+            set { BackingStore?.Set("includedGroups", value); }
+        }
+#else
         public List<Guid?> IncludedGroups {
             get { return BackingStore?.Get<List<Guid?>>("includedGroups"); }
             set { BackingStore?.Set("includedGroups", value); }
         }
+#endif
         /// <summary>Override the default access rule when allowing a device to ensure access is granted.</summary>
         public bool? OverrideDefaultRule {
             get { return BackingStore?.Get<bool?>("overrideDefaultRule"); }

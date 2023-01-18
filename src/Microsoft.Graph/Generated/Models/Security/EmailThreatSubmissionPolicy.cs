@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
     public class EmailThreatSubmissionPolicy : Entity, IParsable {
         /// <summary>Specifies the email address of the sender from which email notifications will be sent to end users to inform them whether an email is spam, phish or clean. The default value is null. Optional for creation.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CustomizedNotificationSenderEmailAddress {
+            get { return BackingStore?.Get<string?>("customizedNotificationSenderEmailAddress"); }
+            set { BackingStore?.Set("customizedNotificationSenderEmailAddress", value); }
+        }
+#else
         public string CustomizedNotificationSenderEmailAddress {
             get { return BackingStore?.Get<string>("customizedNotificationSenderEmailAddress"); }
             set { BackingStore?.Set("customizedNotificationSenderEmailAddress", value); }
         }
+#endif
         /// <summary>Specifies the destination where the reported messages from end users will land whenever they report something as phish, junk or not junk. The default value is null. Optional for creation.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CustomizedReportRecipientEmailAddress {
+            get { return BackingStore?.Get<string?>("customizedReportRecipientEmailAddress"); }
+            set { BackingStore?.Set("customizedReportRecipientEmailAddress", value); }
+        }
+#else
         public string CustomizedReportRecipientEmailAddress {
             get { return BackingStore?.Get<string>("customizedReportRecipientEmailAddress"); }
             set { BackingStore?.Set("customizedReportRecipientEmailAddress", value); }
         }
+#endif
         /// <summary>Indicates whether end users can report a message as spam, phish or junk directly without a confirmation(popup). The default value is true.  Optional for creation.</summary>
         public bool? IsAlwaysReportEnabledForUsers {
             get { return BackingStore?.Get<bool?>("isAlwaysReportEnabledForUsers"); }

@@ -15,10 +15,17 @@ namespace Microsoft.Graph.Beta.Groups.Item.Threads.Item.Reply {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The Post property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.Post? Post {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Post?>("post"); }
+            set { BackingStore?.Set("post", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.Post Post {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Post>("post"); }
             set { BackingStore?.Set("post", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new replyPostRequestBody and sets the default values.
         /// </summary>

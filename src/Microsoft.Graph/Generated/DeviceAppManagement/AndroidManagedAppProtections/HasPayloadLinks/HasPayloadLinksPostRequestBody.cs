@@ -14,10 +14,17 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.AndroidManagedAppProtections.
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The payloadIds property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? PayloadIds {
+            get { return BackingStore?.Get<List<string>?>("payloadIds"); }
+            set { BackingStore?.Set("payloadIds", value); }
+        }
+#else
         public List<string> PayloadIds {
             get { return BackingStore?.Get<List<string>>("payloadIds"); }
             set { BackingStore?.Set("payloadIds", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new hasPayloadLinksPostRequestBody and sets the default values.
         /// </summary>

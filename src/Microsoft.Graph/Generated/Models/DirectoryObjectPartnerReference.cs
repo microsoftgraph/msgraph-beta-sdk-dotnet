@@ -6,25 +6,46 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class DirectoryObjectPartnerReference : DirectoryObject, IParsable {
         /// <summary>Description of the object returned. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>Name of directory object being returned, like group or application. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The tenant identifier for the partner tenant. Read-only.</summary>
         public Guid? ExternalPartnerTenantId {
             get { return BackingStore?.Get<Guid?>("externalPartnerTenantId"); }
             set { BackingStore?.Set("externalPartnerTenantId", value); }
         }
         /// <summary>The type of the referenced object in the partner tenant. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ObjectType {
+            get { return BackingStore?.Get<string?>("objectType"); }
+            set { BackingStore?.Set("objectType", value); }
+        }
+#else
         public string ObjectType {
             get { return BackingStore?.Get<string>("objectType"); }
             set { BackingStore?.Set("objectType", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new DirectoryObjectPartnerReference and sets the default values.
         /// </summary>

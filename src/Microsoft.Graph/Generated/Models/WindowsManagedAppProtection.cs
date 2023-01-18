@@ -26,15 +26,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("appActionIfUnableToAuthenticateUser", value); }
         }
         /// <summary>List of apps to which the policy is deployed.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ManagedMobileApp>? Apps {
+            get { return BackingStore?.Get<List<ManagedMobileApp>?>("apps"); }
+            set { BackingStore?.Set("apps", value); }
+        }
+#else
         public List<ManagedMobileApp> Apps {
             get { return BackingStore?.Get<List<ManagedMobileApp>>("apps"); }
             set { BackingStore?.Set("apps", value); }
         }
+#endif
         /// <summary>Navigation property to list of inclusion and exclusion groups to which the policy is deployed.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<TargetedManagedAppPolicyAssignment>? Assignments {
+            get { return BackingStore?.Get<List<TargetedManagedAppPolicyAssignment>?>("assignments"); }
+            set { BackingStore?.Set("assignments", value); }
+        }
+#else
         public List<TargetedManagedAppPolicyAssignment> Assignments {
             get { return BackingStore?.Get<List<TargetedManagedAppPolicyAssignment>>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
+#endif
         /// <summary>Indicates the total number of applications for which the current policy is deployed.</summary>
         public int? DeployedAppCount {
             get { return BackingStore?.Get<int?>("deployedAppCount"); }
@@ -51,60 +65,137 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("maximumAllowedDeviceThreatLevel", value); }
         }
         /// <summary>Versions bigger than the specified version will block the managed app from accessing company data. For example: &apos;8.1.0&apos; or &apos;13.1.1&apos;.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MaximumRequiredOsVersion {
+            get { return BackingStore?.Get<string?>("maximumRequiredOsVersion"); }
+            set { BackingStore?.Set("maximumRequiredOsVersion", value); }
+        }
+#else
         public string MaximumRequiredOsVersion {
             get { return BackingStore?.Get<string>("maximumRequiredOsVersion"); }
             set { BackingStore?.Set("maximumRequiredOsVersion", value); }
         }
+#endif
         /// <summary>Versions bigger than the specified version will result in warning message on the managed app from accessing company data. For example: &apos;8.1.0&apos; or &apos;13.1.1&apos;.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MaximumWarningOsVersion {
+            get { return BackingStore?.Get<string?>("maximumWarningOsVersion"); }
+            set { BackingStore?.Set("maximumWarningOsVersion", value); }
+        }
+#else
         public string MaximumWarningOsVersion {
             get { return BackingStore?.Get<string>("maximumWarningOsVersion"); }
             set { BackingStore?.Set("maximumWarningOsVersion", value); }
         }
+#endif
         /// <summary>Versions bigger than the specified version will wipe the managed app and the associated company data. For example: &apos;8.1.0&apos; or &apos;13.1.1&apos;.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MaximumWipeOsVersion {
+            get { return BackingStore?.Get<string?>("maximumWipeOsVersion"); }
+            set { BackingStore?.Set("maximumWipeOsVersion", value); }
+        }
+#else
         public string MaximumWipeOsVersion {
             get { return BackingStore?.Get<string>("maximumWipeOsVersion"); }
             set { BackingStore?.Set("maximumWipeOsVersion", value); }
         }
+#endif
         /// <summary>Versions less than the specified version will block the managed app from accessing company data. For example: &apos;8.1.0&apos; or &apos;13.1.1&apos;.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MinimumRequiredAppVersion {
+            get { return BackingStore?.Get<string?>("minimumRequiredAppVersion"); }
+            set { BackingStore?.Set("minimumRequiredAppVersion", value); }
+        }
+#else
         public string MinimumRequiredAppVersion {
             get { return BackingStore?.Get<string>("minimumRequiredAppVersion"); }
             set { BackingStore?.Set("minimumRequiredAppVersion", value); }
         }
+#endif
         /// <summary>Versions less than the specified version will block the managed app from accessing company data. For example: &apos;8.1.0&apos; or &apos;13.1.1&apos;.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MinimumRequiredOsVersion {
+            get { return BackingStore?.Get<string?>("minimumRequiredOsVersion"); }
+            set { BackingStore?.Set("minimumRequiredOsVersion", value); }
+        }
+#else
         public string MinimumRequiredOsVersion {
             get { return BackingStore?.Get<string>("minimumRequiredOsVersion"); }
             set { BackingStore?.Set("minimumRequiredOsVersion", value); }
         }
+#endif
         /// <summary>Versions less than the specified version will block the managed app from accessing company data. For example: &apos;8.1.0&apos; or &apos;13.1.1&apos;.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MinimumRequiredSdkVersion {
+            get { return BackingStore?.Get<string?>("minimumRequiredSdkVersion"); }
+            set { BackingStore?.Set("minimumRequiredSdkVersion", value); }
+        }
+#else
         public string MinimumRequiredSdkVersion {
             get { return BackingStore?.Get<string>("minimumRequiredSdkVersion"); }
             set { BackingStore?.Set("minimumRequiredSdkVersion", value); }
         }
+#endif
         /// <summary>Versions less than the specified version will result in warning message on the managed app from accessing company data. For example: &apos;8.1.0&apos; or &apos;13.1.1&apos;.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MinimumWarningAppVersion {
+            get { return BackingStore?.Get<string?>("minimumWarningAppVersion"); }
+            set { BackingStore?.Set("minimumWarningAppVersion", value); }
+        }
+#else
         public string MinimumWarningAppVersion {
             get { return BackingStore?.Get<string>("minimumWarningAppVersion"); }
             set { BackingStore?.Set("minimumWarningAppVersion", value); }
         }
+#endif
         /// <summary>Versions less than the specified version will result in warning message on the managed app from accessing company data. For example: &apos;8.1.0&apos; or &apos;13.1.1&apos;.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MinimumWarningOsVersion {
+            get { return BackingStore?.Get<string?>("minimumWarningOsVersion"); }
+            set { BackingStore?.Set("minimumWarningOsVersion", value); }
+        }
+#else
         public string MinimumWarningOsVersion {
             get { return BackingStore?.Get<string>("minimumWarningOsVersion"); }
             set { BackingStore?.Set("minimumWarningOsVersion", value); }
         }
+#endif
         /// <summary>Versions less than the specified version will wipe the managed app and the associated company data. For example: &apos;8.1.0&apos; or &apos;13.1.1&apos;.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MinimumWipeAppVersion {
+            get { return BackingStore?.Get<string?>("minimumWipeAppVersion"); }
+            set { BackingStore?.Set("minimumWipeAppVersion", value); }
+        }
+#else
         public string MinimumWipeAppVersion {
             get { return BackingStore?.Get<string>("minimumWipeAppVersion"); }
             set { BackingStore?.Set("minimumWipeAppVersion", value); }
         }
+#endif
         /// <summary>Versions less than the specified version will wipe the managed app and the associated company data. For example: &apos;8.1.0&apos; or &apos;13.1.1&apos;.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MinimumWipeOsVersion {
+            get { return BackingStore?.Get<string?>("minimumWipeOsVersion"); }
+            set { BackingStore?.Set("minimumWipeOsVersion", value); }
+        }
+#else
         public string MinimumWipeOsVersion {
             get { return BackingStore?.Get<string>("minimumWipeOsVersion"); }
             set { BackingStore?.Set("minimumWipeOsVersion", value); }
         }
+#endif
         /// <summary>Versions less than the specified version will wipe the managed app and the associated company data. For example: &apos;8.1.0&apos; or &apos;13.1.1&apos;.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MinimumWipeSdkVersion {
+            get { return BackingStore?.Get<string?>("minimumWipeSdkVersion"); }
+            set { BackingStore?.Set("minimumWipeSdkVersion", value); }
+        }
+#else
         public string MinimumWipeSdkVersion {
             get { return BackingStore?.Get<string>("minimumWipeSdkVersion"); }
             set { BackingStore?.Set("minimumWipeSdkVersion", value); }
         }
+#endif
         /// <summary>An admin initiated action to be applied on a managed app.</summary>
         public ManagedAppRemediationAction? MobileThreatDefenseRemediationAction {
             get { return BackingStore?.Get<ManagedAppRemediationAction?>("mobileThreatDefenseRemediationAction"); }

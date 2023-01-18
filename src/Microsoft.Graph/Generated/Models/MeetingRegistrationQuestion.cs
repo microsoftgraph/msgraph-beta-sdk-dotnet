@@ -11,15 +11,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("answerInputType", value); }
         }
         /// <summary>Answer options when answerInputType is radioButton.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? AnswerOptions {
+            get { return BackingStore?.Get<List<string>?>("answerOptions"); }
+            set { BackingStore?.Set("answerOptions", value); }
+        }
+#else
         public List<string> AnswerOptions {
             get { return BackingStore?.Get<List<string>>("answerOptions"); }
             set { BackingStore?.Set("answerOptions", value); }
         }
+#endif
         /// <summary>Display name of the custom registration question.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>Indicates whether the question is required. Default value is false.</summary>
         public bool? IsRequired {
             get { return BackingStore?.Get<bool?>("isRequired"); }

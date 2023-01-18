@@ -6,40 +6,82 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class EducationSubmission : Entity, IParsable {
         /// <summary>The outcomes property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<EducationOutcome>? Outcomes {
+            get { return BackingStore?.Get<List<EducationOutcome>?>("outcomes"); }
+            set { BackingStore?.Set("outcomes", value); }
+        }
+#else
         public List<EducationOutcome> Outcomes {
             get { return BackingStore?.Get<List<EducationOutcome>>("outcomes"); }
             set { BackingStore?.Set("outcomes", value); }
         }
+#endif
         /// <summary>User who moved the status of this submission to reassigned.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public IdentitySet? ReassignedBy {
+            get { return BackingStore?.Get<IdentitySet?>("reassignedBy"); }
+            set { BackingStore?.Set("reassignedBy", value); }
+        }
+#else
         public IdentitySet ReassignedBy {
             get { return BackingStore?.Get<IdentitySet>("reassignedBy"); }
             set { BackingStore?.Set("reassignedBy", value); }
         }
+#endif
         /// <summary>Moment in time when the submission was reassigned. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
         public DateTimeOffset? ReassignedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("reassignedDateTime"); }
             set { BackingStore?.Set("reassignedDateTime", value); }
         }
         /// <summary>Who this submission is assigned to.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public EducationSubmissionRecipient? Recipient {
+            get { return BackingStore?.Get<EducationSubmissionRecipient?>("recipient"); }
+            set { BackingStore?.Set("recipient", value); }
+        }
+#else
         public EducationSubmissionRecipient Recipient {
             get { return BackingStore?.Get<EducationSubmissionRecipient>("recipient"); }
             set { BackingStore?.Set("recipient", value); }
         }
+#endif
         /// <summary>The resources property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<EducationSubmissionResource>? Resources {
+            get { return BackingStore?.Get<List<EducationSubmissionResource>?>("resources"); }
+            set { BackingStore?.Set("resources", value); }
+        }
+#else
         public List<EducationSubmissionResource> Resources {
             get { return BackingStore?.Get<List<EducationSubmissionResource>>("resources"); }
             set { BackingStore?.Set("resources", value); }
         }
+#endif
         /// <summary>Folder where all file resources for this submission need to be stored.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ResourcesFolderUrl {
+            get { return BackingStore?.Get<string?>("resourcesFolderUrl"); }
+            set { BackingStore?.Set("resourcesFolderUrl", value); }
+        }
+#else
         public string ResourcesFolderUrl {
             get { return BackingStore?.Get<string>("resourcesFolderUrl"); }
             set { BackingStore?.Set("resourcesFolderUrl", value); }
         }
+#endif
         /// <summary>User who moved the status of this submission to returned.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public IdentitySet? ReturnedBy {
+            get { return BackingStore?.Get<IdentitySet?>("returnedBy"); }
+            set { BackingStore?.Set("returnedBy", value); }
+        }
+#else
         public IdentitySet ReturnedBy {
             get { return BackingStore?.Get<IdentitySet>("returnedBy"); }
             set { BackingStore?.Set("returnedBy", value); }
         }
+#endif
         /// <summary>Moment in time when the submission was returned. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
         public DateTimeOffset? ReturnedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("returnedDateTime"); }
@@ -51,35 +93,63 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>User who moved the resource into the submitted state.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public IdentitySet? SubmittedBy {
+            get { return BackingStore?.Get<IdentitySet?>("submittedBy"); }
+            set { BackingStore?.Set("submittedBy", value); }
+        }
+#else
         public IdentitySet SubmittedBy {
             get { return BackingStore?.Get<IdentitySet>("submittedBy"); }
             set { BackingStore?.Set("submittedBy", value); }
         }
+#endif
         /// <summary>Moment in time when the submission was moved into the submitted state. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
         public DateTimeOffset? SubmittedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("submittedDateTime"); }
             set { BackingStore?.Set("submittedDateTime", value); }
         }
         /// <summary>The submittedResources property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<EducationSubmissionResource>? SubmittedResources {
+            get { return BackingStore?.Get<List<EducationSubmissionResource>?>("submittedResources"); }
+            set { BackingStore?.Set("submittedResources", value); }
+        }
+#else
         public List<EducationSubmissionResource> SubmittedResources {
             get { return BackingStore?.Get<List<EducationSubmissionResource>>("submittedResources"); }
             set { BackingStore?.Set("submittedResources", value); }
         }
+#endif
         /// <summary>User who moved the resource from submitted into the working state.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public IdentitySet? UnsubmittedBy {
+            get { return BackingStore?.Get<IdentitySet?>("unsubmittedBy"); }
+            set { BackingStore?.Set("unsubmittedBy", value); }
+        }
+#else
         public IdentitySet UnsubmittedBy {
             get { return BackingStore?.Get<IdentitySet>("unsubmittedBy"); }
             set { BackingStore?.Set("unsubmittedBy", value); }
         }
+#endif
         /// <summary>Moment in time when the submission was moved from submitted into the working state. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
         public DateTimeOffset? UnsubmittedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("unsubmittedDateTime"); }
             set { BackingStore?.Set("unsubmittedDateTime", value); }
         }
         /// <summary>The deep link URL for the given submission.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? WebUrl {
+            get { return BackingStore?.Get<string?>("webUrl"); }
+            set { BackingStore?.Set("webUrl", value); }
+        }
+#else
         public string WebUrl {
             get { return BackingStore?.Get<string>("webUrl"); }
             set { BackingStore?.Set("webUrl", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

@@ -16,20 +16,41 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("exportJobStatus", value); }
         }
         /// <summary>The storage account URL of the exported report. It can be used to download the file.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ExportUrl {
+            get { return BackingStore?.Get<string?>("exportUrl"); }
+            set { BackingStore?.Set("exportUrl", value); }
+        }
+#else
         public string ExportUrl {
             get { return BackingStore?.Get<string>("exportUrl"); }
             set { BackingStore?.Set("exportUrl", value); }
         }
+#endif
         /// <summary>The filter applied on the report.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Filter {
+            get { return BackingStore?.Get<string?>("filter"); }
+            set { BackingStore?.Set("filter", value); }
+        }
+#else
         public string Filter {
             get { return BackingStore?.Get<string>("filter"); }
             set { BackingStore?.Set("filter", value); }
         }
+#endif
         /// <summary>The format of the exported report.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Format {
+            get { return BackingStore?.Get<string?>("format"); }
+            set { BackingStore?.Set("format", value); }
+        }
+#else
         public string Format {
             get { return BackingStore?.Get<string>("format"); }
             set { BackingStore?.Set("format", value); }
         }
+#endif
         /// <summary>The report name. The possible values are: remoteConnectionHistoricalReports, dailyAggregatedRemoteConnectionReports, totalAggregatedRemoteConnectionReports, unknownFutureValue.</summary>
         public CloudPcReportName? ReportName {
             get { return BackingStore?.Get<CloudPcReportName?>("reportName"); }
@@ -41,10 +62,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("requestDateTime", value); }
         }
         /// <summary>The selected columns of the report.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? Select {
+            get { return BackingStore?.Get<List<string>?>("select"); }
+            set { BackingStore?.Set("select", value); }
+        }
+#else
         public List<string> Select {
             get { return BackingStore?.Get<List<string>>("select"); }
             set { BackingStore?.Set("select", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

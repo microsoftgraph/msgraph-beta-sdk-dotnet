@@ -14,10 +14,17 @@ namespace Microsoft.Graph.Beta.Users.Item.MailFolders.Item.Copy {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The DestinationId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DestinationId {
+            get { return BackingStore?.Get<string?>("destinationId"); }
+            set { BackingStore?.Set("destinationId", value); }
+        }
+#else
         public string DestinationId {
             get { return BackingStore?.Get<string>("destinationId"); }
             set { BackingStore?.Set("destinationId", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new copyPostRequestBody and sets the default values.
         /// </summary>

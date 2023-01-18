@@ -14,30 +14,65 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Specific provider (product/service - not vendor company); for example, WindowsDefenderATP.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Provider {
+            get { return BackingStore?.Get<string?>("provider"); }
+            set { BackingStore?.Set("provider", value); }
+        }
+#else
         public string Provider {
             get { return BackingStore?.Get<string>("provider"); }
             set { BackingStore?.Set("provider", value); }
         }
+#endif
         /// <summary>Version of the provider or subprovider, if it exists, that generated the alert. Required</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ProviderVersion {
+            get { return BackingStore?.Get<string?>("providerVersion"); }
+            set { BackingStore?.Set("providerVersion", value); }
+        }
+#else
         public string ProviderVersion {
             get { return BackingStore?.Get<string>("providerVersion"); }
             set { BackingStore?.Set("providerVersion", value); }
         }
+#endif
         /// <summary>Specific subprovider (under aggregating provider); for example, WindowsDefenderATP.SmartScreen.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SubProvider {
+            get { return BackingStore?.Get<string?>("subProvider"); }
+            set { BackingStore?.Set("subProvider", value); }
+        }
+#else
         public string SubProvider {
             get { return BackingStore?.Get<string>("subProvider"); }
             set { BackingStore?.Set("subProvider", value); }
         }
+#endif
         /// <summary>Name of the alert vendor (for example, Microsoft, Dell, FireEye). Required</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Vendor {
+            get { return BackingStore?.Get<string?>("vendor"); }
+            set { BackingStore?.Set("vendor", value); }
+        }
+#else
         public string Vendor {
             get { return BackingStore?.Get<string>("vendor"); }
             set { BackingStore?.Set("vendor", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new securityVendorInformation and sets the default values.
         /// </summary>

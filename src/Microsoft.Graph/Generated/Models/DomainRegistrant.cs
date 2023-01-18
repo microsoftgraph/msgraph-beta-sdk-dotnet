@@ -14,30 +14,65 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The countryOrRegionCode property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CountryOrRegionCode {
+            get { return BackingStore?.Get<string?>("countryOrRegionCode"); }
+            set { BackingStore?.Set("countryOrRegionCode", value); }
+        }
+#else
         public string CountryOrRegionCode {
             get { return BackingStore?.Get<string>("countryOrRegionCode"); }
             set { BackingStore?.Set("countryOrRegionCode", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The organization property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Organization {
+            get { return BackingStore?.Get<string?>("organization"); }
+            set { BackingStore?.Set("organization", value); }
+        }
+#else
         public string Organization {
             get { return BackingStore?.Get<string>("organization"); }
             set { BackingStore?.Set("organization", value); }
         }
+#endif
         /// <summary>The url property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Url {
+            get { return BackingStore?.Get<string?>("url"); }
+            set { BackingStore?.Set("url", value); }
+        }
+#else
         public string Url {
             get { return BackingStore?.Get<string>("url"); }
             set { BackingStore?.Set("url", value); }
         }
+#endif
         /// <summary>The vendor property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Vendor {
+            get { return BackingStore?.Get<string?>("vendor"); }
+            set { BackingStore?.Set("vendor", value); }
+        }
+#else
         public string Vendor {
             get { return BackingStore?.Get<string>("vendor"); }
             set { BackingStore?.Set("vendor", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new domainRegistrant and sets the default values.
         /// </summary>

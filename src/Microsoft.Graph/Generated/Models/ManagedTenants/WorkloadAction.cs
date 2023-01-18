@@ -7,10 +7,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
     public class WorkloadAction : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>The unique identifier for the workload action. Required. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ActionId {
+            get { return BackingStore?.Get<string?>("actionId"); }
+            set { BackingStore?.Set("actionId", value); }
+        }
+#else
         public string ActionId {
             get { return BackingStore?.Get<string>("actionId"); }
             set { BackingStore?.Set("actionId", value); }
         }
+#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
             get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
@@ -24,35 +31,77 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
             set { BackingStore?.Set("category", value); }
         }
         /// <summary>The description for the workload action. Optional. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>The display name for the workload action. Optional. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The licenses property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? Licenses {
+            get { return BackingStore?.Get<List<string>?>("licenses"); }
+            set { BackingStore?.Set("licenses", value); }
+        }
+#else
         public List<string> Licenses {
             get { return BackingStore?.Get<List<string>>("licenses"); }
             set { BackingStore?.Set("licenses", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The service associated with workload action. Optional. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Service {
+            get { return BackingStore?.Get<string?>("service"); }
+            set { BackingStore?.Set("service", value); }
+        }
+#else
         public string Service {
             get { return BackingStore?.Get<string>("service"); }
             set { BackingStore?.Set("service", value); }
         }
+#endif
         /// <summary>The collection of settings associated with the workload action. Optional. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Setting>? Settings {
+            get { return BackingStore?.Get<List<Setting>?>("settings"); }
+            set { BackingStore?.Set("settings", value); }
+        }
+#else
         public List<Setting> Settings {
             get { return BackingStore?.Get<List<Setting>>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new workloadAction and sets the default values.
         /// </summary>

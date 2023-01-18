@@ -6,95 +6,200 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class ProvisioningObjectSummary : Entity, IParsable {
         /// <summary>The action property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Action {
+            get { return BackingStore?.Get<string?>("action"); }
+            set { BackingStore?.Set("action", value); }
+        }
+#else
         public string Action {
             get { return BackingStore?.Get<string>("action"); }
             set { BackingStore?.Set("action", value); }
         }
+#endif
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
         public DateTimeOffset? ActivityDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("activityDateTime"); }
             set { BackingStore?.Set("activityDateTime", value); }
         }
         /// <summary>Unique ID of this change in this cycle.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ChangeId {
+            get { return BackingStore?.Get<string?>("changeId"); }
+            set { BackingStore?.Set("changeId", value); }
+        }
+#else
         public string ChangeId {
             get { return BackingStore?.Get<string>("changeId"); }
             set { BackingStore?.Set("changeId", value); }
         }
+#endif
         /// <summary>Unique ID per job iteration.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CycleId {
+            get { return BackingStore?.Get<string?>("cycleId"); }
+            set { BackingStore?.Set("cycleId", value); }
+        }
+#else
         public string CycleId {
             get { return BackingStore?.Get<string>("cycleId"); }
             set { BackingStore?.Set("cycleId", value); }
         }
+#endif
         /// <summary>Indicates how long this provisioning action took to finish. Measured in milliseconds.</summary>
         public int? DurationInMilliseconds {
             get { return BackingStore?.Get<int?>("durationInMilliseconds"); }
             set { BackingStore?.Set("durationInMilliseconds", value); }
         }
         /// <summary>Details of who initiated this provisioning.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Initiator? InitiatedBy {
+            get { return BackingStore?.Get<Initiator?>("initiatedBy"); }
+            set { BackingStore?.Set("initiatedBy", value); }
+        }
+#else
         public Initiator InitiatedBy {
             get { return BackingStore?.Get<Initiator>("initiatedBy"); }
             set { BackingStore?.Set("initiatedBy", value); }
         }
+#endif
         /// <summary>The unique ID for the whole provisioning job.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? JobId {
+            get { return BackingStore?.Get<string?>("jobId"); }
+            set { BackingStore?.Set("jobId", value); }
+        }
+#else
         public string JobId {
             get { return BackingStore?.Get<string>("jobId"); }
             set { BackingStore?.Set("jobId", value); }
         }
+#endif
         /// <summary>Details of each property that was modified in this provisioning action on this object.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ModifiedProperty>? ModifiedProperties {
+            get { return BackingStore?.Get<List<ModifiedProperty>?>("modifiedProperties"); }
+            set { BackingStore?.Set("modifiedProperties", value); }
+        }
+#else
         public List<ModifiedProperty> ModifiedProperties {
             get { return BackingStore?.Get<List<ModifiedProperty>>("modifiedProperties"); }
             set { BackingStore?.Set("modifiedProperties", value); }
         }
+#endif
         /// <summary>Indicates the activity name or the operation name. Possible values are: create, update, delete, stageddelete, disable, other and unknownFutureValue. For a list of activities logged, refer to Azure AD activity list.</summary>
         public Microsoft.Graph.Beta.Models.ProvisioningAction? ProvisioningAction {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ProvisioningAction?>("provisioningAction"); }
             set { BackingStore?.Set("provisioningAction", value); }
         }
         /// <summary>Details of provisioning status.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.ProvisioningStatusInfo? ProvisioningStatusInfo {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ProvisioningStatusInfo?>("provisioningStatusInfo"); }
+            set { BackingStore?.Set("provisioningStatusInfo", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.ProvisioningStatusInfo ProvisioningStatusInfo {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ProvisioningStatusInfo>("provisioningStatusInfo"); }
             set { BackingStore?.Set("provisioningStatusInfo", value); }
         }
+#endif
         /// <summary>Details of each step in provisioning.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ProvisioningStep>? ProvisioningSteps {
+            get { return BackingStore?.Get<List<ProvisioningStep>?>("provisioningSteps"); }
+            set { BackingStore?.Set("provisioningSteps", value); }
+        }
+#else
         public List<ProvisioningStep> ProvisioningSteps {
             get { return BackingStore?.Get<List<ProvisioningStep>>("provisioningSteps"); }
             set { BackingStore?.Set("provisioningSteps", value); }
         }
+#endif
         /// <summary>Represents the service principal used for provisioning.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ProvisioningServicePrincipal? ServicePrincipal {
+            get { return BackingStore?.Get<ProvisioningServicePrincipal?>("servicePrincipal"); }
+            set { BackingStore?.Set("servicePrincipal", value); }
+        }
+#else
         public ProvisioningServicePrincipal ServicePrincipal {
             get { return BackingStore?.Get<ProvisioningServicePrincipal>("servicePrincipal"); }
             set { BackingStore?.Set("servicePrincipal", value); }
         }
+#endif
         /// <summary>Details of source object being provisioned.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ProvisionedIdentity? SourceIdentity {
+            get { return BackingStore?.Get<ProvisionedIdentity?>("sourceIdentity"); }
+            set { BackingStore?.Set("sourceIdentity", value); }
+        }
+#else
         public ProvisionedIdentity SourceIdentity {
             get { return BackingStore?.Get<ProvisionedIdentity>("sourceIdentity"); }
             set { BackingStore?.Set("sourceIdentity", value); }
         }
+#endif
         /// <summary>Details of source system of the object being provisioned.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ProvisioningSystem? SourceSystem {
+            get { return BackingStore?.Get<ProvisioningSystem?>("sourceSystem"); }
+            set { BackingStore?.Set("sourceSystem", value); }
+        }
+#else
         public ProvisioningSystem SourceSystem {
             get { return BackingStore?.Get<ProvisioningSystem>("sourceSystem"); }
             set { BackingStore?.Set("sourceSystem", value); }
         }
+#endif
         /// <summary>The statusInfo property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public StatusBase? StatusInfo {
+            get { return BackingStore?.Get<StatusBase?>("statusInfo"); }
+            set { BackingStore?.Set("statusInfo", value); }
+        }
+#else
         public StatusBase StatusInfo {
             get { return BackingStore?.Get<StatusBase>("statusInfo"); }
             set { BackingStore?.Set("statusInfo", value); }
         }
+#endif
         /// <summary>Details of target object being provisioned.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ProvisionedIdentity? TargetIdentity {
+            get { return BackingStore?.Get<ProvisionedIdentity?>("targetIdentity"); }
+            set { BackingStore?.Set("targetIdentity", value); }
+        }
+#else
         public ProvisionedIdentity TargetIdentity {
             get { return BackingStore?.Get<ProvisionedIdentity>("targetIdentity"); }
             set { BackingStore?.Set("targetIdentity", value); }
         }
+#endif
         /// <summary>Details of target system of the object being provisioned.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ProvisioningSystem? TargetSystem {
+            get { return BackingStore?.Get<ProvisioningSystem?>("targetSystem"); }
+            set { BackingStore?.Set("targetSystem", value); }
+        }
+#else
         public ProvisioningSystem TargetSystem {
             get { return BackingStore?.Get<ProvisioningSystem>("targetSystem"); }
             set { BackingStore?.Set("targetSystem", value); }
         }
+#endif
         /// <summary>Unique Azure AD tenant ID.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TenantId {
+            get { return BackingStore?.Get<string?>("tenantId"); }
+            set { BackingStore?.Set("tenantId", value); }
+        }
+#else
         public string TenantId {
             get { return BackingStore?.Get<string>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

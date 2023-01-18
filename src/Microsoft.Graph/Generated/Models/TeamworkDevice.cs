@@ -6,80 +6,150 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class TeamworkDevice : Entity, IParsable {
         /// <summary>The activity properties that change based on the device usage.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public TeamworkDeviceActivity? Activity {
+            get { return BackingStore?.Get<TeamworkDeviceActivity?>("activity"); }
+            set { BackingStore?.Set("activity", value); }
+        }
+#else
         public TeamworkDeviceActivity Activity {
             get { return BackingStore?.Get<TeamworkDeviceActivity>("activity"); }
             set { BackingStore?.Set("activity", value); }
         }
+#endif
         /// <summary>The activity state of the device. The possible values are: unknown, busy, idle, unavailable, unknownFutureValue.</summary>
         public TeamworkDeviceActivityState? ActivityState {
             get { return BackingStore?.Get<TeamworkDeviceActivityState?>("activityState"); }
             set { BackingStore?.Set("activityState", value); }
         }
         /// <summary>The company asset tag assigned by the admin on the device.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CompanyAssetTag {
+            get { return BackingStore?.Get<string?>("companyAssetTag"); }
+            set { BackingStore?.Set("companyAssetTag", value); }
+        }
+#else
         public string CompanyAssetTag {
             get { return BackingStore?.Get<string>("companyAssetTag"); }
             set { BackingStore?.Set("companyAssetTag", value); }
         }
+#endif
         /// <summary>The configuration properties of the device.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public TeamworkDeviceConfiguration? Configuration {
+            get { return BackingStore?.Get<TeamworkDeviceConfiguration?>("configuration"); }
+            set { BackingStore?.Set("configuration", value); }
+        }
+#else
         public TeamworkDeviceConfiguration Configuration {
             get { return BackingStore?.Get<TeamworkDeviceConfiguration>("configuration"); }
             set { BackingStore?.Set("configuration", value); }
         }
+#endif
         /// <summary>Identity of the user who enrolled the device to the tenant.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public IdentitySet? CreatedBy {
+            get { return BackingStore?.Get<IdentitySet?>("createdBy"); }
+            set { BackingStore?.Set("createdBy", value); }
+        }
+#else
         public IdentitySet CreatedBy {
             get { return BackingStore?.Get<IdentitySet>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
+#endif
         /// <summary>The UTC date and time when the device was enrolled to the tenant.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The signed-in user on the device.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public TeamworkUserIdentity? CurrentUser {
+            get { return BackingStore?.Get<TeamworkUserIdentity?>("currentUser"); }
+            set { BackingStore?.Set("currentUser", value); }
+        }
+#else
         public TeamworkUserIdentity CurrentUser {
             get { return BackingStore?.Get<TeamworkUserIdentity>("currentUser"); }
             set { BackingStore?.Set("currentUser", value); }
         }
+#endif
         /// <summary>The deviceType property</summary>
         public TeamworkDeviceType? DeviceType {
             get { return BackingStore?.Get<TeamworkDeviceType?>("deviceType"); }
             set { BackingStore?.Set("deviceType", value); }
         }
         /// <summary>The hardwareDetail property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public TeamworkHardwareDetail? HardwareDetail {
+            get { return BackingStore?.Get<TeamworkHardwareDetail?>("hardwareDetail"); }
+            set { BackingStore?.Set("hardwareDetail", value); }
+        }
+#else
         public TeamworkHardwareDetail HardwareDetail {
             get { return BackingStore?.Get<TeamworkHardwareDetail>("hardwareDetail"); }
             set { BackingStore?.Set("hardwareDetail", value); }
         }
+#endif
         /// <summary>The health properties of the device.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public TeamworkDeviceHealth? Health {
+            get { return BackingStore?.Get<TeamworkDeviceHealth?>("health"); }
+            set { BackingStore?.Set("health", value); }
+        }
+#else
         public TeamworkDeviceHealth Health {
             get { return BackingStore?.Get<TeamworkDeviceHealth>("health"); }
             set { BackingStore?.Set("health", value); }
         }
+#endif
         /// <summary>The health status of the device. The possible values are: unknown, offline, critical, nonUrgent, healthy, unknownFutureValue.</summary>
         public TeamworkDeviceHealthStatus? HealthStatus {
             get { return BackingStore?.Get<TeamworkDeviceHealthStatus?>("healthStatus"); }
             set { BackingStore?.Set("healthStatus", value); }
         }
         /// <summary>Identity of the user who last modified the device details.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public IdentitySet? LastModifiedBy {
+            get { return BackingStore?.Get<IdentitySet?>("lastModifiedBy"); }
+            set { BackingStore?.Set("lastModifiedBy", value); }
+        }
+#else
         public IdentitySet LastModifiedBy {
             get { return BackingStore?.Get<IdentitySet>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
+#endif
         /// <summary>The UTC date and time when the device detail was last modified.</summary>
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The notes added by the admin to the device.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Notes {
+            get { return BackingStore?.Get<string?>("notes"); }
+            set { BackingStore?.Set("notes", value); }
+        }
+#else
         public string Notes {
             get { return BackingStore?.Get<string>("notes"); }
             set { BackingStore?.Set("notes", value); }
         }
+#endif
         /// <summary>The async operations on the device.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<TeamworkDeviceOperation>? Operations {
+            get { return BackingStore?.Get<List<TeamworkDeviceOperation>?>("operations"); }
+            set { BackingStore?.Set("operations", value); }
+        }
+#else
         public List<TeamworkDeviceOperation> Operations {
             get { return BackingStore?.Get<List<TeamworkDeviceOperation>>("operations"); }
             set { BackingStore?.Set("operations", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class EvaluateLabelJobResponse : JobResponseBase, IParsable {
         /// <summary>The result property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public EvaluateLabelJobResultGroup? Result {
+            get { return BackingStore?.Get<EvaluateLabelJobResultGroup?>("result"); }
+            set { BackingStore?.Set("result", value); }
+        }
+#else
         public EvaluateLabelJobResultGroup Result {
             get { return BackingStore?.Get<EvaluateLabelJobResultGroup>("result"); }
             set { BackingStore?.Set("result", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

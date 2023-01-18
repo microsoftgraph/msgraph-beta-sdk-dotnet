@@ -14,40 +14,89 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The city.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? City {
+            get { return BackingStore?.Get<string?>("city"); }
+            set { BackingStore?.Set("city", value); }
+        }
+#else
         public string City {
             get { return BackingStore?.Get<string>("city"); }
             set { BackingStore?.Set("city", value); }
         }
+#endif
         /// <summary>The country or region. It&apos;s a free-format string value, for example, &apos;United States&apos;.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CountryOrRegion {
+            get { return BackingStore?.Get<string?>("countryOrRegion"); }
+            set { BackingStore?.Set("countryOrRegion", value); }
+        }
+#else
         public string CountryOrRegion {
             get { return BackingStore?.Get<string>("countryOrRegion"); }
             set { BackingStore?.Set("countryOrRegion", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Office location such as building and office number for an organizational contact.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OfficeLocation {
+            get { return BackingStore?.Get<string?>("officeLocation"); }
+            set { BackingStore?.Set("officeLocation", value); }
+        }
+#else
         public string OfficeLocation {
             get { return BackingStore?.Get<string>("officeLocation"); }
             set { BackingStore?.Set("officeLocation", value); }
         }
+#endif
         /// <summary>The postal code.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PostalCode {
+            get { return BackingStore?.Get<string?>("postalCode"); }
+            set { BackingStore?.Set("postalCode", value); }
+        }
+#else
         public string PostalCode {
             get { return BackingStore?.Get<string>("postalCode"); }
             set { BackingStore?.Set("postalCode", value); }
         }
+#endif
         /// <summary>The state.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? State {
+            get { return BackingStore?.Get<string?>("state"); }
+            set { BackingStore?.Set("state", value); }
+        }
+#else
         public string State {
             get { return BackingStore?.Get<string>("state"); }
             set { BackingStore?.Set("state", value); }
         }
+#endif
         /// <summary>The street.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Street {
+            get { return BackingStore?.Get<string?>("street"); }
+            set { BackingStore?.Set("street", value); }
+        }
+#else
         public string Street {
             get { return BackingStore?.Get<string>("street"); }
             set { BackingStore?.Set("street", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new physicalOfficeAddress and sets the default values.
         /// </summary>

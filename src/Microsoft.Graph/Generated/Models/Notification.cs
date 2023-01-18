@@ -16,30 +16,58 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("expirationDateTime", value); }
         }
         /// <summary>The name of the group that this notification belongs to. It is set by the developer for the purpose of grouping notifications together.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? GroupName {
+            get { return BackingStore?.Get<string?>("groupName"); }
+            set { BackingStore?.Set("groupName", value); }
+        }
+#else
         public string GroupName {
             get { return BackingStore?.Get<string>("groupName"); }
             set { BackingStore?.Set("groupName", value); }
         }
+#endif
         /// <summary>The payload property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public PayloadTypes? Payload {
+            get { return BackingStore?.Get<PayloadTypes?>("payload"); }
+            set { BackingStore?.Set("payload", value); }
+        }
+#else
         public PayloadTypes Payload {
             get { return BackingStore?.Get<PayloadTypes>("payload"); }
             set { BackingStore?.Set("payload", value); }
         }
+#endif
         /// <summary>Indicates the priority of a raw user notification. Visual notifications are sent with high priority by default. Valid values are None, High and Low.</summary>
         public Microsoft.Graph.Beta.Models.Priority? Priority {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Priority?>("priority"); }
             set { BackingStore?.Set("priority", value); }
         }
         /// <summary>Represents the host name of the app to which the calling service wants to post the notification, for the given user. If targeting web endpoints (see targetPolicy.platformTypes), ensure that targetHostName is the same as the name used when creating a subscription on the client side within the application JSON property.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TargetHostName {
+            get { return BackingStore?.Get<string?>("targetHostName"); }
+            set { BackingStore?.Set("targetHostName", value); }
+        }
+#else
         public string TargetHostName {
             get { return BackingStore?.Get<string>("targetHostName"); }
             set { BackingStore?.Set("targetHostName", value); }
         }
+#endif
         /// <summary>Target policy object handles notification delivery policy for endpoint types that should be targeted (Windows, iOS, Android and WebPush) for the given user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public TargetPolicyEndpoints? TargetPolicy {
+            get { return BackingStore?.Get<TargetPolicyEndpoints?>("targetPolicy"); }
+            set { BackingStore?.Set("targetPolicy", value); }
+        }
+#else
         public TargetPolicyEndpoints TargetPolicy {
             get { return BackingStore?.Get<TargetPolicyEndpoints>("targetPolicy"); }
             set { BackingStore?.Set("targetPolicy", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

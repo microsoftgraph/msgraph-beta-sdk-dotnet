@@ -12,47 +12,96 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The app the link is associated with.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Identity? Application {
+            get { return BackingStore?.Get<Identity?>("application"); }
+            set { BackingStore?.Set("application", value); }
+        }
+#else
         public Identity Application {
             get { return BackingStore?.Get<Identity>("application"); }
             set { BackingStore?.Set("application", value); }
         }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The configuratorUrl property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ConfiguratorUrl {
+            get { return BackingStore?.Get<string?>("configuratorUrl"); }
+            set { BackingStore?.Set("configuratorUrl", value); }
+        }
+#else
         public string ConfiguratorUrl {
             get { return BackingStore?.Get<string>("configuratorUrl"); }
             set { BackingStore?.Set("configuratorUrl", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>If true then the user can only use this link to view the item on the web, and cannot use it to download the contents of the item. Only for OneDrive for Business and SharePoint.</summary>
         public bool? PreventsDownload {
             get { return BackingStore?.Get<bool?>("preventsDownload"); }
             set { BackingStore?.Set("preventsDownload", value); }
         }
         /// <summary>The scope of the link represented by this permission. Value anonymous indicates the link is usable by anyone, organization indicates the link is only usable for users signed into the same tenant.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Scope {
+            get { return BackingStore?.Get<string?>("scope"); }
+            set { BackingStore?.Set("scope", value); }
+        }
+#else
         public string Scope {
             get { return BackingStore?.Get<string>("scope"); }
             set { BackingStore?.Set("scope", value); }
         }
+#endif
         /// <summary>The type of the link created.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Type {
+            get { return BackingStore?.Get<string?>("type"); }
+            set { BackingStore?.Set("type", value); }
+        }
+#else
         public string Type {
             get { return BackingStore?.Get<string>("type"); }
             set { BackingStore?.Set("type", value); }
         }
+#endif
         /// <summary>For embed links, this property contains the HTML code for an &lt;iframe&gt; element that will embed the item in a webpage.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? WebHtml {
+            get { return BackingStore?.Get<string?>("webHtml"); }
+            set { BackingStore?.Set("webHtml", value); }
+        }
+#else
         public string WebHtml {
             get { return BackingStore?.Get<string>("webHtml"); }
             set { BackingStore?.Set("webHtml", value); }
         }
+#endif
         /// <summary>A URL that opens the item in the browser on the OneDrive website.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? WebUrl {
+            get { return BackingStore?.Get<string?>("webUrl"); }
+            set { BackingStore?.Set("webUrl", value); }
+        }
+#else
         public string WebUrl {
             get { return BackingStore?.Get<string>("webUrl"); }
             set { BackingStore?.Set("webUrl", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new sharingLink and sets the default values.
         /// </summary>

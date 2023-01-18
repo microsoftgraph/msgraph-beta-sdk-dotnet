@@ -9,20 +9,41 @@ namespace Microsoft.Graph.Beta.Models {
     /// </summary>
     public class DeviceManagementTemplate : Entity, IParsable {
         /// <summary>Collection of setting categories within the template</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DeviceManagementTemplateSettingCategory>? Categories {
+            get { return BackingStore?.Get<List<DeviceManagementTemplateSettingCategory>?>("categories"); }
+            set { BackingStore?.Set("categories", value); }
+        }
+#else
         public List<DeviceManagementTemplateSettingCategory> Categories {
             get { return BackingStore?.Get<List<DeviceManagementTemplateSettingCategory>>("categories"); }
             set { BackingStore?.Set("categories", value); }
         }
+#endif
         /// <summary>The template&apos;s description</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>The template&apos;s display name</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>Number of Intents created from this template.</summary>
         public int? IntentCount {
             get { return BackingStore?.Get<int?>("intentCount"); }
@@ -34,10 +55,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("isDeprecated", value); }
         }
         /// <summary>Collection of templates this template can migrate to</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DeviceManagementTemplate>? MigratableTo {
+            get { return BackingStore?.Get<List<DeviceManagementTemplate>?>("migratableTo"); }
+            set { BackingStore?.Set("migratableTo", value); }
+        }
+#else
         public List<DeviceManagementTemplate> MigratableTo {
             get { return BackingStore?.Get<List<DeviceManagementTemplate>>("migratableTo"); }
             set { BackingStore?.Set("migratableTo", value); }
         }
+#endif
         /// <summary>Supported platform types for policies.</summary>
         public PolicyPlatformType? PlatformType {
             get { return BackingStore?.Get<PolicyPlatformType?>("platformType"); }
@@ -49,10 +77,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("publishedDateTime", value); }
         }
         /// <summary>Collection of all settings this template has</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DeviceManagementSettingInstance>? Settings {
+            get { return BackingStore?.Get<List<DeviceManagementSettingInstance>?>("settings"); }
+            set { BackingStore?.Set("settings", value); }
+        }
+#else
         public List<DeviceManagementSettingInstance> Settings {
             get { return BackingStore?.Get<List<DeviceManagementSettingInstance>>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
+#endif
         /// <summary>Template subtype</summary>
         public DeviceManagementTemplateSubtype? TemplateSubtype {
             get { return BackingStore?.Get<DeviceManagementTemplateSubtype?>("templateSubtype"); }
@@ -64,10 +99,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("templateType", value); }
         }
         /// <summary>The template&apos;s version information</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? VersionInfo {
+            get { return BackingStore?.Get<string?>("versionInfo"); }
+            set { BackingStore?.Set("versionInfo", value); }
+        }
+#else
         public string VersionInfo {
             get { return BackingStore?.Get<string>("versionInfo"); }
             set { BackingStore?.Set("versionInfo", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

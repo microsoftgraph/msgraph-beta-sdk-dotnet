@@ -14,20 +14,41 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Device compliance script Id.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeviceComplianceScriptId {
+            get { return BackingStore?.Get<string?>("deviceComplianceScriptId"); }
+            set { BackingStore?.Set("deviceComplianceScriptId", value); }
+        }
+#else
         public string DeviceComplianceScriptId {
             get { return BackingStore?.Get<string>("deviceComplianceScriptId"); }
             set { BackingStore?.Set("deviceComplianceScriptId", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Json of the rules.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public byte[]? RulesContent {
+            get { return BackingStore?.Get<byte[]?>("rulesContent"); }
+            set { BackingStore?.Set("rulesContent", value); }
+        }
+#else
         public byte[] RulesContent {
             get { return BackingStore?.Get<byte[]>("rulesContent"); }
             set { BackingStore?.Set("rulesContent", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new deviceCompliancePolicyScript and sets the default values.
         /// </summary>

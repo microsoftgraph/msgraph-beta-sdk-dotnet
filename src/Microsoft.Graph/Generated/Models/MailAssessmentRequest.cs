@@ -11,15 +11,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("destinationRoutingReason", value); }
         }
         /// <summary>The resource URI of the mail message for assessment.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MessageUri {
+            get { return BackingStore?.Get<string?>("messageUri"); }
+            set { BackingStore?.Set("messageUri", value); }
+        }
+#else
         public string MessageUri {
             get { return BackingStore?.Get<string>("messageUri"); }
             set { BackingStore?.Set("messageUri", value); }
         }
+#endif
         /// <summary>The mail recipient whose policies are used to assess the mail.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? RecipientEmail {
+            get { return BackingStore?.Get<string?>("recipientEmail"); }
+            set { BackingStore?.Set("recipientEmail", value); }
+        }
+#else
         public string RecipientEmail {
             get { return BackingStore?.Get<string>("recipientEmail"); }
             set { BackingStore?.Set("recipientEmail", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new MailAssessmentRequest and sets the default values.
         /// </summary>

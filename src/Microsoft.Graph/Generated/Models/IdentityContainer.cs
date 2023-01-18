@@ -12,62 +12,139 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Represents entry point for API connectors.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<IdentityApiConnector>? ApiConnectors {
+            get { return BackingStore?.Get<List<IdentityApiConnector>?>("apiConnectors"); }
+            set { BackingStore?.Set("apiConnectors", value); }
+        }
+#else
         public List<IdentityApiConnector> ApiConnectors {
             get { return BackingStore?.Get<List<IdentityApiConnector>>("apiConnectors"); }
             set { BackingStore?.Set("apiConnectors", value); }
         }
+#endif
         /// <summary>The authenticationEventListeners property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AuthenticationEventListener>? AuthenticationEventListeners {
+            get { return BackingStore?.Get<List<AuthenticationEventListener>?>("authenticationEventListeners"); }
+            set { BackingStore?.Set("authenticationEventListeners", value); }
+        }
+#else
         public List<AuthenticationEventListener> AuthenticationEventListeners {
             get { return BackingStore?.Get<List<AuthenticationEventListener>>("authenticationEventListeners"); }
             set { BackingStore?.Set("authenticationEventListeners", value); }
         }
+#endif
         /// <summary>Represents entry point for B2C identity userflows.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<B2cIdentityUserFlow>? B2cUserFlows {
+            get { return BackingStore?.Get<List<B2cIdentityUserFlow>?>("b2cUserFlows"); }
+            set { BackingStore?.Set("b2cUserFlows", value); }
+        }
+#else
         public List<B2cIdentityUserFlow> B2cUserFlows {
             get { return BackingStore?.Get<List<B2cIdentityUserFlow>>("b2cUserFlows"); }
             set { BackingStore?.Set("b2cUserFlows", value); }
         }
+#endif
         /// <summary>Represents entry point for B2X and self-service sign-up identity userflows.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<B2xIdentityUserFlow>? B2xUserFlows {
+            get { return BackingStore?.Get<List<B2xIdentityUserFlow>?>("b2xUserFlows"); }
+            set { BackingStore?.Set("b2xUserFlows", value); }
+        }
+#else
         public List<B2xIdentityUserFlow> B2xUserFlows {
             get { return BackingStore?.Get<List<B2xIdentityUserFlow>>("b2xUserFlows"); }
             set { BackingStore?.Set("b2xUserFlows", value); }
         }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>the entry point for the Conditional Access (CA) object model.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ConditionalAccessRoot? ConditionalAccess {
+            get { return BackingStore?.Get<ConditionalAccessRoot?>("conditionalAccess"); }
+            set { BackingStore?.Set("conditionalAccess", value); }
+        }
+#else
         public ConditionalAccessRoot ConditionalAccess {
             get { return BackingStore?.Get<ConditionalAccessRoot>("conditionalAccess"); }
             set { BackingStore?.Set("conditionalAccess", value); }
         }
+#endif
         /// <summary>Represents entry point for continuous access evaluation policy.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.ContinuousAccessEvaluationPolicy? ContinuousAccessEvaluationPolicy {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ContinuousAccessEvaluationPolicy?>("continuousAccessEvaluationPolicy"); }
+            set { BackingStore?.Set("continuousAccessEvaluationPolicy", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.ContinuousAccessEvaluationPolicy ContinuousAccessEvaluationPolicy {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ContinuousAccessEvaluationPolicy>("continuousAccessEvaluationPolicy"); }
             set { BackingStore?.Set("continuousAccessEvaluationPolicy", value); }
         }
+#endif
         /// <summary>The customAuthenticationExtensions property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<CustomAuthenticationExtension>? CustomAuthenticationExtensions {
+            get { return BackingStore?.Get<List<CustomAuthenticationExtension>?>("customAuthenticationExtensions"); }
+            set { BackingStore?.Set("customAuthenticationExtensions", value); }
+        }
+#else
         public List<CustomAuthenticationExtension> CustomAuthenticationExtensions {
             get { return BackingStore?.Get<List<CustomAuthenticationExtension>>("customAuthenticationExtensions"); }
             set { BackingStore?.Set("customAuthenticationExtensions", value); }
         }
+#endif
         /// <summary>Represents entry point for identity provider base.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<IdentityProviderBase>? IdentityProviders {
+            get { return BackingStore?.Get<List<IdentityProviderBase>?>("identityProviders"); }
+            set { BackingStore?.Set("identityProviders", value); }
+        }
+#else
         public List<IdentityProviderBase> IdentityProviders {
             get { return BackingStore?.Get<List<IdentityProviderBase>>("identityProviders"); }
             set { BackingStore?.Set("identityProviders", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Represents entry point for identity userflow attributes.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<IdentityUserFlowAttribute>? UserFlowAttributes {
+            get { return BackingStore?.Get<List<IdentityUserFlowAttribute>?>("userFlowAttributes"); }
+            set { BackingStore?.Set("userFlowAttributes", value); }
+        }
+#else
         public List<IdentityUserFlowAttribute> UserFlowAttributes {
             get { return BackingStore?.Get<List<IdentityUserFlowAttribute>>("userFlowAttributes"); }
             set { BackingStore?.Set("userFlowAttributes", value); }
         }
+#endif
         /// <summary>The userFlows property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<IdentityUserFlow>? UserFlows {
+            get { return BackingStore?.Get<List<IdentityUserFlow>?>("userFlows"); }
+            set { BackingStore?.Set("userFlows", value); }
+        }
+#else
         public List<IdentityUserFlow> UserFlows {
             get { return BackingStore?.Get<List<IdentityUserFlow>>("userFlows"); }
             set { BackingStore?.Set("userFlows", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new IdentityContainer and sets the default values.
         /// </summary>

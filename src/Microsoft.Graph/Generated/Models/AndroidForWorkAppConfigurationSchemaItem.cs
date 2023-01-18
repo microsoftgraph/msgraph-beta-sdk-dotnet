@@ -32,40 +32,89 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("defaultIntValue", value); }
         }
         /// <summary>Default value for string array type items, if specified by the app developer</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? DefaultStringArrayValue {
+            get { return BackingStore?.Get<List<string>?>("defaultStringArrayValue"); }
+            set { BackingStore?.Set("defaultStringArrayValue", value); }
+        }
+#else
         public List<string> DefaultStringArrayValue {
             get { return BackingStore?.Get<List<string>>("defaultStringArrayValue"); }
             set { BackingStore?.Set("defaultStringArrayValue", value); }
         }
+#endif
         /// <summary>Default value for string type items, if specified by the app developer</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DefaultStringValue {
+            get { return BackingStore?.Get<string?>("defaultStringValue"); }
+            set { BackingStore?.Set("defaultStringValue", value); }
+        }
+#else
         public string DefaultStringValue {
             get { return BackingStore?.Get<string>("defaultStringValue"); }
             set { BackingStore?.Set("defaultStringValue", value); }
         }
+#endif
         /// <summary>Description of what the item controls within the application</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>Human readable name</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Unique key the application uses to identify the item</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SchemaItemKey {
+            get { return BackingStore?.Get<string?>("schemaItemKey"); }
+            set { BackingStore?.Set("schemaItemKey", value); }
+        }
+#else
         public string SchemaItemKey {
             get { return BackingStore?.Get<string>("schemaItemKey"); }
             set { BackingStore?.Set("schemaItemKey", value); }
         }
+#endif
         /// <summary>List of human readable name/value pairs for the valid values that can be set for this item (Choice and Multiselect items only)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<KeyValuePair>? Selections {
+            get { return BackingStore?.Get<List<KeyValuePair>?>("selections"); }
+            set { BackingStore?.Set("selections", value); }
+        }
+#else
         public List<KeyValuePair> Selections {
             get { return BackingStore?.Get<List<KeyValuePair>>("selections"); }
             set { BackingStore?.Set("selections", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new androidForWorkAppConfigurationSchemaItem and sets the default values.
         /// </summary>

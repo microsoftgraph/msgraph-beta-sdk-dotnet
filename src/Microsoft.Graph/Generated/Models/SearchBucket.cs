@@ -12,10 +12,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>A token containing the encoded filter to aggregate search matches by the specific key value. To use the filter, pass the token as part of the aggregationFilter property in a searchRequest object, in the format &apos;{field}:/&apos;{aggregationFilterToken}/&apos;&apos;. See an example.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AggregationFilterToken {
+            get { return BackingStore?.Get<string?>("aggregationFilterToken"); }
+            set { BackingStore?.Set("aggregationFilterToken", value); }
+        }
+#else
         public string AggregationFilterToken {
             get { return BackingStore?.Get<string>("aggregationFilterToken"); }
             set { BackingStore?.Set("aggregationFilterToken", value); }
         }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The approximate number of search matches that share the same value specified in the key property. Note that this number is not the exact number of matches.</summary>
@@ -24,15 +31,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("count", value); }
         }
         /// <summary>The discrete value of the field that an aggregation was computed on.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Key {
+            get { return BackingStore?.Get<string?>("key"); }
+            set { BackingStore?.Set("key", value); }
+        }
+#else
         public string Key {
             get { return BackingStore?.Get<string>("key"); }
             set { BackingStore?.Set("key", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new searchBucket and sets the default values.
         /// </summary>

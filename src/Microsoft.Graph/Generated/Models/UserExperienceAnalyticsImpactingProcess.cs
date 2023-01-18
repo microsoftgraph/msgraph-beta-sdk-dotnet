@@ -4,37 +4,75 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// The user experience analytics top impacting process entity.
+    /// </summary>
     public class UserExperienceAnalyticsImpactingProcess : Entity, IParsable {
         /// <summary>The category of impacting process.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Category {
+            get { return BackingStore?.Get<string?>("category"); }
+            set { BackingStore?.Set("category", value); }
+        }
+#else
         public string Category {
             get { return BackingStore?.Get<string>("category"); }
             set { BackingStore?.Set("category", value); }
         }
+#endif
         /// <summary>The description of process.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>The unique identifier of the impacted device.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeviceId {
+            get { return BackingStore?.Get<string?>("deviceId"); }
+            set { BackingStore?.Set("deviceId", value); }
+        }
+#else
         public string DeviceId {
             get { return BackingStore?.Get<string>("deviceId"); }
             set { BackingStore?.Set("deviceId", value); }
         }
+#endif
         /// <summary>The impact value of the process. Valid values 0 to 1.79769313486232E+308</summary>
         public double? ImpactValue {
             get { return BackingStore?.Get<double?>("impactValue"); }
             set { BackingStore?.Set("impactValue", value); }
         }
         /// <summary>The process name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ProcessName {
+            get { return BackingStore?.Get<string?>("processName"); }
+            set { BackingStore?.Set("processName", value); }
+        }
+#else
         public string ProcessName {
             get { return BackingStore?.Get<string>("processName"); }
             set { BackingStore?.Set("processName", value); }
         }
+#endif
         /// <summary>The publisher of the process.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Publisher {
+            get { return BackingStore?.Get<string?>("publisher"); }
+            set { BackingStore?.Set("publisher", value); }
+        }
+#else
         public string Publisher {
             get { return BackingStore?.Get<string>("publisher"); }
             set { BackingStore?.Set("publisher", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

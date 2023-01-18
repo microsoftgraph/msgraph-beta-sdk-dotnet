@@ -14,25 +14,46 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("intent", value); }
         }
         /// <summary>The settings for target assignment defined by the admin.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public MobileAppAssignmentSettings? Settings {
+            get { return BackingStore?.Get<MobileAppAssignmentSettings?>("settings"); }
+            set { BackingStore?.Set("settings", value); }
+        }
+#else
         public MobileAppAssignmentSettings Settings {
             get { return BackingStore?.Get<MobileAppAssignmentSettings>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
+#endif
         /// <summary>Represents source of assignment.</summary>
         public DeviceAndAppManagementAssignmentSource? Source {
             get { return BackingStore?.Get<DeviceAndAppManagementAssignmentSource?>("source"); }
             set { BackingStore?.Set("source", value); }
         }
         /// <summary>The identifier of the source of the assignment.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SourceId {
+            get { return BackingStore?.Get<string?>("sourceId"); }
+            set { BackingStore?.Set("sourceId", value); }
+        }
+#else
         public string SourceId {
             get { return BackingStore?.Get<string>("sourceId"); }
             set { BackingStore?.Set("sourceId", value); }
         }
+#endif
         /// <summary>The target group assignment defined by the admin.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DeviceAndAppManagementAssignmentTarget? Target {
+            get { return BackingStore?.Get<DeviceAndAppManagementAssignmentTarget?>("target"); }
+            set { BackingStore?.Set("target", value); }
+        }
+#else
         public DeviceAndAppManagementAssignmentTarget Target {
             get { return BackingStore?.Get<DeviceAndAppManagementAssignmentTarget>("target"); }
             set { BackingStore?.Set("target", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

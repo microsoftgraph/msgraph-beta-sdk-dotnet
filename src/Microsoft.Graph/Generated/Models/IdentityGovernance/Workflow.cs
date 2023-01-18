@@ -11,45 +11,87 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
             set { BackingStore?.Set("deletedDateTime", value); }
         }
         /// <summary>The unique identifier of the Azure AD identity that last modified the workflow object.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.User>? ExecutionScope {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.User>?>("executionScope"); }
+            set { BackingStore?.Set("executionScope", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.User> ExecutionScope {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.User>>("executionScope"); }
             set { BackingStore?.Set("executionScope", value); }
         }
+#endif
         /// <summary>Identifier used for individually addressing a specific workflow.Supports $filter(eq, ne) and $orderby.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Id {
+            get { return BackingStore?.Get<string?>("id"); }
+            set { BackingStore?.Set("id", value); }
+        }
+#else
         public string Id {
             get { return BackingStore?.Get<string>("id"); }
             set { BackingStore?.Set("id", value); }
         }
+#endif
         /// <summary>The date time when the workflow is expected to run next based on the schedule interval, if there are any users matching the execution conditions. Supports $filter(lt,gt) and $orderBy.</summary>
         public DateTimeOffset? NextScheduleRunDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("nextScheduleRunDateTime"); }
             set { BackingStore?.Set("nextScheduleRunDateTime", value); }
         }
         /// <summary>The runs property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Run>? Runs {
+            get { return BackingStore?.Get<List<Run>?>("runs"); }
+            set { BackingStore?.Set("runs", value); }
+        }
+#else
         public List<Run> Runs {
             get { return BackingStore?.Get<List<Run>>("runs"); }
             set { BackingStore?.Set("runs", value); }
         }
+#endif
         /// <summary>Represents the aggregation of task execution data for tasks within a workflow object.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<TaskReport>? TaskReports {
+            get { return BackingStore?.Get<List<TaskReport>?>("taskReports"); }
+            set { BackingStore?.Set("taskReports", value); }
+        }
+#else
         public List<TaskReport> TaskReports {
             get { return BackingStore?.Get<List<TaskReport>>("taskReports"); }
             set { BackingStore?.Set("taskReports", value); }
         }
+#endif
         /// <summary>The userProcessingResults property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<UserProcessingResult>? UserProcessingResults {
+            get { return BackingStore?.Get<List<UserProcessingResult>?>("userProcessingResults"); }
+            set { BackingStore?.Set("userProcessingResults", value); }
+        }
+#else
         public List<UserProcessingResult> UserProcessingResults {
             get { return BackingStore?.Get<List<UserProcessingResult>>("userProcessingResults"); }
             set { BackingStore?.Set("userProcessingResults", value); }
         }
+#endif
         /// <summary>The current version number of the workflow. Value is 1 when the workflow is first created.Supports $filter(lt, le, gt, ge, eq, ne) and $orderby.</summary>
         public int? Version {
             get { return BackingStore?.Get<int?>("version"); }
             set { BackingStore?.Set("version", value); }
         }
         /// <summary>The workflow versions that are available.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<WorkflowVersion>? Versions {
+            get { return BackingStore?.Get<List<WorkflowVersion>?>("versions"); }
+            set { BackingStore?.Set("versions", value); }
+        }
+#else
         public List<WorkflowVersion> Versions {
             get { return BackingStore?.Get<List<WorkflowVersion>>("versions"); }
             set { BackingStore?.Set("versions", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new Workflow and sets the default values.
         /// </summary>

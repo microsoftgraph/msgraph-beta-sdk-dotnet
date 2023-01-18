@@ -14,10 +14,17 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsAutopilotDeploymentProfil
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The deviceIds property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? DeviceIds {
+            get { return BackingStore?.Get<List<string>?>("deviceIds"); }
+            set { BackingStore?.Set("deviceIds", value); }
+        }
+#else
         public List<string> DeviceIds {
             get { return BackingStore?.Get<List<string>>("deviceIds"); }
             set { BackingStore?.Set("deviceIds", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new assignPostRequestBody and sets the default values.
         /// </summary>

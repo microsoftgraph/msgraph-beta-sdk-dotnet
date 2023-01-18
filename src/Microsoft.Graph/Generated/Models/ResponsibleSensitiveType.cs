@@ -14,40 +14,89 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The description property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>The id property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Id {
+            get { return BackingStore?.Get<string?>("id"); }
+            set { BackingStore?.Set("id", value); }
+        }
+#else
         public string Id {
             get { return BackingStore?.Get<string>("id"); }
             set { BackingStore?.Set("id", value); }
         }
+#endif
         /// <summary>The name property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Name {
+            get { return BackingStore?.Get<string?>("name"); }
+            set { BackingStore?.Set("name", value); }
+        }
+#else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The publisherName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PublisherName {
+            get { return BackingStore?.Get<string?>("publisherName"); }
+            set { BackingStore?.Set("publisherName", value); }
+        }
+#else
         public string PublisherName {
             get { return BackingStore?.Get<string>("publisherName"); }
             set { BackingStore?.Set("publisherName", value); }
         }
+#endif
         /// <summary>The rulePackageId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? RulePackageId {
+            get { return BackingStore?.Get<string?>("rulePackageId"); }
+            set { BackingStore?.Set("rulePackageId", value); }
+        }
+#else
         public string RulePackageId {
             get { return BackingStore?.Get<string>("rulePackageId"); }
             set { BackingStore?.Set("rulePackageId", value); }
         }
+#endif
         /// <summary>The rulePackageType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? RulePackageType {
+            get { return BackingStore?.Get<string?>("rulePackageType"); }
+            set { BackingStore?.Set("rulePackageType", value); }
+        }
+#else
         public string RulePackageType {
             get { return BackingStore?.Get<string>("rulePackageType"); }
             set { BackingStore?.Set("rulePackageType", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new responsibleSensitiveType and sets the default values.
         /// </summary>

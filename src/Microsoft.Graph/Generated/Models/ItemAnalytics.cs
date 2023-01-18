@@ -6,20 +6,41 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class ItemAnalytics : Entity, IParsable {
         /// <summary>The allTime property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ItemActivityStat? AllTime {
+            get { return BackingStore?.Get<ItemActivityStat?>("allTime"); }
+            set { BackingStore?.Set("allTime", value); }
+        }
+#else
         public ItemActivityStat AllTime {
             get { return BackingStore?.Get<ItemActivityStat>("allTime"); }
             set { BackingStore?.Set("allTime", value); }
         }
+#endif
         /// <summary>The itemActivityStats property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ItemActivityStat>? ItemActivityStats {
+            get { return BackingStore?.Get<List<ItemActivityStat>?>("itemActivityStats"); }
+            set { BackingStore?.Set("itemActivityStats", value); }
+        }
+#else
         public List<ItemActivityStat> ItemActivityStats {
             get { return BackingStore?.Get<List<ItemActivityStat>>("itemActivityStats"); }
             set { BackingStore?.Set("itemActivityStats", value); }
         }
+#endif
         /// <summary>The lastSevenDays property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ItemActivityStat? LastSevenDays {
+            get { return BackingStore?.Get<ItemActivityStat?>("lastSevenDays"); }
+            set { BackingStore?.Set("lastSevenDays", value); }
+        }
+#else
         public ItemActivityStat LastSevenDays {
             get { return BackingStore?.Get<ItemActivityStat>("lastSevenDays"); }
             set { BackingStore?.Set("lastSevenDays", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

@@ -6,75 +6,173 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class EducationSchool : EducationOrganization, IParsable {
         /// <summary>Address of the school.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public PhysicalAddress? Address {
+            get { return BackingStore?.Get<PhysicalAddress?>("address"); }
+            set { BackingStore?.Set("address", value); }
+        }
+#else
         public PhysicalAddress Address {
             get { return BackingStore?.Get<PhysicalAddress>("address"); }
             set { BackingStore?.Set("address", value); }
         }
+#endif
         /// <summary>The administrativeUnit property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.AdministrativeUnit? AdministrativeUnit {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AdministrativeUnit?>("administrativeUnit"); }
+            set { BackingStore?.Set("administrativeUnit", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.AdministrativeUnit AdministrativeUnit {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AdministrativeUnit>("administrativeUnit"); }
             set { BackingStore?.Set("administrativeUnit", value); }
         }
+#endif
         /// <summary>Classes taught at the school. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<EducationClass>? Classes {
+            get { return BackingStore?.Get<List<EducationClass>?>("classes"); }
+            set { BackingStore?.Set("classes", value); }
+        }
+#else
         public List<EducationClass> Classes {
             get { return BackingStore?.Get<List<EducationClass>>("classes"); }
             set { BackingStore?.Set("classes", value); }
         }
+#endif
         /// <summary>Entity who created the school.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public IdentitySet? CreatedBy {
+            get { return BackingStore?.Get<IdentitySet?>("createdBy"); }
+            set { BackingStore?.Set("createdBy", value); }
+        }
+#else
         public IdentitySet CreatedBy {
             get { return BackingStore?.Get<IdentitySet>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
+#endif
         /// <summary>ID of school in syncing system.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ExternalId {
+            get { return BackingStore?.Get<string?>("externalId"); }
+            set { BackingStore?.Set("externalId", value); }
+        }
+#else
         public string ExternalId {
             get { return BackingStore?.Get<string>("externalId"); }
             set { BackingStore?.Set("externalId", value); }
         }
+#endif
         /// <summary>ID of principal in syncing system.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ExternalPrincipalId {
+            get { return BackingStore?.Get<string?>("externalPrincipalId"); }
+            set { BackingStore?.Set("externalPrincipalId", value); }
+        }
+#else
         public string ExternalPrincipalId {
             get { return BackingStore?.Get<string>("externalPrincipalId"); }
             set { BackingStore?.Set("externalPrincipalId", value); }
         }
+#endif
         /// <summary>The fax property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Fax {
+            get { return BackingStore?.Get<string?>("fax"); }
+            set { BackingStore?.Set("fax", value); }
+        }
+#else
         public string Fax {
             get { return BackingStore?.Get<string>("fax"); }
             set { BackingStore?.Set("fax", value); }
         }
+#endif
         /// <summary>Highest grade taught.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? HighestGrade {
+            get { return BackingStore?.Get<string?>("highestGrade"); }
+            set { BackingStore?.Set("highestGrade", value); }
+        }
+#else
         public string HighestGrade {
             get { return BackingStore?.Get<string>("highestGrade"); }
             set { BackingStore?.Set("highestGrade", value); }
         }
+#endif
         /// <summary>Lowest grade taught.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? LowestGrade {
+            get { return BackingStore?.Get<string?>("lowestGrade"); }
+            set { BackingStore?.Set("lowestGrade", value); }
+        }
+#else
         public string LowestGrade {
             get { return BackingStore?.Get<string>("lowestGrade"); }
             set { BackingStore?.Set("lowestGrade", value); }
         }
+#endif
         /// <summary>Phone number of school.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Phone {
+            get { return BackingStore?.Get<string?>("phone"); }
+            set { BackingStore?.Set("phone", value); }
+        }
+#else
         public string Phone {
             get { return BackingStore?.Get<string>("phone"); }
             set { BackingStore?.Set("phone", value); }
         }
+#endif
         /// <summary>Email address of the principal.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PrincipalEmail {
+            get { return BackingStore?.Get<string?>("principalEmail"); }
+            set { BackingStore?.Set("principalEmail", value); }
+        }
+#else
         public string PrincipalEmail {
             get { return BackingStore?.Get<string>("principalEmail"); }
             set { BackingStore?.Set("principalEmail", value); }
         }
+#endif
         /// <summary>Name of the principal.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PrincipalName {
+            get { return BackingStore?.Get<string?>("principalName"); }
+            set { BackingStore?.Set("principalName", value); }
+        }
+#else
         public string PrincipalName {
             get { return BackingStore?.Get<string>("principalName"); }
             set { BackingStore?.Set("principalName", value); }
         }
+#endif
         /// <summary>School Number.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SchoolNumber {
+            get { return BackingStore?.Get<string?>("schoolNumber"); }
+            set { BackingStore?.Set("schoolNumber", value); }
+        }
+#else
         public string SchoolNumber {
             get { return BackingStore?.Get<string>("schoolNumber"); }
             set { BackingStore?.Set("schoolNumber", value); }
         }
+#endif
         /// <summary>Users in the school. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<EducationUser>? Users {
+            get { return BackingStore?.Get<List<EducationUser>?>("users"); }
+            set { BackingStore?.Set("users", value); }
+        }
+#else
         public List<EducationUser> Users {
             get { return BackingStore?.Get<List<EducationUser>>("users"); }
             set { BackingStore?.Set("users", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new EducationSchool and sets the default values.
         /// </summary>

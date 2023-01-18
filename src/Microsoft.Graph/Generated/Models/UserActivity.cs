@@ -6,35 +6,77 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class UserActivity : Entity, IParsable {
         /// <summary>The activationUrl property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ActivationUrl {
+            get { return BackingStore?.Get<string?>("activationUrl"); }
+            set { BackingStore?.Set("activationUrl", value); }
+        }
+#else
         public string ActivationUrl {
             get { return BackingStore?.Get<string>("activationUrl"); }
             set { BackingStore?.Set("activationUrl", value); }
         }
+#endif
         /// <summary>The activitySourceHost property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ActivitySourceHost {
+            get { return BackingStore?.Get<string?>("activitySourceHost"); }
+            set { BackingStore?.Set("activitySourceHost", value); }
+        }
+#else
         public string ActivitySourceHost {
             get { return BackingStore?.Get<string>("activitySourceHost"); }
             set { BackingStore?.Set("activitySourceHost", value); }
         }
+#endif
         /// <summary>The appActivityId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AppActivityId {
+            get { return BackingStore?.Get<string?>("appActivityId"); }
+            set { BackingStore?.Set("appActivityId", value); }
+        }
+#else
         public string AppActivityId {
             get { return BackingStore?.Get<string>("appActivityId"); }
             set { BackingStore?.Set("appActivityId", value); }
         }
+#endif
         /// <summary>The appDisplayName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AppDisplayName {
+            get { return BackingStore?.Get<string?>("appDisplayName"); }
+            set { BackingStore?.Set("appDisplayName", value); }
+        }
+#else
         public string AppDisplayName {
             get { return BackingStore?.Get<string>("appDisplayName"); }
             set { BackingStore?.Set("appDisplayName", value); }
         }
+#endif
         /// <summary>The contentInfo property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Json? ContentInfo {
+            get { return BackingStore?.Get<Json?>("contentInfo"); }
+            set { BackingStore?.Set("contentInfo", value); }
+        }
+#else
         public Json ContentInfo {
             get { return BackingStore?.Get<Json>("contentInfo"); }
             set { BackingStore?.Set("contentInfo", value); }
         }
+#endif
         /// <summary>The contentUrl property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ContentUrl {
+            get { return BackingStore?.Get<string?>("contentUrl"); }
+            set { BackingStore?.Set("contentUrl", value); }
+        }
+#else
         public string ContentUrl {
             get { return BackingStore?.Get<string>("contentUrl"); }
             set { BackingStore?.Set("contentUrl", value); }
         }
+#endif
         /// <summary>The createdDateTime property</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
@@ -46,15 +88,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("expirationDateTime", value); }
         }
         /// <summary>The fallbackUrl property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? FallbackUrl {
+            get { return BackingStore?.Get<string?>("fallbackUrl"); }
+            set { BackingStore?.Set("fallbackUrl", value); }
+        }
+#else
         public string FallbackUrl {
             get { return BackingStore?.Get<string>("fallbackUrl"); }
             set { BackingStore?.Set("fallbackUrl", value); }
         }
+#endif
         /// <summary>The historyItems property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ActivityHistoryItem>? HistoryItems {
+            get { return BackingStore?.Get<List<ActivityHistoryItem>?>("historyItems"); }
+            set { BackingStore?.Set("historyItems", value); }
+        }
+#else
         public List<ActivityHistoryItem> HistoryItems {
             get { return BackingStore?.Get<List<ActivityHistoryItem>>("historyItems"); }
             set { BackingStore?.Set("historyItems", value); }
         }
+#endif
         /// <summary>The lastModifiedDateTime property</summary>
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
@@ -66,15 +122,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>The userTimezone property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UserTimezone {
+            get { return BackingStore?.Get<string?>("userTimezone"); }
+            set { BackingStore?.Set("userTimezone", value); }
+        }
+#else
         public string UserTimezone {
             get { return BackingStore?.Get<string>("userTimezone"); }
             set { BackingStore?.Set("userTimezone", value); }
         }
+#endif
         /// <summary>The visualElements property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public VisualInfo? VisualElements {
+            get { return BackingStore?.Get<VisualInfo?>("visualElements"); }
+            set { BackingStore?.Set("visualElements", value); }
+        }
+#else
         public VisualInfo VisualElements {
             get { return BackingStore?.Get<VisualInfo>("visualElements"); }
             set { BackingStore?.Set("visualElements", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

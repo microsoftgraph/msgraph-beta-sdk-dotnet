@@ -14,10 +14,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("allowRedirect", value); }
         }
         /// <summary>The comment for the site.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Comment {
+            get { return BackingStore?.Get<string?>("comment"); }
+            set { BackingStore?.Set("comment", value); }
+        }
+#else
         public string Comment {
             get { return BackingStore?.Get<string>("comment"); }
             set { BackingStore?.Set("comment", value); }
         }
+#endif
         /// <summary>The compatibilityMode property</summary>
         public BrowserSiteCompatibilityMode? CompatibilityMode {
             get { return BackingStore?.Get<BrowserSiteCompatibilityMode?>("compatibilityMode"); }
@@ -34,15 +41,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("deletedDateTime", value); }
         }
         /// <summary>The history of modifications applied to the site.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<BrowserSiteHistory>? History {
+            get { return BackingStore?.Get<List<BrowserSiteHistory>?>("history"); }
+            set { BackingStore?.Set("history", value); }
+        }
+#else
         public List<BrowserSiteHistory> History {
             get { return BackingStore?.Get<List<BrowserSiteHistory>>("history"); }
             set { BackingStore?.Set("history", value); }
         }
+#endif
         /// <summary>The user who last modified the site.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public IdentitySet? LastModifiedBy {
+            get { return BackingStore?.Get<IdentitySet?>("lastModifiedBy"); }
+            set { BackingStore?.Set("lastModifiedBy", value); }
+        }
+#else
         public IdentitySet LastModifiedBy {
             get { return BackingStore?.Get<IdentitySet>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
+#endif
         /// <summary>The date and time when the site was last modified.</summary>
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
@@ -64,10 +85,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("targetEnvironment", value); }
         }
         /// <summary>The URL of the site.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? WebUrl {
+            get { return BackingStore?.Get<string?>("webUrl"); }
+            set { BackingStore?.Set("webUrl", value); }
+        }
+#else
         public string WebUrl {
             get { return BackingStore?.Get<string>("webUrl"); }
             set { BackingStore?.Set("webUrl", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

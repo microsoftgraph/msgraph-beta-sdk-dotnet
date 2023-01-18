@@ -46,10 +46,17 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
             set { BackingStore?.Set("successfulUsersCount", value); }
         }
         /// <summary>The related taskProcessingResults.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<TaskProcessingResult>? TaskProcessingResults {
+            get { return BackingStore?.Get<List<TaskProcessingResult>?>("taskProcessingResults"); }
+            set { BackingStore?.Set("taskProcessingResults", value); }
+        }
+#else
         public List<TaskProcessingResult> TaskProcessingResults {
             get { return BackingStore?.Get<List<TaskProcessingResult>>("taskProcessingResults"); }
             set { BackingStore?.Set("taskProcessingResults", value); }
         }
+#endif
         /// <summary>The totalTasksCount property</summary>
         public int? TotalTasksCount {
             get { return BackingStore?.Get<int?>("totalTasksCount"); }
@@ -66,10 +73,17 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
             set { BackingStore?.Set("totalUsersCount", value); }
         }
         /// <summary>The associated individual user execution.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<UserProcessingResult>? UserProcessingResults {
+            get { return BackingStore?.Get<List<UserProcessingResult>?>("userProcessingResults"); }
+            set { BackingStore?.Set("userProcessingResults", value); }
+        }
+#else
         public List<UserProcessingResult> UserProcessingResults {
             get { return BackingStore?.Get<List<UserProcessingResult>>("userProcessingResults"); }
             set { BackingStore?.Set("userProcessingResults", value); }
         }
+#endif
         /// <summary>The workflowExecutionType property</summary>
         public Microsoft.Graph.Beta.Models.IdentityGovernance.WorkflowExecutionType? WorkflowExecutionType {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentityGovernance.WorkflowExecutionType?>("workflowExecutionType"); }

@@ -6,40 +6,82 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class CrossTenantAccessPolicyConfigurationDefault : Entity, IParsable {
         /// <summary>Defines your default configuration for users from other organizations accessing your resources via Azure AD B2B collaboration.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public CrossTenantAccessPolicyB2BSetting? B2bCollaborationInbound {
+            get { return BackingStore?.Get<CrossTenantAccessPolicyB2BSetting?>("b2bCollaborationInbound"); }
+            set { BackingStore?.Set("b2bCollaborationInbound", value); }
+        }
+#else
         public CrossTenantAccessPolicyB2BSetting B2bCollaborationInbound {
             get { return BackingStore?.Get<CrossTenantAccessPolicyB2BSetting>("b2bCollaborationInbound"); }
             set { BackingStore?.Set("b2bCollaborationInbound", value); }
         }
+#endif
         /// <summary>Defines your default configuration for users in your organization going outbound to access resources in another organization via Azure AD B2B collaboration.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public CrossTenantAccessPolicyB2BSetting? B2bCollaborationOutbound {
+            get { return BackingStore?.Get<CrossTenantAccessPolicyB2BSetting?>("b2bCollaborationOutbound"); }
+            set { BackingStore?.Set("b2bCollaborationOutbound", value); }
+        }
+#else
         public CrossTenantAccessPolicyB2BSetting B2bCollaborationOutbound {
             get { return BackingStore?.Get<CrossTenantAccessPolicyB2BSetting>("b2bCollaborationOutbound"); }
             set { BackingStore?.Set("b2bCollaborationOutbound", value); }
         }
+#endif
         /// <summary>Defines your default configuration for users from other organizations accessing your resources via Azure AD B2B direct connect.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public CrossTenantAccessPolicyB2BSetting? B2bDirectConnectInbound {
+            get { return BackingStore?.Get<CrossTenantAccessPolicyB2BSetting?>("b2bDirectConnectInbound"); }
+            set { BackingStore?.Set("b2bDirectConnectInbound", value); }
+        }
+#else
         public CrossTenantAccessPolicyB2BSetting B2bDirectConnectInbound {
             get { return BackingStore?.Get<CrossTenantAccessPolicyB2BSetting>("b2bDirectConnectInbound"); }
             set { BackingStore?.Set("b2bDirectConnectInbound", value); }
         }
+#endif
         /// <summary>Defines your default configuration for users in your organization going outbound to access resources in another organization via Azure AD B2B direct connect.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public CrossTenantAccessPolicyB2BSetting? B2bDirectConnectOutbound {
+            get { return BackingStore?.Get<CrossTenantAccessPolicyB2BSetting?>("b2bDirectConnectOutbound"); }
+            set { BackingStore?.Set("b2bDirectConnectOutbound", value); }
+        }
+#else
         public CrossTenantAccessPolicyB2BSetting B2bDirectConnectOutbound {
             get { return BackingStore?.Get<CrossTenantAccessPolicyB2BSetting>("b2bDirectConnectOutbound"); }
             set { BackingStore?.Set("b2bDirectConnectOutbound", value); }
         }
+#endif
         /// <summary>Determines the default configuration for trusting other Conditional Access claims from external Azure AD organizations.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public CrossTenantAccessPolicyInboundTrust? InboundTrust {
+            get { return BackingStore?.Get<CrossTenantAccessPolicyInboundTrust?>("inboundTrust"); }
+            set { BackingStore?.Set("inboundTrust", value); }
+        }
+#else
         public CrossTenantAccessPolicyInboundTrust InboundTrust {
             get { return BackingStore?.Get<CrossTenantAccessPolicyInboundTrust>("inboundTrust"); }
             set { BackingStore?.Set("inboundTrust", value); }
         }
+#endif
         /// <summary>If true, the default configuration is set to the system default configuration. If false, the default settings have been customized.</summary>
         public bool? IsServiceDefault {
             get { return BackingStore?.Get<bool?>("isServiceDefault"); }
             set { BackingStore?.Set("isServiceDefault", value); }
         }
         /// <summary>The tenantRestrictions property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public CrossTenantAccessPolicyTenantRestrictions? TenantRestrictions {
+            get { return BackingStore?.Get<CrossTenantAccessPolicyTenantRestrictions?>("tenantRestrictions"); }
+            set { BackingStore?.Set("tenantRestrictions", value); }
+        }
+#else
         public CrossTenantAccessPolicyTenantRestrictions TenantRestrictions {
             get { return BackingStore?.Get<CrossTenantAccessPolicyTenantRestrictions>("tenantRestrictions"); }
             set { BackingStore?.Set("tenantRestrictions", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

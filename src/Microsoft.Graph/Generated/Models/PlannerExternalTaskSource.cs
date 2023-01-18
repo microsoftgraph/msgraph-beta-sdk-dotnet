@@ -6,40 +6,82 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class PlannerExternalTaskSource : PlannerTaskCreation, IParsable {
         /// <summary>Nullable. An identifier for the scenario associated with this external source. This should be in reverse DNS format. For example, Contoso company owned application for customer support would have a value like &apos;com.constoso.customerSupport&apos;.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ContextScenarioId {
+            get { return BackingStore?.Get<string?>("contextScenarioId"); }
+            set { BackingStore?.Set("contextScenarioId", value); }
+        }
+#else
         public string ContextScenarioId {
             get { return BackingStore?.Get<string>("contextScenarioId"); }
             set { BackingStore?.Set("contextScenarioId", value); }
         }
+#endif
         /// <summary>Specifies how an application should display the link to the associated plannerExternalTaskSource. The possible values are: none, default.</summary>
         public PlannerExternalTaskSourceDisplayType? DisplayLinkType {
             get { return BackingStore?.Get<PlannerExternalTaskSourceDisplayType?>("displayLinkType"); }
             set { BackingStore?.Set("displayLinkType", value); }
         }
         /// <summary>The segments of the name of the external experience. Segments represent a hierarchical structure that allows other apps to display the relationship.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? DisplayNameSegments {
+            get { return BackingStore?.Get<List<string>?>("displayNameSegments"); }
+            set { BackingStore?.Set("displayNameSegments", value); }
+        }
+#else
         public List<string> DisplayNameSegments {
             get { return BackingStore?.Get<List<string>>("displayNameSegments"); }
             set { BackingStore?.Set("displayNameSegments", value); }
         }
+#endif
         /// <summary>Nullable. The id of the external entity&apos;s containing entity or context.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ExternalContextId {
+            get { return BackingStore?.Get<string?>("externalContextId"); }
+            set { BackingStore?.Set("externalContextId", value); }
+        }
+#else
         public string ExternalContextId {
             get { return BackingStore?.Get<string>("externalContextId"); }
             set { BackingStore?.Set("externalContextId", value); }
         }
+#endif
         /// <summary>Nullable. The id of the entity that an external service associates with a task.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ExternalObjectId {
+            get { return BackingStore?.Get<string?>("externalObjectId"); }
+            set { BackingStore?.Set("externalObjectId", value); }
+        }
+#else
         public string ExternalObjectId {
             get { return BackingStore?.Get<string>("externalObjectId"); }
             set { BackingStore?.Set("externalObjectId", value); }
         }
+#endif
         /// <summary>Nullable. The external Item Version for the object specified by the externalObjectId.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ExternalObjectVersion {
+            get { return BackingStore?.Get<string?>("externalObjectVersion"); }
+            set { BackingStore?.Set("externalObjectVersion", value); }
+        }
+#else
         public string ExternalObjectVersion {
             get { return BackingStore?.Get<string>("externalObjectVersion"); }
             set { BackingStore?.Set("externalObjectVersion", value); }
         }
+#endif
         /// <summary>Nullable. URL of the user experience represented by the associated plannerExternalTaskSource.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? WebUrl {
+            get { return BackingStore?.Get<string?>("webUrl"); }
+            set { BackingStore?.Set("webUrl", value); }
+        }
+#else
         public string WebUrl {
             get { return BackingStore?.Get<string>("webUrl"); }
             set { BackingStore?.Set("webUrl", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new PlannerExternalTaskSource and sets the default values.
         /// </summary>

@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class AndroidOmaCpConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Configuration XML that will be applied to the device. When it is read, it only provides a placeholder string since the original data is encrypted and stored.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public byte[]? ConfigurationXml {
+            get { return BackingStore?.Get<byte[]?>("configurationXml"); }
+            set { BackingStore?.Set("configurationXml", value); }
+        }
+#else
         public byte[] ConfigurationXml {
             get { return BackingStore?.Get<byte[]>("configurationXml"); }
             set { BackingStore?.Set("configurationXml", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new AndroidOmaCpConfiguration and sets the default values.
         /// </summary>

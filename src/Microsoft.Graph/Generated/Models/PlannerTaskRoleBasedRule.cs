@@ -14,25 +14,53 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Default rule that applies when a property or action-specific rule is not provided. Possible values are: Allow, Block</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DefaultRule {
+            get { return BackingStore?.Get<string?>("defaultRule"); }
+            set { BackingStore?.Set("defaultRule", value); }
+        }
+#else
         public string DefaultRule {
             get { return BackingStore?.Get<string>("defaultRule"); }
             set { BackingStore?.Set("defaultRule", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Rules for specific properties and actions.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public PlannerTaskPropertyRule? PropertyRule {
+            get { return BackingStore?.Get<PlannerTaskPropertyRule?>("propertyRule"); }
+            set { BackingStore?.Set("propertyRule", value); }
+        }
+#else
         public PlannerTaskPropertyRule PropertyRule {
             get { return BackingStore?.Get<PlannerTaskPropertyRule>("propertyRule"); }
             set { BackingStore?.Set("propertyRule", value); }
         }
+#endif
         /// <summary>The role these rules apply to.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public PlannerTaskConfigurationRoleBase? Role {
+            get { return BackingStore?.Get<PlannerTaskConfigurationRoleBase?>("role"); }
+            set { BackingStore?.Set("role", value); }
+        }
+#else
         public PlannerTaskConfigurationRoleBase Role {
             get { return BackingStore?.Get<PlannerTaskConfigurationRoleBase>("role"); }
             set { BackingStore?.Set("role", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new plannerTaskRoleBasedRule and sets the default values.
         /// </summary>

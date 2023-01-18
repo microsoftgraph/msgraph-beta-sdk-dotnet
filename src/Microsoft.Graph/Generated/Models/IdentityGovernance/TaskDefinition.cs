@@ -16,20 +16,41 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
             set { BackingStore?.Set("continueOnError", value); }
         }
         /// <summary>The description of the taskDefinition.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>The display name of the taskDefinition.Supports $filter(eq, ne) and $orderby.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The parameters that must be supplied when creating a workflow task object.Supports $filter(any).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Parameter>? Parameters {
+            get { return BackingStore?.Get<List<Parameter>?>("parameters"); }
+            set { BackingStore?.Set("parameters", value); }
+        }
+#else
         public List<Parameter> Parameters {
             get { return BackingStore?.Get<List<Parameter>>("parameters"); }
             set { BackingStore?.Set("parameters", value); }
         }
+#endif
         /// <summary>The version number of the taskDefinition. New records are pushed when we add support for new parameters.Supports $filter(ge, gt, le, lt, eq, ne) and $orderby.</summary>
         public int? Version {
             get { return BackingStore?.Get<int?>("version"); }

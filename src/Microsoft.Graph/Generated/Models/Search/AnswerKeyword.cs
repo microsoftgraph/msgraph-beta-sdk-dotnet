@@ -14,25 +14,46 @@ namespace Microsoft.Graph.Beta.Models.Search {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>A collection of keywords used to trigger the search answer.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? Keywords {
+            get { return BackingStore?.Get<List<string>?>("keywords"); }
+            set { BackingStore?.Set("keywords", value); }
+        }
+#else
         public List<string> Keywords {
             get { return BackingStore?.Get<List<string>>("keywords"); }
             set { BackingStore?.Set("keywords", value); }
         }
+#endif
         /// <summary>If true, indicates that the search term contains similar words to the keywords that should trigger the search answer.</summary>
         public bool? MatchSimilarKeywords {
             get { return BackingStore?.Get<bool?>("matchSimilarKeywords"); }
             set { BackingStore?.Set("matchSimilarKeywords", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Unique keywords that will guarantee the search answer is triggered.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? ReservedKeywords {
+            get { return BackingStore?.Get<List<string>?>("reservedKeywords"); }
+            set { BackingStore?.Set("reservedKeywords", value); }
+        }
+#else
         public List<string> ReservedKeywords {
             get { return BackingStore?.Get<List<string>>("reservedKeywords"); }
             set { BackingStore?.Set("reservedKeywords", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new answerKeyword and sets the default values.
         /// </summary>

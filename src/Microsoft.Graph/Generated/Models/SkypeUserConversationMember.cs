@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class SkypeUserConversationMember : ConversationMember, IParsable {
         /// <summary>Skype ID of the user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SkypeId {
+            get { return BackingStore?.Get<string?>("skypeId"); }
+            set { BackingStore?.Set("skypeId", value); }
+        }
+#else
         public string SkypeId {
             get { return BackingStore?.Get<string>("skypeId"); }
             set { BackingStore?.Set("skypeId", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new SkypeUserConversationMember and sets the default values.
         /// </summary>

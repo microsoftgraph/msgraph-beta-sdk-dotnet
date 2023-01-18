@@ -15,22 +15,43 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Address.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Address {
+            get { return BackingStore?.Get<string?>("address"); }
+            set { BackingStore?.Set("address", value); }
+        }
+#else
         public string Address {
             get { return BackingStore?.Get<string>("address"); }
             set { BackingStore?.Set("address", value); }
         }
+#endif
         /// <summary>Proxy&apos;s automatic configuration script url.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AutomaticConfigurationScriptUrl {
+            get { return BackingStore?.Get<string?>("automaticConfigurationScriptUrl"); }
+            set { BackingStore?.Set("automaticConfigurationScriptUrl", value); }
+        }
+#else
         public string AutomaticConfigurationScriptUrl {
             get { return BackingStore?.Get<string>("automaticConfigurationScriptUrl"); }
             set { BackingStore?.Set("automaticConfigurationScriptUrl", value); }
         }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Port. Valid values 0 to 65535</summary>
         public int? Port {
             get { return BackingStore?.Get<int?>("port"); }

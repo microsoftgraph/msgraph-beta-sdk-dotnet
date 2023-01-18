@@ -14,15 +14,29 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Identifier of child setting that is dependent on the current setting</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DependedOnBy {
+            get { return BackingStore?.Get<string?>("dependedOnBy"); }
+            set { BackingStore?.Set("dependedOnBy", value); }
+        }
+#else
         public string DependedOnBy {
             get { return BackingStore?.Get<string>("dependedOnBy"); }
             set { BackingStore?.Set("dependedOnBy", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Value that determines if the child setting is required based on the parent setting&apos;s selection</summary>
         public bool? Required {
             get { return BackingStore?.Get<bool?>("required"); }

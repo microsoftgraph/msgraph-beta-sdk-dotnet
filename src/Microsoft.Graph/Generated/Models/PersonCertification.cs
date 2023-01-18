@@ -7,20 +7,41 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class PersonCertification : ItemFacet, IParsable {
         /// <summary>The referenceable identifier for the certification.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CertificationId {
+            get { return BackingStore?.Get<string?>("certificationId"); }
+            set { BackingStore?.Set("certificationId", value); }
+        }
+#else
         public string CertificationId {
             get { return BackingStore?.Get<string>("certificationId"); }
             set { BackingStore?.Set("certificationId", value); }
         }
+#endif
         /// <summary>Description of the certification.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>Title of the certification.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The date that the certification expires.</summary>
         public Date? EndDate {
             get { return BackingStore?.Get<Date?>("endDate"); }
@@ -32,30 +53,58 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("issuedDate", value); }
         }
         /// <summary>Authority which granted the certification.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? IssuingAuthority {
+            get { return BackingStore?.Get<string?>("issuingAuthority"); }
+            set { BackingStore?.Set("issuingAuthority", value); }
+        }
+#else
         public string IssuingAuthority {
             get { return BackingStore?.Get<string>("issuingAuthority"); }
             set { BackingStore?.Set("issuingAuthority", value); }
         }
+#endif
         /// <summary>Company which granted the certification.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? IssuingCompany {
+            get { return BackingStore?.Get<string?>("issuingCompany"); }
+            set { BackingStore?.Set("issuingCompany", value); }
+        }
+#else
         public string IssuingCompany {
             get { return BackingStore?.Get<string>("issuingCompany"); }
             set { BackingStore?.Set("issuingCompany", value); }
         }
+#endif
         /// <summary>The date that the certification became valid.</summary>
         public Date? StartDate {
             get { return BackingStore?.Get<Date?>("startDate"); }
             set { BackingStore?.Set("startDate", value); }
         }
         /// <summary>URL referencing a thumbnail of the certification.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ThumbnailUrl {
+            get { return BackingStore?.Get<string?>("thumbnailUrl"); }
+            set { BackingStore?.Set("thumbnailUrl", value); }
+        }
+#else
         public string ThumbnailUrl {
             get { return BackingStore?.Get<string>("thumbnailUrl"); }
             set { BackingStore?.Set("thumbnailUrl", value); }
         }
+#endif
         /// <summary>URL referencing the certification.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? WebUrl {
+            get { return BackingStore?.Get<string?>("webUrl"); }
+            set { BackingStore?.Set("webUrl", value); }
+        }
+#else
         public string WebUrl {
             get { return BackingStore?.Get<string>("webUrl"); }
             set { BackingStore?.Set("webUrl", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new PersonCertification and sets the default values.
         /// </summary>

@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class ShiftPreferences : ChangeTrackedEntity, IParsable {
         /// <summary>Availability of the user to be scheduled for work and its recurrence pattern.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ShiftAvailability>? Availability {
+            get { return BackingStore?.Get<List<ShiftAvailability>?>("availability"); }
+            set { BackingStore?.Set("availability", value); }
+        }
+#else
         public List<ShiftAvailability> Availability {
             get { return BackingStore?.Get<List<ShiftAvailability>>("availability"); }
             set { BackingStore?.Set("availability", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new ShiftPreferences and sets the default values.
         /// </summary>

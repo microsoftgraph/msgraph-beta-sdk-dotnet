@@ -19,25 +19,53 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The downgrade justification object that indicates if downgrade was justified and, if so, the reason.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.Security.DowngradeJustification? DowngradeJustification {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.DowngradeJustification?>("downgradeJustification"); }
+            set { BackingStore?.Set("downgradeJustification", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.Security.DowngradeJustification DowngradeJustification {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.DowngradeJustification>("downgradeJustification"); }
             set { BackingStore?.Set("downgradeJustification", value); }
         }
+#endif
         /// <summary>Extended properties will be parsed and returned in the standard Microsoft Purview Information Protection labeled metadata format as part of the label information.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<KeyValuePair>? ExtendedProperties {
+            get { return BackingStore?.Get<List<KeyValuePair>?>("extendedProperties"); }
+            set { BackingStore?.Set("extendedProperties", value); }
+        }
+#else
         public List<KeyValuePair> ExtendedProperties {
             get { return BackingStore?.Get<List<KeyValuePair>>("extendedProperties"); }
             set { BackingStore?.Set("extendedProperties", value); }
         }
+#endif
         /// <summary>The GUID of the label that should be applied to the information.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? LabelId {
+            get { return BackingStore?.Get<string?>("labelId"); }
+            set { BackingStore?.Set("labelId", value); }
+        }
+#else
         public string LabelId {
             get { return BackingStore?.Get<string>("labelId"); }
             set { BackingStore?.Set("labelId", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new labelingOptions and sets the default values.
         /// </summary>

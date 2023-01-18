@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementSettingFileConstraint : DeviceManagementConstraint, IParsable {
         /// <summary>Acceptable file extensions to upload for this setting</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? SupportedExtensions {
+            get { return BackingStore?.Get<List<string>?>("supportedExtensions"); }
+            set { BackingStore?.Set("supportedExtensions", value); }
+        }
+#else
         public List<string> SupportedExtensions {
             get { return BackingStore?.Get<List<string>>("supportedExtensions"); }
             set { BackingStore?.Set("supportedExtensions", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new DeviceManagementSettingFileConstraint and sets the default values.
         /// </summary>

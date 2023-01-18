@@ -22,15 +22,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("configurationAppliedUserCount", value); }
         }
         /// <summary>Deployment of an app.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.MobileAppIdentifier? MobileAppIdentifier {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MobileAppIdentifier?>("mobileAppIdentifier"); }
+            set { BackingStore?.Set("mobileAppIdentifier", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.MobileAppIdentifier MobileAppIdentifier {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MobileAppIdentifier>("mobileAppIdentifier"); }
             set { BackingStore?.Set("mobileAppIdentifier", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new managedAppPolicyDeploymentSummaryPerApp and sets the default values.
         /// </summary>

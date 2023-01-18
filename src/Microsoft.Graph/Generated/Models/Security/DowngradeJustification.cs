@@ -19,15 +19,29 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("isDowngradeJustified", value); }
         }
         /// <summary>Message that indicates why a downgrade is justified. The message will appear in administrative logs.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? JustificationMessage {
+            get { return BackingStore?.Get<string?>("justificationMessage"); }
+            set { BackingStore?.Set("justificationMessage", value); }
+        }
+#else
         public string JustificationMessage {
             get { return BackingStore?.Get<string>("justificationMessage"); }
             set { BackingStore?.Set("justificationMessage", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new downgradeJustification and sets the default values.
         /// </summary>

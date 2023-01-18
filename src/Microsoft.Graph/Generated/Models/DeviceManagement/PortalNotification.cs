@@ -12,25 +12,53 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
             set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The associated alert impact.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.DeviceManagement.AlertImpact? AlertImpact {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagement.AlertImpact?>("alertImpact"); }
+            set { BackingStore?.Set("alertImpact", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.DeviceManagement.AlertImpact AlertImpact {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagement.AlertImpact>("alertImpact"); }
             set { BackingStore?.Set("alertImpact", value); }
         }
+#endif
         /// <summary>The associated alert record ID.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AlertRecordId {
+            get { return BackingStore?.Get<string?>("alertRecordId"); }
+            set { BackingStore?.Set("alertRecordId", value); }
+        }
+#else
         public string AlertRecordId {
             get { return BackingStore?.Get<string>("alertRecordId"); }
             set { BackingStore?.Set("alertRecordId", value); }
         }
+#endif
         /// <summary>The associated alert rule ID.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AlertRuleId {
+            get { return BackingStore?.Get<string?>("alertRuleId"); }
+            set { BackingStore?.Set("alertRuleId", value); }
+        }
+#else
         public string AlertRuleId {
             get { return BackingStore?.Get<string>("alertRuleId"); }
             set { BackingStore?.Set("alertRuleId", value); }
         }
+#endif
         /// <summary>The associated alert rule name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AlertRuleName {
+            get { return BackingStore?.Get<string?>("alertRuleName"); }
+            set { BackingStore?.Set("alertRuleName", value); }
+        }
+#else
         public string AlertRuleName {
             get { return BackingStore?.Get<string>("alertRuleName"); }
             set { BackingStore?.Set("alertRuleName", value); }
         }
+#endif
         /// <summary>The associated alert rule template. The possible values are: cloudPcProvisionScenario, cloudPcImageUploadScenario, cloudPcOnPremiseNetworkConnectionCheckScenario, unknownFutureValue.</summary>
         public Microsoft.Graph.Beta.Models.DeviceManagement.AlertRuleTemplate? AlertRuleTemplate {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagement.AlertRuleTemplate?>("alertRuleTemplate"); }
@@ -39,20 +67,34 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The unique identifier for the portal notification.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Id {
+            get { return BackingStore?.Get<string?>("id"); }
+            set { BackingStore?.Set("id", value); }
+        }
+#else
         public string Id {
             get { return BackingStore?.Get<string>("id"); }
             set { BackingStore?.Set("id", value); }
         }
+#endif
         /// <summary>true if the portal notification has already been sent to the user; false otherwise.</summary>
         public bool? IsPortalNotificationSent {
             get { return BackingStore?.Get<bool?>("isPortalNotificationSent"); }
             set { BackingStore?.Set("isPortalNotificationSent", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The associated alert rule severity. The possible values are: unknown, informational, warning, critical, unknownFutureValue.</summary>
         public RuleSeverityType? Severity {
             get { return BackingStore?.Get<RuleSeverityType?>("severity"); }

@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class CloudPcForensicStorageAccount : Entity, IParsable {
         /// <summary>The ID of the storage account.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? StorageAccountId {
+            get { return BackingStore?.Get<string?>("storageAccountId"); }
+            set { BackingStore?.Set("storageAccountId", value); }
+        }
+#else
         public string StorageAccountId {
             get { return BackingStore?.Get<string>("storageAccountId"); }
             set { BackingStore?.Set("storageAccountId", value); }
         }
+#endif
         /// <summary>The name of the storage account.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? StorageAccountName {
+            get { return BackingStore?.Get<string?>("storageAccountName"); }
+            set { BackingStore?.Set("storageAccountName", value); }
+        }
+#else
         public string StorageAccountName {
             get { return BackingStore?.Get<string>("storageAccountName"); }
             set { BackingStore?.Set("storageAccountName", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

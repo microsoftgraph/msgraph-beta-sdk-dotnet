@@ -14,20 +14,41 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The notification content of a raw user notification that will be delivered to and consumed by the app client on all supported platforms (Windows, iOS, Android or WebPush) receiving this notification. At least one of Payload.RawContent or Payload.VisualContent needs to be valid for a POST Notification request.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? RawContent {
+            get { return BackingStore?.Get<string?>("rawContent"); }
+            set { BackingStore?.Set("rawContent", value); }
+        }
+#else
         public string RawContent {
             get { return BackingStore?.Get<string>("rawContent"); }
             set { BackingStore?.Set("rawContent", value); }
         }
+#endif
         /// <summary>The visual content of a visual user notification, which will be consumed by the notification platform on each supported platform (Windows, iOS and Android only) and rendered for the user. At least one of Payload.RawContent or Payload.VisualContent needs to be valid for a POST Notification request.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public VisualProperties? VisualContent {
+            get { return BackingStore?.Get<VisualProperties?>("visualContent"); }
+            set { BackingStore?.Set("visualContent", value); }
+        }
+#else
         public VisualProperties VisualContent {
             get { return BackingStore?.Get<VisualProperties>("visualContent"); }
             set { BackingStore?.Set("visualContent", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new payloadTypes and sets the default values.
         /// </summary>

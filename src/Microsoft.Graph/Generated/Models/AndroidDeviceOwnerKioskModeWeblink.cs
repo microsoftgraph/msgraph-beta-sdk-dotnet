@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class AndroidDeviceOwnerKioskModeWeblink : AndroidDeviceOwnerKioskModeFolderItem, IParsable {
         /// <summary>Display name for weblink</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Label {
+            get { return BackingStore?.Get<string?>("label"); }
+            set { BackingStore?.Set("label", value); }
+        }
+#else
         public string Label {
             get { return BackingStore?.Get<string>("label"); }
             set { BackingStore?.Set("label", value); }
         }
+#endif
         /// <summary>Link for weblink</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Link {
+            get { return BackingStore?.Get<string?>("link"); }
+            set { BackingStore?.Set("link", value); }
+        }
+#else
         public string Link {
             get { return BackingStore?.Get<string>("link"); }
             set { BackingStore?.Set("link", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new AndroidDeviceOwnerKioskModeWeblink and sets the default values.
         /// </summary>

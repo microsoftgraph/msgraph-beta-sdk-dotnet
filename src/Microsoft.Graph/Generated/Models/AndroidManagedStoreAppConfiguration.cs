@@ -16,20 +16,41 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("connectedAppsEnabled", value); }
         }
         /// <summary>Android Enterprise app configuration package id.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PackageId {
+            get { return BackingStore?.Get<string?>("packageId"); }
+            set { BackingStore?.Set("packageId", value); }
+        }
+#else
         public string PackageId {
             get { return BackingStore?.Get<string>("packageId"); }
             set { BackingStore?.Set("packageId", value); }
         }
+#endif
         /// <summary>Android Enterprise app configuration JSON payload.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PayloadJson {
+            get { return BackingStore?.Get<string?>("payloadJson"); }
+            set { BackingStore?.Set("payloadJson", value); }
+        }
+#else
         public string PayloadJson {
             get { return BackingStore?.Get<string>("payloadJson"); }
             set { BackingStore?.Set("payloadJson", value); }
         }
+#endif
         /// <summary>List of Android app permissions and corresponding permission actions.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AndroidPermissionAction>? PermissionActions {
+            get { return BackingStore?.Get<List<AndroidPermissionAction>?>("permissionActions"); }
+            set { BackingStore?.Set("permissionActions", value); }
+        }
+#else
         public List<AndroidPermissionAction> PermissionActions {
             get { return BackingStore?.Get<List<AndroidPermissionAction>>("permissionActions"); }
             set { BackingStore?.Set("permissionActions", value); }
         }
+#endif
         /// <summary>Android profile applicability</summary>
         public AndroidProfileApplicability? ProfileApplicability {
             get { return BackingStore?.Get<AndroidProfileApplicability?>("profileApplicability"); }

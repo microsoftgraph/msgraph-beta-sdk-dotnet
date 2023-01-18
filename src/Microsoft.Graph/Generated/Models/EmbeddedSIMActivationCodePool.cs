@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// A pool represents a group of embedded SIM activation codes.
+    /// </summary>
     public class EmbeddedSIMActivationCodePool : Entity, IParsable {
         /// <summary>The total count of activation codes which belong to this pool.</summary>
         public int? ActivationCodeCount {
@@ -11,30 +14,58 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("activationCodeCount", value); }
         }
         /// <summary>The activation codes which belong to this pool. This navigation property is used to post activation codes to Intune but cannot be used to read activation codes from Intune.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<EmbeddedSIMActivationCode>? ActivationCodes {
+            get { return BackingStore?.Get<List<EmbeddedSIMActivationCode>?>("activationCodes"); }
+            set { BackingStore?.Set("activationCodes", value); }
+        }
+#else
         public List<EmbeddedSIMActivationCode> ActivationCodes {
             get { return BackingStore?.Get<List<EmbeddedSIMActivationCode>>("activationCodes"); }
             set { BackingStore?.Set("activationCodes", value); }
         }
+#endif
         /// <summary>Navigational property to a list of targets to which this pool is assigned.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<EmbeddedSIMActivationCodePoolAssignment>? Assignments {
+            get { return BackingStore?.Get<List<EmbeddedSIMActivationCodePoolAssignment>?>("assignments"); }
+            set { BackingStore?.Set("assignments", value); }
+        }
+#else
         public List<EmbeddedSIMActivationCodePoolAssignment> Assignments {
             get { return BackingStore?.Get<List<EmbeddedSIMActivationCodePoolAssignment>>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
+#endif
         /// <summary>The time the embedded SIM activation code pool was created. Generated service side.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Navigational property to a list of device states for this pool.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<EmbeddedSIMDeviceState>? DeviceStates {
+            get { return BackingStore?.Get<List<EmbeddedSIMDeviceState>?>("deviceStates"); }
+            set { BackingStore?.Set("deviceStates", value); }
+        }
+#else
         public List<EmbeddedSIMDeviceState> DeviceStates {
             get { return BackingStore?.Get<List<EmbeddedSIMDeviceState>>("deviceStates"); }
             set { BackingStore?.Set("deviceStates", value); }
         }
+#endif
         /// <summary>The admin defined name of the embedded SIM activation code pool.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The time the embedded SIM activation code pool was last modified. Updated service side.</summary>
         public DateTimeOffset? ModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("modifiedDateTime"); }

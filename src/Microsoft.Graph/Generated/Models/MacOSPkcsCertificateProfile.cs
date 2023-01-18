@@ -16,40 +16,89 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("certificateStore", value); }
         }
         /// <summary>PKCS certificate template name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CertificateTemplateName {
+            get { return BackingStore?.Get<string?>("certificateTemplateName"); }
+            set { BackingStore?.Set("certificateTemplateName", value); }
+        }
+#else
         public string CertificateTemplateName {
             get { return BackingStore?.Get<string>("certificateTemplateName"); }
             set { BackingStore?.Set("certificateTemplateName", value); }
         }
+#endif
         /// <summary>PKCS certification authority FQDN.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CertificationAuthority {
+            get { return BackingStore?.Get<string?>("certificationAuthority"); }
+            set { BackingStore?.Set("certificationAuthority", value); }
+        }
+#else
         public string CertificationAuthority {
             get { return BackingStore?.Get<string>("certificationAuthority"); }
             set { BackingStore?.Set("certificationAuthority", value); }
         }
+#endif
         /// <summary>PKCS certification authority Name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CertificationAuthorityName {
+            get { return BackingStore?.Get<string?>("certificationAuthorityName"); }
+            set { BackingStore?.Set("certificationAuthorityName", value); }
+        }
+#else
         public string CertificationAuthorityName {
             get { return BackingStore?.Get<string>("certificationAuthorityName"); }
             set { BackingStore?.Set("certificationAuthorityName", value); }
         }
+#endif
         /// <summary>Custom Subject Alternative Name Settings. This collection can contain a maximum of 500 elements.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<CustomSubjectAlternativeName>? CustomSubjectAlternativeNames {
+            get { return BackingStore?.Get<List<CustomSubjectAlternativeName>?>("customSubjectAlternativeNames"); }
+            set { BackingStore?.Set("customSubjectAlternativeNames", value); }
+        }
+#else
         public List<CustomSubjectAlternativeName> CustomSubjectAlternativeNames {
             get { return BackingStore?.Get<List<CustomSubjectAlternativeName>>("customSubjectAlternativeNames"); }
             set { BackingStore?.Set("customSubjectAlternativeNames", value); }
         }
+#endif
         /// <summary>Certificate state for devices. This collection can contain a maximum of 2147483647 elements.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ManagedDeviceCertificateState>? ManagedDeviceCertificateStates {
+            get { return BackingStore?.Get<List<ManagedDeviceCertificateState>?>("managedDeviceCertificateStates"); }
+            set { BackingStore?.Set("managedDeviceCertificateStates", value); }
+        }
+#else
         public List<ManagedDeviceCertificateState> ManagedDeviceCertificateStates {
             get { return BackingStore?.Get<List<ManagedDeviceCertificateState>>("managedDeviceCertificateStates"); }
             set { BackingStore?.Set("managedDeviceCertificateStates", value); }
         }
+#endif
         /// <summary>Format string that defines the subject alternative name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SubjectAlternativeNameFormatString {
+            get { return BackingStore?.Get<string?>("subjectAlternativeNameFormatString"); }
+            set { BackingStore?.Set("subjectAlternativeNameFormatString", value); }
+        }
+#else
         public string SubjectAlternativeNameFormatString {
             get { return BackingStore?.Get<string>("subjectAlternativeNameFormatString"); }
             set { BackingStore?.Set("subjectAlternativeNameFormatString", value); }
         }
+#endif
         /// <summary>Format string that defines the subject name. Example: CN={{EmailAddress}},E={{EmailAddress}},OU=Enterprise Users,O=Contoso Corporation,L=Redmond,ST=WA,C=US</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SubjectNameFormatString {
+            get { return BackingStore?.Get<string?>("subjectNameFormatString"); }
+            set { BackingStore?.Set("subjectNameFormatString", value); }
+        }
+#else
         public string SubjectNameFormatString {
             get { return BackingStore?.Get<string>("subjectNameFormatString"); }
             set { BackingStore?.Set("subjectNameFormatString", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new MacOSPkcsCertificateProfile and sets the default values.
         /// </summary>

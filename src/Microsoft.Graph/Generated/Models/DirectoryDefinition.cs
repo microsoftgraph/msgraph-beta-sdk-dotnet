@@ -16,25 +16,46 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("discoveryDateTime", value); }
         }
         /// <summary>Name of the directory. Must be unique within the synchronization schema. Not nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Name {
+            get { return BackingStore?.Get<string?>("name"); }
+            set { BackingStore?.Set("name", value); }
+        }
+#else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#endif
         /// <summary>Collection of objects supported by the directory.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ObjectDefinition>? Objects {
+            get { return BackingStore?.Get<List<ObjectDefinition>?>("objects"); }
+            set { BackingStore?.Set("objects", value); }
+        }
+#else
         public List<ObjectDefinition> Objects {
             get { return BackingStore?.Get<List<ObjectDefinition>>("objects"); }
             set { BackingStore?.Set("objects", value); }
         }
+#endif
         /// <summary>The readOnly property</summary>
         public bool? ReadOnly {
             get { return BackingStore?.Get<bool?>("readOnly"); }
             set { BackingStore?.Set("readOnly", value); }
         }
         /// <summary>Read only value that indicates version discovered. null if discovery has not yet occurred.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Version {
+            get { return BackingStore?.Get<string?>("version"); }
+            set { BackingStore?.Set("version", value); }
+        }
+#else
         public string Version {
             get { return BackingStore?.Get<string>("version"); }
             set { BackingStore?.Set("version", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

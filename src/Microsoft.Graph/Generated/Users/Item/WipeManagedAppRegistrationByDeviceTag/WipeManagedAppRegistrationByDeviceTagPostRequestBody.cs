@@ -14,10 +14,17 @@ namespace Microsoft.Graph.Beta.Users.Item.WipeManagedAppRegistrationByDeviceTag 
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The deviceTag property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeviceTag {
+            get { return BackingStore?.Get<string?>("deviceTag"); }
+            set { BackingStore?.Set("deviceTag", value); }
+        }
+#else
         public string DeviceTag {
             get { return BackingStore?.Get<string>("deviceTag"); }
             set { BackingStore?.Set("deviceTag", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new wipeManagedAppRegistrationByDeviceTagPostRequestBody and sets the default values.
         /// </summary>

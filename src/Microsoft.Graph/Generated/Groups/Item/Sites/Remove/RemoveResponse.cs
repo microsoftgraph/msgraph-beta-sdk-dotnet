@@ -7,10 +7,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Groups.Item.Sites.Remove {
     public class RemoveResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.Site>? Value {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Site>?>("value"); }
+            set { BackingStore?.Set("value", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.Site> Value {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Site>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

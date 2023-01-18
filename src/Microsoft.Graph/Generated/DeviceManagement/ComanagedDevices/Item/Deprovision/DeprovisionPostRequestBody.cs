@@ -14,10 +14,17 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.Deprovisio
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The deprovisionReason property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeprovisionReason {
+            get { return BackingStore?.Get<string?>("deprovisionReason"); }
+            set { BackingStore?.Set("deprovisionReason", value); }
+        }
+#else
         public string DeprovisionReason {
             get { return BackingStore?.Get<string>("deprovisionReason"); }
             set { BackingStore?.Set("deprovisionReason", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new deprovisionPostRequestBody and sets the default values.
         /// </summary>

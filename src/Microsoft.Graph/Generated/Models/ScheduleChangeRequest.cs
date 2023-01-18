@@ -16,30 +16,58 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("managerActionDateTime", value); }
         }
         /// <summary>The managerActionMessage property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ManagerActionMessage {
+            get { return BackingStore?.Get<string?>("managerActionMessage"); }
+            set { BackingStore?.Set("managerActionMessage", value); }
+        }
+#else
         public string ManagerActionMessage {
             get { return BackingStore?.Get<string>("managerActionMessage"); }
             set { BackingStore?.Set("managerActionMessage", value); }
         }
+#endif
         /// <summary>The managerUserId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ManagerUserId {
+            get { return BackingStore?.Get<string?>("managerUserId"); }
+            set { BackingStore?.Set("managerUserId", value); }
+        }
+#else
         public string ManagerUserId {
             get { return BackingStore?.Get<string>("managerUserId"); }
             set { BackingStore?.Set("managerUserId", value); }
         }
+#endif
         /// <summary>The senderDateTime property</summary>
         public DateTimeOffset? SenderDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("senderDateTime"); }
             set { BackingStore?.Set("senderDateTime", value); }
         }
         /// <summary>The senderMessage property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SenderMessage {
+            get { return BackingStore?.Get<string?>("senderMessage"); }
+            set { BackingStore?.Set("senderMessage", value); }
+        }
+#else
         public string SenderMessage {
             get { return BackingStore?.Get<string>("senderMessage"); }
             set { BackingStore?.Set("senderMessage", value); }
         }
+#endif
         /// <summary>The senderUserId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SenderUserId {
+            get { return BackingStore?.Get<string?>("senderUserId"); }
+            set { BackingStore?.Set("senderUserId", value); }
+        }
+#else
         public string SenderUserId {
             get { return BackingStore?.Get<string>("senderUserId"); }
             set { BackingStore?.Set("senderUserId", value); }
         }
+#endif
         /// <summary>The state property</summary>
         public ScheduleChangeState? State {
             get { return BackingStore?.Get<ScheduleChangeState?>("state"); }

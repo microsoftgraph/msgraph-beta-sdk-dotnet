@@ -14,10 +14,17 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The classificationAttributes property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ClassificationAttribute>? ClassificationAttributes {
+            get { return BackingStore?.Get<List<ClassificationAttribute>?>("classificationAttributes"); }
+            set { BackingStore?.Set("classificationAttributes", value); }
+        }
+#else
         public List<ClassificationAttribute> ClassificationAttributes {
             get { return BackingStore?.Get<List<ClassificationAttribute>>("classificationAttributes"); }
             set { BackingStore?.Set("classificationAttributes", value); }
         }
+#endif
         /// <summary>The confidence property</summary>
         public int? Confidence {
             get { return BackingStore?.Get<int?>("confidence"); }
@@ -34,10 +41,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("id", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new discoveredSensitiveType and sets the default values.
         /// </summary>

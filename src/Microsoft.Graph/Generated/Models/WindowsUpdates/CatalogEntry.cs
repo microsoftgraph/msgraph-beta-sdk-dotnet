@@ -11,10 +11,17 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
             set { BackingStore?.Set("deployableUntilDateTime", value); }
         }
         /// <summary>The display name of the content. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The release date for the content. Read-only.</summary>
         public DateTimeOffset? ReleaseDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("releaseDateTime"); }

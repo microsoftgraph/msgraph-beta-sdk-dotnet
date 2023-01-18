@@ -7,10 +7,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class SharedPCConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Specifies how accounts are managed on a shared PC. Only applies when disableAccountManager is false.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public SharedPCAccountManagerPolicy? AccountManagerPolicy {
+            get { return BackingStore?.Get<SharedPCAccountManagerPolicy?>("accountManagerPolicy"); }
+            set { BackingStore?.Set("accountManagerPolicy", value); }
+        }
+#else
         public SharedPCAccountManagerPolicy AccountManagerPolicy {
             get { return BackingStore?.Get<SharedPCAccountManagerPolicy>("accountManagerPolicy"); }
             set { BackingStore?.Set("accountManagerPolicy", value); }
         }
+#endif
         /// <summary>Type of accounts that are allowed to share the PC.</summary>
         public SharedPCAllowedAccountType? AllowedAccounts {
             get { return BackingStore?.Get<SharedPCAllowedAccountType?>("allowedAccounts"); }
@@ -57,15 +64,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("idleTimeBeforeSleepInSeconds", value); }
         }
         /// <summary>Specifies the display text for the account shown on the sign-in screen which launches the app specified by SetKioskAppUserModelId. Only applies when KioskAppUserModelId is set.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? KioskAppDisplayName {
+            get { return BackingStore?.Get<string?>("kioskAppDisplayName"); }
+            set { BackingStore?.Set("kioskAppDisplayName", value); }
+        }
+#else
         public string KioskAppDisplayName {
             get { return BackingStore?.Get<string>("kioskAppDisplayName"); }
             set { BackingStore?.Set("kioskAppDisplayName", value); }
         }
+#endif
         /// <summary>Specifies the application user model ID of the app to use with assigned access.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? KioskAppUserModelId {
+            get { return BackingStore?.Get<string?>("kioskAppUserModelId"); }
+            set { BackingStore?.Set("kioskAppUserModelId", value); }
+        }
+#else
         public string KioskAppUserModelId {
             get { return BackingStore?.Get<string>("kioskAppUserModelId"); }
             set { BackingStore?.Set("kioskAppUserModelId", value); }
         }
+#endif
         /// <summary>Possible values of a property</summary>
         public Enablement? LocalStorage {
             get { return BackingStore?.Get<Enablement?>("localStorage"); }

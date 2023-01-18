@@ -16,10 +16,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("downgradeSensitivityRequiresJustification", value); }
         }
         /// <summary>The helpWebUrl property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? HelpWebUrl {
+            get { return BackingStore?.Get<string?>("helpWebUrl"); }
+            set { BackingStore?.Set("helpWebUrl", value); }
+        }
+#else
         public string HelpWebUrl {
             get { return BackingStore?.Get<string>("helpWebUrl"); }
             set { BackingStore?.Set("helpWebUrl", value); }
         }
+#endif
         /// <summary>The isMandatory property</summary>
         public bool? IsMandatory {
             get { return BackingStore?.Get<bool?>("isMandatory"); }

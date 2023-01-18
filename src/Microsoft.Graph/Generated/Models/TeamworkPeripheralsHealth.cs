@@ -14,40 +14,89 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The health details about the communication speaker.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public TeamworkPeripheralHealth? CommunicationSpeakerHealth {
+            get { return BackingStore?.Get<TeamworkPeripheralHealth?>("communicationSpeakerHealth"); }
+            set { BackingStore?.Set("communicationSpeakerHealth", value); }
+        }
+#else
         public TeamworkPeripheralHealth CommunicationSpeakerHealth {
             get { return BackingStore?.Get<TeamworkPeripheralHealth>("communicationSpeakerHealth"); }
             set { BackingStore?.Set("communicationSpeakerHealth", value); }
         }
+#endif
         /// <summary>The health details about the content camera.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public TeamworkPeripheralHealth? ContentCameraHealth {
+            get { return BackingStore?.Get<TeamworkPeripheralHealth?>("contentCameraHealth"); }
+            set { BackingStore?.Set("contentCameraHealth", value); }
+        }
+#else
         public TeamworkPeripheralHealth ContentCameraHealth {
             get { return BackingStore?.Get<TeamworkPeripheralHealth>("contentCameraHealth"); }
             set { BackingStore?.Set("contentCameraHealth", value); }
         }
+#endif
         /// <summary>The health details about displays.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<TeamworkPeripheralHealth>? DisplayHealthCollection {
+            get { return BackingStore?.Get<List<TeamworkPeripheralHealth>?>("displayHealthCollection"); }
+            set { BackingStore?.Set("displayHealthCollection", value); }
+        }
+#else
         public List<TeamworkPeripheralHealth> DisplayHealthCollection {
             get { return BackingStore?.Get<List<TeamworkPeripheralHealth>>("displayHealthCollection"); }
             set { BackingStore?.Set("displayHealthCollection", value); }
         }
+#endif
         /// <summary>The health details about the microphone.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public TeamworkPeripheralHealth? MicrophoneHealth {
+            get { return BackingStore?.Get<TeamworkPeripheralHealth?>("microphoneHealth"); }
+            set { BackingStore?.Set("microphoneHealth", value); }
+        }
+#else
         public TeamworkPeripheralHealth MicrophoneHealth {
             get { return BackingStore?.Get<TeamworkPeripheralHealth>("microphoneHealth"); }
             set { BackingStore?.Set("microphoneHealth", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The health details about the room camera.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public TeamworkPeripheralHealth? RoomCameraHealth {
+            get { return BackingStore?.Get<TeamworkPeripheralHealth?>("roomCameraHealth"); }
+            set { BackingStore?.Set("roomCameraHealth", value); }
+        }
+#else
         public TeamworkPeripheralHealth RoomCameraHealth {
             get { return BackingStore?.Get<TeamworkPeripheralHealth>("roomCameraHealth"); }
             set { BackingStore?.Set("roomCameraHealth", value); }
         }
+#endif
         /// <summary>The health details about the speaker.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public TeamworkPeripheralHealth? SpeakerHealth {
+            get { return BackingStore?.Get<TeamworkPeripheralHealth?>("speakerHealth"); }
+            set { BackingStore?.Set("speakerHealth", value); }
+        }
+#else
         public TeamworkPeripheralHealth SpeakerHealth {
             get { return BackingStore?.Get<TeamworkPeripheralHealth>("speakerHealth"); }
             set { BackingStore?.Set("speakerHealth", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new teamworkPeripheralsHealth and sets the default values.
         /// </summary>

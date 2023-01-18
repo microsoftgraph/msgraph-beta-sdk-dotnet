@@ -14,10 +14,17 @@ namespace Microsoft.Graph.Beta.Me.ManagedDevices.Item.CreateRemoteHelpSession {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The sessionType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SessionType {
+            get { return BackingStore?.Get<string?>("sessionType"); }
+            set { BackingStore?.Set("sessionType", value); }
+        }
+#else
         public string SessionType {
             get { return BackingStore?.Get<string>("sessionType"); }
             set { BackingStore?.Set("sessionType", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new createRemoteHelpSessionPostRequestBody and sets the default values.
         /// </summary>

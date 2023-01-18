@@ -6,20 +6,34 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class MeetingPolicyUpdatedEventMessageDetail : EventMessageDetail, IParsable {
         /// <summary>Initiator of the event.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public IdentitySet? Initiator {
+            get { return BackingStore?.Get<IdentitySet?>("initiator"); }
+            set { BackingStore?.Set("initiator", value); }
+        }
+#else
         public IdentitySet Initiator {
             get { return BackingStore?.Get<IdentitySet>("initiator"); }
             set { BackingStore?.Set("initiator", value); }
         }
+#endif
         /// <summary>Represents whether the meeting chat is enabled or not.</summary>
         public bool? MeetingChatEnabled {
             get { return BackingStore?.Get<bool?>("meetingChatEnabled"); }
             set { BackingStore?.Set("meetingChatEnabled", value); }
         }
         /// <summary>Unique identifier of the meeting chat.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MeetingChatId {
+            get { return BackingStore?.Get<string?>("meetingChatId"); }
+            set { BackingStore?.Set("meetingChatId", value); }
+        }
+#else
         public string MeetingChatId {
             get { return BackingStore?.Get<string>("meetingChatId"); }
             set { BackingStore?.Set("meetingChatId", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new MeetingPolicyUpdatedEventMessageDetail and sets the default values.
         /// </summary>

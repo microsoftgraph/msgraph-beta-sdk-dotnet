@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
     public class Catalog : Entity, IParsable {
         /// <summary>Lists the content that you can approve for deployment. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<CatalogEntry>? Entries {
+            get { return BackingStore?.Get<List<CatalogEntry>?>("entries"); }
+            set { BackingStore?.Set("entries", value); }
+        }
+#else
         public List<CatalogEntry> Entries {
             get { return BackingStore?.Get<List<CatalogEntry>>("entries"); }
             set { BackingStore?.Set("entries", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

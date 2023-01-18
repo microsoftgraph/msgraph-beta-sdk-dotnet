@@ -19,20 +19,41 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("isReply", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The identity of the user who started the comment thread.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public IdentitySet? ParentAuthor {
+            get { return BackingStore?.Get<IdentitySet?>("parentAuthor"); }
+            set { BackingStore?.Set("parentAuthor", value); }
+        }
+#else
         public IdentitySet ParentAuthor {
             get { return BackingStore?.Get<IdentitySet>("parentAuthor"); }
             set { BackingStore?.Set("parentAuthor", value); }
         }
+#endif
         /// <summary>The identities of the users participating in this comment thread.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<IdentitySet>? Participants {
+            get { return BackingStore?.Get<List<IdentitySet>?>("participants"); }
+            set { BackingStore?.Set("participants", value); }
+        }
+#else
         public List<IdentitySet> Participants {
             get { return BackingStore?.Get<List<IdentitySet>>("participants"); }
             set { BackingStore?.Set("participants", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new commentAction and sets the default values.
         /// </summary>

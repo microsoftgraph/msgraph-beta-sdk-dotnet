@@ -49,60 +49,116 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("feedOrientation", value); }
         }
         /// <summary>The finishings property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<PrintFinishing?>? Finishings {
+            get { return BackingStore?.Get<List<PrintFinishing?>?>("finishings"); }
+            set { BackingStore?.Set("finishings", value); }
+        }
+#else
         public List<PrintFinishing?> Finishings {
             get { return BackingStore?.Get<List<PrintFinishing?>>("finishings"); }
             set { BackingStore?.Set("finishings", value); }
         }
+#endif
         /// <summary>The fitPdfToPage property</summary>
         public bool? FitPdfToPage {
             get { return BackingStore?.Get<bool?>("fitPdfToPage"); }
             set { BackingStore?.Set("fitPdfToPage", value); }
         }
         /// <summary>The inputBin property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? InputBin {
+            get { return BackingStore?.Get<string?>("inputBin"); }
+            set { BackingStore?.Set("inputBin", value); }
+        }
+#else
         public string InputBin {
             get { return BackingStore?.Get<string>("inputBin"); }
             set { BackingStore?.Set("inputBin", value); }
         }
+#endif
         /// <summary>The margin property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public PrintMargin? Margin {
+            get { return BackingStore?.Get<PrintMargin?>("margin"); }
+            set { BackingStore?.Set("margin", value); }
+        }
+#else
         public PrintMargin Margin {
             get { return BackingStore?.Get<PrintMargin>("margin"); }
             set { BackingStore?.Set("margin", value); }
         }
+#endif
         /// <summary>The mediaSize property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MediaSize {
+            get { return BackingStore?.Get<string?>("mediaSize"); }
+            set { BackingStore?.Set("mediaSize", value); }
+        }
+#else
         public string MediaSize {
             get { return BackingStore?.Get<string>("mediaSize"); }
             set { BackingStore?.Set("mediaSize", value); }
         }
+#endif
         /// <summary>The mediaType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MediaType {
+            get { return BackingStore?.Get<string?>("mediaType"); }
+            set { BackingStore?.Set("mediaType", value); }
+        }
+#else
         public string MediaType {
             get { return BackingStore?.Get<string>("mediaType"); }
             set { BackingStore?.Set("mediaType", value); }
         }
+#endif
         /// <summary>The multipageLayout property</summary>
         public PrintMultipageLayout? MultipageLayout {
             get { return BackingStore?.Get<PrintMultipageLayout?>("multipageLayout"); }
             set { BackingStore?.Set("multipageLayout", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The orientation property</summary>
         public PrintOrientation? Orientation {
             get { return BackingStore?.Get<PrintOrientation?>("orientation"); }
             set { BackingStore?.Set("orientation", value); }
         }
         /// <summary>The outputBin property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OutputBin {
+            get { return BackingStore?.Get<string?>("outputBin"); }
+            set { BackingStore?.Set("outputBin", value); }
+        }
+#else
         public string OutputBin {
             get { return BackingStore?.Get<string>("outputBin"); }
             set { BackingStore?.Set("outputBin", value); }
         }
+#endif
         /// <summary>The pageRanges property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<IntegerRange>? PageRanges {
+            get { return BackingStore?.Get<List<IntegerRange>?>("pageRanges"); }
+            set { BackingStore?.Set("pageRanges", value); }
+        }
+#else
         public List<IntegerRange> PageRanges {
             get { return BackingStore?.Get<List<IntegerRange>>("pageRanges"); }
             set { BackingStore?.Set("pageRanges", value); }
         }
+#endif
         /// <summary>The pagesPerSheet property</summary>
         public int? PagesPerSheet {
             get { return BackingStore?.Get<int?>("pagesPerSheet"); }

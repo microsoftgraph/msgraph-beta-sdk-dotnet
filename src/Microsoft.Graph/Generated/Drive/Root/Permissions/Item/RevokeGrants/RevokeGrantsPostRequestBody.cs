@@ -15,10 +15,17 @@ namespace Microsoft.Graph.Beta.Drive.Root.Permissions.Item.RevokeGrants {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The grantees property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DriveRecipient>? Grantees {
+            get { return BackingStore?.Get<List<DriveRecipient>?>("grantees"); }
+            set { BackingStore?.Set("grantees", value); }
+        }
+#else
         public List<DriveRecipient> Grantees {
             get { return BackingStore?.Get<List<DriveRecipient>>("grantees"); }
             set { BackingStore?.Set("grantees", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new revokeGrantsPostRequestBody and sets the default values.
         /// </summary>

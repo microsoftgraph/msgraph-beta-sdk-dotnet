@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class AndroidManagedStoreAppAssignmentSettings : MobileAppAssignmentSettings, IParsable {
         /// <summary>The track IDs to enable for this app assignment.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? AndroidManagedStoreAppTrackIds {
+            get { return BackingStore?.Get<List<string>?>("androidManagedStoreAppTrackIds"); }
+            set { BackingStore?.Set("androidManagedStoreAppTrackIds", value); }
+        }
+#else
         public List<string> AndroidManagedStoreAppTrackIds {
             get { return BackingStore?.Get<List<string>>("androidManagedStoreAppTrackIds"); }
             set { BackingStore?.Set("androidManagedStoreAppTrackIds", value); }
         }
+#endif
         /// <summary>Prioritization for automatic updates of Android Managed Store apps set on assignment.</summary>
         public AndroidManagedStoreAutoUpdateMode? AutoUpdateMode {
             get { return BackingStore?.Get<AndroidManagedStoreAutoUpdateMode?>("autoUpdateMode"); }

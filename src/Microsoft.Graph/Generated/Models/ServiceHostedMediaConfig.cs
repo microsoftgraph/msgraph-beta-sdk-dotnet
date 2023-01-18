@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class ServiceHostedMediaConfig : MediaConfig, IParsable {
         /// <summary>The list of media to pre-fetch.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<MediaInfo>? PreFetchMedia {
+            get { return BackingStore?.Get<List<MediaInfo>?>("preFetchMedia"); }
+            set { BackingStore?.Set("preFetchMedia", value); }
+        }
+#else
         public List<MediaInfo> PreFetchMedia {
             get { return BackingStore?.Get<List<MediaInfo>>("preFetchMedia"); }
             set { BackingStore?.Set("preFetchMedia", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new ServiceHostedMediaConfig and sets the default values.
         /// </summary>

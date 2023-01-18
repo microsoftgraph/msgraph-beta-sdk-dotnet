@@ -27,10 +27,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("startDate", value); }
         }
         /// <summary>The time zone that the user sets in Microsoft Outlook is used for the computation. For example, the property value could be &apos;Pacific Standard Time.&apos;</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TimeZoneUsed {
+            get { return BackingStore?.Get<string?>("timeZoneUsed"); }
+            set { BackingStore?.Set("timeZoneUsed", value); }
+        }
+#else
         public string TimeZoneUsed {
             get { return BackingStore?.Get<string>("timeZoneUsed"); }
             set { BackingStore?.Set("timeZoneUsed", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

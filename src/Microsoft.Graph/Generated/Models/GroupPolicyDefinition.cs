@@ -6,35 +6,70 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class GroupPolicyDefinition : Entity, IParsable {
         /// <summary>The group policy category associated with the definition.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public GroupPolicyCategory? Category {
+            get { return BackingStore?.Get<GroupPolicyCategory?>("category"); }
+            set { BackingStore?.Set("category", value); }
+        }
+#else
         public GroupPolicyCategory Category {
             get { return BackingStore?.Get<GroupPolicyCategory>("category"); }
             set { BackingStore?.Set("category", value); }
         }
+#endif
         /// <summary>The localized full category path for the policy.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CategoryPath {
+            get { return BackingStore?.Get<string?>("categoryPath"); }
+            set { BackingStore?.Set("categoryPath", value); }
+        }
+#else
         public string CategoryPath {
             get { return BackingStore?.Get<string>("categoryPath"); }
             set { BackingStore?.Set("categoryPath", value); }
         }
+#endif
         /// <summary>Group Policy Definition Class Type.</summary>
         public GroupPolicyDefinitionClassType? ClassType {
             get { return BackingStore?.Get<GroupPolicyDefinitionClassType?>("classType"); }
             set { BackingStore?.Set("classType", value); }
         }
         /// <summary>The group policy file associated with the definition.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public GroupPolicyDefinitionFile? DefinitionFile {
+            get { return BackingStore?.Get<GroupPolicyDefinitionFile?>("definitionFile"); }
+            set { BackingStore?.Set("definitionFile", value); }
+        }
+#else
         public GroupPolicyDefinitionFile DefinitionFile {
             get { return BackingStore?.Get<GroupPolicyDefinitionFile>("definitionFile"); }
             set { BackingStore?.Set("definitionFile", value); }
         }
+#endif
         /// <summary>The localized policy name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The localized explanation or help text associated with the policy. The default value is empty.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ExplainText {
+            get { return BackingStore?.Get<string?>("explainText"); }
+            set { BackingStore?.Set("explainText", value); }
+        }
+#else
         public string ExplainText {
             get { return BackingStore?.Get<string>("explainText"); }
             set { BackingStore?.Set("explainText", value); }
         }
+#endif
         /// <summary>The category id of the parent category</summary>
         public Guid? GroupPolicyCategoryId {
             get { return BackingStore?.Get<Guid?>("groupPolicyCategoryId"); }
@@ -51,45 +86,94 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>Minimum required CSP version for device configuration in this definition</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MinDeviceCspVersion {
+            get { return BackingStore?.Get<string?>("minDeviceCspVersion"); }
+            set { BackingStore?.Set("minDeviceCspVersion", value); }
+        }
+#else
         public string MinDeviceCspVersion {
             get { return BackingStore?.Get<string>("minDeviceCspVersion"); }
             set { BackingStore?.Set("minDeviceCspVersion", value); }
         }
+#endif
         /// <summary>Minimum required CSP version for user configuration in this definition</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MinUserCspVersion {
+            get { return BackingStore?.Get<string?>("minUserCspVersion"); }
+            set { BackingStore?.Set("minUserCspVersion", value); }
+        }
+#else
         public string MinUserCspVersion {
             get { return BackingStore?.Get<string>("minUserCspVersion"); }
             set { BackingStore?.Set("minUserCspVersion", value); }
         }
+#endif
         /// <summary>Definition of the next version of this definition</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public GroupPolicyDefinition? NextVersionDefinition {
+            get { return BackingStore?.Get<GroupPolicyDefinition?>("nextVersionDefinition"); }
+            set { BackingStore?.Set("nextVersionDefinition", value); }
+        }
+#else
         public GroupPolicyDefinition NextVersionDefinition {
             get { return BackingStore?.Get<GroupPolicyDefinition>("nextVersionDefinition"); }
             set { BackingStore?.Set("nextVersionDefinition", value); }
         }
+#endif
         /// <summary>Type of Group Policy File or Definition.</summary>
         public GroupPolicyType? PolicyType {
             get { return BackingStore?.Get<GroupPolicyType?>("policyType"); }
             set { BackingStore?.Set("policyType", value); }
         }
         /// <summary>The group policy presentations associated with the definition.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<GroupPolicyPresentation>? Presentations {
+            get { return BackingStore?.Get<List<GroupPolicyPresentation>?>("presentations"); }
+            set { BackingStore?.Set("presentations", value); }
+        }
+#else
         public List<GroupPolicyPresentation> Presentations {
             get { return BackingStore?.Get<List<GroupPolicyPresentation>>("presentations"); }
             set { BackingStore?.Set("presentations", value); }
         }
+#endif
         /// <summary>Definition of the previous version of this definition</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public GroupPolicyDefinition? PreviousVersionDefinition {
+            get { return BackingStore?.Get<GroupPolicyDefinition?>("previousVersionDefinition"); }
+            set { BackingStore?.Set("previousVersionDefinition", value); }
+        }
+#else
         public GroupPolicyDefinition PreviousVersionDefinition {
             get { return BackingStore?.Get<GroupPolicyDefinition>("previousVersionDefinition"); }
             set { BackingStore?.Set("previousVersionDefinition", value); }
         }
+#endif
         /// <summary>Localized string used to specify what operating system or application version is affected by the policy.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SupportedOn {
+            get { return BackingStore?.Get<string?>("supportedOn"); }
+            set { BackingStore?.Set("supportedOn", value); }
+        }
+#else
         public string SupportedOn {
             get { return BackingStore?.Get<string>("supportedOn"); }
             set { BackingStore?.Set("supportedOn", value); }
         }
+#endif
         /// <summary>Setting definition version</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Version {
+            get { return BackingStore?.Get<string?>("version"); }
+            set { BackingStore?.Set("version", value); }
+        }
+#else
         public string Version {
             get { return BackingStore?.Get<string>("version"); }
             set { BackingStore?.Set("version", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

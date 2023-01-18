@@ -6,20 +6,41 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class ServiceAnnouncement : Entity, IParsable {
         /// <summary>A collection of service health information for tenant. This property is a contained navigation property, it is nullable and readonly.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ServiceHealth>? HealthOverviews {
+            get { return BackingStore?.Get<List<ServiceHealth>?>("healthOverviews"); }
+            set { BackingStore?.Set("healthOverviews", value); }
+        }
+#else
         public List<ServiceHealth> HealthOverviews {
             get { return BackingStore?.Get<List<ServiceHealth>>("healthOverviews"); }
             set { BackingStore?.Set("healthOverviews", value); }
         }
+#endif
         /// <summary>A collection of service issues for tenant. This property is a contained navigation property, it is nullable and readonly.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ServiceHealthIssue>? Issues {
+            get { return BackingStore?.Get<List<ServiceHealthIssue>?>("issues"); }
+            set { BackingStore?.Set("issues", value); }
+        }
+#else
         public List<ServiceHealthIssue> Issues {
             get { return BackingStore?.Get<List<ServiceHealthIssue>>("issues"); }
             set { BackingStore?.Set("issues", value); }
         }
+#endif
         /// <summary>A collection of service messages for tenant. This property is a contained navigation property, it is nullable and readonly.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ServiceUpdateMessage>? Messages {
+            get { return BackingStore?.Get<List<ServiceUpdateMessage>?>("messages"); }
+            set { BackingStore?.Set("messages", value); }
+        }
+#else
         public List<ServiceUpdateMessage> Messages {
             get { return BackingStore?.Get<List<ServiceUpdateMessage>>("messages"); }
             set { BackingStore?.Set("messages", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

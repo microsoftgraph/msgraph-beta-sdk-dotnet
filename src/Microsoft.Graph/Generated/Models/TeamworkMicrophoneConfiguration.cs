@@ -14,25 +14,46 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The defaultMicrophone property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public TeamworkPeripheral? DefaultMicrophone {
+            get { return BackingStore?.Get<TeamworkPeripheral?>("defaultMicrophone"); }
+            set { BackingStore?.Set("defaultMicrophone", value); }
+        }
+#else
         public TeamworkPeripheral DefaultMicrophone {
             get { return BackingStore?.Get<TeamworkPeripheral>("defaultMicrophone"); }
             set { BackingStore?.Set("defaultMicrophone", value); }
         }
+#endif
         /// <summary>True if the configured microphone is optional. False if the microphone is not optional and the health state of the device should be computed.</summary>
         public bool? IsMicrophoneOptional {
             get { return BackingStore?.Get<bool?>("isMicrophoneOptional"); }
             set { BackingStore?.Set("isMicrophoneOptional", value); }
         }
         /// <summary>The microphones property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<TeamworkPeripheral>? Microphones {
+            get { return BackingStore?.Get<List<TeamworkPeripheral>?>("microphones"); }
+            set { BackingStore?.Set("microphones", value); }
+        }
+#else
         public List<TeamworkPeripheral> Microphones {
             get { return BackingStore?.Get<List<TeamworkPeripheral>>("microphones"); }
             set { BackingStore?.Set("microphones", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new teamworkMicrophoneConfiguration and sets the default values.
         /// </summary>

@@ -16,50 +16,99 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("approvalState", value); }
         }
         /// <summary>The approvalType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ApprovalType {
+            get { return BackingStore?.Get<string?>("approvalType"); }
+            set { BackingStore?.Set("approvalType", value); }
+        }
+#else
         public string ApprovalType {
             get { return BackingStore?.Get<string>("approvalType"); }
             set { BackingStore?.Set("approvalType", value); }
         }
+#endif
         /// <summary>The approverReason property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ApproverReason {
+            get { return BackingStore?.Get<string?>("approverReason"); }
+            set { BackingStore?.Set("approverReason", value); }
+        }
+#else
         public string ApproverReason {
             get { return BackingStore?.Get<string>("approverReason"); }
             set { BackingStore?.Set("approverReason", value); }
         }
+#endif
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
         public DateTimeOffset? EndDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("endDateTime"); }
             set { BackingStore?.Set("endDateTime", value); }
         }
         /// <summary>Read-only. The role assignment request for this approval object</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public PrivilegedRoleAssignmentRequest? Request {
+            get { return BackingStore?.Get<PrivilegedRoleAssignmentRequest?>("request"); }
+            set { BackingStore?.Set("request", value); }
+        }
+#else
         public PrivilegedRoleAssignmentRequest Request {
             get { return BackingStore?.Get<PrivilegedRoleAssignmentRequest>("request"); }
             set { BackingStore?.Set("request", value); }
         }
+#endif
         /// <summary>The requestorReason property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? RequestorReason {
+            get { return BackingStore?.Get<string?>("requestorReason"); }
+            set { BackingStore?.Set("requestorReason", value); }
+        }
+#else
         public string RequestorReason {
             get { return BackingStore?.Get<string>("requestorReason"); }
             set { BackingStore?.Set("requestorReason", value); }
         }
+#endif
         /// <summary>The roleId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? RoleId {
+            get { return BackingStore?.Get<string?>("roleId"); }
+            set { BackingStore?.Set("roleId", value); }
+        }
+#else
         public string RoleId {
             get { return BackingStore?.Get<string>("roleId"); }
             set { BackingStore?.Set("roleId", value); }
         }
+#endif
         /// <summary>The roleInfo property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public PrivilegedRole? RoleInfo {
+            get { return BackingStore?.Get<PrivilegedRole?>("roleInfo"); }
+            set { BackingStore?.Set("roleInfo", value); }
+        }
+#else
         public PrivilegedRole RoleInfo {
             get { return BackingStore?.Get<PrivilegedRole>("roleInfo"); }
             set { BackingStore?.Set("roleInfo", value); }
         }
+#endif
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
         public DateTimeOffset? StartDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }
             set { BackingStore?.Set("startDateTime", value); }
         }
         /// <summary>The userId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UserId {
+            get { return BackingStore?.Get<string?>("userId"); }
+            set { BackingStore?.Set("userId", value); }
+        }
+#else
         public string UserId {
             get { return BackingStore?.Get<string>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

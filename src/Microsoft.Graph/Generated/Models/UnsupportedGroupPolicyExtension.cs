@@ -9,20 +9,41 @@ namespace Microsoft.Graph.Beta.Models {
     /// </summary>
     public class UnsupportedGroupPolicyExtension : Entity, IParsable {
         /// <summary>ExtensionType of the unsupported extension.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ExtensionType {
+            get { return BackingStore?.Get<string?>("extensionType"); }
+            set { BackingStore?.Set("extensionType", value); }
+        }
+#else
         public string ExtensionType {
             get { return BackingStore?.Get<string>("extensionType"); }
             set { BackingStore?.Set("extensionType", value); }
         }
+#endif
         /// <summary>Namespace Url of the unsupported extension.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? NamespaceUrl {
+            get { return BackingStore?.Get<string?>("namespaceUrl"); }
+            set { BackingStore?.Set("namespaceUrl", value); }
+        }
+#else
         public string NamespaceUrl {
             get { return BackingStore?.Get<string>("namespaceUrl"); }
             set { BackingStore?.Set("namespaceUrl", value); }
         }
+#endif
         /// <summary>Node name of the unsupported extension.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? NodeName {
+            get { return BackingStore?.Get<string?>("nodeName"); }
+            set { BackingStore?.Set("nodeName", value); }
+        }
+#else
         public string NodeName {
             get { return BackingStore?.Get<string>("nodeName"); }
             set { BackingStore?.Set("nodeName", value); }
         }
+#endif
         /// <summary>Scope of the group policy setting.</summary>
         public GroupPolicySettingScope? SettingScope {
             get { return BackingStore?.Get<GroupPolicySettingScope?>("settingScope"); }

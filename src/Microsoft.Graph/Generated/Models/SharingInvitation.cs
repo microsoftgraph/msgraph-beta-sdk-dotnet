@@ -14,25 +14,53 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The email address provided for the recipient of the sharing invitation. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Email {
+            get { return BackingStore?.Get<string?>("email"); }
+            set { BackingStore?.Set("email", value); }
+        }
+#else
         public string Email {
             get { return BackingStore?.Get<string>("email"); }
             set { BackingStore?.Set("email", value); }
         }
+#endif
         /// <summary>Provides information about who sent the invitation that created this permission, if that information is available. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public IdentitySet? InvitedBy {
+            get { return BackingStore?.Get<IdentitySet?>("invitedBy"); }
+            set { BackingStore?.Set("invitedBy", value); }
+        }
+#else
         public IdentitySet InvitedBy {
             get { return BackingStore?.Get<IdentitySet>("invitedBy"); }
             set { BackingStore?.Set("invitedBy", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The redeemedBy property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? RedeemedBy {
+            get { return BackingStore?.Get<string?>("redeemedBy"); }
+            set { BackingStore?.Set("redeemedBy", value); }
+        }
+#else
         public string RedeemedBy {
             get { return BackingStore?.Get<string>("redeemedBy"); }
             set { BackingStore?.Set("redeemedBy", value); }
         }
+#endif
         /// <summary>If true the recipient of the invitation needs to sign in in order to access the shared item. Read-only.</summary>
         public bool? SignInRequired {
             get { return BackingStore?.Get<bool?>("signInRequired"); }

@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class ConversationThread : Entity, IParsable {
         /// <summary>The Cc: recipients for the thread. Returned only on $select.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Recipient>? CcRecipients {
+            get { return BackingStore?.Get<List<Recipient>?>("ccRecipients"); }
+            set { BackingStore?.Set("ccRecipients", value); }
+        }
+#else
         public List<Recipient> CcRecipients {
             get { return BackingStore?.Get<List<Recipient>>("ccRecipients"); }
             set { BackingStore?.Set("ccRecipients", value); }
         }
+#endif
         /// <summary>Indicates whether any of the posts within this thread has at least one attachment. Returned by default.</summary>
         public bool? HasAttachments {
             get { return BackingStore?.Get<bool?>("hasAttachments"); }
@@ -26,30 +33,65 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("lastDeliveredDateTime", value); }
         }
         /// <summary>The posts property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Post>? Posts {
+            get { return BackingStore?.Get<List<Post>?>("posts"); }
+            set { BackingStore?.Set("posts", value); }
+        }
+#else
         public List<Post> Posts {
             get { return BackingStore?.Get<List<Post>>("posts"); }
             set { BackingStore?.Set("posts", value); }
         }
+#endif
         /// <summary>A short summary from the body of the latest post in this conversation. Returned by default.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Preview {
+            get { return BackingStore?.Get<string?>("preview"); }
+            set { BackingStore?.Set("preview", value); }
+        }
+#else
         public string Preview {
             get { return BackingStore?.Get<string>("preview"); }
             set { BackingStore?.Set("preview", value); }
         }
+#endif
         /// <summary>The topic of the conversation. This property can be set when the conversation is created, but it cannot be updated. Returned by default.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Topic {
+            get { return BackingStore?.Get<string?>("topic"); }
+            set { BackingStore?.Set("topic", value); }
+        }
+#else
         public string Topic {
             get { return BackingStore?.Get<string>("topic"); }
             set { BackingStore?.Set("topic", value); }
         }
+#endif
         /// <summary>The To: recipients for the thread. Returned only on $select.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Recipient>? ToRecipients {
+            get { return BackingStore?.Get<List<Recipient>?>("toRecipients"); }
+            set { BackingStore?.Set("toRecipients", value); }
+        }
+#else
         public List<Recipient> ToRecipients {
             get { return BackingStore?.Get<List<Recipient>>("toRecipients"); }
             set { BackingStore?.Set("toRecipients", value); }
         }
+#endif
         /// <summary>All the users that sent a message to this thread. Returned by default.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? UniqueSenders {
+            get { return BackingStore?.Get<List<string>?>("uniqueSenders"); }
+            set { BackingStore?.Set("uniqueSenders", value); }
+        }
+#else
         public List<string> UniqueSenders {
             get { return BackingStore?.Get<List<string>>("uniqueSenders"); }
             set { BackingStore?.Set("uniqueSenders", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

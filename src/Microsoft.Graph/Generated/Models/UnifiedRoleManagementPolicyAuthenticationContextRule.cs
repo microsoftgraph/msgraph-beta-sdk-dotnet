@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class UnifiedRoleManagementPolicyAuthenticationContextRule : UnifiedRoleManagementPolicyRule, IParsable {
         /// <summary>The value of the authentication context claim.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ClaimValue {
+            get { return BackingStore?.Get<string?>("claimValue"); }
+            set { BackingStore?.Set("claimValue", value); }
+        }
+#else
         public string ClaimValue {
             get { return BackingStore?.Get<string>("claimValue"); }
             set { BackingStore?.Set("claimValue", value); }
         }
+#endif
         /// <summary>Whether this rule is enabled.</summary>
         public bool? IsEnabled {
             get { return BackingStore?.Get<bool?>("isEnabled"); }

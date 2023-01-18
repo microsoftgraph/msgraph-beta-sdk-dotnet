@@ -19,20 +19,41 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Supported values are like, angry, sad, laugh, heart, surprised.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ReactionType {
+            get { return BackingStore?.Get<string?>("reactionType"); }
+            set { BackingStore?.Set("reactionType", value); }
+        }
+#else
         public string ReactionType {
             get { return BackingStore?.Get<string>("reactionType"); }
             set { BackingStore?.Set("reactionType", value); }
         }
+#endif
         /// <summary>The user property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ChatMessageReactionIdentitySet? User {
+            get { return BackingStore?.Get<ChatMessageReactionIdentitySet?>("user"); }
+            set { BackingStore?.Set("user", value); }
+        }
+#else
         public ChatMessageReactionIdentitySet User {
             get { return BackingStore?.Get<ChatMessageReactionIdentitySet>("user"); }
             set { BackingStore?.Set("user", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new chatMessageReaction and sets the default values.
         /// </summary>

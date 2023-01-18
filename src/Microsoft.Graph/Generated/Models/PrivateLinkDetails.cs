@@ -14,30 +14,65 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The unique identifier for the Private Link policy.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PolicyId {
+            get { return BackingStore?.Get<string?>("policyId"); }
+            set { BackingStore?.Set("policyId", value); }
+        }
+#else
         public string PolicyId {
             get { return BackingStore?.Get<string>("policyId"); }
             set { BackingStore?.Set("policyId", value); }
         }
+#endif
         /// <summary>The name of the Private Link policy in Azure AD.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PolicyName {
+            get { return BackingStore?.Get<string?>("policyName"); }
+            set { BackingStore?.Set("policyName", value); }
+        }
+#else
         public string PolicyName {
             get { return BackingStore?.Get<string>("policyName"); }
             set { BackingStore?.Set("policyName", value); }
         }
+#endif
         /// <summary>The tenant identifier of the Azure AD tenant the Private Link policy belongs to.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PolicyTenantId {
+            get { return BackingStore?.Get<string?>("policyTenantId"); }
+            set { BackingStore?.Set("policyTenantId", value); }
+        }
+#else
         public string PolicyTenantId {
             get { return BackingStore?.Get<string>("policyTenantId"); }
             set { BackingStore?.Set("policyTenantId", value); }
         }
+#endif
         /// <summary>The Azure Resource Manager (ARM) path for the Private Link policy resource.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ResourceId {
+            get { return BackingStore?.Get<string?>("resourceId"); }
+            set { BackingStore?.Set("resourceId", value); }
+        }
+#else
         public string ResourceId {
             get { return BackingStore?.Get<string>("resourceId"); }
             set { BackingStore?.Set("resourceId", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new privateLinkDetails and sets the default values.
         /// </summary>

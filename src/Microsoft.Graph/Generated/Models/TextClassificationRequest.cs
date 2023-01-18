@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class TextClassificationRequest : Entity, IParsable {
         /// <summary>The fileExtension property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? FileExtension {
+            get { return BackingStore?.Get<string?>("fileExtension"); }
+            set { BackingStore?.Set("fileExtension", value); }
+        }
+#else
         public string FileExtension {
             get { return BackingStore?.Get<string>("fileExtension"); }
             set { BackingStore?.Set("fileExtension", value); }
         }
+#endif
         /// <summary>The matchTolerancesToInclude property</summary>
         public MlClassificationMatchTolerance? MatchTolerancesToInclude {
             get { return BackingStore?.Get<MlClassificationMatchTolerance?>("matchTolerancesToInclude"); }
@@ -21,15 +28,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("scopesToRun", value); }
         }
         /// <summary>The sensitiveTypeIds property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? SensitiveTypeIds {
+            get { return BackingStore?.Get<List<string>?>("sensitiveTypeIds"); }
+            set { BackingStore?.Set("sensitiveTypeIds", value); }
+        }
+#else
         public List<string> SensitiveTypeIds {
             get { return BackingStore?.Get<List<string>>("sensitiveTypeIds"); }
             set { BackingStore?.Set("sensitiveTypeIds", value); }
         }
+#endif
         /// <summary>The text property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Text {
+            get { return BackingStore?.Get<string?>("text"); }
+            set { BackingStore?.Set("text", value); }
+        }
+#else
         public string Text {
             get { return BackingStore?.Get<string>("text"); }
             set { BackingStore?.Set("text", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

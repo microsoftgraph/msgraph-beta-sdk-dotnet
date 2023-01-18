@@ -17,10 +17,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("anchor", value); }
         }
         /// <summary>The apiExpressions property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<StringKeyStringValuePair>? ApiExpressions {
+            get { return BackingStore?.Get<List<StringKeyStringValuePair>?>("apiExpressions"); }
+            set { BackingStore?.Set("apiExpressions", value); }
+        }
+#else
         public List<StringKeyStringValuePair> ApiExpressions {
             get { return BackingStore?.Get<List<StringKeyStringValuePair>>("apiExpressions"); }
             set { BackingStore?.Set("apiExpressions", value); }
         }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>true if value of this attribute should be treated as case-sensitive. This setting affects how the synchronization engine detects changes for the attribute.</summary>
@@ -29,20 +36,34 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("caseExact", value); }
         }
         /// <summary>The defaultValue property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DefaultValue {
+            get { return BackingStore?.Get<string?>("defaultValue"); }
+            set { BackingStore?.Set("defaultValue", value); }
+        }
+#else
         public string DefaultValue {
             get { return BackingStore?.Get<string>("defaultValue"); }
             set { BackingStore?.Set("defaultValue", value); }
         }
+#endif
         /// <summary>&apos;true&apos; to allow null values for attributes.</summary>
         public bool? FlowNullValues {
             get { return BackingStore?.Get<bool?>("flowNullValues"); }
             set { BackingStore?.Set("flowNullValues", value); }
         }
         /// <summary>Additional extension properties. Unless mentioned explicitly, metadata values should not be changed.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<MetadataEntry>? Metadata {
+            get { return BackingStore?.Get<List<MetadataEntry>?>("metadata"); }
+            set { BackingStore?.Set("metadata", value); }
+        }
+#else
         public List<MetadataEntry> Metadata {
             get { return BackingStore?.Get<List<MetadataEntry>>("metadata"); }
             set { BackingStore?.Set("metadata", value); }
         }
+#endif
         /// <summary>true if an attribute can have multiple values. Default is false.</summary>
         public bool? Multivalued {
             get { return BackingStore?.Get<bool?>("multivalued"); }
@@ -54,20 +75,41 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("mutability", value); }
         }
         /// <summary>Name of the attribute. Must be unique within the object definition. Not nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Name {
+            get { return BackingStore?.Get<string?>("name"); }
+            set { BackingStore?.Set("name", value); }
+        }
+#else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>For attributes with reference type, lists referenced objects (for example, the manager attribute would list User as the referenced object).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ReferencedObject>? ReferencedObjects {
+            get { return BackingStore?.Get<List<ReferencedObject>?>("referencedObjects"); }
+            set { BackingStore?.Set("referencedObjects", value); }
+        }
+#else
         public List<ReferencedObject> ReferencedObjects {
             get { return BackingStore?.Get<List<ReferencedObject>>("referencedObjects"); }
             set { BackingStore?.Set("referencedObjects", value); }
         }
+#endif
         /// <summary>true if attribute is required. Object can not be created if any of the required attributes are missing. If during synchronization, the required attribute has no value, the default value will be used. If default the value was not set, synchronization will record an error.</summary>
         public bool? Required {
             get { return BackingStore?.Get<bool?>("required"); }

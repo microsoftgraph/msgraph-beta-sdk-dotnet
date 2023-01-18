@@ -6,20 +6,41 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class AospDeviceOwnerCompliancePolicy : DeviceCompliancePolicy, IParsable {
         /// <summary>Minimum Android security patch level.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MinAndroidSecurityPatchLevel {
+            get { return BackingStore?.Get<string?>("minAndroidSecurityPatchLevel"); }
+            set { BackingStore?.Set("minAndroidSecurityPatchLevel", value); }
+        }
+#else
         public string MinAndroidSecurityPatchLevel {
             get { return BackingStore?.Get<string>("minAndroidSecurityPatchLevel"); }
             set { BackingStore?.Set("minAndroidSecurityPatchLevel", value); }
         }
+#endif
         /// <summary>Maximum Android version.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OsMaximumVersion {
+            get { return BackingStore?.Get<string?>("osMaximumVersion"); }
+            set { BackingStore?.Set("osMaximumVersion", value); }
+        }
+#else
         public string OsMaximumVersion {
             get { return BackingStore?.Get<string>("osMaximumVersion"); }
             set { BackingStore?.Set("osMaximumVersion", value); }
         }
+#endif
         /// <summary>Minimum Android version.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OsMinimumVersion {
+            get { return BackingStore?.Get<string?>("osMinimumVersion"); }
+            set { BackingStore?.Set("osMinimumVersion", value); }
+        }
+#else
         public string OsMinimumVersion {
             get { return BackingStore?.Get<string>("osMinimumVersion"); }
             set { BackingStore?.Set("osMinimumVersion", value); }
         }
+#endif
         /// <summary>Minimum password length. Valid values 4 to 16</summary>
         public int? PasswordMinimumLength {
             get { return BackingStore?.Get<int?>("passwordMinimumLength"); }

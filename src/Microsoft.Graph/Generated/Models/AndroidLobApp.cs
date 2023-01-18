@@ -6,35 +6,77 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class AndroidLobApp : MobileLobApp, IParsable {
         /// <summary>The Identity Name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? IdentityName {
+            get { return BackingStore?.Get<string?>("identityName"); }
+            set { BackingStore?.Set("identityName", value); }
+        }
+#else
         public string IdentityName {
             get { return BackingStore?.Get<string>("identityName"); }
             set { BackingStore?.Set("identityName", value); }
         }
+#endif
         /// <summary>The identity version.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? IdentityVersion {
+            get { return BackingStore?.Get<string?>("identityVersion"); }
+            set { BackingStore?.Set("identityVersion", value); }
+        }
+#else
         public string IdentityVersion {
             get { return BackingStore?.Get<string>("identityVersion"); }
             set { BackingStore?.Set("identityVersion", value); }
         }
+#endif
         /// <summary>The value for the minimum applicable operating system.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public AndroidMinimumOperatingSystem? MinimumSupportedOperatingSystem {
+            get { return BackingStore?.Get<AndroidMinimumOperatingSystem?>("minimumSupportedOperatingSystem"); }
+            set { BackingStore?.Set("minimumSupportedOperatingSystem", value); }
+        }
+#else
         public AndroidMinimumOperatingSystem MinimumSupportedOperatingSystem {
             get { return BackingStore?.Get<AndroidMinimumOperatingSystem>("minimumSupportedOperatingSystem"); }
             set { BackingStore?.Set("minimumSupportedOperatingSystem", value); }
         }
+#endif
         /// <summary>The package identifier.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PackageId {
+            get { return BackingStore?.Get<string?>("packageId"); }
+            set { BackingStore?.Set("packageId", value); }
+        }
+#else
         public string PackageId {
             get { return BackingStore?.Get<string>("packageId"); }
             set { BackingStore?.Set("packageId", value); }
         }
+#endif
         /// <summary>The version code of Android Line of Business (LoB) app.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? VersionCode {
+            get { return BackingStore?.Get<string?>("versionCode"); }
+            set { BackingStore?.Set("versionCode", value); }
+        }
+#else
         public string VersionCode {
             get { return BackingStore?.Get<string>("versionCode"); }
             set { BackingStore?.Set("versionCode", value); }
         }
+#endif
         /// <summary>The version name of Android Line of Business (LoB) app.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? VersionName {
+            get { return BackingStore?.Get<string?>("versionName"); }
+            set { BackingStore?.Set("versionName", value); }
+        }
+#else
         public string VersionName {
             get { return BackingStore?.Get<string>("versionName"); }
             set { BackingStore?.Set("versionName", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new AndroidLobApp and sets the default values.
         /// </summary>

@@ -6,45 +6,87 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.TermStore {
     public class Term : Entity, IParsable {
         /// <summary>Children of current term.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Term>? Children {
+            get { return BackingStore?.Get<List<Term>?>("children"); }
+            set { BackingStore?.Set("children", value); }
+        }
+#else
         public List<Term> Children {
             get { return BackingStore?.Get<List<Term>>("children"); }
             set { BackingStore?.Set("children", value); }
         }
+#endif
         /// <summary>Date and time of term creation. Read-only.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Description about term that is dependent on the languageTag.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<LocalizedDescription>? Descriptions {
+            get { return BackingStore?.Get<List<LocalizedDescription>?>("descriptions"); }
+            set { BackingStore?.Set("descriptions", value); }
+        }
+#else
         public List<LocalizedDescription> Descriptions {
             get { return BackingStore?.Get<List<LocalizedDescription>>("descriptions"); }
             set { BackingStore?.Set("descriptions", value); }
         }
+#endif
         /// <summary>Label metadata for a term.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<LocalizedLabel>? Labels {
+            get { return BackingStore?.Get<List<LocalizedLabel>?>("labels"); }
+            set { BackingStore?.Set("labels", value); }
+        }
+#else
         public List<LocalizedLabel> Labels {
             get { return BackingStore?.Get<List<LocalizedLabel>>("labels"); }
             set { BackingStore?.Set("labels", value); }
         }
+#endif
         /// <summary>Last date and time of term modification. Read-only.</summary>
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>Collection of properties on the term.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.KeyValue>? Properties {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.KeyValue>?>("properties"); }
+            set { BackingStore?.Set("properties", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.KeyValue> Properties {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.KeyValue>>("properties"); }
             set { BackingStore?.Set("properties", value); }
         }
+#endif
         /// <summary>To indicate which terms are related to the current term as either pinned or reused.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Relation>? Relations {
+            get { return BackingStore?.Get<List<Relation>?>("relations"); }
+            set { BackingStore?.Set("relations", value); }
+        }
+#else
         public List<Relation> Relations {
             get { return BackingStore?.Get<List<Relation>>("relations"); }
             set { BackingStore?.Set("relations", value); }
         }
+#endif
         /// <summary>The [set] in which the term is created.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.TermStore.Set? Set {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TermStore.Set?>("set"); }
+            set { BackingStore?.Set("set", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.TermStore.Set Set {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TermStore.Set>("set"); }
             set { BackingStore?.Set("set", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

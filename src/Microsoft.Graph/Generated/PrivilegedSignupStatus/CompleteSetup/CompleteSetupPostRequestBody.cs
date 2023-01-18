@@ -15,10 +15,17 @@ namespace Microsoft.Graph.Beta.PrivilegedSignupStatus.CompleteSetup {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The tenantSetupInfo property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.TenantSetupInfo? TenantSetupInfo {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TenantSetupInfo?>("tenantSetupInfo"); }
+            set { BackingStore?.Set("tenantSetupInfo", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.TenantSetupInfo TenantSetupInfo {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TenantSetupInfo>("tenantSetupInfo"); }
             set { BackingStore?.Set("tenantSetupInfo", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new completeSetupPostRequestBody and sets the default values.
         /// </summary>

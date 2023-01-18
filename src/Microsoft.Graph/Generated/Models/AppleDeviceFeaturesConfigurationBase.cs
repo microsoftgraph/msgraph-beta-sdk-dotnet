@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class AppleDeviceFeaturesConfigurationBase : DeviceConfiguration, IParsable {
         /// <summary>An array of AirPrint printers that should always be shown. This collection can contain a maximum of 500 elements.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AirPrintDestination>? AirPrintDestinations {
+            get { return BackingStore?.Get<List<AirPrintDestination>?>("airPrintDestinations"); }
+            set { BackingStore?.Set("airPrintDestinations", value); }
+        }
+#else
         public List<AirPrintDestination> AirPrintDestinations {
             get { return BackingStore?.Get<List<AirPrintDestination>>("airPrintDestinations"); }
             set { BackingStore?.Set("airPrintDestinations", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new AppleDeviceFeaturesConfigurationBase and sets the default values.
         /// </summary>

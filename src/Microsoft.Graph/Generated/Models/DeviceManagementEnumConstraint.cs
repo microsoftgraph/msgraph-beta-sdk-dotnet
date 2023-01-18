@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementEnumConstraint : DeviceManagementConstraint, IParsable {
         /// <summary>List of valid values for this string</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DeviceManagementEnumValue>? Values {
+            get { return BackingStore?.Get<List<DeviceManagementEnumValue>?>("values"); }
+            set { BackingStore?.Set("values", value); }
+        }
+#else
         public List<DeviceManagementEnumValue> Values {
             get { return BackingStore?.Get<List<DeviceManagementEnumValue>>("values"); }
             set { BackingStore?.Set("values", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new DeviceManagementEnumConstraint and sets the default values.
         /// </summary>

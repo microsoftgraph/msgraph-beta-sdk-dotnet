@@ -14,15 +14,29 @@ namespace Microsoft.Graph.Beta.Identity.ApiConnectors.Item.UploadClientCertifica
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The password property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Password {
+            get { return BackingStore?.Get<string?>("password"); }
+            set { BackingStore?.Set("password", value); }
+        }
+#else
         public string Password {
             get { return BackingStore?.Get<string>("password"); }
             set { BackingStore?.Set("password", value); }
         }
+#endif
         /// <summary>The pkcs12Value property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Pkcs12Value {
+            get { return BackingStore?.Get<string?>("pkcs12Value"); }
+            set { BackingStore?.Set("pkcs12Value", value); }
+        }
+#else
         public string Pkcs12Value {
             get { return BackingStore?.Get<string>("pkcs12Value"); }
             set { BackingStore?.Set("pkcs12Value", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new uploadClientCertificatePostRequestBody and sets the default values.
         /// </summary>

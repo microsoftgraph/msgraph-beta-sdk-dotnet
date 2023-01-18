@@ -14,25 +14,53 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Default BCP 47 language tag for the description.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DefaultLanguage {
+            get { return BackingStore?.Get<string?>("defaultLanguage"); }
+            set { BackingStore?.Set("defaultLanguage", value); }
+        }
+#else
         public string DefaultLanguage {
             get { return BackingStore?.Get<string>("defaultLanguage"); }
             set { BackingStore?.Set("defaultLanguage", value); }
         }
+#endif
         /// <summary>Localized messages that explain what is needed for this column&apos;s value to be considered valid. User will be prompted with this message if validation fails.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DisplayNameLocalization>? Descriptions {
+            get { return BackingStore?.Get<List<DisplayNameLocalization>?>("descriptions"); }
+            set { BackingStore?.Set("descriptions", value); }
+        }
+#else
         public List<DisplayNameLocalization> Descriptions {
             get { return BackingStore?.Get<List<DisplayNameLocalization>>("descriptions"); }
             set { BackingStore?.Set("descriptions", value); }
         }
+#endif
         /// <summary>The formula to validate column value. For examples, see Examples of common formulas in lists</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Formula {
+            get { return BackingStore?.Get<string?>("formula"); }
+            set { BackingStore?.Set("formula", value); }
+        }
+#else
         public string Formula {
             get { return BackingStore?.Get<string>("formula"); }
             set { BackingStore?.Set("formula", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new columnValidation and sets the default values.
         /// </summary>

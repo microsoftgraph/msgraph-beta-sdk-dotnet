@@ -20,35 +20,70 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("birthDate", value); }
         }
         /// <summary>ID of the student in the source system.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ExternalId {
+            get { return BackingStore?.Get<string?>("externalId"); }
+            set { BackingStore?.Set("externalId", value); }
+        }
+#else
         public string ExternalId {
             get { return BackingStore?.Get<string>("externalId"); }
             set { BackingStore?.Set("externalId", value); }
         }
+#endif
         /// <summary>Possible values are: female, male, other.</summary>
         public EducationGender? Gender {
             get { return BackingStore?.Get<EducationGender?>("gender"); }
             set { BackingStore?.Set("gender", value); }
         }
         /// <summary>Current grade level of the student.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Grade {
+            get { return BackingStore?.Get<string?>("grade"); }
+            set { BackingStore?.Set("grade", value); }
+        }
+#else
         public string Grade {
             get { return BackingStore?.Get<string>("grade"); }
             set { BackingStore?.Set("grade", value); }
         }
+#endif
         /// <summary>Year the student is graduating from the school.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? GraduationYear {
+            get { return BackingStore?.Get<string?>("graduationYear"); }
+            set { BackingStore?.Set("graduationYear", value); }
+        }
+#else
         public string GraduationYear {
             get { return BackingStore?.Get<string>("graduationYear"); }
             set { BackingStore?.Set("graduationYear", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Student Number.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? StudentNumber {
+            get { return BackingStore?.Get<string?>("studentNumber"); }
+            set { BackingStore?.Set("studentNumber", value); }
+        }
+#else
         public string StudentNumber {
             get { return BackingStore?.Get<string>("studentNumber"); }
             set { BackingStore?.Set("studentNumber", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new educationStudent and sets the default values.
         /// </summary>

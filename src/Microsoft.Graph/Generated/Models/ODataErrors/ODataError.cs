@@ -15,10 +15,17 @@ namespace Microsoft.Graph.Beta.Models.ODataErrors {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The error property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public MainError? Error {
+            get { return BackingStore?.Get<MainError?>("error"); }
+            set { BackingStore?.Set("error", value); }
+        }
+#else
         public MainError Error {
             get { return BackingStore?.Get<MainError>("error"); }
             set { BackingStore?.Set("error", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new ODataError and sets the default values.
         /// </summary>

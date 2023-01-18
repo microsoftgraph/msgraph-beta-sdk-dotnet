@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class GroupPolicyPresentationValueMultiText : GroupPolicyPresentationValue, IParsable {
         /// <summary>A collection of non-empty strings for the associated presentation.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? Values {
+            get { return BackingStore?.Get<List<string>?>("values"); }
+            set { BackingStore?.Set("values", value); }
+        }
+#else
         public List<string> Values {
             get { return BackingStore?.Get<List<string>>("values"); }
             set { BackingStore?.Set("values", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

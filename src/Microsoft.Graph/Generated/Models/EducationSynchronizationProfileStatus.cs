@@ -26,10 +26,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>Status message for the synchronization stage of the current profile.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? StatusMessage {
+            get { return BackingStore?.Get<string?>("statusMessage"); }
+            set { BackingStore?.Set("statusMessage", value); }
+        }
+#else
         public string StatusMessage {
             get { return BackingStore?.Get<string>("statusMessage"); }
             set { BackingStore?.Set("statusMessage", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

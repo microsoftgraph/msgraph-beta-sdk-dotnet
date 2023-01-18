@@ -19,15 +19,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("isValid", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The list of password validation rules and whether the password passed those rules. Not nullable. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ValidationResult>? ValidationResults {
+            get { return BackingStore?.Get<List<ValidationResult>?>("validationResults"); }
+            set { BackingStore?.Set("validationResults", value); }
+        }
+#else
         public List<ValidationResult> ValidationResults {
             get { return BackingStore?.Get<List<ValidationResult>>("validationResults"); }
             set { BackingStore?.Set("validationResults", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new passwordValidationInformation and sets the default values.
         /// </summary>

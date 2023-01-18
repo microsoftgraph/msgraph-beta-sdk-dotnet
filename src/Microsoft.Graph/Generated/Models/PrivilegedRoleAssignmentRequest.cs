@@ -6,65 +6,142 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class PrivilegedRoleAssignmentRequest : Entity, IParsable {
         /// <summary>The state of the assignment. The value can be Eligible for eligible assignment Active - if it is directly assigned Active by administrators, or activated on an eligible assignment by the users.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AssignmentState {
+            get { return BackingStore?.Get<string?>("assignmentState"); }
+            set { BackingStore?.Set("assignmentState", value); }
+        }
+#else
         public string AssignmentState {
             get { return BackingStore?.Get<string>("assignmentState"); }
             set { BackingStore?.Set("assignmentState", value); }
         }
+#endif
         /// <summary>The duration of a role assignment.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Duration {
+            get { return BackingStore?.Get<string?>("duration"); }
+            set { BackingStore?.Set("duration", value); }
+        }
+#else
         public string Duration {
             get { return BackingStore?.Get<string>("duration"); }
             set { BackingStore?.Set("duration", value); }
         }
+#endif
         /// <summary>The reason for the role assignment.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Reason {
+            get { return BackingStore?.Get<string?>("reason"); }
+            set { BackingStore?.Set("reason", value); }
+        }
+#else
         public string Reason {
             get { return BackingStore?.Get<string>("reason"); }
             set { BackingStore?.Set("reason", value); }
         }
+#endif
         /// <summary>Read-only. The request create time. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? RequestedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("requestedDateTime"); }
             set { BackingStore?.Set("requestedDateTime", value); }
         }
         /// <summary>The id of the role.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? RoleId {
+            get { return BackingStore?.Get<string?>("roleId"); }
+            set { BackingStore?.Set("roleId", value); }
+        }
+#else
         public string RoleId {
             get { return BackingStore?.Get<string>("roleId"); }
             set { BackingStore?.Set("roleId", value); }
         }
+#endif
         /// <summary>The roleInfo object of the role assignment request.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public PrivilegedRole? RoleInfo {
+            get { return BackingStore?.Get<PrivilegedRole?>("roleInfo"); }
+            set { BackingStore?.Set("roleInfo", value); }
+        }
+#else
         public PrivilegedRole RoleInfo {
             get { return BackingStore?.Get<PrivilegedRole>("roleInfo"); }
             set { BackingStore?.Set("roleInfo", value); }
         }
+#endif
         /// <summary>The schedule object of the role assignment request.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public GovernanceSchedule? Schedule {
+            get { return BackingStore?.Get<GovernanceSchedule?>("schedule"); }
+            set { BackingStore?.Set("schedule", value); }
+        }
+#else
         public GovernanceSchedule Schedule {
             get { return BackingStore?.Get<GovernanceSchedule>("schedule"); }
             set { BackingStore?.Set("schedule", value); }
         }
+#endif
         /// <summary>Read-only.The status of the role assignment request. The value can be NotStarted,Completed,RequestedApproval,Scheduled,Approved,ApprovalDenied,ApprovalAborted,Cancelling,Cancelled,Revoked,RequestExpired.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Status {
+            get { return BackingStore?.Get<string?>("status"); }
+            set { BackingStore?.Set("status", value); }
+        }
+#else
         public string Status {
             get { return BackingStore?.Get<string>("status"); }
             set { BackingStore?.Set("status", value); }
         }
+#endif
         /// <summary>The ticketNumber for the role assignment.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TicketNumber {
+            get { return BackingStore?.Get<string?>("ticketNumber"); }
+            set { BackingStore?.Set("ticketNumber", value); }
+        }
+#else
         public string TicketNumber {
             get { return BackingStore?.Get<string>("ticketNumber"); }
             set { BackingStore?.Set("ticketNumber", value); }
         }
+#endif
         /// <summary>The ticketSystem for the role assignment.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TicketSystem {
+            get { return BackingStore?.Get<string?>("ticketSystem"); }
+            set { BackingStore?.Set("ticketSystem", value); }
+        }
+#else
         public string TicketSystem {
             get { return BackingStore?.Get<string>("ticketSystem"); }
             set { BackingStore?.Set("ticketSystem", value); }
         }
+#endif
         /// <summary>Representing the type of the operation on the role assignment. The value can be AdminAdd: Administrators add users to roles;UserAdd: Users add role assignments.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Type {
+            get { return BackingStore?.Get<string?>("type"); }
+            set { BackingStore?.Set("type", value); }
+        }
+#else
         public string Type {
             get { return BackingStore?.Get<string>("type"); }
             set { BackingStore?.Set("type", value); }
         }
+#endif
         /// <summary>The id of the user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UserId {
+            get { return BackingStore?.Get<string?>("userId"); }
+            set { BackingStore?.Set("userId", value); }
+        }
+#else
         public string UserId {
             get { return BackingStore?.Get<string>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

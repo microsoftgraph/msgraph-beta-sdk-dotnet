@@ -6,20 +6,41 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class AndroidManagedStoreApp : MobileApp, IParsable {
         /// <summary>The Identity Name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AppIdentifier {
+            get { return BackingStore?.Get<string?>("appIdentifier"); }
+            set { BackingStore?.Set("appIdentifier", value); }
+        }
+#else
         public string AppIdentifier {
             get { return BackingStore?.Get<string>("appIdentifier"); }
             set { BackingStore?.Set("appIdentifier", value); }
         }
+#endif
         /// <summary>The Play for Work Store app URL.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AppStoreUrl {
+            get { return BackingStore?.Get<string?>("appStoreUrl"); }
+            set { BackingStore?.Set("appStoreUrl", value); }
+        }
+#else
         public string AppStoreUrl {
             get { return BackingStore?.Get<string>("appStoreUrl"); }
             set { BackingStore?.Set("appStoreUrl", value); }
         }
+#endif
         /// <summary>The tracks that are visible to this enterprise.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AndroidManagedStoreAppTrack>? AppTracks {
+            get { return BackingStore?.Get<List<AndroidManagedStoreAppTrack>?>("appTracks"); }
+            set { BackingStore?.Set("appTracks", value); }
+        }
+#else
         public List<AndroidManagedStoreAppTrack> AppTracks {
             get { return BackingStore?.Get<List<AndroidManagedStoreAppTrack>>("appTracks"); }
             set { BackingStore?.Set("appTracks", value); }
         }
+#endif
         /// <summary>Indicates whether the app is only available to a given enterprise&apos;s users.</summary>
         public bool? IsPrivate {
             get { return BackingStore?.Get<bool?>("isPrivate"); }
@@ -31,10 +52,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("isSystemApp", value); }
         }
         /// <summary>The package identifier.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PackageId {
+            get { return BackingStore?.Get<string?>("packageId"); }
+            set { BackingStore?.Set("packageId", value); }
+        }
+#else
         public string PackageId {
             get { return BackingStore?.Get<string>("packageId"); }
             set { BackingStore?.Set("packageId", value); }
         }
+#endif
         /// <summary>Whether this app supports OEMConfig policy.</summary>
         public bool? SupportsOemConfig {
             get { return BackingStore?.Get<bool?>("supportsOemConfig"); }

@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class EasEmailProfileConfigurationBase : DeviceConfiguration, IParsable {
         /// <summary>Custom domain name value used while generating an email profile before installing on the device.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CustomDomainName {
+            get { return BackingStore?.Get<string?>("customDomainName"); }
+            set { BackingStore?.Set("customDomainName", value); }
+        }
+#else
         public string CustomDomainName {
             get { return BackingStore?.Get<string>("customDomainName"); }
             set { BackingStore?.Set("customDomainName", value); }
         }
+#endif
         /// <summary>UserDomainname attribute that is picked from AAD and injected into this profile before installing on the device. Possible values are: fullDomainName, netBiosDomainName.</summary>
         public DomainNameSource? UserDomainNameSource {
             get { return BackingStore?.Get<DomainNameSource?>("userDomainNameSource"); }

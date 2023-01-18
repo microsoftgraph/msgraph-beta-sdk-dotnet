@@ -14,15 +14,29 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The unique identifier of the user, group, or application; one of the following keywords: AllUsers and AllApplications; or for targets that are applications, you may use reserved values.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Target {
+            get { return BackingStore?.Get<string?>("target"); }
+            set { BackingStore?.Set("target", value); }
+        }
+#else
         public string Target {
             get { return BackingStore?.Get<string>("target"); }
             set { BackingStore?.Set("target", value); }
         }
+#endif
         /// <summary>The type of resource that you want to target. The possible values are: user, group, application, unknownFutureValue.</summary>
         public CrossTenantAccessPolicyTargetType? TargetType {
             get { return BackingStore?.Get<CrossTenantAccessPolicyTargetType?>("targetType"); }

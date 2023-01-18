@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class StsPolicy : PolicyBase, IParsable {
         /// <summary>The appliesTo property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DirectoryObject>? AppliesTo {
+            get { return BackingStore?.Get<List<DirectoryObject>?>("appliesTo"); }
+            set { BackingStore?.Set("appliesTo", value); }
+        }
+#else
         public List<DirectoryObject> AppliesTo {
             get { return BackingStore?.Get<List<DirectoryObject>>("appliesTo"); }
             set { BackingStore?.Set("appliesTo", value); }
         }
+#endif
         /// <summary>A string collection containing a JSON string that defines the rules and settings for a policy. The syntax for the definition differs for each derived policy type. Required.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? Definition {
+            get { return BackingStore?.Get<List<string>?>("definition"); }
+            set { BackingStore?.Set("definition", value); }
+        }
+#else
         public List<string> Definition {
             get { return BackingStore?.Get<List<string>>("definition"); }
             set { BackingStore?.Set("definition", value); }
         }
+#endif
         /// <summary>If set to true, activates this policy. There can be many policies for the same policy type, but only one can be activated as the organization default. Optional, default value is false.</summary>
         public bool? IsOrganizationDefault {
             get { return BackingStore?.Get<bool?>("isOrganizationDefault"); }

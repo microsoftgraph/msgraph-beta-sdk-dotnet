@@ -12,17 +12,31 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The user in an attack simulation and training campaign.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.AttackSimulationUser? AttackSimulationUser {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AttackSimulationUser?>("attackSimulationUser"); }
+            set { BackingStore?.Set("attackSimulationUser", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.AttackSimulationUser AttackSimulationUser {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AttackSimulationUser>("attackSimulationUser"); }
             set { BackingStore?.Set("attackSimulationUser", value); }
         }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Number of repeat offences of the user in attack simulation and training campaigns.</summary>
         public int? RepeatOffenceCount {
             get { return BackingStore?.Get<int?>("repeatOffenceCount"); }

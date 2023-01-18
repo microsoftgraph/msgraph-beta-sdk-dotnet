@@ -6,45 +6,101 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class ProjectParticipation : ItemFacet, IParsable {
         /// <summary>Contains categories a user has associated with the project (for example, digital transformation, oil rig).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? Categories {
+            get { return BackingStore?.Get<List<string>?>("categories"); }
+            set { BackingStore?.Set("categories", value); }
+        }
+#else
         public List<string> Categories {
             get { return BackingStore?.Get<List<string>>("categories"); }
             set { BackingStore?.Set("categories", value); }
         }
+#endif
         /// <summary>Contains detailed information about the client the project was for.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public CompanyDetail? Client {
+            get { return BackingStore?.Get<CompanyDetail?>("client"); }
+            set { BackingStore?.Set("client", value); }
+        }
+#else
         public CompanyDetail Client {
             get { return BackingStore?.Get<CompanyDetail>("client"); }
             set { BackingStore?.Set("client", value); }
         }
+#endif
         /// <summary>Contains experience scenario tags a user has associated with the interest. Allowed values in the collection are: askMeAbout, ableToMentor, wantsToLearn, wantsToImprove.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? CollaborationTags {
+            get { return BackingStore?.Get<List<string>?>("collaborationTags"); }
+            set { BackingStore?.Set("collaborationTags", value); }
+        }
+#else
         public List<string> CollaborationTags {
             get { return BackingStore?.Get<List<string>>("collaborationTags"); }
             set { BackingStore?.Set("collaborationTags", value); }
         }
+#endif
         /// <summary>Lists people that also worked on the project.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<RelatedPerson>? Colleagues {
+            get { return BackingStore?.Get<List<RelatedPerson>?>("colleagues"); }
+            set { BackingStore?.Set("colleagues", value); }
+        }
+#else
         public List<RelatedPerson> Colleagues {
             get { return BackingStore?.Get<List<RelatedPerson>>("colleagues"); }
             set { BackingStore?.Set("colleagues", value); }
         }
+#endif
         /// <summary>Contains detail about the user&apos;s role on the project.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public PositionDetail? Detail {
+            get { return BackingStore?.Get<PositionDetail?>("detail"); }
+            set { BackingStore?.Set("detail", value); }
+        }
+#else
         public PositionDetail Detail {
             get { return BackingStore?.Get<PositionDetail>("detail"); }
             set { BackingStore?.Set("detail", value); }
         }
+#endif
         /// <summary>Contains a friendly name for the project.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The Person or people who sponsored the project.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<RelatedPerson>? Sponsors {
+            get { return BackingStore?.Get<List<RelatedPerson>?>("sponsors"); }
+            set { BackingStore?.Set("sponsors", value); }
+        }
+#else
         public List<RelatedPerson> Sponsors {
             get { return BackingStore?.Get<List<RelatedPerson>>("sponsors"); }
             set { BackingStore?.Set("sponsors", value); }
         }
+#endif
         /// <summary>The thumbnailUrl property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ThumbnailUrl {
+            get { return BackingStore?.Get<string?>("thumbnailUrl"); }
+            set { BackingStore?.Set("thumbnailUrl", value); }
+        }
+#else
         public string ThumbnailUrl {
             get { return BackingStore?.Get<string>("thumbnailUrl"); }
             set { BackingStore?.Set("thumbnailUrl", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new ProjectParticipation and sets the default values.
         /// </summary>

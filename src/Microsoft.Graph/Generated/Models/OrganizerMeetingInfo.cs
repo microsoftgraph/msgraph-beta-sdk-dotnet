@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class OrganizerMeetingInfo : MeetingInfo, IParsable {
         /// <summary>The organizer property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public IdentitySet? Organizer {
+            get { return BackingStore?.Get<IdentitySet?>("organizer"); }
+            set { BackingStore?.Set("organizer", value); }
+        }
+#else
         public IdentitySet Organizer {
             get { return BackingStore?.Get<IdentitySet>("organizer"); }
             set { BackingStore?.Set("organizer", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new OrganizerMeetingInfo and sets the default values.
         /// </summary>

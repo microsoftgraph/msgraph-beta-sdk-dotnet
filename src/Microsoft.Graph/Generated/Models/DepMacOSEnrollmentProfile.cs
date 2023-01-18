@@ -76,25 +76,53 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("prefillAccountInfo", value); }
         }
         /// <summary>Indicates what the full name for the primary account is</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PrimaryAccountFullName {
+            get { return BackingStore?.Get<string?>("primaryAccountFullName"); }
+            set { BackingStore?.Set("primaryAccountFullName", value); }
+        }
+#else
         public string PrimaryAccountFullName {
             get { return BackingStore?.Get<string>("primaryAccountFullName"); }
             set { BackingStore?.Set("primaryAccountFullName", value); }
         }
+#endif
         /// <summary>Indicates what the account name for the primary account is</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PrimaryAccountUserName {
+            get { return BackingStore?.Get<string?>("primaryAccountUserName"); }
+            set { BackingStore?.Set("primaryAccountUserName", value); }
+        }
+#else
         public string PrimaryAccountUserName {
             get { return BackingStore?.Get<string>("primaryAccountUserName"); }
             set { BackingStore?.Set("primaryAccountUserName", value); }
         }
+#endif
         /// <summary>Indicates who the primary user of the profile is</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PrimaryUser {
+            get { return BackingStore?.Get<string?>("primaryUser"); }
+            set { BackingStore?.Set("primaryUser", value); }
+        }
+#else
         public string PrimaryUser {
             get { return BackingStore?.Get<string>("primaryUser"); }
             set { BackingStore?.Set("primaryUser", value); }
         }
+#endif
         /// <summary>Indicates who the primary user of the profile is</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PrimaryUserFullName {
+            get { return BackingStore?.Get<string?>("primaryUserFullName"); }
+            set { BackingStore?.Set("primaryUserFullName", value); }
+        }
+#else
         public string PrimaryUserFullName {
             get { return BackingStore?.Get<string>("primaryUserFullName"); }
             set { BackingStore?.Set("primaryUserFullName", value); }
         }
+#endif
         /// <summary>Indicates if registration is disabled</summary>
         public bool? RegistrationDisabled {
             get { return BackingStore?.Get<bool?>("registrationDisabled"); }

@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
     public class TaskObject : Entity, IParsable {
         /// <summary>Arguments included within the task.  For guidance to configure this property, see Configure the arguments for built-in Lifecycle Workflow tasks. Required.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.KeyValuePair>? Arguments {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.KeyValuePair>?>("arguments"); }
+            set { BackingStore?.Set("arguments", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.KeyValuePair> Arguments {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.KeyValuePair>>("arguments"); }
             set { BackingStore?.Set("arguments", value); }
         }
+#endif
         /// <summary>The category property</summary>
         public LifecycleTaskCategory? Category {
             get { return BackingStore?.Get<LifecycleTaskCategory?>("category"); }
@@ -21,15 +28,29 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
             set { BackingStore?.Set("continueOnError", value); }
         }
         /// <summary>A string that describes the purpose of the task for administrative use. Optional.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>A unique string that identifies the task. Required.Supports $filter(eq, ne) and orderBy.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>An integer that states in what order the task will run in a workflow.Supports $orderby.</summary>
         public int? ExecutionSequence {
             get { return BackingStore?.Get<int?>("executionSequence"); }
@@ -41,15 +62,29 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
             set { BackingStore?.Set("isEnabled", value); }
         }
         /// <summary>A unique template identifier for the task. For more information about the tasks that Lifecycle Workflows currently supports and their unique identifiers, see supported tasks. Required.Supports $filter(eq, ne).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TaskDefinitionId {
+            get { return BackingStore?.Get<string?>("taskDefinitionId"); }
+            set { BackingStore?.Set("taskDefinitionId", value); }
+        }
+#else
         public string TaskDefinitionId {
             get { return BackingStore?.Get<string>("taskDefinitionId"); }
             set { BackingStore?.Set("taskDefinitionId", value); }
         }
+#endif
         /// <summary>The result of processing the task.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<TaskProcessingResult>? TaskProcessingResults {
+            get { return BackingStore?.Get<List<TaskProcessingResult>?>("taskProcessingResults"); }
+            set { BackingStore?.Set("taskProcessingResults", value); }
+        }
+#else
         public List<TaskProcessingResult> TaskProcessingResults {
             get { return BackingStore?.Get<List<TaskProcessingResult>>("taskProcessingResults"); }
             set { BackingStore?.Set("taskProcessingResults", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

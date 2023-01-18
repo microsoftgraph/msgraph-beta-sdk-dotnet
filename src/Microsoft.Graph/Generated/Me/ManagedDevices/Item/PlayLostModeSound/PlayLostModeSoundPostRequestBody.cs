@@ -14,10 +14,17 @@ namespace Microsoft.Graph.Beta.Me.ManagedDevices.Item.PlayLostModeSound {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The durationInMinutes property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DurationInMinutes {
+            get { return BackingStore?.Get<string?>("durationInMinutes"); }
+            set { BackingStore?.Set("durationInMinutes", value); }
+        }
+#else
         public string DurationInMinutes {
             get { return BackingStore?.Get<string>("durationInMinutes"); }
             set { BackingStore?.Set("durationInMinutes", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new playLostModeSoundPostRequestBody and sets the default values.
         /// </summary>

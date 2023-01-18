@@ -14,15 +14,29 @@ namespace Microsoft.Graph.Beta.Me.ChangePassword {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The currentPassword property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CurrentPassword {
+            get { return BackingStore?.Get<string?>("currentPassword"); }
+            set { BackingStore?.Set("currentPassword", value); }
+        }
+#else
         public string CurrentPassword {
             get { return BackingStore?.Get<string>("currentPassword"); }
             set { BackingStore?.Set("currentPassword", value); }
         }
+#endif
         /// <summary>The newPassword property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? NewPassword {
+            get { return BackingStore?.Get<string?>("newPassword"); }
+            set { BackingStore?.Set("newPassword", value); }
+        }
+#else
         public string NewPassword {
             get { return BackingStore?.Get<string>("newPassword"); }
             set { BackingStore?.Set("newPassword", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new changePasswordPostRequestBody and sets the default values.
         /// </summary>

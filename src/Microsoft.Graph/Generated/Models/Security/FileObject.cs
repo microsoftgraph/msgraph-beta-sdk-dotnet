@@ -6,50 +6,99 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
     public class FileObject : Entity, IParsable {
         /// <summary>The content property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public byte[]? Content {
+            get { return BackingStore?.Get<byte[]?>("content"); }
+            set { BackingStore?.Set("content", value); }
+        }
+#else
         public byte[] Content {
             get { return BackingStore?.Get<byte[]>("content"); }
             set { BackingStore?.Set("content", value); }
         }
+#endif
         /// <summary>The dateTime property</summary>
         public DateTimeOffset? DateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("dateTime"); }
             set { BackingStore?.Set("dateTime", value); }
         }
         /// <summary>The extension property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Extension {
+            get { return BackingStore?.Get<string?>("extension"); }
+            set { BackingStore?.Set("extension", value); }
+        }
+#else
         public string Extension {
             get { return BackingStore?.Get<string>("extension"); }
             set { BackingStore?.Set("extension", value); }
         }
+#endif
         /// <summary>The extractedTextContent property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public byte[]? ExtractedTextContent {
+            get { return BackingStore?.Get<byte[]?>("extractedTextContent"); }
+            set { BackingStore?.Set("extractedTextContent", value); }
+        }
+#else
         public byte[] ExtractedTextContent {
             get { return BackingStore?.Get<byte[]>("extractedTextContent"); }
             set { BackingStore?.Set("extractedTextContent", value); }
         }
+#endif
         /// <summary>The mediaType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MediaType {
+            get { return BackingStore?.Get<string?>("mediaType"); }
+            set { BackingStore?.Set("mediaType", value); }
+        }
+#else
         public string MediaType {
             get { return BackingStore?.Get<string>("mediaType"); }
             set { BackingStore?.Set("mediaType", value); }
         }
+#endif
         /// <summary>The name property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Name {
+            get { return BackingStore?.Get<string?>("name"); }
+            set { BackingStore?.Set("name", value); }
+        }
+#else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#endif
         /// <summary>The otherProperties property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public StringValueDictionary? OtherProperties {
+            get { return BackingStore?.Get<StringValueDictionary?>("otherProperties"); }
+            set { BackingStore?.Set("otherProperties", value); }
+        }
+#else
         public StringValueDictionary OtherProperties {
             get { return BackingStore?.Get<StringValueDictionary>("otherProperties"); }
             set { BackingStore?.Set("otherProperties", value); }
         }
+#endif
         /// <summary>The processingStatus property</summary>
         public FileProcessingStatus? ProcessingStatus {
             get { return BackingStore?.Get<FileProcessingStatus?>("processingStatus"); }
             set { BackingStore?.Set("processingStatus", value); }
         }
         /// <summary>The senderOrAuthors property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? SenderOrAuthors {
+            get { return BackingStore?.Get<List<string>?>("senderOrAuthors"); }
+            set { BackingStore?.Set("senderOrAuthors", value); }
+        }
+#else
         public List<string> SenderOrAuthors {
             get { return BackingStore?.Get<List<string>>("senderOrAuthors"); }
             set { BackingStore?.Set("senderOrAuthors", value); }
         }
+#endif
         /// <summary>The size property</summary>
         public long? Size {
             get { return BackingStore?.Get<long?>("size"); }
@@ -61,10 +110,17 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("sourceType", value); }
         }
         /// <summary>The subjectTitle property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SubjectTitle {
+            get { return BackingStore?.Get<string?>("subjectTitle"); }
+            set { BackingStore?.Set("subjectTitle", value); }
+        }
+#else
         public string SubjectTitle {
             get { return BackingStore?.Get<string>("subjectTitle"); }
             set { BackingStore?.Set("subjectTitle", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

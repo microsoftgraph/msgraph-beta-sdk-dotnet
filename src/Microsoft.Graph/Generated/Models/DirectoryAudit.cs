@@ -11,60 +11,130 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("activityDateTime", value); }
         }
         /// <summary>Indicates the activity name or the operation name (E.g. &apos;Create User&apos;, &apos;Add member to group&apos;). For a list of activities logged, refer to Azure Ad activity list.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ActivityDisplayName {
+            get { return BackingStore?.Get<string?>("activityDisplayName"); }
+            set { BackingStore?.Set("activityDisplayName", value); }
+        }
+#else
         public string ActivityDisplayName {
             get { return BackingStore?.Get<string>("activityDisplayName"); }
             set { BackingStore?.Set("activityDisplayName", value); }
         }
+#endif
         /// <summary>Indicates additional details on the activity.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<KeyValue>? AdditionalDetails {
+            get { return BackingStore?.Get<List<KeyValue>?>("additionalDetails"); }
+            set { BackingStore?.Set("additionalDetails", value); }
+        }
+#else
         public List<KeyValue> AdditionalDetails {
             get { return BackingStore?.Get<List<KeyValue>>("additionalDetails"); }
             set { BackingStore?.Set("additionalDetails", value); }
         }
+#endif
         /// <summary>Indicates which resource category that&apos;s targeted by the activity. For example: UserManagement, GroupManagement, ApplicationManagement, RoleManagement.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Category {
+            get { return BackingStore?.Get<string?>("category"); }
+            set { BackingStore?.Set("category", value); }
+        }
+#else
         public string Category {
             get { return BackingStore?.Get<string>("category"); }
             set { BackingStore?.Set("category", value); }
         }
+#endif
         /// <summary>Indicates a unique ID that helps correlate activities that span across various services. Can be used to trace logs across services.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CorrelationId {
+            get { return BackingStore?.Get<string?>("correlationId"); }
+            set { BackingStore?.Set("correlationId", value); }
+        }
+#else
         public string CorrelationId {
             get { return BackingStore?.Get<string>("correlationId"); }
             set { BackingStore?.Set("correlationId", value); }
         }
+#endif
         /// <summary>The initiatedBy property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public AuditActivityInitiator? InitiatedBy {
+            get { return BackingStore?.Get<AuditActivityInitiator?>("initiatedBy"); }
+            set { BackingStore?.Set("initiatedBy", value); }
+        }
+#else
         public AuditActivityInitiator InitiatedBy {
             get { return BackingStore?.Get<AuditActivityInitiator>("initiatedBy"); }
             set { BackingStore?.Set("initiatedBy", value); }
         }
+#endif
         /// <summary>Indicates information on which service initiated the activity (For example: Self-service Password Management, Core Directory, B2C, Invited Users, Microsoft Identity Manager, Privileged Identity Management.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? LoggedByService {
+            get { return BackingStore?.Get<string?>("loggedByService"); }
+            set { BackingStore?.Set("loggedByService", value); }
+        }
+#else
         public string LoggedByService {
             get { return BackingStore?.Get<string>("loggedByService"); }
             set { BackingStore?.Set("loggedByService", value); }
         }
+#endif
         /// <summary>Indicates the type of operation that was performed. The possible values include but are not limited to the following: Add, Assign, Update, Unassign, and Delete.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OperationType {
+            get { return BackingStore?.Get<string?>("operationType"); }
+            set { BackingStore?.Set("operationType", value); }
+        }
+#else
         public string OperationType {
             get { return BackingStore?.Get<string>("operationType"); }
             set { BackingStore?.Set("operationType", value); }
         }
+#endif
         /// <summary>Indicates the result of the activity. Possible values are: success, failure, timeout, unknownFutureValue.</summary>
         public OperationResult? Result {
             get { return BackingStore?.Get<OperationResult?>("result"); }
             set { BackingStore?.Set("result", value); }
         }
         /// <summary>Indicates the reason for failure if the result is failure or timeout.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ResultReason {
+            get { return BackingStore?.Get<string?>("resultReason"); }
+            set { BackingStore?.Set("resultReason", value); }
+        }
+#else
         public string ResultReason {
             get { return BackingStore?.Get<string>("resultReason"); }
             set { BackingStore?.Set("resultReason", value); }
         }
+#endif
         /// <summary>Information about the resource that changed due to the activity.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<TargetResource>? TargetResources {
+            get { return BackingStore?.Get<List<TargetResource>?>("targetResources"); }
+            set { BackingStore?.Set("targetResources", value); }
+        }
+#else
         public List<TargetResource> TargetResources {
             get { return BackingStore?.Get<List<TargetResource>>("targetResources"); }
             set { BackingStore?.Set("targetResources", value); }
         }
+#endif
         /// <summary>Type of user agent used by a user in the activity.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UserAgent {
+            get { return BackingStore?.Get<string?>("userAgent"); }
+            set { BackingStore?.Set("userAgent", value); }
+        }
+#else
         public string UserAgent {
             get { return BackingStore?.Get<string>("userAgent"); }
             set { BackingStore?.Set("userAgent", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

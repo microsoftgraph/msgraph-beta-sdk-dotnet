@@ -19,10 +19,17 @@ namespace Microsoft.Graph.Beta.DeviceManagement.MicrosoftTunnelSites.Item.Micros
             set { BackingStore?.Set("endDateTime", value); }
         }
         /// <summary>The metricName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MetricName {
+            get { return BackingStore?.Get<string?>("metricName"); }
+            set { BackingStore?.Set("metricName", value); }
+        }
+#else
         public string MetricName {
             get { return BackingStore?.Get<string>("metricName"); }
             set { BackingStore?.Set("metricName", value); }
         }
+#endif
         /// <summary>The startDateTime property</summary>
         public DateTimeOffset? StartDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }

@@ -12,15 +12,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>A description of the delegated permissions, intended to be read by an administrator granting the permission on behalf of all users. This text appears in tenant-wide admin consent experiences.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AdminConsentDescription {
+            get { return BackingStore?.Get<string?>("adminConsentDescription"); }
+            set { BackingStore?.Set("adminConsentDescription", value); }
+        }
+#else
         public string AdminConsentDescription {
             get { return BackingStore?.Get<string>("adminConsentDescription"); }
             set { BackingStore?.Set("adminConsentDescription", value); }
         }
+#endif
         /// <summary>The permission&apos;s title, intended to be read by an administrator granting the permission on behalf of all users.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AdminConsentDisplayName {
+            get { return BackingStore?.Get<string?>("adminConsentDisplayName"); }
+            set { BackingStore?.Set("adminConsentDisplayName", value); }
+        }
+#else
         public string AdminConsentDisplayName {
             get { return BackingStore?.Get<string>("adminConsentDisplayName"); }
             set { BackingStore?.Set("adminConsentDisplayName", value); }
         }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Unique delegated permission identifier inside the collection of delegated permissions defined for a resource application.</summary>
@@ -34,35 +48,77 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("isEnabled", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The origin property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Origin {
+            get { return BackingStore?.Get<string?>("origin"); }
+            set { BackingStore?.Set("origin", value); }
+        }
+#else
         public string Origin {
             get { return BackingStore?.Get<string>("origin"); }
             set { BackingStore?.Set("origin", value); }
         }
+#endif
         /// <summary>The possible values are: User and Admin. Specifies whether this delegated permission should be considered safe for non-admin users to consent to on behalf of themselves, or whether an administrator consent should always be required. While Microsoft Graph defines the default consent requirement for each permission, the tenant administrator may override the behavior in their organization (by allowing, restricting, or limiting user consent to this delegated permission). For more information, see Configure how users consent to applications.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Type {
+            get { return BackingStore?.Get<string?>("type"); }
+            set { BackingStore?.Set("type", value); }
+        }
+#else
         public string Type {
             get { return BackingStore?.Get<string>("type"); }
             set { BackingStore?.Set("type", value); }
         }
+#endif
         /// <summary>A description of the delegated permissions, intended to be read by a user granting the permission on their own behalf. This text appears in consent experiences where the user is consenting only on behalf of themselves.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UserConsentDescription {
+            get { return BackingStore?.Get<string?>("userConsentDescription"); }
+            set { BackingStore?.Set("userConsentDescription", value); }
+        }
+#else
         public string UserConsentDescription {
             get { return BackingStore?.Get<string>("userConsentDescription"); }
             set { BackingStore?.Set("userConsentDescription", value); }
         }
+#endif
         /// <summary>A title for the permission, intended to be read by a user granting the permission on their own behalf. This text appears in consent experiences where the user is consenting only on behalf of themselves.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UserConsentDisplayName {
+            get { return BackingStore?.Get<string?>("userConsentDisplayName"); }
+            set { BackingStore?.Set("userConsentDisplayName", value); }
+        }
+#else
         public string UserConsentDisplayName {
             get { return BackingStore?.Get<string>("userConsentDisplayName"); }
             set { BackingStore?.Set("userConsentDisplayName", value); }
         }
+#endif
         /// <summary>Specifies the value to include in the scp (scope) claim in access tokens. Must not exceed 120 characters in length. Allowed characters are : ! # $ % &amp; &apos; ( ) * + , - . / : ;  =  ? @ [ ] ^ + _  {  } ~, as well as characters in the ranges 0-9, A-Z and a-z. Any other character, including the space character, are not allowed. May not begin with ..</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Value {
+            get { return BackingStore?.Get<string?>("value"); }
+            set { BackingStore?.Set("value", value); }
+        }
+#else
         public string Value {
             get { return BackingStore?.Get<string>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new permissionScope and sets the default values.
         /// </summary>

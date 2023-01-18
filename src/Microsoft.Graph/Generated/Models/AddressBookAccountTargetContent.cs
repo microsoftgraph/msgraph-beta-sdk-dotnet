@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class AddressBookAccountTargetContent : AccountTargetContent, IParsable {
         /// <summary>The accountTargetEmails property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? AccountTargetEmails {
+            get { return BackingStore?.Get<List<string>?>("accountTargetEmails"); }
+            set { BackingStore?.Set("accountTargetEmails", value); }
+        }
+#else
         public List<string> AccountTargetEmails {
             get { return BackingStore?.Get<List<string>>("accountTargetEmails"); }
             set { BackingStore?.Set("accountTargetEmails", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new AddressBookAccountTargetContent and sets the default values.
         /// </summary>

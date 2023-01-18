@@ -14,30 +14,58 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The date and time that the follow-up was finished.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DateTimeTimeZone? CompletedDateTime {
+            get { return BackingStore?.Get<DateTimeTimeZone?>("completedDateTime"); }
+            set { BackingStore?.Set("completedDateTime", value); }
+        }
+#else
         public DateTimeTimeZone CompletedDateTime {
             get { return BackingStore?.Get<DateTimeTimeZone>("completedDateTime"); }
             set { BackingStore?.Set("completedDateTime", value); }
         }
+#endif
         /// <summary>The date and time that the follow up is to be finished. Note: To set the due date, you must also specify the startDateTime; otherwise, you will get a 400 Bad Request response.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DateTimeTimeZone? DueDateTime {
+            get { return BackingStore?.Get<DateTimeTimeZone?>("dueDateTime"); }
+            set { BackingStore?.Set("dueDateTime", value); }
+        }
+#else
         public DateTimeTimeZone DueDateTime {
             get { return BackingStore?.Get<DateTimeTimeZone>("dueDateTime"); }
             set { BackingStore?.Set("dueDateTime", value); }
         }
+#endif
         /// <summary>The status for follow-up for an item. Possible values are notFlagged, complete, and flagged.</summary>
         public FollowupFlagStatus? FlagStatus {
             get { return BackingStore?.Get<FollowupFlagStatus?>("flagStatus"); }
             set { BackingStore?.Set("flagStatus", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The date and time that the follow-up is to begin.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DateTimeTimeZone? StartDateTime {
+            get { return BackingStore?.Get<DateTimeTimeZone?>("startDateTime"); }
+            set { BackingStore?.Set("startDateTime", value); }
+        }
+#else
         public DateTimeTimeZone StartDateTime {
             get { return BackingStore?.Get<DateTimeTimeZone>("startDateTime"); }
             set { BackingStore?.Set("startDateTime", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new followupFlag and sets the default values.
         /// </summary>

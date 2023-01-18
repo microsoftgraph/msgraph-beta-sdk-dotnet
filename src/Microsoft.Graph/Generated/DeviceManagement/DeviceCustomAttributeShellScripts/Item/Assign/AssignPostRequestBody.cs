@@ -15,15 +15,29 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceCustomAttributeShellScript
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The deviceManagementScriptAssignments property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DeviceManagementScriptAssignment>? DeviceManagementScriptAssignments {
+            get { return BackingStore?.Get<List<DeviceManagementScriptAssignment>?>("deviceManagementScriptAssignments"); }
+            set { BackingStore?.Set("deviceManagementScriptAssignments", value); }
+        }
+#else
         public List<DeviceManagementScriptAssignment> DeviceManagementScriptAssignments {
             get { return BackingStore?.Get<List<DeviceManagementScriptAssignment>>("deviceManagementScriptAssignments"); }
             set { BackingStore?.Set("deviceManagementScriptAssignments", value); }
         }
+#endif
         /// <summary>The deviceManagementScriptGroupAssignments property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DeviceManagementScriptGroupAssignment>? DeviceManagementScriptGroupAssignments {
+            get { return BackingStore?.Get<List<DeviceManagementScriptGroupAssignment>?>("deviceManagementScriptGroupAssignments"); }
+            set { BackingStore?.Set("deviceManagementScriptGroupAssignments", value); }
+        }
+#else
         public List<DeviceManagementScriptGroupAssignment> DeviceManagementScriptGroupAssignments {
             get { return BackingStore?.Get<List<DeviceManagementScriptGroupAssignment>>("deviceManagementScriptGroupAssignments"); }
             set { BackingStore?.Set("deviceManagementScriptGroupAssignments", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new assignPostRequestBody and sets the default values.
         /// </summary>

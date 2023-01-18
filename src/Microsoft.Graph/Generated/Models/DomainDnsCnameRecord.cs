@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class DomainDnsCnameRecord : DomainDnsRecord, IParsable {
         /// <summary>The canonical name of the CNAME record. Used to configure the CNAME record at the DNS host.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CanonicalName {
+            get { return BackingStore?.Get<string?>("canonicalName"); }
+            set { BackingStore?.Set("canonicalName", value); }
+        }
+#else
         public string CanonicalName {
             get { return BackingStore?.Get<string>("canonicalName"); }
             set { BackingStore?.Set("canonicalName", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

@@ -22,20 +22,41 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The Azure AD security group ID</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? GroupId {
+            get { return BackingStore?.Get<string?>("groupId"); }
+            set { BackingStore?.Set("groupId", value); }
+        }
+#else
         public string GroupId {
             get { return BackingStore?.Get<string>("groupId"); }
             set { BackingStore?.Set("groupId", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The policy identifier</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PayloadId {
+            get { return BackingStore?.Get<string?>("payloadId"); }
+            set { BackingStore?.Set("payloadId", value); }
+        }
+#else
         public string PayloadId {
             get { return BackingStore?.Get<string>("payloadId"); }
             set { BackingStore?.Set("payloadId", value); }
         }
+#endif
         /// <summary>This enum represents associated assignment payload type</summary>
         public AssociatedAssignmentPayloadType? PayloadType {
             get { return BackingStore?.Get<AssociatedAssignmentPayloadType?>("payloadType"); }

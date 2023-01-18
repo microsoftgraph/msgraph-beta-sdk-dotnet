@@ -19,35 +19,70 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Represents the color that is the target of the condition if the sorting is on font or cell color.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Color {
+            get { return BackingStore?.Get<string?>("color"); }
+            set { BackingStore?.Set("color", value); }
+        }
+#else
         public string Color {
             get { return BackingStore?.Get<string>("color"); }
             set { BackingStore?.Set("color", value); }
         }
+#endif
         /// <summary>Represents additional sorting options for this field. Possible values are: Normal, TextAsNumber.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DataOption {
+            get { return BackingStore?.Get<string?>("dataOption"); }
+            set { BackingStore?.Set("dataOption", value); }
+        }
+#else
         public string DataOption {
             get { return BackingStore?.Get<string>("dataOption"); }
             set { BackingStore?.Set("dataOption", value); }
         }
+#endif
         /// <summary>Represents the icon that is the target of the condition if the sorting is on the cell&apos;s icon.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public WorkbookIcon? Icon {
+            get { return BackingStore?.Get<WorkbookIcon?>("icon"); }
+            set { BackingStore?.Set("icon", value); }
+        }
+#else
         public WorkbookIcon Icon {
             get { return BackingStore?.Get<WorkbookIcon>("icon"); }
             set { BackingStore?.Set("icon", value); }
         }
+#endif
         /// <summary>Represents the column (or row, depending on the sort orientation) that the condition is on. Represented as an offset from the first column (or row).</summary>
         public int? Key {
             get { return BackingStore?.Get<int?>("key"); }
             set { BackingStore?.Set("key", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Represents the type of sorting of this condition. Possible values are: Value, CellColor, FontColor, Icon.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SortOn {
+            get { return BackingStore?.Get<string?>("sortOn"); }
+            set { BackingStore?.Set("sortOn", value); }
+        }
+#else
         public string SortOn {
             get { return BackingStore?.Get<string>("sortOn"); }
             set { BackingStore?.Set("sortOn", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new workbookSortField and sets the default values.
         /// </summary>

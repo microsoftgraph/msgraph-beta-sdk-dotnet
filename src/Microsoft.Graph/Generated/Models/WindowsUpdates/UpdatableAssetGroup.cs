@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
     public class UpdatableAssetGroup : UpdatableAsset, IParsable {
         /// <summary>Members of the group. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<UpdatableAsset>? Members {
+            get { return BackingStore?.Get<List<UpdatableAsset>?>("members"); }
+            set { BackingStore?.Set("members", value); }
+        }
+#else
         public List<UpdatableAsset> Members {
             get { return BackingStore?.Get<List<UpdatableAsset>>("members"); }
             set { BackingStore?.Set("members", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new UpdatableAssetGroup and sets the default values.
         /// </summary>

@@ -14,25 +14,46 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Identity information of the participant. Only the user property is used for onlineMeeting participants.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public IdentitySet? Identity {
+            get { return BackingStore?.Get<IdentitySet?>("identity"); }
+            set { BackingStore?.Set("identity", value); }
+        }
+#else
         public IdentitySet Identity {
             get { return BackingStore?.Get<IdentitySet>("identity"); }
             set { BackingStore?.Set("identity", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Specifies the participant&apos;s role in the meeting.</summary>
         public OnlineMeetingRole? Role {
             get { return BackingStore?.Get<OnlineMeetingRole?>("role"); }
             set { BackingStore?.Set("role", value); }
         }
         /// <summary>User principal name of the participant.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Upn {
+            get { return BackingStore?.Get<string?>("upn"); }
+            set { BackingStore?.Set("upn", value); }
+        }
+#else
         public string Upn {
             get { return BackingStore?.Get<string>("upn"); }
             set { BackingStore?.Set("upn", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new meetingParticipantInfo and sets the default values.
         /// </summary>

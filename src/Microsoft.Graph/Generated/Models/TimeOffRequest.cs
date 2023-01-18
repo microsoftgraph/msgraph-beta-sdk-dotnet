@@ -16,10 +16,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("startDateTime", value); }
         }
         /// <summary>The reason for the time off.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TimeOffReasonId {
+            get { return BackingStore?.Get<string?>("timeOffReasonId"); }
+            set { BackingStore?.Set("timeOffReasonId", value); }
+        }
+#else
         public string TimeOffReasonId {
             get { return BackingStore?.Get<string>("timeOffReasonId"); }
             set { BackingStore?.Set("timeOffReasonId", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new TimeOffRequest and sets the default values.
         /// </summary>

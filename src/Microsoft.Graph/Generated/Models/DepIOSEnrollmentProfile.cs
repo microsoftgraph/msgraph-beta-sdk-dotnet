@@ -16,15 +16,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("awaitDeviceConfiguredConfirmation", value); }
         }
         /// <summary>Carrier URL for activating device eSIM.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CarrierActivationUrl {
+            get { return BackingStore?.Get<string?>("carrierActivationUrl"); }
+            set { BackingStore?.Set("carrierActivationUrl", value); }
+        }
+#else
         public string CarrierActivationUrl {
             get { return BackingStore?.Get<string>("carrierActivationUrl"); }
             set { BackingStore?.Set("carrierActivationUrl", value); }
         }
+#endif
         /// <summary>If set, indicates which Vpp token should be used to deploy the Company Portal w/ device licensing. &apos;enableAuthenticationViaCompanyPortal&apos; must be set in order for this property to be set.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CompanyPortalVppTokenId {
+            get { return BackingStore?.Get<string?>("companyPortalVppTokenId"); }
+            set { BackingStore?.Set("companyPortalVppTokenId", value); }
+        }
+#else
         public string CompanyPortalVppTokenId {
             get { return BackingStore?.Get<string>("companyPortalVppTokenId"); }
             set { BackingStore?.Set("companyPortalVppTokenId", value); }
         }
+#endif
         /// <summary>Indicates if Device To Device Migration is disabled</summary>
         public bool? DeviceToDeviceMigrationDisabled {
             get { return BackingStore?.Get<bool?>("deviceToDeviceMigrationDisabled"); }
@@ -66,10 +80,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("iTunesPairingMode", value); }
         }
         /// <summary>Management certificates for Apple Configurator</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ManagementCertificateWithThumbprint>? ManagementCertificates {
+            get { return BackingStore?.Get<List<ManagementCertificateWithThumbprint>?>("managementCertificates"); }
+            set { BackingStore?.Set("managementCertificates", value); }
+        }
+#else
         public List<ManagementCertificateWithThumbprint> ManagementCertificates {
             get { return BackingStore?.Get<List<ManagementCertificateWithThumbprint>>("managementCertificates"); }
             set { BackingStore?.Set("managementCertificates", value); }
         }
+#endif
         /// <summary>Indicates if onboarding setup screen is disabled</summary>
         public bool? OnBoardingScreenDisabled {
             get { return BackingStore?.Get<bool?>("onBoardingScreenDisabled"); }

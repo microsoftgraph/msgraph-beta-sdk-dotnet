@@ -6,75 +6,173 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class EntitlementManagement : Entity, IParsable {
         /// <summary>The accessPackageAssignmentApprovals property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Approval>? AccessPackageAssignmentApprovals {
+            get { return BackingStore?.Get<List<Approval>?>("accessPackageAssignmentApprovals"); }
+            set { BackingStore?.Set("accessPackageAssignmentApprovals", value); }
+        }
+#else
         public List<Approval> AccessPackageAssignmentApprovals {
             get { return BackingStore?.Get<List<Approval>>("accessPackageAssignmentApprovals"); }
             set { BackingStore?.Set("accessPackageAssignmentApprovals", value); }
         }
+#endif
         /// <summary>Represents the policy that governs which subjects can request or be assigned an access package via an access package assignment.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AccessPackageAssignmentPolicy>? AccessPackageAssignmentPolicies {
+            get { return BackingStore?.Get<List<AccessPackageAssignmentPolicy>?>("accessPackageAssignmentPolicies"); }
+            set { BackingStore?.Set("accessPackageAssignmentPolicies", value); }
+        }
+#else
         public List<AccessPackageAssignmentPolicy> AccessPackageAssignmentPolicies {
             get { return BackingStore?.Get<List<AccessPackageAssignmentPolicy>>("accessPackageAssignmentPolicies"); }
             set { BackingStore?.Set("accessPackageAssignmentPolicies", value); }
         }
+#endif
         /// <summary>Represents access package assignment requests created by or on behalf of a user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AccessPackageAssignmentRequest>? AccessPackageAssignmentRequests {
+            get { return BackingStore?.Get<List<AccessPackageAssignmentRequest>?>("accessPackageAssignmentRequests"); }
+            set { BackingStore?.Set("accessPackageAssignmentRequests", value); }
+        }
+#else
         public List<AccessPackageAssignmentRequest> AccessPackageAssignmentRequests {
             get { return BackingStore?.Get<List<AccessPackageAssignmentRequest>>("accessPackageAssignmentRequests"); }
             set { BackingStore?.Set("accessPackageAssignmentRequests", value); }
         }
+#endif
         /// <summary>Represents the resource-specific role which a subject has been assigned through an access package assignment.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AccessPackageAssignmentResourceRole>? AccessPackageAssignmentResourceRoles {
+            get { return BackingStore?.Get<List<AccessPackageAssignmentResourceRole>?>("accessPackageAssignmentResourceRoles"); }
+            set { BackingStore?.Set("accessPackageAssignmentResourceRoles", value); }
+        }
+#else
         public List<AccessPackageAssignmentResourceRole> AccessPackageAssignmentResourceRoles {
             get { return BackingStore?.Get<List<AccessPackageAssignmentResourceRole>>("accessPackageAssignmentResourceRoles"); }
             set { BackingStore?.Set("accessPackageAssignmentResourceRoles", value); }
         }
+#endif
         /// <summary>The assignment of an access package to a subject for a period of time.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AccessPackageAssignment>? AccessPackageAssignments {
+            get { return BackingStore?.Get<List<AccessPackageAssignment>?>("accessPackageAssignments"); }
+            set { BackingStore?.Set("accessPackageAssignments", value); }
+        }
+#else
         public List<AccessPackageAssignment> AccessPackageAssignments {
             get { return BackingStore?.Get<List<AccessPackageAssignment>>("accessPackageAssignments"); }
             set { BackingStore?.Set("accessPackageAssignments", value); }
         }
+#endif
         /// <summary>A container of access packages.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AccessPackageCatalog>? AccessPackageCatalogs {
+            get { return BackingStore?.Get<List<AccessPackageCatalog>?>("accessPackageCatalogs"); }
+            set { BackingStore?.Set("accessPackageCatalogs", value); }
+        }
+#else
         public List<AccessPackageCatalog> AccessPackageCatalogs {
             get { return BackingStore?.Get<List<AccessPackageCatalog>>("accessPackageCatalogs"); }
             set { BackingStore?.Set("accessPackageCatalogs", value); }
         }
+#endif
         /// <summary>A reference to the geolocation environment in which a resource is located.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AccessPackageResourceEnvironment>? AccessPackageResourceEnvironments {
+            get { return BackingStore?.Get<List<AccessPackageResourceEnvironment>?>("accessPackageResourceEnvironments"); }
+            set { BackingStore?.Set("accessPackageResourceEnvironments", value); }
+        }
+#else
         public List<AccessPackageResourceEnvironment> AccessPackageResourceEnvironments {
             get { return BackingStore?.Get<List<AccessPackageResourceEnvironment>>("accessPackageResourceEnvironments"); }
             set { BackingStore?.Set("accessPackageResourceEnvironments", value); }
         }
+#endif
         /// <summary>Represents a request to add or remove a resource to or from a catalog respectively.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AccessPackageResourceRequest>? AccessPackageResourceRequests {
+            get { return BackingStore?.Get<List<AccessPackageResourceRequest>?>("accessPackageResourceRequests"); }
+            set { BackingStore?.Set("accessPackageResourceRequests", value); }
+        }
+#else
         public List<AccessPackageResourceRequest> AccessPackageResourceRequests {
             get { return BackingStore?.Get<List<AccessPackageResourceRequest>>("accessPackageResourceRequests"); }
             set { BackingStore?.Set("accessPackageResourceRequests", value); }
         }
+#endif
         /// <summary>A reference to both a scope within a resource, and a role in that resource for that scope.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AccessPackageResourceRoleScope>? AccessPackageResourceRoleScopes {
+            get { return BackingStore?.Get<List<AccessPackageResourceRoleScope>?>("accessPackageResourceRoleScopes"); }
+            set { BackingStore?.Set("accessPackageResourceRoleScopes", value); }
+        }
+#else
         public List<AccessPackageResourceRoleScope> AccessPackageResourceRoleScopes {
             get { return BackingStore?.Get<List<AccessPackageResourceRoleScope>>("accessPackageResourceRoleScopes"); }
             set { BackingStore?.Set("accessPackageResourceRoleScopes", value); }
         }
+#endif
         /// <summary>A reference to a resource associated with an access package catalog.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AccessPackageResource>? AccessPackageResources {
+            get { return BackingStore?.Get<List<AccessPackageResource>?>("accessPackageResources"); }
+            set { BackingStore?.Set("accessPackageResources", value); }
+        }
+#else
         public List<AccessPackageResource> AccessPackageResources {
             get { return BackingStore?.Get<List<AccessPackageResource>>("accessPackageResources"); }
             set { BackingStore?.Set("accessPackageResources", value); }
         }
+#endif
         /// <summary>Represents access package objects.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AccessPackage>? AccessPackages {
+            get { return BackingStore?.Get<List<AccessPackage>?>("accessPackages"); }
+            set { BackingStore?.Set("accessPackages", value); }
+        }
+#else
         public List<AccessPackage> AccessPackages {
             get { return BackingStore?.Get<List<AccessPackage>>("accessPackages"); }
             set { BackingStore?.Set("accessPackages", value); }
         }
+#endif
         /// <summary>Represents references to a directory or domain of another organization whose users can request access.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ConnectedOrganization>? ConnectedOrganizations {
+            get { return BackingStore?.Get<List<ConnectedOrganization>?>("connectedOrganizations"); }
+            set { BackingStore?.Set("connectedOrganizations", value); }
+        }
+#else
         public List<ConnectedOrganization> ConnectedOrganizations {
             get { return BackingStore?.Get<List<ConnectedOrganization>>("connectedOrganizations"); }
             set { BackingStore?.Set("connectedOrganizations", value); }
         }
+#endif
         /// <summary>Represents the settings that control the behavior of Azure AD entitlement management.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public EntitlementManagementSettings? Settings {
+            get { return BackingStore?.Get<EntitlementManagementSettings?>("settings"); }
+            set { BackingStore?.Set("settings", value); }
+        }
+#else
         public EntitlementManagementSettings Settings {
             get { return BackingStore?.Get<EntitlementManagementSettings>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
+#endif
         /// <summary>The subjects property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AccessPackageSubject>? Subjects {
+            get { return BackingStore?.Get<List<AccessPackageSubject>?>("subjects"); }
+            set { BackingStore?.Set("subjects", value); }
+        }
+#else
         public List<AccessPackageSubject> Subjects {
             get { return BackingStore?.Get<List<AccessPackageSubject>>("subjects"); }
             set { BackingStore?.Set("subjects", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

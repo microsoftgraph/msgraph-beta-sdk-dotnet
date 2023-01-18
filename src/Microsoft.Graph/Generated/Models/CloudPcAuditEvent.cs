@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class CloudPcAuditEvent : Entity, IParsable {
         /// <summary>Friendly name of the activity. Optional.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Activity {
+            get { return BackingStore?.Get<string?>("activity"); }
+            set { BackingStore?.Set("activity", value); }
+        }
+#else
         public string Activity {
             get { return BackingStore?.Get<string>("activity"); }
             set { BackingStore?.Set("activity", value); }
         }
+#endif
         /// <summary>The date time in UTC when the activity was performed. Read-only.</summary>
         public DateTimeOffset? ActivityDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("activityDateTime"); }
@@ -26,40 +33,82 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("activityResult", value); }
         }
         /// <summary>The type of activity that was performed. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ActivityType {
+            get { return BackingStore?.Get<string?>("activityType"); }
+            set { BackingStore?.Set("activityType", value); }
+        }
+#else
         public string ActivityType {
             get { return BackingStore?.Get<string>("activityType"); }
             set { BackingStore?.Set("activityType", value); }
         }
+#endif
         /// <summary>The actor property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public CloudPcAuditActor? Actor {
+            get { return BackingStore?.Get<CloudPcAuditActor?>("actor"); }
+            set { BackingStore?.Set("actor", value); }
+        }
+#else
         public CloudPcAuditActor Actor {
             get { return BackingStore?.Get<CloudPcAuditActor>("actor"); }
             set { BackingStore?.Set("actor", value); }
         }
+#endif
         /// <summary>The category property</summary>
         public CloudPcAuditCategory? Category {
             get { return BackingStore?.Get<CloudPcAuditCategory?>("category"); }
             set { BackingStore?.Set("category", value); }
         }
         /// <summary>Component name. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ComponentName {
+            get { return BackingStore?.Get<string?>("componentName"); }
+            set { BackingStore?.Set("componentName", value); }
+        }
+#else
         public string ComponentName {
             get { return BackingStore?.Get<string>("componentName"); }
             set { BackingStore?.Set("componentName", value); }
         }
+#endif
         /// <summary>The client request identifier, used to correlate activity within the system. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CorrelationId {
+            get { return BackingStore?.Get<string?>("correlationId"); }
+            set { BackingStore?.Set("correlationId", value); }
+        }
+#else
         public string CorrelationId {
             get { return BackingStore?.Get<string>("correlationId"); }
             set { BackingStore?.Set("correlationId", value); }
         }
+#endif
         /// <summary>Event display name. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>List of cloudPcAuditResource objects. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<CloudPcAuditResource>? Resources {
+            get { return BackingStore?.Get<List<CloudPcAuditResource>?>("resources"); }
+            set { BackingStore?.Set("resources", value); }
+        }
+#else
         public List<CloudPcAuditResource> Resources {
             get { return BackingStore?.Get<List<CloudPcAuditResource>>("resources"); }
             set { BackingStore?.Set("resources", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

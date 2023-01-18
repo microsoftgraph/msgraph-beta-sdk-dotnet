@@ -14,25 +14,46 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The identifier for the management action. Required. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ManagementActionId {
+            get { return BackingStore?.Get<string?>("managementActionId"); }
+            set { BackingStore?.Set("managementActionId", value); }
+        }
+#else
         public string ManagementActionId {
             get { return BackingStore?.Get<string>("managementActionId"); }
             set { BackingStore?.Set("managementActionId", value); }
         }
+#endif
         /// <summary>The identifier for the management template. Required. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ManagementTemplateId {
+            get { return BackingStore?.Get<string?>("managementTemplateId"); }
+            set { BackingStore?.Set("managementTemplateId", value); }
+        }
+#else
         public string ManagementTemplateId {
             get { return BackingStore?.Get<string>("managementTemplateId"); }
             set { BackingStore?.Set("managementTemplateId", value); }
         }
+#endif
         /// <summary>The managementTemplateVersion property</summary>
         public int? ManagementTemplateVersion {
             get { return BackingStore?.Get<int?>("managementTemplateVersion"); }
             set { BackingStore?.Set("managementTemplateVersion", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new managementActionInfo and sets the default values.
         /// </summary>

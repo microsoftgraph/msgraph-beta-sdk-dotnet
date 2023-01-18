@@ -14,30 +14,65 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Title/label override for customization.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CustomizedLabel {
+            get { return BackingStore?.Get<string?>("customizedLabel"); }
+            set { BackingStore?.Set("customizedLabel", value); }
+        }
+#else
         public string CustomizedLabel {
             get { return BackingStore?.Get<string>("customizedLabel"); }
             set { BackingStore?.Set("customizedLabel", value); }
         }
+#endif
         /// <summary>Label that would be used if no customizedLabel is provided. Read only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DefaultLabel {
+            get { return BackingStore?.Get<string?>("defaultLabel"); }
+            set { BackingStore?.Set("defaultLabel", value); }
+        }
+#else
         public string DefaultLabel {
             get { return BackingStore?.Get<string>("defaultLabel"); }
             set { BackingStore?.Set("defaultLabel", value); }
         }
+#endif
         /// <summary>Id used to identity the field type. This is an internal id and possible values are param_1, param_2, param_userName, param_password.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? FieldId {
+            get { return BackingStore?.Get<string?>("fieldId"); }
+            set { BackingStore?.Set("fieldId", value); }
+        }
+#else
         public string FieldId {
             get { return BackingStore?.Get<string>("fieldId"); }
             set { BackingStore?.Set("fieldId", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Type of the credential. The values can be text, password.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Type {
+            get { return BackingStore?.Get<string?>("type"); }
+            set { BackingStore?.Set("type", value); }
+        }
+#else
         public string Type {
             get { return BackingStore?.Get<string>("type"); }
             set { BackingStore?.Set("type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new passwordSingleSignOnField and sets the default values.
         /// </summary>

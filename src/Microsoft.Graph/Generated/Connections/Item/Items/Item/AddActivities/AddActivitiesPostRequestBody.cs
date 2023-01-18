@@ -8,10 +8,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Connections.Item.Items.Item.AddActivities {
     public class AddActivitiesPostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>The activities property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ExternalActivity>? Activities {
+            get { return BackingStore?.Get<List<ExternalActivity>?>("activities"); }
+            set { BackingStore?.Set("activities", value); }
+        }
+#else
         public List<ExternalActivity> Activities {
             get { return BackingStore?.Get<List<ExternalActivity>>("activities"); }
             set { BackingStore?.Set("activities", value); }
         }
+#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
             get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }

@@ -15,10 +15,17 @@ namespace Microsoft.Graph.Beta.DeviceManagement.EvaluateAssignmentFilter {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The data property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public AssignmentFilterEvaluateRequest? Data {
+            get { return BackingStore?.Get<AssignmentFilterEvaluateRequest?>("data"); }
+            set { BackingStore?.Set("data", value); }
+        }
+#else
         public AssignmentFilterEvaluateRequest Data {
             get { return BackingStore?.Get<AssignmentFilterEvaluateRequest>("data"); }
             set { BackingStore?.Set("data", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new evaluateAssignmentFilterPostRequestBody and sets the default values.
         /// </summary>

@@ -7,10 +7,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class RecommendedAction : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Web URL to the recommended action.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ActionWebUrl {
+            get { return BackingStore?.Get<string?>("actionWebUrl"); }
+            set { BackingStore?.Set("actionWebUrl", value); }
+        }
+#else
         public string ActionWebUrl {
             get { return BackingStore?.Get<string>("actionWebUrl"); }
             set { BackingStore?.Set("actionWebUrl", value); }
         }
+#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
             get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
@@ -19,20 +26,34 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Potential improvement in the tenant security score from the recommended action.</summary>
         public double? PotentialScoreImpact {
             get { return BackingStore?.Get<double?>("potentialScoreImpact"); }
             set { BackingStore?.Set("potentialScoreImpact", value); }
         }
         /// <summary>Title of the recommended action.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Title {
+            get { return BackingStore?.Get<string?>("title"); }
+            set { BackingStore?.Set("title", value); }
+        }
+#else
         public string Title {
             get { return BackingStore?.Get<string>("title"); }
             set { BackingStore?.Set("title", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new recommendedAction and sets the default values.
         /// </summary>

@@ -6,75 +6,152 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class StrongAuthenticationPhoneAppDetail : Entity, IParsable {
         /// <summary>The authenticationType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AuthenticationType {
+            get { return BackingStore?.Get<string?>("authenticationType"); }
+            set { BackingStore?.Set("authenticationType", value); }
+        }
+#else
         public string AuthenticationType {
             get { return BackingStore?.Get<string>("authenticationType"); }
             set { BackingStore?.Set("authenticationType", value); }
         }
+#endif
         /// <summary>The authenticatorFlavor property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AuthenticatorFlavor {
+            get { return BackingStore?.Get<string?>("authenticatorFlavor"); }
+            set { BackingStore?.Set("authenticatorFlavor", value); }
+        }
+#else
         public string AuthenticatorFlavor {
             get { return BackingStore?.Get<string>("authenticatorFlavor"); }
             set { BackingStore?.Set("authenticatorFlavor", value); }
         }
+#endif
         /// <summary>The deviceId property</summary>
         public Guid? DeviceId {
             get { return BackingStore?.Get<Guid?>("deviceId"); }
             set { BackingStore?.Set("deviceId", value); }
         }
         /// <summary>The deviceName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeviceName {
+            get { return BackingStore?.Get<string?>("deviceName"); }
+            set { BackingStore?.Set("deviceName", value); }
+        }
+#else
         public string DeviceName {
             get { return BackingStore?.Get<string>("deviceName"); }
             set { BackingStore?.Set("deviceName", value); }
         }
+#endif
         /// <summary>The deviceTag property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeviceTag {
+            get { return BackingStore?.Get<string?>("deviceTag"); }
+            set { BackingStore?.Set("deviceTag", value); }
+        }
+#else
         public string DeviceTag {
             get { return BackingStore?.Get<string>("deviceTag"); }
             set { BackingStore?.Set("deviceTag", value); }
         }
+#endif
         /// <summary>The deviceToken property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeviceToken {
+            get { return BackingStore?.Get<string?>("deviceToken"); }
+            set { BackingStore?.Set("deviceToken", value); }
+        }
+#else
         public string DeviceToken {
             get { return BackingStore?.Get<string>("deviceToken"); }
             set { BackingStore?.Set("deviceToken", value); }
         }
+#endif
         /// <summary>The hashFunction property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? HashFunction {
+            get { return BackingStore?.Get<string?>("hashFunction"); }
+            set { BackingStore?.Set("hashFunction", value); }
+        }
+#else
         public string HashFunction {
             get { return BackingStore?.Get<string>("hashFunction"); }
             set { BackingStore?.Set("hashFunction", value); }
         }
+#endif
         /// <summary>The lastAuthenticatedDateTime property</summary>
         public DateTimeOffset? LastAuthenticatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastAuthenticatedDateTime"); }
             set { BackingStore?.Set("lastAuthenticatedDateTime", value); }
         }
         /// <summary>The notificationType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? NotificationType {
+            get { return BackingStore?.Get<string?>("notificationType"); }
+            set { BackingStore?.Set("notificationType", value); }
+        }
+#else
         public string NotificationType {
             get { return BackingStore?.Get<string>("notificationType"); }
             set { BackingStore?.Set("notificationType", value); }
         }
+#endif
         /// <summary>The oathSecretKey property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OathSecretKey {
+            get { return BackingStore?.Get<string?>("oathSecretKey"); }
+            set { BackingStore?.Set("oathSecretKey", value); }
+        }
+#else
         public string OathSecretKey {
             get { return BackingStore?.Get<string>("oathSecretKey"); }
             set { BackingStore?.Set("oathSecretKey", value); }
         }
+#endif
         /// <summary>The oathTokenMetadata property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.OathTokenMetadata? OathTokenMetadata {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OathTokenMetadata?>("oathTokenMetadata"); }
+            set { BackingStore?.Set("oathTokenMetadata", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.OathTokenMetadata OathTokenMetadata {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OathTokenMetadata>("oathTokenMetadata"); }
             set { BackingStore?.Set("oathTokenMetadata", value); }
         }
+#endif
         /// <summary>The oathTokenTimeDriftInSeconds property</summary>
         public int? OathTokenTimeDriftInSeconds {
             get { return BackingStore?.Get<int?>("oathTokenTimeDriftInSeconds"); }
             set { BackingStore?.Set("oathTokenTimeDriftInSeconds", value); }
         }
         /// <summary>The phoneAppVersion property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PhoneAppVersion {
+            get { return BackingStore?.Get<string?>("phoneAppVersion"); }
+            set { BackingStore?.Set("phoneAppVersion", value); }
+        }
+#else
         public string PhoneAppVersion {
             get { return BackingStore?.Get<string>("phoneAppVersion"); }
             set { BackingStore?.Set("phoneAppVersion", value); }
         }
+#endif
         /// <summary>The tenantDeviceId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TenantDeviceId {
+            get { return BackingStore?.Get<string?>("tenantDeviceId"); }
+            set { BackingStore?.Set("tenantDeviceId", value); }
+        }
+#else
         public string TenantDeviceId {
             get { return BackingStore?.Get<string>("tenantDeviceId"); }
             set { BackingStore?.Set("tenantDeviceId", value); }
         }
+#endif
         /// <summary>The tokenGenerationIntervalInSeconds property</summary>
         public int? TokenGenerationIntervalInSeconds {
             get { return BackingStore?.Get<int?>("tokenGenerationIntervalInSeconds"); }

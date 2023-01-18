@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class ZebraFotaConnector : Entity, IParsable {
         /// <summary>Complete account enrollment authorization URL. This corresponds to verification_uri_complete in the Zebra API documentations.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? EnrollmentAuthorizationUrl {
+            get { return BackingStore?.Get<string?>("enrollmentAuthorizationUrl"); }
+            set { BackingStore?.Set("enrollmentAuthorizationUrl", value); }
+        }
+#else
         public string EnrollmentAuthorizationUrl {
             get { return BackingStore?.Get<string>("enrollmentAuthorizationUrl"); }
             set { BackingStore?.Set("enrollmentAuthorizationUrl", value); }
         }
+#endif
         /// <summary>Tenant enrollment token from Zebra. The token is used to enroll Zebra devices in the FOTA Service via app config.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? EnrollmentToken {
+            get { return BackingStore?.Get<string?>("enrollmentToken"); }
+            set { BackingStore?.Set("enrollmentToken", value); }
+        }
+#else
         public string EnrollmentToken {
             get { return BackingStore?.Get<string>("enrollmentToken"); }
             set { BackingStore?.Set("enrollmentToken", value); }
         }
+#endif
         /// <summary>Flag indicating if required Firmware Over-the-Air (FOTA) Apps have been approved.</summary>
         public bool? FotaAppsApproved {
             get { return BackingStore?.Get<bool?>("fotaAppsApproved"); }

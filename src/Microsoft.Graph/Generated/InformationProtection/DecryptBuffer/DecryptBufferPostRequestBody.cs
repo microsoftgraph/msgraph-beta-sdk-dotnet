@@ -14,15 +14,29 @@ namespace Microsoft.Graph.Beta.InformationProtection.DecryptBuffer {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The encryptedBuffer property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public byte[]? EncryptedBuffer {
+            get { return BackingStore?.Get<byte[]?>("encryptedBuffer"); }
+            set { BackingStore?.Set("encryptedBuffer", value); }
+        }
+#else
         public byte[] EncryptedBuffer {
             get { return BackingStore?.Get<byte[]>("encryptedBuffer"); }
             set { BackingStore?.Set("encryptedBuffer", value); }
         }
+#endif
         /// <summary>The publishingLicense property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public byte[]? PublishingLicense {
+            get { return BackingStore?.Get<byte[]?>("publishingLicense"); }
+            set { BackingStore?.Set("publishingLicense", value); }
+        }
+#else
         public byte[] PublishingLicense {
             get { return BackingStore?.Get<byte[]>("publishingLicense"); }
             set { BackingStore?.Set("publishingLicense", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new decryptBufferPostRequestBody and sets the default values.
         /// </summary>

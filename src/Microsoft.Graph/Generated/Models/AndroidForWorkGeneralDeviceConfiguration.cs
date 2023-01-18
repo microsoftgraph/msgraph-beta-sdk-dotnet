@@ -66,10 +66,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("securityRequireVerifyApps", value); }
         }
         /// <summary>Enable lockdown mode for always-on VPN.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? VpnAlwaysOnPackageIdentifier {
+            get { return BackingStore?.Get<string?>("vpnAlwaysOnPackageIdentifier"); }
+            set { BackingStore?.Set("vpnAlwaysOnPackageIdentifier", value); }
+        }
+#else
         public string VpnAlwaysOnPackageIdentifier {
             get { return BackingStore?.Get<string>("vpnAlwaysOnPackageIdentifier"); }
             set { BackingStore?.Set("vpnAlwaysOnPackageIdentifier", value); }
         }
+#endif
         /// <summary>Enable lockdown mode for always-on VPN.</summary>
         public bool? VpnEnableAlwaysOnLockdownMode {
             get { return BackingStore?.Get<bool?>("vpnEnableAlwaysOnLockdownMode"); }

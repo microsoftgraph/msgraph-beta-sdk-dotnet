@@ -7,10 +7,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Me.Drives.Item.Items.Item.SearchWithQ {
     public class SearchWithQResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.DriveItem>? Value {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DriveItem>?>("value"); }
+            set { BackingStore?.Set("value", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.DriveItem> Value {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DriveItem>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

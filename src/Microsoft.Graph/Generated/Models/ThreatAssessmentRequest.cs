@@ -16,10 +16,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("contentType", value); }
         }
         /// <summary>The threat assessment request creator.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public IdentitySet? CreatedBy {
+            get { return BackingStore?.Get<IdentitySet?>("createdBy"); }
+            set { BackingStore?.Set("createdBy", value); }
+        }
+#else
         public IdentitySet CreatedBy {
             get { return BackingStore?.Get<IdentitySet>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
+#endif
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
@@ -36,10 +43,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("requestSource", value); }
         }
         /// <summary>A collection of threat assessment results. Read-only. By default, a GET /threatAssessmentRequests/{id} does not return this property unless you apply $expand on it.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ThreatAssessmentResult>? Results {
+            get { return BackingStore?.Get<List<ThreatAssessmentResult>?>("results"); }
+            set { BackingStore?.Set("results", value); }
+        }
+#else
         public List<ThreatAssessmentResult> Results {
             get { return BackingStore?.Get<List<ThreatAssessmentResult>>("results"); }
             set { BackingStore?.Set("results", value); }
         }
+#endif
         /// <summary>The assessment process status. Possible values are: pending, completed.</summary>
         public ThreatAssessmentStatus? Status {
             get { return BackingStore?.Get<ThreatAssessmentStatus?>("status"); }

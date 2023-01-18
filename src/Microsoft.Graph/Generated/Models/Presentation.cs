@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class Presentation : Entity, IParsable {
         /// <summary>The comments property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DocumentComment>? Comments {
+            get { return BackingStore?.Get<List<DocumentComment>?>("comments"); }
+            set { BackingStore?.Set("comments", value); }
+        }
+#else
         public List<DocumentComment> Comments {
             get { return BackingStore?.Get<List<DocumentComment>>("comments"); }
             set { BackingStore?.Set("comments", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

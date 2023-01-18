@@ -19,45 +19,94 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("editable", value); }
         }
         /// <summary>Synchronization rule identifier. Must be one of the identifiers recognized by the synchronization engine. Supported rule identifiers can be found in the synchronization template returned by the API.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Id {
+            get { return BackingStore?.Get<string?>("id"); }
+            set { BackingStore?.Set("id", value); }
+        }
+#else
         public string Id {
             get { return BackingStore?.Get<string>("id"); }
             set { BackingStore?.Set("id", value); }
         }
+#endif
         /// <summary>Additional extension properties. Unless instructed explicitly by the support team, metadata values should not be changed.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<StringKeyStringValuePair>? Metadata {
+            get { return BackingStore?.Get<List<StringKeyStringValuePair>?>("metadata"); }
+            set { BackingStore?.Set("metadata", value); }
+        }
+#else
         public List<StringKeyStringValuePair> Metadata {
             get { return BackingStore?.Get<List<StringKeyStringValuePair>>("metadata"); }
             set { BackingStore?.Set("metadata", value); }
         }
+#endif
         /// <summary>Human-readable name of the synchronization rule. Not nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Name {
+            get { return BackingStore?.Get<string?>("name"); }
+            set { BackingStore?.Set("name", value); }
+        }
+#else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#endif
         /// <summary>Collection of object mappings supported by the rule. Tells the synchronization engine which objects should be synchronized.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ObjectMapping>? ObjectMappings {
+            get { return BackingStore?.Get<List<ObjectMapping>?>("objectMappings"); }
+            set { BackingStore?.Set("objectMappings", value); }
+        }
+#else
         public List<ObjectMapping> ObjectMappings {
             get { return BackingStore?.Get<List<ObjectMapping>>("objectMappings"); }
             set { BackingStore?.Set("objectMappings", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Priority relative to other rules in the synchronizationSchema. Rules with the lowest priority number will be processed first.</summary>
         public int? Priority {
             get { return BackingStore?.Get<int?>("priority"); }
             set { BackingStore?.Set("priority", value); }
         }
         /// <summary>Name of the source directory. Must match one of the directory definitions in synchronizationSchema.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SourceDirectoryName {
+            get { return BackingStore?.Get<string?>("sourceDirectoryName"); }
+            set { BackingStore?.Set("sourceDirectoryName", value); }
+        }
+#else
         public string SourceDirectoryName {
             get { return BackingStore?.Get<string>("sourceDirectoryName"); }
             set { BackingStore?.Set("sourceDirectoryName", value); }
         }
+#endif
         /// <summary>Name of the target directory. Must match one of the directory definitions in synchronizationSchema.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TargetDirectoryName {
+            get { return BackingStore?.Get<string?>("targetDirectoryName"); }
+            set { BackingStore?.Set("targetDirectoryName", value); }
+        }
+#else
         public string TargetDirectoryName {
             get { return BackingStore?.Get<string>("targetDirectoryName"); }
             set { BackingStore?.Set("targetDirectoryName", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new synchronizationRule and sets the default values.
         /// </summary>

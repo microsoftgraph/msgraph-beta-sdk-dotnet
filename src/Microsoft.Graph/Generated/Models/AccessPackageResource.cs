@@ -6,70 +6,147 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class AccessPackageResource : Entity, IParsable {
         /// <summary>Contains the environment information for the resource. This can be set using either the @odata.bind annotation or the environment&apos;s originId.Supports $expand.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.AccessPackageResourceEnvironment? AccessPackageResourceEnvironment {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackageResourceEnvironment?>("accessPackageResourceEnvironment"); }
+            set { BackingStore?.Set("accessPackageResourceEnvironment", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.AccessPackageResourceEnvironment AccessPackageResourceEnvironment {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackageResourceEnvironment>("accessPackageResourceEnvironment"); }
             set { BackingStore?.Set("accessPackageResourceEnvironment", value); }
         }
+#endif
         /// <summary>Read-only. Nullable. Supports $expand.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AccessPackageResourceRole>? AccessPackageResourceRoles {
+            get { return BackingStore?.Get<List<AccessPackageResourceRole>?>("accessPackageResourceRoles"); }
+            set { BackingStore?.Set("accessPackageResourceRoles", value); }
+        }
+#else
         public List<AccessPackageResourceRole> AccessPackageResourceRoles {
             get { return BackingStore?.Get<List<AccessPackageResourceRole>>("accessPackageResourceRoles"); }
             set { BackingStore?.Set("accessPackageResourceRoles", value); }
         }
+#endif
         /// <summary>Read-only. Nullable. Supports $expand.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AccessPackageResourceScope>? AccessPackageResourceScopes {
+            get { return BackingStore?.Get<List<AccessPackageResourceScope>?>("accessPackageResourceScopes"); }
+            set { BackingStore?.Set("accessPackageResourceScopes", value); }
+        }
+#else
         public List<AccessPackageResourceScope> AccessPackageResourceScopes {
             get { return BackingStore?.Get<List<AccessPackageResourceScope>>("accessPackageResourceScopes"); }
             set { BackingStore?.Set("accessPackageResourceScopes", value); }
         }
+#endif
         /// <summary>The name of the user or application that first added this resource. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AddedBy {
+            get { return BackingStore?.Get<string?>("addedBy"); }
+            set { BackingStore?.Set("addedBy", value); }
+        }
+#else
         public string AddedBy {
             get { return BackingStore?.Get<string>("addedBy"); }
             set { BackingStore?.Set("addedBy", value); }
         }
+#endif
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.</summary>
         public DateTimeOffset? AddedOn {
             get { return BackingStore?.Get<DateTimeOffset?>("addedOn"); }
             set { BackingStore?.Set("addedOn", value); }
         }
         /// <summary>Contains information about the attributes to be collected from the requestor and sent to the resource application.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AccessPackageResourceAttribute>? Attributes {
+            get { return BackingStore?.Get<List<AccessPackageResourceAttribute>?>("attributes"); }
+            set { BackingStore?.Set("attributes", value); }
+        }
+#else
         public List<AccessPackageResourceAttribute> Attributes {
             get { return BackingStore?.Get<List<AccessPackageResourceAttribute>>("attributes"); }
             set { BackingStore?.Set("attributes", value); }
         }
+#endif
         /// <summary>A description for the resource.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>The display name of the resource, such as the application name, group name or site name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>True if the resource is not yet available for assignment. Read-only.</summary>
         public bool? IsPendingOnboarding {
             get { return BackingStore?.Get<bool?>("isPendingOnboarding"); }
             set { BackingStore?.Set("isPendingOnboarding", value); }
         }
         /// <summary>The unique identifier of the resource in the origin system. In the case of an Azure AD group, this is the identifier of the group.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OriginId {
+            get { return BackingStore?.Get<string?>("originId"); }
+            set { BackingStore?.Set("originId", value); }
+        }
+#else
         public string OriginId {
             get { return BackingStore?.Get<string>("originId"); }
             set { BackingStore?.Set("originId", value); }
         }
+#endif
         /// <summary>The type of the resource in the origin system, such as SharePointOnline, AadApplication or AadGroup.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OriginSystem {
+            get { return BackingStore?.Get<string?>("originSystem"); }
+            set { BackingStore?.Set("originSystem", value); }
+        }
+#else
         public string OriginSystem {
             get { return BackingStore?.Get<string>("originSystem"); }
             set { BackingStore?.Set("originSystem", value); }
         }
+#endif
         /// <summary>The type of the resource, such as Application if it is an Azure AD connected application, or SharePoint Online Site for a SharePoint Online site.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ResourceType {
+            get { return BackingStore?.Get<string?>("resourceType"); }
+            set { BackingStore?.Set("resourceType", value); }
+        }
+#else
         public string ResourceType {
             get { return BackingStore?.Get<string>("resourceType"); }
             set { BackingStore?.Set("resourceType", value); }
         }
+#endif
         /// <summary>A unique resource locator for the resource, such as the URL for signing a user into an application.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Url {
+            get { return BackingStore?.Get<string?>("url"); }
+            set { BackingStore?.Set("url", value); }
+        }
+#else
         public string Url {
             get { return BackingStore?.Get<string>("url"); }
             set { BackingStore?.Set("url", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

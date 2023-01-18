@@ -7,105 +7,245 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class Site : BaseItem, IParsable {
         /// <summary>Analytics about the view activities that took place in this site.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ItemAnalytics? Analytics {
+            get { return BackingStore?.Get<ItemAnalytics?>("analytics"); }
+            set { BackingStore?.Set("analytics", value); }
+        }
+#else
         public ItemAnalytics Analytics {
             get { return BackingStore?.Get<ItemAnalytics>("analytics"); }
             set { BackingStore?.Set("analytics", value); }
         }
+#endif
         /// <summary>The collection of column definitions reusable across lists under this site.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ColumnDefinition>? Columns {
+            get { return BackingStore?.Get<List<ColumnDefinition>?>("columns"); }
+            set { BackingStore?.Set("columns", value); }
+        }
+#else
         public List<ColumnDefinition> Columns {
             get { return BackingStore?.Get<List<ColumnDefinition>>("columns"); }
             set { BackingStore?.Set("columns", value); }
         }
+#endif
         /// <summary>The collection of content types defined for this site.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ContentType>? ContentTypes {
+            get { return BackingStore?.Get<List<ContentType>?>("contentTypes"); }
+            set { BackingStore?.Set("contentTypes", value); }
+        }
+#else
         public List<ContentType> ContentTypes {
             get { return BackingStore?.Get<List<ContentType>>("contentTypes"); }
             set { BackingStore?.Set("contentTypes", value); }
         }
+#endif
         /// <summary>The deleted property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.Deleted? Deleted {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Deleted?>("deleted"); }
+            set { BackingStore?.Set("deleted", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.Deleted Deleted {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Deleted>("deleted"); }
             set { BackingStore?.Set("deleted", value); }
         }
+#endif
         /// <summary>The full title for the site. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The default drive (document library) for this site.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.Drive? Drive {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Drive?>("drive"); }
+            set { BackingStore?.Set("drive", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.Drive Drive {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Drive>("drive"); }
             set { BackingStore?.Set("drive", value); }
         }
+#endif
         /// <summary>The collection of drives (document libraries) under this site.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.Drive>? Drives {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Drive>?>("drives"); }
+            set { BackingStore?.Set("drives", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.Drive> Drives {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Drive>>("drives"); }
             set { BackingStore?.Set("drives", value); }
         }
+#endif
         /// <summary>The collection of column definitions available in the site that are referenced from the sites in the parent hierarchy of the current site.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ColumnDefinition>? ExternalColumns {
+            get { return BackingStore?.Get<List<ColumnDefinition>?>("externalColumns"); }
+            set { BackingStore?.Set("externalColumns", value); }
+        }
+#else
         public List<ColumnDefinition> ExternalColumns {
             get { return BackingStore?.Get<List<ColumnDefinition>>("externalColumns"); }
             set { BackingStore?.Set("externalColumns", value); }
         }
+#endif
         /// <summary>Used to address any item contained in this site. This collection cannot be enumerated.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<BaseItem>? Items {
+            get { return BackingStore?.Get<List<BaseItem>?>("items"); }
+            set { BackingStore?.Set("items", value); }
+        }
+#else
         public List<BaseItem> Items {
             get { return BackingStore?.Get<List<BaseItem>>("items"); }
             set { BackingStore?.Set("items", value); }
         }
+#endif
         /// <summary>The collection of lists under this site.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<List>? Lists {
+            get { return BackingStore?.Get<List<List>?>("lists"); }
+            set { BackingStore?.Set("lists", value); }
+        }
+#else
         public List<List> Lists {
             get { return BackingStore?.Get<List<List>>("lists"); }
             set { BackingStore?.Set("lists", value); }
         }
+#endif
         /// <summary>The onenote property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.Onenote? Onenote {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Onenote?>("onenote"); }
+            set { BackingStore?.Set("onenote", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.Onenote Onenote {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Onenote>("onenote"); }
             set { BackingStore?.Set("onenote", value); }
         }
+#endif
         /// <summary>The collection of long running operations for the site.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<RichLongRunningOperation>? Operations {
+            get { return BackingStore?.Get<List<RichLongRunningOperation>?>("operations"); }
+            set { BackingStore?.Set("operations", value); }
+        }
+#else
         public List<RichLongRunningOperation> Operations {
             get { return BackingStore?.Get<List<RichLongRunningOperation>>("operations"); }
             set { BackingStore?.Set("operations", value); }
         }
+#endif
         /// <summary>The collection of pages in the SitePages list in this site.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<SitePage>? Pages {
+            get { return BackingStore?.Get<List<SitePage>?>("pages"); }
+            set { BackingStore?.Set("pages", value); }
+        }
+#else
         public List<SitePage> Pages {
             get { return BackingStore?.Get<List<SitePage>>("pages"); }
             set { BackingStore?.Set("pages", value); }
         }
+#endif
         /// <summary>The permissions associated with the site. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Permission>? Permissions {
+            get { return BackingStore?.Get<List<Permission>?>("permissions"); }
+            set { BackingStore?.Set("permissions", value); }
+        }
+#else
         public List<Permission> Permissions {
             get { return BackingStore?.Get<List<Permission>>("permissions"); }
             set { BackingStore?.Set("permissions", value); }
         }
+#endif
         /// <summary>If present, indicates that this is the root site in the site collection. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.Root? Root {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Root?>("root"); }
+            set { BackingStore?.Set("root", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.Root Root {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Root>("root"); }
             set { BackingStore?.Set("root", value); }
         }
+#endif
         /// <summary>The settings on this site. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public SiteSettings? Settings {
+            get { return BackingStore?.Get<SiteSettings?>("settings"); }
+            set { BackingStore?.Set("settings", value); }
+        }
+#else
         public SiteSettings Settings {
             get { return BackingStore?.Get<SiteSettings>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
+#endif
         /// <summary>Returns identifiers useful for SharePoint REST compatibility. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.SharepointIds? SharepointIds {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SharepointIds?>("sharepointIds"); }
+            set { BackingStore?.Set("sharepointIds", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.SharepointIds SharepointIds {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SharepointIds>("sharepointIds"); }
             set { BackingStore?.Set("sharepointIds", value); }
         }
+#endif
         /// <summary>Provides details about the site&apos;s site collection. Available only on the root site. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.SiteCollection? SiteCollection {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SiteCollection?>("siteCollection"); }
+            set { BackingStore?.Set("siteCollection", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.SiteCollection SiteCollection {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SiteCollection>("siteCollection"); }
             set { BackingStore?.Set("siteCollection", value); }
         }
+#endif
         /// <summary>The collection of the sub-sites under this site.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Site>? Sites {
+            get { return BackingStore?.Get<List<Site>?>("sites"); }
+            set { BackingStore?.Set("sites", value); }
+        }
+#else
         public List<Site> Sites {
             get { return BackingStore?.Get<List<Site>>("sites"); }
             set { BackingStore?.Set("sites", value); }
         }
+#endif
         /// <summary>The termStore under this site.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Store? TermStore {
+            get { return BackingStore?.Get<Store?>("termStore"); }
+            set { BackingStore?.Set("termStore", value); }
+        }
+#else
         public Store TermStore {
             get { return BackingStore?.Get<Store>("termStore"); }
             set { BackingStore?.Set("termStore", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new Site and sets the default values.
         /// </summary>

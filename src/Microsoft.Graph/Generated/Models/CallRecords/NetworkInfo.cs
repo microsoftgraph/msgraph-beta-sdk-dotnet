@@ -19,10 +19,17 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
             set { BackingStore?.Set("bandwidthLowEventRatio", value); }
         }
         /// <summary>The wireless LAN basic service set identifier of the media endpoint used to connect to the network.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? BasicServiceSetIdentifier {
+            get { return BackingStore?.Get<string?>("basicServiceSetIdentifier"); }
+            set { BackingStore?.Set("basicServiceSetIdentifier", value); }
+        }
+#else
         public string BasicServiceSetIdentifier {
             get { return BackingStore?.Get<string>("basicServiceSetIdentifier"); }
             set { BackingStore?.Set("basicServiceSetIdentifier", value); }
         }
+#endif
         /// <summary>The connectionType property</summary>
         public NetworkConnectionType? ConnectionType {
             get { return BackingStore?.Get<NetworkConnectionType?>("connectionType"); }
@@ -34,35 +41,63 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
             set { BackingStore?.Set("delayEventRatio", value); }
         }
         /// <summary>DNS suffix associated with the network adapter of the media endpoint.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DnsSuffix {
+            get { return BackingStore?.Get<string?>("dnsSuffix"); }
+            set { BackingStore?.Set("dnsSuffix", value); }
+        }
+#else
         public string DnsSuffix {
             get { return BackingStore?.Get<string>("dnsSuffix"); }
             set { BackingStore?.Set("dnsSuffix", value); }
         }
+#endif
         /// <summary>IP address of the media endpoint.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? IpAddress {
+            get { return BackingStore?.Get<string?>("ipAddress"); }
+            set { BackingStore?.Set("ipAddress", value); }
+        }
+#else
         public string IpAddress {
             get { return BackingStore?.Get<string>("ipAddress"); }
             set { BackingStore?.Set("ipAddress", value); }
         }
+#endif
         /// <summary>Link speed in bits per second reported by the network adapter used by the media endpoint.</summary>
         public long? LinkSpeed {
             get { return BackingStore?.Get<long?>("linkSpeed"); }
             set { BackingStore?.Set("linkSpeed", value); }
         }
         /// <summary>The media access control (MAC) address of the media endpoint&apos;s network device.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MacAddress {
+            get { return BackingStore?.Get<string?>("macAddress"); }
+            set { BackingStore?.Set("macAddress", value); }
+        }
+#else
         public string MacAddress {
             get { return BackingStore?.Get<string>("macAddress"); }
             set { BackingStore?.Set("macAddress", value); }
         }
+#endif
         /// <summary>The networkTransportProtocol property</summary>
         public Microsoft.Graph.Beta.Models.CallRecords.NetworkTransportProtocol? NetworkTransportProtocol {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CallRecords.NetworkTransportProtocol?>("networkTransportProtocol"); }
             set { BackingStore?.Set("networkTransportProtocol", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Network port number used by media endpoint.</summary>
         public int? Port {
             get { return BackingStore?.Get<int?>("port"); }
@@ -74,15 +109,29 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
             set { BackingStore?.Set("receivedQualityEventRatio", value); }
         }
         /// <summary>IP address of the media endpoint as seen by the media relay server. This is typically the public internet IP address associated to the endpoint.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ReflexiveIPAddress {
+            get { return BackingStore?.Get<string?>("reflexiveIPAddress"); }
+            set { BackingStore?.Set("reflexiveIPAddress", value); }
+        }
+#else
         public string ReflexiveIPAddress {
             get { return BackingStore?.Get<string>("reflexiveIPAddress"); }
             set { BackingStore?.Set("reflexiveIPAddress", value); }
         }
+#endif
         /// <summary>IP address of the media relay server allocated by the media endpoint.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? RelayIPAddress {
+            get { return BackingStore?.Get<string?>("relayIPAddress"); }
+            set { BackingStore?.Set("relayIPAddress", value); }
+        }
+#else
         public string RelayIPAddress {
             get { return BackingStore?.Get<string>("relayIPAddress"); }
             set { BackingStore?.Set("relayIPAddress", value); }
         }
+#endif
         /// <summary>Network port number allocated on the media relay server by the media endpoint.</summary>
         public int? RelayPort {
             get { return BackingStore?.Get<int?>("relayPort"); }
@@ -94,15 +143,29 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
             set { BackingStore?.Set("sentQualityEventRatio", value); }
         }
         /// <summary>Subnet used for media stream by the media endpoint.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Subnet {
+            get { return BackingStore?.Get<string?>("subnet"); }
+            set { BackingStore?.Set("subnet", value); }
+        }
+#else
         public string Subnet {
             get { return BackingStore?.Get<string>("subnet"); }
             set { BackingStore?.Set("subnet", value); }
         }
+#endif
         /// <summary>List of network trace route hops collected for this media stream.*</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<TraceRouteHop>? TraceRouteHops {
+            get { return BackingStore?.Get<List<TraceRouteHop>?>("traceRouteHops"); }
+            set { BackingStore?.Set("traceRouteHops", value); }
+        }
+#else
         public List<TraceRouteHop> TraceRouteHops {
             get { return BackingStore?.Get<List<TraceRouteHop>>("traceRouteHops"); }
             set { BackingStore?.Set("traceRouteHops", value); }
         }
+#endif
         /// <summary>The wifiBand property</summary>
         public Microsoft.Graph.Beta.Models.CallRecords.WifiBand? WifiBand {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CallRecords.WifiBand?>("wifiBand"); }
@@ -119,15 +182,29 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
             set { BackingStore?.Set("wifiChannel", value); }
         }
         /// <summary>Name of the Microsoft WiFi driver used by the media endpoint. Value may be localized based on the language used by endpoint.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? WifiMicrosoftDriver {
+            get { return BackingStore?.Get<string?>("wifiMicrosoftDriver"); }
+            set { BackingStore?.Set("wifiMicrosoftDriver", value); }
+        }
+#else
         public string WifiMicrosoftDriver {
             get { return BackingStore?.Get<string>("wifiMicrosoftDriver"); }
             set { BackingStore?.Set("wifiMicrosoftDriver", value); }
         }
+#endif
         /// <summary>Version of the Microsoft WiFi driver used by the media endpoint.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? WifiMicrosoftDriverVersion {
+            get { return BackingStore?.Get<string?>("wifiMicrosoftDriverVersion"); }
+            set { BackingStore?.Set("wifiMicrosoftDriverVersion", value); }
+        }
+#else
         public string WifiMicrosoftDriverVersion {
             get { return BackingStore?.Get<string>("wifiMicrosoftDriverVersion"); }
             set { BackingStore?.Set("wifiMicrosoftDriverVersion", value); }
         }
+#endif
         /// <summary>The wifiRadioType property</summary>
         public Microsoft.Graph.Beta.Models.CallRecords.WifiRadioType? WifiRadioType {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CallRecords.WifiRadioType?>("wifiRadioType"); }
@@ -139,15 +216,29 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
             set { BackingStore?.Set("wifiSignalStrength", value); }
         }
         /// <summary>Name of the WiFi driver used by the media endpoint. Value may be localized based on the language used by endpoint.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? WifiVendorDriver {
+            get { return BackingStore?.Get<string?>("wifiVendorDriver"); }
+            set { BackingStore?.Set("wifiVendorDriver", value); }
+        }
+#else
         public string WifiVendorDriver {
             get { return BackingStore?.Get<string>("wifiVendorDriver"); }
             set { BackingStore?.Set("wifiVendorDriver", value); }
         }
+#endif
         /// <summary>Version of the WiFi driver used by the media endpoint.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? WifiVendorDriverVersion {
+            get { return BackingStore?.Get<string?>("wifiVendorDriverVersion"); }
+            set { BackingStore?.Set("wifiVendorDriverVersion", value); }
+        }
+#else
         public string WifiVendorDriverVersion {
             get { return BackingStore?.Get<string>("wifiVendorDriverVersion"); }
             set { BackingStore?.Set("wifiVendorDriverVersion", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new networkInfo and sets the default values.
         /// </summary>

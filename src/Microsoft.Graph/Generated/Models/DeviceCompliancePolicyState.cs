@@ -9,10 +9,17 @@ namespace Microsoft.Graph.Beta.Models {
     /// </summary>
     public class DeviceCompliancePolicyState : Entity, IParsable {
         /// <summary>The name of the policy for this policyBase</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>Supported platform types for policies.</summary>
         public PolicyPlatformType? PlatformType {
             get { return BackingStore?.Get<PolicyPlatformType?>("platformType"); }
@@ -24,25 +31,46 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("settingCount", value); }
         }
         /// <summary>The settingStates property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DeviceCompliancePolicySettingState>? SettingStates {
+            get { return BackingStore?.Get<List<DeviceCompliancePolicySettingState>?>("settingStates"); }
+            set { BackingStore?.Set("settingStates", value); }
+        }
+#else
         public List<DeviceCompliancePolicySettingState> SettingStates {
             get { return BackingStore?.Get<List<DeviceCompliancePolicySettingState>>("settingStates"); }
             set { BackingStore?.Set("settingStates", value); }
         }
+#endif
         /// <summary>The state property</summary>
         public ComplianceStatus? State {
             get { return BackingStore?.Get<ComplianceStatus?>("state"); }
             set { BackingStore?.Set("state", value); }
         }
         /// <summary>User unique identifier, must be Guid</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UserId {
+            get { return BackingStore?.Get<string?>("userId"); }
+            set { BackingStore?.Set("userId", value); }
+        }
+#else
         public string UserId {
             get { return BackingStore?.Get<string>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
+#endif
         /// <summary>User Principal Name</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UserPrincipalName {
+            get { return BackingStore?.Get<string?>("userPrincipalName"); }
+            set { BackingStore?.Set("userPrincipalName", value); }
+        }
+#else
         public string UserPrincipalName {
             get { return BackingStore?.Get<string>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
+#endif
         /// <summary>The version of the policy</summary>
         public int? Version {
             get { return BackingStore?.Get<int?>("version"); }

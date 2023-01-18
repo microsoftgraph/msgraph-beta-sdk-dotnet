@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class CloudPcReports : Entity, IParsable {
         /// <summary>The export jobs created for downloading reports.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<CloudPcExportJob>? ExportJobs {
+            get { return BackingStore?.Get<List<CloudPcExportJob>?>("exportJobs"); }
+            set { BackingStore?.Set("exportJobs", value); }
+        }
+#else
         public List<CloudPcExportJob> ExportJobs {
             get { return BackingStore?.Get<List<CloudPcExportJob>>("exportJobs"); }
             set { BackingStore?.Set("exportJobs", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

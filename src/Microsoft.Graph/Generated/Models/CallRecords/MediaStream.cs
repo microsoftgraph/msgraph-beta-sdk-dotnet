@@ -114,10 +114,17 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
             set { BackingStore?.Set("maxRoundTripTime", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Packet count for the stream.</summary>
         public long? PacketUtilization {
             get { return BackingStore?.Get<long?>("packetUtilization"); }
@@ -139,10 +146,17 @@ namespace Microsoft.Graph.Beta.Models.CallRecords {
             set { BackingStore?.Set("streamDirection", value); }
         }
         /// <summary>Unique identifier for the stream.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? StreamId {
+            get { return BackingStore?.Get<string?>("streamId"); }
+            set { BackingStore?.Set("streamId", value); }
+        }
+#else
         public string StreamId {
             get { return BackingStore?.Get<string>("streamId"); }
             set { BackingStore?.Set("streamId", value); }
         }
+#endif
         /// <summary>Codec name used to encode video for transmission on the network. Possible values are: unknown, invalid, av1, h263, h264, h264s, h264uc, h265, rtvc1, rtVideo, xrtvc1, unknownFutureValue.</summary>
         public Microsoft.Graph.Beta.Models.CallRecords.VideoCodec? VideoCodec {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CallRecords.VideoCodec?>("videoCodec"); }

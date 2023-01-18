@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class BuiltInIdentityProvider : IdentityProviderBase, IParsable {
         /// <summary>The identity provider type. For a B2B scenario, possible values: AADSignup, MicrosoftAccount, EmailOTP. Required.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? IdentityProviderType {
+            get { return BackingStore?.Get<string?>("identityProviderType"); }
+            set { BackingStore?.Set("identityProviderType", value); }
+        }
+#else
         public string IdentityProviderType {
             get { return BackingStore?.Get<string>("identityProviderType"); }
             set { BackingStore?.Set("identityProviderType", value); }
         }
+#endif
         /// <summary>The state property</summary>
         public IdentityProviderState? State {
             get { return BackingStore?.Get<IdentityProviderState?>("state"); }

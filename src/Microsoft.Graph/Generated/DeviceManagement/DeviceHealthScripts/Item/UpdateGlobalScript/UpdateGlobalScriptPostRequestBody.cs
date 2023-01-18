@@ -14,10 +14,17 @@ namespace Microsoft.Graph.Beta.DeviceManagement.DeviceHealthScripts.Item.UpdateG
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The version property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Version {
+            get { return BackingStore?.Get<string?>("version"); }
+            set { BackingStore?.Set("version", value); }
+        }
+#else
         public string Version {
             get { return BackingStore?.Get<string>("version"); }
             set { BackingStore?.Set("version", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new updateGlobalScriptPostRequestBody and sets the default values.
         /// </summary>

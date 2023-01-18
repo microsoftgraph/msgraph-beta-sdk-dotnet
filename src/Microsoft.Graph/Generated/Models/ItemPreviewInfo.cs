@@ -14,25 +14,53 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The getUrl property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? GetUrl {
+            get { return BackingStore?.Get<string?>("getUrl"); }
+            set { BackingStore?.Set("getUrl", value); }
+        }
+#else
         public string GetUrl {
             get { return BackingStore?.Get<string>("getUrl"); }
             set { BackingStore?.Set("getUrl", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The postParameters property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PostParameters {
+            get { return BackingStore?.Get<string?>("postParameters"); }
+            set { BackingStore?.Set("postParameters", value); }
+        }
+#else
         public string PostParameters {
             get { return BackingStore?.Get<string>("postParameters"); }
             set { BackingStore?.Set("postParameters", value); }
         }
+#endif
         /// <summary>The postUrl property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PostUrl {
+            get { return BackingStore?.Get<string?>("postUrl"); }
+            set { BackingStore?.Set("postUrl", value); }
+        }
+#else
         public string PostUrl {
             get { return BackingStore?.Get<string>("postUrl"); }
             set { BackingStore?.Set("postUrl", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new itemPreviewInfo and sets the default values.
         /// </summary>

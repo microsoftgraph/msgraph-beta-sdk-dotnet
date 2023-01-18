@@ -6,30 +6,58 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class WindowsDomainJoinConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Active Directory domain name to join.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ActiveDirectoryDomainName {
+            get { return BackingStore?.Get<string?>("activeDirectoryDomainName"); }
+            set { BackingStore?.Set("activeDirectoryDomainName", value); }
+        }
+#else
         public string ActiveDirectoryDomainName {
             get { return BackingStore?.Get<string>("activeDirectoryDomainName"); }
             set { BackingStore?.Set("activeDirectoryDomainName", value); }
         }
+#endif
         /// <summary>Fixed prefix to be used for computer name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ComputerNameStaticPrefix {
+            get { return BackingStore?.Get<string?>("computerNameStaticPrefix"); }
+            set { BackingStore?.Set("computerNameStaticPrefix", value); }
+        }
+#else
         public string ComputerNameStaticPrefix {
             get { return BackingStore?.Get<string>("computerNameStaticPrefix"); }
             set { BackingStore?.Set("computerNameStaticPrefix", value); }
         }
+#endif
         /// <summary>Dynamically generated characters used as suffix for computer name. Valid values 3 to 14</summary>
         public int? ComputerNameSuffixRandomCharCount {
             get { return BackingStore?.Get<int?>("computerNameSuffixRandomCharCount"); }
             set { BackingStore?.Set("computerNameSuffixRandomCharCount", value); }
         }
         /// <summary>Reference to device configurations required for network connectivity</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DeviceConfiguration>? NetworkAccessConfigurations {
+            get { return BackingStore?.Get<List<DeviceConfiguration>?>("networkAccessConfigurations"); }
+            set { BackingStore?.Set("networkAccessConfigurations", value); }
+        }
+#else
         public List<DeviceConfiguration> NetworkAccessConfigurations {
             get { return BackingStore?.Get<List<DeviceConfiguration>>("networkAccessConfigurations"); }
             set { BackingStore?.Set("networkAccessConfigurations", value); }
         }
+#endif
         /// <summary>Organizational unit (OU) where the computer account will be created. If this parameter is NULL, the well known computer object container will be used as published in the domain.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OrganizationalUnit {
+            get { return BackingStore?.Get<string?>("organizationalUnit"); }
+            set { BackingStore?.Set("organizationalUnit", value); }
+        }
+#else
         public string OrganizationalUnit {
             get { return BackingStore?.Get<string>("organizationalUnit"); }
             set { BackingStore?.Set("organizationalUnit", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new WindowsDomainJoinConfiguration and sets the default values.
         /// </summary>

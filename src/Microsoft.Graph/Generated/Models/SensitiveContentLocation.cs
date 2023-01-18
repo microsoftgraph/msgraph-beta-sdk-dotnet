@@ -19,25 +19,46 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("confidence", value); }
         }
         /// <summary>The evidences property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<SensitiveContentEvidence>? Evidences {
+            get { return BackingStore?.Get<List<SensitiveContentEvidence>?>("evidences"); }
+            set { BackingStore?.Set("evidences", value); }
+        }
+#else
         public List<SensitiveContentEvidence> Evidences {
             get { return BackingStore?.Get<List<SensitiveContentEvidence>>("evidences"); }
             set { BackingStore?.Set("evidences", value); }
         }
+#endif
         /// <summary>The idMatch property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? IdMatch {
+            get { return BackingStore?.Get<string?>("idMatch"); }
+            set { BackingStore?.Set("idMatch", value); }
+        }
+#else
         public string IdMatch {
             get { return BackingStore?.Get<string>("idMatch"); }
             set { BackingStore?.Set("idMatch", value); }
         }
+#endif
         /// <summary>The length property</summary>
         public int? Length {
             get { return BackingStore?.Get<int?>("length"); }
             set { BackingStore?.Set("length", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The offset property</summary>
         public int? Offset {
             get { return BackingStore?.Get<int?>("offset"); }

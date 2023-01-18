@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class WindowsPhone81AppXBundle : WindowsPhone81AppX, IParsable {
         /// <summary>The list of AppX Package Information.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<WindowsPackageInformation>? AppXPackageInformationList {
+            get { return BackingStore?.Get<List<WindowsPackageInformation>?>("appXPackageInformationList"); }
+            set { BackingStore?.Set("appXPackageInformationList", value); }
+        }
+#else
         public List<WindowsPackageInformation> AppXPackageInformationList {
             get { return BackingStore?.Get<List<WindowsPackageInformation>>("appXPackageInformationList"); }
             set { BackingStore?.Set("appXPackageInformationList", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new WindowsPhone81AppXBundle and sets the default values.
         /// </summary>

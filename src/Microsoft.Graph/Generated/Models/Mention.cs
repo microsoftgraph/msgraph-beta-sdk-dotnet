@@ -6,40 +6,82 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class Mention : Entity, IParsable {
         /// <summary>The name of the application where the mention is created. Optional. Not used and defaulted as null for message.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Application {
+            get { return BackingStore?.Get<string?>("application"); }
+            set { BackingStore?.Set("application", value); }
+        }
+#else
         public string Application {
             get { return BackingStore?.Get<string>("application"); }
             set { BackingStore?.Set("application", value); }
         }
+#endif
         /// <summary>A unique identifier that represents a parent of the resource instance. Optional. Not used and defaulted as null for message.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ClientReference {
+            get { return BackingStore?.Get<string?>("clientReference"); }
+            set { BackingStore?.Set("clientReference", value); }
+        }
+#else
         public string ClientReference {
             get { return BackingStore?.Get<string>("clientReference"); }
             set { BackingStore?.Set("clientReference", value); }
         }
+#endif
         /// <summary>The email information of the user who made the mention.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public EmailAddress? CreatedBy {
+            get { return BackingStore?.Get<EmailAddress?>("createdBy"); }
+            set { BackingStore?.Set("createdBy", value); }
+        }
+#else
         public EmailAddress CreatedBy {
             get { return BackingStore?.Get<EmailAddress>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
+#endif
         /// <summary>The date and time that the mention is created on the client.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>A deep web link to the context of the mention in the resource instance. Optional. Not used and defaulted as null for message.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeepLink {
+            get { return BackingStore?.Get<string?>("deepLink"); }
+            set { BackingStore?.Set("deepLink", value); }
+        }
+#else
         public string DeepLink {
             get { return BackingStore?.Get<string>("deepLink"); }
             set { BackingStore?.Set("deepLink", value); }
         }
+#endif
         /// <summary>The mentioned property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public EmailAddress? Mentioned {
+            get { return BackingStore?.Get<EmailAddress?>("mentioned"); }
+            set { BackingStore?.Set("mentioned", value); }
+        }
+#else
         public EmailAddress Mentioned {
             get { return BackingStore?.Get<EmailAddress>("mentioned"); }
             set { BackingStore?.Set("mentioned", value); }
         }
+#endif
         /// <summary>Optional. Not used and defaulted as null for message. To get the mentions in a message, see the bodyPreview property of the message instead.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MentionText {
+            get { return BackingStore?.Get<string?>("mentionText"); }
+            set { BackingStore?.Set("mentionText", value); }
+        }
+#else
         public string MentionText {
             get { return BackingStore?.Get<string>("mentionText"); }
             set { BackingStore?.Set("mentionText", value); }
         }
+#endif
         /// <summary>The date and time that the mention is created on the server. Optional. Not used and defaulted as null for message.</summary>
         public DateTimeOffset? ServerCreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("serverCreatedDateTime"); }

@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Ediscovery {
     public class TagCollectionResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Tag>? Value {
+            get { return BackingStore?.Get<List<Tag>?>("value"); }
+            set { BackingStore?.Set("value", value); }
+        }
+#else
         public List<Tag> Value {
             get { return BackingStore?.Get<List<Tag>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

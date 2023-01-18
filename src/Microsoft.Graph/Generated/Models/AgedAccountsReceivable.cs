@@ -17,25 +17,46 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("balanceDue", value); }
         }
         /// <summary>The currencyCode property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CurrencyCode {
+            get { return BackingStore?.Get<string?>("currencyCode"); }
+            set { BackingStore?.Set("currencyCode", value); }
+        }
+#else
         public string CurrencyCode {
             get { return BackingStore?.Get<string>("currencyCode"); }
             set { BackingStore?.Set("currencyCode", value); }
         }
+#endif
         /// <summary>The currentAmount property</summary>
         public decimal? CurrentAmount {
             get { return BackingStore?.Get<decimal?>("currentAmount"); }
             set { BackingStore?.Set("currentAmount", value); }
         }
         /// <summary>The customerNumber property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CustomerNumber {
+            get { return BackingStore?.Get<string?>("customerNumber"); }
+            set { BackingStore?.Set("customerNumber", value); }
+        }
+#else
         public string CustomerNumber {
             get { return BackingStore?.Get<string>("customerNumber"); }
             set { BackingStore?.Set("customerNumber", value); }
         }
+#endif
         /// <summary>The name property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Name {
+            get { return BackingStore?.Get<string?>("name"); }
+            set { BackingStore?.Set("name", value); }
+        }
+#else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#endif
         /// <summary>The period1Amount property</summary>
         public decimal? Period1Amount {
             get { return BackingStore?.Get<decimal?>("period1Amount"); }
@@ -52,10 +73,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("period3Amount", value); }
         }
         /// <summary>The periodLengthFilter property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PeriodLengthFilter {
+            get { return BackingStore?.Get<string?>("periodLengthFilter"); }
+            set { BackingStore?.Set("periodLengthFilter", value); }
+        }
+#else
         public string PeriodLengthFilter {
             get { return BackingStore?.Get<string>("periodLengthFilter"); }
             set { BackingStore?.Set("periodLengthFilter", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

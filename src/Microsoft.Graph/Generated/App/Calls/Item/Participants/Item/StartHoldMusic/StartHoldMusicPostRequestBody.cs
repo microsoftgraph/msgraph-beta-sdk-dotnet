@@ -15,15 +15,29 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.Participants.Item.StartHoldMusic {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The clientContext property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ClientContext {
+            get { return BackingStore?.Get<string?>("clientContext"); }
+            set { BackingStore?.Set("clientContext", value); }
+        }
+#else
         public string ClientContext {
             get { return BackingStore?.Get<string>("clientContext"); }
             set { BackingStore?.Set("clientContext", value); }
         }
+#endif
         /// <summary>The customPrompt property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Prompt? CustomPrompt {
+            get { return BackingStore?.Get<Prompt?>("customPrompt"); }
+            set { BackingStore?.Set("customPrompt", value); }
+        }
+#else
         public Prompt CustomPrompt {
             get { return BackingStore?.Get<Prompt>("customPrompt"); }
             set { BackingStore?.Set("customPrompt", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new startHoldMusicPostRequestBody and sets the default values.
         /// </summary>

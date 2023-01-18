@@ -14,20 +14,41 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The classification property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ExactMatchDetectedSensitiveContent>? Classification {
+            get { return BackingStore?.Get<List<ExactMatchDetectedSensitiveContent>?>("classification"); }
+            set { BackingStore?.Set("classification", value); }
+        }
+#else
         public List<ExactMatchDetectedSensitiveContent> Classification {
             get { return BackingStore?.Get<List<ExactMatchDetectedSensitiveContent>>("classification"); }
             set { BackingStore?.Set("classification", value); }
         }
+#endif
         /// <summary>The errors property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ClassificationError>? Errors {
+            get { return BackingStore?.Get<List<ClassificationError>?>("errors"); }
+            set { BackingStore?.Set("errors", value); }
+        }
+#else
         public List<ClassificationError> Errors {
             get { return BackingStore?.Get<List<ClassificationError>>("errors"); }
             set { BackingStore?.Set("errors", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new exactMatchClassificationResult and sets the default values.
         /// </summary>

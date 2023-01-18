@@ -14,50 +14,113 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Identifies the version of the reminder. Every time the reminder is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ChangeKey {
+            get { return BackingStore?.Get<string?>("changeKey"); }
+            set { BackingStore?.Set("changeKey", value); }
+        }
+#else
         public string ChangeKey {
             get { return BackingStore?.Get<string>("changeKey"); }
             set { BackingStore?.Set("changeKey", value); }
         }
+#endif
         /// <summary>The date, time and time zone that the event ends.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DateTimeTimeZone? EventEndTime {
+            get { return BackingStore?.Get<DateTimeTimeZone?>("eventEndTime"); }
+            set { BackingStore?.Set("eventEndTime", value); }
+        }
+#else
         public DateTimeTimeZone EventEndTime {
             get { return BackingStore?.Get<DateTimeTimeZone>("eventEndTime"); }
             set { BackingStore?.Set("eventEndTime", value); }
         }
+#endif
         /// <summary>The unique ID of the event. Read only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? EventId {
+            get { return BackingStore?.Get<string?>("eventId"); }
+            set { BackingStore?.Set("eventId", value); }
+        }
+#else
         public string EventId {
             get { return BackingStore?.Get<string>("eventId"); }
             set { BackingStore?.Set("eventId", value); }
         }
+#endif
         /// <summary>The location of the event.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Location? EventLocation {
+            get { return BackingStore?.Get<Location?>("eventLocation"); }
+            set { BackingStore?.Set("eventLocation", value); }
+        }
+#else
         public Location EventLocation {
             get { return BackingStore?.Get<Location>("eventLocation"); }
             set { BackingStore?.Set("eventLocation", value); }
         }
+#endif
         /// <summary>The date, time, and time zone that the event starts.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DateTimeTimeZone? EventStartTime {
+            get { return BackingStore?.Get<DateTimeTimeZone?>("eventStartTime"); }
+            set { BackingStore?.Set("eventStartTime", value); }
+        }
+#else
         public DateTimeTimeZone EventStartTime {
             get { return BackingStore?.Get<DateTimeTimeZone>("eventStartTime"); }
             set { BackingStore?.Set("eventStartTime", value); }
         }
+#endif
         /// <summary>The text of the event&apos;s subject line.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? EventSubject {
+            get { return BackingStore?.Get<string?>("eventSubject"); }
+            set { BackingStore?.Set("eventSubject", value); }
+        }
+#else
         public string EventSubject {
             get { return BackingStore?.Get<string>("eventSubject"); }
             set { BackingStore?.Set("eventSubject", value); }
         }
+#endif
         /// <summary>The URL to open the event in Outlook on the web.The event will open in the browser if you are logged in to your mailbox via Outlook on the web. You will be prompted to login if you are not already logged in with the browser.This URL cannot be accessed from within an iFrame.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? EventWebLink {
+            get { return BackingStore?.Get<string?>("eventWebLink"); }
+            set { BackingStore?.Set("eventWebLink", value); }
+        }
+#else
         public string EventWebLink {
             get { return BackingStore?.Get<string>("eventWebLink"); }
             set { BackingStore?.Set("eventWebLink", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The date, time, and time zone that the reminder is set to occur.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DateTimeTimeZone? ReminderFireTime {
+            get { return BackingStore?.Get<DateTimeTimeZone?>("reminderFireTime"); }
+            set { BackingStore?.Set("reminderFireTime", value); }
+        }
+#else
         public DateTimeTimeZone ReminderFireTime {
             get { return BackingStore?.Get<DateTimeTimeZone>("reminderFireTime"); }
             set { BackingStore?.Set("reminderFireTime", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new reminder and sets the default values.
         /// </summary>

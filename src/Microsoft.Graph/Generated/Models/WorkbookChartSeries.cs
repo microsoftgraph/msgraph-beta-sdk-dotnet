@@ -6,20 +6,41 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class WorkbookChartSeries : Entity, IParsable {
         /// <summary>Represents the formatting of a chart series, which includes fill and line formatting. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public WorkbookChartSeriesFormat? Format {
+            get { return BackingStore?.Get<WorkbookChartSeriesFormat?>("format"); }
+            set { BackingStore?.Set("format", value); }
+        }
+#else
         public WorkbookChartSeriesFormat Format {
             get { return BackingStore?.Get<WorkbookChartSeriesFormat>("format"); }
             set { BackingStore?.Set("format", value); }
         }
+#endif
         /// <summary>Represents the name of a series in a chart.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Name {
+            get { return BackingStore?.Get<string?>("name"); }
+            set { BackingStore?.Set("name", value); }
+        }
+#else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#endif
         /// <summary>Represents a collection of all points in the series. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<WorkbookChartPoint>? Points {
+            get { return BackingStore?.Get<List<WorkbookChartPoint>?>("points"); }
+            set { BackingStore?.Set("points", value); }
+        }
+#else
         public List<WorkbookChartPoint> Points {
             get { return BackingStore?.Get<List<WorkbookChartPoint>>("points"); }
             set { BackingStore?.Set("points", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

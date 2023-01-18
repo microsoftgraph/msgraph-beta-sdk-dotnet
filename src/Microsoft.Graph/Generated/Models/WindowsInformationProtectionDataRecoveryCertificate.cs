@@ -17,30 +17,58 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Data recovery Certificate</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public byte[]? Certificate {
+            get { return BackingStore?.Get<byte[]?>("certificate"); }
+            set { BackingStore?.Set("certificate", value); }
+        }
+#else
         public byte[] Certificate {
             get { return BackingStore?.Get<byte[]>("certificate"); }
             set { BackingStore?.Set("certificate", value); }
         }
+#endif
         /// <summary>Data recovery Certificate description</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>Data recovery Certificate expiration datetime</summary>
         public DateTimeOffset? ExpirationDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
             set { BackingStore?.Set("expirationDateTime", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Data recovery Certificate subject name</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SubjectName {
+            get { return BackingStore?.Get<string?>("subjectName"); }
+            set { BackingStore?.Set("subjectName", value); }
+        }
+#else
         public string SubjectName {
             get { return BackingStore?.Get<string>("subjectName"); }
             set { BackingStore?.Set("subjectName", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new windowsInformationProtectionDataRecoveryCertificate and sets the default values.
         /// </summary>

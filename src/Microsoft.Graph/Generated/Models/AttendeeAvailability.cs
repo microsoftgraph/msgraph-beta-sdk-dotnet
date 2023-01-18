@@ -12,10 +12,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The email address and type of attendee - whether it&apos;s a person or a resource, and whether required or optional if it&apos;s a person.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public AttendeeBase? Attendee {
+            get { return BackingStore?.Get<AttendeeBase?>("attendee"); }
+            set { BackingStore?.Set("attendee", value); }
+        }
+#else
         public AttendeeBase Attendee {
             get { return BackingStore?.Get<AttendeeBase>("attendee"); }
             set { BackingStore?.Set("attendee", value); }
         }
+#endif
         /// <summary>The availability status of the attendee. Possible values are: free, tentative, busy, oof, workingElsewhere, unknown.</summary>
         public FreeBusyStatus? Availability {
             get { return BackingStore?.Get<FreeBusyStatus?>("availability"); }
@@ -24,10 +31,17 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new attendeeAvailability and sets the default values.
         /// </summary>

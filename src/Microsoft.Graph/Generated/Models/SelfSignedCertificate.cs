@@ -14,55 +14,104 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Custom key identifier.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public byte[]? CustomKeyIdentifier {
+            get { return BackingStore?.Get<byte[]?>("customKeyIdentifier"); }
+            set { BackingStore?.Set("customKeyIdentifier", value); }
+        }
+#else
         public byte[] CustomKeyIdentifier {
             get { return BackingStore?.Get<byte[]>("customKeyIdentifier"); }
             set { BackingStore?.Set("customKeyIdentifier", value); }
         }
+#endif
         /// <summary>The friendly name for the key.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The date and time at which the credential expires. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? EndDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("endDateTime"); }
             set { BackingStore?.Set("endDateTime", value); }
         }
         /// <summary>The value for the key credential. Should be a base-64 encoded value.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public byte[]? Key {
+            get { return BackingStore?.Get<byte[]?>("key"); }
+            set { BackingStore?.Set("key", value); }
+        }
+#else
         public byte[] Key {
             get { return BackingStore?.Get<byte[]>("key"); }
             set { BackingStore?.Set("key", value); }
         }
+#endif
         /// <summary>The unique identifier (GUID) for the key.</summary>
         public Guid? KeyId {
             get { return BackingStore?.Get<Guid?>("keyId"); }
             set { BackingStore?.Set("keyId", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The date and time at which the credential becomes valid. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? StartDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }
             set { BackingStore?.Set("startDateTime", value); }
         }
         /// <summary>The thumbprint value for the key.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Thumbprint {
+            get { return BackingStore?.Get<string?>("thumbprint"); }
+            set { BackingStore?.Set("thumbprint", value); }
+        }
+#else
         public string Thumbprint {
             get { return BackingStore?.Get<string>("thumbprint"); }
             set { BackingStore?.Set("thumbprint", value); }
         }
+#endif
         /// <summary>The type of key credential. &apos;AsymmetricX509Cert&apos;.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Type {
+            get { return BackingStore?.Get<string?>("type"); }
+            set { BackingStore?.Set("type", value); }
+        }
+#else
         public string Type {
             get { return BackingStore?.Get<string>("type"); }
             set { BackingStore?.Set("type", value); }
         }
+#endif
         /// <summary>A string that describes the purpose for which the key can be used. For example, &apos;Verify&apos;.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Usage {
+            get { return BackingStore?.Get<string?>("usage"); }
+            set { BackingStore?.Set("usage", value); }
+        }
+#else
         public string Usage {
             get { return BackingStore?.Get<string>("usage"); }
             set { BackingStore?.Set("usage", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new SelfSignedCertificate and sets the default values.
         /// </summary>

@@ -6,60 +6,130 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class AccessPackage : Entity, IParsable {
         /// <summary>Read-only. Nullable. Supports $expand.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AccessPackageAssignmentPolicy>? AccessPackageAssignmentPolicies {
+            get { return BackingStore?.Get<List<AccessPackageAssignmentPolicy>?>("accessPackageAssignmentPolicies"); }
+            set { BackingStore?.Set("accessPackageAssignmentPolicies", value); }
+        }
+#else
         public List<AccessPackageAssignmentPolicy> AccessPackageAssignmentPolicies {
             get { return BackingStore?.Get<List<AccessPackageAssignmentPolicy>>("accessPackageAssignmentPolicies"); }
             set { BackingStore?.Set("accessPackageAssignmentPolicies", value); }
         }
+#endif
         /// <summary>The accessPackageCatalog property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.AccessPackageCatalog? AccessPackageCatalog {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackageCatalog?>("accessPackageCatalog"); }
+            set { BackingStore?.Set("accessPackageCatalog", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.AccessPackageCatalog AccessPackageCatalog {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackageCatalog>("accessPackageCatalog"); }
             set { BackingStore?.Set("accessPackageCatalog", value); }
         }
+#endif
         /// <summary>The accessPackageResourceRoleScopes property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AccessPackageResourceRoleScope>? AccessPackageResourceRoleScopes {
+            get { return BackingStore?.Get<List<AccessPackageResourceRoleScope>?>("accessPackageResourceRoleScopes"); }
+            set { BackingStore?.Set("accessPackageResourceRoleScopes", value); }
+        }
+#else
         public List<AccessPackageResourceRoleScope> AccessPackageResourceRoleScopes {
             get { return BackingStore?.Get<List<AccessPackageResourceRoleScope>>("accessPackageResourceRoleScopes"); }
             set { BackingStore?.Set("accessPackageResourceRoleScopes", value); }
         }
+#endif
         /// <summary>The access packages that are incompatible with this package. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AccessPackage>? AccessPackagesIncompatibleWith {
+            get { return BackingStore?.Get<List<AccessPackage>?>("accessPackagesIncompatibleWith"); }
+            set { BackingStore?.Set("accessPackagesIncompatibleWith", value); }
+        }
+#else
         public List<AccessPackage> AccessPackagesIncompatibleWith {
             get { return BackingStore?.Get<List<AccessPackage>>("accessPackagesIncompatibleWith"); }
             set { BackingStore?.Set("accessPackagesIncompatibleWith", value); }
         }
+#endif
         /// <summary>Identifier of the access package catalog referencing this access package. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CatalogId {
+            get { return BackingStore?.Get<string?>("catalogId"); }
+            set { BackingStore?.Set("catalogId", value); }
+        }
+#else
         public string CatalogId {
             get { return BackingStore?.Get<string>("catalogId"); }
             set { BackingStore?.Set("catalogId", value); }
         }
+#endif
         /// <summary>The userPrincipalName of the user or identity of the subject who created this resource. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CreatedBy {
+            get { return BackingStore?.Get<string?>("createdBy"); }
+            set { BackingStore?.Set("createdBy", value); }
+        }
+#else
         public string CreatedBy {
             get { return BackingStore?.Get<string>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
+#endif
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The description of the access package.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>The display name of the access package. Supports $filter (eq, contains).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The  access packages whose assigned users are ineligible to be assigned this access package.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AccessPackage>? IncompatibleAccessPackages {
+            get { return BackingStore?.Get<List<AccessPackage>?>("incompatibleAccessPackages"); }
+            set { BackingStore?.Set("incompatibleAccessPackages", value); }
+        }
+#else
         public List<AccessPackage> IncompatibleAccessPackages {
             get { return BackingStore?.Get<List<AccessPackage>>("incompatibleAccessPackages"); }
             set { BackingStore?.Set("incompatibleAccessPackages", value); }
         }
+#endif
         /// <summary>The groups whose members are ineligible to be assigned this access package.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Group>? IncompatibleGroups {
+            get { return BackingStore?.Get<List<Group>?>("incompatibleGroups"); }
+            set { BackingStore?.Set("incompatibleGroups", value); }
+        }
+#else
         public List<Group> IncompatibleGroups {
             get { return BackingStore?.Get<List<Group>>("incompatibleGroups"); }
             set { BackingStore?.Set("incompatibleGroups", value); }
         }
+#endif
         /// <summary>Whether the access package is hidden from the requestor.</summary>
         public bool? IsHidden {
             get { return BackingStore?.Get<bool?>("isHidden"); }
@@ -71,10 +141,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("isRoleScopesVisible", value); }
         }
         /// <summary>The userPrincipalName of the user who last modified this resource. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ModifiedBy {
+            get { return BackingStore?.Get<string?>("modifiedBy"); }
+            set { BackingStore?.Set("modifiedBy", value); }
+        }
+#else
         public string ModifiedBy {
             get { return BackingStore?.Get<string>("modifiedBy"); }
             set { BackingStore?.Set("modifiedBy", value); }
         }
+#endif
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.</summary>
         public DateTimeOffset? ModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("modifiedDateTime"); }

@@ -14,15 +14,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("runRemediationScript", value); }
         }
         /// <summary>Script run schedule for the target group</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DeviceHealthScriptRunSchedule? RunSchedule {
+            get { return BackingStore?.Get<DeviceHealthScriptRunSchedule?>("runSchedule"); }
+            set { BackingStore?.Set("runSchedule", value); }
+        }
+#else
         public DeviceHealthScriptRunSchedule RunSchedule {
             get { return BackingStore?.Get<DeviceHealthScriptRunSchedule>("runSchedule"); }
             set { BackingStore?.Set("runSchedule", value); }
         }
+#endif
         /// <summary>The Azure Active Directory group we are targeting the script to</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DeviceAndAppManagementAssignmentTarget? Target {
+            get { return BackingStore?.Get<DeviceAndAppManagementAssignmentTarget?>("target"); }
+            set { BackingStore?.Set("target", value); }
+        }
+#else
         public DeviceAndAppManagementAssignmentTarget Target {
             get { return BackingStore?.Get<DeviceAndAppManagementAssignmentTarget>("target"); }
             set { BackingStore?.Set("target", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

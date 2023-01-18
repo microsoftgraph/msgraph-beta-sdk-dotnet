@@ -6,20 +6,41 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class ConversationMemberRoleUpdatedEventMessageDetail : EventMessageDetail, IParsable {
         /// <summary>Roles for the coversation member user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? ConversationMemberRoles {
+            get { return BackingStore?.Get<List<string>?>("conversationMemberRoles"); }
+            set { BackingStore?.Set("conversationMemberRoles", value); }
+        }
+#else
         public List<string> ConversationMemberRoles {
             get { return BackingStore?.Get<List<string>>("conversationMemberRoles"); }
             set { BackingStore?.Set("conversationMemberRoles", value); }
         }
+#endif
         /// <summary>Identity of the conversation member user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public TeamworkUserIdentity? ConversationMemberUser {
+            get { return BackingStore?.Get<TeamworkUserIdentity?>("conversationMemberUser"); }
+            set { BackingStore?.Set("conversationMemberUser", value); }
+        }
+#else
         public TeamworkUserIdentity ConversationMemberUser {
             get { return BackingStore?.Get<TeamworkUserIdentity>("conversationMemberUser"); }
             set { BackingStore?.Set("conversationMemberUser", value); }
         }
+#endif
         /// <summary>Initiator of the event.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public IdentitySet? Initiator {
+            get { return BackingStore?.Get<IdentitySet?>("initiator"); }
+            set { BackingStore?.Set("initiator", value); }
+        }
+#else
         public IdentitySet Initiator {
             get { return BackingStore?.Get<IdentitySet>("initiator"); }
             set { BackingStore?.Set("initiator", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new ConversationMemberRoleUpdatedEventMessageDetail and sets the default values.
         /// </summary>

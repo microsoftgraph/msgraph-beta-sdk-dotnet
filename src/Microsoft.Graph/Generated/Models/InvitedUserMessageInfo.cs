@@ -14,25 +14,53 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Additional recipients the invitation message should be sent to. Currently only 1 additional recipient is supported.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Recipient>? CcRecipients {
+            get { return BackingStore?.Get<List<Recipient>?>("ccRecipients"); }
+            set { BackingStore?.Set("ccRecipients", value); }
+        }
+#else
         public List<Recipient> CcRecipients {
             get { return BackingStore?.Get<List<Recipient>>("ccRecipients"); }
             set { BackingStore?.Set("ccRecipients", value); }
         }
+#endif
         /// <summary>Customized message body you want to send if you don&apos;t want the default message.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CustomizedMessageBody {
+            get { return BackingStore?.Get<string?>("customizedMessageBody"); }
+            set { BackingStore?.Set("customizedMessageBody", value); }
+        }
+#else
         public string CustomizedMessageBody {
             get { return BackingStore?.Get<string>("customizedMessageBody"); }
             set { BackingStore?.Set("customizedMessageBody", value); }
         }
+#endif
         /// <summary>The language you want to send the default message in. If the customizedMessageBody is specified, this property is ignored, and the message is sent using the customizedMessageBody. The language format should be in ISO 639. The default is en-US.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MessageLanguage {
+            get { return BackingStore?.Get<string?>("messageLanguage"); }
+            set { BackingStore?.Set("messageLanguage", value); }
+        }
+#else
         public string MessageLanguage {
             get { return BackingStore?.Get<string>("messageLanguage"); }
             set { BackingStore?.Set("messageLanguage", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new invitedUserMessageInfo and sets the default values.
         /// </summary>

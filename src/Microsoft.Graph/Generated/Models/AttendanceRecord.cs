@@ -6,30 +6,65 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class AttendanceRecord : Entity, IParsable {
         /// <summary>List of time periods between joining and leaving a meeting.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AttendanceInterval>? AttendanceIntervals {
+            get { return BackingStore?.Get<List<AttendanceInterval>?>("attendanceIntervals"); }
+            set { BackingStore?.Set("attendanceIntervals", value); }
+        }
+#else
         public List<AttendanceInterval> AttendanceIntervals {
             get { return BackingStore?.Get<List<AttendanceInterval>>("attendanceIntervals"); }
             set { BackingStore?.Set("attendanceIntervals", value); }
         }
+#endif
         /// <summary>Email address of the user associated with this atttendance record.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? EmailAddress {
+            get { return BackingStore?.Get<string?>("emailAddress"); }
+            set { BackingStore?.Set("emailAddress", value); }
+        }
+#else
         public string EmailAddress {
             get { return BackingStore?.Get<string>("emailAddress"); }
             set { BackingStore?.Set("emailAddress", value); }
         }
+#endif
         /// <summary>Identity of the user associated with this atttendance record. The specific type will be one of the following derived types of identity, depending on the type of the user: communicationsUserIdentity, azureCommunicationServicesUserIdentity.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.Identity? Identity {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Identity?>("identity"); }
+            set { BackingStore?.Set("identity", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.Identity Identity {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Identity>("identity"); }
             set { BackingStore?.Set("identity", value); }
         }
+#endif
         /// <summary>Unique identifier of a meetingRegistrant. Presents when the participant has registered for the meeting.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? RegistrantId {
+            get { return BackingStore?.Get<string?>("registrantId"); }
+            set { BackingStore?.Set("registrantId", value); }
+        }
+#else
         public string RegistrantId {
             get { return BackingStore?.Get<string>("registrantId"); }
             set { BackingStore?.Set("registrantId", value); }
         }
+#endif
         /// <summary>Role of the attendee. Possible values are: None, Attendee, Presenter, and Organizer.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Role {
+            get { return BackingStore?.Get<string?>("role"); }
+            set { BackingStore?.Set("role", value); }
+        }
+#else
         public string Role {
             get { return BackingStore?.Get<string>("role"); }
             set { BackingStore?.Set("role", value); }
         }
+#endif
         /// <summary>Total duration of the attendances in seconds.</summary>
         public int? TotalAttendanceInSeconds {
             get { return BackingStore?.Get<int?>("totalAttendanceInSeconds"); }

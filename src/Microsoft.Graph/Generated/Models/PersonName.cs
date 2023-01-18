@@ -6,60 +6,137 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class PersonName : ItemFacet, IParsable {
         /// <summary>Provides an ordered rendering of firstName and lastName depending on the locale of the user or their device.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>First name of the user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? First {
+            get { return BackingStore?.Get<string?>("first"); }
+            set { BackingStore?.Set("first", value); }
+        }
+#else
         public string First {
             get { return BackingStore?.Get<string>("first"); }
             set { BackingStore?.Set("first", value); }
         }
+#endif
         /// <summary>Initials of the user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Initials {
+            get { return BackingStore?.Get<string?>("initials"); }
+            set { BackingStore?.Set("initials", value); }
+        }
+#else
         public string Initials {
             get { return BackingStore?.Get<string>("initials"); }
             set { BackingStore?.Set("initials", value); }
         }
+#endif
         /// <summary>Contains the name for the language (en-US, no-NB, en-AU) following IETF BCP47 format.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? LanguageTag {
+            get { return BackingStore?.Get<string?>("languageTag"); }
+            set { BackingStore?.Set("languageTag", value); }
+        }
+#else
         public string LanguageTag {
             get { return BackingStore?.Get<string>("languageTag"); }
             set { BackingStore?.Set("languageTag", value); }
         }
+#endif
         /// <summary>Last name of the user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Last {
+            get { return BackingStore?.Get<string?>("last"); }
+            set { BackingStore?.Set("last", value); }
+        }
+#else
         public string Last {
             get { return BackingStore?.Get<string>("last"); }
             set { BackingStore?.Set("last", value); }
         }
+#endif
         /// <summary>Maiden name of the user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Maiden {
+            get { return BackingStore?.Get<string?>("maiden"); }
+            set { BackingStore?.Set("maiden", value); }
+        }
+#else
         public string Maiden {
             get { return BackingStore?.Get<string>("maiden"); }
             set { BackingStore?.Set("maiden", value); }
         }
+#endif
         /// <summary>Middle name of the user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Middle {
+            get { return BackingStore?.Get<string?>("middle"); }
+            set { BackingStore?.Set("middle", value); }
+        }
+#else
         public string Middle {
             get { return BackingStore?.Get<string>("middle"); }
             set { BackingStore?.Set("middle", value); }
         }
+#endif
         /// <summary>Nickname of the user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Nickname {
+            get { return BackingStore?.Get<string?>("nickname"); }
+            set { BackingStore?.Set("nickname", value); }
+        }
+#else
         public string Nickname {
             get { return BackingStore?.Get<string>("nickname"); }
             set { BackingStore?.Set("nickname", value); }
         }
+#endif
         /// <summary>Guidance on how to pronounce the users name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public PersonNamePronounciation? Pronunciation {
+            get { return BackingStore?.Get<PersonNamePronounciation?>("pronunciation"); }
+            set { BackingStore?.Set("pronunciation", value); }
+        }
+#else
         public PersonNamePronounciation Pronunciation {
             get { return BackingStore?.Get<PersonNamePronounciation>("pronunciation"); }
             set { BackingStore?.Set("pronunciation", value); }
         }
+#endif
         /// <summary>Designators used after the users name (eg: PhD.)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Suffix {
+            get { return BackingStore?.Get<string?>("suffix"); }
+            set { BackingStore?.Set("suffix", value); }
+        }
+#else
         public string Suffix {
             get { return BackingStore?.Get<string>("suffix"); }
             set { BackingStore?.Set("suffix", value); }
         }
+#endif
         /// <summary>Honorifics used to prefix a users name (eg: Dr, Sir, Madam, Mrs.)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Title {
+            get { return BackingStore?.Get<string?>("title"); }
+            set { BackingStore?.Set("title", value); }
+        }
+#else
         public string Title {
             get { return BackingStore?.Get<string>("title"); }
             set { BackingStore?.Set("title", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new PersonName and sets the default values.
         /// </summary>

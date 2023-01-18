@@ -20,10 +20,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("end", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The time of the day when work starts. For example, 08:00:00.0000000.</summary>
         public Time? Start {
             get { return BackingStore?.Get<Time?>("start"); }

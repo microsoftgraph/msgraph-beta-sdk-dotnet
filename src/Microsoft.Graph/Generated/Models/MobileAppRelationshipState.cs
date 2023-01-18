@@ -17,10 +17,17 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The corresponding device id.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeviceId {
+            get { return BackingStore?.Get<string?>("deviceId"); }
+            set { BackingStore?.Set("deviceId", value); }
+        }
+#else
         public string DeviceId {
             get { return BackingStore?.Get<string>("deviceId"); }
             set { BackingStore?.Set("deviceId", value); }
         }
+#endif
         /// <summary>The error code for install or uninstall failures of target app.</summary>
         public int? ErrorCode {
             get { return BackingStore?.Get<int?>("errorCode"); }
@@ -37,25 +44,53 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("installStateDetail", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The collection of source mobile app&apos;s ids.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? SourceIds {
+            get { return BackingStore?.Get<List<string>?>("sourceIds"); }
+            set { BackingStore?.Set("sourceIds", value); }
+        }
+#else
         public List<string> SourceIds {
             get { return BackingStore?.Get<List<string>>("sourceIds"); }
             set { BackingStore?.Set("sourceIds", value); }
         }
+#endif
         /// <summary>The related target app&apos;s display name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TargetDisplayName {
+            get { return BackingStore?.Get<string?>("targetDisplayName"); }
+            set { BackingStore?.Set("targetDisplayName", value); }
+        }
+#else
         public string TargetDisplayName {
             get { return BackingStore?.Get<string>("targetDisplayName"); }
             set { BackingStore?.Set("targetDisplayName", value); }
         }
+#endif
         /// <summary>The related target app&apos;s id.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TargetId {
+            get { return BackingStore?.Get<string?>("targetId"); }
+            set { BackingStore?.Set("targetId", value); }
+        }
+#else
         public string TargetId {
             get { return BackingStore?.Get<string>("targetId"); }
             set { BackingStore?.Set("targetId", value); }
         }
+#endif
         /// <summary>The last sync time of the target app.</summary>
         public DateTimeOffset? TargetLastSyncDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("targetLastSyncDateTime"); }

@@ -10,10 +10,17 @@ namespace Microsoft.Graph.Beta.Models {
     /// </summary>
     public class VppTokenActionResult : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Action name</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ActionName {
+            get { return BackingStore?.Get<string?>("actionName"); }
+            set { BackingStore?.Set("actionName", value); }
+        }
+#else
         public string ActionName {
             get { return BackingStore?.Get<string>("actionName"); }
             set { BackingStore?.Set("actionName", value); }
         }
+#endif
         /// <summary>The actionState property</summary>
         public Microsoft.Graph.Beta.Models.ActionState? ActionState {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ActionState?>("actionState"); }
@@ -32,10 +39,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("lastUpdatedDateTime", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Time the action was initiated</summary>
         public DateTimeOffset? StartDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }

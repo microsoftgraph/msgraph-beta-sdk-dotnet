@@ -14,25 +14,46 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Translation override behavior for languages, if any.Returned by default.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<TranslationLanguageOverride>? LanguageOverrides {
+            get { return BackingStore?.Get<List<TranslationLanguageOverride>?>("languageOverrides"); }
+            set { BackingStore?.Set("languageOverrides", value); }
+        }
+#else
         public List<TranslationLanguageOverride> LanguageOverrides {
             get { return BackingStore?.Get<List<TranslationLanguageOverride>>("languageOverrides"); }
             set { BackingStore?.Set("languageOverrides", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The user&apos;s preferred translation behavior.Returned by default. Not nullable.</summary>
         public Microsoft.Graph.Beta.Models.TranslationBehavior? TranslationBehavior {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TranslationBehavior?>("translationBehavior"); }
             set { BackingStore?.Set("translationBehavior", value); }
         }
         /// <summary>The list of languages the user does not need translated. This is computed from the authoringLanguages collection in regionalAndLanguageSettings, and the languageOverrides collection in translationPreferences. The list specifies neutral culture values that include the language code without any country or region association. For example, it would specify &apos;fr&apos; for the neutral French culture, but not &apos;fr-FR&apos; for the French culture in France. Returned by default. Read only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? UntranslatedLanguages {
+            get { return BackingStore?.Get<List<string>?>("untranslatedLanguages"); }
+            set { BackingStore?.Set("untranslatedLanguages", value); }
+        }
+#else
         public List<string> UntranslatedLanguages {
             get { return BackingStore?.Get<List<string>>("untranslatedLanguages"); }
             set { BackingStore?.Set("untranslatedLanguages", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new translationPreferences and sets the default values.
         /// </summary>

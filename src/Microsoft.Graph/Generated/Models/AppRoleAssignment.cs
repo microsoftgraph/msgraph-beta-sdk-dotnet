@@ -16,25 +16,46 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("creationTimestamp", value); }
         }
         /// <summary>The display name of the user, group, or service principal that was granted the app role assignment. Read-only. Supports $filter (eq and startswith).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PrincipalDisplayName {
+            get { return BackingStore?.Get<string?>("principalDisplayName"); }
+            set { BackingStore?.Set("principalDisplayName", value); }
+        }
+#else
         public string PrincipalDisplayName {
             get { return BackingStore?.Get<string>("principalDisplayName"); }
             set { BackingStore?.Set("principalDisplayName", value); }
         }
+#endif
         /// <summary>The unique identifier (id) for the user, security group, or service principal being granted the app role. Security groups with dynamic memberships are supported. Required on create.</summary>
         public Guid? PrincipalId {
             get { return BackingStore?.Get<Guid?>("principalId"); }
             set { BackingStore?.Set("principalId", value); }
         }
         /// <summary>The type of the assigned principal. This can either be User, Group, or ServicePrincipal. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PrincipalType {
+            get { return BackingStore?.Get<string?>("principalType"); }
+            set { BackingStore?.Set("principalType", value); }
+        }
+#else
         public string PrincipalType {
             get { return BackingStore?.Get<string>("principalType"); }
             set { BackingStore?.Set("principalType", value); }
         }
+#endif
         /// <summary>The display name of the resource app&apos;s service principal to which the assignment is made.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ResourceDisplayName {
+            get { return BackingStore?.Get<string?>("resourceDisplayName"); }
+            set { BackingStore?.Set("resourceDisplayName", value); }
+        }
+#else
         public string ResourceDisplayName {
             get { return BackingStore?.Get<string>("resourceDisplayName"); }
             set { BackingStore?.Set("resourceDisplayName", value); }
         }
+#endif
         /// <summary>The unique identifier (id) for the resource service principal for which the assignment is made. Required on create. Supports $filter (eq only).</summary>
         public Guid? ResourceId {
             get { return BackingStore?.Get<Guid?>("resourceId"); }

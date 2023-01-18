@@ -11,20 +11,41 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("deploymentChannel", value); }
         }
         /// <summary>Payload. (UTF8 encoded byte array)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public byte[]? Payload {
+            get { return BackingStore?.Get<byte[]?>("payload"); }
+            set { BackingStore?.Set("payload", value); }
+        }
+#else
         public byte[] Payload {
             get { return BackingStore?.Get<byte[]>("payload"); }
             set { BackingStore?.Set("payload", value); }
         }
+#endif
         /// <summary>Payload file name (.mobileconfig</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PayloadFileName {
+            get { return BackingStore?.Get<string?>("payloadFileName"); }
+            set { BackingStore?.Set("payloadFileName", value); }
+        }
+#else
         public string PayloadFileName {
             get { return BackingStore?.Get<string>("payloadFileName"); }
             set { BackingStore?.Set("payloadFileName", value); }
         }
+#endif
         /// <summary>Name that is displayed to the user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PayloadName {
+            get { return BackingStore?.Get<string?>("payloadName"); }
+            set { BackingStore?.Set("payloadName", value); }
+        }
+#else
         public string PayloadName {
             get { return BackingStore?.Get<string>("payloadName"); }
             set { BackingStore?.Set("payloadName", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new MacOSCustomConfiguration and sets the default values.
         /// </summary>

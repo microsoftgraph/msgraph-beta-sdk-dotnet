@@ -14,20 +14,41 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Collection of keyCredential restrictions settings to be applied to an application or service principal.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<KeyCredentialConfiguration>? KeyCredentials {
+            get { return BackingStore?.Get<List<KeyCredentialConfiguration>?>("keyCredentials"); }
+            set { BackingStore?.Set("keyCredentials", value); }
+        }
+#else
         public List<KeyCredentialConfiguration> KeyCredentials {
             get { return BackingStore?.Get<List<KeyCredentialConfiguration>>("keyCredentials"); }
             set { BackingStore?.Set("keyCredentials", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Collection of password restrictions settings to be applied to an application or service principal.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<PasswordCredentialConfiguration>? PasswordCredentials {
+            get { return BackingStore?.Get<List<PasswordCredentialConfiguration>?>("passwordCredentials"); }
+            set { BackingStore?.Set("passwordCredentials", value); }
+        }
+#else
         public List<PasswordCredentialConfiguration> PasswordCredentials {
             get { return BackingStore?.Get<List<PasswordCredentialConfiguration>>("passwordCredentials"); }
             set { BackingStore?.Set("passwordCredentials", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new appManagementConfiguration and sets the default values.
         /// </summary>

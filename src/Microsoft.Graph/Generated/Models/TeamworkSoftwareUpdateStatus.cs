@@ -12,22 +12,43 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The available software version to update.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AvailableVersion {
+            get { return BackingStore?.Get<string?>("availableVersion"); }
+            set { BackingStore?.Set("availableVersion", value); }
+        }
+#else
         public string AvailableVersion {
             get { return BackingStore?.Get<string>("availableVersion"); }
             set { BackingStore?.Set("availableVersion", value); }
         }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The current software version.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CurrentVersion {
+            get { return BackingStore?.Get<string?>("currentVersion"); }
+            set { BackingStore?.Set("currentVersion", value); }
+        }
+#else
         public string CurrentVersion {
             get { return BackingStore?.Get<string>("currentVersion"); }
             set { BackingStore?.Set("currentVersion", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The update status of the software. The possible values are: unknown, latest, updateAvailable, unknownFutureValue.</summary>
         public TeamworkSoftwareFreshness? SoftwareFreshness {
             get { return BackingStore?.Get<TeamworkSoftwareFreshness?>("softwareFreshness"); }

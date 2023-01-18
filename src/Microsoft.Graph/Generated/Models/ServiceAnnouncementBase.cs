@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class ServiceAnnouncementBase : Entity, IParsable {
         /// <summary>Additional details about service event. This property doesn&apos;t support filters.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<KeyValuePair>? Details {
+            get { return BackingStore?.Get<List<KeyValuePair>?>("details"); }
+            set { BackingStore?.Set("details", value); }
+        }
+#else
         public List<KeyValuePair> Details {
             get { return BackingStore?.Get<List<KeyValuePair>>("details"); }
             set { BackingStore?.Set("details", value); }
         }
+#endif
         /// <summary>The end time of the service event.</summary>
         public DateTimeOffset? EndDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("endDateTime"); }
@@ -26,10 +33,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("startDateTime", value); }
         }
         /// <summary>The title of the service event.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Title {
+            get { return BackingStore?.Get<string?>("title"); }
+            set { BackingStore?.Set("title", value); }
+        }
+#else
         public string Title {
             get { return BackingStore?.Get<string>("title"); }
             set { BackingStore?.Set("title", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

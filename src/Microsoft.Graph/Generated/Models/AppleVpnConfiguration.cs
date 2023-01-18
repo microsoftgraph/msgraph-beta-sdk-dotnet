@@ -6,35 +6,63 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class AppleVpnConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Associated Domains</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? AssociatedDomains {
+            get { return BackingStore?.Get<List<string>?>("associatedDomains"); }
+            set { BackingStore?.Set("associatedDomains", value); }
+        }
+#else
         public List<string> AssociatedDomains {
             get { return BackingStore?.Get<List<string>>("associatedDomains"); }
             set { BackingStore?.Set("associatedDomains", value); }
         }
+#endif
         /// <summary>VPN Authentication Method.</summary>
         public VpnAuthenticationMethod? AuthenticationMethod {
             get { return BackingStore?.Get<VpnAuthenticationMethod?>("authenticationMethod"); }
             set { BackingStore?.Set("authenticationMethod", value); }
         }
         /// <summary>Connection name displayed to the user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ConnectionName {
+            get { return BackingStore?.Get<string?>("connectionName"); }
+            set { BackingStore?.Set("connectionName", value); }
+        }
+#else
         public string ConnectionName {
             get { return BackingStore?.Get<string>("connectionName"); }
             set { BackingStore?.Set("connectionName", value); }
         }
+#endif
         /// <summary>Apple VPN connection type.</summary>
         public AppleVpnConnectionType? ConnectionType {
             get { return BackingStore?.Get<AppleVpnConnectionType?>("connectionType"); }
             set { BackingStore?.Set("connectionType", value); }
         }
         /// <summary>Custom data when connection type is set to Custom VPN. Use this field to enable functionality not supported by Intune, but available in your VPN solution. Contact your VPN vendor to learn how to add these key/value pairs. This collection can contain a maximum of 25 elements.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<KeyValue>? CustomData {
+            get { return BackingStore?.Get<List<KeyValue>?>("customData"); }
+            set { BackingStore?.Set("customData", value); }
+        }
+#else
         public List<KeyValue> CustomData {
             get { return BackingStore?.Get<List<KeyValue>>("customData"); }
             set { BackingStore?.Set("customData", value); }
         }
+#endif
         /// <summary>Custom data when connection type is set to Custom VPN. Use this field to enable functionality not supported by Intune, but available in your VPN solution. Contact your VPN vendor to learn how to add these key/value pairs. This collection can contain a maximum of 25 elements.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<KeyValuePair>? CustomKeyValueData {
+            get { return BackingStore?.Get<List<KeyValuePair>?>("customKeyValueData"); }
+            set { BackingStore?.Set("customKeyValueData", value); }
+        }
+#else
         public List<KeyValuePair> CustomKeyValueData {
             get { return BackingStore?.Get<List<KeyValuePair>>("customKeyValueData"); }
             set { BackingStore?.Set("customKeyValueData", value); }
         }
+#endif
         /// <summary>Toggle to prevent user from disabling automatic VPN in the Settings app</summary>
         public bool? DisableOnDemandUserOverride {
             get { return BackingStore?.Get<bool?>("disableOnDemandUserOverride"); }
@@ -61,25 +89,53 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("enableSplitTunneling", value); }
         }
         /// <summary>Domains that are accessed through the public internet instead of through VPN, even when per-app VPN is activated</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? ExcludedDomains {
+            get { return BackingStore?.Get<List<string>?>("excludedDomains"); }
+            set { BackingStore?.Set("excludedDomains", value); }
+        }
+#else
         public List<string> ExcludedDomains {
             get { return BackingStore?.Get<List<string>>("excludedDomains"); }
             set { BackingStore?.Set("excludedDomains", value); }
         }
+#endif
         /// <summary>Identifier provided by VPN vendor when connection type is set to Custom VPN. For example: Cisco AnyConnect uses an identifier of the form com.cisco.anyconnect.applevpn.plugin</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Identifier {
+            get { return BackingStore?.Get<string?>("identifier"); }
+            set { BackingStore?.Set("identifier", value); }
+        }
+#else
         public string Identifier {
             get { return BackingStore?.Get<string>("identifier"); }
             set { BackingStore?.Set("identifier", value); }
         }
+#endif
         /// <summary>Login group or domain when connection type is set to Dell SonicWALL Mobile Connection.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? LoginGroupOrDomain {
+            get { return BackingStore?.Get<string?>("loginGroupOrDomain"); }
+            set { BackingStore?.Set("loginGroupOrDomain", value); }
+        }
+#else
         public string LoginGroupOrDomain {
             get { return BackingStore?.Get<string>("loginGroupOrDomain"); }
             set { BackingStore?.Set("loginGroupOrDomain", value); }
         }
+#endif
         /// <summary>On-Demand Rules. This collection can contain a maximum of 500 elements.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<VpnOnDemandRule>? OnDemandRules {
+            get { return BackingStore?.Get<List<VpnOnDemandRule>?>("onDemandRules"); }
+            set { BackingStore?.Set("onDemandRules", value); }
+        }
+#else
         public List<VpnOnDemandRule> OnDemandRules {
             get { return BackingStore?.Get<List<VpnOnDemandRule>>("onDemandRules"); }
             set { BackingStore?.Set("onDemandRules", value); }
         }
+#endif
         /// <summary>Opt-In to sharing the device&apos;s Id to third-party vpn clients for use during network access control validation.</summary>
         public bool? OptInToDeviceIdSharing {
             get { return BackingStore?.Get<bool?>("optInToDeviceIdSharing"); }
@@ -91,30 +147,65 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("providerType", value); }
         }
         /// <summary>Proxy Server.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public VpnProxyServer? ProxyServer {
+            get { return BackingStore?.Get<VpnProxyServer?>("proxyServer"); }
+            set { BackingStore?.Set("proxyServer", value); }
+        }
+#else
         public VpnProxyServer ProxyServer {
             get { return BackingStore?.Get<VpnProxyServer>("proxyServer"); }
             set { BackingStore?.Set("proxyServer", value); }
         }
+#endif
         /// <summary>Realm when connection type is set to Pulse Secure.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Realm {
+            get { return BackingStore?.Get<string?>("realm"); }
+            set { BackingStore?.Set("realm", value); }
+        }
+#else
         public string Realm {
             get { return BackingStore?.Get<string>("realm"); }
             set { BackingStore?.Set("realm", value); }
         }
+#endif
         /// <summary>Role when connection type is set to Pulse Secure.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Role {
+            get { return BackingStore?.Get<string?>("role"); }
+            set { BackingStore?.Set("role", value); }
+        }
+#else
         public string Role {
             get { return BackingStore?.Get<string>("role"); }
             set { BackingStore?.Set("role", value); }
         }
+#endif
         /// <summary>Safari domains when this VPN per App setting is enabled. In addition to the apps associated with this VPN, Safari domains specified here will also be able to trigger this VPN connection.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? SafariDomains {
+            get { return BackingStore?.Get<List<string>?>("safariDomains"); }
+            set { BackingStore?.Set("safariDomains", value); }
+        }
+#else
         public List<string> SafariDomains {
             get { return BackingStore?.Get<List<string>>("safariDomains"); }
             set { BackingStore?.Set("safariDomains", value); }
         }
+#endif
         /// <summary>VPN Server definition.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public VpnServer? Server {
+            get { return BackingStore?.Get<VpnServer?>("server"); }
+            set { BackingStore?.Set("server", value); }
+        }
+#else
         public VpnServer Server {
             get { return BackingStore?.Get<VpnServer>("server"); }
             set { BackingStore?.Set("server", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new AppleVpnConfiguration and sets the default values.
         /// </summary>

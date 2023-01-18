@@ -16,10 +16,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The associated group policy definition with the value.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public GroupPolicyDefinition? Definition {
+            get { return BackingStore?.Get<GroupPolicyDefinition?>("definition"); }
+            set { BackingStore?.Set("definition", value); }
+        }
+#else
         public GroupPolicyDefinition Definition {
             get { return BackingStore?.Get<GroupPolicyDefinition>("definition"); }
             set { BackingStore?.Set("definition", value); }
         }
+#endif
         /// <summary>Enables or disables the associated group policy definition.</summary>
         public bool? Enabled {
             get { return BackingStore?.Get<bool?>("enabled"); }
@@ -31,10 +38,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The associated group policy presentation values with the definition value.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<GroupPolicyPresentationValue>? PresentationValues {
+            get { return BackingStore?.Get<List<GroupPolicyPresentationValue>?>("presentationValues"); }
+            set { BackingStore?.Set("presentationValues", value); }
+        }
+#else
         public List<GroupPolicyPresentationValue> PresentationValues {
             get { return BackingStore?.Get<List<GroupPolicyPresentationValue>>("presentationValues"); }
             set { BackingStore?.Set("presentationValues", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

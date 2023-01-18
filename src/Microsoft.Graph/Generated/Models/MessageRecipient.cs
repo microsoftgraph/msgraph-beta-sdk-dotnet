@@ -11,15 +11,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("deliveryStatus", value); }
         }
         /// <summary>The events property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<MessageEvent>? Events {
+            get { return BackingStore?.Get<List<MessageEvent>?>("events"); }
+            set { BackingStore?.Set("events", value); }
+        }
+#else
         public List<MessageEvent> Events {
             get { return BackingStore?.Get<List<MessageEvent>>("events"); }
             set { BackingStore?.Set("events", value); }
         }
+#endif
         /// <summary>The recipientEmail property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? RecipientEmail {
+            get { return BackingStore?.Get<string?>("recipientEmail"); }
+            set { BackingStore?.Set("recipientEmail", value); }
+        }
+#else
         public string RecipientEmail {
             get { return BackingStore?.Get<string>("recipientEmail"); }
             set { BackingStore?.Set("recipientEmail", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

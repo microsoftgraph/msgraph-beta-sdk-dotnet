@@ -14,50 +14,106 @@ namespace Microsoft.Graph.Beta.Models.Security {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The name of the file.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? FileName {
+            get { return BackingStore?.Get<string?>("fileName"); }
+            set { BackingStore?.Set("fileName", value); }
+        }
+#else
         public string FileName {
             get { return BackingStore?.Get<string>("fileName"); }
             set { BackingStore?.Set("fileName", value); }
         }
+#endif
         /// <summary>The file path (location) of the file instance.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? FilePath {
+            get { return BackingStore?.Get<string?>("filePath"); }
+            set { BackingStore?.Set("filePath", value); }
+        }
+#else
         public string FilePath {
             get { return BackingStore?.Get<string>("filePath"); }
             set { BackingStore?.Set("filePath", value); }
         }
+#endif
         /// <summary>The publisher of the file.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? FilePublisher {
+            get { return BackingStore?.Get<string?>("filePublisher"); }
+            set { BackingStore?.Set("filePublisher", value); }
+        }
+#else
         public string FilePublisher {
             get { return BackingStore?.Get<string>("filePublisher"); }
             set { BackingStore?.Set("filePublisher", value); }
         }
+#endif
         /// <summary>The size of the file in bytes.</summary>
         public long? FileSize {
             get { return BackingStore?.Get<long?>("fileSize"); }
             set { BackingStore?.Set("fileSize", value); }
         }
         /// <summary>The certificate authority (CA) that issued the certificate.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Issuer {
+            get { return BackingStore?.Get<string?>("issuer"); }
+            set { BackingStore?.Set("issuer", value); }
+        }
+#else
         public string Issuer {
             get { return BackingStore?.Get<string>("issuer"); }
             set { BackingStore?.Set("issuer", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The Sha1 cryptographic hash of the file content.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Sha1 {
+            get { return BackingStore?.Get<string?>("sha1"); }
+            set { BackingStore?.Set("sha1", value); }
+        }
+#else
         public string Sha1 {
             get { return BackingStore?.Get<string>("sha1"); }
             set { BackingStore?.Set("sha1", value); }
         }
+#endif
         /// <summary>The Sha256 cryptographic hash of the file content.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Sha256 {
+            get { return BackingStore?.Get<string?>("sha256"); }
+            set { BackingStore?.Set("sha256", value); }
+        }
+#else
         public string Sha256 {
             get { return BackingStore?.Get<string>("sha256"); }
             set { BackingStore?.Set("sha256", value); }
         }
+#endif
         /// <summary>The signer of the signed file.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Signer {
+            get { return BackingStore?.Get<string?>("signer"); }
+            set { BackingStore?.Set("signer", value); }
+        }
+#else
         public string Signer {
             get { return BackingStore?.Get<string>("signer"); }
             set { BackingStore?.Set("signer", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new fileDetails and sets the default values.
         /// </summary>

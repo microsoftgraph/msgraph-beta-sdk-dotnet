@@ -6,30 +6,65 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class ResourceSpecificPermissionGrant : DirectoryObject, IParsable {
         /// <summary>ID of the service principal of the Azure AD app that has been granted access. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ClientAppId {
+            get { return BackingStore?.Get<string?>("clientAppId"); }
+            set { BackingStore?.Set("clientAppId", value); }
+        }
+#else
         public string ClientAppId {
             get { return BackingStore?.Get<string>("clientAppId"); }
             set { BackingStore?.Set("clientAppId", value); }
         }
+#endif
         /// <summary>ID of the Azure AD app that has been granted access. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ClientId {
+            get { return BackingStore?.Get<string?>("clientId"); }
+            set { BackingStore?.Set("clientId", value); }
+        }
+#else
         public string ClientId {
             get { return BackingStore?.Get<string>("clientId"); }
             set { BackingStore?.Set("clientId", value); }
         }
+#endif
         /// <summary>The name of the resource-specific permission. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Permission {
+            get { return BackingStore?.Get<string?>("permission"); }
+            set { BackingStore?.Set("permission", value); }
+        }
+#else
         public string Permission {
             get { return BackingStore?.Get<string>("permission"); }
             set { BackingStore?.Set("permission", value); }
         }
+#endif
         /// <summary>The type of permission. Possible values are: Application, Delegated. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PermissionType {
+            get { return BackingStore?.Get<string?>("permissionType"); }
+            set { BackingStore?.Set("permissionType", value); }
+        }
+#else
         public string PermissionType {
             get { return BackingStore?.Get<string>("permissionType"); }
             set { BackingStore?.Set("permissionType", value); }
         }
+#endif
         /// <summary>ID of the Azure AD app that is hosting the resource. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ResourceAppId {
+            get { return BackingStore?.Get<string?>("resourceAppId"); }
+            set { BackingStore?.Set("resourceAppId", value); }
+        }
+#else
         public string ResourceAppId {
             get { return BackingStore?.Get<string>("resourceAppId"); }
             set { BackingStore?.Set("resourceAppId", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new resourceSpecificPermissionGrant and sets the default values.
         /// </summary>

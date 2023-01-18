@@ -12,10 +12,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Optional field. Describes the  actions to take once a review is complete. There are two types that are currently supported: removeAccessApplyAction (default) and disableAndDeleteUserApplyAction. Field only needs to be specified in the case of disableAndDeleteUserApplyAction.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AccessReviewApplyAction>? ApplyActions {
+            get { return BackingStore?.Get<List<AccessReviewApplyAction>?>("applyActions"); }
+            set { BackingStore?.Set("applyActions", value); }
+        }
+#else
         public List<AccessReviewApplyAction> ApplyActions {
             get { return BackingStore?.Get<List<AccessReviewApplyAction>>("applyActions"); }
             set { BackingStore?.Set("applyActions", value); }
         }
+#endif
         /// <summary>Indicates whether decisions are automatically applied. When set to false, an admin must apply the decisions manually once the reviewer completes the access review. When set to true, decisions are applied automatically after the access review instance duration ends, whether or not the reviewers have responded. Default value is false.</summary>
         public bool? AutoApplyDecisionsEnabled {
             get { return BackingStore?.Get<bool?>("autoApplyDecisionsEnabled"); }
@@ -29,10 +36,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("decisionHistoriesForReviewersEnabled", value); }
         }
         /// <summary>Decision chosen if defaultDecisionEnabled is enabled. Can be one of Approve, Deny, or Recommendation.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DefaultDecision {
+            get { return BackingStore?.Get<string?>("defaultDecision"); }
+            set { BackingStore?.Set("defaultDecision", value); }
+        }
+#else
         public string DefaultDecision {
             get { return BackingStore?.Get<string>("defaultDecision"); }
             set { BackingStore?.Set("defaultDecision", value); }
         }
+#endif
         /// <summary>Indicates whether the default decision is enabled or disabled when reviewers do not respond. Default value is false.</summary>
         public bool? DefaultDecisionEnabled {
             get { return BackingStore?.Get<bool?>("defaultDecisionEnabled"); }
@@ -54,15 +68,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("mailNotificationsEnabled", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Optional. Describes the types of insights that aid reviewers to make access review decisions. NOTE: If the stageSettings of the accessReviewScheduleDefinition object is defined, its recommendationInsightSettings setting will be used instead of the value of this property.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AccessReviewRecommendationInsightSetting>? RecommendationInsightSettings {
+            get { return BackingStore?.Get<List<AccessReviewRecommendationInsightSetting>?>("recommendationInsightSettings"); }
+            set { BackingStore?.Set("recommendationInsightSettings", value); }
+        }
+#else
         public List<AccessReviewRecommendationInsightSetting> RecommendationInsightSettings {
             get { return BackingStore?.Get<List<AccessReviewRecommendationInsightSetting>>("recommendationInsightSettings"); }
             set { BackingStore?.Set("recommendationInsightSettings", value); }
         }
+#endif
         /// <summary>Optional field. Indicates the period of inactivity (with respect to the start date of the review instance) that recommendations will be configured from. The recommendation will be to deny if the user is inactive during the look-back duration. For reviews of groups and Azure AD roles, any duration is accepted. For reviews of applications, 30 days is the maximum duration. If not specified, the duration is 30 days. NOTE: If the stageSettings of the accessReviewScheduleDefinition object is defined, its recommendationLookBackDuration setting will be used instead of the value of this property.</summary>
         public TimeSpan? RecommendationLookBackDuration {
             get { return BackingStore?.Get<TimeSpan?>("recommendationLookBackDuration"); }
@@ -74,10 +102,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("recommendationsEnabled", value); }
         }
         /// <summary>Detailed settings for recurrence using the standard Outlook recurrence object. Note: Only dayOfMonth, interval, and type (weekly, absoluteMonthly) properties are supported. Use the property startDate on recurrenceRange to determine the day the review starts.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public PatternedRecurrence? Recurrence {
+            get { return BackingStore?.Get<PatternedRecurrence?>("recurrence"); }
+            set { BackingStore?.Set("recurrence", value); }
+        }
+#else
         public PatternedRecurrence Recurrence {
             get { return BackingStore?.Get<PatternedRecurrence>("recurrence"); }
             set { BackingStore?.Set("recurrence", value); }
         }
+#endif
         /// <summary>Indicates whether reminders are enabled or disabled. Default value is false.</summary>
         public bool? ReminderNotificationsEnabled {
             get { return BackingStore?.Get<bool?>("reminderNotificationsEnabled"); }

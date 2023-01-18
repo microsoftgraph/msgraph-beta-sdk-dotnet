@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class IosHomeScreenFolder : IosHomeScreenItem, IParsable {
         /// <summary>Pages of Home Screen Layout Icons which must be applications or web clips. This collection can contain a maximum of 500 elements.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<IosHomeScreenFolderPage>? Pages {
+            get { return BackingStore?.Get<List<IosHomeScreenFolderPage>?>("pages"); }
+            set { BackingStore?.Set("pages", value); }
+        }
+#else
         public List<IosHomeScreenFolderPage> Pages {
             get { return BackingStore?.Get<List<IosHomeScreenFolderPage>>("pages"); }
             set { BackingStore?.Set("pages", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new IosHomeScreenFolder and sets the default values.
         /// </summary>

@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class SmsAuthenticationMethodConfiguration : AuthenticationMethodConfiguration, IParsable {
         /// <summary>A collection of groups that are enabled to use the authentication method.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<SmsAuthenticationMethodTarget>? IncludeTargets {
+            get { return BackingStore?.Get<List<SmsAuthenticationMethodTarget>?>("includeTargets"); }
+            set { BackingStore?.Set("includeTargets", value); }
+        }
+#else
         public List<SmsAuthenticationMethodTarget> IncludeTargets {
             get { return BackingStore?.Get<List<SmsAuthenticationMethodTarget>>("includeTargets"); }
             set { BackingStore?.Set("includeTargets", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new SmsAuthenticationMethodConfiguration and sets the default values.
         /// </summary>

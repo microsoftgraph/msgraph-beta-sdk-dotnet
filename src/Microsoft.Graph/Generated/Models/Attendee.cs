@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class Attendee : AttendeeBase, IParsable {
         /// <summary>An alternate date/time proposed by the attendee for a meeting request to start and end. If the attendee hasn&apos;t proposed another time, then this property is not included in a response of a GET event.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public TimeSlot? ProposedNewTime {
+            get { return BackingStore?.Get<TimeSlot?>("proposedNewTime"); }
+            set { BackingStore?.Set("proposedNewTime", value); }
+        }
+#else
         public TimeSlot ProposedNewTime {
             get { return BackingStore?.Get<TimeSlot>("proposedNewTime"); }
             set { BackingStore?.Set("proposedNewTime", value); }
         }
+#endif
         /// <summary>The attendee&apos;s response (none, accepted, declined, etc.) for the event and date-time that the response was sent.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ResponseStatus? Status {
+            get { return BackingStore?.Get<ResponseStatus?>("status"); }
+            set { BackingStore?.Set("status", value); }
+        }
+#else
         public ResponseStatus Status {
             get { return BackingStore?.Get<ResponseStatus>("status"); }
             set { BackingStore?.Set("status", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new Attendee and sets the default values.
         /// </summary>

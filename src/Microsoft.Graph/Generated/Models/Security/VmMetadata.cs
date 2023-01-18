@@ -19,25 +19,53 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("cloudProvider", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Unique identifier of the Azure resource.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ResourceId {
+            get { return BackingStore?.Get<string?>("resourceId"); }
+            set { BackingStore?.Set("resourceId", value); }
+        }
+#else
         public string ResourceId {
             get { return BackingStore?.Get<string>("resourceId"); }
             set { BackingStore?.Set("resourceId", value); }
         }
+#endif
         /// <summary>Unique identifier of the Azure subscription the customer tenant belongs to.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SubscriptionId {
+            get { return BackingStore?.Get<string?>("subscriptionId"); }
+            set { BackingStore?.Set("subscriptionId", value); }
+        }
+#else
         public string SubscriptionId {
             get { return BackingStore?.Get<string>("subscriptionId"); }
             set { BackingStore?.Set("subscriptionId", value); }
         }
+#endif
         /// <summary>Unique identifier of the virtual machine instance.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? VmId {
+            get { return BackingStore?.Get<string?>("vmId"); }
+            set { BackingStore?.Set("vmId", value); }
+        }
+#else
         public string VmId {
             get { return BackingStore?.Get<string>("vmId"); }
             set { BackingStore?.Set("vmId", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new vmMetadata and sets the default values.
         /// </summary>

@@ -14,10 +14,17 @@ namespace Microsoft.Graph.Beta.DeviceAppManagement.MobileApps.ValidateXml {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The officeConfigurationXml property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public byte[]? OfficeConfigurationXml {
+            get { return BackingStore?.Get<byte[]?>("officeConfigurationXml"); }
+            set { BackingStore?.Set("officeConfigurationXml", value); }
+        }
+#else
         public byte[] OfficeConfigurationXml {
             get { return BackingStore?.Get<byte[]>("officeConfigurationXml"); }
             set { BackingStore?.Set("officeConfigurationXml", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new validateXmlPostRequestBody and sets the default values.
         /// </summary>

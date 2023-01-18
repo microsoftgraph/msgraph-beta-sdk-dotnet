@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class WindowsKioskSingleWin32App : WindowsKioskAppConfiguration, IParsable {
         /// <summary>The win32App property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public WindowsKioskWin32App? Win32App {
+            get { return BackingStore?.Get<WindowsKioskWin32App?>("win32App"); }
+            set { BackingStore?.Set("win32App", value); }
+        }
+#else
         public WindowsKioskWin32App Win32App {
             get { return BackingStore?.Get<WindowsKioskWin32App>("win32App"); }
             set { BackingStore?.Set("win32App", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new WindowsKioskSingleWin32App and sets the default values.
         /// </summary>

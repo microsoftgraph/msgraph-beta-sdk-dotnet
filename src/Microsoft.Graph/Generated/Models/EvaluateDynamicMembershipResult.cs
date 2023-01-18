@@ -14,25 +14,46 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>If a group ID is provided, the value is the membership rule for the group. If a group ID is not provided, the value is the membership rule that was provided as a parameter. For more information, see Dynamic membership rules for groups in Azure Active Directory.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MembershipRule {
+            get { return BackingStore?.Get<string?>("membershipRule"); }
+            set { BackingStore?.Set("membershipRule", value); }
+        }
+#else
         public string MembershipRule {
             get { return BackingStore?.Get<string>("membershipRule"); }
             set { BackingStore?.Set("membershipRule", value); }
         }
+#endif
         /// <summary>Provides a detailed anaylsis of the membership evaluation result.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ExpressionEvaluationDetails? MembershipRuleEvaluationDetails {
+            get { return BackingStore?.Get<ExpressionEvaluationDetails?>("membershipRuleEvaluationDetails"); }
+            set { BackingStore?.Set("membershipRuleEvaluationDetails", value); }
+        }
+#else
         public ExpressionEvaluationDetails MembershipRuleEvaluationDetails {
             get { return BackingStore?.Get<ExpressionEvaluationDetails>("membershipRuleEvaluationDetails"); }
             set { BackingStore?.Set("membershipRuleEvaluationDetails", value); }
         }
+#endif
         /// <summary>The value is true if the user or device is a member of the group. The value can also be true if a membership rule was provided and the user or device passes the rule evaluation; otherwise false.</summary>
         public bool? MembershipRuleEvaluationResult {
             get { return BackingStore?.Get<bool?>("membershipRuleEvaluationResult"); }
             set { BackingStore?.Set("membershipRuleEvaluationResult", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new evaluateDynamicMembershipResult and sets the default values.
         /// </summary>

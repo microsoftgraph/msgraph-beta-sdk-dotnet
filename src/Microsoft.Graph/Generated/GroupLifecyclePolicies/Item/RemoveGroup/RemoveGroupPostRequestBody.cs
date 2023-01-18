@@ -14,10 +14,17 @@ namespace Microsoft.Graph.Beta.GroupLifecyclePolicies.Item.RemoveGroup {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The groupId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? GroupId {
+            get { return BackingStore?.Get<string?>("groupId"); }
+            set { BackingStore?.Set("groupId", value); }
+        }
+#else
         public string GroupId {
             get { return BackingStore?.Get<string>("groupId"); }
             set { BackingStore?.Set("groupId", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new removeGroupPostRequestBody and sets the default values.
         /// </summary>

@@ -14,20 +14,41 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The ticket number.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TicketNumber {
+            get { return BackingStore?.Get<string?>("ticketNumber"); }
+            set { BackingStore?.Set("ticketNumber", value); }
+        }
+#else
         public string TicketNumber {
             get { return BackingStore?.Get<string>("ticketNumber"); }
             set { BackingStore?.Set("ticketNumber", value); }
         }
+#endif
         /// <summary>The description of the ticket system.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TicketSystem {
+            get { return BackingStore?.Get<string?>("ticketSystem"); }
+            set { BackingStore?.Set("ticketSystem", value); }
+        }
+#else
         public string TicketSystem {
             get { return BackingStore?.Get<string>("ticketSystem"); }
             set { BackingStore?.Set("ticketSystem", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new ticketInfo and sets the default values.
         /// </summary>

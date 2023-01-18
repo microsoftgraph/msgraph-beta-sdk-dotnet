@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class ListItemVersion : BaseItemVersion, IParsable {
         /// <summary>A collection of the fields and values for this version of the list item.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public FieldValueSet? Fields {
+            get { return BackingStore?.Get<FieldValueSet?>("fields"); }
+            set { BackingStore?.Set("fields", value); }
+        }
+#else
         public FieldValueSet Fields {
             get { return BackingStore?.Get<FieldValueSet>("fields"); }
             set { BackingStore?.Set("fields", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new ListItemVersion and sets the default values.
         /// </summary>

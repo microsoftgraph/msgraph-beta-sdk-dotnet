@@ -36,105 +36,210 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("assignedDateTime", value); }
         }
         /// <summary>Which users, or whole class should receive a submission object once the assignment is published.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public EducationAssignmentRecipient? AssignTo {
+            get { return BackingStore?.Get<EducationAssignmentRecipient?>("assignTo"); }
+            set { BackingStore?.Set("assignTo", value); }
+        }
+#else
         public EducationAssignmentRecipient AssignTo {
             get { return BackingStore?.Get<EducationAssignmentRecipient>("assignTo"); }
             set { BackingStore?.Set("assignTo", value); }
         }
+#endif
         /// <summary>When set, enables users to easily find assignments of a given type.  Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<EducationCategory>? Categories {
+            get { return BackingStore?.Get<List<EducationCategory>?>("categories"); }
+            set { BackingStore?.Set("categories", value); }
+        }
+#else
         public List<EducationCategory> Categories {
             get { return BackingStore?.Get<List<EducationCategory>>("categories"); }
             set { BackingStore?.Set("categories", value); }
         }
+#endif
         /// <summary>Class which this assignment belongs.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ClassId {
+            get { return BackingStore?.Get<string?>("classId"); }
+            set { BackingStore?.Set("classId", value); }
+        }
+#else
         public string ClassId {
             get { return BackingStore?.Get<string>("classId"); }
             set { BackingStore?.Set("classId", value); }
         }
+#endif
         /// <summary>Date when the assignment will be closed for submissions. This is an optional field that can be null if the assignment does not allowLateSubmissions or when the closeDateTime is the same as the dueDateTime. But if specified, then the closeDateTime must be greater than or equal to the dueDateTime. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
         public DateTimeOffset? CloseDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("closeDateTime"); }
             set { BackingStore?.Set("closeDateTime", value); }
         }
         /// <summary>Who created the assignment.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public IdentitySet? CreatedBy {
+            get { return BackingStore?.Get<IdentitySet?>("createdBy"); }
+            set { BackingStore?.Set("createdBy", value); }
+        }
+#else
         public IdentitySet CreatedBy {
             get { return BackingStore?.Get<IdentitySet>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
+#endif
         /// <summary>Moment when the assignment was created.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Name of the assignment.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>Date when the students assignment is due.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
         public DateTimeOffset? DueDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("dueDateTime"); }
             set { BackingStore?.Set("dueDateTime", value); }
         }
         /// <summary>Folder URL where all the feedback file resources for this assignment are stored.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? FeedbackResourcesFolderUrl {
+            get { return BackingStore?.Get<string?>("feedbackResourcesFolderUrl"); }
+            set { BackingStore?.Set("feedbackResourcesFolderUrl", value); }
+        }
+#else
         public string FeedbackResourcesFolderUrl {
             get { return BackingStore?.Get<string>("feedbackResourcesFolderUrl"); }
             set { BackingStore?.Set("feedbackResourcesFolderUrl", value); }
         }
+#endif
         /// <summary>How the assignment will be graded.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public EducationAssignmentGradeType? Grading {
+            get { return BackingStore?.Get<EducationAssignmentGradeType?>("grading"); }
+            set { BackingStore?.Set("grading", value); }
+        }
+#else
         public EducationAssignmentGradeType Grading {
             get { return BackingStore?.Get<EducationAssignmentGradeType>("grading"); }
             set { BackingStore?.Set("grading", value); }
         }
+#endif
         /// <summary>Instructions for the assignment.  This along with the display name tell the student what to do.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public EducationItemBody? Instructions {
+            get { return BackingStore?.Get<EducationItemBody?>("instructions"); }
+            set { BackingStore?.Set("instructions", value); }
+        }
+#else
         public EducationItemBody Instructions {
             get { return BackingStore?.Get<EducationItemBody>("instructions"); }
             set { BackingStore?.Set("instructions", value); }
         }
+#endif
         /// <summary>Who last modified the assignment.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public IdentitySet? LastModifiedBy {
+            get { return BackingStore?.Get<IdentitySet?>("lastModifiedBy"); }
+            set { BackingStore?.Set("lastModifiedBy", value); }
+        }
+#else
         public IdentitySet LastModifiedBy {
             get { return BackingStore?.Get<IdentitySet>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
+#endif
         /// <summary>Moment when the assignment was last modified.  The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>Optional field to specify the URL of the channel to post the assignment publish notification. If not specified or null, defaults to the General channel. This field only applies to assignments where the assignTo value is educationAssignmentClassRecipient. Updating the notificationChannelUrl is not allowed after the assignment has been published.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? NotificationChannelUrl {
+            get { return BackingStore?.Get<string?>("notificationChannelUrl"); }
+            set { BackingStore?.Set("notificationChannelUrl", value); }
+        }
+#else
         public string NotificationChannelUrl {
             get { return BackingStore?.Get<string>("notificationChannelUrl"); }
             set { BackingStore?.Set("notificationChannelUrl", value); }
         }
+#endif
         /// <summary>Learning objects that are associated with this assignment.  Only teachers can modify this list. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<EducationAssignmentResource>? Resources {
+            get { return BackingStore?.Get<List<EducationAssignmentResource>?>("resources"); }
+            set { BackingStore?.Set("resources", value); }
+        }
+#else
         public List<EducationAssignmentResource> Resources {
             get { return BackingStore?.Get<List<EducationAssignmentResource>>("resources"); }
             set { BackingStore?.Set("resources", value); }
         }
+#endif
         /// <summary>Folder URL where all the file resources for this assignment are stored.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ResourcesFolderUrl {
+            get { return BackingStore?.Get<string?>("resourcesFolderUrl"); }
+            set { BackingStore?.Set("resourcesFolderUrl", value); }
+        }
+#else
         public string ResourcesFolderUrl {
             get { return BackingStore?.Get<string>("resourcesFolderUrl"); }
             set { BackingStore?.Set("resourcesFolderUrl", value); }
         }
+#endif
         /// <summary>When set, the grading rubric attached to this assignment.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public EducationRubric? Rubric {
+            get { return BackingStore?.Get<EducationRubric?>("rubric"); }
+            set { BackingStore?.Set("rubric", value); }
+        }
+#else
         public EducationRubric Rubric {
             get { return BackingStore?.Get<EducationRubric>("rubric"); }
             set { BackingStore?.Set("rubric", value); }
         }
+#endif
         /// <summary>Status of the Assignment.  You can not PATCH this value.  Possible values are: draft, scheduled, published, assigned.</summary>
         public EducationAssignmentStatus? Status {
             get { return BackingStore?.Get<EducationAssignmentStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>Once published, there is a submission object for each student representing their work and grade.  Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<EducationSubmission>? Submissions {
+            get { return BackingStore?.Get<List<EducationSubmission>?>("submissions"); }
+            set { BackingStore?.Set("submissions", value); }
+        }
+#else
         public List<EducationSubmission> Submissions {
             get { return BackingStore?.Get<List<EducationSubmission>>("submissions"); }
             set { BackingStore?.Set("submissions", value); }
         }
+#endif
         /// <summary>The deep link URL for the given assignment.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? WebUrl {
+            get { return BackingStore?.Get<string?>("webUrl"); }
+            set { BackingStore?.Set("webUrl", value); }
+        }
+#else
         public string WebUrl {
             get { return BackingStore?.Get<string>("webUrl"); }
             set { BackingStore?.Set("webUrl", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

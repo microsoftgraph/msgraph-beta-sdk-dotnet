@@ -15,20 +15,41 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Templates.
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The expression property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Expression {
+            get { return BackingStore?.Get<string?>("expression"); }
+            set { BackingStore?.Set("expression", value); }
+        }
+#else
         public string Expression {
             get { return BackingStore?.Get<string>("expression"); }
             set { BackingStore?.Set("expression", value); }
         }
+#endif
         /// <summary>The targetAttributeDefinition property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public AttributeDefinition? TargetAttributeDefinition {
+            get { return BackingStore?.Get<AttributeDefinition?>("targetAttributeDefinition"); }
+            set { BackingStore?.Set("targetAttributeDefinition", value); }
+        }
+#else
         public AttributeDefinition TargetAttributeDefinition {
             get { return BackingStore?.Get<AttributeDefinition>("targetAttributeDefinition"); }
             set { BackingStore?.Set("targetAttributeDefinition", value); }
         }
+#endif
         /// <summary>The testInputObject property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ExpressionInputObject? TestInputObject {
+            get { return BackingStore?.Get<ExpressionInputObject?>("testInputObject"); }
+            set { BackingStore?.Set("testInputObject", value); }
+        }
+#else
         public ExpressionInputObject TestInputObject {
             get { return BackingStore?.Get<ExpressionInputObject>("testInputObject"); }
             set { BackingStore?.Set("testInputObject", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new parseExpressionPostRequestBody and sets the default values.
         /// </summary>

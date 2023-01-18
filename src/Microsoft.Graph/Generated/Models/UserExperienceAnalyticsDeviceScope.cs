@@ -11,10 +11,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The name of the user experience analytics device Scope configuration.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeviceScopeName {
+            get { return BackingStore?.Get<string?>("deviceScopeName"); }
+            set { BackingStore?.Set("deviceScopeName", value); }
+        }
+#else
         public string DeviceScopeName {
             get { return BackingStore?.Get<string>("deviceScopeName"); }
             set { BackingStore?.Set("deviceScopeName", value); }
         }
+#endif
         /// <summary>Indicates whether a device scope is enabled or disabled. When TRUE, the device scope is enabled. When FALSE, the device scope is disabled. Default value is FALSE.</summary>
         public bool? Enabled {
             get { return BackingStore?.Get<bool?>("enabled"); }
@@ -36,10 +43,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("operator", value); }
         }
         /// <summary>The unique identifier of the person (admin) who created the device scope configuration.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OwnerId {
+            get { return BackingStore?.Get<string?>("ownerId"); }
+            set { BackingStore?.Set("ownerId", value); }
+        }
+#else
         public string OwnerId {
             get { return BackingStore?.Get<string>("ownerId"); }
             set { BackingStore?.Set("ownerId", value); }
         }
+#endif
         /// <summary>Device scope configuration parameter. It will be expend in future to add more parameter. Eg: device scope parameter can be OS version, Disk Type, Device manufacturer, device model or Scope tag. Default value: scopeTag.</summary>
         public DeviceScopeParameter? Parameter {
             get { return BackingStore?.Get<DeviceScopeParameter?>("parameter"); }
@@ -51,15 +65,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>The device scope configuration query clause value.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Value {
+            get { return BackingStore?.Get<string?>("value"); }
+            set { BackingStore?.Set("value", value); }
+        }
+#else
         public string Value {
             get { return BackingStore?.Get<string>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#endif
         /// <summary>The unique identifier for a user device scope tag Id used for the creation of device scope configuration.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ValueObjectId {
+            get { return BackingStore?.Get<string?>("valueObjectId"); }
+            set { BackingStore?.Set("valueObjectId", value); }
+        }
+#else
         public string ValueObjectId {
             get { return BackingStore?.Get<string>("valueObjectId"); }
             set { BackingStore?.Set("valueObjectId", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

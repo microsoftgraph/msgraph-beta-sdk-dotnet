@@ -21,40 +21,75 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("eapType", value); }
         }
         /// <summary>Enable identity privacy (Outer Identity) when EAP Type is configured to EAP-TTLS, EAP-FAST or PEAP. This property masks usernames with the text you enter. For example, if you use &apos;anonymous&apos;, each user that authenticates with this wired network using their real username is displayed as &apos;anonymous&apos;.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? EnableOuterIdentityPrivacy {
+            get { return BackingStore?.Get<string?>("enableOuterIdentityPrivacy"); }
+            set { BackingStore?.Set("enableOuterIdentityPrivacy", value); }
+        }
+#else
         public string EnableOuterIdentityPrivacy {
             get { return BackingStore?.Get<string>("enableOuterIdentityPrivacy"); }
             set { BackingStore?.Set("enableOuterIdentityPrivacy", value); }
         }
+#endif
         /// <summary>Identity Certificate for client authentication when EAP Type is configured to EAP-TLS, EAP-TTLS (with Certificate Authentication), or PEAP (with Certificate Authentication).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public MacOSCertificateProfileBase? IdentityCertificateForClientAuthentication {
+            get { return BackingStore?.Get<MacOSCertificateProfileBase?>("identityCertificateForClientAuthentication"); }
+            set { BackingStore?.Set("identityCertificateForClientAuthentication", value); }
+        }
+#else
         public MacOSCertificateProfileBase IdentityCertificateForClientAuthentication {
             get { return BackingStore?.Get<MacOSCertificateProfileBase>("identityCertificateForClientAuthentication"); }
             set { BackingStore?.Set("identityCertificateForClientAuthentication", value); }
         }
+#endif
         /// <summary>Apple network interface type.</summary>
         public WiredNetworkInterface? NetworkInterface {
             get { return BackingStore?.Get<WiredNetworkInterface?>("networkInterface"); }
             set { BackingStore?.Set("networkInterface", value); }
         }
         /// <summary>Network Name</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? NetworkName {
+            get { return BackingStore?.Get<string?>("networkName"); }
+            set { BackingStore?.Set("networkName", value); }
+        }
+#else
         public string NetworkName {
             get { return BackingStore?.Get<string>("networkName"); }
             set { BackingStore?.Set("networkName", value); }
         }
+#endif
         /// <summary>Non-EAP Method for Authentication (Inner Identity) when EAP Type is EAP-TTLS and Authenticationmethod is Username and Password. Possible values are: unencryptedPassword, challengeHandshakeAuthenticationProtocol, microsoftChap, microsoftChapVersionTwo.</summary>
         public NonEapAuthenticationMethodForEapTtlsType? NonEapAuthenticationMethodForEapTtls {
             get { return BackingStore?.Get<NonEapAuthenticationMethodForEapTtlsType?>("nonEapAuthenticationMethodForEapTtls"); }
             set { BackingStore?.Set("nonEapAuthenticationMethodForEapTtls", value); }
         }
         /// <summary>Trusted Root Certificate for Server Validation when EAP Type is configured to EAP-TLS/TTLS/FAST or PEAP.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public MacOSTrustedRootCertificate? RootCertificateForServerValidation {
+            get { return BackingStore?.Get<MacOSTrustedRootCertificate?>("rootCertificateForServerValidation"); }
+            set { BackingStore?.Set("rootCertificateForServerValidation", value); }
+        }
+#else
         public MacOSTrustedRootCertificate RootCertificateForServerValidation {
             get { return BackingStore?.Get<MacOSTrustedRootCertificate>("rootCertificateForServerValidation"); }
             set { BackingStore?.Set("rootCertificateForServerValidation", value); }
         }
+#endif
         /// <summary>Trusted server certificate names when EAP Type is configured to EAP-TLS/TTLS/FAST or PEAP. This is the common name used in the certificates issued by your trusted certificate authority (CA). If you provide this information, you can bypass the dynamic trust dialog that is displayed on end users devices when they connect to this wired network.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? TrustedServerCertificateNames {
+            get { return BackingStore?.Get<List<string>?>("trustedServerCertificateNames"); }
+            set { BackingStore?.Set("trustedServerCertificateNames", value); }
+        }
+#else
         public List<string> TrustedServerCertificateNames {
             get { return BackingStore?.Get<List<string>>("trustedServerCertificateNames"); }
             set { BackingStore?.Set("trustedServerCertificateNames", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new MacOSWiredNetworkConfiguration and sets the default values.
         /// </summary>

@@ -12,10 +12,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The aliases property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? Aliases {
+            get { return BackingStore?.Get<List<string>?>("aliases"); }
+            set { BackingStore?.Set("aliases", value); }
+        }
+#else
         public List<string> Aliases {
             get { return BackingStore?.Get<List<string>>("aliases"); }
             set { BackingStore?.Set("aliases", value); }
         }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The isQueryable property</summary>
@@ -39,20 +46,41 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("isSearchable", value); }
         }
         /// <summary>The labels property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Label?>? Labels {
+            get { return BackingStore?.Get<List<Label?>?>("labels"); }
+            set { BackingStore?.Set("labels", value); }
+        }
+#else
         public List<Label?> Labels {
             get { return BackingStore?.Get<List<Label?>>("labels"); }
             set { BackingStore?.Set("labels", value); }
         }
+#endif
         /// <summary>The name property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Name {
+            get { return BackingStore?.Get<string?>("name"); }
+            set { BackingStore?.Set("name", value); }
+        }
+#else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The type property</summary>
         public PropertyType? Type {
             get { return BackingStore?.Get<PropertyType?>("type"); }

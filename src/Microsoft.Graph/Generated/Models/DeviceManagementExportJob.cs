@@ -14,10 +14,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("expirationDateTime", value); }
         }
         /// <summary>Filters applied on the report</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Filter {
+            get { return BackingStore?.Get<string?>("filter"); }
+            set { BackingStore?.Set("filter", value); }
+        }
+#else
         public string Filter {
             get { return BackingStore?.Get<string>("filter"); }
             set { BackingStore?.Set("filter", value); }
         }
+#endif
         /// <summary>Possible values for the file format of a report</summary>
         public DeviceManagementReportFileFormat? Format {
             get { return BackingStore?.Get<DeviceManagementReportFileFormat?>("format"); }
@@ -29,35 +36,63 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("localizationType", value); }
         }
         /// <summary>Name of the report</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ReportName {
+            get { return BackingStore?.Get<string?>("reportName"); }
+            set { BackingStore?.Set("reportName", value); }
+        }
+#else
         public string ReportName {
             get { return BackingStore?.Get<string>("reportName"); }
             set { BackingStore?.Set("reportName", value); }
         }
+#endif
         /// <summary>Time that the exported report was requested</summary>
         public DateTimeOffset? RequestDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("requestDateTime"); }
             set { BackingStore?.Set("requestDateTime", value); }
         }
         /// <summary>Columns selected from the report</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? Select {
+            get { return BackingStore?.Get<List<string>?>("select"); }
+            set { BackingStore?.Set("select", value); }
+        }
+#else
         public List<string> Select {
             get { return BackingStore?.Get<List<string>>("select"); }
             set { BackingStore?.Set("select", value); }
         }
+#endif
         /// <summary>A snapshot is an identifiable subset of the dataset represented by the ReportName. A sessionId or CachedReportConfiguration id can be used here. If a sessionId is specified, Filter, Select, and OrderBy are applied to the data represented by the sessionId. Filter, Select, and OrderBy cannot be specified together with a CachedReportConfiguration id.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SnapshotId {
+            get { return BackingStore?.Get<string?>("snapshotId"); }
+            set { BackingStore?.Set("snapshotId", value); }
+        }
+#else
         public string SnapshotId {
             get { return BackingStore?.Get<string>("snapshotId"); }
             set { BackingStore?.Set("snapshotId", value); }
         }
+#endif
         /// <summary>Possible statuses associated with a generated report</summary>
         public DeviceManagementReportStatus? Status {
             get { return BackingStore?.Get<DeviceManagementReportStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>Temporary location of the exported report</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Url {
+            get { return BackingStore?.Get<string?>("url"); }
+            set { BackingStore?.Set("url", value); }
+        }
+#else
         public string Url {
             get { return BackingStore?.Get<string>("url"); }
             set { BackingStore?.Set("url", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

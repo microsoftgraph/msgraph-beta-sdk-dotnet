@@ -14,20 +14,34 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The Internal Application SPN of the application server. This SPN needs to be in the list of services to which the connector can present delegated credentials.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? KerberosServicePrincipalName {
+            get { return BackingStore?.Get<string?>("kerberosServicePrincipalName"); }
+            set { BackingStore?.Set("kerberosServicePrincipalName", value); }
+        }
+#else
         public string KerberosServicePrincipalName {
             get { return BackingStore?.Get<string>("kerberosServicePrincipalName"); }
             set { BackingStore?.Set("kerberosServicePrincipalName", value); }
         }
+#endif
         /// <summary>The Delegated Login Identity for the connector to use on behalf of your users. For more information, see Working with different on-premises and cloud identities . Possible values are: userPrincipalName, onPremisesUserPrincipalName, userPrincipalUsername, onPremisesUserPrincipalUsername, onPremisesSAMAccountName.</summary>
         public Microsoft.Graph.Beta.Models.KerberosSignOnMappingAttributeType? KerberosSignOnMappingAttributeType {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.KerberosSignOnMappingAttributeType?>("kerberosSignOnMappingAttributeType"); }
             set { BackingStore?.Set("kerberosSignOnMappingAttributeType", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new kerberosSignOnSettings and sets the default values.
         /// </summary>

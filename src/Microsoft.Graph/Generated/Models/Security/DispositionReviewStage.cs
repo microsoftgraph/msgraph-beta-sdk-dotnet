@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
     public class DispositionReviewStage : Entity, IParsable {
         /// <summary>Name representing each stage within a collection.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Name {
+            get { return BackingStore?.Get<string?>("name"); }
+            set { BackingStore?.Set("name", value); }
+        }
+#else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#endif
         /// <summary>A collection of reviewers at each stage.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? ReviewersEmailAddresses {
+            get { return BackingStore?.Get<List<string>?>("reviewersEmailAddresses"); }
+            set { BackingStore?.Set("reviewersEmailAddresses", value); }
+        }
+#else
         public List<string> ReviewersEmailAddresses {
             get { return BackingStore?.Get<List<string>>("reviewersEmailAddresses"); }
             set { BackingStore?.Set("reviewersEmailAddresses", value); }
         }
+#endif
         /// <summary>The sequence number for each stage of the disposition review.</summary>
         public int? StageNumber {
             get { return BackingStore?.Get<int?>("stageNumber"); }

@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class PrivilegedAccessCollectionResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<PrivilegedAccess>? Value {
+            get { return BackingStore?.Get<List<PrivilegedAccess>?>("value"); }
+            set { BackingStore?.Set("value", value); }
+        }
+#else
         public List<PrivilegedAccess> Value {
             get { return BackingStore?.Get<List<PrivilegedAccess>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

@@ -11,15 +11,29 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("detectionStatus", value); }
         }
         /// <summary>Image file details.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public FileDetails? ImageFile {
+            get { return BackingStore?.Get<FileDetails?>("imageFile"); }
+            set { BackingStore?.Set("imageFile", value); }
+        }
+#else
         public FileDetails ImageFile {
             get { return BackingStore?.Get<FileDetails>("imageFile"); }
             set { BackingStore?.Set("imageFile", value); }
         }
+#endif
         /// <summary>A unique identifier assigned to a device by Microsoft Defender for Endpoint.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MdeDeviceId {
+            get { return BackingStore?.Get<string?>("mdeDeviceId"); }
+            set { BackingStore?.Set("mdeDeviceId", value); }
+        }
+#else
         public string MdeDeviceId {
             get { return BackingStore?.Get<string>("mdeDeviceId"); }
             set { BackingStore?.Set("mdeDeviceId", value); }
         }
+#endif
         /// <summary>Date and time when the parent of the process was created.</summary>
         public DateTimeOffset? ParentProcessCreationDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("parentProcessCreationDateTime"); }
@@ -31,15 +45,29 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("parentProcessId", value); }
         }
         /// <summary>Parent process image file details.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public FileDetails? ParentProcessImageFile {
+            get { return BackingStore?.Get<FileDetails?>("parentProcessImageFile"); }
+            set { BackingStore?.Set("parentProcessImageFile", value); }
+        }
+#else
         public FileDetails ParentProcessImageFile {
             get { return BackingStore?.Get<FileDetails>("parentProcessImageFile"); }
             set { BackingStore?.Set("parentProcessImageFile", value); }
         }
+#endif
         /// <summary>Command line used to create the new process.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ProcessCommandLine {
+            get { return BackingStore?.Get<string?>("processCommandLine"); }
+            set { BackingStore?.Set("processCommandLine", value); }
+        }
+#else
         public string ProcessCommandLine {
             get { return BackingStore?.Get<string>("processCommandLine"); }
             set { BackingStore?.Set("processCommandLine", value); }
         }
+#endif
         /// <summary>Date and time the process was created.</summary>
         public DateTimeOffset? ProcessCreationDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("processCreationDateTime"); }
@@ -51,10 +79,17 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("processId", value); }
         }
         /// <summary>User details of the user that ran the process.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.Security.UserAccount? UserAccount {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.UserAccount?>("userAccount"); }
+            set { BackingStore?.Set("userAccount", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.Security.UserAccount UserAccount {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.UserAccount>("userAccount"); }
             set { BackingStore?.Set("userAccount", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

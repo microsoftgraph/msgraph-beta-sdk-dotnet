@@ -29,15 +29,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("notBefore", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The certificate thumbprint.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Thumbprint {
+            get { return BackingStore?.Get<string?>("thumbprint"); }
+            set { BackingStore?.Set("thumbprint", value); }
+        }
+#else
         public string Thumbprint {
             get { return BackingStore?.Get<string>("thumbprint"); }
             set { BackingStore?.Set("thumbprint", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new pkcs12CertificateInformation and sets the default values.
         /// </summary>

@@ -11,25 +11,53 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("isDefaultRecipientsEnabled", value); }
         }
         /// <summary>The level of notification. The possible values are None, Critical, All.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? NotificationLevel {
+            get { return BackingStore?.Get<string?>("notificationLevel"); }
+            set { BackingStore?.Set("notificationLevel", value); }
+        }
+#else
         public string NotificationLevel {
             get { return BackingStore?.Get<string>("notificationLevel"); }
             set { BackingStore?.Set("notificationLevel", value); }
         }
+#endif
         /// <summary>The list of recipients of the email notifications.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? NotificationRecipients {
+            get { return BackingStore?.Get<List<string>?>("notificationRecipients"); }
+            set { BackingStore?.Set("notificationRecipients", value); }
+        }
+#else
         public List<string> NotificationRecipients {
             get { return BackingStore?.Get<List<string>>("notificationRecipients"); }
             set { BackingStore?.Set("notificationRecipients", value); }
         }
+#endif
         /// <summary>The type of notification. Only Email is supported.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? NotificationType {
+            get { return BackingStore?.Get<string?>("notificationType"); }
+            set { BackingStore?.Set("notificationType", value); }
+        }
+#else
         public string NotificationType {
             get { return BackingStore?.Get<string>("notificationType"); }
             set { BackingStore?.Set("notificationType", value); }
         }
+#endif
         /// <summary>The type of recipient of the notification. The possible values are Requestor, Approver, Admin.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? RecipientType {
+            get { return BackingStore?.Get<string?>("recipientType"); }
+            set { BackingStore?.Set("recipientType", value); }
+        }
+#else
         public string RecipientType {
             get { return BackingStore?.Get<string>("recipientType"); }
             set { BackingStore?.Set("recipientType", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new UnifiedRoleManagementPolicyNotificationRule and sets the default values.
         /// </summary>

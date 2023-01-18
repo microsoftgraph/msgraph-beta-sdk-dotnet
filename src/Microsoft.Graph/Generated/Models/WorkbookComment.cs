@@ -6,20 +6,41 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class WorkbookComment : Entity, IParsable {
         /// <summary>The content of the comment.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Content {
+            get { return BackingStore?.Get<string?>("content"); }
+            set { BackingStore?.Set("content", value); }
+        }
+#else
         public string Content {
             get { return BackingStore?.Get<string>("content"); }
             set { BackingStore?.Set("content", value); }
         }
+#endif
         /// <summary>Indicates the type for the comment.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ContentType {
+            get { return BackingStore?.Get<string?>("contentType"); }
+            set { BackingStore?.Set("contentType", value); }
+        }
+#else
         public string ContentType {
             get { return BackingStore?.Get<string>("contentType"); }
             set { BackingStore?.Set("contentType", value); }
         }
+#endif
         /// <summary>The replies property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<WorkbookCommentReply>? Replies {
+            get { return BackingStore?.Get<List<WorkbookCommentReply>?>("replies"); }
+            set { BackingStore?.Set("replies", value); }
+        }
+#else
         public List<WorkbookCommentReply> Replies {
             get { return BackingStore?.Get<List<WorkbookCommentReply>>("replies"); }
             set { BackingStore?.Set("replies", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

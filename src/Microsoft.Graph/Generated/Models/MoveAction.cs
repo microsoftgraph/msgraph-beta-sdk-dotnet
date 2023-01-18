@@ -14,20 +14,41 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The name of the location the item was moved from.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? From {
+            get { return BackingStore?.Get<string?>("from"); }
+            set { BackingStore?.Set("from", value); }
+        }
+#else
         public string From {
             get { return BackingStore?.Get<string>("from"); }
             set { BackingStore?.Set("from", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The name of the location the item was moved to.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? To {
+            get { return BackingStore?.Get<string?>("to"); }
+            set { BackingStore?.Set("to", value); }
+        }
+#else
         public string To {
             get { return BackingStore?.Get<string>("to"); }
             set { BackingStore?.Set("to", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new moveAction and sets the default values.
         /// </summary>

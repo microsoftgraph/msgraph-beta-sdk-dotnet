@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
     public class MetadataAction : InformationProtectionAction, IParsable {
         /// <summary>A collection of key-value pairs that should be added to the file.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<KeyValuePair>? MetadataToAdd {
+            get { return BackingStore?.Get<List<KeyValuePair>?>("metadataToAdd"); }
+            set { BackingStore?.Set("metadataToAdd", value); }
+        }
+#else
         public List<KeyValuePair> MetadataToAdd {
             get { return BackingStore?.Get<List<KeyValuePair>>("metadataToAdd"); }
             set { BackingStore?.Set("metadataToAdd", value); }
         }
+#endif
         /// <summary>A collection of strings that indicate which keys to remove from the file metadata.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? MetadataToRemove {
+            get { return BackingStore?.Get<List<string>?>("metadataToRemove"); }
+            set { BackingStore?.Set("metadataToRemove", value); }
+        }
+#else
         public List<string> MetadataToRemove {
             get { return BackingStore?.Get<List<string>>("metadataToRemove"); }
             set { BackingStore?.Set("metadataToRemove", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new MetadataAction and sets the default values.
         /// </summary>

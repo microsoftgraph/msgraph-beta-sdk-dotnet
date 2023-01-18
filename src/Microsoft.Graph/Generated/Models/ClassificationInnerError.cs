@@ -7,10 +7,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class ClassificationInnerError : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>The activityId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ActivityId {
+            get { return BackingStore?.Get<string?>("activityId"); }
+            set { BackingStore?.Set("activityId", value); }
+        }
+#else
         public string ActivityId {
             get { return BackingStore?.Get<string>("activityId"); }
             set { BackingStore?.Set("activityId", value); }
         }
+#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
             get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
@@ -19,25 +26,46 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The clientRequestId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ClientRequestId {
+            get { return BackingStore?.Get<string?>("clientRequestId"); }
+            set { BackingStore?.Set("clientRequestId", value); }
+        }
+#else
         public string ClientRequestId {
             get { return BackingStore?.Get<string>("clientRequestId"); }
             set { BackingStore?.Set("clientRequestId", value); }
         }
+#endif
         /// <summary>The code property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Code {
+            get { return BackingStore?.Get<string?>("code"); }
+            set { BackingStore?.Set("code", value); }
+        }
+#else
         public string Code {
             get { return BackingStore?.Get<string>("code"); }
             set { BackingStore?.Set("code", value); }
         }
+#endif
         /// <summary>The errorDateTime property</summary>
         public DateTimeOffset? ErrorDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("errorDateTime"); }
             set { BackingStore?.Set("errorDateTime", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new classificationInnerError and sets the default values.
         /// </summary>

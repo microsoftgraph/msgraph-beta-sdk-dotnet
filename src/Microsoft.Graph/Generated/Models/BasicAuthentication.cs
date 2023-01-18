@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class BasicAuthentication : ApiAuthenticationConfigurationBase, IParsable {
         /// <summary>The password. It is not returned in the responses.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Password {
+            get { return BackingStore?.Get<string?>("password"); }
+            set { BackingStore?.Set("password", value); }
+        }
+#else
         public string Password {
             get { return BackingStore?.Get<string>("password"); }
             set { BackingStore?.Set("password", value); }
         }
+#endif
         /// <summary>The username.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Username {
+            get { return BackingStore?.Get<string?>("username"); }
+            set { BackingStore?.Set("username", value); }
+        }
+#else
         public string Username {
             get { return BackingStore?.Get<string>("username"); }
             set { BackingStore?.Set("username", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new BasicAuthentication and sets the default values.
         /// </summary>

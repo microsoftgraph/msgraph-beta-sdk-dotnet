@@ -6,20 +6,41 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class AuthenticationFlowsPolicy : Entity, IParsable {
         /// <summary>Inherited property. A description of the policy. This property is not a key. Optional. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>Inherited property. The human-readable name of the policy. This property is not a key. Optional. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>Contains selfServiceSignUpAuthenticationFlowConfiguration settings that convey whether self-service sign-up is enabled or disabled. This property is not a key. Optional. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public SelfServiceSignUpAuthenticationFlowConfiguration? SelfServiceSignUp {
+            get { return BackingStore?.Get<SelfServiceSignUpAuthenticationFlowConfiguration?>("selfServiceSignUp"); }
+            set { BackingStore?.Set("selfServiceSignUp", value); }
+        }
+#else
         public SelfServiceSignUpAuthenticationFlowConfiguration SelfServiceSignUp {
             get { return BackingStore?.Get<SelfServiceSignUpAuthenticationFlowConfiguration>("selfServiceSignUp"); }
             set { BackingStore?.Set("selfServiceSignUp", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

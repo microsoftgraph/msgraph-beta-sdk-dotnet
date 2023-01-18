@@ -62,10 +62,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("applicationGuardBlockNonEnterpriseContent", value); }
         }
         /// <summary>Allows certain device level Root Certificates to be shared with the Microsoft Defender Application Guard container.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? ApplicationGuardCertificateThumbprints {
+            get { return BackingStore?.Get<List<string>?>("applicationGuardCertificateThumbprints"); }
+            set { BackingStore?.Set("applicationGuardCertificateThumbprints", value); }
+        }
+#else
         public List<string> ApplicationGuardCertificateThumbprints {
             get { return BackingStore?.Get<List<string>>("applicationGuardCertificateThumbprints"); }
             set { BackingStore?.Set("applicationGuardCertificateThumbprints", value); }
         }
+#endif
         /// <summary>Enable Windows Defender Application Guard</summary>
         public bool? ApplicationGuardEnabled {
             get { return BackingStore?.Get<bool?>("applicationGuardEnabled"); }
@@ -107,30 +114,58 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("bitLockerEncryptDevice", value); }
         }
         /// <summary>BitLocker Fixed Drive Policy.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.BitLockerFixedDrivePolicy? BitLockerFixedDrivePolicy {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.BitLockerFixedDrivePolicy?>("bitLockerFixedDrivePolicy"); }
+            set { BackingStore?.Set("bitLockerFixedDrivePolicy", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.BitLockerFixedDrivePolicy BitLockerFixedDrivePolicy {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.BitLockerFixedDrivePolicy>("bitLockerFixedDrivePolicy"); }
             set { BackingStore?.Set("bitLockerFixedDrivePolicy", value); }
         }
+#endif
         /// <summary>BitLocker recovery password rotation type</summary>
         public BitLockerRecoveryPasswordRotationType? BitLockerRecoveryPasswordRotation {
             get { return BackingStore?.Get<BitLockerRecoveryPasswordRotationType?>("bitLockerRecoveryPasswordRotation"); }
             set { BackingStore?.Set("bitLockerRecoveryPasswordRotation", value); }
         }
         /// <summary>BitLocker Removable Drive Policy.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.BitLockerRemovableDrivePolicy? BitLockerRemovableDrivePolicy {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.BitLockerRemovableDrivePolicy?>("bitLockerRemovableDrivePolicy"); }
+            set { BackingStore?.Set("bitLockerRemovableDrivePolicy", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.BitLockerRemovableDrivePolicy BitLockerRemovableDrivePolicy {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.BitLockerRemovableDrivePolicy>("bitLockerRemovableDrivePolicy"); }
             set { BackingStore?.Set("bitLockerRemovableDrivePolicy", value); }
         }
+#endif
         /// <summary>BitLocker System Drive Policy.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.BitLockerSystemDrivePolicy? BitLockerSystemDrivePolicy {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.BitLockerSystemDrivePolicy?>("bitLockerSystemDrivePolicy"); }
+            set { BackingStore?.Set("bitLockerSystemDrivePolicy", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.BitLockerSystemDrivePolicy BitLockerSystemDrivePolicy {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.BitLockerSystemDrivePolicy>("bitLockerSystemDrivePolicy"); }
             set { BackingStore?.Set("bitLockerSystemDrivePolicy", value); }
         }
+#endif
         /// <summary>List of folder paths to be added to the list of protected folders</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? DefenderAdditionalGuardedFolders {
+            get { return BackingStore?.Get<List<string>?>("defenderAdditionalGuardedFolders"); }
+            set { BackingStore?.Set("defenderAdditionalGuardedFolders", value); }
+        }
+#else
         public List<string> DefenderAdditionalGuardedFolders {
             get { return BackingStore?.Get<List<string>>("defenderAdditionalGuardedFolders"); }
             set { BackingStore?.Set("defenderAdditionalGuardedFolders", value); }
         }
+#endif
         /// <summary>Possible values of Defender PUA Protection</summary>
         public DefenderProtectionType? DefenderAdobeReaderLaunchChildProcess {
             get { return BackingStore?.Get<DefenderProtectionType?>("defenderAdobeReaderLaunchChildProcess"); }
@@ -197,10 +232,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("defenderAllowScanScriptsLoadedInInternetExplorer", value); }
         }
         /// <summary>List of exe files and folders to be excluded from attack surface reduction rules</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? DefenderAttackSurfaceReductionExcludedPaths {
+            get { return BackingStore?.Get<List<string>?>("defenderAttackSurfaceReductionExcludedPaths"); }
+            set { BackingStore?.Set("defenderAttackSurfaceReductionExcludedPaths", value); }
+        }
+#else
         public List<string> DefenderAttackSurfaceReductionExcludedPaths {
             get { return BackingStore?.Get<List<string>>("defenderAttackSurfaceReductionExcludedPaths"); }
             set { BackingStore?.Set("defenderAttackSurfaceReductionExcludedPaths", value); }
         }
+#endif
         /// <summary>Allows or disallows user access to the Windows Defender UI. If disallowed, all Windows Defender notifications will also be suppressed.</summary>
         public bool? DefenderBlockEndUserAccess {
             get { return BackingStore?.Get<bool?>("defenderBlockEndUserAccess"); }
@@ -232,10 +274,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("defenderDaysBeforeDeletingQuarantinedMalware", value); }
         }
         /// <summary>Allows an administrator to specify any valid threat severity levels and the corresponding default action ID to take.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.DefenderDetectedMalwareActions? DefenderDetectedMalwareActions {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DefenderDetectedMalwareActions?>("defenderDetectedMalwareActions"); }
+            set { BackingStore?.Set("defenderDetectedMalwareActions", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.DefenderDetectedMalwareActions DefenderDetectedMalwareActions {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DefenderDetectedMalwareActions>("defenderDetectedMalwareActions"); }
             set { BackingStore?.Set("defenderDetectedMalwareActions", value); }
         }
+#endif
         /// <summary>Allows or disallows Windows Defender Behavior Monitoring functionality.</summary>
         public bool? DefenderDisableBehaviorMonitoring {
             get { return BackingStore?.Get<bool?>("defenderDisableBehaviorMonitoring"); }
@@ -322,30 +371,65 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("defenderEnableScanMappedNetworkDrivesDuringFullScan", value); }
         }
         /// <summary>Xml content containing information regarding exploit protection details.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public byte[]? DefenderExploitProtectionXml {
+            get { return BackingStore?.Get<byte[]?>("defenderExploitProtectionXml"); }
+            set { BackingStore?.Set("defenderExploitProtectionXml", value); }
+        }
+#else
         public byte[] DefenderExploitProtectionXml {
             get { return BackingStore?.Get<byte[]>("defenderExploitProtectionXml"); }
             set { BackingStore?.Set("defenderExploitProtectionXml", value); }
         }
+#endif
         /// <summary>Name of the file from which DefenderExploitProtectionXml was obtained.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DefenderExploitProtectionXmlFileName {
+            get { return BackingStore?.Get<string?>("defenderExploitProtectionXmlFileName"); }
+            set { BackingStore?.Set("defenderExploitProtectionXmlFileName", value); }
+        }
+#else
         public string DefenderExploitProtectionXmlFileName {
             get { return BackingStore?.Get<string>("defenderExploitProtectionXmlFileName"); }
             set { BackingStore?.Set("defenderExploitProtectionXmlFileName", value); }
         }
+#endif
         /// <summary>File extensions to exclude from scans and real time protection.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? DefenderFileExtensionsToExclude {
+            get { return BackingStore?.Get<List<string>?>("defenderFileExtensionsToExclude"); }
+            set { BackingStore?.Set("defenderFileExtensionsToExclude", value); }
+        }
+#else
         public List<string> DefenderFileExtensionsToExclude {
             get { return BackingStore?.Get<List<string>>("defenderFileExtensionsToExclude"); }
             set { BackingStore?.Set("defenderFileExtensionsToExclude", value); }
         }
+#endif
         /// <summary>Files and folder to exclude from scans and real time protection.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? DefenderFilesAndFoldersToExclude {
+            get { return BackingStore?.Get<List<string>?>("defenderFilesAndFoldersToExclude"); }
+            set { BackingStore?.Set("defenderFilesAndFoldersToExclude", value); }
+        }
+#else
         public List<string> DefenderFilesAndFoldersToExclude {
             get { return BackingStore?.Get<List<string>>("defenderFilesAndFoldersToExclude"); }
             set { BackingStore?.Set("defenderFilesAndFoldersToExclude", value); }
         }
+#endif
         /// <summary>List of paths to exe that are allowed to access protected folders</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? DefenderGuardedFoldersAllowedAppPaths {
+            get { return BackingStore?.Get<List<string>?>("defenderGuardedFoldersAllowedAppPaths"); }
+            set { BackingStore?.Set("defenderGuardedFoldersAllowedAppPaths", value); }
+        }
+#else
         public List<string> DefenderGuardedFoldersAllowedAppPaths {
             get { return BackingStore?.Get<List<string>>("defenderGuardedFoldersAllowedAppPaths"); }
             set { BackingStore?.Set("defenderGuardedFoldersAllowedAppPaths", value); }
         }
+#endif
         /// <summary>Possible values of Folder Protection</summary>
         public FolderProtectionType? DefenderGuardMyFoldersType {
             get { return BackingStore?.Get<FolderProtectionType?>("defenderGuardMyFoldersType"); }
@@ -422,10 +506,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("defenderProcessCreationType", value); }
         }
         /// <summary>Processes to exclude from scans and real time protection.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? DefenderProcessesToExclude {
+            get { return BackingStore?.Get<List<string>?>("defenderProcessesToExclude"); }
+            set { BackingStore?.Set("defenderProcessesToExclude", value); }
+        }
+#else
         public List<string> DefenderProcessesToExclude {
             get { return BackingStore?.Get<List<string>>("defenderProcessesToExclude"); }
             set { BackingStore?.Set("defenderProcessesToExclude", value); }
         }
+#endif
         /// <summary>Controls which sets of files should be monitored. Possible values are: monitorAllFiles, monitorIncomingFilesOnly, monitorOutgoingFilesOnly.</summary>
         public DefenderRealtimeScanDirection? DefenderScanDirection {
             get { return BackingStore?.Get<DefenderRealtimeScanDirection?>("defenderScanDirection"); }
@@ -547,20 +638,41 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("defenderSecurityCenterDisableVulnerableTpmFirmwareUpdateUI", value); }
         }
         /// <summary>The email address that is displayed to users.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DefenderSecurityCenterHelpEmail {
+            get { return BackingStore?.Get<string?>("defenderSecurityCenterHelpEmail"); }
+            set { BackingStore?.Set("defenderSecurityCenterHelpEmail", value); }
+        }
+#else
         public string DefenderSecurityCenterHelpEmail {
             get { return BackingStore?.Get<string>("defenderSecurityCenterHelpEmail"); }
             set { BackingStore?.Set("defenderSecurityCenterHelpEmail", value); }
         }
+#endif
         /// <summary>The phone number or Skype ID that is displayed to users.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DefenderSecurityCenterHelpPhone {
+            get { return BackingStore?.Get<string?>("defenderSecurityCenterHelpPhone"); }
+            set { BackingStore?.Set("defenderSecurityCenterHelpPhone", value); }
+        }
+#else
         public string DefenderSecurityCenterHelpPhone {
             get { return BackingStore?.Get<string>("defenderSecurityCenterHelpPhone"); }
             set { BackingStore?.Set("defenderSecurityCenterHelpPhone", value); }
         }
+#endif
         /// <summary>The help portal URL this is displayed to users.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DefenderSecurityCenterHelpURL {
+            get { return BackingStore?.Get<string?>("defenderSecurityCenterHelpURL"); }
+            set { BackingStore?.Set("defenderSecurityCenterHelpURL", value); }
+        }
+#else
         public string DefenderSecurityCenterHelpURL {
             get { return BackingStore?.Get<string>("defenderSecurityCenterHelpURL"); }
             set { BackingStore?.Set("defenderSecurityCenterHelpURL", value); }
         }
+#endif
         /// <summary>Possible values for defenderSecurityCenterITContactDisplay</summary>
         public DefenderSecurityCenterITContactDisplayType? DefenderSecurityCenterITContactDisplay {
             get { return BackingStore?.Get<DefenderSecurityCenterITContactDisplayType?>("defenderSecurityCenterITContactDisplay"); }
@@ -572,10 +684,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("defenderSecurityCenterNotificationsFromApp", value); }
         }
         /// <summary>The company name that is displayed to the users.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DefenderSecurityCenterOrganizationDisplayName {
+            get { return BackingStore?.Get<string?>("defenderSecurityCenterOrganizationDisplayName"); }
+            set { BackingStore?.Set("defenderSecurityCenterOrganizationDisplayName", value); }
+        }
+#else
         public string DefenderSecurityCenterOrganizationDisplayName {
             get { return BackingStore?.Get<string>("defenderSecurityCenterOrganizationDisplayName"); }
             set { BackingStore?.Set("defenderSecurityCenterOrganizationDisplayName", value); }
         }
+#endif
         /// <summary>Specifies the interval (in hours) that will be used to check for signatures, so instead of using the ScheduleDay and ScheduleTime the check for new signatures will be set according to the interval. Valid values 0 to 24</summary>
         public int? DefenderSignatureUpdateIntervalInHours {
             get { return BackingStore?.Get<int?>("defenderSignatureUpdateIntervalInHours"); }
@@ -692,25 +811,53 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("firewallPreSharedKeyEncodingMethod", value); }
         }
         /// <summary>Configures the firewall profile settings for domain networks</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public WindowsFirewallNetworkProfile? FirewallProfileDomain {
+            get { return BackingStore?.Get<WindowsFirewallNetworkProfile?>("firewallProfileDomain"); }
+            set { BackingStore?.Set("firewallProfileDomain", value); }
+        }
+#else
         public WindowsFirewallNetworkProfile FirewallProfileDomain {
             get { return BackingStore?.Get<WindowsFirewallNetworkProfile>("firewallProfileDomain"); }
             set { BackingStore?.Set("firewallProfileDomain", value); }
         }
+#endif
         /// <summary>Configures the firewall profile settings for private networks</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public WindowsFirewallNetworkProfile? FirewallProfilePrivate {
+            get { return BackingStore?.Get<WindowsFirewallNetworkProfile?>("firewallProfilePrivate"); }
+            set { BackingStore?.Set("firewallProfilePrivate", value); }
+        }
+#else
         public WindowsFirewallNetworkProfile FirewallProfilePrivate {
             get { return BackingStore?.Get<WindowsFirewallNetworkProfile>("firewallProfilePrivate"); }
             set { BackingStore?.Set("firewallProfilePrivate", value); }
         }
+#endif
         /// <summary>Configures the firewall profile settings for public networks</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public WindowsFirewallNetworkProfile? FirewallProfilePublic {
+            get { return BackingStore?.Get<WindowsFirewallNetworkProfile?>("firewallProfilePublic"); }
+            set { BackingStore?.Set("firewallProfilePublic", value); }
+        }
+#else
         public WindowsFirewallNetworkProfile FirewallProfilePublic {
             get { return BackingStore?.Get<WindowsFirewallNetworkProfile>("firewallProfilePublic"); }
             set { BackingStore?.Set("firewallProfilePublic", value); }
         }
+#endif
         /// <summary>Configures the firewall rule settings. This collection can contain a maximum of 150 elements.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<WindowsFirewallRule>? FirewallRules {
+            get { return BackingStore?.Get<List<WindowsFirewallRule>?>("firewallRules"); }
+            set { BackingStore?.Set("firewallRules", value); }
+        }
+#else
         public List<WindowsFirewallRule> FirewallRules {
             get { return BackingStore?.Get<List<WindowsFirewallRule>>("firewallRules"); }
             set { BackingStore?.Set("firewallRules", value); }
         }
+#endif
         /// <summary>Possible values for LanManagerAuthenticationLevel</summary>
         public Microsoft.Graph.Beta.Models.LanManagerAuthenticationLevel? LanManagerAuthenticationLevel {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.LanManagerAuthenticationLevel?>("lanManagerAuthenticationLevel"); }
@@ -722,10 +869,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("lanManagerWorkstationDisableInsecureGuestLogons", value); }
         }
         /// <summary>Define a different account name to be associated with the security identifier (SID) for the account &apos;Administrator&apos;.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? LocalSecurityOptionsAdministratorAccountName {
+            get { return BackingStore?.Get<string?>("localSecurityOptionsAdministratorAccountName"); }
+            set { BackingStore?.Set("localSecurityOptionsAdministratorAccountName", value); }
+        }
+#else
         public string LocalSecurityOptionsAdministratorAccountName {
             get { return BackingStore?.Get<string>("localSecurityOptionsAdministratorAccountName"); }
             set { BackingStore?.Set("localSecurityOptionsAdministratorAccountName", value); }
         }
+#endif
         /// <summary>Possible values for LocalSecurityOptionsAdministratorElevationPromptBehavior</summary>
         public LocalSecurityOptionsAdministratorElevationPromptBehaviorType? LocalSecurityOptionsAdministratorElevationPromptBehavior {
             get { return BackingStore?.Get<LocalSecurityOptionsAdministratorElevationPromptBehaviorType?>("localSecurityOptionsAdministratorElevationPromptBehavior"); }
@@ -742,10 +896,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("localSecurityOptionsAllowPKU2UAuthenticationRequests", value); }
         }
         /// <summary>Edit the default Security Descriptor Definition Language string to allow or deny users and groups to make remote calls to the SAM.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? LocalSecurityOptionsAllowRemoteCallsToSecurityAccountsManager {
+            get { return BackingStore?.Get<string?>("localSecurityOptionsAllowRemoteCallsToSecurityAccountsManager"); }
+            set { BackingStore?.Set("localSecurityOptionsAllowRemoteCallsToSecurityAccountsManager", value); }
+        }
+#else
         public string LocalSecurityOptionsAllowRemoteCallsToSecurityAccountsManager {
             get { return BackingStore?.Get<string>("localSecurityOptionsAllowRemoteCallsToSecurityAccountsManager"); }
             set { BackingStore?.Set("localSecurityOptionsAllowRemoteCallsToSecurityAccountsManager", value); }
         }
+#endif
         /// <summary>UI helper boolean for LocalSecurityOptionsAllowRemoteCallsToSecurityAccountsManager entity</summary>
         public bool? LocalSecurityOptionsAllowRemoteCallsToSecurityAccountsManagerHelperBool {
             get { return BackingStore?.Get<bool?>("localSecurityOptionsAllowRemoteCallsToSecurityAccountsManagerHelperBool"); }
@@ -857,10 +1018,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("localSecurityOptionsFormatAndEjectOfRemovableMediaAllowedUser", value); }
         }
         /// <summary>Define a different account name to be associated with the security identifier (SID) for the account &apos;Guest&apos;.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? LocalSecurityOptionsGuestAccountName {
+            get { return BackingStore?.Get<string?>("localSecurityOptionsGuestAccountName"); }
+            set { BackingStore?.Set("localSecurityOptionsGuestAccountName", value); }
+        }
+#else
         public string LocalSecurityOptionsGuestAccountName {
             get { return BackingStore?.Get<string>("localSecurityOptionsGuestAccountName"); }
             set { BackingStore?.Set("localSecurityOptionsGuestAccountName", value); }
         }
+#endif
         /// <summary>Do not display the username of the last person who signed in on this device.</summary>
         public bool? LocalSecurityOptionsHideLastSignedInUser {
             get { return BackingStore?.Get<bool?>("localSecurityOptionsHideLastSignedInUser"); }
@@ -882,15 +1050,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("localSecurityOptionsInformationShownOnLockScreen", value); }
         }
         /// <summary>Set message text for users attempting to log in.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? LocalSecurityOptionsLogOnMessageText {
+            get { return BackingStore?.Get<string?>("localSecurityOptionsLogOnMessageText"); }
+            set { BackingStore?.Set("localSecurityOptionsLogOnMessageText", value); }
+        }
+#else
         public string LocalSecurityOptionsLogOnMessageText {
             get { return BackingStore?.Get<string>("localSecurityOptionsLogOnMessageText"); }
             set { BackingStore?.Set("localSecurityOptionsLogOnMessageText", value); }
         }
+#endif
         /// <summary>Set message title for users attempting to log in.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? LocalSecurityOptionsLogOnMessageTitle {
+            get { return BackingStore?.Get<string?>("localSecurityOptionsLogOnMessageTitle"); }
+            set { BackingStore?.Set("localSecurityOptionsLogOnMessageTitle", value); }
+        }
+#else
         public string LocalSecurityOptionsLogOnMessageTitle {
             get { return BackingStore?.Get<string>("localSecurityOptionsLogOnMessageTitle"); }
             set { BackingStore?.Set("localSecurityOptionsLogOnMessageTitle", value); }
         }
+#endif
         /// <summary>Define maximum minutes of inactivity on the interactive desktop’s login screen until the screen saver runs. Valid values 0 to 9999</summary>
         public int? LocalSecurityOptionsMachineInactivityLimit {
             get { return BackingStore?.Get<int?>("localSecurityOptionsMachineInactivityLimit"); }
@@ -962,150 +1144,353 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("smartScreenEnableInShell", value); }
         }
         /// <summary>This user right is used by Credential Manager during Backup/Restore. Users&apos; saved credentials might be compromised if this privilege is given to other entities. Only states NotConfigured and Allowed are supported</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DeviceManagementUserRightsSetting? UserRightsAccessCredentialManagerAsTrustedCaller {
+            get { return BackingStore?.Get<DeviceManagementUserRightsSetting?>("userRightsAccessCredentialManagerAsTrustedCaller"); }
+            set { BackingStore?.Set("userRightsAccessCredentialManagerAsTrustedCaller", value); }
+        }
+#else
         public DeviceManagementUserRightsSetting UserRightsAccessCredentialManagerAsTrustedCaller {
             get { return BackingStore?.Get<DeviceManagementUserRightsSetting>("userRightsAccessCredentialManagerAsTrustedCaller"); }
             set { BackingStore?.Set("userRightsAccessCredentialManagerAsTrustedCaller", value); }
         }
+#endif
         /// <summary>This user right allows a process to impersonate any user without authentication. The process can therefore gain access to the same local resources as that user. Only states NotConfigured and Allowed are supported</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DeviceManagementUserRightsSetting? UserRightsActAsPartOfTheOperatingSystem {
+            get { return BackingStore?.Get<DeviceManagementUserRightsSetting?>("userRightsActAsPartOfTheOperatingSystem"); }
+            set { BackingStore?.Set("userRightsActAsPartOfTheOperatingSystem", value); }
+        }
+#else
         public DeviceManagementUserRightsSetting UserRightsActAsPartOfTheOperatingSystem {
             get { return BackingStore?.Get<DeviceManagementUserRightsSetting>("userRightsActAsPartOfTheOperatingSystem"); }
             set { BackingStore?.Set("userRightsActAsPartOfTheOperatingSystem", value); }
         }
+#endif
         /// <summary>This user right determines which users and groups are allowed to connect to the computer over the network. State Allowed is supported.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DeviceManagementUserRightsSetting? UserRightsAllowAccessFromNetwork {
+            get { return BackingStore?.Get<DeviceManagementUserRightsSetting?>("userRightsAllowAccessFromNetwork"); }
+            set { BackingStore?.Set("userRightsAllowAccessFromNetwork", value); }
+        }
+#else
         public DeviceManagementUserRightsSetting UserRightsAllowAccessFromNetwork {
             get { return BackingStore?.Get<DeviceManagementUserRightsSetting>("userRightsAllowAccessFromNetwork"); }
             set { BackingStore?.Set("userRightsAllowAccessFromNetwork", value); }
         }
+#endif
         /// <summary>This user right determines which users can bypass file, directory, registry, and other persistent objects permissions when backing up files and directories. Only states NotConfigured and Allowed are supported</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DeviceManagementUserRightsSetting? UserRightsBackupData {
+            get { return BackingStore?.Get<DeviceManagementUserRightsSetting?>("userRightsBackupData"); }
+            set { BackingStore?.Set("userRightsBackupData", value); }
+        }
+#else
         public DeviceManagementUserRightsSetting UserRightsBackupData {
             get { return BackingStore?.Get<DeviceManagementUserRightsSetting>("userRightsBackupData"); }
             set { BackingStore?.Set("userRightsBackupData", value); }
         }
+#endif
         /// <summary>This user right determines which users and groups are block from connecting to the computer over the network. State Block is supported.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DeviceManagementUserRightsSetting? UserRightsBlockAccessFromNetwork {
+            get { return BackingStore?.Get<DeviceManagementUserRightsSetting?>("userRightsBlockAccessFromNetwork"); }
+            set { BackingStore?.Set("userRightsBlockAccessFromNetwork", value); }
+        }
+#else
         public DeviceManagementUserRightsSetting UserRightsBlockAccessFromNetwork {
             get { return BackingStore?.Get<DeviceManagementUserRightsSetting>("userRightsBlockAccessFromNetwork"); }
             set { BackingStore?.Set("userRightsBlockAccessFromNetwork", value); }
         }
+#endif
         /// <summary>This user right determines which users and groups can change the time and date on the internal clock of the computer. Only states NotConfigured and Allowed are supported</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DeviceManagementUserRightsSetting? UserRightsChangeSystemTime {
+            get { return BackingStore?.Get<DeviceManagementUserRightsSetting?>("userRightsChangeSystemTime"); }
+            set { BackingStore?.Set("userRightsChangeSystemTime", value); }
+        }
+#else
         public DeviceManagementUserRightsSetting UserRightsChangeSystemTime {
             get { return BackingStore?.Get<DeviceManagementUserRightsSetting>("userRightsChangeSystemTime"); }
             set { BackingStore?.Set("userRightsChangeSystemTime", value); }
         }
+#endif
         /// <summary>This security setting determines whether users can create global objects that are available to all sessions. Users who can create global objects could affect processes that run under other users&apos; sessions, which could lead to application failure or data corruption. Only states NotConfigured and Allowed are supported</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DeviceManagementUserRightsSetting? UserRightsCreateGlobalObjects {
+            get { return BackingStore?.Get<DeviceManagementUserRightsSetting?>("userRightsCreateGlobalObjects"); }
+            set { BackingStore?.Set("userRightsCreateGlobalObjects", value); }
+        }
+#else
         public DeviceManagementUserRightsSetting UserRightsCreateGlobalObjects {
             get { return BackingStore?.Get<DeviceManagementUserRightsSetting>("userRightsCreateGlobalObjects"); }
             set { BackingStore?.Set("userRightsCreateGlobalObjects", value); }
         }
+#endif
         /// <summary>This user right determines which users and groups can call an internal API to create and change the size of a page file. Only states NotConfigured and Allowed are supported</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DeviceManagementUserRightsSetting? UserRightsCreatePageFile {
+            get { return BackingStore?.Get<DeviceManagementUserRightsSetting?>("userRightsCreatePageFile"); }
+            set { BackingStore?.Set("userRightsCreatePageFile", value); }
+        }
+#else
         public DeviceManagementUserRightsSetting UserRightsCreatePageFile {
             get { return BackingStore?.Get<DeviceManagementUserRightsSetting>("userRightsCreatePageFile"); }
             set { BackingStore?.Set("userRightsCreatePageFile", value); }
         }
+#endif
         /// <summary>This user right determines which accounts can be used by processes to create a directory object using the object manager. Only states NotConfigured and Allowed are supported</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DeviceManagementUserRightsSetting? UserRightsCreatePermanentSharedObjects {
+            get { return BackingStore?.Get<DeviceManagementUserRightsSetting?>("userRightsCreatePermanentSharedObjects"); }
+            set { BackingStore?.Set("userRightsCreatePermanentSharedObjects", value); }
+        }
+#else
         public DeviceManagementUserRightsSetting UserRightsCreatePermanentSharedObjects {
             get { return BackingStore?.Get<DeviceManagementUserRightsSetting>("userRightsCreatePermanentSharedObjects"); }
             set { BackingStore?.Set("userRightsCreatePermanentSharedObjects", value); }
         }
+#endif
         /// <summary>This user right determines if the user can create a symbolic link from the computer to which they are logged on. Only states NotConfigured and Allowed are supported</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DeviceManagementUserRightsSetting? UserRightsCreateSymbolicLinks {
+            get { return BackingStore?.Get<DeviceManagementUserRightsSetting?>("userRightsCreateSymbolicLinks"); }
+            set { BackingStore?.Set("userRightsCreateSymbolicLinks", value); }
+        }
+#else
         public DeviceManagementUserRightsSetting UserRightsCreateSymbolicLinks {
             get { return BackingStore?.Get<DeviceManagementUserRightsSetting>("userRightsCreateSymbolicLinks"); }
             set { BackingStore?.Set("userRightsCreateSymbolicLinks", value); }
         }
+#endif
         /// <summary>This user right determines which users/groups can be used by processes to create a token that can then be used to get access to any local resources when the process uses an internal API to create an access token. Only states NotConfigured and Allowed are supported</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DeviceManagementUserRightsSetting? UserRightsCreateToken {
+            get { return BackingStore?.Get<DeviceManagementUserRightsSetting?>("userRightsCreateToken"); }
+            set { BackingStore?.Set("userRightsCreateToken", value); }
+        }
+#else
         public DeviceManagementUserRightsSetting UserRightsCreateToken {
             get { return BackingStore?.Get<DeviceManagementUserRightsSetting>("userRightsCreateToken"); }
             set { BackingStore?.Set("userRightsCreateToken", value); }
         }
+#endif
         /// <summary>This user right determines which users can attach a debugger to any process or to the kernel. Only states NotConfigured and Allowed are supported</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DeviceManagementUserRightsSetting? UserRightsDebugPrograms {
+            get { return BackingStore?.Get<DeviceManagementUserRightsSetting?>("userRightsDebugPrograms"); }
+            set { BackingStore?.Set("userRightsDebugPrograms", value); }
+        }
+#else
         public DeviceManagementUserRightsSetting UserRightsDebugPrograms {
             get { return BackingStore?.Get<DeviceManagementUserRightsSetting>("userRightsDebugPrograms"); }
             set { BackingStore?.Set("userRightsDebugPrograms", value); }
         }
+#endif
         /// <summary>This user right determines which users can set the Trusted for Delegation setting on a user or computer object. Only states NotConfigured and Allowed are supported.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DeviceManagementUserRightsSetting? UserRightsDelegation {
+            get { return BackingStore?.Get<DeviceManagementUserRightsSetting?>("userRightsDelegation"); }
+            set { BackingStore?.Set("userRightsDelegation", value); }
+        }
+#else
         public DeviceManagementUserRightsSetting UserRightsDelegation {
             get { return BackingStore?.Get<DeviceManagementUserRightsSetting>("userRightsDelegation"); }
             set { BackingStore?.Set("userRightsDelegation", value); }
         }
+#endif
         /// <summary>This user right determines which users cannot log on to the computer. States NotConfigured, Blocked are supported</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DeviceManagementUserRightsSetting? UserRightsDenyLocalLogOn {
+            get { return BackingStore?.Get<DeviceManagementUserRightsSetting?>("userRightsDenyLocalLogOn"); }
+            set { BackingStore?.Set("userRightsDenyLocalLogOn", value); }
+        }
+#else
         public DeviceManagementUserRightsSetting UserRightsDenyLocalLogOn {
             get { return BackingStore?.Get<DeviceManagementUserRightsSetting>("userRightsDenyLocalLogOn"); }
             set { BackingStore?.Set("userRightsDenyLocalLogOn", value); }
         }
+#endif
         /// <summary>This user right determines which accounts can be used by a process to add entries to the security log. The security log is used to trace unauthorized system access.  Only states NotConfigured and Allowed are supported.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DeviceManagementUserRightsSetting? UserRightsGenerateSecurityAudits {
+            get { return BackingStore?.Get<DeviceManagementUserRightsSetting?>("userRightsGenerateSecurityAudits"); }
+            set { BackingStore?.Set("userRightsGenerateSecurityAudits", value); }
+        }
+#else
         public DeviceManagementUserRightsSetting UserRightsGenerateSecurityAudits {
             get { return BackingStore?.Get<DeviceManagementUserRightsSetting>("userRightsGenerateSecurityAudits"); }
             set { BackingStore?.Set("userRightsGenerateSecurityAudits", value); }
         }
+#endif
         /// <summary>Assigning this user right to a user allows programs running on behalf of that user to impersonate a client. Requiring this user right for this kind of impersonation prevents an unauthorized user from convincing a client to connect to a service that they have created and then impersonating that client, which can elevate the unauthorized user&apos;s permissions to administrative or system levels. Only states NotConfigured and Allowed are supported.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DeviceManagementUserRightsSetting? UserRightsImpersonateClient {
+            get { return BackingStore?.Get<DeviceManagementUserRightsSetting?>("userRightsImpersonateClient"); }
+            set { BackingStore?.Set("userRightsImpersonateClient", value); }
+        }
+#else
         public DeviceManagementUserRightsSetting UserRightsImpersonateClient {
             get { return BackingStore?.Get<DeviceManagementUserRightsSetting>("userRightsImpersonateClient"); }
             set { BackingStore?.Set("userRightsImpersonateClient", value); }
         }
+#endif
         /// <summary>This user right determines which accounts can use a process with Write Property access to another process to increase the execution priority assigned to the other process. Only states NotConfigured and Allowed are supported.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DeviceManagementUserRightsSetting? UserRightsIncreaseSchedulingPriority {
+            get { return BackingStore?.Get<DeviceManagementUserRightsSetting?>("userRightsIncreaseSchedulingPriority"); }
+            set { BackingStore?.Set("userRightsIncreaseSchedulingPriority", value); }
+        }
+#else
         public DeviceManagementUserRightsSetting UserRightsIncreaseSchedulingPriority {
             get { return BackingStore?.Get<DeviceManagementUserRightsSetting>("userRightsIncreaseSchedulingPriority"); }
             set { BackingStore?.Set("userRightsIncreaseSchedulingPriority", value); }
         }
+#endif
         /// <summary>This user right determines which users can dynamically load and unload device drivers or other code in to kernel mode. Only states NotConfigured and Allowed are supported.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DeviceManagementUserRightsSetting? UserRightsLoadUnloadDrivers {
+            get { return BackingStore?.Get<DeviceManagementUserRightsSetting?>("userRightsLoadUnloadDrivers"); }
+            set { BackingStore?.Set("userRightsLoadUnloadDrivers", value); }
+        }
+#else
         public DeviceManagementUserRightsSetting UserRightsLoadUnloadDrivers {
             get { return BackingStore?.Get<DeviceManagementUserRightsSetting>("userRightsLoadUnloadDrivers"); }
             set { BackingStore?.Set("userRightsLoadUnloadDrivers", value); }
         }
+#endif
         /// <summary>This user right determines which users can log on to the computer. States NotConfigured, Allowed are supported</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DeviceManagementUserRightsSetting? UserRightsLocalLogOn {
+            get { return BackingStore?.Get<DeviceManagementUserRightsSetting?>("userRightsLocalLogOn"); }
+            set { BackingStore?.Set("userRightsLocalLogOn", value); }
+        }
+#else
         public DeviceManagementUserRightsSetting UserRightsLocalLogOn {
             get { return BackingStore?.Get<DeviceManagementUserRightsSetting>("userRightsLocalLogOn"); }
             set { BackingStore?.Set("userRightsLocalLogOn", value); }
         }
+#endif
         /// <summary>This user right determines which accounts can use a process to keep data in physical memory, which prevents the system from paging the data to virtual memory on disk. Only states NotConfigured and Allowed are supported.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DeviceManagementUserRightsSetting? UserRightsLockMemory {
+            get { return BackingStore?.Get<DeviceManagementUserRightsSetting?>("userRightsLockMemory"); }
+            set { BackingStore?.Set("userRightsLockMemory", value); }
+        }
+#else
         public DeviceManagementUserRightsSetting UserRightsLockMemory {
             get { return BackingStore?.Get<DeviceManagementUserRightsSetting>("userRightsLockMemory"); }
             set { BackingStore?.Set("userRightsLockMemory", value); }
         }
+#endif
         /// <summary>This user right determines which users can specify object access auditing options for individual resources, such as files, Active Directory objects, and registry keys. Only states NotConfigured and Allowed are supported.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DeviceManagementUserRightsSetting? UserRightsManageAuditingAndSecurityLogs {
+            get { return BackingStore?.Get<DeviceManagementUserRightsSetting?>("userRightsManageAuditingAndSecurityLogs"); }
+            set { BackingStore?.Set("userRightsManageAuditingAndSecurityLogs", value); }
+        }
+#else
         public DeviceManagementUserRightsSetting UserRightsManageAuditingAndSecurityLogs {
             get { return BackingStore?.Get<DeviceManagementUserRightsSetting>("userRightsManageAuditingAndSecurityLogs"); }
             set { BackingStore?.Set("userRightsManageAuditingAndSecurityLogs", value); }
         }
+#endif
         /// <summary>This user right determines which users and groups can run maintenance tasks on a volume, such as remote defragmentation. Only states NotConfigured and Allowed are supported.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DeviceManagementUserRightsSetting? UserRightsManageVolumes {
+            get { return BackingStore?.Get<DeviceManagementUserRightsSetting?>("userRightsManageVolumes"); }
+            set { BackingStore?.Set("userRightsManageVolumes", value); }
+        }
+#else
         public DeviceManagementUserRightsSetting UserRightsManageVolumes {
             get { return BackingStore?.Get<DeviceManagementUserRightsSetting>("userRightsManageVolumes"); }
             set { BackingStore?.Set("userRightsManageVolumes", value); }
         }
+#endif
         /// <summary>This user right determines who can modify firmware environment values. Only states NotConfigured and Allowed are supported.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DeviceManagementUserRightsSetting? UserRightsModifyFirmwareEnvironment {
+            get { return BackingStore?.Get<DeviceManagementUserRightsSetting?>("userRightsModifyFirmwareEnvironment"); }
+            set { BackingStore?.Set("userRightsModifyFirmwareEnvironment", value); }
+        }
+#else
         public DeviceManagementUserRightsSetting UserRightsModifyFirmwareEnvironment {
             get { return BackingStore?.Get<DeviceManagementUserRightsSetting>("userRightsModifyFirmwareEnvironment"); }
             set { BackingStore?.Set("userRightsModifyFirmwareEnvironment", value); }
         }
+#endif
         /// <summary>This user right determines which user accounts can modify the integrity label of objects, such as files, registry keys, or processes owned by other users. Only states NotConfigured and Allowed are supported.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DeviceManagementUserRightsSetting? UserRightsModifyObjectLabels {
+            get { return BackingStore?.Get<DeviceManagementUserRightsSetting?>("userRightsModifyObjectLabels"); }
+            set { BackingStore?.Set("userRightsModifyObjectLabels", value); }
+        }
+#else
         public DeviceManagementUserRightsSetting UserRightsModifyObjectLabels {
             get { return BackingStore?.Get<DeviceManagementUserRightsSetting>("userRightsModifyObjectLabels"); }
             set { BackingStore?.Set("userRightsModifyObjectLabels", value); }
         }
+#endif
         /// <summary>This user right determines which users can use performance monitoring tools to monitor the performance of system processes. Only states NotConfigured and Allowed are supported.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DeviceManagementUserRightsSetting? UserRightsProfileSingleProcess {
+            get { return BackingStore?.Get<DeviceManagementUserRightsSetting?>("userRightsProfileSingleProcess"); }
+            set { BackingStore?.Set("userRightsProfileSingleProcess", value); }
+        }
+#else
         public DeviceManagementUserRightsSetting UserRightsProfileSingleProcess {
             get { return BackingStore?.Get<DeviceManagementUserRightsSetting>("userRightsProfileSingleProcess"); }
             set { BackingStore?.Set("userRightsProfileSingleProcess", value); }
         }
+#endif
         /// <summary>This user right determines which users and groups are prohibited from logging on as a Remote Desktop Services client. Only states NotConfigured and Blocked are supported</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DeviceManagementUserRightsSetting? UserRightsRemoteDesktopServicesLogOn {
+            get { return BackingStore?.Get<DeviceManagementUserRightsSetting?>("userRightsRemoteDesktopServicesLogOn"); }
+            set { BackingStore?.Set("userRightsRemoteDesktopServicesLogOn", value); }
+        }
+#else
         public DeviceManagementUserRightsSetting UserRightsRemoteDesktopServicesLogOn {
             get { return BackingStore?.Get<DeviceManagementUserRightsSetting>("userRightsRemoteDesktopServicesLogOn"); }
             set { BackingStore?.Set("userRightsRemoteDesktopServicesLogOn", value); }
         }
+#endif
         /// <summary>This user right determines which users are allowed to shut down a computer from a remote location on the network. Misuse of this user right can result in a denial of service. Only states NotConfigured and Allowed are supported.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DeviceManagementUserRightsSetting? UserRightsRemoteShutdown {
+            get { return BackingStore?.Get<DeviceManagementUserRightsSetting?>("userRightsRemoteShutdown"); }
+            set { BackingStore?.Set("userRightsRemoteShutdown", value); }
+        }
+#else
         public DeviceManagementUserRightsSetting UserRightsRemoteShutdown {
             get { return BackingStore?.Get<DeviceManagementUserRightsSetting>("userRightsRemoteShutdown"); }
             set { BackingStore?.Set("userRightsRemoteShutdown", value); }
         }
+#endif
         /// <summary>This user right determines which users can bypass file, directory, registry, and other persistent objects permissions when restoring backed up files and directories, and determines which users can set any valid security principal as the owner of an object. Only states NotConfigured and Allowed are supported.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DeviceManagementUserRightsSetting? UserRightsRestoreData {
+            get { return BackingStore?.Get<DeviceManagementUserRightsSetting?>("userRightsRestoreData"); }
+            set { BackingStore?.Set("userRightsRestoreData", value); }
+        }
+#else
         public DeviceManagementUserRightsSetting UserRightsRestoreData {
             get { return BackingStore?.Get<DeviceManagementUserRightsSetting>("userRightsRestoreData"); }
             set { BackingStore?.Set("userRightsRestoreData", value); }
         }
+#endif
         /// <summary>This user right determines which users can take ownership of any securable object in the system, including Active Directory objects, files and folders, printers, registry keys, processes, and threads. Only states NotConfigured and Allowed are supported.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DeviceManagementUserRightsSetting? UserRightsTakeOwnership {
+            get { return BackingStore?.Get<DeviceManagementUserRightsSetting?>("userRightsTakeOwnership"); }
+            set { BackingStore?.Set("userRightsTakeOwnership", value); }
+        }
+#else
         public DeviceManagementUserRightsSetting UserRightsTakeOwnership {
             get { return BackingStore?.Get<DeviceManagementUserRightsSetting>("userRightsTakeOwnership"); }
             set { BackingStore?.Set("userRightsTakeOwnership", value); }
         }
+#endif
         /// <summary>Defender TamperProtection setting options</summary>
         public WindowsDefenderTamperProtectionOptions? WindowsDefenderTamperProtection {
             get { return BackingStore?.Get<WindowsDefenderTamperProtectionOptions?>("windowsDefenderTamperProtection"); }

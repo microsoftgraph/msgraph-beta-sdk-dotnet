@@ -21,30 +21,58 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("allowTextSuggestion", value); }
         }
         /// <summary>Specifies the application user model ID of the assessment app launched when a user signs in to a secure assessment with a local guest account. Important notice: this property must be set with localGuestAccountName in order to make the local guest account sign-in experience work properly for secure assessments.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AssessmentAppUserModelId {
+            get { return BackingStore?.Get<string?>("assessmentAppUserModelId"); }
+            set { BackingStore?.Set("assessmentAppUserModelId", value); }
+        }
+#else
         public string AssessmentAppUserModelId {
             get { return BackingStore?.Get<string>("assessmentAppUserModelId"); }
             set { BackingStore?.Set("assessmentAppUserModelId", value); }
         }
+#endif
         /// <summary>The account used to configure the Windows device for taking the test. The user can be a domain account (domain/user), an AAD account (username@tenant.com) or a local account (username).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ConfigurationAccount {
+            get { return BackingStore?.Get<string?>("configurationAccount"); }
+            set { BackingStore?.Set("configurationAccount", value); }
+        }
+#else
         public string ConfigurationAccount {
             get { return BackingStore?.Get<string>("configurationAccount"); }
             set { BackingStore?.Set("configurationAccount", value); }
         }
+#endif
         /// <summary>Type of accounts that are allowed for Windows10SecureAssessment ConfigurationAccount.</summary>
         public SecureAssessmentAccountType? ConfigurationAccountType {
             get { return BackingStore?.Get<SecureAssessmentAccountType?>("configurationAccountType"); }
             set { BackingStore?.Set("configurationAccountType", value); }
         }
         /// <summary>Url link to an assessment that&apos;s automatically loaded when the secure assessment browser is launched. It has to be a valid Url (http[s]://msdn.microsoft.com/).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? LaunchUri {
+            get { return BackingStore?.Get<string?>("launchUri"); }
+            set { BackingStore?.Set("launchUri", value); }
+        }
+#else
         public string LaunchUri {
             get { return BackingStore?.Get<string>("launchUri"); }
             set { BackingStore?.Set("launchUri", value); }
         }
+#endif
         /// <summary>Specifies the display text for the local guest account shown on the sign-in screen. Typically is the name of an assessment. When the user clicks the local guest account on the sign-in screen, an assessment app is launched with a specified assessment URL. Secure assessments can only be configured with local guest account sign-in on devices running Windows 10, version 1903 or later. Important notice: this property must be set with assessmentAppUserModelID in order to make the local guest account sign-in experience work properly for secure assessments.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? LocalGuestAccountName {
+            get { return BackingStore?.Get<string?>("localGuestAccountName"); }
+            set { BackingStore?.Set("localGuestAccountName", value); }
+        }
+#else
         public string LocalGuestAccountName {
             get { return BackingStore?.Get<string>("localGuestAccountName"); }
             set { BackingStore?.Set("localGuestAccountName", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new Windows10SecureAssessmentConfiguration and sets the default values.
         /// </summary>

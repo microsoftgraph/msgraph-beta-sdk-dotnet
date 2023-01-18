@@ -9,10 +9,17 @@ namespace Microsoft.Graph.Beta.Models {
     /// </summary>
     public class DeviceLogCollectionResponse : Entity, IParsable {
         /// <summary>The User Principal Name (UPN) of the user that enrolled the device</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? EnrolledByUser {
+            get { return BackingStore?.Get<string?>("enrolledByUser"); }
+            set { BackingStore?.Set("enrolledByUser", value); }
+        }
+#else
         public string EnrolledByUser {
             get { return BackingStore?.Get<string>("enrolledByUser"); }
             set { BackingStore?.Set("enrolledByUser", value); }
         }
+#endif
         /// <summary>The error code, if any. Valid values -9.22337203685478E+18 to 9.22337203685478E+18</summary>
         public long? ErrorCode {
             get { return BackingStore?.Get<long?>("errorCode"); }
@@ -24,10 +31,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("expirationDateTimeUTC", value); }
         }
         /// <summary>The UPN for who initiated the request</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? InitiatedByUserPrincipalName {
+            get { return BackingStore?.Get<string?>("initiatedByUserPrincipalName"); }
+            set { BackingStore?.Set("initiatedByUserPrincipalName", value); }
+        }
+#else
         public string InitiatedByUserPrincipalName {
             get { return BackingStore?.Get<string>("initiatedByUserPrincipalName"); }
             set { BackingStore?.Set("initiatedByUserPrincipalName", value); }
         }
+#endif
         /// <summary>The device Id</summary>
         public Guid? ManagedDeviceId {
             get { return BackingStore?.Get<Guid?>("managedDeviceId"); }
@@ -49,10 +63,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("size", value); }
         }
         /// <summary>The status of the log collection request</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Status {
+            get { return BackingStore?.Get<string?>("status"); }
+            set { BackingStore?.Set("status", value); }
+        }
+#else
         public string Status {
             get { return BackingStore?.Get<string>("status"); }
             set { BackingStore?.Set("status", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

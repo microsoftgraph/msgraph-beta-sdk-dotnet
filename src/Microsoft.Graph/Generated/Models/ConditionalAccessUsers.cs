@@ -14,50 +14,113 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Group IDs excluded from scope of policy.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? ExcludeGroups {
+            get { return BackingStore?.Get<List<string>?>("excludeGroups"); }
+            set { BackingStore?.Set("excludeGroups", value); }
+        }
+#else
         public List<string> ExcludeGroups {
             get { return BackingStore?.Get<List<string>>("excludeGroups"); }
             set { BackingStore?.Set("excludeGroups", value); }
         }
+#endif
         /// <summary>Internal guests or external users excluded in the policy scope. Optionally populated.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ConditionalAccessGuestsOrExternalUsers? ExcludeGuestsOrExternalUsers {
+            get { return BackingStore?.Get<ConditionalAccessGuestsOrExternalUsers?>("excludeGuestsOrExternalUsers"); }
+            set { BackingStore?.Set("excludeGuestsOrExternalUsers", value); }
+        }
+#else
         public ConditionalAccessGuestsOrExternalUsers ExcludeGuestsOrExternalUsers {
             get { return BackingStore?.Get<ConditionalAccessGuestsOrExternalUsers>("excludeGuestsOrExternalUsers"); }
             set { BackingStore?.Set("excludeGuestsOrExternalUsers", value); }
         }
+#endif
         /// <summary>Role IDs excluded from scope of policy.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? ExcludeRoles {
+            get { return BackingStore?.Get<List<string>?>("excludeRoles"); }
+            set { BackingStore?.Set("excludeRoles", value); }
+        }
+#else
         public List<string> ExcludeRoles {
             get { return BackingStore?.Get<List<string>>("excludeRoles"); }
             set { BackingStore?.Set("excludeRoles", value); }
         }
+#endif
         /// <summary>User IDs excluded from scope of policy and/or GuestsOrExternalUsers.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? ExcludeUsers {
+            get { return BackingStore?.Get<List<string>?>("excludeUsers"); }
+            set { BackingStore?.Set("excludeUsers", value); }
+        }
+#else
         public List<string> ExcludeUsers {
             get { return BackingStore?.Get<List<string>>("excludeUsers"); }
             set { BackingStore?.Set("excludeUsers", value); }
         }
+#endif
         /// <summary>Group IDs in scope of policy unless explicitly excluded, or All.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? IncludeGroups {
+            get { return BackingStore?.Get<List<string>?>("includeGroups"); }
+            set { BackingStore?.Set("includeGroups", value); }
+        }
+#else
         public List<string> IncludeGroups {
             get { return BackingStore?.Get<List<string>>("includeGroups"); }
             set { BackingStore?.Set("includeGroups", value); }
         }
+#endif
         /// <summary>Internal guests or external users included in the policy scope. Optionally populated.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ConditionalAccessGuestsOrExternalUsers? IncludeGuestsOrExternalUsers {
+            get { return BackingStore?.Get<ConditionalAccessGuestsOrExternalUsers?>("includeGuestsOrExternalUsers"); }
+            set { BackingStore?.Set("includeGuestsOrExternalUsers", value); }
+        }
+#else
         public ConditionalAccessGuestsOrExternalUsers IncludeGuestsOrExternalUsers {
             get { return BackingStore?.Get<ConditionalAccessGuestsOrExternalUsers>("includeGuestsOrExternalUsers"); }
             set { BackingStore?.Set("includeGuestsOrExternalUsers", value); }
         }
+#endif
         /// <summary>Role IDs in scope of policy unless explicitly excluded, or All.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? IncludeRoles {
+            get { return BackingStore?.Get<List<string>?>("includeRoles"); }
+            set { BackingStore?.Set("includeRoles", value); }
+        }
+#else
         public List<string> IncludeRoles {
             get { return BackingStore?.Get<List<string>>("includeRoles"); }
             set { BackingStore?.Set("includeRoles", value); }
         }
+#endif
         /// <summary>User IDs in scope of policy unless explicitly excluded, or None or All or GuestsOrExternalUsers.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? IncludeUsers {
+            get { return BackingStore?.Get<List<string>?>("includeUsers"); }
+            set { BackingStore?.Set("includeUsers", value); }
+        }
+#else
         public List<string> IncludeUsers {
             get { return BackingStore?.Get<List<string>>("includeUsers"); }
             set { BackingStore?.Set("includeUsers", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new conditionalAccessUsers and sets the default values.
         /// </summary>

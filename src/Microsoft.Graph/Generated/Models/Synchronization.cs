@@ -6,20 +6,41 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class Synchronization : Entity, IParsable {
         /// <summary>Performs synchronization by periodically running in the background, polling for changes in one directory, and pushing them to another directory.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<SynchronizationJob>? Jobs {
+            get { return BackingStore?.Get<List<SynchronizationJob>?>("jobs"); }
+            set { BackingStore?.Set("jobs", value); }
+        }
+#else
         public List<SynchronizationJob> Jobs {
             get { return BackingStore?.Get<List<SynchronizationJob>>("jobs"); }
             set { BackingStore?.Set("jobs", value); }
         }
+#endif
         /// <summary>Represents a collection of credentials to access provisioned cloud applications.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<SynchronizationSecretKeyStringValuePair>? Secrets {
+            get { return BackingStore?.Get<List<SynchronizationSecretKeyStringValuePair>?>("secrets"); }
+            set { BackingStore?.Set("secrets", value); }
+        }
+#else
         public List<SynchronizationSecretKeyStringValuePair> Secrets {
             get { return BackingStore?.Get<List<SynchronizationSecretKeyStringValuePair>>("secrets"); }
             set { BackingStore?.Set("secrets", value); }
         }
+#endif
         /// <summary>Pre-configured synchronization settings for a particular application.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<SynchronizationTemplate>? Templates {
+            get { return BackingStore?.Get<List<SynchronizationTemplate>?>("templates"); }
+            set { BackingStore?.Set("templates", value); }
+        }
+#else
         public List<SynchronizationTemplate> Templates {
             get { return BackingStore?.Get<List<SynchronizationTemplate>>("templates"); }
             set { BackingStore?.Set("templates", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

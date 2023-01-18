@@ -6,20 +6,41 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class ScopedRoleMembership : Entity, IParsable {
         /// <summary>Unique identifier for the administrative unit that the directory role is scoped to</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AdministrativeUnitId {
+            get { return BackingStore?.Get<string?>("administrativeUnitId"); }
+            set { BackingStore?.Set("administrativeUnitId", value); }
+        }
+#else
         public string AdministrativeUnitId {
             get { return BackingStore?.Get<string>("administrativeUnitId"); }
             set { BackingStore?.Set("administrativeUnitId", value); }
         }
+#endif
         /// <summary>Unique identifier for the directory role that the member is in.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? RoleId {
+            get { return BackingStore?.Get<string?>("roleId"); }
+            set { BackingStore?.Set("roleId", value); }
+        }
+#else
         public string RoleId {
             get { return BackingStore?.Get<string>("roleId"); }
             set { BackingStore?.Set("roleId", value); }
         }
+#endif
         /// <summary>The roleMemberInfo property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Identity? RoleMemberInfo {
+            get { return BackingStore?.Get<Identity?>("roleMemberInfo"); }
+            set { BackingStore?.Set("roleMemberInfo", value); }
+        }
+#else
         public Identity RoleMemberInfo {
             get { return BackingStore?.Get<Identity>("roleMemberInfo"); }
             set { BackingStore?.Set("roleMemberInfo", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

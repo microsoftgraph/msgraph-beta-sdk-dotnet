@@ -22,15 +22,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("occurrenceDateTime", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Object containing detailed information about the error and its remediation.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DeviceManagementTroubleshootingErrorDetails? TroubleshootingErrorDetails {
+            get { return BackingStore?.Get<DeviceManagementTroubleshootingErrorDetails?>("troubleshootingErrorDetails"); }
+            set { BackingStore?.Set("troubleshootingErrorDetails", value); }
+        }
+#else
         public DeviceManagementTroubleshootingErrorDetails TroubleshootingErrorDetails {
             get { return BackingStore?.Get<DeviceManagementTroubleshootingErrorDetails>("troubleshootingErrorDetails"); }
             set { BackingStore?.Set("troubleshootingErrorDetails", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new mobileAppTroubleshootingHistoryItem and sets the default values.
         /// </summary>

@@ -7,10 +7,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class SalesOrderLine : Entity, IParsable {
         /// <summary>The account property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.Account? Account {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Account?>("account"); }
+            set { BackingStore?.Set("account", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.Account Account {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Account>("account"); }
             set { BackingStore?.Set("account", value); }
         }
+#endif
         /// <summary>The accountId property</summary>
         public Guid? AccountId {
             get { return BackingStore?.Get<Guid?>("accountId"); }
@@ -27,10 +34,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("amountIncludingTax", value); }
         }
         /// <summary>The description property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>The discountAmount property</summary>
         public decimal? DiscountAmount {
             get { return BackingStore?.Get<decimal?>("discountAmount"); }
@@ -67,20 +81,34 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("invoiceQuantity", value); }
         }
         /// <summary>The item property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.Item? Item {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Item?>("item"); }
+            set { BackingStore?.Set("item", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.Item Item {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Item>("item"); }
             set { BackingStore?.Set("item", value); }
         }
+#endif
         /// <summary>The itemId property</summary>
         public Guid? ItemId {
             get { return BackingStore?.Get<Guid?>("itemId"); }
             set { BackingStore?.Set("itemId", value); }
         }
         /// <summary>The lineType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? LineType {
+            get { return BackingStore?.Get<string?>("lineType"); }
+            set { BackingStore?.Set("lineType", value); }
+        }
+#else
         public string LineType {
             get { return BackingStore?.Get<string>("lineType"); }
             set { BackingStore?.Set("lineType", value); }
         }
+#endif
         /// <summary>The netAmount property</summary>
         public decimal? NetAmount {
             get { return BackingStore?.Get<decimal?>("netAmount"); }
@@ -122,10 +150,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("shipQuantity", value); }
         }
         /// <summary>The taxCode property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TaxCode {
+            get { return BackingStore?.Get<string?>("taxCode"); }
+            set { BackingStore?.Set("taxCode", value); }
+        }
+#else
         public string TaxCode {
             get { return BackingStore?.Get<string>("taxCode"); }
             set { BackingStore?.Set("taxCode", value); }
         }
+#endif
         /// <summary>The taxPercent property</summary>
         public decimal? TaxPercent {
             get { return BackingStore?.Get<decimal?>("taxPercent"); }

@@ -34,15 +34,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("maxLength", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The type of text being stored. Must be one of plain or richText</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TextType {
+            get { return BackingStore?.Get<string?>("textType"); }
+            set { BackingStore?.Set("textType", value); }
+        }
+#else
         public string TextType {
             get { return BackingStore?.Get<string>("textType"); }
             set { BackingStore?.Set("textType", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new textColumn and sets the default values.
         /// </summary>

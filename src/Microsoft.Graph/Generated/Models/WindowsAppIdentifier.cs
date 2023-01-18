@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class WindowsAppIdentifier : MobileAppIdentifier, IParsable {
         /// <summary>The identifier for an app, as specified in the app store.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? WindowsAppId {
+            get { return BackingStore?.Get<string?>("windowsAppId"); }
+            set { BackingStore?.Set("windowsAppId", value); }
+        }
+#else
         public string WindowsAppId {
             get { return BackingStore?.Get<string>("windowsAppId"); }
             set { BackingStore?.Set("windowsAppId", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new WindowsAppIdentifier and sets the default values.
         /// </summary>

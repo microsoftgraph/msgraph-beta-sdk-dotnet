@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class StrongAuthenticationDetail : Entity, IParsable {
         /// <summary>The encryptedPinHashHistory property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public byte[]? EncryptedPinHashHistory {
+            get { return BackingStore?.Get<byte[]?>("encryptedPinHashHistory"); }
+            set { BackingStore?.Set("encryptedPinHashHistory", value); }
+        }
+#else
         public byte[] EncryptedPinHashHistory {
             get { return BackingStore?.Get<byte[]>("encryptedPinHashHistory"); }
             set { BackingStore?.Set("encryptedPinHashHistory", value); }
         }
+#endif
         /// <summary>The proofupTime property</summary>
         public long? ProofupTime {
             get { return BackingStore?.Get<long?>("proofupTime"); }

@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class InformationProtectionPolicy : Entity, IParsable {
         /// <summary>The labels property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<InformationProtectionLabel>? Labels {
+            get { return BackingStore?.Get<List<InformationProtectionLabel>?>("labels"); }
+            set { BackingStore?.Set("labels", value); }
+        }
+#else
         public List<InformationProtectionLabel> Labels {
             get { return BackingStore?.Get<List<InformationProtectionLabel>>("labels"); }
             set { BackingStore?.Set("labels", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

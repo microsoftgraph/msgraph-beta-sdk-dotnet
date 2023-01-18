@@ -6,65 +6,149 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class Drive : BaseItem, IParsable {
         /// <summary>The list of recent activities that took place under this drive.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ItemActivityOLD>? Activities {
+            get { return BackingStore?.Get<List<ItemActivityOLD>?>("activities"); }
+            set { BackingStore?.Set("activities", value); }
+        }
+#else
         public List<ItemActivityOLD> Activities {
             get { return BackingStore?.Get<List<ItemActivityOLD>>("activities"); }
             set { BackingStore?.Set("activities", value); }
         }
+#endif
         /// <summary>Collection of [bundles][bundle] (albums and multi-select-shared sets of items). Only in personal OneDrive.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DriveItem>? Bundles {
+            get { return BackingStore?.Get<List<DriveItem>?>("bundles"); }
+            set { BackingStore?.Set("bundles", value); }
+        }
+#else
         public List<DriveItem> Bundles {
             get { return BackingStore?.Get<List<DriveItem>>("bundles"); }
             set { BackingStore?.Set("bundles", value); }
         }
+#endif
         /// <summary>Describes the type of drive represented by this resource. OneDrive personal drives will return personal. OneDrive for Business will return business. SharePoint document libraries will return documentLibrary. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DriveType {
+            get { return BackingStore?.Get<string?>("driveType"); }
+            set { BackingStore?.Set("driveType", value); }
+        }
+#else
         public string DriveType {
             get { return BackingStore?.Get<string>("driveType"); }
             set { BackingStore?.Set("driveType", value); }
         }
+#endif
         /// <summary>The list of items the user is following. Only in OneDrive for Business.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DriveItem>? Following {
+            get { return BackingStore?.Get<List<DriveItem>?>("following"); }
+            set { BackingStore?.Set("following", value); }
+        }
+#else
         public List<DriveItem> Following {
             get { return BackingStore?.Get<List<DriveItem>>("following"); }
             set { BackingStore?.Set("following", value); }
         }
+#endif
         /// <summary>All items contained in the drive. Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DriveItem>? Items {
+            get { return BackingStore?.Get<List<DriveItem>?>("items"); }
+            set { BackingStore?.Set("items", value); }
+        }
+#else
         public List<DriveItem> Items {
             get { return BackingStore?.Get<List<DriveItem>>("items"); }
             set { BackingStore?.Set("items", value); }
         }
+#endif
         /// <summary>For drives in SharePoint, the underlying document library list. Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.List? List {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.List?>("list"); }
+            set { BackingStore?.Set("list", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.List List {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.List>("list"); }
             set { BackingStore?.Set("list", value); }
         }
+#endif
         /// <summary>Optional. The user account that owns the drive. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public IdentitySet? Owner {
+            get { return BackingStore?.Get<IdentitySet?>("owner"); }
+            set { BackingStore?.Set("owner", value); }
+        }
+#else
         public IdentitySet Owner {
             get { return BackingStore?.Get<IdentitySet>("owner"); }
             set { BackingStore?.Set("owner", value); }
         }
+#endif
         /// <summary>Optional. Information about the drive&apos;s storage space quota. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.Quota? Quota {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Quota?>("quota"); }
+            set { BackingStore?.Set("quota", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.Quota Quota {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Quota>("quota"); }
             set { BackingStore?.Set("quota", value); }
         }
+#endif
         /// <summary>The root folder of the drive. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DriveItem? Root {
+            get { return BackingStore?.Get<DriveItem?>("root"); }
+            set { BackingStore?.Set("root", value); }
+        }
+#else
         public DriveItem Root {
             get { return BackingStore?.Get<DriveItem>("root"); }
             set { BackingStore?.Set("root", value); }
         }
+#endif
         /// <summary>The sharePointIds property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.SharepointIds? SharePointIds {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SharepointIds?>("sharePointIds"); }
+            set { BackingStore?.Set("sharePointIds", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.SharepointIds SharePointIds {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SharepointIds>("sharePointIds"); }
             set { BackingStore?.Set("sharePointIds", value); }
         }
+#endif
         /// <summary>Collection of common folders available in OneDrive. Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DriveItem>? Special {
+            get { return BackingStore?.Get<List<DriveItem>?>("special"); }
+            set { BackingStore?.Set("special", value); }
+        }
+#else
         public List<DriveItem> Special {
             get { return BackingStore?.Get<List<DriveItem>>("special"); }
             set { BackingStore?.Set("special", value); }
         }
+#endif
         /// <summary>If present, indicates that this is a system-managed drive. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public SystemFacet? System {
+            get { return BackingStore?.Get<SystemFacet?>("system"); }
+            set { BackingStore?.Set("system", value); }
+        }
+#else
         public SystemFacet System {
             get { return BackingStore?.Get<SystemFacet>("system"); }
             set { BackingStore?.Set("system", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new Drive and sets the default values.
         /// </summary>

@@ -6,25 +6,46 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class TimeOff : ChangeTrackedEntity, IParsable {
         /// <summary>The draft version of this timeOff that is viewable by managers. Required.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public TimeOffItem? DraftTimeOff {
+            get { return BackingStore?.Get<TimeOffItem?>("draftTimeOff"); }
+            set { BackingStore?.Set("draftTimeOff", value); }
+        }
+#else
         public TimeOffItem DraftTimeOff {
             get { return BackingStore?.Get<TimeOffItem>("draftTimeOff"); }
             set { BackingStore?.Set("draftTimeOff", value); }
         }
+#endif
         /// <summary>The isStagedForDeletion property</summary>
         public bool? IsStagedForDeletion {
             get { return BackingStore?.Get<bool?>("isStagedForDeletion"); }
             set { BackingStore?.Set("isStagedForDeletion", value); }
         }
         /// <summary>The shared version of this timeOff that is viewable by both employees and managers. Required.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public TimeOffItem? SharedTimeOff {
+            get { return BackingStore?.Get<TimeOffItem?>("sharedTimeOff"); }
+            set { BackingStore?.Set("sharedTimeOff", value); }
+        }
+#else
         public TimeOffItem SharedTimeOff {
             get { return BackingStore?.Get<TimeOffItem>("sharedTimeOff"); }
             set { BackingStore?.Set("sharedTimeOff", value); }
         }
+#endif
         /// <summary>ID of the user assigned to the timeOff. Required.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UserId {
+            get { return BackingStore?.Get<string?>("userId"); }
+            set { BackingStore?.Set("userId", value); }
+        }
+#else
         public string UserId {
             get { return BackingStore?.Get<string>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new TimeOff and sets the default values.
         /// </summary>

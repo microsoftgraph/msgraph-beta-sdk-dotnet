@@ -6,45 +6,94 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class WorkbookWorksheet : Entity, IParsable {
         /// <summary>Returns collection of charts that are part of the worksheet. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<WorkbookChart>? Charts {
+            get { return BackingStore?.Get<List<WorkbookChart>?>("charts"); }
+            set { BackingStore?.Set("charts", value); }
+        }
+#else
         public List<WorkbookChart> Charts {
             get { return BackingStore?.Get<List<WorkbookChart>>("charts"); }
             set { BackingStore?.Set("charts", value); }
         }
+#endif
         /// <summary>The display name of the worksheet.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Name {
+            get { return BackingStore?.Get<string?>("name"); }
+            set { BackingStore?.Set("name", value); }
+        }
+#else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#endif
         /// <summary>Returns collection of names that are associated with the worksheet. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<WorkbookNamedItem>? Names {
+            get { return BackingStore?.Get<List<WorkbookNamedItem>?>("names"); }
+            set { BackingStore?.Set("names", value); }
+        }
+#else
         public List<WorkbookNamedItem> Names {
             get { return BackingStore?.Get<List<WorkbookNamedItem>>("names"); }
             set { BackingStore?.Set("names", value); }
         }
+#endif
         /// <summary>Collection of PivotTables that are part of the worksheet.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<WorkbookPivotTable>? PivotTables {
+            get { return BackingStore?.Get<List<WorkbookPivotTable>?>("pivotTables"); }
+            set { BackingStore?.Set("pivotTables", value); }
+        }
+#else
         public List<WorkbookPivotTable> PivotTables {
             get { return BackingStore?.Get<List<WorkbookPivotTable>>("pivotTables"); }
             set { BackingStore?.Set("pivotTables", value); }
         }
+#endif
         /// <summary>The zero-based position of the worksheet within the workbook.</summary>
         public int? Position {
             get { return BackingStore?.Get<int?>("position"); }
             set { BackingStore?.Set("position", value); }
         }
         /// <summary>Returns sheet protection object for a worksheet. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public WorkbookWorksheetProtection? Protection {
+            get { return BackingStore?.Get<WorkbookWorksheetProtection?>("protection"); }
+            set { BackingStore?.Set("protection", value); }
+        }
+#else
         public WorkbookWorksheetProtection Protection {
             get { return BackingStore?.Get<WorkbookWorksheetProtection>("protection"); }
             set { BackingStore?.Set("protection", value); }
         }
+#endif
         /// <summary>Collection of tables that are part of the worksheet. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<WorkbookTable>? Tables {
+            get { return BackingStore?.Get<List<WorkbookTable>?>("tables"); }
+            set { BackingStore?.Set("tables", value); }
+        }
+#else
         public List<WorkbookTable> Tables {
             get { return BackingStore?.Get<List<WorkbookTable>>("tables"); }
             set { BackingStore?.Set("tables", value); }
         }
+#endif
         /// <summary>The Visibility of the worksheet. The possible values are: Visible, Hidden, VeryHidden.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Visibility {
+            get { return BackingStore?.Get<string?>("visibility"); }
+            set { BackingStore?.Set("visibility", value); }
+        }
+#else
         public string Visibility {
             get { return BackingStore?.Get<string>("visibility"); }
             set { BackingStore?.Set("visibility", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

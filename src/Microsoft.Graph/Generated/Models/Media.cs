@@ -19,15 +19,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("isTranscriptionShown", value); }
         }
         /// <summary>Information about the source of media. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.MediaSource? MediaSource {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MediaSource?>("mediaSource"); }
+            set { BackingStore?.Set("mediaSource", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.MediaSource MediaSource {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MediaSource>("mediaSource"); }
             set { BackingStore?.Set("mediaSource", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new media and sets the default values.
         /// </summary>

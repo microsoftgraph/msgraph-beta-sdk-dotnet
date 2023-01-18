@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class InsightsSettings : Entity, IParsable {
         /// <summary>The ID of an Azure Active Directory group, of which the specified type of insights are disabled for its members. Default is empty. Optional.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisabledForGroup {
+            get { return BackingStore?.Get<string?>("disabledForGroup"); }
+            set { BackingStore?.Set("disabledForGroup", value); }
+        }
+#else
         public string DisabledForGroup {
             get { return BackingStore?.Get<string>("disabledForGroup"); }
             set { BackingStore?.Set("disabledForGroup", value); }
         }
+#endif
         /// <summary>true if the specified type of insights are enabled for the organization; false if the specified type of insights are disabled for all users without exceptions. Default is true. Optional.</summary>
         public bool? IsEnabledInOrganization {
             get { return BackingStore?.Get<bool?>("isEnabledInOrganization"); }

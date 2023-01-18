@@ -22,15 +22,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("daysUntilForcedReboot", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The release date to identify a quality update.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? QualityUpdateRelease {
+            get { return BackingStore?.Get<string?>("qualityUpdateRelease"); }
+            set { BackingStore?.Set("qualityUpdateRelease", value); }
+        }
+#else
         public string QualityUpdateRelease {
             get { return BackingStore?.Get<string>("qualityUpdateRelease"); }
             set { BackingStore?.Set("qualityUpdateRelease", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new expeditedWindowsQualityUpdateSettings and sets the default values.
         /// </summary>

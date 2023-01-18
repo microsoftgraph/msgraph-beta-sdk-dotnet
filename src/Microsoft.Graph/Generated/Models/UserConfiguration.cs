@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class UserConfiguration : Entity, IParsable {
         /// <summary>The binaryData property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public byte[]? BinaryData {
+            get { return BackingStore?.Get<byte[]?>("binaryData"); }
+            set { BackingStore?.Set("binaryData", value); }
+        }
+#else
         public byte[] BinaryData {
             get { return BackingStore?.Get<byte[]>("binaryData"); }
             set { BackingStore?.Set("binaryData", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

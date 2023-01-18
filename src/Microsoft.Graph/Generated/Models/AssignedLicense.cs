@@ -14,15 +14,29 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>A collection of the unique identifiers for plans that have been disabled.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Guid?>? DisabledPlans {
+            get { return BackingStore?.Get<List<Guid?>?>("disabledPlans"); }
+            set { BackingStore?.Set("disabledPlans", value); }
+        }
+#else
         public List<Guid?> DisabledPlans {
             get { return BackingStore?.Get<List<Guid?>>("disabledPlans"); }
             set { BackingStore?.Set("disabledPlans", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The unique identifier for the SKU.</summary>
         public Guid? SkuId {
             get { return BackingStore?.Get<Guid?>("skuId"); }

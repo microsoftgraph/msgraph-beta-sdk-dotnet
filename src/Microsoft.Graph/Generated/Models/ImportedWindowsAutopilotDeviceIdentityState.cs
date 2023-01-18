@@ -19,25 +19,46 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("deviceErrorCode", value); }
         }
         /// <summary>Device error name reported by Device Directory Service(DDS).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeviceErrorName {
+            get { return BackingStore?.Get<string?>("deviceErrorName"); }
+            set { BackingStore?.Set("deviceErrorName", value); }
+        }
+#else
         public string DeviceErrorName {
             get { return BackingStore?.Get<string>("deviceErrorName"); }
             set { BackingStore?.Set("deviceErrorName", value); }
         }
+#endif
         /// <summary>The deviceImportStatus property</summary>
         public ImportedWindowsAutopilotDeviceIdentityImportStatus? DeviceImportStatus {
             get { return BackingStore?.Get<ImportedWindowsAutopilotDeviceIdentityImportStatus?>("deviceImportStatus"); }
             set { BackingStore?.Set("deviceImportStatus", value); }
         }
         /// <summary>Device Registration ID for successfully added device reported by Device Directory Service(DDS).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeviceRegistrationId {
+            get { return BackingStore?.Get<string?>("deviceRegistrationId"); }
+            set { BackingStore?.Set("deviceRegistrationId", value); }
+        }
+#else
         public string DeviceRegistrationId {
             get { return BackingStore?.Get<string>("deviceRegistrationId"); }
             set { BackingStore?.Set("deviceRegistrationId", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new importedWindowsAutopilotDeviceIdentityState and sets the default values.
         /// </summary>

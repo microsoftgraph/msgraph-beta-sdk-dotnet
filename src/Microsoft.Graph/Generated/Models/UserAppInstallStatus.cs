@@ -9,15 +9,29 @@ namespace Microsoft.Graph.Beta.Models {
     /// </summary>
     public class UserAppInstallStatus : Entity, IParsable {
         /// <summary>The navigation link to the mobile app.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public MobileApp? App {
+            get { return BackingStore?.Get<MobileApp?>("app"); }
+            set { BackingStore?.Set("app", value); }
+        }
+#else
         public MobileApp App {
             get { return BackingStore?.Get<MobileApp>("app"); }
             set { BackingStore?.Set("app", value); }
         }
+#endif
         /// <summary>The install state of the app on devices.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<MobileAppInstallStatus>? DeviceStatuses {
+            get { return BackingStore?.Get<List<MobileAppInstallStatus>?>("deviceStatuses"); }
+            set { BackingStore?.Set("deviceStatuses", value); }
+        }
+#else
         public List<MobileAppInstallStatus> DeviceStatuses {
             get { return BackingStore?.Get<List<MobileAppInstallStatus>>("deviceStatuses"); }
             set { BackingStore?.Set("deviceStatuses", value); }
         }
+#endif
         /// <summary>Failed Device Count.</summary>
         public int? FailedDeviceCount {
             get { return BackingStore?.Get<int?>("failedDeviceCount"); }
@@ -34,15 +48,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("notInstalledDeviceCount", value); }
         }
         /// <summary>User name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UserName {
+            get { return BackingStore?.Get<string?>("userName"); }
+            set { BackingStore?.Set("userName", value); }
+        }
+#else
         public string UserName {
             get { return BackingStore?.Get<string>("userName"); }
             set { BackingStore?.Set("userName", value); }
         }
+#endif
         /// <summary>User Principal Name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UserPrincipalName {
+            get { return BackingStore?.Get<string?>("userPrincipalName"); }
+            set { BackingStore?.Set("userPrincipalName", value); }
+        }
+#else
         public string UserPrincipalName {
             get { return BackingStore?.Get<string>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

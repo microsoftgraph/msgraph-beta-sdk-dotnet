@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class PinnedChatMessageInfo : Entity, IParsable {
         /// <summary>Represents details about the chat message that is pinned.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ChatMessage? Message {
+            get { return BackingStore?.Get<ChatMessage?>("message"); }
+            set { BackingStore?.Set("message", value); }
+        }
+#else
         public ChatMessage Message {
             get { return BackingStore?.Get<ChatMessage>("message"); }
             set { BackingStore?.Set("message", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

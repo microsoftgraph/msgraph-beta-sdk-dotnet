@@ -7,152 +7,348 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class PolicyRoot : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>The policy that contains directory-level access review settings.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.AccessReviewPolicy? AccessReviewPolicy {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessReviewPolicy?>("accessReviewPolicy"); }
+            set { BackingStore?.Set("accessReviewPolicy", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.AccessReviewPolicy AccessReviewPolicy {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessReviewPolicy>("accessReviewPolicy"); }
             set { BackingStore?.Set("accessReviewPolicy", value); }
         }
+#endif
         /// <summary>The policy that controls the idle time out for web sessions for applications.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ActivityBasedTimeoutPolicy>? ActivityBasedTimeoutPolicies {
+            get { return BackingStore?.Get<List<ActivityBasedTimeoutPolicy>?>("activityBasedTimeoutPolicies"); }
+            set { BackingStore?.Set("activityBasedTimeoutPolicies", value); }
+        }
+#else
         public List<ActivityBasedTimeoutPolicy> ActivityBasedTimeoutPolicies {
             get { return BackingStore?.Get<List<ActivityBasedTimeoutPolicy>>("activityBasedTimeoutPolicies"); }
             set { BackingStore?.Set("activityBasedTimeoutPolicies", value); }
         }
+#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
             get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
             set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The policy by which consent requests are created and managed for the entire tenant.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.AdminConsentRequestPolicy? AdminConsentRequestPolicy {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AdminConsentRequestPolicy?>("adminConsentRequestPolicy"); }
+            set { BackingStore?.Set("adminConsentRequestPolicy", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.AdminConsentRequestPolicy AdminConsentRequestPolicy {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AdminConsentRequestPolicy>("adminConsentRequestPolicy"); }
             set { BackingStore?.Set("adminConsentRequestPolicy", value); }
         }
+#endif
         /// <summary>The policies that enforce app management restrictions for specific applications and service principals, overriding the defaultAppManagementPolicy.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AppManagementPolicy>? AppManagementPolicies {
+            get { return BackingStore?.Get<List<AppManagementPolicy>?>("appManagementPolicies"); }
+            set { BackingStore?.Set("appManagementPolicies", value); }
+        }
+#else
         public List<AppManagementPolicy> AppManagementPolicies {
             get { return BackingStore?.Get<List<AppManagementPolicy>>("appManagementPolicies"); }
             set { BackingStore?.Set("appManagementPolicies", value); }
         }
+#endif
         /// <summary>The policy configuration of the self-service sign-up experience of external users.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.AuthenticationFlowsPolicy? AuthenticationFlowsPolicy {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AuthenticationFlowsPolicy?>("authenticationFlowsPolicy"); }
+            set { BackingStore?.Set("authenticationFlowsPolicy", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.AuthenticationFlowsPolicy AuthenticationFlowsPolicy {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AuthenticationFlowsPolicy>("authenticationFlowsPolicy"); }
             set { BackingStore?.Set("authenticationFlowsPolicy", value); }
         }
+#endif
         /// <summary>The authentication methods and the users that are allowed to use them to sign in and perform multi-factor authentication (MFA) in Azure Active Directory (Azure AD).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.AuthenticationMethodsPolicy? AuthenticationMethodsPolicy {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AuthenticationMethodsPolicy?>("authenticationMethodsPolicy"); }
+            set { BackingStore?.Set("authenticationMethodsPolicy", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.AuthenticationMethodsPolicy AuthenticationMethodsPolicy {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AuthenticationMethodsPolicy>("authenticationMethodsPolicy"); }
             set { BackingStore?.Set("authenticationMethodsPolicy", value); }
         }
+#endif
         /// <summary>The authentication method combinations that are to be used in scenarios defined by Azure AD Conditional Access.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AuthenticationStrengthPolicy>? AuthenticationStrengthPolicies {
+            get { return BackingStore?.Get<List<AuthenticationStrengthPolicy>?>("authenticationStrengthPolicies"); }
+            set { BackingStore?.Set("authenticationStrengthPolicies", value); }
+        }
+#else
         public List<AuthenticationStrengthPolicy> AuthenticationStrengthPolicies {
             get { return BackingStore?.Get<List<AuthenticationStrengthPolicy>>("authenticationStrengthPolicies"); }
             set { BackingStore?.Set("authenticationStrengthPolicies", value); }
         }
+#endif
         /// <summary>The policy that controls Azure AD authorization settings.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.AuthorizationPolicy>? AuthorizationPolicy {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AuthorizationPolicy>?>("authorizationPolicy"); }
+            set { BackingStore?.Set("authorizationPolicy", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.AuthorizationPolicy> AuthorizationPolicy {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AuthorizationPolicy>>("authorizationPolicy"); }
             set { BackingStore?.Set("authorizationPolicy", value); }
         }
+#endif
         /// <summary>The Azure AD B2C policies that define how end users register via local accounts.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.B2cAuthenticationMethodsPolicy? B2cAuthenticationMethodsPolicy {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.B2cAuthenticationMethodsPolicy?>("b2cAuthenticationMethodsPolicy"); }
+            set { BackingStore?.Set("b2cAuthenticationMethodsPolicy", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.B2cAuthenticationMethodsPolicy B2cAuthenticationMethodsPolicy {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.B2cAuthenticationMethodsPolicy>("b2cAuthenticationMethodsPolicy"); }
             set { BackingStore?.Set("b2cAuthenticationMethodsPolicy", value); }
         }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The claim-mapping policies for WS-Fed, SAML, OAuth 2.0, and OpenID Connect protocols, for tokens issued to a specific application.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ClaimsMappingPolicy>? ClaimsMappingPolicies {
+            get { return BackingStore?.Get<List<ClaimsMappingPolicy>?>("claimsMappingPolicies"); }
+            set { BackingStore?.Set("claimsMappingPolicies", value); }
+        }
+#else
         public List<ClaimsMappingPolicy> ClaimsMappingPolicies {
             get { return BackingStore?.Get<List<ClaimsMappingPolicy>>("claimsMappingPolicies"); }
             set { BackingStore?.Set("claimsMappingPolicies", value); }
         }
+#endif
         /// <summary>The custom rules that define an access scenario.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ConditionalAccessPolicy>? ConditionalAccessPolicies {
+            get { return BackingStore?.Get<List<ConditionalAccessPolicy>?>("conditionalAccessPolicies"); }
+            set { BackingStore?.Set("conditionalAccessPolicies", value); }
+        }
+#else
         public List<ConditionalAccessPolicy> ConditionalAccessPolicies {
             get { return BackingStore?.Get<List<ConditionalAccessPolicy>>("conditionalAccessPolicies"); }
             set { BackingStore?.Set("conditionalAccessPolicies", value); }
         }
+#endif
         /// <summary>The custom rules that define an access scenario when interacting with external Azure AD tenants.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.CrossTenantAccessPolicy? CrossTenantAccessPolicy {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CrossTenantAccessPolicy?>("crossTenantAccessPolicy"); }
+            set { BackingStore?.Set("crossTenantAccessPolicy", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.CrossTenantAccessPolicy CrossTenantAccessPolicy {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CrossTenantAccessPolicy>("crossTenantAccessPolicy"); }
             set { BackingStore?.Set("crossTenantAccessPolicy", value); }
         }
+#endif
         /// <summary>The tenant-wide policy that enforces app management restrictions for all applications and service principals.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public TenantAppManagementPolicy? DefaultAppManagementPolicy {
+            get { return BackingStore?.Get<TenantAppManagementPolicy?>("defaultAppManagementPolicy"); }
+            set { BackingStore?.Set("defaultAppManagementPolicy", value); }
+        }
+#else
         public TenantAppManagementPolicy DefaultAppManagementPolicy {
             get { return BackingStore?.Get<TenantAppManagementPolicy>("defaultAppManagementPolicy"); }
             set { BackingStore?.Set("defaultAppManagementPolicy", value); }
         }
+#endif
         /// <summary>The deviceRegistrationPolicy property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.DeviceRegistrationPolicy? DeviceRegistrationPolicy {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceRegistrationPolicy?>("deviceRegistrationPolicy"); }
+            set { BackingStore?.Set("deviceRegistrationPolicy", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.DeviceRegistrationPolicy DeviceRegistrationPolicy {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceRegistrationPolicy>("deviceRegistrationPolicy"); }
             set { BackingStore?.Set("deviceRegistrationPolicy", value); }
         }
+#endif
         /// <summary>The directoryRoleAccessReviewPolicy property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.DirectoryRoleAccessReviewPolicy? DirectoryRoleAccessReviewPolicy {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DirectoryRoleAccessReviewPolicy?>("directoryRoleAccessReviewPolicy"); }
+            set { BackingStore?.Set("directoryRoleAccessReviewPolicy", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.DirectoryRoleAccessReviewPolicy DirectoryRoleAccessReviewPolicy {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DirectoryRoleAccessReviewPolicy>("directoryRoleAccessReviewPolicy"); }
             set { BackingStore?.Set("directoryRoleAccessReviewPolicy", value); }
         }
+#endif
         /// <summary>Represents the tenant-wide policy that controls whether external users can leave an Azure AD tenant via self-service controls.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.ExternalIdentitiesPolicy? ExternalIdentitiesPolicy {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ExternalIdentitiesPolicy?>("externalIdentitiesPolicy"); }
+            set { BackingStore?.Set("externalIdentitiesPolicy", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.ExternalIdentitiesPolicy ExternalIdentitiesPolicy {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ExternalIdentitiesPolicy>("externalIdentitiesPolicy"); }
             set { BackingStore?.Set("externalIdentitiesPolicy", value); }
         }
+#endif
         /// <summary>The feature rollout policy associated with a directory object.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<FeatureRolloutPolicy>? FeatureRolloutPolicies {
+            get { return BackingStore?.Get<List<FeatureRolloutPolicy>?>("featureRolloutPolicies"); }
+            set { BackingStore?.Set("featureRolloutPolicies", value); }
+        }
+#else
         public List<FeatureRolloutPolicy> FeatureRolloutPolicies {
             get { return BackingStore?.Get<List<FeatureRolloutPolicy>>("featureRolloutPolicies"); }
             set { BackingStore?.Set("featureRolloutPolicies", value); }
         }
+#endif
         /// <summary>The policy to control Azure AD authentication behavior for federated users.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<HomeRealmDiscoveryPolicy>? HomeRealmDiscoveryPolicies {
+            get { return BackingStore?.Get<List<HomeRealmDiscoveryPolicy>?>("homeRealmDiscoveryPolicies"); }
+            set { BackingStore?.Set("homeRealmDiscoveryPolicies", value); }
+        }
+#else
         public List<HomeRealmDiscoveryPolicy> HomeRealmDiscoveryPolicies {
             get { return BackingStore?.Get<List<HomeRealmDiscoveryPolicy>>("homeRealmDiscoveryPolicies"); }
             set { BackingStore?.Set("homeRealmDiscoveryPolicies", value); }
         }
+#endif
         /// <summary>The policy that represents the security defaults that protect against common attacks.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.IdentitySecurityDefaultsEnforcementPolicy? IdentitySecurityDefaultsEnforcementPolicy {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySecurityDefaultsEnforcementPolicy?>("identitySecurityDefaultsEnforcementPolicy"); }
+            set { BackingStore?.Set("identitySecurityDefaultsEnforcementPolicy", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.IdentitySecurityDefaultsEnforcementPolicy IdentitySecurityDefaultsEnforcementPolicy {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySecurityDefaultsEnforcementPolicy>("identitySecurityDefaultsEnforcementPolicy"); }
             set { BackingStore?.Set("identitySecurityDefaultsEnforcementPolicy", value); }
         }
+#endif
         /// <summary>The policy that defines auto-enrollment configuration for a mobility management (MDM or MAM) application.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<MobilityManagementPolicy>? MobileAppManagementPolicies {
+            get { return BackingStore?.Get<List<MobilityManagementPolicy>?>("mobileAppManagementPolicies"); }
+            set { BackingStore?.Set("mobileAppManagementPolicies", value); }
+        }
+#else
         public List<MobilityManagementPolicy> MobileAppManagementPolicies {
             get { return BackingStore?.Get<List<MobilityManagementPolicy>>("mobileAppManagementPolicies"); }
             set { BackingStore?.Set("mobileAppManagementPolicies", value); }
         }
+#endif
         /// <summary>The mobileDeviceManagementPolicies property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<MobilityManagementPolicy>? MobileDeviceManagementPolicies {
+            get { return BackingStore?.Get<List<MobilityManagementPolicy>?>("mobileDeviceManagementPolicies"); }
+            set { BackingStore?.Set("mobileDeviceManagementPolicies", value); }
+        }
+#else
         public List<MobilityManagementPolicy> MobileDeviceManagementPolicies {
             get { return BackingStore?.Get<List<MobilityManagementPolicy>>("mobileDeviceManagementPolicies"); }
             set { BackingStore?.Set("mobileDeviceManagementPolicies", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The policy that specifies the conditions under which consent can be granted.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<PermissionGrantPolicy>? PermissionGrantPolicies {
+            get { return BackingStore?.Get<List<PermissionGrantPolicy>?>("permissionGrantPolicies"); }
+            set { BackingStore?.Set("permissionGrantPolicies", value); }
+        }
+#else
         public List<PermissionGrantPolicy> PermissionGrantPolicies {
             get { return BackingStore?.Get<List<PermissionGrantPolicy>>("permissionGrantPolicies"); }
             set { BackingStore?.Set("permissionGrantPolicies", value); }
         }
+#endif
         /// <summary>Represents the role management policies.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<UnifiedRoleManagementPolicy>? RoleManagementPolicies {
+            get { return BackingStore?.Get<List<UnifiedRoleManagementPolicy>?>("roleManagementPolicies"); }
+            set { BackingStore?.Set("roleManagementPolicies", value); }
+        }
+#else
         public List<UnifiedRoleManagementPolicy> RoleManagementPolicies {
             get { return BackingStore?.Get<List<UnifiedRoleManagementPolicy>>("roleManagementPolicies"); }
             set { BackingStore?.Set("roleManagementPolicies", value); }
         }
+#endif
         /// <summary>Represents the role management policy assignments.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<UnifiedRoleManagementPolicyAssignment>? RoleManagementPolicyAssignments {
+            get { return BackingStore?.Get<List<UnifiedRoleManagementPolicyAssignment>?>("roleManagementPolicyAssignments"); }
+            set { BackingStore?.Set("roleManagementPolicyAssignments", value); }
+        }
+#else
         public List<UnifiedRoleManagementPolicyAssignment> RoleManagementPolicyAssignments {
             get { return BackingStore?.Get<List<UnifiedRoleManagementPolicyAssignment>>("roleManagementPolicyAssignments"); }
             set { BackingStore?.Set("roleManagementPolicyAssignments", value); }
         }
+#endif
         /// <summary>The servicePrincipalCreationPolicies property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ServicePrincipalCreationPolicy>? ServicePrincipalCreationPolicies {
+            get { return BackingStore?.Get<List<ServicePrincipalCreationPolicy>?>("servicePrincipalCreationPolicies"); }
+            set { BackingStore?.Set("servicePrincipalCreationPolicies", value); }
+        }
+#else
         public List<ServicePrincipalCreationPolicy> ServicePrincipalCreationPolicies {
             get { return BackingStore?.Get<List<ServicePrincipalCreationPolicy>>("servicePrincipalCreationPolicies"); }
             set { BackingStore?.Set("servicePrincipalCreationPolicies", value); }
         }
+#endif
         /// <summary>The policy that specifies the characteristics of SAML tokens issued by Azure AD.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<TokenIssuancePolicy>? TokenIssuancePolicies {
+            get { return BackingStore?.Get<List<TokenIssuancePolicy>?>("tokenIssuancePolicies"); }
+            set { BackingStore?.Set("tokenIssuancePolicies", value); }
+        }
+#else
         public List<TokenIssuancePolicy> TokenIssuancePolicies {
             get { return BackingStore?.Get<List<TokenIssuancePolicy>>("tokenIssuancePolicies"); }
             set { BackingStore?.Set("tokenIssuancePolicies", value); }
         }
+#endif
         /// <summary>The policy that controls the lifetime of a JWT access token, an ID token, or a SAML 1.1/2.0 token issued by Azure AD.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<TokenLifetimePolicy>? TokenLifetimePolicies {
+            get { return BackingStore?.Get<List<TokenLifetimePolicy>?>("tokenLifetimePolicies"); }
+            set { BackingStore?.Set("tokenLifetimePolicies", value); }
+        }
+#else
         public List<TokenLifetimePolicy> TokenLifetimePolicies {
             get { return BackingStore?.Get<List<TokenLifetimePolicy>>("tokenLifetimePolicies"); }
             set { BackingStore?.Set("tokenLifetimePolicies", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new PolicyRoot and sets the default values.
         /// </summary>

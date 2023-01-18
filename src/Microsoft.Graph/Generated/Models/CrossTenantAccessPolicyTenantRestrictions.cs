@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class CrossTenantAccessPolicyTenantRestrictions : CrossTenantAccessPolicyB2BSetting, IParsable {
         /// <summary>The devices property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DevicesFilter? Devices {
+            get { return BackingStore?.Get<DevicesFilter?>("devices"); }
+            set { BackingStore?.Set("devices", value); }
+        }
+#else
         public DevicesFilter Devices {
             get { return BackingStore?.Get<DevicesFilter>("devices"); }
             set { BackingStore?.Set("devices", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new CrossTenantAccessPolicyTenantRestrictions and sets the default values.
         /// </summary>

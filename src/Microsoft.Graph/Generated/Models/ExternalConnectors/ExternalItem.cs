@@ -6,25 +6,53 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
     public class ExternalItem : Entity, IParsable {
         /// <summary>An array of access control entries. Each entry specifies the access granted to a user or group. Required.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.ExternalConnectors.Acl>? Acl {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ExternalConnectors.Acl>?>("acl"); }
+            set { BackingStore?.Set("acl", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.ExternalConnectors.Acl> Acl {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ExternalConnectors.Acl>>("acl"); }
             set { BackingStore?.Set("acl", value); }
         }
+#endif
         /// <summary>Write-only property. Returns results.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ExternalActivity>? Activities {
+            get { return BackingStore?.Get<List<ExternalActivity>?>("activities"); }
+            set { BackingStore?.Set("activities", value); }
+        }
+#else
         public List<ExternalActivity> Activities {
             get { return BackingStore?.Get<List<ExternalActivity>>("activities"); }
             set { BackingStore?.Set("activities", value); }
         }
+#endif
         /// <summary>A plain-text representation of the contents of the item. The text in this property is full-text indexed. Optional.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ExternalItemContent? Content {
+            get { return BackingStore?.Get<ExternalItemContent?>("content"); }
+            set { BackingStore?.Set("content", value); }
+        }
+#else
         public ExternalItemContent Content {
             get { return BackingStore?.Get<ExternalItemContent>("content"); }
             set { BackingStore?.Set("content", value); }
         }
+#endif
         /// <summary>A property bag with the properties of the item. The properties MUST conform to the schema defined for the externalConnection. Required.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.ExternalConnectors.Properties? Properties {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ExternalConnectors.Properties?>("properties"); }
+            set { BackingStore?.Set("properties", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.ExternalConnectors.Properties Properties {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ExternalConnectors.Properties>("properties"); }
             set { BackingStore?.Set("properties", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

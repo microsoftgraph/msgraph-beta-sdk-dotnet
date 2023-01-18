@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
     public class EmailThreatSubmission : ThreatSubmission, IParsable {
         /// <summary>If the email is phishing simulation, this field will not be null.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.Security.AttackSimulationInfo? AttackSimulationInfo {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.AttackSimulationInfo?>("attackSimulationInfo"); }
+            set { BackingStore?.Set("attackSimulationInfo", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.Security.AttackSimulationInfo AttackSimulationInfo {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.AttackSimulationInfo>("attackSimulationInfo"); }
             set { BackingStore?.Set("attackSimulationInfo", value); }
         }
+#endif
         /// <summary>Specifies the internet message id of the email being submitted. This information is present in the email header.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? InternetMessageId {
+            get { return BackingStore?.Get<string?>("internetMessageId"); }
+            set { BackingStore?.Set("internetMessageId", value); }
+        }
+#else
         public string InternetMessageId {
             get { return BackingStore?.Get<string>("internetMessageId"); }
             set { BackingStore?.Set("internetMessageId", value); }
         }
+#endif
         /// <summary>The original category of the submission. The possible values are: notJunk, spam, phishing, malware and unkownFutureValue.</summary>
         public SubmissionCategory? OriginalCategory {
             get { return BackingStore?.Get<SubmissionCategory?>("originalCategory"); }
@@ -26,30 +40,65 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("receivedDateTime", value); }
         }
         /// <summary>Specifies the email address (in smtp format) of the recipient who received the email.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? RecipientEmailAddress {
+            get { return BackingStore?.Get<string?>("recipientEmailAddress"); }
+            set { BackingStore?.Set("recipientEmailAddress", value); }
+        }
+#else
         public string RecipientEmailAddress {
             get { return BackingStore?.Get<string>("recipientEmailAddress"); }
             set { BackingStore?.Set("recipientEmailAddress", value); }
         }
+#endif
         /// <summary>Specifies the email address of the sender.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Sender {
+            get { return BackingStore?.Get<string?>("sender"); }
+            set { BackingStore?.Set("sender", value); }
+        }
+#else
         public string Sender {
             get { return BackingStore?.Get<string>("sender"); }
             set { BackingStore?.Set("sender", value); }
         }
+#endif
         /// <summary>Specifies the IP address of the sender.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SenderIP {
+            get { return BackingStore?.Get<string?>("senderIP"); }
+            set { BackingStore?.Set("senderIP", value); }
+        }
+#else
         public string SenderIP {
             get { return BackingStore?.Get<string>("senderIP"); }
             set { BackingStore?.Set("senderIP", value); }
         }
+#endif
         /// <summary>Specifies the subject of the email .</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Subject {
+            get { return BackingStore?.Get<string?>("subject"); }
+            set { BackingStore?.Set("subject", value); }
+        }
+#else
         public string Subject {
             get { return BackingStore?.Get<string>("subject"); }
             set { BackingStore?.Set("subject", value); }
         }
+#endif
         /// <summary>It is used to automatically add allows for the components such as URL, file, sender; which are deemed bad by Microsoft so that similar messages in the future can be allowed.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.Security.TenantAllowOrBlockListAction? TenantAllowOrBlockListAction {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.TenantAllowOrBlockListAction?>("tenantAllowOrBlockListAction"); }
+            set { BackingStore?.Set("tenantAllowOrBlockListAction", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.Security.TenantAllowOrBlockListAction TenantAllowOrBlockListAction {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.TenantAllowOrBlockListAction>("tenantAllowOrBlockListAction"); }
             set { BackingStore?.Set("tenantAllowOrBlockListAction", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new EmailThreatSubmission and sets the default values.
         /// </summary>

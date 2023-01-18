@@ -6,25 +6,53 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class EducationTeamsAppResource : EducationResource, IParsable {
         /// <summary>URL that points to the icon of the app.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AppIconWebUrl {
+            get { return BackingStore?.Get<string?>("appIconWebUrl"); }
+            set { BackingStore?.Set("appIconWebUrl", value); }
+        }
+#else
         public string AppIconWebUrl {
             get { return BackingStore?.Get<string>("appIconWebUrl"); }
             set { BackingStore?.Set("appIconWebUrl", value); }
         }
+#endif
         /// <summary>Teams app ID of the application.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AppId {
+            get { return BackingStore?.Get<string?>("appId"); }
+            set { BackingStore?.Set("appId", value); }
+        }
+#else
         public string AppId {
             get { return BackingStore?.Get<string>("appId"); }
             set { BackingStore?.Set("appId", value); }
         }
+#endif
         /// <summary>URL for the app resource that will be opened by Teams.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TeamsEmbeddedContentUrl {
+            get { return BackingStore?.Get<string?>("teamsEmbeddedContentUrl"); }
+            set { BackingStore?.Set("teamsEmbeddedContentUrl", value); }
+        }
+#else
         public string TeamsEmbeddedContentUrl {
             get { return BackingStore?.Get<string>("teamsEmbeddedContentUrl"); }
             set { BackingStore?.Set("teamsEmbeddedContentUrl", value); }
         }
+#endif
         /// <summary>URL for the app resource that can be opened in the browser.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? WebUrl {
+            get { return BackingStore?.Get<string?>("webUrl"); }
+            set { BackingStore?.Set("webUrl", value); }
+        }
+#else
         public string WebUrl {
             get { return BackingStore?.Get<string>("webUrl"); }
             set { BackingStore?.Set("webUrl", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new EducationTeamsAppResource and sets the default values.
         /// </summary>

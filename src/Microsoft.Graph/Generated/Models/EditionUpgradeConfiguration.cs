@@ -6,20 +6,34 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class EditionUpgradeConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Edition Upgrade License File Content.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? License {
+            get { return BackingStore?.Get<string?>("license"); }
+            set { BackingStore?.Set("license", value); }
+        }
+#else
         public string License {
             get { return BackingStore?.Get<string>("license"); }
             set { BackingStore?.Set("license", value); }
         }
+#endif
         /// <summary>Edition Upgrade License type</summary>
         public EditionUpgradeLicenseType? LicenseType {
             get { return BackingStore?.Get<EditionUpgradeLicenseType?>("licenseType"); }
             set { BackingStore?.Set("licenseType", value); }
         }
         /// <summary>Edition Upgrade Product Key.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ProductKey {
+            get { return BackingStore?.Get<string?>("productKey"); }
+            set { BackingStore?.Set("productKey", value); }
+        }
+#else
         public string ProductKey {
             get { return BackingStore?.Get<string>("productKey"); }
             set { BackingStore?.Set("productKey", value); }
         }
+#endif
         /// <summary>Windows 10 Edition type.</summary>
         public Windows10EditionType? TargetEdition {
             get { return BackingStore?.Get<Windows10EditionType?>("targetEdition"); }

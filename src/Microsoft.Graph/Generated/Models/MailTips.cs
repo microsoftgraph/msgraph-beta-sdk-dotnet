@@ -12,32 +12,60 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Mail tips for automatic reply if it has been set up by the recipient.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public AutomaticRepliesMailTips? AutomaticReplies {
+            get { return BackingStore?.Get<AutomaticRepliesMailTips?>("automaticReplies"); }
+            set { BackingStore?.Set("automaticReplies", value); }
+        }
+#else
         public AutomaticRepliesMailTips AutomaticReplies {
             get { return BackingStore?.Get<AutomaticRepliesMailTips>("automaticReplies"); }
             set { BackingStore?.Set("automaticReplies", value); }
         }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>A custom mail tip that can be set on the recipient&apos;s mailbox.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CustomMailTip {
+            get { return BackingStore?.Get<string?>("customMailTip"); }
+            set { BackingStore?.Set("customMailTip", value); }
+        }
+#else
         public string CustomMailTip {
             get { return BackingStore?.Get<string>("customMailTip"); }
             set { BackingStore?.Set("customMailTip", value); }
         }
+#endif
         /// <summary>Whether the recipient&apos;s mailbox is restricted, for example, accepting messages from only a predefined list of senders, rejecting messages from a predefined list of senders, or accepting messages from only authenticated senders.</summary>
         public bool? DeliveryRestricted {
             get { return BackingStore?.Get<bool?>("deliveryRestricted"); }
             set { BackingStore?.Set("deliveryRestricted", value); }
         }
         /// <summary>The email address of the recipient to get mailtips for.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.EmailAddress? EmailAddress {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EmailAddress?>("emailAddress"); }
+            set { BackingStore?.Set("emailAddress", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.EmailAddress EmailAddress {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EmailAddress>("emailAddress"); }
             set { BackingStore?.Set("emailAddress", value); }
         }
+#endif
         /// <summary>Errors that occur during the getMailTips action.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public MailTipsError? Error {
+            get { return BackingStore?.Get<MailTipsError?>("error"); }
+            set { BackingStore?.Set("error", value); }
+        }
+#else
         public MailTipsError Error {
             get { return BackingStore?.Get<MailTipsError>("error"); }
             set { BackingStore?.Set("error", value); }
         }
+#endif
         /// <summary>The number of external members if the recipient is a distribution list.</summary>
         public int? ExternalMemberCount {
             get { return BackingStore?.Get<int?>("externalMemberCount"); }
@@ -59,20 +87,34 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("maxMessageSize", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The scope of the recipient. Possible values are: none, internal, external, externalPartner, externalNonParther. For example, an administrator can set another organization to be its &apos;partner&apos;. The scope is useful if an administrator wants certain mailtips to be accessible to certain scopes. It&apos;s also useful to senders to inform them that their message may leave the organization, helping them make the correct decisions about wording, tone and content.</summary>
         public RecipientScopeType? RecipientScope {
             get { return BackingStore?.Get<RecipientScopeType?>("recipientScope"); }
             set { BackingStore?.Set("recipientScope", value); }
         }
         /// <summary>Recipients suggested based on previous contexts where they appear in the same message.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Recipient>? RecipientSuggestions {
+            get { return BackingStore?.Get<List<Recipient>?>("recipientSuggestions"); }
+            set { BackingStore?.Set("recipientSuggestions", value); }
+        }
+#else
         public List<Recipient> RecipientSuggestions {
             get { return BackingStore?.Get<List<Recipient>>("recipientSuggestions"); }
             set { BackingStore?.Set("recipientSuggestions", value); }
         }
+#endif
         /// <summary>The number of members if the recipient is a distribution list.</summary>
         public int? TotalMemberCount {
             get { return BackingStore?.Get<int?>("totalMemberCount"); }

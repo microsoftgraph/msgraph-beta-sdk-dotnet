@@ -15,15 +15,29 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.ReviewSets.Item.
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The tagsToAdd property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Tag>? TagsToAdd {
+            get { return BackingStore?.Get<List<Tag>?>("tagsToAdd"); }
+            set { BackingStore?.Set("tagsToAdd", value); }
+        }
+#else
         public List<Tag> TagsToAdd {
             get { return BackingStore?.Get<List<Tag>>("tagsToAdd"); }
             set { BackingStore?.Set("tagsToAdd", value); }
         }
+#endif
         /// <summary>The tagsToRemove property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Tag>? TagsToRemove {
+            get { return BackingStore?.Get<List<Tag>?>("tagsToRemove"); }
+            set { BackingStore?.Set("tagsToRemove", value); }
+        }
+#else
         public List<Tag> TagsToRemove {
             get { return BackingStore?.Get<List<Tag>>("tagsToRemove"); }
             set { BackingStore?.Set("tagsToRemove", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new applyTagsPostRequestBody and sets the default values.
         /// </summary>

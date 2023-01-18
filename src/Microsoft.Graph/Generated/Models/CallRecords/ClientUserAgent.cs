@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.CallRecords {
     public class ClientUserAgent : UserAgent, IParsable {
         /// <summary>The unique identifier of the Azure AD application used by this endpoint.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AzureADAppId {
+            get { return BackingStore?.Get<string?>("azureADAppId"); }
+            set { BackingStore?.Set("azureADAppId", value); }
+        }
+#else
         public string AzureADAppId {
             get { return BackingStore?.Get<string>("azureADAppId"); }
             set { BackingStore?.Set("azureADAppId", value); }
         }
+#endif
         /// <summary>Immutable resource identifier of the Azure Communication Service associated with this endpoint based on Communication Services APIs.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CommunicationServiceId {
+            get { return BackingStore?.Get<string?>("communicationServiceId"); }
+            set { BackingStore?.Set("communicationServiceId", value); }
+        }
+#else
         public string CommunicationServiceId {
             get { return BackingStore?.Get<string>("communicationServiceId"); }
             set { BackingStore?.Set("communicationServiceId", value); }
         }
+#endif
         /// <summary>The platform property</summary>
         public ClientPlatform? Platform {
             get { return BackingStore?.Get<ClientPlatform?>("platform"); }

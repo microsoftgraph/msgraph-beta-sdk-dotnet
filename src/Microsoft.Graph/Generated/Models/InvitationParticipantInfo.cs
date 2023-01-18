@@ -24,30 +24,58 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("hidden", value); }
         }
         /// <summary>The identity property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public IdentitySet? Identity {
+            get { return BackingStore?.Get<IdentitySet?>("identity"); }
+            set { BackingStore?.Set("identity", value); }
+        }
+#else
         public IdentitySet Identity {
             get { return BackingStore?.Get<IdentitySet>("identity"); }
             set { BackingStore?.Set("identity", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Optional. The ID of the target participant.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ParticipantId {
+            get { return BackingStore?.Get<string?>("participantId"); }
+            set { BackingStore?.Set("participantId", value); }
+        }
+#else
         public string ParticipantId {
             get { return BackingStore?.Get<string>("participantId"); }
             set { BackingStore?.Set("participantId", value); }
         }
+#endif
         /// <summary>Optional. Whether to remove them from the main mixer.</summary>
         public bool? RemoveFromDefaultAudioRoutingGroup {
             get { return BackingStore?.Get<bool?>("removeFromDefaultAudioRoutingGroup"); }
             set { BackingStore?.Set("removeFromDefaultAudioRoutingGroup", value); }
         }
         /// <summary>Optional. The call which the target identity is currently a part of. For peer-to-peer case, the call will be dropped once the participant is added successfully.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ReplacesCallId {
+            get { return BackingStore?.Get<string?>("replacesCallId"); }
+            set { BackingStore?.Set("replacesCallId", value); }
+        }
+#else
         public string ReplacesCallId {
             get { return BackingStore?.Get<string>("replacesCallId"); }
             set { BackingStore?.Set("replacesCallId", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new invitationParticipantInfo and sets the default values.
         /// </summary>

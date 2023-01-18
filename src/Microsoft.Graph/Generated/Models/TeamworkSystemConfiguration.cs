@@ -14,15 +14,29 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The date and time configurations for a device.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public TeamworkDateTimeConfiguration? DateTimeConfiguration {
+            get { return BackingStore?.Get<TeamworkDateTimeConfiguration?>("dateTimeConfiguration"); }
+            set { BackingStore?.Set("dateTimeConfiguration", value); }
+        }
+#else
         public TeamworkDateTimeConfiguration DateTimeConfiguration {
             get { return BackingStore?.Get<TeamworkDateTimeConfiguration>("dateTimeConfiguration"); }
             set { BackingStore?.Set("dateTimeConfiguration", value); }
         }
+#endif
         /// <summary>The default password for the device. Write-Only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DefaultPassword {
+            get { return BackingStore?.Get<string?>("defaultPassword"); }
+            set { BackingStore?.Set("defaultPassword", value); }
+        }
+#else
         public string DefaultPassword {
             get { return BackingStore?.Get<string>("defaultPassword"); }
             set { BackingStore?.Set("defaultPassword", value); }
         }
+#endif
         /// <summary>The device lock timeout in seconds.</summary>
         public TimeSpan? DeviceLockTimeout {
             get { return BackingStore?.Get<TimeSpan?>("deviceLockTimeout"); }
@@ -54,30 +68,65 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("isSilentModeEnabled", value); }
         }
         /// <summary>The language option for the device.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Language {
+            get { return BackingStore?.Get<string?>("language"); }
+            set { BackingStore?.Set("language", value); }
+        }
+#else
         public string Language {
             get { return BackingStore?.Get<string>("language"); }
             set { BackingStore?.Set("language", value); }
         }
+#endif
         /// <summary>The pin that unlocks the device. Write-Only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? LockPin {
+            get { return BackingStore?.Get<string?>("lockPin"); }
+            set { BackingStore?.Set("lockPin", value); }
+        }
+#else
         public string LockPin {
             get { return BackingStore?.Get<string>("lockPin"); }
             set { BackingStore?.Set("lockPin", value); }
         }
+#endif
         /// <summary>The logging level for the device.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? LoggingLevel {
+            get { return BackingStore?.Get<string?>("loggingLevel"); }
+            set { BackingStore?.Set("loggingLevel", value); }
+        }
+#else
         public string LoggingLevel {
             get { return BackingStore?.Get<string>("loggingLevel"); }
             set { BackingStore?.Set("loggingLevel", value); }
         }
+#endif
         /// <summary>The network configuration for the device.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public TeamworkNetworkConfiguration? NetworkConfiguration {
+            get { return BackingStore?.Get<TeamworkNetworkConfiguration?>("networkConfiguration"); }
+            set { BackingStore?.Set("networkConfiguration", value); }
+        }
+#else
         public TeamworkNetworkConfiguration NetworkConfiguration {
             get { return BackingStore?.Get<TeamworkNetworkConfiguration>("networkConfiguration"); }
             set { BackingStore?.Set("networkConfiguration", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new teamworkSystemConfiguration and sets the default values.
         /// </summary>

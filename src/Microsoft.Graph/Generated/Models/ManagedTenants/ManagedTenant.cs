@@ -6,175 +6,413 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
     public class ManagedTenant : Entity, IParsable {
         /// <summary>Aggregate view of device compliance policies across managed tenants.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AggregatedPolicyCompliance>? AggregatedPolicyCompliances {
+            get { return BackingStore?.Get<List<AggregatedPolicyCompliance>?>("aggregatedPolicyCompliances"); }
+            set { BackingStore?.Set("aggregatedPolicyCompliances", value); }
+        }
+#else
         public List<AggregatedPolicyCompliance> AggregatedPolicyCompliances {
             get { return BackingStore?.Get<List<AggregatedPolicyCompliance>>("aggregatedPolicyCompliances"); }
             set { BackingStore?.Set("aggregatedPolicyCompliances", value); }
         }
+#endif
         /// <summary>The collection of audit events across managed tenants.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AuditEvent>? AuditEvents {
+            get { return BackingStore?.Get<List<AuditEvent>?>("auditEvents"); }
+            set { BackingStore?.Set("auditEvents", value); }
+        }
+#else
         public List<AuditEvent> AuditEvents {
             get { return BackingStore?.Get<List<AuditEvent>>("auditEvents"); }
             set { BackingStore?.Set("auditEvents", value); }
         }
+#endif
         /// <summary>The collection of cloud PC connections across managed tenants.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<CloudPcConnection>? CloudPcConnections {
+            get { return BackingStore?.Get<List<CloudPcConnection>?>("cloudPcConnections"); }
+            set { BackingStore?.Set("cloudPcConnections", value); }
+        }
+#else
         public List<CloudPcConnection> CloudPcConnections {
             get { return BackingStore?.Get<List<CloudPcConnection>>("cloudPcConnections"); }
             set { BackingStore?.Set("cloudPcConnections", value); }
         }
+#endif
         /// <summary>The collection of cloud PC devices across managed tenants.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<CloudPcDevice>? CloudPcDevices {
+            get { return BackingStore?.Get<List<CloudPcDevice>?>("cloudPcDevices"); }
+            set { BackingStore?.Set("cloudPcDevices", value); }
+        }
+#else
         public List<CloudPcDevice> CloudPcDevices {
             get { return BackingStore?.Get<List<CloudPcDevice>>("cloudPcDevices"); }
             set { BackingStore?.Set("cloudPcDevices", value); }
         }
+#endif
         /// <summary>Overview of cloud PC information across managed tenants.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<CloudPcOverview>? CloudPcsOverview {
+            get { return BackingStore?.Get<List<CloudPcOverview>?>("cloudPcsOverview"); }
+            set { BackingStore?.Set("cloudPcsOverview", value); }
+        }
+#else
         public List<CloudPcOverview> CloudPcsOverview {
             get { return BackingStore?.Get<List<CloudPcOverview>>("cloudPcsOverview"); }
             set { BackingStore?.Set("cloudPcsOverview", value); }
         }
+#endif
         /// <summary>Aggregate view of conditional access policy coverage across managed tenants.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ConditionalAccessPolicyCoverage>? ConditionalAccessPolicyCoverages {
+            get { return BackingStore?.Get<List<ConditionalAccessPolicyCoverage>?>("conditionalAccessPolicyCoverages"); }
+            set { BackingStore?.Set("conditionalAccessPolicyCoverages", value); }
+        }
+#else
         public List<ConditionalAccessPolicyCoverage> ConditionalAccessPolicyCoverages {
             get { return BackingStore?.Get<List<ConditionalAccessPolicyCoverage>>("conditionalAccessPolicyCoverages"); }
             set { BackingStore?.Set("conditionalAccessPolicyCoverages", value); }
         }
+#endif
         /// <summary>Summary information for user registration for multi-factor authentication and self service password reset across managed tenants.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<CredentialUserRegistrationsSummary>? CredentialUserRegistrationsSummaries {
+            get { return BackingStore?.Get<List<CredentialUserRegistrationsSummary>?>("credentialUserRegistrationsSummaries"); }
+            set { BackingStore?.Set("credentialUserRegistrationsSummaries", value); }
+        }
+#else
         public List<CredentialUserRegistrationsSummary> CredentialUserRegistrationsSummaries {
             get { return BackingStore?.Get<List<CredentialUserRegistrationsSummary>>("credentialUserRegistrationsSummaries"); }
             set { BackingStore?.Set("credentialUserRegistrationsSummaries", value); }
         }
+#endif
         /// <summary>Summary information for device compliance policy setting states across managed tenants.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DeviceCompliancePolicySettingStateSummary>? DeviceCompliancePolicySettingStateSummaries {
+            get { return BackingStore?.Get<List<DeviceCompliancePolicySettingStateSummary>?>("deviceCompliancePolicySettingStateSummaries"); }
+            set { BackingStore?.Set("deviceCompliancePolicySettingStateSummaries", value); }
+        }
+#else
         public List<DeviceCompliancePolicySettingStateSummary> DeviceCompliancePolicySettingStateSummaries {
             get { return BackingStore?.Get<List<DeviceCompliancePolicySettingStateSummary>>("deviceCompliancePolicySettingStateSummaries"); }
             set { BackingStore?.Set("deviceCompliancePolicySettingStateSummaries", value); }
         }
+#endif
         /// <summary>The collection of compliance for managed devices across managed tenants.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ManagedDeviceCompliance>? ManagedDeviceCompliances {
+            get { return BackingStore?.Get<List<ManagedDeviceCompliance>?>("managedDeviceCompliances"); }
+            set { BackingStore?.Set("managedDeviceCompliances", value); }
+        }
+#else
         public List<ManagedDeviceCompliance> ManagedDeviceCompliances {
             get { return BackingStore?.Get<List<ManagedDeviceCompliance>>("managedDeviceCompliances"); }
             set { BackingStore?.Set("managedDeviceCompliances", value); }
         }
+#endif
         /// <summary>Trend insights for device compliance across managed tenants.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ManagedDeviceComplianceTrend>? ManagedDeviceComplianceTrends {
+            get { return BackingStore?.Get<List<ManagedDeviceComplianceTrend>?>("managedDeviceComplianceTrends"); }
+            set { BackingStore?.Set("managedDeviceComplianceTrends", value); }
+        }
+#else
         public List<ManagedDeviceComplianceTrend> ManagedDeviceComplianceTrends {
             get { return BackingStore?.Get<List<ManagedDeviceComplianceTrend>>("managedDeviceComplianceTrends"); }
             set { BackingStore?.Set("managedDeviceComplianceTrends", value); }
         }
+#endif
         /// <summary>The managedTenantAlertLogs property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ManagedTenantAlertLog>? ManagedTenantAlertLogs {
+            get { return BackingStore?.Get<List<ManagedTenantAlertLog>?>("managedTenantAlertLogs"); }
+            set { BackingStore?.Set("managedTenantAlertLogs", value); }
+        }
+#else
         public List<ManagedTenantAlertLog> ManagedTenantAlertLogs {
             get { return BackingStore?.Get<List<ManagedTenantAlertLog>>("managedTenantAlertLogs"); }
             set { BackingStore?.Set("managedTenantAlertLogs", value); }
         }
+#endif
         /// <summary>The managedTenantAlertRuleDefinitions property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ManagedTenantAlertRuleDefinition>? ManagedTenantAlertRuleDefinitions {
+            get { return BackingStore?.Get<List<ManagedTenantAlertRuleDefinition>?>("managedTenantAlertRuleDefinitions"); }
+            set { BackingStore?.Set("managedTenantAlertRuleDefinitions", value); }
+        }
+#else
         public List<ManagedTenantAlertRuleDefinition> ManagedTenantAlertRuleDefinitions {
             get { return BackingStore?.Get<List<ManagedTenantAlertRuleDefinition>>("managedTenantAlertRuleDefinitions"); }
             set { BackingStore?.Set("managedTenantAlertRuleDefinitions", value); }
         }
+#endif
         /// <summary>The managedTenantAlertRules property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ManagedTenantAlertRule>? ManagedTenantAlertRules {
+            get { return BackingStore?.Get<List<ManagedTenantAlertRule>?>("managedTenantAlertRules"); }
+            set { BackingStore?.Set("managedTenantAlertRules", value); }
+        }
+#else
         public List<ManagedTenantAlertRule> ManagedTenantAlertRules {
             get { return BackingStore?.Get<List<ManagedTenantAlertRule>>("managedTenantAlertRules"); }
             set { BackingStore?.Set("managedTenantAlertRules", value); }
         }
+#endif
         /// <summary>The managedTenantAlerts property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ManagedTenantAlert>? ManagedTenantAlerts {
+            get { return BackingStore?.Get<List<ManagedTenantAlert>?>("managedTenantAlerts"); }
+            set { BackingStore?.Set("managedTenantAlerts", value); }
+        }
+#else
         public List<ManagedTenantAlert> ManagedTenantAlerts {
             get { return BackingStore?.Get<List<ManagedTenantAlert>>("managedTenantAlerts"); }
             set { BackingStore?.Set("managedTenantAlerts", value); }
         }
+#endif
         /// <summary>The managedTenantApiNotifications property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ManagedTenantApiNotification>? ManagedTenantApiNotifications {
+            get { return BackingStore?.Get<List<ManagedTenantApiNotification>?>("managedTenantApiNotifications"); }
+            set { BackingStore?.Set("managedTenantApiNotifications", value); }
+        }
+#else
         public List<ManagedTenantApiNotification> ManagedTenantApiNotifications {
             get { return BackingStore?.Get<List<ManagedTenantApiNotification>>("managedTenantApiNotifications"); }
             set { BackingStore?.Set("managedTenantApiNotifications", value); }
         }
+#endif
         /// <summary>The managedTenantEmailNotifications property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ManagedTenantEmailNotification>? ManagedTenantEmailNotifications {
+            get { return BackingStore?.Get<List<ManagedTenantEmailNotification>?>("managedTenantEmailNotifications"); }
+            set { BackingStore?.Set("managedTenantEmailNotifications", value); }
+        }
+#else
         public List<ManagedTenantEmailNotification> ManagedTenantEmailNotifications {
             get { return BackingStore?.Get<List<ManagedTenantEmailNotification>>("managedTenantEmailNotifications"); }
             set { BackingStore?.Set("managedTenantEmailNotifications", value); }
         }
+#endif
         /// <summary>The managedTenantTicketingEndpoints property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ManagedTenantTicketingEndpoint>? ManagedTenantTicketingEndpoints {
+            get { return BackingStore?.Get<List<ManagedTenantTicketingEndpoint>?>("managedTenantTicketingEndpoints"); }
+            set { BackingStore?.Set("managedTenantTicketingEndpoints", value); }
+        }
+#else
         public List<ManagedTenantTicketingEndpoint> ManagedTenantTicketingEndpoints {
             get { return BackingStore?.Get<List<ManagedTenantTicketingEndpoint>>("managedTenantTicketingEndpoints"); }
             set { BackingStore?.Set("managedTenantTicketingEndpoints", value); }
         }
+#endif
         /// <summary>The collection of baseline management actions across managed tenants.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ManagementAction>? ManagementActions {
+            get { return BackingStore?.Get<List<ManagementAction>?>("managementActions"); }
+            set { BackingStore?.Set("managementActions", value); }
+        }
+#else
         public List<ManagementAction> ManagementActions {
             get { return BackingStore?.Get<List<ManagementAction>>("managementActions"); }
             set { BackingStore?.Set("managementActions", value); }
         }
+#endif
         /// <summary>The tenant level status of management actions across managed tenants.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ManagementActionTenantDeploymentStatus>? ManagementActionTenantDeploymentStatuses {
+            get { return BackingStore?.Get<List<ManagementActionTenantDeploymentStatus>?>("managementActionTenantDeploymentStatuses"); }
+            set { BackingStore?.Set("managementActionTenantDeploymentStatuses", value); }
+        }
+#else
         public List<ManagementActionTenantDeploymentStatus> ManagementActionTenantDeploymentStatuses {
             get { return BackingStore?.Get<List<ManagementActionTenantDeploymentStatus>>("managementActionTenantDeploymentStatuses"); }
             set { BackingStore?.Set("managementActionTenantDeploymentStatuses", value); }
         }
+#endif
         /// <summary>The collection of baseline management intents across managed tenants.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ManagementIntent>? ManagementIntents {
+            get { return BackingStore?.Get<List<ManagementIntent>?>("managementIntents"); }
+            set { BackingStore?.Set("managementIntents", value); }
+        }
+#else
         public List<ManagementIntent> ManagementIntents {
             get { return BackingStore?.Get<List<ManagementIntent>>("managementIntents"); }
             set { BackingStore?.Set("managementIntents", value); }
         }
+#endif
         /// <summary>The managementTemplateCollections property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ManagementTemplateCollection>? ManagementTemplateCollections {
+            get { return BackingStore?.Get<List<ManagementTemplateCollection>?>("managementTemplateCollections"); }
+            set { BackingStore?.Set("managementTemplateCollections", value); }
+        }
+#else
         public List<ManagementTemplateCollection> ManagementTemplateCollections {
             get { return BackingStore?.Get<List<ManagementTemplateCollection>>("managementTemplateCollections"); }
             set { BackingStore?.Set("managementTemplateCollections", value); }
         }
+#endif
         /// <summary>The managementTemplateCollectionTenantSummaries property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ManagementTemplateCollectionTenantSummary>? ManagementTemplateCollectionTenantSummaries {
+            get { return BackingStore?.Get<List<ManagementTemplateCollectionTenantSummary>?>("managementTemplateCollectionTenantSummaries"); }
+            set { BackingStore?.Set("managementTemplateCollectionTenantSummaries", value); }
+        }
+#else
         public List<ManagementTemplateCollectionTenantSummary> ManagementTemplateCollectionTenantSummaries {
             get { return BackingStore?.Get<List<ManagementTemplateCollectionTenantSummary>>("managementTemplateCollectionTenantSummaries"); }
             set { BackingStore?.Set("managementTemplateCollectionTenantSummaries", value); }
         }
+#endif
         /// <summary>The collection of baseline management templates across managed tenants.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ManagementTemplate>? ManagementTemplates {
+            get { return BackingStore?.Get<List<ManagementTemplate>?>("managementTemplates"); }
+            set { BackingStore?.Set("managementTemplates", value); }
+        }
+#else
         public List<ManagementTemplate> ManagementTemplates {
             get { return BackingStore?.Get<List<ManagementTemplate>>("managementTemplates"); }
             set { BackingStore?.Set("managementTemplates", value); }
         }
+#endif
         /// <summary>The managementTemplateSteps property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ManagementTemplateStep>? ManagementTemplateSteps {
+            get { return BackingStore?.Get<List<ManagementTemplateStep>?>("managementTemplateSteps"); }
+            set { BackingStore?.Set("managementTemplateSteps", value); }
+        }
+#else
         public List<ManagementTemplateStep> ManagementTemplateSteps {
             get { return BackingStore?.Get<List<ManagementTemplateStep>>("managementTemplateSteps"); }
             set { BackingStore?.Set("managementTemplateSteps", value); }
         }
+#endif
         /// <summary>The managementTemplateStepTenantSummaries property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ManagementTemplateStepTenantSummary>? ManagementTemplateStepTenantSummaries {
+            get { return BackingStore?.Get<List<ManagementTemplateStepTenantSummary>?>("managementTemplateStepTenantSummaries"); }
+            set { BackingStore?.Set("managementTemplateStepTenantSummaries", value); }
+        }
+#else
         public List<ManagementTemplateStepTenantSummary> ManagementTemplateStepTenantSummaries {
             get { return BackingStore?.Get<List<ManagementTemplateStepTenantSummary>>("managementTemplateStepTenantSummaries"); }
             set { BackingStore?.Set("managementTemplateStepTenantSummaries", value); }
         }
+#endif
         /// <summary>The managementTemplateStepVersions property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ManagementTemplateStepVersion>? ManagementTemplateStepVersions {
+            get { return BackingStore?.Get<List<ManagementTemplateStepVersion>?>("managementTemplateStepVersions"); }
+            set { BackingStore?.Set("managementTemplateStepVersions", value); }
+        }
+#else
         public List<ManagementTemplateStepVersion> ManagementTemplateStepVersions {
             get { return BackingStore?.Get<List<ManagementTemplateStepVersion>>("managementTemplateStepVersions"); }
             set { BackingStore?.Set("managementTemplateStepVersions", value); }
         }
+#endif
         /// <summary>The collection of role assignments to a signed-in user for a managed tenant.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<MyRole>? MyRoles {
+            get { return BackingStore?.Get<List<MyRole>?>("myRoles"); }
+            set { BackingStore?.Set("myRoles", value); }
+        }
+#else
         public List<MyRole> MyRoles {
             get { return BackingStore?.Get<List<MyRole>>("myRoles"); }
             set { BackingStore?.Set("myRoles", value); }
         }
+#endif
         /// <summary>The collection of a logical grouping of managed tenants used by the multi-tenant management platform.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<TenantGroup>? TenantGroups {
+            get { return BackingStore?.Get<List<TenantGroup>?>("tenantGroups"); }
+            set { BackingStore?.Set("tenantGroups", value); }
+        }
+#else
         public List<TenantGroup> TenantGroups {
             get { return BackingStore?.Get<List<TenantGroup>>("tenantGroups"); }
             set { BackingStore?.Set("tenantGroups", value); }
         }
+#endif
         /// <summary>The collection of tenants associated with the managing entity.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Tenant>? Tenants {
+            get { return BackingStore?.Get<List<Tenant>?>("tenants"); }
+            set { BackingStore?.Set("tenants", value); }
+        }
+#else
         public List<Tenant> Tenants {
             get { return BackingStore?.Get<List<Tenant>>("tenants"); }
             set { BackingStore?.Set("tenants", value); }
         }
+#endif
         /// <summary>The collection of tenant level customized information across managed tenants.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<TenantCustomizedInformation>? TenantsCustomizedInformation {
+            get { return BackingStore?.Get<List<TenantCustomizedInformation>?>("tenantsCustomizedInformation"); }
+            set { BackingStore?.Set("tenantsCustomizedInformation", value); }
+        }
+#else
         public List<TenantCustomizedInformation> TenantsCustomizedInformation {
             get { return BackingStore?.Get<List<TenantCustomizedInformation>>("tenantsCustomizedInformation"); }
             set { BackingStore?.Set("tenantsCustomizedInformation", value); }
         }
+#endif
         /// <summary>The collection tenant level detailed information across managed tenants.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<TenantDetailedInformation>? TenantsDetailedInformation {
+            get { return BackingStore?.Get<List<TenantDetailedInformation>?>("tenantsDetailedInformation"); }
+            set { BackingStore?.Set("tenantsDetailedInformation", value); }
+        }
+#else
         public List<TenantDetailedInformation> TenantsDetailedInformation {
             get { return BackingStore?.Get<List<TenantDetailedInformation>>("tenantsDetailedInformation"); }
             set { BackingStore?.Set("tenantsDetailedInformation", value); }
         }
+#endif
         /// <summary>The collection of tenant tags across managed tenants.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<TenantTag>? TenantTags {
+            get { return BackingStore?.Get<List<TenantTag>?>("tenantTags"); }
+            set { BackingStore?.Set("tenantTags", value); }
+        }
+#else
         public List<TenantTag> TenantTags {
             get { return BackingStore?.Get<List<TenantTag>>("tenantTags"); }
             set { BackingStore?.Set("tenantTags", value); }
         }
+#endif
         /// <summary>The state of malware for Windows devices, registered with Microsoft Endpoint Manager, across managed tenants.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<WindowsDeviceMalwareState>? WindowsDeviceMalwareStates {
+            get { return BackingStore?.Get<List<WindowsDeviceMalwareState>?>("windowsDeviceMalwareStates"); }
+            set { BackingStore?.Set("windowsDeviceMalwareStates", value); }
+        }
+#else
         public List<WindowsDeviceMalwareState> WindowsDeviceMalwareStates {
             get { return BackingStore?.Get<List<WindowsDeviceMalwareState>>("windowsDeviceMalwareStates"); }
             set { BackingStore?.Set("windowsDeviceMalwareStates", value); }
         }
+#endif
         /// <summary>The protection state for Windows devices, registered with Microsoft Endpoint Manager, across managed tenants.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<WindowsProtectionState>? WindowsProtectionStates {
+            get { return BackingStore?.Get<List<WindowsProtectionState>?>("windowsProtectionStates"); }
+            set { BackingStore?.Set("windowsProtectionStates", value); }
+        }
+#else
         public List<WindowsProtectionState> WindowsProtectionStates {
             get { return BackingStore?.Get<List<WindowsProtectionState>>("windowsProtectionStates"); }
             set { BackingStore?.Set("windowsProtectionStates", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

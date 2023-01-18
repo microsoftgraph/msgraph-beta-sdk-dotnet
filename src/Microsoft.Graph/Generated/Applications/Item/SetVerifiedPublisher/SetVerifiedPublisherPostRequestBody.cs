@@ -14,10 +14,17 @@ namespace Microsoft.Graph.Beta.Applications.Item.SetVerifiedPublisher {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The verifiedPublisherId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? VerifiedPublisherId {
+            get { return BackingStore?.Get<string?>("verifiedPublisherId"); }
+            set { BackingStore?.Set("verifiedPublisherId", value); }
+        }
+#else
         public string VerifiedPublisherId {
             get { return BackingStore?.Get<string>("verifiedPublisherId"); }
             set { BackingStore?.Set("verifiedPublisherId", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new setVerifiedPublisherPostRequestBody and sets the default values.
         /// </summary>

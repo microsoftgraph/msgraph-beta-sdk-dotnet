@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class AppleVppTokenTroubleshootingEvent : DeviceManagementTroubleshootingEvent, IParsable {
         /// <summary>Apple Volume Purchase Program Token Identifier.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TokenId {
+            get { return BackingStore?.Get<string?>("tokenId"); }
+            set { BackingStore?.Set("tokenId", value); }
+        }
+#else
         public string TokenId {
             get { return BackingStore?.Get<string>("tokenId"); }
             set { BackingStore?.Set("tokenId", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

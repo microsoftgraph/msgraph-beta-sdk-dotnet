@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
     public class WindowsProtectionState : Entity, IParsable {
         /// <summary>The anti-malware version for the managed device. Optional. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AntiMalwareVersion {
+            get { return BackingStore?.Get<string?>("antiMalwareVersion"); }
+            set { BackingStore?.Set("antiMalwareVersion", value); }
+        }
+#else
         public string AntiMalwareVersion {
             get { return BackingStore?.Get<string>("antiMalwareVersion"); }
             set { BackingStore?.Set("antiMalwareVersion", value); }
         }
+#endif
         /// <summary>A flag indicating whether attention is required for the managed device. Optional. Read-only.</summary>
         public bool? AttentionRequired {
             get { return BackingStore?.Get<bool?>("attentionRequired"); }
@@ -26,10 +33,17 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
             set { BackingStore?.Set("devicePropertyRefreshDateTime", value); }
         }
         /// <summary>The anti-virus engine version for the managed device. Optional. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? EngineVersion {
+            get { return BackingStore?.Get<string?>("engineVersion"); }
+            set { BackingStore?.Set("engineVersion", value); }
+        }
+#else
         public string EngineVersion {
             get { return BackingStore?.Get<string>("engineVersion"); }
             set { BackingStore?.Set("engineVersion", value); }
         }
+#endif
         /// <summary>A flag indicating whether quick scan is overdue for the managed device. Optional. Read-only.</summary>
         public bool? FullScanOverdue {
             get { return BackingStore?.Get<bool?>("fullScanOverdue"); }
@@ -46,20 +60,34 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
             set { BackingStore?.Set("lastFullScanDateTime", value); }
         }
         /// <summary>The version anti-malware version used to perform the last full scan. Optional. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? LastFullScanSignatureVersion {
+            get { return BackingStore?.Get<string?>("lastFullScanSignatureVersion"); }
+            set { BackingStore?.Set("lastFullScanSignatureVersion", value); }
+        }
+#else
         public string LastFullScanSignatureVersion {
             get { return BackingStore?.Get<string>("lastFullScanSignatureVersion"); }
             set { BackingStore?.Set("lastFullScanSignatureVersion", value); }
         }
+#endif
         /// <summary>The date and time a quick scan was completed. Optional. Read-only.</summary>
         public DateTimeOffset? LastQuickScanDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastQuickScanDateTime"); }
             set { BackingStore?.Set("lastQuickScanDateTime", value); }
         }
         /// <summary>The version anti-malware version used to perform the last full scan. Optional. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? LastQuickScanSignatureVersion {
+            get { return BackingStore?.Get<string?>("lastQuickScanSignatureVersion"); }
+            set { BackingStore?.Set("lastQuickScanSignatureVersion", value); }
+        }
+#else
         public string LastQuickScanSignatureVersion {
             get { return BackingStore?.Get<string>("lastQuickScanSignatureVersion"); }
             set { BackingStore?.Set("lastQuickScanSignatureVersion", value); }
         }
+#endif
         /// <summary>Date and time the entity was last updated in the multi-tenant management platform. Optional. Read-only.</summary>
         public DateTimeOffset? LastRefreshedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastRefreshedDateTime"); }
@@ -76,20 +104,41 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
             set { BackingStore?.Set("malwareProtectionEnabled", value); }
         }
         /// <summary>The health state for the managed device. Optional. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ManagedDeviceHealthState {
+            get { return BackingStore?.Get<string?>("managedDeviceHealthState"); }
+            set { BackingStore?.Set("managedDeviceHealthState", value); }
+        }
+#else
         public string ManagedDeviceHealthState {
             get { return BackingStore?.Get<string>("managedDeviceHealthState"); }
             set { BackingStore?.Set("managedDeviceHealthState", value); }
         }
+#endif
         /// <summary>The unique identifier for the managed device. Optional. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ManagedDeviceId {
+            get { return BackingStore?.Get<string?>("managedDeviceId"); }
+            set { BackingStore?.Set("managedDeviceId", value); }
+        }
+#else
         public string ManagedDeviceId {
             get { return BackingStore?.Get<string>("managedDeviceId"); }
             set { BackingStore?.Set("managedDeviceId", value); }
         }
+#endif
         /// <summary>The display name for the managed device. Optional. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ManagedDeviceName {
+            get { return BackingStore?.Get<string?>("managedDeviceName"); }
+            set { BackingStore?.Set("managedDeviceName", value); }
+        }
+#else
         public string ManagedDeviceName {
             get { return BackingStore?.Get<string>("managedDeviceName"); }
             set { BackingStore?.Set("managedDeviceName", value); }
         }
+#endif
         /// <summary>A flag indicating whether the network inspection system is enabled. Optional. Read-only.</summary>
         public bool? NetworkInspectionSystemEnabled {
             get { return BackingStore?.Get<bool?>("networkInspectionSystemEnabled"); }
@@ -116,20 +165,41 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
             set { BackingStore?.Set("signatureUpdateOverdue", value); }
         }
         /// <summary>The signature version for the managed device. Optional. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SignatureVersion {
+            get { return BackingStore?.Get<string?>("signatureVersion"); }
+            set { BackingStore?.Set("signatureVersion", value); }
+        }
+#else
         public string SignatureVersion {
             get { return BackingStore?.Get<string>("signatureVersion"); }
             set { BackingStore?.Set("signatureVersion", value); }
         }
+#endif
         /// <summary>The display name for the managed tenant. Optional. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TenantDisplayName {
+            get { return BackingStore?.Get<string?>("tenantDisplayName"); }
+            set { BackingStore?.Set("tenantDisplayName", value); }
+        }
+#else
         public string TenantDisplayName {
             get { return BackingStore?.Get<string>("tenantDisplayName"); }
             set { BackingStore?.Set("tenantDisplayName", value); }
         }
+#endif
         /// <summary>The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TenantId {
+            get { return BackingStore?.Get<string?>("tenantId"); }
+            set { BackingStore?.Set("tenantId", value); }
+        }
+#else
         public string TenantId {
             get { return BackingStore?.Get<string>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

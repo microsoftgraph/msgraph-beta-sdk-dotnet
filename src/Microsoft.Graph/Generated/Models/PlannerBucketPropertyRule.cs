@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class PlannerBucketPropertyRule : PlannerPropertyRule, IParsable {
         /// <summary>The order property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? Order {
+            get { return BackingStore?.Get<List<string>?>("order"); }
+            set { BackingStore?.Set("order", value); }
+        }
+#else
         public List<string> Order {
             get { return BackingStore?.Get<List<string>>("order"); }
             set { BackingStore?.Set("order", value); }
         }
+#endif
         /// <summary>The title property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? Title {
+            get { return BackingStore?.Get<List<string>?>("title"); }
+            set { BackingStore?.Set("title", value); }
+        }
+#else
         public List<string> Title {
             get { return BackingStore?.Get<List<string>>("title"); }
             set { BackingStore?.Set("title", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new PlannerBucketPropertyRule and sets the default values.
         /// </summary>

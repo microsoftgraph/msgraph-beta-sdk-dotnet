@@ -11,55 +11,111 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
             set { BackingStore?.Set("category", value); }
         }
         /// <summary>The createdByUserId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CreatedByUserId {
+            get { return BackingStore?.Get<string?>("createdByUserId"); }
+            set { BackingStore?.Set("createdByUserId", value); }
+        }
+#else
         public string CreatedByUserId {
             get { return BackingStore?.Get<string>("createdByUserId"); }
             set { BackingStore?.Set("createdByUserId", value); }
         }
+#endif
         /// <summary>The createdDateTime property</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The description for the management template. Optional. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>The display name for the management template. Required. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The informationLinks property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.ActionUrl>? InformationLinks {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ActionUrl>?>("informationLinks"); }
+            set { BackingStore?.Set("informationLinks", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.ActionUrl> InformationLinks {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ActionUrl>>("informationLinks"); }
             set { BackingStore?.Set("informationLinks", value); }
         }
+#endif
         /// <summary>The lastActionByUserId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? LastActionByUserId {
+            get { return BackingStore?.Get<string?>("lastActionByUserId"); }
+            set { BackingStore?.Set("lastActionByUserId", value); }
+        }
+#else
         public string LastActionByUserId {
             get { return BackingStore?.Get<string>("lastActionByUserId"); }
             set { BackingStore?.Set("lastActionByUserId", value); }
         }
+#endif
         /// <summary>The lastActionDateTime property</summary>
         public DateTimeOffset? LastActionDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastActionDateTime"); }
             set { BackingStore?.Set("lastActionDateTime", value); }
         }
         /// <summary>The managementTemplateCollections property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ManagementTemplateCollection>? ManagementTemplateCollections {
+            get { return BackingStore?.Get<List<ManagementTemplateCollection>?>("managementTemplateCollections"); }
+            set { BackingStore?.Set("managementTemplateCollections", value); }
+        }
+#else
         public List<ManagementTemplateCollection> ManagementTemplateCollections {
             get { return BackingStore?.Get<List<ManagementTemplateCollection>>("managementTemplateCollections"); }
             set { BackingStore?.Set("managementTemplateCollections", value); }
         }
+#endif
         /// <summary>The managementTemplateSteps property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ManagementTemplateStep>? ManagementTemplateSteps {
+            get { return BackingStore?.Get<List<ManagementTemplateStep>?>("managementTemplateSteps"); }
+            set { BackingStore?.Set("managementTemplateSteps", value); }
+        }
+#else
         public List<ManagementTemplateStep> ManagementTemplateSteps {
             get { return BackingStore?.Get<List<ManagementTemplateStep>>("managementTemplateSteps"); }
             set { BackingStore?.Set("managementTemplateSteps", value); }
         }
+#endif
         /// <summary>The collection of parameters used by the management template. Optional. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<TemplateParameter>? Parameters {
+            get { return BackingStore?.Get<List<TemplateParameter>?>("parameters"); }
+            set { BackingStore?.Set("parameters", value); }
+        }
+#else
         public List<TemplateParameter> Parameters {
             get { return BackingStore?.Get<List<TemplateParameter>>("parameters"); }
             set { BackingStore?.Set("parameters", value); }
         }
+#endif
         /// <summary>The priority property</summary>
         public int? Priority {
             get { return BackingStore?.Get<int?>("priority"); }
@@ -71,20 +127,34 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
             set { BackingStore?.Set("provider", value); }
         }
         /// <summary>The userImpact property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UserImpact {
+            get { return BackingStore?.Get<string?>("userImpact"); }
+            set { BackingStore?.Set("userImpact", value); }
+        }
+#else
         public string UserImpact {
             get { return BackingStore?.Get<string>("userImpact"); }
             set { BackingStore?.Set("userImpact", value); }
         }
+#endif
         /// <summary>The version property</summary>
         public int? Version {
             get { return BackingStore?.Get<int?>("version"); }
             set { BackingStore?.Set("version", value); }
         }
         /// <summary>The collection of workload actions associated with the management template. Optional. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<WorkloadAction>? WorkloadActions {
+            get { return BackingStore?.Get<List<WorkloadAction>?>("workloadActions"); }
+            set { BackingStore?.Set("workloadActions", value); }
+        }
+#else
         public List<WorkloadAction> WorkloadActions {
             get { return BackingStore?.Get<List<WorkloadAction>>("workloadActions"); }
             set { BackingStore?.Set("workloadActions", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

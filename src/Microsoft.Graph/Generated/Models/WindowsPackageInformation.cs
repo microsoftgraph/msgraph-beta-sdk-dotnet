@@ -22,40 +22,89 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The Display Name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The Identity Name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? IdentityName {
+            get { return BackingStore?.Get<string?>("identityName"); }
+            set { BackingStore?.Set("identityName", value); }
+        }
+#else
         public string IdentityName {
             get { return BackingStore?.Get<string>("identityName"); }
             set { BackingStore?.Set("identityName", value); }
         }
+#endif
         /// <summary>The Identity Publisher.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? IdentityPublisher {
+            get { return BackingStore?.Get<string?>("identityPublisher"); }
+            set { BackingStore?.Set("identityPublisher", value); }
+        }
+#else
         public string IdentityPublisher {
             get { return BackingStore?.Get<string>("identityPublisher"); }
             set { BackingStore?.Set("identityPublisher", value); }
         }
+#endif
         /// <summary>The Identity Resource Identifier.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? IdentityResourceIdentifier {
+            get { return BackingStore?.Get<string?>("identityResourceIdentifier"); }
+            set { BackingStore?.Set("identityResourceIdentifier", value); }
+        }
+#else
         public string IdentityResourceIdentifier {
             get { return BackingStore?.Get<string>("identityResourceIdentifier"); }
             set { BackingStore?.Set("identityResourceIdentifier", value); }
         }
+#endif
         /// <summary>The Identity Version.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? IdentityVersion {
+            get { return BackingStore?.Get<string?>("identityVersion"); }
+            set { BackingStore?.Set("identityVersion", value); }
+        }
+#else
         public string IdentityVersion {
             get { return BackingStore?.Get<string>("identityVersion"); }
             set { BackingStore?.Set("identityVersion", value); }
         }
+#endif
         /// <summary>The value for the minimum applicable operating system.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public WindowsMinimumOperatingSystem? MinimumSupportedOperatingSystem {
+            get { return BackingStore?.Get<WindowsMinimumOperatingSystem?>("minimumSupportedOperatingSystem"); }
+            set { BackingStore?.Set("minimumSupportedOperatingSystem", value); }
+        }
+#else
         public WindowsMinimumOperatingSystem MinimumSupportedOperatingSystem {
             get { return BackingStore?.Get<WindowsMinimumOperatingSystem>("minimumSupportedOperatingSystem"); }
             set { BackingStore?.Set("minimumSupportedOperatingSystem", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new windowsPackageInformation and sets the default values.
         /// </summary>

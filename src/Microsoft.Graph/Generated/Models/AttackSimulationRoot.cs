@@ -6,25 +6,53 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class AttackSimulationRoot : Entity, IParsable {
         /// <summary>The operations property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AttackSimulationOperation>? Operations {
+            get { return BackingStore?.Get<List<AttackSimulationOperation>?>("operations"); }
+            set { BackingStore?.Set("operations", value); }
+        }
+#else
         public List<AttackSimulationOperation> Operations {
             get { return BackingStore?.Get<List<AttackSimulationOperation>>("operations"); }
             set { BackingStore?.Set("operations", value); }
         }
+#endif
         /// <summary>The payloads property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Payload>? Payloads {
+            get { return BackingStore?.Get<List<Payload>?>("payloads"); }
+            set { BackingStore?.Set("payloads", value); }
+        }
+#else
         public List<Payload> Payloads {
             get { return BackingStore?.Get<List<Payload>>("payloads"); }
             set { BackingStore?.Set("payloads", value); }
         }
+#endif
         /// <summary>Represents simulation automation created to run on a tenant.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<SimulationAutomation>? SimulationAutomations {
+            get { return BackingStore?.Get<List<SimulationAutomation>?>("simulationAutomations"); }
+            set { BackingStore?.Set("simulationAutomations", value); }
+        }
+#else
         public List<SimulationAutomation> SimulationAutomations {
             get { return BackingStore?.Get<List<SimulationAutomation>>("simulationAutomations"); }
             set { BackingStore?.Set("simulationAutomations", value); }
         }
+#endif
         /// <summary>Represents an attack simulation training campaign in a tenant.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Simulation>? Simulations {
+            get { return BackingStore?.Get<List<Simulation>?>("simulations"); }
+            set { BackingStore?.Set("simulations", value); }
+        }
+#else
         public List<Simulation> Simulations {
             get { return BackingStore?.Get<List<Simulation>>("simulations"); }
             set { BackingStore?.Set("simulations", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

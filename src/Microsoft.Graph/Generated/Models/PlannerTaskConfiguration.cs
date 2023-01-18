@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class PlannerTaskConfiguration : Entity, IParsable {
         /// <summary>Policy configuration for tasks created for the businessScenario when they are being changed outside of the scenario.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public PlannerTaskPolicy? EditPolicy {
+            get { return BackingStore?.Get<PlannerTaskPolicy?>("editPolicy"); }
+            set { BackingStore?.Set("editPolicy", value); }
+        }
+#else
         public PlannerTaskPolicy EditPolicy {
             get { return BackingStore?.Get<PlannerTaskPolicy>("editPolicy"); }
             set { BackingStore?.Set("editPolicy", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

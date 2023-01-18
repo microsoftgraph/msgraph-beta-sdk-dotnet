@@ -16,40 +16,82 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("applicableDeviceTypes", value); }
         }
         /// <summary>The collection of contained apps in the committed mobileAppContent of a windowsUniversalAppX app.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<MobileContainedApp>? CommittedContainedApps {
+            get { return BackingStore?.Get<List<MobileContainedApp>?>("committedContainedApps"); }
+            set { BackingStore?.Set("committedContainedApps", value); }
+        }
+#else
         public List<MobileContainedApp> CommittedContainedApps {
             get { return BackingStore?.Get<List<MobileContainedApp>>("committedContainedApps"); }
             set { BackingStore?.Set("committedContainedApps", value); }
         }
+#endif
         /// <summary>The Identity Name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? IdentityName {
+            get { return BackingStore?.Get<string?>("identityName"); }
+            set { BackingStore?.Set("identityName", value); }
+        }
+#else
         public string IdentityName {
             get { return BackingStore?.Get<string>("identityName"); }
             set { BackingStore?.Set("identityName", value); }
         }
+#endif
         /// <summary>The Identity Publisher Hash.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? IdentityPublisherHash {
+            get { return BackingStore?.Get<string?>("identityPublisherHash"); }
+            set { BackingStore?.Set("identityPublisherHash", value); }
+        }
+#else
         public string IdentityPublisherHash {
             get { return BackingStore?.Get<string>("identityPublisherHash"); }
             set { BackingStore?.Set("identityPublisherHash", value); }
         }
+#endif
         /// <summary>The Identity Resource Identifier.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? IdentityResourceIdentifier {
+            get { return BackingStore?.Get<string?>("identityResourceIdentifier"); }
+            set { BackingStore?.Set("identityResourceIdentifier", value); }
+        }
+#else
         public string IdentityResourceIdentifier {
             get { return BackingStore?.Get<string>("identityResourceIdentifier"); }
             set { BackingStore?.Set("identityResourceIdentifier", value); }
         }
+#endif
         /// <summary>The identity version.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? IdentityVersion {
+            get { return BackingStore?.Get<string?>("identityVersion"); }
+            set { BackingStore?.Set("identityVersion", value); }
+        }
+#else
         public string IdentityVersion {
             get { return BackingStore?.Get<string>("identityVersion"); }
             set { BackingStore?.Set("identityVersion", value); }
         }
+#endif
         /// <summary>Whether or not the app is a bundle.</summary>
         public bool? IsBundle {
             get { return BackingStore?.Get<bool?>("isBundle"); }
             set { BackingStore?.Set("isBundle", value); }
         }
         /// <summary>The minimum operating system required for a Windows mobile app.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public WindowsMinimumOperatingSystem? MinimumSupportedOperatingSystem {
+            get { return BackingStore?.Get<WindowsMinimumOperatingSystem?>("minimumSupportedOperatingSystem"); }
+            set { BackingStore?.Set("minimumSupportedOperatingSystem", value); }
+        }
+#else
         public WindowsMinimumOperatingSystem MinimumSupportedOperatingSystem {
             get { return BackingStore?.Get<WindowsMinimumOperatingSystem>("minimumSupportedOperatingSystem"); }
             set { BackingStore?.Set("minimumSupportedOperatingSystem", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new WindowsUniversalAppX and sets the default values.
         /// </summary>

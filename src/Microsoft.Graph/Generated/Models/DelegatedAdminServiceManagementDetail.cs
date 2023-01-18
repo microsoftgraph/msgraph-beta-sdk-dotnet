@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class DelegatedAdminServiceManagementDetail : Entity, IParsable {
         /// <summary>The URL of the management portal for the managed service. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ServiceManagementUrl {
+            get { return BackingStore?.Get<string?>("serviceManagementUrl"); }
+            set { BackingStore?.Set("serviceManagementUrl", value); }
+        }
+#else
         public string ServiceManagementUrl {
             get { return BackingStore?.Get<string>("serviceManagementUrl"); }
             set { BackingStore?.Set("serviceManagementUrl", value); }
         }
+#endif
         /// <summary>The name of a managed service. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ServiceName {
+            get { return BackingStore?.Get<string?>("serviceName"); }
+            set { BackingStore?.Set("serviceName", value); }
+        }
+#else
         public string ServiceName {
             get { return BackingStore?.Get<string>("serviceName"); }
             set { BackingStore?.Set("serviceName", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

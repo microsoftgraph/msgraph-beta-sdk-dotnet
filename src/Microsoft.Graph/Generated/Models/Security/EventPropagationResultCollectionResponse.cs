@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
     public class EventPropagationResultCollectionResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<EventPropagationResult>? Value {
+            get { return BackingStore?.Get<List<EventPropagationResult>?>("value"); }
+            set { BackingStore?.Set("value", value); }
+        }
+#else
         public List<EventPropagationResult> Value {
             get { return BackingStore?.Get<List<EventPropagationResult>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

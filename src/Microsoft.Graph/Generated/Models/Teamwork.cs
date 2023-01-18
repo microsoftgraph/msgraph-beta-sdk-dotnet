@@ -6,30 +6,65 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class Teamwork : Entity, IParsable {
         /// <summary>A collection of deleted teams.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DeletedTeam>? DeletedTeams {
+            get { return BackingStore?.Get<List<DeletedTeam>?>("deletedTeams"); }
+            set { BackingStore?.Set("deletedTeams", value); }
+        }
+#else
         public List<DeletedTeam> DeletedTeams {
             get { return BackingStore?.Get<List<DeletedTeam>>("deletedTeams"); }
             set { BackingStore?.Set("deletedTeams", value); }
         }
+#endif
         /// <summary>The Teams devices provisioned for the tenant.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<TeamworkDevice>? Devices {
+            get { return BackingStore?.Get<List<TeamworkDevice>?>("devices"); }
+            set { BackingStore?.Set("devices", value); }
+        }
+#else
         public List<TeamworkDevice> Devices {
             get { return BackingStore?.Get<List<TeamworkDevice>>("devices"); }
             set { BackingStore?.Set("devices", value); }
         }
+#endif
         /// <summary>Represents tenant-wide settings for all Teams apps in the tenant.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.TeamsAppSettings? TeamsAppSettings {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamsAppSettings?>("teamsAppSettings"); }
+            set { BackingStore?.Set("teamsAppSettings", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.TeamsAppSettings TeamsAppSettings {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TeamsAppSettings>("teamsAppSettings"); }
             set { BackingStore?.Set("teamsAppSettings", value); }
         }
+#endif
         /// <summary>The templates associated with a team.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<TeamTemplate>? TeamTemplates {
+            get { return BackingStore?.Get<List<TeamTemplate>?>("teamTemplates"); }
+            set { BackingStore?.Set("teamTemplates", value); }
+        }
+#else
         public List<TeamTemplate> TeamTemplates {
             get { return BackingStore?.Get<List<TeamTemplate>>("teamTemplates"); }
             set { BackingStore?.Set("teamTemplates", value); }
         }
+#endif
         /// <summary>A workforce integration with shifts.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<WorkforceIntegration>? WorkforceIntegrations {
+            get { return BackingStore?.Get<List<WorkforceIntegration>?>("workforceIntegrations"); }
+            set { BackingStore?.Set("workforceIntegrations", value); }
+        }
+#else
         public List<WorkforceIntegration> WorkforceIntegrations {
             get { return BackingStore?.Get<List<WorkforceIntegration>>("workforceIntegrations"); }
             set { BackingStore?.Set("workforceIntegrations", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

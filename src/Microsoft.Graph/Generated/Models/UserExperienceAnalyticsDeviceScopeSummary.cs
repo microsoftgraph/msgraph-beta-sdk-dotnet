@@ -17,20 +17,41 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>A collection of the user experience analytics device scope Unique Identifiers that are enabled and finished recalculating the report metric.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? CompletedDeviceScopeIds {
+            get { return BackingStore?.Get<List<string>?>("completedDeviceScopeIds"); }
+            set { BackingStore?.Set("completedDeviceScopeIds", value); }
+        }
+#else
         public List<string> CompletedDeviceScopeIds {
             get { return BackingStore?.Get<List<string>>("completedDeviceScopeIds"); }
             set { BackingStore?.Set("completedDeviceScopeIds", value); }
         }
+#endif
         /// <summary>A collection of user experience analytics device scope Unique Identitfiers that are enabled but there is insufficient data to calculate results.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? InsufficientDataDeviceScopeIds {
+            get { return BackingStore?.Get<List<string>?>("insufficientDataDeviceScopeIds"); }
+            set { BackingStore?.Set("insufficientDataDeviceScopeIds", value); }
+        }
+#else
         public List<string> InsufficientDataDeviceScopeIds {
             get { return BackingStore?.Get<List<string>>("insufficientDataDeviceScopeIds"); }
             set { BackingStore?.Set("insufficientDataDeviceScopeIds", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The total number of user experience analytics device scopes. Valid values -2147483648 to 2147483647</summary>
         public int? TotalDeviceScopes {
             get { return BackingStore?.Get<int?>("totalDeviceScopes"); }

@@ -12,22 +12,43 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The authorizedAppIds property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? AuthorizedAppIds {
+            get { return BackingStore?.Get<List<string>?>("authorizedAppIds"); }
+            set { BackingStore?.Set("authorizedAppIds", value); }
+        }
+#else
         public List<string> AuthorizedAppIds {
             get { return BackingStore?.Get<List<string>>("authorizedAppIds"); }
             set { BackingStore?.Set("authorizedAppIds", value); }
         }
+#endif
         /// <summary>The authorizedApps property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? AuthorizedApps {
+            get { return BackingStore?.Get<List<string>?>("authorizedApps"); }
+            set { BackingStore?.Set("authorizedApps", value); }
+        }
+#else
         public List<string> AuthorizedApps {
             get { return BackingStore?.Get<List<string>>("authorizedApps"); }
             set { BackingStore?.Set("authorizedApps", value); }
         }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new configuration and sets the default values.
         /// </summary>

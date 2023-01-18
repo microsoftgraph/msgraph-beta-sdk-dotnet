@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class RoleMembershipGovernanceCriteria : GovernanceCriteria, IParsable {
         /// <summary>The roleId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? RoleId {
+            get { return BackingStore?.Get<string?>("roleId"); }
+            set { BackingStore?.Set("roleId", value); }
+        }
+#else
         public string RoleId {
             get { return BackingStore?.Get<string>("roleId"); }
             set { BackingStore?.Set("roleId", value); }
         }
+#endif
         /// <summary>The roleTemplateId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? RoleTemplateId {
+            get { return BackingStore?.Get<string?>("roleTemplateId"); }
+            set { BackingStore?.Set("roleTemplateId", value); }
+        }
+#else
         public string RoleTemplateId {
             get { return BackingStore?.Get<string>("roleTemplateId"); }
             set { BackingStore?.Set("roleTemplateId", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new RoleMembershipGovernanceCriteria and sets the default values.
         /// </summary>

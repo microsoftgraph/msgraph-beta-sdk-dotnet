@@ -14,30 +14,65 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Email of the data subject.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Email {
+            get { return BackingStore?.Get<string?>("email"); }
+            set { BackingStore?.Set("email", value); }
+        }
+#else
         public string Email {
             get { return BackingStore?.Get<string>("email"); }
             set { BackingStore?.Set("email", value); }
         }
+#endif
         /// <summary>First name of the data subject.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? FirstName {
+            get { return BackingStore?.Get<string?>("firstName"); }
+            set { BackingStore?.Set("firstName", value); }
+        }
+#else
         public string FirstName {
             get { return BackingStore?.Get<string>("firstName"); }
             set { BackingStore?.Set("firstName", value); }
         }
+#endif
         /// <summary>Last Name of the data subject.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? LastName {
+            get { return BackingStore?.Get<string?>("lastName"); }
+            set { BackingStore?.Set("lastName", value); }
+        }
+#else
         public string LastName {
             get { return BackingStore?.Get<string>("lastName"); }
             set { BackingStore?.Set("lastName", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The country/region of residency. The residency information is uesed only for internal reporting but not for the content search.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Residency {
+            get { return BackingStore?.Get<string?>("residency"); }
+            set { BackingStore?.Set("residency", value); }
+        }
+#else
         public string Residency {
             get { return BackingStore?.Get<string>("residency"); }
             set { BackingStore?.Set("residency", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new dataSubject and sets the default values.
         /// </summary>

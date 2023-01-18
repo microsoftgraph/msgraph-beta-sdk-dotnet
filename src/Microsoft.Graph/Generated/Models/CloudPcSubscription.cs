@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class CloudPcSubscription : Entity, IParsable {
         /// <summary>The ID of the subscription.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SubscriptionId {
+            get { return BackingStore?.Get<string?>("subscriptionId"); }
+            set { BackingStore?.Set("subscriptionId", value); }
+        }
+#else
         public string SubscriptionId {
             get { return BackingStore?.Get<string>("subscriptionId"); }
             set { BackingStore?.Set("subscriptionId", value); }
         }
+#endif
         /// <summary>The name of the subscription.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SubscriptionName {
+            get { return BackingStore?.Get<string?>("subscriptionName"); }
+            set { BackingStore?.Set("subscriptionName", value); }
+        }
+#else
         public string SubscriptionName {
             get { return BackingStore?.Get<string>("subscriptionName"); }
             set { BackingStore?.Set("subscriptionName", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

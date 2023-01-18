@@ -19,20 +19,41 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("eventType", value); }
         }
         /// <summary>The executedListenerId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ExecutedListenerId {
+            get { return BackingStore?.Get<string?>("executedListenerId"); }
+            set { BackingStore?.Set("executedListenerId", value); }
+        }
+#else
         public string ExecutedListenerId {
             get { return BackingStore?.Get<string>("executedListenerId"); }
             set { BackingStore?.Set("executedListenerId", value); }
         }
+#endif
         /// <summary>The handlerResult property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public AuthenticationEventHandlerResult? HandlerResult {
+            get { return BackingStore?.Get<AuthenticationEventHandlerResult?>("handlerResult"); }
+            set { BackingStore?.Set("handlerResult", value); }
+        }
+#else
         public AuthenticationEventHandlerResult HandlerResult {
             get { return BackingStore?.Get<AuthenticationEventHandlerResult>("handlerResult"); }
             set { BackingStore?.Set("handlerResult", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new appliedAuthenticationEventListener and sets the default values.
         /// </summary>

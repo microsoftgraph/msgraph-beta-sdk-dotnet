@@ -14,10 +14,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The description of the device</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>The discoverySource property</summary>
         public Microsoft.Graph.Beta.Models.DiscoverySource? DiscoverySource {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DiscoverySource?>("discoverySource"); }
@@ -54,15 +61,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("requestedEnrollmentProfileAssignmentDateTime", value); }
         }
         /// <summary>Enrollment profile Id admin intends to apply to the device during next enrollment</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? RequestedEnrollmentProfileId {
+            get { return BackingStore?.Get<string?>("requestedEnrollmentProfileId"); }
+            set { BackingStore?.Set("requestedEnrollmentProfileId", value); }
+        }
+#else
         public string RequestedEnrollmentProfileId {
             get { return BackingStore?.Get<string>("requestedEnrollmentProfileId"); }
             set { BackingStore?.Set("requestedEnrollmentProfileId", value); }
         }
+#endif
         /// <summary>Device serial number</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SerialNumber {
+            get { return BackingStore?.Get<string?>("serialNumber"); }
+            set { BackingStore?.Set("serialNumber", value); }
+        }
+#else
         public string SerialNumber {
             get { return BackingStore?.Get<string>("serialNumber"); }
             set { BackingStore?.Set("serialNumber", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

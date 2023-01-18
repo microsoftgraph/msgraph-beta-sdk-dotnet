@@ -14,15 +14,29 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Use to filter the notification distribution to a specific platform or platforms. Valid values are Windows, iOS, Android and WebPush. By default, all push endpoint types (Windows, iOS, Android and WebPush) are enabled.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? PlatformTypes {
+            get { return BackingStore?.Get<List<string>?>("platformTypes"); }
+            set { BackingStore?.Set("platformTypes", value); }
+        }
+#else
         public List<string> PlatformTypes {
             get { return BackingStore?.Get<List<string>>("platformTypes"); }
             set { BackingStore?.Set("platformTypes", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new targetPolicyEndpoints and sets the default values.
         /// </summary>

@@ -6,70 +6,133 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Ediscovery {
     public class LegalHold : Entity, IParsable {
         /// <summary>KQL query that specifies content to be held in the specified locations. To learn more, see Keyword queries and search conditions for Content Search and eDiscovery.  To hold all content in the specified locations, leave contentQuery blank.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ContentQuery {
+            get { return BackingStore?.Get<string?>("contentQuery"); }
+            set { BackingStore?.Set("contentQuery", value); }
+        }
+#else
         public string ContentQuery {
             get { return BackingStore?.Get<string>("contentQuery"); }
             set { BackingStore?.Set("contentQuery", value); }
         }
+#endif
         /// <summary>The user who created the legal hold.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.IdentitySet? CreatedBy {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet?>("createdBy"); }
+            set { BackingStore?.Set("createdBy", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.IdentitySet CreatedBy {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
+#endif
         /// <summary>The date and time the legal hold was created.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The legal hold description.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>The display name of the legal hold.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>Lists any errors that happened while placing the hold.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? Errors {
+            get { return BackingStore?.Get<List<string>?>("errors"); }
+            set { BackingStore?.Set("errors", value); }
+        }
+#else
         public List<string> Errors {
             get { return BackingStore?.Get<List<string>>("errors"); }
             set { BackingStore?.Set("errors", value); }
         }
+#endif
         /// <summary>Indicates whether the hold is enabled and actively holding content.</summary>
         public bool? IsEnabled {
             get { return BackingStore?.Get<bool?>("isEnabled"); }
             set { BackingStore?.Set("isEnabled", value); }
         }
         /// <summary>the user who last modified the legal hold.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.IdentitySet? LastModifiedBy {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet?>("lastModifiedBy"); }
+            set { BackingStore?.Set("lastModifiedBy", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.IdentitySet LastModifiedBy {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
+#endif
         /// <summary>The date and time the legal hold was last modified.</summary>
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>Data source entity for SharePoint sites associated with the legal hold.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<SiteSource>? SiteSources {
+            get { return BackingStore?.Get<List<SiteSource>?>("siteSources"); }
+            set { BackingStore?.Set("siteSources", value); }
+        }
+#else
         public List<SiteSource> SiteSources {
             get { return BackingStore?.Get<List<SiteSource>>("siteSources"); }
             set { BackingStore?.Set("siteSources", value); }
         }
+#endif
         /// <summary>The status of the legal hold. Possible values are: Pending, Error, Success, UnknownFutureValue.</summary>
         public LegalHoldStatus? Status {
             get { return BackingStore?.Get<LegalHoldStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>The unifiedGroupSources property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<UnifiedGroupSource>? UnifiedGroupSources {
+            get { return BackingStore?.Get<List<UnifiedGroupSource>?>("unifiedGroupSources"); }
+            set { BackingStore?.Set("unifiedGroupSources", value); }
+        }
+#else
         public List<UnifiedGroupSource> UnifiedGroupSources {
             get { return BackingStore?.Get<List<UnifiedGroupSource>>("unifiedGroupSources"); }
             set { BackingStore?.Set("unifiedGroupSources", value); }
         }
+#endif
         /// <summary>Data source entity for a the legal hold. This is the container for a mailbox and OneDrive for Business site.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<UserSource>? UserSources {
+            get { return BackingStore?.Get<List<UserSource>?>("userSources"); }
+            set { BackingStore?.Set("userSources", value); }
+        }
+#else
         public List<UserSource> UserSources {
             get { return BackingStore?.Get<List<UserSource>>("userSources"); }
             set { BackingStore?.Set("userSources", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

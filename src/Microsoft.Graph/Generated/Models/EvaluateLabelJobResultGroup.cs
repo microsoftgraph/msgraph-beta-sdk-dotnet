@@ -12,22 +12,43 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The automatic property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public EvaluateLabelJobResult? Automatic {
+            get { return BackingStore?.Get<EvaluateLabelJobResult?>("automatic"); }
+            set { BackingStore?.Set("automatic", value); }
+        }
+#else
         public EvaluateLabelJobResult Automatic {
             get { return BackingStore?.Get<EvaluateLabelJobResult>("automatic"); }
             set { BackingStore?.Set("automatic", value); }
         }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The recommended property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public EvaluateLabelJobResult? Recommended {
+            get { return BackingStore?.Get<EvaluateLabelJobResult?>("recommended"); }
+            set { BackingStore?.Set("recommended", value); }
+        }
+#else
         public EvaluateLabelJobResult Recommended {
             get { return BackingStore?.Get<EvaluateLabelJobResult>("recommended"); }
             set { BackingStore?.Set("recommended", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new evaluateLabelJobResultGroup and sets the default values.
         /// </summary>

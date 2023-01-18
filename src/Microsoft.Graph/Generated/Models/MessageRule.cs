@@ -6,25 +6,53 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class MessageRule : Entity, IParsable {
         /// <summary>Actions to be taken on a message when the corresponding conditions are fulfilled.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public MessageRuleActions? Actions {
+            get { return BackingStore?.Get<MessageRuleActions?>("actions"); }
+            set { BackingStore?.Set("actions", value); }
+        }
+#else
         public MessageRuleActions Actions {
             get { return BackingStore?.Get<MessageRuleActions>("actions"); }
             set { BackingStore?.Set("actions", value); }
         }
+#endif
         /// <summary>Conditions that when fulfilled, will trigger the corresponding actions for that rule.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public MessageRulePredicates? Conditions {
+            get { return BackingStore?.Get<MessageRulePredicates?>("conditions"); }
+            set { BackingStore?.Set("conditions", value); }
+        }
+#else
         public MessageRulePredicates Conditions {
             get { return BackingStore?.Get<MessageRulePredicates>("conditions"); }
             set { BackingStore?.Set("conditions", value); }
         }
+#endif
         /// <summary>The display name of the rule.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>Exception conditions for the rule.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public MessageRulePredicates? Exceptions {
+            get { return BackingStore?.Get<MessageRulePredicates?>("exceptions"); }
+            set { BackingStore?.Set("exceptions", value); }
+        }
+#else
         public MessageRulePredicates Exceptions {
             get { return BackingStore?.Get<MessageRulePredicates>("exceptions"); }
             set { BackingStore?.Set("exceptions", value); }
         }
+#endif
         /// <summary>Indicates whether the rule is in an error condition. Read-only.</summary>
         public bool? HasError {
             get { return BackingStore?.Get<bool?>("hasError"); }

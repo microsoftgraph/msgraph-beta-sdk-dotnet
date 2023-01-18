@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class AccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource : AccessReviewInstanceDecisionItemResource, IParsable {
         /// <summary>Display name of the access package to which access has been granted.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AccessPackageDisplayName {
+            get { return BackingStore?.Get<string?>("accessPackageDisplayName"); }
+            set { BackingStore?.Set("accessPackageDisplayName", value); }
+        }
+#else
         public string AccessPackageDisplayName {
             get { return BackingStore?.Get<string>("accessPackageDisplayName"); }
             set { BackingStore?.Set("accessPackageDisplayName", value); }
         }
+#endif
         /// <summary>Identifier of the access package to which access has been granted.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AccessPackageId {
+            get { return BackingStore?.Get<string?>("accessPackageId"); }
+            set { BackingStore?.Set("accessPackageId", value); }
+        }
+#else
         public string AccessPackageId {
             get { return BackingStore?.Get<string>("accessPackageId"); }
             set { BackingStore?.Set("accessPackageId", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new AccessReviewInstanceDecisionItemAccessPackageAssignmentPolicyResource and sets the default values.
         /// </summary>

@@ -6,45 +6,87 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class MessageTrace : Entity, IParsable {
         /// <summary>The destinationIPAddress property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DestinationIPAddress {
+            get { return BackingStore?.Get<string?>("destinationIPAddress"); }
+            set { BackingStore?.Set("destinationIPAddress", value); }
+        }
+#else
         public string DestinationIPAddress {
             get { return BackingStore?.Get<string>("destinationIPAddress"); }
             set { BackingStore?.Set("destinationIPAddress", value); }
         }
+#endif
         /// <summary>The messageId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MessageId {
+            get { return BackingStore?.Get<string?>("messageId"); }
+            set { BackingStore?.Set("messageId", value); }
+        }
+#else
         public string MessageId {
             get { return BackingStore?.Get<string>("messageId"); }
             set { BackingStore?.Set("messageId", value); }
         }
+#endif
         /// <summary>The receivedDateTime property</summary>
         public DateTimeOffset? ReceivedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("receivedDateTime"); }
             set { BackingStore?.Set("receivedDateTime", value); }
         }
         /// <summary>The recipients property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<MessageRecipient>? Recipients {
+            get { return BackingStore?.Get<List<MessageRecipient>?>("recipients"); }
+            set { BackingStore?.Set("recipients", value); }
+        }
+#else
         public List<MessageRecipient> Recipients {
             get { return BackingStore?.Get<List<MessageRecipient>>("recipients"); }
             set { BackingStore?.Set("recipients", value); }
         }
+#endif
         /// <summary>The senderEmail property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SenderEmail {
+            get { return BackingStore?.Get<string?>("senderEmail"); }
+            set { BackingStore?.Set("senderEmail", value); }
+        }
+#else
         public string SenderEmail {
             get { return BackingStore?.Get<string>("senderEmail"); }
             set { BackingStore?.Set("senderEmail", value); }
         }
+#endif
         /// <summary>The size property</summary>
         public int? Size {
             get { return BackingStore?.Get<int?>("size"); }
             set { BackingStore?.Set("size", value); }
         }
         /// <summary>The sourceIPAddress property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SourceIPAddress {
+            get { return BackingStore?.Get<string?>("sourceIPAddress"); }
+            set { BackingStore?.Set("sourceIPAddress", value); }
+        }
+#else
         public string SourceIPAddress {
             get { return BackingStore?.Get<string>("sourceIPAddress"); }
             set { BackingStore?.Set("sourceIPAddress", value); }
         }
+#endif
         /// <summary>The subject property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Subject {
+            get { return BackingStore?.Get<string?>("subject"); }
+            set { BackingStore?.Set("subject", value); }
+        }
+#else
         public string Subject {
             get { return BackingStore?.Get<string>("subject"); }
             set { BackingStore?.Set("subject", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

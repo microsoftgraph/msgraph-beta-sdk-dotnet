@@ -17,25 +17,53 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Unique identifier for the folder</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? FolderIdentifier {
+            get { return BackingStore?.Get<string?>("folderIdentifier"); }
+            set { BackingStore?.Set("folderIdentifier", value); }
+        }
+#else
         public string FolderIdentifier {
             get { return BackingStore?.Get<string>("folderIdentifier"); }
             set { BackingStore?.Set("folderIdentifier", value); }
         }
+#endif
         /// <summary>Display name for the folder</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? FolderName {
+            get { return BackingStore?.Get<string?>("folderName"); }
+            set { BackingStore?.Set("folderName", value); }
+        }
+#else
         public string FolderName {
             get { return BackingStore?.Get<string>("folderName"); }
             set { BackingStore?.Set("folderName", value); }
         }
+#endif
         /// <summary>Items to be added to managed folder. This collection can contain a maximum of 500 elements.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AndroidDeviceOwnerKioskModeFolderItem>? Items {
+            get { return BackingStore?.Get<List<AndroidDeviceOwnerKioskModeFolderItem>?>("items"); }
+            set { BackingStore?.Set("items", value); }
+        }
+#else
         public List<AndroidDeviceOwnerKioskModeFolderItem> Items {
             get { return BackingStore?.Get<List<AndroidDeviceOwnerKioskModeFolderItem>>("items"); }
             set { BackingStore?.Set("items", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new androidDeviceOwnerKioskModeManagedFolder and sets the default values.
         /// </summary>

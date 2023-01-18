@@ -7,10 +7,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class Fido2KeyRestrictions : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>A collection of Authenticator Attestation GUIDs. AADGUIDs define key types and manufacturers.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? AaGuids {
+            get { return BackingStore?.Get<List<string>?>("aaGuids"); }
+            set { BackingStore?.Set("aaGuids", value); }
+        }
+#else
         public List<string> AaGuids {
             get { return BackingStore?.Get<List<string>>("aaGuids"); }
             set { BackingStore?.Set("aaGuids", value); }
         }
+#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
             get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
@@ -29,10 +36,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("isEnforced", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new fido2KeyRestrictions and sets the default values.
         /// </summary>

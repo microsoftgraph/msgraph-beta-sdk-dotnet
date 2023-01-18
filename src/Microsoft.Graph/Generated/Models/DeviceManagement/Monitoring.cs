@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.DeviceManagement {
     public class Monitoring : Entity, IParsable {
         /// <summary>The collection of records of alert events.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AlertRecord>? AlertRecords {
+            get { return BackingStore?.Get<List<AlertRecord>?>("alertRecords"); }
+            set { BackingStore?.Set("alertRecords", value); }
+        }
+#else
         public List<AlertRecord> AlertRecords {
             get { return BackingStore?.Get<List<AlertRecord>>("alertRecords"); }
             set { BackingStore?.Set("alertRecords", value); }
         }
+#endif
         /// <summary>The collection of alert rules.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AlertRule>? AlertRules {
+            get { return BackingStore?.Get<List<AlertRule>?>("alertRules"); }
+            set { BackingStore?.Set("alertRules", value); }
+        }
+#else
         public List<AlertRule> AlertRules {
             get { return BackingStore?.Get<List<AlertRule>>("alertRules"); }
             set { BackingStore?.Set("alertRules", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

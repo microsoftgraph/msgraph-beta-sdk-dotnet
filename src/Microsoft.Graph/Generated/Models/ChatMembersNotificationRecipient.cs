@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class ChatMembersNotificationRecipient : TeamworkNotificationRecipient, IParsable {
         /// <summary>The unique identifier for the chat whose members should receive the notifications.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ChatId {
+            get { return BackingStore?.Get<string?>("chatId"); }
+            set { BackingStore?.Set("chatId", value); }
+        }
+#else
         public string ChatId {
             get { return BackingStore?.Get<string>("chatId"); }
             set { BackingStore?.Set("chatId", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new ChatMembersNotificationRecipient and sets the default values.
         /// </summary>

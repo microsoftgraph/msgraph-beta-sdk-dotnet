@@ -61,10 +61,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("macOSRegistrationDisabled", value); }
         }
         /// <summary>Management certificates for Apple Configurator</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ManagementCertificateWithThumbprint>? ManagementCertificates {
+            get { return BackingStore?.Get<List<ManagementCertificateWithThumbprint>?>("managementCertificates"); }
+            set { BackingStore?.Set("managementCertificates", value); }
+        }
+#else
         public List<ManagementCertificateWithThumbprint> ManagementCertificates {
             get { return BackingStore?.Get<List<ManagementCertificateWithThumbprint>>("managementCertificates"); }
             set { BackingStore?.Set("managementCertificates", value); }
         }
+#endif
         /// <summary>Indicates if Passcode setup pane is disabled</summary>
         public bool? PassCodeDisabled {
             get { return BackingStore?.Get<bool?>("passCodeDisabled"); }
@@ -101,15 +108,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("supervisedModeEnabled", value); }
         }
         /// <summary>Support department information</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SupportDepartment {
+            get { return BackingStore?.Get<string?>("supportDepartment"); }
+            set { BackingStore?.Set("supportDepartment", value); }
+        }
+#else
         public string SupportDepartment {
             get { return BackingStore?.Get<string>("supportDepartment"); }
             set { BackingStore?.Set("supportDepartment", value); }
         }
+#endif
         /// <summary>Support phone number</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SupportPhoneNumber {
+            get { return BackingStore?.Get<string?>("supportPhoneNumber"); }
+            set { BackingStore?.Set("supportPhoneNumber", value); }
+        }
+#else
         public string SupportPhoneNumber {
             get { return BackingStore?.Get<string>("supportPhoneNumber"); }
             set { BackingStore?.Set("supportPhoneNumber", value); }
         }
+#endif
         /// <summary>Indicates if &apos;Terms and Conditions&apos; setup pane is disabled</summary>
         public bool? TermsAndConditionsDisabled {
             get { return BackingStore?.Get<bool?>("termsAndConditionsDisabled"); }

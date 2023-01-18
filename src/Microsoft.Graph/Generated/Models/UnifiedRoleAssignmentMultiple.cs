@@ -6,60 +6,137 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class UnifiedRoleAssignmentMultiple : Entity, IParsable {
         /// <summary>Ids of the app specific scopes when the assignment scopes are app specific. The scopes of an assignment determines the set of resources for which the principal has been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. Use / for tenant-wide scope. App scopes are scopes that are defined and understood by this application only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? AppScopeIds {
+            get { return BackingStore?.Get<List<string>?>("appScopeIds"); }
+            set { BackingStore?.Set("appScopeIds", value); }
+        }
+#else
         public List<string> AppScopeIds {
             get { return BackingStore?.Get<List<string>>("appScopeIds"); }
             set { BackingStore?.Set("appScopeIds", value); }
         }
+#endif
         /// <summary>Read-only collection with details of the app specific scopes when the assignment scopes are app specific. Containment entity. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AppScope>? AppScopes {
+            get { return BackingStore?.Get<List<AppScope>?>("appScopes"); }
+            set { BackingStore?.Set("appScopes", value); }
+        }
+#else
         public List<AppScope> AppScopes {
             get { return BackingStore?.Get<List<AppScope>>("appScopes"); }
             set { BackingStore?.Set("appScopes", value); }
         }
+#endif
         /// <summary>The condition property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Condition {
+            get { return BackingStore?.Get<string?>("condition"); }
+            set { BackingStore?.Set("condition", value); }
+        }
+#else
         public string Condition {
             get { return BackingStore?.Get<string>("condition"); }
             set { BackingStore?.Set("condition", value); }
         }
+#endif
         /// <summary>Description of the role assignment.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>Ids of the directory objects representing the scopes of the assignment. The scopes of an assignment determine the set of resources for which the principals have been granted access. Directory scopes are shared scopes stored in the directory that are understood by multiple applications. App scopes are scopes that are defined and understood by this application only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? DirectoryScopeIds {
+            get { return BackingStore?.Get<List<string>?>("directoryScopeIds"); }
+            set { BackingStore?.Set("directoryScopeIds", value); }
+        }
+#else
         public List<string> DirectoryScopeIds {
             get { return BackingStore?.Get<List<string>>("directoryScopeIds"); }
             set { BackingStore?.Set("directoryScopeIds", value); }
         }
+#endif
         /// <summary>Read-only collection referencing the directory objects that are scope of the assignment. Provided so that callers can get the directory objects using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DirectoryObject>? DirectoryScopes {
+            get { return BackingStore?.Get<List<DirectoryObject>?>("directoryScopes"); }
+            set { BackingStore?.Set("directoryScopes", value); }
+        }
+#else
         public List<DirectoryObject> DirectoryScopes {
             get { return BackingStore?.Get<List<DirectoryObject>>("directoryScopes"); }
             set { BackingStore?.Set("directoryScopes", value); }
         }
+#endif
         /// <summary>Name of the role assignment. Required.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>Identifiers of the principals to which the assignment is granted.  Supports $filter (any operator only).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? PrincipalIds {
+            get { return BackingStore?.Get<List<string>?>("principalIds"); }
+            set { BackingStore?.Set("principalIds", value); }
+        }
+#else
         public List<string> PrincipalIds {
             get { return BackingStore?.Get<List<string>>("principalIds"); }
             set { BackingStore?.Set("principalIds", value); }
         }
+#endif
         /// <summary>Read-only collection referencing the assigned principals. Provided so that callers can get the principals using $expand at the same time as getting the role assignment. Read-only.  Supports $expand.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DirectoryObject>? Principals {
+            get { return BackingStore?.Get<List<DirectoryObject>?>("principals"); }
+            set { BackingStore?.Set("principals", value); }
+        }
+#else
         public List<DirectoryObject> Principals {
             get { return BackingStore?.Get<List<DirectoryObject>>("principals"); }
             set { BackingStore?.Set("principals", value); }
         }
+#endif
         /// <summary>Specifies the roleDefinition that the assignment is for. Provided so that callers can get the role definition using $expand at the same time as getting the role assignment.  Supports $filter (eq operator on id, isBuiltIn, and displayName, and startsWith operator on displayName)  and $expand.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public UnifiedRoleDefinition? RoleDefinition {
+            get { return BackingStore?.Get<UnifiedRoleDefinition?>("roleDefinition"); }
+            set { BackingStore?.Set("roleDefinition", value); }
+        }
+#else
         public UnifiedRoleDefinition RoleDefinition {
             get { return BackingStore?.Get<UnifiedRoleDefinition>("roleDefinition"); }
             set { BackingStore?.Set("roleDefinition", value); }
         }
+#endif
         /// <summary>Identifier of the unifiedRoleDefinition the assignment is for.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? RoleDefinitionId {
+            get { return BackingStore?.Get<string?>("roleDefinitionId"); }
+            set { BackingStore?.Set("roleDefinitionId", value); }
+        }
+#else
         public string RoleDefinitionId {
             get { return BackingStore?.Get<string>("roleDefinitionId"); }
             set { BackingStore?.Set("roleDefinitionId", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

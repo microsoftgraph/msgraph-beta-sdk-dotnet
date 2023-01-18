@@ -11,10 +11,17 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Display name of the dataSourceContainer entity.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The hold status of the dataSourceContainer.The possible values are: notApplied, applied, applying, removing, partial</summary>
         public DataSourceHoldStatus? HoldStatus {
             get { return BackingStore?.Get<DataSourceHoldStatus?>("holdStatus"); }

@@ -14,10 +14,17 @@ namespace Microsoft.Graph.Beta.Admin.ServiceAnnouncement.Messages.Unarchive {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The messageIds property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? MessageIds {
+            get { return BackingStore?.Get<List<string>?>("messageIds"); }
+            set { BackingStore?.Set("messageIds", value); }
+        }
+#else
         public List<string> MessageIds {
             get { return BackingStore?.Get<List<string>>("messageIds"); }
             set { BackingStore?.Set("messageIds", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new unarchivePostRequestBody and sets the default values.
         /// </summary>

@@ -14,15 +14,29 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>How many decimal places to display. See below for information about the possible values.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DecimalPlaces {
+            get { return BackingStore?.Get<string?>("decimalPlaces"); }
+            set { BackingStore?.Set("decimalPlaces", value); }
+        }
+#else
         public string DecimalPlaces {
             get { return BackingStore?.Get<string>("decimalPlaces"); }
             set { BackingStore?.Set("decimalPlaces", value); }
         }
+#endif
         /// <summary>How the value should be presented in the UX. Must be one of number or percentage. If unspecified, treated as number.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayAs {
+            get { return BackingStore?.Get<string?>("displayAs"); }
+            set { BackingStore?.Set("displayAs", value); }
+        }
+#else
         public string DisplayAs {
             get { return BackingStore?.Get<string>("displayAs"); }
             set { BackingStore?.Set("displayAs", value); }
         }
+#endif
         /// <summary>The maximum permitted value.</summary>
         public double? Maximum {
             get { return BackingStore?.Get<double?>("maximum"); }
@@ -34,10 +48,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("minimum", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new numberColumn and sets the default values.
         /// </summary>

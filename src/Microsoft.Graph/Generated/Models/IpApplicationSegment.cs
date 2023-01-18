@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class IpApplicationSegment : ApplicationSegment, IParsable {
         /// <summary>The destinationHost property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DestinationHost {
+            get { return BackingStore?.Get<string?>("destinationHost"); }
+            set { BackingStore?.Set("destinationHost", value); }
+        }
+#else
         public string DestinationHost {
             get { return BackingStore?.Get<string>("destinationHost"); }
             set { BackingStore?.Set("destinationHost", value); }
         }
+#endif
         /// <summary>The port property</summary>
         public int? Port {
             get { return BackingStore?.Get<int?>("port"); }

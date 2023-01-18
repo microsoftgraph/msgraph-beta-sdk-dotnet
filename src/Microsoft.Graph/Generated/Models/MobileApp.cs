@@ -9,15 +9,29 @@ namespace Microsoft.Graph.Beta.Models {
     /// </summary>
     public class MobileApp : Entity, IParsable {
         /// <summary>The list of group assignments for this mobile app.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<MobileAppAssignment>? Assignments {
+            get { return BackingStore?.Get<List<MobileAppAssignment>?>("assignments"); }
+            set { BackingStore?.Set("assignments", value); }
+        }
+#else
         public List<MobileAppAssignment> Assignments {
             get { return BackingStore?.Get<List<MobileAppAssignment>>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
+#endif
         /// <summary>The list of categories for this app.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<MobileAppCategory>? Categories {
+            get { return BackingStore?.Get<List<MobileAppCategory>?>("categories"); }
+            set { BackingStore?.Set("categories", value); }
+        }
+#else
         public List<MobileAppCategory> Categories {
             get { return BackingStore?.Get<List<MobileAppCategory>>("categories"); }
             set { BackingStore?.Set("categories", value); }
         }
+#endif
         /// <summary>The date and time the app was created.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
@@ -29,35 +43,77 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("dependentAppCount", value); }
         }
         /// <summary>The description of the app.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>The developer of the app.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Developer {
+            get { return BackingStore?.Get<string?>("developer"); }
+            set { BackingStore?.Set("developer", value); }
+        }
+#else
         public string Developer {
             get { return BackingStore?.Get<string>("developer"); }
             set { BackingStore?.Set("developer", value); }
         }
+#endif
         /// <summary>The list of installation states for this mobile app.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<MobileAppInstallStatus>? DeviceStatuses {
+            get { return BackingStore?.Get<List<MobileAppInstallStatus>?>("deviceStatuses"); }
+            set { BackingStore?.Set("deviceStatuses", value); }
+        }
+#else
         public List<MobileAppInstallStatus> DeviceStatuses {
             get { return BackingStore?.Get<List<MobileAppInstallStatus>>("deviceStatuses"); }
             set { BackingStore?.Set("deviceStatuses", value); }
         }
+#endif
         /// <summary>The admin provided or imported title of the app.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The more information Url.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? InformationUrl {
+            get { return BackingStore?.Get<string?>("informationUrl"); }
+            set { BackingStore?.Set("informationUrl", value); }
+        }
+#else
         public string InformationUrl {
             get { return BackingStore?.Get<string>("informationUrl"); }
             set { BackingStore?.Set("informationUrl", value); }
         }
+#endif
         /// <summary>Mobile App Install Summary.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public MobileAppInstallSummary? InstallSummary {
+            get { return BackingStore?.Get<MobileAppInstallSummary?>("installSummary"); }
+            set { BackingStore?.Set("installSummary", value); }
+        }
+#else
         public MobileAppInstallSummary InstallSummary {
             get { return BackingStore?.Get<MobileAppInstallSummary>("installSummary"); }
             set { BackingStore?.Set("installSummary", value); }
         }
+#endif
         /// <summary>The value indicating whether the app is assigned to at least one group.</summary>
         public bool? IsAssigned {
             get { return BackingStore?.Get<bool?>("isAssigned"); }
@@ -69,50 +125,99 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("isFeatured", value); }
         }
         /// <summary>The large icon, to be displayed in the app details and used for upload of the icon.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public MimeContent? LargeIcon {
+            get { return BackingStore?.Get<MimeContent?>("largeIcon"); }
+            set { BackingStore?.Set("largeIcon", value); }
+        }
+#else
         public MimeContent LargeIcon {
             get { return BackingStore?.Get<MimeContent>("largeIcon"); }
             set { BackingStore?.Set("largeIcon", value); }
         }
+#endif
         /// <summary>The date and time the app was last modified.</summary>
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>Notes for the app.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Notes {
+            get { return BackingStore?.Get<string?>("notes"); }
+            set { BackingStore?.Set("notes", value); }
+        }
+#else
         public string Notes {
             get { return BackingStore?.Get<string>("notes"); }
             set { BackingStore?.Set("notes", value); }
         }
+#endif
         /// <summary>The owner of the app.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Owner {
+            get { return BackingStore?.Get<string?>("owner"); }
+            set { BackingStore?.Set("owner", value); }
+        }
+#else
         public string Owner {
             get { return BackingStore?.Get<string>("owner"); }
             set { BackingStore?.Set("owner", value); }
         }
+#endif
         /// <summary>The privacy statement Url.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PrivacyInformationUrl {
+            get { return BackingStore?.Get<string?>("privacyInformationUrl"); }
+            set { BackingStore?.Set("privacyInformationUrl", value); }
+        }
+#else
         public string PrivacyInformationUrl {
             get { return BackingStore?.Get<string>("privacyInformationUrl"); }
             set { BackingStore?.Set("privacyInformationUrl", value); }
         }
+#endif
         /// <summary>The publisher of the app.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Publisher {
+            get { return BackingStore?.Get<string?>("publisher"); }
+            set { BackingStore?.Set("publisher", value); }
+        }
+#else
         public string Publisher {
             get { return BackingStore?.Get<string>("publisher"); }
             set { BackingStore?.Set("publisher", value); }
         }
+#endif
         /// <summary>Indicates the publishing state of an app.</summary>
         public MobileAppPublishingState? PublishingState {
             get { return BackingStore?.Get<MobileAppPublishingState?>("publishingState"); }
             set { BackingStore?.Set("publishingState", value); }
         }
         /// <summary>List of relationships for this mobile app.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<MobileAppRelationship>? Relationships {
+            get { return BackingStore?.Get<List<MobileAppRelationship>?>("relationships"); }
+            set { BackingStore?.Set("relationships", value); }
+        }
+#else
         public List<MobileAppRelationship> Relationships {
             get { return BackingStore?.Get<List<MobileAppRelationship>>("relationships"); }
             set { BackingStore?.Set("relationships", value); }
         }
+#endif
         /// <summary>List of scope tag ids for this mobile app.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? RoleScopeTagIds {
+            get { return BackingStore?.Get<List<string>?>("roleScopeTagIds"); }
+            set { BackingStore?.Set("roleScopeTagIds", value); }
+        }
+#else
         public List<string> RoleScopeTagIds {
             get { return BackingStore?.Get<List<string>>("roleScopeTagIds"); }
             set { BackingStore?.Set("roleScopeTagIds", value); }
         }
+#endif
         /// <summary>The total number of apps this app is directly or indirectly superseded by.</summary>
         public int? SupersededAppCount {
             get { return BackingStore?.Get<int?>("supersededAppCount"); }
@@ -129,10 +234,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("uploadState", value); }
         }
         /// <summary>The list of installation states for this mobile app.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<UserAppInstallStatus>? UserStatuses {
+            get { return BackingStore?.Get<List<UserAppInstallStatus>?>("userStatuses"); }
+            set { BackingStore?.Set("userStatuses", value); }
+        }
+#else
         public List<UserAppInstallStatus> UserStatuses {
             get { return BackingStore?.Get<List<UserAppInstallStatus>>("userStatuses"); }
             set { BackingStore?.Set("userStatuses", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

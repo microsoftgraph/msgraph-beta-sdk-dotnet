@@ -14,20 +14,41 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>A single entity that&apos;s excluded from using this feature.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public FeatureTarget? ExcludeTarget {
+            get { return BackingStore?.Get<FeatureTarget?>("excludeTarget"); }
+            set { BackingStore?.Set("excludeTarget", value); }
+        }
+#else
         public FeatureTarget ExcludeTarget {
             get { return BackingStore?.Get<FeatureTarget>("excludeTarget"); }
             set { BackingStore?.Set("excludeTarget", value); }
         }
+#endif
         /// <summary>A single entity that&apos;s allowed to use this feature.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public FeatureTarget? IncludeTarget {
+            get { return BackingStore?.Get<FeatureTarget?>("includeTarget"); }
+            set { BackingStore?.Set("includeTarget", value); }
+        }
+#else
         public FeatureTarget IncludeTarget {
             get { return BackingStore?.Get<FeatureTarget>("includeTarget"); }
             set { BackingStore?.Set("includeTarget", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Enable or disable the feature. Possible values are: default, enabled, disabled, unknownFutureValue. The default value is used when the configuration hasn&apos;t been explicitly set and uses the default behavior of Azure AD for the setting. The default value is disabled.</summary>
         public AdvancedConfigState? State {
             get { return BackingStore?.Get<AdvancedConfigState?>("state"); }

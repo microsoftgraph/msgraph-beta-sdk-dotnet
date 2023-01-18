@@ -15,15 +15,29 @@ namespace Microsoft.Graph.Beta.Groups.Item.Events.Item.Forward {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The Comment property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Comment {
+            get { return BackingStore?.Get<string?>("comment"); }
+            set { BackingStore?.Set("comment", value); }
+        }
+#else
         public string Comment {
             get { return BackingStore?.Get<string>("comment"); }
             set { BackingStore?.Set("comment", value); }
         }
+#endif
         /// <summary>The ToRecipients property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Recipient>? ToRecipients {
+            get { return BackingStore?.Get<List<Recipient>?>("toRecipients"); }
+            set { BackingStore?.Set("toRecipients", value); }
+        }
+#else
         public List<Recipient> ToRecipients {
             get { return BackingStore?.Get<List<Recipient>>("toRecipients"); }
             set { BackingStore?.Set("toRecipients", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new forwardPostRequestBody and sets the default values.
         /// </summary>

@@ -6,40 +6,75 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class SubscribedSku : Entity, IParsable {
         /// <summary>For example, &apos;User&apos; or &apos;Company&apos;.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AppliesTo {
+            get { return BackingStore?.Get<string?>("appliesTo"); }
+            set { BackingStore?.Set("appliesTo", value); }
+        }
+#else
         public string AppliesTo {
             get { return BackingStore?.Get<string>("appliesTo"); }
             set { BackingStore?.Set("appliesTo", value); }
         }
+#endif
         /// <summary>Possible values are: Enabled, Warning, Suspended, Deleted, LockedOut. The capabilityStatus is Enabled if the prepaidUnits property has at least 1 unit that is enabled, and LockedOut if the customer cancelled their subscription.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CapabilityStatus {
+            get { return BackingStore?.Get<string?>("capabilityStatus"); }
+            set { BackingStore?.Set("capabilityStatus", value); }
+        }
+#else
         public string CapabilityStatus {
             get { return BackingStore?.Get<string>("capabilityStatus"); }
             set { BackingStore?.Set("capabilityStatus", value); }
         }
+#endif
         /// <summary>The number of licenses that have been assigned.</summary>
         public int? ConsumedUnits {
             get { return BackingStore?.Get<int?>("consumedUnits"); }
             set { BackingStore?.Set("consumedUnits", value); }
         }
         /// <summary>Information about the number and status of prepaid licenses.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public LicenseUnitsDetail? PrepaidUnits {
+            get { return BackingStore?.Get<LicenseUnitsDetail?>("prepaidUnits"); }
+            set { BackingStore?.Set("prepaidUnits", value); }
+        }
+#else
         public LicenseUnitsDetail PrepaidUnits {
             get { return BackingStore?.Get<LicenseUnitsDetail>("prepaidUnits"); }
             set { BackingStore?.Set("prepaidUnits", value); }
         }
+#endif
         /// <summary>Information about the service plans that are available with the SKU. Not nullable</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ServicePlanInfo>? ServicePlans {
+            get { return BackingStore?.Get<List<ServicePlanInfo>?>("servicePlans"); }
+            set { BackingStore?.Set("servicePlans", value); }
+        }
+#else
         public List<ServicePlanInfo> ServicePlans {
             get { return BackingStore?.Get<List<ServicePlanInfo>>("servicePlans"); }
             set { BackingStore?.Set("servicePlans", value); }
         }
+#endif
         /// <summary>The unique identifier (GUID) for the service SKU.</summary>
         public Guid? SkuId {
             get { return BackingStore?.Get<Guid?>("skuId"); }
             set { BackingStore?.Set("skuId", value); }
         }
         /// <summary>The SKU part number; for example: &apos;AAD_PREMIUM&apos; or &apos;RMSBASIC&apos;. To get a list of commercial subscriptions that an organization has acquired, see List subscribedSkus.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SkuPartNumber {
+            get { return BackingStore?.Get<string?>("skuPartNumber"); }
+            set { BackingStore?.Set("skuPartNumber", value); }
+        }
+#else
         public string SkuPartNumber {
             get { return BackingStore?.Get<string>("skuPartNumber"); }
             set { BackingStore?.Set("skuPartNumber", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

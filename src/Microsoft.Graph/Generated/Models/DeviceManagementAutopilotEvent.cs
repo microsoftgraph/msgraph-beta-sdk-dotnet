@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Represents an Autopilot flow event.
+    /// </summary>
     public class DeviceManagementAutopilotEvent : Entity, IParsable {
         /// <summary>Time spent in user ESP.</summary>
         public TimeSpan? AccountSetupDuration {
@@ -41,10 +44,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("deploymentTotalDuration", value); }
         }
         /// <summary>Device id associated with the object</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeviceId {
+            get { return BackingStore?.Get<string?>("deviceId"); }
+            set { BackingStore?.Set("deviceId", value); }
+        }
+#else
         public string DeviceId {
             get { return BackingStore?.Get<string>("deviceId"); }
             set { BackingStore?.Set("deviceId", value); }
         }
+#endif
         /// <summary>Time spent in device enrollment.</summary>
         public TimeSpan? DevicePreparationDuration {
             get { return BackingStore?.Get<TimeSpan?>("devicePreparationDuration"); }
@@ -56,10 +66,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("deviceRegisteredDateTime", value); }
         }
         /// <summary>Device serial number.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeviceSerialNumber {
+            get { return BackingStore?.Get<string?>("deviceSerialNumber"); }
+            set { BackingStore?.Set("deviceSerialNumber", value); }
+        }
+#else
         public string DeviceSerialNumber {
             get { return BackingStore?.Get<string>("deviceSerialNumber"); }
             set { BackingStore?.Set("deviceSerialNumber", value); }
         }
+#endif
         /// <summary>Time spent in device ESP.</summary>
         public TimeSpan? DeviceSetupDuration {
             get { return BackingStore?.Get<TimeSpan?>("deviceSetupDuration"); }
@@ -71,10 +88,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("deviceSetupStatus", value); }
         }
         /// <summary>Enrollment failure details.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? EnrollmentFailureDetails {
+            get { return BackingStore?.Get<string?>("enrollmentFailureDetails"); }
+            set { BackingStore?.Set("enrollmentFailureDetails", value); }
+        }
+#else
         public string EnrollmentFailureDetails {
             get { return BackingStore?.Get<string>("enrollmentFailureDetails"); }
             set { BackingStore?.Set("enrollmentFailureDetails", value); }
         }
+#endif
         /// <summary>Device enrollment start date.</summary>
         public DateTimeOffset? EnrollmentStartDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("enrollmentStartDateTime"); }
@@ -96,20 +120,41 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("eventDateTime", value); }
         }
         /// <summary>Managed device name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ManagedDeviceName {
+            get { return BackingStore?.Get<string?>("managedDeviceName"); }
+            set { BackingStore?.Set("managedDeviceName", value); }
+        }
+#else
         public string ManagedDeviceName {
             get { return BackingStore?.Get<string>("managedDeviceName"); }
             set { BackingStore?.Set("managedDeviceName", value); }
         }
+#endif
         /// <summary>Device operating system version.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OsVersion {
+            get { return BackingStore?.Get<string?>("osVersion"); }
+            set { BackingStore?.Set("osVersion", value); }
+        }
+#else
         public string OsVersion {
             get { return BackingStore?.Get<string>("osVersion"); }
             set { BackingStore?.Set("osVersion", value); }
         }
+#endif
         /// <summary>Policy and application status details for this device.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DeviceManagementAutopilotPolicyStatusDetail>? PolicyStatusDetails {
+            get { return BackingStore?.Get<List<DeviceManagementAutopilotPolicyStatusDetail>?>("policyStatusDetails"); }
+            set { BackingStore?.Set("policyStatusDetails", value); }
+        }
+#else
         public List<DeviceManagementAutopilotPolicyStatusDetail> PolicyStatusDetails {
             get { return BackingStore?.Get<List<DeviceManagementAutopilotPolicyStatusDetail>>("policyStatusDetails"); }
             set { BackingStore?.Set("policyStatusDetails", value); }
         }
+#endif
         /// <summary>Count of applications targeted.</summary>
         public int? TargetedAppCount {
             get { return BackingStore?.Get<int?>("targetedAppCount"); }
@@ -121,25 +166,53 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("targetedPolicyCount", value); }
         }
         /// <summary>User principal name used to enroll the device.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UserPrincipalName {
+            get { return BackingStore?.Get<string?>("userPrincipalName"); }
+            set { BackingStore?.Set("userPrincipalName", value); }
+        }
+#else
         public string UserPrincipalName {
             get { return BackingStore?.Get<string>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
+#endif
         /// <summary>Enrollment Status Page profile name</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Windows10EnrollmentCompletionPageConfigurationDisplayName {
+            get { return BackingStore?.Get<string?>("windows10EnrollmentCompletionPageConfigurationDisplayName"); }
+            set { BackingStore?.Set("windows10EnrollmentCompletionPageConfigurationDisplayName", value); }
+        }
+#else
         public string Windows10EnrollmentCompletionPageConfigurationDisplayName {
             get { return BackingStore?.Get<string>("windows10EnrollmentCompletionPageConfigurationDisplayName"); }
             set { BackingStore?.Set("windows10EnrollmentCompletionPageConfigurationDisplayName", value); }
         }
+#endif
         /// <summary>Enrollment Status Page profile ID</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Windows10EnrollmentCompletionPageConfigurationId {
+            get { return BackingStore?.Get<string?>("windows10EnrollmentCompletionPageConfigurationId"); }
+            set { BackingStore?.Set("windows10EnrollmentCompletionPageConfigurationId", value); }
+        }
+#else
         public string Windows10EnrollmentCompletionPageConfigurationId {
             get { return BackingStore?.Get<string>("windows10EnrollmentCompletionPageConfigurationId"); }
             set { BackingStore?.Set("windows10EnrollmentCompletionPageConfigurationId", value); }
         }
+#endif
         /// <summary>Autopilot profile name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? WindowsAutopilotDeploymentProfileDisplayName {
+            get { return BackingStore?.Get<string?>("windowsAutopilotDeploymentProfileDisplayName"); }
+            set { BackingStore?.Set("windowsAutopilotDeploymentProfileDisplayName", value); }
+        }
+#else
         public string WindowsAutopilotDeploymentProfileDisplayName {
             get { return BackingStore?.Get<string>("windowsAutopilotDeploymentProfileDisplayName"); }
             set { BackingStore?.Set("windowsAutopilotDeploymentProfileDisplayName", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

@@ -14,20 +14,41 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The id of the rule. For example, ExpirationRule and MfaRule.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? RuleIdentifier {
+            get { return BackingStore?.Get<string?>("ruleIdentifier"); }
+            set { BackingStore?.Set("ruleIdentifier", value); }
+        }
+#else
         public string RuleIdentifier {
             get { return BackingStore?.Get<string>("ruleIdentifier"); }
             set { BackingStore?.Set("ruleIdentifier", value); }
         }
+#endif
         /// <summary>The settings of the rule. The value is a JSON string with a list of pairs in the format of Parameter_Name:Parameter_Value. For example, {&apos;permanentAssignment&apos;:false,&apos;maximumGrantPeriodInMinutes&apos;:129600}</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Setting {
+            get { return BackingStore?.Get<string?>("setting"); }
+            set { BackingStore?.Set("setting", value); }
+        }
+#else
         public string Setting {
             get { return BackingStore?.Get<string>("setting"); }
             set { BackingStore?.Set("setting", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new governanceRuleSetting and sets the default values.
         /// </summary>

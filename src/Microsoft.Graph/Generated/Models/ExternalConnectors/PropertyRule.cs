@@ -14,25 +14,46 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The operation property</summary>
         public RuleOperation? Operation {
             get { return BackingStore?.Get<RuleOperation?>("operation"); }
             set { BackingStore?.Set("operation", value); }
         }
         /// <summary>The property from the externalItem schema. Required.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Property {
+            get { return BackingStore?.Get<string?>("property"); }
+            set { BackingStore?.Set("property", value); }
+        }
+#else
         public string Property {
             get { return BackingStore?.Get<string>("property"); }
             set { BackingStore?.Set("property", value); }
         }
+#endif
         /// <summary>A collection with one or many strings. The specified string(s) will be matched with the specified property using the specified operation. Required.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? Values {
+            get { return BackingStore?.Get<List<string>?>("values"); }
+            set { BackingStore?.Set("values", value); }
+        }
+#else
         public List<string> Values {
             get { return BackingStore?.Get<List<string>>("values"); }
             set { BackingStore?.Set("values", value); }
         }
+#endif
         /// <summary>The valuesJoinedBy property</summary>
         public BinaryOperator? ValuesJoinedBy {
             get { return BackingStore?.Get<BinaryOperator?>("valuesJoinedBy"); }

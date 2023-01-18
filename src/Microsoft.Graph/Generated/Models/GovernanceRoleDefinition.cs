@@ -6,35 +6,77 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class GovernanceRoleDefinition : Entity, IParsable {
         /// <summary>The display name of the role definition.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The external id of the role definition.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ExternalId {
+            get { return BackingStore?.Get<string?>("externalId"); }
+            set { BackingStore?.Set("externalId", value); }
+        }
+#else
         public string ExternalId {
             get { return BackingStore?.Get<string>("externalId"); }
             set { BackingStore?.Set("externalId", value); }
         }
+#endif
         /// <summary>Read-only. The associated resource for the role definition.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public GovernanceResource? Resource {
+            get { return BackingStore?.Get<GovernanceResource?>("resource"); }
+            set { BackingStore?.Set("resource", value); }
+        }
+#else
         public GovernanceResource Resource {
             get { return BackingStore?.Get<GovernanceResource>("resource"); }
             set { BackingStore?.Set("resource", value); }
         }
+#endif
         /// <summary>Required. The id of the resource associated with the role definition.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ResourceId {
+            get { return BackingStore?.Get<string?>("resourceId"); }
+            set { BackingStore?.Set("resourceId", value); }
+        }
+#else
         public string ResourceId {
             get { return BackingStore?.Get<string>("resourceId"); }
             set { BackingStore?.Set("resourceId", value); }
         }
+#endif
         /// <summary>The associated role setting for the role definition.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public GovernanceRoleSetting? RoleSetting {
+            get { return BackingStore?.Get<GovernanceRoleSetting?>("roleSetting"); }
+            set { BackingStore?.Set("roleSetting", value); }
+        }
+#else
         public GovernanceRoleSetting RoleSetting {
             get { return BackingStore?.Get<GovernanceRoleSetting>("roleSetting"); }
             set { BackingStore?.Set("roleSetting", value); }
         }
+#endif
         /// <summary>The templateId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TemplateId {
+            get { return BackingStore?.Get<string?>("templateId"); }
+            set { BackingStore?.Set("templateId", value); }
+        }
+#else
         public string TemplateId {
             get { return BackingStore?.Get<string>("templateId"); }
             set { BackingStore?.Set("templateId", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

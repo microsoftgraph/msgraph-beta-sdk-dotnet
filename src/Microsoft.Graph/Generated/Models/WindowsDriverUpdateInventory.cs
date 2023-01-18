@@ -29,30 +29,58 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("deployDateTime", value); }
         }
         /// <summary>The class of the driver.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DriverClass {
+            get { return BackingStore?.Get<string?>("driverClass"); }
+            set { BackingStore?.Set("driverClass", value); }
+        }
+#else
         public string DriverClass {
             get { return BackingStore?.Get<string>("driverClass"); }
             set { BackingStore?.Set("driverClass", value); }
         }
+#endif
         /// <summary>The manufacturer of the driver.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Manufacturer {
+            get { return BackingStore?.Get<string?>("manufacturer"); }
+            set { BackingStore?.Set("manufacturer", value); }
+        }
+#else
         public string Manufacturer {
             get { return BackingStore?.Get<string>("manufacturer"); }
             set { BackingStore?.Set("manufacturer", value); }
         }
+#endif
         /// <summary>The name of the driver.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Name {
+            get { return BackingStore?.Get<string?>("name"); }
+            set { BackingStore?.Set("name", value); }
+        }
+#else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#endif
         /// <summary>The release date time of the driver.</summary>
         public DateTimeOffset? ReleaseDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("releaseDateTime"); }
             set { BackingStore?.Set("releaseDateTime", value); }
         }
         /// <summary>The version of the driver.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Version {
+            get { return BackingStore?.Get<string?>("version"); }
+            set { BackingStore?.Set("version", value); }
+        }
+#else
         public string Version {
             get { return BackingStore?.Get<string>("version"); }
             set { BackingStore?.Set("version", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

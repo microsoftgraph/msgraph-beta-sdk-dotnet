@@ -16,15 +16,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("connectWhenNetworkNameIsHidden", value); }
         }
         /// <summary>Network Name</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? NetworkName {
+            get { return BackingStore?.Get<string?>("networkName"); }
+            set { BackingStore?.Set("networkName", value); }
+        }
+#else
         public string NetworkName {
             get { return BackingStore?.Get<string>("networkName"); }
             set { BackingStore?.Set("networkName", value); }
         }
+#endif
         /// <summary>This is the name of the Wi-Fi network that is broadcast to all devices.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Ssid {
+            get { return BackingStore?.Get<string?>("ssid"); }
+            set { BackingStore?.Set("ssid", value); }
+        }
+#else
         public string Ssid {
             get { return BackingStore?.Get<string>("ssid"); }
             set { BackingStore?.Set("ssid", value); }
         }
+#endif
         /// <summary>Wi-Fi Security Types for Android.</summary>
         public AndroidWiFiSecurityType? WiFiSecurityType {
             get { return BackingStore?.Get<AndroidWiFiSecurityType?>("wiFiSecurityType"); }

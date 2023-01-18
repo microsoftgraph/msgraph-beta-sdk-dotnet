@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class DeviceComanagementAuthorityConfiguration : DeviceEnrollmentConfiguration, IParsable {
         /// <summary>CoManagement Authority configuration ConfigurationManagerAgentCommandLineArgument</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ConfigurationManagerAgentCommandLineArgument {
+            get { return BackingStore?.Get<string?>("configurationManagerAgentCommandLineArgument"); }
+            set { BackingStore?.Set("configurationManagerAgentCommandLineArgument", value); }
+        }
+#else
         public string ConfigurationManagerAgentCommandLineArgument {
             get { return BackingStore?.Get<string>("configurationManagerAgentCommandLineArgument"); }
             set { BackingStore?.Set("configurationManagerAgentCommandLineArgument", value); }
         }
+#endif
         /// <summary>CoManagement Authority configuration InstallConfigurationManagerAgent</summary>
         public bool? InstallConfigurationManagerAgent {
             get { return BackingStore?.Get<bool?>("installConfigurationManagerAgent"); }

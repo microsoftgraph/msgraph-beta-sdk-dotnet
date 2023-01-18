@@ -30,10 +30,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("month", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Represents the time of day when the transition from daylight saving time to standard time occurs.</summary>
         public Time? Time {
             get { return BackingStore?.Get<Time?>("time"); }

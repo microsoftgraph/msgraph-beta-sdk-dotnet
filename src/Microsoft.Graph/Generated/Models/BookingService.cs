@@ -4,27 +4,51 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Represents a particular service offered by a booking business.
+    /// </summary>
     public class BookingService : BookingNamedEntity, IParsable {
         /// <summary>Additional information that is sent to the customer when an appointment is confirmed.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AdditionalInformation {
+            get { return BackingStore?.Get<string?>("additionalInformation"); }
+            set { BackingStore?.Set("additionalInformation", value); }
+        }
+#else
         public string AdditionalInformation {
             get { return BackingStore?.Get<string>("additionalInformation"); }
             set { BackingStore?.Set("additionalInformation", value); }
         }
+#endif
         /// <summary>Contains the set of custom questions associated with a particular service.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<BookingQuestionAssignment>? CustomQuestions {
+            get { return BackingStore?.Get<List<BookingQuestionAssignment>?>("customQuestions"); }
+            set { BackingStore?.Set("customQuestions", value); }
+        }
+#else
         public List<BookingQuestionAssignment> CustomQuestions {
             get { return BackingStore?.Get<List<BookingQuestionAssignment>>("customQuestions"); }
             set { BackingStore?.Set("customQuestions", value); }
         }
+#endif
         /// <summary>The default length of the service, represented in numbers of days, hours, minutes, and seconds. For example, P11D23H59M59.999999999999S.</summary>
         public TimeSpan? DefaultDuration {
             get { return BackingStore?.Get<TimeSpan?>("defaultDuration"); }
             set { BackingStore?.Set("defaultDuration", value); }
         }
         /// <summary>The default physical location for the service.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Location? DefaultLocation {
+            get { return BackingStore?.Get<Location?>("defaultLocation"); }
+            set { BackingStore?.Set("defaultLocation", value); }
+        }
+#else
         public Location DefaultLocation {
             get { return BackingStore?.Get<Location>("defaultLocation"); }
             set { BackingStore?.Set("defaultLocation", value); }
         }
+#endif
         /// <summary>The default monetary price for the service.</summary>
         public double? DefaultPrice {
             get { return BackingStore?.Get<double?>("defaultPrice"); }
@@ -36,15 +60,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("defaultPriceType", value); }
         }
         /// <summary>The default set of reminders for an appointment of this service. The value of this property is available only when reading this bookingService by its ID.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<BookingReminder>? DefaultReminders {
+            get { return BackingStore?.Get<List<BookingReminder>?>("defaultReminders"); }
+            set { BackingStore?.Set("defaultReminders", value); }
+        }
+#else
         public List<BookingReminder> DefaultReminders {
             get { return BackingStore?.Get<List<BookingReminder>>("defaultReminders"); }
             set { BackingStore?.Set("defaultReminders", value); }
         }
+#endif
         /// <summary>A text description for the service.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>True if an anonymousJoinWebUrl(webrtcUrl) will be generated for the appointment booked for this service.</summary>
         public bool? IsAnonymousJoinEnabled {
             get { return BackingStore?.Get<bool?>("isAnonymousJoinEnabled"); }
@@ -61,20 +99,34 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("isLocationOnline", value); }
         }
         /// <summary>The language of the self service booking page.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? LanguageTag {
+            get { return BackingStore?.Get<string?>("languageTag"); }
+            set { BackingStore?.Set("languageTag", value); }
+        }
+#else
         public string LanguageTag {
             get { return BackingStore?.Get<string>("languageTag"); }
             set { BackingStore?.Set("languageTag", value); }
         }
+#endif
         /// <summary>The maximum number of customers allowed in a service. If maximumAttendeesCount of the service is greater than 1, pass valid customer IDs while creating or updating an appointment.  To create a customer, use the Create bookingCustomer operation.</summary>
         public int? MaximumAttendeesCount {
             get { return BackingStore?.Get<int?>("maximumAttendeesCount"); }
             set { BackingStore?.Set("maximumAttendeesCount", value); }
         }
         /// <summary>Additional information about this service.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Notes {
+            get { return BackingStore?.Get<string?>("notes"); }
+            set { BackingStore?.Set("notes", value); }
+        }
+#else
         public string Notes {
             get { return BackingStore?.Get<string>("notes"); }
             set { BackingStore?.Set("notes", value); }
         }
+#endif
         /// <summary>The time to buffer after an appointment for this service ends, and before the next customer appointment can be booked.</summary>
         public TimeSpan? PostBuffer {
             get { return BackingStore?.Get<TimeSpan?>("postBuffer"); }
@@ -86,27 +138,48 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("preBuffer", value); }
         }
         /// <summary>The set of policies that determine how appointments for this type of service should be created and managed.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public BookingSchedulingPolicy? SchedulingPolicy {
+            get { return BackingStore?.Get<BookingSchedulingPolicy?>("schedulingPolicy"); }
+            set { BackingStore?.Set("schedulingPolicy", value); }
+        }
+#else
         public BookingSchedulingPolicy SchedulingPolicy {
             get { return BackingStore?.Get<BookingSchedulingPolicy>("schedulingPolicy"); }
             set { BackingStore?.Set("schedulingPolicy", value); }
         }
+#endif
         /// <summary>True indicates SMS notifications can be sent to the customers for the appointment of the service. Default value is false.</summary>
         public bool? SmsNotificationsEnabled {
             get { return BackingStore?.Get<bool?>("smsNotificationsEnabled"); }
             set { BackingStore?.Set("smsNotificationsEnabled", value); }
         }
         /// <summary>Represents those staff members who provide this service.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? StaffMemberIds {
+            get { return BackingStore?.Get<List<string>?>("staffMemberIds"); }
+            set { BackingStore?.Set("staffMemberIds", value); }
+        }
+#else
         public List<string> StaffMemberIds {
             get { return BackingStore?.Get<List<string>>("staffMemberIds"); }
             set { BackingStore?.Set("staffMemberIds", value); }
         }
+#endif
         /// <summary>The URL a customer uses to access the service.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? WebUrl {
+            get { return BackingStore?.Get<string?>("webUrl"); }
+            set { BackingStore?.Set("webUrl", value); }
+        }
+#else
         public string WebUrl {
             get { return BackingStore?.Get<string>("webUrl"); }
             set { BackingStore?.Set("webUrl", value); }
         }
+#endif
         /// <summary>
-        /// Instantiates a new BookingService and sets the default values.
+        /// Instantiates a new bookingService and sets the default values.
         /// </summary>
         public BookingService() : base() {
             OdataType = "#microsoft.graph.bookingService";

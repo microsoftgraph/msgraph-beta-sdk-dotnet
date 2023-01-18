@@ -14,20 +14,41 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The calls property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Call>? Calls {
+            get { return BackingStore?.Get<List<Call>?>("calls"); }
+            set { BackingStore?.Set("calls", value); }
+        }
+#else
         public List<Call> Calls {
             get { return BackingStore?.Get<List<Call>>("calls"); }
             set { BackingStore?.Set("calls", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The onlineMeetings property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<OnlineMeeting>? OnlineMeetings {
+            get { return BackingStore?.Get<List<OnlineMeeting>?>("onlineMeetings"); }
+            set { BackingStore?.Set("onlineMeetings", value); }
+        }
+#else
         public List<OnlineMeeting> OnlineMeetings {
             get { return BackingStore?.Get<List<OnlineMeeting>>("onlineMeetings"); }
             set { BackingStore?.Set("onlineMeetings", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new CommsApplication and sets the default values.
         /// </summary>

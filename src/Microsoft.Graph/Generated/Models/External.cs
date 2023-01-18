@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class External : Entity, IParsable {
         /// <summary>The connections property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ExternalConnection>? Connections {
+            get { return BackingStore?.Get<List<ExternalConnection>?>("connections"); }
+            set { BackingStore?.Set("connections", value); }
+        }
+#else
         public List<ExternalConnection> Connections {
             get { return BackingStore?.Get<List<ExternalConnection>>("connections"); }
             set { BackingStore?.Set("connections", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

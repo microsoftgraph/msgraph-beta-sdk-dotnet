@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class ChannelUnsetAsFavoriteByDefaultEventMessageDetail : EventMessageDetail, IParsable {
         /// <summary>Unique identifier of the channel.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ChannelId {
+            get { return BackingStore?.Get<string?>("channelId"); }
+            set { BackingStore?.Set("channelId", value); }
+        }
+#else
         public string ChannelId {
             get { return BackingStore?.Get<string>("channelId"); }
             set { BackingStore?.Set("channelId", value); }
         }
+#endif
         /// <summary>Initiator of the event.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public IdentitySet? Initiator {
+            get { return BackingStore?.Get<IdentitySet?>("initiator"); }
+            set { BackingStore?.Set("initiator", value); }
+        }
+#else
         public IdentitySet Initiator {
             get { return BackingStore?.Get<IdentitySet>("initiator"); }
             set { BackingStore?.Set("initiator", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new ChannelUnsetAsFavoriteByDefaultEventMessageDetail and sets the default values.
         /// </summary>

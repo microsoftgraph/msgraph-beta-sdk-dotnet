@@ -15,15 +15,29 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.Transfer {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The transferee property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ParticipantInfo? Transferee {
+            get { return BackingStore?.Get<ParticipantInfo?>("transferee"); }
+            set { BackingStore?.Set("transferee", value); }
+        }
+#else
         public ParticipantInfo Transferee {
             get { return BackingStore?.Get<ParticipantInfo>("transferee"); }
             set { BackingStore?.Set("transferee", value); }
         }
+#endif
         /// <summary>The transferTarget property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public InvitationParticipantInfo? TransferTarget {
+            get { return BackingStore?.Get<InvitationParticipantInfo?>("transferTarget"); }
+            set { BackingStore?.Set("transferTarget", value); }
+        }
+#else
         public InvitationParticipantInfo TransferTarget {
             get { return BackingStore?.Get<InvitationParticipantInfo>("transferTarget"); }
             set { BackingStore?.Set("transferTarget", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new transferPostRequestBody and sets the default values.
         /// </summary>

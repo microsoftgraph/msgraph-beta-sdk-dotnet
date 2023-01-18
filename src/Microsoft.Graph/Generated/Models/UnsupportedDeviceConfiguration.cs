@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class UnsupportedDeviceConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Details describing why the entity is unsupported. This collection can contain a maximum of 1000 elements.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<UnsupportedDeviceConfigurationDetail>? Details {
+            get { return BackingStore?.Get<List<UnsupportedDeviceConfigurationDetail>?>("details"); }
+            set { BackingStore?.Set("details", value); }
+        }
+#else
         public List<UnsupportedDeviceConfigurationDetail> Details {
             get { return BackingStore?.Get<List<UnsupportedDeviceConfigurationDetail>>("details"); }
             set { BackingStore?.Set("details", value); }
         }
+#endif
         /// <summary>The type of entity that would be returned otherwise.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OriginalEntityTypeName {
+            get { return BackingStore?.Get<string?>("originalEntityTypeName"); }
+            set { BackingStore?.Set("originalEntityTypeName", value); }
+        }
+#else
         public string OriginalEntityTypeName {
             get { return BackingStore?.Get<string>("originalEntityTypeName"); }
             set { BackingStore?.Set("originalEntityTypeName", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new UnsupportedDeviceConfiguration and sets the default values.
         /// </summary>

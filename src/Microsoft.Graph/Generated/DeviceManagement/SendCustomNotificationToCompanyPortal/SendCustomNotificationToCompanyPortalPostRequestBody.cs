@@ -14,20 +14,41 @@ namespace Microsoft.Graph.Beta.DeviceManagement.SendCustomNotificationToCompanyP
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The groupsToNotify property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? GroupsToNotify {
+            get { return BackingStore?.Get<List<string>?>("groupsToNotify"); }
+            set { BackingStore?.Set("groupsToNotify", value); }
+        }
+#else
         public List<string> GroupsToNotify {
             get { return BackingStore?.Get<List<string>>("groupsToNotify"); }
             set { BackingStore?.Set("groupsToNotify", value); }
         }
+#endif
         /// <summary>The notificationBody property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? NotificationBody {
+            get { return BackingStore?.Get<string?>("notificationBody"); }
+            set { BackingStore?.Set("notificationBody", value); }
+        }
+#else
         public string NotificationBody {
             get { return BackingStore?.Get<string>("notificationBody"); }
             set { BackingStore?.Set("notificationBody", value); }
         }
+#endif
         /// <summary>The notificationTitle property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? NotificationTitle {
+            get { return BackingStore?.Get<string?>("notificationTitle"); }
+            set { BackingStore?.Set("notificationTitle", value); }
+        }
+#else
         public string NotificationTitle {
             get { return BackingStore?.Get<string>("notificationTitle"); }
             set { BackingStore?.Set("notificationTitle", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new sendCustomNotificationToCompanyPortalPostRequestBody and sets the default values.
         /// </summary>

@@ -12,37 +12,79 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Filter that defines the dynamic-application-syntax rule to include/exclude cloud applications. A filter can use custom security attributes to include/exclude applications.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ConditionalAccessFilter? ApplicationFilter {
+            get { return BackingStore?.Get<ConditionalAccessFilter?>("applicationFilter"); }
+            set { BackingStore?.Set("applicationFilter", value); }
+        }
+#else
         public ConditionalAccessFilter ApplicationFilter {
             get { return BackingStore?.Get<ConditionalAccessFilter>("applicationFilter"); }
             set { BackingStore?.Set("applicationFilter", value); }
         }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Can be one of the following:  The list of client IDs (appId) explicitly excluded from the policy. Office365 - For the list of apps included in Office365, see Conditional Access target apps: Office 365</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? ExcludeApplications {
+            get { return BackingStore?.Get<List<string>?>("excludeApplications"); }
+            set { BackingStore?.Set("excludeApplications", value); }
+        }
+#else
         public List<string> ExcludeApplications {
             get { return BackingStore?.Get<List<string>>("excludeApplications"); }
             set { BackingStore?.Set("excludeApplications", value); }
         }
+#endif
         /// <summary>Can be one of the following:  The list of client IDs (appId) the policy applies to, unless explicitly excluded (in excludeApplications)  All  Office365 - For the list of apps included in Office365, see Conditional Access target apps: Office 365</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? IncludeApplications {
+            get { return BackingStore?.Get<List<string>?>("includeApplications"); }
+            set { BackingStore?.Set("includeApplications", value); }
+        }
+#else
         public List<string> IncludeApplications {
             get { return BackingStore?.Get<List<string>>("includeApplications"); }
             set { BackingStore?.Set("includeApplications", value); }
         }
+#endif
         /// <summary>Authentication context class references include. Supported values are c1 through c25.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? IncludeAuthenticationContextClassReferences {
+            get { return BackingStore?.Get<List<string>?>("includeAuthenticationContextClassReferences"); }
+            set { BackingStore?.Set("includeAuthenticationContextClassReferences", value); }
+        }
+#else
         public List<string> IncludeAuthenticationContextClassReferences {
             get { return BackingStore?.Get<List<string>>("includeAuthenticationContextClassReferences"); }
             set { BackingStore?.Set("includeAuthenticationContextClassReferences", value); }
         }
+#endif
         /// <summary>User actions to include. Supported values are urn:user:registersecurityinfo and urn:user:registerdevice</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? IncludeUserActions {
+            get { return BackingStore?.Get<List<string>?>("includeUserActions"); }
+            set { BackingStore?.Set("includeUserActions", value); }
+        }
+#else
         public List<string> IncludeUserActions {
             get { return BackingStore?.Get<List<string>>("includeUserActions"); }
             set { BackingStore?.Set("includeUserActions", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new conditionalAccessApplications and sets the default values.
         /// </summary>

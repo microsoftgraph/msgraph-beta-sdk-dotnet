@@ -6,25 +6,53 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
     public class AggregatedPolicyCompliance : Entity, IParsable {
         /// <summary>Identifier for the device compliance policy. Optional. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CompliancePolicyId {
+            get { return BackingStore?.Get<string?>("compliancePolicyId"); }
+            set { BackingStore?.Set("compliancePolicyId", value); }
+        }
+#else
         public string CompliancePolicyId {
             get { return BackingStore?.Get<string>("compliancePolicyId"); }
             set { BackingStore?.Set("compliancePolicyId", value); }
         }
+#endif
         /// <summary>Name of the device compliance policy. Optional. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CompliancePolicyName {
+            get { return BackingStore?.Get<string?>("compliancePolicyName"); }
+            set { BackingStore?.Set("compliancePolicyName", value); }
+        }
+#else
         public string CompliancePolicyName {
             get { return BackingStore?.Get<string>("compliancePolicyName"); }
             set { BackingStore?.Set("compliancePolicyName", value); }
         }
+#endif
         /// <summary>Platform for the device compliance policy. Possible values are: android, androidForWork, iOS, macOS, windowsPhone81, windows81AndLater, windows10AndLater, androidWorkProfile, androidAOSP, all. Optional. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CompliancePolicyPlatform {
+            get { return BackingStore?.Get<string?>("compliancePolicyPlatform"); }
+            set { BackingStore?.Set("compliancePolicyPlatform", value); }
+        }
+#else
         public string CompliancePolicyPlatform {
             get { return BackingStore?.Get<string>("compliancePolicyPlatform"); }
             set { BackingStore?.Set("compliancePolicyPlatform", value); }
         }
+#endif
         /// <summary>The type of compliance policy. Optional. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CompliancePolicyType {
+            get { return BackingStore?.Get<string?>("compliancePolicyType"); }
+            set { BackingStore?.Set("compliancePolicyType", value); }
+        }
+#else
         public string CompliancePolicyType {
             get { return BackingStore?.Get<string>("compliancePolicyType"); }
             set { BackingStore?.Set("compliancePolicyType", value); }
         }
+#endif
         /// <summary>Date and time the entity was last updated in the multi-tenant management platform. Optional. Read-only.</summary>
         public DateTimeOffset? LastRefreshedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastRefreshedDateTime"); }
@@ -51,15 +79,29 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
             set { BackingStore?.Set("policyModifiedDateTime", value); }
         }
         /// <summary>The display name for the managed tenant. Optional. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TenantDisplayName {
+            get { return BackingStore?.Get<string?>("tenantDisplayName"); }
+            set { BackingStore?.Set("tenantDisplayName", value); }
+        }
+#else
         public string TenantDisplayName {
             get { return BackingStore?.Get<string>("tenantDisplayName"); }
             set { BackingStore?.Set("tenantDisplayName", value); }
         }
+#endif
         /// <summary>The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TenantId {
+            get { return BackingStore?.Get<string?>("tenantId"); }
+            set { BackingStore?.Set("tenantId", value); }
+        }
+#else
         public string TenantId {
             get { return BackingStore?.Get<string>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

@@ -26,20 +26,34 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("lifetimeInMinutes", value); }
         }
         /// <summary>Details about the usability state (isUsable). Reasons can include: EnabledByPolicy, DisabledByPolicy, Expired, NotYetValid, OneTimeUsed.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MethodUsabilityReason {
+            get { return BackingStore?.Get<string?>("methodUsabilityReason"); }
+            set { BackingStore?.Set("methodUsabilityReason", value); }
+        }
+#else
         public string MethodUsabilityReason {
             get { return BackingStore?.Get<string>("methodUsabilityReason"); }
             set { BackingStore?.Set("methodUsabilityReason", value); }
         }
+#endif
         /// <summary>The date and time when the Temporary Access Pass becomes available to use and when isUsable is true is enforced.</summary>
         public DateTimeOffset? StartDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }
             set { BackingStore?.Set("startDateTime", value); }
         }
         /// <summary>The Temporary Access Pass used to authenticate. Returned only on creation of a new temporaryAccessPassAuthenticationMethod object; Hidden in subsequent read operations and returned as null with GET.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TemporaryAccessPass {
+            get { return BackingStore?.Get<string?>("temporaryAccessPass"); }
+            set { BackingStore?.Set("temporaryAccessPass", value); }
+        }
+#else
         public string TemporaryAccessPass {
             get { return BackingStore?.Get<string>("temporaryAccessPass"); }
             set { BackingStore?.Set("temporaryAccessPass", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new TemporaryAccessPassAuthenticationMethod and sets the default values.
         /// </summary>

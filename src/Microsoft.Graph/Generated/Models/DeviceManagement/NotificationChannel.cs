@@ -19,20 +19,41 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
             set { BackingStore?.Set("notificationChannelType", value); }
         }
         /// <summary>Information about the notification receivers, such as locale and contact information. For example, en-us for locale and serena.davis@contoso.com for contact information.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<NotificationReceiver>? NotificationReceivers {
+            get { return BackingStore?.Get<List<NotificationReceiver>?>("notificationReceivers"); }
+            set { BackingStore?.Set("notificationReceivers", value); }
+        }
+#else
         public List<NotificationReceiver> NotificationReceivers {
             get { return BackingStore?.Get<List<NotificationReceiver>>("notificationReceivers"); }
             set { BackingStore?.Set("notificationReceivers", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The contact information about the notification receivers, such as email addresses. For portal notifications, receivers can be left blank. For email notifications, receivers consists of email addresses such as serena.davis@contoso.com.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? Receivers {
+            get { return BackingStore?.Get<List<string>?>("receivers"); }
+            set { BackingStore?.Set("receivers", value); }
+        }
+#else
         public List<string> Receivers {
             get { return BackingStore?.Get<List<string>>("receivers"); }
             set { BackingStore?.Set("receivers", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new notificationChannel and sets the default values.
         /// </summary>

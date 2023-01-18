@@ -14,20 +14,34 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The group policy definition value associated with the presentation value.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public GroupPolicyDefinitionValue? DefinitionValue {
+            get { return BackingStore?.Get<GroupPolicyDefinitionValue?>("definitionValue"); }
+            set { BackingStore?.Set("definitionValue", value); }
+        }
+#else
         public GroupPolicyDefinitionValue DefinitionValue {
             get { return BackingStore?.Get<GroupPolicyDefinitionValue>("definitionValue"); }
             set { BackingStore?.Set("definitionValue", value); }
         }
+#endif
         /// <summary>The date and time the object was last modified.</summary>
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The group policy presentation associated with the presentation value.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public GroupPolicyPresentation? Presentation {
+            get { return BackingStore?.Get<GroupPolicyPresentation?>("presentation"); }
+            set { BackingStore?.Set("presentation", value); }
+        }
+#else
         public GroupPolicyPresentation Presentation {
             get { return BackingStore?.Get<GroupPolicyPresentation>("presentation"); }
             set { BackingStore?.Set("presentation", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

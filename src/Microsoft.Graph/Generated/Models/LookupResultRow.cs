@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class LookupResultRow : Entity, IParsable {
         /// <summary>The row property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Row {
+            get { return BackingStore?.Get<string?>("row"); }
+            set { BackingStore?.Set("row", value); }
+        }
+#else
         public string Row {
             get { return BackingStore?.Get<string>("row"); }
             set { BackingStore?.Set("row", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

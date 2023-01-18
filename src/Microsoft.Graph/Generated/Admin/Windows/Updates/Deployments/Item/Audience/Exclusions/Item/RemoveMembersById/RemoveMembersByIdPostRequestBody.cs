@@ -14,15 +14,29 @@ namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.E
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The ids property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? Ids {
+            get { return BackingStore?.Get<List<string>?>("ids"); }
+            set { BackingStore?.Set("ids", value); }
+        }
+#else
         public List<string> Ids {
             get { return BackingStore?.Get<List<string>>("ids"); }
             set { BackingStore?.Set("ids", value); }
         }
+#endif
         /// <summary>The memberEntityType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MemberEntityType {
+            get { return BackingStore?.Get<string?>("memberEntityType"); }
+            set { BackingStore?.Set("memberEntityType", value); }
+        }
+#else
         public string MemberEntityType {
             get { return BackingStore?.Get<string>("memberEntityType"); }
             set { BackingStore?.Set("memberEntityType", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new removeMembersByIdPostRequestBody and sets the default values.
         /// </summary>

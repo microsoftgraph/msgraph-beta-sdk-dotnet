@@ -29,10 +29,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("isInVerticalSection", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Index of the current web part. Represents the order of the web part in this column or section.</summary>
         public double? WebPartIndex {
             get { return BackingStore?.Get<double?>("webPartIndex"); }

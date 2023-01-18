@@ -25,10 +25,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("addressBook", value); }
         }
         /// <summary>Allow or deny the app or process to send a restricted Apple event to another app or process. You will need to know the identifier, identifier type, and code requirement of the receiving app or process. This collection can contain a maximum of 500 elements.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<MacOSAppleEventReceiver>? AppleEventsAllowedReceivers {
+            get { return BackingStore?.Get<List<MacOSAppleEventReceiver>?>("appleEventsAllowedReceivers"); }
+            set { BackingStore?.Set("appleEventsAllowedReceivers", value); }
+        }
+#else
         public List<MacOSAppleEventReceiver> AppleEventsAllowedReceivers {
             get { return BackingStore?.Get<List<MacOSAppleEventReceiver>>("appleEventsAllowedReceivers"); }
             set { BackingStore?.Set("appleEventsAllowedReceivers", value); }
         }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Block access to camera app.</summary>
@@ -57,25 +64,46 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("calendar", value); }
         }
         /// <summary>Enter the code requirement, which can be obtained with the command &apos;codesign –display -r –&apos; in the Terminal app. Include everything after &apos;=&gt;&apos;.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CodeRequirement {
+            get { return BackingStore?.Get<string?>("codeRequirement"); }
+            set { BackingStore?.Set("codeRequirement", value); }
+        }
+#else
         public string CodeRequirement {
             get { return BackingStore?.Get<string>("codeRequirement"); }
             set { BackingStore?.Set("codeRequirement", value); }
         }
+#endif
         /// <summary>The display name of the app, process, or executable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>Possible values of a property</summary>
         public Enablement? FileProviderPresence {
             get { return BackingStore?.Get<Enablement?>("fileProviderPresence"); }
             set { BackingStore?.Set("fileProviderPresence", value); }
         }
         /// <summary>The bundle ID or path of the app, process, or executable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Identifier {
+            get { return BackingStore?.Get<string?>("identifier"); }
+            set { BackingStore?.Set("identifier", value); }
+        }
+#else
         public string Identifier {
             get { return BackingStore?.Get<string>("identifier"); }
             set { BackingStore?.Set("identifier", value); }
         }
+#endif
         /// <summary>Process identifier types for MacOS Privacy Preferences</summary>
         public MacOSProcessIdentifierType? IdentifierType {
             get { return BackingStore?.Get<MacOSProcessIdentifierType?>("identifierType"); }
@@ -87,10 +115,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("mediaLibrary", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Possible values of a property</summary>
         public Enablement? Photos {
             get { return BackingStore?.Get<Enablement?>("photos"); }

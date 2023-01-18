@@ -6,50 +6,99 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class AccessReviewDecision : Entity, IParsable {
         /// <summary>The feature- generated recommendation shown to the reviewer, one of Approve, Deny or NotAvailable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AccessRecommendation {
+            get { return BackingStore?.Get<string?>("accessRecommendation"); }
+            set { BackingStore?.Set("accessRecommendation", value); }
+        }
+#else
         public string AccessRecommendation {
             get { return BackingStore?.Get<string>("accessRecommendation"); }
             set { BackingStore?.Set("accessRecommendation", value); }
         }
+#endif
         /// <summary>The feature-generated id of the access review.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AccessReviewId {
+            get { return BackingStore?.Get<string?>("accessReviewId"); }
+            set { BackingStore?.Set("accessReviewId", value); }
+        }
+#else
         public string AccessReviewId {
             get { return BackingStore?.Get<string>("accessReviewId"); }
             set { BackingStore?.Set("accessReviewId", value); }
         }
+#endif
         /// <summary>When the review completes, if the results were manually applied, the user identity of the user who applied the decision. If the review was auto-applied, the userPrincipalName is empty.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public UserIdentity? AppliedBy {
+            get { return BackingStore?.Get<UserIdentity?>("appliedBy"); }
+            set { BackingStore?.Set("appliedBy", value); }
+        }
+#else
         public UserIdentity AppliedBy {
             get { return BackingStore?.Get<UserIdentity>("appliedBy"); }
             set { BackingStore?.Set("appliedBy", value); }
         }
+#endif
         /// <summary>The date and time when the review decision was applied.</summary>
         public DateTimeOffset? AppliedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("appliedDateTime"); }
             set { BackingStore?.Set("appliedDateTime", value); }
         }
         /// <summary>The outcome of applying the decision, one of NotApplied, Success, Failed, NotFound or NotSupported.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ApplyResult {
+            get { return BackingStore?.Get<string?>("applyResult"); }
+            set { BackingStore?.Set("applyResult", value); }
+        }
+#else
         public string ApplyResult {
             get { return BackingStore?.Get<string>("applyResult"); }
             set { BackingStore?.Set("applyResult", value); }
         }
+#endif
         /// <summary>The reviewer&apos;s business justification, if supplied.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Justification {
+            get { return BackingStore?.Get<string?>("justification"); }
+            set { BackingStore?.Set("justification", value); }
+        }
+#else
         public string Justification {
             get { return BackingStore?.Get<string>("justification"); }
             set { BackingStore?.Set("justification", value); }
         }
+#endif
         /// <summary>The identity of the reviewer. If the recommendation was used as the review, the userPrincipalName is empty.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public UserIdentity? ReviewedBy {
+            get { return BackingStore?.Get<UserIdentity?>("reviewedBy"); }
+            set { BackingStore?.Set("reviewedBy", value); }
+        }
+#else
         public UserIdentity ReviewedBy {
             get { return BackingStore?.Get<UserIdentity>("reviewedBy"); }
             set { BackingStore?.Set("reviewedBy", value); }
         }
+#endif
         /// <summary>The reviewedDateTime property</summary>
         public DateTimeOffset? ReviewedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("reviewedDateTime"); }
             set { BackingStore?.Set("reviewedDateTime", value); }
         }
         /// <summary>The result of the review, one of NotReviewed, Deny, DontKnow or Approve.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ReviewResult {
+            get { return BackingStore?.Get<string?>("reviewResult"); }
+            set { BackingStore?.Set("reviewResult", value); }
+        }
+#else
         public string ReviewResult {
             get { return BackingStore?.Get<string>("reviewResult"); }
             set { BackingStore?.Set("reviewResult", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

@@ -12,10 +12,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>An array that shows the availability status of each attendee for this meeting suggestion.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.AttendeeAvailability>? AttendeeAvailability {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AttendeeAvailability>?>("attendeeAvailability"); }
+            set { BackingStore?.Set("attendeeAvailability", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.AttendeeAvailability> AttendeeAvailability {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AttendeeAvailability>>("attendeeAvailability"); }
             set { BackingStore?.Set("attendeeAvailability", value); }
         }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>A percentage that represents the likelhood of all the attendees attending.</summary>
@@ -24,20 +31,41 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("confidence", value); }
         }
         /// <summary>An array that specifies the name and geographic location of each meeting location for this meeting suggestion.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Location>? Locations {
+            get { return BackingStore?.Get<List<Location>?>("locations"); }
+            set { BackingStore?.Set("locations", value); }
+        }
+#else
         public List<Location> Locations {
             get { return BackingStore?.Get<List<Location>>("locations"); }
             set { BackingStore?.Set("locations", value); }
         }
+#endif
         /// <summary>A time period suggested for the meeting.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public TimeSlot? MeetingTimeSlot {
+            get { return BackingStore?.Get<TimeSlot?>("meetingTimeSlot"); }
+            set { BackingStore?.Set("meetingTimeSlot", value); }
+        }
+#else
         public TimeSlot MeetingTimeSlot {
             get { return BackingStore?.Get<TimeSlot>("meetingTimeSlot"); }
             set { BackingStore?.Set("meetingTimeSlot", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Order of meeting time suggestions sorted by their computed confidence value from high to low, then by chronology if there are suggestions with the same confidence.</summary>
         public int? Order {
             get { return BackingStore?.Get<int?>("order"); }
@@ -49,10 +77,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("organizerAvailability", value); }
         }
         /// <summary>Reason for suggesting the meeting time.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SuggestionReason {
+            get { return BackingStore?.Get<string?>("suggestionReason"); }
+            set { BackingStore?.Set("suggestionReason", value); }
+        }
+#else
         public string SuggestionReason {
             get { return BackingStore?.Get<string>("suggestionReason"); }
             set { BackingStore?.Set("suggestionReason", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new meetingTimeSuggestion and sets the default values.
         /// </summary>

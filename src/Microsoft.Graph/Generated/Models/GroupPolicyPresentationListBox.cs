@@ -11,10 +11,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("explicitValue", value); }
         }
         /// <summary>Not yet documented</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ValuePrefix {
+            get { return BackingStore?.Get<string?>("valuePrefix"); }
+            set { BackingStore?.Set("valuePrefix", value); }
+        }
+#else
         public string ValuePrefix {
             get { return BackingStore?.Get<string>("valuePrefix"); }
             set { BackingStore?.Set("valuePrefix", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new GroupPolicyPresentationListBox and sets the default values.
         /// </summary>

@@ -11,20 +11,34 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("deliveryOptimizationPriority", value); }
         }
         /// <summary>The install time settings to apply for this app assignment.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public MobileAppInstallTimeSettings? InstallTimeSettings {
+            get { return BackingStore?.Get<MobileAppInstallTimeSettings?>("installTimeSettings"); }
+            set { BackingStore?.Set("installTimeSettings", value); }
+        }
+#else
         public MobileAppInstallTimeSettings InstallTimeSettings {
             get { return BackingStore?.Get<MobileAppInstallTimeSettings>("installTimeSettings"); }
             set { BackingStore?.Set("installTimeSettings", value); }
         }
+#endif
         /// <summary>Contains value for notification status.</summary>
         public Win32LobAppNotification? Notifications {
             get { return BackingStore?.Get<Win32LobAppNotification?>("notifications"); }
             set { BackingStore?.Set("notifications", value); }
         }
         /// <summary>The reboot settings to apply for this app assignment.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Win32LobAppRestartSettings? RestartSettings {
+            get { return BackingStore?.Get<Win32LobAppRestartSettings?>("restartSettings"); }
+            set { BackingStore?.Set("restartSettings", value); }
+        }
+#else
         public Win32LobAppRestartSettings RestartSettings {
             get { return BackingStore?.Get<Win32LobAppRestartSettings>("restartSettings"); }
             set { BackingStore?.Set("restartSettings", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new Win32LobAppAssignmentSettings and sets the default values.
         /// </summary>

@@ -6,35 +6,63 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class TeamworkTag : Entity, IParsable {
         /// <summary>Tag description as it will appear to the user in Microsoft Teams.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>Tag name as it will appear to the user in Microsoft Teams.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The number of users assigned to the tag.</summary>
         public int? MemberCount {
             get { return BackingStore?.Get<int?>("memberCount"); }
             set { BackingStore?.Set("memberCount", value); }
         }
         /// <summary>Users assigned to the tag.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<TeamworkTagMember>? Members {
+            get { return BackingStore?.Get<List<TeamworkTagMember>?>("members"); }
+            set { BackingStore?.Set("members", value); }
+        }
+#else
         public List<TeamworkTagMember> Members {
             get { return BackingStore?.Get<List<TeamworkTagMember>>("members"); }
             set { BackingStore?.Set("members", value); }
         }
+#endif
         /// <summary>The type of tag. Default is standard.</summary>
         public TeamworkTagType? TagType {
             get { return BackingStore?.Get<TeamworkTagType?>("tagType"); }
             set { BackingStore?.Set("tagType", value); }
         }
         /// <summary>ID of the team in which the tag is defined.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TeamId {
+            get { return BackingStore?.Get<string?>("teamId"); }
+            set { BackingStore?.Set("teamId", value); }
+        }
+#else
         public string TeamId {
             get { return BackingStore?.Get<string>("teamId"); }
             set { BackingStore?.Set("teamId", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

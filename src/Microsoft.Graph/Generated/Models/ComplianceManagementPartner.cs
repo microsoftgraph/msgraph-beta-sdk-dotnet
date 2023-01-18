@@ -9,25 +9,46 @@ namespace Microsoft.Graph.Beta.Models {
     /// </summary>
     public class ComplianceManagementPartner : Entity, IParsable {
         /// <summary>User groups which enroll Android devices through partner.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ComplianceManagementPartnerAssignment>? AndroidEnrollmentAssignments {
+            get { return BackingStore?.Get<List<ComplianceManagementPartnerAssignment>?>("androidEnrollmentAssignments"); }
+            set { BackingStore?.Set("androidEnrollmentAssignments", value); }
+        }
+#else
         public List<ComplianceManagementPartnerAssignment> AndroidEnrollmentAssignments {
             get { return BackingStore?.Get<List<ComplianceManagementPartnerAssignment>>("androidEnrollmentAssignments"); }
             set { BackingStore?.Set("androidEnrollmentAssignments", value); }
         }
+#endif
         /// <summary>Partner onboarded for Android devices.</summary>
         public bool? AndroidOnboarded {
             get { return BackingStore?.Get<bool?>("androidOnboarded"); }
             set { BackingStore?.Set("androidOnboarded", value); }
         }
         /// <summary>Partner display name</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>User groups which enroll ios devices through partner.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ComplianceManagementPartnerAssignment>? IosEnrollmentAssignments {
+            get { return BackingStore?.Get<List<ComplianceManagementPartnerAssignment>?>("iosEnrollmentAssignments"); }
+            set { BackingStore?.Set("iosEnrollmentAssignments", value); }
+        }
+#else
         public List<ComplianceManagementPartnerAssignment> IosEnrollmentAssignments {
             get { return BackingStore?.Get<List<ComplianceManagementPartnerAssignment>>("iosEnrollmentAssignments"); }
             set { BackingStore?.Set("iosEnrollmentAssignments", value); }
         }
+#endif
         /// <summary>Partner onboarded for ios devices.</summary>
         public bool? IosOnboarded {
             get { return BackingStore?.Get<bool?>("iosOnboarded"); }
@@ -39,10 +60,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("lastHeartbeatDateTime", value); }
         }
         /// <summary>User groups which enroll Mac devices through partner.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ComplianceManagementPartnerAssignment>? MacOsEnrollmentAssignments {
+            get { return BackingStore?.Get<List<ComplianceManagementPartnerAssignment>?>("macOsEnrollmentAssignments"); }
+            set { BackingStore?.Set("macOsEnrollmentAssignments", value); }
+        }
+#else
         public List<ComplianceManagementPartnerAssignment> MacOsEnrollmentAssignments {
             get { return BackingStore?.Get<List<ComplianceManagementPartnerAssignment>>("macOsEnrollmentAssignments"); }
             set { BackingStore?.Set("macOsEnrollmentAssignments", value); }
         }
+#endif
         /// <summary>Partner onboarded for Mac devices.</summary>
         public bool? MacOsOnboarded {
             get { return BackingStore?.Get<bool?>("macOsOnboarded"); }
@@ -54,10 +82,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("partnerState", value); }
         }
         /// <summary>User groups which enroll Windows devices through partner.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ComplianceManagementPartnerAssignment>? WindowsEnrollmentAssignments {
+            get { return BackingStore?.Get<List<ComplianceManagementPartnerAssignment>?>("windowsEnrollmentAssignments"); }
+            set { BackingStore?.Set("windowsEnrollmentAssignments", value); }
+        }
+#else
         public List<ComplianceManagementPartnerAssignment> WindowsEnrollmentAssignments {
             get { return BackingStore?.Get<List<ComplianceManagementPartnerAssignment>>("windowsEnrollmentAssignments"); }
             set { BackingStore?.Set("windowsEnrollmentAssignments", value); }
         }
+#endif
         /// <summary>Partner onboarded for Windows devices.</summary>
         public bool? WindowsOnboarded {
             get { return BackingStore?.Get<bool?>("windowsOnboarded"); }

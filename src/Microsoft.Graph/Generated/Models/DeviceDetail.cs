@@ -14,25 +14,53 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Indicates the browser information of the used for signing-in.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Browser {
+            get { return BackingStore?.Get<string?>("browser"); }
+            set { BackingStore?.Set("browser", value); }
+        }
+#else
         public string Browser {
             get { return BackingStore?.Get<string>("browser"); }
             set { BackingStore?.Set("browser", value); }
         }
+#endif
         /// <summary>The browserId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? BrowserId {
+            get { return BackingStore?.Get<string?>("browserId"); }
+            set { BackingStore?.Set("browserId", value); }
+        }
+#else
         public string BrowserId {
             get { return BackingStore?.Get<string>("browserId"); }
             set { BackingStore?.Set("browserId", value); }
         }
+#endif
         /// <summary>Refers to the UniqueID of the device used for signing-in.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeviceId {
+            get { return BackingStore?.Get<string?>("deviceId"); }
+            set { BackingStore?.Set("deviceId", value); }
+        }
+#else
         public string DeviceId {
             get { return BackingStore?.Get<string>("deviceId"); }
             set { BackingStore?.Set("deviceId", value); }
         }
+#endif
         /// <summary>Refers to the name of the device used for signing-in.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>Indicates whether the device is compliant or not.</summary>
         public bool? IsCompliant {
             get { return BackingStore?.Get<bool?>("isCompliant"); }
@@ -44,20 +72,41 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("isManaged", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Indicates the OS name and version used for signing-in.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OperatingSystem {
+            get { return BackingStore?.Get<string?>("operatingSystem"); }
+            set { BackingStore?.Set("operatingSystem", value); }
+        }
+#else
         public string OperatingSystem {
             get { return BackingStore?.Get<string>("operatingSystem"); }
             set { BackingStore?.Set("operatingSystem", value); }
         }
+#endif
         /// <summary>Indicates information on whether the signed-in device is Workplace Joined, AzureAD Joined, Domain Joined.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TrustType {
+            get { return BackingStore?.Get<string?>("trustType"); }
+            set { BackingStore?.Set("trustType", value); }
+        }
+#else
         public string TrustType {
             get { return BackingStore?.Get<string>("trustType"); }
             set { BackingStore?.Set("trustType", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new deviceDetail and sets the default values.
         /// </summary>

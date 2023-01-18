@@ -9,50 +9,92 @@ namespace Microsoft.Graph.Beta.Models {
     /// </summary>
     public class PolicySet : Entity, IParsable {
         /// <summary>Assignments of the PolicySet.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<PolicySetAssignment>? Assignments {
+            get { return BackingStore?.Get<List<PolicySetAssignment>?>("assignments"); }
+            set { BackingStore?.Set("assignments", value); }
+        }
+#else
         public List<PolicySetAssignment> Assignments {
             get { return BackingStore?.Get<List<PolicySetAssignment>>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
+#endif
         /// <summary>Creation time of the PolicySet.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Description of the PolicySet.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>DisplayName of the PolicySet.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The errorCode property</summary>
         public Microsoft.Graph.Beta.Models.ErrorCode? ErrorCode {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ErrorCode?>("errorCode"); }
             set { BackingStore?.Set("errorCode", value); }
         }
         /// <summary>Tags of the guided deployment</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? GuidedDeploymentTags {
+            get { return BackingStore?.Get<List<string>?>("guidedDeploymentTags"); }
+            set { BackingStore?.Set("guidedDeploymentTags", value); }
+        }
+#else
         public List<string> GuidedDeploymentTags {
             get { return BackingStore?.Get<List<string>>("guidedDeploymentTags"); }
             set { BackingStore?.Set("guidedDeploymentTags", value); }
         }
+#endif
         /// <summary>Items of the PolicySet with maximum count 100.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<PolicySetItem>? Items {
+            get { return BackingStore?.Get<List<PolicySetItem>?>("items"); }
+            set { BackingStore?.Set("items", value); }
+        }
+#else
         public List<PolicySetItem> Items {
             get { return BackingStore?.Get<List<PolicySetItem>>("items"); }
             set { BackingStore?.Set("items", value); }
         }
+#endif
         /// <summary>Last modified time of the PolicySet.</summary>
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>RoleScopeTags of the PolicySet</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? RoleScopeTags {
+            get { return BackingStore?.Get<List<string>?>("roleScopeTags"); }
+            set { BackingStore?.Set("roleScopeTags", value); }
+        }
+#else
         public List<string> RoleScopeTags {
             get { return BackingStore?.Get<List<string>>("roleScopeTags"); }
             set { BackingStore?.Set("roleScopeTags", value); }
         }
+#endif
         /// <summary>The enum to specify the status of PolicySet.</summary>
         public PolicySetStatus? Status {
             get { return BackingStore?.Get<PolicySetStatus?>("status"); }

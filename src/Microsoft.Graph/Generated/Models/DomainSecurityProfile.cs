@@ -6,20 +6,41 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class DomainSecurityProfile : Entity, IParsable {
         /// <summary>The activityGroupNames property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? ActivityGroupNames {
+            get { return BackingStore?.Get<List<string>?>("activityGroupNames"); }
+            set { BackingStore?.Set("activityGroupNames", value); }
+        }
+#else
         public List<string> ActivityGroupNames {
             get { return BackingStore?.Get<List<string>>("activityGroupNames"); }
             set { BackingStore?.Set("activityGroupNames", value); }
         }
+#endif
         /// <summary>The azureSubscriptionId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AzureSubscriptionId {
+            get { return BackingStore?.Get<string?>("azureSubscriptionId"); }
+            set { BackingStore?.Set("azureSubscriptionId", value); }
+        }
+#else
         public string AzureSubscriptionId {
             get { return BackingStore?.Get<string>("azureSubscriptionId"); }
             set { BackingStore?.Set("azureSubscriptionId", value); }
         }
+#endif
         /// <summary>The azureTenantId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AzureTenantId {
+            get { return BackingStore?.Get<string?>("azureTenantId"); }
+            set { BackingStore?.Set("azureTenantId", value); }
+        }
+#else
         public string AzureTenantId {
             get { return BackingStore?.Get<string>("azureTenantId"); }
             set { BackingStore?.Set("azureTenantId", value); }
         }
+#endif
         /// <summary>The countHits property</summary>
         public int? CountHits {
             get { return BackingStore?.Get<int?>("countHits"); }
@@ -31,10 +52,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("countInOrg", value); }
         }
         /// <summary>The domainCategories property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ReputationCategory>? DomainCategories {
+            get { return BackingStore?.Get<List<ReputationCategory>?>("domainCategories"); }
+            set { BackingStore?.Set("domainCategories", value); }
+        }
+#else
         public List<ReputationCategory> DomainCategories {
             get { return BackingStore?.Get<List<ReputationCategory>>("domainCategories"); }
             set { BackingStore?.Set("domainCategories", value); }
         }
+#endif
         /// <summary>The domainRegisteredDateTime property</summary>
         public DateTimeOffset? DomainRegisteredDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("domainRegisteredDateTime"); }
@@ -51,30 +79,65 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("lastSeenDateTime", value); }
         }
         /// <summary>The name property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Name {
+            get { return BackingStore?.Get<string?>("name"); }
+            set { BackingStore?.Set("name", value); }
+        }
+#else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#endif
         /// <summary>The registrant property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DomainRegistrant? Registrant {
+            get { return BackingStore?.Get<DomainRegistrant?>("registrant"); }
+            set { BackingStore?.Set("registrant", value); }
+        }
+#else
         public DomainRegistrant Registrant {
             get { return BackingStore?.Get<DomainRegistrant>("registrant"); }
             set { BackingStore?.Set("registrant", value); }
         }
+#endif
         /// <summary>The riskScore property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? RiskScore {
+            get { return BackingStore?.Get<string?>("riskScore"); }
+            set { BackingStore?.Set("riskScore", value); }
+        }
+#else
         public string RiskScore {
             get { return BackingStore?.Get<string>("riskScore"); }
             set { BackingStore?.Set("riskScore", value); }
         }
+#endif
         /// <summary>The tags property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? Tags {
+            get { return BackingStore?.Get<List<string>?>("tags"); }
+            set { BackingStore?.Set("tags", value); }
+        }
+#else
         public List<string> Tags {
             get { return BackingStore?.Get<List<string>>("tags"); }
             set { BackingStore?.Set("tags", value); }
         }
+#endif
         /// <summary>The vendorInformation property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public SecurityVendorInformation? VendorInformation {
+            get { return BackingStore?.Get<SecurityVendorInformation?>("vendorInformation"); }
+            set { BackingStore?.Set("vendorInformation", value); }
+        }
+#else
         public SecurityVendorInformation VendorInformation {
             get { return BackingStore?.Get<SecurityVendorInformation>("vendorInformation"); }
             set { BackingStore?.Set("vendorInformation", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

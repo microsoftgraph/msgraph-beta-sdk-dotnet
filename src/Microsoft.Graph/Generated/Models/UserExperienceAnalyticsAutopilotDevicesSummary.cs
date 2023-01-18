@@ -27,10 +27,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("devicesWithoutAutopilotProfileAssigned", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The count of windows 10 devices that are Intune and Comanaged.</summary>
         public int? TotalWindows10DevicesWithoutTenantAttached {
             get { return BackingStore?.Get<int?>("totalWindows10DevicesWithoutTenantAttached"); }

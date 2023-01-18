@@ -19,10 +19,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("enabled", value); }
         }
         /// <summary>OEM name. This property is read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OemName {
+            get { return BackingStore?.Get<string?>("oemName"); }
+            set { BackingStore?.Set("oemName", value); }
+        }
+#else
         public string OemName {
             get { return BackingStore?.Get<string>("oemName"); }
             set { BackingStore?.Set("oemName", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

@@ -14,50 +14,106 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The ISO 3166-1 Alpha-2 country code of the participant&apos;s best estimated physical location at the start of the call. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CountryCode {
+            get { return BackingStore?.Get<string?>("countryCode"); }
+            set { BackingStore?.Set("countryCode", value); }
+        }
+#else
         public string CountryCode {
             get { return BackingStore?.Get<string>("countryCode"); }
             set { BackingStore?.Set("countryCode", value); }
         }
+#endif
         /// <summary>The type of endpoint the participant is using. Possible values are: default, voicemail, skypeForBusiness, skypeForBusinessVoipPhone and unknownFutureValue. Read-only.</summary>
         public Microsoft.Graph.Beta.Models.EndpointType? EndpointType {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EndpointType?>("endpointType"); }
             set { BackingStore?.Set("endpointType", value); }
         }
         /// <summary>The identity property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public IdentitySet? Identity {
+            get { return BackingStore?.Get<IdentitySet?>("identity"); }
+            set { BackingStore?.Set("identity", value); }
+        }
+#else
         public IdentitySet Identity {
             get { return BackingStore?.Get<IdentitySet>("identity"); }
             set { BackingStore?.Set("identity", value); }
         }
+#endif
         /// <summary>The language culture string. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? LanguageId {
+            get { return BackingStore?.Get<string?>("languageId"); }
+            set { BackingStore?.Set("languageId", value); }
+        }
+#else
         public string LanguageId {
             get { return BackingStore?.Get<string>("languageId"); }
             set { BackingStore?.Set("languageId", value); }
         }
+#endif
         /// <summary>The nonAnonymizedIdentity property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public IdentitySet? NonAnonymizedIdentity {
+            get { return BackingStore?.Get<IdentitySet?>("nonAnonymizedIdentity"); }
+            set { BackingStore?.Set("nonAnonymizedIdentity", value); }
+        }
+#else
         public IdentitySet NonAnonymizedIdentity {
             get { return BackingStore?.Get<IdentitySet>("nonAnonymizedIdentity"); }
             set { BackingStore?.Set("nonAnonymizedIdentity", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The participant ID of the participant. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ParticipantId {
+            get { return BackingStore?.Get<string?>("participantId"); }
+            set { BackingStore?.Set("participantId", value); }
+        }
+#else
         public string ParticipantId {
             get { return BackingStore?.Get<string>("participantId"); }
             set { BackingStore?.Set("participantId", value); }
         }
+#endif
         /// <summary>The client platform ID of the participant. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PlatformId {
+            get { return BackingStore?.Get<string?>("platformId"); }
+            set { BackingStore?.Set("platformId", value); }
+        }
+#else
         public string PlatformId {
             get { return BackingStore?.Get<string>("platformId"); }
             set { BackingStore?.Set("platformId", value); }
         }
+#endif
         /// <summary>The home region of the participant. This can be a country, a continent, or a larger geographic region. This does not change based on the participant&apos;s current physical location, unlike countryCode. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Region {
+            get { return BackingStore?.Get<string?>("region"); }
+            set { BackingStore?.Set("region", value); }
+        }
+#else
         public string Region {
             get { return BackingStore?.Get<string>("region"); }
             set { BackingStore?.Set("region", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new participantInfo and sets the default values.
         /// </summary>

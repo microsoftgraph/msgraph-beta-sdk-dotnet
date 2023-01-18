@@ -14,25 +14,53 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Name of property that was modified.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>New property value.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? NewValue {
+            get { return BackingStore?.Get<string?>("newValue"); }
+            set { BackingStore?.Set("newValue", value); }
+        }
+#else
         public string NewValue {
             get { return BackingStore?.Get<string>("newValue"); }
             set { BackingStore?.Set("newValue", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Old property value.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OldValue {
+            get { return BackingStore?.Get<string?>("oldValue"); }
+            set { BackingStore?.Set("oldValue", value); }
+        }
+#else
         public string OldValue {
             get { return BackingStore?.Get<string>("oldValue"); }
             set { BackingStore?.Set("oldValue", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new modifiedProperty and sets the default values.
         /// </summary>

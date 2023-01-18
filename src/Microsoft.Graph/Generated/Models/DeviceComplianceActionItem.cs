@@ -19,15 +19,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("gracePeriodHours", value); }
         }
         /// <summary>A list of group IDs to speicify who to CC this notification message to.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? NotificationMessageCCList {
+            get { return BackingStore?.Get<List<string>?>("notificationMessageCCList"); }
+            set { BackingStore?.Set("notificationMessageCCList", value); }
+        }
+#else
         public List<string> NotificationMessageCCList {
             get { return BackingStore?.Get<List<string>>("notificationMessageCCList"); }
             set { BackingStore?.Set("notificationMessageCCList", value); }
         }
+#endif
         /// <summary>What notification Message template to use</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? NotificationTemplateId {
+            get { return BackingStore?.Get<string?>("notificationTemplateId"); }
+            set { BackingStore?.Set("notificationTemplateId", value); }
+        }
+#else
         public string NotificationTemplateId {
             get { return BackingStore?.Get<string>("notificationTemplateId"); }
             set { BackingStore?.Set("notificationTemplateId", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

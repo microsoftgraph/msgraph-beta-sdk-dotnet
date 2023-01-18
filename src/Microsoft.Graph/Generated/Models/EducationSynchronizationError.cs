@@ -6,35 +6,70 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class EducationSynchronizationError : Entity, IParsable {
         /// <summary>Represents the sync entity (school, section, student, teacher).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? EntryType {
+            get { return BackingStore?.Get<string?>("entryType"); }
+            set { BackingStore?.Set("entryType", value); }
+        }
+#else
         public string EntryType {
             get { return BackingStore?.Get<string>("entryType"); }
             set { BackingStore?.Set("entryType", value); }
         }
+#endif
         /// <summary>Represents the error code for this error.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ErrorCode {
+            get { return BackingStore?.Get<string?>("errorCode"); }
+            set { BackingStore?.Set("errorCode", value); }
+        }
+#else
         public string ErrorCode {
             get { return BackingStore?.Get<string>("errorCode"); }
             set { BackingStore?.Set("errorCode", value); }
         }
+#endif
         /// <summary>Contains a description of the error.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ErrorMessage {
+            get { return BackingStore?.Get<string?>("errorMessage"); }
+            set { BackingStore?.Set("errorMessage", value); }
+        }
+#else
         public string ErrorMessage {
             get { return BackingStore?.Get<string>("errorMessage"); }
             set { BackingStore?.Set("errorMessage", value); }
         }
+#endif
         /// <summary>The unique identifier for the entry.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? JoiningValue {
+            get { return BackingStore?.Get<string?>("joiningValue"); }
+            set { BackingStore?.Set("joiningValue", value); }
+        }
+#else
         public string JoiningValue {
             get { return BackingStore?.Get<string>("joiningValue"); }
             set { BackingStore?.Set("joiningValue", value); }
         }
+#endif
         /// <summary>The time of occurrence of this error.</summary>
         public DateTimeOffset? RecordedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("recordedDateTime"); }
             set { BackingStore?.Set("recordedDateTime", value); }
         }
         /// <summary>The identifier of this error entry.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ReportableIdentifier {
+            get { return BackingStore?.Get<string?>("reportableIdentifier"); }
+            set { BackingStore?.Set("reportableIdentifier", value); }
+        }
+#else
         public string ReportableIdentifier {
             get { return BackingStore?.Get<string>("reportableIdentifier"); }
             set { BackingStore?.Set("reportableIdentifier", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

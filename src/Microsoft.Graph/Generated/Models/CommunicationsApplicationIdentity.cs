@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class CommunicationsApplicationIdentity : Identity, IParsable {
         /// <summary>First party Microsoft application presenting this identity.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ApplicationType {
+            get { return BackingStore?.Get<string?>("applicationType"); }
+            set { BackingStore?.Set("applicationType", value); }
+        }
+#else
         public string ApplicationType {
             get { return BackingStore?.Get<string>("applicationType"); }
             set { BackingStore?.Set("applicationType", value); }
         }
+#endif
         /// <summary>True if the participant would not like to be shown in other participants&apos; rosters.</summary>
         public bool? Hidden {
             get { return BackingStore?.Get<bool?>("hidden"); }

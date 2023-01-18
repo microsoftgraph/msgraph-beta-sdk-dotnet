@@ -19,25 +19,46 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("deleted", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Total space remaining before reaching the quota limit, in bytes. Read-only.</summary>
         public long? Remaining {
             get { return BackingStore?.Get<long?>("remaining"); }
             set { BackingStore?.Set("remaining", value); }
         }
         /// <summary>Enumeration value that indicates the state of the storage space. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? State {
+            get { return BackingStore?.Get<string?>("state"); }
+            set { BackingStore?.Set("state", value); }
+        }
+#else
         public string State {
             get { return BackingStore?.Get<string>("state"); }
             set { BackingStore?.Set("state", value); }
         }
+#endif
         /// <summary>Information about the drive&apos;s storage quota plans. Only in Personal OneDrive.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.StoragePlanInformation? StoragePlanInformation {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.StoragePlanInformation?>("storagePlanInformation"); }
+            set { BackingStore?.Set("storagePlanInformation", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.StoragePlanInformation StoragePlanInformation {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.StoragePlanInformation>("storagePlanInformation"); }
             set { BackingStore?.Set("storagePlanInformation", value); }
         }
+#endif
         /// <summary>Total allowed storage space, in bytes. Read-only.</summary>
         public long? Total {
             get { return BackingStore?.Get<long?>("total"); }

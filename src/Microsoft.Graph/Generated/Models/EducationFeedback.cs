@@ -14,25 +14,46 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>User who created the feedback.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public IdentitySet? FeedbackBy {
+            get { return BackingStore?.Get<IdentitySet?>("feedbackBy"); }
+            set { BackingStore?.Set("feedbackBy", value); }
+        }
+#else
         public IdentitySet FeedbackBy {
             get { return BackingStore?.Get<IdentitySet>("feedbackBy"); }
             set { BackingStore?.Set("feedbackBy", value); }
         }
+#endif
         /// <summary>Moment in time when the feedback was given. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
         public DateTimeOffset? FeedbackDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("feedbackDateTime"); }
             set { BackingStore?.Set("feedbackDateTime", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Feedback.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public EducationItemBody? Text {
+            get { return BackingStore?.Get<EducationItemBody?>("text"); }
+            set { BackingStore?.Set("text", value); }
+        }
+#else
         public EducationItemBody Text {
             get { return BackingStore?.Get<EducationItemBody>("text"); }
             set { BackingStore?.Set("text", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new educationFeedback and sets the default values.
         /// </summary>

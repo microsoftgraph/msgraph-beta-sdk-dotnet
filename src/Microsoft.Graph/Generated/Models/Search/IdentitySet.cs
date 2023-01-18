@@ -12,27 +12,55 @@ namespace Microsoft.Graph.Beta.Models.Search {
             set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The application property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Identity? Application {
+            get { return BackingStore?.Get<Identity?>("application"); }
+            set { BackingStore?.Set("application", value); }
+        }
+#else
         public Identity Application {
             get { return BackingStore?.Get<Identity>("application"); }
             set { BackingStore?.Set("application", value); }
         }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The device property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Identity? Device {
+            get { return BackingStore?.Get<Identity?>("device"); }
+            set { BackingStore?.Set("device", value); }
+        }
+#else
         public Identity Device {
             get { return BackingStore?.Get<Identity>("device"); }
             set { BackingStore?.Set("device", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The user property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Identity? User {
+            get { return BackingStore?.Get<Identity?>("user"); }
+            set { BackingStore?.Set("user", value); }
+        }
+#else
         public Identity User {
             get { return BackingStore?.Get<Identity>("user"); }
             set { BackingStore?.Set("user", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new identitySet and sets the default values.
         /// </summary>

@@ -7,65 +7,135 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class CompanyInformation : Entity, IParsable {
         /// <summary>The address property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public PostalAddressType? Address {
+            get { return BackingStore?.Get<PostalAddressType?>("address"); }
+            set { BackingStore?.Set("address", value); }
+        }
+#else
         public PostalAddressType Address {
             get { return BackingStore?.Get<PostalAddressType>("address"); }
             set { BackingStore?.Set("address", value); }
         }
+#endif
         /// <summary>The currencyCode property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CurrencyCode {
+            get { return BackingStore?.Get<string?>("currencyCode"); }
+            set { BackingStore?.Set("currencyCode", value); }
+        }
+#else
         public string CurrencyCode {
             get { return BackingStore?.Get<string>("currencyCode"); }
             set { BackingStore?.Set("currencyCode", value); }
         }
+#endif
         /// <summary>The currentFiscalYearStartDate property</summary>
         public Date? CurrentFiscalYearStartDate {
             get { return BackingStore?.Get<Date?>("currentFiscalYearStartDate"); }
             set { BackingStore?.Set("currentFiscalYearStartDate", value); }
         }
         /// <summary>The displayName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The email property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Email {
+            get { return BackingStore?.Get<string?>("email"); }
+            set { BackingStore?.Set("email", value); }
+        }
+#else
         public string Email {
             get { return BackingStore?.Get<string>("email"); }
             set { BackingStore?.Set("email", value); }
         }
+#endif
         /// <summary>The faxNumber property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? FaxNumber {
+            get { return BackingStore?.Get<string?>("faxNumber"); }
+            set { BackingStore?.Set("faxNumber", value); }
+        }
+#else
         public string FaxNumber {
             get { return BackingStore?.Get<string>("faxNumber"); }
             set { BackingStore?.Set("faxNumber", value); }
         }
+#endif
         /// <summary>The industry property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Industry {
+            get { return BackingStore?.Get<string?>("industry"); }
+            set { BackingStore?.Set("industry", value); }
+        }
+#else
         public string Industry {
             get { return BackingStore?.Get<string>("industry"); }
             set { BackingStore?.Set("industry", value); }
         }
+#endif
         /// <summary>The lastModifiedDateTime property</summary>
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The phoneNumber property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PhoneNumber {
+            get { return BackingStore?.Get<string?>("phoneNumber"); }
+            set { BackingStore?.Set("phoneNumber", value); }
+        }
+#else
         public string PhoneNumber {
             get { return BackingStore?.Get<string>("phoneNumber"); }
             set { BackingStore?.Set("phoneNumber", value); }
         }
+#endif
         /// <summary>The picture property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public byte[]? Picture {
+            get { return BackingStore?.Get<byte[]?>("picture"); }
+            set { BackingStore?.Set("picture", value); }
+        }
+#else
         public byte[] Picture {
             get { return BackingStore?.Get<byte[]>("picture"); }
             set { BackingStore?.Set("picture", value); }
         }
+#endif
         /// <summary>The taxRegistrationNumber property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TaxRegistrationNumber {
+            get { return BackingStore?.Get<string?>("taxRegistrationNumber"); }
+            set { BackingStore?.Set("taxRegistrationNumber", value); }
+        }
+#else
         public string TaxRegistrationNumber {
             get { return BackingStore?.Get<string>("taxRegistrationNumber"); }
             set { BackingStore?.Set("taxRegistrationNumber", value); }
         }
+#endif
         /// <summary>The website property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Website {
+            get { return BackingStore?.Get<string?>("website"); }
+            set { BackingStore?.Set("website", value); }
+        }
+#else
         public string Website {
             get { return BackingStore?.Get<string>("website"); }
             set { BackingStore?.Set("website", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

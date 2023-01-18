@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// The user experience analytics Device not windows autopilot ready.
+    /// </summary>
     public class UserExperienceAnalyticsNotAutopilotReadyDevice : Entity, IParsable {
         /// <summary>The intune device&apos;s autopilotProfileAssigned.</summary>
         public bool? AutoPilotProfileAssigned {
@@ -16,40 +19,82 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("autoPilotRegistered", value); }
         }
         /// <summary>The intune device&apos;s azure Ad joinType.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AzureAdJoinType {
+            get { return BackingStore?.Get<string?>("azureAdJoinType"); }
+            set { BackingStore?.Set("azureAdJoinType", value); }
+        }
+#else
         public string AzureAdJoinType {
             get { return BackingStore?.Get<string>("azureAdJoinType"); }
             set { BackingStore?.Set("azureAdJoinType", value); }
         }
+#endif
         /// <summary>The intune device&apos;s azureAdRegistered.</summary>
         public bool? AzureAdRegistered {
             get { return BackingStore?.Get<bool?>("azureAdRegistered"); }
             set { BackingStore?.Set("azureAdRegistered", value); }
         }
         /// <summary>The intune device&apos;s name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeviceName {
+            get { return BackingStore?.Get<string?>("deviceName"); }
+            set { BackingStore?.Set("deviceName", value); }
+        }
+#else
         public string DeviceName {
             get { return BackingStore?.Get<string>("deviceName"); }
             set { BackingStore?.Set("deviceName", value); }
         }
+#endif
         /// <summary>The intune device&apos;s managed by.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ManagedBy {
+            get { return BackingStore?.Get<string?>("managedBy"); }
+            set { BackingStore?.Set("managedBy", value); }
+        }
+#else
         public string ManagedBy {
             get { return BackingStore?.Get<string>("managedBy"); }
             set { BackingStore?.Set("managedBy", value); }
         }
+#endif
         /// <summary>The intune device&apos;s manufacturer.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Manufacturer {
+            get { return BackingStore?.Get<string?>("manufacturer"); }
+            set { BackingStore?.Set("manufacturer", value); }
+        }
+#else
         public string Manufacturer {
             get { return BackingStore?.Get<string>("manufacturer"); }
             set { BackingStore?.Set("manufacturer", value); }
         }
+#endif
         /// <summary>The intune device&apos;s model.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Model {
+            get { return BackingStore?.Get<string?>("model"); }
+            set { BackingStore?.Set("model", value); }
+        }
+#else
         public string Model {
             get { return BackingStore?.Get<string>("model"); }
             set { BackingStore?.Set("model", value); }
         }
+#endif
         /// <summary>The intune device&apos;s serial number.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SerialNumber {
+            get { return BackingStore?.Get<string?>("serialNumber"); }
+            set { BackingStore?.Set("serialNumber", value); }
+        }
+#else
         public string SerialNumber {
             get { return BackingStore?.Get<string>("serialNumber"); }
             set { BackingStore?.Set("serialNumber", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

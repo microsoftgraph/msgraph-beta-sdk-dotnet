@@ -11,10 +11,17 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
             set { BackingStore?.Set("applyHoldToSource", value); }
         }
         /// <summary>User source or SharePoint site data source as non-custodial data source.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.Ediscovery.DataSource? DataSource {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Ediscovery.DataSource?>("dataSource"); }
+            set { BackingStore?.Set("dataSource", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.Ediscovery.DataSource DataSource {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Ediscovery.DataSource>("dataSource"); }
             set { BackingStore?.Set("dataSource", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new NoncustodialDataSource and sets the default values.
         /// </summary>

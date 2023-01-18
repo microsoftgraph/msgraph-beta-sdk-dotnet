@@ -22,10 +22,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("audioChannels", value); }
         }
         /// <summary>Name of the audio format (AAC, MP3, etc.).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AudioFormat {
+            get { return BackingStore?.Get<string?>("audioFormat"); }
+            set { BackingStore?.Set("audioFormat", value); }
+        }
+#else
         public string AudioFormat {
             get { return BackingStore?.Get<string>("audioFormat"); }
             set { BackingStore?.Set("audioFormat", value); }
         }
+#endif
         /// <summary>Number of audio samples per second.</summary>
         public int? AudioSamplesPerSecond {
             get { return BackingStore?.Get<int?>("audioSamplesPerSecond"); }
@@ -44,10 +51,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("duration", value); }
         }
         /// <summary>&apos;Four character code&apos; name of the video format.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? FourCC {
+            get { return BackingStore?.Get<string?>("fourCC"); }
+            set { BackingStore?.Set("fourCC", value); }
+        }
+#else
         public string FourCC {
             get { return BackingStore?.Get<string>("fourCC"); }
             set { BackingStore?.Set("fourCC", value); }
         }
+#endif
         /// <summary>The frameRate property</summary>
         public double? FrameRate {
             get { return BackingStore?.Get<double?>("frameRate"); }
@@ -59,10 +73,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("height", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Width of the video, in pixels.</summary>
         public int? Width {
             get { return BackingStore?.Get<int?>("width"); }

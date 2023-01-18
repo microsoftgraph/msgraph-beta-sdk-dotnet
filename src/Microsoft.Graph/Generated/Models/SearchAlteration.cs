@@ -12,27 +12,55 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Defines the altered highlighted query string with spelling correction. The annotation around the corrected segment is (/ue000, /ue001)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AlteredHighlightedQueryString {
+            get { return BackingStore?.Get<string?>("alteredHighlightedQueryString"); }
+            set { BackingStore?.Set("alteredHighlightedQueryString", value); }
+        }
+#else
         public string AlteredHighlightedQueryString {
             get { return BackingStore?.Get<string>("alteredHighlightedQueryString"); }
             set { BackingStore?.Set("alteredHighlightedQueryString", value); }
         }
+#endif
         /// <summary>Defines the altered query string with spelling correction.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AlteredQueryString {
+            get { return BackingStore?.Get<string?>("alteredQueryString"); }
+            set { BackingStore?.Set("alteredQueryString", value); }
+        }
+#else
         public string AlteredQueryString {
             get { return BackingStore?.Get<string>("alteredQueryString"); }
             set { BackingStore?.Set("alteredQueryString", value); }
         }
+#endif
         /// <summary>Represents changed segments with respect to original query.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AlteredQueryToken>? AlteredQueryTokens {
+            get { return BackingStore?.Get<List<AlteredQueryToken>?>("alteredQueryTokens"); }
+            set { BackingStore?.Set("alteredQueryTokens", value); }
+        }
+#else
         public List<AlteredQueryToken> AlteredQueryTokens {
             get { return BackingStore?.Get<List<AlteredQueryToken>>("alteredQueryTokens"); }
             set { BackingStore?.Set("alteredQueryTokens", value); }
         }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new searchAlteration and sets the default values.
         /// </summary>

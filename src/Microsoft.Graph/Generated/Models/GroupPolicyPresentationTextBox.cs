@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class GroupPolicyPresentationTextBox : GroupPolicyUploadedPresentation, IParsable {
         /// <summary>Localized default string displayed in the text box. The default value is empty.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DefaultValue {
+            get { return BackingStore?.Get<string?>("defaultValue"); }
+            set { BackingStore?.Set("defaultValue", value); }
+        }
+#else
         public string DefaultValue {
             get { return BackingStore?.Get<string>("defaultValue"); }
             set { BackingStore?.Set("defaultValue", value); }
         }
+#endif
         /// <summary>An unsigned integer that specifies the maximum number of text characters. Default value is 1023.</summary>
         public long? MaxLength {
             get { return BackingStore?.Get<long?>("maxLength"); }

@@ -6,30 +6,58 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.TenantAdmin {
     public class Settings : Entity, IParsable {
         /// <summary>Collection of trusted domain GUIDs for the OneDrive sync app.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Guid?>? AllowedDomainGuidsForSyncApp {
+            get { return BackingStore?.Get<List<Guid?>?>("allowedDomainGuidsForSyncApp"); }
+            set { BackingStore?.Set("allowedDomainGuidsForSyncApp", value); }
+        }
+#else
         public List<Guid?> AllowedDomainGuidsForSyncApp {
             get { return BackingStore?.Get<List<Guid?>>("allowedDomainGuidsForSyncApp"); }
             set { BackingStore?.Set("allowedDomainGuidsForSyncApp", value); }
         }
+#endif
         /// <summary>Collection of managed paths available for site creation. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? AvailableManagedPathsForSiteCreation {
+            get { return BackingStore?.Get<List<string>?>("availableManagedPathsForSiteCreation"); }
+            set { BackingStore?.Set("availableManagedPathsForSiteCreation", value); }
+        }
+#else
         public List<string> AvailableManagedPathsForSiteCreation {
             get { return BackingStore?.Get<List<string>>("availableManagedPathsForSiteCreation"); }
             set { BackingStore?.Set("availableManagedPathsForSiteCreation", value); }
         }
+#endif
         /// <summary>The number of days for preserving a deleted user&apos;s OneDrive.</summary>
         public int? DeletedUserPersonalSiteRetentionPeriodInDays {
             get { return BackingStore?.Get<int?>("deletedUserPersonalSiteRetentionPeriodInDays"); }
             set { BackingStore?.Set("deletedUserPersonalSiteRetentionPeriodInDays", value); }
         }
         /// <summary>Collection of file extensions not uploaded by the OneDrive sync app.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? ExcludedFileExtensionsForSyncApp {
+            get { return BackingStore?.Get<List<string>?>("excludedFileExtensionsForSyncApp"); }
+            set { BackingStore?.Set("excludedFileExtensionsForSyncApp", value); }
+        }
+#else
         public List<string> ExcludedFileExtensionsForSyncApp {
             get { return BackingStore?.Get<List<string>>("excludedFileExtensionsForSyncApp"); }
             set { BackingStore?.Set("excludedFileExtensionsForSyncApp", value); }
         }
+#endif
         /// <summary>Specifies the idle session sign-out policies for the tenant.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.TenantAdmin.IdleSessionSignOut? IdleSessionSignOut {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TenantAdmin.IdleSessionSignOut?>("idleSessionSignOut"); }
+            set { BackingStore?.Set("idleSessionSignOut", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.TenantAdmin.IdleSessionSignOut IdleSessionSignOut {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TenantAdmin.IdleSessionSignOut>("idleSessionSignOut"); }
             set { BackingStore?.Set("idleSessionSignOut", value); }
         }
+#endif
         /// <summary>Specifies the image tagging option for the tenant. Possible values are: disabled, basic, enhanced.</summary>
         public ImageTaggingChoice? ImageTaggingOption {
             get { return BackingStore?.Get<ImageTaggingChoice?>("imageTaggingOption"); }
@@ -116,15 +144,29 @@ namespace Microsoft.Graph.Beta.Models.TenantAdmin {
             set { BackingStore?.Set("personalSiteDefaultStorageLimitInMB", value); }
         }
         /// <summary>Collection of email domains that are allowed for sharing outside the organization.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? SharingAllowedDomainList {
+            get { return BackingStore?.Get<List<string>?>("sharingAllowedDomainList"); }
+            set { BackingStore?.Set("sharingAllowedDomainList", value); }
+        }
+#else
         public List<string> SharingAllowedDomainList {
             get { return BackingStore?.Get<List<string>>("sharingAllowedDomainList"); }
             set { BackingStore?.Set("sharingAllowedDomainList", value); }
         }
+#endif
         /// <summary>Collection of email domains that are blocked for sharing outside the organization.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? SharingBlockedDomainList {
+            get { return BackingStore?.Get<List<string>?>("sharingBlockedDomainList"); }
+            set { BackingStore?.Set("sharingBlockedDomainList", value); }
+        }
+#else
         public List<string> SharingBlockedDomainList {
             get { return BackingStore?.Get<List<string>>("sharingBlockedDomainList"); }
             set { BackingStore?.Set("sharingBlockedDomainList", value); }
         }
+#endif
         /// <summary>Sharing capability for the tenant. Possible values are: disabled, externalUserSharingOnly, externalUserAndGuestSharing, existingExternalUserSharingOnly.</summary>
         public SharingCapabilities? SharingCapability {
             get { return BackingStore?.Get<SharingCapabilities?>("sharingCapability"); }
@@ -136,20 +178,34 @@ namespace Microsoft.Graph.Beta.Models.TenantAdmin {
             set { BackingStore?.Set("sharingDomainRestrictionMode", value); }
         }
         /// <summary>The value of the team site managed path. This is the path under which new team sites will be created.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SiteCreationDefaultManagedPath {
+            get { return BackingStore?.Get<string?>("siteCreationDefaultManagedPath"); }
+            set { BackingStore?.Set("siteCreationDefaultManagedPath", value); }
+        }
+#else
         public string SiteCreationDefaultManagedPath {
             get { return BackingStore?.Get<string>("siteCreationDefaultManagedPath"); }
             set { BackingStore?.Set("siteCreationDefaultManagedPath", value); }
         }
+#endif
         /// <summary>The default storage quota for a new site upon creation. Measured in megabytes (MB).</summary>
         public int? SiteCreationDefaultStorageLimitInMB {
             get { return BackingStore?.Get<int?>("siteCreationDefaultStorageLimitInMB"); }
             set { BackingStore?.Set("siteCreationDefaultStorageLimitInMB", value); }
         }
         /// <summary>The default timezone of a tenant for newly created sites. For a list of possible values, see SPRegionalSettings.TimeZones property.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TenantDefaultTimezone {
+            get { return BackingStore?.Get<string?>("tenantDefaultTimezone"); }
+            set { BackingStore?.Set("tenantDefaultTimezone", value); }
+        }
+#else
         public string TenantDefaultTimezone {
             get { return BackingStore?.Get<string>("tenantDefaultTimezone"); }
             set { BackingStore?.Set("tenantDefaultTimezone", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

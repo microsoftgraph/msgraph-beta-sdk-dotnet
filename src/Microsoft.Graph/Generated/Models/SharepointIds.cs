@@ -14,45 +14,101 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The unique identifier (guid) for the item&apos;s list in SharePoint.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ListId {
+            get { return BackingStore?.Get<string?>("listId"); }
+            set { BackingStore?.Set("listId", value); }
+        }
+#else
         public string ListId {
             get { return BackingStore?.Get<string>("listId"); }
             set { BackingStore?.Set("listId", value); }
         }
+#endif
         /// <summary>An integer identifier for the item within the containing list.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ListItemId {
+            get { return BackingStore?.Get<string?>("listItemId"); }
+            set { BackingStore?.Set("listItemId", value); }
+        }
+#else
         public string ListItemId {
             get { return BackingStore?.Get<string>("listItemId"); }
             set { BackingStore?.Set("listItemId", value); }
         }
+#endif
         /// <summary>The unique identifier (guid) for the item within OneDrive for Business or a SharePoint site.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ListItemUniqueId {
+            get { return BackingStore?.Get<string?>("listItemUniqueId"); }
+            set { BackingStore?.Set("listItemUniqueId", value); }
+        }
+#else
         public string ListItemUniqueId {
             get { return BackingStore?.Get<string>("listItemUniqueId"); }
             set { BackingStore?.Set("listItemUniqueId", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The unique identifier (guid) for the item&apos;s site collection (SPSite).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SiteId {
+            get { return BackingStore?.Get<string?>("siteId"); }
+            set { BackingStore?.Set("siteId", value); }
+        }
+#else
         public string SiteId {
             get { return BackingStore?.Get<string>("siteId"); }
             set { BackingStore?.Set("siteId", value); }
         }
+#endif
         /// <summary>The SharePoint URL for the site that contains the item.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SiteUrl {
+            get { return BackingStore?.Get<string?>("siteUrl"); }
+            set { BackingStore?.Set("siteUrl", value); }
+        }
+#else
         public string SiteUrl {
             get { return BackingStore?.Get<string>("siteUrl"); }
             set { BackingStore?.Set("siteUrl", value); }
         }
+#endif
         /// <summary>The unique identifier (guid) for the tenancy.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TenantId {
+            get { return BackingStore?.Get<string?>("tenantId"); }
+            set { BackingStore?.Set("tenantId", value); }
+        }
+#else
         public string TenantId {
             get { return BackingStore?.Get<string>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
+#endif
         /// <summary>The unique identifier (guid) for the item&apos;s site (SPWeb).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? WebId {
+            get { return BackingStore?.Get<string?>("webId"); }
+            set { BackingStore?.Set("webId", value); }
+        }
+#else
         public string WebId {
             get { return BackingStore?.Get<string>("webId"); }
             set { BackingStore?.Set("webId", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new sharepointIds and sets the default values.
         /// </summary>

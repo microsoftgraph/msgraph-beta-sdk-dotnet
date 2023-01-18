@@ -13,10 +13,17 @@ namespace Microsoft.Graph.Beta.Me.FindMeetingTimes {
             set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The attendees property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AttendeeBase>? Attendees {
+            get { return BackingStore?.Get<List<AttendeeBase>?>("attendees"); }
+            set { BackingStore?.Set("attendees", value); }
+        }
+#else
         public List<AttendeeBase> Attendees {
             get { return BackingStore?.Get<List<AttendeeBase>>("attendees"); }
             set { BackingStore?.Set("attendees", value); }
         }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The isOrganizerOptional property</summary>
@@ -25,10 +32,17 @@ namespace Microsoft.Graph.Beta.Me.FindMeetingTimes {
             set { BackingStore?.Set("isOrganizerOptional", value); }
         }
         /// <summary>The locationConstraint property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.LocationConstraint? LocationConstraint {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.LocationConstraint?>("locationConstraint"); }
+            set { BackingStore?.Set("locationConstraint", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.LocationConstraint LocationConstraint {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.LocationConstraint>("locationConstraint"); }
             set { BackingStore?.Set("locationConstraint", value); }
         }
+#endif
         /// <summary>The maxCandidates property</summary>
         public int? MaxCandidates {
             get { return BackingStore?.Get<int?>("maxCandidates"); }
@@ -50,10 +64,17 @@ namespace Microsoft.Graph.Beta.Me.FindMeetingTimes {
             set { BackingStore?.Set("returnSuggestionReasons", value); }
         }
         /// <summary>The timeConstraint property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.TimeConstraint? TimeConstraint {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TimeConstraint?>("timeConstraint"); }
+            set { BackingStore?.Set("timeConstraint", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.TimeConstraint TimeConstraint {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TimeConstraint>("timeConstraint"); }
             set { BackingStore?.Set("timeConstraint", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new findMeetingTimesPostRequestBody and sets the default values.
         /// </summary>

@@ -6,80 +6,164 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
     public class ManagedTenantAlert : Entity, IParsable {
         /// <summary>The alertData property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.ManagedTenants.AlertData? AlertData {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedTenants.AlertData?>("alertData"); }
+            set { BackingStore?.Set("alertData", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.ManagedTenants.AlertData AlertData {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedTenants.AlertData>("alertData"); }
             set { BackingStore?.Set("alertData", value); }
         }
+#endif
         /// <summary>The alertDataReferenceStrings property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AlertDataReferenceString>? AlertDataReferenceStrings {
+            get { return BackingStore?.Get<List<AlertDataReferenceString>?>("alertDataReferenceStrings"); }
+            set { BackingStore?.Set("alertDataReferenceStrings", value); }
+        }
+#else
         public List<AlertDataReferenceString> AlertDataReferenceStrings {
             get { return BackingStore?.Get<List<AlertDataReferenceString>>("alertDataReferenceStrings"); }
             set { BackingStore?.Set("alertDataReferenceStrings", value); }
         }
+#endif
         /// <summary>The alertLogs property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ManagedTenantAlertLog>? AlertLogs {
+            get { return BackingStore?.Get<List<ManagedTenantAlertLog>?>("alertLogs"); }
+            set { BackingStore?.Set("alertLogs", value); }
+        }
+#else
         public List<ManagedTenantAlertLog> AlertLogs {
             get { return BackingStore?.Get<List<ManagedTenantAlertLog>>("alertLogs"); }
             set { BackingStore?.Set("alertLogs", value); }
         }
+#endif
         /// <summary>The alertRule property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ManagedTenantAlertRule? AlertRule {
+            get { return BackingStore?.Get<ManagedTenantAlertRule?>("alertRule"); }
+            set { BackingStore?.Set("alertRule", value); }
+        }
+#else
         public ManagedTenantAlertRule AlertRule {
             get { return BackingStore?.Get<ManagedTenantAlertRule>("alertRule"); }
             set { BackingStore?.Set("alertRule", value); }
         }
+#endif
         /// <summary>The alertRuleDisplayName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AlertRuleDisplayName {
+            get { return BackingStore?.Get<string?>("alertRuleDisplayName"); }
+            set { BackingStore?.Set("alertRuleDisplayName", value); }
+        }
+#else
         public string AlertRuleDisplayName {
             get { return BackingStore?.Get<string>("alertRuleDisplayName"); }
             set { BackingStore?.Set("alertRuleDisplayName", value); }
         }
+#endif
         /// <summary>The apiNotifications property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ManagedTenantApiNotification>? ApiNotifications {
+            get { return BackingStore?.Get<List<ManagedTenantApiNotification>?>("apiNotifications"); }
+            set { BackingStore?.Set("apiNotifications", value); }
+        }
+#else
         public List<ManagedTenantApiNotification> ApiNotifications {
             get { return BackingStore?.Get<List<ManagedTenantApiNotification>>("apiNotifications"); }
             set { BackingStore?.Set("apiNotifications", value); }
         }
+#endif
         /// <summary>The assignedToUserId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AssignedToUserId {
+            get { return BackingStore?.Get<string?>("assignedToUserId"); }
+            set { BackingStore?.Set("assignedToUserId", value); }
+        }
+#else
         public string AssignedToUserId {
             get { return BackingStore?.Get<string>("assignedToUserId"); }
             set { BackingStore?.Set("assignedToUserId", value); }
         }
+#endif
         /// <summary>The correlationCount property</summary>
         public int? CorrelationCount {
             get { return BackingStore?.Get<int?>("correlationCount"); }
             set { BackingStore?.Set("correlationCount", value); }
         }
         /// <summary>The correlationId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CorrelationId {
+            get { return BackingStore?.Get<string?>("correlationId"); }
+            set { BackingStore?.Set("correlationId", value); }
+        }
+#else
         public string CorrelationId {
             get { return BackingStore?.Get<string>("correlationId"); }
             set { BackingStore?.Set("correlationId", value); }
         }
+#endif
         /// <summary>The createdByUserId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CreatedByUserId {
+            get { return BackingStore?.Get<string?>("createdByUserId"); }
+            set { BackingStore?.Set("createdByUserId", value); }
+        }
+#else
         public string CreatedByUserId {
             get { return BackingStore?.Get<string>("createdByUserId"); }
             set { BackingStore?.Set("createdByUserId", value); }
         }
+#endif
         /// <summary>The createdDateTime property</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The emailNotifications property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ManagedTenantEmailNotification>? EmailNotifications {
+            get { return BackingStore?.Get<List<ManagedTenantEmailNotification>?>("emailNotifications"); }
+            set { BackingStore?.Set("emailNotifications", value); }
+        }
+#else
         public List<ManagedTenantEmailNotification> EmailNotifications {
             get { return BackingStore?.Get<List<ManagedTenantEmailNotification>>("emailNotifications"); }
             set { BackingStore?.Set("emailNotifications", value); }
         }
+#endif
         /// <summary>The lastActionByUserId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? LastActionByUserId {
+            get { return BackingStore?.Get<string?>("lastActionByUserId"); }
+            set { BackingStore?.Set("lastActionByUserId", value); }
+        }
+#else
         public string LastActionByUserId {
             get { return BackingStore?.Get<string>("lastActionByUserId"); }
             set { BackingStore?.Set("lastActionByUserId", value); }
         }
+#endif
         /// <summary>The lastActionDateTime property</summary>
         public DateTimeOffset? LastActionDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastActionDateTime"); }
             set { BackingStore?.Set("lastActionDateTime", value); }
         }
         /// <summary>The message property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Message {
+            get { return BackingStore?.Get<string?>("message"); }
+            set { BackingStore?.Set("message", value); }
+        }
+#else
         public string Message {
             get { return BackingStore?.Get<string>("message"); }
             set { BackingStore?.Set("message", value); }
         }
+#endif
         /// <summary>The severity property</summary>
         public AlertSeverity? Severity {
             get { return BackingStore?.Get<AlertSeverity?>("severity"); }
@@ -91,15 +175,29 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>The tenantId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TenantId {
+            get { return BackingStore?.Get<string?>("tenantId"); }
+            set { BackingStore?.Set("tenantId", value); }
+        }
+#else
         public string TenantId {
             get { return BackingStore?.Get<string>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
+#endif
         /// <summary>The title property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Title {
+            get { return BackingStore?.Get<string?>("title"); }
+            set { BackingStore?.Set("title", value); }
+        }
+#else
         public string Title {
             get { return BackingStore?.Get<string>("title"); }
             set { BackingStore?.Set("title", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

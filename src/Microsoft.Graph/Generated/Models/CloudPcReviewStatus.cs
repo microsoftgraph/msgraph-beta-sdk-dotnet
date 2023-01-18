@@ -12,20 +12,41 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The resource ID of the Azure Storage account in which the Cloud PC snapshot is being saved.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AzureStorageAccountId {
+            get { return BackingStore?.Get<string?>("azureStorageAccountId"); }
+            set { BackingStore?.Set("azureStorageAccountId", value); }
+        }
+#else
         public string AzureStorageAccountId {
             get { return BackingStore?.Get<string>("azureStorageAccountId"); }
             set { BackingStore?.Set("azureStorageAccountId", value); }
         }
+#endif
         /// <summary>The name of the Azure Storage account in which the Cloud PC snapshot is being saved.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AzureStorageAccountName {
+            get { return BackingStore?.Get<string?>("azureStorageAccountName"); }
+            set { BackingStore?.Set("azureStorageAccountName", value); }
+        }
+#else
         public string AzureStorageAccountName {
             get { return BackingStore?.Get<string>("azureStorageAccountName"); }
             set { BackingStore?.Set("azureStorageAccountName", value); }
         }
+#endif
         /// <summary>The name of the container in an Azure Storage account in which the Cloud PC snapshot is being saved.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AzureStorageContainerName {
+            get { return BackingStore?.Get<string?>("azureStorageContainerName"); }
+            set { BackingStore?.Set("azureStorageContainerName", value); }
+        }
+#else
         public string AzureStorageContainerName {
             get { return BackingStore?.Get<string>("azureStorageContainerName"); }
             set { BackingStore?.Set("azureStorageContainerName", value); }
         }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>True if the Cloud PC is set to in review by the administrator.</summary>
@@ -34,10 +55,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("inReview", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The specific date and time of the Cloud PC snapshot that was taken and saved automatically, when the Cloud PC is set to in review. The timestamp is shown in ISO 8601 format and Coordinated Universal Time (UTC). For example, midnight UTC on Jan 1, 2014 appears as 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? RestorePointDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("restorePointDateTime"); }
@@ -49,15 +77,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("reviewStartDateTime", value); }
         }
         /// <summary>The ID of the Azure subscription in which the Cloud PC snapshot is being saved, in GUID format.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SubscriptionId {
+            get { return BackingStore?.Get<string?>("subscriptionId"); }
+            set { BackingStore?.Set("subscriptionId", value); }
+        }
+#else
         public string SubscriptionId {
             get { return BackingStore?.Get<string>("subscriptionId"); }
             set { BackingStore?.Set("subscriptionId", value); }
         }
+#endif
         /// <summary>The name of the Azure subscription in which the Cloud PC snapshot is being saved.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SubscriptionName {
+            get { return BackingStore?.Get<string?>("subscriptionName"); }
+            set { BackingStore?.Set("subscriptionName", value); }
+        }
+#else
         public string SubscriptionName {
             get { return BackingStore?.Get<string>("subscriptionName"); }
             set { BackingStore?.Set("subscriptionName", value); }
         }
+#endif
         /// <summary>The userAccessLevel property</summary>
         public CloudPcUserAccessLevel? UserAccessLevel {
             get { return BackingStore?.Get<CloudPcUserAccessLevel?>("userAccessLevel"); }

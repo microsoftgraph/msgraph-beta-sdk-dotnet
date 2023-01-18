@@ -6,25 +6,46 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
     public class ApplyLabelAction : InformationProtectionAction, IParsable {
         /// <summary>The collection of actions that should be implemented by the caller.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<InformationProtectionAction>? Actions {
+            get { return BackingStore?.Get<List<InformationProtectionAction>?>("actions"); }
+            set { BackingStore?.Set("actions", value); }
+        }
+#else
         public List<InformationProtectionAction> Actions {
             get { return BackingStore?.Get<List<InformationProtectionAction>>("actions"); }
             set { BackingStore?.Set("actions", value); }
         }
+#endif
         /// <summary>The actionSource property</summary>
         public Microsoft.Graph.Beta.Models.Security.ActionSource? ActionSource {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.ActionSource?>("actionSource"); }
             set { BackingStore?.Set("actionSource", value); }
         }
         /// <summary>If the label was the result of an automatic classification, supply the list of sensitive info type GUIDs that resulted in the returned label.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? ResponsibleSensitiveTypeIds {
+            get { return BackingStore?.Get<List<string>?>("responsibleSensitiveTypeIds"); }
+            set { BackingStore?.Set("responsibleSensitiveTypeIds", value); }
+        }
+#else
         public List<string> ResponsibleSensitiveTypeIds {
             get { return BackingStore?.Get<List<string>>("responsibleSensitiveTypeIds"); }
             set { BackingStore?.Set("responsibleSensitiveTypeIds", value); }
         }
+#endif
         /// <summary>The sensitivityLabelId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SensitivityLabelId {
+            get { return BackingStore?.Get<string?>("sensitivityLabelId"); }
+            set { BackingStore?.Set("sensitivityLabelId", value); }
+        }
+#else
         public string SensitivityLabelId {
             get { return BackingStore?.Get<string>("sensitivityLabelId"); }
             set { BackingStore?.Set("sensitivityLabelId", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new ApplyLabelAction and sets the default values.
         /// </summary>

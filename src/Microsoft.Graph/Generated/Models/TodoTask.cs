@@ -6,55 +6,111 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class TodoTask : Entity, IParsable {
         /// <summary>A collection of file attachments for the task.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AttachmentBase>? Attachments {
+            get { return BackingStore?.Get<List<AttachmentBase>?>("attachments"); }
+            set { BackingStore?.Set("attachments", value); }
+        }
+#else
         public List<AttachmentBase> Attachments {
             get { return BackingStore?.Get<List<AttachmentBase>>("attachments"); }
             set { BackingStore?.Set("attachments", value); }
         }
+#endif
         /// <summary>The attachmentSessions property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AttachmentSession>? AttachmentSessions {
+            get { return BackingStore?.Get<List<AttachmentSession>?>("attachmentSessions"); }
+            set { BackingStore?.Set("attachmentSessions", value); }
+        }
+#else
         public List<AttachmentSession> AttachmentSessions {
             get { return BackingStore?.Get<List<AttachmentSession>>("attachmentSessions"); }
             set { BackingStore?.Set("attachmentSessions", value); }
         }
+#endif
         /// <summary>The task body that typically contains information about the task.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ItemBody? Body {
+            get { return BackingStore?.Get<ItemBody?>("body"); }
+            set { BackingStore?.Set("body", value); }
+        }
+#else
         public ItemBody Body {
             get { return BackingStore?.Get<ItemBody>("body"); }
             set { BackingStore?.Set("body", value); }
         }
+#endif
         /// <summary>The date and time when the task body was last modified. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2020 would look like this: &apos;2020-01-01T00:00:00Z&apos;.</summary>
         public DateTimeOffset? BodyLastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("bodyLastModifiedDateTime"); }
             set { BackingStore?.Set("bodyLastModifiedDateTime", value); }
         }
         /// <summary>The categories associated with the task. Each category corresponds to the displayName property of an outlookCategory that the user has defined.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? Categories {
+            get { return BackingStore?.Get<List<string>?>("categories"); }
+            set { BackingStore?.Set("categories", value); }
+        }
+#else
         public List<string> Categories {
             get { return BackingStore?.Get<List<string>>("categories"); }
             set { BackingStore?.Set("categories", value); }
         }
+#endif
         /// <summary>A collection of smaller subtasks linked to the more complex parent task.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ChecklistItem>? ChecklistItems {
+            get { return BackingStore?.Get<List<ChecklistItem>?>("checklistItems"); }
+            set { BackingStore?.Set("checklistItems", value); }
+        }
+#else
         public List<ChecklistItem> ChecklistItems {
             get { return BackingStore?.Get<List<ChecklistItem>>("checklistItems"); }
             set { BackingStore?.Set("checklistItems", value); }
         }
+#endif
         /// <summary>The date and time in the specified time zone that the task was finished.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DateTimeTimeZone? CompletedDateTime {
+            get { return BackingStore?.Get<DateTimeTimeZone?>("completedDateTime"); }
+            set { BackingStore?.Set("completedDateTime", value); }
+        }
+#else
         public DateTimeTimeZone CompletedDateTime {
             get { return BackingStore?.Get<DateTimeTimeZone>("completedDateTime"); }
             set { BackingStore?.Set("completedDateTime", value); }
         }
+#endif
         /// <summary>The date and time when the task was created. By default, it is in UTC. You can provide a custom time zone in the request header. The property value uses ISO 8601 format. For example, midnight UTC on Jan 1, 2020 would look like this: &apos;2020-01-01T00:00:00Z&apos;.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The date and time in the specified time zone that the task is to be finished.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DateTimeTimeZone? DueDateTime {
+            get { return BackingStore?.Get<DateTimeTimeZone?>("dueDateTime"); }
+            set { BackingStore?.Set("dueDateTime", value); }
+        }
+#else
         public DateTimeTimeZone DueDateTime {
             get { return BackingStore?.Get<DateTimeTimeZone>("dueDateTime"); }
             set { BackingStore?.Set("dueDateTime", value); }
         }
+#endif
         /// <summary>The collection of open extensions defined for the task. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Extension>? Extensions {
+            get { return BackingStore?.Get<List<Extension>?>("extensions"); }
+            set { BackingStore?.Set("extensions", value); }
+        }
+#else
         public List<Extension> Extensions {
             get { return BackingStore?.Get<List<Extension>>("extensions"); }
             set { BackingStore?.Set("extensions", value); }
         }
+#endif
         /// <summary>Indicates whether the task has attachments.</summary>
         public bool? HasAttachments {
             get { return BackingStore?.Get<bool?>("hasAttachments"); }
@@ -76,35 +132,70 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>A collection of resources linked to the task.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<LinkedResource>? LinkedResources {
+            get { return BackingStore?.Get<List<LinkedResource>?>("linkedResources"); }
+            set { BackingStore?.Set("linkedResources", value); }
+        }
+#else
         public List<LinkedResource> LinkedResources {
             get { return BackingStore?.Get<List<LinkedResource>>("linkedResources"); }
             set { BackingStore?.Set("linkedResources", value); }
         }
+#endif
         /// <summary>The recurrence pattern for the task.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public PatternedRecurrence? Recurrence {
+            get { return BackingStore?.Get<PatternedRecurrence?>("recurrence"); }
+            set { BackingStore?.Set("recurrence", value); }
+        }
+#else
         public PatternedRecurrence Recurrence {
             get { return BackingStore?.Get<PatternedRecurrence>("recurrence"); }
             set { BackingStore?.Set("recurrence", value); }
         }
+#endif
         /// <summary>The date and time in the specified time zone for a reminder alert of the task to occur.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DateTimeTimeZone? ReminderDateTime {
+            get { return BackingStore?.Get<DateTimeTimeZone?>("reminderDateTime"); }
+            set { BackingStore?.Set("reminderDateTime", value); }
+        }
+#else
         public DateTimeTimeZone ReminderDateTime {
             get { return BackingStore?.Get<DateTimeTimeZone>("reminderDateTime"); }
             set { BackingStore?.Set("reminderDateTime", value); }
         }
+#endif
         /// <summary>The date and time in the specified time zone at which the task is scheduled to start.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DateTimeTimeZone? StartDateTime {
+            get { return BackingStore?.Get<DateTimeTimeZone?>("startDateTime"); }
+            set { BackingStore?.Set("startDateTime", value); }
+        }
+#else
         public DateTimeTimeZone StartDateTime {
             get { return BackingStore?.Get<DateTimeTimeZone>("startDateTime"); }
             set { BackingStore?.Set("startDateTime", value); }
         }
+#endif
         /// <summary>The status property</summary>
         public TaskStatus? Status {
             get { return BackingStore?.Get<TaskStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>A brief description of the task.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Title {
+            get { return BackingStore?.Get<string?>("title"); }
+            set { BackingStore?.Set("title", value); }
+        }
+#else
         public string Title {
             get { return BackingStore?.Get<string>("title"); }
             set { BackingStore?.Set("title", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

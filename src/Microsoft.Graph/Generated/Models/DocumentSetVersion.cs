@@ -6,25 +6,46 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class DocumentSetVersion : ListItemVersion, IParsable {
         /// <summary>Comment about the captured version.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Comment {
+            get { return BackingStore?.Get<string?>("comment"); }
+            set { BackingStore?.Set("comment", value); }
+        }
+#else
         public string Comment {
             get { return BackingStore?.Get<string>("comment"); }
             set { BackingStore?.Set("comment", value); }
         }
+#endif
         /// <summary>User who captured the version.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public IdentitySet? CreatedBy {
+            get { return BackingStore?.Get<IdentitySet?>("createdBy"); }
+            set { BackingStore?.Set("createdBy", value); }
+        }
+#else
         public IdentitySet CreatedBy {
             get { return BackingStore?.Get<IdentitySet>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
+#endif
         /// <summary>Date and time when this version was created.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Items within the document set that are captured as part of this version.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DocumentSetVersionItem>? Items {
+            get { return BackingStore?.Get<List<DocumentSetVersionItem>?>("items"); }
+            set { BackingStore?.Set("items", value); }
+        }
+#else
         public List<DocumentSetVersionItem> Items {
             get { return BackingStore?.Get<List<DocumentSetVersionItem>>("items"); }
             set { BackingStore?.Set("items", value); }
         }
+#endif
         /// <summary>If true, minor versions of items are also captured; otherwise, only major versions will be captured. Default value is false.</summary>
         public bool? ShouldCaptureMinorVersion {
             get { return BackingStore?.Get<bool?>("shouldCaptureMinorVersion"); }

@@ -6,25 +6,53 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class Calendar : Entity, IParsable {
         /// <summary>Represent the online meeting service providers that can be used to create online meetings in this calendar. Possible values are: unknown, skypeForBusiness, skypeForConsumer, teamsForBusiness.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<OnlineMeetingProviderType?>? AllowedOnlineMeetingProviders {
+            get { return BackingStore?.Get<List<OnlineMeetingProviderType?>?>("allowedOnlineMeetingProviders"); }
+            set { BackingStore?.Set("allowedOnlineMeetingProviders", value); }
+        }
+#else
         public List<OnlineMeetingProviderType?> AllowedOnlineMeetingProviders {
             get { return BackingStore?.Get<List<OnlineMeetingProviderType?>>("allowedOnlineMeetingProviders"); }
             set { BackingStore?.Set("allowedOnlineMeetingProviders", value); }
         }
+#endif
         /// <summary>The calendarGroup in which to create the calendar. If the user has never explicitly set a group for the calendar, this property is  null.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CalendarGroupId {
+            get { return BackingStore?.Get<string?>("calendarGroupId"); }
+            set { BackingStore?.Set("calendarGroupId", value); }
+        }
+#else
         public string CalendarGroupId {
             get { return BackingStore?.Get<string>("calendarGroupId"); }
             set { BackingStore?.Set("calendarGroupId", value); }
         }
+#endif
         /// <summary>The permissions of the users with whom the calendar is shared.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<CalendarPermission>? CalendarPermissions {
+            get { return BackingStore?.Get<List<CalendarPermission>?>("calendarPermissions"); }
+            set { BackingStore?.Set("calendarPermissions", value); }
+        }
+#else
         public List<CalendarPermission> CalendarPermissions {
             get { return BackingStore?.Get<List<CalendarPermission>>("calendarPermissions"); }
             set { BackingStore?.Set("calendarPermissions", value); }
         }
+#endif
         /// <summary>The calendar view for the calendar. Navigation property. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Event>? CalendarView {
+            get { return BackingStore?.Get<List<Event>?>("calendarView"); }
+            set { BackingStore?.Set("calendarView", value); }
+        }
+#else
         public List<Event> CalendarView {
             get { return BackingStore?.Get<List<Event>>("calendarView"); }
             set { BackingStore?.Set("calendarView", value); }
         }
+#endif
         /// <summary>true if the user can write to the calendar, false otherwise. This property is true for the user who created the calendar. This property is also true for a user who has been shared a calendar and granted write access, through an Outlook client or the corresponding calendarPermission resource. Read-only.</summary>
         public bool? CanEdit {
             get { return BackingStore?.Get<bool?>("canEdit"); }
@@ -41,10 +69,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("canViewPrivateItems", value); }
         }
         /// <summary>Identifies the version of the calendar object. Every time the calendar is changed, changeKey changes as well. This allows Exchange to apply changes to the correct version of the object. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ChangeKey {
+            get { return BackingStore?.Get<string?>("changeKey"); }
+            set { BackingStore?.Set("changeKey", value); }
+        }
+#else
         public string ChangeKey {
             get { return BackingStore?.Get<string>("changeKey"); }
             set { BackingStore?.Set("changeKey", value); }
         }
+#endif
         /// <summary>Specifies the color theme to distinguish the calendar from other calendars in a UI. The property values are: auto, lightBlue, lightGreen, lightOrange, lightGray, lightYellow, lightTeal, lightPink, lightBrown, lightRed, maxColor.</summary>
         public CalendarColor? Color {
             get { return BackingStore?.Get<CalendarColor?>("color"); }
@@ -56,15 +91,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("defaultOnlineMeetingProvider", value); }
         }
         /// <summary>The events in the calendar. Navigation property. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Event>? Events {
+            get { return BackingStore?.Get<List<Event>?>("events"); }
+            set { BackingStore?.Set("events", value); }
+        }
+#else
         public List<Event> Events {
             get { return BackingStore?.Get<List<Event>>("events"); }
             set { BackingStore?.Set("events", value); }
         }
+#endif
         /// <summary>The calendar color, expressed in a hex color code of three hexadecimal values, each ranging from 00 to FF and representing the red, green, or blue components of the color in the RGB color space. If the user has never explicitly set a color for the calendar, this property is  empty.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? HexColor {
+            get { return BackingStore?.Get<string?>("hexColor"); }
+            set { BackingStore?.Set("hexColor", value); }
+        }
+#else
         public string HexColor {
             get { return BackingStore?.Get<string>("hexColor"); }
             set { BackingStore?.Set("hexColor", value); }
         }
+#endif
         /// <summary>true if this is the default calendar where new events are created by default, false otherwise.</summary>
         public bool? IsDefaultCalendar {
             get { return BackingStore?.Get<bool?>("isDefaultCalendar"); }
@@ -91,25 +140,53 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("isTallyingResponses", value); }
         }
         /// <summary>The collection of multi-value extended properties defined for the calendar. Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<MultiValueLegacyExtendedProperty>? MultiValueExtendedProperties {
+            get { return BackingStore?.Get<List<MultiValueLegacyExtendedProperty>?>("multiValueExtendedProperties"); }
+            set { BackingStore?.Set("multiValueExtendedProperties", value); }
+        }
+#else
         public List<MultiValueLegacyExtendedProperty> MultiValueExtendedProperties {
             get { return BackingStore?.Get<List<MultiValueLegacyExtendedProperty>>("multiValueExtendedProperties"); }
             set { BackingStore?.Set("multiValueExtendedProperties", value); }
         }
+#endif
         /// <summary>The calendar name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Name {
+            get { return BackingStore?.Get<string?>("name"); }
+            set { BackingStore?.Set("name", value); }
+        }
+#else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#endif
         /// <summary>If set, this represents the user who created or added the calendar. For a calendar that the user created or added, the owner property is set to the user. For a calendar shared with the user, the owner property is set to the person who shared that calendar with the user. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public EmailAddress? Owner {
+            get { return BackingStore?.Get<EmailAddress?>("owner"); }
+            set { BackingStore?.Set("owner", value); }
+        }
+#else
         public EmailAddress Owner {
             get { return BackingStore?.Get<EmailAddress>("owner"); }
             set { BackingStore?.Set("owner", value); }
         }
+#endif
         /// <summary>The collection of single-value extended properties defined for the calendar. Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<SingleValueLegacyExtendedProperty>? SingleValueExtendedProperties {
+            get { return BackingStore?.Get<List<SingleValueLegacyExtendedProperty>?>("singleValueExtendedProperties"); }
+            set { BackingStore?.Set("singleValueExtendedProperties", value); }
+        }
+#else
         public List<SingleValueLegacyExtendedProperty> SingleValueExtendedProperties {
             get { return BackingStore?.Get<List<SingleValueLegacyExtendedProperty>>("singleValueExtendedProperties"); }
             set { BackingStore?.Set("singleValueExtendedProperties", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

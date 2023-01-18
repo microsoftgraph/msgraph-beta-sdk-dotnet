@@ -6,55 +6,118 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class PlannerPlan : PlannerDelta, IParsable {
         /// <summary>Collection of buckets in the plan. Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<PlannerBucket>? Buckets {
+            get { return BackingStore?.Get<List<PlannerBucket>?>("buckets"); }
+            set { BackingStore?.Set("buckets", value); }
+        }
+#else
         public List<PlannerBucket> Buckets {
             get { return BackingStore?.Get<List<PlannerBucket>>("buckets"); }
             set { BackingStore?.Set("buckets", value); }
         }
+#endif
         /// <summary>Identifies the container of the plan. Specify only the url, the containerId and type, or all properties. After it is set, this property can’t be updated. Required.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public PlannerPlanContainer? Container {
+            get { return BackingStore?.Get<PlannerPlanContainer?>("container"); }
+            set { BackingStore?.Set("container", value); }
+        }
+#else
         public PlannerPlanContainer Container {
             get { return BackingStore?.Get<PlannerPlanContainer>("container"); }
             set { BackingStore?.Set("container", value); }
         }
+#endif
         /// <summary>Read-only. Additional user experiences in which this plan is used, represented as plannerPlanContext entries.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public PlannerPlanContextCollection? Contexts {
+            get { return BackingStore?.Get<PlannerPlanContextCollection?>("contexts"); }
+            set { BackingStore?.Set("contexts", value); }
+        }
+#else
         public PlannerPlanContextCollection Contexts {
             get { return BackingStore?.Get<PlannerPlanContextCollection>("contexts"); }
             set { BackingStore?.Set("contexts", value); }
         }
+#endif
         /// <summary>Read-only. The user who created the plan.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public IdentitySet? CreatedBy {
+            get { return BackingStore?.Get<IdentitySet?>("createdBy"); }
+            set { BackingStore?.Set("createdBy", value); }
+        }
+#else
         public IdentitySet CreatedBy {
             get { return BackingStore?.Get<IdentitySet>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
+#endif
         /// <summary>Read-only. Date and time at which the plan is created. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Contains information about the origin of the plan.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public PlannerPlanCreation? CreationSource {
+            get { return BackingStore?.Get<PlannerPlanCreation?>("creationSource"); }
+            set { BackingStore?.Set("creationSource", value); }
+        }
+#else
         public PlannerPlanCreation CreationSource {
             get { return BackingStore?.Get<PlannerPlanCreation>("creationSource"); }
             set { BackingStore?.Set("creationSource", value); }
         }
+#endif
         /// <summary>Additional details about the plan. Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public PlannerPlanDetails? Details {
+            get { return BackingStore?.Get<PlannerPlanDetails?>("details"); }
+            set { BackingStore?.Set("details", value); }
+        }
+#else
         public PlannerPlanDetails Details {
             get { return BackingStore?.Get<PlannerPlanDetails>("details"); }
             set { BackingStore?.Set("details", value); }
         }
+#endif
         /// <summary>The owner property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Owner {
+            get { return BackingStore?.Get<string?>("owner"); }
+            set { BackingStore?.Set("owner", value); }
+        }
+#else
         public string Owner {
             get { return BackingStore?.Get<string>("owner"); }
             set { BackingStore?.Set("owner", value); }
         }
+#endif
         /// <summary>Collection of tasks in the plan. Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<PlannerTask>? Tasks {
+            get { return BackingStore?.Get<List<PlannerTask>?>("tasks"); }
+            set { BackingStore?.Set("tasks", value); }
+        }
+#else
         public List<PlannerTask> Tasks {
             get { return BackingStore?.Get<List<PlannerTask>>("tasks"); }
             set { BackingStore?.Set("tasks", value); }
         }
+#endif
         /// <summary>Required. Title of the plan.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Title {
+            get { return BackingStore?.Get<string?>("title"); }
+            set { BackingStore?.Set("title", value); }
+        }
+#else
         public string Title {
             get { return BackingStore?.Get<string>("title"); }
             set { BackingStore?.Set("title", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

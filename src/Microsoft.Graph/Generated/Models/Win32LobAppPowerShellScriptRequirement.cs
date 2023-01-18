@@ -11,10 +11,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("detectionType", value); }
         }
         /// <summary>The unique display name for this rule</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>A value indicating whether signature check is enforced</summary>
         public bool? EnforceSignatureCheck {
             get { return BackingStore?.Get<bool?>("enforceSignatureCheck"); }
@@ -31,10 +38,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("runAsAccount", value); }
         }
         /// <summary>The base64 encoded script content to detect Win32 Line of Business (LoB) app</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ScriptContent {
+            get { return BackingStore?.Get<string?>("scriptContent"); }
+            set { BackingStore?.Set("scriptContent", value); }
+        }
+#else
         public string ScriptContent {
             get { return BackingStore?.Get<string>("scriptContent"); }
             set { BackingStore?.Set("scriptContent", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new Win32LobAppPowerShellScriptRequirement and sets the default values.
         /// </summary>

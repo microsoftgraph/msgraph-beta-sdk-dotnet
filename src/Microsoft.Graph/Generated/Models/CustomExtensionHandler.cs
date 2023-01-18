@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class CustomExtensionHandler : Entity, IParsable {
         /// <summary>Indicates which custom workflow extension will be executed at this stage. Nullable. Supports $expand.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public CustomAccessPackageWorkflowExtension? CustomExtension {
+            get { return BackingStore?.Get<CustomAccessPackageWorkflowExtension?>("customExtension"); }
+            set { BackingStore?.Set("customExtension", value); }
+        }
+#else
         public CustomAccessPackageWorkflowExtension CustomExtension {
             get { return BackingStore?.Get<CustomAccessPackageWorkflowExtension>("customExtension"); }
             set { BackingStore?.Set("customExtension", value); }
         }
+#endif
         /// <summary>Indicates the stage of the access package assignment request workflow when the access package custom extension runs. The possible values are: assignmentRequestCreated, assignmentRequestApproved, assignmentRequestGranted, assignmentRequestRemoved, assignmentFourteenDaysBeforeExpiration, assignmentOneDayBeforeExpiration, unknownFutureValue.</summary>
         public AccessPackageCustomExtensionStage? Stage {
             get { return BackingStore?.Get<AccessPackageCustomExtensionStage?>("stage"); }

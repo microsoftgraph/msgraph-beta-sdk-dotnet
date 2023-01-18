@@ -6,35 +6,77 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
     public class LifecycleWorkflowsContainer : Entity, IParsable {
         /// <summary>The customTaskExtension instance.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<CustomTaskExtension>? CustomTaskExtensions {
+            get { return BackingStore?.Get<List<CustomTaskExtension>?>("customTaskExtensions"); }
+            set { BackingStore?.Set("customTaskExtensions", value); }
+        }
+#else
         public List<CustomTaskExtension> CustomTaskExtensions {
             get { return BackingStore?.Get<List<CustomTaskExtension>>("customTaskExtensions"); }
             set { BackingStore?.Set("customTaskExtensions", value); }
         }
+#endif
         /// <summary>Deleted workflows in your lifecycle workflows instance.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.DeletedItemContainer? DeletedItems {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeletedItemContainer?>("deletedItems"); }
+            set { BackingStore?.Set("deletedItems", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.DeletedItemContainer DeletedItems {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeletedItemContainer>("deletedItems"); }
             set { BackingStore?.Set("deletedItems", value); }
         }
+#endif
         /// <summary>The settings property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public LifecycleManagementSettings? Settings {
+            get { return BackingStore?.Get<LifecycleManagementSettings?>("settings"); }
+            set { BackingStore?.Set("settings", value); }
+        }
+#else
         public LifecycleManagementSettings Settings {
             get { return BackingStore?.Get<LifecycleManagementSettings>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
+#endif
         /// <summary>The definition of tasks within the lifecycle workflows instance.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<TaskDefinition>? TaskDefinitions {
+            get { return BackingStore?.Get<List<TaskDefinition>?>("taskDefinitions"); }
+            set { BackingStore?.Set("taskDefinitions", value); }
+        }
+#else
         public List<TaskDefinition> TaskDefinitions {
             get { return BackingStore?.Get<List<TaskDefinition>>("taskDefinitions"); }
             set { BackingStore?.Set("taskDefinitions", value); }
         }
+#endif
         /// <summary>The workflows in the lifecycle workflows instance.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Workflow>? Workflows {
+            get { return BackingStore?.Get<List<Workflow>?>("workflows"); }
+            set { BackingStore?.Set("workflows", value); }
+        }
+#else
         public List<Workflow> Workflows {
             get { return BackingStore?.Get<List<Workflow>>("workflows"); }
             set { BackingStore?.Set("workflows", value); }
         }
+#endif
         /// <summary>The workflow templates in the lifecycle workflow instance.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<WorkflowTemplate>? WorkflowTemplates {
+            get { return BackingStore?.Get<List<WorkflowTemplate>?>("workflowTemplates"); }
+            set { BackingStore?.Set("workflowTemplates", value); }
+        }
+#else
         public List<WorkflowTemplate> WorkflowTemplates {
             get { return BackingStore?.Get<List<WorkflowTemplate>>("workflowTemplates"); }
             set { BackingStore?.Set("workflowTemplates", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

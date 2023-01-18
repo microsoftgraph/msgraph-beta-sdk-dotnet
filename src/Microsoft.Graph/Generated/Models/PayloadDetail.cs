@@ -14,25 +14,53 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The coachmarks property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<PayloadCoachmark>? Coachmarks {
+            get { return BackingStore?.Get<List<PayloadCoachmark>?>("coachmarks"); }
+            set { BackingStore?.Set("coachmarks", value); }
+        }
+#else
         public List<PayloadCoachmark> Coachmarks {
             get { return BackingStore?.Get<List<PayloadCoachmark>>("coachmarks"); }
             set { BackingStore?.Set("coachmarks", value); }
         }
+#endif
         /// <summary>The content property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Content {
+            get { return BackingStore?.Get<string?>("content"); }
+            set { BackingStore?.Set("content", value); }
+        }
+#else
         public string Content {
             get { return BackingStore?.Get<string>("content"); }
             set { BackingStore?.Set("content", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The phishingUrl property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PhishingUrl {
+            get { return BackingStore?.Get<string?>("phishingUrl"); }
+            set { BackingStore?.Set("phishingUrl", value); }
+        }
+#else
         public string PhishingUrl {
             get { return BackingStore?.Get<string>("phishingUrl"); }
             set { BackingStore?.Set("phishingUrl", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new payloadDetail and sets the default values.
         /// </summary>

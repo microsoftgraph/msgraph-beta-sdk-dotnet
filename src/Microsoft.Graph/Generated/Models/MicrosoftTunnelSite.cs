@@ -10,40 +10,89 @@ namespace Microsoft.Graph.Beta.Models {
     /// </summary>
     public class MicrosoftTunnelSite : Entity, IParsable {
         /// <summary>The site&apos;s description (optional)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>The display name for the site. This property is required when a site is created.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The site&apos;s Internal Network Access Probe URL</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? InternalNetworkProbeUrl {
+            get { return BackingStore?.Get<string?>("internalNetworkProbeUrl"); }
+            set { BackingStore?.Set("internalNetworkProbeUrl", value); }
+        }
+#else
         public string InternalNetworkProbeUrl {
             get { return BackingStore?.Get<string>("internalNetworkProbeUrl"); }
             set { BackingStore?.Set("internalNetworkProbeUrl", value); }
         }
+#endif
         /// <summary>The MicrosoftTunnelConfiguration that has been applied to this MicrosoftTunnelSite</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.MicrosoftTunnelConfiguration? MicrosoftTunnelConfiguration {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MicrosoftTunnelConfiguration?>("microsoftTunnelConfiguration"); }
+            set { BackingStore?.Set("microsoftTunnelConfiguration", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.MicrosoftTunnelConfiguration MicrosoftTunnelConfiguration {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MicrosoftTunnelConfiguration>("microsoftTunnelConfiguration"); }
             set { BackingStore?.Set("microsoftTunnelConfiguration", value); }
         }
+#endif
         /// <summary>A list of MicrosoftTunnelServers that are registered to this MicrosoftTunnelSite</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<MicrosoftTunnelServer>? MicrosoftTunnelServers {
+            get { return BackingStore?.Get<List<MicrosoftTunnelServer>?>("microsoftTunnelServers"); }
+            set { BackingStore?.Set("microsoftTunnelServers", value); }
+        }
+#else
         public List<MicrosoftTunnelServer> MicrosoftTunnelServers {
             get { return BackingStore?.Get<List<MicrosoftTunnelServer>>("microsoftTunnelServers"); }
             set { BackingStore?.Set("microsoftTunnelServers", value); }
         }
+#endif
         /// <summary>The site&apos;s public domain name or IP address</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PublicAddress {
+            get { return BackingStore?.Get<string?>("publicAddress"); }
+            set { BackingStore?.Set("publicAddress", value); }
+        }
+#else
         public string PublicAddress {
             get { return BackingStore?.Get<string>("publicAddress"); }
             set { BackingStore?.Set("publicAddress", value); }
         }
+#endif
         /// <summary>List of Scope Tags for this Entity instance</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? RoleScopeTagIds {
+            get { return BackingStore?.Get<List<string>?>("roleScopeTagIds"); }
+            set { BackingStore?.Set("roleScopeTagIds", value); }
+        }
+#else
         public List<string> RoleScopeTagIds {
             get { return BackingStore?.Get<List<string>>("roleScopeTagIds"); }
             set { BackingStore?.Set("roleScopeTagIds", value); }
         }
+#endif
         /// <summary>The site&apos;s automatic upgrade setting. True for automatic upgrades, false for manual control</summary>
         public bool? UpgradeAutomatically {
             get { return BackingStore?.Get<bool?>("upgradeAutomatically"); }

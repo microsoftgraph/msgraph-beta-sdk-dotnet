@@ -9,35 +9,70 @@ namespace Microsoft.Graph.Beta.Models {
     /// </summary>
     public class WindowsInformationProtectionDeviceRegistration : Entity, IParsable {
         /// <summary>Device Mac address.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeviceMacAddress {
+            get { return BackingStore?.Get<string?>("deviceMacAddress"); }
+            set { BackingStore?.Set("deviceMacAddress", value); }
+        }
+#else
         public string DeviceMacAddress {
             get { return BackingStore?.Get<string>("deviceMacAddress"); }
             set { BackingStore?.Set("deviceMacAddress", value); }
         }
+#endif
         /// <summary>Device name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeviceName {
+            get { return BackingStore?.Get<string?>("deviceName"); }
+            set { BackingStore?.Set("deviceName", value); }
+        }
+#else
         public string DeviceName {
             get { return BackingStore?.Get<string>("deviceName"); }
             set { BackingStore?.Set("deviceName", value); }
         }
+#endif
         /// <summary>Device identifier for this device registration record.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeviceRegistrationId {
+            get { return BackingStore?.Get<string?>("deviceRegistrationId"); }
+            set { BackingStore?.Set("deviceRegistrationId", value); }
+        }
+#else
         public string DeviceRegistrationId {
             get { return BackingStore?.Get<string>("deviceRegistrationId"); }
             set { BackingStore?.Set("deviceRegistrationId", value); }
         }
+#endif
         /// <summary>Device type, for example, Windows laptop VS Windows phone.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeviceType {
+            get { return BackingStore?.Get<string?>("deviceType"); }
+            set { BackingStore?.Set("deviceType", value); }
+        }
+#else
         public string DeviceType {
             get { return BackingStore?.Get<string>("deviceType"); }
             set { BackingStore?.Set("deviceType", value); }
         }
+#endif
         /// <summary>Last checkin time of the device.</summary>
         public DateTimeOffset? LastCheckInDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastCheckInDateTime"); }
             set { BackingStore?.Set("lastCheckInDateTime", value); }
         }
         /// <summary>UserId associated with this device registration record.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UserId {
+            get { return BackingStore?.Get<string?>("userId"); }
+            set { BackingStore?.Set("userId", value); }
+        }
+#else
         public string UserId {
             get { return BackingStore?.Get<string>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

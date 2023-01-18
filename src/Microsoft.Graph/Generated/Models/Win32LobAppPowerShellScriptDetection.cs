@@ -16,10 +16,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("runAs32Bit", value); }
         }
         /// <summary>The base64 encoded script content to detect Win32 Line of Business (LoB) app</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ScriptContent {
+            get { return BackingStore?.Get<string?>("scriptContent"); }
+            set { BackingStore?.Set("scriptContent", value); }
+        }
+#else
         public string ScriptContent {
             get { return BackingStore?.Get<string>("scriptContent"); }
             set { BackingStore?.Set("scriptContent", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new Win32LobAppPowerShellScriptDetection and sets the default values.
         /// </summary>

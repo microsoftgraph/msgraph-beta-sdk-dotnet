@@ -14,15 +14,29 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ChromeOSOnboardingSettings.Conne
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The ownerAccessToken property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OwnerAccessToken {
+            get { return BackingStore?.Get<string?>("ownerAccessToken"); }
+            set { BackingStore?.Set("ownerAccessToken", value); }
+        }
+#else
         public string OwnerAccessToken {
             get { return BackingStore?.Get<string>("ownerAccessToken"); }
             set { BackingStore?.Set("ownerAccessToken", value); }
         }
+#endif
         /// <summary>The ownerUserPrincipalName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OwnerUserPrincipalName {
+            get { return BackingStore?.Get<string?>("ownerUserPrincipalName"); }
+            set { BackingStore?.Set("ownerUserPrincipalName", value); }
+        }
+#else
         public string OwnerUserPrincipalName {
             get { return BackingStore?.Get<string>("ownerUserPrincipalName"); }
             set { BackingStore?.Set("ownerUserPrincipalName", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new connectPostRequestBody and sets the default values.
         /// </summary>

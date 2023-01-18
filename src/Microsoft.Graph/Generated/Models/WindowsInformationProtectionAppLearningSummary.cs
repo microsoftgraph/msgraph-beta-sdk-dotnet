@@ -4,12 +4,22 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Windows Information Protection AppLearning Summary entity.
+    /// </summary>
     public class WindowsInformationProtectionAppLearningSummary : Entity, IParsable {
         /// <summary>Application Name</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ApplicationName {
+            get { return BackingStore?.Get<string?>("applicationName"); }
+            set { BackingStore?.Set("applicationName", value); }
+        }
+#else
         public string ApplicationName {
             get { return BackingStore?.Get<string>("applicationName"); }
             set { BackingStore?.Set("applicationName", value); }
         }
+#endif
         /// <summary>Possible types of Application</summary>
         public Microsoft.Graph.Beta.Models.ApplicationType? ApplicationType {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ApplicationType?>("applicationType"); }

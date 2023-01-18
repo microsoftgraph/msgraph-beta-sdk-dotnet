@@ -19,10 +19,17 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterp
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The packageIds property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? PackageIds {
+            get { return BackingStore?.Get<List<string>?>("packageIds"); }
+            set { BackingStore?.Set("packageIds", value); }
+        }
+#else
         public List<string> PackageIds {
             get { return BackingStore?.Get<List<string>>("packageIds"); }
             set { BackingStore?.Set("packageIds", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new approveAppsPostRequestBody and sets the default values.
         /// </summary>

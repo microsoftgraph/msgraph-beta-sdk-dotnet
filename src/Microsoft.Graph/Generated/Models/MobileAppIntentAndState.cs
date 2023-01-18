@@ -9,20 +9,41 @@ namespace Microsoft.Graph.Beta.Models {
     /// </summary>
     public class MobileAppIntentAndState : Entity, IParsable {
         /// <summary>Device identifier created or collected by Intune.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ManagedDeviceIdentifier {
+            get { return BackingStore?.Get<string?>("managedDeviceIdentifier"); }
+            set { BackingStore?.Set("managedDeviceIdentifier", value); }
+        }
+#else
         public string ManagedDeviceIdentifier {
             get { return BackingStore?.Get<string>("managedDeviceIdentifier"); }
             set { BackingStore?.Set("managedDeviceIdentifier", value); }
         }
+#endif
         /// <summary>The list of payload intents and states for the tenant.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<MobileAppIntentAndStateDetail>? MobileAppList {
+            get { return BackingStore?.Get<List<MobileAppIntentAndStateDetail>?>("mobileAppList"); }
+            set { BackingStore?.Set("mobileAppList", value); }
+        }
+#else
         public List<MobileAppIntentAndStateDetail> MobileAppList {
             get { return BackingStore?.Get<List<MobileAppIntentAndStateDetail>>("mobileAppList"); }
             set { BackingStore?.Set("mobileAppList", value); }
         }
+#endif
         /// <summary>Identifier for the user that tried to enroll the device.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UserId {
+            get { return BackingStore?.Get<string?>("userId"); }
+            set { BackingStore?.Set("userId", value); }
+        }
+#else
         public string UserId {
             get { return BackingStore?.Get<string>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

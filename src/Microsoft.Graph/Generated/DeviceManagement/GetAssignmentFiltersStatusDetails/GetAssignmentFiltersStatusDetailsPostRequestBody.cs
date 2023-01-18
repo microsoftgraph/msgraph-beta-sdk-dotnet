@@ -12,22 +12,43 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GetAssignmentFiltersStatusDetail
             set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The assignmentFilterIds property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? AssignmentFilterIds {
+            get { return BackingStore?.Get<List<string>?>("assignmentFilterIds"); }
+            set { BackingStore?.Set("assignmentFilterIds", value); }
+        }
+#else
         public List<string> AssignmentFilterIds {
             get { return BackingStore?.Get<List<string>>("assignmentFilterIds"); }
             set { BackingStore?.Set("assignmentFilterIds", value); }
         }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The managedDeviceId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ManagedDeviceId {
+            get { return BackingStore?.Get<string?>("managedDeviceId"); }
+            set { BackingStore?.Set("managedDeviceId", value); }
+        }
+#else
         public string ManagedDeviceId {
             get { return BackingStore?.Get<string>("managedDeviceId"); }
             set { BackingStore?.Set("managedDeviceId", value); }
         }
+#endif
         /// <summary>The payloadId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PayloadId {
+            get { return BackingStore?.Get<string?>("payloadId"); }
+            set { BackingStore?.Set("payloadId", value); }
+        }
+#else
         public string PayloadId {
             get { return BackingStore?.Get<string>("payloadId"); }
             set { BackingStore?.Set("payloadId", value); }
         }
+#endif
         /// <summary>The skip property</summary>
         public int? Skip {
             get { return BackingStore?.Get<int?>("skip"); }
@@ -39,10 +60,17 @@ namespace Microsoft.Graph.Beta.DeviceManagement.GetAssignmentFiltersStatusDetail
             set { BackingStore?.Set("top", value); }
         }
         /// <summary>The userId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UserId {
+            get { return BackingStore?.Get<string?>("userId"); }
+            set { BackingStore?.Set("userId", value); }
+        }
+#else
         public string UserId {
             get { return BackingStore?.Get<string>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new getAssignmentFiltersStatusDetailsPostRequestBody and sets the default values.
         /// </summary>

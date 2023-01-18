@@ -14,55 +14,104 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("anomalyFirstOccurrenceDateTime", value); }
         }
         /// <summary>The unique identifier of the anomaly.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AnomalyId {
+            get { return BackingStore?.Get<string?>("anomalyId"); }
+            set { BackingStore?.Set("anomalyId", value); }
+        }
+#else
         public string AnomalyId {
             get { return BackingStore?.Get<string>("anomalyId"); }
             set { BackingStore?.Set("anomalyId", value); }
         }
+#endif
         /// <summary>Indicates the latest occurrence date and time for the anomaly.</summary>
         public DateTimeOffset? AnomalyLatestOccurrenceDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("anomalyLatestOccurrenceDateTime"); }
             set { BackingStore?.Set("anomalyLatestOccurrenceDateTime", value); }
         }
         /// <summary>The name of the anomaly.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AnomalyName {
+            get { return BackingStore?.Get<string?>("anomalyName"); }
+            set { BackingStore?.Set("anomalyName", value); }
+        }
+#else
         public string AnomalyName {
             get { return BackingStore?.Get<string>("anomalyName"); }
             set { BackingStore?.Set("anomalyName", value); }
         }
+#endif
         /// <summary>Indicates the category of the anomaly. Eg: anomaly type can be device, application, stop error, driver or other.</summary>
         public UserExperienceAnalyticsAnomalyType? AnomalyType {
             get { return BackingStore?.Get<UserExperienceAnalyticsAnomalyType?>("anomalyType"); }
             set { BackingStore?.Set("anomalyType", value); }
         }
         /// <summary>The name of the application or module that caused the anomaly.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AssetName {
+            get { return BackingStore?.Get<string?>("assetName"); }
+            set { BackingStore?.Set("assetName", value); }
+        }
+#else
         public string AssetName {
             get { return BackingStore?.Get<string>("assetName"); }
             set { BackingStore?.Set("assetName", value); }
         }
+#endif
         /// <summary>The publisher of the application or module that caused the anomaly.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AssetPublisher {
+            get { return BackingStore?.Get<string?>("assetPublisher"); }
+            set { BackingStore?.Set("assetPublisher", value); }
+        }
+#else
         public string AssetPublisher {
             get { return BackingStore?.Get<string>("assetPublisher"); }
             set { BackingStore?.Set("assetPublisher", value); }
         }
+#endif
         /// <summary>The version of the application or module that caused the anomaly.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AssetVersion {
+            get { return BackingStore?.Get<string?>("assetVersion"); }
+            set { BackingStore?.Set("assetVersion", value); }
+        }
+#else
         public string AssetVersion {
             get { return BackingStore?.Get<string>("assetVersion"); }
             set { BackingStore?.Set("assetVersion", value); }
         }
+#endif
         /// <summary>The unique identifier of the anomaly detection model.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DetectionModelId {
+            get { return BackingStore?.Get<string?>("detectionModelId"); }
+            set { BackingStore?.Set("detectionModelId", value); }
+        }
+#else
         public string DetectionModelId {
             get { return BackingStore?.Get<string>("detectionModelId"); }
             set { BackingStore?.Set("detectionModelId", value); }
         }
+#endif
         /// <summary>The number of devices impacted by the anomaly. Valid values -2147483648 to 2147483647</summary>
         public int? DeviceImpactedCount {
             get { return BackingStore?.Get<int?>("deviceImpactedCount"); }
             set { BackingStore?.Set("deviceImpactedCount", value); }
         }
         /// <summary>The unique identifier of the anomaly detection model.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? IssueId {
+            get { return BackingStore?.Get<string?>("issueId"); }
+            set { BackingStore?.Set("issueId", value); }
+        }
+#else
         public string IssueId {
             get { return BackingStore?.Get<string>("issueId"); }
             set { BackingStore?.Set("issueId", value); }
         }
+#endif
         /// <summary>Indicates the severity of the anomaly. Eg: anomaly severity can be high, medium, low, informational or other.</summary>
         public UserExperienceAnalyticsAnomalySeverity? Severity {
             get { return BackingStore?.Get<UserExperienceAnalyticsAnomalySeverity?>("severity"); }

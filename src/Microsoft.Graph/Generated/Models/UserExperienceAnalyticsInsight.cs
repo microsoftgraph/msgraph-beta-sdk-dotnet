@@ -17,30 +17,58 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The unique identifier of the user experience analytics insight.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? InsightId {
+            get { return BackingStore?.Get<string?>("insightId"); }
+            set { BackingStore?.Set("insightId", value); }
+        }
+#else
         public string InsightId {
             get { return BackingStore?.Get<string>("insightId"); }
             set { BackingStore?.Set("insightId", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The severity property</summary>
         public UserExperienceAnalyticsInsightSeverity? Severity {
             get { return BackingStore?.Get<UserExperienceAnalyticsInsightSeverity?>("severity"); }
             set { BackingStore?.Set("severity", value); }
         }
         /// <summary>The unique identifier of the user experience analytics insight.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UserExperienceAnalyticsMetricId {
+            get { return BackingStore?.Get<string?>("userExperienceAnalyticsMetricId"); }
+            set { BackingStore?.Set("userExperienceAnalyticsMetricId", value); }
+        }
+#else
         public string UserExperienceAnalyticsMetricId {
             get { return BackingStore?.Get<string>("userExperienceAnalyticsMetricId"); }
             set { BackingStore?.Set("userExperienceAnalyticsMetricId", value); }
         }
+#endif
         /// <summary>The value of the user experience analytics insight.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<UserExperienceAnalyticsInsightValue>? Values {
+            get { return BackingStore?.Get<List<UserExperienceAnalyticsInsightValue>?>("values"); }
+            set { BackingStore?.Set("values", value); }
+        }
+#else
         public List<UserExperienceAnalyticsInsightValue> Values {
             get { return BackingStore?.Get<List<UserExperienceAnalyticsInsightValue>>("values"); }
             set { BackingStore?.Set("values", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new userExperienceAnalyticsInsight and sets the default values.
         /// </summary>

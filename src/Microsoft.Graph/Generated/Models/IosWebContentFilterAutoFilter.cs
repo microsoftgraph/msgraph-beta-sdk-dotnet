@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class IosWebContentFilterAutoFilter : IosWebContentFilterBase, IParsable {
         /// <summary>Additional URLs allowed for access</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? AllowedUrls {
+            get { return BackingStore?.Get<List<string>?>("allowedUrls"); }
+            set { BackingStore?.Set("allowedUrls", value); }
+        }
+#else
         public List<string> AllowedUrls {
             get { return BackingStore?.Get<List<string>>("allowedUrls"); }
             set { BackingStore?.Set("allowedUrls", value); }
         }
+#endif
         /// <summary>Additional URLs blocked for access</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? BlockedUrls {
+            get { return BackingStore?.Get<List<string>?>("blockedUrls"); }
+            set { BackingStore?.Set("blockedUrls", value); }
+        }
+#else
         public List<string> BlockedUrls {
             get { return BackingStore?.Get<List<string>>("blockedUrls"); }
             set { BackingStore?.Set("blockedUrls", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new IosWebContentFilterAutoFilter and sets the default values.
         /// </summary>

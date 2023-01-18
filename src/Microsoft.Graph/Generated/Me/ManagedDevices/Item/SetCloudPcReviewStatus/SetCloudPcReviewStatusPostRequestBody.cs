@@ -15,10 +15,17 @@ namespace Microsoft.Graph.Beta.Me.ManagedDevices.Item.SetCloudPcReviewStatus {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The reviewStatus property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public CloudPcReviewStatus? ReviewStatus {
+            get { return BackingStore?.Get<CloudPcReviewStatus?>("reviewStatus"); }
+            set { BackingStore?.Set("reviewStatus", value); }
+        }
+#else
         public CloudPcReviewStatus ReviewStatus {
             get { return BackingStore?.Get<CloudPcReviewStatus>("reviewStatus"); }
             set { BackingStore?.Set("reviewStatus", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new setCloudPcReviewStatusPostRequestBody and sets the default values.
         /// </summary>

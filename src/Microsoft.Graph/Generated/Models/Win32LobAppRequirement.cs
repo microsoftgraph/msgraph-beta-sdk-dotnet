@@ -17,15 +17,29 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The detection value</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DetectionValue {
+            get { return BackingStore?.Get<string?>("detectionValue"); }
+            set { BackingStore?.Set("detectionValue", value); }
+        }
+#else
         public string DetectionValue {
             get { return BackingStore?.Get<string>("detectionValue"); }
             set { BackingStore?.Set("detectionValue", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Contains properties for detection operator.</summary>
         public Win32LobAppDetectionOperator? Operator {
             get { return BackingStore?.Get<Win32LobAppDetectionOperator?>("operator"); }

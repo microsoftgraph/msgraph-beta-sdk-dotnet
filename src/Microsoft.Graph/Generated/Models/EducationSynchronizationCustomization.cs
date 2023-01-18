@@ -24,15 +24,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("isSyncDeferred", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The collection of property names to sync. If set to null, all properties will be synchronized. Does not apply to Student Enrollments or Teacher Rosters</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? OptionalPropertiesToSync {
+            get { return BackingStore?.Get<List<string>?>("optionalPropertiesToSync"); }
+            set { BackingStore?.Set("optionalPropertiesToSync", value); }
+        }
+#else
         public List<string> OptionalPropertiesToSync {
             get { return BackingStore?.Get<List<string>>("optionalPropertiesToSync"); }
             set { BackingStore?.Set("optionalPropertiesToSync", value); }
         }
+#endif
         /// <summary>The date that the synchronization should start. This value should be set to a future date. If set to null, the resource will be synchronized when the profile setup completes. Only applies to Student Enrollments</summary>
         public DateTimeOffset? SynchronizationStartDate {
             get { return BackingStore?.Get<DateTimeOffset?>("synchronizationStartDate"); }

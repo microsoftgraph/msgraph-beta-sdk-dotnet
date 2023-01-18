@@ -16,10 +16,17 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Describes why the taskProcessingResult has failed.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? FailureReason {
+            get { return BackingStore?.Get<string?>("failureReason"); }
+            set { BackingStore?.Set("failureReason", value); }
+        }
+#else
         public string FailureReason {
             get { return BackingStore?.Get<string>("failureReason"); }
             set { BackingStore?.Set("failureReason", value); }
         }
+#endif
         /// <summary>The processingStatus property</summary>
         public LifecycleWorkflowProcessingStatus? ProcessingStatus {
             get { return BackingStore?.Get<LifecycleWorkflowProcessingStatus?>("processingStatus"); }
@@ -31,15 +38,29 @@ namespace Microsoft.Graph.Beta.Models.IdentityGovernance {
             set { BackingStore?.Set("startedDateTime", value); }
         }
         /// <summary>The subject property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.User? Subject {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.User?>("subject"); }
+            set { BackingStore?.Set("subject", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.User Subject {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.User>("subject"); }
             set { BackingStore?.Set("subject", value); }
         }
+#endif
         /// <summary>The task property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.IdentityGovernance.TaskObject? TaskObject {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentityGovernance.TaskObject?>("task"); }
+            set { BackingStore?.Set("task", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.IdentityGovernance.TaskObject TaskObject {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentityGovernance.TaskObject>("task"); }
             set { BackingStore?.Set("task", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

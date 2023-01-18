@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
     public class TriggersRoot : Entity, IParsable {
         /// <summary>The retentionEvents property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<RetentionEvent>? RetentionEvents {
+            get { return BackingStore?.Get<List<RetentionEvent>?>("retentionEvents"); }
+            set { BackingStore?.Set("retentionEvents", value); }
+        }
+#else
         public List<RetentionEvent> RetentionEvents {
             get { return BackingStore?.Get<List<RetentionEvent>>("retentionEvents"); }
             set { BackingStore?.Set("retentionEvents", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

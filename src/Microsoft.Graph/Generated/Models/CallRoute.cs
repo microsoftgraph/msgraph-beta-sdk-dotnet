@@ -14,20 +14,41 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The final property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public IdentitySet? Final {
+            get { return BackingStore?.Get<IdentitySet?>("final"); }
+            set { BackingStore?.Set("final", value); }
+        }
+#else
         public IdentitySet Final {
             get { return BackingStore?.Get<IdentitySet>("final"); }
             set { BackingStore?.Set("final", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The original property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public IdentitySet? Original {
+            get { return BackingStore?.Get<IdentitySet?>("original"); }
+            set { BackingStore?.Set("original", value); }
+        }
+#else
         public IdentitySet Original {
             get { return BackingStore?.Get<IdentitySet>("original"); }
             set { BackingStore?.Set("original", value); }
         }
+#endif
         /// <summary>The routingType property</summary>
         public Microsoft.Graph.Beta.Models.RoutingType? RoutingType {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RoutingType?>("routingType"); }

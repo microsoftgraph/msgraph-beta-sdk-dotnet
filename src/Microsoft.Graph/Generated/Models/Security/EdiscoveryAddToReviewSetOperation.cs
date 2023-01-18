@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
     public class EdiscoveryAddToReviewSetOperation : CaseOperation, IParsable {
         /// <summary>eDiscovery review set to which items matching source collection query gets added.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public EdiscoveryReviewSet? ReviewSet {
+            get { return BackingStore?.Get<EdiscoveryReviewSet?>("reviewSet"); }
+            set { BackingStore?.Set("reviewSet", value); }
+        }
+#else
         public EdiscoveryReviewSet ReviewSet {
             get { return BackingStore?.Get<EdiscoveryReviewSet>("reviewSet"); }
             set { BackingStore?.Set("reviewSet", value); }
         }
+#endif
         /// <summary>eDiscovery search that gets added to review set.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public EdiscoverySearch? Search {
+            get { return BackingStore?.Get<EdiscoverySearch?>("search"); }
+            set { BackingStore?.Set("search", value); }
+        }
+#else
         public EdiscoverySearch Search {
             get { return BackingStore?.Get<EdiscoverySearch>("search"); }
             set { BackingStore?.Set("search", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

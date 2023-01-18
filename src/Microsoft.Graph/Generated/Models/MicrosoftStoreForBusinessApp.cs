@@ -6,30 +6,58 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class MicrosoftStoreForBusinessApp : MobileApp, IParsable {
         /// <summary>The collection of contained apps in a mobileApp acting as a package.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<MobileContainedApp>? ContainedApps {
+            get { return BackingStore?.Get<List<MobileContainedApp>?>("containedApps"); }
+            set { BackingStore?.Set("containedApps", value); }
+        }
+#else
         public List<MobileContainedApp> ContainedApps {
             get { return BackingStore?.Get<List<MobileContainedApp>>("containedApps"); }
             set { BackingStore?.Set("containedApps", value); }
         }
+#endif
         /// <summary>The licenseType property</summary>
         public MicrosoftStoreForBusinessLicenseType? LicenseType {
             get { return BackingStore?.Get<MicrosoftStoreForBusinessLicenseType?>("licenseType"); }
             set { BackingStore?.Set("licenseType", value); }
         }
         /// <summary>The supported License Type.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public VppLicensingType? LicensingType {
+            get { return BackingStore?.Get<VppLicensingType?>("licensingType"); }
+            set { BackingStore?.Set("licensingType", value); }
+        }
+#else
         public VppLicensingType LicensingType {
             get { return BackingStore?.Get<VppLicensingType>("licensingType"); }
             set { BackingStore?.Set("licensingType", value); }
         }
+#endif
         /// <summary>The app package identifier</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PackageIdentityName {
+            get { return BackingStore?.Get<string?>("packageIdentityName"); }
+            set { BackingStore?.Set("packageIdentityName", value); }
+        }
+#else
         public string PackageIdentityName {
             get { return BackingStore?.Get<string>("packageIdentityName"); }
             set { BackingStore?.Set("packageIdentityName", value); }
         }
+#endif
         /// <summary>The app product key</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ProductKey {
+            get { return BackingStore?.Get<string?>("productKey"); }
+            set { BackingStore?.Set("productKey", value); }
+        }
+#else
         public string ProductKey {
             get { return BackingStore?.Get<string>("productKey"); }
             set { BackingStore?.Set("productKey", value); }
         }
+#endif
         /// <summary>The total number of Microsoft Store for Business licenses.</summary>
         public int? TotalLicenseCount {
             get { return BackingStore?.Get<int?>("totalLicenseCount"); }

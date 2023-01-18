@@ -24,10 +24,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("errorDeviceCount", value); }
         }
         /// <summary>Name of the InstancePath for the setting</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? InstancePath {
+            get { return BackingStore?.Get<string?>("instancePath"); }
+            set { BackingStore?.Set("instancePath", value); }
+        }
+#else
         public string InstancePath {
             get { return BackingStore?.Get<string>("instancePath"); }
             set { BackingStore?.Set("instancePath", value); }
         }
+#endif
         /// <summary>Device NonCompliant count for the setting</summary>
         public int? NonCompliantDeviceCount {
             get { return BackingStore?.Get<int?>("nonCompliantDeviceCount"); }
@@ -44,10 +51,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("remediatedDeviceCount", value); }
         }
         /// <summary>Name of the setting</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SettingName {
+            get { return BackingStore?.Get<string?>("settingName"); }
+            set { BackingStore?.Set("settingName", value); }
+        }
+#else
         public string SettingName {
             get { return BackingStore?.Get<string>("settingName"); }
             set { BackingStore?.Set("settingName", value); }
         }
+#endif
         /// <summary>Device Unkown count for the setting</summary>
         public int? UnknownDeviceCount {
             get { return BackingStore?.Get<int?>("unknownDeviceCount"); }

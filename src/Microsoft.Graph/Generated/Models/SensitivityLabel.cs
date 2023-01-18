@@ -16,25 +16,53 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("applicationMode", value); }
         }
         /// <summary>The assignedPolicies property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<LabelPolicy>? AssignedPolicies {
+            get { return BackingStore?.Get<List<LabelPolicy>?>("assignedPolicies"); }
+            set { BackingStore?.Set("assignedPolicies", value); }
+        }
+#else
         public List<LabelPolicy> AssignedPolicies {
             get { return BackingStore?.Get<List<LabelPolicy>>("assignedPolicies"); }
             set { BackingStore?.Set("assignedPolicies", value); }
         }
+#endif
         /// <summary>The autoLabeling property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.AutoLabeling? AutoLabeling {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AutoLabeling?>("autoLabeling"); }
+            set { BackingStore?.Set("autoLabeling", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.AutoLabeling AutoLabeling {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AutoLabeling>("autoLabeling"); }
             set { BackingStore?.Set("autoLabeling", value); }
         }
+#endif
         /// <summary>The description property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>The displayName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The isDefault property</summary>
         public bool? IsDefault {
             get { return BackingStore?.Get<bool?>("isDefault"); }
@@ -46,30 +74,58 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("isEndpointProtectionEnabled", value); }
         }
         /// <summary>The labelActions property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<LabelActionBase>? LabelActions {
+            get { return BackingStore?.Get<List<LabelActionBase>?>("labelActions"); }
+            set { BackingStore?.Set("labelActions", value); }
+        }
+#else
         public List<LabelActionBase> LabelActions {
             get { return BackingStore?.Get<List<LabelActionBase>>("labelActions"); }
             set { BackingStore?.Set("labelActions", value); }
         }
+#endif
         /// <summary>The name property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Name {
+            get { return BackingStore?.Get<string?>("name"); }
+            set { BackingStore?.Set("name", value); }
+        }
+#else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#endif
         /// <summary>The priority property</summary>
         public int? Priority {
             get { return BackingStore?.Get<int?>("priority"); }
             set { BackingStore?.Set("priority", value); }
         }
         /// <summary>The sublabels property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<SensitivityLabel>? Sublabels {
+            get { return BackingStore?.Get<List<SensitivityLabel>?>("sublabels"); }
+            set { BackingStore?.Set("sublabels", value); }
+        }
+#else
         public List<SensitivityLabel> Sublabels {
             get { return BackingStore?.Get<List<SensitivityLabel>>("sublabels"); }
             set { BackingStore?.Set("sublabels", value); }
         }
+#endif
         /// <summary>The toolTip property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ToolTip {
+            get { return BackingStore?.Get<string?>("toolTip"); }
+            set { BackingStore?.Set("toolTip", value); }
+        }
+#else
         public string ToolTip {
             get { return BackingStore?.Get<string>("toolTip"); }
             set { BackingStore?.Set("toolTip", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

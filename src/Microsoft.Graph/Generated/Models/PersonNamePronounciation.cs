@@ -14,35 +14,77 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The displayName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The first property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? First {
+            get { return BackingStore?.Get<string?>("first"); }
+            set { BackingStore?.Set("first", value); }
+        }
+#else
         public string First {
             get { return BackingStore?.Get<string>("first"); }
             set { BackingStore?.Set("first", value); }
         }
+#endif
         /// <summary>The last property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Last {
+            get { return BackingStore?.Get<string?>("last"); }
+            set { BackingStore?.Set("last", value); }
+        }
+#else
         public string Last {
             get { return BackingStore?.Get<string>("last"); }
             set { BackingStore?.Set("last", value); }
         }
+#endif
         /// <summary>The maiden property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Maiden {
+            get { return BackingStore?.Get<string?>("maiden"); }
+            set { BackingStore?.Set("maiden", value); }
+        }
+#else
         public string Maiden {
             get { return BackingStore?.Get<string>("maiden"); }
             set { BackingStore?.Set("maiden", value); }
         }
+#endif
         /// <summary>The middle property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Middle {
+            get { return BackingStore?.Get<string?>("middle"); }
+            set { BackingStore?.Set("middle", value); }
+        }
+#else
         public string Middle {
             get { return BackingStore?.Get<string>("middle"); }
             set { BackingStore?.Set("middle", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new personNamePronounciation and sets the default values.
         /// </summary>

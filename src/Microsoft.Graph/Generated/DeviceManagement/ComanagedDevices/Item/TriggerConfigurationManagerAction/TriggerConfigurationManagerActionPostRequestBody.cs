@@ -15,10 +15,17 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ComanagedDevices.Item.TriggerCon
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Parameter for action triggerConfigurationManagerAction</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.ConfigurationManagerAction? ConfigurationManagerAction {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ConfigurationManagerAction?>("configurationManagerAction"); }
+            set { BackingStore?.Set("configurationManagerAction", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.ConfigurationManagerAction ConfigurationManagerAction {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ConfigurationManagerAction>("configurationManagerAction"); }
             set { BackingStore?.Set("configurationManagerAction", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new triggerConfigurationManagerActionPostRequestBody and sets the default values.
         /// </summary>

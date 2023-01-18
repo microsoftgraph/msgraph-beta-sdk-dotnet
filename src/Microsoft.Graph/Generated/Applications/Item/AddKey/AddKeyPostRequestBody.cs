@@ -15,20 +15,41 @@ namespace Microsoft.Graph.Beta.Applications.Item.AddKey {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The keyCredential property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.KeyCredential? KeyCredential {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.KeyCredential?>("keyCredential"); }
+            set { BackingStore?.Set("keyCredential", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.KeyCredential KeyCredential {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.KeyCredential>("keyCredential"); }
             set { BackingStore?.Set("keyCredential", value); }
         }
+#endif
         /// <summary>The passwordCredential property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.PasswordCredential? PasswordCredential {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PasswordCredential?>("passwordCredential"); }
+            set { BackingStore?.Set("passwordCredential", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.PasswordCredential PasswordCredential {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PasswordCredential>("passwordCredential"); }
             set { BackingStore?.Set("passwordCredential", value); }
         }
+#endif
         /// <summary>The proof property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Proof {
+            get { return BackingStore?.Get<string?>("proof"); }
+            set { BackingStore?.Set("proof", value); }
+        }
+#else
         public string Proof {
             get { return BackingStore?.Get<string>("proof"); }
             set { BackingStore?.Set("proof", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new addKeyPostRequestBody and sets the default values.
         /// </summary>

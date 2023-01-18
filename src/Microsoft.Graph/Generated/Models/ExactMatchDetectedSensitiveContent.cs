@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class ExactMatchDetectedSensitiveContent : DetectedSensitiveContentBase, IParsable {
         /// <summary>The matches property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<SensitiveContentLocation>? Matches {
+            get { return BackingStore?.Get<List<SensitiveContentLocation>?>("matches"); }
+            set { BackingStore?.Set("matches", value); }
+        }
+#else
         public List<SensitiveContentLocation> Matches {
             get { return BackingStore?.Get<List<SensitiveContentLocation>>("matches"); }
             set { BackingStore?.Set("matches", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

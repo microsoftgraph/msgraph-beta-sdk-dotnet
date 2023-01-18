@@ -6,40 +6,89 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class RegionalAndLanguageSettings : Entity, IParsable {
         /// <summary>Prioritized list of languages the user reads and authors in.Returned by default. Not nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<LocaleInfo>? AuthoringLanguages {
+            get { return BackingStore?.Get<List<LocaleInfo>?>("authoringLanguages"); }
+            set { BackingStore?.Set("authoringLanguages", value); }
+        }
+#else
         public List<LocaleInfo> AuthoringLanguages {
             get { return BackingStore?.Get<List<LocaleInfo>>("authoringLanguages"); }
             set { BackingStore?.Set("authoringLanguages", value); }
         }
+#endif
         /// <summary>The  user&apos;s preferred user interface language (menus, buttons, ribbons, warning messages) for Microsoft web applications.Returned by default. Not nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public LocaleInfo? DefaultDisplayLanguage {
+            get { return BackingStore?.Get<LocaleInfo?>("defaultDisplayLanguage"); }
+            set { BackingStore?.Set("defaultDisplayLanguage", value); }
+        }
+#else
         public LocaleInfo DefaultDisplayLanguage {
             get { return BackingStore?.Get<LocaleInfo>("defaultDisplayLanguage"); }
             set { BackingStore?.Set("defaultDisplayLanguage", value); }
         }
+#endif
         /// <summary>The locale that drives the default date, time, and calendar formatting.Returned by default.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public LocaleInfo? DefaultRegionalFormat {
+            get { return BackingStore?.Get<LocaleInfo?>("defaultRegionalFormat"); }
+            set { BackingStore?.Set("defaultRegionalFormat", value); }
+        }
+#else
         public LocaleInfo DefaultRegionalFormat {
             get { return BackingStore?.Get<LocaleInfo>("defaultRegionalFormat"); }
             set { BackingStore?.Set("defaultRegionalFormat", value); }
         }
+#endif
         /// <summary>The language a user expected to use as input for text to speech scenarios.Returned by default.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public LocaleInfo? DefaultSpeechInputLanguage {
+            get { return BackingStore?.Get<LocaleInfo?>("defaultSpeechInputLanguage"); }
+            set { BackingStore?.Set("defaultSpeechInputLanguage", value); }
+        }
+#else
         public LocaleInfo DefaultSpeechInputLanguage {
             get { return BackingStore?.Get<LocaleInfo>("defaultSpeechInputLanguage"); }
             set { BackingStore?.Set("defaultSpeechInputLanguage", value); }
         }
+#endif
         /// <summary>The language a user expects to have documents, emails, and messages translated into.Returned by default.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public LocaleInfo? DefaultTranslationLanguage {
+            get { return BackingStore?.Get<LocaleInfo?>("defaultTranslationLanguage"); }
+            set { BackingStore?.Set("defaultTranslationLanguage", value); }
+        }
+#else
         public LocaleInfo DefaultTranslationLanguage {
             get { return BackingStore?.Get<LocaleInfo>("defaultTranslationLanguage"); }
             set { BackingStore?.Set("defaultTranslationLanguage", value); }
         }
+#endif
         /// <summary>Allows a user to override their defaultRegionalFormat with field specific formats.Returned by default.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.RegionalFormatOverrides? RegionalFormatOverrides {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RegionalFormatOverrides?>("regionalFormatOverrides"); }
+            set { BackingStore?.Set("regionalFormatOverrides", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.RegionalFormatOverrides RegionalFormatOverrides {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RegionalFormatOverrides>("regionalFormatOverrides"); }
             set { BackingStore?.Set("regionalFormatOverrides", value); }
         }
+#endif
         /// <summary>The user&apos;s preferred settings when consuming translated documents, emails, messages, and websites.Returned by default. Not nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.TranslationPreferences? TranslationPreferences {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TranslationPreferences?>("translationPreferences"); }
+            set { BackingStore?.Set("translationPreferences", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.TranslationPreferences TranslationPreferences {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TranslationPreferences>("translationPreferences"); }
             set { BackingStore?.Set("translationPreferences", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

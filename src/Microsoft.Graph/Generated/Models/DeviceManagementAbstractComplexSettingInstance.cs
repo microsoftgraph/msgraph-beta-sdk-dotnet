@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementAbstractComplexSettingInstance : DeviceManagementSettingInstance, IParsable {
         /// <summary>The definition ID for the chosen implementation of this complex setting</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ImplementationId {
+            get { return BackingStore?.Get<string?>("implementationId"); }
+            set { BackingStore?.Set("implementationId", value); }
+        }
+#else
         public string ImplementationId {
             get { return BackingStore?.Get<string>("implementationId"); }
             set { BackingStore?.Set("implementationId", value); }
         }
+#endif
         /// <summary>The values that make up the complex setting</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DeviceManagementSettingInstance>? Value {
+            get { return BackingStore?.Get<List<DeviceManagementSettingInstance>?>("value"); }
+            set { BackingStore?.Set("value", value); }
+        }
+#else
         public List<DeviceManagementSettingInstance> Value {
             get { return BackingStore?.Get<List<DeviceManagementSettingInstance>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new DeviceManagementAbstractComplexSettingInstance and sets the default values.
         /// </summary>

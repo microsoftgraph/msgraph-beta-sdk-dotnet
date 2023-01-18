@@ -12,47 +12,96 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The street address of the location.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public PhysicalAddress? Address {
+            get { return BackingStore?.Get<PhysicalAddress?>("address"); }
+            set { BackingStore?.Set("address", value); }
+        }
+#else
         public PhysicalAddress Address {
             get { return BackingStore?.Get<PhysicalAddress>("address"); }
             set { BackingStore?.Set("address", value); }
         }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The geographic coordinates and elevation of the location.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public OutlookGeoCoordinates? Coordinates {
+            get { return BackingStore?.Get<OutlookGeoCoordinates?>("coordinates"); }
+            set { BackingStore?.Set("coordinates", value); }
+        }
+#else
         public OutlookGeoCoordinates Coordinates {
             get { return BackingStore?.Get<OutlookGeoCoordinates>("coordinates"); }
             set { BackingStore?.Set("coordinates", value); }
         }
+#endif
         /// <summary>The name associated with the location.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>Optional email address of the location.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? LocationEmailAddress {
+            get { return BackingStore?.Get<string?>("locationEmailAddress"); }
+            set { BackingStore?.Set("locationEmailAddress", value); }
+        }
+#else
         public string LocationEmailAddress {
             get { return BackingStore?.Get<string>("locationEmailAddress"); }
             set { BackingStore?.Set("locationEmailAddress", value); }
         }
+#endif
         /// <summary>The type of location. Possible values are: default, conferenceRoom, homeAddress, businessAddress,geoCoordinates, streetAddress, hotel, restaurant, localBusiness, postalAddress. Read-only.</summary>
         public Microsoft.Graph.Beta.Models.LocationType? LocationType {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.LocationType?>("locationType"); }
             set { BackingStore?.Set("locationType", value); }
         }
         /// <summary>Optional URI representing the location.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? LocationUri {
+            get { return BackingStore?.Get<string?>("locationUri"); }
+            set { BackingStore?.Set("locationUri", value); }
+        }
+#else
         public string LocationUri {
             get { return BackingStore?.Get<string>("locationUri"); }
             set { BackingStore?.Set("locationUri", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>For internal use only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UniqueId {
+            get { return BackingStore?.Get<string?>("uniqueId"); }
+            set { BackingStore?.Set("uniqueId", value); }
+        }
+#else
         public string UniqueId {
             get { return BackingStore?.Get<string>("uniqueId"); }
             set { BackingStore?.Set("uniqueId", value); }
         }
+#endif
         /// <summary>For internal use only.</summary>
         public LocationUniqueIdType? UniqueIdType {
             get { return BackingStore?.Get<LocationUniqueIdType?>("uniqueIdType"); }

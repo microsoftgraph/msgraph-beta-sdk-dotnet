@@ -16,10 +16,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("creationDateTime", value); }
         }
         /// <summary>The error property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ClassificationError? Error {
+            get { return BackingStore?.Get<ClassificationError?>("error"); }
+            set { BackingStore?.Set("error", value); }
+        }
+#else
         public ClassificationError Error {
             get { return BackingStore?.Get<ClassificationError>("error"); }
             set { BackingStore?.Set("error", value); }
         }
+#endif
         /// <summary>The lastUpdatedDateTime property</summary>
         public DateTimeOffset? LastUpdatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastUpdatedDateTime"); }

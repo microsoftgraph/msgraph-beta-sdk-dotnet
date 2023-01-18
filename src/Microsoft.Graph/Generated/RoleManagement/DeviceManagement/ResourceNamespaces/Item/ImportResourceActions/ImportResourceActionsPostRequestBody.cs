@@ -14,20 +14,34 @@ namespace Microsoft.Graph.Beta.RoleManagement.DeviceManagement.ResourceNamespace
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The format property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Format {
+            get { return BackingStore?.Get<string?>("format"); }
+            set { BackingStore?.Set("format", value); }
+        }
+#else
         public string Format {
             get { return BackingStore?.Get<string>("format"); }
             set { BackingStore?.Set("format", value); }
         }
+#endif
         /// <summary>The overwriteResourceNamespace property</summary>
         public bool? OverwriteResourceNamespace {
             get { return BackingStore?.Get<bool?>("overwriteResourceNamespace"); }
             set { BackingStore?.Set("overwriteResourceNamespace", value); }
         }
         /// <summary>The value property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Value {
+            get { return BackingStore?.Get<string?>("value"); }
+            set { BackingStore?.Set("value", value); }
+        }
+#else
         public string Value {
             get { return BackingStore?.Get<string>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new importResourceActionsPostRequestBody and sets the default values.
         /// </summary>

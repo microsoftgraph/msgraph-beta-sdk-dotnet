@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class AccessPackageResourceRequest : Entity, IParsable {
         /// <summary>The accessPackageResource property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.AccessPackageResource? AccessPackageResource {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackageResource?>("accessPackageResource"); }
+            set { BackingStore?.Set("accessPackageResource", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.AccessPackageResource AccessPackageResource {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AccessPackageResource>("accessPackageResource"); }
             set { BackingStore?.Set("accessPackageResource", value); }
         }
+#endif
         /// <summary>The unique ID of the access package catalog.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CatalogId {
+            get { return BackingStore?.Get<string?>("catalogId"); }
+            set { BackingStore?.Set("catalogId", value); }
+        }
+#else
         public string CatalogId {
             get { return BackingStore?.Get<string>("catalogId"); }
             set { BackingStore?.Set("catalogId", value); }
         }
+#endif
         /// <summary>The executeImmediately property</summary>
         public bool? ExecuteImmediately {
             get { return BackingStore?.Get<bool?>("executeImmediately"); }
@@ -31,30 +45,65 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("isValidationOnly", value); }
         }
         /// <summary>The requestor&apos;s justification for adding or removing the resource.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Justification {
+            get { return BackingStore?.Get<string?>("justification"); }
+            set { BackingStore?.Set("justification", value); }
+        }
+#else
         public string Justification {
             get { return BackingStore?.Get<string>("justification"); }
             set { BackingStore?.Set("justification", value); }
         }
+#endif
         /// <summary>Read-only. Nullable. Supports $expand.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public AccessPackageSubject? Requestor {
+            get { return BackingStore?.Get<AccessPackageSubject?>("requestor"); }
+            set { BackingStore?.Set("requestor", value); }
+        }
+#else
         public AccessPackageSubject Requestor {
             get { return BackingStore?.Get<AccessPackageSubject>("requestor"); }
             set { BackingStore?.Set("requestor", value); }
         }
+#endif
         /// <summary>The outcome of whether the service was able to add the resource to the catalog.  The value is Delivered if the resource was added or removed. Read-Only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? RequestState {
+            get { return BackingStore?.Get<string?>("requestState"); }
+            set { BackingStore?.Set("requestState", value); }
+        }
+#else
         public string RequestState {
             get { return BackingStore?.Get<string>("requestState"); }
             set { BackingStore?.Set("requestState", value); }
         }
+#endif
         /// <summary>The requestStatus property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? RequestStatus {
+            get { return BackingStore?.Get<string?>("requestStatus"); }
+            set { BackingStore?.Set("requestStatus", value); }
+        }
+#else
         public string RequestStatus {
             get { return BackingStore?.Get<string>("requestStatus"); }
             set { BackingStore?.Set("requestStatus", value); }
         }
+#endif
         /// <summary>Use AdminAdd to add a resource, if the caller is an administrator or resource owner, AdminUpdate to update a resource, or AdminRemove to remove a resource.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? RequestType {
+            get { return BackingStore?.Get<string?>("requestType"); }
+            set { BackingStore?.Set("requestType", value); }
+        }
+#else
         public string RequestType {
             get { return BackingStore?.Get<string>("requestType"); }
             set { BackingStore?.Set("requestType", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

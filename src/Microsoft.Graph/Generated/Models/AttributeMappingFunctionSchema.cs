@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class AttributeMappingFunctionSchema : Entity, IParsable {
         /// <summary>Collection of function parameters.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AttributeMappingParameterSchema>? Parameters {
+            get { return BackingStore?.Get<List<AttributeMappingParameterSchema>?>("parameters"); }
+            set { BackingStore?.Set("parameters", value); }
+        }
+#else
         public List<AttributeMappingParameterSchema> Parameters {
             get { return BackingStore?.Get<List<AttributeMappingParameterSchema>>("parameters"); }
             set { BackingStore?.Set("parameters", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

@@ -6,20 +6,41 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class CallTranscriptEventMessageDetail : EventMessageDetail, IParsable {
         /// <summary>Unique identifier of the call.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CallId {
+            get { return BackingStore?.Get<string?>("callId"); }
+            set { BackingStore?.Set("callId", value); }
+        }
+#else
         public string CallId {
             get { return BackingStore?.Get<string>("callId"); }
             set { BackingStore?.Set("callId", value); }
         }
+#endif
         /// <summary>Unique identifier for a call transcript.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CallTranscriptICalUid {
+            get { return BackingStore?.Get<string?>("callTranscriptICalUid"); }
+            set { BackingStore?.Set("callTranscriptICalUid", value); }
+        }
+#else
         public string CallTranscriptICalUid {
             get { return BackingStore?.Get<string>("callTranscriptICalUid"); }
             set { BackingStore?.Set("callTranscriptICalUid", value); }
         }
+#endif
         /// <summary>The organizer of the meeting.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public IdentitySet? MeetingOrganizer {
+            get { return BackingStore?.Get<IdentitySet?>("meetingOrganizer"); }
+            set { BackingStore?.Set("meetingOrganizer", value); }
+        }
+#else
         public IdentitySet MeetingOrganizer {
             get { return BackingStore?.Get<IdentitySet>("meetingOrganizer"); }
             set { BackingStore?.Set("meetingOrganizer", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new CallTranscriptEventMessageDetail and sets the default values.
         /// </summary>

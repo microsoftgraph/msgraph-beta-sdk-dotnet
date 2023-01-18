@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class MembersDeletedEventMessageDetail : EventMessageDetail, IParsable {
         /// <summary>Initiator of the event.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public IdentitySet? Initiator {
+            get { return BackingStore?.Get<IdentitySet?>("initiator"); }
+            set { BackingStore?.Set("initiator", value); }
+        }
+#else
         public IdentitySet Initiator {
             get { return BackingStore?.Get<IdentitySet>("initiator"); }
             set { BackingStore?.Set("initiator", value); }
         }
+#endif
         /// <summary>List of members deleted.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<TeamworkUserIdentity>? Members {
+            get { return BackingStore?.Get<List<TeamworkUserIdentity>?>("members"); }
+            set { BackingStore?.Set("members", value); }
+        }
+#else
         public List<TeamworkUserIdentity> Members {
             get { return BackingStore?.Get<List<TeamworkUserIdentity>>("members"); }
             set { BackingStore?.Set("members", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new MembersDeletedEventMessageDetail and sets the default values.
         /// </summary>

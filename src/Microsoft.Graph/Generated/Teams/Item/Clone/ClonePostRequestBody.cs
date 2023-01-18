@@ -15,25 +15,53 @@ namespace Microsoft.Graph.Beta.Teams.Item.Clone {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The classification property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Classification {
+            get { return BackingStore?.Get<string?>("classification"); }
+            set { BackingStore?.Set("classification", value); }
+        }
+#else
         public string Classification {
             get { return BackingStore?.Get<string>("classification"); }
             set { BackingStore?.Set("classification", value); }
         }
+#endif
         /// <summary>The description property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>The displayName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The mailNickname property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MailNickname {
+            get { return BackingStore?.Get<string?>("mailNickname"); }
+            set { BackingStore?.Set("mailNickname", value); }
+        }
+#else
         public string MailNickname {
             get { return BackingStore?.Get<string>("mailNickname"); }
             set { BackingStore?.Set("mailNickname", value); }
         }
+#endif
         /// <summary>The partsToClone property</summary>
         public ClonableTeamParts? PartsToClone {
             get { return BackingStore?.Get<ClonableTeamParts?>("partsToClone"); }

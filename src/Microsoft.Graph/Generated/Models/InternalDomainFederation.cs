@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class InternalDomainFederation : SamlOrWsFedProvider, IParsable {
         /// <summary>URL of the endpoint used by active clients when authenticating with federated domains set up for single sign-on in Azure Active Directory (Azure AD). Corresponds to the ActiveLogOnUri property of the Set-MsolDomainFederationSettings MSOnline v1 PowerShell cmdlet.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ActiveSignInUri {
+            get { return BackingStore?.Get<string?>("activeSignInUri"); }
+            set { BackingStore?.Set("activeSignInUri", value); }
+        }
+#else
         public string ActiveSignInUri {
             get { return BackingStore?.Get<string>("activeSignInUri"); }
             set { BackingStore?.Set("activeSignInUri", value); }
         }
+#endif
         /// <summary>Determines whether Azure AD accepts the MFA performed by the federated IdP when a federated user accesses an application that is governed by a conditional access policy that requires MFA. The possible values are: acceptIfMfaDoneByFederatedIdp, enforceMfaByFederatedIdp, rejectMfaByFederatedIdp, unknownFutureValue. For more information, see federatedIdpMfaBehavior values.</summary>
         public Microsoft.Graph.Beta.Models.FederatedIdpMfaBehavior? FederatedIdpMfaBehavior {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.FederatedIdpMfaBehavior?>("federatedIdpMfaBehavior"); }
@@ -21,25 +28,46 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("isSignedAuthenticationRequestRequired", value); }
         }
         /// <summary>Fallback token signing certificate that is used to sign tokens when the primary signing certificate expires. Formatted as Base64 encoded strings of the public portion of the federated IdP&apos;s token signing certificate. Needs to be compatible with the X509Certificate2 class. Much like the signingCertificate, the nextSigningCertificate property is used if a rollover is required outside of the auto-rollover update, a new federation service is being set up, or if the new token signing certificate is not present in the federation properties after the federation service certificate has been updated.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? NextSigningCertificate {
+            get { return BackingStore?.Get<string?>("nextSigningCertificate"); }
+            set { BackingStore?.Set("nextSigningCertificate", value); }
+        }
+#else
         public string NextSigningCertificate {
             get { return BackingStore?.Get<string>("nextSigningCertificate"); }
             set { BackingStore?.Set("nextSigningCertificate", value); }
         }
+#endif
         /// <summary>Sets the preferred behavior for the sign-in prompt. The possible values are: translateToFreshPasswordAuthentication, nativeSupport, disabled, unknownFutureValue.</summary>
         public Microsoft.Graph.Beta.Models.PromptLoginBehavior? PromptLoginBehavior {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PromptLoginBehavior?>("promptLoginBehavior"); }
             set { BackingStore?.Set("promptLoginBehavior", value); }
         }
         /// <summary>Provides status and timestamp of the last update of the signing certificate.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.SigningCertificateUpdateStatus? SigningCertificateUpdateStatus {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SigningCertificateUpdateStatus?>("signingCertificateUpdateStatus"); }
+            set { BackingStore?.Set("signingCertificateUpdateStatus", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.SigningCertificateUpdateStatus SigningCertificateUpdateStatus {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SigningCertificateUpdateStatus>("signingCertificateUpdateStatus"); }
             set { BackingStore?.Set("signingCertificateUpdateStatus", value); }
         }
+#endif
         /// <summary>URI that clients are redirected to when they sign out of Azure AD services. Corresponds to the LogOffUri property of the Set-MsolDomainFederationSettings MSOnline v1 PowerShell cmdlet.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SignOutUri {
+            get { return BackingStore?.Get<string?>("signOutUri"); }
+            set { BackingStore?.Set("signOutUri", value); }
+        }
+#else
         public string SignOutUri {
             get { return BackingStore?.Get<string>("signOutUri"); }
             set { BackingStore?.Set("signOutUri", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new InternalDomainFederation and sets the default values.
         /// </summary>

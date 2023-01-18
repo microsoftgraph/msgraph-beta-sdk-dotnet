@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class IpSegmentConfiguration : SegmentConfiguration, IParsable {
         /// <summary>The applicationSegments property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<IpApplicationSegment>? ApplicationSegments {
+            get { return BackingStore?.Get<List<IpApplicationSegment>?>("applicationSegments"); }
+            set { BackingStore?.Set("applicationSegments", value); }
+        }
+#else
         public List<IpApplicationSegment> ApplicationSegments {
             get { return BackingStore?.Get<List<IpApplicationSegment>>("applicationSegments"); }
             set { BackingStore?.Set("applicationSegments", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new IpSegmentConfiguration and sets the default values.
         /// </summary>

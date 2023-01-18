@@ -21,20 +21,41 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("deviceThreatProtectionRequiredSecurityLevel", value); }
         }
         /// <summary>Minimum Android security patch level.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MinAndroidSecurityPatchLevel {
+            get { return BackingStore?.Get<string?>("minAndroidSecurityPatchLevel"); }
+            set { BackingStore?.Set("minAndroidSecurityPatchLevel", value); }
+        }
+#else
         public string MinAndroidSecurityPatchLevel {
             get { return BackingStore?.Get<string>("minAndroidSecurityPatchLevel"); }
             set { BackingStore?.Set("minAndroidSecurityPatchLevel", value); }
         }
+#endif
         /// <summary>Maximum Android version.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OsMaximumVersion {
+            get { return BackingStore?.Get<string?>("osMaximumVersion"); }
+            set { BackingStore?.Set("osMaximumVersion", value); }
+        }
+#else
         public string OsMaximumVersion {
             get { return BackingStore?.Get<string>("osMaximumVersion"); }
             set { BackingStore?.Set("osMaximumVersion", value); }
         }
+#endif
         /// <summary>Minimum Android version.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OsMinimumVersion {
+            get { return BackingStore?.Get<string?>("osMinimumVersion"); }
+            set { BackingStore?.Set("osMinimumVersion", value); }
+        }
+#else
         public string OsMinimumVersion {
             get { return BackingStore?.Get<string>("osMinimumVersion"); }
             set { BackingStore?.Set("osMinimumVersion", value); }
         }
+#endif
         /// <summary>Number of days before the password expires. Valid values 1 to 365</summary>
         public int? PasswordExpirationDays {
             get { return BackingStore?.Get<int?>("passwordExpirationDays"); }

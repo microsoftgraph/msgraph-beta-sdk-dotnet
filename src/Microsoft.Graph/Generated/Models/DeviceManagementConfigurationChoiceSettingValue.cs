@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementConfigurationChoiceSettingValue : DeviceManagementConfigurationSettingValue, IParsable {
         /// <summary>Child settings.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DeviceManagementConfigurationSettingInstance>? Children {
+            get { return BackingStore?.Get<List<DeviceManagementConfigurationSettingInstance>?>("children"); }
+            set { BackingStore?.Set("children", value); }
+        }
+#else
         public List<DeviceManagementConfigurationSettingInstance> Children {
             get { return BackingStore?.Get<List<DeviceManagementConfigurationSettingInstance>>("children"); }
             set { BackingStore?.Set("children", value); }
         }
+#endif
         /// <summary>Choice setting value: an OptionDefinition ItemId.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Value {
+            get { return BackingStore?.Get<string?>("value"); }
+            set { BackingStore?.Set("value", value); }
+        }
+#else
         public string Value {
             get { return BackingStore?.Get<string>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new DeviceManagementConfigurationChoiceSettingValue and sets the default values.
         /// </summary>

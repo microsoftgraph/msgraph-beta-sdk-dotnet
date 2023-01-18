@@ -21,10 +21,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("criticalUpdateBehavior", value); }
         }
         /// <summary>Custom Time windows when updates will be allowed or blocked. This collection can contain a maximum of 20 elements.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<CustomUpdateTimeWindow>? CustomUpdateTimeWindows {
+            get { return BackingStore?.Get<List<CustomUpdateTimeWindow>?>("customUpdateTimeWindows"); }
+            set { BackingStore?.Set("customUpdateTimeWindows", value); }
+        }
+#else
         public List<CustomUpdateTimeWindow> CustomUpdateTimeWindows {
             get { return BackingStore?.Get<List<CustomUpdateTimeWindow>>("customUpdateTimeWindows"); }
             set { BackingStore?.Set("customUpdateTimeWindows", value); }
         }
+#endif
         /// <summary>Update behavior options for macOS software updates.</summary>
         public MacOSSoftwareUpdateBehavior? FirmwareUpdateBehavior {
             get { return BackingStore?.Get<MacOSSoftwareUpdateBehavior?>("firmwareUpdateBehavior"); }

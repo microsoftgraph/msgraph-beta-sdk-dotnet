@@ -14,20 +14,34 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Provides the name of the network used when signing in.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? NetworkNames {
+            get { return BackingStore?.Get<List<string>?>("networkNames"); }
+            set { BackingStore?.Set("networkNames", value); }
+        }
+#else
         public List<string> NetworkNames {
             get { return BackingStore?.Get<List<string>>("networkNames"); }
             set { BackingStore?.Set("networkNames", value); }
         }
+#endif
         /// <summary>Provides the type of network used when signing in. Possible values are: intranet, extranet, namedNetwork, trusted, unknownFutureValue.</summary>
         public Microsoft.Graph.Beta.Models.NetworkType? NetworkType {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.NetworkType?>("networkType"); }
             set { BackingStore?.Set("networkType", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new networkLocationDetail and sets the default values.
         /// </summary>

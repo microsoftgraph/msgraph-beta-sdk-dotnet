@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class HorizontalSectionColumn : Entity, IParsable {
         /// <summary>The collection of WebParts in this column.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<WebPart>? Webparts {
+            get { return BackingStore?.Get<List<WebPart>?>("webparts"); }
+            set { BackingStore?.Set("webparts", value); }
+        }
+#else
         public List<WebPart> Webparts {
             get { return BackingStore?.Get<List<WebPart>>("webparts"); }
             set { BackingStore?.Set("webparts", value); }
         }
+#endif
         /// <summary>Width of the column. A horizontal section is divided into 12 grids. A column should have a value of 1-12 to represent its range spans. For example, there can be two columns both have a width of 6 in a section.</summary>
         public int? Width {
             get { return BackingStore?.Get<int?>("width"); }

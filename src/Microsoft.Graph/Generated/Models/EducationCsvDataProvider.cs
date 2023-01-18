@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class EducationCsvDataProvider : EducationSynchronizationDataProvider, IParsable {
         /// <summary>Optional customizations to be applied to the synchronization profile.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public EducationSynchronizationCustomizations? Customizations {
+            get { return BackingStore?.Get<EducationSynchronizationCustomizations?>("customizations"); }
+            set { BackingStore?.Set("customizations", value); }
+        }
+#else
         public EducationSynchronizationCustomizations Customizations {
             get { return BackingStore?.Get<EducationSynchronizationCustomizations>("customizations"); }
             set { BackingStore?.Set("customizations", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new EducationCsvDataProvider and sets the default values.
         /// </summary>

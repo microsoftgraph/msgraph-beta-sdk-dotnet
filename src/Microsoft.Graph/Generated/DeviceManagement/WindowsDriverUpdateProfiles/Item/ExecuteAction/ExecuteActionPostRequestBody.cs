@@ -25,10 +25,17 @@ namespace Microsoft.Graph.Beta.DeviceManagement.WindowsDriverUpdateProfiles.Item
             set { BackingStore?.Set("deploymentDate", value); }
         }
         /// <summary>The driverIds property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? DriverIds {
+            get { return BackingStore?.Get<List<string>?>("driverIds"); }
+            set { BackingStore?.Set("driverIds", value); }
+        }
+#else
         public List<string> DriverIds {
             get { return BackingStore?.Get<List<string>>("driverIds"); }
             set { BackingStore?.Set("driverIds", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new executeActionPostRequestBody and sets the default values.
         /// </summary>

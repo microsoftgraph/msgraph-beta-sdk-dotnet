@@ -7,10 +7,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class DeletedItemContainer : Entity, IParsable {
         /// <summary>Deleted workflows that end up in the deletedItemsContainer.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Workflow>? Workflows {
+            get { return BackingStore?.Get<List<Workflow>?>("workflows"); }
+            set { BackingStore?.Set("workflows", value); }
+        }
+#else
         public List<Workflow> Workflows {
             get { return BackingStore?.Get<List<Workflow>>("workflows"); }
             set { BackingStore?.Set("workflows", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

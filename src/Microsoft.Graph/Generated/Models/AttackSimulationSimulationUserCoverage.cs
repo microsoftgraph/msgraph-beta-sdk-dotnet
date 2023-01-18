@@ -12,10 +12,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>User in an attack simulation and training campaign.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.AttackSimulationUser? AttackSimulationUser {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AttackSimulationUser?>("attackSimulationUser"); }
+            set { BackingStore?.Set("attackSimulationUser", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.AttackSimulationUser AttackSimulationUser {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AttackSimulationUser>("attackSimulationUser"); }
             set { BackingStore?.Set("attackSimulationUser", value); }
         }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Number of link clicks in the received payloads by the user in attack simulation and training campaigns.</summary>
@@ -34,10 +41,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("latestSimulationDateTime", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Number of attack simulation and training campaigns that the user was included in.</summary>
         public int? SimulationCount {
             get { return BackingStore?.Get<int?>("simulationCount"); }

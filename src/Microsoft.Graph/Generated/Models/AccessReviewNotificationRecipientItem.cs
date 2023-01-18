@@ -14,20 +14,41 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Determines the recipient of the notification email.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public AccessReviewNotificationRecipientScope? NotificationRecipientScope {
+            get { return BackingStore?.Get<AccessReviewNotificationRecipientScope?>("notificationRecipientScope"); }
+            set { BackingStore?.Set("notificationRecipientScope", value); }
+        }
+#else
         public AccessReviewNotificationRecipientScope NotificationRecipientScope {
             get { return BackingStore?.Get<AccessReviewNotificationRecipientScope>("notificationRecipientScope"); }
             set { BackingStore?.Set("notificationRecipientScope", value); }
         }
+#endif
         /// <summary>Indicates the type of access review email to be sent. Supported template type is CompletedAdditionalRecipients which sends review completion notifications to the recipients.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? NotificationTemplateType {
+            get { return BackingStore?.Get<string?>("notificationTemplateType"); }
+            set { BackingStore?.Set("notificationTemplateType", value); }
+        }
+#else
         public string NotificationTemplateType {
             get { return BackingStore?.Get<string>("notificationTemplateType"); }
             set { BackingStore?.Set("notificationTemplateType", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new accessReviewNotificationRecipientItem and sets the default values.
         /// </summary>

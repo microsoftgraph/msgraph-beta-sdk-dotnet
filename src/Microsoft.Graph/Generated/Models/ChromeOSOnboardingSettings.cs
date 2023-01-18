@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Entity that represents a Chromebook tenant settings
+    /// </summary>
     public class ChromeOSOnboardingSettings : Entity, IParsable {
         /// <summary>The ChromebookTenant&apos;s LastDirectorySyncDateTime</summary>
         public DateTimeOffset? LastDirectorySyncDateTime {
@@ -21,10 +24,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("onboardingStatus", value); }
         }
         /// <summary>The ChromebookTenant&apos;s OwnerUserPrincipalName</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OwnerUserPrincipalName {
+            get { return BackingStore?.Get<string?>("ownerUserPrincipalName"); }
+            set { BackingStore?.Set("ownerUserPrincipalName", value); }
+        }
+#else
         public string OwnerUserPrincipalName {
             get { return BackingStore?.Get<string>("ownerUserPrincipalName"); }
             set { BackingStore?.Set("ownerUserPrincipalName", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

@@ -14,15 +14,29 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.Item.RequestRemoteHelpS
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The pubSubConnectionId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PubSubConnectionId {
+            get { return BackingStore?.Get<string?>("pubSubConnectionId"); }
+            set { BackingStore?.Set("pubSubConnectionId", value); }
+        }
+#else
         public string PubSubConnectionId {
             get { return BackingStore?.Get<string>("pubSubConnectionId"); }
             set { BackingStore?.Set("pubSubConnectionId", value); }
         }
+#endif
         /// <summary>The sessionKey property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SessionKey {
+            get { return BackingStore?.Get<string?>("sessionKey"); }
+            set { BackingStore?.Set("sessionKey", value); }
+        }
+#else
         public string SessionKey {
             get { return BackingStore?.Get<string>("sessionKey"); }
             set { BackingStore?.Set("sessionKey", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new requestRemoteHelpSessionAccessPostRequestBody and sets the default values.
         /// </summary>

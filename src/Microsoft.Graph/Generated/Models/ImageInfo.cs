@@ -17,27 +17,55 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Optional; alt-text accessible content for the image</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AlternateText {
+            get { return BackingStore?.Get<string?>("alternateText"); }
+            set { BackingStore?.Set("alternateText", value); }
+        }
+#else
         public string AlternateText {
             get { return BackingStore?.Get<string>("alternateText"); }
             set { BackingStore?.Set("alternateText", value); }
         }
+#endif
         /// <summary>The alternativeText property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AlternativeText {
+            get { return BackingStore?.Get<string?>("alternativeText"); }
+            set { BackingStore?.Set("alternativeText", value); }
+        }
+#else
         public string AlternativeText {
             get { return BackingStore?.Get<string>("alternativeText"); }
             set { BackingStore?.Set("alternativeText", value); }
         }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Optional; URI that points to an icon which represents the application used to generate the activity</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? IconUrl {
+            get { return BackingStore?.Get<string?>("iconUrl"); }
+            set { BackingStore?.Set("iconUrl", value); }
+        }
+#else
         public string IconUrl {
             get { return BackingStore?.Get<string>("iconUrl"); }
             set { BackingStore?.Set("iconUrl", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new imageInfo and sets the default values.
         /// </summary>

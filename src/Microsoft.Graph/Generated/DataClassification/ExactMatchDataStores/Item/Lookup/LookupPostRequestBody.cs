@@ -14,20 +14,41 @@ namespace Microsoft.Graph.Beta.DataClassification.ExactMatchDataStores.Item.Look
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The key property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Key {
+            get { return BackingStore?.Get<string?>("key"); }
+            set { BackingStore?.Set("key", value); }
+        }
+#else
         public string Key {
             get { return BackingStore?.Get<string>("key"); }
             set { BackingStore?.Set("key", value); }
         }
+#endif
         /// <summary>The resultColumnNames property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? ResultColumnNames {
+            get { return BackingStore?.Get<List<string>?>("resultColumnNames"); }
+            set { BackingStore?.Set("resultColumnNames", value); }
+        }
+#else
         public List<string> ResultColumnNames {
             get { return BackingStore?.Get<List<string>>("resultColumnNames"); }
             set { BackingStore?.Set("resultColumnNames", value); }
         }
+#endif
         /// <summary>The values property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? Values {
+            get { return BackingStore?.Get<List<string>?>("values"); }
+            set { BackingStore?.Set("values", value); }
+        }
+#else
         public List<string> Values {
             get { return BackingStore?.Get<List<string>>("values"); }
             set { BackingStore?.Set("values", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new lookupPostRequestBody and sets the default values.
         /// </summary>

@@ -15,10 +15,17 @@ namespace Microsoft.Graph.Beta.OfficeConfiguration.ClientConfigurations.Item.Ass
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The officeConfigurationAssignments property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<OfficeClientConfigurationAssignment>? OfficeConfigurationAssignments {
+            get { return BackingStore?.Get<List<OfficeClientConfigurationAssignment>?>("officeConfigurationAssignments"); }
+            set { BackingStore?.Set("officeConfigurationAssignments", value); }
+        }
+#else
         public List<OfficeClientConfigurationAssignment> OfficeConfigurationAssignments {
             get { return BackingStore?.Get<List<OfficeClientConfigurationAssignment>>("officeConfigurationAssignments"); }
             set { BackingStore?.Set("officeConfigurationAssignments", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new assignPostRequestBody and sets the default values.
         /// </summary>

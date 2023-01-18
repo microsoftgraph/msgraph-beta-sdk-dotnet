@@ -6,25 +6,53 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class MeetingRegistrant : MeetingRegistrantBase, IParsable {
         /// <summary>The registrant&apos;s answer to custom questions.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<CustomQuestionAnswer>? CustomQuestionAnswers {
+            get { return BackingStore?.Get<List<CustomQuestionAnswer>?>("customQuestionAnswers"); }
+            set { BackingStore?.Set("customQuestionAnswers", value); }
+        }
+#else
         public List<CustomQuestionAnswer> CustomQuestionAnswers {
             get { return BackingStore?.Get<List<CustomQuestionAnswer>>("customQuestionAnswers"); }
             set { BackingStore?.Set("customQuestionAnswers", value); }
         }
+#endif
         /// <summary>The email address of the registrant.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Email {
+            get { return BackingStore?.Get<string?>("email"); }
+            set { BackingStore?.Set("email", value); }
+        }
+#else
         public string Email {
             get { return BackingStore?.Get<string>("email"); }
             set { BackingStore?.Set("email", value); }
         }
+#endif
         /// <summary>The first name of the registrant.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? FirstName {
+            get { return BackingStore?.Get<string?>("firstName"); }
+            set { BackingStore?.Set("firstName", value); }
+        }
+#else
         public string FirstName {
             get { return BackingStore?.Get<string>("firstName"); }
             set { BackingStore?.Set("firstName", value); }
         }
+#endif
         /// <summary>The last name of the registrant.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? LastName {
+            get { return BackingStore?.Get<string?>("lastName"); }
+            set { BackingStore?.Set("lastName", value); }
+        }
+#else
         public string LastName {
             get { return BackingStore?.Get<string>("lastName"); }
             set { BackingStore?.Set("lastName", value); }
         }
+#endif
         /// <summary>Time in UTC when the registrant registers for the meeting. Read-only.</summary>
         public DateTimeOffset? RegistrationDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("registrationDateTime"); }

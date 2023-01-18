@@ -22,30 +22,58 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Name {
+            get { return BackingStore?.Get<string?>("name"); }
+            set { BackingStore?.Set("name", value); }
+        }
+#else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Keep this rule active even when the VPN is not connected: Default False</summary>
         public bool? Persistent {
             get { return BackingStore?.Get<bool?>("persistent"); }
             set { BackingStore?.Set("persistent", value); }
         }
         /// <summary>Proxy Server Uri.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ProxyServerUri {
+            get { return BackingStore?.Get<string?>("proxyServerUri"); }
+            set { BackingStore?.Set("proxyServerUri", value); }
+        }
+#else
         public string ProxyServerUri {
             get { return BackingStore?.Get<string>("proxyServerUri"); }
             set { BackingStore?.Set("proxyServerUri", value); }
         }
+#endif
         /// <summary>Servers.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? Servers {
+            get { return BackingStore?.Get<List<string>?>("servers"); }
+            set { BackingStore?.Set("servers", value); }
+        }
+#else
         public List<string> Servers {
             get { return BackingStore?.Get<List<string>>("servers"); }
             set { BackingStore?.Set("servers", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new vpnDnsRule and sets the default values.
         /// </summary>

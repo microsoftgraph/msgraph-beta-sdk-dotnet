@@ -36,10 +36,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("compliantAppListType", value); }
         }
         /// <summary>List of apps in the compliance (either allow list or block list, controlled by CompliantAppListType). This collection can contain a maximum of 10000 elements.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AppListItem>? CompliantAppsList {
+            get { return BackingStore?.Get<List<AppListItem>?>("compliantAppsList"); }
+            set { BackingStore?.Set("compliantAppsList", value); }
+        }
+#else
         public List<AppListItem> CompliantAppsList {
             get { return BackingStore?.Get<List<AppListItem>>("compliantAppsList"); }
             set { BackingStore?.Set("compliantAppsList", value); }
         }
+#endif
         /// <summary>Indicates whether or not to block diagnostic data submission.</summary>
         public bool? DiagnosticDataBlockSubmission {
             get { return BackingStore?.Get<bool?>("diagnosticDataBlockSubmission"); }

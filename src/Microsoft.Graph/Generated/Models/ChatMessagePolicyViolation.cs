@@ -19,20 +19,41 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("dlpAction", value); }
         }
         /// <summary>Justification text provided by the sender of the message when overriding a policy violation.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? JustificationText {
+            get { return BackingStore?.Get<string?>("justificationText"); }
+            set { BackingStore?.Set("justificationText", value); }
+        }
+#else
         public string JustificationText {
             get { return BackingStore?.Get<string>("justificationText"); }
             set { BackingStore?.Set("justificationText", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Information to display to the message sender about why the message was flagged as a violation.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ChatMessagePolicyViolationPolicyTip? PolicyTip {
+            get { return BackingStore?.Get<ChatMessagePolicyViolationPolicyTip?>("policyTip"); }
+            set { BackingStore?.Set("policyTip", value); }
+        }
+#else
         public ChatMessagePolicyViolationPolicyTip PolicyTip {
             get { return BackingStore?.Get<ChatMessagePolicyViolationPolicyTip>("policyTip"); }
             set { BackingStore?.Set("policyTip", value); }
         }
+#endif
         /// <summary>Indicates the action taken by the user on a message blocked by the DLP provider. Supported values are: NoneOverrideReportFalsePositiveWhen the DLP provider is updating the message for blocking sensitive content, userAction is not required.</summary>
         public ChatMessagePolicyViolationUserActionTypes? UserAction {
             get { return BackingStore?.Get<ChatMessagePolicyViolationUserActionTypes?>("userAction"); }

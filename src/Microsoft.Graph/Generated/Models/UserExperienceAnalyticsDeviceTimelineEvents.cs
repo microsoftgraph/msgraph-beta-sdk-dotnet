@@ -4,42 +4,80 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// The user experience analytics device events entity contains NRT device events details.
+    /// </summary>
     public class UserExperienceAnalyticsDeviceTimelineEvents : Entity, IParsable {
         /// <summary>The id of the device where the event occurred.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeviceId {
+            get { return BackingStore?.Get<string?>("deviceId"); }
+            set { BackingStore?.Set("deviceId", value); }
+        }
+#else
         public string DeviceId {
             get { return BackingStore?.Get<string>("deviceId"); }
             set { BackingStore?.Set("deviceId", value); }
         }
+#endif
         /// <summary>Placeholder value for future expansion.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? EventAdditionalInformation {
+            get { return BackingStore?.Get<string?>("eventAdditionalInformation"); }
+            set { BackingStore?.Set("eventAdditionalInformation", value); }
+        }
+#else
         public string EventAdditionalInformation {
             get { return BackingStore?.Get<string>("eventAdditionalInformation"); }
             set { BackingStore?.Set("eventAdditionalInformation", value); }
         }
+#endif
         /// <summary>The time the event occured.</summary>
         public DateTimeOffset? EventDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("eventDateTime"); }
             set { BackingStore?.Set("eventDateTime", value); }
         }
         /// <summary>The details provided by the event, format depends on event type.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? EventDetails {
+            get { return BackingStore?.Get<string?>("eventDetails"); }
+            set { BackingStore?.Set("eventDetails", value); }
+        }
+#else
         public string EventDetails {
             get { return BackingStore?.Get<string>("eventDetails"); }
             set { BackingStore?.Set("eventDetails", value); }
         }
+#endif
         /// <summary>Indicates device event level. Possible values are: None, Verbose, Information, Warning, Error, Critical</summary>
         public DeviceEventLevel? EventLevel {
             get { return BackingStore?.Get<DeviceEventLevel?>("eventLevel"); }
             set { BackingStore?.Set("eventLevel", value); }
         }
         /// <summary>The name of the event. Examples include: BootEvent, LogonEvent, AppCrashEvent, AppHangEvent.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? EventName {
+            get { return BackingStore?.Get<string?>("eventName"); }
+            set { BackingStore?.Set("eventName", value); }
+        }
+#else
         public string EventName {
             get { return BackingStore?.Get<string>("eventName"); }
             set { BackingStore?.Set("eventName", value); }
         }
+#endif
         /// <summary>The source of the event. Examples include: Intune, Sccm.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? EventSource {
+            get { return BackingStore?.Get<string?>("eventSource"); }
+            set { BackingStore?.Set("eventSource", value); }
+        }
+#else
         public string EventSource {
             get { return BackingStore?.Get<string>("eventSource"); }
             set { BackingStore?.Set("eventSource", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

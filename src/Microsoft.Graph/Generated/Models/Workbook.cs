@@ -6,40 +6,89 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class Workbook : Entity, IParsable {
         /// <summary>The application property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public WorkbookApplication? Application {
+            get { return BackingStore?.Get<WorkbookApplication?>("application"); }
+            set { BackingStore?.Set("application", value); }
+        }
+#else
         public WorkbookApplication Application {
             get { return BackingStore?.Get<WorkbookApplication>("application"); }
             set { BackingStore?.Set("application", value); }
         }
+#endif
         /// <summary>The comments property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<WorkbookComment>? Comments {
+            get { return BackingStore?.Get<List<WorkbookComment>?>("comments"); }
+            set { BackingStore?.Set("comments", value); }
+        }
+#else
         public List<WorkbookComment> Comments {
             get { return BackingStore?.Get<List<WorkbookComment>>("comments"); }
             set { BackingStore?.Set("comments", value); }
         }
+#endif
         /// <summary>The functions property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public WorkbookFunctions? Functions {
+            get { return BackingStore?.Get<WorkbookFunctions?>("functions"); }
+            set { BackingStore?.Set("functions", value); }
+        }
+#else
         public WorkbookFunctions Functions {
             get { return BackingStore?.Get<WorkbookFunctions>("functions"); }
             set { BackingStore?.Set("functions", value); }
         }
+#endif
         /// <summary>Represents a collection of workbooks scoped named items (named ranges and constants). Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<WorkbookNamedItem>? Names {
+            get { return BackingStore?.Get<List<WorkbookNamedItem>?>("names"); }
+            set { BackingStore?.Set("names", value); }
+        }
+#else
         public List<WorkbookNamedItem> Names {
             get { return BackingStore?.Get<List<WorkbookNamedItem>>("names"); }
             set { BackingStore?.Set("names", value); }
         }
+#endif
         /// <summary>The status of Workbook operations. Getting an operation collection is not supported, but you can get the status of a long-running operation if the Location header is returned in the response. Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<WorkbookOperation>? Operations {
+            get { return BackingStore?.Get<List<WorkbookOperation>?>("operations"); }
+            set { BackingStore?.Set("operations", value); }
+        }
+#else
         public List<WorkbookOperation> Operations {
             get { return BackingStore?.Get<List<WorkbookOperation>>("operations"); }
             set { BackingStore?.Set("operations", value); }
         }
+#endif
         /// <summary>Represents a collection of tables associated with the workbook. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<WorkbookTable>? Tables {
+            get { return BackingStore?.Get<List<WorkbookTable>?>("tables"); }
+            set { BackingStore?.Set("tables", value); }
+        }
+#else
         public List<WorkbookTable> Tables {
             get { return BackingStore?.Get<List<WorkbookTable>>("tables"); }
             set { BackingStore?.Set("tables", value); }
         }
+#endif
         /// <summary>Represents a collection of worksheets associated with the workbook. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<WorkbookWorksheet>? Worksheets {
+            get { return BackingStore?.Get<List<WorkbookWorksheet>?>("worksheets"); }
+            set { BackingStore?.Set("worksheets", value); }
+        }
+#else
         public List<WorkbookWorksheet> Worksheets {
             get { return BackingStore?.Get<List<WorkbookWorksheet>>("worksheets"); }
             set { BackingStore?.Set("worksheets", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

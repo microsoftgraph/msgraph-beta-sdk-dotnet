@@ -15,10 +15,17 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.Redirect {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The callbackUri property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CallbackUri {
+            get { return BackingStore?.Get<string?>("callbackUri"); }
+            set { BackingStore?.Set("callbackUri", value); }
+        }
+#else
         public string CallbackUri {
             get { return BackingStore?.Get<string>("callbackUri"); }
             set { BackingStore?.Set("callbackUri", value); }
         }
+#endif
         /// <summary>The maskCallee property</summary>
         public bool? MaskCallee {
             get { return BackingStore?.Get<bool?>("maskCallee"); }
@@ -35,10 +42,17 @@ namespace Microsoft.Graph.Beta.App.Calls.Item.Redirect {
             set { BackingStore?.Set("targetDisposition", value); }
         }
         /// <summary>The targets property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<InvitationParticipantInfo>? Targets {
+            get { return BackingStore?.Get<List<InvitationParticipantInfo>?>("targets"); }
+            set { BackingStore?.Set("targets", value); }
+        }
+#else
         public List<InvitationParticipantInfo> Targets {
             get { return BackingStore?.Get<List<InvitationParticipantInfo>>("targets"); }
             set { BackingStore?.Set("targets", value); }
         }
+#endif
         /// <summary>The timeout property</summary>
         public int? Timeout {
             get { return BackingStore?.Get<int?>("timeout"); }

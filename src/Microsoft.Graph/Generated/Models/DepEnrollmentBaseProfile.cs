@@ -21,10 +21,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("configurationWebUrl", value); }
         }
         /// <summary>Sets a literal or name pattern.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeviceNameTemplate {
+            get { return BackingStore?.Get<string?>("deviceNameTemplate"); }
+            set { BackingStore?.Set("deviceNameTemplate", value); }
+        }
+#else
         public string DeviceNameTemplate {
             get { return BackingStore?.Get<string>("deviceNameTemplate"); }
             set { BackingStore?.Set("deviceNameTemplate", value); }
         }
+#endif
         /// <summary>Indicates if diagnostics setup pane is disabled</summary>
         public bool? DiagnosticsDisabled {
             get { return BackingStore?.Get<bool?>("diagnosticsDisabled"); }
@@ -36,10 +43,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("displayToneSetupDisabled", value); }
         }
         /// <summary>enabledSkipKeys contains all the enabled skip keys as strings</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? EnabledSkipKeys {
+            get { return BackingStore?.Get<List<string>?>("enabledSkipKeys"); }
+            set { BackingStore?.Set("enabledSkipKeys", value); }
+        }
+#else
         public List<string> EnabledSkipKeys {
             get { return BackingStore?.Get<List<string>>("enabledSkipKeys"); }
             set { BackingStore?.Set("enabledSkipKeys", value); }
         }
+#endif
         /// <summary>Indicates if this is the default profile</summary>
         public bool? IsDefault {
             get { return BackingStore?.Get<bool?>("isDefault"); }
@@ -86,15 +100,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("supervisedModeEnabled", value); }
         }
         /// <summary>Support department information</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SupportDepartment {
+            get { return BackingStore?.Get<string?>("supportDepartment"); }
+            set { BackingStore?.Set("supportDepartment", value); }
+        }
+#else
         public string SupportDepartment {
             get { return BackingStore?.Get<string>("supportDepartment"); }
             set { BackingStore?.Set("supportDepartment", value); }
         }
+#endif
         /// <summary>Support phone number</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SupportPhoneNumber {
+            get { return BackingStore?.Get<string?>("supportPhoneNumber"); }
+            set { BackingStore?.Set("supportPhoneNumber", value); }
+        }
+#else
         public string SupportPhoneNumber {
             get { return BackingStore?.Get<string>("supportPhoneNumber"); }
             set { BackingStore?.Set("supportPhoneNumber", value); }
         }
+#endif
         /// <summary>Indicates if &apos;Terms and Conditions&apos; setup pane is disabled</summary>
         public bool? TermsAndConditionsDisabled {
             get { return BackingStore?.Get<bool?>("termsAndConditionsDisabled"); }

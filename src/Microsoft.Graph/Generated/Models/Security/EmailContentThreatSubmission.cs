@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
     public class EmailContentThreatSubmission : EmailThreatSubmission, IParsable {
         /// <summary>Base64 encoded file content.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? FileContent {
+            get { return BackingStore?.Get<string?>("fileContent"); }
+            set { BackingStore?.Set("fileContent", value); }
+        }
+#else
         public string FileContent {
             get { return BackingStore?.Get<string>("fileContent"); }
             set { BackingStore?.Set("fileContent", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new EmailContentThreatSubmission and sets the default values.
         /// </summary>

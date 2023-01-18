@@ -14,25 +14,53 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>For dateTime output types, the format of the value. Must be one of dateOnly or dateTime.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Format {
+            get { return BackingStore?.Get<string?>("format"); }
+            set { BackingStore?.Set("format", value); }
+        }
+#else
         public string Format {
             get { return BackingStore?.Get<string>("format"); }
             set { BackingStore?.Set("format", value); }
         }
+#endif
         /// <summary>The formula used to compute the value for this column.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Formula {
+            get { return BackingStore?.Get<string?>("formula"); }
+            set { BackingStore?.Set("formula", value); }
+        }
+#else
         public string Formula {
             get { return BackingStore?.Get<string>("formula"); }
             set { BackingStore?.Set("formula", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The output type used to format values in this column. Must be one of boolean, currency, dateTime, number, or text.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OutputType {
+            get { return BackingStore?.Get<string?>("outputType"); }
+            set { BackingStore?.Set("outputType", value); }
+        }
+#else
         public string OutputType {
             get { return BackingStore?.Get<string>("outputType"); }
             set { BackingStore?.Set("outputType", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new calculatedColumn and sets the default values.
         /// </summary>

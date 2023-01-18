@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementConfigurationChoiceSettingDefinition : DeviceManagementConfigurationSettingDefinition, IParsable {
         /// <summary>Default option for choice setting</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DefaultOptionId {
+            get { return BackingStore?.Get<string?>("defaultOptionId"); }
+            set { BackingStore?.Set("defaultOptionId", value); }
+        }
+#else
         public string DefaultOptionId {
             get { return BackingStore?.Get<string>("defaultOptionId"); }
             set { BackingStore?.Set("defaultOptionId", value); }
         }
+#endif
         /// <summary>Options for the setting that can be selected</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DeviceManagementConfigurationOptionDefinition>? Options {
+            get { return BackingStore?.Get<List<DeviceManagementConfigurationOptionDefinition>?>("options"); }
+            set { BackingStore?.Set("options", value); }
+        }
+#else
         public List<DeviceManagementConfigurationOptionDefinition> Options {
             get { return BackingStore?.Get<List<DeviceManagementConfigurationOptionDefinition>>("options"); }
             set { BackingStore?.Set("options", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

@@ -7,10 +7,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.DeviceManagement.DeviceConfigurations.GetIosAvailableUpdateVersions {
     public class GetIosAvailableUpdateVersionsResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<IosAvailableUpdateVersion>? Value {
+            get { return BackingStore?.Get<List<IosAvailableUpdateVersion>?>("value"); }
+            set { BackingStore?.Set("value", value); }
+        }
+#else
         public List<IosAvailableUpdateVersion> Value {
             get { return BackingStore?.Get<List<IosAvailableUpdateVersion>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

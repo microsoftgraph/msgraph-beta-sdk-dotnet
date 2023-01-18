@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class RiskDetectionCollectionResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<RiskDetection>? Value {
+            get { return BackingStore?.Get<List<RiskDetection>?>("value"); }
+            set { BackingStore?.Set("value", value); }
+        }
+#else
         public List<RiskDetection> Value {
             get { return BackingStore?.Get<List<RiskDetection>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

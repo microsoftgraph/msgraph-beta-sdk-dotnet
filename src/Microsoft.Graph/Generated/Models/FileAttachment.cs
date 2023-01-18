@@ -6,20 +6,41 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class FileAttachment : Attachment, IParsable {
         /// <summary>The base64-encoded contents of the file.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public byte[]? ContentBytes {
+            get { return BackingStore?.Get<byte[]?>("contentBytes"); }
+            set { BackingStore?.Set("contentBytes", value); }
+        }
+#else
         public byte[] ContentBytes {
             get { return BackingStore?.Get<byte[]>("contentBytes"); }
             set { BackingStore?.Set("contentBytes", value); }
         }
+#endif
         /// <summary>The ID of the attachment in the Exchange store.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ContentId {
+            get { return BackingStore?.Get<string?>("contentId"); }
+            set { BackingStore?.Set("contentId", value); }
+        }
+#else
         public string ContentId {
             get { return BackingStore?.Get<string>("contentId"); }
             set { BackingStore?.Set("contentId", value); }
         }
+#endif
         /// <summary>Do not use this property as it is not supported.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ContentLocation {
+            get { return BackingStore?.Get<string?>("contentLocation"); }
+            set { BackingStore?.Set("contentLocation", value); }
+        }
+#else
         public string ContentLocation {
             get { return BackingStore?.Get<string>("contentLocation"); }
             set { BackingStore?.Set("contentLocation", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new FileAttachment and sets the default values.
         /// </summary>

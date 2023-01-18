@@ -14,10 +14,17 @@ namespace Microsoft.Graph.Beta.Users.Item.CloudPCs.Item.Restore {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The cloudPcSnapshotId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CloudPcSnapshotId {
+            get { return BackingStore?.Get<string?>("cloudPcSnapshotId"); }
+            set { BackingStore?.Set("cloudPcSnapshotId", value); }
+        }
+#else
         public string CloudPcSnapshotId {
             get { return BackingStore?.Get<string>("cloudPcSnapshotId"); }
             set { BackingStore?.Set("cloudPcSnapshotId", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new restorePostRequestBody and sets the default values.
         /// </summary>

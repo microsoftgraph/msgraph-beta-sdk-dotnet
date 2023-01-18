@@ -16,15 +16,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("allowDefaultSecurityAssociationParameters", value); }
         }
         /// <summary>AlwaysOn Configuration</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public AppleVpnAlwaysOnConfiguration? AlwaysOnConfiguration {
+            get { return BackingStore?.Get<AppleVpnAlwaysOnConfiguration?>("alwaysOnConfiguration"); }
+            set { BackingStore?.Set("alwaysOnConfiguration", value); }
+        }
+#else
         public AppleVpnAlwaysOnConfiguration AlwaysOnConfiguration {
             get { return BackingStore?.Get<AppleVpnAlwaysOnConfiguration>("alwaysOnConfiguration"); }
             set { BackingStore?.Set("alwaysOnConfiguration", value); }
         }
+#endif
         /// <summary>Child Security Association Parameters</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public IosVpnSecurityAssociationParameters? ChildSecurityAssociationParameters {
+            get { return BackingStore?.Get<IosVpnSecurityAssociationParameters?>("childSecurityAssociationParameters"); }
+            set { BackingStore?.Set("childSecurityAssociationParameters", value); }
+        }
+#else
         public IosVpnSecurityAssociationParameters ChildSecurityAssociationParameters {
             get { return BackingStore?.Get<IosVpnSecurityAssociationParameters>("childSecurityAssociationParameters"); }
             set { BackingStore?.Set("childSecurityAssociationParameters", value); }
         }
+#endif
         /// <summary>The type of VPN client authentication type</summary>
         public VpnClientAuthenticationType? ClientAuthenticationType {
             get { return BackingStore?.Get<VpnClientAuthenticationType?>("clientAuthenticationType"); }
@@ -81,45 +95,94 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("mtuSizeInBytes", value); }
         }
         /// <summary>Address of the IKEv2 server. Must be a FQDN, UserFQDN, network address, or ASN1DN</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? RemoteIdentifier {
+            get { return BackingStore?.Get<string?>("remoteIdentifier"); }
+            set { BackingStore?.Set("remoteIdentifier", value); }
+        }
+#else
         public string RemoteIdentifier {
             get { return BackingStore?.Get<string>("remoteIdentifier"); }
             set { BackingStore?.Set("remoteIdentifier", value); }
         }
+#endif
         /// <summary>Security Association Parameters</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public IosVpnSecurityAssociationParameters? SecurityAssociationParameters {
+            get { return BackingStore?.Get<IosVpnSecurityAssociationParameters?>("securityAssociationParameters"); }
+            set { BackingStore?.Set("securityAssociationParameters", value); }
+        }
+#else
         public IosVpnSecurityAssociationParameters SecurityAssociationParameters {
             get { return BackingStore?.Get<IosVpnSecurityAssociationParameters>("securityAssociationParameters"); }
             set { BackingStore?.Set("securityAssociationParameters", value); }
         }
+#endif
         /// <summary>Common name of the IKEv2 Server Certificate used in Server Authentication</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ServerCertificateCommonName {
+            get { return BackingStore?.Get<string?>("serverCertificateCommonName"); }
+            set { BackingStore?.Set("serverCertificateCommonName", value); }
+        }
+#else
         public string ServerCertificateCommonName {
             get { return BackingStore?.Get<string>("serverCertificateCommonName"); }
             set { BackingStore?.Set("serverCertificateCommonName", value); }
         }
+#endif
         /// <summary>Issuer Common name of the IKEv2 Server Certificate issuer used in Authentication</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ServerCertificateIssuerCommonName {
+            get { return BackingStore?.Get<string?>("serverCertificateIssuerCommonName"); }
+            set { BackingStore?.Set("serverCertificateIssuerCommonName", value); }
+        }
+#else
         public string ServerCertificateIssuerCommonName {
             get { return BackingStore?.Get<string>("serverCertificateIssuerCommonName"); }
             set { BackingStore?.Set("serverCertificateIssuerCommonName", value); }
         }
+#endif
         /// <summary>The type of certificate the VPN server will present to the VPN client for authentication. Possible values are: rsa, ecdsa256, ecdsa384, ecdsa521.</summary>
         public VpnServerCertificateType? ServerCertificateType {
             get { return BackingStore?.Get<VpnServerCertificateType?>("serverCertificateType"); }
             set { BackingStore?.Set("serverCertificateType", value); }
         }
         /// <summary>Used when Shared Secret Authentication is selected</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SharedSecret {
+            get { return BackingStore?.Get<string?>("sharedSecret"); }
+            set { BackingStore?.Set("sharedSecret", value); }
+        }
+#else
         public string SharedSecret {
             get { return BackingStore?.Get<string>("sharedSecret"); }
             set { BackingStore?.Set("sharedSecret", value); }
         }
+#endif
         /// <summary>The maximum TLS version to be used with EAP-TLS authentication</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TlsMaximumVersion {
+            get { return BackingStore?.Get<string?>("tlsMaximumVersion"); }
+            set { BackingStore?.Set("tlsMaximumVersion", value); }
+        }
+#else
         public string TlsMaximumVersion {
             get { return BackingStore?.Get<string>("tlsMaximumVersion"); }
             set { BackingStore?.Set("tlsMaximumVersion", value); }
         }
+#endif
         /// <summary>The minimum TLS version to be used with EAP-TLS authentication</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TlsMinimumVersion {
+            get { return BackingStore?.Get<string?>("tlsMinimumVersion"); }
+            set { BackingStore?.Set("tlsMinimumVersion", value); }
+        }
+#else
         public string TlsMinimumVersion {
             get { return BackingStore?.Get<string>("tlsMinimumVersion"); }
             set { BackingStore?.Set("tlsMinimumVersion", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new IosikEv2VpnConfiguration and sets the default values.
         /// </summary>

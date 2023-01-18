@@ -9,55 +9,118 @@ namespace Microsoft.Graph.Beta.Models {
     /// </summary>
     public class DeviceManagementSettingDefinition : Entity, IParsable {
         /// <summary>Collection of constraints for the setting value</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DeviceManagementConstraint>? Constraints {
+            get { return BackingStore?.Get<List<DeviceManagementConstraint>?>("constraints"); }
+            set { BackingStore?.Set("constraints", value); }
+        }
+#else
         public List<DeviceManagementConstraint> Constraints {
             get { return BackingStore?.Get<List<DeviceManagementConstraint>>("constraints"); }
             set { BackingStore?.Set("constraints", value); }
         }
+#endif
         /// <summary>Collection of dependencies on other settings</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DeviceManagementSettingDependency>? Dependencies {
+            get { return BackingStore?.Get<List<DeviceManagementSettingDependency>?>("dependencies"); }
+            set { BackingStore?.Set("dependencies", value); }
+        }
+#else
         public List<DeviceManagementSettingDependency> Dependencies {
             get { return BackingStore?.Get<List<DeviceManagementSettingDependency>>("dependencies"); }
             set { BackingStore?.Set("dependencies", value); }
         }
+#endif
         /// <summary>The setting&apos;s description</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>The setting&apos;s display name</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>Url to setting documentation</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DocumentationUrl {
+            get { return BackingStore?.Get<string?>("documentationUrl"); }
+            set { BackingStore?.Set("documentationUrl", value); }
+        }
+#else
         public string DocumentationUrl {
             get { return BackingStore?.Get<string>("documentationUrl"); }
             set { BackingStore?.Set("documentationUrl", value); }
         }
+#endif
         /// <summary>subtitle of the setting header for more details about the category/section</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? HeaderSubtitle {
+            get { return BackingStore?.Get<string?>("headerSubtitle"); }
+            set { BackingStore?.Set("headerSubtitle", value); }
+        }
+#else
         public string HeaderSubtitle {
             get { return BackingStore?.Get<string>("headerSubtitle"); }
             set { BackingStore?.Set("headerSubtitle", value); }
         }
+#endif
         /// <summary>title of the setting header represents a category/section of a setting/settings</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? HeaderTitle {
+            get { return BackingStore?.Get<string?>("headerTitle"); }
+            set { BackingStore?.Set("headerTitle", value); }
+        }
+#else
         public string HeaderTitle {
             get { return BackingStore?.Get<string>("headerTitle"); }
             set { BackingStore?.Set("headerTitle", value); }
         }
+#endif
         /// <summary>If the setting is top level, it can be configured without the need to be wrapped in a collection or complex setting</summary>
         public bool? IsTopLevel {
             get { return BackingStore?.Get<bool?>("isTopLevel"); }
             set { BackingStore?.Set("isTopLevel", value); }
         }
         /// <summary>Keywords associated with the setting</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? Keywords {
+            get { return BackingStore?.Get<List<string>?>("keywords"); }
+            set { BackingStore?.Set("keywords", value); }
+        }
+#else
         public List<string> Keywords {
             get { return BackingStore?.Get<List<string>>("keywords"); }
             set { BackingStore?.Set("keywords", value); }
         }
+#endif
         /// <summary>Placeholder text as an example of valid input</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PlaceholderText {
+            get { return BackingStore?.Get<string?>("placeholderText"); }
+            set { BackingStore?.Set("placeholderText", value); }
+        }
+#else
         public string PlaceholderText {
             get { return BackingStore?.Get<string>("placeholderText"); }
             set { BackingStore?.Set("placeholderText", value); }
         }
+#endif
         /// <summary>The valueType property</summary>
         public DeviceManangementIntentValueType? ValueType {
             get { return BackingStore?.Get<DeviceManangementIntentValueType?>("valueType"); }

@@ -20,10 +20,17 @@ namespace Microsoft.Graph.Beta.Communications.Calls.Item.RecordResponse {
             set { BackingStore?.Set("bargeInAllowed", value); }
         }
         /// <summary>The clientContext property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ClientContext {
+            get { return BackingStore?.Get<string?>("clientContext"); }
+            set { BackingStore?.Set("clientContext", value); }
+        }
+#else
         public string ClientContext {
             get { return BackingStore?.Get<string>("clientContext"); }
             set { BackingStore?.Set("clientContext", value); }
         }
+#endif
         /// <summary>The initialSilenceTimeoutInSeconds property</summary>
         public int? InitialSilenceTimeoutInSeconds {
             get { return BackingStore?.Get<int?>("initialSilenceTimeoutInSeconds"); }
@@ -45,15 +52,29 @@ namespace Microsoft.Graph.Beta.Communications.Calls.Item.RecordResponse {
             set { BackingStore?.Set("playBeep", value); }
         }
         /// <summary>The prompts property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Prompt>? Prompts {
+            get { return BackingStore?.Get<List<Prompt>?>("prompts"); }
+            set { BackingStore?.Set("prompts", value); }
+        }
+#else
         public List<Prompt> Prompts {
             get { return BackingStore?.Get<List<Prompt>>("prompts"); }
             set { BackingStore?.Set("prompts", value); }
         }
+#endif
         /// <summary>The stopTones property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? StopTones {
+            get { return BackingStore?.Get<List<string>?>("stopTones"); }
+            set { BackingStore?.Set("stopTones", value); }
+        }
+#else
         public List<string> StopTones {
             get { return BackingStore?.Get<List<string>>("stopTones"); }
             set { BackingStore?.Set("stopTones", value); }
         }
+#endif
         /// <summary>The streamWhileRecording property</summary>
         public bool? StreamWhileRecording {
             get { return BackingStore?.Get<bool?>("streamWhileRecording"); }

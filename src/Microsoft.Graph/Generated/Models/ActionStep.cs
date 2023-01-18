@@ -7,10 +7,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class ActionStep : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>The actionUrl property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.ActionUrl? ActionUrl {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ActionUrl?>("actionUrl"); }
+            set { BackingStore?.Set("actionUrl", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.ActionUrl ActionUrl {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ActionUrl>("actionUrl"); }
             set { BackingStore?.Set("actionUrl", value); }
         }
+#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
             get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
@@ -19,20 +26,34 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The stepNumber property</summary>
         public long? StepNumber {
             get { return BackingStore?.Get<long?>("stepNumber"); }
             set { BackingStore?.Set("stepNumber", value); }
         }
         /// <summary>The text property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Text {
+            get { return BackingStore?.Get<string?>("text"); }
+            set { BackingStore?.Set("text", value); }
+        }
+#else
         public string Text {
             get { return BackingStore?.Get<string>("text"); }
             set { BackingStore?.Set("text", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new actionStep and sets the default values.
         /// </summary>

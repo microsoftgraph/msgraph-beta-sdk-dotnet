@@ -16,60 +16,109 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("attackType", value); }
         }
         /// <summary>Unique identifier for the attack simulation automation.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AutomationId {
+            get { return BackingStore?.Get<string?>("automationId"); }
+            set { BackingStore?.Set("automationId", value); }
+        }
+#else
         public string AutomationId {
             get { return BackingStore?.Get<string>("automationId"); }
             set { BackingStore?.Set("automationId", value); }
         }
+#endif
         /// <summary>Date and time of completion of the attack simulation and training campaign. Supports $filter and $orderby.</summary>
         public DateTimeOffset? CompletionDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("completionDateTime"); }
             set { BackingStore?.Set("completionDateTime", value); }
         }
         /// <summary>Identity of the user who created the attack simulation and training campaign.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public EmailIdentity? CreatedBy {
+            get { return BackingStore?.Get<EmailIdentity?>("createdBy"); }
+            set { BackingStore?.Set("createdBy", value); }
+        }
+#else
         public EmailIdentity CreatedBy {
             get { return BackingStore?.Get<EmailIdentity>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
+#endif
         /// <summary>Date and time of creation of the attack simulation and training campaign.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Description of the attack simulation and training campaign.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>Display name of the attack simulation and training campaign. Supports $filter and $orderby.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The durationInDays property</summary>
         public int? DurationInDays {
             get { return BackingStore?.Get<int?>("durationInDays"); }
             set { BackingStore?.Set("durationInDays", value); }
         }
         /// <summary>The excludedAccountTarget property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public AccountTargetContent? ExcludedAccountTarget {
+            get { return BackingStore?.Get<AccountTargetContent?>("excludedAccountTarget"); }
+            set { BackingStore?.Set("excludedAccountTarget", value); }
+        }
+#else
         public AccountTargetContent ExcludedAccountTarget {
             get { return BackingStore?.Get<AccountTargetContent>("excludedAccountTarget"); }
             set { BackingStore?.Set("excludedAccountTarget", value); }
         }
+#endif
         /// <summary>The includedAccountTarget property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public AccountTargetContent? IncludedAccountTarget {
+            get { return BackingStore?.Get<AccountTargetContent?>("includedAccountTarget"); }
+            set { BackingStore?.Set("includedAccountTarget", value); }
+        }
+#else
         public AccountTargetContent IncludedAccountTarget {
             get { return BackingStore?.Get<AccountTargetContent>("includedAccountTarget"); }
             set { BackingStore?.Set("includedAccountTarget", value); }
         }
+#endif
         /// <summary>Flag that represents if the attack simulation and training campaign was created from a simulation automation flow. Supports $filter and $orderby.</summary>
         public bool? IsAutomated {
             get { return BackingStore?.Get<bool?>("isAutomated"); }
             set { BackingStore?.Set("isAutomated", value); }
         }
         /// <summary>Identity of the user who most recently modified the attack simulation and training campaign.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public EmailIdentity? LastModifiedBy {
+            get { return BackingStore?.Get<EmailIdentity?>("lastModifiedBy"); }
+            set { BackingStore?.Set("lastModifiedBy", value); }
+        }
+#else
         public EmailIdentity LastModifiedBy {
             get { return BackingStore?.Get<EmailIdentity>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
+#endif
         /// <summary>Date and time of the most recent modification of the attack simulation and training campaign.</summary>
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
@@ -81,20 +130,34 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("launchDateTime", value); }
         }
         /// <summary>The payload property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.Payload? Payload {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Payload?>("payload"); }
+            set { BackingStore?.Set("payload", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.Payload Payload {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Payload>("payload"); }
             set { BackingStore?.Set("payload", value); }
         }
+#endif
         /// <summary>Method of delivery of the phishing payload used in the attack simulation and training campaign. Possible values are: unknown, sms, email, teams, unknownFutureValue.</summary>
         public Microsoft.Graph.Beta.Models.PayloadDeliveryPlatform? PayloadDeliveryPlatform {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PayloadDeliveryPlatform?>("payloadDeliveryPlatform"); }
             set { BackingStore?.Set("payloadDeliveryPlatform", value); }
         }
         /// <summary>Report of the attack simulation and training campaign.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public SimulationReport? Report {
+            get { return BackingStore?.Get<SimulationReport?>("report"); }
+            set { BackingStore?.Set("report", value); }
+        }
+#else
         public SimulationReport Report {
             get { return BackingStore?.Get<SimulationReport>("report"); }
             set { BackingStore?.Set("report", value); }
         }
+#endif
         /// <summary>Status of the attack simulation and training campaign. Supports $filter and $orderby. Possible values are: unknown, draft, running, scheduled, succeeded, failed, cancelled, excluded, unknownFutureValue.</summary>
         public SimulationStatus? Status {
             get { return BackingStore?.Get<SimulationStatus?>("status"); }

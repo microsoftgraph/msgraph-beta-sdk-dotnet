@@ -12,10 +12,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Alternative text on the title area.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AlternativeText {
+            get { return BackingStore?.Get<string?>("alternativeText"); }
+            set { BackingStore?.Set("alternativeText", value); }
+        }
+#else
         public string AlternativeText {
             get { return BackingStore?.Get<string>("alternativeText"); }
             set { BackingStore?.Set("alternativeText", value); }
         }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Indicates whether the title area has a gradient effect enabled.</summary>
@@ -24,25 +31,46 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("enableGradientEffect", value); }
         }
         /// <summary>URL of the image in the title area.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ImageWebUrl {
+            get { return BackingStore?.Get<string?>("imageWebUrl"); }
+            set { BackingStore?.Set("imageWebUrl", value); }
+        }
+#else
         public string ImageWebUrl {
             get { return BackingStore?.Get<string>("imageWebUrl"); }
             set { BackingStore?.Set("imageWebUrl", value); }
         }
+#endif
         /// <summary>Enumeration value that indicates the layout of the title area. The possible values are: imageAndTitle, plain, colorBlock, overlap, unknownFutureValue.</summary>
         public TitleAreaLayoutType? Layout {
             get { return BackingStore?.Get<TitleAreaLayoutType?>("layout"); }
             set { BackingStore?.Set("layout", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Contains collections of data that can be processed by server side services like search index and link fixup.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.ServerProcessedContent? ServerProcessedContent {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ServerProcessedContent?>("serverProcessedContent"); }
+            set { BackingStore?.Set("serverProcessedContent", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.ServerProcessedContent ServerProcessedContent {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ServerProcessedContent>("serverProcessedContent"); }
             set { BackingStore?.Set("serverProcessedContent", value); }
         }
+#endif
         /// <summary>Indicates whether the author should be shown in title area.</summary>
         public bool? ShowAuthor {
             get { return BackingStore?.Get<bool?>("showAuthor"); }
@@ -59,10 +87,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("showTextBlockAboveTitle", value); }
         }
         /// <summary>The text above title line.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TextAboveTitle {
+            get { return BackingStore?.Get<string?>("textAboveTitle"); }
+            set { BackingStore?.Set("textAboveTitle", value); }
+        }
+#else
         public string TextAboveTitle {
             get { return BackingStore?.Get<string>("textAboveTitle"); }
             set { BackingStore?.Set("textAboveTitle", value); }
         }
+#endif
         /// <summary>Enumeration value that indicates the text alignment of the title area. The possible values are: left, center, unknownFutureValue.</summary>
         public TitleAreaTextAlignmentType? TextAlignment {
             get { return BackingStore?.Get<TitleAreaTextAlignmentType?>("textAlignment"); }

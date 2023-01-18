@@ -14,10 +14,17 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.ActivateDevi
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The carrierUrl property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CarrierUrl {
+            get { return BackingStore?.Get<string?>("carrierUrl"); }
+            set { BackingStore?.Set("carrierUrl", value); }
+        }
+#else
         public string CarrierUrl {
             get { return BackingStore?.Get<string>("carrierUrl"); }
             set { BackingStore?.Set("carrierUrl", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new activateDeviceEsimPostRequestBody and sets the default values.
         /// </summary>

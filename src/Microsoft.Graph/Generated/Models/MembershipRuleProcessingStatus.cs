@@ -14,20 +14,34 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Detailed error message if dynamic group processing ran into an error.  Optional. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ErrorMessage {
+            get { return BackingStore?.Get<string?>("errorMessage"); }
+            set { BackingStore?.Set("errorMessage", value); }
+        }
+#else
         public string ErrorMessage {
             get { return BackingStore?.Get<string>("errorMessage"); }
             set { BackingStore?.Set("errorMessage", value); }
         }
+#endif
         /// <summary>Most recent date and time when membership of a dynamic group was updated.  Optional. Read-only.</summary>
         public DateTimeOffset? LastMembershipUpdated {
             get { return BackingStore?.Get<DateTimeOffset?>("lastMembershipUpdated"); }
             set { BackingStore?.Set("lastMembershipUpdated", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Current status of a dynamic group processing. Possible values are: NotStarted, Running, Succeeded, Failed, and UnknownFutureValue.  Required. Read-only.</summary>
         public MembershipRuleProcessingStatusDetails? Status {
             get { return BackingStore?.Get<MembershipRuleProcessingStatusDetails?>("status"); }

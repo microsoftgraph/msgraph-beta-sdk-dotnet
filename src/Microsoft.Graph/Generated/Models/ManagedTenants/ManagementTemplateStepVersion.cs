@@ -6,60 +6,116 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
     public class ManagementTemplateStepVersion : Entity, IParsable {
         /// <summary>The acceptedFor property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ManagementTemplateStep? AcceptedFor {
+            get { return BackingStore?.Get<ManagementTemplateStep?>("acceptedFor"); }
+            set { BackingStore?.Set("acceptedFor", value); }
+        }
+#else
         public ManagementTemplateStep AcceptedFor {
             get { return BackingStore?.Get<ManagementTemplateStep>("acceptedFor"); }
             set { BackingStore?.Set("acceptedFor", value); }
         }
+#endif
         /// <summary>The contentMarkdown property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ContentMarkdown {
+            get { return BackingStore?.Get<string?>("contentMarkdown"); }
+            set { BackingStore?.Set("contentMarkdown", value); }
+        }
+#else
         public string ContentMarkdown {
             get { return BackingStore?.Get<string>("contentMarkdown"); }
             set { BackingStore?.Set("contentMarkdown", value); }
         }
+#endif
         /// <summary>The createdByUserId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CreatedByUserId {
+            get { return BackingStore?.Get<string?>("createdByUserId"); }
+            set { BackingStore?.Set("createdByUserId", value); }
+        }
+#else
         public string CreatedByUserId {
             get { return BackingStore?.Get<string>("createdByUserId"); }
             set { BackingStore?.Set("createdByUserId", value); }
         }
+#endif
         /// <summary>The createdDateTime property</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The deployments property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ManagementTemplateStepDeployment>? Deployments {
+            get { return BackingStore?.Get<List<ManagementTemplateStepDeployment>?>("deployments"); }
+            set { BackingStore?.Set("deployments", value); }
+        }
+#else
         public List<ManagementTemplateStepDeployment> Deployments {
             get { return BackingStore?.Get<List<ManagementTemplateStepDeployment>>("deployments"); }
             set { BackingStore?.Set("deployments", value); }
         }
+#endif
         /// <summary>The lastActionByUserId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? LastActionByUserId {
+            get { return BackingStore?.Get<string?>("lastActionByUserId"); }
+            set { BackingStore?.Set("lastActionByUserId", value); }
+        }
+#else
         public string LastActionByUserId {
             get { return BackingStore?.Get<string>("lastActionByUserId"); }
             set { BackingStore?.Set("lastActionByUserId", value); }
         }
+#endif
         /// <summary>The lastActionDateTime property</summary>
         public DateTimeOffset? LastActionDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastActionDateTime"); }
             set { BackingStore?.Set("lastActionDateTime", value); }
         }
         /// <summary>The name property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Name {
+            get { return BackingStore?.Get<string?>("name"); }
+            set { BackingStore?.Set("name", value); }
+        }
+#else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#endif
         /// <summary>The templateStep property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ManagementTemplateStep? TemplateStep {
+            get { return BackingStore?.Get<ManagementTemplateStep?>("templateStep"); }
+            set { BackingStore?.Set("templateStep", value); }
+        }
+#else
         public ManagementTemplateStep TemplateStep {
             get { return BackingStore?.Get<ManagementTemplateStep>("templateStep"); }
             set { BackingStore?.Set("templateStep", value); }
         }
+#endif
         /// <summary>The version property</summary>
         public int? Version {
             get { return BackingStore?.Get<int?>("version"); }
             set { BackingStore?.Set("version", value); }
         }
         /// <summary>The versionInformation property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? VersionInformation {
+            get { return BackingStore?.Get<string?>("versionInformation"); }
+            set { BackingStore?.Set("versionInformation", value); }
+        }
+#else
         public string VersionInformation {
             get { return BackingStore?.Get<string>("versionInformation"); }
             set { BackingStore?.Set("versionInformation", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

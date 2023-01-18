@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class BrowserSharedCookie : Entity, IParsable {
         /// <summary>The comment for the shared cookie.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Comment {
+            get { return BackingStore?.Get<string?>("comment"); }
+            set { BackingStore?.Set("comment", value); }
+        }
+#else
         public string Comment {
             get { return BackingStore?.Get<string>("comment"); }
             set { BackingStore?.Set("comment", value); }
         }
+#endif
         /// <summary>The date and time when the shared cookie was created.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
@@ -21,40 +28,75 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("deletedDateTime", value); }
         }
         /// <summary>The name of the cookie.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The history of modifications applied to the cookie.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<BrowserSharedCookieHistory>? History {
+            get { return BackingStore?.Get<List<BrowserSharedCookieHistory>?>("history"); }
+            set { BackingStore?.Set("history", value); }
+        }
+#else
         public List<BrowserSharedCookieHistory> History {
             get { return BackingStore?.Get<List<BrowserSharedCookieHistory>>("history"); }
             set { BackingStore?.Set("history", value); }
         }
+#endif
         /// <summary>Controls whether a cookie is a host-only or domain cookie.</summary>
         public bool? HostOnly {
             get { return BackingStore?.Get<bool?>("hostOnly"); }
             set { BackingStore?.Set("hostOnly", value); }
         }
         /// <summary>The URL of the cookie.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? HostOrDomain {
+            get { return BackingStore?.Get<string?>("hostOrDomain"); }
+            set { BackingStore?.Set("hostOrDomain", value); }
+        }
+#else
         public string HostOrDomain {
             get { return BackingStore?.Get<string>("hostOrDomain"); }
             set { BackingStore?.Set("hostOrDomain", value); }
         }
+#endif
         /// <summary>The user who last modified the cookie.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public IdentitySet? LastModifiedBy {
+            get { return BackingStore?.Get<IdentitySet?>("lastModifiedBy"); }
+            set { BackingStore?.Set("lastModifiedBy", value); }
+        }
+#else
         public IdentitySet LastModifiedBy {
             get { return BackingStore?.Get<IdentitySet>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
+#endif
         /// <summary>The date and time when the cookie was last modified.</summary>
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The path of the cookie.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Path {
+            get { return BackingStore?.Get<string?>("path"); }
+            set { BackingStore?.Set("path", value); }
+        }
+#else
         public string Path {
             get { return BackingStore?.Get<string>("path"); }
             set { BackingStore?.Set("path", value); }
         }
+#endif
         /// <summary>The sourceEnvironment property</summary>
         public BrowserSharedCookieSourceEnvironment? SourceEnvironment {
             get { return BackingStore?.Get<BrowserSharedCookieSourceEnvironment?>("sourceEnvironment"); }

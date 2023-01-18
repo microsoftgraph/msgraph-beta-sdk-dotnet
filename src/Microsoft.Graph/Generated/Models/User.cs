@@ -7,315 +7,700 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class User : DirectoryObject, IParsable {
         /// <summary>A freeform text entry field for the user to describe themselves. Returned only on $select.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AboutMe {
+            get { return BackingStore?.Get<string?>("aboutMe"); }
+            set { BackingStore?.Set("aboutMe", value); }
+        }
+#else
         public string AboutMe {
             get { return BackingStore?.Get<string>("aboutMe"); }
             set { BackingStore?.Set("aboutMe", value); }
         }
+#endif
         /// <summary>true if the account is enabled; otherwise, false. This property is required when a user is created. Supports $filter (eq, ne, not, and in).</summary>
         public bool? AccountEnabled {
             get { return BackingStore?.Get<bool?>("accountEnabled"); }
             set { BackingStore?.Set("accountEnabled", value); }
         }
         /// <summary>The activities property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<UserActivity>? Activities {
+            get { return BackingStore?.Get<List<UserActivity>?>("activities"); }
+            set { BackingStore?.Set("activities", value); }
+        }
+#else
         public List<UserActivity> Activities {
             get { return BackingStore?.Get<List<UserActivity>>("activities"); }
             set { BackingStore?.Set("activities", value); }
         }
+#endif
         /// <summary>Sets the age group of the user. Allowed values: null, Minor, NotAdult and Adult. Refer to the legal age group property definitions for further information. Supports $filter (eq, ne, not, and in).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AgeGroup {
+            get { return BackingStore?.Get<string?>("ageGroup"); }
+            set { BackingStore?.Set("ageGroup", value); }
+        }
+#else
         public string AgeGroup {
             get { return BackingStore?.Get<string>("ageGroup"); }
             set { BackingStore?.Set("ageGroup", value); }
         }
+#endif
         /// <summary>The user&apos;s terms of use acceptance statuses. Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AgreementAcceptance>? AgreementAcceptances {
+            get { return BackingStore?.Get<List<AgreementAcceptance>?>("agreementAcceptances"); }
+            set { BackingStore?.Set("agreementAcceptances", value); }
+        }
+#else
         public List<AgreementAcceptance> AgreementAcceptances {
             get { return BackingStore?.Get<List<AgreementAcceptance>>("agreementAcceptances"); }
             set { BackingStore?.Set("agreementAcceptances", value); }
         }
+#endif
         /// <summary>The analytics property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public UserAnalytics? Analytics {
+            get { return BackingStore?.Get<UserAnalytics?>("analytics"); }
+            set { BackingStore?.Set("analytics", value); }
+        }
+#else
         public UserAnalytics Analytics {
             get { return BackingStore?.Get<UserAnalytics>("analytics"); }
             set { BackingStore?.Set("analytics", value); }
         }
+#endif
         /// <summary>The appConsentRequestsForApproval property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AppConsentRequest>? AppConsentRequestsForApproval {
+            get { return BackingStore?.Get<List<AppConsentRequest>?>("appConsentRequestsForApproval"); }
+            set { BackingStore?.Set("appConsentRequestsForApproval", value); }
+        }
+#else
         public List<AppConsentRequest> AppConsentRequestsForApproval {
             get { return BackingStore?.Get<List<AppConsentRequest>>("appConsentRequestsForApproval"); }
             set { BackingStore?.Set("appConsentRequestsForApproval", value); }
         }
+#endif
         /// <summary>The appRoleAssignedResources property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ServicePrincipal>? AppRoleAssignedResources {
+            get { return BackingStore?.Get<List<ServicePrincipal>?>("appRoleAssignedResources"); }
+            set { BackingStore?.Set("appRoleAssignedResources", value); }
+        }
+#else
         public List<ServicePrincipal> AppRoleAssignedResources {
             get { return BackingStore?.Get<List<ServicePrincipal>>("appRoleAssignedResources"); }
             set { BackingStore?.Set("appRoleAssignedResources", value); }
         }
+#endif
         /// <summary>Represents the app roles a user has been granted for an application. Supports $expand.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AppRoleAssignment>? AppRoleAssignments {
+            get { return BackingStore?.Get<List<AppRoleAssignment>?>("appRoleAssignments"); }
+            set { BackingStore?.Set("appRoleAssignments", value); }
+        }
+#else
         public List<AppRoleAssignment> AppRoleAssignments {
             get { return BackingStore?.Get<List<AppRoleAssignment>>("appRoleAssignments"); }
             set { BackingStore?.Set("appRoleAssignments", value); }
         }
+#endif
         /// <summary>The approvals property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Approval>? Approvals {
+            get { return BackingStore?.Get<List<Approval>?>("approvals"); }
+            set { BackingStore?.Set("approvals", value); }
+        }
+#else
         public List<Approval> Approvals {
             get { return BackingStore?.Get<List<Approval>>("approvals"); }
             set { BackingStore?.Set("approvals", value); }
         }
+#endif
         /// <summary>The licenses that are assigned to the user, including inherited (group-based) licenses. This property doesn&apos;t differentiate directly-assigned and inherited licenses. Use the licenseAssignmentStates property to identify the directly-assigned and inherited licenses. Not nullable. Supports $filter (eq, not, /$count eq 0, /$count ne 0).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AssignedLicense>? AssignedLicenses {
+            get { return BackingStore?.Get<List<AssignedLicense>?>("assignedLicenses"); }
+            set { BackingStore?.Set("assignedLicenses", value); }
+        }
+#else
         public List<AssignedLicense> AssignedLicenses {
             get { return BackingStore?.Get<List<AssignedLicense>>("assignedLicenses"); }
             set { BackingStore?.Set("assignedLicenses", value); }
         }
+#endif
         /// <summary>The plans that are assigned to the user. Read-only. Not nullable.Supports $filter (eq and not).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AssignedPlan>? AssignedPlans {
+            get { return BackingStore?.Get<List<AssignedPlan>?>("assignedPlans"); }
+            set { BackingStore?.Set("assignedPlans", value); }
+        }
+#else
         public List<AssignedPlan> AssignedPlans {
             get { return BackingStore?.Get<List<AssignedPlan>>("assignedPlans"); }
             set { BackingStore?.Set("assignedPlans", value); }
         }
+#endif
         /// <summary>The authentication property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.Authentication? Authentication {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Authentication?>("authentication"); }
+            set { BackingStore?.Set("authentication", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.Authentication Authentication {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Authentication>("authentication"); }
             set { BackingStore?.Set("authentication", value); }
         }
+#endif
         /// <summary>Identifiers that can be used to identify and authenticate a user in non-Azure AD environments. This property can be used to store identifiers for smartcard-based certificates that a user uses for access to on-premises Active Directory deployments or for federated access. It can also be used to store the Subject Alternate Name (SAN) that&apos;s associated with a Common Access Card (CAC). Nullable.Supports $filter (eq and startsWith).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.AuthorizationInfo? AuthorizationInfo {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AuthorizationInfo?>("authorizationInfo"); }
+            set { BackingStore?.Set("authorizationInfo", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.AuthorizationInfo AuthorizationInfo {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AuthorizationInfo>("authorizationInfo"); }
             set { BackingStore?.Set("authorizationInfo", value); }
         }
+#endif
         /// <summary>The birthday of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z Returned only on $select.</summary>
         public DateTimeOffset? Birthday {
             get { return BackingStore?.Get<DateTimeOffset?>("birthday"); }
             set { BackingStore?.Set("birthday", value); }
         }
         /// <summary>The telephone numbers for the user. Only one number can be set for this property. Read-only for users synced from on-premises directory. Supports $filter (eq, not, ge, le, startsWith).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? BusinessPhones {
+            get { return BackingStore?.Get<List<string>?>("businessPhones"); }
+            set { BackingStore?.Set("businessPhones", value); }
+        }
+#else
         public List<string> BusinessPhones {
             get { return BackingStore?.Get<List<string>>("businessPhones"); }
             set { BackingStore?.Set("businessPhones", value); }
         }
+#endif
         /// <summary>The user&apos;s primary calendar. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.Calendar? Calendar {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Calendar?>("calendar"); }
+            set { BackingStore?.Set("calendar", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.Calendar Calendar {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Calendar>("calendar"); }
             set { BackingStore?.Set("calendar", value); }
         }
+#endif
         /// <summary>The user&apos;s calendar groups. Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<CalendarGroup>? CalendarGroups {
+            get { return BackingStore?.Get<List<CalendarGroup>?>("calendarGroups"); }
+            set { BackingStore?.Set("calendarGroups", value); }
+        }
+#else
         public List<CalendarGroup> CalendarGroups {
             get { return BackingStore?.Get<List<CalendarGroup>>("calendarGroups"); }
             set { BackingStore?.Set("calendarGroups", value); }
         }
+#endif
         /// <summary>The user&apos;s calendars. Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.Calendar>? Calendars {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Calendar>?>("calendars"); }
+            set { BackingStore?.Set("calendars", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.Calendar> Calendars {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Calendar>>("calendars"); }
             set { BackingStore?.Set("calendars", value); }
         }
+#endif
         /// <summary>The calendar view for the calendar. Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Event>? CalendarView {
+            get { return BackingStore?.Get<List<Event>?>("calendarView"); }
+            set { BackingStore?.Set("calendarView", value); }
+        }
+#else
         public List<Event> CalendarView {
             get { return BackingStore?.Get<List<Event>>("calendarView"); }
             set { BackingStore?.Set("calendarView", value); }
         }
+#endif
         /// <summary>The chats property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Chat>? Chats {
+            get { return BackingStore?.Get<List<Chat>?>("chats"); }
+            set { BackingStore?.Set("chats", value); }
+        }
+#else
         public List<Chat> Chats {
             get { return BackingStore?.Get<List<Chat>>("chats"); }
             set { BackingStore?.Set("chats", value); }
         }
+#endif
         /// <summary>The city in which the user is located. Maximum length is 128 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? City {
+            get { return BackingStore?.Get<string?>("city"); }
+            set { BackingStore?.Set("city", value); }
+        }
+#else
         public string City {
             get { return BackingStore?.Get<string>("city"); }
             set { BackingStore?.Set("city", value); }
         }
+#endif
         /// <summary>The cloudPCs property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<CloudPC>? CloudPCs {
+            get { return BackingStore?.Get<List<CloudPC>?>("cloudPCs"); }
+            set { BackingStore?.Set("cloudPCs", value); }
+        }
+#else
         public List<CloudPC> CloudPCs {
             get { return BackingStore?.Get<List<CloudPC>>("cloudPCs"); }
             set { BackingStore?.Set("cloudPCs", value); }
         }
+#endif
         /// <summary>The company name which the user is associated. This property can be useful for describing the company that an external user comes from. The maximum length is 64 characters.Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CompanyName {
+            get { return BackingStore?.Get<string?>("companyName"); }
+            set { BackingStore?.Set("companyName", value); }
+        }
+#else
         public string CompanyName {
             get { return BackingStore?.Get<string>("companyName"); }
             set { BackingStore?.Set("companyName", value); }
         }
+#endif
         /// <summary>Sets whether consent has been obtained for minors. Allowed values: null, Granted, Denied and NotRequired. Refer to the legal age group property definitions for further information. Supports $filter (eq, ne, not, and in).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ConsentProvidedForMinor {
+            get { return BackingStore?.Get<string?>("consentProvidedForMinor"); }
+            set { BackingStore?.Set("consentProvidedForMinor", value); }
+        }
+#else
         public string ConsentProvidedForMinor {
             get { return BackingStore?.Get<string>("consentProvidedForMinor"); }
             set { BackingStore?.Set("consentProvidedForMinor", value); }
         }
+#endif
         /// <summary>The user&apos;s contacts folders. Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ContactFolder>? ContactFolders {
+            get { return BackingStore?.Get<List<ContactFolder>?>("contactFolders"); }
+            set { BackingStore?.Set("contactFolders", value); }
+        }
+#else
         public List<ContactFolder> ContactFolders {
             get { return BackingStore?.Get<List<ContactFolder>>("contactFolders"); }
             set { BackingStore?.Set("contactFolders", value); }
         }
+#endif
         /// <summary>The user&apos;s contacts. Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Contact>? Contacts {
+            get { return BackingStore?.Get<List<Contact>?>("contacts"); }
+            set { BackingStore?.Set("contacts", value); }
+        }
+#else
         public List<Contact> Contacts {
             get { return BackingStore?.Get<List<Contact>>("contacts"); }
             set { BackingStore?.Set("contacts", value); }
         }
+#endif
         /// <summary>The country/region in which the user is located; for example, US or UK. Maximum length is 128 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Country {
+            get { return BackingStore?.Get<string?>("country"); }
+            set { BackingStore?.Set("country", value); }
+        }
+#else
         public string Country {
             get { return BackingStore?.Get<string>("country"); }
             set { BackingStore?.Set("country", value); }
         }
+#endif
         /// <summary>The date and time the user was created, in ISO 8601 format and in UTC time. The value cannot be modified and is automatically populated when the entity is created. Nullable. For on-premises users, the value represents when they were first created in Azure AD. Property is null for some users created before June 2018 and on-premises users that were synced to Azure AD before June 2018. Read-only. Supports $filter (eq, ne, not , ge, le, in).</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Directory objects that were created by the user. Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DirectoryObject>? CreatedObjects {
+            get { return BackingStore?.Get<List<DirectoryObject>?>("createdObjects"); }
+            set { BackingStore?.Set("createdObjects", value); }
+        }
+#else
         public List<DirectoryObject> CreatedObjects {
             get { return BackingStore?.Get<List<DirectoryObject>>("createdObjects"); }
             set { BackingStore?.Set("createdObjects", value); }
         }
+#endif
         /// <summary>Indicates whether the user account was created through one of the following methods:  As a regular school or work account (null). As an external account (Invitation). As a local account for an Azure Active Directory B2C tenant (LocalAccount). Through self-service sign-up by an internal user using email verification (EmailVerified). Through self-service sign-up by an external user signing up through a link that is part of a user flow (SelfServiceSignUp).  Read-only.Supports $filter (eq, ne, not, and in).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CreationType {
+            get { return BackingStore?.Get<string?>("creationType"); }
+            set { BackingStore?.Set("creationType", value); }
+        }
+#else
         public string CreationType {
             get { return BackingStore?.Get<string>("creationType"); }
             set { BackingStore?.Set("creationType", value); }
         }
+#endif
         /// <summary>An open complex type that holds the value of a custom security attribute that is assigned to a directory object. Nullable. Returned only on $select. Supports $filter (eq, ne, not, startsWith).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public CustomSecurityAttributeValue? CustomSecurityAttributes {
+            get { return BackingStore?.Get<CustomSecurityAttributeValue?>("customSecurityAttributes"); }
+            set { BackingStore?.Set("customSecurityAttributes", value); }
+        }
+#else
         public CustomSecurityAttributeValue CustomSecurityAttributes {
             get { return BackingStore?.Get<CustomSecurityAttributeValue>("customSecurityAttributes"); }
             set { BackingStore?.Set("customSecurityAttributes", value); }
         }
+#endif
         /// <summary>The name for the department in which the user works. Maximum length is 64 characters.Supports $filter (eq, ne, not , ge, le, in, and eq on null values).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Department {
+            get { return BackingStore?.Get<string?>("department"); }
+            set { BackingStore?.Set("department", value); }
+        }
+#else
         public string Department {
             get { return BackingStore?.Get<string>("department"); }
             set { BackingStore?.Set("department", value); }
         }
+#endif
         /// <summary>Get enrollment configurations targeted to the user</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DeviceEnrollmentConfiguration>? DeviceEnrollmentConfigurations {
+            get { return BackingStore?.Get<List<DeviceEnrollmentConfiguration>?>("deviceEnrollmentConfigurations"); }
+            set { BackingStore?.Set("deviceEnrollmentConfigurations", value); }
+        }
+#else
         public List<DeviceEnrollmentConfiguration> DeviceEnrollmentConfigurations {
             get { return BackingStore?.Get<List<DeviceEnrollmentConfiguration>>("deviceEnrollmentConfigurations"); }
             set { BackingStore?.Set("deviceEnrollmentConfigurations", value); }
         }
+#endif
         /// <summary>The limit on the maximum number of devices that the user is permitted to enroll. Allowed values are 5 or 1000.</summary>
         public int? DeviceEnrollmentLimit {
             get { return BackingStore?.Get<int?>("deviceEnrollmentLimit"); }
             set { BackingStore?.Set("deviceEnrollmentLimit", value); }
         }
         /// <summary>The deviceKeys property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DeviceKey>? DeviceKeys {
+            get { return BackingStore?.Get<List<DeviceKey>?>("deviceKeys"); }
+            set { BackingStore?.Set("deviceKeys", value); }
+        }
+#else
         public List<DeviceKey> DeviceKeys {
             get { return BackingStore?.Get<List<DeviceKey>>("deviceKeys"); }
             set { BackingStore?.Set("deviceKeys", value); }
         }
+#endif
         /// <summary>The list of troubleshooting events for this user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DeviceManagementTroubleshootingEvent>? DeviceManagementTroubleshootingEvents {
+            get { return BackingStore?.Get<List<DeviceManagementTroubleshootingEvent>?>("deviceManagementTroubleshootingEvents"); }
+            set { BackingStore?.Set("deviceManagementTroubleshootingEvents", value); }
+        }
+#else
         public List<DeviceManagementTroubleshootingEvent> DeviceManagementTroubleshootingEvents {
             get { return BackingStore?.Get<List<DeviceManagementTroubleshootingEvent>>("deviceManagementTroubleshootingEvents"); }
             set { BackingStore?.Set("deviceManagementTroubleshootingEvents", value); }
         }
+#endif
         /// <summary>The devices property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Device>? Devices {
+            get { return BackingStore?.Get<List<Device>?>("devices"); }
+            set { BackingStore?.Set("devices", value); }
+        }
+#else
         public List<Device> Devices {
             get { return BackingStore?.Get<List<Device>>("devices"); }
             set { BackingStore?.Set("devices", value); }
         }
+#endif
         /// <summary>The users and contacts that report to the user. (The users and contacts that have their manager property set to this user.) Read-only. Nullable. Supports $expand.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DirectoryObject>? DirectReports {
+            get { return BackingStore?.Get<List<DirectoryObject>?>("directReports"); }
+            set { BackingStore?.Set("directReports", value); }
+        }
+#else
         public List<DirectoryObject> DirectReports {
             get { return BackingStore?.Get<List<DirectoryObject>>("directReports"); }
             set { BackingStore?.Set("directReports", value); }
         }
+#endif
         /// <summary>The name displayed in the address book for the user. This value is usually the combination of the user&apos;s first name, middle initial, and last name. This property is required when a user is created and it cannot be cleared during updates. Maximum length is 256 characters. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values), $orderBy, and $search.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The user&apos;s OneDrive. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.Drive? Drive {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Drive?>("drive"); }
+            set { BackingStore?.Set("drive", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.Drive Drive {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Drive>("drive"); }
             set { BackingStore?.Set("drive", value); }
         }
+#endif
         /// <summary>A collection of drives available for this user. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.Drive>? Drives {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Drive>?>("drives"); }
+            set { BackingStore?.Set("drives", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.Drive> Drives {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.Drive>>("drives"); }
             set { BackingStore?.Set("drives", value); }
         }
+#endif
         /// <summary>The date and time when the user was hired or will start work in case of a future hire. Supports $filter (eq, ne, not , ge, le, in).</summary>
         public DateTimeOffset? EmployeeHireDate {
             get { return BackingStore?.Get<DateTimeOffset?>("employeeHireDate"); }
             set { BackingStore?.Set("employeeHireDate", value); }
         }
         /// <summary>The employee identifier assigned to the user by the organization. The maximum length is 16 characters.Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? EmployeeId {
+            get { return BackingStore?.Get<string?>("employeeId"); }
+            set { BackingStore?.Set("employeeId", value); }
+        }
+#else
         public string EmployeeId {
             get { return BackingStore?.Get<string>("employeeId"); }
             set { BackingStore?.Set("employeeId", value); }
         }
+#endif
         /// <summary>The date and time when the user left or will leave the organization. To read or write this property, the calling app must be assigned the User-LifeCycleInfo.Read.All or User-LifeCycleInfo.ReadWrite.All permissions respectively. To read this property in delegated scenarios, the admin needs one of the following Azure AD roles: Lifecycle Workflows Administrator, Global Reader, or Global Admin. To write this property in delegated scenarios, the admin needs the Global Administrator Azure AD role. Supports $filter (eq, ne, not , ge, le, in). For more information, see Configure the employeeLeaveDateTime property for a user.</summary>
         public DateTimeOffset? EmployeeLeaveDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("employeeLeaveDateTime"); }
             set { BackingStore?.Set("employeeLeaveDateTime", value); }
         }
         /// <summary>Represents organization data (e.g. division and costCenter) associated with a user. Supports $filter (eq, ne, not , ge, le, in).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.EmployeeOrgData? EmployeeOrgData {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EmployeeOrgData?>("employeeOrgData"); }
+            set { BackingStore?.Set("employeeOrgData", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.EmployeeOrgData EmployeeOrgData {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EmployeeOrgData>("employeeOrgData"); }
             set { BackingStore?.Set("employeeOrgData", value); }
         }
+#endif
         /// <summary>Captures enterprise worker type. For example, Employee, Contractor, Consultant, or Vendor. Supports $filter (eq, ne, not , ge, le, in, startsWith).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? EmployeeType {
+            get { return BackingStore?.Get<string?>("employeeType"); }
+            set { BackingStore?.Set("employeeType", value); }
+        }
+#else
         public string EmployeeType {
             get { return BackingStore?.Get<string>("employeeType"); }
             set { BackingStore?.Set("employeeType", value); }
         }
+#endif
         /// <summary>The user&apos;s events. Default is to show events under the Default Calendar. Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Event>? Events {
+            get { return BackingStore?.Get<List<Event>?>("events"); }
+            set { BackingStore?.Set("events", value); }
+        }
+#else
         public List<Event> Events {
             get { return BackingStore?.Get<List<Event>>("events"); }
             set { BackingStore?.Set("events", value); }
         }
+#endif
         /// <summary>The collection of open extensions defined for the user. Supports $expand. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Extension>? Extensions {
+            get { return BackingStore?.Get<List<Extension>?>("extensions"); }
+            set { BackingStore?.Set("extensions", value); }
+        }
+#else
         public List<Extension> Extensions {
             get { return BackingStore?.Get<List<Extension>>("extensions"); }
             set { BackingStore?.Set("extensions", value); }
         }
+#endif
         /// <summary>For an external user invited to the tenant using the invitation API, this property represents the invited user&apos;s invitation status. For invited users, the state can be PendingAcceptance or Accepted, or null for all other users. Supports $filter (eq, ne, not , in).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ExternalUserState {
+            get { return BackingStore?.Get<string?>("externalUserState"); }
+            set { BackingStore?.Set("externalUserState", value); }
+        }
+#else
         public string ExternalUserState {
             get { return BackingStore?.Get<string>("externalUserState"); }
             set { BackingStore?.Set("externalUserState", value); }
         }
+#endif
         /// <summary>Shows the timestamp for the latest change to the externalUserState property. Supports $filter (eq, ne, not , in).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ExternalUserStateChangeDateTime {
+            get { return BackingStore?.Get<string?>("externalUserStateChangeDateTime"); }
+            set { BackingStore?.Set("externalUserStateChangeDateTime", value); }
+        }
+#else
         public string ExternalUserStateChangeDateTime {
             get { return BackingStore?.Get<string>("externalUserStateChangeDateTime"); }
             set { BackingStore?.Set("externalUserStateChangeDateTime", value); }
         }
+#endif
         /// <summary>The fax number of the user. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? FaxNumber {
+            get { return BackingStore?.Get<string?>("faxNumber"); }
+            set { BackingStore?.Set("faxNumber", value); }
+        }
+#else
         public string FaxNumber {
             get { return BackingStore?.Get<string>("faxNumber"); }
             set { BackingStore?.Set("faxNumber", value); }
         }
+#endif
         /// <summary>The followedSites property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Site>? FollowedSites {
+            get { return BackingStore?.Get<List<Site>?>("followedSites"); }
+            set { BackingStore?.Set("followedSites", value); }
+        }
+#else
         public List<Site> FollowedSites {
             get { return BackingStore?.Get<List<Site>>("followedSites"); }
             set { BackingStore?.Set("followedSites", value); }
         }
+#endif
         /// <summary>The given name (first name) of the user. Maximum length is 64 characters. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? GivenName {
+            get { return BackingStore?.Get<string?>("givenName"); }
+            set { BackingStore?.Set("givenName", value); }
+        }
+#else
         public string GivenName {
             get { return BackingStore?.Get<string>("givenName"); }
             set { BackingStore?.Set("givenName", value); }
         }
+#endif
         /// <summary>The hire date of the user. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.  Returned only on $select.  Note: This property is specific to SharePoint Online. We recommend using the native employeeHireDate property to set and update hire date values using Microsoft Graph APIs.</summary>
         public DateTimeOffset? HireDate {
             get { return BackingStore?.Get<DateTimeOffset?>("hireDate"); }
             set { BackingStore?.Set("hireDate", value); }
         }
         /// <summary>Represents the identities that can be used to sign in to this user account. An identity can be provided by Microsoft (also known as a local account), by organizations, or by social identity providers such as Facebook, Google, and Microsoft, and tied to a user account. May contain multiple items with the same signInType value. Supports $filter (eq) including on null values, only where the signInType is not userPrincipalName.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ObjectIdentity>? Identities {
+            get { return BackingStore?.Get<List<ObjectIdentity>?>("identities"); }
+            set { BackingStore?.Set("identities", value); }
+        }
+#else
         public List<ObjectIdentity> Identities {
             get { return BackingStore?.Get<List<ObjectIdentity>>("identities"); }
             set { BackingStore?.Set("identities", value); }
         }
+#endif
         /// <summary>The instant message voice over IP (VOIP) session initiation protocol (SIP) addresses for the user. Read-only. Supports $filter (eq, not, ge, le, startsWith).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? ImAddresses {
+            get { return BackingStore?.Get<List<string>?>("imAddresses"); }
+            set { BackingStore?.Set("imAddresses", value); }
+        }
+#else
         public List<string> ImAddresses {
             get { return BackingStore?.Get<List<string>>("imAddresses"); }
             set { BackingStore?.Set("imAddresses", value); }
         }
+#endif
         /// <summary>Relevance classification of the user&apos;s messages based on explicit designations which override inferred relevance or importance.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.InferenceClassification? InferenceClassification {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.InferenceClassification?>("inferenceClassification"); }
+            set { BackingStore?.Set("inferenceClassification", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.InferenceClassification InferenceClassification {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.InferenceClassification>("inferenceClassification"); }
             set { BackingStore?.Set("inferenceClassification", value); }
         }
+#endif
         /// <summary>Identifies the info segments assigned to the user.  Supports $filter (eq, not, ge, le, startsWith).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? InfoCatalogs {
+            get { return BackingStore?.Get<List<string>?>("infoCatalogs"); }
+            set { BackingStore?.Set("infoCatalogs", value); }
+        }
+#else
         public List<string> InfoCatalogs {
             get { return BackingStore?.Get<List<string>>("infoCatalogs"); }
             set { BackingStore?.Set("infoCatalogs", value); }
         }
+#endif
         /// <summary>The informationProtection property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.InformationProtection? InformationProtection {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.InformationProtection?>("informationProtection"); }
+            set { BackingStore?.Set("informationProtection", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.InformationProtection InformationProtection {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.InformationProtection>("informationProtection"); }
             set { BackingStore?.Set("informationProtection", value); }
         }
+#endif
         /// <summary>The insights property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ItemInsights? Insights {
+            get { return BackingStore?.Get<ItemInsights?>("insights"); }
+            set { BackingStore?.Set("insights", value); }
+        }
+#else
         public ItemInsights Insights {
             get { return BackingStore?.Get<ItemInsights>("insights"); }
             set { BackingStore?.Set("insights", value); }
         }
+#endif
         /// <summary>A list for the user to describe their interests. Returned only on $select.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? Interests {
+            get { return BackingStore?.Get<List<string>?>("interests"); }
+            set { BackingStore?.Set("interests", value); }
+        }
+#else
         public List<string> Interests {
             get { return BackingStore?.Get<List<string>>("interests"); }
             set { BackingStore?.Set("interests", value); }
         }
+#endif
         /// <summary>The isManagementRestricted property</summary>
         public bool? IsManagementRestricted {
             get { return BackingStore?.Get<bool?>("isManagementRestricted"); }
@@ -327,405 +712,923 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("isResourceAccount", value); }
         }
         /// <summary>The user&apos;s job title. Maximum length is 128 characters. Supports $filter (eq, ne, not , ge, le, in, startsWith, and eq on null values).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? JobTitle {
+            get { return BackingStore?.Get<string?>("jobTitle"); }
+            set { BackingStore?.Set("jobTitle", value); }
+        }
+#else
         public string JobTitle {
             get { return BackingStore?.Get<string>("jobTitle"); }
             set { BackingStore?.Set("jobTitle", value); }
         }
+#endif
         /// <summary>The joinedGroups property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Group>? JoinedGroups {
+            get { return BackingStore?.Get<List<Group>?>("joinedGroups"); }
+            set { BackingStore?.Set("joinedGroups", value); }
+        }
+#else
         public List<Group> JoinedGroups {
             get { return BackingStore?.Get<List<Group>>("joinedGroups"); }
             set { BackingStore?.Set("joinedGroups", value); }
         }
+#endif
         /// <summary>The Microsoft Teams teams that the user is a member of. Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Team>? JoinedTeams {
+            get { return BackingStore?.Get<List<Team>?>("joinedTeams"); }
+            set { BackingStore?.Set("joinedTeams", value); }
+        }
+#else
         public List<Team> JoinedTeams {
             get { return BackingStore?.Get<List<Team>>("joinedTeams"); }
             set { BackingStore?.Set("joinedTeams", value); }
         }
+#endif
         /// <summary>The time when this Azure AD user last changed their password or when their password was created, , whichever date the latest action was performed. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Returned only on $select.</summary>
         public DateTimeOffset? LastPasswordChangeDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastPasswordChangeDateTime"); }
             set { BackingStore?.Set("lastPasswordChangeDateTime", value); }
         }
         /// <summary>Used by enterprise applications to determine the legal age group of the user. This property is read-only and calculated based on ageGroup and consentProvidedForMinor properties. Allowed values: null, MinorWithOutParentalConsent, MinorWithParentalConsent, MinorNoParentalConsentRequired, NotAdult and Adult. Refer to the legal age group property definitions for further information. Returned only on $select.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? LegalAgeGroupClassification {
+            get { return BackingStore?.Get<string?>("legalAgeGroupClassification"); }
+            set { BackingStore?.Set("legalAgeGroupClassification", value); }
+        }
+#else
         public string LegalAgeGroupClassification {
             get { return BackingStore?.Get<string>("legalAgeGroupClassification"); }
             set { BackingStore?.Set("legalAgeGroupClassification", value); }
         }
+#endif
         /// <summary>State of license assignments for this user. Also indicates licenses that are directly-assigned and those that the user has inherited through group memberships. Read-only. Returned only on $select.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<LicenseAssignmentState>? LicenseAssignmentStates {
+            get { return BackingStore?.Get<List<LicenseAssignmentState>?>("licenseAssignmentStates"); }
+            set { BackingStore?.Set("licenseAssignmentStates", value); }
+        }
+#else
         public List<LicenseAssignmentState> LicenseAssignmentStates {
             get { return BackingStore?.Get<List<LicenseAssignmentState>>("licenseAssignmentStates"); }
             set { BackingStore?.Set("licenseAssignmentStates", value); }
         }
+#endif
         /// <summary>The licenseDetails property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.LicenseDetails>? LicenseDetails {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.LicenseDetails>?>("licenseDetails"); }
+            set { BackingStore?.Set("licenseDetails", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.LicenseDetails> LicenseDetails {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.LicenseDetails>>("licenseDetails"); }
             set { BackingStore?.Set("licenseDetails", value); }
         }
+#endif
         /// <summary>The SMTP address for the user, for example, admin@contoso.com. Changes to this property will also update the user&apos;s proxyAddresses collection to include the value as an SMTP address. This property cannot contain accent characters.  NOTE: We do not recommend updating this property for Azure AD B2C user profiles. Use the otherMails property instead.  Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith, and eq on null values).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Mail {
+            get { return BackingStore?.Get<string?>("mail"); }
+            set { BackingStore?.Set("mail", value); }
+        }
+#else
         public string Mail {
             get { return BackingStore?.Get<string>("mail"); }
             set { BackingStore?.Set("mail", value); }
         }
+#endif
         /// <summary>Settings for the primary mailbox of the signed-in user. You can get or update settings for sending automatic replies to incoming messages, locale, and time zone. For more information, see User preferences for languages and regional formats. Returned only on $select.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.MailboxSettings? MailboxSettings {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MailboxSettings?>("mailboxSettings"); }
+            set { BackingStore?.Set("mailboxSettings", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.MailboxSettings MailboxSettings {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MailboxSettings>("mailboxSettings"); }
             set { BackingStore?.Set("mailboxSettings", value); }
         }
+#endif
         /// <summary>The user&apos;s mail folders. Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<MailFolder>? MailFolders {
+            get { return BackingStore?.Get<List<MailFolder>?>("mailFolders"); }
+            set { BackingStore?.Set("mailFolders", value); }
+        }
+#else
         public List<MailFolder> MailFolders {
             get { return BackingStore?.Get<List<MailFolder>>("mailFolders"); }
             set { BackingStore?.Set("mailFolders", value); }
         }
+#endif
         /// <summary>The mail alias for the user. This property must be specified when a user is created. Maximum length is 64 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MailNickname {
+            get { return BackingStore?.Get<string?>("mailNickname"); }
+            set { BackingStore?.Set("mailNickname", value); }
+        }
+#else
         public string MailNickname {
             get { return BackingStore?.Get<string>("mailNickname"); }
             set { BackingStore?.Set("mailNickname", value); }
         }
+#endif
         /// <summary>Zero or more managed app registrations that belong to the user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ManagedAppRegistration>? ManagedAppRegistrations {
+            get { return BackingStore?.Get<List<ManagedAppRegistration>?>("managedAppRegistrations"); }
+            set { BackingStore?.Set("managedAppRegistrations", value); }
+        }
+#else
         public List<ManagedAppRegistration> ManagedAppRegistrations {
             get { return BackingStore?.Get<List<ManagedAppRegistration>>("managedAppRegistrations"); }
             set { BackingStore?.Set("managedAppRegistrations", value); }
         }
+#endif
         /// <summary>The managed devices associated with the user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ManagedDevice>? ManagedDevices {
+            get { return BackingStore?.Get<List<ManagedDevice>?>("managedDevices"); }
+            set { BackingStore?.Set("managedDevices", value); }
+        }
+#else
         public List<ManagedDevice> ManagedDevices {
             get { return BackingStore?.Get<List<ManagedDevice>>("managedDevices"); }
             set { BackingStore?.Set("managedDevices", value); }
         }
+#endif
         /// <summary>The user or contact that is this user&apos;s manager. Read-only. (HTTP Methods: GET, PUT, DELETE.). Supports $expand.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DirectoryObject? Manager {
+            get { return BackingStore?.Get<DirectoryObject?>("manager"); }
+            set { BackingStore?.Set("manager", value); }
+        }
+#else
         public DirectoryObject Manager {
             get { return BackingStore?.Get<DirectoryObject>("manager"); }
             set { BackingStore?.Set("manager", value); }
         }
+#endif
         /// <summary>The groups, directory roles and administrative units that the user is a member of. Read-only. Nullable. Supports $expand.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DirectoryObject>? MemberOf {
+            get { return BackingStore?.Get<List<DirectoryObject>?>("memberOf"); }
+            set { BackingStore?.Set("memberOf", value); }
+        }
+#else
         public List<DirectoryObject> MemberOf {
             get { return BackingStore?.Get<List<DirectoryObject>>("memberOf"); }
             set { BackingStore?.Set("memberOf", value); }
         }
+#endif
         /// <summary>The messages in a mailbox or folder. Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Message>? Messages {
+            get { return BackingStore?.Get<List<Message>?>("messages"); }
+            set { BackingStore?.Set("messages", value); }
+        }
+#else
         public List<Message> Messages {
             get { return BackingStore?.Get<List<Message>>("messages"); }
             set { BackingStore?.Set("messages", value); }
         }
+#endif
         /// <summary>The list of troubleshooting events for this user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<MobileAppIntentAndState>? MobileAppIntentAndStates {
+            get { return BackingStore?.Get<List<MobileAppIntentAndState>?>("mobileAppIntentAndStates"); }
+            set { BackingStore?.Set("mobileAppIntentAndStates", value); }
+        }
+#else
         public List<MobileAppIntentAndState> MobileAppIntentAndStates {
             get { return BackingStore?.Get<List<MobileAppIntentAndState>>("mobileAppIntentAndStates"); }
             set { BackingStore?.Set("mobileAppIntentAndStates", value); }
         }
+#endif
         /// <summary>The list of mobile app troubleshooting events for this user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<MobileAppTroubleshootingEvent>? MobileAppTroubleshootingEvents {
+            get { return BackingStore?.Get<List<MobileAppTroubleshootingEvent>?>("mobileAppTroubleshootingEvents"); }
+            set { BackingStore?.Set("mobileAppTroubleshootingEvents", value); }
+        }
+#else
         public List<MobileAppTroubleshootingEvent> MobileAppTroubleshootingEvents {
             get { return BackingStore?.Get<List<MobileAppTroubleshootingEvent>>("mobileAppTroubleshootingEvents"); }
             set { BackingStore?.Set("mobileAppTroubleshootingEvents", value); }
         }
+#endif
         /// <summary>The primary cellular telephone number for the user. Read-only for users synced from on-premises directory.  Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MobilePhone {
+            get { return BackingStore?.Get<string?>("mobilePhone"); }
+            set { BackingStore?.Set("mobilePhone", value); }
+        }
+#else
         public string MobilePhone {
             get { return BackingStore?.Get<string>("mobilePhone"); }
             set { BackingStore?.Set("mobilePhone", value); }
         }
+#endif
         /// <summary>The URL for the user&apos;s personal site. Returned only on $select.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MySite {
+            get { return BackingStore?.Get<string?>("mySite"); }
+            set { BackingStore?.Set("mySite", value); }
+        }
+#else
         public string MySite {
             get { return BackingStore?.Get<string>("mySite"); }
             set { BackingStore?.Set("mySite", value); }
         }
+#endif
         /// <summary>The notifications property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Notification>? Notifications {
+            get { return BackingStore?.Get<List<Notification>?>("notifications"); }
+            set { BackingStore?.Set("notifications", value); }
+        }
+#else
         public List<Notification> Notifications {
             get { return BackingStore?.Get<List<Notification>>("notifications"); }
             set { BackingStore?.Set("notifications", value); }
         }
+#endif
         /// <summary>The oauth2PermissionGrants property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<OAuth2PermissionGrant>? Oauth2PermissionGrants {
+            get { return BackingStore?.Get<List<OAuth2PermissionGrant>?>("oauth2PermissionGrants"); }
+            set { BackingStore?.Set("oauth2PermissionGrants", value); }
+        }
+#else
         public List<OAuth2PermissionGrant> Oauth2PermissionGrants {
             get { return BackingStore?.Get<List<OAuth2PermissionGrant>>("oauth2PermissionGrants"); }
             set { BackingStore?.Set("oauth2PermissionGrants", value); }
         }
+#endif
         /// <summary>The office location in the user&apos;s place of business. Maximum length is 128 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OfficeLocation {
+            get { return BackingStore?.Get<string?>("officeLocation"); }
+            set { BackingStore?.Set("officeLocation", value); }
+        }
+#else
         public string OfficeLocation {
             get { return BackingStore?.Get<string>("officeLocation"); }
             set { BackingStore?.Set("officeLocation", value); }
         }
+#endif
         /// <summary>The onenote property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.Onenote? Onenote {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Onenote?>("onenote"); }
+            set { BackingStore?.Set("onenote", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.Onenote Onenote {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Onenote>("onenote"); }
             set { BackingStore?.Set("onenote", value); }
         }
+#endif
         /// <summary>The onlineMeetings property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<OnlineMeeting>? OnlineMeetings {
+            get { return BackingStore?.Get<List<OnlineMeeting>?>("onlineMeetings"); }
+            set { BackingStore?.Set("onlineMeetings", value); }
+        }
+#else
         public List<OnlineMeeting> OnlineMeetings {
             get { return BackingStore?.Get<List<OnlineMeeting>>("onlineMeetings"); }
             set { BackingStore?.Set("onlineMeetings", value); }
         }
+#endif
         /// <summary>Contains the on-premises Active Directory distinguished name or DN. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OnPremisesDistinguishedName {
+            get { return BackingStore?.Get<string?>("onPremisesDistinguishedName"); }
+            set { BackingStore?.Set("onPremisesDistinguishedName", value); }
+        }
+#else
         public string OnPremisesDistinguishedName {
             get { return BackingStore?.Get<string>("onPremisesDistinguishedName"); }
             set { BackingStore?.Set("onPremisesDistinguishedName", value); }
         }
+#endif
         /// <summary>Contains the on-premises domainFQDN, also called dnsDomainName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OnPremisesDomainName {
+            get { return BackingStore?.Get<string?>("onPremisesDomainName"); }
+            set { BackingStore?.Set("onPremisesDomainName", value); }
+        }
+#else
         public string OnPremisesDomainName {
             get { return BackingStore?.Get<string>("onPremisesDomainName"); }
             set { BackingStore?.Set("onPremisesDomainName", value); }
         }
+#endif
         /// <summary>Contains extensionAttributes1-15 for the user. These extension attributes are also known as Exchange custom attributes 1-15. For an onPremisesSyncEnabled user, the source of authority for this set of properties is the on-premises and is read-only. For a cloud-only user (where onPremisesSyncEnabled is false), these properties can be set during creation or update of a user object.  For a cloud-only user previously synced from on-premises Active Directory, these properties are read-only in Microsoft Graph but can be fully managed through the Exchange Admin Center or the Exchange Online V2 module in PowerShell. Supports $filter (eq, ne, not, in).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.OnPremisesExtensionAttributes? OnPremisesExtensionAttributes {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OnPremisesExtensionAttributes?>("onPremisesExtensionAttributes"); }
+            set { BackingStore?.Set("onPremisesExtensionAttributes", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.OnPremisesExtensionAttributes OnPremisesExtensionAttributes {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OnPremisesExtensionAttributes>("onPremisesExtensionAttributes"); }
             set { BackingStore?.Set("onPremisesExtensionAttributes", value); }
         }
+#endif
         /// <summary>This property is used to associate an on-premises Active Directory user account to their Azure AD user object. This property must be specified when creating a new user account in the Graph if you are using a federated domain for the user&apos;s userPrincipalName (UPN) property. Note: The $ and _ characters cannot be used when specifying this property. Supports $filter (eq, ne, not, ge, le, in).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OnPremisesImmutableId {
+            get { return BackingStore?.Get<string?>("onPremisesImmutableId"); }
+            set { BackingStore?.Set("onPremisesImmutableId", value); }
+        }
+#else
         public string OnPremisesImmutableId {
             get { return BackingStore?.Get<string>("onPremisesImmutableId"); }
             set { BackingStore?.Set("onPremisesImmutableId", value); }
         }
+#endif
         /// <summary>Indicates the last time at which the object was synced with the on-premises directory; for example: &apos;2013-02-16T03:04:54Z&apos;. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only. Supports $filter (eq, ne, not, ge, le, in).</summary>
         public DateTimeOffset? OnPremisesLastSyncDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("onPremisesLastSyncDateTime"); }
             set { BackingStore?.Set("onPremisesLastSyncDateTime", value); }
         }
         /// <summary>Errors when using Microsoft synchronization product during provisioning.  Supports $filter (eq, not, ge, le).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<OnPremisesProvisioningError>? OnPremisesProvisioningErrors {
+            get { return BackingStore?.Get<List<OnPremisesProvisioningError>?>("onPremisesProvisioningErrors"); }
+            set { BackingStore?.Set("onPremisesProvisioningErrors", value); }
+        }
+#else
         public List<OnPremisesProvisioningError> OnPremisesProvisioningErrors {
             get { return BackingStore?.Get<List<OnPremisesProvisioningError>>("onPremisesProvisioningErrors"); }
             set { BackingStore?.Set("onPremisesProvisioningErrors", value); }
         }
+#endif
         /// <summary>Contains the on-premises sAMAccountName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OnPremisesSamAccountName {
+            get { return BackingStore?.Get<string?>("onPremisesSamAccountName"); }
+            set { BackingStore?.Set("onPremisesSamAccountName", value); }
+        }
+#else
         public string OnPremisesSamAccountName {
             get { return BackingStore?.Get<string>("onPremisesSamAccountName"); }
             set { BackingStore?.Set("onPremisesSamAccountName", value); }
         }
+#endif
         /// <summary>Contains the on-premises security identifier (SID) for the user that was synchronized from on-premises to the cloud. Read-only. Supports $filter (eq including on null values).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OnPremisesSecurityIdentifier {
+            get { return BackingStore?.Get<string?>("onPremisesSecurityIdentifier"); }
+            set { BackingStore?.Set("onPremisesSecurityIdentifier", value); }
+        }
+#else
         public string OnPremisesSecurityIdentifier {
             get { return BackingStore?.Get<string>("onPremisesSecurityIdentifier"); }
             set { BackingStore?.Set("onPremisesSecurityIdentifier", value); }
         }
+#endif
         /// <summary>true if this user object is currently being synced from an on-premises Active Directory (AD); otherwise the user isn&apos;t being synced and can be managed in Azure Active Directory (Azure AD). Read-only. Supports $filter (eq, ne, not, in, and eq on null values).</summary>
         public bool? OnPremisesSyncEnabled {
             get { return BackingStore?.Get<bool?>("onPremisesSyncEnabled"); }
             set { BackingStore?.Set("onPremisesSyncEnabled", value); }
         }
         /// <summary>Contains the on-premises userPrincipalName synchronized from the on-premises directory. The property is only populated for customers who are synchronizing their on-premises directory to Azure Active Directory via Azure AD Connect. Read-only. Supports $filter (eq, ne, not, ge, le, in, startsWith).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OnPremisesUserPrincipalName {
+            get { return BackingStore?.Get<string?>("onPremisesUserPrincipalName"); }
+            set { BackingStore?.Set("onPremisesUserPrincipalName", value); }
+        }
+#else
         public string OnPremisesUserPrincipalName {
             get { return BackingStore?.Get<string>("onPremisesUserPrincipalName"); }
             set { BackingStore?.Set("onPremisesUserPrincipalName", value); }
         }
+#endif
         /// <summary>A list of additional email addresses for the user; for example: [&apos;bob@contoso.com&apos;, &apos;Robert@fabrikam.com&apos;].NOTE: This property cannot contain accent characters.Supports $filter (eq, not, ge, le, in, startsWith, endsWith, /$count eq 0, /$count ne 0).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? OtherMails {
+            get { return BackingStore?.Get<List<string>?>("otherMails"); }
+            set { BackingStore?.Set("otherMails", value); }
+        }
+#else
         public List<string> OtherMails {
             get { return BackingStore?.Get<List<string>>("otherMails"); }
             set { BackingStore?.Set("otherMails", value); }
         }
+#endif
         /// <summary>Selective Outlook services available to the user. Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public OutlookUser? Outlook {
+            get { return BackingStore?.Get<OutlookUser?>("outlook"); }
+            set { BackingStore?.Set("outlook", value); }
+        }
+#else
         public OutlookUser Outlook {
             get { return BackingStore?.Get<OutlookUser>("outlook"); }
             set { BackingStore?.Set("outlook", value); }
         }
+#endif
         /// <summary>Devices that are owned by the user. Read-only. Nullable. Supports $expand.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DirectoryObject>? OwnedDevices {
+            get { return BackingStore?.Get<List<DirectoryObject>?>("ownedDevices"); }
+            set { BackingStore?.Set("ownedDevices", value); }
+        }
+#else
         public List<DirectoryObject> OwnedDevices {
             get { return BackingStore?.Get<List<DirectoryObject>>("ownedDevices"); }
             set { BackingStore?.Set("ownedDevices", value); }
         }
+#endif
         /// <summary>Directory objects that are owned by the user. Read-only. Nullable. Supports $expand and $filter (/$count eq 0, /$count ne 0, /$count eq 1, /$count ne 1).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DirectoryObject>? OwnedObjects {
+            get { return BackingStore?.Get<List<DirectoryObject>?>("ownedObjects"); }
+            set { BackingStore?.Set("ownedObjects", value); }
+        }
+#else
         public List<DirectoryObject> OwnedObjects {
             get { return BackingStore?.Get<List<DirectoryObject>>("ownedObjects"); }
             set { BackingStore?.Set("ownedObjects", value); }
         }
+#endif
         /// <summary>Specifies password policies for the user. This value is an enumeration with one possible value being DisableStrongPassword, which allows weaker passwords than the default policy to be specified. DisablePasswordExpiration can also be specified. The two may be specified together; for example: DisablePasswordExpiration, DisableStrongPassword. For more information on the default password policies, see Azure AD pasword policies. Supports $filter (ne, not, and eq on null values).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PasswordPolicies {
+            get { return BackingStore?.Get<string?>("passwordPolicies"); }
+            set { BackingStore?.Set("passwordPolicies", value); }
+        }
+#else
         public string PasswordPolicies {
             get { return BackingStore?.Get<string>("passwordPolicies"); }
             set { BackingStore?.Set("passwordPolicies", value); }
         }
+#endif
         /// <summary>Specifies the password profile for the user. The profile contains the user&apos;s password. This property is required when a user is created. The password in the profile must satisfy minimum requirements as specified by the passwordPolicies property. By default, a strong password is required. Supports $filter (eq, ne, not, in, and eq on null values).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.PasswordProfile? PasswordProfile {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PasswordProfile?>("passwordProfile"); }
+            set { BackingStore?.Set("passwordProfile", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.PasswordProfile PasswordProfile {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.PasswordProfile>("passwordProfile"); }
             set { BackingStore?.Set("passwordProfile", value); }
         }
+#endif
         /// <summary>A list for the user to enumerate their past projects. Returned only on $select.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? PastProjects {
+            get { return BackingStore?.Get<List<string>?>("pastProjects"); }
+            set { BackingStore?.Set("pastProjects", value); }
+        }
+#else
         public List<string> PastProjects {
             get { return BackingStore?.Get<List<string>>("pastProjects"); }
             set { BackingStore?.Set("pastProjects", value); }
         }
+#endif
         /// <summary>Navigation property to get list of access reviews pending approval by reviewer.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AccessReviewInstance>? PendingAccessReviewInstances {
+            get { return BackingStore?.Get<List<AccessReviewInstance>?>("pendingAccessReviewInstances"); }
+            set { BackingStore?.Set("pendingAccessReviewInstances", value); }
+        }
+#else
         public List<AccessReviewInstance> PendingAccessReviewInstances {
             get { return BackingStore?.Get<List<AccessReviewInstance>>("pendingAccessReviewInstances"); }
             set { BackingStore?.Set("pendingAccessReviewInstances", value); }
         }
+#endif
         /// <summary>Read-only. The most relevant people to the user. The collection is ordered by their relevance to the user, which is determined by the user&apos;s communication, collaboration and business relationships. A person is an aggregation of information from across mail, contacts and social networks.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Person>? People {
+            get { return BackingStore?.Get<List<Person>?>("people"); }
+            set { BackingStore?.Set("people", value); }
+        }
+#else
         public List<Person> People {
             get { return BackingStore?.Get<List<Person>>("people"); }
             set { BackingStore?.Set("people", value); }
         }
+#endif
         /// <summary>The user&apos;s profile photo. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ProfilePhoto? Photo {
+            get { return BackingStore?.Get<ProfilePhoto?>("photo"); }
+            set { BackingStore?.Set("photo", value); }
+        }
+#else
         public ProfilePhoto Photo {
             get { return BackingStore?.Get<ProfilePhoto>("photo"); }
             set { BackingStore?.Set("photo", value); }
         }
+#endif
         /// <summary>The photos property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ProfilePhoto>? Photos {
+            get { return BackingStore?.Get<List<ProfilePhoto>?>("photos"); }
+            set { BackingStore?.Set("photos", value); }
+        }
+#else
         public List<ProfilePhoto> Photos {
             get { return BackingStore?.Get<List<ProfilePhoto>>("photos"); }
             set { BackingStore?.Set("photos", value); }
         }
+#endif
         /// <summary>Selective Planner services available to the user. Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public PlannerUser? Planner {
+            get { return BackingStore?.Get<PlannerUser?>("planner"); }
+            set { BackingStore?.Set("planner", value); }
+        }
+#else
         public PlannerUser Planner {
             get { return BackingStore?.Get<PlannerUser>("planner"); }
             set { BackingStore?.Set("planner", value); }
         }
+#endif
         /// <summary>The postal code for the user&apos;s postal address. The postal code is specific to the user&apos;s country/region. In the United States of America, this attribute contains the ZIP code. Maximum length is 40 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PostalCode {
+            get { return BackingStore?.Get<string?>("postalCode"); }
+            set { BackingStore?.Set("postalCode", value); }
+        }
+#else
         public string PostalCode {
             get { return BackingStore?.Get<string>("postalCode"); }
             set { BackingStore?.Set("postalCode", value); }
         }
+#endif
         /// <summary>The preferred data location for the user. For more information, see OneDrive Online Multi-Geo.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PreferredDataLocation {
+            get { return BackingStore?.Get<string?>("preferredDataLocation"); }
+            set { BackingStore?.Set("preferredDataLocation", value); }
+        }
+#else
         public string PreferredDataLocation {
             get { return BackingStore?.Get<string>("preferredDataLocation"); }
             set { BackingStore?.Set("preferredDataLocation", value); }
         }
+#endif
         /// <summary>The preferred language for the user. Should follow ISO 639-1 Code; for example en-US. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PreferredLanguage {
+            get { return BackingStore?.Get<string?>("preferredLanguage"); }
+            set { BackingStore?.Set("preferredLanguage", value); }
+        }
+#else
         public string PreferredLanguage {
             get { return BackingStore?.Get<string>("preferredLanguage"); }
             set { BackingStore?.Set("preferredLanguage", value); }
         }
+#endif
         /// <summary>The preferred name for the user. Not Supported. This attribute returns an empty string.Returned only on $select.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PreferredName {
+            get { return BackingStore?.Get<string?>("preferredName"); }
+            set { BackingStore?.Set("preferredName", value); }
+        }
+#else
         public string PreferredName {
             get { return BackingStore?.Get<string>("preferredName"); }
             set { BackingStore?.Set("preferredName", value); }
         }
+#endif
         /// <summary>The presence property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.Presence? Presence {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Presence?>("presence"); }
+            set { BackingStore?.Set("presence", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.Presence Presence {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Presence>("presence"); }
             set { BackingStore?.Set("presence", value); }
         }
+#endif
         /// <summary>The print property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public UserPrint? Print {
+            get { return BackingStore?.Get<UserPrint?>("print"); }
+            set { BackingStore?.Set("print", value); }
+        }
+#else
         public UserPrint Print {
             get { return BackingStore?.Get<UserPrint>("print"); }
             set { BackingStore?.Set("print", value); }
         }
+#endif
         /// <summary>Represents properties that are descriptive of a user in a tenant.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.Profile? Profile {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Profile?>("profile"); }
+            set { BackingStore?.Set("profile", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.Profile Profile {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Profile>("profile"); }
             set { BackingStore?.Set("profile", value); }
         }
+#endif
         /// <summary>The plans that are provisioned for the user. Read-only. Not nullable. Supports $filter (eq, not, ge, le).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ProvisionedPlan>? ProvisionedPlans {
+            get { return BackingStore?.Get<List<ProvisionedPlan>?>("provisionedPlans"); }
+            set { BackingStore?.Set("provisionedPlans", value); }
+        }
+#else
         public List<ProvisionedPlan> ProvisionedPlans {
             get { return BackingStore?.Get<List<ProvisionedPlan>>("provisionedPlans"); }
             set { BackingStore?.Set("provisionedPlans", value); }
         }
+#endif
         /// <summary>For example: [&apos;SMTP: bob@contoso.com&apos;, &apos;smtp: bob@sales.contoso.com&apos;]. Changes to the mail property will also update this collection to include the value as an SMTP address. For more information, see mail and proxyAddresses properties. The proxy address prefixed with SMTP (capitalized) is the primary proxy address while those prefixed with smtp are the secondary proxy addresses. For Azure AD B2C accounts, this property has a limit of ten unique addresses. Read-only in Microsoft Graph; you can update this property only through the Microsoft 365 admin center. Not nullable. Supports $filter (eq, not, ge, le, startsWith, endsWith, /$count eq 0, /$count ne 0).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? ProxyAddresses {
+            get { return BackingStore?.Get<List<string>?>("proxyAddresses"); }
+            set { BackingStore?.Set("proxyAddresses", value); }
+        }
+#else
         public List<string> ProxyAddresses {
             get { return BackingStore?.Get<List<string>>("proxyAddresses"); }
             set { BackingStore?.Set("proxyAddresses", value); }
         }
+#endif
         /// <summary>Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications will get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application will need to acquire a new refresh token by making a request to the authorize endpoint. Read-only. Use invalidateAllRefreshTokens to reset.</summary>
         public DateTimeOffset? RefreshTokensValidFromDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("refreshTokensValidFromDateTime"); }
             set { BackingStore?.Set("refreshTokensValidFromDateTime", value); }
         }
         /// <summary>Devices that are registered for the user. Read-only. Nullable. Supports $expand.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DirectoryObject>? RegisteredDevices {
+            get { return BackingStore?.Get<List<DirectoryObject>?>("registeredDevices"); }
+            set { BackingStore?.Set("registeredDevices", value); }
+        }
+#else
         public List<DirectoryObject> RegisteredDevices {
             get { return BackingStore?.Get<List<DirectoryObject>>("registeredDevices"); }
             set { BackingStore?.Set("registeredDevices", value); }
         }
+#endif
         /// <summary>A list for the user to enumerate their responsibilities. Returned only on $select.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? Responsibilities {
+            get { return BackingStore?.Get<List<string>?>("responsibilities"); }
+            set { BackingStore?.Set("responsibilities", value); }
+        }
+#else
         public List<string> Responsibilities {
             get { return BackingStore?.Get<List<string>>("responsibilities"); }
             set { BackingStore?.Set("responsibilities", value); }
         }
+#endif
         /// <summary>A list for the user to enumerate the schools they have attended. Returned only on $select.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? Schools {
+            get { return BackingStore?.Get<List<string>?>("schools"); }
+            set { BackingStore?.Set("schools", value); }
+        }
+#else
         public List<string> Schools {
             get { return BackingStore?.Get<List<string>>("schools"); }
             set { BackingStore?.Set("schools", value); }
         }
+#endif
         /// <summary>The scoped-role administrative unit memberships for this user. Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ScopedRoleMembership>? ScopedRoleMemberOf {
+            get { return BackingStore?.Get<List<ScopedRoleMembership>?>("scopedRoleMemberOf"); }
+            set { BackingStore?.Set("scopedRoleMemberOf", value); }
+        }
+#else
         public List<ScopedRoleMembership> ScopedRoleMemberOf {
             get { return BackingStore?.Get<List<ScopedRoleMembership>>("scopedRoleMemberOf"); }
             set { BackingStore?.Set("scopedRoleMemberOf", value); }
         }
+#endif
         /// <summary>The security property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.Security.Security? Security {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.Security?>("security"); }
+            set { BackingStore?.Set("security", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.Security.Security Security {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.Security>("security"); }
             set { BackingStore?.Set("security", value); }
         }
+#endif
         /// <summary>Security identifier (SID) of the user, used in Windows scenarios. Read-only. Returned by default. Supports $select and $filter (eq, not, ge, le, startsWith).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SecurityIdentifier {
+            get { return BackingStore?.Get<string?>("securityIdentifier"); }
+            set { BackingStore?.Set("securityIdentifier", value); }
+        }
+#else
         public string SecurityIdentifier {
             get { return BackingStore?.Get<string>("securityIdentifier"); }
             set { BackingStore?.Set("securityIdentifier", value); }
         }
+#endif
         /// <summary>The settings property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public UserSettings? Settings {
+            get { return BackingStore?.Get<UserSettings?>("settings"); }
+            set { BackingStore?.Set("settings", value); }
+        }
+#else
         public UserSettings Settings {
             get { return BackingStore?.Get<UserSettings>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
+#endif
         /// <summary>Do not use in Microsoft Graph. Manage this property through the Microsoft 365 admin center instead. Represents whether the user should be included in the Outlook global address list. See Known issue.</summary>
         public bool? ShowInAddressList {
             get { return BackingStore?.Get<bool?>("showInAddressList"); }
             set { BackingStore?.Set("showInAddressList", value); }
         }
         /// <summary>Get the last signed-in date and request ID of the sign-in for a given user. Read-only.Returned only on $select. Supports $filter (eq, ne, not, ge, le) but, not with any other filterable properties. Note: Details for this property require an Azure AD Premium P1/P2 license and the AuditLog.Read.All permission.Note: There&apos;s a known issue with retrieving this property.This property is not returned for a user who has never signed in or last signed in before April 2020.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.SignInActivity? SignInActivity {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SignInActivity?>("signInActivity"); }
+            set { BackingStore?.Set("signInActivity", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.SignInActivity SignInActivity {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SignInActivity>("signInActivity"); }
             set { BackingStore?.Set("signInActivity", value); }
         }
+#endif
         /// <summary>Any refresh tokens or sessions tokens (session cookies) issued before this time are invalid, and applications will get an error when using an invalid refresh or sessions token to acquire a delegated access token (to access APIs such as Microsoft Graph).  If this happens, the application will need to acquire a new refresh token by making a request to the authorize endpoint. Read-only. Use revokeSignInSessions to reset.</summary>
         public DateTimeOffset? SignInSessionsValidFromDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("signInSessionsValidFromDateTime"); }
             set { BackingStore?.Set("signInSessionsValidFromDateTime", value); }
         }
         /// <summary>A list for the user to enumerate their skills. Returned only on $select.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? Skills {
+            get { return BackingStore?.Get<List<string>?>("skills"); }
+            set { BackingStore?.Set("skills", value); }
+        }
+#else
         public List<string> Skills {
             get { return BackingStore?.Get<List<string>>("skills"); }
             set { BackingStore?.Set("skills", value); }
         }
+#endif
         /// <summary>The state or province in the user&apos;s address. Maximum length is 128 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? State {
+            get { return BackingStore?.Get<string?>("state"); }
+            set { BackingStore?.Set("state", value); }
+        }
+#else
         public string State {
             get { return BackingStore?.Get<string>("state"); }
             set { BackingStore?.Set("state", value); }
         }
+#endif
         /// <summary>The street address of the user&apos;s place of business. Maximum length is 1024 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? StreetAddress {
+            get { return BackingStore?.Get<string?>("streetAddress"); }
+            set { BackingStore?.Set("streetAddress", value); }
+        }
+#else
         public string StreetAddress {
             get { return BackingStore?.Get<string>("streetAddress"); }
             set { BackingStore?.Set("streetAddress", value); }
         }
+#endif
         /// <summary>The user&apos;s surname (family name or last name). Maximum length is 64 characters. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Surname {
+            get { return BackingStore?.Get<string?>("surname"); }
+            set { BackingStore?.Set("surname", value); }
+        }
+#else
         public string Surname {
             get { return BackingStore?.Get<string>("surname"); }
             set { BackingStore?.Set("surname", value); }
         }
+#endif
         /// <summary>A container for Microsoft Teams features available for the user. Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public UserTeamwork? Teamwork {
+            get { return BackingStore?.Get<UserTeamwork?>("teamwork"); }
+            set { BackingStore?.Set("teamwork", value); }
+        }
+#else
         public UserTeamwork Teamwork {
             get { return BackingStore?.Get<UserTeamwork>("teamwork"); }
             set { BackingStore?.Set("teamwork", value); }
         }
+#endif
         /// <summary>Represents the To Do services available to a user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.Todo? Todo {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Todo?>("todo"); }
+            set { BackingStore?.Set("todo", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.Todo Todo {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Todo>("todo"); }
             set { BackingStore?.Set("todo", value); }
         }
+#endif
         /// <summary>The groups, including nested groups, and directory roles that a user is a member of. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DirectoryObject>? TransitiveMemberOf {
+            get { return BackingStore?.Get<List<DirectoryObject>?>("transitiveMemberOf"); }
+            set { BackingStore?.Set("transitiveMemberOf", value); }
+        }
+#else
         public List<DirectoryObject> TransitiveMemberOf {
             get { return BackingStore?.Get<List<DirectoryObject>>("transitiveMemberOf"); }
             set { BackingStore?.Set("transitiveMemberOf", value); }
         }
+#endif
         /// <summary>The transitive reports for a user. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DirectoryObject>? TransitiveReports {
+            get { return BackingStore?.Get<List<DirectoryObject>?>("transitiveReports"); }
+            set { BackingStore?.Set("transitiveReports", value); }
+        }
+#else
         public List<DirectoryObject> TransitiveReports {
             get { return BackingStore?.Get<List<DirectoryObject>>("transitiveReports"); }
             set { BackingStore?.Set("transitiveReports", value); }
         }
+#endif
         /// <summary>A two letter country code (ISO standard 3166). Required for users that will be assigned licenses due to legal requirement to check for availability of services in countries.  Examples include: US, JP, and GB. Not nullable. Supports $filter (eq, ne, not, ge, le, in, startsWith, and eq on null values).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UsageLocation {
+            get { return BackingStore?.Get<string?>("usageLocation"); }
+            set { BackingStore?.Set("usageLocation", value); }
+        }
+#else
         public string UsageLocation {
             get { return BackingStore?.Get<string>("usageLocation"); }
             set { BackingStore?.Set("usageLocation", value); }
         }
+#endif
         /// <summary>Represents the usage rights a user has been granted.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<UsageRight>? UsageRights {
+            get { return BackingStore?.Get<List<UsageRight>?>("usageRights"); }
+            set { BackingStore?.Set("usageRights", value); }
+        }
+#else
         public List<UsageRight> UsageRights {
             get { return BackingStore?.Get<List<UsageRight>>("usageRights"); }
             set { BackingStore?.Set("usageRights", value); }
         }
+#endif
         /// <summary>The user principal name (UPN) of the user. The UPN is an Internet-style login name for the user based on the Internet standard RFC 822. By convention, this should map to the user&apos;s email name. The general format is alias@domain, where domain must be present in the tenant&apos;s collection of verified domains. This property is required when a user is created. The verified domains for the tenant can be accessed from the verifiedDomains property of organization.NOTE: This property cannot contain accent characters. Only the following characters are allowed A - Z, a - z, 0 - 9, &apos; . - _ ! # ^ ~. For the complete list of allowed characters, see username policies. Supports $filter (eq, ne, not, ge, le, in, startsWith, endsWith) and $orderBy.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UserPrincipalName {
+            get { return BackingStore?.Get<string?>("userPrincipalName"); }
+            set { BackingStore?.Set("userPrincipalName", value); }
+        }
+#else
         public string UserPrincipalName {
             get { return BackingStore?.Get<string>("userPrincipalName"); }
             set { BackingStore?.Set("userPrincipalName", value); }
         }
+#endif
         /// <summary>A String value that can be used to classify user types in your directory, such as Member and Guest. Supports $filter (eq, ne, not, in, and eq on null values). NOTE: For more information about the permissions for member and guest users, see What are the default user permissions in Azure Active Directory?</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UserType {
+            get { return BackingStore?.Get<string?>("userType"); }
+            set { BackingStore?.Set("userType", value); }
+        }
+#else
         public string UserType {
             get { return BackingStore?.Get<string>("userType"); }
             set { BackingStore?.Set("userType", value); }
         }
+#endif
         /// <summary>Zero or more WIP device registrations that belong to the user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<WindowsInformationProtectionDeviceRegistration>? WindowsInformationProtectionDeviceRegistrations {
+            get { return BackingStore?.Get<List<WindowsInformationProtectionDeviceRegistration>?>("windowsInformationProtectionDeviceRegistrations"); }
+            set { BackingStore?.Set("windowsInformationProtectionDeviceRegistrations", value); }
+        }
+#else
         public List<WindowsInformationProtectionDeviceRegistration> WindowsInformationProtectionDeviceRegistrations {
             get { return BackingStore?.Get<List<WindowsInformationProtectionDeviceRegistration>>("windowsInformationProtectionDeviceRegistrations"); }
             set { BackingStore?.Set("windowsInformationProtectionDeviceRegistrations", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new User and sets the default values.
         /// </summary>

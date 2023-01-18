@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class UserAnalytics : Entity, IParsable {
         /// <summary>The collection of work activities that a user spent time on during and outside of working hours. Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.ActivityStatistics>? ActivityStatistics {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ActivityStatistics>?>("activityStatistics"); }
+            set { BackingStore?.Set("activityStatistics", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.ActivityStatistics> ActivityStatistics {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ActivityStatistics>>("activityStatistics"); }
             set { BackingStore?.Set("activityStatistics", value); }
         }
+#endif
         /// <summary>The current settings for a user to use the analytics API.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.Settings? Settings {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Settings?>("settings"); }
+            set { BackingStore?.Set("settings", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.Settings Settings {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Settings>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

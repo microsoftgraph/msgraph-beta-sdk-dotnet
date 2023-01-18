@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class Schema : Entity, IParsable {
         /// <summary>The baseType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? BaseType {
+            get { return BackingStore?.Get<string?>("baseType"); }
+            set { BackingStore?.Set("baseType", value); }
+        }
+#else
         public string BaseType {
             get { return BackingStore?.Get<string>("baseType"); }
             set { BackingStore?.Set("baseType", value); }
         }
+#endif
         /// <summary>The properties property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Property>? Properties {
+            get { return BackingStore?.Get<List<Property>?>("properties"); }
+            set { BackingStore?.Set("properties", value); }
+        }
+#else
         public List<Property> Properties {
             get { return BackingStore?.Get<List<Property>>("properties"); }
             set { BackingStore?.Set("properties", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

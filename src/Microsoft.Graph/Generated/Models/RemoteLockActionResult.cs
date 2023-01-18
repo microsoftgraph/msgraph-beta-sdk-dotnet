@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class RemoteLockActionResult : DeviceActionResult, IParsable {
         /// <summary>Pin to unlock the client</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UnlockPin {
+            get { return BackingStore?.Get<string?>("unlockPin"); }
+            set { BackingStore?.Set("unlockPin", value); }
+        }
+#else
         public string UnlockPin {
             get { return BackingStore?.Get<string>("unlockPin"); }
             set { BackingStore?.Set("unlockPin", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

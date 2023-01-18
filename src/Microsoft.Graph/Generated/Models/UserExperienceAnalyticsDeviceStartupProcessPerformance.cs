@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// The user experience analytics device startup process performance.
+    /// </summary>
     public class UserExperienceAnalyticsDeviceStartupProcessPerformance : Entity, IParsable {
         /// <summary>User experience analytics device startup process summarized count.</summary>
         public long? DeviceCount {
@@ -21,20 +24,41 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("medianImpactInMs2", value); }
         }
         /// <summary>User experience analytics device startup process name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ProcessName {
+            get { return BackingStore?.Get<string?>("processName"); }
+            set { BackingStore?.Set("processName", value); }
+        }
+#else
         public string ProcessName {
             get { return BackingStore?.Get<string>("processName"); }
             set { BackingStore?.Set("processName", value); }
         }
+#endif
         /// <summary>The user experience analytics device startup process product name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ProductName {
+            get { return BackingStore?.Get<string?>("productName"); }
+            set { BackingStore?.Set("productName", value); }
+        }
+#else
         public string ProductName {
             get { return BackingStore?.Get<string>("productName"); }
             set { BackingStore?.Set("productName", value); }
         }
+#endif
         /// <summary>The User experience analytics device startup process publisher.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Publisher {
+            get { return BackingStore?.Get<string?>("publisher"); }
+            set { BackingStore?.Set("publisher", value); }
+        }
+#else
         public string Publisher {
             get { return BackingStore?.Get<string>("publisher"); }
             set { BackingStore?.Set("publisher", value); }
         }
+#endif
         /// <summary>User experience analytics device startup process total impact in milliseconds.</summary>
         public int? TotalImpactInMs {
             get { return BackingStore?.Get<int?>("totalImpactInMs"); }

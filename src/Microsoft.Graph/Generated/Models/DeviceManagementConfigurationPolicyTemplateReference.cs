@@ -17,30 +17,58 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Template Display Name of the referenced template. This property is read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TemplateDisplayName {
+            get { return BackingStore?.Get<string?>("templateDisplayName"); }
+            set { BackingStore?.Set("templateDisplayName", value); }
+        }
+#else
         public string TemplateDisplayName {
             get { return BackingStore?.Get<string>("templateDisplayName"); }
             set { BackingStore?.Set("templateDisplayName", value); }
         }
+#endif
         /// <summary>Template Display Version of the referenced Template. This property is read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TemplateDisplayVersion {
+            get { return BackingStore?.Get<string?>("templateDisplayVersion"); }
+            set { BackingStore?.Set("templateDisplayVersion", value); }
+        }
+#else
         public string TemplateDisplayVersion {
             get { return BackingStore?.Get<string>("templateDisplayVersion"); }
             set { BackingStore?.Set("templateDisplayVersion", value); }
         }
+#endif
         /// <summary>Describes the TemplateFamily for the Template entity</summary>
         public DeviceManagementConfigurationTemplateFamily? TemplateFamily {
             get { return BackingStore?.Get<DeviceManagementConfigurationTemplateFamily?>("templateFamily"); }
             set { BackingStore?.Set("templateFamily", value); }
         }
         /// <summary>Template id</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TemplateId {
+            get { return BackingStore?.Get<string?>("templateId"); }
+            set { BackingStore?.Set("templateId", value); }
+        }
+#else
         public string TemplateId {
             get { return BackingStore?.Get<string>("templateId"); }
             set { BackingStore?.Set("templateId", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new deviceManagementConfigurationPolicyTemplateReference and sets the default values.
         /// </summary>

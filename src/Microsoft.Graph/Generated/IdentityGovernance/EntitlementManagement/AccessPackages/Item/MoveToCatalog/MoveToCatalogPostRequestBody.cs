@@ -14,10 +14,17 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.EntitlementManagement.AccessPa
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The catalogId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CatalogId {
+            get { return BackingStore?.Get<string?>("catalogId"); }
+            set { BackingStore?.Set("catalogId", value); }
+        }
+#else
         public string CatalogId {
             get { return BackingStore?.Get<string>("catalogId"); }
             set { BackingStore?.Set("catalogId", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new moveToCatalogPostRequestBody and sets the default values.
         /// </summary>

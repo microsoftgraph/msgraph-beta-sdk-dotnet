@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class Win32LobAppPowerShellScriptRule : Win32LobAppRule, IParsable {
         /// <summary>The script output comparison value. Do not specify a value if the rule is used for detection.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ComparisonValue {
+            get { return BackingStore?.Get<string?>("comparisonValue"); }
+            set { BackingStore?.Set("comparisonValue", value); }
+        }
+#else
         public string ComparisonValue {
             get { return BackingStore?.Get<string>("comparisonValue"); }
             set { BackingStore?.Set("comparisonValue", value); }
         }
+#endif
         /// <summary>The display name for the rule. Do not specify this value if the rule is used for detection.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>A value indicating whether a signature check is enforced.</summary>
         public bool? EnforceSignatureCheck {
             get { return BackingStore?.Get<bool?>("enforceSignatureCheck"); }
@@ -41,10 +55,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("runAsAccount", value); }
         }
         /// <summary>The base64-encoded script content.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ScriptContent {
+            get { return BackingStore?.Get<string?>("scriptContent"); }
+            set { BackingStore?.Set("scriptContent", value); }
+        }
+#else
         public string ScriptContent {
             get { return BackingStore?.Get<string>("scriptContent"); }
             set { BackingStore?.Set("scriptContent", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new Win32LobAppPowerShellScriptRule and sets the default values.
         /// </summary>

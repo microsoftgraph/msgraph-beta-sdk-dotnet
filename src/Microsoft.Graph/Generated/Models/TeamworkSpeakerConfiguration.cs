@@ -14,15 +14,29 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The defaultCommunicationSpeaker property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public TeamworkPeripheral? DefaultCommunicationSpeaker {
+            get { return BackingStore?.Get<TeamworkPeripheral?>("defaultCommunicationSpeaker"); }
+            set { BackingStore?.Set("defaultCommunicationSpeaker", value); }
+        }
+#else
         public TeamworkPeripheral DefaultCommunicationSpeaker {
             get { return BackingStore?.Get<TeamworkPeripheral>("defaultCommunicationSpeaker"); }
             set { BackingStore?.Set("defaultCommunicationSpeaker", value); }
         }
+#endif
         /// <summary>The defaultSpeaker property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public TeamworkPeripheral? DefaultSpeaker {
+            get { return BackingStore?.Get<TeamworkPeripheral?>("defaultSpeaker"); }
+            set { BackingStore?.Set("defaultSpeaker", value); }
+        }
+#else
         public TeamworkPeripheral DefaultSpeaker {
             get { return BackingStore?.Get<TeamworkPeripheral>("defaultSpeaker"); }
             set { BackingStore?.Set("defaultSpeaker", value); }
         }
+#endif
         /// <summary>True if the communication speaker is optional. Used to compute the health state if the communication speaker is not optional.</summary>
         public bool? IsCommunicationSpeakerOptional {
             get { return BackingStore?.Get<bool?>("isCommunicationSpeakerOptional"); }
@@ -34,15 +48,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("isSpeakerOptional", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The speakers property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<TeamworkPeripheral>? Speakers {
+            get { return BackingStore?.Get<List<TeamworkPeripheral>?>("speakers"); }
+            set { BackingStore?.Set("speakers", value); }
+        }
+#else
         public List<TeamworkPeripheral> Speakers {
             get { return BackingStore?.Get<List<TeamworkPeripheral>>("speakers"); }
             set { BackingStore?.Set("speakers", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new teamworkSpeakerConfiguration and sets the default values.
         /// </summary>

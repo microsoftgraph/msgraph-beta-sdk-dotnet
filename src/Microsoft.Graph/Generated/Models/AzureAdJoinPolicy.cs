@@ -12,15 +12,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The identifiers of the groups that are in the scope of the policy. Required when the appliesTo property is set to selected.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? AllowedGroups {
+            get { return BackingStore?.Get<List<string>?>("allowedGroups"); }
+            set { BackingStore?.Set("allowedGroups", value); }
+        }
+#else
         public List<string> AllowedGroups {
             get { return BackingStore?.Get<List<string>>("allowedGroups"); }
             set { BackingStore?.Set("allowedGroups", value); }
         }
+#endif
         /// <summary>The identifiers of users that are in the scope of the policy. Required when the appliesTo property is set to selected.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? AllowedUsers {
+            get { return BackingStore?.Get<List<string>?>("allowedUsers"); }
+            set { BackingStore?.Set("allowedUsers", value); }
+        }
+#else
         public List<string> AllowedUsers {
             get { return BackingStore?.Get<List<string>>("allowedUsers"); }
             set { BackingStore?.Set("allowedUsers", value); }
         }
+#endif
         /// <summary>Specifies whether to block or allow fine-grained control of the policy scope. The possible values are: 0 (meaning none), 1 (meaning all), 2 (meaning selected), 3 (meaning unknownFutureValue). The default value is 1. When set to 2, at least one user or group identifier must be specified in either allowedUsers or allowedGroups.  Setting this property to 0 or 1 removes all identifiers in both allowedUsers and allowedGroups.</summary>
         public PolicyScope? AppliesTo {
             get { return BackingStore?.Get<PolicyScope?>("appliesTo"); }
@@ -34,10 +48,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("isAdminConfigurable", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new azureAdJoinPolicy and sets the default values.
         /// </summary>

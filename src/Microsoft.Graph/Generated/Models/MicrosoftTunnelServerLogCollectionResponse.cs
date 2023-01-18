@@ -24,10 +24,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("requestDateTime", value); }
         }
         /// <summary>ID of the server the log collection is requested upon</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ServerId {
+            get { return BackingStore?.Get<string?>("serverId"); }
+            set { BackingStore?.Set("serverId", value); }
+        }
+#else
         public string ServerId {
             get { return BackingStore?.Get<string>("serverId"); }
             set { BackingStore?.Set("serverId", value); }
         }
+#endif
         /// <summary>The size of the logs in bytes</summary>
         public long? SizeInBytes {
             get { return BackingStore?.Get<long?>("sizeInBytes"); }

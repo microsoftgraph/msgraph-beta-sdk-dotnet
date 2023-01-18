@@ -6,60 +6,123 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class AccessReviewInstance : Entity, IParsable {
         /// <summary>Returns the collection of reviewers who were contacted to complete this review. While the reviewers and fallbackReviewers properties of the accessReviewScheduleDefinition might specify group owners or managers as reviewers, contactedReviewers returns their individual identities. Supports $select. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AccessReviewReviewer>? ContactedReviewers {
+            get { return BackingStore?.Get<List<AccessReviewReviewer>?>("contactedReviewers"); }
+            set { BackingStore?.Set("contactedReviewers", value); }
+        }
+#else
         public List<AccessReviewReviewer> ContactedReviewers {
             get { return BackingStore?.Get<List<AccessReviewReviewer>>("contactedReviewers"); }
             set { BackingStore?.Set("contactedReviewers", value); }
         }
+#endif
         /// <summary>Each user reviewed in an accessReviewInstance has a decision item representing if they were approved, denied, or not yet reviewed.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AccessReviewInstanceDecisionItem>? Decisions {
+            get { return BackingStore?.Get<List<AccessReviewInstanceDecisionItem>?>("decisions"); }
+            set { BackingStore?.Set("decisions", value); }
+        }
+#else
         public List<AccessReviewInstanceDecisionItem> Decisions {
             get { return BackingStore?.Get<List<AccessReviewInstanceDecisionItem>>("decisions"); }
             set { BackingStore?.Set("decisions", value); }
         }
+#endif
         /// <summary>There is exactly one accessReviewScheduleDefinition associated with each instance. It is the parent schedule for the instance, where instances are created for each recurrence of a review definition and each group selected to review by the definition.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public AccessReviewScheduleDefinition? Definition {
+            get { return BackingStore?.Get<AccessReviewScheduleDefinition?>("definition"); }
+            set { BackingStore?.Set("definition", value); }
+        }
+#else
         public AccessReviewScheduleDefinition Definition {
             get { return BackingStore?.Get<AccessReviewScheduleDefinition>("definition"); }
             set { BackingStore?.Set("definition", value); }
         }
+#endif
         /// <summary>DateTime when review instance is scheduled to end.The DatetimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $select. Read-only.</summary>
         public DateTimeOffset? EndDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("endDateTime"); }
             set { BackingStore?.Set("endDateTime", value); }
         }
         /// <summary>Collection of errors in an access review instance lifecycle. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AccessReviewError>? Errors {
+            get { return BackingStore?.Get<List<AccessReviewError>?>("errors"); }
+            set { BackingStore?.Set("errors", value); }
+        }
+#else
         public List<AccessReviewError> Errors {
             get { return BackingStore?.Get<List<AccessReviewError>>("errors"); }
             set { BackingStore?.Set("errors", value); }
         }
+#endif
         /// <summary>This collection of reviewer scopes is used to define the list of fallback reviewers. These fallback reviewers will be notified to take action if no users are found from the list of reviewers specified. This could occur when either the group owner is specified as the reviewer but the group owner does not exist, or manager is specified as reviewer but a user&apos;s manager does not exist. Supports $select.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AccessReviewReviewerScope>? FallbackReviewers {
+            get { return BackingStore?.Get<List<AccessReviewReviewerScope>?>("fallbackReviewers"); }
+            set { BackingStore?.Set("fallbackReviewers", value); }
+        }
+#else
         public List<AccessReviewReviewerScope> FallbackReviewers {
             get { return BackingStore?.Get<List<AccessReviewReviewerScope>>("fallbackReviewers"); }
             set { BackingStore?.Set("fallbackReviewers", value); }
         }
+#endif
         /// <summary>This collection of access review scopes is used to define who the reviewers are. Supports $select. For examples of options for assigning reviewers, see Assign reviewers to your access review definition using the Microsoft Graph API.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AccessReviewReviewerScope>? Reviewers {
+            get { return BackingStore?.Get<List<AccessReviewReviewerScope>?>("reviewers"); }
+            set { BackingStore?.Set("reviewers", value); }
+        }
+#else
         public List<AccessReviewReviewerScope> Reviewers {
             get { return BackingStore?.Get<List<AccessReviewReviewerScope>>("reviewers"); }
             set { BackingStore?.Set("reviewers", value); }
         }
+#endif
         /// <summary>Created based on scope and instanceEnumerationScope at the accessReviewScheduleDefinition level. Defines the scope of users reviewed in a group. Supports $select and $filter (contains only). Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public AccessReviewScope? Scope {
+            get { return BackingStore?.Get<AccessReviewScope?>("scope"); }
+            set { BackingStore?.Set("scope", value); }
+        }
+#else
         public AccessReviewScope Scope {
             get { return BackingStore?.Get<AccessReviewScope>("scope"); }
             set { BackingStore?.Set("scope", value); }
         }
+#endif
         /// <summary>If the instance has multiple stages, this returns the collection of stages. A new stage will only be created when the previous stage ends. The existence, number, and settings of stages on a review instance are created based on the accessReviewStageSettings on the parent accessReviewScheduleDefinition.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AccessReviewStage>? Stages {
+            get { return BackingStore?.Get<List<AccessReviewStage>?>("stages"); }
+            set { BackingStore?.Set("stages", value); }
+        }
+#else
         public List<AccessReviewStage> Stages {
             get { return BackingStore?.Get<List<AccessReviewStage>>("stages"); }
             set { BackingStore?.Set("stages", value); }
         }
+#endif
         /// <summary>DateTime when review instance is scheduled to start. May be in the future. The DateTimeOffset type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Supports $select. Read-only.</summary>
         public DateTimeOffset? StartDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }
             set { BackingStore?.Set("startDateTime", value); }
         }
         /// <summary>Specifies the status of an accessReview. Possible values: Initializing, NotStarted, Starting, InProgress, Completing, Completed, AutoReviewing, and AutoReviewed. Supports $select, $orderby, and $filter (eq only). Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Status {
+            get { return BackingStore?.Get<string?>("status"); }
+            set { BackingStore?.Set("status", value); }
+        }
+#else
         public string Status {
             get { return BackingStore?.Get<string>("status"); }
             set { BackingStore?.Set("status", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

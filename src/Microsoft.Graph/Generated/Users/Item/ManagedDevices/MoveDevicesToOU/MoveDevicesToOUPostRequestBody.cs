@@ -14,15 +14,29 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.MoveDevicesToOU {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The deviceIds property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Guid?>? DeviceIds {
+            get { return BackingStore?.Get<List<Guid?>?>("deviceIds"); }
+            set { BackingStore?.Set("deviceIds", value); }
+        }
+#else
         public List<Guid?> DeviceIds {
             get { return BackingStore?.Get<List<Guid?>>("deviceIds"); }
             set { BackingStore?.Set("deviceIds", value); }
         }
+#endif
         /// <summary>The organizationalUnitPath property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OrganizationalUnitPath {
+            get { return BackingStore?.Get<string?>("organizationalUnitPath"); }
+            set { BackingStore?.Set("organizationalUnitPath", value); }
+        }
+#else
         public string OrganizationalUnitPath {
             get { return BackingStore?.Get<string>("organizationalUnitPath"); }
             set { BackingStore?.Set("organizationalUnitPath", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new moveDevicesToOUPostRequestBody and sets the default values.
         /// </summary>

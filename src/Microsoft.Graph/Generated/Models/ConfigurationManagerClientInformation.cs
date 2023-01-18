@@ -17,25 +17,46 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Configuration Manager Client Id from SCCM</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ClientIdentifier {
+            get { return BackingStore?.Get<string?>("clientIdentifier"); }
+            set { BackingStore?.Set("clientIdentifier", value); }
+        }
+#else
         public string ClientIdentifier {
             get { return BackingStore?.Get<string>("clientIdentifier"); }
             set { BackingStore?.Set("clientIdentifier", value); }
         }
+#endif
         /// <summary>Configuration Manager Client version from SCCM</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ClientVersion {
+            get { return BackingStore?.Get<string?>("clientVersion"); }
+            set { BackingStore?.Set("clientVersion", value); }
+        }
+#else
         public string ClientVersion {
             get { return BackingStore?.Get<string>("clientVersion"); }
             set { BackingStore?.Set("clientVersion", value); }
         }
+#endif
         /// <summary>Configuration Manager Client blocked status from SCCM</summary>
         public bool? IsBlocked {
             get { return BackingStore?.Get<bool?>("isBlocked"); }
             set { BackingStore?.Set("isBlocked", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new configurationManagerClientInformation and sets the default values.
         /// </summary>

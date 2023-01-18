@@ -6,20 +6,34 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementConfigurationStringSettingValueDefinition : DeviceManagementConfigurationSettingValueDefinition, IParsable {
         /// <summary>Supported file types for this setting.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? FileTypes {
+            get { return BackingStore?.Get<List<string>?>("fileTypes"); }
+            set { BackingStore?.Set("fileTypes", value); }
+        }
+#else
         public List<string> FileTypes {
             get { return BackingStore?.Get<List<string>>("fileTypes"); }
             set { BackingStore?.Set("fileTypes", value); }
         }
+#endif
         /// <summary>The format property</summary>
         public DeviceManagementConfigurationStringFormat? Format {
             get { return BackingStore?.Get<DeviceManagementConfigurationStringFormat?>("format"); }
             set { BackingStore?.Set("format", value); }
         }
         /// <summary>Regular expression or any xml or json schema that the input string should match</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? InputValidationSchema {
+            get { return BackingStore?.Get<string?>("inputValidationSchema"); }
+            set { BackingStore?.Set("inputValidationSchema", value); }
+        }
+#else
         public string InputValidationSchema {
             get { return BackingStore?.Get<string>("inputValidationSchema"); }
             set { BackingStore?.Set("inputValidationSchema", value); }
         }
+#endif
         /// <summary>Specifies whether the setting needs to be treated as a secret. Settings marked as yes will be encrypted in transit and at rest and will be displayed as asterisks when represented in the UX.</summary>
         public bool? IsSecret {
             get { return BackingStore?.Get<bool?>("isSecret"); }

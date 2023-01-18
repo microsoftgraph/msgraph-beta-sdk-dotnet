@@ -6,60 +6,123 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class BaseItem : Entity, IParsable {
         /// <summary>Identity of the user, device, or application which created the item. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public IdentitySet? CreatedBy {
+            get { return BackingStore?.Get<IdentitySet?>("createdBy"); }
+            set { BackingStore?.Set("createdBy", value); }
+        }
+#else
         public IdentitySet CreatedBy {
             get { return BackingStore?.Get<IdentitySet>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
+#endif
         /// <summary>The createdByUser property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public User? CreatedByUser {
+            get { return BackingStore?.Get<User?>("createdByUser"); }
+            set { BackingStore?.Set("createdByUser", value); }
+        }
+#else
         public User CreatedByUser {
             get { return BackingStore?.Get<User>("createdByUser"); }
             set { BackingStore?.Set("createdByUser", value); }
         }
+#endif
         /// <summary>Date and time of item creation. Read-only.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The description property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>ETag for the item. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ETag {
+            get { return BackingStore?.Get<string?>("eTag"); }
+            set { BackingStore?.Set("eTag", value); }
+        }
+#else
         public string ETag {
             get { return BackingStore?.Get<string>("eTag"); }
             set { BackingStore?.Set("eTag", value); }
         }
+#endif
         /// <summary>Identity of the user, device, and application which last modified the item. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public IdentitySet? LastModifiedBy {
+            get { return BackingStore?.Get<IdentitySet?>("lastModifiedBy"); }
+            set { BackingStore?.Set("lastModifiedBy", value); }
+        }
+#else
         public IdentitySet LastModifiedBy {
             get { return BackingStore?.Get<IdentitySet>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
+#endif
         /// <summary>The lastModifiedByUser property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public User? LastModifiedByUser {
+            get { return BackingStore?.Get<User?>("lastModifiedByUser"); }
+            set { BackingStore?.Set("lastModifiedByUser", value); }
+        }
+#else
         public User LastModifiedByUser {
             get { return BackingStore?.Get<User>("lastModifiedByUser"); }
             set { BackingStore?.Set("lastModifiedByUser", value); }
         }
+#endif
         /// <summary>Date and time the item was last modified. Read-only.</summary>
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The name of the item. Read-write.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Name {
+            get { return BackingStore?.Get<string?>("name"); }
+            set { BackingStore?.Set("name", value); }
+        }
+#else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#endif
         /// <summary>Parent information, if the item has a parent. Read-write.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ItemReference? ParentReference {
+            get { return BackingStore?.Get<ItemReference?>("parentReference"); }
+            set { BackingStore?.Set("parentReference", value); }
+        }
+#else
         public ItemReference ParentReference {
             get { return BackingStore?.Get<ItemReference>("parentReference"); }
             set { BackingStore?.Set("parentReference", value); }
         }
+#endif
         /// <summary>URL that displays the resource in the browser. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? WebUrl {
+            get { return BackingStore?.Get<string?>("webUrl"); }
+            set { BackingStore?.Set("webUrl", value); }
+        }
+#else
         public string WebUrl {
             get { return BackingStore?.Get<string>("webUrl"); }
             set { BackingStore?.Set("webUrl", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

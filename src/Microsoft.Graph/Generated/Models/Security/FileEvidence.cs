@@ -11,15 +11,29 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("detectionStatus", value); }
         }
         /// <summary>The file details.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.Security.FileDetails? FileDetails {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.FileDetails?>("fileDetails"); }
+            set { BackingStore?.Set("fileDetails", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.Security.FileDetails FileDetails {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.FileDetails>("fileDetails"); }
             set { BackingStore?.Set("fileDetails", value); }
         }
+#endif
         /// <summary>A unique identifier assigned to a device by Microsoft Defender for Endpoint.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MdeDeviceId {
+            get { return BackingStore?.Get<string?>("mdeDeviceId"); }
+            set { BackingStore?.Set("mdeDeviceId", value); }
+        }
+#else
         public string MdeDeviceId {
             get { return BackingStore?.Get<string>("mdeDeviceId"); }
             set { BackingStore?.Set("mdeDeviceId", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

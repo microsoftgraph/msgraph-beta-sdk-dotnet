@@ -19,20 +19,41 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("isPasscodeRequired", value); }
         }
         /// <summary>The meeting ID to be used to join a meeting. Optional. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? JoinMeetingId {
+            get { return BackingStore?.Get<string?>("joinMeetingId"); }
+            set { BackingStore?.Set("joinMeetingId", value); }
+        }
+#else
         public string JoinMeetingId {
             get { return BackingStore?.Get<string>("joinMeetingId"); }
             set { BackingStore?.Set("joinMeetingId", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The passcode to join a meeting.  Optional. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Passcode {
+            get { return BackingStore?.Get<string?>("passcode"); }
+            set { BackingStore?.Set("passcode", value); }
+        }
+#else
         public string Passcode {
             get { return BackingStore?.Get<string>("passcode"); }
             set { BackingStore?.Set("passcode", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new joinMeetingIdSettings and sets the default values.
         /// </summary>

@@ -12,42 +12,91 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The software update available for the admin agent.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public TeamworkSoftwareUpdateStatus? AdminAgentSoftwareUpdateStatus {
+            get { return BackingStore?.Get<TeamworkSoftwareUpdateStatus?>("adminAgentSoftwareUpdateStatus"); }
+            set { BackingStore?.Set("adminAgentSoftwareUpdateStatus", value); }
+        }
+#else
         public TeamworkSoftwareUpdateStatus AdminAgentSoftwareUpdateStatus {
             get { return BackingStore?.Get<TeamworkSoftwareUpdateStatus>("adminAgentSoftwareUpdateStatus"); }
             set { BackingStore?.Set("adminAgentSoftwareUpdateStatus", value); }
         }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The software update available for the company portal.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public TeamworkSoftwareUpdateStatus? CompanyPortalSoftwareUpdateStatus {
+            get { return BackingStore?.Get<TeamworkSoftwareUpdateStatus?>("companyPortalSoftwareUpdateStatus"); }
+            set { BackingStore?.Set("companyPortalSoftwareUpdateStatus", value); }
+        }
+#else
         public TeamworkSoftwareUpdateStatus CompanyPortalSoftwareUpdateStatus {
             get { return BackingStore?.Get<TeamworkSoftwareUpdateStatus>("companyPortalSoftwareUpdateStatus"); }
             set { BackingStore?.Set("companyPortalSoftwareUpdateStatus", value); }
         }
+#endif
         /// <summary>The software update available for the firmware.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public TeamworkSoftwareUpdateStatus? FirmwareSoftwareUpdateStatus {
+            get { return BackingStore?.Get<TeamworkSoftwareUpdateStatus?>("firmwareSoftwareUpdateStatus"); }
+            set { BackingStore?.Set("firmwareSoftwareUpdateStatus", value); }
+        }
+#else
         public TeamworkSoftwareUpdateStatus FirmwareSoftwareUpdateStatus {
             get { return BackingStore?.Get<TeamworkSoftwareUpdateStatus>("firmwareSoftwareUpdateStatus"); }
             set { BackingStore?.Set("firmwareSoftwareUpdateStatus", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The software update available for the operating system.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public TeamworkSoftwareUpdateStatus? OperatingSystemSoftwareUpdateStatus {
+            get { return BackingStore?.Get<TeamworkSoftwareUpdateStatus?>("operatingSystemSoftwareUpdateStatus"); }
+            set { BackingStore?.Set("operatingSystemSoftwareUpdateStatus", value); }
+        }
+#else
         public TeamworkSoftwareUpdateStatus OperatingSystemSoftwareUpdateStatus {
             get { return BackingStore?.Get<TeamworkSoftwareUpdateStatus>("operatingSystemSoftwareUpdateStatus"); }
             set { BackingStore?.Set("operatingSystemSoftwareUpdateStatus", value); }
         }
+#endif
         /// <summary>The software update available for the partner agent.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public TeamworkSoftwareUpdateStatus? PartnerAgentSoftwareUpdateStatus {
+            get { return BackingStore?.Get<TeamworkSoftwareUpdateStatus?>("partnerAgentSoftwareUpdateStatus"); }
+            set { BackingStore?.Set("partnerAgentSoftwareUpdateStatus", value); }
+        }
+#else
         public TeamworkSoftwareUpdateStatus PartnerAgentSoftwareUpdateStatus {
             get { return BackingStore?.Get<TeamworkSoftwareUpdateStatus>("partnerAgentSoftwareUpdateStatus"); }
             set { BackingStore?.Set("partnerAgentSoftwareUpdateStatus", value); }
         }
+#endif
         /// <summary>The software update available for the Teams client.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public TeamworkSoftwareUpdateStatus? TeamsClientSoftwareUpdateStatus {
+            get { return BackingStore?.Get<TeamworkSoftwareUpdateStatus?>("teamsClientSoftwareUpdateStatus"); }
+            set { BackingStore?.Set("teamsClientSoftwareUpdateStatus", value); }
+        }
+#else
         public TeamworkSoftwareUpdateStatus TeamsClientSoftwareUpdateStatus {
             get { return BackingStore?.Get<TeamworkSoftwareUpdateStatus>("teamsClientSoftwareUpdateStatus"); }
             set { BackingStore?.Set("teamsClientSoftwareUpdateStatus", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new teamworkSoftwareUpdateHealth and sets the default values.
         /// </summary>

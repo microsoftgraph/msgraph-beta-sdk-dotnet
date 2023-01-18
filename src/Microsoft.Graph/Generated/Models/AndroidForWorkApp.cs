@@ -6,20 +6,41 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class AndroidForWorkApp : MobileApp, IParsable {
         /// <summary>The Identity Name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AppIdentifier {
+            get { return BackingStore?.Get<string?>("appIdentifier"); }
+            set { BackingStore?.Set("appIdentifier", value); }
+        }
+#else
         public string AppIdentifier {
             get { return BackingStore?.Get<string>("appIdentifier"); }
             set { BackingStore?.Set("appIdentifier", value); }
         }
+#endif
         /// <summary>The Play for Work Store app URL.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AppStoreUrl {
+            get { return BackingStore?.Get<string?>("appStoreUrl"); }
+            set { BackingStore?.Set("appStoreUrl", value); }
+        }
+#else
         public string AppStoreUrl {
             get { return BackingStore?.Get<string>("appStoreUrl"); }
             set { BackingStore?.Set("appStoreUrl", value); }
         }
+#endif
         /// <summary>The package identifier.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PackageId {
+            get { return BackingStore?.Get<string?>("packageId"); }
+            set { BackingStore?.Set("packageId", value); }
+        }
+#else
         public string PackageId {
             get { return BackingStore?.Get<string>("packageId"); }
             set { BackingStore?.Set("packageId", value); }
         }
+#endif
         /// <summary>The total number of VPP licenses.</summary>
         public int? TotalLicenseCount {
             get { return BackingStore?.Get<int?>("totalLicenseCount"); }

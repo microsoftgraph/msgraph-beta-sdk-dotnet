@@ -6,20 +6,41 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class TeamworkPeripheral : Entity, IParsable {
         /// <summary>Display name for the peripheral.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The product ID of the device. Each product from a vendor has its own ID.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ProductId {
+            get { return BackingStore?.Get<string?>("productId"); }
+            set { BackingStore?.Set("productId", value); }
+        }
+#else
         public string ProductId {
             get { return BackingStore?.Get<string>("productId"); }
             set { BackingStore?.Set("productId", value); }
         }
+#endif
         /// <summary>The unique identifier for the vendor of the device. Each vendor has a unique ID.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? VendorId {
+            get { return BackingStore?.Get<string?>("vendorId"); }
+            set { BackingStore?.Set("vendorId", value); }
+        }
+#else
         public string VendorId {
             get { return BackingStore?.Get<string>("vendorId"); }
             set { BackingStore?.Set("vendorId", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

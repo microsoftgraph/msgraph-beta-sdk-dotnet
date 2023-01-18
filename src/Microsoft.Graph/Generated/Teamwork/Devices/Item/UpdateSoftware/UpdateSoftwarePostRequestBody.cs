@@ -20,10 +20,17 @@ namespace Microsoft.Graph.Beta.Teamwork.Devices.Item.UpdateSoftware {
             set { BackingStore?.Set("softwareType", value); }
         }
         /// <summary>The softwareVersion property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SoftwareVersion {
+            get { return BackingStore?.Get<string?>("softwareVersion"); }
+            set { BackingStore?.Set("softwareVersion", value); }
+        }
+#else
         public string SoftwareVersion {
             get { return BackingStore?.Get<string>("softwareVersion"); }
             set { BackingStore?.Set("softwareVersion", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new updateSoftwarePostRequestBody and sets the default values.
         /// </summary>

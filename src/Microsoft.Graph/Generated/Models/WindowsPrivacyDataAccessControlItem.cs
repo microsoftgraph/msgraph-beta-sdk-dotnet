@@ -14,15 +14,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("accessLevel", value); }
         }
         /// <summary>The Package Family Name of a Windows app. When set, the access level applies to the specified application.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AppDisplayName {
+            get { return BackingStore?.Get<string?>("appDisplayName"); }
+            set { BackingStore?.Set("appDisplayName", value); }
+        }
+#else
         public string AppDisplayName {
             get { return BackingStore?.Get<string>("appDisplayName"); }
             set { BackingStore?.Set("appDisplayName", value); }
         }
+#endif
         /// <summary>The Package Family Name of a Windows app. When set, the access level applies to the specified application.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AppPackageFamilyName {
+            get { return BackingStore?.Get<string?>("appPackageFamilyName"); }
+            set { BackingStore?.Set("appPackageFamilyName", value); }
+        }
+#else
         public string AppPackageFamilyName {
             get { return BackingStore?.Get<string>("appPackageFamilyName"); }
             set { BackingStore?.Set("appPackageFamilyName", value); }
         }
+#endif
         /// <summary>Windows privacy data category specifier for privacy data access.</summary>
         public WindowsPrivacyDataCategory? DataCategory {
             get { return BackingStore?.Get<WindowsPrivacyDataCategory?>("dataCategory"); }

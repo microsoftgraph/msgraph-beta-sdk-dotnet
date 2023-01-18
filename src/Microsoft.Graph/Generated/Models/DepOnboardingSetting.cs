@@ -9,35 +9,70 @@ namespace Microsoft.Graph.Beta.Models {
     /// </summary>
     public class DepOnboardingSetting : Entity, IParsable {
         /// <summary>The Apple ID used to obtain the current token.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AppleIdentifier {
+            get { return BackingStore?.Get<string?>("appleIdentifier"); }
+            set { BackingStore?.Set("appleIdentifier", value); }
+        }
+#else
         public string AppleIdentifier {
             get { return BackingStore?.Get<string>("appleIdentifier"); }
             set { BackingStore?.Set("appleIdentifier", value); }
         }
+#endif
         /// <summary>Consent granted for data sharing with Apple Dep Service</summary>
         public bool? DataSharingConsentGranted {
             get { return BackingStore?.Get<bool?>("dataSharingConsentGranted"); }
             set { BackingStore?.Set("dataSharingConsentGranted", value); }
         }
         /// <summary>Default iOS Enrollment Profile</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DepIOSEnrollmentProfile? DefaultIosEnrollmentProfile {
+            get { return BackingStore?.Get<DepIOSEnrollmentProfile?>("defaultIosEnrollmentProfile"); }
+            set { BackingStore?.Set("defaultIosEnrollmentProfile", value); }
+        }
+#else
         public DepIOSEnrollmentProfile DefaultIosEnrollmentProfile {
             get { return BackingStore?.Get<DepIOSEnrollmentProfile>("defaultIosEnrollmentProfile"); }
             set { BackingStore?.Set("defaultIosEnrollmentProfile", value); }
         }
+#endif
         /// <summary>Default MacOs Enrollment Profile</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DepMacOSEnrollmentProfile? DefaultMacOsEnrollmentProfile {
+            get { return BackingStore?.Get<DepMacOSEnrollmentProfile?>("defaultMacOsEnrollmentProfile"); }
+            set { BackingStore?.Set("defaultMacOsEnrollmentProfile", value); }
+        }
+#else
         public DepMacOSEnrollmentProfile DefaultMacOsEnrollmentProfile {
             get { return BackingStore?.Get<DepMacOSEnrollmentProfile>("defaultMacOsEnrollmentProfile"); }
             set { BackingStore?.Set("defaultMacOsEnrollmentProfile", value); }
         }
+#endif
         /// <summary>The enrollment profiles.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<EnrollmentProfile>? EnrollmentProfiles {
+            get { return BackingStore?.Get<List<EnrollmentProfile>?>("enrollmentProfiles"); }
+            set { BackingStore?.Set("enrollmentProfiles", value); }
+        }
+#else
         public List<EnrollmentProfile> EnrollmentProfiles {
             get { return BackingStore?.Get<List<EnrollmentProfile>>("enrollmentProfiles"); }
             set { BackingStore?.Set("enrollmentProfiles", value); }
         }
+#endif
         /// <summary>The imported Apple device identities.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ImportedAppleDeviceIdentity>? ImportedAppleDeviceIdentities {
+            get { return BackingStore?.Get<List<ImportedAppleDeviceIdentity>?>("importedAppleDeviceIdentities"); }
+            set { BackingStore?.Set("importedAppleDeviceIdentities", value); }
+        }
+#else
         public List<ImportedAppleDeviceIdentity> ImportedAppleDeviceIdentities {
             get { return BackingStore?.Get<List<ImportedAppleDeviceIdentity>>("importedAppleDeviceIdentities"); }
             set { BackingStore?.Set("importedAppleDeviceIdentities", value); }
         }
+#endif
         /// <summary>When the service was onboarded.</summary>
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
@@ -59,10 +94,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("lastSyncTriggeredDateTime", value); }
         }
         /// <summary>List of Scope Tags for this Entity instance.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? RoleScopeTagIds {
+            get { return BackingStore?.Get<List<string>?>("roleScopeTagIds"); }
+            set { BackingStore?.Set("roleScopeTagIds", value); }
+        }
+#else
         public List<string> RoleScopeTagIds {
             get { return BackingStore?.Get<List<string>>("roleScopeTagIds"); }
             set { BackingStore?.Set("roleScopeTagIds", value); }
         }
+#endif
         /// <summary>Whether or not the Dep token sharing is enabled with the School Data Sync service.</summary>
         public bool? ShareTokenWithSchoolDataSyncService {
             get { return BackingStore?.Get<bool?>("shareTokenWithSchoolDataSyncService"); }
@@ -79,10 +121,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("tokenExpirationDateTime", value); }
         }
         /// <summary>Friendly Name for Dep Token</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TokenName {
+            get { return BackingStore?.Get<string?>("tokenName"); }
+            set { BackingStore?.Set("tokenName", value); }
+        }
+#else
         public string TokenName {
             get { return BackingStore?.Get<string>("tokenName"); }
             set { BackingStore?.Set("tokenName", value); }
         }
+#endif
         /// <summary>The tokenType property</summary>
         public DepTokenType? TokenType {
             get { return BackingStore?.Get<DepTokenType?>("tokenType"); }

@@ -31,10 +31,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("appsRecommendSkippingFirstUseHints", value); }
         }
         /// <summary>A list of managed apps that will have their data cleared during a global sign-out in AAD shared device mode. This collection can contain a maximum of 500 elements.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AppListItem>? AzureAdSharedDeviceDataClearApps {
+            get { return BackingStore?.Get<List<AppListItem>?>("azureAdSharedDeviceDataClearApps"); }
+            set { BackingStore?.Set("azureAdSharedDeviceDataClearApps", value); }
+        }
+#else
         public List<AppListItem> AzureAdSharedDeviceDataClearApps {
             get { return BackingStore?.Get<List<AppListItem>>("azureAdSharedDeviceDataClearApps"); }
             set { BackingStore?.Set("azureAdSharedDeviceDataClearApps", value); }
         }
+#endif
         /// <summary>Indicates whether or not to block a user from configuring bluetooth.</summary>
         public bool? BluetoothBlockConfiguration {
             get { return BackingStore?.Get<bool?>("bluetoothBlockConfiguration"); }
@@ -86,15 +93,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("dateTimeConfigurationBlocked", value); }
         }
         /// <summary>Represents the customized detailed help text provided to users when they attempt to modify managed settings on their device.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public AndroidDeviceOwnerUserFacingMessage? DetailedHelpText {
+            get { return BackingStore?.Get<AndroidDeviceOwnerUserFacingMessage?>("detailedHelpText"); }
+            set { BackingStore?.Set("detailedHelpText", value); }
+        }
+#else
         public AndroidDeviceOwnerUserFacingMessage DetailedHelpText {
             get { return BackingStore?.Get<AndroidDeviceOwnerUserFacingMessage>("detailedHelpText"); }
             set { BackingStore?.Set("detailedHelpText", value); }
         }
+#endif
         /// <summary>Represents the customized lock screen message provided to users when they attempt to modify managed settings on their device.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public AndroidDeviceOwnerUserFacingMessage? DeviceOwnerLockScreenMessage {
+            get { return BackingStore?.Get<AndroidDeviceOwnerUserFacingMessage?>("deviceOwnerLockScreenMessage"); }
+            set { BackingStore?.Set("deviceOwnerLockScreenMessage", value); }
+        }
+#else
         public AndroidDeviceOwnerUserFacingMessage DeviceOwnerLockScreenMessage {
             get { return BackingStore?.Get<AndroidDeviceOwnerUserFacingMessage>("deviceOwnerLockScreenMessage"); }
             set { BackingStore?.Set("deviceOwnerLockScreenMessage", value); }
         }
+#endif
         /// <summary>Android Device Owner Enrollment Profile types.</summary>
         public AndroidDeviceOwnerEnrollmentProfileType? EnrollmentProfile {
             get { return BackingStore?.Get<AndroidDeviceOwnerEnrollmentProfileType?>("enrollmentProfile"); }
@@ -106,15 +127,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("factoryResetBlocked", value); }
         }
         /// <summary>List of Google account emails that will be required to authenticate after a device is factory reset before it can be set up.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? FactoryResetDeviceAdministratorEmails {
+            get { return BackingStore?.Get<List<string>?>("factoryResetDeviceAdministratorEmails"); }
+            set { BackingStore?.Set("factoryResetDeviceAdministratorEmails", value); }
+        }
+#else
         public List<string> FactoryResetDeviceAdministratorEmails {
             get { return BackingStore?.Get<List<string>>("factoryResetDeviceAdministratorEmails"); }
             set { BackingStore?.Set("factoryResetDeviceAdministratorEmails", value); }
         }
+#endif
         /// <summary>Proxy is set up directly with host, port and excluded hosts.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public AndroidDeviceOwnerGlobalProxy? GlobalProxy {
+            get { return BackingStore?.Get<AndroidDeviceOwnerGlobalProxy?>("globalProxy"); }
+            set { BackingStore?.Set("globalProxy", value); }
+        }
+#else
         public AndroidDeviceOwnerGlobalProxy GlobalProxy {
             get { return BackingStore?.Get<AndroidDeviceOwnerGlobalProxy>("globalProxy"); }
             set { BackingStore?.Set("globalProxy", value); }
         }
+#endif
         /// <summary>Indicates whether or not google accounts will be blocked.</summary>
         public bool? GoogleAccountsBlocked {
             get { return BackingStore?.Get<bool?>("googleAccountsBlocked"); }
@@ -151,15 +186,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("kioskModeAppOrderEnabled", value); }
         }
         /// <summary>The ordering of items on Kiosk Mode Managed Home Screen. This collection can contain a maximum of 500 elements.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AndroidDeviceOwnerKioskModeAppPositionItem>? KioskModeAppPositions {
+            get { return BackingStore?.Get<List<AndroidDeviceOwnerKioskModeAppPositionItem>?>("kioskModeAppPositions"); }
+            set { BackingStore?.Set("kioskModeAppPositions", value); }
+        }
+#else
         public List<AndroidDeviceOwnerKioskModeAppPositionItem> KioskModeAppPositions {
             get { return BackingStore?.Get<List<AndroidDeviceOwnerKioskModeAppPositionItem>>("kioskModeAppPositions"); }
             set { BackingStore?.Set("kioskModeAppPositions", value); }
         }
+#endif
         /// <summary>A list of managed apps that will be shown when the device is in Kiosk Mode. This collection can contain a maximum of 500 elements.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AppListItem>? KioskModeApps {
+            get { return BackingStore?.Get<List<AppListItem>?>("kioskModeApps"); }
+            set { BackingStore?.Set("kioskModeApps", value); }
+        }
+#else
         public List<AppListItem> KioskModeApps {
             get { return BackingStore?.Get<List<AppListItem>>("kioskModeApps"); }
             set { BackingStore?.Set("kioskModeApps", value); }
         }
+#endif
         /// <summary>Whether or not to alphabetize applications within a folder in Kiosk Mode.</summary>
         public bool? KioskModeAppsInFolderOrderedByName {
             get { return BackingStore?.Get<bool?>("kioskModeAppsInFolderOrderedByName"); }
@@ -176,10 +225,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("kioskModeDebugMenuEasyAccessEnabled", value); }
         }
         /// <summary>Exit code to allow a user to escape from Kiosk Mode when the device is in Kiosk Mode.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? KioskModeExitCode {
+            get { return BackingStore?.Get<string?>("kioskModeExitCode"); }
+            set { BackingStore?.Set("kioskModeExitCode", value); }
+        }
+#else
         public string KioskModeExitCode {
             get { return BackingStore?.Get<string>("kioskModeExitCode"); }
             set { BackingStore?.Set("kioskModeExitCode", value); }
         }
+#endif
         /// <summary>Whether or not to allow a user to use the flashlight in Kiosk Mode.</summary>
         public bool? KioskModeFlashlightConfigurationEnabled {
             get { return BackingStore?.Get<bool?>("kioskModeFlashlightConfigurationEnabled"); }
@@ -211,10 +267,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("kioskModeLockHomeScreen", value); }
         }
         /// <summary>A list of managed folders for a device in Kiosk Mode. This collection can contain a maximum of 500 elements.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AndroidDeviceOwnerKioskModeManagedFolder>? KioskModeManagedFolders {
+            get { return BackingStore?.Get<List<AndroidDeviceOwnerKioskModeManagedFolder>?>("kioskModeManagedFolders"); }
+            set { BackingStore?.Set("kioskModeManagedFolders", value); }
+        }
+#else
         public List<AndroidDeviceOwnerKioskModeManagedFolder> KioskModeManagedFolders {
             get { return BackingStore?.Get<List<AndroidDeviceOwnerKioskModeManagedFolder>>("kioskModeManagedFolders"); }
             set { BackingStore?.Set("kioskModeManagedFolders", value); }
         }
+#endif
         /// <summary>Whether or not to automatically sign-out of MHS and Shared device mode applications after inactive for Managed Home Screen.</summary>
         public bool? KioskModeManagedHomeScreenAutoSignout {
             get { return BackingStore?.Get<bool?>("kioskModeManagedHomeScreenAutoSignout"); }
@@ -246,15 +309,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("kioskModeManagedHomeScreenPinRequiredToResume", value); }
         }
         /// <summary>Custom URL background for sign-in screen for Managed Home Screen.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? KioskModeManagedHomeScreenSignInBackground {
+            get { return BackingStore?.Get<string?>("kioskModeManagedHomeScreenSignInBackground"); }
+            set { BackingStore?.Set("kioskModeManagedHomeScreenSignInBackground", value); }
+        }
+#else
         public string KioskModeManagedHomeScreenSignInBackground {
             get { return BackingStore?.Get<string>("kioskModeManagedHomeScreenSignInBackground"); }
             set { BackingStore?.Set("kioskModeManagedHomeScreenSignInBackground", value); }
         }
+#endif
         /// <summary>Custom URL branding logo for sign-in screen and session pin page for Managed Home Screen.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? KioskModeManagedHomeScreenSignInBrandingLogo {
+            get { return BackingStore?.Get<string?>("kioskModeManagedHomeScreenSignInBrandingLogo"); }
+            set { BackingStore?.Set("kioskModeManagedHomeScreenSignInBrandingLogo", value); }
+        }
+#else
         public string KioskModeManagedHomeScreenSignInBrandingLogo {
             get { return BackingStore?.Get<string>("kioskModeManagedHomeScreenSignInBrandingLogo"); }
             set { BackingStore?.Set("kioskModeManagedHomeScreenSignInBrandingLogo", value); }
         }
+#endif
         /// <summary>Whether or not show sign-in screen for Managed Home Screen.</summary>
         public bool? KioskModeManagedHomeScreenSignInEnabled {
             get { return BackingStore?.Get<bool?>("kioskModeManagedHomeScreenSignInEnabled"); }
@@ -291,10 +368,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("kioskModeScreenSaverDisplayTimeInSeconds", value); }
         }
         /// <summary>URL for an image that will be the device&apos;s screen saver in Kiosk Mode.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? KioskModeScreenSaverImageUrl {
+            get { return BackingStore?.Get<string?>("kioskModeScreenSaverImageUrl"); }
+            set { BackingStore?.Set("kioskModeScreenSaverImageUrl", value); }
+        }
+#else
         public string KioskModeScreenSaverImageUrl {
             get { return BackingStore?.Get<string>("kioskModeScreenSaverImageUrl"); }
             set { BackingStore?.Set("kioskModeScreenSaverImageUrl", value); }
         }
+#endif
         /// <summary>The number of seconds the device needs to be inactive for before the screen saver is shown in Kiosk Mode. Valid values 1 to 9999999</summary>
         public int? KioskModeScreenSaverStartDelayInSeconds {
             get { return BackingStore?.Get<int?>("kioskModeScreenSaverStartDelayInSeconds"); }
@@ -326,15 +410,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("kioskModeVirtualHomeButtonType", value); }
         }
         /// <summary>URL to a publicly accessible image to use for the wallpaper when the device is in Kiosk Mode.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? KioskModeWallpaperUrl {
+            get { return BackingStore?.Get<string?>("kioskModeWallpaperUrl"); }
+            set { BackingStore?.Set("kioskModeWallpaperUrl", value); }
+        }
+#else
         public string KioskModeWallpaperUrl {
             get { return BackingStore?.Get<string>("kioskModeWallpaperUrl"); }
             set { BackingStore?.Set("kioskModeWallpaperUrl", value); }
         }
+#endif
         /// <summary>The restricted set of WIFI SSIDs available for the user to configure in Kiosk Mode. This collection can contain a maximum of 500 elements.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? KioskModeWifiAllowedSsids {
+            get { return BackingStore?.Get<List<string>?>("kioskModeWifiAllowedSsids"); }
+            set { BackingStore?.Set("kioskModeWifiAllowedSsids", value); }
+        }
+#else
         public List<string> KioskModeWifiAllowedSsids {
             get { return BackingStore?.Get<List<string>>("kioskModeWifiAllowedSsids"); }
             set { BackingStore?.Set("kioskModeWifiAllowedSsids", value); }
         }
+#endif
         /// <summary>Whether or not to allow a user to configure Wi-Fi settings in Kiosk Mode.</summary>
         public bool? KioskModeWiFiConfigurationEnabled {
             get { return BackingStore?.Get<bool?>("kioskModeWiFiConfigurationEnabled"); }
@@ -361,10 +459,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("microsoftLauncherCustomWallpaperEnabled", value); }
         }
         /// <summary>Indicates the URL for the image file to use as the wallpaper on the targeted devices.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MicrosoftLauncherCustomWallpaperImageUrl {
+            get { return BackingStore?.Get<string?>("microsoftLauncherCustomWallpaperImageUrl"); }
+            set { BackingStore?.Set("microsoftLauncherCustomWallpaperImageUrl", value); }
+        }
+#else
         public string MicrosoftLauncherCustomWallpaperImageUrl {
             get { return BackingStore?.Get<string>("microsoftLauncherCustomWallpaperImageUrl"); }
             set { BackingStore?.Set("microsoftLauncherCustomWallpaperImageUrl", value); }
         }
+#endif
         /// <summary>Indicates whether or not the user can modify the device dock configuration on the device.</summary>
         public bool? MicrosoftLauncherDockPresenceAllowUserModification {
             get { return BackingStore?.Get<bool?>("microsoftLauncherDockPresenceAllowUserModification"); }
@@ -406,10 +511,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("passwordBlockKeyguard", value); }
         }
         /// <summary>List of device keyguard features to block. This collection can contain a maximum of 11 elements.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AndroidKeyguardFeature?>? PasswordBlockKeyguardFeatures {
+            get { return BackingStore?.Get<List<AndroidKeyguardFeature?>?>("passwordBlockKeyguardFeatures"); }
+            set { BackingStore?.Set("passwordBlockKeyguardFeatures", value); }
+        }
+#else
         public List<AndroidKeyguardFeature?> PasswordBlockKeyguardFeatures {
             get { return BackingStore?.Get<List<AndroidKeyguardFeature?>>("passwordBlockKeyguardFeatures"); }
             set { BackingStore?.Set("passwordBlockKeyguardFeatures", value); }
         }
+#endif
         /// <summary>Indicates the amount of time that a password can be set for before it expires and a new password will be required. Valid values 1 to 365</summary>
         public int? PasswordExpirationDays {
             get { return BackingStore?.Get<int?>("passwordExpirationDays"); }
@@ -486,10 +598,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("personalProfileCameraBlocked", value); }
         }
         /// <summary>Policy applied to applications in the personal profile. This collection can contain a maximum of 500 elements.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AppListItem>? PersonalProfilePersonalApplications {
+            get { return BackingStore?.Get<List<AppListItem>?>("personalProfilePersonalApplications"); }
+            set { BackingStore?.Set("personalProfilePersonalApplications", value); }
+        }
+#else
         public List<AppListItem> PersonalProfilePersonalApplications {
             get { return BackingStore?.Get<List<AppListItem>>("personalProfilePersonalApplications"); }
             set { BackingStore?.Set("personalProfilePersonalApplications", value); }
         }
+#endif
         /// <summary>Used together with PersonalProfilePersonalApplications to control how apps in the personal profile are allowed or blocked. Possible values are: notConfigured, blockedApps, allowedApps.</summary>
         public PersonalProfilePersonalPlayStoreMode? PersonalProfilePlayStoreMode {
             get { return BackingStore?.Get<PersonalProfilePersonalPlayStoreMode?>("personalProfilePlayStoreMode"); }
@@ -526,20 +645,34 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("securityRequireVerifyApps", value); }
         }
         /// <summary>Represents the customized short help text provided to users when they attempt to modify managed settings on their device.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public AndroidDeviceOwnerUserFacingMessage? ShortHelpText {
+            get { return BackingStore?.Get<AndroidDeviceOwnerUserFacingMessage?>("shortHelpText"); }
+            set { BackingStore?.Set("shortHelpText", value); }
+        }
+#else
         public AndroidDeviceOwnerUserFacingMessage ShortHelpText {
             get { return BackingStore?.Get<AndroidDeviceOwnerUserFacingMessage>("shortHelpText"); }
             set { BackingStore?.Set("shortHelpText", value); }
         }
+#endif
         /// <summary>Indicates whether or the status bar is disabled, including notifications, quick settings and other screen overlays.</summary>
         public bool? StatusBarBlocked {
             get { return BackingStore?.Get<bool?>("statusBarBlocked"); }
             set { BackingStore?.Set("statusBarBlocked", value); }
         }
         /// <summary>List of modes in which the device&apos;s display will stay powered-on. This collection can contain a maximum of 4 elements.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AndroidDeviceOwnerBatteryPluggedMode?>? StayOnModes {
+            get { return BackingStore?.Get<List<AndroidDeviceOwnerBatteryPluggedMode?>?>("stayOnModes"); }
+            set { BackingStore?.Set("stayOnModes", value); }
+        }
+#else
         public List<AndroidDeviceOwnerBatteryPluggedMode?> StayOnModes {
             get { return BackingStore?.Get<List<AndroidDeviceOwnerBatteryPluggedMode?>>("stayOnModes"); }
             set { BackingStore?.Set("stayOnModes", value); }
         }
+#endif
         /// <summary>Indicates whether or not to allow USB mass storage.</summary>
         public bool? StorageAllowUsb {
             get { return BackingStore?.Get<bool?>("storageAllowUsb"); }
@@ -556,10 +689,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("storageBlockUsbFileTransfer", value); }
         }
         /// <summary>Indicates the annually repeating time periods during which system updates are postponed. This collection can contain a maximum of 500 elements.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AndroidDeviceOwnerSystemUpdateFreezePeriod>? SystemUpdateFreezePeriods {
+            get { return BackingStore?.Get<List<AndroidDeviceOwnerSystemUpdateFreezePeriod>?>("systemUpdateFreezePeriods"); }
+            set { BackingStore?.Set("systemUpdateFreezePeriods", value); }
+        }
+#else
         public List<AndroidDeviceOwnerSystemUpdateFreezePeriod> SystemUpdateFreezePeriods {
             get { return BackingStore?.Get<List<AndroidDeviceOwnerSystemUpdateFreezePeriod>>("systemUpdateFreezePeriods"); }
             set { BackingStore?.Set("systemUpdateFreezePeriods", value); }
         }
+#endif
         /// <summary>The type of system update configuration. Possible values are: deviceDefault, postpone, windowed, automatic.</summary>
         public AndroidDeviceOwnerSystemUpdateInstallType? SystemUpdateInstallType {
             get { return BackingStore?.Get<AndroidDeviceOwnerSystemUpdateInstallType?>("systemUpdateInstallType"); }
@@ -601,10 +741,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("vpnAlwaysOnLockdownMode", value); }
         }
         /// <summary>Android app package name for app that will handle an always-on VPN connection.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? VpnAlwaysOnPackageIdentifier {
+            get { return BackingStore?.Get<string?>("vpnAlwaysOnPackageIdentifier"); }
+            set { BackingStore?.Set("vpnAlwaysOnPackageIdentifier", value); }
+        }
+#else
         public string VpnAlwaysOnPackageIdentifier {
             get { return BackingStore?.Get<string>("vpnAlwaysOnPackageIdentifier"); }
             set { BackingStore?.Set("vpnAlwaysOnPackageIdentifier", value); }
         }
+#endif
         /// <summary>Indicates whether or not to block the user from editing the wifi connection settings.</summary>
         public bool? WifiBlockEditConfigurations {
             get { return BackingStore?.Get<bool?>("wifiBlockEditConfigurations"); }

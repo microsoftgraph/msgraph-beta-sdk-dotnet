@@ -14,20 +14,41 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Identifier of the customAccessPackageWorkflowExtension triggered at this instance.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CustomExtensionId {
+            get { return BackingStore?.Get<string?>("customExtensionId"); }
+            set { BackingStore?.Set("customExtensionId", value); }
+        }
+#else
         public string CustomExtensionId {
             get { return BackingStore?.Get<string>("customExtensionId"); }
             set { BackingStore?.Set("customExtensionId", value); }
         }
+#endif
         /// <summary>The unique run ID for the logic app.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ExternalCorrelationId {
+            get { return BackingStore?.Get<string?>("externalCorrelationId"); }
+            set { BackingStore?.Set("externalCorrelationId", value); }
+        }
+#else
         public string ExternalCorrelationId {
             get { return BackingStore?.Get<string>("externalCorrelationId"); }
             set { BackingStore?.Set("externalCorrelationId", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Indicates the stage of the request workflow when the access package custom extension runs. The possible values are: assignmentRequestCreated, assignmentRequestApproved, assignmentRequestGranted, assignmentRequestRemoved, assignmentFourteenDaysBeforeExpiration, assignmentOneDayBeforeExpiration, unknownFutureValue.</summary>
         public AccessPackageCustomExtensionStage? Stage {
             get { return BackingStore?.Get<AccessPackageCustomExtensionStage?>("stage"); }

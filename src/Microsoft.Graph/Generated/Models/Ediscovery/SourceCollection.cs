@@ -6,70 +6,140 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Ediscovery {
     public class SourceCollection : Entity, IParsable {
         /// <summary>Adds an additional source to the sourceCollection.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DataSource>? AdditionalSources {
+            get { return BackingStore?.Get<List<DataSource>?>("additionalSources"); }
+            set { BackingStore?.Set("additionalSources", value); }
+        }
+#else
         public List<DataSource> AdditionalSources {
             get { return BackingStore?.Get<List<DataSource>>("additionalSources"); }
             set { BackingStore?.Set("additionalSources", value); }
         }
+#endif
         /// <summary>Adds the results of the sourceCollection to the specified reviewSet.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.Ediscovery.AddToReviewSetOperation? AddToReviewSetOperation {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Ediscovery.AddToReviewSetOperation?>("addToReviewSetOperation"); }
+            set { BackingStore?.Set("addToReviewSetOperation", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.Ediscovery.AddToReviewSetOperation AddToReviewSetOperation {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Ediscovery.AddToReviewSetOperation>("addToReviewSetOperation"); }
             set { BackingStore?.Set("addToReviewSetOperation", value); }
         }
+#endif
         /// <summary>The query string in KQL (Keyword Query Language) query. For details, see Keyword queries and search conditions for Content Search and eDiscovery. You can refine searches by using fields paired with values; for example, subject:&apos;Quarterly Financials&apos; AND Date&gt;=06/01/2016 AND Date&lt;=07/01/2016.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ContentQuery {
+            get { return BackingStore?.Get<string?>("contentQuery"); }
+            set { BackingStore?.Set("contentQuery", value); }
+        }
+#else
         public string ContentQuery {
             get { return BackingStore?.Get<string>("contentQuery"); }
             set { BackingStore?.Set("contentQuery", value); }
         }
+#endif
         /// <summary>The user who created the sourceCollection.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.IdentitySet? CreatedBy {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet?>("createdBy"); }
+            set { BackingStore?.Set("createdBy", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.IdentitySet CreatedBy {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
+#endif
         /// <summary>The date and time the sourceCollection was created.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Custodian sources that are included in the sourceCollection.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DataSource>? CustodianSources {
+            get { return BackingStore?.Get<List<DataSource>?>("custodianSources"); }
+            set { BackingStore?.Set("custodianSources", value); }
+        }
+#else
         public List<DataSource> CustodianSources {
             get { return BackingStore?.Get<List<DataSource>>("custodianSources"); }
             set { BackingStore?.Set("custodianSources", value); }
         }
+#endif
         /// <summary>When specified, the collection will span across a service for an entire workload. Possible values are: none, allTenantMailboxes, allTenantSites, allCaseCustodians, allCaseNoncustodialDataSources.</summary>
         public Microsoft.Graph.Beta.Models.Ediscovery.DataSourceScopes? DataSourceScopes {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Ediscovery.DataSourceScopes?>("dataSourceScopes"); }
             set { BackingStore?.Set("dataSourceScopes", value); }
         }
         /// <summary>The description of the sourceCollection.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>The display name of the sourceCollection.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The last estimate operation associated with the sourceCollection.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public EstimateStatisticsOperation? LastEstimateStatisticsOperation {
+            get { return BackingStore?.Get<EstimateStatisticsOperation?>("lastEstimateStatisticsOperation"); }
+            set { BackingStore?.Set("lastEstimateStatisticsOperation", value); }
+        }
+#else
         public EstimateStatisticsOperation LastEstimateStatisticsOperation {
             get { return BackingStore?.Get<EstimateStatisticsOperation>("lastEstimateStatisticsOperation"); }
             set { BackingStore?.Set("lastEstimateStatisticsOperation", value); }
         }
+#endif
         /// <summary>The last user who modified the sourceCollection.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.IdentitySet? LastModifiedBy {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet?>("lastModifiedBy"); }
+            set { BackingStore?.Set("lastModifiedBy", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.IdentitySet LastModifiedBy {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
+#endif
         /// <summary>The last date and time the sourceCollection was modified.</summary>
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>noncustodialDataSource sources that are included in the sourceCollection</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<NoncustodialDataSource>? NoncustodialSources {
+            get { return BackingStore?.Get<List<NoncustodialDataSource>?>("noncustodialSources"); }
+            set { BackingStore?.Set("noncustodialSources", value); }
+        }
+#else
         public List<NoncustodialDataSource> NoncustodialSources {
             get { return BackingStore?.Get<List<NoncustodialDataSource>>("noncustodialSources"); }
             set { BackingStore?.Set("noncustodialSources", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

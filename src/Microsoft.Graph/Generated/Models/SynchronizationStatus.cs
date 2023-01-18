@@ -29,35 +29,77 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("escrowsPruned", value); }
         }
         /// <summary>Details of the last execution of the job.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public SynchronizationTaskExecution? LastExecution {
+            get { return BackingStore?.Get<SynchronizationTaskExecution?>("lastExecution"); }
+            set { BackingStore?.Set("lastExecution", value); }
+        }
+#else
         public SynchronizationTaskExecution LastExecution {
             get { return BackingStore?.Get<SynchronizationTaskExecution>("lastExecution"); }
             set { BackingStore?.Set("lastExecution", value); }
         }
+#endif
         /// <summary>Details of the last execution of this job, which didn&apos;t have any errors.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public SynchronizationTaskExecution? LastSuccessfulExecution {
+            get { return BackingStore?.Get<SynchronizationTaskExecution?>("lastSuccessfulExecution"); }
+            set { BackingStore?.Set("lastSuccessfulExecution", value); }
+        }
+#else
         public SynchronizationTaskExecution LastSuccessfulExecution {
             get { return BackingStore?.Get<SynchronizationTaskExecution>("lastSuccessfulExecution"); }
             set { BackingStore?.Set("lastSuccessfulExecution", value); }
         }
+#endif
         /// <summary>Details of the last execution of the job, which exported objects into the target directory.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public SynchronizationTaskExecution? LastSuccessfulExecutionWithExports {
+            get { return BackingStore?.Get<SynchronizationTaskExecution?>("lastSuccessfulExecutionWithExports"); }
+            set { BackingStore?.Set("lastSuccessfulExecutionWithExports", value); }
+        }
+#else
         public SynchronizationTaskExecution LastSuccessfulExecutionWithExports {
             get { return BackingStore?.Get<SynchronizationTaskExecution>("lastSuccessfulExecutionWithExports"); }
             set { BackingStore?.Set("lastSuccessfulExecutionWithExports", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Details of the progress of a job toward completion.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<SynchronizationProgress>? Progress {
+            get { return BackingStore?.Get<List<SynchronizationProgress>?>("progress"); }
+            set { BackingStore?.Set("progress", value); }
+        }
+#else
         public List<SynchronizationProgress> Progress {
             get { return BackingStore?.Get<List<SynchronizationProgress>>("progress"); }
             set { BackingStore?.Set("progress", value); }
         }
+#endif
         /// <summary>If job is in quarantine, quarantine details.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public SynchronizationQuarantine? Quarantine {
+            get { return BackingStore?.Get<SynchronizationQuarantine?>("quarantine"); }
+            set { BackingStore?.Set("quarantine", value); }
+        }
+#else
         public SynchronizationQuarantine Quarantine {
             get { return BackingStore?.Get<SynchronizationQuarantine>("quarantine"); }
             set { BackingStore?.Set("quarantine", value); }
         }
+#endif
         /// <summary>The time when steady state (no more changes to the process) was first achieved. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z.</summary>
         public DateTimeOffset? SteadyStateFirstAchievedTime {
             get { return BackingStore?.Get<DateTimeOffset?>("steadyStateFirstAchievedTime"); }
@@ -69,15 +111,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("steadyStateLastAchievedTime", value); }
         }
         /// <summary>Count of synchronized objects, listed by object type.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<StringKeyLongValuePair>? SynchronizedEntryCountByType {
+            get { return BackingStore?.Get<List<StringKeyLongValuePair>?>("synchronizedEntryCountByType"); }
+            set { BackingStore?.Set("synchronizedEntryCountByType", value); }
+        }
+#else
         public List<StringKeyLongValuePair> SynchronizedEntryCountByType {
             get { return BackingStore?.Get<List<StringKeyLongValuePair>>("synchronizedEntryCountByType"); }
             set { BackingStore?.Set("synchronizedEntryCountByType", value); }
         }
+#endif
         /// <summary>In the event of an error, the URL with the troubleshooting steps for the issue.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TroubleshootingUrl {
+            get { return BackingStore?.Get<string?>("troubleshootingUrl"); }
+            set { BackingStore?.Set("troubleshootingUrl", value); }
+        }
+#else
         public string TroubleshootingUrl {
             get { return BackingStore?.Get<string>("troubleshootingUrl"); }
             set { BackingStore?.Set("troubleshootingUrl", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new synchronizationStatus and sets the default values.
         /// </summary>

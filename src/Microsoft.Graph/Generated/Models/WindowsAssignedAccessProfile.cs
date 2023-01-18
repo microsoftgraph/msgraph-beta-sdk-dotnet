@@ -6,35 +6,70 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class WindowsAssignedAccessProfile : Entity, IParsable {
         /// <summary>These are the only Windows Store Apps that will be available to launch from the Start menu.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? AppUserModelIds {
+            get { return BackingStore?.Get<List<string>?>("appUserModelIds"); }
+            set { BackingStore?.Set("appUserModelIds", value); }
+        }
+#else
         public List<string> AppUserModelIds {
             get { return BackingStore?.Get<List<string>>("appUserModelIds"); }
             set { BackingStore?.Set("appUserModelIds", value); }
         }
+#endif
         /// <summary>These are the paths of the Desktop Apps that will be available on the Start menu and the only apps the user will be able to launch.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? DesktopAppPaths {
+            get { return BackingStore?.Get<List<string>?>("desktopAppPaths"); }
+            set { BackingStore?.Set("desktopAppPaths", value); }
+        }
+#else
         public List<string> DesktopAppPaths {
             get { return BackingStore?.Get<List<string>>("desktopAppPaths"); }
             set { BackingStore?.Set("desktopAppPaths", value); }
         }
+#endif
         /// <summary>This is a friendly name used to identify a group of applications, the layout of these apps on the start menu and the users to whom this kiosk configuration is assigned.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ProfileName {
+            get { return BackingStore?.Get<string?>("profileName"); }
+            set { BackingStore?.Set("profileName", value); }
+        }
+#else
         public string ProfileName {
             get { return BackingStore?.Get<string>("profileName"); }
             set { BackingStore?.Set("profileName", value); }
         }
+#endif
         /// <summary>This setting allows the admin to specify whether the Task Bar is shown or not.</summary>
         public bool? ShowTaskBar {
             get { return BackingStore?.Get<bool?>("showTaskBar"); }
             set { BackingStore?.Set("showTaskBar", value); }
         }
         /// <summary>Allows admins to override the default Start layout and prevents the user from changing it. The layout is modified by specifying an XML file based on a layout modification schema. XML needs to be in Binary format.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public byte[]? StartMenuLayoutXml {
+            get { return BackingStore?.Get<byte[]?>("startMenuLayoutXml"); }
+            set { BackingStore?.Set("startMenuLayoutXml", value); }
+        }
+#else
         public byte[] StartMenuLayoutXml {
             get { return BackingStore?.Get<byte[]>("startMenuLayoutXml"); }
             set { BackingStore?.Set("startMenuLayoutXml", value); }
         }
+#endif
         /// <summary>The user accounts that will be locked to this kiosk configuration.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? UserAccounts {
+            get { return BackingStore?.Get<List<string>?>("userAccounts"); }
+            set { BackingStore?.Set("userAccounts", value); }
+        }
+#else
         public List<string> UserAccounts {
             get { return BackingStore?.Get<List<string>>("userAccounts"); }
             set { BackingStore?.Set("userAccounts", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

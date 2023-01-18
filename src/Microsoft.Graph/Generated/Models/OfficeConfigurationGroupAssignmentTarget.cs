@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class OfficeConfigurationGroupAssignmentTarget : OfficeConfigurationAssignmentTarget, IParsable {
         /// <summary>The Id of the AAD group we are targeting the device configuration to.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? GroupId {
+            get { return BackingStore?.Get<string?>("groupId"); }
+            set { BackingStore?.Set("groupId", value); }
+        }
+#else
         public string GroupId {
             get { return BackingStore?.Get<string>("groupId"); }
             set { BackingStore?.Set("groupId", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new OfficeConfigurationGroupAssignmentTarget and sets the default values.
         /// </summary>

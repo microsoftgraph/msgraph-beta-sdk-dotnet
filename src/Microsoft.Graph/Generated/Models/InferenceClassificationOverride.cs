@@ -11,10 +11,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("classifyAs", value); }
         }
         /// <summary>The email address information of the sender for whom the override is created.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public EmailAddress? SenderEmailAddress {
+            get { return BackingStore?.Get<EmailAddress?>("senderEmailAddress"); }
+            set { BackingStore?.Set("senderEmailAddress", value); }
+        }
+#else
         public EmailAddress SenderEmailAddress {
             get { return BackingStore?.Get<EmailAddress>("senderEmailAddress"); }
             set { BackingStore?.Set("senderEmailAddress", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

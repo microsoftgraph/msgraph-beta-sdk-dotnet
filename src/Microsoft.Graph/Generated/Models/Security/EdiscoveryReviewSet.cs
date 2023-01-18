@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
     public class EdiscoveryReviewSet : DataSet, IParsable {
         /// <summary>Represents files within the review set.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<EdiscoveryFile>? Files {
+            get { return BackingStore?.Get<List<EdiscoveryFile>?>("files"); }
+            set { BackingStore?.Set("files", value); }
+        }
+#else
         public List<EdiscoveryFile> Files {
             get { return BackingStore?.Get<List<EdiscoveryFile>>("files"); }
             set { BackingStore?.Set("files", value); }
         }
+#endif
         /// <summary>Represents queries within the review set.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<EdiscoveryReviewSetQuery>? Queries {
+            get { return BackingStore?.Get<List<EdiscoveryReviewSetQuery>?>("queries"); }
+            set { BackingStore?.Set("queries", value); }
+        }
+#else
         public List<EdiscoveryReviewSetQuery> Queries {
             get { return BackingStore?.Get<List<EdiscoveryReviewSetQuery>>("queries"); }
             set { BackingStore?.Set("queries", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new EdiscoveryReviewSet and sets the default values.
         /// </summary>

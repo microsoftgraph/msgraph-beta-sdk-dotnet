@@ -11,15 +11,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("classification", value); }
         }
         /// <summary>The unique identifier (id) for the delegated permission listed in the publishedPermissionScopes collection of the servicePrincipal. Required on create. Does not support $filter.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PermissionId {
+            get { return BackingStore?.Get<string?>("permissionId"); }
+            set { BackingStore?.Set("permissionId", value); }
+        }
+#else
         public string PermissionId {
             get { return BackingStore?.Get<string>("permissionId"); }
             set { BackingStore?.Set("permissionId", value); }
         }
+#endif
         /// <summary>The claim value (value) for the delegated permission listed in the publishedPermissionScopes collection of the servicePrincipal. Does not support $filter.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PermissionName {
+            get { return BackingStore?.Get<string?>("permissionName"); }
+            set { BackingStore?.Set("permissionName", value); }
+        }
+#else
         public string PermissionName {
             get { return BackingStore?.Get<string>("permissionName"); }
             set { BackingStore?.Set("permissionName", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

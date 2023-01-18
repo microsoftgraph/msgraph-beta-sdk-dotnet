@@ -14,15 +14,29 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The rules that should be enforced on the tasks when they are being changed outside of the scenario, based on the role of the caller.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<PlannerTaskRoleBasedRule>? Rules {
+            get { return BackingStore?.Get<List<PlannerTaskRoleBasedRule>?>("rules"); }
+            set { BackingStore?.Set("rules", value); }
+        }
+#else
         public List<PlannerTaskRoleBasedRule> Rules {
             get { return BackingStore?.Get<List<PlannerTaskRoleBasedRule>>("rules"); }
             set { BackingStore?.Set("rules", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new plannerTaskPolicy and sets the default values.
         /// </summary>

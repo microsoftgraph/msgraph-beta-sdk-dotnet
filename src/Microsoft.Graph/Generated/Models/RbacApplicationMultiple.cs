@@ -6,20 +6,41 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class RbacApplicationMultiple : Entity, IParsable {
         /// <summary>The resourceNamespaces property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<UnifiedRbacResourceNamespace>? ResourceNamespaces {
+            get { return BackingStore?.Get<List<UnifiedRbacResourceNamespace>?>("resourceNamespaces"); }
+            set { BackingStore?.Set("resourceNamespaces", value); }
+        }
+#else
         public List<UnifiedRbacResourceNamespace> ResourceNamespaces {
             get { return BackingStore?.Get<List<UnifiedRbacResourceNamespace>>("resourceNamespaces"); }
             set { BackingStore?.Set("resourceNamespaces", value); }
         }
+#endif
         /// <summary>The roleAssignments property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<UnifiedRoleAssignmentMultiple>? RoleAssignments {
+            get { return BackingStore?.Get<List<UnifiedRoleAssignmentMultiple>?>("roleAssignments"); }
+            set { BackingStore?.Set("roleAssignments", value); }
+        }
+#else
         public List<UnifiedRoleAssignmentMultiple> RoleAssignments {
             get { return BackingStore?.Get<List<UnifiedRoleAssignmentMultiple>>("roleAssignments"); }
             set { BackingStore?.Set("roleAssignments", value); }
         }
+#endif
         /// <summary>The roleDefinitions property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<UnifiedRoleDefinition>? RoleDefinitions {
+            get { return BackingStore?.Get<List<UnifiedRoleDefinition>?>("roleDefinitions"); }
+            set { BackingStore?.Set("roleDefinitions", value); }
+        }
+#else
         public List<UnifiedRoleDefinition> RoleDefinitions {
             get { return BackingStore?.Get<List<UnifiedRoleDefinition>>("roleDefinitions"); }
             set { BackingStore?.Set("roleDefinitions", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

@@ -6,25 +6,53 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class ChatMessage : Entity, IParsable {
         /// <summary>References to attached objects like files, tabs, meetings etc.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ChatMessageAttachment>? Attachments {
+            get { return BackingStore?.Get<List<ChatMessageAttachment>?>("attachments"); }
+            set { BackingStore?.Set("attachments", value); }
+        }
+#else
         public List<ChatMessageAttachment> Attachments {
             get { return BackingStore?.Get<List<ChatMessageAttachment>>("attachments"); }
             set { BackingStore?.Set("attachments", value); }
         }
+#endif
         /// <summary>The body property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ItemBody? Body {
+            get { return BackingStore?.Get<ItemBody?>("body"); }
+            set { BackingStore?.Set("body", value); }
+        }
+#else
         public ItemBody Body {
             get { return BackingStore?.Get<ItemBody>("body"); }
             set { BackingStore?.Set("body", value); }
         }
+#endif
         /// <summary>If the message was sent in a channel, represents identity of the channel.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.ChannelIdentity? ChannelIdentity {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ChannelIdentity?>("channelIdentity"); }
+            set { BackingStore?.Set("channelIdentity", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.ChannelIdentity ChannelIdentity {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ChannelIdentity>("channelIdentity"); }
             set { BackingStore?.Set("channelIdentity", value); }
         }
+#endif
         /// <summary>If the message was sent in a chat, represents the identity of the chat.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ChatId {
+            get { return BackingStore?.Get<string?>("chatId"); }
+            set { BackingStore?.Set("chatId", value); }
+        }
+#else
         public string ChatId {
             get { return BackingStore?.Get<string>("chatId"); }
             set { BackingStore?.Set("chatId", value); }
         }
+#endif
         /// <summary>Timestamp of when the chat message was created.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
@@ -36,25 +64,53 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("deletedDateTime", value); }
         }
         /// <summary>Read-only. Version number of the chat message.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Etag {
+            get { return BackingStore?.Get<string?>("etag"); }
+            set { BackingStore?.Set("etag", value); }
+        }
+#else
         public string Etag {
             get { return BackingStore?.Get<string>("etag"); }
             set { BackingStore?.Set("etag", value); }
         }
+#endif
         /// <summary>Read-only.  If present, represents details of an event that happened in a chat, a channel, or a team, for example, adding new members. For event messages, the messageType property will be set to systemEventMessage.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public EventMessageDetail? EventDetail {
+            get { return BackingStore?.Get<EventMessageDetail?>("eventDetail"); }
+            set { BackingStore?.Set("eventDetail", value); }
+        }
+#else
         public EventMessageDetail EventDetail {
             get { return BackingStore?.Get<EventMessageDetail>("eventDetail"); }
             set { BackingStore?.Set("eventDetail", value); }
         }
+#endif
         /// <summary>Details of the sender of the chat message. Can only be set during migration.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ChatMessageFromIdentitySet? From {
+            get { return BackingStore?.Get<ChatMessageFromIdentitySet?>("from"); }
+            set { BackingStore?.Set("from", value); }
+        }
+#else
         public ChatMessageFromIdentitySet From {
             get { return BackingStore?.Get<ChatMessageFromIdentitySet>("from"); }
             set { BackingStore?.Set("from", value); }
         }
+#endif
         /// <summary>Content in a message hosted by Microsoft Teams - for example, images or code snippets.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ChatMessageHostedContent>? HostedContents {
+            get { return BackingStore?.Get<List<ChatMessageHostedContent>?>("hostedContents"); }
+            set { BackingStore?.Set("hostedContents", value); }
+        }
+#else
         public List<ChatMessageHostedContent> HostedContents {
             get { return BackingStore?.Get<List<ChatMessageHostedContent>>("hostedContents"); }
             set { BackingStore?.Set("hostedContents", value); }
         }
+#endif
         /// <summary>The importance property</summary>
         public ChatMessageImportance? Importance {
             get { return BackingStore?.Get<ChatMessageImportance?>("importance"); }
@@ -71,65 +127,142 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>Locale of the chat message set by the client. Always set to en-us.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Locale {
+            get { return BackingStore?.Get<string?>("locale"); }
+            set { BackingStore?.Set("locale", value); }
+        }
+#else
         public string Locale {
             get { return BackingStore?.Get<string>("locale"); }
             set { BackingStore?.Set("locale", value); }
         }
+#endif
         /// <summary>List of entities mentioned in the chat message. Supported entities are: user, bot, team, channel, and tag.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ChatMessageMention>? Mentions {
+            get { return BackingStore?.Get<List<ChatMessageMention>?>("mentions"); }
+            set { BackingStore?.Set("mentions", value); }
+        }
+#else
         public List<ChatMessageMention> Mentions {
             get { return BackingStore?.Get<List<ChatMessageMention>>("mentions"); }
             set { BackingStore?.Set("mentions", value); }
         }
+#endif
         /// <summary>List of activity history of a message item, including modification time and actions, such as reactionAdded, reactionRemoved, or reaction changes, on the message.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ChatMessageHistoryItem>? MessageHistory {
+            get { return BackingStore?.Get<List<ChatMessageHistoryItem>?>("messageHistory"); }
+            set { BackingStore?.Set("messageHistory", value); }
+        }
+#else
         public List<ChatMessageHistoryItem> MessageHistory {
             get { return BackingStore?.Get<List<ChatMessageHistoryItem>>("messageHistory"); }
             set { BackingStore?.Set("messageHistory", value); }
         }
+#endif
         /// <summary>The messageType property</summary>
         public ChatMessageType? MessageType {
             get { return BackingStore?.Get<ChatMessageType?>("messageType"); }
             set { BackingStore?.Set("messageType", value); }
         }
         /// <summary>User attribution of the message when bot sends a message on behalf of a user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ChatMessageFromIdentitySet? OnBehalfOf {
+            get { return BackingStore?.Get<ChatMessageFromIdentitySet?>("onBehalfOf"); }
+            set { BackingStore?.Set("onBehalfOf", value); }
+        }
+#else
         public ChatMessageFromIdentitySet OnBehalfOf {
             get { return BackingStore?.Get<ChatMessageFromIdentitySet>("onBehalfOf"); }
             set { BackingStore?.Set("onBehalfOf", value); }
         }
+#endif
         /// <summary>Defines the properties of a policy violation set by a data loss prevention (DLP) application.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ChatMessagePolicyViolation? PolicyViolation {
+            get { return BackingStore?.Get<ChatMessagePolicyViolation?>("policyViolation"); }
+            set { BackingStore?.Set("policyViolation", value); }
+        }
+#else
         public ChatMessagePolicyViolation PolicyViolation {
             get { return BackingStore?.Get<ChatMessagePolicyViolation>("policyViolation"); }
             set { BackingStore?.Set("policyViolation", value); }
         }
+#endif
         /// <summary>Reactions for this chat message (for example, Like).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ChatMessageReaction>? Reactions {
+            get { return BackingStore?.Get<List<ChatMessageReaction>?>("reactions"); }
+            set { BackingStore?.Set("reactions", value); }
+        }
+#else
         public List<ChatMessageReaction> Reactions {
             get { return BackingStore?.Get<List<ChatMessageReaction>>("reactions"); }
             set { BackingStore?.Set("reactions", value); }
         }
+#endif
         /// <summary>Replies for a specified message. Supports $expand for channel messages.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ChatMessage>? Replies {
+            get { return BackingStore?.Get<List<ChatMessage>?>("replies"); }
+            set { BackingStore?.Set("replies", value); }
+        }
+#else
         public List<ChatMessage> Replies {
             get { return BackingStore?.Get<List<ChatMessage>>("replies"); }
             set { BackingStore?.Set("replies", value); }
         }
+#endif
         /// <summary>Read-only. ID of the parent chat message or root chat message of the thread. (Only applies to chat messages in channels, not chats.)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ReplyToId {
+            get { return BackingStore?.Get<string?>("replyToId"); }
+            set { BackingStore?.Set("replyToId", value); }
+        }
+#else
         public string ReplyToId {
             get { return BackingStore?.Get<string>("replyToId"); }
             set { BackingStore?.Set("replyToId", value); }
         }
+#endif
         /// <summary>The subject of the chat message, in plaintext.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Subject {
+            get { return BackingStore?.Get<string?>("subject"); }
+            set { BackingStore?.Set("subject", value); }
+        }
+#else
         public string Subject {
             get { return BackingStore?.Get<string>("subject"); }
             set { BackingStore?.Set("subject", value); }
         }
+#endif
         /// <summary>Summary text of the chat message that could be used for push notifications and summary views or fall back views. Only applies to channel chat messages, not chat messages in a chat.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Summary {
+            get { return BackingStore?.Get<string?>("summary"); }
+            set { BackingStore?.Set("summary", value); }
+        }
+#else
         public string Summary {
             get { return BackingStore?.Get<string>("summary"); }
             set { BackingStore?.Set("summary", value); }
         }
+#endif
         /// <summary>Read-only. Link to the message in Microsoft Teams.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? WebUrl {
+            get { return BackingStore?.Get<string?>("webUrl"); }
+            set { BackingStore?.Set("webUrl", value); }
+        }
+#else
         public string WebUrl {
             get { return BackingStore?.Get<string>("webUrl"); }
             set { BackingStore?.Set("webUrl", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

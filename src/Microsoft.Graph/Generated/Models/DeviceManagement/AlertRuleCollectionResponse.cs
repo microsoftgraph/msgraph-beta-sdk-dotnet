@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.DeviceManagement {
     public class AlertRuleCollectionResponse : BaseCollectionPaginationCountResponse, IParsable {
         /// <summary>The value property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AlertRule>? Value {
+            get { return BackingStore?.Get<List<AlertRule>?>("value"); }
+            set { BackingStore?.Set("value", value); }
+        }
+#else
         public List<AlertRule> Value {
             get { return BackingStore?.Get<List<AlertRule>>("value"); }
             set { BackingStore?.Set("value", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

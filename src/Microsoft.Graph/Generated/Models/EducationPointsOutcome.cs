@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class EducationPointsOutcome : EducationOutcome, IParsable {
         /// <summary>The numeric grade the teacher has given the student for this assignment.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public EducationAssignmentPointsGrade? Points {
+            get { return BackingStore?.Get<EducationAssignmentPointsGrade?>("points"); }
+            set { BackingStore?.Set("points", value); }
+        }
+#else
         public EducationAssignmentPointsGrade Points {
             get { return BackingStore?.Get<EducationAssignmentPointsGrade>("points"); }
             set { BackingStore?.Set("points", value); }
         }
+#endif
         /// <summary>A copy of the points property that is made when the grade is released to the student.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public EducationAssignmentPointsGrade? PublishedPoints {
+            get { return BackingStore?.Get<EducationAssignmentPointsGrade?>("publishedPoints"); }
+            set { BackingStore?.Set("publishedPoints", value); }
+        }
+#else
         public EducationAssignmentPointsGrade PublishedPoints {
             get { return BackingStore?.Get<EducationAssignmentPointsGrade>("publishedPoints"); }
             set { BackingStore?.Set("publishedPoints", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new EducationPointsOutcome and sets the default values.
         /// </summary>

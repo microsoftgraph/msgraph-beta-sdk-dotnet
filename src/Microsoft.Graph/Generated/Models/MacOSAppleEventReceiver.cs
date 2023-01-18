@@ -22,25 +22,46 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Code requirement for the app or binary that receives the Apple Event.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CodeRequirement {
+            get { return BackingStore?.Get<string?>("codeRequirement"); }
+            set { BackingStore?.Set("codeRequirement", value); }
+        }
+#else
         public string CodeRequirement {
             get { return BackingStore?.Get<string>("codeRequirement"); }
             set { BackingStore?.Set("codeRequirement", value); }
         }
+#endif
         /// <summary>Bundle ID of the app or file path of the process or executable that receives the Apple Event.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Identifier {
+            get { return BackingStore?.Get<string?>("identifier"); }
+            set { BackingStore?.Set("identifier", value); }
+        }
+#else
         public string Identifier {
             get { return BackingStore?.Get<string>("identifier"); }
             set { BackingStore?.Set("identifier", value); }
         }
+#endif
         /// <summary>Process identifier types for MacOS Privacy Preferences</summary>
         public MacOSProcessIdentifierType? IdentifierType {
             get { return BackingStore?.Get<MacOSProcessIdentifierType?>("identifierType"); }
             set { BackingStore?.Set("identifierType", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new macOSAppleEventReceiver and sets the default values.
         /// </summary>

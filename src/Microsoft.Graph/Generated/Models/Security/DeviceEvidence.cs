@@ -6,20 +6,34 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
     public class DeviceEvidence : AlertEvidence, IParsable {
         /// <summary>A unique identifier assigned to a device by Azure Active Directory (Azure AD) when device is Azure AD-joined.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AzureAdDeviceId {
+            get { return BackingStore?.Get<string?>("azureAdDeviceId"); }
+            set { BackingStore?.Set("azureAdDeviceId", value); }
+        }
+#else
         public string AzureAdDeviceId {
             get { return BackingStore?.Get<string>("azureAdDeviceId"); }
             set { BackingStore?.Set("azureAdDeviceId", value); }
         }
+#endif
         /// <summary>State of the Defender AntiMalware engine. The possible values are: notReporting, disabled, notUpdated, updated, unknown, notSupported, unknownFutureValue.</summary>
         public Microsoft.Graph.Beta.Models.Security.DefenderAvStatus? DefenderAvStatus {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.DefenderAvStatus?>("defenderAvStatus"); }
             set { BackingStore?.Set("defenderAvStatus", value); }
         }
         /// <summary>The fully qualified domain name (FQDN) for the device.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeviceDnsName {
+            get { return BackingStore?.Get<string?>("deviceDnsName"); }
+            set { BackingStore?.Set("deviceDnsName", value); }
+        }
+#else
         public string DeviceDnsName {
             get { return BackingStore?.Get<string>("deviceDnsName"); }
             set { BackingStore?.Set("deviceDnsName", value); }
         }
+#endif
         /// <summary>The date and time when the device was first seen.</summary>
         public DateTimeOffset? FirstSeenDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("firstSeenDateTime"); }
@@ -31,15 +45,29 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("healthStatus", value); }
         }
         /// <summary>Users that were logged on the machine during the time of the alert.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<LoggedOnUser>? LoggedOnUsers {
+            get { return BackingStore?.Get<List<LoggedOnUser>?>("loggedOnUsers"); }
+            set { BackingStore?.Set("loggedOnUsers", value); }
+        }
+#else
         public List<LoggedOnUser> LoggedOnUsers {
             get { return BackingStore?.Get<List<LoggedOnUser>>("loggedOnUsers"); }
             set { BackingStore?.Set("loggedOnUsers", value); }
         }
+#endif
         /// <summary>A unique identifier assigned to a device by Microsoft Defender for Endpoint.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MdeDeviceId {
+            get { return BackingStore?.Get<string?>("mdeDeviceId"); }
+            set { BackingStore?.Set("mdeDeviceId", value); }
+        }
+#else
         public string MdeDeviceId {
             get { return BackingStore?.Get<string>("mdeDeviceId"); }
             set { BackingStore?.Set("mdeDeviceId", value); }
         }
+#endif
         /// <summary>The status of the machine onboarding to Microsoft Defender for Endpoint.The possible values are: insufficientInfo, onboarded, canBeOnboarded, unsupported, unknownFutureValue.</summary>
         public Microsoft.Graph.Beta.Models.Security.OnboardingStatus? OnboardingStatus {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.OnboardingStatus?>("onboardingStatus"); }
@@ -51,35 +79,63 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("osBuild", value); }
         }
         /// <summary>The operating system platform the device is running.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OsPlatform {
+            get { return BackingStore?.Get<string?>("osPlatform"); }
+            set { BackingStore?.Set("osPlatform", value); }
+        }
+#else
         public string OsPlatform {
             get { return BackingStore?.Get<string>("osPlatform"); }
             set { BackingStore?.Set("osPlatform", value); }
         }
+#endif
         /// <summary>The ID of the role-based access control (RBAC) device group.</summary>
         public int? RbacGroupId {
             get { return BackingStore?.Get<int?>("rbacGroupId"); }
             set { BackingStore?.Set("rbacGroupId", value); }
         }
         /// <summary>The name of the RBAC device group.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? RbacGroupName {
+            get { return BackingStore?.Get<string?>("rbacGroupName"); }
+            set { BackingStore?.Set("rbacGroupName", value); }
+        }
+#else
         public string RbacGroupName {
             get { return BackingStore?.Get<string>("rbacGroupName"); }
             set { BackingStore?.Set("rbacGroupName", value); }
         }
+#endif
         /// <summary>Risk score as evaluated by Microsoft Defender for Endpoint. The possible values are: none, informational, low, medium, high, unknownFutureValue.</summary>
         public DeviceRiskScore? RiskScore {
             get { return BackingStore?.Get<DeviceRiskScore?>("riskScore"); }
             set { BackingStore?.Set("riskScore", value); }
         }
         /// <summary>The version of the operating system platform.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Version {
+            get { return BackingStore?.Get<string?>("version"); }
+            set { BackingStore?.Set("version", value); }
+        }
+#else
         public string Version {
             get { return BackingStore?.Get<string>("version"); }
             set { BackingStore?.Set("version", value); }
         }
+#endif
         /// <summary>Metadata of the virtual machine (VM) on which Microsoft Defender for Endpoint is running.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.Security.VmMetadata? VmMetadata {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.VmMetadata?>("vmMetadata"); }
+            set { BackingStore?.Set("vmMetadata", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.Security.VmMetadata VmMetadata {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.VmMetadata>("vmMetadata"); }
             set { BackingStore?.Set("vmMetadata", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

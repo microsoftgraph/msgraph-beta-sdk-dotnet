@@ -14,15 +14,29 @@ namespace Microsoft.Graph.Beta.Models.ExternalConnectors {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Specifies configurations to identify an externalItem based on a shared URL.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<UrlToItemResolverBase>? UrlToItemResolvers {
+            get { return BackingStore?.Get<List<UrlToItemResolverBase>?>("urlToItemResolvers"); }
+            set { BackingStore?.Set("urlToItemResolvers", value); }
+        }
+#else
         public List<UrlToItemResolverBase> UrlToItemResolvers {
             get { return BackingStore?.Get<List<UrlToItemResolverBase>>("urlToItemResolvers"); }
             set { BackingStore?.Set("urlToItemResolvers", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new activitySettings and sets the default values.
         /// </summary>

@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class ManagedAppProtection : ManagedAppPolicy, IParsable {
         /// <summary>Data storage locations where a user may store managed data.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ManagedAppDataIngestionLocation?>? AllowedDataIngestionLocations {
+            get { return BackingStore?.Get<List<ManagedAppDataIngestionLocation?>?>("allowedDataIngestionLocations"); }
+            set { BackingStore?.Set("allowedDataIngestionLocations", value); }
+        }
+#else
         public List<ManagedAppDataIngestionLocation?> AllowedDataIngestionLocations {
             get { return BackingStore?.Get<List<ManagedAppDataIngestionLocation?>>("allowedDataIngestionLocations"); }
             set { BackingStore?.Set("allowedDataIngestionLocations", value); }
         }
+#endif
         /// <summary>Data storage locations where a user may store managed data.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ManagedAppDataStorageLocation?>? AllowedDataStorageLocations {
+            get { return BackingStore?.Get<List<ManagedAppDataStorageLocation?>?>("allowedDataStorageLocations"); }
+            set { BackingStore?.Set("allowedDataStorageLocations", value); }
+        }
+#else
         public List<ManagedAppDataStorageLocation?> AllowedDataStorageLocations {
             get { return BackingStore?.Get<List<ManagedAppDataStorageLocation?>>("allowedDataStorageLocations"); }
             set { BackingStore?.Set("allowedDataStorageLocations", value); }
         }
+#endif
         /// <summary>Data can be transferred from/to these classes of apps</summary>
         public ManagedAppDataTransferLevel? AllowedInboundDataTransferSources {
             get { return BackingStore?.Get<ManagedAppDataTransferLevel?>("allowedInboundDataTransferSources"); }
@@ -111,55 +125,118 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("maximumPinRetries", value); }
         }
         /// <summary>Versions bigger than the specified version will block the managed app from accessing company data.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MaximumRequiredOsVersion {
+            get { return BackingStore?.Get<string?>("maximumRequiredOsVersion"); }
+            set { BackingStore?.Set("maximumRequiredOsVersion", value); }
+        }
+#else
         public string MaximumRequiredOsVersion {
             get { return BackingStore?.Get<string>("maximumRequiredOsVersion"); }
             set { BackingStore?.Set("maximumRequiredOsVersion", value); }
         }
+#endif
         /// <summary>Versions bigger than the specified version will block the managed app from accessing company data.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MaximumWarningOsVersion {
+            get { return BackingStore?.Get<string?>("maximumWarningOsVersion"); }
+            set { BackingStore?.Set("maximumWarningOsVersion", value); }
+        }
+#else
         public string MaximumWarningOsVersion {
             get { return BackingStore?.Get<string>("maximumWarningOsVersion"); }
             set { BackingStore?.Set("maximumWarningOsVersion", value); }
         }
+#endif
         /// <summary>Versions bigger than the specified version will block the managed app from accessing company data.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MaximumWipeOsVersion {
+            get { return BackingStore?.Get<string?>("maximumWipeOsVersion"); }
+            set { BackingStore?.Set("maximumWipeOsVersion", value); }
+        }
+#else
         public string MaximumWipeOsVersion {
             get { return BackingStore?.Get<string>("maximumWipeOsVersion"); }
             set { BackingStore?.Set("maximumWipeOsVersion", value); }
         }
+#endif
         /// <summary>Minimum pin length required for an app-level pin if PinRequired is set to True</summary>
         public int? MinimumPinLength {
             get { return BackingStore?.Get<int?>("minimumPinLength"); }
             set { BackingStore?.Set("minimumPinLength", value); }
         }
         /// <summary>Versions less than the specified version will block the managed app from accessing company data.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MinimumRequiredAppVersion {
+            get { return BackingStore?.Get<string?>("minimumRequiredAppVersion"); }
+            set { BackingStore?.Set("minimumRequiredAppVersion", value); }
+        }
+#else
         public string MinimumRequiredAppVersion {
             get { return BackingStore?.Get<string>("minimumRequiredAppVersion"); }
             set { BackingStore?.Set("minimumRequiredAppVersion", value); }
         }
+#endif
         /// <summary>Versions less than the specified version will block the managed app from accessing company data.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MinimumRequiredOsVersion {
+            get { return BackingStore?.Get<string?>("minimumRequiredOsVersion"); }
+            set { BackingStore?.Set("minimumRequiredOsVersion", value); }
+        }
+#else
         public string MinimumRequiredOsVersion {
             get { return BackingStore?.Get<string>("minimumRequiredOsVersion"); }
             set { BackingStore?.Set("minimumRequiredOsVersion", value); }
         }
+#endif
         /// <summary>Versions less than the specified version will result in warning message on the managed app.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MinimumWarningAppVersion {
+            get { return BackingStore?.Get<string?>("minimumWarningAppVersion"); }
+            set { BackingStore?.Set("minimumWarningAppVersion", value); }
+        }
+#else
         public string MinimumWarningAppVersion {
             get { return BackingStore?.Get<string>("minimumWarningAppVersion"); }
             set { BackingStore?.Set("minimumWarningAppVersion", value); }
         }
+#endif
         /// <summary>Versions less than the specified version will result in warning message on the managed app from accessing company data.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MinimumWarningOsVersion {
+            get { return BackingStore?.Get<string?>("minimumWarningOsVersion"); }
+            set { BackingStore?.Set("minimumWarningOsVersion", value); }
+        }
+#else
         public string MinimumWarningOsVersion {
             get { return BackingStore?.Get<string>("minimumWarningOsVersion"); }
             set { BackingStore?.Set("minimumWarningOsVersion", value); }
         }
+#endif
         /// <summary>Versions less than or equal to the specified version will wipe the managed app and the associated company data.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MinimumWipeAppVersion {
+            get { return BackingStore?.Get<string?>("minimumWipeAppVersion"); }
+            set { BackingStore?.Set("minimumWipeAppVersion", value); }
+        }
+#else
         public string MinimumWipeAppVersion {
             get { return BackingStore?.Get<string>("minimumWipeAppVersion"); }
             set { BackingStore?.Set("minimumWipeAppVersion", value); }
         }
+#endif
         /// <summary>Versions less than or equal to the specified version will wipe the managed app and the associated company data.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MinimumWipeOsVersion {
+            get { return BackingStore?.Get<string?>("minimumWipeOsVersion"); }
+            set { BackingStore?.Set("minimumWipeOsVersion", value); }
+        }
+#else
         public string MinimumWipeOsVersion {
             get { return BackingStore?.Get<string>("minimumWipeOsVersion"); }
             set { BackingStore?.Set("minimumWipeOsVersion", value); }
         }
+#endif
         /// <summary>Indicates how to prioritize which Mobile Threat Defense (MTD) partner is enabled for a given platform, when more than one is enabled. An app can only be actively using a single Mobile Threat Defense partner. When NULL, Microsoft Defender will be given preference. Otherwise setting the value to defenderOverThirdPartyPartner or thirdPartyPartnerOverDefender will make explicit which partner to prioritize. Possible values are: null, defenderOverThirdPartyPartner, thirdPartyPartnerOverDefender and unknownFutureValue. Default value is null. Possible values are: defenderOverThirdPartyPartner, thirdPartyPartnerOverDefender, unknownFutureValue.</summary>
         public Microsoft.Graph.Beta.Models.MobileThreatDefensePartnerPriority? MobileThreatDefensePartnerPriority {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MobileThreatDefensePartnerPriority?>("mobileThreatDefensePartnerPriority"); }

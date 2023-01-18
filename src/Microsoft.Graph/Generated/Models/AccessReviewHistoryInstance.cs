@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class AccessReviewHistoryInstance : Entity, IParsable {
         /// <summary>Uri which can be used to retrieve review history data. This URI will be active for 24 hours after being generated. Required.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DownloadUri {
+            get { return BackingStore?.Get<string?>("downloadUri"); }
+            set { BackingStore?.Set("downloadUri", value); }
+        }
+#else
         public string DownloadUri {
             get { return BackingStore?.Get<string>("downloadUri"); }
             set { BackingStore?.Set("downloadUri", value); }
         }
+#endif
         /// <summary>Timestamp when this instance and associated data expires and the history is deleted. Required.</summary>
         public DateTimeOffset? ExpirationDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }

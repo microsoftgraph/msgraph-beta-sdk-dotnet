@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementConfigurationChoiceSettingValueConstantDefaultTemplate : DeviceManagementConfigurationChoiceSettingValueDefaultTemplate, IParsable {
         /// <summary>Option Children</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DeviceManagementConfigurationSettingInstanceTemplate>? Children {
+            get { return BackingStore?.Get<List<DeviceManagementConfigurationSettingInstanceTemplate>?>("children"); }
+            set { BackingStore?.Set("children", value); }
+        }
+#else
         public List<DeviceManagementConfigurationSettingInstanceTemplate> Children {
             get { return BackingStore?.Get<List<DeviceManagementConfigurationSettingInstanceTemplate>>("children"); }
             set { BackingStore?.Set("children", value); }
         }
+#endif
         /// <summary>Default Constant Value</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SettingDefinitionOptionId {
+            get { return BackingStore?.Get<string?>("settingDefinitionOptionId"); }
+            set { BackingStore?.Set("settingDefinitionOptionId", value); }
+        }
+#else
         public string SettingDefinitionOptionId {
             get { return BackingStore?.Get<string>("settingDefinitionOptionId"); }
             set { BackingStore?.Set("settingDefinitionOptionId", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new DeviceManagementConfigurationChoiceSettingValueConstantDefaultTemplate and sets the default values.
         /// </summary>

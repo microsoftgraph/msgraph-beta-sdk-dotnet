@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class OnTokenIssuanceStartCustomExtension : CustomAuthenticationExtension, IParsable {
         /// <summary>The claimsForTokenConfiguration property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<OnTokenIssuanceStartReturnClaim>? ClaimsForTokenConfiguration {
+            get { return BackingStore?.Get<List<OnTokenIssuanceStartReturnClaim>?>("claimsForTokenConfiguration"); }
+            set { BackingStore?.Set("claimsForTokenConfiguration", value); }
+        }
+#else
         public List<OnTokenIssuanceStartReturnClaim> ClaimsForTokenConfiguration {
             get { return BackingStore?.Get<List<OnTokenIssuanceStartReturnClaim>>("claimsForTokenConfiguration"); }
             set { BackingStore?.Set("claimsForTokenConfiguration", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new OnTokenIssuanceStartCustomExtension and sets the default values.
         /// </summary>

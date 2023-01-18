@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class WindowsKioskSingleUWPApp : WindowsKioskAppConfiguration, IParsable {
         /// <summary>The uwpApp property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public WindowsKioskUWPApp? UwpApp {
+            get { return BackingStore?.Get<WindowsKioskUWPApp?>("uwpApp"); }
+            set { BackingStore?.Set("uwpApp", value); }
+        }
+#else
         public WindowsKioskUWPApp UwpApp {
             get { return BackingStore?.Get<WindowsKioskUWPApp>("uwpApp"); }
             set { BackingStore?.Set("uwpApp", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new WindowsKioskSingleUWPApp and sets the default values.
         /// </summary>

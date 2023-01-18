@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
     public class InformationProtectionPolicySetting : Entity, IParsable {
         /// <summary>The defaultLabelId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DefaultLabelId {
+            get { return BackingStore?.Get<string?>("defaultLabelId"); }
+            set { BackingStore?.Set("defaultLabelId", value); }
+        }
+#else
         public string DefaultLabelId {
             get { return BackingStore?.Get<string>("defaultLabelId"); }
             set { BackingStore?.Set("defaultLabelId", value); }
         }
+#endif
         /// <summary>Exposes whether justification input is required on label downgrade.</summary>
         public bool? IsDowngradeJustificationRequired {
             get { return BackingStore?.Get<bool?>("isDowngradeJustificationRequired"); }
@@ -21,10 +28,17 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("isMandatory", value); }
         }
         /// <summary>Exposes the more information URL that can be configured by the administrator.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MoreInfoUrl {
+            get { return BackingStore?.Get<string?>("moreInfoUrl"); }
+            set { BackingStore?.Set("moreInfoUrl", value); }
+        }
+#else
         public string MoreInfoUrl {
             get { return BackingStore?.Get<string>("moreInfoUrl"); }
             set { BackingStore?.Set("moreInfoUrl", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

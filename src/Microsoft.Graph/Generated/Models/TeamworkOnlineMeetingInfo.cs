@@ -14,25 +14,53 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The identifier of the calendar event associated with the meeting.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CalendarEventId {
+            get { return BackingStore?.Get<string?>("calendarEventId"); }
+            set { BackingStore?.Set("calendarEventId", value); }
+        }
+#else
         public string CalendarEventId {
             get { return BackingStore?.Get<string>("calendarEventId"); }
             set { BackingStore?.Set("calendarEventId", value); }
         }
+#endif
         /// <summary>The URL which can be clicked on to join or uniquely identify the meeting.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? JoinWebUrl {
+            get { return BackingStore?.Get<string?>("joinWebUrl"); }
+            set { BackingStore?.Set("joinWebUrl", value); }
+        }
+#else
         public string JoinWebUrl {
             get { return BackingStore?.Get<string>("joinWebUrl"); }
             set { BackingStore?.Set("joinWebUrl", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The organizer of the meeting.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public TeamworkUserIdentity? Organizer {
+            get { return BackingStore?.Get<TeamworkUserIdentity?>("organizer"); }
+            set { BackingStore?.Set("organizer", value); }
+        }
+#else
         public TeamworkUserIdentity Organizer {
             get { return BackingStore?.Get<TeamworkUserIdentity>("organizer"); }
             set { BackingStore?.Set("organizer", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new teamworkOnlineMeetingInfo and sets the default values.
         /// </summary>

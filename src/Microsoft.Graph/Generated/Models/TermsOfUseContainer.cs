@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class TermsOfUseContainer : Entity, IParsable {
         /// <summary>Represents the current status of a user&apos;s response to a company&apos;s customizable terms of use agreement.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AgreementAcceptance>? AgreementAcceptances {
+            get { return BackingStore?.Get<List<AgreementAcceptance>?>("agreementAcceptances"); }
+            set { BackingStore?.Set("agreementAcceptances", value); }
+        }
+#else
         public List<AgreementAcceptance> AgreementAcceptances {
             get { return BackingStore?.Get<List<AgreementAcceptance>>("agreementAcceptances"); }
             set { BackingStore?.Set("agreementAcceptances", value); }
         }
+#endif
         /// <summary>Represents a tenant&apos;s customizable terms of use agreement that&apos;s created and managed with Azure Active Directory (Azure AD).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Agreement>? Agreements {
+            get { return BackingStore?.Get<List<Agreement>?>("agreements"); }
+            set { BackingStore?.Set("agreements", value); }
+        }
+#else
         public List<Agreement> Agreements {
             get { return BackingStore?.Get<List<Agreement>>("agreements"); }
             set { BackingStore?.Set("agreements", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Windows Driver Update Profile
+    /// </summary>
     public class WindowsDriverUpdateProfile : Entity, IParsable {
         /// <summary>An enum type to represent approval type of a driver update profile.</summary>
         public DriverUpdateProfileApprovalType? ApprovalType {
@@ -11,10 +14,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("approvalType", value); }
         }
         /// <summary>The list of group assignments of the profile.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<WindowsDriverUpdateProfileAssignment>? Assignments {
+            get { return BackingStore?.Get<List<WindowsDriverUpdateProfileAssignment>?>("assignments"); }
+            set { BackingStore?.Set("assignments", value); }
+        }
+#else
         public List<WindowsDriverUpdateProfileAssignment> Assignments {
             get { return BackingStore?.Get<List<WindowsDriverUpdateProfileAssignment>>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
+#endif
         /// <summary>The date time that the profile was created.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
@@ -26,30 +36,58 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("deploymentDeferralInDays", value); }
         }
         /// <summary>The description of the profile which is specified by the user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>Number of devices reporting for this profile</summary>
         public int? DeviceReporting {
             get { return BackingStore?.Get<int?>("deviceReporting"); }
             set { BackingStore?.Set("deviceReporting", value); }
         }
         /// <summary>The display name for the profile.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>Driver inventories for this profile.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<WindowsDriverUpdateInventory>? DriverInventories {
+            get { return BackingStore?.Get<List<WindowsDriverUpdateInventory>?>("driverInventories"); }
+            set { BackingStore?.Set("driverInventories", value); }
+        }
+#else
         public List<WindowsDriverUpdateInventory> DriverInventories {
             get { return BackingStore?.Get<List<WindowsDriverUpdateInventory>>("driverInventories"); }
             set { BackingStore?.Set("driverInventories", value); }
         }
+#endif
         /// <summary>Driver inventory sync status for this profile.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public WindowsDriverUpdateProfileInventorySyncStatus? InventorySyncStatus {
+            get { return BackingStore?.Get<WindowsDriverUpdateProfileInventorySyncStatus?>("inventorySyncStatus"); }
+            set { BackingStore?.Set("inventorySyncStatus", value); }
+        }
+#else
         public WindowsDriverUpdateProfileInventorySyncStatus InventorySyncStatus {
             get { return BackingStore?.Get<WindowsDriverUpdateProfileInventorySyncStatus>("inventorySyncStatus"); }
             set { BackingStore?.Set("inventorySyncStatus", value); }
         }
+#endif
         /// <summary>The date time that the profile was last modified.</summary>
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
@@ -61,10 +99,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("newUpdates", value); }
         }
         /// <summary>List of Scope Tags for this Driver Update entity.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? RoleScopeTagIds {
+            get { return BackingStore?.Get<List<string>?>("roleScopeTagIds"); }
+            set { BackingStore?.Set("roleScopeTagIds", value); }
+        }
+#else
         public List<string> RoleScopeTagIds {
             get { return BackingStore?.Get<List<string>>("roleScopeTagIds"); }
             set { BackingStore?.Set("roleScopeTagIds", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class CanvasLayout : Entity, IParsable {
         /// <summary>Collection of horizontal sections on the SharePoint page.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<HorizontalSection>? HorizontalSections {
+            get { return BackingStore?.Get<List<HorizontalSection>?>("horizontalSections"); }
+            set { BackingStore?.Set("horizontalSections", value); }
+        }
+#else
         public List<HorizontalSection> HorizontalSections {
             get { return BackingStore?.Get<List<HorizontalSection>>("horizontalSections"); }
             set { BackingStore?.Set("horizontalSections", value); }
         }
+#endif
         /// <summary>Vertical section on the SharePoint page.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.VerticalSection? VerticalSection {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.VerticalSection?>("verticalSection"); }
+            set { BackingStore?.Set("verticalSection", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.VerticalSection VerticalSection {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.VerticalSection>("verticalSection"); }
             set { BackingStore?.Set("verticalSection", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

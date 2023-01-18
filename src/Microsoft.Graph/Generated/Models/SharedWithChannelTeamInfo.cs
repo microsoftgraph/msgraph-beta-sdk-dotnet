@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class SharedWithChannelTeamInfo : TeamInfo, IParsable {
         /// <summary>A collection of team members who have access to the shared channel.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ConversationMember>? AllowedMembers {
+            get { return BackingStore?.Get<List<ConversationMember>?>("allowedMembers"); }
+            set { BackingStore?.Set("allowedMembers", value); }
+        }
+#else
         public List<ConversationMember> AllowedMembers {
             get { return BackingStore?.Get<List<ConversationMember>>("allowedMembers"); }
             set { BackingStore?.Set("allowedMembers", value); }
         }
+#endif
         /// <summary>Indicates whether the team is the host of the channel.</summary>
         public bool? IsHostTeam {
             get { return BackingStore?.Get<bool?>("isHostTeam"); }

@@ -14,10 +14,17 @@ namespace Microsoft.Graph.Beta.DeviceManagement.AndroidManagedStoreAccountEnterp
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The parentUri property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ParentUri {
+            get { return BackingStore?.Get<string?>("parentUri"); }
+            set { BackingStore?.Set("parentUri", value); }
+        }
+#else
         public string ParentUri {
             get { return BackingStore?.Get<string>("parentUri"); }
             set { BackingStore?.Set("parentUri", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new createGooglePlayWebTokenPostRequestBody and sets the default values.
         /// </summary>

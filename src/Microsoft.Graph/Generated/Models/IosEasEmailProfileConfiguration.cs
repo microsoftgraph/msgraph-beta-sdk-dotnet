@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class IosEasEmailProfileConfiguration : EasEmailProfileConfigurationBase, IParsable {
         /// <summary>Account name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AccountName {
+            get { return BackingStore?.Get<string?>("accountName"); }
+            set { BackingStore?.Set("accountName", value); }
+        }
+#else
         public string AccountName {
             get { return BackingStore?.Get<string>("accountName"); }
             set { BackingStore?.Set("accountName", value); }
         }
+#endif
         /// <summary>Authentication method for this Email profile. Possible values are: usernameAndPassword, certificate, derivedCredential.</summary>
         public EasAuthenticationMethod? AuthenticationMethod {
             get { return BackingStore?.Get<EasAuthenticationMethod?>("authenticationMethod"); }
@@ -31,10 +38,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("blockSyncingRecentlyUsedEmailAddresses", value); }
         }
         /// <summary>Tenant level settings for the Derived Credentials to be used for authentication.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DeviceManagementDerivedCredentialSettings? DerivedCredentialSettings {
+            get { return BackingStore?.Get<DeviceManagementDerivedCredentialSettings?>("derivedCredentialSettings"); }
+            set { BackingStore?.Set("derivedCredentialSettings", value); }
+        }
+#else
         public DeviceManagementDerivedCredentialSettings DerivedCredentialSettings {
             get { return BackingStore?.Get<DeviceManagementDerivedCredentialSettings>("derivedCredentialSettings"); }
             set { BackingStore?.Set("derivedCredentialSettings", value); }
         }
+#endif
         /// <summary>Possible values for email sync duration.</summary>
         public EmailSyncDuration? DurationOfEmailToSync {
             get { return BackingStore?.Get<EmailSyncDuration?>("durationOfEmailToSync"); }
@@ -61,20 +75,41 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("encryptionCertificateType", value); }
         }
         /// <summary>Exchange location that (URL) that the native mail app connects to.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? HostName {
+            get { return BackingStore?.Get<string?>("hostName"); }
+            set { BackingStore?.Set("hostName", value); }
+        }
+#else
         public string HostName {
             get { return BackingStore?.Get<string>("hostName"); }
             set { BackingStore?.Set("hostName", value); }
         }
+#endif
         /// <summary>Identity certificate.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public IosCertificateProfileBase? IdentityCertificate {
+            get { return BackingStore?.Get<IosCertificateProfileBase?>("identityCertificate"); }
+            set { BackingStore?.Set("identityCertificate", value); }
+        }
+#else
         public IosCertificateProfileBase IdentityCertificate {
             get { return BackingStore?.Get<IosCertificateProfileBase>("identityCertificate"); }
             set { BackingStore?.Set("identityCertificate", value); }
         }
+#endif
         /// <summary>Profile ID of the Per-App VPN policy to be used to access emails from the native Mail client</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PerAppVPNProfileId {
+            get { return BackingStore?.Get<string?>("perAppVPNProfileId"); }
+            set { BackingStore?.Set("perAppVPNProfileId", value); }
+        }
+#else
         public string PerAppVPNProfileId {
             get { return BackingStore?.Get<string>("perAppVPNProfileId"); }
             set { BackingStore?.Set("perAppVPNProfileId", value); }
         }
+#endif
         /// <summary>Indicates whether or not to use S/MIME certificate.</summary>
         public bool? RequireSmime {
             get { return BackingStore?.Get<bool?>("requireSmime"); }
@@ -106,20 +141,34 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("smimeEncryptByDefaultUserOverrideEnabled", value); }
         }
         /// <summary>S/MIME encryption certificate.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public IosCertificateProfile? SmimeEncryptionCertificate {
+            get { return BackingStore?.Get<IosCertificateProfile?>("smimeEncryptionCertificate"); }
+            set { BackingStore?.Set("smimeEncryptionCertificate", value); }
+        }
+#else
         public IosCertificateProfile SmimeEncryptionCertificate {
             get { return BackingStore?.Get<IosCertificateProfile>("smimeEncryptionCertificate"); }
             set { BackingStore?.Set("smimeEncryptionCertificate", value); }
         }
+#endif
         /// <summary>If set to true the user can select the S/MIME encryption identity.</summary>
         public bool? SmimeEncryptionCertificateUserOverrideEnabled {
             get { return BackingStore?.Get<bool?>("smimeEncryptionCertificateUserOverrideEnabled"); }
             set { BackingStore?.Set("smimeEncryptionCertificateUserOverrideEnabled", value); }
         }
         /// <summary>S/MIME signing certificate.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public IosCertificateProfile? SmimeSigningCertificate {
+            get { return BackingStore?.Get<IosCertificateProfile?>("smimeSigningCertificate"); }
+            set { BackingStore?.Set("smimeSigningCertificate", value); }
+        }
+#else
         public IosCertificateProfile SmimeSigningCertificate {
             get { return BackingStore?.Get<IosCertificateProfile>("smimeSigningCertificate"); }
             set { BackingStore?.Set("smimeSigningCertificate", value); }
         }
+#endif
         /// <summary>If set to true, the user can select the signing identity.</summary>
         public bool? SmimeSigningCertificateUserOverrideEnabled {
             get { return BackingStore?.Get<bool?>("smimeSigningCertificateUserOverrideEnabled"); }

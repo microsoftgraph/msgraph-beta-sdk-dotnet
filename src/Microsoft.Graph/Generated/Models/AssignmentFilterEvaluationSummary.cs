@@ -15,15 +15,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The admin defined name for assignment filter.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AssignmentFilterDisplayName {
+            get { return BackingStore?.Get<string?>("assignmentFilterDisplayName"); }
+            set { BackingStore?.Set("assignmentFilterDisplayName", value); }
+        }
+#else
         public string AssignmentFilterDisplayName {
             get { return BackingStore?.Get<string>("assignmentFilterDisplayName"); }
             set { BackingStore?.Set("assignmentFilterDisplayName", value); }
         }
+#endif
         /// <summary>Unique identifier for the assignment filter object</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AssignmentFilterId {
+            get { return BackingStore?.Get<string?>("assignmentFilterId"); }
+            set { BackingStore?.Set("assignmentFilterId", value); }
+        }
+#else
         public string AssignmentFilterId {
             get { return BackingStore?.Get<string>("assignmentFilterId"); }
             set { BackingStore?.Set("assignmentFilterId", value); }
         }
+#endif
         /// <summary>The time the assignment filter was last modified.</summary>
         public DateTimeOffset? AssignmentFilterLastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("assignmentFilterLastModifiedDateTime"); }
@@ -40,10 +54,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("assignmentFilterType", value); }
         }
         /// <summary>A collection of filter types and their corresponding evaluation results.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AssignmentFilterTypeAndEvaluationResult>? AssignmentFilterTypeAndEvaluationResults {
+            get { return BackingStore?.Get<List<AssignmentFilterTypeAndEvaluationResult>?>("assignmentFilterTypeAndEvaluationResults"); }
+            set { BackingStore?.Set("assignmentFilterTypeAndEvaluationResults", value); }
+        }
+#else
         public List<AssignmentFilterTypeAndEvaluationResult> AssignmentFilterTypeAndEvaluationResults {
             get { return BackingStore?.Get<List<AssignmentFilterTypeAndEvaluationResult>>("assignmentFilterTypeAndEvaluationResults"); }
             set { BackingStore?.Set("assignmentFilterTypeAndEvaluationResults", value); }
         }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The time assignment filter was evaluated.</summary>
@@ -57,10 +78,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("evaluationResult", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new assignmentFilterEvaluationSummary and sets the default values.
         /// </summary>

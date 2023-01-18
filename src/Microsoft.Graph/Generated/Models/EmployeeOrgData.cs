@@ -14,20 +14,41 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The cost center associated with the user. Returned only on $select. Supports $filter.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CostCenter {
+            get { return BackingStore?.Get<string?>("costCenter"); }
+            set { BackingStore?.Set("costCenter", value); }
+        }
+#else
         public string CostCenter {
             get { return BackingStore?.Get<string>("costCenter"); }
             set { BackingStore?.Set("costCenter", value); }
         }
+#endif
         /// <summary>The name of the division in which the user works. Returned only on $select. Supports $filter.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Division {
+            get { return BackingStore?.Get<string?>("division"); }
+            set { BackingStore?.Set("division", value); }
+        }
+#else
         public string Division {
             get { return BackingStore?.Get<string>("division"); }
             set { BackingStore?.Set("division", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new employeeOrgData and sets the default values.
         /// </summary>

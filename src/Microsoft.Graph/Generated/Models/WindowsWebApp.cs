@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class WindowsWebApp : MobileApp, IParsable {
         /// <summary>The web app URL.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AppUrl {
+            get { return BackingStore?.Get<string?>("appUrl"); }
+            set { BackingStore?.Set("appUrl", value); }
+        }
+#else
         public string AppUrl {
             get { return BackingStore?.Get<string>("appUrl"); }
             set { BackingStore?.Set("appUrl", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new WindowsWebApp and sets the default values.
         /// </summary>

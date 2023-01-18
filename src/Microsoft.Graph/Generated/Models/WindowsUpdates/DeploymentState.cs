@@ -14,15 +14,29 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Specifies the reasons the deployment has its state value. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DeploymentStateReason>? Reasons {
+            get { return BackingStore?.Get<List<DeploymentStateReason>?>("reasons"); }
+            set { BackingStore?.Set("reasons", value); }
+        }
+#else
         public List<DeploymentStateReason> Reasons {
             get { return BackingStore?.Get<List<DeploymentStateReason>>("reasons"); }
             set { BackingStore?.Set("reasons", value); }
         }
+#endif
         /// <summary>The requestedValue property</summary>
         public RequestedDeploymentStateValue? RequestedValue {
             get { return BackingStore?.Get<RequestedDeploymentStateValue?>("requestedValue"); }

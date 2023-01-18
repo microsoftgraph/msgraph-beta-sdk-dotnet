@@ -11,35 +11,77 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("accessId", value); }
         }
         /// <summary>The group property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.Group? Group {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Group?>("group"); }
+            set { BackingStore?.Set("group", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.Group Group {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Group>("group"); }
             set { BackingStore?.Set("group", value); }
         }
+#endif
         /// <summary>The groupId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? GroupId {
+            get { return BackingStore?.Get<string?>("groupId"); }
+            set { BackingStore?.Set("groupId", value); }
+        }
+#else
         public string GroupId {
             get { return BackingStore?.Get<string>("groupId"); }
             set { BackingStore?.Set("groupId", value); }
         }
+#endif
         /// <summary>The principal property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DirectoryObject? Principal {
+            get { return BackingStore?.Get<DirectoryObject?>("principal"); }
+            set { BackingStore?.Set("principal", value); }
+        }
+#else
         public DirectoryObject Principal {
             get { return BackingStore?.Get<DirectoryObject>("principal"); }
             set { BackingStore?.Set("principal", value); }
         }
+#endif
         /// <summary>The principalId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PrincipalId {
+            get { return BackingStore?.Get<string?>("principalId"); }
+            set { BackingStore?.Set("principalId", value); }
+        }
+#else
         public string PrincipalId {
             get { return BackingStore?.Get<string>("principalId"); }
             set { BackingStore?.Set("principalId", value); }
         }
+#endif
         /// <summary>The targetSchedule property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public PrivilegedAccessGroupEligibilitySchedule? TargetSchedule {
+            get { return BackingStore?.Get<PrivilegedAccessGroupEligibilitySchedule?>("targetSchedule"); }
+            set { BackingStore?.Set("targetSchedule", value); }
+        }
+#else
         public PrivilegedAccessGroupEligibilitySchedule TargetSchedule {
             get { return BackingStore?.Get<PrivilegedAccessGroupEligibilitySchedule>("targetSchedule"); }
             set { BackingStore?.Set("targetSchedule", value); }
         }
+#endif
         /// <summary>The targetScheduleId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TargetScheduleId {
+            get { return BackingStore?.Get<string?>("targetScheduleId"); }
+            set { BackingStore?.Set("targetScheduleId", value); }
+        }
+#else
         public string TargetScheduleId {
             get { return BackingStore?.Get<string>("targetScheduleId"); }
             set { BackingStore?.Set("targetScheduleId", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new PrivilegedAccessGroupEligibilityScheduleRequest and sets the default values.
         /// </summary>

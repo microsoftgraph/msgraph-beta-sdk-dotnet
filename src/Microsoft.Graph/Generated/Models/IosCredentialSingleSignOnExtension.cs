@@ -6,30 +6,65 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class IosCredentialSingleSignOnExtension : IosSingleSignOnExtension, IParsable {
         /// <summary>Gets or sets a list of typed key-value pairs used to configure Credential-type profiles. This collection can contain a maximum of 500 elements.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<KeyTypedValuePair>? Configurations {
+            get { return BackingStore?.Get<List<KeyTypedValuePair>?>("configurations"); }
+            set { BackingStore?.Set("configurations", value); }
+        }
+#else
         public List<KeyTypedValuePair> Configurations {
             get { return BackingStore?.Get<List<KeyTypedValuePair>>("configurations"); }
             set { BackingStore?.Set("configurations", value); }
         }
+#endif
         /// <summary>Gets or sets a list of hosts or domain names for which the app extension performs SSO.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? Domains {
+            get { return BackingStore?.Get<List<string>?>("domains"); }
+            set { BackingStore?.Set("domains", value); }
+        }
+#else
         public List<string> Domains {
             get { return BackingStore?.Get<List<string>>("domains"); }
             set { BackingStore?.Set("domains", value); }
         }
+#endif
         /// <summary>Gets or sets the bundle ID of the app extension that performs SSO for the specified URLs.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ExtensionIdentifier {
+            get { return BackingStore?.Get<string?>("extensionIdentifier"); }
+            set { BackingStore?.Set("extensionIdentifier", value); }
+        }
+#else
         public string ExtensionIdentifier {
             get { return BackingStore?.Get<string>("extensionIdentifier"); }
             set { BackingStore?.Set("extensionIdentifier", value); }
         }
+#endif
         /// <summary>Gets or sets the case-sensitive realm name for this profile.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Realm {
+            get { return BackingStore?.Get<string?>("realm"); }
+            set { BackingStore?.Set("realm", value); }
+        }
+#else
         public string Realm {
             get { return BackingStore?.Get<string>("realm"); }
             set { BackingStore?.Set("realm", value); }
         }
+#endif
         /// <summary>Gets or sets the team ID of the app extension that performs SSO for the specified URLs.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TeamIdentifier {
+            get { return BackingStore?.Get<string?>("teamIdentifier"); }
+            set { BackingStore?.Set("teamIdentifier", value); }
+        }
+#else
         public string TeamIdentifier {
             get { return BackingStore?.Get<string>("teamIdentifier"); }
             set { BackingStore?.Set("teamIdentifier", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new IosCredentialSingleSignOnExtension and sets the default values.
         /// </summary>

@@ -6,40 +6,82 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class UnifiedRbacResourceAction : Entity, IParsable {
         /// <summary>HTTP method for the action, such as DELETE, GET, PATCH, POST, PUT, or null. Supports $filter (eq) but not for null values.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ActionVerb {
+            get { return BackingStore?.Get<string?>("actionVerb"); }
+            set { BackingStore?.Set("actionVerb", value); }
+        }
+#else
         public string ActionVerb {
             get { return BackingStore?.Get<string>("actionVerb"); }
             set { BackingStore?.Set("actionVerb", value); }
         }
+#endif
         /// <summary>The authenticationContextId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AuthenticationContextId {
+            get { return BackingStore?.Get<string?>("authenticationContextId"); }
+            set { BackingStore?.Set("authenticationContextId", value); }
+        }
+#else
         public string AuthenticationContextId {
             get { return BackingStore?.Get<string>("authenticationContextId"); }
             set { BackingStore?.Set("authenticationContextId", value); }
         }
+#endif
         /// <summary>Description for the action. Supports $filter (eq).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>The isAuthenticationContextSettable property</summary>
         public bool? IsAuthenticationContextSettable {
             get { return BackingStore?.Get<bool?>("isAuthenticationContextSettable"); }
             set { BackingStore?.Set("isAuthenticationContextSettable", value); }
         }
         /// <summary>Name for the action within the resource namespace, such as microsoft.insights/programs/update. Can include slash character (/). Case insensitive. Required. Supports $filter (eq).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Name {
+            get { return BackingStore?.Get<string?>("name"); }
+            set { BackingStore?.Set("name", value); }
+        }
+#else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#endif
         /// <summary>The resourceScope property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public UnifiedRbacResourceScope? ResourceScope {
+            get { return BackingStore?.Get<UnifiedRbacResourceScope?>("resourceScope"); }
+            set { BackingStore?.Set("resourceScope", value); }
+        }
+#else
         public UnifiedRbacResourceScope ResourceScope {
             get { return BackingStore?.Get<UnifiedRbacResourceScope>("resourceScope"); }
             set { BackingStore?.Set("resourceScope", value); }
         }
+#endif
         /// <summary>Not implemented.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ResourceScopeId {
+            get { return BackingStore?.Get<string?>("resourceScopeId"); }
+            set { BackingStore?.Set("resourceScopeId", value); }
+        }
+#else
         public string ResourceScopeId {
             get { return BackingStore?.Get<string>("resourceScopeId"); }
             set { BackingStore?.Set("resourceScopeId", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

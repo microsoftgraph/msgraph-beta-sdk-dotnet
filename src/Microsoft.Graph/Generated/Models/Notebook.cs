@@ -16,30 +16,65 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("isShared", value); }
         }
         /// <summary>Links for opening the notebook. The oneNoteClientURL link opens the notebook in the OneNote native client if it&apos;s installed. The oneNoteWebURL link opens the notebook in OneNote on the web.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public NotebookLinks? Links {
+            get { return BackingStore?.Get<NotebookLinks?>("links"); }
+            set { BackingStore?.Set("links", value); }
+        }
+#else
         public NotebookLinks Links {
             get { return BackingStore?.Get<NotebookLinks>("links"); }
             set { BackingStore?.Set("links", value); }
         }
+#endif
         /// <summary>The section groups in the notebook. Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<SectionGroup>? SectionGroups {
+            get { return BackingStore?.Get<List<SectionGroup>?>("sectionGroups"); }
+            set { BackingStore?.Set("sectionGroups", value); }
+        }
+#else
         public List<SectionGroup> SectionGroups {
             get { return BackingStore?.Get<List<SectionGroup>>("sectionGroups"); }
             set { BackingStore?.Set("sectionGroups", value); }
         }
+#endif
         /// <summary>The URL for the sectionGroups navigation property, which returns all the section groups in the notebook. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SectionGroupsUrl {
+            get { return BackingStore?.Get<string?>("sectionGroupsUrl"); }
+            set { BackingStore?.Set("sectionGroupsUrl", value); }
+        }
+#else
         public string SectionGroupsUrl {
             get { return BackingStore?.Get<string>("sectionGroupsUrl"); }
             set { BackingStore?.Set("sectionGroupsUrl", value); }
         }
+#endif
         /// <summary>The sections in the notebook. Read-only. Nullable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<OnenoteSection>? Sections {
+            get { return BackingStore?.Get<List<OnenoteSection>?>("sections"); }
+            set { BackingStore?.Set("sections", value); }
+        }
+#else
         public List<OnenoteSection> Sections {
             get { return BackingStore?.Get<List<OnenoteSection>>("sections"); }
             set { BackingStore?.Set("sections", value); }
         }
+#endif
         /// <summary>The URL for the sections navigation property, which returns all the sections in the notebook. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SectionsUrl {
+            get { return BackingStore?.Get<string?>("sectionsUrl"); }
+            set { BackingStore?.Set("sectionsUrl", value); }
+        }
+#else
         public string SectionsUrl {
             get { return BackingStore?.Get<string>("sectionsUrl"); }
             set { BackingStore?.Set("sectionsUrl", value); }
         }
+#endif
         /// <summary>Possible values are: Owner, Contributor, Reader, None. Owner represents owner-level access to the notebook. Contributor represents read/write access to the notebook. Reader represents read-only access to the notebook. Read-only.</summary>
         public OnenoteUserRole? UserRole {
             get { return BackingStore?.Get<OnenoteUserRole?>("userRole"); }

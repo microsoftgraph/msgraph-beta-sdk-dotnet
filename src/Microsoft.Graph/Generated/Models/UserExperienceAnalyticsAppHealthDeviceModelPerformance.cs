@@ -14,15 +14,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("activeDeviceCount", value); }
         }
         /// <summary>The manufacturer name of the device.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeviceManufacturer {
+            get { return BackingStore?.Get<string?>("deviceManufacturer"); }
+            set { BackingStore?.Set("deviceManufacturer", value); }
+        }
+#else
         public string DeviceManufacturer {
             get { return BackingStore?.Get<string>("deviceManufacturer"); }
             set { BackingStore?.Set("deviceManufacturer", value); }
         }
+#endif
         /// <summary>The model name of the device.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeviceModel {
+            get { return BackingStore?.Get<string?>("deviceModel"); }
+            set { BackingStore?.Set("deviceModel", value); }
+        }
+#else
         public string DeviceModel {
             get { return BackingStore?.Get<string>("deviceModel"); }
             set { BackingStore?.Set("deviceModel", value); }
         }
+#endif
         /// <summary>The healthStatus property</summary>
         public UserExperienceAnalyticsHealthState? HealthStatus {
             get { return BackingStore?.Get<UserExperienceAnalyticsHealthState?>("healthStatus"); }
@@ -39,10 +53,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("modelAppHealthScore", value); }
         }
         /// <summary>The overall app health status of the device model.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ModelAppHealthStatus {
+            get { return BackingStore?.Get<string?>("modelAppHealthStatus"); }
+            set { BackingStore?.Set("modelAppHealthStatus", value); }
+        }
+#else
         public string ModelAppHealthStatus {
             get { return BackingStore?.Get<string>("modelAppHealthStatus"); }
             set { BackingStore?.Set("modelAppHealthStatus", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

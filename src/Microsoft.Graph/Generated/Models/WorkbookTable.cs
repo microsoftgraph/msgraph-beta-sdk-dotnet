@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class WorkbookTable : Entity, IParsable {
         /// <summary>Represents a collection of all the columns in the table. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<WorkbookTableColumn>? Columns {
+            get { return BackingStore?.Get<List<WorkbookTableColumn>?>("columns"); }
+            set { BackingStore?.Set("columns", value); }
+        }
+#else
         public List<WorkbookTableColumn> Columns {
             get { return BackingStore?.Get<List<WorkbookTableColumn>>("columns"); }
             set { BackingStore?.Set("columns", value); }
         }
+#endif
         /// <summary>Indicates whether the first column contains special formatting.</summary>
         public bool? HighlightFirstColumn {
             get { return BackingStore?.Get<bool?>("highlightFirstColumn"); }
@@ -21,20 +28,41 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("highlightLastColumn", value); }
         }
         /// <summary>Legacy Id used in older Excle clients. The value of the identifier remains the same even when the table is renamed. This property should be interpreted as an opaque string value and should not be parsed to any other type. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? LegacyId {
+            get { return BackingStore?.Get<string?>("legacyId"); }
+            set { BackingStore?.Set("legacyId", value); }
+        }
+#else
         public string LegacyId {
             get { return BackingStore?.Get<string>("legacyId"); }
             set { BackingStore?.Set("legacyId", value); }
         }
+#endif
         /// <summary>Name of the table.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Name {
+            get { return BackingStore?.Get<string?>("name"); }
+            set { BackingStore?.Set("name", value); }
+        }
+#else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#endif
         /// <summary>Represents a collection of all the rows in the table. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<WorkbookTableRow>? Rows {
+            get { return BackingStore?.Get<List<WorkbookTableRow>?>("rows"); }
+            set { BackingStore?.Set("rows", value); }
+        }
+#else
         public List<WorkbookTableRow> Rows {
             get { return BackingStore?.Get<List<WorkbookTableRow>>("rows"); }
             set { BackingStore?.Set("rows", value); }
         }
+#endif
         /// <summary>Indicates whether the columns show banded formatting in which odd columns are highlighted differently from even ones to make reading the table easier.</summary>
         public bool? ShowBandedColumns {
             get { return BackingStore?.Get<bool?>("showBandedColumns"); }
@@ -61,20 +89,41 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("showTotals", value); }
         }
         /// <summary>Represents the sorting for the table. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public WorkbookTableSort? Sort {
+            get { return BackingStore?.Get<WorkbookTableSort?>("sort"); }
+            set { BackingStore?.Set("sort", value); }
+        }
+#else
         public WorkbookTableSort Sort {
             get { return BackingStore?.Get<WorkbookTableSort>("sort"); }
             set { BackingStore?.Set("sort", value); }
         }
+#endif
         /// <summary>Constant value that represents the Table style. Possible values are: TableStyleLight1 thru TableStyleLight21, TableStyleMedium1 thru TableStyleMedium28, TableStyleStyleDark1 thru TableStyleStyleDark11. A custom user-defined style present in the workbook can also be specified.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Style {
+            get { return BackingStore?.Get<string?>("style"); }
+            set { BackingStore?.Set("style", value); }
+        }
+#else
         public string Style {
             get { return BackingStore?.Get<string>("style"); }
             set { BackingStore?.Set("style", value); }
         }
+#endif
         /// <summary>The worksheet containing the current table. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public WorkbookWorksheet? Worksheet {
+            get { return BackingStore?.Get<WorkbookWorksheet?>("worksheet"); }
+            set { BackingStore?.Set("worksheet", value); }
+        }
+#else
         public WorkbookWorksheet Worksheet {
             get { return BackingStore?.Get<WorkbookWorksheet>("worksheet"); }
             set { BackingStore?.Set("worksheet", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

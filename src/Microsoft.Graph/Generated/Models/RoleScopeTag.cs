@@ -9,20 +9,41 @@ namespace Microsoft.Graph.Beta.Models {
     /// </summary>
     public class RoleScopeTag : Entity, IParsable {
         /// <summary>The list of assignments for this Role Scope Tag.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<RoleScopeTagAutoAssignment>? Assignments {
+            get { return BackingStore?.Get<List<RoleScopeTagAutoAssignment>?>("assignments"); }
+            set { BackingStore?.Set("assignments", value); }
+        }
+#else
         public List<RoleScopeTagAutoAssignment> Assignments {
             get { return BackingStore?.Get<List<RoleScopeTagAutoAssignment>>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
+#endif
         /// <summary>Description of the Role Scope Tag.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>The display or friendly name of the Role Scope Tag.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>Description of the Role Scope Tag. This property is read-only.</summary>
         public bool? IsBuiltIn {
             get { return BackingStore?.Get<bool?>("isBuiltIn"); }

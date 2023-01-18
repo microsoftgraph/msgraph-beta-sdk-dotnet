@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class MailSearchFolder : MailFolder, IParsable {
         /// <summary>The OData query to filter the messages.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? FilterQuery {
+            get { return BackingStore?.Get<string?>("filterQuery"); }
+            set { BackingStore?.Set("filterQuery", value); }
+        }
+#else
         public string FilterQuery {
             get { return BackingStore?.Get<string>("filterQuery"); }
             set { BackingStore?.Set("filterQuery", value); }
         }
+#endif
         /// <summary>Indicates how the mailbox folder hierarchy should be traversed in the search. true means that a deep search should be done to include child folders in the hierarchy of each folder explicitly specified in sourceFolderIds. false means a shallow search of only each of the folders explicitly specified in sourceFolderIds.</summary>
         public bool? IncludeNestedFolders {
             get { return BackingStore?.Get<bool?>("includeNestedFolders"); }
@@ -21,10 +28,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("isSupported", value); }
         }
         /// <summary>The mailbox folders that should be mined.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? SourceFolderIds {
+            get { return BackingStore?.Get<List<string>?>("sourceFolderIds"); }
+            set { BackingStore?.Set("sourceFolderIds", value); }
+        }
+#else
         public List<string> SourceFolderIds {
             get { return BackingStore?.Get<List<string>>("sourceFolderIds"); }
             set { BackingStore?.Set("sourceFolderIds", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new MailSearchFolder and sets the default values.
         /// </summary>

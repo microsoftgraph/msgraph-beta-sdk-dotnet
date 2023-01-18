@@ -6,50 +6,99 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class ItemActivityStat : Entity, IParsable {
         /// <summary>Statistics about the access actions in this interval. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ItemActionStat? Access {
+            get { return BackingStore?.Get<ItemActionStat?>("access"); }
+            set { BackingStore?.Set("access", value); }
+        }
+#else
         public ItemActionStat Access {
             get { return BackingStore?.Get<ItemActionStat>("access"); }
             set { BackingStore?.Set("access", value); }
         }
+#endif
         /// <summary>Exposes the itemActivities represented in this itemActivityStat resource.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ItemActivity>? Activities {
+            get { return BackingStore?.Get<List<ItemActivity>?>("activities"); }
+            set { BackingStore?.Set("activities", value); }
+        }
+#else
         public List<ItemActivity> Activities {
             get { return BackingStore?.Get<List<ItemActivity>>("activities"); }
             set { BackingStore?.Set("activities", value); }
         }
+#endif
         /// <summary>Statistics about the create actions in this interval. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ItemActionStat? Create {
+            get { return BackingStore?.Get<ItemActionStat?>("create"); }
+            set { BackingStore?.Set("create", value); }
+        }
+#else
         public ItemActionStat Create {
             get { return BackingStore?.Get<ItemActionStat>("create"); }
             set { BackingStore?.Set("create", value); }
         }
+#endif
         /// <summary>Statistics about the delete actions in this interval. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ItemActionStat? Delete {
+            get { return BackingStore?.Get<ItemActionStat?>("delete"); }
+            set { BackingStore?.Set("delete", value); }
+        }
+#else
         public ItemActionStat Delete {
             get { return BackingStore?.Get<ItemActionStat>("delete"); }
             set { BackingStore?.Set("delete", value); }
         }
+#endif
         /// <summary>Statistics about the edit actions in this interval. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ItemActionStat? Edit {
+            get { return BackingStore?.Get<ItemActionStat?>("edit"); }
+            set { BackingStore?.Set("edit", value); }
+        }
+#else
         public ItemActionStat Edit {
             get { return BackingStore?.Get<ItemActionStat>("edit"); }
             set { BackingStore?.Set("edit", value); }
         }
+#endif
         /// <summary>When the interval ends. Read-only.</summary>
         public DateTimeOffset? EndDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("endDateTime"); }
             set { BackingStore?.Set("endDateTime", value); }
         }
         /// <summary>Indicates that the statistics in this interval are based on incomplete data. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.IncompleteData? IncompleteData {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IncompleteData?>("incompleteData"); }
+            set { BackingStore?.Set("incompleteData", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.IncompleteData IncompleteData {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IncompleteData>("incompleteData"); }
             set { BackingStore?.Set("incompleteData", value); }
         }
+#endif
         /// <summary>Indicates whether the item is &apos;trending.&apos; Read-only.</summary>
         public bool? IsTrending {
             get { return BackingStore?.Get<bool?>("isTrending"); }
             set { BackingStore?.Set("isTrending", value); }
         }
         /// <summary>Statistics about the move actions in this interval. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ItemActionStat? Move {
+            get { return BackingStore?.Get<ItemActionStat?>("move"); }
+            set { BackingStore?.Set("move", value); }
+        }
+#else
         public ItemActionStat Move {
             get { return BackingStore?.Get<ItemActionStat>("move"); }
             set { BackingStore?.Set("move", value); }
         }
+#endif
         /// <summary>When the interval starts. Read-only.</summary>
         public DateTimeOffset? StartDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("startDateTime"); }

@@ -17,45 +17,87 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Indicates the package type of an MSI Win32LobApp.</summary>
         public Win32LobAppMsiPackageType? PackageType {
             get { return BackingStore?.Get<Win32LobAppMsiPackageType?>("packageType"); }
             set { BackingStore?.Set("packageType", value); }
         }
         /// <summary>The MSI product code.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ProductCode {
+            get { return BackingStore?.Get<string?>("productCode"); }
+            set { BackingStore?.Set("productCode", value); }
+        }
+#else
         public string ProductCode {
             get { return BackingStore?.Get<string>("productCode"); }
             set { BackingStore?.Set("productCode", value); }
         }
+#endif
         /// <summary>The MSI product name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ProductName {
+            get { return BackingStore?.Get<string?>("productName"); }
+            set { BackingStore?.Set("productName", value); }
+        }
+#else
         public string ProductName {
             get { return BackingStore?.Get<string>("productName"); }
             set { BackingStore?.Set("productName", value); }
         }
+#endif
         /// <summary>The MSI product version.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ProductVersion {
+            get { return BackingStore?.Get<string?>("productVersion"); }
+            set { BackingStore?.Set("productVersion", value); }
+        }
+#else
         public string ProductVersion {
             get { return BackingStore?.Get<string>("productVersion"); }
             set { BackingStore?.Set("productVersion", value); }
         }
+#endif
         /// <summary>The MSI publisher.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Publisher {
+            get { return BackingStore?.Get<string?>("publisher"); }
+            set { BackingStore?.Set("publisher", value); }
+        }
+#else
         public string Publisher {
             get { return BackingStore?.Get<string>("publisher"); }
             set { BackingStore?.Set("publisher", value); }
         }
+#endif
         /// <summary>Whether the MSI app requires the machine to reboot to complete installation.</summary>
         public bool? RequiresReboot {
             get { return BackingStore?.Get<bool?>("requiresReboot"); }
             set { BackingStore?.Set("requiresReboot", value); }
         }
         /// <summary>The MSI upgrade code.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UpgradeCode {
+            get { return BackingStore?.Get<string?>("upgradeCode"); }
+            set { BackingStore?.Set("upgradeCode", value); }
+        }
+#else
         public string UpgradeCode {
             get { return BackingStore?.Get<string>("upgradeCode"); }
             set { BackingStore?.Set("upgradeCode", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new win32LobAppMsiInformation and sets the default values.
         /// </summary>

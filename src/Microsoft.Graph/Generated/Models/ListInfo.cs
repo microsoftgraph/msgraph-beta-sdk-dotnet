@@ -24,15 +24,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("hidden", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>An enumerated value that represents the base list template used in creating the list. Possible values include documentLibrary, genericList, task, survey, announcements, contacts, and more.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Template {
+            get { return BackingStore?.Get<string?>("template"); }
+            set { BackingStore?.Set("template", value); }
+        }
+#else
         public string Template {
             get { return BackingStore?.Get<string>("template"); }
             set { BackingStore?.Set("template", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new listInfo and sets the default values.
         /// </summary>

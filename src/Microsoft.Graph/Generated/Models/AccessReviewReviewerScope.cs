@@ -6,20 +6,41 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class AccessReviewReviewerScope : AccessReviewScope, IParsable {
         /// <summary>The query specifying who will be the reviewer.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Query {
+            get { return BackingStore?.Get<string?>("query"); }
+            set { BackingStore?.Set("query", value); }
+        }
+#else
         public string Query {
             get { return BackingStore?.Get<string>("query"); }
             set { BackingStore?.Set("query", value); }
         }
+#endif
         /// <summary>In the scenario where reviewers need to be specified dynamically, this property is used to indicate the relative source of the query. This property is only required if a relative query, for example, ./manager, is specified. Possible value: decisions.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? QueryRoot {
+            get { return BackingStore?.Get<string?>("queryRoot"); }
+            set { BackingStore?.Set("queryRoot", value); }
+        }
+#else
         public string QueryRoot {
             get { return BackingStore?.Get<string>("queryRoot"); }
             set { BackingStore?.Set("queryRoot", value); }
         }
+#endif
         /// <summary>The type of query. Examples include MicrosoftGraph and ARM.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? QueryType {
+            get { return BackingStore?.Get<string?>("queryType"); }
+            set { BackingStore?.Set("queryType", value); }
+        }
+#else
         public string QueryType {
             get { return BackingStore?.Get<string>("queryType"); }
             set { BackingStore?.Set("queryType", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new AccessReviewReviewerScope and sets the default values.
         /// </summary>

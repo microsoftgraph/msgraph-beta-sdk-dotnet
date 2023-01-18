@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class CloudPcManagementGroupAssignmentTarget : CloudPcManagementAssignmentTarget, IParsable {
         /// <summary>The id of the assignment&apos;s target group</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? GroupId {
+            get { return BackingStore?.Get<string?>("groupId"); }
+            set { BackingStore?.Set("groupId", value); }
+        }
+#else
         public string GroupId {
             get { return BackingStore?.Get<string>("groupId"); }
             set { BackingStore?.Set("groupId", value); }
         }
+#endif
         /// <summary>The servicePlanId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ServicePlanId {
+            get { return BackingStore?.Get<string?>("servicePlanId"); }
+            set { BackingStore?.Set("servicePlanId", value); }
+        }
+#else
         public string ServicePlanId {
             get { return BackingStore?.Get<string>("servicePlanId"); }
             set { BackingStore?.Set("servicePlanId", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new CloudPcManagementGroupAssignmentTarget and sets the default values.
         /// </summary>

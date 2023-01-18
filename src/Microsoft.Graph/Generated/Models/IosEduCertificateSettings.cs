@@ -17,15 +17,29 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>File name to display in UI.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CertFileName {
+            get { return BackingStore?.Get<string?>("certFileName"); }
+            set { BackingStore?.Set("certFileName", value); }
+        }
+#else
         public string CertFileName {
             get { return BackingStore?.Get<string>("certFileName"); }
             set { BackingStore?.Set("certFileName", value); }
         }
+#endif
         /// <summary>PKCS Certificate Template Name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CertificateTemplateName {
+            get { return BackingStore?.Get<string?>("certificateTemplateName"); }
+            set { BackingStore?.Set("certificateTemplateName", value); }
+        }
+#else
         public string CertificateTemplateName {
             get { return BackingStore?.Get<string>("certificateTemplateName"); }
             set { BackingStore?.Set("certificateTemplateName", value); }
         }
+#endif
         /// <summary>Certificate Validity Period Options.</summary>
         public Microsoft.Graph.Beta.Models.CertificateValidityPeriodScale? CertificateValidityPeriodScale {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.CertificateValidityPeriodScale?>("certificateValidityPeriodScale"); }
@@ -37,30 +51,58 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("certificateValidityPeriodValue", value); }
         }
         /// <summary>PKCS Certification Authority.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CertificationAuthority {
+            get { return BackingStore?.Get<string?>("certificationAuthority"); }
+            set { BackingStore?.Set("certificationAuthority", value); }
+        }
+#else
         public string CertificationAuthority {
             get { return BackingStore?.Get<string>("certificationAuthority"); }
             set { BackingStore?.Set("certificationAuthority", value); }
         }
+#endif
         /// <summary>PKCS Certification Authority Name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CertificationAuthorityName {
+            get { return BackingStore?.Get<string?>("certificationAuthorityName"); }
+            set { BackingStore?.Set("certificationAuthorityName", value); }
+        }
+#else
         public string CertificationAuthorityName {
             get { return BackingStore?.Get<string>("certificationAuthorityName"); }
             set { BackingStore?.Set("certificationAuthorityName", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Certificate renewal threshold percentage. Valid values 1 to 99</summary>
         public int? RenewalThresholdPercentage {
             get { return BackingStore?.Get<int?>("renewalThresholdPercentage"); }
             set { BackingStore?.Set("renewalThresholdPercentage", value); }
         }
         /// <summary>Trusted Root Certificate.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public byte[]? TrustedRootCertificate {
+            get { return BackingStore?.Get<byte[]?>("trustedRootCertificate"); }
+            set { BackingStore?.Set("trustedRootCertificate", value); }
+        }
+#else
         public byte[] TrustedRootCertificate {
             get { return BackingStore?.Get<byte[]>("trustedRootCertificate"); }
             set { BackingStore?.Set("trustedRootCertificate", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new iosEduCertificateSettings and sets the default values.
         /// </summary>

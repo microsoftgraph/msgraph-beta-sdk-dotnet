@@ -11,15 +11,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("certificateAccessType", value); }
         }
         /// <summary>Tenant level settings for the Derived Credentials to be used for authentication.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DeviceManagementDerivedCredentialSettings? DerivedCredentialSettings {
+            get { return BackingStore?.Get<DeviceManagementDerivedCredentialSettings?>("derivedCredentialSettings"); }
+            set { BackingStore?.Set("derivedCredentialSettings", value); }
+        }
+#else
         public DeviceManagementDerivedCredentialSettings DerivedCredentialSettings {
             get { return BackingStore?.Get<DeviceManagementDerivedCredentialSettings>("derivedCredentialSettings"); }
             set { BackingStore?.Set("derivedCredentialSettings", value); }
         }
+#endif
         /// <summary>Certificate access information. This collection can contain a maximum of 50 elements.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AndroidDeviceOwnerSilentCertificateAccess>? SilentCertificateAccessDetails {
+            get { return BackingStore?.Get<List<AndroidDeviceOwnerSilentCertificateAccess>?>("silentCertificateAccessDetails"); }
+            set { BackingStore?.Set("silentCertificateAccessDetails", value); }
+        }
+#else
         public List<AndroidDeviceOwnerSilentCertificateAccess> SilentCertificateAccessDetails {
             get { return BackingStore?.Get<List<AndroidDeviceOwnerSilentCertificateAccess>>("silentCertificateAccessDetails"); }
             set { BackingStore?.Set("silentCertificateAccessDetails", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new AndroidDeviceOwnerDerivedCredentialAuthenticationConfiguration and sets the default values.
         /// </summary>

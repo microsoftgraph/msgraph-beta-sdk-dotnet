@@ -14,50 +14,113 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>A string describing where the item is stored. For example, the name of a SharePoint site or the user name identifying the owner of the OneDrive storing the item.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ContainerDisplayName {
+            get { return BackingStore?.Get<string?>("containerDisplayName"); }
+            set { BackingStore?.Set("containerDisplayName", value); }
+        }
+#else
         public string ContainerDisplayName {
             get { return BackingStore?.Get<string>("containerDisplayName"); }
             set { BackingStore?.Set("containerDisplayName", value); }
         }
+#endif
         /// <summary>Can be used for filtering by the type of container in which the file is stored. Such as Site or OneDriveBusiness.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ContainerType {
+            get { return BackingStore?.Get<string?>("containerType"); }
+            set { BackingStore?.Set("containerType", value); }
+        }
+#else
         public string ContainerType {
             get { return BackingStore?.Get<string>("containerType"); }
             set { BackingStore?.Set("containerType", value); }
         }
+#endif
         /// <summary>A path leading to the folder in which the item is stored.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ContainerWebUrl {
+            get { return BackingStore?.Get<string?>("containerWebUrl"); }
+            set { BackingStore?.Set("containerWebUrl", value); }
+        }
+#else
         public string ContainerWebUrl {
             get { return BackingStore?.Get<string>("containerWebUrl"); }
             set { BackingStore?.Set("containerWebUrl", value); }
         }
+#endif
         /// <summary>The item&apos;s media type. Can be used for filtering for a specific type of file based on supported IANA Media Mime Types. Note that not all Media Mime Types are supported.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MediaType {
+            get { return BackingStore?.Get<string?>("mediaType"); }
+            set { BackingStore?.Set("mediaType", value); }
+        }
+#else
         public string MediaType {
             get { return BackingStore?.Get<string>("mediaType"); }
             set { BackingStore?.Set("mediaType", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>A URL leading to the preview image for the item.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PreviewImageUrl {
+            get { return BackingStore?.Get<string?>("previewImageUrl"); }
+            set { BackingStore?.Set("previewImageUrl", value); }
+        }
+#else
         public string PreviewImageUrl {
             get { return BackingStore?.Get<string>("previewImageUrl"); }
             set { BackingStore?.Set("previewImageUrl", value); }
         }
+#endif
         /// <summary>A preview text for the item.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PreviewText {
+            get { return BackingStore?.Get<string?>("previewText"); }
+            set { BackingStore?.Set("previewText", value); }
+        }
+#else
         public string PreviewText {
             get { return BackingStore?.Get<string>("previewText"); }
             set { BackingStore?.Set("previewText", value); }
         }
+#endif
         /// <summary>The item&apos;s title text.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Title {
+            get { return BackingStore?.Get<string?>("title"); }
+            set { BackingStore?.Set("title", value); }
+        }
+#else
         public string Title {
             get { return BackingStore?.Get<string>("title"); }
             set { BackingStore?.Set("title", value); }
         }
+#endif
         /// <summary>The item&apos;s media type. Can be used for filtering for a specific file based on a specific type. See below for supported types.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Type {
+            get { return BackingStore?.Get<string?>("type"); }
+            set { BackingStore?.Set("type", value); }
+        }
+#else
         public string Type {
             get { return BackingStore?.Get<string>("type"); }
             set { BackingStore?.Set("type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new resourceVisualization and sets the default values.
         /// </summary>

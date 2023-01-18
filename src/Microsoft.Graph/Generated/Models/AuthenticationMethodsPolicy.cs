@@ -6,40 +6,75 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class AuthenticationMethodsPolicy : Entity, IParsable {
         /// <summary>Represents the settings for each authentication method. Automatically expanded on GET /policies/authenticationMethodsPolicy.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AuthenticationMethodConfiguration>? AuthenticationMethodConfigurations {
+            get { return BackingStore?.Get<List<AuthenticationMethodConfiguration>?>("authenticationMethodConfigurations"); }
+            set { BackingStore?.Set("authenticationMethodConfigurations", value); }
+        }
+#else
         public List<AuthenticationMethodConfiguration> AuthenticationMethodConfigurations {
             get { return BackingStore?.Get<List<AuthenticationMethodConfiguration>>("authenticationMethodConfigurations"); }
             set { BackingStore?.Set("authenticationMethodConfigurations", value); }
         }
+#endif
         /// <summary>A description of the policy.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>The name of the policy.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The date and time of the last update to the policy.</summary>
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The version of the policy in use.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PolicyVersion {
+            get { return BackingStore?.Get<string?>("policyVersion"); }
+            set { BackingStore?.Set("policyVersion", value); }
+        }
+#else
         public string PolicyVersion {
             get { return BackingStore?.Get<string>("policyVersion"); }
             set { BackingStore?.Set("policyVersion", value); }
         }
+#endif
         /// <summary>Days before the user will be asked to reconfirm their method.</summary>
         public int? ReconfirmationInDays {
             get { return BackingStore?.Get<int?>("reconfirmationInDays"); }
             set { BackingStore?.Set("reconfirmationInDays", value); }
         }
         /// <summary>Enforce registration at sign-in time. This property can be used to remind users to set up targeted authentication methods.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.RegistrationEnforcement? RegistrationEnforcement {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RegistrationEnforcement?>("registrationEnforcement"); }
+            set { BackingStore?.Set("registrationEnforcement", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.RegistrationEnforcement RegistrationEnforcement {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RegistrationEnforcement>("registrationEnforcement"); }
             set { BackingStore?.Set("registrationEnforcement", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

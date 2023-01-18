@@ -6,60 +6,137 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class Authentication : Entity, IParsable {
         /// <summary>Represents the email addresses registered to a user for authentication.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<EmailAuthenticationMethod>? EmailMethods {
+            get { return BackingStore?.Get<List<EmailAuthenticationMethod>?>("emailMethods"); }
+            set { BackingStore?.Set("emailMethods", value); }
+        }
+#else
         public List<EmailAuthenticationMethod> EmailMethods {
             get { return BackingStore?.Get<List<EmailAuthenticationMethod>>("emailMethods"); }
             set { BackingStore?.Set("emailMethods", value); }
         }
+#endif
         /// <summary>Represents the FIDO2 security keys registered to a user for authentication.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Fido2AuthenticationMethod>? Fido2Methods {
+            get { return BackingStore?.Get<List<Fido2AuthenticationMethod>?>("fido2Methods"); }
+            set { BackingStore?.Set("fido2Methods", value); }
+        }
+#else
         public List<Fido2AuthenticationMethod> Fido2Methods {
             get { return BackingStore?.Get<List<Fido2AuthenticationMethod>>("fido2Methods"); }
             set { BackingStore?.Set("fido2Methods", value); }
         }
+#endif
         /// <summary>Represents all authentication methods registered to a user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AuthenticationMethod>? Methods {
+            get { return BackingStore?.Get<List<AuthenticationMethod>?>("methods"); }
+            set { BackingStore?.Set("methods", value); }
+        }
+#else
         public List<AuthenticationMethod> Methods {
             get { return BackingStore?.Get<List<AuthenticationMethod>>("methods"); }
             set { BackingStore?.Set("methods", value); }
         }
+#endif
         /// <summary>The details of the Microsoft Authenticator app registered to a user for authentication.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<MicrosoftAuthenticatorAuthenticationMethod>? MicrosoftAuthenticatorMethods {
+            get { return BackingStore?.Get<List<MicrosoftAuthenticatorAuthenticationMethod>?>("microsoftAuthenticatorMethods"); }
+            set { BackingStore?.Set("microsoftAuthenticatorMethods", value); }
+        }
+#else
         public List<MicrosoftAuthenticatorAuthenticationMethod> MicrosoftAuthenticatorMethods {
             get { return BackingStore?.Get<List<MicrosoftAuthenticatorAuthenticationMethod>>("microsoftAuthenticatorMethods"); }
             set { BackingStore?.Set("microsoftAuthenticatorMethods", value); }
         }
+#endif
         /// <summary>The operations property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<LongRunningOperation>? Operations {
+            get { return BackingStore?.Get<List<LongRunningOperation>?>("operations"); }
+            set { BackingStore?.Set("operations", value); }
+        }
+#else
         public List<LongRunningOperation> Operations {
             get { return BackingStore?.Get<List<LongRunningOperation>>("operations"); }
             set { BackingStore?.Set("operations", value); }
         }
+#endif
         /// <summary>Represents the Microsoft Authenticator Passwordless Phone Sign-in methods registered to a user for authentication.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<PasswordlessMicrosoftAuthenticatorAuthenticationMethod>? PasswordlessMicrosoftAuthenticatorMethods {
+            get { return BackingStore?.Get<List<PasswordlessMicrosoftAuthenticatorAuthenticationMethod>?>("passwordlessMicrosoftAuthenticatorMethods"); }
+            set { BackingStore?.Set("passwordlessMicrosoftAuthenticatorMethods", value); }
+        }
+#else
         public List<PasswordlessMicrosoftAuthenticatorAuthenticationMethod> PasswordlessMicrosoftAuthenticatorMethods {
             get { return BackingStore?.Get<List<PasswordlessMicrosoftAuthenticatorAuthenticationMethod>>("passwordlessMicrosoftAuthenticatorMethods"); }
             set { BackingStore?.Set("passwordlessMicrosoftAuthenticatorMethods", value); }
         }
+#endif
         /// <summary>Represents the details of the password authentication method registered to a user for authentication.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<PasswordAuthenticationMethod>? PasswordMethods {
+            get { return BackingStore?.Get<List<PasswordAuthenticationMethod>?>("passwordMethods"); }
+            set { BackingStore?.Set("passwordMethods", value); }
+        }
+#else
         public List<PasswordAuthenticationMethod> PasswordMethods {
             get { return BackingStore?.Get<List<PasswordAuthenticationMethod>>("passwordMethods"); }
             set { BackingStore?.Set("passwordMethods", value); }
         }
+#endif
         /// <summary>Represents the phone registered to a user for authentication.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<PhoneAuthenticationMethod>? PhoneMethods {
+            get { return BackingStore?.Get<List<PhoneAuthenticationMethod>?>("phoneMethods"); }
+            set { BackingStore?.Set("phoneMethods", value); }
+        }
+#else
         public List<PhoneAuthenticationMethod> PhoneMethods {
             get { return BackingStore?.Get<List<PhoneAuthenticationMethod>>("phoneMethods"); }
             set { BackingStore?.Set("phoneMethods", value); }
         }
+#endif
         /// <summary>The softwareOathMethods property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<SoftwareOathAuthenticationMethod>? SoftwareOathMethods {
+            get { return BackingStore?.Get<List<SoftwareOathAuthenticationMethod>?>("softwareOathMethods"); }
+            set { BackingStore?.Set("softwareOathMethods", value); }
+        }
+#else
         public List<SoftwareOathAuthenticationMethod> SoftwareOathMethods {
             get { return BackingStore?.Get<List<SoftwareOathAuthenticationMethod>>("softwareOathMethods"); }
             set { BackingStore?.Set("softwareOathMethods", value); }
         }
+#endif
         /// <summary>Represents a Temporary Access Pass registered to a user for authentication through time-limited passcodes.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<TemporaryAccessPassAuthenticationMethod>? TemporaryAccessPassMethods {
+            get { return BackingStore?.Get<List<TemporaryAccessPassAuthenticationMethod>?>("temporaryAccessPassMethods"); }
+            set { BackingStore?.Set("temporaryAccessPassMethods", value); }
+        }
+#else
         public List<TemporaryAccessPassAuthenticationMethod> TemporaryAccessPassMethods {
             get { return BackingStore?.Get<List<TemporaryAccessPassAuthenticationMethod>>("temporaryAccessPassMethods"); }
             set { BackingStore?.Set("temporaryAccessPassMethods", value); }
         }
+#endif
         /// <summary>Represents the Windows Hello for Business authentication method registered to a user for authentication.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<WindowsHelloForBusinessAuthenticationMethod>? WindowsHelloForBusinessMethods {
+            get { return BackingStore?.Get<List<WindowsHelloForBusinessAuthenticationMethod>?>("windowsHelloForBusinessMethods"); }
+            set { BackingStore?.Set("windowsHelloForBusinessMethods", value); }
+        }
+#else
         public List<WindowsHelloForBusinessAuthenticationMethod> WindowsHelloForBusinessMethods {
             get { return BackingStore?.Get<List<WindowsHelloForBusinessAuthenticationMethod>>("windowsHelloForBusinessMethods"); }
             set { BackingStore?.Set("windowsHelloForBusinessMethods", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

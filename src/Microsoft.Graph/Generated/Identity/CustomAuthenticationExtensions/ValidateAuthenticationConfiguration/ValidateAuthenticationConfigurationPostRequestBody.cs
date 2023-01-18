@@ -13,17 +13,31 @@ namespace Microsoft.Graph.Beta.Identity.CustomAuthenticationExtensions.ValidateA
             set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The authenticationConfiguration property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public CustomExtensionAuthenticationConfiguration? AuthenticationConfiguration {
+            get { return BackingStore?.Get<CustomExtensionAuthenticationConfiguration?>("authenticationConfiguration"); }
+            set { BackingStore?.Set("authenticationConfiguration", value); }
+        }
+#else
         public CustomExtensionAuthenticationConfiguration AuthenticationConfiguration {
             get { return BackingStore?.Get<CustomExtensionAuthenticationConfiguration>("authenticationConfiguration"); }
             set { BackingStore?.Set("authenticationConfiguration", value); }
         }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The endpointConfiguration property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public CustomExtensionEndpointConfiguration? EndpointConfiguration {
+            get { return BackingStore?.Get<CustomExtensionEndpointConfiguration?>("endpointConfiguration"); }
+            set { BackingStore?.Set("endpointConfiguration", value); }
+        }
+#else
         public CustomExtensionEndpointConfiguration EndpointConfiguration {
             get { return BackingStore?.Get<CustomExtensionEndpointConfiguration>("endpointConfiguration"); }
             set { BackingStore?.Set("endpointConfiguration", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new validateAuthenticationConfigurationPostRequestBody and sets the default values.
         /// </summary>

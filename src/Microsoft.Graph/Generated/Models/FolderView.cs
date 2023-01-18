@@ -14,25 +14,53 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The method by which the folder should be sorted.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SortBy {
+            get { return BackingStore?.Get<string?>("sortBy"); }
+            set { BackingStore?.Set("sortBy", value); }
+        }
+#else
         public string SortBy {
             get { return BackingStore?.Get<string>("sortBy"); }
             set { BackingStore?.Set("sortBy", value); }
         }
+#endif
         /// <summary>If true, indicates that items should be sorted in descending order. Otherwise, items should be sorted ascending.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SortOrder {
+            get { return BackingStore?.Get<string?>("sortOrder"); }
+            set { BackingStore?.Set("sortOrder", value); }
+        }
+#else
         public string SortOrder {
             get { return BackingStore?.Get<string>("sortOrder"); }
             set { BackingStore?.Set("sortOrder", value); }
         }
+#endif
         /// <summary>The type of view that should be used to represent the folder.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ViewType {
+            get { return BackingStore?.Get<string?>("viewType"); }
+            set { BackingStore?.Set("viewType", value); }
+        }
+#else
         public string ViewType {
             get { return BackingStore?.Get<string>("viewType"); }
             set { BackingStore?.Set("viewType", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new folderView and sets the default values.
         /// </summary>

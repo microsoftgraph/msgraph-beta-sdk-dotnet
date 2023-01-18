@@ -54,10 +54,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("inboundPackets", value); }
         }
         /// <summary>the local IP address for the media session.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? LocalIPAddress {
+            get { return BackingStore?.Get<string?>("localIPAddress"); }
+            set { BackingStore?.Set("localIPAddress", value); }
+        }
+#else
         public string LocalIPAddress {
             get { return BackingStore?.Get<string>("localIPAddress"); }
             set { BackingStore?.Set("localIPAddress", value); }
         }
+#endif
         /// <summary>The local media port.</summary>
         public int? LocalPort {
             get { return BackingStore?.Get<int?>("localPort"); }
@@ -104,20 +111,34 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("networkLinkSpeedInBytes", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The total number of the outbound packets.</summary>
         public long? OutboundPackets {
             get { return BackingStore?.Get<long?>("outboundPackets"); }
             set { BackingStore?.Set("outboundPackets", value); }
         }
         /// <summary>The remote IP address for the media session.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? RemoteIPAddress {
+            get { return BackingStore?.Get<string?>("remoteIPAddress"); }
+            set { BackingStore?.Set("remoteIPAddress", value); }
+        }
+#else
         public string RemoteIPAddress {
             get { return BackingStore?.Get<string>("remoteIPAddress"); }
             set { BackingStore?.Set("remoteIPAddress", value); }
         }
+#endif
         /// <summary>The remote media port.</summary>
         public int? RemotePort {
             get { return BackingStore?.Get<int?>("remotePort"); }

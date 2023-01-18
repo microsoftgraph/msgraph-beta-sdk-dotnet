@@ -9,50 +9,99 @@ namespace Microsoft.Graph.Beta.Models {
     /// </summary>
     public class DeviceHealthScript : Entity, IParsable {
         /// <summary>The list of group assignments for the device health script</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DeviceHealthScriptAssignment>? Assignments {
+            get { return BackingStore?.Get<List<DeviceHealthScriptAssignment>?>("assignments"); }
+            set { BackingStore?.Set("assignments", value); }
+        }
+#else
         public List<DeviceHealthScriptAssignment> Assignments {
             get { return BackingStore?.Get<List<DeviceHealthScriptAssignment>>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
+#endif
         /// <summary>The timestamp of when the device health script was created. This property is read-only.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Description of the device health script</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>The entire content of the detection powershell script</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public byte[]? DetectionScriptContent {
+            get { return BackingStore?.Get<byte[]?>("detectionScriptContent"); }
+            set { BackingStore?.Set("detectionScriptContent", value); }
+        }
+#else
         public byte[] DetectionScriptContent {
             get { return BackingStore?.Get<byte[]>("detectionScriptContent"); }
             set { BackingStore?.Set("detectionScriptContent", value); }
         }
+#endif
         /// <summary>List of ComplexType DetectionScriptParameters objects.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DeviceHealthScriptParameter>? DetectionScriptParameters {
+            get { return BackingStore?.Get<List<DeviceHealthScriptParameter>?>("detectionScriptParameters"); }
+            set { BackingStore?.Set("detectionScriptParameters", value); }
+        }
+#else
         public List<DeviceHealthScriptParameter> DetectionScriptParameters {
             get { return BackingStore?.Get<List<DeviceHealthScriptParameter>>("detectionScriptParameters"); }
             set { BackingStore?.Set("detectionScriptParameters", value); }
         }
+#endif
         /// <summary>List of run states for the device health script across all devices</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DeviceHealthScriptDeviceState>? DeviceRunStates {
+            get { return BackingStore?.Get<List<DeviceHealthScriptDeviceState>?>("deviceRunStates"); }
+            set { BackingStore?.Set("deviceRunStates", value); }
+        }
+#else
         public List<DeviceHealthScriptDeviceState> DeviceRunStates {
             get { return BackingStore?.Get<List<DeviceHealthScriptDeviceState>>("deviceRunStates"); }
             set { BackingStore?.Set("deviceRunStates", value); }
         }
+#endif
         /// <summary>Name of the device health script</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>Indicate whether the script signature needs be checked</summary>
         public bool? EnforceSignatureCheck {
             get { return BackingStore?.Get<bool?>("enforceSignatureCheck"); }
             set { BackingStore?.Set("enforceSignatureCheck", value); }
         }
         /// <summary>Highest available version for a Microsoft Proprietary script</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? HighestAvailableVersion {
+            get { return BackingStore?.Get<string?>("highestAvailableVersion"); }
+            set { BackingStore?.Set("highestAvailableVersion", value); }
+        }
+#else
         public string HighestAvailableVersion {
             get { return BackingStore?.Get<string>("highestAvailableVersion"); }
             set { BackingStore?.Set("highestAvailableVersion", value); }
         }
+#endif
         /// <summary>Determines if this is Microsoft Proprietary Script. Proprietary scripts are read-only</summary>
         public bool? IsGlobalScript {
             get { return BackingStore?.Get<bool?>("isGlobalScript"); }
@@ -64,25 +113,53 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>Name of the device health script publisher</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Publisher {
+            get { return BackingStore?.Get<string?>("publisher"); }
+            set { BackingStore?.Set("publisher", value); }
+        }
+#else
         public string Publisher {
             get { return BackingStore?.Get<string>("publisher"); }
             set { BackingStore?.Set("publisher", value); }
         }
+#endif
         /// <summary>The entire content of the remediation powershell script</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public byte[]? RemediationScriptContent {
+            get { return BackingStore?.Get<byte[]?>("remediationScriptContent"); }
+            set { BackingStore?.Set("remediationScriptContent", value); }
+        }
+#else
         public byte[] RemediationScriptContent {
             get { return BackingStore?.Get<byte[]>("remediationScriptContent"); }
             set { BackingStore?.Set("remediationScriptContent", value); }
         }
+#endif
         /// <summary>List of ComplexType RemediationScriptParameters objects.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DeviceHealthScriptParameter>? RemediationScriptParameters {
+            get { return BackingStore?.Get<List<DeviceHealthScriptParameter>?>("remediationScriptParameters"); }
+            set { BackingStore?.Set("remediationScriptParameters", value); }
+        }
+#else
         public List<DeviceHealthScriptParameter> RemediationScriptParameters {
             get { return BackingStore?.Get<List<DeviceHealthScriptParameter>>("remediationScriptParameters"); }
             set { BackingStore?.Set("remediationScriptParameters", value); }
         }
+#endif
         /// <summary>List of Scope Tag IDs for the device health script</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? RoleScopeTagIds {
+            get { return BackingStore?.Get<List<string>?>("roleScopeTagIds"); }
+            set { BackingStore?.Set("roleScopeTagIds", value); }
+        }
+#else
         public List<string> RoleScopeTagIds {
             get { return BackingStore?.Get<List<string>>("roleScopeTagIds"); }
             set { BackingStore?.Set("roleScopeTagIds", value); }
         }
+#endif
         /// <summary>Indicate whether PowerShell script(s) should run as 32-bit</summary>
         public bool? RunAs32Bit {
             get { return BackingStore?.Get<bool?>("runAs32Bit"); }
@@ -94,15 +171,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("runAsAccount", value); }
         }
         /// <summary>High level run summary for device health script.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DeviceHealthScriptRunSummary? RunSummary {
+            get { return BackingStore?.Get<DeviceHealthScriptRunSummary?>("runSummary"); }
+            set { BackingStore?.Set("runSummary", value); }
+        }
+#else
         public DeviceHealthScriptRunSummary RunSummary {
             get { return BackingStore?.Get<DeviceHealthScriptRunSummary>("runSummary"); }
             set { BackingStore?.Set("runSummary", value); }
         }
+#endif
         /// <summary>Version of the device health script</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Version {
+            get { return BackingStore?.Get<string?>("version"); }
+            set { BackingStore?.Set("version", value); }
+        }
+#else
         public string Version {
             get { return BackingStore?.Get<string>("version"); }
             set { BackingStore?.Set("version", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

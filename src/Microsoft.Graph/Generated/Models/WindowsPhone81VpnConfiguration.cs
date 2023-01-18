@@ -21,15 +21,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("bypassVpnOnHomeWifi", value); }
         }
         /// <summary>DNS suffix search list.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? DnsSuffixSearchList {
+            get { return BackingStore?.Get<List<string>?>("dnsSuffixSearchList"); }
+            set { BackingStore?.Set("dnsSuffixSearchList", value); }
+        }
+#else
         public List<string> DnsSuffixSearchList {
             get { return BackingStore?.Get<List<string>>("dnsSuffixSearchList"); }
             set { BackingStore?.Set("dnsSuffixSearchList", value); }
         }
+#endif
         /// <summary>Identity certificate for client authentication when authentication method is certificate.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public WindowsPhone81CertificateProfileBase? IdentityCertificate {
+            get { return BackingStore?.Get<WindowsPhone81CertificateProfileBase?>("identityCertificate"); }
+            set { BackingStore?.Set("identityCertificate", value); }
+        }
+#else
         public WindowsPhone81CertificateProfileBase IdentityCertificate {
             get { return BackingStore?.Get<WindowsPhone81CertificateProfileBase>("identityCertificate"); }
             set { BackingStore?.Set("identityCertificate", value); }
         }
+#endif
         /// <summary>Remember user credentials.</summary>
         public bool? RememberUserCredentials {
             get { return BackingStore?.Get<bool?>("rememberUserCredentials"); }

@@ -6,45 +6,87 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.ManagedTenants {
     public class ManagedTenantAlertRule : Entity, IParsable {
         /// <summary>The alertDisplayName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AlertDisplayName {
+            get { return BackingStore?.Get<string?>("alertDisplayName"); }
+            set { BackingStore?.Set("alertDisplayName", value); }
+        }
+#else
         public string AlertDisplayName {
             get { return BackingStore?.Get<string>("alertDisplayName"); }
             set { BackingStore?.Set("alertDisplayName", value); }
         }
+#endif
         /// <summary>The alerts property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ManagedTenantAlert>? Alerts {
+            get { return BackingStore?.Get<List<ManagedTenantAlert>?>("alerts"); }
+            set { BackingStore?.Set("alerts", value); }
+        }
+#else
         public List<ManagedTenantAlert> Alerts {
             get { return BackingStore?.Get<List<ManagedTenantAlert>>("alerts"); }
             set { BackingStore?.Set("alerts", value); }
         }
+#endif
         /// <summary>The alertTTL property</summary>
         public int? AlertTTL {
             get { return BackingStore?.Get<int?>("alertTTL"); }
             set { BackingStore?.Set("alertTTL", value); }
         }
         /// <summary>The createdByUserId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CreatedByUserId {
+            get { return BackingStore?.Get<string?>("createdByUserId"); }
+            set { BackingStore?.Set("createdByUserId", value); }
+        }
+#else
         public string CreatedByUserId {
             get { return BackingStore?.Get<string>("createdByUserId"); }
             set { BackingStore?.Set("createdByUserId", value); }
         }
+#endif
         /// <summary>The createdDateTime property</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The description property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>The displayName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The lastActionByUserId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? LastActionByUserId {
+            get { return BackingStore?.Get<string?>("lastActionByUserId"); }
+            set { BackingStore?.Set("lastActionByUserId", value); }
+        }
+#else
         public string LastActionByUserId {
             get { return BackingStore?.Get<string>("lastActionByUserId"); }
             set { BackingStore?.Set("lastActionByUserId", value); }
         }
+#endif
         /// <summary>The lastActionDateTime property</summary>
         public DateTimeOffset? LastActionDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastActionDateTime"); }
@@ -61,25 +103,46 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
             set { BackingStore?.Set("notificationFinalDestinations", value); }
         }
         /// <summary>The ruleDefinition property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ManagedTenantAlertRuleDefinition? RuleDefinition {
+            get { return BackingStore?.Get<ManagedTenantAlertRuleDefinition?>("ruleDefinition"); }
+            set { BackingStore?.Set("ruleDefinition", value); }
+        }
+#else
         public ManagedTenantAlertRuleDefinition RuleDefinition {
             get { return BackingStore?.Get<ManagedTenantAlertRuleDefinition>("ruleDefinition"); }
             set { BackingStore?.Set("ruleDefinition", value); }
         }
+#endif
         /// <summary>The severity property</summary>
         public AlertSeverity? Severity {
             get { return BackingStore?.Get<AlertSeverity?>("severity"); }
             set { BackingStore?.Set("severity", value); }
         }
         /// <summary>The targets property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<NotificationTarget>? Targets {
+            get { return BackingStore?.Get<List<NotificationTarget>?>("targets"); }
+            set { BackingStore?.Set("targets", value); }
+        }
+#else
         public List<NotificationTarget> Targets {
             get { return BackingStore?.Get<List<NotificationTarget>>("targets"); }
             set { BackingStore?.Set("targets", value); }
         }
+#endif
         /// <summary>The tenantIds property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<TenantInfo>? TenantIds {
+            get { return BackingStore?.Get<List<TenantInfo>?>("tenantIds"); }
+            set { BackingStore?.Set("tenantIds", value); }
+        }
+#else
         public List<TenantInfo> TenantIds {
             get { return BackingStore?.Get<List<TenantInfo>>("tenantIds"); }
             set { BackingStore?.Set("tenantIds", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

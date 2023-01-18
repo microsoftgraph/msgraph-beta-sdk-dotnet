@@ -12,127 +12,288 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>TWhen an Attestation Identity Key (AIK) is present on a device, it indicates that the device has an endorsement key (EK) certificate.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AttestationIdentityKey {
+            get { return BackingStore?.Get<string?>("attestationIdentityKey"); }
+            set { BackingStore?.Set("attestationIdentityKey", value); }
+        }
+#else
         public string AttestationIdentityKey {
             get { return BackingStore?.Get<string>("attestationIdentityKey"); }
             set { BackingStore?.Set("attestationIdentityKey", value); }
         }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>On or Off of BitLocker Drive Encryption</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? BitLockerStatus {
+            get { return BackingStore?.Get<string?>("bitLockerStatus"); }
+            set { BackingStore?.Set("bitLockerStatus", value); }
+        }
+#else
         public string BitLockerStatus {
             get { return BackingStore?.Get<string>("bitLockerStatus"); }
             set { BackingStore?.Set("bitLockerStatus", value); }
         }
+#endif
         /// <summary>The security version number of the Boot Application</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? BootAppSecurityVersion {
+            get { return BackingStore?.Get<string?>("bootAppSecurityVersion"); }
+            set { BackingStore?.Set("bootAppSecurityVersion", value); }
+        }
+#else
         public string BootAppSecurityVersion {
             get { return BackingStore?.Get<string>("bootAppSecurityVersion"); }
             set { BackingStore?.Set("bootAppSecurityVersion", value); }
         }
+#endif
         /// <summary>When bootDebugging is enabled, the device is used in development and testing</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? BootDebugging {
+            get { return BackingStore?.Get<string?>("bootDebugging"); }
+            set { BackingStore?.Set("bootDebugging", value); }
+        }
+#else
         public string BootDebugging {
             get { return BackingStore?.Get<string>("bootDebugging"); }
             set { BackingStore?.Set("bootDebugging", value); }
         }
+#endif
         /// <summary>The security version number of the Boot Application</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? BootManagerSecurityVersion {
+            get { return BackingStore?.Get<string?>("bootManagerSecurityVersion"); }
+            set { BackingStore?.Set("bootManagerSecurityVersion", value); }
+        }
+#else
         public string BootManagerSecurityVersion {
             get { return BackingStore?.Get<string>("bootManagerSecurityVersion"); }
             set { BackingStore?.Set("bootManagerSecurityVersion", value); }
         }
+#endif
         /// <summary>The version of the Boot Manager</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? BootManagerVersion {
+            get { return BackingStore?.Get<string?>("bootManagerVersion"); }
+            set { BackingStore?.Set("bootManagerVersion", value); }
+        }
+#else
         public string BootManagerVersion {
             get { return BackingStore?.Get<string>("bootManagerVersion"); }
             set { BackingStore?.Set("bootManagerVersion", value); }
         }
+#endif
         /// <summary>The Boot Revision List that was loaded during initial boot on the attested device</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? BootRevisionListInfo {
+            get { return BackingStore?.Get<string?>("bootRevisionListInfo"); }
+            set { BackingStore?.Set("bootRevisionListInfo", value); }
+        }
+#else
         public string BootRevisionListInfo {
             get { return BackingStore?.Get<string>("bootRevisionListInfo"); }
             set { BackingStore?.Set("bootRevisionListInfo", value); }
         }
+#endif
         /// <summary>When code integrity is enabled, code execution is restricted to integrity verified code</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CodeIntegrity {
+            get { return BackingStore?.Get<string?>("codeIntegrity"); }
+            set { BackingStore?.Set("codeIntegrity", value); }
+        }
+#else
         public string CodeIntegrity {
             get { return BackingStore?.Get<string>("codeIntegrity"); }
             set { BackingStore?.Set("codeIntegrity", value); }
         }
+#endif
         /// <summary>The version of the Boot Manager</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CodeIntegrityCheckVersion {
+            get { return BackingStore?.Get<string?>("codeIntegrityCheckVersion"); }
+            set { BackingStore?.Set("codeIntegrityCheckVersion", value); }
+        }
+#else
         public string CodeIntegrityCheckVersion {
             get { return BackingStore?.Get<string>("codeIntegrityCheckVersion"); }
             set { BackingStore?.Set("codeIntegrityCheckVersion", value); }
         }
+#endif
         /// <summary>The Code Integrity policy that is controlling the security of the boot environment</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CodeIntegrityPolicy {
+            get { return BackingStore?.Get<string?>("codeIntegrityPolicy"); }
+            set { BackingStore?.Set("codeIntegrityPolicy", value); }
+        }
+#else
         public string CodeIntegrityPolicy {
             get { return BackingStore?.Get<string>("codeIntegrityPolicy"); }
             set { BackingStore?.Set("codeIntegrityPolicy", value); }
         }
+#endif
         /// <summary>The DHA report version. (Namespace version)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ContentNamespaceUrl {
+            get { return BackingStore?.Get<string?>("contentNamespaceUrl"); }
+            set { BackingStore?.Set("contentNamespaceUrl", value); }
+        }
+#else
         public string ContentNamespaceUrl {
             get { return BackingStore?.Get<string>("contentNamespaceUrl"); }
             set { BackingStore?.Set("contentNamespaceUrl", value); }
         }
+#endif
         /// <summary>The HealthAttestation state schema version</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ContentVersion {
+            get { return BackingStore?.Get<string?>("contentVersion"); }
+            set { BackingStore?.Set("contentVersion", value); }
+        }
+#else
         public string ContentVersion {
             get { return BackingStore?.Get<string>("contentVersion"); }
             set { BackingStore?.Set("contentVersion", value); }
         }
+#endif
         /// <summary>DEP Policy defines a set of hardware and software technologies that perform additional checks on memory</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DataExcutionPolicy {
+            get { return BackingStore?.Get<string?>("dataExcutionPolicy"); }
+            set { BackingStore?.Set("dataExcutionPolicy", value); }
+        }
+#else
         public string DataExcutionPolicy {
             get { return BackingStore?.Get<string>("dataExcutionPolicy"); }
             set { BackingStore?.Set("dataExcutionPolicy", value); }
         }
+#endif
         /// <summary>The DHA report version. (Namespace version)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeviceHealthAttestationStatus {
+            get { return BackingStore?.Get<string?>("deviceHealthAttestationStatus"); }
+            set { BackingStore?.Set("deviceHealthAttestationStatus", value); }
+        }
+#else
         public string DeviceHealthAttestationStatus {
             get { return BackingStore?.Get<string>("deviceHealthAttestationStatus"); }
             set { BackingStore?.Set("deviceHealthAttestationStatus", value); }
         }
+#endif
         /// <summary>ELAM provides protection for the computers in your network when they start up</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? EarlyLaunchAntiMalwareDriverProtection {
+            get { return BackingStore?.Get<string?>("earlyLaunchAntiMalwareDriverProtection"); }
+            set { BackingStore?.Set("earlyLaunchAntiMalwareDriverProtection", value); }
+        }
+#else
         public string EarlyLaunchAntiMalwareDriverProtection {
             get { return BackingStore?.Get<string>("earlyLaunchAntiMalwareDriverProtection"); }
             set { BackingStore?.Set("earlyLaunchAntiMalwareDriverProtection", value); }
         }
+#endif
         /// <summary>This attribute indicates if DHA is supported for the device</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? HealthAttestationSupportedStatus {
+            get { return BackingStore?.Get<string?>("healthAttestationSupportedStatus"); }
+            set { BackingStore?.Set("healthAttestationSupportedStatus", value); }
+        }
+#else
         public string HealthAttestationSupportedStatus {
             get { return BackingStore?.Get<string>("healthAttestationSupportedStatus"); }
             set { BackingStore?.Set("healthAttestationSupportedStatus", value); }
         }
+#endif
         /// <summary>This attribute appears if DHA-Service detects an integrity issue</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? HealthStatusMismatchInfo {
+            get { return BackingStore?.Get<string?>("healthStatusMismatchInfo"); }
+            set { BackingStore?.Set("healthStatusMismatchInfo", value); }
+        }
+#else
         public string HealthStatusMismatchInfo {
             get { return BackingStore?.Get<string>("healthStatusMismatchInfo"); }
             set { BackingStore?.Set("healthStatusMismatchInfo", value); }
         }
+#endif
         /// <summary>The DateTime when device was evaluated or issued to MDM</summary>
         public DateTimeOffset? IssuedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("issuedDateTime"); }
             set { BackingStore?.Set("issuedDateTime", value); }
         }
         /// <summary>The Timestamp of the last update.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? LastUpdateDateTime {
+            get { return BackingStore?.Get<string?>("lastUpdateDateTime"); }
+            set { BackingStore?.Set("lastUpdateDateTime", value); }
+        }
+#else
         public string LastUpdateDateTime {
             get { return BackingStore?.Get<string>("lastUpdateDateTime"); }
             set { BackingStore?.Set("lastUpdateDateTime", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>When operatingSystemKernelDebugging is enabled, the device is used in development and testing</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OperatingSystemKernelDebugging {
+            get { return BackingStore?.Get<string?>("operatingSystemKernelDebugging"); }
+            set { BackingStore?.Set("operatingSystemKernelDebugging", value); }
+        }
+#else
         public string OperatingSystemKernelDebugging {
             get { return BackingStore?.Get<string>("operatingSystemKernelDebugging"); }
             set { BackingStore?.Set("operatingSystemKernelDebugging", value); }
         }
+#endif
         /// <summary>The Operating System Revision List that was loaded during initial boot on the attested device</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OperatingSystemRevListInfo {
+            get { return BackingStore?.Get<string?>("operatingSystemRevListInfo"); }
+            set { BackingStore?.Set("operatingSystemRevListInfo", value); }
+        }
+#else
         public string OperatingSystemRevListInfo {
             get { return BackingStore?.Get<string>("operatingSystemRevListInfo"); }
             set { BackingStore?.Set("operatingSystemRevListInfo", value); }
         }
+#endif
         /// <summary>The measurement that is captured in PCR[0]</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Pcr0 {
+            get { return BackingStore?.Get<string?>("pcr0"); }
+            set { BackingStore?.Set("pcr0", value); }
+        }
+#else
         public string Pcr0 {
             get { return BackingStore?.Get<string>("pcr0"); }
             set { BackingStore?.Set("pcr0", value); }
         }
+#endif
         /// <summary>Informational attribute that identifies the HASH algorithm that was used by TPM</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PcrHashAlgorithm {
+            get { return BackingStore?.Get<string?>("pcrHashAlgorithm"); }
+            set { BackingStore?.Set("pcrHashAlgorithm", value); }
+        }
+#else
         public string PcrHashAlgorithm {
             get { return BackingStore?.Get<string>("pcrHashAlgorithm"); }
             set { BackingStore?.Set("pcrHashAlgorithm", value); }
         }
+#endif
         /// <summary>The number of times a PC device has hibernated or resumed</summary>
         public long? ResetCount {
             get { return BackingStore?.Get<long?>("resetCount"); }
@@ -144,40 +305,89 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("restartCount", value); }
         }
         /// <summary>Safe mode is a troubleshooting option for Windows that starts your computer in a limited state</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SafeMode {
+            get { return BackingStore?.Get<string?>("safeMode"); }
+            set { BackingStore?.Set("safeMode", value); }
+        }
+#else
         public string SafeMode {
             get { return BackingStore?.Get<string>("safeMode"); }
             set { BackingStore?.Set("safeMode", value); }
         }
+#endif
         /// <summary>When Secure Boot is enabled, the core components must have the correct cryptographic signatures</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SecureBoot {
+            get { return BackingStore?.Get<string?>("secureBoot"); }
+            set { BackingStore?.Set("secureBoot", value); }
+        }
+#else
         public string SecureBoot {
             get { return BackingStore?.Get<string>("secureBoot"); }
             set { BackingStore?.Set("secureBoot", value); }
         }
+#endif
         /// <summary>Fingerprint of the Custom Secure Boot Configuration Policy</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SecureBootConfigurationPolicyFingerPrint {
+            get { return BackingStore?.Get<string?>("secureBootConfigurationPolicyFingerPrint"); }
+            set { BackingStore?.Set("secureBootConfigurationPolicyFingerPrint", value); }
+        }
+#else
         public string SecureBootConfigurationPolicyFingerPrint {
             get { return BackingStore?.Get<string>("secureBootConfigurationPolicyFingerPrint"); }
             set { BackingStore?.Set("secureBootConfigurationPolicyFingerPrint", value); }
         }
+#endif
         /// <summary>When test signing is allowed, the device does not enforce signature validation during boot</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TestSigning {
+            get { return BackingStore?.Get<string?>("testSigning"); }
+            set { BackingStore?.Set("testSigning", value); }
+        }
+#else
         public string TestSigning {
             get { return BackingStore?.Get<string>("testSigning"); }
             set { BackingStore?.Set("testSigning", value); }
         }
+#endif
         /// <summary>The security version number of the Boot Application</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TpmVersion {
+            get { return BackingStore?.Get<string?>("tpmVersion"); }
+            set { BackingStore?.Set("tpmVersion", value); }
+        }
+#else
         public string TpmVersion {
             get { return BackingStore?.Get<string>("tpmVersion"); }
             set { BackingStore?.Set("tpmVersion", value); }
         }
+#endif
         /// <summary>VSM is a container that protects high value assets from a compromised kernel</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? VirtualSecureMode {
+            get { return BackingStore?.Get<string?>("virtualSecureMode"); }
+            set { BackingStore?.Set("virtualSecureMode", value); }
+        }
+#else
         public string VirtualSecureMode {
             get { return BackingStore?.Get<string>("virtualSecureMode"); }
             set { BackingStore?.Set("virtualSecureMode", value); }
         }
+#endif
         /// <summary>Operating system running with limited services that is used to prepare a computer for Windows</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? WindowsPE {
+            get { return BackingStore?.Get<string?>("windowsPE"); }
+            set { BackingStore?.Set("windowsPE", value); }
+        }
+#else
         public string WindowsPE {
             get { return BackingStore?.Get<string>("windowsPE"); }
             set { BackingStore?.Set("windowsPE", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new deviceHealthAttestationState and sets the default values.
         /// </summary>

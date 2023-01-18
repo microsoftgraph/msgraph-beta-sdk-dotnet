@@ -6,25 +6,53 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class GroupPolicyUploadedDefinitionFile : GroupPolicyDefinitionFile, IParsable {
         /// <summary>The contents of the uploaded ADMX file.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public byte[]? Content {
+            get { return BackingStore?.Get<byte[]?>("content"); }
+            set { BackingStore?.Set("content", value); }
+        }
+#else
         public byte[] Content {
             get { return BackingStore?.Get<byte[]>("content"); }
             set { BackingStore?.Set("content", value); }
         }
+#endif
         /// <summary>The default language of the uploaded ADMX file.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DefaultLanguageCode {
+            get { return BackingStore?.Get<string?>("defaultLanguageCode"); }
+            set { BackingStore?.Set("defaultLanguageCode", value); }
+        }
+#else
         public string DefaultLanguageCode {
             get { return BackingStore?.Get<string>("defaultLanguageCode"); }
             set { BackingStore?.Set("defaultLanguageCode", value); }
         }
+#endif
         /// <summary>The list of operations on the uploaded ADMX file.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<GroupPolicyOperation>? GroupPolicyOperations {
+            get { return BackingStore?.Get<List<GroupPolicyOperation>?>("groupPolicyOperations"); }
+            set { BackingStore?.Set("groupPolicyOperations", value); }
+        }
+#else
         public List<GroupPolicyOperation> GroupPolicyOperations {
             get { return BackingStore?.Get<List<GroupPolicyOperation>>("groupPolicyOperations"); }
             set { BackingStore?.Set("groupPolicyOperations", value); }
         }
+#endif
         /// <summary>The list of ADML files associated with the uploaded ADMX file.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<GroupPolicyUploadedLanguageFile>? GroupPolicyUploadedLanguageFiles {
+            get { return BackingStore?.Get<List<GroupPolicyUploadedLanguageFile>?>("groupPolicyUploadedLanguageFiles"); }
+            set { BackingStore?.Set("groupPolicyUploadedLanguageFiles", value); }
+        }
+#else
         public List<GroupPolicyUploadedLanguageFile> GroupPolicyUploadedLanguageFiles {
             get { return BackingStore?.Get<List<GroupPolicyUploadedLanguageFile>>("groupPolicyUploadedLanguageFiles"); }
             set { BackingStore?.Set("groupPolicyUploadedLanguageFiles", value); }
         }
+#endif
         /// <summary>Type of Group Policy uploaded definition file status.</summary>
         public GroupPolicyUploadedDefinitionFileStatus? Status {
             get { return BackingStore?.Get<GroupPolicyUploadedDefinitionFileStatus?>("status"); }

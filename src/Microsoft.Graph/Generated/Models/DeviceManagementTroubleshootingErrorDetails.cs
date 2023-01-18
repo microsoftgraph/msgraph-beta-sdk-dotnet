@@ -17,35 +17,77 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Not yet documented</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Context {
+            get { return BackingStore?.Get<string?>("context"); }
+            set { BackingStore?.Set("context", value); }
+        }
+#else
         public string Context {
             get { return BackingStore?.Get<string>("context"); }
             set { BackingStore?.Set("context", value); }
         }
+#endif
         /// <summary>Not yet documented</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Failure {
+            get { return BackingStore?.Get<string?>("failure"); }
+            set { BackingStore?.Set("failure", value); }
+        }
+#else
         public string Failure {
             get { return BackingStore?.Get<string>("failure"); }
             set { BackingStore?.Set("failure", value); }
         }
+#endif
         /// <summary>The detailed description of what went wrong.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? FailureDetails {
+            get { return BackingStore?.Get<string?>("failureDetails"); }
+            set { BackingStore?.Set("failureDetails", value); }
+        }
+#else
         public string FailureDetails {
             get { return BackingStore?.Get<string>("failureDetails"); }
             set { BackingStore?.Set("failureDetails", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The detailed description of how to remediate this issue.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Remediation {
+            get { return BackingStore?.Get<string?>("remediation"); }
+            set { BackingStore?.Set("remediation", value); }
+        }
+#else
         public string Remediation {
             get { return BackingStore?.Get<string>("remediation"); }
             set { BackingStore?.Set("remediation", value); }
         }
+#endif
         /// <summary>Links to helpful documentation about this failure.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DeviceManagementTroubleshootingErrorResource>? Resources {
+            get { return BackingStore?.Get<List<DeviceManagementTroubleshootingErrorResource>?>("resources"); }
+            set { BackingStore?.Set("resources", value); }
+        }
+#else
         public List<DeviceManagementTroubleshootingErrorResource> Resources {
             get { return BackingStore?.Get<List<DeviceManagementTroubleshootingErrorResource>>("resources"); }
             set { BackingStore?.Set("resources", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new deviceManagementTroubleshootingErrorDetails and sets the default values.
         /// </summary>

@@ -9,25 +9,46 @@ namespace Microsoft.Graph.Beta.Models {
     /// </summary>
     public class WindowsManagementAppHealthState : Entity, IParsable {
         /// <summary>Name of the device on which Windows management app is installed.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeviceName {
+            get { return BackingStore?.Get<string?>("deviceName"); }
+            set { BackingStore?.Set("deviceName", value); }
+        }
+#else
         public string DeviceName {
             get { return BackingStore?.Get<string>("deviceName"); }
             set { BackingStore?.Set("deviceName", value); }
         }
+#endif
         /// <summary>Windows 10 OS version of the device on which Windows management app is installed.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeviceOSVersion {
+            get { return BackingStore?.Get<string?>("deviceOSVersion"); }
+            set { BackingStore?.Set("deviceOSVersion", value); }
+        }
+#else
         public string DeviceOSVersion {
             get { return BackingStore?.Get<string>("deviceOSVersion"); }
             set { BackingStore?.Set("deviceOSVersion", value); }
         }
+#endif
         /// <summary>Indicates health state of the Windows management app.</summary>
         public Microsoft.Graph.Beta.Models.HealthState? HealthState {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.HealthState?>("healthState"); }
             set { BackingStore?.Set("healthState", value); }
         }
         /// <summary>Windows management app installed version.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? InstalledVersion {
+            get { return BackingStore?.Get<string?>("installedVersion"); }
+            set { BackingStore?.Set("installedVersion", value); }
+        }
+#else
         public string InstalledVersion {
             get { return BackingStore?.Get<string>("installedVersion"); }
             set { BackingStore?.Set("installedVersion", value); }
         }
+#endif
         /// <summary>Windows management app last check-in time.</summary>
         public DateTimeOffset? LastCheckInDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastCheckInDateTime"); }

@@ -19,20 +19,41 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>DecryptionKey as string</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DecryptionKey {
+            get { return BackingStore?.Get<string?>("decryptionKey"); }
+            set { BackingStore?.Set("decryptionKey", value); }
+        }
+#else
         public string DecryptionKey {
             get { return BackingStore?.Get<string>("decryptionKey"); }
             set { BackingStore?.Set("decryptionKey", value); }
         }
+#endif
         /// <summary>Download SAS Url for completed AppLogUploadRequest</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DownloadUrl {
+            get { return BackingStore?.Get<string?>("downloadUrl"); }
+            set { BackingStore?.Set("downloadUrl", value); }
+        }
+#else
         public string DownloadUrl {
             get { return BackingStore?.Get<string>("downloadUrl"); }
             set { BackingStore?.Set("downloadUrl", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new appLogCollectionDownloadDetails and sets the default values.
         /// </summary>

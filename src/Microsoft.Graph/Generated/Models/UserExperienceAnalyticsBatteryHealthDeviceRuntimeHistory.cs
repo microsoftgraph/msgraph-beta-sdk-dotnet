@@ -9,20 +9,34 @@ namespace Microsoft.Graph.Beta.Models {
     /// </summary>
     public class UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory : Entity, IParsable {
         /// <summary>The unique identifier of the device, Intune DeviceID or SCCM device id.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeviceId {
+            get { return BackingStore?.Get<string?>("deviceId"); }
+            set { BackingStore?.Set("deviceId", value); }
+        }
+#else
         public string DeviceId {
             get { return BackingStore?.Get<string>("deviceId"); }
             set { BackingStore?.Set("deviceId", value); }
         }
+#endif
         /// <summary>The estimated runtime of the device when the battery is fully charged. Unit in minutes. Valid values -2147483648 to 2147483647</summary>
         public int? EstimatedRuntimeInMinutes {
             get { return BackingStore?.Get<int?>("estimatedRuntimeInMinutes"); }
             set { BackingStore?.Set("estimatedRuntimeInMinutes", value); }
         }
         /// <summary>The datetime for the instance of runtime history.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? RuntimeDateTime {
+            get { return BackingStore?.Get<string?>("runtimeDateTime"); }
+            set { BackingStore?.Set("runtimeDateTime", value); }
+        }
+#else
         public string RuntimeDateTime {
             get { return BackingStore?.Get<string>("runtimeDateTime"); }
             set { BackingStore?.Set("runtimeDateTime", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

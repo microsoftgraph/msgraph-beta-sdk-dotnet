@@ -6,45 +6,94 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class ConnectedOrganization : Entity, IParsable {
         /// <summary>UPN of the user who created this resource. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CreatedBy {
+            get { return BackingStore?.Get<string?>("createdBy"); }
+            set { BackingStore?.Set("createdBy", value); }
+        }
+#else
         public string CreatedBy {
             get { return BackingStore?.Get<string>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
+#endif
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The description of the connected organization.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>The display name of the connected organization. Supports $filter (eq).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The externalSponsors property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DirectoryObject>? ExternalSponsors {
+            get { return BackingStore?.Get<List<DirectoryObject>?>("externalSponsors"); }
+            set { BackingStore?.Set("externalSponsors", value); }
+        }
+#else
         public List<DirectoryObject> ExternalSponsors {
             get { return BackingStore?.Get<List<DirectoryObject>>("externalSponsors"); }
             set { BackingStore?.Set("externalSponsors", value); }
         }
+#endif
         /// <summary>The identity sources in this connected organization, one of azureActiveDirectoryTenant, crossCloudAzureActiveDirectoryTenant, domainIdentitySource or externalDomainFederation. Read-only. Nullable. Supports $select and $filter(eq). To filter by the derived types, you must declare the resource using its full OData cast, for example, $filter=identitySources/any(is:is/microsoft.graph.azureActiveDirectoryTenant/tenantId eq &apos;bcfdfff4-cbc3-43f2-9000-ba7b7515054f&apos;).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<IdentitySource>? IdentitySources {
+            get { return BackingStore?.Get<List<IdentitySource>?>("identitySources"); }
+            set { BackingStore?.Set("identitySources", value); }
+        }
+#else
         public List<IdentitySource> IdentitySources {
             get { return BackingStore?.Get<List<IdentitySource>>("identitySources"); }
             set { BackingStore?.Set("identitySources", value); }
         }
+#endif
         /// <summary>The internalSponsors property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DirectoryObject>? InternalSponsors {
+            get { return BackingStore?.Get<List<DirectoryObject>?>("internalSponsors"); }
+            set { BackingStore?.Set("internalSponsors", value); }
+        }
+#else
         public List<DirectoryObject> InternalSponsors {
             get { return BackingStore?.Get<List<DirectoryObject>>("internalSponsors"); }
             set { BackingStore?.Set("internalSponsors", value); }
         }
+#endif
         /// <summary>UPN of the user who last modified this resource. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ModifiedBy {
+            get { return BackingStore?.Get<string?>("modifiedBy"); }
+            set { BackingStore?.Set("modifiedBy", value); }
+        }
+#else
         public string ModifiedBy {
             get { return BackingStore?.Get<string>("modifiedBy"); }
             set { BackingStore?.Set("modifiedBy", value); }
         }
+#endif
         /// <summary>The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z. Read-only.</summary>
         public DateTimeOffset? ModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("modifiedDateTime"); }

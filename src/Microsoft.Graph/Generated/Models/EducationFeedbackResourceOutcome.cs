@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class EducationFeedbackResourceOutcome : EducationOutcome, IParsable {
         /// <summary>The actual feedback resource.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public EducationResource? FeedbackResource {
+            get { return BackingStore?.Get<EducationResource?>("feedbackResource"); }
+            set { BackingStore?.Set("feedbackResource", value); }
+        }
+#else
         public EducationResource FeedbackResource {
             get { return BackingStore?.Get<EducationResource>("feedbackResource"); }
             set { BackingStore?.Set("feedbackResource", value); }
         }
+#endif
         /// <summary>The status of the feedback resource. The possible values are: notPublished, pendingPublish, published, failedPublish, unknownFutureValue.</summary>
         public EducationFeedbackResourceOutcomeStatus? ResourceStatus {
             get { return BackingStore?.Get<EducationFeedbackResourceOutcomeStatus?>("resourceStatus"); }

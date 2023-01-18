@@ -6,45 +6,94 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class ExactMatchSession : ExactMatchSessionBase, IParsable {
         /// <summary>The checksum property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Checksum {
+            get { return BackingStore?.Get<string?>("checksum"); }
+            set { BackingStore?.Set("checksum", value); }
+        }
+#else
         public string Checksum {
             get { return BackingStore?.Get<string>("checksum"); }
             set { BackingStore?.Set("checksum", value); }
         }
+#endif
         /// <summary>The dataUploadURI property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DataUploadURI {
+            get { return BackingStore?.Get<string?>("dataUploadURI"); }
+            set { BackingStore?.Set("dataUploadURI", value); }
+        }
+#else
         public string DataUploadURI {
             get { return BackingStore?.Get<string>("dataUploadURI"); }
             set { BackingStore?.Set("dataUploadURI", value); }
         }
+#endif
         /// <summary>The fields property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? Fields {
+            get { return BackingStore?.Get<List<string>?>("fields"); }
+            set { BackingStore?.Set("fields", value); }
+        }
+#else
         public List<string> Fields {
             get { return BackingStore?.Get<List<string>>("fields"); }
             set { BackingStore?.Set("fields", value); }
         }
+#endif
         /// <summary>The fileName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? FileName {
+            get { return BackingStore?.Get<string?>("fileName"); }
+            set { BackingStore?.Set("fileName", value); }
+        }
+#else
         public string FileName {
             get { return BackingStore?.Get<string>("fileName"); }
             set { BackingStore?.Set("fileName", value); }
         }
+#endif
         /// <summary>The rowsPerBlock property</summary>
         public int? RowsPerBlock {
             get { return BackingStore?.Get<int?>("rowsPerBlock"); }
             set { BackingStore?.Set("rowsPerBlock", value); }
         }
         /// <summary>The salt property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Salt {
+            get { return BackingStore?.Get<string?>("salt"); }
+            set { BackingStore?.Set("salt", value); }
+        }
+#else
         public string Salt {
             get { return BackingStore?.Get<string>("salt"); }
             set { BackingStore?.Set("salt", value); }
         }
+#endif
         /// <summary>The uploadAgent property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ExactMatchUploadAgent? UploadAgent {
+            get { return BackingStore?.Get<ExactMatchUploadAgent?>("uploadAgent"); }
+            set { BackingStore?.Set("uploadAgent", value); }
+        }
+#else
         public ExactMatchUploadAgent UploadAgent {
             get { return BackingStore?.Get<ExactMatchUploadAgent>("uploadAgent"); }
             set { BackingStore?.Set("uploadAgent", value); }
         }
+#endif
         /// <summary>The uploadAgentId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UploadAgentId {
+            get { return BackingStore?.Get<string?>("uploadAgentId"); }
+            set { BackingStore?.Set("uploadAgentId", value); }
+        }
+#else
         public string UploadAgentId {
             get { return BackingStore?.Get<string>("uploadAgentId"); }
             set { BackingStore?.Set("uploadAgentId", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

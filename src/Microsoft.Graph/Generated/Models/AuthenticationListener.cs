@@ -11,10 +11,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("priority", value); }
         }
         /// <summary>Filter based on the source of the authentication that is used to determine whether the listener is evaluated. This is currently limited to evaluations based on application the user is authenticating to.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public AuthenticationSourceFilter? SourceFilter {
+            get { return BackingStore?.Get<AuthenticationSourceFilter?>("sourceFilter"); }
+            set { BackingStore?.Set("sourceFilter", value); }
+        }
+#else
         public AuthenticationSourceFilter SourceFilter {
             get { return BackingStore?.Get<AuthenticationSourceFilter>("sourceFilter"); }
             set { BackingStore?.Set("sourceFilter", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

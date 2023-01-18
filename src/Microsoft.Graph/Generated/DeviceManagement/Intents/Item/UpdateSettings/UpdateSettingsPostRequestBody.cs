@@ -15,10 +15,17 @@ namespace Microsoft.Graph.Beta.DeviceManagement.Intents.Item.UpdateSettings {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The settings property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DeviceManagementSettingInstance>? Settings {
+            get { return BackingStore?.Get<List<DeviceManagementSettingInstance>?>("settings"); }
+            set { BackingStore?.Set("settings", value); }
+        }
+#else
         public List<DeviceManagementSettingInstance> Settings {
             get { return BackingStore?.Get<List<DeviceManagementSettingInstance>>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new updateSettingsPostRequestBody and sets the default values.
         /// </summary>

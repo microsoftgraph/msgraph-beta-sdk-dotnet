@@ -7,10 +7,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class OptionalClaims : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>The optional claims returned in the JWT access token.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<OptionalClaim>? AccessToken {
+            get { return BackingStore?.Get<List<OptionalClaim>?>("accessToken"); }
+            set { BackingStore?.Set("accessToken", value); }
+        }
+#else
         public List<OptionalClaim> AccessToken {
             get { return BackingStore?.Get<List<OptionalClaim>>("accessToken"); }
             set { BackingStore?.Set("accessToken", value); }
         }
+#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
             get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
@@ -19,20 +26,41 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The optional claims returned in the JWT ID token.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<OptionalClaim>? IdToken {
+            get { return BackingStore?.Get<List<OptionalClaim>?>("idToken"); }
+            set { BackingStore?.Set("idToken", value); }
+        }
+#else
         public List<OptionalClaim> IdToken {
             get { return BackingStore?.Get<List<OptionalClaim>>("idToken"); }
             set { BackingStore?.Set("idToken", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The optional claims returned in the SAML token.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<OptionalClaim>? Saml2Token {
+            get { return BackingStore?.Get<List<OptionalClaim>?>("saml2Token"); }
+            set { BackingStore?.Set("saml2Token", value); }
+        }
+#else
         public List<OptionalClaim> Saml2Token {
             get { return BackingStore?.Get<List<OptionalClaim>>("saml2Token"); }
             set { BackingStore?.Set("saml2Token", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new optionalClaims and sets the default values.
         /// </summary>

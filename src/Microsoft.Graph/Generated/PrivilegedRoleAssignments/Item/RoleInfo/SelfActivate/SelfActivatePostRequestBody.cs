@@ -14,25 +14,53 @@ namespace Microsoft.Graph.Beta.PrivilegedRoleAssignments.Item.RoleInfo.SelfActiv
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The duration property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Duration {
+            get { return BackingStore?.Get<string?>("duration"); }
+            set { BackingStore?.Set("duration", value); }
+        }
+#else
         public string Duration {
             get { return BackingStore?.Get<string>("duration"); }
             set { BackingStore?.Set("duration", value); }
         }
+#endif
         /// <summary>The reason property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Reason {
+            get { return BackingStore?.Get<string?>("reason"); }
+            set { BackingStore?.Set("reason", value); }
+        }
+#else
         public string Reason {
             get { return BackingStore?.Get<string>("reason"); }
             set { BackingStore?.Set("reason", value); }
         }
+#endif
         /// <summary>The ticketNumber property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TicketNumber {
+            get { return BackingStore?.Get<string?>("ticketNumber"); }
+            set { BackingStore?.Set("ticketNumber", value); }
+        }
+#else
         public string TicketNumber {
             get { return BackingStore?.Get<string>("ticketNumber"); }
             set { BackingStore?.Set("ticketNumber", value); }
         }
+#endif
         /// <summary>The ticketSystem property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TicketSystem {
+            get { return BackingStore?.Get<string?>("ticketSystem"); }
+            set { BackingStore?.Set("ticketSystem", value); }
+        }
+#else
         public string TicketSystem {
             get { return BackingStore?.Get<string>("ticketSystem"); }
             set { BackingStore?.Set("ticketSystem", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new selfActivatePostRequestBody and sets the default values.
         /// </summary>

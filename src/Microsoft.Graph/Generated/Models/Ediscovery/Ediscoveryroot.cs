@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Ediscovery {
     public class Ediscoveryroot : Entity, IParsable {
         /// <summary>The cases property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Case>? Cases {
+            get { return BackingStore?.Get<List<Case>?>("cases"); }
+            set { BackingStore?.Set("cases", value); }
+        }
+#else
         public List<Case> Cases {
             get { return BackingStore?.Get<List<Case>>("cases"); }
             set { BackingStore?.Set("cases", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

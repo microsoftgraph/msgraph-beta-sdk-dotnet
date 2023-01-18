@@ -20,10 +20,17 @@ namespace Microsoft.Graph.Beta.Security.Cases.EdiscoveryCases.Item.ReviewSets.It
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The search property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public EdiscoverySearch? Search {
+            get { return BackingStore?.Get<EdiscoverySearch?>("search"); }
+            set { BackingStore?.Set("search", value); }
+        }
+#else
         public EdiscoverySearch Search {
             get { return BackingStore?.Get<EdiscoverySearch>("search"); }
             set { BackingStore?.Set("search", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new addToReviewSetPostRequestBody and sets the default values.
         /// </summary>

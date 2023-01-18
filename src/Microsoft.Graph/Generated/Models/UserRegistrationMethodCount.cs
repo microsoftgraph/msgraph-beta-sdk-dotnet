@@ -12,17 +12,31 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Name of authentication method.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AuthenticationMethod {
+            get { return BackingStore?.Get<string?>("authenticationMethod"); }
+            set { BackingStore?.Set("authenticationMethod", value); }
+        }
+#else
         public string AuthenticationMethod {
             get { return BackingStore?.Get<string>("authenticationMethod"); }
             set { BackingStore?.Set("authenticationMethod", value); }
         }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Number of users registered.</summary>
         public long? UserCount {
             get { return BackingStore?.Get<long?>("userCount"); }

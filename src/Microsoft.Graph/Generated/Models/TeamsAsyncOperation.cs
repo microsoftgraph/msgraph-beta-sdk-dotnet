@@ -16,10 +16,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Any error that causes the async operation to fail.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public OperationError? Error {
+            get { return BackingStore?.Get<OperationError?>("error"); }
+            set { BackingStore?.Set("error", value); }
+        }
+#else
         public OperationError Error {
             get { return BackingStore?.Get<OperationError>("error"); }
             set { BackingStore?.Set("error", value); }
         }
+#endif
         /// <summary>Time when the async operation was last updated.</summary>
         public DateTimeOffset? LastActionDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastActionDateTime"); }
@@ -36,15 +43,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>The ID of the object that&apos;s created or modified as result of this async operation, typically a team.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TargetResourceId {
+            get { return BackingStore?.Get<string?>("targetResourceId"); }
+            set { BackingStore?.Set("targetResourceId", value); }
+        }
+#else
         public string TargetResourceId {
             get { return BackingStore?.Get<string>("targetResourceId"); }
             set { BackingStore?.Set("targetResourceId", value); }
         }
+#endif
         /// <summary>The location of the object that&apos;s created or modified as result of this async operation. This URL should be treated as an opaque value and not parsed into its component paths.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TargetResourceLocation {
+            get { return BackingStore?.Get<string?>("targetResourceLocation"); }
+            set { BackingStore?.Set("targetResourceLocation", value); }
+        }
+#else
         public string TargetResourceLocation {
             get { return BackingStore?.Get<string>("targetResourceLocation"); }
             set { BackingStore?.Set("targetResourceLocation", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

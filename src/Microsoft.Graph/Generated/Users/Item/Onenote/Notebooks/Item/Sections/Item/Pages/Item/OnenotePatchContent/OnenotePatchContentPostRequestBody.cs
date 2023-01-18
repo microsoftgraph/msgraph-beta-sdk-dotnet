@@ -15,10 +15,17 @@ namespace Microsoft.Graph.Beta.Users.Item.Onenote.Notebooks.Item.Sections.Item.P
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The commands property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<OnenotePatchContentCommand>? Commands {
+            get { return BackingStore?.Get<List<OnenotePatchContentCommand>?>("commands"); }
+            set { BackingStore?.Set("commands", value); }
+        }
+#else
         public List<OnenotePatchContentCommand> Commands {
             get { return BackingStore?.Get<List<OnenotePatchContentCommand>>("commands"); }
             set { BackingStore?.Set("commands", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new onenotePatchContentPostRequestBody and sets the default values.
         /// </summary>

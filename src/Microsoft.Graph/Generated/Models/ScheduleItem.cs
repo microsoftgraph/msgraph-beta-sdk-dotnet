@@ -14,40 +14,75 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The date, time, and time zone that the corresponding event ends.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DateTimeTimeZone? End {
+            get { return BackingStore?.Get<DateTimeTimeZone?>("end"); }
+            set { BackingStore?.Set("end", value); }
+        }
+#else
         public DateTimeTimeZone End {
             get { return BackingStore?.Get<DateTimeTimeZone>("end"); }
             set { BackingStore?.Set("end", value); }
         }
+#endif
         /// <summary>The sensitivity of the corresponding event. True if the event is marked private, false otherwise. Optional.</summary>
         public bool? IsPrivate {
             get { return BackingStore?.Get<bool?>("isPrivate"); }
             set { BackingStore?.Set("isPrivate", value); }
         }
         /// <summary>The location where the corresponding event is held or attended from. Optional.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Location {
+            get { return BackingStore?.Get<string?>("location"); }
+            set { BackingStore?.Set("location", value); }
+        }
+#else
         public string Location {
             get { return BackingStore?.Get<string>("location"); }
             set { BackingStore?.Set("location", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The date, time, and time zone that the corresponding event starts.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DateTimeTimeZone? Start {
+            get { return BackingStore?.Get<DateTimeTimeZone?>("start"); }
+            set { BackingStore?.Set("start", value); }
+        }
+#else
         public DateTimeTimeZone Start {
             get { return BackingStore?.Get<DateTimeTimeZone>("start"); }
             set { BackingStore?.Set("start", value); }
         }
+#endif
         /// <summary>The availability status of the user or resource during the corresponding event. The possible values are: free, tentative, busy, oof, workingElsewhere, unknown.</summary>
         public FreeBusyStatus? Status {
             get { return BackingStore?.Get<FreeBusyStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>The corresponding event&apos;s subject line. Optional.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Subject {
+            get { return BackingStore?.Get<string?>("subject"); }
+            set { BackingStore?.Set("subject", value); }
+        }
+#else
         public string Subject {
             get { return BackingStore?.Get<string>("subject"); }
             set { BackingStore?.Set("subject", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new scheduleItem and sets the default values.
         /// </summary>

@@ -11,20 +11,34 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("apiVersion", value); }
         }
         /// <summary>Name of the workforce integration.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The eligibilityFilteringEnabledEntities property</summary>
         public Microsoft.Graph.Beta.Models.EligibilityFilteringEnabledEntities? EligibilityFilteringEnabledEntities {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EligibilityFilteringEnabledEntities?>("eligibilityFilteringEnabledEntities"); }
             set { BackingStore?.Set("eligibilityFilteringEnabledEntities", value); }
         }
         /// <summary>The workforce integration encryption resource.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public WorkforceIntegrationEncryption? Encryption {
+            get { return BackingStore?.Get<WorkforceIntegrationEncryption?>("encryption"); }
+            set { BackingStore?.Set("encryption", value); }
+        }
+#else
         public WorkforceIntegrationEncryption Encryption {
             get { return BackingStore?.Get<WorkforceIntegrationEncryption>("encryption"); }
             set { BackingStore?.Set("encryption", value); }
         }
+#endif
         /// <summary>Indicates whether this workforce integration is currently active and available.</summary>
         public bool? IsActive {
             get { return BackingStore?.Get<bool?>("isActive"); }
@@ -41,10 +55,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("supports", value); }
         }
         /// <summary>Workforce Integration URL for callbacks from the Shifts service.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Url {
+            get { return BackingStore?.Get<string?>("url"); }
+            set { BackingStore?.Set("url", value); }
+        }
+#else
         public string Url {
             get { return BackingStore?.Get<string>("url"); }
             set { BackingStore?.Set("url", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new WorkforceIntegration and sets the default values.
         /// </summary>

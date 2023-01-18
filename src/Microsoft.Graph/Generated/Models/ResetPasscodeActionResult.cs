@@ -11,10 +11,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("errorCode", value); }
         }
         /// <summary>Newly generated passcode for the device</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Passcode {
+            get { return BackingStore?.Get<string?>("passcode"); }
+            set { BackingStore?.Set("passcode", value); }
+        }
+#else
         public string Passcode {
             get { return BackingStore?.Get<string>("passcode"); }
             set { BackingStore?.Set("passcode", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

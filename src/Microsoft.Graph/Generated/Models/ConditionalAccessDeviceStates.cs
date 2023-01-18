@@ -14,20 +14,41 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>States excluded from the scope of the policy. Possible values: Compliant, DomainJoined.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? ExcludeStates {
+            get { return BackingStore?.Get<List<string>?>("excludeStates"); }
+            set { BackingStore?.Set("excludeStates", value); }
+        }
+#else
         public List<string> ExcludeStates {
             get { return BackingStore?.Get<List<string>>("excludeStates"); }
             set { BackingStore?.Set("excludeStates", value); }
         }
+#endif
         /// <summary>States in the scope of the policy. All is the only allowed value.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? IncludeStates {
+            get { return BackingStore?.Get<List<string>?>("includeStates"); }
+            set { BackingStore?.Set("includeStates", value); }
+        }
+#else
         public List<string> IncludeStates {
             get { return BackingStore?.Get<List<string>>("includeStates"); }
             set { BackingStore?.Set("includeStates", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new conditionalAccessDeviceStates and sets the default values.
         /// </summary>

@@ -15,20 +15,41 @@ namespace Microsoft.Graph.Beta.InformationProtection.DataLossPreventionPolicies.
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The evaluationInput property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DlpEvaluationInput? EvaluationInput {
+            get { return BackingStore?.Get<DlpEvaluationInput?>("evaluationInput"); }
+            set { BackingStore?.Set("evaluationInput", value); }
+        }
+#else
         public DlpEvaluationInput EvaluationInput {
             get { return BackingStore?.Get<DlpEvaluationInput>("evaluationInput"); }
             set { BackingStore?.Set("evaluationInput", value); }
         }
+#endif
         /// <summary>The notificationInfo property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DlpNotification? NotificationInfo {
+            get { return BackingStore?.Get<DlpNotification?>("notificationInfo"); }
+            set { BackingStore?.Set("notificationInfo", value); }
+        }
+#else
         public DlpNotification NotificationInfo {
             get { return BackingStore?.Get<DlpNotification>("notificationInfo"); }
             set { BackingStore?.Set("notificationInfo", value); }
         }
+#endif
         /// <summary>The target property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Target {
+            get { return BackingStore?.Get<string?>("target"); }
+            set { BackingStore?.Set("target", value); }
+        }
+#else
         public string Target {
             get { return BackingStore?.Get<string>("target"); }
             set { BackingStore?.Set("target", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new evaluatePostRequestBody and sets the default values.
         /// </summary>

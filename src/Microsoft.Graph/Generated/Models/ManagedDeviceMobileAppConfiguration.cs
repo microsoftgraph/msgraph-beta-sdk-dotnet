@@ -4,62 +4,128 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// An abstract class for Mobile app configuration for enrolled devices.
+    /// </summary>
     public class ManagedDeviceMobileAppConfiguration : Entity, IParsable {
         /// <summary>The list of group assignemenets for app configration.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ManagedDeviceMobileAppConfigurationAssignment>? Assignments {
+            get { return BackingStore?.Get<List<ManagedDeviceMobileAppConfigurationAssignment>?>("assignments"); }
+            set { BackingStore?.Set("assignments", value); }
+        }
+#else
         public List<ManagedDeviceMobileAppConfigurationAssignment> Assignments {
             get { return BackingStore?.Get<List<ManagedDeviceMobileAppConfigurationAssignment>>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
+#endif
         /// <summary>DateTime the object was created.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Admin provided description of the Device Configuration.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>List of ManagedDeviceMobileAppConfigurationDeviceStatus.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ManagedDeviceMobileAppConfigurationDeviceStatus>? DeviceStatuses {
+            get { return BackingStore?.Get<List<ManagedDeviceMobileAppConfigurationDeviceStatus>?>("deviceStatuses"); }
+            set { BackingStore?.Set("deviceStatuses", value); }
+        }
+#else
         public List<ManagedDeviceMobileAppConfigurationDeviceStatus> DeviceStatuses {
             get { return BackingStore?.Get<List<ManagedDeviceMobileAppConfigurationDeviceStatus>>("deviceStatuses"); }
             set { BackingStore?.Set("deviceStatuses", value); }
         }
+#endif
         /// <summary>App configuration device status summary.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ManagedDeviceMobileAppConfigurationDeviceSummary? DeviceStatusSummary {
+            get { return BackingStore?.Get<ManagedDeviceMobileAppConfigurationDeviceSummary?>("deviceStatusSummary"); }
+            set { BackingStore?.Set("deviceStatusSummary", value); }
+        }
+#else
         public ManagedDeviceMobileAppConfigurationDeviceSummary DeviceStatusSummary {
             get { return BackingStore?.Get<ManagedDeviceMobileAppConfigurationDeviceSummary>("deviceStatusSummary"); }
             set { BackingStore?.Set("deviceStatusSummary", value); }
         }
+#endif
         /// <summary>Admin provided name of the device configuration.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>DateTime the object was last modified.</summary>
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>List of Scope Tags for this App configuration entity.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? RoleScopeTagIds {
+            get { return BackingStore?.Get<List<string>?>("roleScopeTagIds"); }
+            set { BackingStore?.Set("roleScopeTagIds", value); }
+        }
+#else
         public List<string> RoleScopeTagIds {
             get { return BackingStore?.Get<List<string>>("roleScopeTagIds"); }
             set { BackingStore?.Set("roleScopeTagIds", value); }
         }
+#endif
         /// <summary>the associated app.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? TargetedMobileApps {
+            get { return BackingStore?.Get<List<string>?>("targetedMobileApps"); }
+            set { BackingStore?.Set("targetedMobileApps", value); }
+        }
+#else
         public List<string> TargetedMobileApps {
             get { return BackingStore?.Get<List<string>>("targetedMobileApps"); }
             set { BackingStore?.Set("targetedMobileApps", value); }
         }
+#endif
         /// <summary>List of ManagedDeviceMobileAppConfigurationUserStatus.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ManagedDeviceMobileAppConfigurationUserStatus>? UserStatuses {
+            get { return BackingStore?.Get<List<ManagedDeviceMobileAppConfigurationUserStatus>?>("userStatuses"); }
+            set { BackingStore?.Set("userStatuses", value); }
+        }
+#else
         public List<ManagedDeviceMobileAppConfigurationUserStatus> UserStatuses {
             get { return BackingStore?.Get<List<ManagedDeviceMobileAppConfigurationUserStatus>>("userStatuses"); }
             set { BackingStore?.Set("userStatuses", value); }
         }
+#endif
         /// <summary>App configuration user status summary.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ManagedDeviceMobileAppConfigurationUserSummary? UserStatusSummary {
+            get { return BackingStore?.Get<ManagedDeviceMobileAppConfigurationUserSummary?>("userStatusSummary"); }
+            set { BackingStore?.Set("userStatusSummary", value); }
+        }
+#else
         public ManagedDeviceMobileAppConfigurationUserSummary UserStatusSummary {
             get { return BackingStore?.Get<ManagedDeviceMobileAppConfigurationUserSummary>("userStatusSummary"); }
             set { BackingStore?.Set("userStatusSummary", value); }
         }
+#endif
         /// <summary>Version of the device configuration.</summary>
         public int? Version {
             get { return BackingStore?.Get<int?>("version"); }

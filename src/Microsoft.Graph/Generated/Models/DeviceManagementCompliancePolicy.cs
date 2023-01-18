@@ -9,25 +9,46 @@ namespace Microsoft.Graph.Beta.Models {
     /// </summary>
     public class DeviceManagementCompliancePolicy : Entity, IParsable {
         /// <summary>Policy assignments</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DeviceManagementConfigurationPolicyAssignment>? Assignments {
+            get { return BackingStore?.Get<List<DeviceManagementConfigurationPolicyAssignment>?>("assignments"); }
+            set { BackingStore?.Set("assignments", value); }
+        }
+#else
         public List<DeviceManagementConfigurationPolicyAssignment> Assignments {
             get { return BackingStore?.Get<List<DeviceManagementConfigurationPolicyAssignment>>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
+#endif
         /// <summary>Policy creation date and time. This property is read-only.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Policy creation source</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CreationSource {
+            get { return BackingStore?.Get<string?>("creationSource"); }
+            set { BackingStore?.Set("creationSource", value); }
+        }
+#else
         public string CreationSource {
             get { return BackingStore?.Get<string>("creationSource"); }
             set { BackingStore?.Set("creationSource", value); }
         }
+#endif
         /// <summary>Policy description</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>Policy assignment status. This property is read-only.</summary>
         public bool? IsAssigned {
             get { return BackingStore?.Get<bool?>("isAssigned"); }
@@ -39,35 +60,63 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>Policy name</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Name {
+            get { return BackingStore?.Get<string?>("name"); }
+            set { BackingStore?.Set("name", value); }
+        }
+#else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#endif
         /// <summary>Supported platform types.</summary>
         public DeviceManagementConfigurationPlatforms? Platforms {
             get { return BackingStore?.Get<DeviceManagementConfigurationPlatforms?>("platforms"); }
             set { BackingStore?.Set("platforms", value); }
         }
         /// <summary>List of Scope Tags for this Entity instance.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? RoleScopeTagIds {
+            get { return BackingStore?.Get<List<string>?>("roleScopeTagIds"); }
+            set { BackingStore?.Set("roleScopeTagIds", value); }
+        }
+#else
         public List<string> RoleScopeTagIds {
             get { return BackingStore?.Get<List<string>>("roleScopeTagIds"); }
             set { BackingStore?.Set("roleScopeTagIds", value); }
         }
+#endif
         /// <summary>The list of scheduled action for this rule</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DeviceManagementComplianceScheduledActionForRule>? ScheduledActionsForRule {
+            get { return BackingStore?.Get<List<DeviceManagementComplianceScheduledActionForRule>?>("scheduledActionsForRule"); }
+            set { BackingStore?.Set("scheduledActionsForRule", value); }
+        }
+#else
         public List<DeviceManagementComplianceScheduledActionForRule> ScheduledActionsForRule {
             get { return BackingStore?.Get<List<DeviceManagementComplianceScheduledActionForRule>>("scheduledActionsForRule"); }
             set { BackingStore?.Set("scheduledActionsForRule", value); }
         }
+#endif
         /// <summary>Number of settings. This property is read-only.</summary>
         public int? SettingCount {
             get { return BackingStore?.Get<int?>("settingCount"); }
             set { BackingStore?.Set("settingCount", value); }
         }
         /// <summary>Policy settings</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DeviceManagementConfigurationSetting>? Settings {
+            get { return BackingStore?.Get<List<DeviceManagementConfigurationSetting>?>("settings"); }
+            set { BackingStore?.Set("settings", value); }
+        }
+#else
         public List<DeviceManagementConfigurationSetting> Settings {
             get { return BackingStore?.Get<List<DeviceManagementConfigurationSetting>>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
+#endif
         /// <summary>Describes which technology this setting can be deployed with</summary>
         public DeviceManagementConfigurationTechnologies? Technologies {
             get { return BackingStore?.Get<DeviceManagementConfigurationTechnologies?>("technologies"); }

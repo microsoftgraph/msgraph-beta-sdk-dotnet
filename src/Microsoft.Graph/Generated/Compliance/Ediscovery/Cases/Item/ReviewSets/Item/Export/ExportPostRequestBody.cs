@@ -13,22 +13,43 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.ReviewSets.Item.
             set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The azureBlobContainer property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AzureBlobContainer {
+            get { return BackingStore?.Get<string?>("azureBlobContainer"); }
+            set { BackingStore?.Set("azureBlobContainer", value); }
+        }
+#else
         public string AzureBlobContainer {
             get { return BackingStore?.Get<string>("azureBlobContainer"); }
             set { BackingStore?.Set("azureBlobContainer", value); }
         }
+#endif
         /// <summary>The azureBlobToken property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AzureBlobToken {
+            get { return BackingStore?.Get<string?>("azureBlobToken"); }
+            set { BackingStore?.Set("azureBlobToken", value); }
+        }
+#else
         public string AzureBlobToken {
             get { return BackingStore?.Get<string>("azureBlobToken"); }
             set { BackingStore?.Set("azureBlobToken", value); }
         }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The description property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>The exportOptions property</summary>
         public Microsoft.Graph.Beta.Models.Ediscovery.ExportOptions? ExportOptions {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Ediscovery.ExportOptions?>("exportOptions"); }
@@ -40,10 +61,17 @@ namespace Microsoft.Graph.Beta.Compliance.Ediscovery.Cases.Item.ReviewSets.Item.
             set { BackingStore?.Set("exportStructure", value); }
         }
         /// <summary>The outputName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OutputName {
+            get { return BackingStore?.Get<string?>("outputName"); }
+            set { BackingStore?.Set("outputName", value); }
+        }
+#else
         public string OutputName {
             get { return BackingStore?.Get<string>("outputName"); }
             set { BackingStore?.Set("outputName", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new exportPostRequestBody and sets the default values.
         /// </summary>

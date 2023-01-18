@@ -29,25 +29,46 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("deviceComplianceScriptRulOperator", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Operand specified in the rule.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Operand {
+            get { return BackingStore?.Get<string?>("operand"); }
+            set { BackingStore?.Set("operand", value); }
+        }
+#else
         public string Operand {
             get { return BackingStore?.Get<string>("operand"); }
             set { BackingStore?.Set("operand", value); }
         }
+#endif
         /// <summary>Operator for rules.</summary>
         public Microsoft.Graph.Beta.Models.Operator? Operator {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Operator?>("operator"); }
             set { BackingStore?.Set("operator", value); }
         }
         /// <summary>Setting name specified in the rule.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SettingName {
+            get { return BackingStore?.Get<string?>("settingName"); }
+            set { BackingStore?.Set("settingName", value); }
+        }
+#else
         public string SettingName {
             get { return BackingStore?.Get<string>("settingName"); }
             set { BackingStore?.Set("settingName", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new deviceComplianceScriptRule and sets the default values.
         /// </summary>

@@ -19,20 +19,41 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The list of values available for this column.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? Choices {
+            get { return BackingStore?.Get<List<string>?>("choices"); }
+            set { BackingStore?.Set("choices", value); }
+        }
+#else
         public List<string> Choices {
             get { return BackingStore?.Get<List<string>>("choices"); }
             set { BackingStore?.Set("choices", value); }
         }
+#endif
         /// <summary>How the choices are to be presented in the UX. Must be one of checkBoxes, dropDownMenu, or radioButtons</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayAs {
+            get { return BackingStore?.Get<string?>("displayAs"); }
+            set { BackingStore?.Set("displayAs", value); }
+        }
+#else
         public string DisplayAs {
             get { return BackingStore?.Get<string>("displayAs"); }
             set { BackingStore?.Set("displayAs", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new choiceColumn and sets the default values.
         /// </summary>

@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
     public class Deployment : Entity, IParsable {
         /// <summary>Specifies the audience to which content is deployed.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DeploymentAudience? Audience {
+            get { return BackingStore?.Get<DeploymentAudience?>("audience"); }
+            set { BackingStore?.Set("audience", value); }
+        }
+#else
         public DeploymentAudience Audience {
             get { return BackingStore?.Get<DeploymentAudience>("audience"); }
             set { BackingStore?.Set("audience", value); }
         }
+#endif
         /// <summary>Specifies what content to deploy. Cannot be changed. Returned by default.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DeployableContent? Content {
+            get { return BackingStore?.Get<DeployableContent?>("content"); }
+            set { BackingStore?.Set("content", value); }
+        }
+#else
         public DeployableContent Content {
             get { return BackingStore?.Get<DeployableContent>("content"); }
             set { BackingStore?.Set("content", value); }
         }
+#endif
         /// <summary>The date and time the deployment was created. Returned by default. Read-only.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
@@ -26,15 +40,29 @@ namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>Settings specified on the specific deployment governing how to deploy content. Returned by default.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DeploymentSettings? Settings {
+            get { return BackingStore?.Get<DeploymentSettings?>("settings"); }
+            set { BackingStore?.Set("settings", value); }
+        }
+#else
         public DeploymentSettings Settings {
             get { return BackingStore?.Get<DeploymentSettings>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
+#endif
         /// <summary>Execution status of the deployment. Returned by default.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DeploymentState? State {
+            get { return BackingStore?.Get<DeploymentState?>("state"); }
+            set { BackingStore?.Set("state", value); }
+        }
+#else
         public DeploymentState State {
             get { return BackingStore?.Get<DeploymentState>("state"); }
             set { BackingStore?.Set("state", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

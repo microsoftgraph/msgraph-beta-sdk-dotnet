@@ -16,10 +16,17 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
             set { BackingStore?.Set("configManagerDeviceCount", value); }
         }
         /// <summary>The date and time compliance snapshot was performed. Required. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CountDateTime {
+            get { return BackingStore?.Get<string?>("countDateTime"); }
+            set { BackingStore?.Set("countDateTime", value); }
+        }
+#else
         public string CountDateTime {
             get { return BackingStore?.Get<string>("countDateTime"); }
             set { BackingStore?.Set("countDateTime", value); }
         }
+#endif
         /// <summary>The number of devices with an error status. Required. Read-only.</summary>
         public int? ErrorDeviceCount {
             get { return BackingStore?.Get<int?>("errorDeviceCount"); }
@@ -36,15 +43,29 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
             set { BackingStore?.Set("noncompliantDeviceCount", value); }
         }
         /// <summary>The display name for the managed tenant. Optional. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TenantDisplayName {
+            get { return BackingStore?.Get<string?>("tenantDisplayName"); }
+            set { BackingStore?.Set("tenantDisplayName", value); }
+        }
+#else
         public string TenantDisplayName {
             get { return BackingStore?.Get<string>("tenantDisplayName"); }
             set { BackingStore?.Set("tenantDisplayName", value); }
         }
+#endif
         /// <summary>The Azure Active Directory tenant identifier for the managed tenant. Optional. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TenantId {
+            get { return BackingStore?.Get<string?>("tenantId"); }
+            set { BackingStore?.Set("tenantId", value); }
+        }
+#else
         public string TenantId {
             get { return BackingStore?.Get<string>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
+#endif
         /// <summary>The number of devices in an unknown status. Required. Read-only.</summary>
         public int? UnknownDeviceCount {
             get { return BackingStore?.Get<int?>("unknownDeviceCount"); }

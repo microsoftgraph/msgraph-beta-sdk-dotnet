@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class IosiPadOSWebClip : MobileApp, IParsable {
         /// <summary>The web app URL.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AppUrl {
+            get { return BackingStore?.Get<string?>("appUrl"); }
+            set { BackingStore?.Set("appUrl", value); }
+        }
+#else
         public string AppUrl {
             get { return BackingStore?.Get<string>("appUrl"); }
             set { BackingStore?.Set("appUrl", value); }
         }
+#endif
         /// <summary>Whether or not to use managed browser. When true, the app will be required to be opened in an Intune-protected browser. When false, the app will not be required to be opened in an Intune-protected browser.</summary>
         public bool? UseManagedBrowser {
             get { return BackingStore?.Get<bool?>("useManagedBrowser"); }

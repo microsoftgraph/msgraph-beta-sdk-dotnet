@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class TabUpdatedEventMessageDetail : EventMessageDetail, IParsable {
         /// <summary>Initiator of the event.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public IdentitySet? Initiator {
+            get { return BackingStore?.Get<IdentitySet?>("initiator"); }
+            set { BackingStore?.Set("initiator", value); }
+        }
+#else
         public IdentitySet Initiator {
             get { return BackingStore?.Get<IdentitySet>("initiator"); }
             set { BackingStore?.Set("initiator", value); }
         }
+#endif
         /// <summary>Unique identifier of the tab.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TabId {
+            get { return BackingStore?.Get<string?>("tabId"); }
+            set { BackingStore?.Set("tabId", value); }
+        }
+#else
         public string TabId {
             get { return BackingStore?.Get<string>("tabId"); }
             set { BackingStore?.Set("tabId", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new TabUpdatedEventMessageDetail and sets the default values.
         /// </summary>

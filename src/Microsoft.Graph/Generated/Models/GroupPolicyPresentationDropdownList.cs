@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class GroupPolicyPresentationDropdownList : GroupPolicyUploadedPresentation, IParsable {
         /// <summary>Localized string value identifying the default choice of the list of items.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public GroupPolicyPresentationDropdownListItem? DefaultItem {
+            get { return BackingStore?.Get<GroupPolicyPresentationDropdownListItem?>("defaultItem"); }
+            set { BackingStore?.Set("defaultItem", value); }
+        }
+#else
         public GroupPolicyPresentationDropdownListItem DefaultItem {
             get { return BackingStore?.Get<GroupPolicyPresentationDropdownListItem>("defaultItem"); }
             set { BackingStore?.Set("defaultItem", value); }
         }
+#endif
         /// <summary>Represents a set of localized display names and their associated values.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<GroupPolicyPresentationDropdownListItem>? Items {
+            get { return BackingStore?.Get<List<GroupPolicyPresentationDropdownListItem>?>("items"); }
+            set { BackingStore?.Set("items", value); }
+        }
+#else
         public List<GroupPolicyPresentationDropdownListItem> Items {
             get { return BackingStore?.Get<List<GroupPolicyPresentationDropdownListItem>>("items"); }
             set { BackingStore?.Set("items", value); }
         }
+#endif
         /// <summary>Requirement to enter a value in the parameter box. The default value is false.</summary>
         public bool? Required {
             get { return BackingStore?.Get<bool?>("required"); }

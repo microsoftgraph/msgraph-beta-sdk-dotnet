@@ -11,25 +11,53 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The registered device on which Microsoft Authenticator resides. This property is null if the device is not registered for passwordless Phone Sign-In.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.Device? Device {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Device?>("device"); }
+            set { BackingStore?.Set("device", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.Device Device {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Device>("device"); }
             set { BackingStore?.Set("device", value); }
         }
+#endif
         /// <summary>Tags containing app metadata.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeviceTag {
+            get { return BackingStore?.Get<string?>("deviceTag"); }
+            set { BackingStore?.Set("deviceTag", value); }
+        }
+#else
         public string DeviceTag {
             get { return BackingStore?.Get<string>("deviceTag"); }
             set { BackingStore?.Set("deviceTag", value); }
         }
+#endif
         /// <summary>The name of the device on which this app is registered.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>Numerical version of this instance of the Authenticator app.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PhoneAppVersion {
+            get { return BackingStore?.Get<string?>("phoneAppVersion"); }
+            set { BackingStore?.Set("phoneAppVersion", value); }
+        }
+#else
         public string PhoneAppVersion {
             get { return BackingStore?.Get<string>("phoneAppVersion"); }
             set { BackingStore?.Set("phoneAppVersion", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new MicrosoftAuthenticatorAuthenticationMethod and sets the default values.
         /// </summary>

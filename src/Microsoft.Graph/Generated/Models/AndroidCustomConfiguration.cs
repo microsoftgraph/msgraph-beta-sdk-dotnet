@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class AndroidCustomConfiguration : DeviceConfiguration, IParsable {
         /// <summary>OMA settings. This collection can contain a maximum of 1000 elements.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<OmaSetting>? OmaSettings {
+            get { return BackingStore?.Get<List<OmaSetting>?>("omaSettings"); }
+            set { BackingStore?.Set("omaSettings", value); }
+        }
+#else
         public List<OmaSetting> OmaSettings {
             get { return BackingStore?.Get<List<OmaSetting>>("omaSettings"); }
             set { BackingStore?.Set("omaSettings", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new AndroidCustomConfiguration and sets the default values.
         /// </summary>

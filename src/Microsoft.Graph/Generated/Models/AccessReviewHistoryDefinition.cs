@@ -6,40 +6,75 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class AccessReviewHistoryDefinition : Entity, IParsable {
         /// <summary>The createdBy property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public UserIdentity? CreatedBy {
+            get { return BackingStore?.Get<UserIdentity?>("createdBy"); }
+            set { BackingStore?.Set("createdBy", value); }
+        }
+#else
         public UserIdentity CreatedBy {
             get { return BackingStore?.Get<UserIdentity>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
+#endif
         /// <summary>Timestamp when the access review definition was created.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Determines which review decisions will be included in the fetched review history data if specified. Optional on create. All decisions will be included by default if no decisions are provided on create. Possible values are: approve, deny, dontKnow, notReviewed, and notNotified.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AccessReviewHistoryDecisionFilter?>? Decisions {
+            get { return BackingStore?.Get<List<AccessReviewHistoryDecisionFilter?>?>("decisions"); }
+            set { BackingStore?.Set("decisions", value); }
+        }
+#else
         public List<AccessReviewHistoryDecisionFilter?> Decisions {
             get { return BackingStore?.Get<List<AccessReviewHistoryDecisionFilter?>>("decisions"); }
             set { BackingStore?.Set("decisions", value); }
         }
+#endif
         /// <summary>Name for the access review history data collection. Required.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The downloadUri property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DownloadUri {
+            get { return BackingStore?.Get<string?>("downloadUri"); }
+            set { BackingStore?.Set("downloadUri", value); }
+        }
+#else
         public string DownloadUri {
             get { return BackingStore?.Get<string>("downloadUri"); }
             set { BackingStore?.Set("downloadUri", value); }
         }
+#endif
         /// <summary>The fulfilledDateTime property</summary>
         public DateTimeOffset? FulfilledDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("fulfilledDateTime"); }
             set { BackingStore?.Set("fulfilledDateTime", value); }
         }
         /// <summary>If the accessReviewHistoryDefinition is a recurring definition, instances represent each recurrence. A definition that does not recur will have exactly one instance.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AccessReviewHistoryInstance>? Instances {
+            get { return BackingStore?.Get<List<AccessReviewHistoryInstance>?>("instances"); }
+            set { BackingStore?.Set("instances", value); }
+        }
+#else
         public List<AccessReviewHistoryInstance> Instances {
             get { return BackingStore?.Get<List<AccessReviewHistoryInstance>>("instances"); }
             set { BackingStore?.Set("instances", value); }
         }
+#endif
         /// <summary>A timestamp. Reviews ending on or before this date will be included in the fetched history data. Only required if scheduleSettings is not defined.</summary>
         public DateTimeOffset? ReviewHistoryPeriodEndDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("reviewHistoryPeriodEndDateTime"); }
@@ -51,15 +86,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("reviewHistoryPeriodStartDateTime", value); }
         }
         /// <summary>The settings for a recurring access review history definition series. Only required if reviewHistoryPeriodStartDateTime or reviewHistoryPeriodEndDateTime are not defined. Not supported yet.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public AccessReviewHistoryScheduleSettings? ScheduleSettings {
+            get { return BackingStore?.Get<AccessReviewHistoryScheduleSettings?>("scheduleSettings"); }
+            set { BackingStore?.Set("scheduleSettings", value); }
+        }
+#else
         public AccessReviewHistoryScheduleSettings ScheduleSettings {
             get { return BackingStore?.Get<AccessReviewHistoryScheduleSettings>("scheduleSettings"); }
             set { BackingStore?.Set("scheduleSettings", value); }
         }
+#endif
         /// <summary>Used to scope what reviews are included in the fetched history data. Fetches reviews whose scope matches with this provided scope. Required.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AccessReviewScope>? Scopes {
+            get { return BackingStore?.Get<List<AccessReviewScope>?>("scopes"); }
+            set { BackingStore?.Set("scopes", value); }
+        }
+#else
         public List<AccessReviewScope> Scopes {
             get { return BackingStore?.Get<List<AccessReviewScope>>("scopes"); }
             set { BackingStore?.Set("scopes", value); }
         }
+#endif
         /// <summary>Represents the status of the review history data collection. The possible values are: done, inProgress, error, requested, unknownFutureValue.</summary>
         public AccessReviewHistoryStatus? Status {
             get { return BackingStore?.Get<AccessReviewHistoryStatus?>("status"); }

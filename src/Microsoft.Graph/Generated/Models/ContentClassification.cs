@@ -19,20 +19,41 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("confidence", value); }
         }
         /// <summary>The matches property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<MatchLocation>? Matches {
+            get { return BackingStore?.Get<List<MatchLocation>?>("matches"); }
+            set { BackingStore?.Set("matches", value); }
+        }
+#else
         public List<MatchLocation> Matches {
             get { return BackingStore?.Get<List<MatchLocation>>("matches"); }
             set { BackingStore?.Set("matches", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The sensitiveTypeId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SensitiveTypeId {
+            get { return BackingStore?.Get<string?>("sensitiveTypeId"); }
+            set { BackingStore?.Set("sensitiveTypeId", value); }
+        }
+#else
         public string SensitiveTypeId {
             get { return BackingStore?.Get<string>("sensitiveTypeId"); }
             set { BackingStore?.Set("sensitiveTypeId", value); }
         }
+#endif
         /// <summary>The uniqueCount property</summary>
         public int? UniqueCount {
             get { return BackingStore?.Get<int?>("uniqueCount"); }

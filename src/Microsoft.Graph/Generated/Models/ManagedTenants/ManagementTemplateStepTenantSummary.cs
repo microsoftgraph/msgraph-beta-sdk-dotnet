@@ -16,10 +16,17 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
             set { BackingStore?.Set("compliantTenantsCount", value); }
         }
         /// <summary>The createdByUserId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CreatedByUserId {
+            get { return BackingStore?.Get<string?>("createdByUserId"); }
+            set { BackingStore?.Set("createdByUserId", value); }
+        }
+#else
         public string CreatedByUserId {
             get { return BackingStore?.Get<string>("createdByUserId"); }
             set { BackingStore?.Set("createdByUserId", value); }
         }
+#endif
         /// <summary>The createdDateTime property</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
@@ -36,45 +43,94 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
             set { BackingStore?.Set("ineligibleTenantsCount", value); }
         }
         /// <summary>The lastActionByUserId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? LastActionByUserId {
+            get { return BackingStore?.Get<string?>("lastActionByUserId"); }
+            set { BackingStore?.Set("lastActionByUserId", value); }
+        }
+#else
         public string LastActionByUserId {
             get { return BackingStore?.Get<string>("lastActionByUserId"); }
             set { BackingStore?.Set("lastActionByUserId", value); }
         }
+#endif
         /// <summary>The lastActionDateTime property</summary>
         public DateTimeOffset? LastActionDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastActionDateTime"); }
             set { BackingStore?.Set("lastActionDateTime", value); }
         }
         /// <summary>The managementTemplateCollectionDisplayName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ManagementTemplateCollectionDisplayName {
+            get { return BackingStore?.Get<string?>("managementTemplateCollectionDisplayName"); }
+            set { BackingStore?.Set("managementTemplateCollectionDisplayName", value); }
+        }
+#else
         public string ManagementTemplateCollectionDisplayName {
             get { return BackingStore?.Get<string>("managementTemplateCollectionDisplayName"); }
             set { BackingStore?.Set("managementTemplateCollectionDisplayName", value); }
         }
+#endif
         /// <summary>The managementTemplateCollectionId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ManagementTemplateCollectionId {
+            get { return BackingStore?.Get<string?>("managementTemplateCollectionId"); }
+            set { BackingStore?.Set("managementTemplateCollectionId", value); }
+        }
+#else
         public string ManagementTemplateCollectionId {
             get { return BackingStore?.Get<string>("managementTemplateCollectionId"); }
             set { BackingStore?.Set("managementTemplateCollectionId", value); }
         }
+#endif
         /// <summary>The managementTemplateDisplayName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ManagementTemplateDisplayName {
+            get { return BackingStore?.Get<string?>("managementTemplateDisplayName"); }
+            set { BackingStore?.Set("managementTemplateDisplayName", value); }
+        }
+#else
         public string ManagementTemplateDisplayName {
             get { return BackingStore?.Get<string>("managementTemplateDisplayName"); }
             set { BackingStore?.Set("managementTemplateDisplayName", value); }
         }
+#endif
         /// <summary>The managementTemplateId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ManagementTemplateId {
+            get { return BackingStore?.Get<string?>("managementTemplateId"); }
+            set { BackingStore?.Set("managementTemplateId", value); }
+        }
+#else
         public string ManagementTemplateId {
             get { return BackingStore?.Get<string>("managementTemplateId"); }
             set { BackingStore?.Set("managementTemplateId", value); }
         }
+#endif
         /// <summary>The managementTemplateStepDisplayName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ManagementTemplateStepDisplayName {
+            get { return BackingStore?.Get<string?>("managementTemplateStepDisplayName"); }
+            set { BackingStore?.Set("managementTemplateStepDisplayName", value); }
+        }
+#else
         public string ManagementTemplateStepDisplayName {
             get { return BackingStore?.Get<string>("managementTemplateStepDisplayName"); }
             set { BackingStore?.Set("managementTemplateStepDisplayName", value); }
         }
+#endif
         /// <summary>The managementTemplateStepId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ManagementTemplateStepId {
+            get { return BackingStore?.Get<string?>("managementTemplateStepId"); }
+            set { BackingStore?.Set("managementTemplateStepId", value); }
+        }
+#else
         public string ManagementTemplateStepId {
             get { return BackingStore?.Get<string>("managementTemplateStepId"); }
             set { BackingStore?.Set("managementTemplateStepId", value); }
         }
+#endif
         /// <summary>The notCompliantTenantsCount property</summary>
         public int? NotCompliantTenantsCount {
             get { return BackingStore?.Get<int?>("notCompliantTenantsCount"); }

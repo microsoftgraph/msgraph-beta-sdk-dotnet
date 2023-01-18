@@ -9,35 +9,70 @@ namespace Microsoft.Graph.Beta.Models {
     /// </summary>
     public class CloudPCConnectivityIssue : Entity, IParsable {
         /// <summary>The Intune DeviceId of the device the connection is associated with.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeviceId {
+            get { return BackingStore?.Get<string?>("deviceId"); }
+            set { BackingStore?.Set("deviceId", value); }
+        }
+#else
         public string DeviceId {
             get { return BackingStore?.Get<string>("deviceId"); }
             set { BackingStore?.Set("deviceId", value); }
         }
+#endif
         /// <summary>The error code of the connectivity issue.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ErrorCode {
+            get { return BackingStore?.Get<string?>("errorCode"); }
+            set { BackingStore?.Set("errorCode", value); }
+        }
+#else
         public string ErrorCode {
             get { return BackingStore?.Get<string>("errorCode"); }
             set { BackingStore?.Set("errorCode", value); }
         }
+#endif
         /// <summary>The time that the connection initiated. The time is shown in ISO 8601 format and Coordinated Universal Time (UTC) time.</summary>
         public DateTimeOffset? ErrorDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("errorDateTime"); }
             set { BackingStore?.Set("errorDateTime", value); }
         }
         /// <summary>The detailed description of what went wrong.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ErrorDescription {
+            get { return BackingStore?.Get<string?>("errorDescription"); }
+            set { BackingStore?.Set("errorDescription", value); }
+        }
+#else
         public string ErrorDescription {
             get { return BackingStore?.Get<string>("errorDescription"); }
             set { BackingStore?.Set("errorDescription", value); }
         }
+#endif
         /// <summary>The recommended action to fix the corresponding error.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? RecommendedAction {
+            get { return BackingStore?.Get<string?>("recommendedAction"); }
+            set { BackingStore?.Set("recommendedAction", value); }
+        }
+#else
         public string RecommendedAction {
             get { return BackingStore?.Get<string>("recommendedAction"); }
             set { BackingStore?.Set("recommendedAction", value); }
         }
+#endif
         /// <summary>The unique id of user who initialize the connection.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UserId {
+            get { return BackingStore?.Get<string?>("userId"); }
+            set { BackingStore?.Set("userId", value); }
+        }
+#else
         public string UserId {
             get { return BackingStore?.Get<string>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

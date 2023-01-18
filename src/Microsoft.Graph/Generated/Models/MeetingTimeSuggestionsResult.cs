@@ -14,20 +14,41 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>A reason for not returning any meeting suggestions. Possible values are: attendeesUnavailable, attendeesUnavailableOrUnknown, locationsUnavailable, organizerUnavailable, or unknown. This property is an empty string if the meetingTimeSuggestions property does include any meeting suggestions.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? EmptySuggestionsReason {
+            get { return BackingStore?.Get<string?>("emptySuggestionsReason"); }
+            set { BackingStore?.Set("emptySuggestionsReason", value); }
+        }
+#else
         public string EmptySuggestionsReason {
             get { return BackingStore?.Get<string>("emptySuggestionsReason"); }
             set { BackingStore?.Set("emptySuggestionsReason", value); }
         }
+#endif
         /// <summary>An array of meeting suggestions.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<MeetingTimeSuggestion>? MeetingTimeSuggestions {
+            get { return BackingStore?.Get<List<MeetingTimeSuggestion>?>("meetingTimeSuggestions"); }
+            set { BackingStore?.Set("meetingTimeSuggestions", value); }
+        }
+#else
         public List<MeetingTimeSuggestion> MeetingTimeSuggestions {
             get { return BackingStore?.Get<List<MeetingTimeSuggestion>>("meetingTimeSuggestions"); }
             set { BackingStore?.Set("meetingTimeSuggestions", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new meetingTimeSuggestionsResult and sets the default values.
         /// </summary>

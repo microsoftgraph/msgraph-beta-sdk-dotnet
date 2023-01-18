@@ -11,30 +11,58 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("calculateDiscountOnCreditMemos", value); }
         }
         /// <summary>The code property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Code {
+            get { return BackingStore?.Get<string?>("code"); }
+            set { BackingStore?.Set("code", value); }
+        }
+#else
         public string Code {
             get { return BackingStore?.Get<string>("code"); }
             set { BackingStore?.Set("code", value); }
         }
+#endif
         /// <summary>The discountDateCalculation property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DiscountDateCalculation {
+            get { return BackingStore?.Get<string?>("discountDateCalculation"); }
+            set { BackingStore?.Set("discountDateCalculation", value); }
+        }
+#else
         public string DiscountDateCalculation {
             get { return BackingStore?.Get<string>("discountDateCalculation"); }
             set { BackingStore?.Set("discountDateCalculation", value); }
         }
+#endif
         /// <summary>The discountPercent property</summary>
         public decimal? DiscountPercent {
             get { return BackingStore?.Get<decimal?>("discountPercent"); }
             set { BackingStore?.Set("discountPercent", value); }
         }
         /// <summary>The displayName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The dueDateCalculation property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DueDateCalculation {
+            get { return BackingStore?.Get<string?>("dueDateCalculation"); }
+            set { BackingStore?.Set("dueDateCalculation", value); }
+        }
+#else
         public string DueDateCalculation {
             get { return BackingStore?.Get<string>("dueDateCalculation"); }
             set { BackingStore?.Set("dueDateCalculation", value); }
         }
+#endif
         /// <summary>The lastModifiedDateTime property</summary>
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }

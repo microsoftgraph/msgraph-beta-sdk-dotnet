@@ -12,27 +12,55 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>Set of tasks that can be performed on a resource.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? AllowedResourceActions {
+            get { return BackingStore?.Get<List<string>?>("allowedResourceActions"); }
+            set { BackingStore?.Set("allowedResourceActions", value); }
+        }
+#else
         public List<string> AllowedResourceActions {
             get { return BackingStore?.Get<List<string>>("allowedResourceActions"); }
             set { BackingStore?.Set("allowedResourceActions", value); }
         }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Optional constraints that must be met for the permission to be effective. Not supported for custom roles.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Condition {
+            get { return BackingStore?.Get<string?>("condition"); }
+            set { BackingStore?.Set("condition", value); }
+        }
+#else
         public string Condition {
             get { return BackingStore?.Get<string>("condition"); }
             set { BackingStore?.Set("condition", value); }
         }
+#endif
         /// <summary>The excludedResourceActions property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? ExcludedResourceActions {
+            get { return BackingStore?.Get<List<string>?>("excludedResourceActions"); }
+            set { BackingStore?.Set("excludedResourceActions", value); }
+        }
+#else
         public List<string> ExcludedResourceActions {
             get { return BackingStore?.Get<List<string>>("excludedResourceActions"); }
             set { BackingStore?.Set("excludedResourceActions", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new unifiedRolePermission and sets the default values.
         /// </summary>

@@ -9,15 +9,29 @@ namespace Microsoft.Graph.Beta.Models {
     /// </summary>
     public class DeviceManagementComplianceScheduledActionForRule : Entity, IParsable {
         /// <summary>Name of the rule which this scheduled action applies to.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? RuleName {
+            get { return BackingStore?.Get<string?>("ruleName"); }
+            set { BackingStore?.Set("ruleName", value); }
+        }
+#else
         public string RuleName {
             get { return BackingStore?.Get<string>("ruleName"); }
             set { BackingStore?.Set("ruleName", value); }
         }
+#endif
         /// <summary>The list of scheduled action configurations for this compliance policy. This collection can contain a maximum of 100 elements.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DeviceManagementComplianceActionItem>? ScheduledActionConfigurations {
+            get { return BackingStore?.Get<List<DeviceManagementComplianceActionItem>?>("scheduledActionConfigurations"); }
+            set { BackingStore?.Set("scheduledActionConfigurations", value); }
+        }
+#else
         public List<DeviceManagementComplianceActionItem> ScheduledActionConfigurations {
             get { return BackingStore?.Get<List<DeviceManagementComplianceActionItem>>("scheduledActionConfigurations"); }
             set { BackingStore?.Set("scheduledActionConfigurations", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class WorkbookChartSeriesFormat : Entity, IParsable {
         /// <summary>Represents the fill format of a chart series, which includes background formating information. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public WorkbookChartFill? Fill {
+            get { return BackingStore?.Get<WorkbookChartFill?>("fill"); }
+            set { BackingStore?.Set("fill", value); }
+        }
+#else
         public WorkbookChartFill Fill {
             get { return BackingStore?.Get<WorkbookChartFill>("fill"); }
             set { BackingStore?.Set("fill", value); }
         }
+#endif
         /// <summary>Represents line formatting. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public WorkbookChartLineFormat? Line {
+            get { return BackingStore?.Get<WorkbookChartLineFormat?>("line"); }
+            set { BackingStore?.Set("line", value); }
+        }
+#else
         public WorkbookChartLineFormat Line {
             get { return BackingStore?.Get<WorkbookChartLineFormat>("line"); }
             set { BackingStore?.Set("line", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

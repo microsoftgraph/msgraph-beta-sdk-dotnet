@@ -10,10 +10,17 @@ namespace Microsoft.Graph.Beta.Models {
     /// </summary>
     public class RolePermission : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>Allowed Actions - Deprecated</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? Actions {
+            get { return BackingStore?.Get<List<string>?>("actions"); }
+            set { BackingStore?.Set("actions", value); }
+        }
+#else
         public List<string> Actions {
             get { return BackingStore?.Get<List<string>>("actions"); }
             set { BackingStore?.Set("actions", value); }
         }
+#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
             get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
@@ -22,15 +29,29 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Resource Actions each containing a set of allowed and not allowed permissions.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ResourceAction>? ResourceActions {
+            get { return BackingStore?.Get<List<ResourceAction>?>("resourceActions"); }
+            set { BackingStore?.Set("resourceActions", value); }
+        }
+#else
         public List<ResourceAction> ResourceActions {
             get { return BackingStore?.Get<List<ResourceAction>>("resourceActions"); }
             set { BackingStore?.Set("resourceActions", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new rolePermission and sets the default values.
         /// </summary>

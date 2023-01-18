@@ -16,15 +16,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("creationDateTime", value); }
         }
         /// <summary>The device property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.Device? Device {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Device?>("device"); }
+            set { BackingStore?.Set("device", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.Device Device {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Device>("device"); }
             set { BackingStore?.Set("device", value); }
         }
+#endif
         /// <summary>The display name of the mobile device as given by the user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new PasswordlessMicrosoftAuthenticatorAuthenticationMethod and sets the default values.
         /// </summary>

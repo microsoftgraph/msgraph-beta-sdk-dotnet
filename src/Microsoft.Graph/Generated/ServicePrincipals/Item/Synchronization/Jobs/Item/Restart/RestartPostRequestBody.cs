@@ -15,10 +15,17 @@ namespace Microsoft.Graph.Beta.ServicePrincipals.Item.Synchronization.Jobs.Item.
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The criteria property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public SynchronizationJobRestartCriteria? Criteria {
+            get { return BackingStore?.Get<SynchronizationJobRestartCriteria?>("criteria"); }
+            set { BackingStore?.Set("criteria", value); }
+        }
+#else
         public SynchronizationJobRestartCriteria Criteria {
             get { return BackingStore?.Get<SynchronizationJobRestartCriteria>("criteria"); }
             set { BackingStore?.Set("criteria", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new restartPostRequestBody and sets the default values.
         /// </summary>

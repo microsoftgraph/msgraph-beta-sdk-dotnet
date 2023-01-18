@@ -7,10 +7,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class CloudPcGalleryImage : Entity, IParsable {
         /// <summary>The official display name of the gallery image. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The date in which this image is no longer within long-term support. The Cloud PC will continue to provide short-term support. Read-only.</summary>
         public Date? EndDate {
             get { return BackingStore?.Get<Date?>("endDate"); }
@@ -22,40 +29,82 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("expirationDate", value); }
         }
         /// <summary>The offer name of the gallery image. This value will be passed to Azure to get the image resource. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Offer {
+            get { return BackingStore?.Get<string?>("offer"); }
+            set { BackingStore?.Set("offer", value); }
+        }
+#else
         public string Offer {
             get { return BackingStore?.Get<string>("offer"); }
             set { BackingStore?.Set("offer", value); }
         }
+#endif
         /// <summary>The official display offer name of the gallery image. For example, Windows 10 Enterprise + OS Optimizations. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OfferDisplayName {
+            get { return BackingStore?.Get<string?>("offerDisplayName"); }
+            set { BackingStore?.Set("offerDisplayName", value); }
+        }
+#else
         public string OfferDisplayName {
             get { return BackingStore?.Get<string>("offerDisplayName"); }
             set { BackingStore?.Set("offerDisplayName", value); }
         }
+#endif
         /// <summary>The publisher name of the gallery image. This value will be passed to Azure to get the image resource. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Publisher {
+            get { return BackingStore?.Get<string?>("publisher"); }
+            set { BackingStore?.Set("publisher", value); }
+        }
+#else
         public string Publisher {
             get { return BackingStore?.Get<string>("publisher"); }
             set { BackingStore?.Set("publisher", value); }
         }
+#endif
         /// <summary>Recommended Cloud PC SKU for this gallery image. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? RecommendedSku {
+            get { return BackingStore?.Get<string?>("recommendedSku"); }
+            set { BackingStore?.Set("recommendedSku", value); }
+        }
+#else
         public string RecommendedSku {
             get { return BackingStore?.Get<string>("recommendedSku"); }
             set { BackingStore?.Set("recommendedSku", value); }
         }
+#endif
         /// <summary>The size of this image in gigabytes. Read-only.</summary>
         public int? SizeInGB {
             get { return BackingStore?.Get<int?>("sizeInGB"); }
             set { BackingStore?.Set("sizeInGB", value); }
         }
         /// <summary>The SKU name of the gallery image. This value will be passed to Azure to get the image resource. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Sku {
+            get { return BackingStore?.Get<string?>("sku"); }
+            set { BackingStore?.Set("sku", value); }
+        }
+#else
         public string Sku {
             get { return BackingStore?.Get<string>("sku"); }
             set { BackingStore?.Set("sku", value); }
         }
+#endif
         /// <summary>The official display stock keeping unit (SKU) name of this gallery image. For example, 2004. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SkuDisplayName {
+            get { return BackingStore?.Get<string?>("skuDisplayName"); }
+            set { BackingStore?.Set("skuDisplayName", value); }
+        }
+#else
         public string SkuDisplayName {
             get { return BackingStore?.Get<string>("skuDisplayName"); }
             set { BackingStore?.Set("skuDisplayName", value); }
         }
+#endif
         /// <summary>The date when the image becomes available. Read-only.</summary>
         public Date? StartDate {
             get { return BackingStore?.Get<Date?>("startDate"); }

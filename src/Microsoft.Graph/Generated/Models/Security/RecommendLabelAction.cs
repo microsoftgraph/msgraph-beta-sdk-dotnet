@@ -6,25 +6,46 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
     public class RecommendLabelAction : InformationProtectionAction, IParsable {
         /// <summary>Actions to take if the label is accepted by the user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<InformationProtectionAction>? Actions {
+            get { return BackingStore?.Get<List<InformationProtectionAction>?>("actions"); }
+            set { BackingStore?.Set("actions", value); }
+        }
+#else
         public List<InformationProtectionAction> Actions {
             get { return BackingStore?.Get<List<InformationProtectionAction>>("actions"); }
             set { BackingStore?.Set("actions", value); }
         }
+#endif
         /// <summary>The actionSource property</summary>
         public Microsoft.Graph.Beta.Models.Security.ActionSource? ActionSource {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.ActionSource?>("actionSource"); }
             set { BackingStore?.Set("actionSource", value); }
         }
         /// <summary>The sensitive information type GUIDs that caused the recommendation to be given.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? ResponsibleSensitiveTypeIds {
+            get { return BackingStore?.Get<List<string>?>("responsibleSensitiveTypeIds"); }
+            set { BackingStore?.Set("responsibleSensitiveTypeIds", value); }
+        }
+#else
         public List<string> ResponsibleSensitiveTypeIds {
             get { return BackingStore?.Get<List<string>>("responsibleSensitiveTypeIds"); }
             set { BackingStore?.Set("responsibleSensitiveTypeIds", value); }
         }
+#endif
         /// <summary>The sensitivityLabelId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SensitivityLabelId {
+            get { return BackingStore?.Get<string?>("sensitivityLabelId"); }
+            set { BackingStore?.Set("sensitivityLabelId", value); }
+        }
+#else
         public string SensitivityLabelId {
             get { return BackingStore?.Get<string>("sensitivityLabelId"); }
             set { BackingStore?.Set("sensitivityLabelId", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new RecommendLabelAction and sets the default values.
         /// </summary>

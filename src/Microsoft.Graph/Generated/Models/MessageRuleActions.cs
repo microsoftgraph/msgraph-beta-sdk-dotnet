@@ -12,32 +12,60 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>A list of categories to be assigned to a message.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? AssignCategories {
+            get { return BackingStore?.Get<List<string>?>("assignCategories"); }
+            set { BackingStore?.Set("assignCategories", value); }
+        }
+#else
         public List<string> AssignCategories {
             get { return BackingStore?.Get<List<string>>("assignCategories"); }
             set { BackingStore?.Set("assignCategories", value); }
         }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The ID of a folder that a message is to be copied to.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CopyToFolder {
+            get { return BackingStore?.Get<string?>("copyToFolder"); }
+            set { BackingStore?.Set("copyToFolder", value); }
+        }
+#else
         public string CopyToFolder {
             get { return BackingStore?.Get<string>("copyToFolder"); }
             set { BackingStore?.Set("copyToFolder", value); }
         }
+#endif
         /// <summary>Indicates whether a message should be moved to the Deleted Items folder.</summary>
         public bool? Delete {
             get { return BackingStore?.Get<bool?>("delete"); }
             set { BackingStore?.Set("delete", value); }
         }
         /// <summary>The email addresses of the recipients to which a message should be forwarded as an attachment.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Recipient>? ForwardAsAttachmentTo {
+            get { return BackingStore?.Get<List<Recipient>?>("forwardAsAttachmentTo"); }
+            set { BackingStore?.Set("forwardAsAttachmentTo", value); }
+        }
+#else
         public List<Recipient> ForwardAsAttachmentTo {
             get { return BackingStore?.Get<List<Recipient>>("forwardAsAttachmentTo"); }
             set { BackingStore?.Set("forwardAsAttachmentTo", value); }
         }
+#endif
         /// <summary>The email addresses of the recipients to which a message should be forwarded.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Recipient>? ForwardTo {
+            get { return BackingStore?.Get<List<Recipient>?>("forwardTo"); }
+            set { BackingStore?.Set("forwardTo", value); }
+        }
+#else
         public List<Recipient> ForwardTo {
             get { return BackingStore?.Get<List<Recipient>>("forwardTo"); }
             set { BackingStore?.Set("forwardTo", value); }
         }
+#endif
         /// <summary>Indicates whether a message should be marked as read.</summary>
         public bool? MarkAsRead {
             get { return BackingStore?.Get<bool?>("markAsRead"); }
@@ -49,25 +77,46 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("markImportance", value); }
         }
         /// <summary>The ID of the folder that a message will be moved to.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MoveToFolder {
+            get { return BackingStore?.Get<string?>("moveToFolder"); }
+            set { BackingStore?.Set("moveToFolder", value); }
+        }
+#else
         public string MoveToFolder {
             get { return BackingStore?.Get<string>("moveToFolder"); }
             set { BackingStore?.Set("moveToFolder", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Indicates whether a message should be permanently deleted and not saved to the Deleted Items folder.</summary>
         public bool? PermanentDelete {
             get { return BackingStore?.Get<bool?>("permanentDelete"); }
             set { BackingStore?.Set("permanentDelete", value); }
         }
         /// <summary>The email address to which a message should be redirected.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Recipient>? RedirectTo {
+            get { return BackingStore?.Get<List<Recipient>?>("redirectTo"); }
+            set { BackingStore?.Set("redirectTo", value); }
+        }
+#else
         public List<Recipient> RedirectTo {
             get { return BackingStore?.Get<List<Recipient>>("redirectTo"); }
             set { BackingStore?.Set("redirectTo", value); }
         }
+#endif
         /// <summary>Indicates whether subsequent rules should be evaluated.</summary>
         public bool? StopProcessingRules {
             get { return BackingStore?.Get<bool?>("stopProcessingRules"); }

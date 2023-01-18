@@ -11,370 +11,867 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
             set { BackingStore?.Set("accountMoveCompletionDateTime", value); }
         }
         /// <summary>Admin consent information.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.AdminConsent? AdminConsent {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AdminConsent?>("adminConsent"); }
+            set { BackingStore?.Set("adminConsent", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.AdminConsent AdminConsent {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AdminConsent>("adminConsent"); }
             set { BackingStore?.Set("adminConsent", value); }
         }
+#endif
         /// <summary>The summary state of ATP onboarding state for this account.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.AdvancedThreatProtectionOnboardingStateSummary? AdvancedThreatProtectionOnboardingStateSummary {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AdvancedThreatProtectionOnboardingStateSummary?>("advancedThreatProtectionOnboardingStateSummary"); }
+            set { BackingStore?.Set("advancedThreatProtectionOnboardingStateSummary", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.AdvancedThreatProtectionOnboardingStateSummary AdvancedThreatProtectionOnboardingStateSummary {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AdvancedThreatProtectionOnboardingStateSummary>("advancedThreatProtectionOnboardingStateSummary"); }
             set { BackingStore?.Set("advancedThreatProtectionOnboardingStateSummary", value); }
         }
+#endif
         /// <summary>Android device owner enrollment profile entities.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerEnrollmentProfile>? AndroidDeviceOwnerEnrollmentProfiles {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerEnrollmentProfile>?>("androidDeviceOwnerEnrollmentProfiles"); }
+            set { BackingStore?.Set("androidDeviceOwnerEnrollmentProfiles", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerEnrollmentProfile> AndroidDeviceOwnerEnrollmentProfiles {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AndroidDeviceOwnerEnrollmentProfile>>("androidDeviceOwnerEnrollmentProfiles"); }
             set { BackingStore?.Set("androidDeviceOwnerEnrollmentProfiles", value); }
         }
+#endif
         /// <summary>Android for Work app configuration schema entities.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.AndroidForWorkAppConfigurationSchema>? AndroidForWorkAppConfigurationSchemas {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AndroidForWorkAppConfigurationSchema>?>("androidForWorkAppConfigurationSchemas"); }
+            set { BackingStore?.Set("androidForWorkAppConfigurationSchemas", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.AndroidForWorkAppConfigurationSchema> AndroidForWorkAppConfigurationSchemas {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AndroidForWorkAppConfigurationSchema>>("androidForWorkAppConfigurationSchemas"); }
             set { BackingStore?.Set("androidForWorkAppConfigurationSchemas", value); }
         }
+#endif
         /// <summary>Android for Work enrollment profile entities.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.AndroidForWorkEnrollmentProfile>? AndroidForWorkEnrollmentProfiles {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AndroidForWorkEnrollmentProfile>?>("androidForWorkEnrollmentProfiles"); }
+            set { BackingStore?.Set("androidForWorkEnrollmentProfiles", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.AndroidForWorkEnrollmentProfile> AndroidForWorkEnrollmentProfiles {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AndroidForWorkEnrollmentProfile>>("androidForWorkEnrollmentProfiles"); }
             set { BackingStore?.Set("androidForWorkEnrollmentProfiles", value); }
         }
+#endif
         /// <summary>The singleton Android for Work settings entity.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.AndroidForWorkSettings? AndroidForWorkSettings {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AndroidForWorkSettings?>("androidForWorkSettings"); }
+            set { BackingStore?.Set("androidForWorkSettings", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.AndroidForWorkSettings AndroidForWorkSettings {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AndroidForWorkSettings>("androidForWorkSettings"); }
             set { BackingStore?.Set("androidForWorkSettings", value); }
         }
+#endif
         /// <summary>The singleton Android managed store account enterprise settings entity.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.AndroidManagedStoreAccountEnterpriseSettings? AndroidManagedStoreAccountEnterpriseSettings {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AndroidManagedStoreAccountEnterpriseSettings?>("androidManagedStoreAccountEnterpriseSettings"); }
+            set { BackingStore?.Set("androidManagedStoreAccountEnterpriseSettings", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.AndroidManagedStoreAccountEnterpriseSettings AndroidManagedStoreAccountEnterpriseSettings {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AndroidManagedStoreAccountEnterpriseSettings>("androidManagedStoreAccountEnterpriseSettings"); }
             set { BackingStore?.Set("androidManagedStoreAccountEnterpriseSettings", value); }
         }
+#endif
         /// <summary>Android Enterprise app configuration schema entities.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.AndroidManagedStoreAppConfigurationSchema>? AndroidManagedStoreAppConfigurationSchemas {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AndroidManagedStoreAppConfigurationSchema>?>("androidManagedStoreAppConfigurationSchemas"); }
+            set { BackingStore?.Set("androidManagedStoreAppConfigurationSchemas", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.AndroidManagedStoreAppConfigurationSchema> AndroidManagedStoreAppConfigurationSchemas {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AndroidManagedStoreAppConfigurationSchema>>("androidManagedStoreAppConfigurationSchemas"); }
             set { BackingStore?.Set("androidManagedStoreAppConfigurationSchemas", value); }
         }
+#endif
         /// <summary>Apple push notification certificate.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.ApplePushNotificationCertificate? ApplePushNotificationCertificate {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ApplePushNotificationCertificate?>("applePushNotificationCertificate"); }
+            set { BackingStore?.Set("applePushNotificationCertificate", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.ApplePushNotificationCertificate ApplePushNotificationCertificate {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ApplePushNotificationCertificate>("applePushNotificationCertificate"); }
             set { BackingStore?.Set("applePushNotificationCertificate", value); }
         }
+#endif
         /// <summary>Apple user initiated enrollment profiles</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.AppleUserInitiatedEnrollmentProfile>? AppleUserInitiatedEnrollmentProfiles {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AppleUserInitiatedEnrollmentProfile>?>("appleUserInitiatedEnrollmentProfiles"); }
+            set { BackingStore?.Set("appleUserInitiatedEnrollmentProfiles", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.AppleUserInitiatedEnrollmentProfile> AppleUserInitiatedEnrollmentProfiles {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AppleUserInitiatedEnrollmentProfile>>("appleUserInitiatedEnrollmentProfiles"); }
             set { BackingStore?.Set("appleUserInitiatedEnrollmentProfiles", value); }
         }
+#endif
         /// <summary>The list of assignment filters</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentFilter>? AssignmentFilters {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentFilter>?>("assignmentFilters"); }
+            set { BackingStore?.Set("assignmentFilters", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentFilter> AssignmentFilters {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceAndAppManagementAssignmentFilter>>("assignmentFilters"); }
             set { BackingStore?.Set("assignmentFilters", value); }
         }
+#endif
         /// <summary>The Audit Events</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.AuditEvent>? AuditEvents {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AuditEvent>?>("auditEvents"); }
+            set { BackingStore?.Set("auditEvents", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.AuditEvent> AuditEvents {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.AuditEvent>>("auditEvents"); }
             set { BackingStore?.Set("auditEvents", value); }
         }
+#endif
         /// <summary>The list of autopilot events for the tenant.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementAutopilotEvent>? AutopilotEvents {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementAutopilotEvent>?>("autopilotEvents"); }
+            set { BackingStore?.Set("autopilotEvents", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.DeviceManagementAutopilotEvent> AutopilotEvents {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementAutopilotEvent>>("autopilotEvents"); }
             set { BackingStore?.Set("autopilotEvents", value); }
         }
+#endif
         /// <summary>The Cart To Class Associations.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.CartToClassAssociation>? CartToClassAssociations {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CartToClassAssociation>?>("cartToClassAssociations"); }
+            set { BackingStore?.Set("cartToClassAssociations", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.CartToClassAssociation> CartToClassAssociations {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CartToClassAssociation>>("cartToClassAssociations"); }
             set { BackingStore?.Set("cartToClassAssociations", value); }
         }
+#endif
         /// <summary>The available categories</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementSettingCategory>? Categories {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementSettingCategory>?>("categories"); }
+            set { BackingStore?.Set("categories", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.DeviceManagementSettingCategory> Categories {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementSettingCategory>>("categories"); }
             set { BackingStore?.Set("categories", value); }
         }
+#endif
         /// <summary>Collection of certificate connector details, each associated with a corresponding Intune Certificate Connector.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.CertificateConnectorDetails>? CertificateConnectorDetails {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CertificateConnectorDetails>?>("certificateConnectorDetails"); }
+            set { BackingStore?.Set("certificateConnectorDetails", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.CertificateConnectorDetails> CertificateConnectorDetails {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CertificateConnectorDetails>>("certificateConnectorDetails"); }
             set { BackingStore?.Set("certificateConnectorDetails", value); }
         }
+#endif
         /// <summary>Collection of ChromeOSOnboardingSettings settings associated with account.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.ChromeOSOnboardingSettings>? ChromeOSOnboardingSettings {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ChromeOSOnboardingSettings>?>("chromeOSOnboardingSettings"); }
+            set { BackingStore?.Set("chromeOSOnboardingSettings", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.ChromeOSOnboardingSettings> ChromeOSOnboardingSettings {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ChromeOSOnboardingSettings>>("chromeOSOnboardingSettings"); }
             set { BackingStore?.Set("chromeOSOnboardingSettings", value); }
         }
+#endif
         /// <summary>The list of CloudPC Connectivity Issue.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.CloudPCConnectivityIssue>? CloudPCConnectivityIssues {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CloudPCConnectivityIssue>?>("cloudPCConnectivityIssues"); }
+            set { BackingStore?.Set("cloudPCConnectivityIssues", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.CloudPCConnectivityIssue> CloudPCConnectivityIssues {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.CloudPCConnectivityIssue>>("cloudPCConnectivityIssues"); }
             set { BackingStore?.Set("cloudPCConnectivityIssues", value); }
         }
+#endif
         /// <summary>The list of co-managed devices report</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.ManagedDevice>? ComanagedDevices {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedDevice>?>("comanagedDevices"); }
+            set { BackingStore?.Set("comanagedDevices", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.ManagedDevice> ComanagedDevices {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedDevice>>("comanagedDevices"); }
             set { BackingStore?.Set("comanagedDevices", value); }
         }
+#endif
         /// <summary>The list of co-management eligible devices report</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.ComanagementEligibleDevice>? ComanagementEligibleDevices {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ComanagementEligibleDevice>?>("comanagementEligibleDevices"); }
+            set { BackingStore?.Set("comanagementEligibleDevices", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.ComanagementEligibleDevice> ComanagementEligibleDevices {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ComanagementEligibleDevice>>("comanagementEligibleDevices"); }
             set { BackingStore?.Set("comanagementEligibleDevices", value); }
         }
+#endif
         /// <summary>List of all compliance categories</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationCategory>? ComplianceCategories {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationCategory>?>("complianceCategories"); }
+            set { BackingStore?.Set("complianceCategories", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationCategory> ComplianceCategories {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationCategory>>("complianceCategories"); }
             set { BackingStore?.Set("complianceCategories", value); }
         }
+#endif
         /// <summary>The list of Compliance Management Partners configured by the tenant.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.ComplianceManagementPartner>? ComplianceManagementPartners {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ComplianceManagementPartner>?>("complianceManagementPartners"); }
+            set { BackingStore?.Set("complianceManagementPartners", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.ComplianceManagementPartner> ComplianceManagementPartners {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ComplianceManagementPartner>>("complianceManagementPartners"); }
             set { BackingStore?.Set("complianceManagementPartners", value); }
         }
+#endif
         /// <summary>List of all compliance policies</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementCompliancePolicy>? CompliancePolicies {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementCompliancePolicy>?>("compliancePolicies"); }
+            set { BackingStore?.Set("compliancePolicies", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.DeviceManagementCompliancePolicy> CompliancePolicies {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementCompliancePolicy>>("compliancePolicies"); }
             set { BackingStore?.Set("compliancePolicies", value); }
         }
+#endif
         /// <summary>List of all ComplianceSettings</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingDefinition>? ComplianceSettings {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingDefinition>?>("complianceSettings"); }
+            set { BackingStore?.Set("complianceSettings", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingDefinition> ComplianceSettings {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingDefinition>>("complianceSettings"); }
             set { BackingStore?.Set("complianceSettings", value); }
         }
+#endif
         /// <summary>The Exchange on premises conditional access settings. On premises conditional access will require devices to be both enrolled and compliant for mail access</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.OnPremisesConditionalAccessSettings? ConditionalAccessSettings {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OnPremisesConditionalAccessSettings?>("conditionalAccessSettings"); }
+            set { BackingStore?.Set("conditionalAccessSettings", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.OnPremisesConditionalAccessSettings ConditionalAccessSettings {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.OnPremisesConditionalAccessSettings>("conditionalAccessSettings"); }
             set { BackingStore?.Set("conditionalAccessSettings", value); }
         }
+#endif
         /// <summary>A list of ConfigManagerCollection</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.ConfigManagerCollection>? ConfigManagerCollections {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ConfigManagerCollection>?>("configManagerCollections"); }
+            set { BackingStore?.Set("configManagerCollections", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.ConfigManagerCollection> ConfigManagerCollections {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ConfigManagerCollection>>("configManagerCollections"); }
             set { BackingStore?.Set("configManagerCollections", value); }
         }
+#endif
         /// <summary>List of all Configuration Categories</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationCategory>? ConfigurationCategories {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationCategory>?>("configurationCategories"); }
+            set { BackingStore?.Set("configurationCategories", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationCategory> ConfigurationCategories {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationCategory>>("configurationCategories"); }
             set { BackingStore?.Set("configurationCategories", value); }
         }
+#endif
         /// <summary>List of all Configuration policies</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicy>? ConfigurationPolicies {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicy>?>("configurationPolicies"); }
+            set { BackingStore?.Set("configurationPolicies", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicy> ConfigurationPolicies {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicy>>("configurationPolicies"); }
             set { BackingStore?.Set("configurationPolicies", value); }
         }
+#endif
         /// <summary>List of all templates</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicyTemplate>? ConfigurationPolicyTemplates {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicyTemplate>?>("configurationPolicyTemplates"); }
+            set { BackingStore?.Set("configurationPolicyTemplates", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicyTemplate> ConfigurationPolicyTemplates {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationPolicyTemplate>>("configurationPolicyTemplates"); }
             set { BackingStore?.Set("configurationPolicyTemplates", value); }
         }
+#endif
         /// <summary>List of all ConfigurationSettings</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingDefinition>? ConfigurationSettings {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingDefinition>?>("configurationSettings"); }
+            set { BackingStore?.Set("configurationSettings", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingDefinition> ConfigurationSettings {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingDefinition>>("configurationSettings"); }
             set { BackingStore?.Set("configurationSettings", value); }
         }
+#endif
         /// <summary>A configuration entity for MEM features that utilize Data Processor Service for Windows (DPSW) data.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.DataProcessorServiceForWindowsFeaturesOnboarding? DataProcessorServiceForWindowsFeaturesOnboarding {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DataProcessorServiceForWindowsFeaturesOnboarding?>("dataProcessorServiceForWindowsFeaturesOnboarding"); }
+            set { BackingStore?.Set("dataProcessorServiceForWindowsFeaturesOnboarding", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.DataProcessorServiceForWindowsFeaturesOnboarding DataProcessorServiceForWindowsFeaturesOnboarding {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DataProcessorServiceForWindowsFeaturesOnboarding>("dataProcessorServiceForWindowsFeaturesOnboarding"); }
             set { BackingStore?.Set("dataProcessorServiceForWindowsFeaturesOnboarding", value); }
         }
+#endif
         /// <summary>Data sharing consents.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.DataSharingConsent>? DataSharingConsents {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DataSharingConsent>?>("dataSharingConsents"); }
+            set { BackingStore?.Set("dataSharingConsents", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.DataSharingConsent> DataSharingConsents {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DataSharingConsent>>("dataSharingConsents"); }
             set { BackingStore?.Set("dataSharingConsents", value); }
         }
+#endif
         /// <summary>This collections of multiple DEP tokens per-tenant.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.DepOnboardingSetting>? DepOnboardingSettings {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DepOnboardingSetting>?>("depOnboardingSettings"); }
+            set { BackingStore?.Set("depOnboardingSettings", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.DepOnboardingSetting> DepOnboardingSettings {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DepOnboardingSetting>>("depOnboardingSettings"); }
             set { BackingStore?.Set("depOnboardingSettings", value); }
         }
+#endif
         /// <summary>Collection of Derived credential settings associated with account.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementDerivedCredentialSettings>? DerivedCredentials {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementDerivedCredentialSettings>?>("derivedCredentials"); }
+            set { BackingStore?.Set("derivedCredentials", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.DeviceManagementDerivedCredentialSettings> DerivedCredentials {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementDerivedCredentialSettings>>("derivedCredentials"); }
             set { BackingStore?.Set("derivedCredentials", value); }
         }
+#endif
         /// <summary>The list of detected apps associated with a device.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.DetectedApp>? DetectedApps {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DetectedApp>?>("detectedApps"); }
+            set { BackingStore?.Set("detectedApps", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.DetectedApp> DetectedApps {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DetectedApp>>("detectedApps"); }
             set { BackingStore?.Set("detectedApps", value); }
         }
+#endif
         /// <summary>The list of device categories with the tenant.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.DeviceCategory>? DeviceCategories {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceCategory>?>("deviceCategories"); }
+            set { BackingStore?.Set("deviceCategories", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.DeviceCategory> DeviceCategories {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceCategory>>("deviceCategories"); }
             set { BackingStore?.Set("deviceCategories", value); }
         }
+#endif
         /// <summary>The device compliance policies.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.DeviceCompliancePolicy>? DeviceCompliancePolicies {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceCompliancePolicy>?>("deviceCompliancePolicies"); }
+            set { BackingStore?.Set("deviceCompliancePolicies", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.DeviceCompliancePolicy> DeviceCompliancePolicies {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceCompliancePolicy>>("deviceCompliancePolicies"); }
             set { BackingStore?.Set("deviceCompliancePolicies", value); }
         }
+#endif
         /// <summary>The device compliance state summary for this account.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.DeviceCompliancePolicyDeviceStateSummary? DeviceCompliancePolicyDeviceStateSummary {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceCompliancePolicyDeviceStateSummary?>("deviceCompliancePolicyDeviceStateSummary"); }
+            set { BackingStore?.Set("deviceCompliancePolicyDeviceStateSummary", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.DeviceCompliancePolicyDeviceStateSummary DeviceCompliancePolicyDeviceStateSummary {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceCompliancePolicyDeviceStateSummary>("deviceCompliancePolicyDeviceStateSummary"); }
             set { BackingStore?.Set("deviceCompliancePolicyDeviceStateSummary", value); }
         }
+#endif
         /// <summary>The summary states of compliance policy settings for this account.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.DeviceCompliancePolicySettingStateSummary>? DeviceCompliancePolicySettingStateSummaries {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceCompliancePolicySettingStateSummary>?>("deviceCompliancePolicySettingStateSummaries"); }
+            set { BackingStore?.Set("deviceCompliancePolicySettingStateSummaries", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.DeviceCompliancePolicySettingStateSummary> DeviceCompliancePolicySettingStateSummaries {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceCompliancePolicySettingStateSummary>>("deviceCompliancePolicySettingStateSummaries"); }
             set { BackingStore?.Set("deviceCompliancePolicySettingStateSummaries", value); }
         }
+#endif
         /// <summary>The last requested time of device compliance reporting for this account. This property is read-only.</summary>
         public DateTimeOffset? DeviceComplianceReportSummarizationDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("deviceComplianceReportSummarizationDateTime"); }
             set { BackingStore?.Set("deviceComplianceReportSummarizationDateTime", value); }
         }
         /// <summary>The list of device compliance scripts associated with the tenant.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.DeviceComplianceScript>? DeviceComplianceScripts {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceComplianceScript>?>("deviceComplianceScripts"); }
+            set { BackingStore?.Set("deviceComplianceScripts", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.DeviceComplianceScript> DeviceComplianceScripts {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceComplianceScript>>("deviceComplianceScripts"); }
             set { BackingStore?.Set("deviceComplianceScripts", value); }
         }
+#endif
         /// <summary>Summary of policies in conflict state for this account.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.DeviceConfigurationConflictSummary>? DeviceConfigurationConflictSummary {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceConfigurationConflictSummary>?>("deviceConfigurationConflictSummary"); }
+            set { BackingStore?.Set("deviceConfigurationConflictSummary", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.DeviceConfigurationConflictSummary> DeviceConfigurationConflictSummary {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceConfigurationConflictSummary>>("deviceConfigurationConflictSummary"); }
             set { BackingStore?.Set("deviceConfigurationConflictSummary", value); }
         }
+#endif
         /// <summary>The device configuration device state summary for this account.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.DeviceConfigurationDeviceStateSummary? DeviceConfigurationDeviceStateSummaries {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceConfigurationDeviceStateSummary?>("deviceConfigurationDeviceStateSummaries"); }
+            set { BackingStore?.Set("deviceConfigurationDeviceStateSummaries", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.DeviceConfigurationDeviceStateSummary DeviceConfigurationDeviceStateSummaries {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceConfigurationDeviceStateSummary>("deviceConfigurationDeviceStateSummaries"); }
             set { BackingStore?.Set("deviceConfigurationDeviceStateSummaries", value); }
         }
+#endif
         /// <summary>Restricted apps violations for this account.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.RestrictedAppsViolation>? DeviceConfigurationRestrictedAppsViolations {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.RestrictedAppsViolation>?>("deviceConfigurationRestrictedAppsViolations"); }
+            set { BackingStore?.Set("deviceConfigurationRestrictedAppsViolations", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.RestrictedAppsViolation> DeviceConfigurationRestrictedAppsViolations {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.RestrictedAppsViolation>>("deviceConfigurationRestrictedAppsViolations"); }
             set { BackingStore?.Set("deviceConfigurationRestrictedAppsViolations", value); }
         }
+#endif
         /// <summary>The device configurations.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.DeviceConfiguration>? DeviceConfigurations {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceConfiguration>?>("deviceConfigurations"); }
+            set { BackingStore?.Set("deviceConfigurations", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.DeviceConfiguration> DeviceConfigurations {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceConfiguration>>("deviceConfigurations"); }
             set { BackingStore?.Set("deviceConfigurations", value); }
         }
+#endif
         /// <summary>Summary of all certificates for all devices.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.ManagedAllDeviceCertificateState>? DeviceConfigurationsAllManagedDeviceCertificateStates {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedAllDeviceCertificateState>?>("deviceConfigurationsAllManagedDeviceCertificateStates"); }
+            set { BackingStore?.Set("deviceConfigurationsAllManagedDeviceCertificateStates", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.ManagedAllDeviceCertificateState> DeviceConfigurationsAllManagedDeviceCertificateStates {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedAllDeviceCertificateState>>("deviceConfigurationsAllManagedDeviceCertificateStates"); }
             set { BackingStore?.Set("deviceConfigurationsAllManagedDeviceCertificateStates", value); }
         }
+#endif
         /// <summary>The device configuration user state summary for this account.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.DeviceConfigurationUserStateSummary? DeviceConfigurationUserStateSummaries {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceConfigurationUserStateSummary?>("deviceConfigurationUserStateSummaries"); }
+            set { BackingStore?.Set("deviceConfigurationUserStateSummaries", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.DeviceConfigurationUserStateSummary DeviceConfigurationUserStateSummaries {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceConfigurationUserStateSummary>("deviceConfigurationUserStateSummaries"); }
             set { BackingStore?.Set("deviceConfigurationUserStateSummaries", value); }
         }
+#endif
         /// <summary>The list of device custom attribute shell scripts associated with the tenant.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.DeviceCustomAttributeShellScript>? DeviceCustomAttributeShellScripts {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceCustomAttributeShellScript>?>("deviceCustomAttributeShellScripts"); }
+            set { BackingStore?.Set("deviceCustomAttributeShellScripts", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.DeviceCustomAttributeShellScript> DeviceCustomAttributeShellScripts {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceCustomAttributeShellScript>>("deviceCustomAttributeShellScripts"); }
             set { BackingStore?.Set("deviceCustomAttributeShellScripts", value); }
         }
+#endif
         /// <summary>The list of device enrollment configurations</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.DeviceEnrollmentConfiguration>? DeviceEnrollmentConfigurations {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceEnrollmentConfiguration>?>("deviceEnrollmentConfigurations"); }
+            set { BackingStore?.Set("deviceEnrollmentConfigurations", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.DeviceEnrollmentConfiguration> DeviceEnrollmentConfigurations {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceEnrollmentConfiguration>>("deviceEnrollmentConfigurations"); }
             set { BackingStore?.Set("deviceEnrollmentConfigurations", value); }
         }
+#endif
         /// <summary>The list of device health scripts associated with the tenant.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.DeviceHealthScript>? DeviceHealthScripts {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceHealthScript>?>("deviceHealthScripts"); }
+            set { BackingStore?.Set("deviceHealthScripts", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.DeviceHealthScript> DeviceHealthScripts {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceHealthScript>>("deviceHealthScripts"); }
             set { BackingStore?.Set("deviceHealthScripts", value); }
         }
+#endif
         /// <summary>The list of Device Management Partners configured by the tenant.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementPartner>? DeviceManagementPartners {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementPartner>?>("deviceManagementPartners"); }
+            set { BackingStore?.Set("deviceManagementPartners", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.DeviceManagementPartner> DeviceManagementPartners {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementPartner>>("deviceManagementPartners"); }
             set { BackingStore?.Set("deviceManagementPartners", value); }
         }
+#endif
         /// <summary>The list of device management scripts associated with the tenant.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementScript>? DeviceManagementScripts {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementScript>?>("deviceManagementScripts"); }
+            set { BackingStore?.Set("deviceManagementScripts", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.DeviceManagementScript> DeviceManagementScripts {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementScript>>("deviceManagementScripts"); }
             set { BackingStore?.Set("deviceManagementScripts", value); }
         }
+#endif
         /// <summary>Device protection overview.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.DeviceProtectionOverview? DeviceProtectionOverview {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceProtectionOverview?>("deviceProtectionOverview"); }
+            set { BackingStore?.Set("deviceProtectionOverview", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.DeviceProtectionOverview DeviceProtectionOverview {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceProtectionOverview>("deviceProtectionOverview"); }
             set { BackingStore?.Set("deviceProtectionOverview", value); }
         }
+#endif
         /// <summary>The list of device shell scripts associated with the tenant.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.DeviceShellScript>? DeviceShellScripts {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceShellScript>?>("deviceShellScripts"); }
+            set { BackingStore?.Set("deviceShellScripts", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.DeviceShellScript> DeviceShellScripts {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceShellScript>>("deviceShellScripts"); }
             set { BackingStore?.Set("deviceShellScripts", value); }
         }
+#endif
         /// <summary>A list of connector objects.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementDomainJoinConnector>? DomainJoinConnectors {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementDomainJoinConnector>?>("domainJoinConnectors"); }
+            set { BackingStore?.Set("domainJoinConnectors", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.DeviceManagementDomainJoinConnector> DomainJoinConnectors {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementDomainJoinConnector>>("domainJoinConnectors"); }
             set { BackingStore?.Set("domainJoinConnectors", value); }
         }
+#endif
         /// <summary>The embedded SIM activation code pools created by this account.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.EmbeddedSIMActivationCodePool>? EmbeddedSIMActivationCodePools {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.EmbeddedSIMActivationCodePool>?>("embeddedSIMActivationCodePools"); }
+            set { BackingStore?.Set("embeddedSIMActivationCodePools", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.EmbeddedSIMActivationCodePool> EmbeddedSIMActivationCodePools {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.EmbeddedSIMActivationCodePool>>("embeddedSIMActivationCodePools"); }
             set { BackingStore?.Set("embeddedSIMActivationCodePools", value); }
         }
+#endif
         /// <summary>The list of Exchange Connectors configured by the tenant.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementExchangeConnector>? ExchangeConnectors {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementExchangeConnector>?>("exchangeConnectors"); }
+            set { BackingStore?.Set("exchangeConnectors", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.DeviceManagementExchangeConnector> ExchangeConnectors {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementExchangeConnector>>("exchangeConnectors"); }
             set { BackingStore?.Set("exchangeConnectors", value); }
         }
+#endif
         /// <summary>The list of Exchange On Premisis policies configured by the tenant.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementExchangeOnPremisesPolicy>? ExchangeOnPremisesPolicies {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementExchangeOnPremisesPolicy>?>("exchangeOnPremisesPolicies"); }
+            set { BackingStore?.Set("exchangeOnPremisesPolicies", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.DeviceManagementExchangeOnPremisesPolicy> ExchangeOnPremisesPolicies {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementExchangeOnPremisesPolicy>>("exchangeOnPremisesPolicies"); }
             set { BackingStore?.Set("exchangeOnPremisesPolicies", value); }
         }
+#endif
         /// <summary>The policy which controls mobile device access to Exchange On Premises</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.DeviceManagementExchangeOnPremisesPolicy? ExchangeOnPremisesPolicy {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementExchangeOnPremisesPolicy?>("exchangeOnPremisesPolicy"); }
+            set { BackingStore?.Set("exchangeOnPremisesPolicy", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.DeviceManagementExchangeOnPremisesPolicy ExchangeOnPremisesPolicy {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementExchangeOnPremisesPolicy>("exchangeOnPremisesPolicy"); }
             set { BackingStore?.Set("exchangeOnPremisesPolicy", value); }
         }
+#endif
         /// <summary>The available group policy categories for this account.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.GroupPolicyCategory>? GroupPolicyCategories {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.GroupPolicyCategory>?>("groupPolicyCategories"); }
+            set { BackingStore?.Set("groupPolicyCategories", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.GroupPolicyCategory> GroupPolicyCategories {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.GroupPolicyCategory>>("groupPolicyCategories"); }
             set { BackingStore?.Set("groupPolicyCategories", value); }
         }
+#endif
         /// <summary>The group policy configurations created by this account.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.GroupPolicyConfiguration>? GroupPolicyConfigurations {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.GroupPolicyConfiguration>?>("groupPolicyConfigurations"); }
+            set { BackingStore?.Set("groupPolicyConfigurations", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.GroupPolicyConfiguration> GroupPolicyConfigurations {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.GroupPolicyConfiguration>>("groupPolicyConfigurations"); }
             set { BackingStore?.Set("groupPolicyConfigurations", value); }
         }
+#endif
         /// <summary>The available group policy definition files for this account.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.GroupPolicyDefinitionFile>? GroupPolicyDefinitionFiles {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.GroupPolicyDefinitionFile>?>("groupPolicyDefinitionFiles"); }
+            set { BackingStore?.Set("groupPolicyDefinitionFiles", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.GroupPolicyDefinitionFile> GroupPolicyDefinitionFiles {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.GroupPolicyDefinitionFile>>("groupPolicyDefinitionFiles"); }
             set { BackingStore?.Set("groupPolicyDefinitionFiles", value); }
         }
+#endif
         /// <summary>The available group policy definitions for this account.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.GroupPolicyDefinition>? GroupPolicyDefinitions {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.GroupPolicyDefinition>?>("groupPolicyDefinitions"); }
+            set { BackingStore?.Set("groupPolicyDefinitions", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.GroupPolicyDefinition> GroupPolicyDefinitions {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.GroupPolicyDefinition>>("groupPolicyDefinitions"); }
             set { BackingStore?.Set("groupPolicyDefinitions", value); }
         }
+#endif
         /// <summary>A list of Group Policy migration reports.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.GroupPolicyMigrationReport>? GroupPolicyMigrationReports {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.GroupPolicyMigrationReport>?>("groupPolicyMigrationReports"); }
+            set { BackingStore?.Set("groupPolicyMigrationReports", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.GroupPolicyMigrationReport> GroupPolicyMigrationReports {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.GroupPolicyMigrationReport>>("groupPolicyMigrationReports"); }
             set { BackingStore?.Set("groupPolicyMigrationReports", value); }
         }
+#endif
         /// <summary>A list of Group Policy Object files uploaded.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.GroupPolicyObjectFile>? GroupPolicyObjectFiles {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.GroupPolicyObjectFile>?>("groupPolicyObjectFiles"); }
+            set { BackingStore?.Set("groupPolicyObjectFiles", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.GroupPolicyObjectFile> GroupPolicyObjectFiles {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.GroupPolicyObjectFile>>("groupPolicyObjectFiles"); }
             set { BackingStore?.Set("groupPolicyObjectFiles", value); }
         }
+#endif
         /// <summary>The available group policy uploaded definition files for this account.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.GroupPolicyUploadedDefinitionFile>? GroupPolicyUploadedDefinitionFiles {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.GroupPolicyUploadedDefinitionFile>?>("groupPolicyUploadedDefinitionFiles"); }
+            set { BackingStore?.Set("groupPolicyUploadedDefinitionFiles", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.GroupPolicyUploadedDefinitionFile> GroupPolicyUploadedDefinitionFiles {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.GroupPolicyUploadedDefinitionFile>>("groupPolicyUploadedDefinitionFiles"); }
             set { BackingStore?.Set("groupPolicyUploadedDefinitionFiles", value); }
         }
+#endif
         /// <summary>The imported device identities.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.ImportedDeviceIdentity>? ImportedDeviceIdentities {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ImportedDeviceIdentity>?>("importedDeviceIdentities"); }
+            set { BackingStore?.Set("importedDeviceIdentities", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.ImportedDeviceIdentity> ImportedDeviceIdentities {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ImportedDeviceIdentity>>("importedDeviceIdentities"); }
             set { BackingStore?.Set("importedDeviceIdentities", value); }
         }
+#endif
         /// <summary>Collection of imported Windows autopilot devices.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.ImportedWindowsAutopilotDeviceIdentity>? ImportedWindowsAutopilotDeviceIdentities {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ImportedWindowsAutopilotDeviceIdentity>?>("importedWindowsAutopilotDeviceIdentities"); }
+            set { BackingStore?.Set("importedWindowsAutopilotDeviceIdentities", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.ImportedWindowsAutopilotDeviceIdentity> ImportedWindowsAutopilotDeviceIdentities {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ImportedWindowsAutopilotDeviceIdentity>>("importedWindowsAutopilotDeviceIdentities"); }
             set { BackingStore?.Set("importedWindowsAutopilotDeviceIdentities", value); }
         }
+#endif
         /// <summary>The device management intents</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementIntent>? Intents {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementIntent>?>("intents"); }
+            set { BackingStore?.Set("intents", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.DeviceManagementIntent> Intents {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementIntent>>("intents"); }
             set { BackingStore?.Set("intents", value); }
         }
+#endif
         /// <summary>Intune Account ID for given tenant</summary>
         public Guid? IntuneAccountId {
             get { return BackingStore?.Get<Guid?>("intuneAccountId"); }
             set { BackingStore?.Set("intuneAccountId", value); }
         }
         /// <summary>intuneBrand contains data which is used in customizing the appearance of the Company Portal applications as well as the end user web portal.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.IntuneBrand? IntuneBrand {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IntuneBrand?>("intuneBrand"); }
+            set { BackingStore?.Set("intuneBrand", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.IntuneBrand IntuneBrand {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IntuneBrand>("intuneBrand"); }
             set { BackingStore?.Set("intuneBrand", value); }
         }
+#endif
         /// <summary>Intune branding profiles targeted to AAD groups</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.IntuneBrandingProfile>? IntuneBrandingProfiles {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.IntuneBrandingProfile>?>("intuneBrandingProfiles"); }
+            set { BackingStore?.Set("intuneBrandingProfiles", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.IntuneBrandingProfile> IntuneBrandingProfiles {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.IntuneBrandingProfile>>("intuneBrandingProfiles"); }
             set { BackingStore?.Set("intuneBrandingProfiles", value); }
         }
+#endif
         /// <summary>The IOS software update installation statuses for this account.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.IosUpdateDeviceStatus>? IosUpdateStatuses {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.IosUpdateDeviceStatus>?>("iosUpdateStatuses"); }
+            set { BackingStore?.Set("iosUpdateStatuses", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.IosUpdateDeviceStatus> IosUpdateStatuses {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.IosUpdateDeviceStatus>>("iosUpdateStatuses"); }
             set { BackingStore?.Set("iosUpdateStatuses", value); }
         }
+#endif
         /// <summary>The last modified time of reporting for this account. This property is read-only.</summary>
         public DateTimeOffset? LastReportAggregationDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastReportAggregationDateTime"); }
@@ -386,155 +883,358 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
             set { BackingStore?.Set("legacyPcManangementEnabled", value); }
         }
         /// <summary>The MacOS software update account summaries for this account.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.MacOSSoftwareUpdateAccountSummary>? MacOSSoftwareUpdateAccountSummaries {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MacOSSoftwareUpdateAccountSummary>?>("macOSSoftwareUpdateAccountSummaries"); }
+            set { BackingStore?.Set("macOSSoftwareUpdateAccountSummaries", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.MacOSSoftwareUpdateAccountSummary> MacOSSoftwareUpdateAccountSummaries {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MacOSSoftwareUpdateAccountSummary>>("macOSSoftwareUpdateAccountSummaries"); }
             set { BackingStore?.Set("macOSSoftwareUpdateAccountSummaries", value); }
         }
+#endif
         /// <summary>Device cleanup rule</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.ManagedDeviceCleanupSettings? ManagedDeviceCleanupSettings {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedDeviceCleanupSettings?>("managedDeviceCleanupSettings"); }
+            set { BackingStore?.Set("managedDeviceCleanupSettings", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.ManagedDeviceCleanupSettings ManagedDeviceCleanupSettings {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedDeviceCleanupSettings>("managedDeviceCleanupSettings"); }
             set { BackingStore?.Set("managedDeviceCleanupSettings", value); }
         }
+#endif
         /// <summary>Encryption report for devices in this account</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.ManagedDeviceEncryptionState>? ManagedDeviceEncryptionStates {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedDeviceEncryptionState>?>("managedDeviceEncryptionStates"); }
+            set { BackingStore?.Set("managedDeviceEncryptionStates", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.ManagedDeviceEncryptionState> ManagedDeviceEncryptionStates {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedDeviceEncryptionState>>("managedDeviceEncryptionStates"); }
             set { BackingStore?.Set("managedDeviceEncryptionStates", value); }
         }
+#endif
         /// <summary>Device overview</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.ManagedDeviceOverview? ManagedDeviceOverview {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedDeviceOverview?>("managedDeviceOverview"); }
+            set { BackingStore?.Set("managedDeviceOverview", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.ManagedDeviceOverview ManagedDeviceOverview {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ManagedDeviceOverview>("managedDeviceOverview"); }
             set { BackingStore?.Set("managedDeviceOverview", value); }
         }
+#endif
         /// <summary>The list of managed devices.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.ManagedDevice>? ManagedDevices {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedDevice>?>("managedDevices"); }
+            set { BackingStore?.Set("managedDevices", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.ManagedDevice> ManagedDevices {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ManagedDevice>>("managedDevices"); }
             set { BackingStore?.Set("managedDevices", value); }
         }
+#endif
         /// <summary>Maximum number of DEP tokens allowed per-tenant.</summary>
         public int? MaximumDepTokens {
             get { return BackingStore?.Get<int?>("maximumDepTokens"); }
             set { BackingStore?.Set("maximumDepTokens", value); }
         }
         /// <summary>Collection of MicrosoftTunnelConfiguration settings associated with account.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.MicrosoftTunnelConfiguration>? MicrosoftTunnelConfigurations {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MicrosoftTunnelConfiguration>?>("microsoftTunnelConfigurations"); }
+            set { BackingStore?.Set("microsoftTunnelConfigurations", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.MicrosoftTunnelConfiguration> MicrosoftTunnelConfigurations {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MicrosoftTunnelConfiguration>>("microsoftTunnelConfigurations"); }
             set { BackingStore?.Set("microsoftTunnelConfigurations", value); }
         }
+#endif
         /// <summary>Collection of MicrosoftTunnelHealthThreshold settings associated with account.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.MicrosoftTunnelHealthThreshold>? MicrosoftTunnelHealthThresholds {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MicrosoftTunnelHealthThreshold>?>("microsoftTunnelHealthThresholds"); }
+            set { BackingStore?.Set("microsoftTunnelHealthThresholds", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.MicrosoftTunnelHealthThreshold> MicrosoftTunnelHealthThresholds {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MicrosoftTunnelHealthThreshold>>("microsoftTunnelHealthThresholds"); }
             set { BackingStore?.Set("microsoftTunnelHealthThresholds", value); }
         }
+#endif
         /// <summary>Collection of MicrosoftTunnelServerLogCollectionResponse settings associated with account.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.MicrosoftTunnelServerLogCollectionResponse>? MicrosoftTunnelServerLogCollectionResponses {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MicrosoftTunnelServerLogCollectionResponse>?>("microsoftTunnelServerLogCollectionResponses"); }
+            set { BackingStore?.Set("microsoftTunnelServerLogCollectionResponses", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.MicrosoftTunnelServerLogCollectionResponse> MicrosoftTunnelServerLogCollectionResponses {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MicrosoftTunnelServerLogCollectionResponse>>("microsoftTunnelServerLogCollectionResponses"); }
             set { BackingStore?.Set("microsoftTunnelServerLogCollectionResponses", value); }
         }
+#endif
         /// <summary>Collection of MicrosoftTunnelSite settings associated with account.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.MicrosoftTunnelSite>? MicrosoftTunnelSites {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MicrosoftTunnelSite>?>("microsoftTunnelSites"); }
+            set { BackingStore?.Set("microsoftTunnelSites", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.MicrosoftTunnelSite> MicrosoftTunnelSites {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MicrosoftTunnelSite>>("microsoftTunnelSites"); }
             set { BackingStore?.Set("microsoftTunnelSites", value); }
         }
+#endif
         /// <summary>The collection property of MobileAppTroubleshootingEvent.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.MobileAppTroubleshootingEvent>? MobileAppTroubleshootingEvents {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MobileAppTroubleshootingEvent>?>("mobileAppTroubleshootingEvents"); }
+            set { BackingStore?.Set("mobileAppTroubleshootingEvents", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.MobileAppTroubleshootingEvent> MobileAppTroubleshootingEvents {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MobileAppTroubleshootingEvent>>("mobileAppTroubleshootingEvents"); }
             set { BackingStore?.Set("mobileAppTroubleshootingEvents", value); }
         }
+#endif
         /// <summary>The list of Mobile threat Defense connectors configured by the tenant.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.MobileThreatDefenseConnector>? MobileThreatDefenseConnectors {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MobileThreatDefenseConnector>?>("mobileThreatDefenseConnectors"); }
+            set { BackingStore?.Set("mobileThreatDefenseConnectors", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.MobileThreatDefenseConnector> MobileThreatDefenseConnectors {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.MobileThreatDefenseConnector>>("mobileThreatDefenseConnectors"); }
             set { BackingStore?.Set("mobileThreatDefenseConnectors", value); }
         }
+#endif
         /// <summary>The monitoring property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.DeviceManagement.Monitoring? Monitoring {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagement.Monitoring?>("monitoring"); }
+            set { BackingStore?.Set("monitoring", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.DeviceManagement.Monitoring Monitoring {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagement.Monitoring>("monitoring"); }
             set { BackingStore?.Set("monitoring", value); }
         }
+#endif
         /// <summary>The collection of Ndes connectors for this account.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.NdesConnector>? NdesConnectors {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.NdesConnector>?>("ndesConnectors"); }
+            set { BackingStore?.Set("ndesConnectors", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.NdesConnector> NdesConnectors {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.NdesConnector>>("ndesConnectors"); }
             set { BackingStore?.Set("ndesConnectors", value); }
         }
+#endif
         /// <summary>The Notification Message Templates.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.NotificationMessageTemplate>? NotificationMessageTemplates {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.NotificationMessageTemplate>?>("notificationMessageTemplates"); }
+            set { BackingStore?.Set("notificationMessageTemplates", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.NotificationMessageTemplate> NotificationMessageTemplates {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.NotificationMessageTemplate>>("notificationMessageTemplates"); }
             set { BackingStore?.Set("notificationMessageTemplates", value); }
         }
+#endif
         /// <summary>List of OEM Warranty Statuses</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.OemWarrantyInformationOnboarding>? OemWarrantyInformationOnboarding {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.OemWarrantyInformationOnboarding>?>("oemWarrantyInformationOnboarding"); }
+            set { BackingStore?.Set("oemWarrantyInformationOnboarding", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.OemWarrantyInformationOnboarding> OemWarrantyInformationOnboarding {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.OemWarrantyInformationOnboarding>>("oemWarrantyInformationOnboarding"); }
             set { BackingStore?.Set("oemWarrantyInformationOnboarding", value); }
         }
+#endif
         /// <summary>The list of device remote action audits with the tenant.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.RemoteActionAudit>? RemoteActionAudits {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.RemoteActionAudit>?>("remoteActionAudits"); }
+            set { BackingStore?.Set("remoteActionAudits", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.RemoteActionAudit> RemoteActionAudits {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.RemoteActionAudit>>("remoteActionAudits"); }
             set { BackingStore?.Set("remoteActionAudits", value); }
         }
+#endif
         /// <summary>The remote assist partners.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.RemoteAssistancePartner>? RemoteAssistancePartners {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.RemoteAssistancePartner>?>("remoteAssistancePartners"); }
+            set { BackingStore?.Set("remoteAssistancePartners", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.RemoteAssistancePartner> RemoteAssistancePartners {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.RemoteAssistancePartner>>("remoteAssistancePartners"); }
             set { BackingStore?.Set("remoteAssistancePartners", value); }
         }
+#endif
         /// <summary>The remote assistance settings singleton</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.RemoteAssistanceSettings? RemoteAssistanceSettings {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RemoteAssistanceSettings?>("remoteAssistanceSettings"); }
+            set { BackingStore?.Set("remoteAssistanceSettings", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.RemoteAssistanceSettings RemoteAssistanceSettings {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RemoteAssistanceSettings>("remoteAssistanceSettings"); }
             set { BackingStore?.Set("remoteAssistanceSettings", value); }
         }
+#endif
         /// <summary>Reports singleton</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.DeviceManagementReports? Reports {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementReports?>("reports"); }
+            set { BackingStore?.Set("reports", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.DeviceManagementReports Reports {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementReports>("reports"); }
             set { BackingStore?.Set("reports", value); }
         }
+#endif
         /// <summary>Collection of resource access settings associated with account.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementResourceAccessProfileBase>? ResourceAccessProfiles {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementResourceAccessProfileBase>?>("resourceAccessProfiles"); }
+            set { BackingStore?.Set("resourceAccessProfiles", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.DeviceManagementResourceAccessProfileBase> ResourceAccessProfiles {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementResourceAccessProfileBase>>("resourceAccessProfiles"); }
             set { BackingStore?.Set("resourceAccessProfiles", value); }
         }
+#endif
         /// <summary>The Resource Operations.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.ResourceOperation>? ResourceOperations {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ResourceOperation>?>("resourceOperations"); }
+            set { BackingStore?.Set("resourceOperations", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.ResourceOperation> ResourceOperations {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ResourceOperation>>("resourceOperations"); }
             set { BackingStore?.Set("resourceOperations", value); }
         }
+#endif
         /// <summary>List of all reusable settings that can be referred in a policy</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementReusablePolicySetting>? ReusablePolicySettings {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementReusablePolicySetting>?>("reusablePolicySettings"); }
+            set { BackingStore?.Set("reusablePolicySettings", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.DeviceManagementReusablePolicySetting> ReusablePolicySettings {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementReusablePolicySetting>>("reusablePolicySettings"); }
             set { BackingStore?.Set("reusablePolicySettings", value); }
         }
+#endif
         /// <summary>List of all reusable settings</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingDefinition>? ReusableSettings {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingDefinition>?>("reusableSettings"); }
+            set { BackingStore?.Set("reusableSettings", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingDefinition> ReusableSettings {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingDefinition>>("reusableSettings"); }
             set { BackingStore?.Set("reusableSettings", value); }
         }
+#endif
         /// <summary>The Role Assignments.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.DeviceAndAppManagementRoleAssignment>? RoleAssignments {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceAndAppManagementRoleAssignment>?>("roleAssignments"); }
+            set { BackingStore?.Set("roleAssignments", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.DeviceAndAppManagementRoleAssignment> RoleAssignments {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceAndAppManagementRoleAssignment>>("roleAssignments"); }
             set { BackingStore?.Set("roleAssignments", value); }
         }
+#endif
         /// <summary>The Role Definitions.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.RoleDefinition>? RoleDefinitions {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.RoleDefinition>?>("roleDefinitions"); }
+            set { BackingStore?.Set("roleDefinitions", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.RoleDefinition> RoleDefinitions {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.RoleDefinition>>("roleDefinitions"); }
             set { BackingStore?.Set("roleDefinitions", value); }
         }
+#endif
         /// <summary>The Role Scope Tags.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.RoleScopeTag>? RoleScopeTags {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.RoleScopeTag>?>("roleScopeTags"); }
+            set { BackingStore?.Set("roleScopeTags", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.RoleScopeTag> RoleScopeTags {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.RoleScopeTag>>("roleScopeTags"); }
             set { BackingStore?.Set("roleScopeTags", value); }
         }
+#endif
         /// <summary>The device management intent setting definitions</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementSettingDefinition>? SettingDefinitions {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementSettingDefinition>?>("settingDefinitions"); }
+            set { BackingStore?.Set("settingDefinitions", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.DeviceManagementSettingDefinition> SettingDefinitions {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementSettingDefinition>>("settingDefinitions"); }
             set { BackingStore?.Set("settingDefinitions", value); }
         }
+#endif
         /// <summary>Account level settings.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.DeviceManagementSettings? Settings {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementSettings?>("settings"); }
+            set { BackingStore?.Set("settings", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.DeviceManagementSettings Settings {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceManagementSettings>("settings"); }
             set { BackingStore?.Set("settings", value); }
         }
+#endif
         /// <summary>The software update status summary.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.SoftwareUpdateStatusSummary? SoftwareUpdateStatusSummary {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SoftwareUpdateStatusSummary?>("softwareUpdateStatusSummary"); }
+            set { BackingStore?.Set("softwareUpdateStatusSummary", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.SoftwareUpdateStatusSummary SoftwareUpdateStatusSummary {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SoftwareUpdateStatusSummary>("softwareUpdateStatusSummary"); }
             set { BackingStore?.Set("softwareUpdateStatusSummary", value); }
         }
+#endif
         /// <summary>Tenant mobile device management subscriptions.</summary>
         public DeviceManagementSubscriptions? Subscriptions {
             get { return BackingStore?.Get<DeviceManagementSubscriptions?>("subscriptions"); }
@@ -546,345 +1246,814 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
             set { BackingStore?.Set("subscriptionState", value); }
         }
         /// <summary>The telecom expense management partners.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.TelecomExpenseManagementPartner>? TelecomExpenseManagementPartners {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.TelecomExpenseManagementPartner>?>("telecomExpenseManagementPartners"); }
+            set { BackingStore?.Set("telecomExpenseManagementPartners", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.TelecomExpenseManagementPartner> TelecomExpenseManagementPartners {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.TelecomExpenseManagementPartner>>("telecomExpenseManagementPartners"); }
             set { BackingStore?.Set("telecomExpenseManagementPartners", value); }
         }
+#endif
         /// <summary>The available templates</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementTemplate>? Templates {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementTemplate>?>("templates"); }
+            set { BackingStore?.Set("templates", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.DeviceManagementTemplate> Templates {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementTemplate>>("templates"); }
             set { BackingStore?.Set("templates", value); }
         }
+#endif
         /// <summary>List of all TemplateSettings</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingTemplate>? TemplateSettings {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingTemplate>?>("templateSettings"); }
+            set { BackingStore?.Set("templateSettings", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingTemplate> TemplateSettings {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementConfigurationSettingTemplate>>("templateSettings"); }
             set { BackingStore?.Set("templateSettings", value); }
         }
+#endif
         /// <summary>TenantAttach RBAC Enablement</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.TenantAttachRBAC? TenantAttachRBAC {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TenantAttachRBAC?>("tenantAttachRBAC"); }
+            set { BackingStore?.Set("tenantAttachRBAC", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.TenantAttachRBAC TenantAttachRBAC {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.TenantAttachRBAC>("tenantAttachRBAC"); }
             set { BackingStore?.Set("tenantAttachRBAC", value); }
         }
+#endif
         /// <summary>The terms and conditions associated with device management of the company.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.TermsAndConditions>? TermsAndConditions {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.TermsAndConditions>?>("termsAndConditions"); }
+            set { BackingStore?.Set("termsAndConditions", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.TermsAndConditions> TermsAndConditions {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.TermsAndConditions>>("termsAndConditions"); }
             set { BackingStore?.Set("termsAndConditions", value); }
         }
+#endif
         /// <summary>The list of troubleshooting events for the tenant.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.DeviceManagementTroubleshootingEvent>? TroubleshootingEvents {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementTroubleshootingEvent>?>("troubleshootingEvents"); }
+            set { BackingStore?.Set("troubleshootingEvents", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.DeviceManagementTroubleshootingEvent> TroubleshootingEvents {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.DeviceManagementTroubleshootingEvent>>("troubleshootingEvents"); }
             set { BackingStore?.Set("troubleshootingEvents", value); }
         }
+#endif
         /// <summary>When enabled, users assigned as administrators via Role Assignment Memberships do not require an assigned Intune license. Prior to this, only Intune licensed users were granted permissions with an Intune role unless they were assigned a role via Azure Active Directory. You are limited to 350 unlicensed direct members for each AAD security group in a role assignment, but you can assign multiple AAD security groups to a role if you need to support more than 350 unlicensed administrators. Licensed administrators are unaffected, do not have to be direct members, nor does the 350 member limit apply. This property is read-only.</summary>
         public bool? UnlicensedAdminstratorsEnabled {
             get { return BackingStore?.Get<bool?>("unlicensedAdminstratorsEnabled"); }
             set { BackingStore?.Set("unlicensedAdminstratorsEnabled", value); }
         }
         /// <summary>The user experience analytics anomaly entity contains anomaly details.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomaly>? UserExperienceAnalyticsAnomaly {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomaly>?>("userExperienceAnalyticsAnomaly"); }
+            set { BackingStore?.Set("userExperienceAnalyticsAnomaly", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomaly> UserExperienceAnalyticsAnomaly {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomaly>>("userExperienceAnalyticsAnomaly"); }
             set { BackingStore?.Set("userExperienceAnalyticsAnomaly", value); }
         }
+#endif
         /// <summary>The user experience analytics anomaly entity contains device details.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalyDevice>? UserExperienceAnalyticsAnomalyDevice {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalyDevice>?>("userExperienceAnalyticsAnomalyDevice"); }
+            set { BackingStore?.Set("userExperienceAnalyticsAnomalyDevice", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalyDevice> UserExperienceAnalyticsAnomalyDevice {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalyDevice>>("userExperienceAnalyticsAnomalyDevice"); }
             set { BackingStore?.Set("userExperienceAnalyticsAnomalyDevice", value); }
         }
+#endif
         /// <summary>The user experience analytics anomaly severity overview entity contains the count information for each severity of anomaly.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalySeverityOverview? UserExperienceAnalyticsAnomalySeverityOverview {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalySeverityOverview?>("userExperienceAnalyticsAnomalySeverityOverview"); }
+            set { BackingStore?.Set("userExperienceAnalyticsAnomalySeverityOverview", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalySeverityOverview UserExperienceAnalyticsAnomalySeverityOverview {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAnomalySeverityOverview>("userExperienceAnalyticsAnomalySeverityOverview"); }
             set { BackingStore?.Set("userExperienceAnalyticsAnomalySeverityOverview", value); }
         }
+#endif
         /// <summary>User experience analytics appHealth Application Performance</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthApplicationPerformance>? UserExperienceAnalyticsAppHealthApplicationPerformance {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthApplicationPerformance>?>("userExperienceAnalyticsAppHealthApplicationPerformance"); }
+            set { BackingStore?.Set("userExperienceAnalyticsAppHealthApplicationPerformance", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthApplicationPerformance> UserExperienceAnalyticsAppHealthApplicationPerformance {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthApplicationPerformance>>("userExperienceAnalyticsAppHealthApplicationPerformance"); }
             set { BackingStore?.Set("userExperienceAnalyticsAppHealthApplicationPerformance", value); }
         }
+#endif
         /// <summary>User experience analytics appHealth Application Performance by App Version</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion>? UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion>?>("userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion"); }
+            set { BackingStore?.Set("userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion> UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthAppPerformanceByAppVersion>>("userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion"); }
             set { BackingStore?.Set("userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersion", value); }
         }
+#endif
         /// <summary>User experience analytics appHealth Application Performance by App Version details</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails>? UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails>?>("userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails"); }
+            set { BackingStore?.Set("userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails> UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDetails>>("userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails"); }
             set { BackingStore?.Set("userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDetails", value); }
         }
+#endif
         /// <summary>User experience analytics appHealth Application Performance by App Version Device Id</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId>? UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId>?>("userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId"); }
+            set { BackingStore?.Set("userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId> UserExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthAppPerformanceByAppVersionDeviceId>>("userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId"); }
             set { BackingStore?.Set("userExperienceAnalyticsAppHealthApplicationPerformanceByAppVersionDeviceId", value); }
         }
+#endif
         /// <summary>User experience analytics appHealth Application Performance by OS Version</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion>? UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion>?>("userExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion"); }
+            set { BackingStore?.Set("userExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion> UserExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthAppPerformanceByOSVersion>>("userExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion"); }
             set { BackingStore?.Set("userExperienceAnalyticsAppHealthApplicationPerformanceByOSVersion", value); }
         }
+#endif
         /// <summary>User experience analytics appHealth Model Performance</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthDeviceModelPerformance>? UserExperienceAnalyticsAppHealthDeviceModelPerformance {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthDeviceModelPerformance>?>("userExperienceAnalyticsAppHealthDeviceModelPerformance"); }
+            set { BackingStore?.Set("userExperienceAnalyticsAppHealthDeviceModelPerformance", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthDeviceModelPerformance> UserExperienceAnalyticsAppHealthDeviceModelPerformance {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthDeviceModelPerformance>>("userExperienceAnalyticsAppHealthDeviceModelPerformance"); }
             set { BackingStore?.Set("userExperienceAnalyticsAppHealthDeviceModelPerformance", value); }
         }
+#endif
         /// <summary>User experience analytics appHealth Device Performance</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthDevicePerformance>? UserExperienceAnalyticsAppHealthDevicePerformance {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthDevicePerformance>?>("userExperienceAnalyticsAppHealthDevicePerformance"); }
+            set { BackingStore?.Set("userExperienceAnalyticsAppHealthDevicePerformance", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthDevicePerformance> UserExperienceAnalyticsAppHealthDevicePerformance {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthDevicePerformance>>("userExperienceAnalyticsAppHealthDevicePerformance"); }
             set { BackingStore?.Set("userExperienceAnalyticsAppHealthDevicePerformance", value); }
         }
+#endif
         /// <summary>User experience analytics device performance details</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthDevicePerformanceDetails>? UserExperienceAnalyticsAppHealthDevicePerformanceDetails {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthDevicePerformanceDetails>?>("userExperienceAnalyticsAppHealthDevicePerformanceDetails"); }
+            set { BackingStore?.Set("userExperienceAnalyticsAppHealthDevicePerformanceDetails", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthDevicePerformanceDetails> UserExperienceAnalyticsAppHealthDevicePerformanceDetails {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthDevicePerformanceDetails>>("userExperienceAnalyticsAppHealthDevicePerformanceDetails"); }
             set { BackingStore?.Set("userExperienceAnalyticsAppHealthDevicePerformanceDetails", value); }
         }
+#endif
         /// <summary>User experience analytics appHealth OS version Performance</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthOSVersionPerformance>? UserExperienceAnalyticsAppHealthOSVersionPerformance {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthOSVersionPerformance>?>("userExperienceAnalyticsAppHealthOSVersionPerformance"); }
+            set { BackingStore?.Set("userExperienceAnalyticsAppHealthOSVersionPerformance", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthOSVersionPerformance> UserExperienceAnalyticsAppHealthOSVersionPerformance {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsAppHealthOSVersionPerformance>>("userExperienceAnalyticsAppHealthOSVersionPerformance"); }
             set { BackingStore?.Set("userExperienceAnalyticsAppHealthOSVersionPerformance", value); }
         }
+#endif
         /// <summary>User experience analytics appHealth overview</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.UserExperienceAnalyticsCategory? UserExperienceAnalyticsAppHealthOverview {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsCategory?>("userExperienceAnalyticsAppHealthOverview"); }
+            set { BackingStore?.Set("userExperienceAnalyticsAppHealthOverview", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.UserExperienceAnalyticsCategory UserExperienceAnalyticsAppHealthOverview {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsCategory>("userExperienceAnalyticsAppHealthOverview"); }
             set { BackingStore?.Set("userExperienceAnalyticsAppHealthOverview", value); }
         }
+#endif
         /// <summary>User experience analytics baselines</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBaseline>? UserExperienceAnalyticsBaselines {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBaseline>?>("userExperienceAnalyticsBaselines"); }
+            set { BackingStore?.Set("userExperienceAnalyticsBaselines", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBaseline> UserExperienceAnalyticsBaselines {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBaseline>>("userExperienceAnalyticsBaselines"); }
             set { BackingStore?.Set("userExperienceAnalyticsBaselines", value); }
         }
+#endif
         /// <summary>User Experience Analytics Battery Health App Impact</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthAppImpact>? UserExperienceAnalyticsBatteryHealthAppImpact {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthAppImpact>?>("userExperienceAnalyticsBatteryHealthAppImpact"); }
+            set { BackingStore?.Set("userExperienceAnalyticsBatteryHealthAppImpact", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthAppImpact> UserExperienceAnalyticsBatteryHealthAppImpact {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthAppImpact>>("userExperienceAnalyticsBatteryHealthAppImpact"); }
             set { BackingStore?.Set("userExperienceAnalyticsBatteryHealthAppImpact", value); }
         }
+#endif
         /// <summary>User Experience Analytics Battery Health Capacity Details</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthCapacityDetails? UserExperienceAnalyticsBatteryHealthCapacityDetails {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthCapacityDetails?>("userExperienceAnalyticsBatteryHealthCapacityDetails"); }
+            set { BackingStore?.Set("userExperienceAnalyticsBatteryHealthCapacityDetails", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthCapacityDetails UserExperienceAnalyticsBatteryHealthCapacityDetails {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthCapacityDetails>("userExperienceAnalyticsBatteryHealthCapacityDetails"); }
             set { BackingStore?.Set("userExperienceAnalyticsBatteryHealthCapacityDetails", value); }
         }
+#endif
         /// <summary>User Experience Analytics Battery Health Device App Impact</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthDeviceAppImpact>? UserExperienceAnalyticsBatteryHealthDeviceAppImpact {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthDeviceAppImpact>?>("userExperienceAnalyticsBatteryHealthDeviceAppImpact"); }
+            set { BackingStore?.Set("userExperienceAnalyticsBatteryHealthDeviceAppImpact", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthDeviceAppImpact> UserExperienceAnalyticsBatteryHealthDeviceAppImpact {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthDeviceAppImpact>>("userExperienceAnalyticsBatteryHealthDeviceAppImpact"); }
             set { BackingStore?.Set("userExperienceAnalyticsBatteryHealthDeviceAppImpact", value); }
         }
+#endif
         /// <summary>User Experience Analytics Battery Health Device Performance</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthDevicePerformance>? UserExperienceAnalyticsBatteryHealthDevicePerformance {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthDevicePerformance>?>("userExperienceAnalyticsBatteryHealthDevicePerformance"); }
+            set { BackingStore?.Set("userExperienceAnalyticsBatteryHealthDevicePerformance", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthDevicePerformance> UserExperienceAnalyticsBatteryHealthDevicePerformance {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthDevicePerformance>>("userExperienceAnalyticsBatteryHealthDevicePerformance"); }
             set { BackingStore?.Set("userExperienceAnalyticsBatteryHealthDevicePerformance", value); }
         }
+#endif
         /// <summary>User Experience Analytics Battery Health Device Runtime History</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory>? UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory>?>("userExperienceAnalyticsBatteryHealthDeviceRuntimeHistory"); }
+            set { BackingStore?.Set("userExperienceAnalyticsBatteryHealthDeviceRuntimeHistory", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory> UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthDeviceRuntimeHistory>>("userExperienceAnalyticsBatteryHealthDeviceRuntimeHistory"); }
             set { BackingStore?.Set("userExperienceAnalyticsBatteryHealthDeviceRuntimeHistory", value); }
         }
+#endif
         /// <summary>User Experience Analytics Battery Health Model Performance</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthModelPerformance>? UserExperienceAnalyticsBatteryHealthModelPerformance {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthModelPerformance>?>("userExperienceAnalyticsBatteryHealthModelPerformance"); }
+            set { BackingStore?.Set("userExperienceAnalyticsBatteryHealthModelPerformance", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthModelPerformance> UserExperienceAnalyticsBatteryHealthModelPerformance {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthModelPerformance>>("userExperienceAnalyticsBatteryHealthModelPerformance"); }
             set { BackingStore?.Set("userExperienceAnalyticsBatteryHealthModelPerformance", value); }
         }
+#endif
         /// <summary>User Experience Analytics Battery Health Os Performance</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthOsPerformance>? UserExperienceAnalyticsBatteryHealthOsPerformance {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthOsPerformance>?>("userExperienceAnalyticsBatteryHealthOsPerformance"); }
+            set { BackingStore?.Set("userExperienceAnalyticsBatteryHealthOsPerformance", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthOsPerformance> UserExperienceAnalyticsBatteryHealthOsPerformance {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthOsPerformance>>("userExperienceAnalyticsBatteryHealthOsPerformance"); }
             set { BackingStore?.Set("userExperienceAnalyticsBatteryHealthOsPerformance", value); }
         }
+#endif
         /// <summary>User Experience Analytics Battery Health Runtime Details</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthRuntimeDetails? UserExperienceAnalyticsBatteryHealthRuntimeDetails {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthRuntimeDetails?>("userExperienceAnalyticsBatteryHealthRuntimeDetails"); }
+            set { BackingStore?.Set("userExperienceAnalyticsBatteryHealthRuntimeDetails", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthRuntimeDetails UserExperienceAnalyticsBatteryHealthRuntimeDetails {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsBatteryHealthRuntimeDetails>("userExperienceAnalyticsBatteryHealthRuntimeDetails"); }
             set { BackingStore?.Set("userExperienceAnalyticsBatteryHealthRuntimeDetails", value); }
         }
+#endif
         /// <summary>User experience analytics categories</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsCategory>? UserExperienceAnalyticsCategories {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsCategory>?>("userExperienceAnalyticsCategories"); }
+            set { BackingStore?.Set("userExperienceAnalyticsCategories", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsCategory> UserExperienceAnalyticsCategories {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsCategory>>("userExperienceAnalyticsCategories"); }
             set { BackingStore?.Set("userExperienceAnalyticsCategories", value); }
         }
+#endif
         /// <summary>User experience analytics device metric history</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsMetricHistory>? UserExperienceAnalyticsDeviceMetricHistory {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsMetricHistory>?>("userExperienceAnalyticsDeviceMetricHistory"); }
+            set { BackingStore?.Set("userExperienceAnalyticsDeviceMetricHistory", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsMetricHistory> UserExperienceAnalyticsDeviceMetricHistory {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsMetricHistory>>("userExperienceAnalyticsDeviceMetricHistory"); }
             set { BackingStore?.Set("userExperienceAnalyticsDeviceMetricHistory", value); }
         }
+#endif
         /// <summary>User experience analytics device performance</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDevicePerformance>? UserExperienceAnalyticsDevicePerformance {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDevicePerformance>?>("userExperienceAnalyticsDevicePerformance"); }
+            set { BackingStore?.Set("userExperienceAnalyticsDevicePerformance", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDevicePerformance> UserExperienceAnalyticsDevicePerformance {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDevicePerformance>>("userExperienceAnalyticsDevicePerformance"); }
             set { BackingStore?.Set("userExperienceAnalyticsDevicePerformance", value); }
         }
+#endif
         /// <summary>The user experience analytics device scope entity endpoint to trigger on the service to either START or STOP computing metrics data based on a device scope configuration.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceScope? UserExperienceAnalyticsDeviceScope {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceScope?>("userExperienceAnalyticsDeviceScope"); }
+            set { BackingStore?.Set("userExperienceAnalyticsDeviceScope", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceScope UserExperienceAnalyticsDeviceScope {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceScope>("userExperienceAnalyticsDeviceScope"); }
             set { BackingStore?.Set("userExperienceAnalyticsDeviceScope", value); }
         }
+#endif
         /// <summary>The user experience analytics device scope entity contains device scope configuration use to apply filtering on the endpoint analytics reports.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceScope>? UserExperienceAnalyticsDeviceScopes {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceScope>?>("userExperienceAnalyticsDeviceScopes"); }
+            set { BackingStore?.Set("userExperienceAnalyticsDeviceScopes", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceScope> UserExperienceAnalyticsDeviceScopes {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceScope>>("userExperienceAnalyticsDeviceScopes"); }
             set { BackingStore?.Set("userExperienceAnalyticsDeviceScopes", value); }
         }
+#endif
         /// <summary>User experience analytics device scores</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceScores>? UserExperienceAnalyticsDeviceScores {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceScores>?>("userExperienceAnalyticsDeviceScores"); }
+            set { BackingStore?.Set("userExperienceAnalyticsDeviceScores", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceScores> UserExperienceAnalyticsDeviceScores {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceScores>>("userExperienceAnalyticsDeviceScores"); }
             set { BackingStore?.Set("userExperienceAnalyticsDeviceScores", value); }
         }
+#endif
         /// <summary>User experience analytics device Startup History</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceStartupHistory>? UserExperienceAnalyticsDeviceStartupHistory {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceStartupHistory>?>("userExperienceAnalyticsDeviceStartupHistory"); }
+            set { BackingStore?.Set("userExperienceAnalyticsDeviceStartupHistory", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceStartupHistory> UserExperienceAnalyticsDeviceStartupHistory {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceStartupHistory>>("userExperienceAnalyticsDeviceStartupHistory"); }
             set { BackingStore?.Set("userExperienceAnalyticsDeviceStartupHistory", value); }
         }
+#endif
         /// <summary>User experience analytics device Startup Processes</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceStartupProcess>? UserExperienceAnalyticsDeviceStartupProcesses {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceStartupProcess>?>("userExperienceAnalyticsDeviceStartupProcesses"); }
+            set { BackingStore?.Set("userExperienceAnalyticsDeviceStartupProcesses", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceStartupProcess> UserExperienceAnalyticsDeviceStartupProcesses {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceStartupProcess>>("userExperienceAnalyticsDeviceStartupProcesses"); }
             set { BackingStore?.Set("userExperienceAnalyticsDeviceStartupProcesses", value); }
         }
+#endif
         /// <summary>User experience analytics device Startup Process Performance</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceStartupProcessPerformance>? UserExperienceAnalyticsDeviceStartupProcessPerformance {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceStartupProcessPerformance>?>("userExperienceAnalyticsDeviceStartupProcessPerformance"); }
+            set { BackingStore?.Set("userExperienceAnalyticsDeviceStartupProcessPerformance", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceStartupProcessPerformance> UserExperienceAnalyticsDeviceStartupProcessPerformance {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceStartupProcessPerformance>>("userExperienceAnalyticsDeviceStartupProcessPerformance"); }
             set { BackingStore?.Set("userExperienceAnalyticsDeviceStartupProcessPerformance", value); }
         }
+#endif
         /// <summary>User experience analytics devices without cloud identity.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceWithoutCloudIdentity>? UserExperienceAnalyticsDevicesWithoutCloudIdentity {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceWithoutCloudIdentity>?>("userExperienceAnalyticsDevicesWithoutCloudIdentity"); }
+            set { BackingStore?.Set("userExperienceAnalyticsDevicesWithoutCloudIdentity", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceWithoutCloudIdentity> UserExperienceAnalyticsDevicesWithoutCloudIdentity {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceWithoutCloudIdentity>>("userExperienceAnalyticsDevicesWithoutCloudIdentity"); }
             set { BackingStore?.Set("userExperienceAnalyticsDevicesWithoutCloudIdentity", value); }
         }
+#endif
         /// <summary>The user experience analytics device events entity contains NRT device timeline events details.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceTimelineEvents>? UserExperienceAnalyticsDeviceTimelineEvents {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceTimelineEvents>?>("userExperienceAnalyticsDeviceTimelineEvents"); }
+            set { BackingStore?.Set("userExperienceAnalyticsDeviceTimelineEvents", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceTimelineEvents> UserExperienceAnalyticsDeviceTimelineEvents {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsDeviceTimelineEvents>>("userExperienceAnalyticsDeviceTimelineEvents"); }
             set { BackingStore?.Set("userExperienceAnalyticsDeviceTimelineEvents", value); }
         }
+#endif
         /// <summary>User experience analytics impacting process</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsImpactingProcess>? UserExperienceAnalyticsImpactingProcess {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsImpactingProcess>?>("userExperienceAnalyticsImpactingProcess"); }
+            set { BackingStore?.Set("userExperienceAnalyticsImpactingProcess", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsImpactingProcess> UserExperienceAnalyticsImpactingProcess {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsImpactingProcess>>("userExperienceAnalyticsImpactingProcess"); }
             set { BackingStore?.Set("userExperienceAnalyticsImpactingProcess", value); }
         }
+#endif
         /// <summary>User experience analytics metric history</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsMetricHistory>? UserExperienceAnalyticsMetricHistory {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsMetricHistory>?>("userExperienceAnalyticsMetricHistory"); }
+            set { BackingStore?.Set("userExperienceAnalyticsMetricHistory", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsMetricHistory> UserExperienceAnalyticsMetricHistory {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsMetricHistory>>("userExperienceAnalyticsMetricHistory"); }
             set { BackingStore?.Set("userExperienceAnalyticsMetricHistory", value); }
         }
+#endif
         /// <summary>User experience analytics model scores</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsModelScores>? UserExperienceAnalyticsModelScores {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsModelScores>?>("userExperienceAnalyticsModelScores"); }
+            set { BackingStore?.Set("userExperienceAnalyticsModelScores", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsModelScores> UserExperienceAnalyticsModelScores {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsModelScores>>("userExperienceAnalyticsModelScores"); }
             set { BackingStore?.Set("userExperienceAnalyticsModelScores", value); }
         }
+#endif
         /// <summary>User experience analytics devices not Windows Autopilot ready.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsNotAutopilotReadyDevice>? UserExperienceAnalyticsNotAutopilotReadyDevice {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsNotAutopilotReadyDevice>?>("userExperienceAnalyticsNotAutopilotReadyDevice"); }
+            set { BackingStore?.Set("userExperienceAnalyticsNotAutopilotReadyDevice", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsNotAutopilotReadyDevice> UserExperienceAnalyticsNotAutopilotReadyDevice {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsNotAutopilotReadyDevice>>("userExperienceAnalyticsNotAutopilotReadyDevice"); }
             set { BackingStore?.Set("userExperienceAnalyticsNotAutopilotReadyDevice", value); }
         }
+#endif
         /// <summary>User experience analytics overview</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.UserExperienceAnalyticsOverview? UserExperienceAnalyticsOverview {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsOverview?>("userExperienceAnalyticsOverview"); }
+            set { BackingStore?.Set("userExperienceAnalyticsOverview", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.UserExperienceAnalyticsOverview UserExperienceAnalyticsOverview {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsOverview>("userExperienceAnalyticsOverview"); }
             set { BackingStore?.Set("userExperienceAnalyticsOverview", value); }
         }
+#endif
         /// <summary>User experience analytics remote connection</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsRemoteConnection>? UserExperienceAnalyticsRemoteConnection {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsRemoteConnection>?>("userExperienceAnalyticsRemoteConnection"); }
+            set { BackingStore?.Set("userExperienceAnalyticsRemoteConnection", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsRemoteConnection> UserExperienceAnalyticsRemoteConnection {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsRemoteConnection>>("userExperienceAnalyticsRemoteConnection"); }
             set { BackingStore?.Set("userExperienceAnalyticsRemoteConnection", value); }
         }
+#endif
         /// <summary>User experience analytics resource performance</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsResourcePerformance>? UserExperienceAnalyticsResourcePerformance {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsResourcePerformance>?>("userExperienceAnalyticsResourcePerformance"); }
+            set { BackingStore?.Set("userExperienceAnalyticsResourcePerformance", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsResourcePerformance> UserExperienceAnalyticsResourcePerformance {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsResourcePerformance>>("userExperienceAnalyticsResourcePerformance"); }
             set { BackingStore?.Set("userExperienceAnalyticsResourcePerformance", value); }
         }
+#endif
         /// <summary>User experience analytics device Startup Score History</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsScoreHistory>? UserExperienceAnalyticsScoreHistory {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsScoreHistory>?>("userExperienceAnalyticsScoreHistory"); }
+            set { BackingStore?.Set("userExperienceAnalyticsScoreHistory", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsScoreHistory> UserExperienceAnalyticsScoreHistory {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsScoreHistory>>("userExperienceAnalyticsScoreHistory"); }
             set { BackingStore?.Set("userExperienceAnalyticsScoreHistory", value); }
         }
+#endif
         /// <summary>User experience analytics device settings</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.UserExperienceAnalyticsSettings? UserExperienceAnalyticsSettings {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsSettings?>("userExperienceAnalyticsSettings"); }
+            set { BackingStore?.Set("userExperienceAnalyticsSettings", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.UserExperienceAnalyticsSettings UserExperienceAnalyticsSettings {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsSettings>("userExperienceAnalyticsSettings"); }
             set { BackingStore?.Set("userExperienceAnalyticsSettings", value); }
         }
+#endif
         /// <summary>User experience analytics work from anywhere hardware readiness metrics.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric? UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric?>("userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric"); }
+            set { BackingStore?.Set("userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric>("userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric"); }
             set { BackingStore?.Set("userExperienceAnalyticsWorkFromAnywhereHardwareReadinessMetric", value); }
         }
+#endif
         /// <summary>User experience analytics work from anywhere metrics.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsWorkFromAnywhereMetric>? UserExperienceAnalyticsWorkFromAnywhereMetrics {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsWorkFromAnywhereMetric>?>("userExperienceAnalyticsWorkFromAnywhereMetrics"); }
+            set { BackingStore?.Set("userExperienceAnalyticsWorkFromAnywhereMetrics", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsWorkFromAnywhereMetric> UserExperienceAnalyticsWorkFromAnywhereMetrics {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsWorkFromAnywhereMetric>>("userExperienceAnalyticsWorkFromAnywhereMetrics"); }
             set { BackingStore?.Set("userExperienceAnalyticsWorkFromAnywhereMetrics", value); }
         }
+#endif
         /// <summary>The user experience analytics work from anywhere model performance</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsWorkFromAnywhereModelPerformance>? UserExperienceAnalyticsWorkFromAnywhereModelPerformance {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsWorkFromAnywhereModelPerformance>?>("userExperienceAnalyticsWorkFromAnywhereModelPerformance"); }
+            set { BackingStore?.Set("userExperienceAnalyticsWorkFromAnywhereModelPerformance", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsWorkFromAnywhereModelPerformance> UserExperienceAnalyticsWorkFromAnywhereModelPerformance {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserExperienceAnalyticsWorkFromAnywhereModelPerformance>>("userExperienceAnalyticsWorkFromAnywhereModelPerformance"); }
             set { BackingStore?.Set("userExperienceAnalyticsWorkFromAnywhereModelPerformance", value); }
         }
+#endif
         /// <summary>Collection of PFX certificates associated with a user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.UserPFXCertificate>? UserPfxCertificates {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserPFXCertificate>?>("userPfxCertificates"); }
+            set { BackingStore?.Set("userPfxCertificates", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.UserPFXCertificate> UserPfxCertificates {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.UserPFXCertificate>>("userPfxCertificates"); }
             set { BackingStore?.Set("userPfxCertificates", value); }
         }
+#endif
         /// <summary>The virtualEndpoint property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.VirtualEndpoint? VirtualEndpoint {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.VirtualEndpoint?>("virtualEndpoint"); }
+            set { BackingStore?.Set("virtualEndpoint", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.VirtualEndpoint VirtualEndpoint {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.VirtualEndpoint>("virtualEndpoint"); }
             set { BackingStore?.Set("virtualEndpoint", value); }
         }
+#endif
         /// <summary>Windows auto pilot deployment profiles</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.WindowsAutopilotDeploymentProfile>? WindowsAutopilotDeploymentProfiles {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsAutopilotDeploymentProfile>?>("windowsAutopilotDeploymentProfiles"); }
+            set { BackingStore?.Set("windowsAutopilotDeploymentProfiles", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.WindowsAutopilotDeploymentProfile> WindowsAutopilotDeploymentProfiles {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsAutopilotDeploymentProfile>>("windowsAutopilotDeploymentProfiles"); }
             set { BackingStore?.Set("windowsAutopilotDeploymentProfiles", value); }
         }
+#endif
         /// <summary>The Windows autopilot device identities contained collection.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.WindowsAutopilotDeviceIdentity>? WindowsAutopilotDeviceIdentities {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsAutopilotDeviceIdentity>?>("windowsAutopilotDeviceIdentities"); }
+            set { BackingStore?.Set("windowsAutopilotDeviceIdentities", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.WindowsAutopilotDeviceIdentity> WindowsAutopilotDeviceIdentities {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsAutopilotDeviceIdentity>>("windowsAutopilotDeviceIdentities"); }
             set { BackingStore?.Set("windowsAutopilotDeviceIdentities", value); }
         }
+#endif
         /// <summary>The Windows autopilot account settings.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.WindowsAutopilotSettings? WindowsAutopilotSettings {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsAutopilotSettings?>("windowsAutopilotSettings"); }
+            set { BackingStore?.Set("windowsAutopilotSettings", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.WindowsAutopilotSettings WindowsAutopilotSettings {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsAutopilotSettings>("windowsAutopilotSettings"); }
             set { BackingStore?.Set("windowsAutopilotSettings", value); }
         }
+#endif
         /// <summary>A collection of windows driver update profiles</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.WindowsDriverUpdateProfile>? WindowsDriverUpdateProfiles {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsDriverUpdateProfile>?>("windowsDriverUpdateProfiles"); }
+            set { BackingStore?.Set("windowsDriverUpdateProfiles", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.WindowsDriverUpdateProfile> WindowsDriverUpdateProfiles {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsDriverUpdateProfile>>("windowsDriverUpdateProfiles"); }
             set { BackingStore?.Set("windowsDriverUpdateProfiles", value); }
         }
+#endif
         /// <summary>A collection of windows feature update profiles</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.WindowsFeatureUpdateProfile>? WindowsFeatureUpdateProfiles {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsFeatureUpdateProfile>?>("windowsFeatureUpdateProfiles"); }
+            set { BackingStore?.Set("windowsFeatureUpdateProfiles", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.WindowsFeatureUpdateProfile> WindowsFeatureUpdateProfiles {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsFeatureUpdateProfile>>("windowsFeatureUpdateProfiles"); }
             set { BackingStore?.Set("windowsFeatureUpdateProfiles", value); }
         }
+#endif
         /// <summary>The windows information protection app learning summaries.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.WindowsInformationProtectionAppLearningSummary>? WindowsInformationProtectionAppLearningSummaries {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsInformationProtectionAppLearningSummary>?>("windowsInformationProtectionAppLearningSummaries"); }
+            set { BackingStore?.Set("windowsInformationProtectionAppLearningSummaries", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.WindowsInformationProtectionAppLearningSummary> WindowsInformationProtectionAppLearningSummaries {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsInformationProtectionAppLearningSummary>>("windowsInformationProtectionAppLearningSummaries"); }
             set { BackingStore?.Set("windowsInformationProtectionAppLearningSummaries", value); }
         }
+#endif
         /// <summary>The windows information protection network learning summaries.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.WindowsInformationProtectionNetworkLearningSummary>? WindowsInformationProtectionNetworkLearningSummaries {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsInformationProtectionNetworkLearningSummary>?>("windowsInformationProtectionNetworkLearningSummaries"); }
+            set { BackingStore?.Set("windowsInformationProtectionNetworkLearningSummaries", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.WindowsInformationProtectionNetworkLearningSummary> WindowsInformationProtectionNetworkLearningSummaries {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsInformationProtectionNetworkLearningSummary>>("windowsInformationProtectionNetworkLearningSummaries"); }
             set { BackingStore?.Set("windowsInformationProtectionNetworkLearningSummaries", value); }
         }
+#endif
         /// <summary>The list of affected malware in the tenant.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.WindowsMalwareInformation>? WindowsMalwareInformation {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsMalwareInformation>?>("windowsMalwareInformation"); }
+            set { BackingStore?.Set("windowsMalwareInformation", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.WindowsMalwareInformation> WindowsMalwareInformation {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsMalwareInformation>>("windowsMalwareInformation"); }
             set { BackingStore?.Set("windowsMalwareInformation", value); }
         }
+#endif
         /// <summary>Malware overview for windows devices.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.WindowsMalwareOverview? WindowsMalwareOverview {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsMalwareOverview?>("windowsMalwareOverview"); }
+            set { BackingStore?.Set("windowsMalwareOverview", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.WindowsMalwareOverview WindowsMalwareOverview {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.WindowsMalwareOverview>("windowsMalwareOverview"); }
             set { BackingStore?.Set("windowsMalwareOverview", value); }
         }
+#endif
         /// <summary>A collection of windows quality update profiles</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.WindowsQualityUpdateProfile>? WindowsQualityUpdateProfiles {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsQualityUpdateProfile>?>("windowsQualityUpdateProfiles"); }
+            set { BackingStore?.Set("windowsQualityUpdateProfiles", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.WindowsQualityUpdateProfile> WindowsQualityUpdateProfiles {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsQualityUpdateProfile>>("windowsQualityUpdateProfiles"); }
             set { BackingStore?.Set("windowsQualityUpdateProfiles", value); }
         }
+#endif
         /// <summary>A collection of windows update catalog items (fetaure updates item , quality updates item)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.WindowsUpdateCatalogItem>? WindowsUpdateCatalogItems {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsUpdateCatalogItem>?>("windowsUpdateCatalogItems"); }
+            set { BackingStore?.Set("windowsUpdateCatalogItems", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.WindowsUpdateCatalogItem> WindowsUpdateCatalogItems {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.WindowsUpdateCatalogItem>>("windowsUpdateCatalogItems"); }
             set { BackingStore?.Set("windowsUpdateCatalogItems", value); }
         }
+#endif
         /// <summary>The Collection of ZebraFotaArtifacts.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.ZebraFotaArtifact>? ZebraFotaArtifacts {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ZebraFotaArtifact>?>("zebraFotaArtifacts"); }
+            set { BackingStore?.Set("zebraFotaArtifacts", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.ZebraFotaArtifact> ZebraFotaArtifacts {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ZebraFotaArtifact>>("zebraFotaArtifacts"); }
             set { BackingStore?.Set("zebraFotaArtifacts", value); }
         }
+#endif
         /// <summary>The singleton ZebraFotaConnector associated with account.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.ZebraFotaConnector? ZebraFotaConnector {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ZebraFotaConnector?>("zebraFotaConnector"); }
+            set { BackingStore?.Set("zebraFotaConnector", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.ZebraFotaConnector ZebraFotaConnector {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ZebraFotaConnector>("zebraFotaConnector"); }
             set { BackingStore?.Set("zebraFotaConnector", value); }
         }
+#endif
         /// <summary>Collection of ZebraFotaDeployments associated with account.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.ZebraFotaDeployment>? ZebraFotaDeployments {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ZebraFotaDeployment>?>("zebraFotaDeployments"); }
+            set { BackingStore?.Set("zebraFotaDeployments", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.ZebraFotaDeployment> ZebraFotaDeployments {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.ZebraFotaDeployment>>("zebraFotaDeployments"); }
             set { BackingStore?.Set("zebraFotaDeployments", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

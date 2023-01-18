@@ -13,10 +13,17 @@ namespace Microsoft.Graph.Beta.Groups.Item.Threads.Item.Posts.Item.InReplyTo.Att
             set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The AttachmentItem property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.AttachmentItem? AttachmentItem {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AttachmentItem?>("attachmentItem"); }
+            set { BackingStore?.Set("attachmentItem", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.AttachmentItem AttachmentItem {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.AttachmentItem>("attachmentItem"); }
             set { BackingStore?.Set("attachmentItem", value); }
         }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>

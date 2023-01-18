@@ -6,25 +6,53 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class ApprovalWorkflowProvider : Entity, IParsable {
         /// <summary>The businessFlows property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<BusinessFlow>? BusinessFlows {
+            get { return BackingStore?.Get<List<BusinessFlow>?>("businessFlows"); }
+            set { BackingStore?.Set("businessFlows", value); }
+        }
+#else
         public List<BusinessFlow> BusinessFlows {
             get { return BackingStore?.Get<List<BusinessFlow>>("businessFlows"); }
             set { BackingStore?.Set("businessFlows", value); }
         }
+#endif
         /// <summary>The businessFlowsWithRequestsAwaitingMyDecision property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<BusinessFlow>? BusinessFlowsWithRequestsAwaitingMyDecision {
+            get { return BackingStore?.Get<List<BusinessFlow>?>("businessFlowsWithRequestsAwaitingMyDecision"); }
+            set { BackingStore?.Set("businessFlowsWithRequestsAwaitingMyDecision", value); }
+        }
+#else
         public List<BusinessFlow> BusinessFlowsWithRequestsAwaitingMyDecision {
             get { return BackingStore?.Get<List<BusinessFlow>>("businessFlowsWithRequestsAwaitingMyDecision"); }
             set { BackingStore?.Set("businessFlowsWithRequestsAwaitingMyDecision", value); }
         }
+#endif
         /// <summary>The displayName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The policyTemplates property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<GovernancePolicyTemplate>? PolicyTemplates {
+            get { return BackingStore?.Get<List<GovernancePolicyTemplate>?>("policyTemplates"); }
+            set { BackingStore?.Set("policyTemplates", value); }
+        }
+#else
         public List<GovernancePolicyTemplate> PolicyTemplates {
             get { return BackingStore?.Get<List<GovernancePolicyTemplate>>("policyTemplates"); }
             set { BackingStore?.Set("policyTemplates", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

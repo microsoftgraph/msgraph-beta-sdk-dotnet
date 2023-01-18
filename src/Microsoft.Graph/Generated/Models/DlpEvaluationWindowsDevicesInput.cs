@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class DlpEvaluationWindowsDevicesInput : DlpEvaluationInput, IParsable {
         /// <summary>The contentProperties property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.ContentProperties? ContentProperties {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ContentProperties?>("contentProperties"); }
+            set { BackingStore?.Set("contentProperties", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.ContentProperties ContentProperties {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ContentProperties>("contentProperties"); }
             set { BackingStore?.Set("contentProperties", value); }
         }
+#endif
         /// <summary>The sharedBy property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SharedBy {
+            get { return BackingStore?.Get<string?>("sharedBy"); }
+            set { BackingStore?.Set("sharedBy", value); }
+        }
+#else
         public string SharedBy {
             get { return BackingStore?.Get<string>("sharedBy"); }
             set { BackingStore?.Set("sharedBy", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new DlpEvaluationWindowsDevicesInput and sets the default values.
         /// </summary>

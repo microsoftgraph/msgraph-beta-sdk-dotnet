@@ -6,30 +6,65 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class ApplePushNotificationCertificate : Entity, IParsable {
         /// <summary>Apple Id of the account used to create the MDM push certificate.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AppleIdentifier {
+            get { return BackingStore?.Get<string?>("appleIdentifier"); }
+            set { BackingStore?.Set("appleIdentifier", value); }
+        }
+#else
         public string AppleIdentifier {
             get { return BackingStore?.Get<string>("appleIdentifier"); }
             set { BackingStore?.Set("appleIdentifier", value); }
         }
+#endif
         /// <summary>Not yet documented</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Certificate {
+            get { return BackingStore?.Get<string?>("certificate"); }
+            set { BackingStore?.Set("certificate", value); }
+        }
+#else
         public string Certificate {
             get { return BackingStore?.Get<string>("certificate"); }
             set { BackingStore?.Set("certificate", value); }
         }
+#endif
         /// <summary>Certificate serial number. This property is read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CertificateSerialNumber {
+            get { return BackingStore?.Get<string?>("certificateSerialNumber"); }
+            set { BackingStore?.Set("certificateSerialNumber", value); }
+        }
+#else
         public string CertificateSerialNumber {
             get { return BackingStore?.Get<string>("certificateSerialNumber"); }
             set { BackingStore?.Set("certificateSerialNumber", value); }
         }
+#endif
         /// <summary>The reason the certificate upload failed.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CertificateUploadFailureReason {
+            get { return BackingStore?.Get<string?>("certificateUploadFailureReason"); }
+            set { BackingStore?.Set("certificateUploadFailureReason", value); }
+        }
+#else
         public string CertificateUploadFailureReason {
             get { return BackingStore?.Get<string>("certificateUploadFailureReason"); }
             set { BackingStore?.Set("certificateUploadFailureReason", value); }
         }
+#endif
         /// <summary>The certificate upload status.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CertificateUploadStatus {
+            get { return BackingStore?.Get<string?>("certificateUploadStatus"); }
+            set { BackingStore?.Set("certificateUploadStatus", value); }
+        }
+#else
         public string CertificateUploadStatus {
             get { return BackingStore?.Get<string>("certificateUploadStatus"); }
             set { BackingStore?.Set("certificateUploadStatus", value); }
         }
+#endif
         /// <summary>The expiration date and time for Apple push notification certificate.</summary>
         public DateTimeOffset? ExpirationDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("expirationDateTime"); }
@@ -41,10 +76,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>Topic Id.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TopicIdentifier {
+            get { return BackingStore?.Get<string?>("topicIdentifier"); }
+            set { BackingStore?.Set("topicIdentifier", value); }
+        }
+#else
         public string TopicIdentifier {
             get { return BackingStore?.Get<string>("topicIdentifier"); }
             set { BackingStore?.Set("topicIdentifier", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

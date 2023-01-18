@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class AndroidDeviceOwnerGlobalProxyAutoConfig : AndroidDeviceOwnerGlobalProxy, IParsable {
         /// <summary>The proxy auto-config URL</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ProxyAutoConfigURL {
+            get { return BackingStore?.Get<string?>("proxyAutoConfigURL"); }
+            set { BackingStore?.Set("proxyAutoConfigURL", value); }
+        }
+#else
         public string ProxyAutoConfigURL {
             get { return BackingStore?.Get<string>("proxyAutoConfigURL"); }
             set { BackingStore?.Set("proxyAutoConfigURL", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new AndroidDeviceOwnerGlobalProxyAutoConfig and sets the default values.
         /// </summary>

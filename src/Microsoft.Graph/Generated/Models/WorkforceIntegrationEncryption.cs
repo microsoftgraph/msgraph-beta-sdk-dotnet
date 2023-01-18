@@ -14,20 +14,34 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Possible values are: sharedSecret, unknownFutureValue.</summary>
         public WorkforceIntegrationEncryptionProtocol? Protocol {
             get { return BackingStore?.Get<WorkforceIntegrationEncryptionProtocol?>("protocol"); }
             set { BackingStore?.Set("protocol", value); }
         }
         /// <summary>Encryption shared secret.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Secret {
+            get { return BackingStore?.Get<string?>("secret"); }
+            set { BackingStore?.Set("secret", value); }
+        }
+#else
         public string Secret {
             get { return BackingStore?.Get<string>("secret"); }
             set { BackingStore?.Set("secret", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new workforceIntegrationEncryption and sets the default values.
         /// </summary>

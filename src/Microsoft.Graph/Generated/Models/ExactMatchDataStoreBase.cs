@@ -6,25 +6,46 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class ExactMatchDataStoreBase : Entity, IParsable {
         /// <summary>The columns property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ExactDataMatchStoreColumn>? Columns {
+            get { return BackingStore?.Get<List<ExactDataMatchStoreColumn>?>("columns"); }
+            set { BackingStore?.Set("columns", value); }
+        }
+#else
         public List<ExactDataMatchStoreColumn> Columns {
             get { return BackingStore?.Get<List<ExactDataMatchStoreColumn>>("columns"); }
             set { BackingStore?.Set("columns", value); }
         }
+#endif
         /// <summary>The dataLastUpdatedDateTime property</summary>
         public DateTimeOffset? DataLastUpdatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("dataLastUpdatedDateTime"); }
             set { BackingStore?.Set("dataLastUpdatedDateTime", value); }
         }
         /// <summary>The description property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>The displayName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

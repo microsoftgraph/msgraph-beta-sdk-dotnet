@@ -8,32 +8,60 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Admin.Windows.Updates.Deployments.Item.Audience.UpdateAudience {
     public class UpdateAudiencePostRequestBody : IAdditionalDataHolder, IBackedModel, IParsable {
         /// <summary>The addExclusions property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<UpdatableAsset>? AddExclusions {
+            get { return BackingStore?.Get<List<UpdatableAsset>?>("addExclusions"); }
+            set { BackingStore?.Set("addExclusions", value); }
+        }
+#else
         public List<UpdatableAsset> AddExclusions {
             get { return BackingStore?.Get<List<UpdatableAsset>>("addExclusions"); }
             set { BackingStore?.Set("addExclusions", value); }
         }
+#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData {
             get { return BackingStore?.Get<IDictionary<string, object>>("additionalData"); }
             set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The addMembers property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<UpdatableAsset>? AddMembers {
+            get { return BackingStore?.Get<List<UpdatableAsset>?>("addMembers"); }
+            set { BackingStore?.Set("addMembers", value); }
+        }
+#else
         public List<UpdatableAsset> AddMembers {
             get { return BackingStore?.Get<List<UpdatableAsset>>("addMembers"); }
             set { BackingStore?.Set("addMembers", value); }
         }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The removeExclusions property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<UpdatableAsset>? RemoveExclusions {
+            get { return BackingStore?.Get<List<UpdatableAsset>?>("removeExclusions"); }
+            set { BackingStore?.Set("removeExclusions", value); }
+        }
+#else
         public List<UpdatableAsset> RemoveExclusions {
             get { return BackingStore?.Get<List<UpdatableAsset>>("removeExclusions"); }
             set { BackingStore?.Set("removeExclusions", value); }
         }
+#endif
         /// <summary>The removeMembers property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<UpdatableAsset>? RemoveMembers {
+            get { return BackingStore?.Get<List<UpdatableAsset>?>("removeMembers"); }
+            set { BackingStore?.Set("removeMembers", value); }
+        }
+#else
         public List<UpdatableAsset> RemoveMembers {
             get { return BackingStore?.Get<List<UpdatableAsset>>("removeMembers"); }
             set { BackingStore?.Set("removeMembers", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new updateAudiencePostRequestBody and sets the default values.
         /// </summary>

@@ -11,20 +11,41 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("recipientActionDateTime", value); }
         }
         /// <summary>Custom message sent by recipient of the offer shift request.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? RecipientActionMessage {
+            get { return BackingStore?.Get<string?>("recipientActionMessage"); }
+            set { BackingStore?.Set("recipientActionMessage", value); }
+        }
+#else
         public string RecipientActionMessage {
             get { return BackingStore?.Get<string>("recipientActionMessage"); }
             set { BackingStore?.Set("recipientActionMessage", value); }
         }
+#endif
         /// <summary>User id of the recipient of the offer shift request.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? RecipientUserId {
+            get { return BackingStore?.Get<string?>("recipientUserId"); }
+            set { BackingStore?.Set("recipientUserId", value); }
+        }
+#else
         public string RecipientUserId {
             get { return BackingStore?.Get<string>("recipientUserId"); }
             set { BackingStore?.Set("recipientUserId", value); }
         }
+#endif
         /// <summary>User id of the sender of the offer shift request.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SenderShiftId {
+            get { return BackingStore?.Get<string?>("senderShiftId"); }
+            set { BackingStore?.Set("senderShiftId", value); }
+        }
+#else
         public string SenderShiftId {
             get { return BackingStore?.Get<string>("senderShiftId"); }
             set { BackingStore?.Set("senderShiftId", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new OfferShiftRequest and sets the default values.
         /// </summary>

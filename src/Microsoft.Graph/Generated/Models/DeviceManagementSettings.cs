@@ -24,10 +24,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("derivedCredentialProvider", value); }
         }
         /// <summary>The Derived Credential Provider self-service URI.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DerivedCredentialUrl {
+            get { return BackingStore?.Get<string?>("derivedCredentialUrl"); }
+            set { BackingStore?.Set("derivedCredentialUrl", value); }
+        }
+#else
         public string DerivedCredentialUrl {
             get { return BackingStore?.Get<string>("derivedCredentialUrl"); }
             set { BackingStore?.Set("derivedCredentialUrl", value); }
         }
+#endif
         /// <summary>The number of days a device is allowed to go without checking in to remain compliant.</summary>
         public int? DeviceComplianceCheckinThresholdDays {
             get { return BackingStore?.Get<int?>("deviceComplianceCheckinThresholdDays"); }
@@ -74,10 +81,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("isScheduledActionEnabled", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Device should be noncompliant when there is no compliance policy targeted when this is true</summary>
         public bool? SecureByDefault {
             get { return BackingStore?.Get<bool?>("secureByDefault"); }

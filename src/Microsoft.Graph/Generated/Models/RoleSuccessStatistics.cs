@@ -14,10 +14,17 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The permanentFail property</summary>
         public long? PermanentFail {
             get { return BackingStore?.Get<long?>("permanentFail"); }
@@ -39,15 +46,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("removeSuccess", value); }
         }
         /// <summary>The roleId property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? RoleId {
+            get { return BackingStore?.Get<string?>("roleId"); }
+            set { BackingStore?.Set("roleId", value); }
+        }
+#else
         public string RoleId {
             get { return BackingStore?.Get<string>("roleId"); }
             set { BackingStore?.Set("roleId", value); }
         }
+#endif
         /// <summary>The roleName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? RoleName {
+            get { return BackingStore?.Get<string?>("roleName"); }
+            set { BackingStore?.Set("roleName", value); }
+        }
+#else
         public string RoleName {
             get { return BackingStore?.Get<string>("roleName"); }
             set { BackingStore?.Set("roleName", value); }
         }
+#endif
         /// <summary>The temporaryFail property</summary>
         public long? TemporaryFail {
             get { return BackingStore?.Get<long?>("temporaryFail"); }

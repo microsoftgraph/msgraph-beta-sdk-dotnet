@@ -20,10 +20,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("alertType", value); }
         }
         /// <summary>Application name to be associated with the bundleID.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AppName {
+            get { return BackingStore?.Get<string?>("appName"); }
+            set { BackingStore?.Set("appName", value); }
+        }
+#else
         public string AppName {
             get { return BackingStore?.Get<string>("appName"); }
             set { BackingStore?.Set("appName", value); }
         }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Indicates whether badges are allowed for this app.</summary>
@@ -32,30 +39,51 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("badgesEnabled", value); }
         }
         /// <summary>Bundle id of app to which to apply these notification settings.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? BundleID {
+            get { return BackingStore?.Get<string?>("bundleID"); }
+            set { BackingStore?.Set("bundleID", value); }
+        }
+#else
         public string BundleID {
             get { return BackingStore?.Get<string>("bundleID"); }
             set { BackingStore?.Set("bundleID", value); }
         }
+#endif
         /// <summary>Indicates whether notifications are allowed for this app.</summary>
         public bool? Enabled {
             get { return BackingStore?.Get<bool?>("enabled"); }
             set { BackingStore?.Set("enabled", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Determines when notification previews are visible on an iOS device. Previews can include things like text (from Messages and Mail) and invitation details (from Calendar). When configured, it will override the user&apos;s defined preview settings.</summary>
         public IosNotificationPreviewVisibility? PreviewVisibility {
             get { return BackingStore?.Get<IosNotificationPreviewVisibility?>("previewVisibility"); }
             set { BackingStore?.Set("previewVisibility", value); }
         }
         /// <summary>Publisher to be associated with the bundleID.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Publisher {
+            get { return BackingStore?.Get<string?>("publisher"); }
+            set { BackingStore?.Set("publisher", value); }
+        }
+#else
         public string Publisher {
             get { return BackingStore?.Get<string>("publisher"); }
             set { BackingStore?.Set("publisher", value); }
         }
+#endif
         /// <summary>Indicates whether notifications can be shown in notification center.</summary>
         public bool? ShowInNotificationCenter {
             get { return BackingStore?.Get<bool?>("showInNotificationCenter"); }

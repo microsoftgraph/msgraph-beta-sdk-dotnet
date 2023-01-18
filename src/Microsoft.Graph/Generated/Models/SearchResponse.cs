@@ -14,30 +14,65 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>A collection of search results.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<SearchHitsContainer>? HitsContainers {
+            get { return BackingStore?.Get<List<SearchHitsContainer>?>("hitsContainers"); }
+            set { BackingStore?.Set("hitsContainers", value); }
+        }
+#else
         public List<SearchHitsContainer> HitsContainers {
             get { return BackingStore?.Get<List<SearchHitsContainer>>("hitsContainers"); }
             set { BackingStore?.Set("hitsContainers", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Provides details of query alteration response for spelling correction.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public AlterationResponse? QueryAlterationResponse {
+            get { return BackingStore?.Get<AlterationResponse?>("queryAlterationResponse"); }
+            set { BackingStore?.Set("queryAlterationResponse", value); }
+        }
+#else
         public AlterationResponse QueryAlterationResponse {
             get { return BackingStore?.Get<AlterationResponse>("queryAlterationResponse"); }
             set { BackingStore?.Set("queryAlterationResponse", value); }
         }
+#endif
         /// <summary>A dictionary of resultTemplateIds and associated values, which include the name and JSON schema of the result templates.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public ResultTemplateDictionary? ResultTemplates {
+            get { return BackingStore?.Get<ResultTemplateDictionary?>("resultTemplates"); }
+            set { BackingStore?.Set("resultTemplates", value); }
+        }
+#else
         public ResultTemplateDictionary ResultTemplates {
             get { return BackingStore?.Get<ResultTemplateDictionary>("resultTemplates"); }
             set { BackingStore?.Set("resultTemplates", value); }
         }
+#endif
         /// <summary>Contains the search terms sent in the initial search query.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? SearchTerms {
+            get { return BackingStore?.Get<List<string>?>("searchTerms"); }
+            set { BackingStore?.Set("searchTerms", value); }
+        }
+#else
         public List<string> SearchTerms {
             get { return BackingStore?.Get<List<string>>("searchTerms"); }
             set { BackingStore?.Set("searchTerms", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new searchResponse and sets the default values.
         /// </summary>

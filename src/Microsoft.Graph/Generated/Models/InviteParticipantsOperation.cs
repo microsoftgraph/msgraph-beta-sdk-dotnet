@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class InviteParticipantsOperation : CommsOperation, IParsable {
         /// <summary>The participants to invite.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<InvitationParticipantInfo>? Participants {
+            get { return BackingStore?.Get<List<InvitationParticipantInfo>?>("participants"); }
+            set { BackingStore?.Set("participants", value); }
+        }
+#else
         public List<InvitationParticipantInfo> Participants {
             get { return BackingStore?.Get<List<InvitationParticipantInfo>>("participants"); }
             set { BackingStore?.Set("participants", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

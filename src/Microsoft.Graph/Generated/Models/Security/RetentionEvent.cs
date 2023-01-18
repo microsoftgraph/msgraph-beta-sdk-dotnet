@@ -6,50 +6,99 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
     public class RetentionEvent : Entity, IParsable {
         /// <summary>The user who created the retentionEvent.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.IdentitySet? CreatedBy {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet?>("createdBy"); }
+            set { BackingStore?.Set("createdBy", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.IdentitySet CreatedBy {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
+#endif
         /// <summary>The date time when the retentionEvent was created.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Optional information about the event.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>Name of the event.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The eventPropagationResults property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<EventPropagationResult>? EventPropagationResults {
+            get { return BackingStore?.Get<List<EventPropagationResult>?>("eventPropagationResults"); }
+            set { BackingStore?.Set("eventPropagationResults", value); }
+        }
+#else
         public List<EventPropagationResult> EventPropagationResults {
             get { return BackingStore?.Get<List<EventPropagationResult>>("eventPropagationResults"); }
             set { BackingStore?.Set("eventPropagationResults", value); }
         }
+#endif
         /// <summary>Represents the workload (SharePoint Online, OneDrive for Business, Exchange Online) and identification information associated with a retention event.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<EventQuery>? EventQueries {
+            get { return BackingStore?.Get<List<EventQuery>?>("eventQueries"); }
+            set { BackingStore?.Set("eventQueries", value); }
+        }
+#else
         public List<EventQuery> EventQueries {
             get { return BackingStore?.Get<List<EventQuery>>("eventQueries"); }
             set { BackingStore?.Set("eventQueries", value); }
         }
+#endif
         /// <summary>The eventStatus property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public RetentionEventStatus? EventStatus {
+            get { return BackingStore?.Get<RetentionEventStatus?>("eventStatus"); }
+            set { BackingStore?.Set("eventStatus", value); }
+        }
+#else
         public RetentionEventStatus EventStatus {
             get { return BackingStore?.Get<RetentionEventStatus>("eventStatus"); }
             set { BackingStore?.Set("eventStatus", value); }
         }
+#endif
         /// <summary>Optional time when the event should be triggered.</summary>
         public DateTimeOffset? EventTriggerDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("eventTriggerDateTime"); }
             set { BackingStore?.Set("eventTriggerDateTime", value); }
         }
         /// <summary>The user who last modified the retentionEvent.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.IdentitySet? LastModifiedBy {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet?>("lastModifiedBy"); }
+            set { BackingStore?.Set("lastModifiedBy", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.IdentitySet LastModifiedBy {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.IdentitySet>("lastModifiedBy"); }
             set { BackingStore?.Set("lastModifiedBy", value); }
         }
+#endif
         /// <summary>The latest date time when the retentionEvent was modified.</summary>
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
@@ -61,10 +110,17 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("lastStatusUpdateDateTime", value); }
         }
         /// <summary>Specifies the event that will start the retention period for labels that use this event type when an event is created.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.Security.RetentionEventType? RetentionEventType {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.RetentionEventType?>("retentionEventType"); }
+            set { BackingStore?.Set("retentionEventType", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.Security.RetentionEventType RetentionEventType {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.RetentionEventType>("retentionEventType"); }
             set { BackingStore?.Set("retentionEventType", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

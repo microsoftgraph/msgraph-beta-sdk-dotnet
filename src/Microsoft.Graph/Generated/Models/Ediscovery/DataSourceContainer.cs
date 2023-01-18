@@ -11,20 +11,34 @@ namespace Microsoft.Graph.Beta.Models.Ediscovery {
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Display name of the dataSourceContainer entity.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The holdStatus property</summary>
         public DataSourceHoldStatus? HoldStatus {
             get { return BackingStore?.Get<DataSourceHoldStatus?>("holdStatus"); }
             set { BackingStore?.Set("holdStatus", value); }
         }
         /// <summary>The lastIndexOperation property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public CaseIndexOperation? LastIndexOperation {
+            get { return BackingStore?.Get<CaseIndexOperation?>("lastIndexOperation"); }
+            set { BackingStore?.Set("lastIndexOperation", value); }
+        }
+#else
         public CaseIndexOperation LastIndexOperation {
             get { return BackingStore?.Get<CaseIndexOperation>("lastIndexOperation"); }
             set { BackingStore?.Set("lastIndexOperation", value); }
         }
+#endif
         /// <summary>Last modified date and time of the dataSourceContainer.</summary>
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }

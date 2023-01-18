@@ -19,10 +19,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("appCrashCount", value); }
         }
         /// <summary>The friendly name of the application.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AppDisplayName {
+            get { return BackingStore?.Get<string?>("appDisplayName"); }
+            set { BackingStore?.Set("appDisplayName", value); }
+        }
+#else
         public string AppDisplayName {
             get { return BackingStore?.Get<string>("appDisplayName"); }
             set { BackingStore?.Set("appDisplayName", value); }
         }
+#endif
         /// <summary>The number of hangs for the app. Valid values -2147483648 to 2147483647</summary>
         public int? AppHangCount {
             get { return BackingStore?.Get<int?>("appHangCount"); }
@@ -34,20 +41,41 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("appHealthScore", value); }
         }
         /// <summary>The overall health status of the app.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AppHealthStatus {
+            get { return BackingStore?.Get<string?>("appHealthStatus"); }
+            set { BackingStore?.Set("appHealthStatus", value); }
+        }
+#else
         public string AppHealthStatus {
             get { return BackingStore?.Get<string>("appHealthStatus"); }
             set { BackingStore?.Set("appHealthStatus", value); }
         }
+#endif
         /// <summary>The name of the application.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AppName {
+            get { return BackingStore?.Get<string?>("appName"); }
+            set { BackingStore?.Set("appName", value); }
+        }
+#else
         public string AppName {
             get { return BackingStore?.Get<string>("appName"); }
             set { BackingStore?.Set("appName", value); }
         }
+#endif
         /// <summary>The publisher of the application.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AppPublisher {
+            get { return BackingStore?.Get<string?>("appPublisher"); }
+            set { BackingStore?.Set("appPublisher", value); }
+        }
+#else
         public string AppPublisher {
             get { return BackingStore?.Get<string>("appPublisher"); }
             set { BackingStore?.Set("appPublisher", value); }
         }
+#endif
         /// <summary>The total usage time of the application in minutes. Valid values -2147483648 to 2147483647</summary>
         public int? AppUsageDuration {
             get { return BackingStore?.Get<int?>("appUsageDuration"); }

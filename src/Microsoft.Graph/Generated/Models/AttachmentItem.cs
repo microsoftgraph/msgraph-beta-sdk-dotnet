@@ -19,30 +19,58 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The CID or Content-Id of the attachment for referencing in case of in-line attachments using &lt;img src=&apos;cid:contentId&apos;&gt; tag in HTML messages. Optional.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ContentId {
+            get { return BackingStore?.Get<string?>("contentId"); }
+            set { BackingStore?.Set("contentId", value); }
+        }
+#else
         public string ContentId {
             get { return BackingStore?.Get<string>("contentId"); }
             set { BackingStore?.Set("contentId", value); }
         }
+#endif
         /// <summary>The nature of the data in the attachment. Optional.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ContentType {
+            get { return BackingStore?.Get<string?>("contentType"); }
+            set { BackingStore?.Set("contentType", value); }
+        }
+#else
         public string ContentType {
             get { return BackingStore?.Get<string>("contentType"); }
             set { BackingStore?.Set("contentType", value); }
         }
+#endif
         /// <summary>true if the attachment is an inline attachment; otherwise, false. Optional.</summary>
         public bool? IsInline {
             get { return BackingStore?.Get<bool?>("isInline"); }
             set { BackingStore?.Set("isInline", value); }
         }
         /// <summary>The display name of the attachment. This can be a descriptive string and does not have to be the actual file name. Required.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Name {
+            get { return BackingStore?.Get<string?>("name"); }
+            set { BackingStore?.Set("name", value); }
+        }
+#else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The length of the attachment in bytes. Required.</summary>
         public long? Size {
             get { return BackingStore?.Get<long?>("size"); }

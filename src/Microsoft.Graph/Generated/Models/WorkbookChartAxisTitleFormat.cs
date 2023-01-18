@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class WorkbookChartAxisTitleFormat : Entity, IParsable {
         /// <summary>Represents the font attributes, such as font name, font size, color, etc. of chart axis title object. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public WorkbookChartFont? Font {
+            get { return BackingStore?.Get<WorkbookChartFont?>("font"); }
+            set { BackingStore?.Set("font", value); }
+        }
+#else
         public WorkbookChartFont Font {
             get { return BackingStore?.Get<WorkbookChartFont>("font"); }
             set { BackingStore?.Set("font", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

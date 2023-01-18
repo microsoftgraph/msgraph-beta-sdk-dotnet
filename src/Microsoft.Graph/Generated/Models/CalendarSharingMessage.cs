@@ -11,20 +11,41 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("canAccept", value); }
         }
         /// <summary>The sharingMessageAction property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public CalendarSharingMessageAction? SharingMessageAction {
+            get { return BackingStore?.Get<CalendarSharingMessageAction?>("sharingMessageAction"); }
+            set { BackingStore?.Set("sharingMessageAction", value); }
+        }
+#else
         public CalendarSharingMessageAction SharingMessageAction {
             get { return BackingStore?.Get<CalendarSharingMessageAction>("sharingMessageAction"); }
             set { BackingStore?.Set("sharingMessageAction", value); }
         }
+#endif
         /// <summary>The sharingMessageActions property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<CalendarSharingMessageAction>? SharingMessageActions {
+            get { return BackingStore?.Get<List<CalendarSharingMessageAction>?>("sharingMessageActions"); }
+            set { BackingStore?.Set("sharingMessageActions", value); }
+        }
+#else
         public List<CalendarSharingMessageAction> SharingMessageActions {
             get { return BackingStore?.Get<List<CalendarSharingMessageAction>>("sharingMessageActions"); }
             set { BackingStore?.Set("sharingMessageActions", value); }
         }
+#endif
         /// <summary>The suggestedCalendarName property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SuggestedCalendarName {
+            get { return BackingStore?.Get<string?>("suggestedCalendarName"); }
+            set { BackingStore?.Set("suggestedCalendarName", value); }
+        }
+#else
         public string SuggestedCalendarName {
             get { return BackingStore?.Get<string>("suggestedCalendarName"); }
             set { BackingStore?.Set("suggestedCalendarName", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new CalendarSharingMessage and sets the default values.
         /// </summary>

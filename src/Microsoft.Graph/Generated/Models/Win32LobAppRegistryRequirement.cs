@@ -16,15 +16,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("detectionType", value); }
         }
         /// <summary>The registry key path to detect Win32 Line of Business (LoB) app</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? KeyPath {
+            get { return BackingStore?.Get<string?>("keyPath"); }
+            set { BackingStore?.Set("keyPath", value); }
+        }
+#else
         public string KeyPath {
             get { return BackingStore?.Get<string>("keyPath"); }
             set { BackingStore?.Set("keyPath", value); }
         }
+#endif
         /// <summary>The registry value name</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ValueName {
+            get { return BackingStore?.Get<string?>("valueName"); }
+            set { BackingStore?.Set("valueName", value); }
+        }
+#else
         public string ValueName {
             get { return BackingStore?.Get<string>("valueName"); }
             set { BackingStore?.Set("valueName", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new Win32LobAppRegistryRequirement and sets the default values.
         /// </summary>

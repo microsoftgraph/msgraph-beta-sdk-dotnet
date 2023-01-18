@@ -11,10 +11,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("emphasis", value); }
         }
         /// <summary>The set of web parts in this section.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<WebPart>? Webparts {
+            get { return BackingStore?.Get<List<WebPart>?>("webparts"); }
+            set { BackingStore?.Set("webparts", value); }
+        }
+#else
         public List<WebPart> Webparts {
             get { return BackingStore?.Get<List<WebPart>>("webparts"); }
             set { BackingStore?.Set("webparts", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

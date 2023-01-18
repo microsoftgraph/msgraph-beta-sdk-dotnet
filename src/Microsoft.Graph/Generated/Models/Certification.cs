@@ -14,10 +14,17 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>URL that shows certification details for the application.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CertificationDetailsUrl {
+            get { return BackingStore?.Get<string?>("certificationDetailsUrl"); }
+            set { BackingStore?.Set("certificationDetailsUrl", value); }
+        }
+#else
         public string CertificationDetailsUrl {
             get { return BackingStore?.Get<string>("certificationDetailsUrl"); }
             set { BackingStore?.Set("certificationDetailsUrl", value); }
         }
+#endif
         /// <summary>The timestamp when the current certification for the application will expire.</summary>
         public DateTimeOffset? CertificationExpirationDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("certificationExpirationDateTime"); }
@@ -39,10 +46,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("lastCertificationDateTime", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new certification and sets the default values.
         /// </summary>

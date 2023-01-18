@@ -14,30 +14,65 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The CRC32 value of the file (if available). Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Crc32Hash {
+            get { return BackingStore?.Get<string?>("crc32Hash"); }
+            set { BackingStore?.Set("crc32Hash", value); }
+        }
+#else
         public string Crc32Hash {
             get { return BackingStore?.Get<string>("crc32Hash"); }
             set { BackingStore?.Set("crc32Hash", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>A proprietary hash of the file that can be used to determine if the contents of the file have changed (if available). Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? QuickXorHash {
+            get { return BackingStore?.Get<string?>("quickXorHash"); }
+            set { BackingStore?.Set("quickXorHash", value); }
+        }
+#else
         public string QuickXorHash {
             get { return BackingStore?.Get<string>("quickXorHash"); }
             set { BackingStore?.Set("quickXorHash", value); }
         }
+#endif
         /// <summary>SHA1 hash for the contents of the file (if available). Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Sha1Hash {
+            get { return BackingStore?.Get<string?>("sha1Hash"); }
+            set { BackingStore?.Set("sha1Hash", value); }
+        }
+#else
         public string Sha1Hash {
             get { return BackingStore?.Get<string>("sha1Hash"); }
             set { BackingStore?.Set("sha1Hash", value); }
         }
+#endif
         /// <summary>SHA256 hash for the contents of the file (if available). Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Sha256Hash {
+            get { return BackingStore?.Get<string?>("sha256Hash"); }
+            set { BackingStore?.Set("sha256Hash", value); }
+        }
+#else
         public string Sha256Hash {
             get { return BackingStore?.Get<string>("sha256Hash"); }
             set { BackingStore?.Set("sha256Hash", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new hashes and sets the default values.
         /// </summary>

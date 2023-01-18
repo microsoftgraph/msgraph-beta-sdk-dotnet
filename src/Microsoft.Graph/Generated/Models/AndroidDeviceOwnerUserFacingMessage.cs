@@ -17,20 +17,41 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The default message displayed if the user&apos;s locale doesn&apos;t match with any of the localized messages</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DefaultMessage {
+            get { return BackingStore?.Get<string?>("defaultMessage"); }
+            set { BackingStore?.Set("defaultMessage", value); }
+        }
+#else
         public string DefaultMessage {
             get { return BackingStore?.Get<string>("defaultMessage"); }
             set { BackingStore?.Set("defaultMessage", value); }
         }
+#endif
         /// <summary>The list of &lt;locale, message&gt; pairs. This collection can contain a maximum of 500 elements.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<KeyValuePair>? LocalizedMessages {
+            get { return BackingStore?.Get<List<KeyValuePair>?>("localizedMessages"); }
+            set { BackingStore?.Set("localizedMessages", value); }
+        }
+#else
         public List<KeyValuePair> LocalizedMessages {
             get { return BackingStore?.Get<List<KeyValuePair>>("localizedMessages"); }
             set { BackingStore?.Set("localizedMessages", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new androidDeviceOwnerUserFacingMessage and sets the default values.
         /// </summary>

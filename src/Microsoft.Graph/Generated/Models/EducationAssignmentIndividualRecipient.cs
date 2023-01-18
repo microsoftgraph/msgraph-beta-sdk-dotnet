@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class EducationAssignmentIndividualRecipient : EducationAssignmentRecipient, IParsable {
         /// <summary>A collection of ids of the recipients.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? Recipients {
+            get { return BackingStore?.Get<List<string>?>("recipients"); }
+            set { BackingStore?.Set("recipients", value); }
+        }
+#else
         public List<string> Recipients {
             get { return BackingStore?.Get<List<string>>("recipients"); }
             set { BackingStore?.Set("recipients", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new EducationAssignmentIndividualRecipient and sets the default values.
         /// </summary>

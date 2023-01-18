@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class ActiveDirectoryWindowsAutopilotDeploymentProfile : WindowsAutopilotDeploymentProfile, IParsable {
         /// <summary>Configuration to join Active Directory domain</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public WindowsDomainJoinConfiguration? DomainJoinConfiguration {
+            get { return BackingStore?.Get<WindowsDomainJoinConfiguration?>("domainJoinConfiguration"); }
+            set { BackingStore?.Set("domainJoinConfiguration", value); }
+        }
+#else
         public WindowsDomainJoinConfiguration DomainJoinConfiguration {
             get { return BackingStore?.Get<WindowsDomainJoinConfiguration>("domainJoinConfiguration"); }
             set { BackingStore?.Set("domainJoinConfiguration", value); }
         }
+#endif
         /// <summary>The Autopilot Hybrid Azure AD join flow will continue even if it does not establish domain controller connectivity during OOBE.</summary>
         public bool? HybridAzureADJoinSkipConnectivityCheck {
             get { return BackingStore?.Get<bool?>("hybridAzureADJoinSkipConnectivityCheck"); }

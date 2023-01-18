@@ -19,35 +19,63 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>A human-readable description of the print job&apos;s current processing state. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>Additional details for print job state. Valid values are described in the following table. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<PrintJobStateDetail?>? Details {
+            get { return BackingStore?.Get<List<PrintJobStateDetail?>?>("details"); }
+            set { BackingStore?.Set("details", value); }
+        }
+#else
         public List<PrintJobStateDetail?> Details {
             get { return BackingStore?.Get<List<PrintJobStateDetail?>>("details"); }
             set { BackingStore?.Set("details", value); }
         }
+#endif
         /// <summary>True if the job was acknowledged by a printer; false otherwise. Read-only.</summary>
         public bool? IsAcquiredByPrinter {
             get { return BackingStore?.Get<bool?>("isAcquiredByPrinter"); }
             set { BackingStore?.Set("isAcquiredByPrinter", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The processingState property</summary>
         public PrintJobProcessingState? ProcessingState {
             get { return BackingStore?.Get<PrintJobProcessingState?>("processingState"); }
             set { BackingStore?.Set("processingState", value); }
         }
         /// <summary>The processingStateDescription property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ProcessingStateDescription {
+            get { return BackingStore?.Get<string?>("processingStateDescription"); }
+            set { BackingStore?.Set("processingStateDescription", value); }
+        }
+#else
         public string ProcessingStateDescription {
             get { return BackingStore?.Get<string>("processingStateDescription"); }
             set { BackingStore?.Set("processingStateDescription", value); }
         }
+#endif
         /// <summary>The state property</summary>
         public PrintJobProcessingState? State {
             get { return BackingStore?.Get<PrintJobProcessingState?>("state"); }

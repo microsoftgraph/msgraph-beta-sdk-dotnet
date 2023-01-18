@@ -9,80 +9,164 @@ namespace Microsoft.Graph.Beta.Models {
     /// </summary>
     public class GroupPolicySettingMapping : Entity, IParsable {
         /// <summary>Admx Group Policy Id</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AdmxSettingDefinitionId {
+            get { return BackingStore?.Get<string?>("admxSettingDefinitionId"); }
+            set { BackingStore?.Set("admxSettingDefinitionId", value); }
+        }
+#else
         public string AdmxSettingDefinitionId {
             get { return BackingStore?.Get<string>("admxSettingDefinitionId"); }
             set { BackingStore?.Set("admxSettingDefinitionId", value); }
         }
+#endif
         /// <summary>List of Child Ids of the group policy setting.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? ChildIdList {
+            get { return BackingStore?.Get<List<string>?>("childIdList"); }
+            set { BackingStore?.Set("childIdList", value); }
+        }
+#else
         public List<string> ChildIdList {
             get { return BackingStore?.Get<List<string>>("childIdList"); }
             set { BackingStore?.Set("childIdList", value); }
         }
+#endif
         /// <summary>The Intune Setting Definition Id</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? IntuneSettingDefinitionId {
+            get { return BackingStore?.Get<string?>("intuneSettingDefinitionId"); }
+            set { BackingStore?.Set("intuneSettingDefinitionId", value); }
+        }
+#else
         public string IntuneSettingDefinitionId {
             get { return BackingStore?.Get<string>("intuneSettingDefinitionId"); }
             set { BackingStore?.Set("intuneSettingDefinitionId", value); }
         }
+#endif
         /// <summary>The list of Intune Setting URIs this group policy setting maps to</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? IntuneSettingUriList {
+            get { return BackingStore?.Get<List<string>?>("intuneSettingUriList"); }
+            set { BackingStore?.Set("intuneSettingUriList", value); }
+        }
+#else
         public List<string> IntuneSettingUriList {
             get { return BackingStore?.Get<List<string>>("intuneSettingUriList"); }
             set { BackingStore?.Set("intuneSettingUriList", value); }
         }
+#endif
         /// <summary>Indicates if the setting is supported by Intune or not</summary>
         public bool? IsMdmSupported {
             get { return BackingStore?.Get<bool?>("isMdmSupported"); }
             set { BackingStore?.Set("isMdmSupported", value); }
         }
         /// <summary>The CSP name this group policy setting maps to.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MdmCspName {
+            get { return BackingStore?.Get<string?>("mdmCspName"); }
+            set { BackingStore?.Set("mdmCspName", value); }
+        }
+#else
         public string MdmCspName {
             get { return BackingStore?.Get<string>("mdmCspName"); }
             set { BackingStore?.Set("mdmCspName", value); }
         }
+#endif
         /// <summary>The minimum OS version this mdm setting supports.</summary>
         public int? MdmMinimumOSVersion {
             get { return BackingStore?.Get<int?>("mdmMinimumOSVersion"); }
             set { BackingStore?.Set("mdmMinimumOSVersion", value); }
         }
         /// <summary>The MDM CSP URI this group policy setting maps to.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MdmSettingUri {
+            get { return BackingStore?.Get<string?>("mdmSettingUri"); }
+            set { BackingStore?.Set("mdmSettingUri", value); }
+        }
+#else
         public string MdmSettingUri {
             get { return BackingStore?.Get<string>("mdmSettingUri"); }
             set { BackingStore?.Set("mdmSettingUri", value); }
         }
+#endif
         /// <summary>Mdm Support Status of the setting.</summary>
         public Microsoft.Graph.Beta.Models.MdmSupportedState? MdmSupportedState {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.MdmSupportedState?>("mdmSupportedState"); }
             set { BackingStore?.Set("mdmSupportedState", value); }
         }
         /// <summary>Parent Id of the group policy setting.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ParentId {
+            get { return BackingStore?.Get<string?>("parentId"); }
+            set { BackingStore?.Set("parentId", value); }
+        }
+#else
         public string ParentId {
             get { return BackingStore?.Get<string>("parentId"); }
             set { BackingStore?.Set("parentId", value); }
         }
+#endif
         /// <summary>The category the group policy setting is in.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SettingCategory {
+            get { return BackingStore?.Get<string?>("settingCategory"); }
+            set { BackingStore?.Set("settingCategory", value); }
+        }
+#else
         public string SettingCategory {
             get { return BackingStore?.Get<string>("settingCategory"); }
             set { BackingStore?.Set("settingCategory", value); }
         }
+#endif
         /// <summary>The display name of this group policy setting.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SettingDisplayName {
+            get { return BackingStore?.Get<string?>("settingDisplayName"); }
+            set { BackingStore?.Set("settingDisplayName", value); }
+        }
+#else
         public string SettingDisplayName {
             get { return BackingStore?.Get<string>("settingDisplayName"); }
             set { BackingStore?.Set("settingDisplayName", value); }
         }
+#endif
         /// <summary>The display value of this group policy setting.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SettingDisplayValue {
+            get { return BackingStore?.Get<string?>("settingDisplayValue"); }
+            set { BackingStore?.Set("settingDisplayValue", value); }
+        }
+#else
         public string SettingDisplayValue {
             get { return BackingStore?.Get<string>("settingDisplayValue"); }
             set { BackingStore?.Set("settingDisplayValue", value); }
         }
+#endif
         /// <summary>The display value type of this group policy setting.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SettingDisplayValueType {
+            get { return BackingStore?.Get<string?>("settingDisplayValueType"); }
+            set { BackingStore?.Set("settingDisplayValueType", value); }
+        }
+#else
         public string SettingDisplayValueType {
             get { return BackingStore?.Get<string>("settingDisplayValueType"); }
             set { BackingStore?.Set("settingDisplayValueType", value); }
         }
+#endif
         /// <summary>The name of this group policy setting.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SettingName {
+            get { return BackingStore?.Get<string?>("settingName"); }
+            set { BackingStore?.Set("settingName", value); }
+        }
+#else
         public string SettingName {
             get { return BackingStore?.Get<string>("settingName"); }
             set { BackingStore?.Set("settingName", value); }
         }
+#endif
         /// <summary>Scope of the group policy setting.</summary>
         public GroupPolicySettingScope? SettingScope {
             get { return BackingStore?.Get<GroupPolicySettingScope?>("settingScope"); }
@@ -94,20 +178,41 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("settingType", value); }
         }
         /// <summary>The value of this group policy setting.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SettingValue {
+            get { return BackingStore?.Get<string?>("settingValue"); }
+            set { BackingStore?.Set("settingValue", value); }
+        }
+#else
         public string SettingValue {
             get { return BackingStore?.Get<string>("settingValue"); }
             set { BackingStore?.Set("settingValue", value); }
         }
+#endif
         /// <summary>The display units of this group policy setting value</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SettingValueDisplayUnits {
+            get { return BackingStore?.Get<string?>("settingValueDisplayUnits"); }
+            set { BackingStore?.Set("settingValueDisplayUnits", value); }
+        }
+#else
         public string SettingValueDisplayUnits {
             get { return BackingStore?.Get<string>("settingValueDisplayUnits"); }
             set { BackingStore?.Set("settingValueDisplayUnits", value); }
         }
+#endif
         /// <summary>The value type of this group policy setting.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SettingValueType {
+            get { return BackingStore?.Get<string?>("settingValueType"); }
+            set { BackingStore?.Set("settingValueType", value); }
+        }
+#else
         public string SettingValueType {
             get { return BackingStore?.Get<string>("settingValueType"); }
             set { BackingStore?.Set("settingValueType", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

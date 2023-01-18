@@ -14,20 +14,41 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The default rules that apply if no override matches to the current data.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? DefaultRules {
+            get { return BackingStore?.Get<List<string>?>("defaultRules"); }
+            set { BackingStore?.Set("defaultRules", value); }
+        }
+#else
         public List<string> DefaultRules {
             get { return BackingStore?.Get<List<string>>("defaultRules"); }
             set { BackingStore?.Set("defaultRules", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Overrides that specify different rules for specific data associated with the field.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<PlannerRuleOverride>? Overrides {
+            get { return BackingStore?.Get<List<PlannerRuleOverride>?>("overrides"); }
+            set { BackingStore?.Set("overrides", value); }
+        }
+#else
         public List<PlannerRuleOverride> Overrides {
             get { return BackingStore?.Get<List<PlannerRuleOverride>>("overrides"); }
             set { BackingStore?.Set("overrides", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new plannerFieldRules and sets the default values.
         /// </summary>

@@ -14,10 +14,17 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Host FQDN (Fully Qualified Domain Name) (for example, machine.company.com).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Fqdn {
+            get { return BackingStore?.Get<string?>("fqdn"); }
+            set { BackingStore?.Set("fqdn", value); }
+        }
+#else
         public string Fqdn {
             get { return BackingStore?.Get<string>("fqdn"); }
             set { BackingStore?.Set("fqdn", value); }
         }
+#endif
         /// <summary>The isAzureAdJoined property</summary>
         public bool? IsAzureAdJoined {
             get { return BackingStore?.Get<bool?>("isAzureAdJoined"); }
@@ -34,35 +41,77 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("isHybridAzureDomainJoined", value); }
         }
         /// <summary>The local host name, without the DNS domain name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? NetBiosName {
+            get { return BackingStore?.Get<string?>("netBiosName"); }
+            set { BackingStore?.Set("netBiosName", value); }
+        }
+#else
         public string NetBiosName {
             get { return BackingStore?.Get<string>("netBiosName"); }
             set { BackingStore?.Set("netBiosName", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Host Operating System. (For example, Windows10, MacOS, RHEL, etc.).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Os {
+            get { return BackingStore?.Get<string?>("os"); }
+            set { BackingStore?.Set("os", value); }
+        }
+#else
         public string Os {
             get { return BackingStore?.Get<string>("os"); }
             set { BackingStore?.Set("os", value); }
         }
+#endif
         /// <summary>Private (not routable) IPv4 or IPv6 address (see RFC 1918) at the time of the alert.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PrivateIpAddress {
+            get { return BackingStore?.Get<string?>("privateIpAddress"); }
+            set { BackingStore?.Set("privateIpAddress", value); }
+        }
+#else
         public string PrivateIpAddress {
             get { return BackingStore?.Get<string>("privateIpAddress"); }
             set { BackingStore?.Set("privateIpAddress", value); }
         }
+#endif
         /// <summary>Publicly routable IPv4 or IPv6 address (see RFC 1918) at time of the alert.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PublicIpAddress {
+            get { return BackingStore?.Get<string?>("publicIpAddress"); }
+            set { BackingStore?.Set("publicIpAddress", value); }
+        }
+#else
         public string PublicIpAddress {
             get { return BackingStore?.Get<string>("publicIpAddress"); }
             set { BackingStore?.Set("publicIpAddress", value); }
         }
+#endif
         /// <summary>Provider-generated/calculated risk score of the host.  Recommended value range of 0-1, which equates to a percentage.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? RiskScore {
+            get { return BackingStore?.Get<string?>("riskScore"); }
+            set { BackingStore?.Set("riskScore", value); }
+        }
+#else
         public string RiskScore {
             get { return BackingStore?.Get<string>("riskScore"); }
             set { BackingStore?.Set("riskScore", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new hostSecurityState and sets the default values.
         /// </summary>

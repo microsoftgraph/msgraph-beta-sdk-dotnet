@@ -15,10 +15,17 @@ namespace Microsoft.Graph.Beta.IdentityGovernance.LifecycleWorkflows.DeletedItem
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The subjects property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Microsoft.Graph.Beta.Models.User>? Subjects {
+            get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.User>?>("subjects"); }
+            set { BackingStore?.Set("subjects", value); }
+        }
+#else
         public List<Microsoft.Graph.Beta.Models.User> Subjects {
             get { return BackingStore?.Get<List<Microsoft.Graph.Beta.Models.User>>("subjects"); }
             set { BackingStore?.Set("subjects", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new activatePostRequestBody and sets the default values.
         /// </summary>

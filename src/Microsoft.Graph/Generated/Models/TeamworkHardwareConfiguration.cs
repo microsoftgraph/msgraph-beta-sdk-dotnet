@@ -14,25 +14,53 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The compute property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public TeamworkPeripheral? Compute {
+            get { return BackingStore?.Get<TeamworkPeripheral?>("compute"); }
+            set { BackingStore?.Set("compute", value); }
+        }
+#else
         public TeamworkPeripheral Compute {
             get { return BackingStore?.Get<TeamworkPeripheral>("compute"); }
             set { BackingStore?.Set("compute", value); }
         }
+#endif
         /// <summary>The hdmiIngest property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public TeamworkPeripheral? HdmiIngest {
+            get { return BackingStore?.Get<TeamworkPeripheral?>("hdmiIngest"); }
+            set { BackingStore?.Set("hdmiIngest", value); }
+        }
+#else
         public TeamworkPeripheral HdmiIngest {
             get { return BackingStore?.Get<TeamworkPeripheral>("hdmiIngest"); }
             set { BackingStore?.Set("hdmiIngest", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The CPU model on the device.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ProcessorModel {
+            get { return BackingStore?.Get<string?>("processorModel"); }
+            set { BackingStore?.Set("processorModel", value); }
+        }
+#else
         public string ProcessorModel {
             get { return BackingStore?.Get<string>("processorModel"); }
             set { BackingStore?.Set("processorModel", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new teamworkHardwareConfiguration and sets the default values.
         /// </summary>

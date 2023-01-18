@@ -7,25 +7,53 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class CloudCommunications : Entity, IParsable {
         /// <summary>The callRecords property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<CallRecord>? CallRecords {
+            get { return BackingStore?.Get<List<CallRecord>?>("callRecords"); }
+            set { BackingStore?.Set("callRecords", value); }
+        }
+#else
         public List<CallRecord> CallRecords {
             get { return BackingStore?.Get<List<CallRecord>>("callRecords"); }
             set { BackingStore?.Set("callRecords", value); }
         }
+#endif
         /// <summary>The calls property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Call>? Calls {
+            get { return BackingStore?.Get<List<Call>?>("calls"); }
+            set { BackingStore?.Set("calls", value); }
+        }
+#else
         public List<Call> Calls {
             get { return BackingStore?.Get<List<Call>>("calls"); }
             set { BackingStore?.Set("calls", value); }
         }
+#endif
         /// <summary>The onlineMeetings property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<OnlineMeeting>? OnlineMeetings {
+            get { return BackingStore?.Get<List<OnlineMeeting>?>("onlineMeetings"); }
+            set { BackingStore?.Set("onlineMeetings", value); }
+        }
+#else
         public List<OnlineMeeting> OnlineMeetings {
             get { return BackingStore?.Get<List<OnlineMeeting>>("onlineMeetings"); }
             set { BackingStore?.Set("onlineMeetings", value); }
         }
+#endif
         /// <summary>The presences property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<Presence>? Presences {
+            get { return BackingStore?.Get<List<Presence>?>("presences"); }
+            set { BackingStore?.Set("presences", value); }
+        }
+#else
         public List<Presence> Presences {
             get { return BackingStore?.Get<List<Presence>>("presences"); }
             set { BackingStore?.Set("presences", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

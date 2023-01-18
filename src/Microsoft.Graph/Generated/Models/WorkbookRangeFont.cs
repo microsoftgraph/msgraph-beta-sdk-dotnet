@@ -11,30 +11,51 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("bold", value); }
         }
         /// <summary>HTML color code representation of the text color. E.g. #FF0000 represents Red.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Color {
+            get { return BackingStore?.Get<string?>("color"); }
+            set { BackingStore?.Set("color", value); }
+        }
+#else
         public string Color {
             get { return BackingStore?.Get<string>("color"); }
             set { BackingStore?.Set("color", value); }
         }
+#endif
         /// <summary>Represents the italic status of the font.</summary>
         public bool? Italic {
             get { return BackingStore?.Get<bool?>("italic"); }
             set { BackingStore?.Set("italic", value); }
         }
         /// <summary>Font name (e.g. &apos;Calibri&apos;)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Name {
+            get { return BackingStore?.Get<string?>("name"); }
+            set { BackingStore?.Set("name", value); }
+        }
+#else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#endif
         /// <summary>Font size.</summary>
         public double? Size {
             get { return BackingStore?.Get<double?>("size"); }
             set { BackingStore?.Set("size", value); }
         }
         /// <summary>Type of underline applied to the font. Possible values are: None, Single, Double, SingleAccountant, DoubleAccountant.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Underline {
+            get { return BackingStore?.Get<string?>("underline"); }
+            set { BackingStore?.Set("underline", value); }
+        }
+#else
         public string Underline {
             get { return BackingStore?.Get<string>("underline"); }
             set { BackingStore?.Set("underline", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

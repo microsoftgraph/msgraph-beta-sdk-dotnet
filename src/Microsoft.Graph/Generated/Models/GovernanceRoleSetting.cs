@@ -6,60 +6,123 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class GovernanceRoleSetting : Entity, IParsable {
         /// <summary>The rule settings that are evaluated when an administrator tries to add an eligible role assignment.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<GovernanceRuleSetting>? AdminEligibleSettings {
+            get { return BackingStore?.Get<List<GovernanceRuleSetting>?>("adminEligibleSettings"); }
+            set { BackingStore?.Set("adminEligibleSettings", value); }
+        }
+#else
         public List<GovernanceRuleSetting> AdminEligibleSettings {
             get { return BackingStore?.Get<List<GovernanceRuleSetting>>("adminEligibleSettings"); }
             set { BackingStore?.Set("adminEligibleSettings", value); }
         }
+#endif
         /// <summary>The rule settings that are evaluated when an administrator tries to add a direct member role assignment.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<GovernanceRuleSetting>? AdminMemberSettings {
+            get { return BackingStore?.Get<List<GovernanceRuleSetting>?>("adminMemberSettings"); }
+            set { BackingStore?.Set("adminMemberSettings", value); }
+        }
+#else
         public List<GovernanceRuleSetting> AdminMemberSettings {
             get { return BackingStore?.Get<List<GovernanceRuleSetting>>("adminMemberSettings"); }
             set { BackingStore?.Set("adminMemberSettings", value); }
         }
+#endif
         /// <summary>Read-only. Indicate if the roleSetting is a default roleSetting</summary>
         public bool? IsDefault {
             get { return BackingStore?.Get<bool?>("isDefault"); }
             set { BackingStore?.Set("isDefault", value); }
         }
         /// <summary>Read-only. The display name of the administrator who last updated the roleSetting.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? LastUpdatedBy {
+            get { return BackingStore?.Get<string?>("lastUpdatedBy"); }
+            set { BackingStore?.Set("lastUpdatedBy", value); }
+        }
+#else
         public string LastUpdatedBy {
             get { return BackingStore?.Get<string>("lastUpdatedBy"); }
             set { BackingStore?.Set("lastUpdatedBy", value); }
         }
+#endif
         /// <summary>Read-only. The time when the role setting was last updated. The Timestamp type represents date and time information using ISO 8601 format and is always in UTC time. For example, midnight UTC on Jan 1, 2014 is 2014-01-01T00:00:00Z</summary>
         public DateTimeOffset? LastUpdatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastUpdatedDateTime"); }
             set { BackingStore?.Set("lastUpdatedDateTime", value); }
         }
         /// <summary>Read-only. The associated resource for this role setting.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public GovernanceResource? Resource {
+            get { return BackingStore?.Get<GovernanceResource?>("resource"); }
+            set { BackingStore?.Set("resource", value); }
+        }
+#else
         public GovernanceResource Resource {
             get { return BackingStore?.Get<GovernanceResource>("resource"); }
             set { BackingStore?.Set("resource", value); }
         }
+#endif
         /// <summary>Required. The id of the resource that the role setting is associated with.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ResourceId {
+            get { return BackingStore?.Get<string?>("resourceId"); }
+            set { BackingStore?.Set("resourceId", value); }
+        }
+#else
         public string ResourceId {
             get { return BackingStore?.Get<string>("resourceId"); }
             set { BackingStore?.Set("resourceId", value); }
         }
+#endif
         /// <summary>Read-only. The role definition that is enforced with this role setting.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public GovernanceRoleDefinition? RoleDefinition {
+            get { return BackingStore?.Get<GovernanceRoleDefinition?>("roleDefinition"); }
+            set { BackingStore?.Set("roleDefinition", value); }
+        }
+#else
         public GovernanceRoleDefinition RoleDefinition {
             get { return BackingStore?.Get<GovernanceRoleDefinition>("roleDefinition"); }
             set { BackingStore?.Set("roleDefinition", value); }
         }
+#endif
         /// <summary>Required. The id of the role definition that the role setting is associated with.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? RoleDefinitionId {
+            get { return BackingStore?.Get<string?>("roleDefinitionId"); }
+            set { BackingStore?.Set("roleDefinitionId", value); }
+        }
+#else
         public string RoleDefinitionId {
             get { return BackingStore?.Get<string>("roleDefinitionId"); }
             set { BackingStore?.Set("roleDefinitionId", value); }
         }
+#endif
         /// <summary>The rule settings that are evaluated when a user tries to add an eligible role assignment. The setting is not supported for now.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<GovernanceRuleSetting>? UserEligibleSettings {
+            get { return BackingStore?.Get<List<GovernanceRuleSetting>?>("userEligibleSettings"); }
+            set { BackingStore?.Set("userEligibleSettings", value); }
+        }
+#else
         public List<GovernanceRuleSetting> UserEligibleSettings {
             get { return BackingStore?.Get<List<GovernanceRuleSetting>>("userEligibleSettings"); }
             set { BackingStore?.Set("userEligibleSettings", value); }
         }
+#endif
         /// <summary>The rule settings that are evaluated when a user tries to activate his role assignment.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<GovernanceRuleSetting>? UserMemberSettings {
+            get { return BackingStore?.Get<List<GovernanceRuleSetting>?>("userMemberSettings"); }
+            set { BackingStore?.Set("userMemberSettings", value); }
+        }
+#else
         public List<GovernanceRuleSetting> UserMemberSettings {
             get { return BackingStore?.Get<List<GovernanceRuleSetting>>("userMemberSettings"); }
             set { BackingStore?.Set("userMemberSettings", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

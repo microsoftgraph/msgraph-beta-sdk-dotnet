@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class IosAzureAdSingleSignOnExtension : IosSingleSignOnExtension, IParsable {
         /// <summary>An optional list of additional bundle IDs allowed to use the AAD extension for single sign-on.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? BundleIdAccessControlList {
+            get { return BackingStore?.Get<List<string>?>("bundleIdAccessControlList"); }
+            set { BackingStore?.Set("bundleIdAccessControlList", value); }
+        }
+#else
         public List<string> BundleIdAccessControlList {
             get { return BackingStore?.Get<List<string>>("bundleIdAccessControlList"); }
             set { BackingStore?.Set("bundleIdAccessControlList", value); }
         }
+#endif
         /// <summary>Gets or sets a list of typed key-value pairs used to configure Credential-type profiles. This collection can contain a maximum of 500 elements.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<KeyTypedValuePair>? Configurations {
+            get { return BackingStore?.Get<List<KeyTypedValuePair>?>("configurations"); }
+            set { BackingStore?.Set("configurations", value); }
+        }
+#else
         public List<KeyTypedValuePair> Configurations {
             get { return BackingStore?.Get<List<KeyTypedValuePair>>("configurations"); }
             set { BackingStore?.Set("configurations", value); }
         }
+#endif
         /// <summary>Enables or disables shared device mode.</summary>
         public bool? EnableSharedDeviceMode {
             get { return BackingStore?.Get<bool?>("enableSharedDeviceMode"); }

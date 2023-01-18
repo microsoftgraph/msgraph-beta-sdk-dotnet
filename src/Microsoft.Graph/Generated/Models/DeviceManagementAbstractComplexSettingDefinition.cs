@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class DeviceManagementAbstractComplexSettingDefinition : DeviceManagementSettingDefinition, IParsable {
         /// <summary>List of definition IDs for all possible implementations of this abstract complex setting</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? Implementations {
+            get { return BackingStore?.Get<List<string>?>("implementations"); }
+            set { BackingStore?.Set("implementations", value); }
+        }
+#else
         public List<string> Implementations {
             get { return BackingStore?.Get<List<string>>("implementations"); }
             set { BackingStore?.Set("implementations", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

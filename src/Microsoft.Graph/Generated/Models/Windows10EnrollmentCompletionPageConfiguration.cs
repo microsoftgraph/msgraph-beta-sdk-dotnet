@@ -31,10 +31,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("blockDeviceSetupRetryByUser", value); }
         }
         /// <summary>Set custom error message to show upon installation failure</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CustomErrorMessage {
+            get { return BackingStore?.Get<string?>("customErrorMessage"); }
+            set { BackingStore?.Set("customErrorMessage", value); }
+        }
+#else
         public string CustomErrorMessage {
             get { return BackingStore?.Get<string>("customErrorMessage"); }
             set { BackingStore?.Set("customErrorMessage", value); }
         }
+#endif
         /// <summary>Only show installation progress for first user post enrollment</summary>
         public bool? DisableUserStatusTrackingAfterFirstUser {
             get { return BackingStore?.Get<bool?>("disableUserStatusTrackingAfterFirstUser"); }
@@ -51,10 +58,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("installQualityUpdates", value); }
         }
         /// <summary>Selected applications to track the installation status</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? SelectedMobileAppIds {
+            get { return BackingStore?.Get<List<string>?>("selectedMobileAppIds"); }
+            set { BackingStore?.Set("selectedMobileAppIds", value); }
+        }
+#else
         public List<string> SelectedMobileAppIds {
             get { return BackingStore?.Get<List<string>>("selectedMobileAppIds"); }
             set { BackingStore?.Set("selectedMobileAppIds", value); }
         }
+#endif
         /// <summary>Show or hide installation progress to user</summary>
         public bool? ShowInstallationProgress {
             get { return BackingStore?.Get<bool?>("showInstallationProgress"); }

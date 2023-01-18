@@ -14,15 +14,29 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The Kerberos Constrained Delegation settings for applications that use Integrated Window Authentication.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.KerberosSignOnSettings? KerberosSignOnSettings {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.KerberosSignOnSettings?>("kerberosSignOnSettings"); }
+            set { BackingStore?.Set("kerberosSignOnSettings", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.KerberosSignOnSettings KerberosSignOnSettings {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.KerberosSignOnSettings>("kerberosSignOnSettings"); }
             set { BackingStore?.Set("kerberosSignOnSettings", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The preferred single-sign on mode for the application. Possible values are: none, onPremisesKerberos, aadHeaderBased,pingHeaderBased.</summary>
         public Microsoft.Graph.Beta.Models.SingleSignOnMode? SingleSignOnMode {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.SingleSignOnMode?>("singleSignOnMode"); }

@@ -15,15 +15,29 @@ namespace Microsoft.Graph.Beta.Me.Drives.Item.Root.Permissions.Item.Grant {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The recipients property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<DriveRecipient>? Recipients {
+            get { return BackingStore?.Get<List<DriveRecipient>?>("recipients"); }
+            set { BackingStore?.Set("recipients", value); }
+        }
+#else
         public List<DriveRecipient> Recipients {
             get { return BackingStore?.Get<List<DriveRecipient>>("recipients"); }
             set { BackingStore?.Set("recipients", value); }
         }
+#endif
         /// <summary>The roles property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? Roles {
+            get { return BackingStore?.Get<List<string>?>("roles"); }
+            set { BackingStore?.Set("roles", value); }
+        }
+#else
         public List<string> Roles {
             get { return BackingStore?.Get<List<string>>("roles"); }
             set { BackingStore?.Set("roles", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new grantPostRequestBody and sets the default values.
         /// </summary>

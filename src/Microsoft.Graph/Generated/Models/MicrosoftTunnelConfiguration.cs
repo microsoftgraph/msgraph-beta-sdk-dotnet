@@ -4,40 +4,72 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
-    /// <summary>
-    /// Entity that represents a collection of Microsoft Tunnel settings
-    /// </summary>
     public class MicrosoftTunnelConfiguration : Entity, IParsable {
         /// <summary>Additional settings that may be applied to the server</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<KeyValuePair>? AdvancedSettings {
+            get { return BackingStore?.Get<List<KeyValuePair>?>("advancedSettings"); }
+            set { BackingStore?.Set("advancedSettings", value); }
+        }
+#else
         public List<KeyValuePair> AdvancedSettings {
             get { return BackingStore?.Get<List<KeyValuePair>>("advancedSettings"); }
             set { BackingStore?.Set("advancedSettings", value); }
         }
+#endif
         /// <summary>The Default Domain appendix that will be used by the clients</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DefaultDomainSuffix {
+            get { return BackingStore?.Get<string?>("defaultDomainSuffix"); }
+            set { BackingStore?.Set("defaultDomainSuffix", value); }
+        }
+#else
         public string DefaultDomainSuffix {
             get { return BackingStore?.Get<string>("defaultDomainSuffix"); }
             set { BackingStore?.Set("defaultDomainSuffix", value); }
         }
+#endif
         /// <summary>The configuration&apos;s description (optional)</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>When DisableUdpConnections is set, the clients and VPN server will not use DTLS connections to transfer data.</summary>
         public bool? DisableUdpConnections {
             get { return BackingStore?.Get<bool?>("disableUdpConnections"); }
             set { BackingStore?.Set("disableUdpConnections", value); }
         }
         /// <summary>The display name for the server configuration. This property is required when a server is created.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The DNS servers that will be used by the clients</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? DnsServers {
+            get { return BackingStore?.Get<List<string>?>("dnsServers"); }
+            set { BackingStore?.Set("dnsServers", value); }
+        }
+#else
         public List<string> DnsServers {
             get { return BackingStore?.Get<List<string>>("dnsServers"); }
             set { BackingStore?.Set("dnsServers", value); }
         }
+#endif
         /// <summary>When the configuration was last updated</summary>
         public DateTimeOffset? LastUpdateDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastUpdateDateTime"); }
@@ -49,40 +81,89 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("listenPort", value); }
         }
         /// <summary>The subnet that will be used to allocate virtual address for the clients</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Network {
+            get { return BackingStore?.Get<string?>("network"); }
+            set { BackingStore?.Set("network", value); }
+        }
+#else
         public string Network {
             get { return BackingStore?.Get<string>("network"); }
             set { BackingStore?.Set("network", value); }
         }
+#endif
         /// <summary>List of Scope Tags for this Entity instance</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? RoleScopeTagIds {
+            get { return BackingStore?.Get<List<string>?>("roleScopeTagIds"); }
+            set { BackingStore?.Set("roleScopeTagIds", value); }
+        }
+#else
         public List<string> RoleScopeTagIds {
             get { return BackingStore?.Get<List<string>>("roleScopeTagIds"); }
             set { BackingStore?.Set("roleScopeTagIds", value); }
         }
+#endif
         /// <summary>Subsets of the routes that will not be routed by the server</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? RouteExcludes {
+            get { return BackingStore?.Get<List<string>?>("routeExcludes"); }
+            set { BackingStore?.Set("routeExcludes", value); }
+        }
+#else
         public List<string> RouteExcludes {
             get { return BackingStore?.Get<List<string>>("routeExcludes"); }
             set { BackingStore?.Set("routeExcludes", value); }
         }
+#endif
         /// <summary>The routes that will be routed by the server</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? RouteIncludes {
+            get { return BackingStore?.Get<List<string>?>("routeIncludes"); }
+            set { BackingStore?.Set("routeIncludes", value); }
+        }
+#else
         public List<string> RouteIncludes {
             get { return BackingStore?.Get<List<string>>("routeIncludes"); }
             set { BackingStore?.Set("routeIncludes", value); }
         }
+#endif
         /// <summary>Subsets of the routes that will not be routed by the server. This property is going to be deprecated with the option of using the new property, &apos;RouteExcludes&apos;.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? RoutesExclude {
+            get { return BackingStore?.Get<List<string>?>("routesExclude"); }
+            set { BackingStore?.Set("routesExclude", value); }
+        }
+#else
         public List<string> RoutesExclude {
             get { return BackingStore?.Get<List<string>>("routesExclude"); }
             set { BackingStore?.Set("routesExclude", value); }
         }
+#endif
         /// <summary>The routes that will be routed by the server. This property is going to be deprecated with the option of using the new property, &apos;RouteIncludes&apos;.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? RoutesInclude {
+            get { return BackingStore?.Get<List<string>?>("routesInclude"); }
+            set { BackingStore?.Set("routesInclude", value); }
+        }
+#else
         public List<string> RoutesInclude {
             get { return BackingStore?.Get<List<string>>("routesInclude"); }
             set { BackingStore?.Set("routesInclude", value); }
         }
+#endif
         /// <summary>The domains that will be resolved using the provided dns servers</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? SplitDNS {
+            get { return BackingStore?.Get<List<string>?>("splitDNS"); }
+            set { BackingStore?.Set("splitDNS", value); }
+        }
+#else
         public List<string> SplitDNS {
             get { return BackingStore?.Get<List<string>>("splitDNS"); }
             set { BackingStore?.Set("splitDNS", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

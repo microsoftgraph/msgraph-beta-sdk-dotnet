@@ -19,25 +19,46 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("meanTimeToFailureInMinutes", value); }
         }
         /// <summary>The OS build number installed on the device.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OsBuildNumber {
+            get { return BackingStore?.Get<string?>("osBuildNumber"); }
+            set { BackingStore?.Set("osBuildNumber", value); }
+        }
+#else
         public string OsBuildNumber {
             get { return BackingStore?.Get<string>("osBuildNumber"); }
             set { BackingStore?.Set("osBuildNumber", value); }
         }
+#endif
         /// <summary>The OS version installed on the device.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OsVersion {
+            get { return BackingStore?.Get<string?>("osVersion"); }
+            set { BackingStore?.Set("osVersion", value); }
+        }
+#else
         public string OsVersion {
             get { return BackingStore?.Get<string>("osVersion"); }
             set { BackingStore?.Set("osVersion", value); }
         }
+#endif
         /// <summary>The app health score of the OS version. Valid values -1.79769313486232E+308 to 1.79769313486232E+308</summary>
         public double? OsVersionAppHealthScore {
             get { return BackingStore?.Get<double?>("osVersionAppHealthScore"); }
             set { BackingStore?.Set("osVersionAppHealthScore", value); }
         }
         /// <summary>The overall app health status of the OS version.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OsVersionAppHealthStatus {
+            get { return BackingStore?.Get<string?>("osVersionAppHealthStatus"); }
+            set { BackingStore?.Set("osVersionAppHealthStatus", value); }
+        }
+#else
         public string OsVersionAppHealthStatus {
             get { return BackingStore?.Get<string>("osVersionAppHealthStatus"); }
             set { BackingStore?.Set("osVersionAppHealthStatus", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

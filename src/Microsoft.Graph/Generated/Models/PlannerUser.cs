@@ -6,45 +6,101 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class PlannerUser : PlannerDelta, IParsable {
         /// <summary>The all property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<PlannerDelta>? All {
+            get { return BackingStore?.Get<List<PlannerDelta>?>("all"); }
+            set { BackingStore?.Set("all", value); }
+        }
+#else
         public List<PlannerDelta> All {
             get { return BackingStore?.Get<List<PlannerDelta>>("all"); }
             set { BackingStore?.Set("all", value); }
         }
+#endif
         /// <summary>A collection that contains the references to the plans that the user has marked as favorites.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public PlannerFavoritePlanReferenceCollection? FavoritePlanReferences {
+            get { return BackingStore?.Get<PlannerFavoritePlanReferenceCollection?>("favoritePlanReferences"); }
+            set { BackingStore?.Set("favoritePlanReferences", value); }
+        }
+#else
         public PlannerFavoritePlanReferenceCollection FavoritePlanReferences {
             get { return BackingStore?.Get<PlannerFavoritePlanReferenceCollection>("favoritePlanReferences"); }
             set { BackingStore?.Set("favoritePlanReferences", value); }
         }
+#endif
         /// <summary>Read-only. Nullable. Returns the plannerPlans that the user marked as favorites.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<PlannerPlan>? FavoritePlans {
+            get { return BackingStore?.Get<List<PlannerPlan>?>("favoritePlans"); }
+            set { BackingStore?.Set("favoritePlans", value); }
+        }
+#else
         public List<PlannerPlan> FavoritePlans {
             get { return BackingStore?.Get<List<PlannerPlan>>("favoritePlans"); }
             set { BackingStore?.Set("favoritePlans", value); }
         }
+#endif
         /// <summary>The plans property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<PlannerPlan>? Plans {
+            get { return BackingStore?.Get<List<PlannerPlan>?>("plans"); }
+            set { BackingStore?.Set("plans", value); }
+        }
+#else
         public List<PlannerPlan> Plans {
             get { return BackingStore?.Get<List<PlannerPlan>>("plans"); }
             set { BackingStore?.Set("plans", value); }
         }
+#endif
         /// <summary>A collection that contains references to the plans that were viewed recently by the user in apps that support recent plans.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public PlannerRecentPlanReferenceCollection? RecentPlanReferences {
+            get { return BackingStore?.Get<PlannerRecentPlanReferenceCollection?>("recentPlanReferences"); }
+            set { BackingStore?.Set("recentPlanReferences", value); }
+        }
+#else
         public PlannerRecentPlanReferenceCollection RecentPlanReferences {
             get { return BackingStore?.Get<PlannerRecentPlanReferenceCollection>("recentPlanReferences"); }
             set { BackingStore?.Set("recentPlanReferences", value); }
         }
+#endif
         /// <summary>Read-only. Nullable. Returns the plannerPlans that have been recently viewed by the user in apps that support recent plans.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<PlannerPlan>? RecentPlans {
+            get { return BackingStore?.Get<List<PlannerPlan>?>("recentPlans"); }
+            set { BackingStore?.Set("recentPlans", value); }
+        }
+#else
         public List<PlannerPlan> RecentPlans {
             get { return BackingStore?.Get<List<PlannerPlan>>("recentPlans"); }
             set { BackingStore?.Set("recentPlans", value); }
         }
+#endif
         /// <summary>Read-only. Nullable. Returns the plannerPlans contained by the plannerRosters the user is a member.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<PlannerPlan>? RosterPlans {
+            get { return BackingStore?.Get<List<PlannerPlan>?>("rosterPlans"); }
+            set { BackingStore?.Set("rosterPlans", value); }
+        }
+#else
         public List<PlannerPlan> RosterPlans {
             get { return BackingStore?.Get<List<PlannerPlan>>("rosterPlans"); }
             set { BackingStore?.Set("rosterPlans", value); }
         }
+#endif
         /// <summary>Read-only. Nullable. Returns the plannerTasks assigned to the user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<PlannerTask>? Tasks {
+            get { return BackingStore?.Get<List<PlannerTask>?>("tasks"); }
+            set { BackingStore?.Set("tasks", value); }
+        }
+#else
         public List<PlannerTask> Tasks {
             get { return BackingStore?.Get<List<PlannerTask>>("tasks"); }
             set { BackingStore?.Set("tasks", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

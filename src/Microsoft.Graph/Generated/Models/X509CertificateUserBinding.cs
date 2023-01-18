@@ -14,25 +14,46 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The priority of the binding. Azure AD uses the binding with the highest priority. This value must be a non-negative integer and unique in the collection of objects in the certificateUserBindings property of an x509CertificateAuthenticationMethodConfiguration object. Required</summary>
         public int? Priority {
             get { return BackingStore?.Get<int?>("priority"); }
             set { BackingStore?.Set("priority", value); }
         }
         /// <summary>Defines the Azure AD user property of the user object to use for the binding. The possible values are: userPrincipalName, onPremisesUserPrincipalName, email. Required.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UserProperty {
+            get { return BackingStore?.Get<string?>("userProperty"); }
+            set { BackingStore?.Set("userProperty", value); }
+        }
+#else
         public string UserProperty {
             get { return BackingStore?.Get<string>("userProperty"); }
             set { BackingStore?.Set("userProperty", value); }
         }
+#endif
         /// <summary>The field on the X.509 certificate to use for the binding. The possible values are: PrincipalName, RFC822Name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? X509CertificateField {
+            get { return BackingStore?.Get<string?>("x509CertificateField"); }
+            set { BackingStore?.Set("x509CertificateField", value); }
+        }
+#else
         public string X509CertificateField {
             get { return BackingStore?.Get<string>("x509CertificateField"); }
             set { BackingStore?.Set("x509CertificateField", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new x509CertificateUserBinding and sets the default values.
         /// </summary>

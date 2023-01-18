@@ -11,15 +11,29 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
             set { BackingStore?.Set("alertRuleTemplate", value); }
         }
         /// <summary>The rule description.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>The display name of the rule.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>The status of the rule that indicates whether the rule is enabled or disabled. If true, the rule is enabled; otherwise, the rule is disabled.</summary>
         public bool? Enabled {
             get { return BackingStore?.Get<bool?>("enabled"); }
@@ -31,20 +45,34 @@ namespace Microsoft.Graph.Beta.Models.DeviceManagement {
             set { BackingStore?.Set("isSystemRule", value); }
         }
         /// <summary>The notification channels of the rule selected by the user.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<NotificationChannel>? NotificationChannels {
+            get { return BackingStore?.Get<List<NotificationChannel>?>("notificationChannels"); }
+            set { BackingStore?.Set("notificationChannels", value); }
+        }
+#else
         public List<NotificationChannel> NotificationChannels {
             get { return BackingStore?.Get<List<NotificationChannel>>("notificationChannels"); }
             set { BackingStore?.Set("notificationChannels", value); }
         }
+#endif
         /// <summary>The severity of the rule. The possible values are: unknown, informational, warning, critical, unknownFutureValue.</summary>
         public RuleSeverityType? Severity {
             get { return BackingStore?.Get<RuleSeverityType?>("severity"); }
             set { BackingStore?.Set("severity", value); }
         }
         /// <summary>The conditions to send alerts. For example, send alert when provisioning has failed for greater than or equal to 6 Cloud PCs.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public RuleThreshold? Threshold {
+            get { return BackingStore?.Get<RuleThreshold?>("threshold"); }
+            set { BackingStore?.Set("threshold", value); }
+        }
+#else
         public RuleThreshold Threshold {
             get { return BackingStore?.Get<RuleThreshold>("threshold"); }
             set { BackingStore?.Set("threshold", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Search {
     public class Acronym : SearchAnswer, IParsable {
         /// <summary>What the acronym stands for.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? StandsFor {
+            get { return BackingStore?.Get<string?>("standsFor"); }
+            set { BackingStore?.Set("standsFor", value); }
+        }
+#else
         public string StandsFor {
             get { return BackingStore?.Get<string>("standsFor"); }
             set { BackingStore?.Set("standsFor", value); }
         }
+#endif
         /// <summary>The state property</summary>
         public AnswerState? State {
             get { return BackingStore?.Get<AnswerState?>("state"); }

@@ -16,20 +16,34 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("lastActionDateTime", value); }
         }
         /// <summary>The resourceLocation property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ResourceLocation {
+            get { return BackingStore?.Get<string?>("resourceLocation"); }
+            set { BackingStore?.Set("resourceLocation", value); }
+        }
+#else
         public string ResourceLocation {
             get { return BackingStore?.Get<string>("resourceLocation"); }
             set { BackingStore?.Set("resourceLocation", value); }
         }
+#endif
         /// <summary>The status property</summary>
         public LongRunningOperationStatus? Status {
             get { return BackingStore?.Get<LongRunningOperationStatus?>("status"); }
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>The statusDetail property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? StatusDetail {
+            get { return BackingStore?.Get<string?>("statusDetail"); }
+            set { BackingStore?.Set("statusDetail", value); }
+        }
+#else
         public string StatusDetail {
             get { return BackingStore?.Get<string>("statusDetail"); }
             set { BackingStore?.Set("statusDetail", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

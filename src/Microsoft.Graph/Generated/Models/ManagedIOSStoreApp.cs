@@ -6,25 +6,53 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class ManagedIOSStoreApp : ManagedApp, IParsable {
         /// <summary>Contains properties of the possible iOS device types the mobile app can run on.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public IosDeviceType? ApplicableDeviceType {
+            get { return BackingStore?.Get<IosDeviceType?>("applicableDeviceType"); }
+            set { BackingStore?.Set("applicableDeviceType", value); }
+        }
+#else
         public IosDeviceType ApplicableDeviceType {
             get { return BackingStore?.Get<IosDeviceType>("applicableDeviceType"); }
             set { BackingStore?.Set("applicableDeviceType", value); }
         }
+#endif
         /// <summary>The Apple AppStoreUrl.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AppStoreUrl {
+            get { return BackingStore?.Get<string?>("appStoreUrl"); }
+            set { BackingStore?.Set("appStoreUrl", value); }
+        }
+#else
         public string AppStoreUrl {
             get { return BackingStore?.Get<string>("appStoreUrl"); }
             set { BackingStore?.Set("appStoreUrl", value); }
         }
+#endif
         /// <summary>The app&apos;s Bundle ID.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? BundleId {
+            get { return BackingStore?.Get<string?>("bundleId"); }
+            set { BackingStore?.Set("bundleId", value); }
+        }
+#else
         public string BundleId {
             get { return BackingStore?.Get<string>("bundleId"); }
             set { BackingStore?.Set("bundleId", value); }
         }
+#endif
         /// <summary>Contains properties of the minimum operating system required for an iOS mobile app.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public IosMinimumOperatingSystem? MinimumSupportedOperatingSystem {
+            get { return BackingStore?.Get<IosMinimumOperatingSystem?>("minimumSupportedOperatingSystem"); }
+            set { BackingStore?.Set("minimumSupportedOperatingSystem", value); }
+        }
+#else
         public IosMinimumOperatingSystem MinimumSupportedOperatingSystem {
             get { return BackingStore?.Get<IosMinimumOperatingSystem>("minimumSupportedOperatingSystem"); }
             set { BackingStore?.Set("minimumSupportedOperatingSystem", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new ManagedIOSStoreApp and sets the default values.
         /// </summary>

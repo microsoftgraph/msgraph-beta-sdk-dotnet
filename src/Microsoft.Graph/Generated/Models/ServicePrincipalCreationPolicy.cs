@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class ServicePrincipalCreationPolicy : PolicyBase, IParsable {
         /// <summary>The excludes property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ServicePrincipalCreationConditionSet>? Excludes {
+            get { return BackingStore?.Get<List<ServicePrincipalCreationConditionSet>?>("excludes"); }
+            set { BackingStore?.Set("excludes", value); }
+        }
+#else
         public List<ServicePrincipalCreationConditionSet> Excludes {
             get { return BackingStore?.Get<List<ServicePrincipalCreationConditionSet>>("excludes"); }
             set { BackingStore?.Set("excludes", value); }
         }
+#endif
         /// <summary>The includes property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ServicePrincipalCreationConditionSet>? Includes {
+            get { return BackingStore?.Get<List<ServicePrincipalCreationConditionSet>?>("includes"); }
+            set { BackingStore?.Set("includes", value); }
+        }
+#else
         public List<ServicePrincipalCreationConditionSet> Includes {
             get { return BackingStore?.Get<List<ServicePrincipalCreationConditionSet>>("includes"); }
             set { BackingStore?.Set("includes", value); }
         }
+#endif
         /// <summary>The isBuiltIn property</summary>
         public bool? IsBuiltIn {
             get { return BackingStore?.Get<bool?>("isBuiltIn"); }

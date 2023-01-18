@@ -12,10 +12,17 @@ namespace Microsoft.Graph.Beta.DeviceManagement.VirtualEndpoint.OnPremisesConnec
             set { BackingStore?.Set("additionalData", value); }
         }
         /// <summary>The adDomainPassword property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AdDomainPassword {
+            get { return BackingStore?.Get<string?>("adDomainPassword"); }
+            set { BackingStore?.Set("adDomainPassword", value); }
+        }
+#else
         public string AdDomainPassword {
             get { return BackingStore?.Get<string>("adDomainPassword"); }
             set { BackingStore?.Set("adDomainPassword", value); }
         }
+#endif
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>

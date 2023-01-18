@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class AgreementFileLocalization : AgreementFileProperties, IParsable {
         /// <summary>Read-only. Customized versions of the terms of use agreement in the Azure AD tenant.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AgreementFileVersion>? Versions {
+            get { return BackingStore?.Get<List<AgreementFileVersion>?>("versions"); }
+            set { BackingStore?.Set("versions", value); }
+        }
+#else
         public List<AgreementFileVersion> Versions {
             get { return BackingStore?.Get<List<AgreementFileVersion>>("versions"); }
             set { BackingStore?.Set("versions", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

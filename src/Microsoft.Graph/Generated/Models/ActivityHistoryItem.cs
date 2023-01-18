@@ -11,10 +11,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("activeDurationSeconds", value); }
         }
         /// <summary>The activity property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public UserActivity? Activity {
+            get { return BackingStore?.Get<UserActivity?>("activity"); }
+            set { BackingStore?.Set("activity", value); }
+        }
+#else
         public UserActivity Activity {
             get { return BackingStore?.Get<UserActivity>("activity"); }
             set { BackingStore?.Set("activity", value); }
         }
+#endif
         /// <summary>The createdDateTime property</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
@@ -46,10 +53,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>The userTimezone property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UserTimezone {
+            get { return BackingStore?.Get<string?>("userTimezone"); }
+            set { BackingStore?.Set("userTimezone", value); }
+        }
+#else
         public string UserTimezone {
             get { return BackingStore?.Get<string>("userTimezone"); }
             set { BackingStore?.Set("userTimezone", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

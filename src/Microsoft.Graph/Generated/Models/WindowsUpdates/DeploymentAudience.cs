@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.WindowsUpdates {
     public class DeploymentAudience : Entity, IParsable {
         /// <summary>Specifies the assets to exclude from the audience.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<UpdatableAsset>? Exclusions {
+            get { return BackingStore?.Get<List<UpdatableAsset>?>("exclusions"); }
+            set { BackingStore?.Set("exclusions", value); }
+        }
+#else
         public List<UpdatableAsset> Exclusions {
             get { return BackingStore?.Get<List<UpdatableAsset>>("exclusions"); }
             set { BackingStore?.Set("exclusions", value); }
         }
+#endif
         /// <summary>Specifies the assets to include in the audience.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<UpdatableAsset>? Members {
+            get { return BackingStore?.Get<List<UpdatableAsset>?>("members"); }
+            set { BackingStore?.Set("members", value); }
+        }
+#else
         public List<UpdatableAsset> Members {
             get { return BackingStore?.Get<List<UpdatableAsset>>("members"); }
             set { BackingStore?.Set("members", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

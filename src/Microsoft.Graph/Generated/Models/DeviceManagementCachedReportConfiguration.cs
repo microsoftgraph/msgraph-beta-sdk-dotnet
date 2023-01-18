@@ -14,35 +14,70 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("expirationDateTime", value); }
         }
         /// <summary>Filters applied on report creation.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Filter {
+            get { return BackingStore?.Get<string?>("filter"); }
+            set { BackingStore?.Set("filter", value); }
+        }
+#else
         public string Filter {
             get { return BackingStore?.Get<string>("filter"); }
             set { BackingStore?.Set("filter", value); }
         }
+#endif
         /// <summary>Time that the cached report was last refreshed</summary>
         public DateTimeOffset? LastRefreshDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastRefreshDateTime"); }
             set { BackingStore?.Set("lastRefreshDateTime", value); }
         }
         /// <summary>Caller-managed metadata associated with the report</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Metadata {
+            get { return BackingStore?.Get<string?>("metadata"); }
+            set { BackingStore?.Set("metadata", value); }
+        }
+#else
         public string Metadata {
             get { return BackingStore?.Get<string>("metadata"); }
             set { BackingStore?.Set("metadata", value); }
         }
+#endif
         /// <summary>Ordering of columns in the report</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? OrderBy {
+            get { return BackingStore?.Get<List<string>?>("orderBy"); }
+            set { BackingStore?.Set("orderBy", value); }
+        }
+#else
         public List<string> OrderBy {
             get { return BackingStore?.Get<List<string>>("orderBy"); }
             set { BackingStore?.Set("orderBy", value); }
         }
+#endif
         /// <summary>Name of the report</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ReportName {
+            get { return BackingStore?.Get<string?>("reportName"); }
+            set { BackingStore?.Set("reportName", value); }
+        }
+#else
         public string ReportName {
             get { return BackingStore?.Get<string>("reportName"); }
             set { BackingStore?.Set("reportName", value); }
         }
+#endif
         /// <summary>Columns selected from the report</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? Select {
+            get { return BackingStore?.Get<List<string>?>("select"); }
+            set { BackingStore?.Set("select", value); }
+        }
+#else
         public List<string> Select {
             get { return BackingStore?.Get<List<string>>("select"); }
             set { BackingStore?.Set("select", value); }
         }
+#endif
         /// <summary>Possible statuses associated with a generated report</summary>
         public DeviceManagementReportStatus? Status {
             get { return BackingStore?.Get<DeviceManagementReportStatus?>("status"); }

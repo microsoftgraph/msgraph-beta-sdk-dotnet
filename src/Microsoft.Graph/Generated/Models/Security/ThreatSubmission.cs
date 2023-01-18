@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
     public class ThreatSubmission : Entity, IParsable {
         /// <summary>Specifies the admin review property which constitutes of who reviewed the user submission, when and what was it identified as.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public SubmissionAdminReview? AdminReview {
+            get { return BackingStore?.Get<SubmissionAdminReview?>("adminReview"); }
+            set { BackingStore?.Set("adminReview", value); }
+        }
+#else
         public SubmissionAdminReview AdminReview {
             get { return BackingStore?.Get<SubmissionAdminReview>("adminReview"); }
             set { BackingStore?.Set("adminReview", value); }
         }
+#endif
         /// <summary>The category property</summary>
         public SubmissionCategory? Category {
             get { return BackingStore?.Get<SubmissionCategory?>("category"); }
@@ -26,20 +33,34 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("contentType", value); }
         }
         /// <summary>Specifies who submitted the email as a threat. Supports $filter = createdBy/email eq &apos;value&apos;.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public SubmissionUserIdentity? CreatedBy {
+            get { return BackingStore?.Get<SubmissionUserIdentity?>("createdBy"); }
+            set { BackingStore?.Set("createdBy", value); }
+        }
+#else
         public SubmissionUserIdentity CreatedBy {
             get { return BackingStore?.Get<SubmissionUserIdentity>("createdBy"); }
             set { BackingStore?.Set("createdBy", value); }
         }
+#endif
         /// <summary>Specifies when the threat submission was created. Supports $filter = createdDateTime ge 2022-01-01T00:00:00Z and createdDateTime lt 2022-01-02T00:00:00Z.</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>Specifies the result of the analysis performed by Microsoft.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public SubmissionResult? Result {
+            get { return BackingStore?.Get<SubmissionResult?>("result"); }
+            set { BackingStore?.Set("result", value); }
+        }
+#else
         public SubmissionResult Result {
             get { return BackingStore?.Get<SubmissionResult>("result"); }
             set { BackingStore?.Set("result", value); }
         }
+#endif
         /// <summary>Specifies the role of the submitter. Supports $filter = source eq &apos;value&apos;. The possible values are: administrator,  user and unkownFutureValue.</summary>
         public SubmissionSource? Source {
             get { return BackingStore?.Get<SubmissionSource?>("source"); }
@@ -51,10 +72,17 @@ namespace Microsoft.Graph.Beta.Models.Security {
             set { BackingStore?.Set("status", value); }
         }
         /// <summary>Indicates the tenant id of the submitter. Not required when created using a POST operation. It is extracted from the token of the post API call.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TenantId {
+            get { return BackingStore?.Get<string?>("tenantId"); }
+            set { BackingStore?.Set("tenantId", value); }
+        }
+#else
         public string TenantId {
             get { return BackingStore?.Get<string>("tenantId"); }
             set { BackingStore?.Set("tenantId", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

@@ -14,10 +14,17 @@ namespace Microsoft.Graph.Beta.Users.Item.Devices.Item.CheckMemberGroups {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The groupIds property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? GroupIds {
+            get { return BackingStore?.Get<List<string>?>("groupIds"); }
+            set { BackingStore?.Set("groupIds", value); }
+        }
+#else
         public List<string> GroupIds {
             get { return BackingStore?.Get<List<string>>("groupIds"); }
             set { BackingStore?.Set("groupIds", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new checkMemberGroupsPostRequestBody and sets the default values.
         /// </summary>

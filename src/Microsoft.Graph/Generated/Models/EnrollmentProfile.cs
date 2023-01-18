@@ -9,20 +9,41 @@ namespace Microsoft.Graph.Beta.Models {
     /// </summary>
     public class EnrollmentProfile : Entity, IParsable {
         /// <summary>Configuration endpoint url to use for Enrollment</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ConfigurationEndpointUrl {
+            get { return BackingStore?.Get<string?>("configurationEndpointUrl"); }
+            set { BackingStore?.Set("configurationEndpointUrl", value); }
+        }
+#else
         public string ConfigurationEndpointUrl {
             get { return BackingStore?.Get<string>("configurationEndpointUrl"); }
             set { BackingStore?.Set("configurationEndpointUrl", value); }
         }
+#endif
         /// <summary>Description of the profile</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>Name of the profile</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>Indicates to authenticate with Apple Setup Assistant instead of Company Portal.</summary>
         public bool? EnableAuthenticationViaCompanyPortal {
             get { return BackingStore?.Get<bool?>("enableAuthenticationViaCompanyPortal"); }

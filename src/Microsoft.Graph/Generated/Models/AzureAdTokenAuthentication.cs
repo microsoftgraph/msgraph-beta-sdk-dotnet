@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class AzureAdTokenAuthentication : CustomExtensionAuthenticationConfiguration, IParsable {
         /// <summary>The appID of the Azure AD application to use to authenticate a logic app with a custom access package workflow extension.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ResourceId {
+            get { return BackingStore?.Get<string?>("resourceId"); }
+            set { BackingStore?.Set("resourceId", value); }
+        }
+#else
         public string ResourceId {
             get { return BackingStore?.Get<string>("resourceId"); }
             set { BackingStore?.Set("resourceId", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new AzureAdTokenAuthentication and sets the default values.
         /// </summary>

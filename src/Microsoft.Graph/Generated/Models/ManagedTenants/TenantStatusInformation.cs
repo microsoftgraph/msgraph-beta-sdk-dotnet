@@ -24,25 +24,46 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
             set { BackingStore?.Set("lastDelegatedPrivilegeRefreshDateTime", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The identifier for the account that offboarded the managed tenant. Optional. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OffboardedByUserId {
+            get { return BackingStore?.Get<string?>("offboardedByUserId"); }
+            set { BackingStore?.Set("offboardedByUserId", value); }
+        }
+#else
         public string OffboardedByUserId {
             get { return BackingStore?.Get<string>("offboardedByUserId"); }
             set { BackingStore?.Set("offboardedByUserId", value); }
         }
+#endif
         /// <summary>The date and time when the managed tenant was offboarded. Optional. Read-only.</summary>
         public DateTimeOffset? OffboardedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("offboardedDateTime"); }
             set { BackingStore?.Set("offboardedDateTime", value); }
         }
         /// <summary>The identifier for the account that onboarded the managed tenant. Optional. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OnboardedByUserId {
+            get { return BackingStore?.Get<string?>("onboardedByUserId"); }
+            set { BackingStore?.Set("onboardedByUserId", value); }
+        }
+#else
         public string OnboardedByUserId {
             get { return BackingStore?.Get<string>("onboardedByUserId"); }
             set { BackingStore?.Set("onboardedByUserId", value); }
         }
+#endif
         /// <summary>The date and time when the managed tenant was onboarded. Optional. Read-only.</summary>
         public DateTimeOffset? OnboardedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("onboardedDateTime"); }
@@ -59,10 +80,17 @@ namespace Microsoft.Graph.Beta.Models.ManagedTenants {
             set { BackingStore?.Set("tenantOnboardingEligibilityReason", value); }
         }
         /// <summary>The collection of workload statues for the managed tenant. Optional. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<WorkloadStatus>? WorkloadStatuses {
+            get { return BackingStore?.Get<List<WorkloadStatus>?>("workloadStatuses"); }
+            set { BackingStore?.Set("workloadStatuses", value); }
+        }
+#else
         public List<WorkloadStatus> WorkloadStatuses {
             get { return BackingStore?.Get<List<WorkloadStatus>>("workloadStatuses"); }
             set { BackingStore?.Set("workloadStatuses", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new tenantStatusInformation and sets the default values.
         /// </summary>

@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class AndroidDeviceComplianceLocalActionLockDeviceWithPasscode : AndroidDeviceComplianceLocalActionBase, IParsable {
         /// <summary>Passcode to reset to Android device. This property is read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Passcode {
+            get { return BackingStore?.Get<string?>("passcode"); }
+            set { BackingStore?.Set("passcode", value); }
+        }
+#else
         public string Passcode {
             get { return BackingStore?.Get<string>("passcode"); }
             set { BackingStore?.Set("passcode", value); }
         }
+#endif
         /// <summary>Number of sign in failures before wiping device, the value can be 4-11. Valid values 4 to 11</summary>
         public int? PasscodeSignInFailureCountBeforeWipe {
             get { return BackingStore?.Get<int?>("passcodeSignInFailureCountBeforeWipe"); }

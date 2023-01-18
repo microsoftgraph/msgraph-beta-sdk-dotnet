@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
     public class CustomAction : InformationProtectionAction, IParsable {
         /// <summary>Name of the custom action.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Name {
+            get { return BackingStore?.Get<string?>("name"); }
+            set { BackingStore?.Set("name", value); }
+        }
+#else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#endif
         /// <summary>Properties, in key-value pair format, of the action.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<KeyValuePair>? Properties {
+            get { return BackingStore?.Get<List<KeyValuePair>?>("properties"); }
+            set { BackingStore?.Set("properties", value); }
+        }
+#else
         public List<KeyValuePair> Properties {
             get { return BackingStore?.Get<List<KeyValuePair>>("properties"); }
             set { BackingStore?.Set("properties", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new CustomAction and sets the default values.
         /// </summary>

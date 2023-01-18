@@ -7,20 +7,34 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class GeneralLedgerEntry : Entity, IParsable {
         /// <summary>The account property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.Account? Account {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Account?>("account"); }
+            set { BackingStore?.Set("account", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.Account Account {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Account>("account"); }
             set { BackingStore?.Set("account", value); }
         }
+#endif
         /// <summary>The accountId property</summary>
         public Guid? AccountId {
             get { return BackingStore?.Get<Guid?>("accountId"); }
             set { BackingStore?.Set("accountId", value); }
         }
         /// <summary>The accountNumber property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AccountNumber {
+            get { return BackingStore?.Get<string?>("accountNumber"); }
+            set { BackingStore?.Set("accountNumber", value); }
+        }
+#else
         public string AccountNumber {
             get { return BackingStore?.Get<string>("accountNumber"); }
             set { BackingStore?.Set("accountNumber", value); }
         }
+#endif
         /// <summary>The creditAmount property</summary>
         public decimal? CreditAmount {
             get { return BackingStore?.Get<decimal?>("creditAmount"); }
@@ -32,20 +46,41 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("debitAmount", value); }
         }
         /// <summary>The description property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>The documentNumber property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DocumentNumber {
+            get { return BackingStore?.Get<string?>("documentNumber"); }
+            set { BackingStore?.Set("documentNumber", value); }
+        }
+#else
         public string DocumentNumber {
             get { return BackingStore?.Get<string>("documentNumber"); }
             set { BackingStore?.Set("documentNumber", value); }
         }
+#endif
         /// <summary>The documentType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DocumentType {
+            get { return BackingStore?.Get<string?>("documentType"); }
+            set { BackingStore?.Set("documentType", value); }
+        }
+#else
         public string DocumentType {
             get { return BackingStore?.Get<string>("documentType"); }
             set { BackingStore?.Set("documentType", value); }
         }
+#endif
         /// <summary>The lastModifiedDateTime property</summary>
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }

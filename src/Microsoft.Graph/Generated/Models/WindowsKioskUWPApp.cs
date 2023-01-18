@@ -6,20 +6,41 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class WindowsKioskUWPApp : WindowsKioskAppBase, IParsable {
         /// <summary>This references an Intune App that will be target to the same assignments as Kiosk configuration</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AppId {
+            get { return BackingStore?.Get<string?>("appId"); }
+            set { BackingStore?.Set("appId", value); }
+        }
+#else
         public string AppId {
             get { return BackingStore?.Get<string>("appId"); }
             set { BackingStore?.Set("appId", value); }
         }
+#endif
         /// <summary>This is the only Application User Model ID (AUMID) that will be available to launch use while in Kiosk Mode</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AppUserModelId {
+            get { return BackingStore?.Get<string?>("appUserModelId"); }
+            set { BackingStore?.Set("appUserModelId", value); }
+        }
+#else
         public string AppUserModelId {
             get { return BackingStore?.Get<string>("appUserModelId"); }
             set { BackingStore?.Set("appUserModelId", value); }
         }
+#endif
         /// <summary>This references an contained App from an Intune App</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ContainedAppId {
+            get { return BackingStore?.Get<string?>("containedAppId"); }
+            set { BackingStore?.Set("containedAppId", value); }
+        }
+#else
         public string ContainedAppId {
             get { return BackingStore?.Get<string>("containedAppId"); }
             set { BackingStore?.Set("containedAppId", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new WindowsKioskUWPApp and sets the default values.
         /// </summary>

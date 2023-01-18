@@ -6,50 +6,106 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class BookingCustomerInformation : BookingCustomerInformationBase, IParsable {
         /// <summary>The ID of the bookingCustomer for this appointment. If no ID is specified when an appointment is created, then a new bookingCustomer object is created. Once set, you should consider the customerId immutable.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CustomerId {
+            get { return BackingStore?.Get<string?>("customerId"); }
+            set { BackingStore?.Set("customerId", value); }
+        }
+#else
         public string CustomerId {
             get { return BackingStore?.Get<string>("customerId"); }
             set { BackingStore?.Set("customerId", value); }
         }
+#endif
         /// <summary>It consists of the list of custom questions and answers given by the customer as part of the appointment.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<BookingQuestionAnswer>? CustomQuestionAnswers {
+            get { return BackingStore?.Get<List<BookingQuestionAnswer>?>("customQuestionAnswers"); }
+            set { BackingStore?.Set("customQuestionAnswers", value); }
+        }
+#else
         public List<BookingQuestionAnswer> CustomQuestionAnswers {
             get { return BackingStore?.Get<List<BookingQuestionAnswer>>("customQuestionAnswers"); }
             set { BackingStore?.Set("customQuestionAnswers", value); }
         }
+#endif
         /// <summary>The SMTP address of the bookingCustomer who is booking the appointment.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? EmailAddress {
+            get { return BackingStore?.Get<string?>("emailAddress"); }
+            set { BackingStore?.Set("emailAddress", value); }
+        }
+#else
         public string EmailAddress {
             get { return BackingStore?.Get<string>("emailAddress"); }
             set { BackingStore?.Set("emailAddress", value); }
         }
+#endif
         /// <summary>Represents location information for the bookingCustomer who is booking the appointment.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.Location? Location {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Location?>("location"); }
+            set { BackingStore?.Set("location", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.Location Location {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Location>("location"); }
             set { BackingStore?.Set("location", value); }
         }
+#endif
         /// <summary>The customer&apos;s name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Name {
+            get { return BackingStore?.Get<string?>("name"); }
+            set { BackingStore?.Set("name", value); }
+        }
+#else
         public string Name {
             get { return BackingStore?.Get<string>("name"); }
             set { BackingStore?.Set("name", value); }
         }
+#endif
         /// <summary>Notes from the customer associated with this appointment. You can get the value only when reading this bookingAppointment by its ID. You can set this property only when initially creating an appointment with a new customer. After that point, the value is computed from the customer represented by the customerId.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Notes {
+            get { return BackingStore?.Get<string?>("notes"); }
+            set { BackingStore?.Set("notes", value); }
+        }
+#else
         public string Notes {
             get { return BackingStore?.Get<string>("notes"); }
             set { BackingStore?.Set("notes", value); }
         }
+#endif
         /// <summary>The customer&apos;s phone number.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Phone {
+            get { return BackingStore?.Get<string?>("phone"); }
+            set { BackingStore?.Set("phone", value); }
+        }
+#else
         public string Phone {
             get { return BackingStore?.Get<string>("phone"); }
             set { BackingStore?.Set("phone", value); }
         }
+#endif
         /// <summary>Indicates if the SMS notifications will be sent to the customer for the appointment</summary>
         public bool? SmsNotificationsEnabled {
             get { return BackingStore?.Get<bool?>("smsNotificationsEnabled"); }
             set { BackingStore?.Set("smsNotificationsEnabled", value); }
         }
         /// <summary>The time zone of the customer. For a list of possible values, see dateTimeTimeZone.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TimeZone {
+            get { return BackingStore?.Get<string?>("timeZone"); }
+            set { BackingStore?.Set("timeZone", value); }
+        }
+#else
         public string TimeZone {
             get { return BackingStore?.Get<string>("timeZone"); }
             set { BackingStore?.Set("timeZone", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new BookingCustomerInformation and sets the default values.
         /// </summary>

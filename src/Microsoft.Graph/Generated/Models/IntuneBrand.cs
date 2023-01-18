@@ -17,60 +17,130 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Collection of blocked actions on the company portal as per platform and device ownership types.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<CompanyPortalBlockedAction>? CompanyPortalBlockedActions {
+            get { return BackingStore?.Get<List<CompanyPortalBlockedAction>?>("companyPortalBlockedActions"); }
+            set { BackingStore?.Set("companyPortalBlockedActions", value); }
+        }
+#else
         public List<CompanyPortalBlockedAction> CompanyPortalBlockedActions {
             get { return BackingStore?.Get<List<CompanyPortalBlockedAction>>("companyPortalBlockedActions"); }
             set { BackingStore?.Set("companyPortalBlockedActions", value); }
         }
+#endif
         /// <summary>Email address of the person/organization responsible for IT support.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ContactITEmailAddress {
+            get { return BackingStore?.Get<string?>("contactITEmailAddress"); }
+            set { BackingStore?.Set("contactITEmailAddress", value); }
+        }
+#else
         public string ContactITEmailAddress {
             get { return BackingStore?.Get<string>("contactITEmailAddress"); }
             set { BackingStore?.Set("contactITEmailAddress", value); }
         }
+#endif
         /// <summary>Name of the person/organization responsible for IT support.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ContactITName {
+            get { return BackingStore?.Get<string?>("contactITName"); }
+            set { BackingStore?.Set("contactITName", value); }
+        }
+#else
         public string ContactITName {
             get { return BackingStore?.Get<string>("contactITName"); }
             set { BackingStore?.Set("contactITName", value); }
         }
+#endif
         /// <summary>Text comments regarding the person/organization responsible for IT support.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ContactITNotes {
+            get { return BackingStore?.Get<string?>("contactITNotes"); }
+            set { BackingStore?.Set("contactITNotes", value); }
+        }
+#else
         public string ContactITNotes {
             get { return BackingStore?.Get<string>("contactITNotes"); }
             set { BackingStore?.Set("contactITNotes", value); }
         }
+#endif
         /// <summary>Phone number of the person/organization responsible for IT support.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ContactITPhoneNumber {
+            get { return BackingStore?.Get<string?>("contactITPhoneNumber"); }
+            set { BackingStore?.Set("contactITPhoneNumber", value); }
+        }
+#else
         public string ContactITPhoneNumber {
             get { return BackingStore?.Get<string>("contactITPhoneNumber"); }
             set { BackingStore?.Set("contactITPhoneNumber", value); }
         }
+#endif
         /// <summary>The custom privacy message used to explain what the organization can see and do on managed devices.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CustomCanSeePrivacyMessage {
+            get { return BackingStore?.Get<string?>("customCanSeePrivacyMessage"); }
+            set { BackingStore?.Set("customCanSeePrivacyMessage", value); }
+        }
+#else
         public string CustomCanSeePrivacyMessage {
             get { return BackingStore?.Get<string>("customCanSeePrivacyMessage"); }
             set { BackingStore?.Set("customCanSeePrivacyMessage", value); }
         }
+#endif
         /// <summary>The custom privacy message used to explain what the organization can’t see or do on managed devices.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CustomCantSeePrivacyMessage {
+            get { return BackingStore?.Get<string?>("customCantSeePrivacyMessage"); }
+            set { BackingStore?.Set("customCantSeePrivacyMessage", value); }
+        }
+#else
         public string CustomCantSeePrivacyMessage {
             get { return BackingStore?.Get<string>("customCantSeePrivacyMessage"); }
             set { BackingStore?.Set("customCantSeePrivacyMessage", value); }
         }
+#endif
         /// <summary>The custom privacy message used to explain what the organization can’t see or do on managed devices.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CustomPrivacyMessage {
+            get { return BackingStore?.Get<string?>("customPrivacyMessage"); }
+            set { BackingStore?.Set("customPrivacyMessage", value); }
+        }
+#else
         public string CustomPrivacyMessage {
             get { return BackingStore?.Get<string>("customPrivacyMessage"); }
             set { BackingStore?.Set("customPrivacyMessage", value); }
         }
+#endif
         /// <summary>Logo image displayed in Company Portal apps which have a dark background behind the logo.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public MimeContent? DarkBackgroundLogo {
+            get { return BackingStore?.Get<MimeContent?>("darkBackgroundLogo"); }
+            set { BackingStore?.Set("darkBackgroundLogo", value); }
+        }
+#else
         public MimeContent DarkBackgroundLogo {
             get { return BackingStore?.Get<MimeContent>("darkBackgroundLogo"); }
             set { BackingStore?.Set("darkBackgroundLogo", value); }
         }
+#endif
         /// <summary>Applies to telemetry sent from all clients to the Intune service. When disabled, all proactive troubleshooting and issue warnings within the client are turned off, and telemetry settings appear inactive or hidden to the device user.</summary>
         public bool? DisableClientTelemetry {
             get { return BackingStore?.Get<bool?>("disableClientTelemetry"); }
             set { BackingStore?.Set("disableClientTelemetry", value); }
         }
         /// <summary>Company/organization name that is displayed to end users.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>Options available for enrollment flow customization</summary>
         public EnrollmentAvailabilityOptions? EnrollmentAvailability {
             get { return BackingStore?.Get<EnrollmentAvailabilityOptions?>("enrollmentAvailability"); }
@@ -87,40 +157,89 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("isRemoveDeviceDisabled", value); }
         }
         /// <summary>Customized image displayed in Company Portal app landing page</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public MimeContent? LandingPageCustomizedImage {
+            get { return BackingStore?.Get<MimeContent?>("landingPageCustomizedImage"); }
+            set { BackingStore?.Set("landingPageCustomizedImage", value); }
+        }
+#else
         public MimeContent LandingPageCustomizedImage {
             get { return BackingStore?.Get<MimeContent>("landingPageCustomizedImage"); }
             set { BackingStore?.Set("landingPageCustomizedImage", value); }
         }
+#endif
         /// <summary>Logo image displayed in Company Portal apps which have a light background behind the logo.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public MimeContent? LightBackgroundLogo {
+            get { return BackingStore?.Get<MimeContent?>("lightBackgroundLogo"); }
+            set { BackingStore?.Set("lightBackgroundLogo", value); }
+        }
+#else
         public MimeContent LightBackgroundLogo {
             get { return BackingStore?.Get<MimeContent>("lightBackgroundLogo"); }
             set { BackingStore?.Set("lightBackgroundLogo", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Display name of the company/organization’s IT helpdesk site.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OnlineSupportSiteName {
+            get { return BackingStore?.Get<string?>("onlineSupportSiteName"); }
+            set { BackingStore?.Set("onlineSupportSiteName", value); }
+        }
+#else
         public string OnlineSupportSiteName {
             get { return BackingStore?.Get<string>("onlineSupportSiteName"); }
             set { BackingStore?.Set("onlineSupportSiteName", value); }
         }
+#endif
         /// <summary>URL to the company/organization’s IT helpdesk site.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OnlineSupportSiteUrl {
+            get { return BackingStore?.Get<string?>("onlineSupportSiteUrl"); }
+            set { BackingStore?.Set("onlineSupportSiteUrl", value); }
+        }
+#else
         public string OnlineSupportSiteUrl {
             get { return BackingStore?.Get<string>("onlineSupportSiteUrl"); }
             set { BackingStore?.Set("onlineSupportSiteUrl", value); }
         }
+#endif
         /// <summary>URL to the company/organization’s privacy policy.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PrivacyUrl {
+            get { return BackingStore?.Get<string?>("privacyUrl"); }
+            set { BackingStore?.Set("privacyUrl", value); }
+        }
+#else
         public string PrivacyUrl {
             get { return BackingStore?.Get<string>("privacyUrl"); }
             set { BackingStore?.Set("privacyUrl", value); }
         }
+#endif
         /// <summary>List of scope tags assigned to the default branding profile</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? RoleScopeTagIds {
+            get { return BackingStore?.Get<List<string>?>("roleScopeTagIds"); }
+            set { BackingStore?.Set("roleScopeTagIds", value); }
+        }
+#else
         public List<string> RoleScopeTagIds {
             get { return BackingStore?.Get<List<string>>("roleScopeTagIds"); }
             set { BackingStore?.Set("roleScopeTagIds", value); }
         }
+#endif
         /// <summary>Boolean that indicates if a push notification is sent to users when their device ownership type changes from personal to corporate</summary>
         public bool? SendDeviceOwnershipChangePushNotification {
             get { return BackingStore?.Get<bool?>("sendDeviceOwnershipChangePushNotification"); }
@@ -157,10 +276,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("showOfficeWebApps", value); }
         }
         /// <summary>Primary theme color used in the Company Portal applications and web portal.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public RgbColor? ThemeColor {
+            get { return BackingStore?.Get<RgbColor?>("themeColor"); }
+            set { BackingStore?.Set("themeColor", value); }
+        }
+#else
         public RgbColor ThemeColor {
             get { return BackingStore?.Get<RgbColor>("themeColor"); }
             set { BackingStore?.Set("themeColor", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new intuneBrand and sets the default values.
         /// </summary>

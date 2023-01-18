@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Data sharing consent information.
+    /// </summary>
     public class DataSharingConsent : Entity, IParsable {
         /// <summary>The time consent was granted for this account</summary>
         public DateTimeOffset? GrantDateTime {
@@ -16,25 +19,53 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("granted", value); }
         }
         /// <summary>The Upn of the user that granted consent for this account</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? GrantedByUpn {
+            get { return BackingStore?.Get<string?>("grantedByUpn"); }
+            set { BackingStore?.Set("grantedByUpn", value); }
+        }
+#else
         public string GrantedByUpn {
             get { return BackingStore?.Get<string>("grantedByUpn"); }
             set { BackingStore?.Set("grantedByUpn", value); }
         }
+#endif
         /// <summary>The UserId of the user that granted consent for this account</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? GrantedByUserId {
+            get { return BackingStore?.Get<string?>("grantedByUserId"); }
+            set { BackingStore?.Set("grantedByUserId", value); }
+        }
+#else
         public string GrantedByUserId {
             get { return BackingStore?.Get<string>("grantedByUserId"); }
             set { BackingStore?.Set("grantedByUserId", value); }
         }
+#endif
         /// <summary>The display name of the service work flow</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ServiceDisplayName {
+            get { return BackingStore?.Get<string?>("serviceDisplayName"); }
+            set { BackingStore?.Set("serviceDisplayName", value); }
+        }
+#else
         public string ServiceDisplayName {
             get { return BackingStore?.Get<string>("serviceDisplayName"); }
             set { BackingStore?.Set("serviceDisplayName", value); }
         }
+#endif
         /// <summary>The TermsUrl for the data sharing consent</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TermsUrl {
+            get { return BackingStore?.Get<string?>("termsUrl"); }
+            set { BackingStore?.Set("termsUrl", value); }
+        }
+#else
         public string TermsUrl {
             get { return BackingStore?.Get<string>("termsUrl"); }
             set { BackingStore?.Set("termsUrl", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

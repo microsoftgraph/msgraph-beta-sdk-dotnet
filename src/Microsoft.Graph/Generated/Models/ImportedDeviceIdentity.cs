@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// The importedDeviceIdentity resource represents a unique hardware identity of a device that has been pre-staged for pre-enrollment configuration.
+    /// </summary>
     public class ImportedDeviceIdentity : Entity, IParsable {
         /// <summary>Created Date Time of the device</summary>
         public DateTimeOffset? CreatedDateTime {
@@ -11,20 +14,34 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The description of the device</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>The enrollmentState property</summary>
         public Microsoft.Graph.Beta.Models.EnrollmentState? EnrollmentState {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.EnrollmentState?>("enrollmentState"); }
             set { BackingStore?.Set("enrollmentState", value); }
         }
         /// <summary>Imported Device Identifier</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ImportedDeviceIdentifier {
+            get { return BackingStore?.Get<string?>("importedDeviceIdentifier"); }
+            set { BackingStore?.Set("importedDeviceIdentifier", value); }
+        }
+#else
         public string ImportedDeviceIdentifier {
             get { return BackingStore?.Get<string>("importedDeviceIdentifier"); }
             set { BackingStore?.Set("importedDeviceIdentifier", value); }
         }
+#endif
         /// <summary>The importedDeviceIdentityType property</summary>
         public Microsoft.Graph.Beta.Models.ImportedDeviceIdentityType? ImportedDeviceIdentityType {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.ImportedDeviceIdentityType?>("importedDeviceIdentityType"); }

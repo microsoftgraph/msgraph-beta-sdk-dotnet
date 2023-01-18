@@ -14,15 +14,29 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>Camera manufacturer. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CameraMake {
+            get { return BackingStore?.Get<string?>("cameraMake"); }
+            set { BackingStore?.Set("cameraMake", value); }
+        }
+#else
         public string CameraMake {
             get { return BackingStore?.Get<string>("cameraMake"); }
             set { BackingStore?.Set("cameraMake", value); }
         }
+#endif
         /// <summary>Camera model. Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? CameraModel {
+            get { return BackingStore?.Get<string?>("cameraModel"); }
+            set { BackingStore?.Set("cameraModel", value); }
+        }
+#else
         public string CameraModel {
             get { return BackingStore?.Get<string>("cameraModel"); }
             set { BackingStore?.Set("cameraModel", value); }
         }
+#endif
         /// <summary>The denominator for the exposure time fraction from the camera. Read-only.</summary>
         public double? ExposureDenominator {
             get { return BackingStore?.Get<double?>("exposureDenominator"); }
@@ -49,10 +63,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("iso", value); }
         }
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>The orientation value from the camera. Writable on OneDrive Personal.</summary>
         public int? Orientation {
             get { return BackingStore?.Get<int?>("orientation"); }

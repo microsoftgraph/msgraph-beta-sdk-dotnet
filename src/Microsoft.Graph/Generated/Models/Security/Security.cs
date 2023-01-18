@@ -6,10 +6,17 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models.Security {
     public class Security : Entity, IParsable {
         /// <summary>The informationProtection property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public Microsoft.Graph.Beta.Models.Security.InformationProtection? InformationProtection {
+            get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.InformationProtection?>("informationProtection"); }
+            set { BackingStore?.Set("informationProtection", value); }
+        }
+#else
         public Microsoft.Graph.Beta.Models.Security.InformationProtection InformationProtection {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.Security.InformationProtection>("informationProtection"); }
             set { BackingStore?.Set("informationProtection", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

@@ -9,30 +9,51 @@ namespace Microsoft.Graph.Beta.Models {
     /// </summary>
     public class DeviceEnrollmentConfiguration : Entity, IParsable {
         /// <summary>The list of group assignments for the device configuration profile</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<EnrollmentConfigurationAssignment>? Assignments {
+            get { return BackingStore?.Get<List<EnrollmentConfigurationAssignment>?>("assignments"); }
+            set { BackingStore?.Set("assignments", value); }
+        }
+#else
         public List<EnrollmentConfigurationAssignment> Assignments {
             get { return BackingStore?.Get<List<EnrollmentConfigurationAssignment>>("assignments"); }
             set { BackingStore?.Set("assignments", value); }
         }
+#endif
         /// <summary>Created date time in UTC of the device enrollment configuration</summary>
         public DateTimeOffset? CreatedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("createdDateTime"); }
             set { BackingStore?.Set("createdDateTime", value); }
         }
         /// <summary>The description of the device enrollment configuration</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Description {
+            get { return BackingStore?.Get<string?>("description"); }
+            set { BackingStore?.Set("description", value); }
+        }
+#else
         public string Description {
             get { return BackingStore?.Get<string>("description"); }
             set { BackingStore?.Set("description", value); }
         }
+#endif
         /// <summary>Describes the TemplateFamily for the Template entity</summary>
         public Microsoft.Graph.Beta.Models.DeviceEnrollmentConfigurationType? DeviceEnrollmentConfigurationType {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.DeviceEnrollmentConfigurationType?>("deviceEnrollmentConfigurationType"); }
             set { BackingStore?.Set("deviceEnrollmentConfigurationType", value); }
         }
         /// <summary>The display name of the device enrollment configuration</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>Last modified date time in UTC of the device enrollment configuration</summary>
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
@@ -44,10 +65,17 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("priority", value); }
         }
         /// <summary>Optional role scope tags for the enrollment restrictions.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? RoleScopeTagIds {
+            get { return BackingStore?.Get<List<string>?>("roleScopeTagIds"); }
+            set { BackingStore?.Set("roleScopeTagIds", value); }
+        }
+#else
         public List<string> RoleScopeTagIds {
             get { return BackingStore?.Get<List<string>>("roleScopeTagIds"); }
             set { BackingStore?.Set("roleScopeTagIds", value); }
         }
+#endif
         /// <summary>The version of the device enrollment configuration</summary>
         public int? Version {
             get { return BackingStore?.Get<int?>("version"); }

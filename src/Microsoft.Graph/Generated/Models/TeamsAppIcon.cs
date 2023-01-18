@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class TeamsAppIcon : Entity, IParsable {
         /// <summary>The contents of the app icon if the icon is hosted within the Teams infrastructure.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public TeamworkHostedContent? HostedContent {
+            get { return BackingStore?.Get<TeamworkHostedContent?>("hostedContent"); }
+            set { BackingStore?.Set("hostedContent", value); }
+        }
+#else
         public TeamworkHostedContent HostedContent {
             get { return BackingStore?.Get<TeamworkHostedContent>("hostedContent"); }
             set { BackingStore?.Set("hostedContent", value); }
         }
+#endif
         /// <summary>The web URL that can be used for downloading the image.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? WebUrl {
+            get { return BackingStore?.Get<string?>("webUrl"); }
+            set { BackingStore?.Set("webUrl", value); }
+        }
+#else
         public string WebUrl {
             get { return BackingStore?.Get<string>("webUrl"); }
             set { BackingStore?.Set("webUrl", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

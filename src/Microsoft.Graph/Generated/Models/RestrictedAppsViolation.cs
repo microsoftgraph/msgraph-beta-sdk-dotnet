@@ -4,52 +4,104 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// Violation of restricted apps configuration profile per device per user
+    /// </summary>
     public class RestrictedAppsViolation : Entity, IParsable {
         /// <summary>Device configuration profile unique identifier, must be Guid</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeviceConfigurationId {
+            get { return BackingStore?.Get<string?>("deviceConfigurationId"); }
+            set { BackingStore?.Set("deviceConfigurationId", value); }
+        }
+#else
         public string DeviceConfigurationId {
             get { return BackingStore?.Get<string>("deviceConfigurationId"); }
             set { BackingStore?.Set("deviceConfigurationId", value); }
         }
+#endif
         /// <summary>Device configuration profile name</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeviceConfigurationName {
+            get { return BackingStore?.Get<string?>("deviceConfigurationName"); }
+            set { BackingStore?.Set("deviceConfigurationName", value); }
+        }
+#else
         public string DeviceConfigurationName {
             get { return BackingStore?.Get<string>("deviceConfigurationName"); }
             set { BackingStore?.Set("deviceConfigurationName", value); }
         }
+#endif
         /// <summary>Device name</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DeviceName {
+            get { return BackingStore?.Get<string?>("deviceName"); }
+            set { BackingStore?.Set("deviceName", value); }
+        }
+#else
         public string DeviceName {
             get { return BackingStore?.Get<string>("deviceName"); }
             set { BackingStore?.Set("deviceName", value); }
         }
+#endif
         /// <summary>Managed device unique identifier, must be Guid</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ManagedDeviceId {
+            get { return BackingStore?.Get<string?>("managedDeviceId"); }
+            set { BackingStore?.Set("managedDeviceId", value); }
+        }
+#else
         public string ManagedDeviceId {
             get { return BackingStore?.Get<string>("managedDeviceId"); }
             set { BackingStore?.Set("managedDeviceId", value); }
         }
+#endif
         /// <summary>Supported platform types for policies.</summary>
         public PolicyPlatformType? PlatformType {
             get { return BackingStore?.Get<PolicyPlatformType?>("platformType"); }
             set { BackingStore?.Set("platformType", value); }
         }
         /// <summary>List of violated restricted apps</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<ManagedDeviceReportedApp>? RestrictedApps {
+            get { return BackingStore?.Get<List<ManagedDeviceReportedApp>?>("restrictedApps"); }
+            set { BackingStore?.Set("restrictedApps", value); }
+        }
+#else
         public List<ManagedDeviceReportedApp> RestrictedApps {
             get { return BackingStore?.Get<List<ManagedDeviceReportedApp>>("restrictedApps"); }
             set { BackingStore?.Set("restrictedApps", value); }
         }
+#endif
         /// <summary>Restricted apps state</summary>
         public Microsoft.Graph.Beta.Models.RestrictedAppsState? RestrictedAppsState {
             get { return BackingStore?.Get<Microsoft.Graph.Beta.Models.RestrictedAppsState?>("restrictedAppsState"); }
             set { BackingStore?.Set("restrictedAppsState", value); }
         }
         /// <summary>User unique identifier, must be Guid</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UserId {
+            get { return BackingStore?.Get<string?>("userId"); }
+            set { BackingStore?.Set("userId", value); }
+        }
+#else
         public string UserId {
             get { return BackingStore?.Get<string>("userId"); }
             set { BackingStore?.Set("userId", value); }
         }
+#endif
         /// <summary>User name</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? UserName {
+            get { return BackingStore?.Get<string?>("userName"); }
+            set { BackingStore?.Set("userName", value); }
+        }
+#else
         public string UserName {
             get { return BackingStore?.Get<string>("userName"); }
             set { BackingStore?.Set("userName", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

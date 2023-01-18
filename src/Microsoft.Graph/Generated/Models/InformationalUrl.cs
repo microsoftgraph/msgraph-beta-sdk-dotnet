@@ -14,35 +14,77 @@ namespace Microsoft.Graph.Beta.Models {
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>CDN URL to the application&apos;s logo, Read-only.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? LogoUrl {
+            get { return BackingStore?.Get<string?>("logoUrl"); }
+            set { BackingStore?.Set("logoUrl", value); }
+        }
+#else
         public string LogoUrl {
             get { return BackingStore?.Get<string>("logoUrl"); }
             set { BackingStore?.Set("logoUrl", value); }
         }
+#endif
         /// <summary>Link to the application&apos;s marketing page. For example, https://www.contoso.com/app/marketing</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? MarketingUrl {
+            get { return BackingStore?.Get<string?>("marketingUrl"); }
+            set { BackingStore?.Set("marketingUrl", value); }
+        }
+#else
         public string MarketingUrl {
             get { return BackingStore?.Get<string>("marketingUrl"); }
             set { BackingStore?.Set("marketingUrl", value); }
         }
+#endif
         /// <summary>The OdataType property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? OdataType {
+            get { return BackingStore?.Get<string?>("@odata.type"); }
+            set { BackingStore?.Set("@odata.type", value); }
+        }
+#else
         public string OdataType {
             get { return BackingStore?.Get<string>("@odata.type"); }
             set { BackingStore?.Set("@odata.type", value); }
         }
+#endif
         /// <summary>Link to the application&apos;s privacy statement. For example, https://www.contoso.com/app/privacy</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PrivacyStatementUrl {
+            get { return BackingStore?.Get<string?>("privacyStatementUrl"); }
+            set { BackingStore?.Set("privacyStatementUrl", value); }
+        }
+#else
         public string PrivacyStatementUrl {
             get { return BackingStore?.Get<string>("privacyStatementUrl"); }
             set { BackingStore?.Set("privacyStatementUrl", value); }
         }
+#endif
         /// <summary>Link to the application&apos;s support page. For example, https://www.contoso.com/app/support</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SupportUrl {
+            get { return BackingStore?.Get<string?>("supportUrl"); }
+            set { BackingStore?.Set("supportUrl", value); }
+        }
+#else
         public string SupportUrl {
             get { return BackingStore?.Get<string>("supportUrl"); }
             set { BackingStore?.Set("supportUrl", value); }
         }
+#endif
         /// <summary>Link to the application&apos;s terms of service statement. For example, https://www.contoso.com/app/termsofservice</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TermsOfServiceUrl {
+            get { return BackingStore?.Get<string?>("termsOfServiceUrl"); }
+            set { BackingStore?.Set("termsOfServiceUrl", value); }
+        }
+#else
         public string TermsOfServiceUrl {
             get { return BackingStore?.Get<string>("termsOfServiceUrl"); }
             set { BackingStore?.Set("termsOfServiceUrl", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new informationalUrl and sets the default values.
         /// </summary>

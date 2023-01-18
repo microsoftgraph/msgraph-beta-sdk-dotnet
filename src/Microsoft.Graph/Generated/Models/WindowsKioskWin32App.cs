@@ -6,15 +6,29 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class WindowsKioskWin32App : WindowsKioskAppBase, IParsable {
         /// <summary>This is the classicapppath to be used by v4 Win32 app while in Kiosk Mode</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ClassicAppPath {
+            get { return BackingStore?.Get<string?>("classicAppPath"); }
+            set { BackingStore?.Set("classicAppPath", value); }
+        }
+#else
         public string ClassicAppPath {
             get { return BackingStore?.Get<string>("classicAppPath"); }
             set { BackingStore?.Set("classicAppPath", value); }
         }
+#endif
         /// <summary>Edge kiosk (url) for Edge kiosk mode</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? EdgeKiosk {
+            get { return BackingStore?.Get<string?>("edgeKiosk"); }
+            set { BackingStore?.Set("edgeKiosk", value); }
+        }
+#else
         public string EdgeKiosk {
             get { return BackingStore?.Get<string>("edgeKiosk"); }
             set { BackingStore?.Set("edgeKiosk", value); }
         }
+#endif
         /// <summary>Edge kiosk idle timeout in minutes for Edge kiosk mode. Valid values 0 to 1440</summary>
         public int? EdgeKioskIdleTimeoutMinutes {
             get { return BackingStore?.Get<int?>("edgeKioskIdleTimeoutMinutes"); }

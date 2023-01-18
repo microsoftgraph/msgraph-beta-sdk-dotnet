@@ -6,20 +6,41 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class Windows81WifiImportConfiguration : DeviceConfiguration, IParsable {
         /// <summary>Payload. (UTF8 encoded byte array). This is the XML file saved on the device you used to connect to the Wi-Fi endpoint.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public byte[]? Payload {
+            get { return BackingStore?.Get<byte[]?>("payload"); }
+            set { BackingStore?.Set("payload", value); }
+        }
+#else
         public byte[] Payload {
             get { return BackingStore?.Get<byte[]>("payload"); }
             set { BackingStore?.Set("payload", value); }
         }
+#endif
         /// <summary>Payload file name (.xml).</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? PayloadFileName {
+            get { return BackingStore?.Get<string?>("payloadFileName"); }
+            set { BackingStore?.Set("payloadFileName", value); }
+        }
+#else
         public string PayloadFileName {
             get { return BackingStore?.Get<string>("payloadFileName"); }
             set { BackingStore?.Set("payloadFileName", value); }
         }
+#endif
         /// <summary>Profile name displayed in the UI.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ProfileName {
+            get { return BackingStore?.Get<string?>("profileName"); }
+            set { BackingStore?.Set("profileName", value); }
+        }
+#else
         public string ProfileName {
             get { return BackingStore?.Get<string>("profileName"); }
             set { BackingStore?.Set("profileName", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new Windows81WifiImportConfiguration and sets the default values.
         /// </summary>

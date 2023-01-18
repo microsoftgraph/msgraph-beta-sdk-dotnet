@@ -4,62 +4,128 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
+    /// <summary>
+    /// A class containing the properties for Audit Event.
+    /// </summary>
     public class AuditEvent : Entity, IParsable {
         /// <summary>Friendly name of the activity.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Activity {
+            get { return BackingStore?.Get<string?>("activity"); }
+            set { BackingStore?.Set("activity", value); }
+        }
+#else
         public string Activity {
             get { return BackingStore?.Get<string>("activity"); }
             set { BackingStore?.Set("activity", value); }
         }
+#endif
         /// <summary>The date time in UTC when the activity was performed.</summary>
         public DateTimeOffset? ActivityDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("activityDateTime"); }
             set { BackingStore?.Set("activityDateTime", value); }
         }
         /// <summary>The HTTP operation type of the activity.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ActivityOperationType {
+            get { return BackingStore?.Get<string?>("activityOperationType"); }
+            set { BackingStore?.Set("activityOperationType", value); }
+        }
+#else
         public string ActivityOperationType {
             get { return BackingStore?.Get<string>("activityOperationType"); }
             set { BackingStore?.Set("activityOperationType", value); }
         }
+#endif
         /// <summary>The result of the activity.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ActivityResult {
+            get { return BackingStore?.Get<string?>("activityResult"); }
+            set { BackingStore?.Set("activityResult", value); }
+        }
+#else
         public string ActivityResult {
             get { return BackingStore?.Get<string>("activityResult"); }
             set { BackingStore?.Set("activityResult", value); }
         }
+#endif
         /// <summary>The type of activity that was being performed.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ActivityType {
+            get { return BackingStore?.Get<string?>("activityType"); }
+            set { BackingStore?.Set("activityType", value); }
+        }
+#else
         public string ActivityType {
             get { return BackingStore?.Get<string>("activityType"); }
             set { BackingStore?.Set("activityType", value); }
         }
+#endif
         /// <summary>AAD user and application that are associated with the audit event.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public AuditActor? Actor {
+            get { return BackingStore?.Get<AuditActor?>("actor"); }
+            set { BackingStore?.Set("actor", value); }
+        }
+#else
         public AuditActor Actor {
             get { return BackingStore?.Get<AuditActor>("actor"); }
             set { BackingStore?.Set("actor", value); }
         }
+#endif
         /// <summary>Audit category.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? Category {
+            get { return BackingStore?.Get<string?>("category"); }
+            set { BackingStore?.Set("category", value); }
+        }
+#else
         public string Category {
             get { return BackingStore?.Get<string>("category"); }
             set { BackingStore?.Set("category", value); }
         }
+#endif
         /// <summary>Component name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? ComponentName {
+            get { return BackingStore?.Get<string?>("componentName"); }
+            set { BackingStore?.Set("componentName", value); }
+        }
+#else
         public string ComponentName {
             get { return BackingStore?.Get<string>("componentName"); }
             set { BackingStore?.Set("componentName", value); }
         }
+#endif
         /// <summary>The client request Id that is used to correlate activity within the system.</summary>
         public Guid? CorrelationId {
             get { return BackingStore?.Get<Guid?>("correlationId"); }
             set { BackingStore?.Set("correlationId", value); }
         }
         /// <summary>Event display name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>Resources being modified.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<AuditResource>? Resources {
+            get { return BackingStore?.Get<List<AuditResource>?>("resources"); }
+            set { BackingStore?.Set("resources", value); }
+        }
+#else
         public List<AuditResource> Resources {
             get { return BackingStore?.Get<List<AuditResource>>("resources"); }
             set { BackingStore?.Set("resources", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

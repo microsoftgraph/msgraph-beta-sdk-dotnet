@@ -14,25 +14,53 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("appCrashCount", value); }
         }
         /// <summary>The friendly name of the application.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AppDisplayName {
+            get { return BackingStore?.Get<string?>("appDisplayName"); }
+            set { BackingStore?.Set("appDisplayName", value); }
+        }
+#else
         public string AppDisplayName {
             get { return BackingStore?.Get<string>("appDisplayName"); }
             set { BackingStore?.Set("appDisplayName", value); }
         }
+#endif
         /// <summary>The name of the application.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AppName {
+            get { return BackingStore?.Get<string?>("appName"); }
+            set { BackingStore?.Set("appName", value); }
+        }
+#else
         public string AppName {
             get { return BackingStore?.Get<string>("appName"); }
             set { BackingStore?.Set("appName", value); }
         }
+#endif
         /// <summary>The publisher of the application.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AppPublisher {
+            get { return BackingStore?.Get<string?>("appPublisher"); }
+            set { BackingStore?.Set("appPublisher", value); }
+        }
+#else
         public string AppPublisher {
             get { return BackingStore?.Get<string>("appPublisher"); }
             set { BackingStore?.Set("appPublisher", value); }
         }
+#endif
         /// <summary>The version of the application.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? AppVersion {
+            get { return BackingStore?.Get<string?>("appVersion"); }
+            set { BackingStore?.Set("appVersion", value); }
+        }
+#else
         public string AppVersion {
             get { return BackingStore?.Get<string>("appVersion"); }
             set { BackingStore?.Set("appVersion", value); }
         }
+#endif
         /// <summary>The total number of devices that have reported one or more application crashes for this application and version. Valid values -2147483648 to 2147483647</summary>
         public int? DeviceCountWithCrashes {
             get { return BackingStore?.Get<int?>("deviceCountWithCrashes"); }

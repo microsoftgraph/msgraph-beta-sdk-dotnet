@@ -6,20 +6,41 @@ using System.Linq;
 namespace Microsoft.Graph.Beta.Models {
     public class TeamsAppInstalledEventMessageDetail : EventMessageDetail, IParsable {
         /// <summary>Initiator of the event.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public IdentitySet? Initiator {
+            get { return BackingStore?.Get<IdentitySet?>("initiator"); }
+            set { BackingStore?.Set("initiator", value); }
+        }
+#else
         public IdentitySet Initiator {
             get { return BackingStore?.Get<IdentitySet>("initiator"); }
             set { BackingStore?.Set("initiator", value); }
         }
+#endif
         /// <summary>Display name of the teamsApp.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TeamsAppDisplayName {
+            get { return BackingStore?.Get<string?>("teamsAppDisplayName"); }
+            set { BackingStore?.Set("teamsAppDisplayName", value); }
+        }
+#else
         public string TeamsAppDisplayName {
             get { return BackingStore?.Get<string>("teamsAppDisplayName"); }
             set { BackingStore?.Set("teamsAppDisplayName", value); }
         }
+#endif
         /// <summary>Unique identifier of the teamsApp.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? TeamsAppId {
+            get { return BackingStore?.Get<string?>("teamsAppId"); }
+            set { BackingStore?.Set("teamsAppId", value); }
+        }
+#else
         public string TeamsAppId {
             get { return BackingStore?.Get<string>("teamsAppId"); }
             set { BackingStore?.Set("teamsAppId", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new TeamsAppInstalledEventMessageDetail and sets the default values.
         /// </summary>

@@ -15,10 +15,17 @@ namespace Microsoft.Graph.Beta.Users.Item.ManagedDevices.DownloadAppDiagnostics 
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The request property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public PowerliftDownloadRequest? Request {
+            get { return BackingStore?.Get<PowerliftDownloadRequest?>("request"); }
+            set { BackingStore?.Set("request", value); }
+        }
+#else
         public PowerliftDownloadRequest Request {
             get { return BackingStore?.Get<PowerliftDownloadRequest>("request"); }
             set { BackingStore?.Set("request", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new downloadAppDiagnosticsPostRequestBody and sets the default values.
         /// </summary>

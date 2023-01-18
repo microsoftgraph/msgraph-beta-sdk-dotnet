@@ -11,15 +11,29 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("bias", value); }
         }
         /// <summary>Specifies when the time zone switches from standard time to daylight saving time.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public DaylightTimeZoneOffset? DaylightOffset {
+            get { return BackingStore?.Get<DaylightTimeZoneOffset?>("daylightOffset"); }
+            set { BackingStore?.Set("daylightOffset", value); }
+        }
+#else
         public DaylightTimeZoneOffset DaylightOffset {
             get { return BackingStore?.Get<DaylightTimeZoneOffset>("daylightOffset"); }
             set { BackingStore?.Set("daylightOffset", value); }
         }
+#endif
         /// <summary>Specifies when the time zone switches from daylight saving time to standard time.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public StandardTimeZoneOffset? StandardOffset {
+            get { return BackingStore?.Get<StandardTimeZoneOffset?>("standardOffset"); }
+            set { BackingStore?.Set("standardOffset", value); }
+        }
+#else
         public StandardTimeZoneOffset StandardOffset {
             get { return BackingStore?.Get<StandardTimeZoneOffset>("standardOffset"); }
             set { BackingStore?.Set("standardOffset", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new CustomTimeZone and sets the default values.
         /// </summary>

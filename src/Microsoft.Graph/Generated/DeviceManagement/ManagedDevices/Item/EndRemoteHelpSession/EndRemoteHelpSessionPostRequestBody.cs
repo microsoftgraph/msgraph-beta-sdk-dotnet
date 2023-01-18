@@ -14,10 +14,17 @@ namespace Microsoft.Graph.Beta.DeviceManagement.ManagedDevices.Item.EndRemoteHel
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The sessionKey property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? SessionKey {
+            get { return BackingStore?.Get<string?>("sessionKey"); }
+            set { BackingStore?.Set("sessionKey", value); }
+        }
+#else
         public string SessionKey {
             get { return BackingStore?.Get<string>("sessionKey"); }
             set { BackingStore?.Set("sessionKey", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new endRemoteHelpSessionPostRequestBody and sets the default values.
         /// </summary>

@@ -14,30 +14,58 @@ namespace Microsoft.Graph.Beta.Models {
             set { BackingStore?.Set("brandingOptions", value); }
         }
         /// <summary>The default locale to fallback onto when the requested locale is not available.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DefaultLocale {
+            get { return BackingStore?.Get<string?>("defaultLocale"); }
+            set { BackingStore?.Set("defaultLocale", value); }
+        }
+#else
         public string DefaultLocale {
             get { return BackingStore?.Get<string>("defaultLocale"); }
             set { BackingStore?.Set("defaultLocale", value); }
         }
+#endif
         /// <summary>Display name for the Notification Message Template.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public string? DisplayName {
+            get { return BackingStore?.Get<string?>("displayName"); }
+            set { BackingStore?.Set("displayName", value); }
+        }
+#else
         public string DisplayName {
             get { return BackingStore?.Get<string>("displayName"); }
             set { BackingStore?.Set("displayName", value); }
         }
+#endif
         /// <summary>DateTime the object was last modified.</summary>
         public DateTimeOffset? LastModifiedDateTime {
             get { return BackingStore?.Get<DateTimeOffset?>("lastModifiedDateTime"); }
             set { BackingStore?.Set("lastModifiedDateTime", value); }
         }
         /// <summary>The list of localized messages for this Notification Message Template.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<LocalizedNotificationMessage>? LocalizedNotificationMessages {
+            get { return BackingStore?.Get<List<LocalizedNotificationMessage>?>("localizedNotificationMessages"); }
+            set { BackingStore?.Set("localizedNotificationMessages", value); }
+        }
+#else
         public List<LocalizedNotificationMessage> LocalizedNotificationMessages {
             get { return BackingStore?.Get<List<LocalizedNotificationMessage>>("localizedNotificationMessages"); }
             set { BackingStore?.Set("localizedNotificationMessages", value); }
         }
+#endif
         /// <summary>List of Scope Tags for this Entity instance.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public List<string>? RoleScopeTagIds {
+            get { return BackingStore?.Get<List<string>?>("roleScopeTagIds"); }
+            set { BackingStore?.Set("roleScopeTagIds", value); }
+        }
+#else
         public List<string> RoleScopeTagIds {
             get { return BackingStore?.Get<List<string>>("roleScopeTagIds"); }
             set { BackingStore?.Set("roleScopeTagIds", value); }
         }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

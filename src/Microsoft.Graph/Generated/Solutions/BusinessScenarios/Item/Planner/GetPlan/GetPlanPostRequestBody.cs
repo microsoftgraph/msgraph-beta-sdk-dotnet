@@ -15,10 +15,17 @@ namespace Microsoft.Graph.Beta.Solutions.BusinessScenarios.Item.Planner.GetPlan 
         /// <summary>Stores model information.</summary>
         public IBackingStore BackingStore { get; private set; }
         /// <summary>The target property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+        public BusinessScenarioTaskTargetBase? Target {
+            get { return BackingStore?.Get<BusinessScenarioTaskTargetBase?>("target"); }
+            set { BackingStore?.Set("target", value); }
+        }
+#else
         public BusinessScenarioTaskTargetBase Target {
             get { return BackingStore?.Get<BusinessScenarioTaskTargetBase>("target"); }
             set { BackingStore?.Set("target", value); }
         }
+#endif
         /// <summary>
         /// Instantiates a new getPlanPostRequestBody and sets the default values.
         /// </summary>
